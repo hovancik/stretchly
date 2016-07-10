@@ -1,0 +1,28 @@
+{
+  "name": "strechly",
+  "version": "0.0.0",
+  "description": "break time reminder app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hovancik/strechly.git"
+  },
+  "keywords": [
+    "strechly",
+    "break",
+    "time",
+    "reminder"
+  ],
+  "author": "Jan Hovancik <conta.srdr@gmail.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/hovancik/strechly/issues"
+  },
+  "homepage": "https://github.com/hovancik/strechly",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}
