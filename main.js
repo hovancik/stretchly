@@ -9,19 +9,15 @@ const ipc = electron.ipcMain
 let appIcon = null
 let smallBreakWin = null
 let finishSmallBreakTimer
+let startSmallBreakTimer
+let planSmallBreakTimer
 
 function creatTrayIcon () {
   app.dock.hide()
   const iconPath = path.join(__dirname, 'icon.png')
   appIcon = new Tray(iconPath)
-  const contextMenu = Menu.buildFromTemplate([{
-    label: 'Quit',
-    click: function () {
-      app.quit()
-    }
-  }])
   appIcon.setToolTip('strechly - break time reminder app')
-  appIcon.setContextMenu(contextMenu)
+  appIcon.setContextMenu(getTrayMenu(false))
 }
 
 function startSmallBreak () {
@@ -34,18 +30,18 @@ function startSmallBreak () {
   })
   smallBreakWin.on('close', function () { smallBreakWin = null })
   smallBreakWin.loadURL(modalPath)
-  //smallBreakWin.webContents.openDevTools();
+  // smallBreakWin.webContents.openDevTools();
   finishSmallBreakTimer = setTimeout(finishSmallBreak, 10000)
 }
 
 function finishSmallBreak () {
   smallBreakWin.close()
   smallBreakWin = null
-  setTimeout (planSmallBreak, 100)
+  planSmallBreakTimer = setTimeout(planSmallBreak, 100)
 }
 
 function planSmallBreak () {
-  setTimeout (startSmallBreak, 600000)
+  startSmallBreakTimer = setTimeout(startSmallBreak, 600000)
 }
 
 ipc.on('finish-small-break', function () {
@@ -59,3 +55,49 @@ app.on('ready', planSmallBreak)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
+
+function pauseSmallBreaks () {
+  if (smallBreakWin) {
+    clearTimeout(finishSmallBreakTimer)
+    finishSmallBreak()
+  }
+  clearTimeout(planSmallBreakTimer)
+  clearTimeout(startSmallBreakTimer)
+  appIcon.setContextMenu(getTrayMenu(true))
+}
+
+function resumeSmallBreaks () {
+  appIcon.setContextMenu(getTrayMenu(false))
+  planSmallBreak()
+}
+
+function getTrayMenu (smallBreaksPaused) {
+  let trayMenu = []
+
+  if (smallBreaksPaused) {
+    trayMenu.push({
+      label: 'Resume',
+      click: function () {
+        resumeSmallBreaks()
+      }
+    })
+  } else {
+    trayMenu.push({
+      label: 'Pause',
+      click: function () {
+        pauseSmallBreaks()
+      }
+    })
+  }
+
+  trayMenu.push({
+    type: 'separator'
+  }, {
+    label: 'Quit',
+    click: function () {
+      app.quit()
+    }
+  })
+
+  return Menu.buildFromTemplate(trayMenu)
+}
