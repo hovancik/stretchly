@@ -8,6 +8,7 @@ const ipc = electron.ipcMain
 
 let appIcon = null
 let smallBreakWin = null
+let aboutWin = null
 let finishSmallBreakTimer
 let startSmallBreakTimer
 let planSmallBreakTimer
@@ -71,8 +72,27 @@ function resumeSmallBreaks () {
   planSmallBreak()
 }
 
+function showAboutWindow () {
+  const modalPath = path.join('file://', __dirname, 'about.html')
+  aboutWin = new BrowserWindow({
+    alwaysOnTop: true,
+    backgroundColor: '#8aba87',
+    title: 'About strechly'
+  })
+  aboutWin.loadURL(modalPath)
+}
+
 function getTrayMenu (smallBreaksPaused) {
   let trayMenu = []
+
+  trayMenu.push({
+    label: 'About',
+    click: function () {
+      showAboutWindow()
+    }
+  },{
+    type: 'separator'
+  })
 
   if (smallBreaksPaused) {
     trayMenu.push({
