@@ -16,5 +16,26 @@ To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm
 
 It should run on any electron supported platform. Tested on OS X.
 
+## Development
+
+Feel free to join development of this app via Issues and Pull Requests.
+
+### TODOs and Ideas
+- [ ] tests
+- [ ] PR tools
+- [ ] make installers/executables
+- [ ] create about page
+- [ ] create longer breaks (5min every 30 minutes)
+- [ ] create settings for breaks
+- [ ] remember settings after restart
+- [ ] autostart app
+- [ ] start break anytime from menu
+- [ ] create keyboard shortcuts
+
+### Contributors
+*(by date of contributions)*
+
+- Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
+
 ## License
 See LICENSE file.
