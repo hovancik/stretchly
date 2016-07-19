@@ -3,6 +3,7 @@
 [![bitHound Dependencies](https://www.bithound.io/github/hovancik/strechly/badges/dependencies.svg)](https://www.bithound.io/github/hovancik/strechly/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/hovancik/strechly/badges/devDependencies.svg)](https://www.bithound.io/github/hovancik/strechly/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/hovancik/strechly/badges/code.svg)](https://www.bithound.io/github/hovancik/strechly)
+[![Build Status](https://travis-ci.org/hovancik/strechly.svg?branch=master)](https://travis-ci.org/hovancik/strechly)
 
 break time reminder app
 
