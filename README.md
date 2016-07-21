@@ -1,4 +1,5 @@
 # strechly
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![bitHound Overall Score](https://www.bithound.io/github/hovancik/strechly/badges/score.svg)](https://www.bithound.io/github/hovancik/strechly)
 [![bitHound Dependencies](https://www.bithound.io/github/hovancik/strechly/badges/dependencies.svg)](https://www.bithound.io/github/hovancik/strechly/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/hovancik/strechly/badges/devDependencies.svg)](https://www.bithound.io/github/hovancik/strechly/master/dependencies/npm)

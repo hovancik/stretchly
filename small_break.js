@@ -1,6 +1,6 @@
-const remote = require('electron').remote;
-const ipc = require('electron').ipcRenderer;
+const remote = require('electron').remote
+const ipc = require('electron').ipcRenderer
 
 document.getElementById('close').addEventListener('click', function (e) {
-  ipc.send('finish-small-break');
-});
+  ipc.send('finish-small-break')
+})
