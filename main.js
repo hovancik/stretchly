@@ -8,6 +8,7 @@ const ipc = electron.ipcMain
 
 let appIcon = null
 let smallBreakWin = null
+let appStartupWin = null
 let aboutWin = null
 let finishSmallBreakTimer
 let startSmallBreakTimer
@@ -19,6 +20,22 @@ function createTrayIcon () {
   appIcon = new Tray(iconPath)
   appIcon.setToolTip('strechly - break time reminder app')
   appIcon.setContextMenu(getTrayMenu(false))
+}
+
+function showStartUpWindow () {
+  const modalPath = path.join('file://', __dirname, 'start.html')
+  appStartupWin = new BrowserWindow({
+    frame: false,
+    alwaysOnTop: true,
+    title: 'strechly',
+    transparent: true,
+    width: 600,
+    height: 200
+  })
+  appStartupWin.loadURL(modalPath)
+  setTimeout(function () {
+    appStartupWin.close()
+  }, 5000)
 }
 
 function startSmallBreak () {
@@ -52,6 +69,7 @@ ipc.on('finish-small-break', function () {
 
 app.on('ready', createTrayIcon)
 app.on('ready', planSmallBreak)
+app.on('ready', showStartUpWindow)
 
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
