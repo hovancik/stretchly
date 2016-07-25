@@ -4,7 +4,8 @@
   "description": "break time reminder app",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,10 @@
   },
   "homepage": "https://github.com/hovancik/strechly",
   "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "electron-prebuilt": "^1.2.0",
+    "mocha": "^2.5.3",
+    "spectron": "^3.2.6"
   }
 }

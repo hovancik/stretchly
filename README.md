@@ -27,7 +27,8 @@ It should run on any electron supported platform. Tested on OS X.
 Feel free to join development of this app via Issues and Pull Requests.
 
 ### TODOs and Ideas
-- [ ] tests
+- [x] prepare stuff for tests
+- [ ] figure out how to stop app after test (`TODO #1`) 
 - [x] PR tools
 - [ ] make installers/executables
 - [x] create about page
@@ -39,7 +40,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] create keyboard shortcuts
 
 ### Contributors
-*(by date of contributions)*
+*(by date of first contribution)*
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
 
