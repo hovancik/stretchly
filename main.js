@@ -15,7 +15,9 @@ let startSmallBreakTimer
 let planSmallBreakTimer
 
 function createTrayIcon () {
-  app.dock.hide()
+  if (process.platform === 'darwin') {
+    app.dock.hide()
+  }
   const iconPath = path.join(__dirname, 'icon.png')
   appIcon = new Tray(iconPath)
   appIcon.setToolTip('strechly - break time reminder app')

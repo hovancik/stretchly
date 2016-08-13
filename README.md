@@ -20,7 +20,10 @@ There are not any installers, yet.
 
 To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply do `npm run` to start *strechly*.
 
-It should run on any electron supported platform. Tested on OS X.
+It should run on any electron supported platform. Tested on OS X and Ubuntu Linux.
+
+### Linux note
+Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *strechly*. 
 
 ## Development
 
@@ -39,7 +42,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] create keyboard shortcuts
 
 ### Contributors
-*(by date of contributions)*
+*(by date of the first contribution)*
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
 
