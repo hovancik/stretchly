@@ -30,7 +30,6 @@ function showStartUpWindow () {
     frame: false,
     alwaysOnTop: true,
     title: 'strechly',
-    transparent: true,
     width: 600,
     height: 200
   })
