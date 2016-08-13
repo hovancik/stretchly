@@ -39,7 +39,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] create keyboard shortcuts
 
 ### Contributors
-*(by date of contributions)*
+*(by date of the first contribution)*
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
 
