@@ -1,0 +1,24 @@
+os:
+  - linux
+  - osx
+
+branches:
+  only:
+    - master
+
+env:
+  - NODE_VERSION="6.3.0"
+
+before_script:
+  - chmod +x ./script/travis-build.sh
+
+script: ./script/travis-build.sh
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    on_success: never
+on_failure: change
