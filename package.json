@@ -2,9 +2,14 @@
   "name": "strechly",
   "version": "0.0.0",
   "description": "break time reminder app",
-  "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron ./app --enable-logging --remote-debugging-port=9222",
+    "dev": "NODE_ENV='development' npm run start",
+    "postinstall": "install-app-deps",
+    "pack-all": "build --dir -mwl --x64 --ia32",
+    "dist-all": "build -mwl --x64 --ia32",
+    "pack": "build --dir",
+    "dist": "build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,29 @@
   },
   "homepage": "https://github.com/hovancik/strechly",
   "devDependencies": {
+    "electron-builder": "^5.25.1",
     "electron-prebuilt": "^1.2.0"
+  },
+  "build": {
+    "appId": "net.hovancik.strechly",
+    "category": "public.app-category.healthcare-fitness",
+    "dmg": {
+      "title": "strechly",
+      "icon": "build/icon.icns",
+      "icon-size": 128,
+      "contents": [
+        {
+          "x": 355,
+          "y": 125,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 155,
+          "y": 125,
+          "type": "file"
+        }
+      ]
+    }
   }
 }
