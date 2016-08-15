@@ -18,7 +18,7 @@ function createTrayIcon () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  const iconPath = path.join(__dirname, 'resources/strechly_18x18.png')
+  const iconPath = path.join(__dirname, 'images/strechly_18x18.png')
   appIcon = new Tray(iconPath)
   appIcon.setToolTip('strechly - break time reminder app')
   appIcon.setContextMenu(getTrayMenu(false))
