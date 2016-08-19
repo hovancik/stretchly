@@ -3,41 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>About strechly</title>
-    <style>
-      body {
-        font-family: system, -apple-system, '.SFNSText-Regular', 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
-        color: #fff;
-        background-color: #8aba87;
-        text-align: center;
-        font-size: 40px;
-      }
-      h1 {
-        padding: 0;
-        margin: 0;
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      #about {
-        color: white;
-        opacity: 0.7;
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        text-decoration: none;
-      }
-      </style>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
     <div class="about">
-      <h1>strechly</h1>
+      <div class="about-name">
+        strechly
+      </div>
       <div id="about">
         break time reminder app <br/>
-        <a href="https://github.com/hovancik/strechly">homepage</a>
+        <a href="https://hovancik.net/strechly" id="homepage">homepage</a>
       </div>
     </div>
   </body>
+  <script>
+    require('./about.js')
+  </script>
 </html>

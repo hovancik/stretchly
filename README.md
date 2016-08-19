@@ -6,7 +6,7 @@
 
 *strechly* is [electron](http://electron.atom.io/) app that reminds you to take breaks when working with computer.
 
-It runs in your tray and shows small reminder window every 10 minutes, that is open for 10 seconds (or until closed early).
+It runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds (or until closed early). The window contains idea for microbreak.
 
 You can pause/resume reminding of breaks.
 
@@ -48,6 +48,8 @@ Feel free to join development of this app via Issues and Pull Requests.
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
+ - http://web.stanford.edu/dept/EHS/prod/general/ergo/microbreaks.html
+ - http://www.latofonts.com/lato-free-fonts/
 
 ## License
 See LICENSE file.
