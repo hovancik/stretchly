@@ -7,12 +7,12 @@ const Menu = electron.Menu
 const ipc = electron.ipcMain
 
 let appIcon = null
-let smallBreakWin = null
+let microbreakWin = null
 let appStartupWin = null
 let aboutWin = null
-let finishSmallBreakTimer
-let startSmallBreakTimer
-let planSmallBreakTimer
+let finishMicrobreakTimer
+let startMicrobreakTimer
+let planMicrobreakTimer
 
 function createTrayIcon () {
   if (process.platform === 'darwin') {
@@ -30,6 +30,7 @@ function showStartUpWindow () {
     frame: false,
     alwaysOnTop: true,
     title: 'strechly',
+    backgroundColor: '#478484',
     width: 600,
     height: 200
   })
@@ -39,69 +40,69 @@ function showStartUpWindow () {
   }, 5000)
 }
 
-function startSmallBreak () {
-  const modalPath = path.join('file://', __dirname, 'small_break.html')
-  smallBreakWin = new BrowserWindow({
+function startMicrobreak () {
+  const modalPath = path.join('file://', __dirname, 'microbreak.html')
+  microbreakWin = new BrowserWindow({
     frame: false,
     alwaysOnTop: true,
-    backgroundColor: '#8aba87',
+    backgroundColor: '#478484',
     title: 'strechly'
   })
-  smallBreakWin.on('close', function () { smallBreakWin = null })
-  smallBreakWin.loadURL(modalPath)
-  // smallBreakWin.webContents.openDevTools()
-  finishSmallBreakTimer = setTimeout(finishSmallBreak, 10000)
+  microbreakWin.on('close', function () { microbreakWin = null })
+  microbreakWin.loadURL(modalPath)
+  // microbreakWin.webContents.openDevTools()
+  finishMicrobreakTimer = setTimeout(finishMicrobreak, 20000)
 }
 
-function finishSmallBreak () {
-  smallBreakWin.close()
-  smallBreakWin = null
-  planSmallBreakTimer = setTimeout(planSmallBreak, 100)
+function finishMicrobreak () {
+  microbreakWin.close()
+  microbreakWin = null
+  planMicrobreakTimer = setTimeout(planMicrobreak, 100)
 }
 
-function planSmallBreak () {
-  startSmallBreakTimer = setTimeout(startSmallBreak, 600000)
+function planMicrobreak () {
+  startMicrobreakTimer = setTimeout(startMicrobreak, 600000)
 }
 
-ipc.on('finish-small-break', function () {
-  clearTimeout(finishSmallBreakTimer)
-  finishSmallBreak()
+ipc.on('finish-microbreak', function () {
+  clearTimeout(finishMicrobreakTimer)
+  finishMicrobreak()
 })
 
 app.on('ready', createTrayIcon)
-app.on('ready', planSmallBreak)
+app.on('ready', planMicrobreak)
 app.on('ready', showStartUpWindow)
 
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
 
-function pauseSmallBreaks () {
-  if (smallBreakWin) {
-    clearTimeout(finishSmallBreakTimer)
-    finishSmallBreak()
+function pauseMicrobreaks () {
+  if (microbreakWin) {
+    clearTimeout(finishMicrobreakTimer)
+    finishMicrobreak()
   }
-  clearTimeout(planSmallBreakTimer)
-  clearTimeout(startSmallBreakTimer)
+  clearTimeout(planMicrobreakTimer)
+  clearTimeout(startMicrobreakTimer)
   appIcon.setContextMenu(getTrayMenu(true))
 }
 
-function resumeSmallBreaks () {
+function resumeMicrobreaks () {
   appIcon.setContextMenu(getTrayMenu(false))
-  planSmallBreak()
+  planMicrobreak()
 }
 
 function showAboutWindow () {
   const modalPath = path.join('file://', __dirname, 'about.html')
   aboutWin = new BrowserWindow({
     alwaysOnTop: true,
-    backgroundColor: '#8aba87',
+    backgroundColor: '#478484',
     title: 'About strechly'
   })
   aboutWin.loadURL(modalPath)
 }
 
-function getTrayMenu (smallBreaksPaused) {
+function getTrayMenu (MicrobreaksPaused) {
   let trayMenu = []
 
   trayMenu.push({
@@ -113,18 +114,18 @@ function getTrayMenu (smallBreaksPaused) {
     type: 'separator'
   })
 
-  if (smallBreaksPaused) {
+  if (MicrobreaksPaused) {
     trayMenu.push({
       label: 'Resume',
       click: function () {
-        resumeSmallBreaks()
+        resumeMicrobreaks()
       }
     })
   } else {
     trayMenu.push({
       label: 'Pause',
       click: function () {
-        pauseSmallBreaks()
+        pauseMicrobreaks()
       }
     })
   }
