@@ -19,12 +19,13 @@ body {
 }
 
 .microbreak-idea,
-.about-name {
+.about-name,
+.start-name {
   font-size: 70px;
 }
 
 #close,
-#about {
+#about-footer {
   color: white;
   opacity: 0.7;
   position: absolute;

@@ -11,7 +11,8 @@ const microbreakIdeas = [
   'Slowly turn head to side and hold for 10 seconds.',
   'Slowly tilt head to side and hold for 5-10 seconds.',
   'Stand from chair and strech.',
-  'Refocus eyes on an object at least 20 meters away.'
+  'Refocus eyes on an object at least 20 meters away.',
+  'Take a moment to think about something you appreciate.'
 ]
 
 document.getElementById('close').addEventListener('click', function (e) {

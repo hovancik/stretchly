@@ -32,7 +32,7 @@ function showStartUpWindow () {
     title: 'strechly',
     backgroundColor: '#478484',
     width: 600,
-    height: 200
+    height: 170
   })
   appStartupWin.loadURL(modalPath)
   setTimeout(function () {
