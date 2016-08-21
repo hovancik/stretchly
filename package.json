@@ -62,6 +62,15 @@
         "tar.xz",
         "tar.gz"
       ]
+    },
+    "win": {
+      "target": [
+        "squirrel",
+        "nsis",
+        "7z",
+        "zip"
+      ],
+      "msi": true
     }
   }
 }
