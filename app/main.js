@@ -1,10 +1,23 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
+// process.on('uncaughtException', (...args) => console.error(...args))
+const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron')
 const path = require('path')
-const Tray = electron.Tray
-const Menu = electron.Menu
-const ipc = electron.ipcMain
+
+const Shuffled = require('./shuffled')
+let microbreakIdeas = new Shuffled([
+  'Go grab a glass of water.',
+  'Slowly look all the way left, then right.',
+  'Slowly look all the way up, then down.',
+  'Close your eyes and take few deep breaths.',
+  'Close your eyes and relax.',
+  'Strech your legs.',
+  'Strech your arms.',
+  'Is your sitting pose correct?',
+  'Slowly turn head to side and hold for 10 seconds.',
+  'Slowly tilt head to side and hold for 5-10 seconds.',
+  'Stand from chair and strech.',
+  'Refocus eyes on an object at least 20 meters away.',
+  'Take a moment to think about something you appreciate.'
+])
 
 let appIcon = null
 let microbreakWin = null
@@ -51,6 +64,9 @@ function startMicrobreak () {
   microbreakWin.on('close', function () { microbreakWin = null })
   microbreakWin.loadURL(modalPath)
   // microbreakWin.webContents.openDevTools()
+  microbreakWin.webContents.on('did-finish-load', () => {
+    microbreakWin.webContents.send('breakIdea', microbreakIdeas.randomElement())
+  })
   finishMicrobreakTimer = setTimeout(finishMicrobreak, 20000)
 }
 
@@ -64,7 +80,7 @@ function planMicrobreak () {
   startMicrobreakTimer = setTimeout(startMicrobreak, 600000)
 }
 
-ipc.on('finish-microbreak', function () {
+ipcMain.on('finish-microbreak', function () {
   clearTimeout(finishMicrobreakTimer)
   finishMicrobreak()
 })
