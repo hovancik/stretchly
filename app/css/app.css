@@ -1,6 +1,11 @@
 @font-face {
-    font-family: 'Lato';
-    src: url('./fonts/Lato-Hairline.ttf')
+  font-family: 'Lato Hairline';
+  src: url('./fonts/Lato-Hairline.ttf')
+}
+
+@font-face {
+  font-family: 'Lato Thin';
+  src: url('./fonts/Lato-Thin.ttf')
 }
 
 body {
@@ -8,7 +13,7 @@ body {
   background-color: #478484;
   text-align: center;
   font-size: 28px;
-  font-family: 'Lato'
+  font-family: 'Lato Hairline'
 }
 
 .microbreak,
@@ -19,18 +24,19 @@ body {
 }
 
 .microbreak-idea,
-.about-name {
+.about-name,
+.start-name {
   font-size: 70px;
 }
 
 #close,
-#about {
+#about-footer {
   color: white;
-  opacity: 0.7;
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 18px;
   text-decoration: none;
+  font-family: 'Lato Thin';
 }
