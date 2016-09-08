@@ -65,7 +65,7 @@ function startMicrobreak () {
   microbreakWin.loadURL(modalPath)
   // microbreakWin.webContents.openDevTools()
   microbreakWin.webContents.on('did-finish-load', () => {
-    microbreakWin.webContents.send('breakIdea', microbreakIdeas.randomElement())
+    microbreakWin.webContents.send('breakIdea', microbreakIdeas.randomElement)
   })
   finishMicrobreakTimer = setTimeout(finishMicrobreak, 20000)
 }

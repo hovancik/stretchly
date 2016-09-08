@@ -13,7 +13,7 @@ describe('shuffled', function () {
   it('returns random elements without repetition', function () {
     let sum = 0
     for (let i = 1; i < 20000; i++) {
-      sum += this.microbreakIdeas.randomElement()
+      sum += this.microbreakIdeas.randomElement
       if (i % 4 === 0) {
         sum.should.equal(10)
         sum = 0
