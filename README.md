@@ -12,7 +12,9 @@ You can pause/resume reminding of breaks.
 
 ## Install
 
-There are not any installers or executables, yet, but you can create one by running `npm run pack` or `npm run dist` after  `npm install`.
+Latest installers can be found [here](https://github.com/hovancik/stretchly/releases).
+
+You can create one by running `npm run pack` or `npm run dist` after  `npm install`.
 
 ## Running from source
 
