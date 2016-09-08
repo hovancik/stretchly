@@ -1,10 +1,10 @@
-# strechly [![Build Status](https://travis-ci.org/hovancik/strechly.svg?branch=master)](https://travis-ci.org/hovancik/strechly)[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![bitHound Overall Score](https://www.bithound.io/github/hovancik/strechly/badges/score.svg)](https://www.bithound.io/github/hovancik/strechly) [![bitHound Dependencies](https://www.bithound.io/github/hovancik/strechly/badges/dependencies.svg)](https://www.bithound.io/github/hovancik/strechly/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/hovancik/strechly/badges/devDependencies.svg)](https://www.bithound.io/github/hovancik/strechly/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/hovancik/strechly/badges/code.svg)](https://www.bithound.io/github/hovancik/strechly)
+# stretchly [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly)[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![bitHound Overall Score](https://www.bithound.io/github/hovancik/stretchly/badges/score.svg)](https://www.bithound.io/github/hovancik/stretchly) [![bitHound Dependencies](https://www.bithound.io/github/hovancik/stretchly/badges/dependencies.svg)](https://www.bithound.io/github/hovancik/stretchly/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/hovancik/stretchly/badges/devDependencies.svg)](https://www.bithound.io/github/hovancik/stretchly/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/hovancik/stretchly/badges/code.svg)](https://www.bithound.io/github/hovancik/stretchly)
 
-<img src="https://rawgit.com/hovancik/strechly/master/strechly_128x128.png" align="right">
+<img src="https://rawgit.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
 
 > break time reminder app
 
-*strechly* is [electron](http://electron.atom.io/) app that reminds you to take breaks when working with computer.
+*stretchly* is [electron](http://electron.atom.io/) app that reminds you to take breaks when working with computer.
 
 It runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds (or until closed early). The window contains idea for microbreak.
 
@@ -16,12 +16,12 @@ There are not any installers or executables, yet, but you can create one by runn
 
 ## Running from source
 
-To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply do `npm run` to start *strechly*.
+To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply do `npm run` to start *stretchly*.
 
 It should run on any electron supported platform. Tested on OS X, Windows and Ubuntu Linux.
 
 ### Linux note
-Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *strechly*.
+Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*.
 
 ## Development
 
@@ -32,6 +32,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [x] PR tools
 - [x] make installers/executables
 - [x] create about page
+- [ ] notification on 2nd instance
 - [ ] create longer breaks (5min every 30 minutes)
 - [ ] create settings for breaks
 - [ ] remember settings after restart
@@ -43,7 +44,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 *(by date of the first contribution)*
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
-- Martina Mocinecova, (*strechly* logo)
+- Martina Mocinecova, (*stretchly* logo)
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns

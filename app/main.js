@@ -9,12 +9,12 @@ let microbreakIdeas = new Shuffled([
   'Slowly look all the way up, then down.',
   'Close your eyes and take few deep breaths.',
   'Close your eyes and relax.',
-  'Strech your legs.',
-  'Strech your arms.',
+  'Stretch your legs.',
+  'Stretch your arms.',
   'Is your sitting pose correct?',
   'Slowly turn head to side and hold for 10 seconds.',
   'Slowly tilt head to side and hold for 5-10 seconds.',
-  'Stand from chair and strech.',
+  'Stand from chair and stretch.',
   'Refocus eyes on an object at least 20 meters away.',
   'Take a moment to think about something you appreciate.'
 ])
@@ -31,9 +31,9 @@ function createTrayIcon () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  const iconPath = path.join(__dirname, 'images/strechly_18x18.png')
+  const iconPath = path.join(__dirname, 'images/stretchly_18x18.png')
   appIcon = new Tray(iconPath)
-  appIcon.setToolTip('strechly - break time reminder app')
+  appIcon.setToolTip('stretchly - break time reminder app')
   appIcon.setContextMenu(getTrayMenu(false))
 }
 
@@ -42,7 +42,7 @@ function showStartUpWindow () {
   appStartupWin = new BrowserWindow({
     frame: false,
     alwaysOnTop: true,
-    title: 'strechly',
+    title: 'stretchly',
     backgroundColor: '#478484',
     width: 600,
     height: 170
@@ -59,13 +59,13 @@ function startMicrobreak () {
     frame: false,
     alwaysOnTop: true,
     backgroundColor: '#478484',
-    title: 'strechly'
+    title: 'stretchly'
   })
   microbreakWin.on('close', function () { microbreakWin = null })
   microbreakWin.loadURL(modalPath)
   // microbreakWin.webContents.openDevTools()
   microbreakWin.webContents.on('did-finish-load', () => {
-    microbreakWin.webContents.send('breakIdea', microbreakIdeas.randomElement())
+    microbreakWin.webContents.send('breakIdea', microbreakIdeas.randomElement)
   })
   finishMicrobreakTimer = setTimeout(finishMicrobreak, 20000)
 }
@@ -84,6 +84,17 @@ ipcMain.on('finish-microbreak', function () {
   clearTimeout(finishMicrobreakTimer)
   finishMicrobreak()
 })
+
+let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+  if (appIcon) {
+    // Someone tried to run a second instance
+  }
+})
+
+if (shouldQuit) {
+  console.log('stretchly is already running.')
+  app.quit()
+}
 
 app.on('ready', createTrayIcon)
 app.on('ready', planMicrobreak)
@@ -113,7 +124,7 @@ function showAboutWindow () {
   aboutWin = new BrowserWindow({
     alwaysOnTop: true,
     backgroundColor: '#478484',
-    title: 'About strechly'
+    title: 'About stretchly'
   })
   aboutWin.loadURL(modalPath)
 }
