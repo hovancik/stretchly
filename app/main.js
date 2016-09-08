@@ -85,6 +85,17 @@ ipcMain.on('finish-microbreak', function () {
   finishMicrobreak()
 })
 
+let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+  if (appIcon) {
+    // Someone tried to run a second instance
+  }
+})
+
+if (shouldQuit) {
+  console.log('stretchly is already running.')
+  app.quit()
+}
+
 app.on('ready', createTrayIcon)
 app.on('ready', planMicrobreak)
 app.on('ready', showStartUpWindow)

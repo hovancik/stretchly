@@ -32,6 +32,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [x] PR tools
 - [x] make installers/executables
 - [x] create about page
+- [ ] notification on 2nd instance
 - [ ] create longer breaks (5min every 30 minutes)
 - [ ] create settings for breaks
 - [ ] remember settings after restart
