@@ -1,5 +1,5 @@
 const chai = require('chai')
-const Shuffled = require('../app/shuffled')
+const Shuffled = require('../app/utils/shuffled')
 
 chai.should()
 

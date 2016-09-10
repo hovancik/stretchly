@@ -1,7 +1,7 @@
 const chai = require('chai')
 // Actual Test Imports
-const Settings = require('./../app/settings')
-const defaultSettings = require('./../app/defaultSettings')
+const Settings = require('./../app/utils/settings')
+const defaultSettings = require('./../app/utils/defaultSettings')
 
 chai.should()
 

@@ -2,8 +2,8 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron')
 const path = require('path')
 
-const Shuffled = require('./shuffled')
-const AppSettings = require('./settings')
+const Shuffled = require('./utils/shuffled')
+const AppSettings = require('./utils/settings')
 
 let microbreakIdeas = new Shuffled([
   'Go grab a glass of water.',
