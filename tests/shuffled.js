@@ -1,7 +1,5 @@
-'use strict'
-
-var chai = require('chai')
-var Shuffled = require('../app/shuffled')
+const chai = require('chai')
+const Shuffled = require('../app/shuffled')
 
 chai.should()
 
