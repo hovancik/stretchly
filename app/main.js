@@ -46,7 +46,7 @@ function showStartUpWindow () {
     frame: false,
     alwaysOnTop: true,
     title: 'stretchly',
-    backgroundColor: '#478484',
+    backgroundColor: settings.get('mainColor'),
     width: 600,
     height: 170
   })
@@ -61,7 +61,7 @@ function startMicrobreak () {
   microbreakWin = new BrowserWindow({
     frame: false,
     alwaysOnTop: true,
-    backgroundColor: '#478484',
+    backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })
   microbreakWin.on('close', function () { microbreakWin = null })
@@ -133,7 +133,7 @@ function showAboutWindow () {
   const modalPath = path.join('file://', __dirname, 'about.html')
   aboutWin = new BrowserWindow({
     alwaysOnTop: true,
-    backgroundColor: '#478484',
+    backgroundColor: settings.get('mainColor'),
     title: 'About stretchly'
   })
   aboutWin.loadURL(modalPath)
