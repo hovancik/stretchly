@@ -3,6 +3,8 @@ const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron')
 const path = require('path')
 
 const Shuffled = require('./shuffled')
+const AppSettings = require('./settings')
+
 let microbreakIdeas = new Shuffled([
   'Go grab a glass of water.',
   'Slowly look all the way left, then right.',
@@ -26,6 +28,7 @@ let aboutWin = null
 let finishMicrobreakTimer
 let startMicrobreakTimer
 let planMicrobreakTimer
+let settings
 
 function createTrayIcon () {
   if (process.platform === 'darwin') {
@@ -67,7 +70,7 @@ function startMicrobreak () {
   microbreakWin.webContents.on('did-finish-load', () => {
     microbreakWin.webContents.send('breakIdea', microbreakIdeas.randomElement)
   })
-  finishMicrobreakTimer = setTimeout(finishMicrobreak, 20000)
+  finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
 }
 
 function finishMicrobreak () {
@@ -77,7 +80,7 @@ function finishMicrobreak () {
 }
 
 function planMicrobreak () {
-  startMicrobreakTimer = setTimeout(startMicrobreak, 600000)
+  startMicrobreakTimer = setTimeout(startMicrobreak, settings.get('microbreakInterval'))
 }
 
 ipcMain.on('finish-microbreak', function () {
@@ -96,6 +99,7 @@ if (shouldQuit) {
   app.quit()
 }
 
+app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', planMicrobreak)
 app.on('ready', showStartUpWindow)
@@ -103,6 +107,12 @@ app.on('ready', showStartUpWindow)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
+
+function loadSettings () {
+  const dir = app.getPath('userData')
+  const settingsFile = `${dir}/config.json`
+  settings = new AppSettings(settingsFile)
+}
 
 function pauseMicrobreaks () {
   if (microbreakWin) {

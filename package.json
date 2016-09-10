@@ -77,6 +77,11 @@
     }
   },
   "standard": {
-    "globals": [ "it", "describe", "beforeEach" ]
+    "globals": [
+      "it",
+      "describe",
+      "beforeEach",
+      "afterEach"
+    ]
   }
 }
