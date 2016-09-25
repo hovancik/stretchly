@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div class="settings">
+      <div>
+        <h2>microbreaks</h2>
+        <p>
+          <span id="microbreakDurationMinus" class="pointer">-</span>
+          <span id="microbreakDuration"></span>
+          <span id="microbreakDurationPlus" class="pointer">+</span>
+          seconds break every
+          <span id="microbreakIntervalMinus" class="pointer">-</span>
+          <span id="microbreakInterval"></span>
+          <span id="microbreakIntervalPlus" class="pointer">+</span>
+          minutes
+        </p>
+      </div>
+      <div class="color-scheme">
+        <h2>color scheme</h2>
+        <div class="scheme">
+          <div class="color pointer" data-color="#478484"></div>
+          green <br/> clouds
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#633738"></div>
+          autumn be blessed
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#CCB6A1"></div>
+          splash of cappuccino
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#A49898"></div>
+          coffee <br/> kisses
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#567890"></div>
+          morning <br/> swim
+        </div>
+      </div>
+    </div>
+    <script>
+      require('./settings.js')
+    </script>
+  </body>
+</html>

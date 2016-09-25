@@ -25,6 +25,7 @@ let appIcon = null
 let microbreakWin = null
 let appStartupWin = null
 let aboutWin = null
+let settingsWin = null
 let finishMicrobreakTimer
 let startMicrobreakTimer
 let planMicrobreakTimer
@@ -88,6 +89,11 @@ ipcMain.on('finish-microbreak', function () {
   finishMicrobreak()
 })
 
+ipcMain.on('save-setting', function (event, key, value) {
+  settings.set(key, value)
+  settingsWin.webContents.send('renderSettings', settings.data)
+})
+
 let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
   if (appIcon) {
     // Someone tried to run a second instance
@@ -139,6 +145,19 @@ function showAboutWindow () {
   aboutWin.loadURL(modalPath)
 }
 
+function showSettingsWindow () {
+  const modalPath = path.join('file://', __dirname, 'settings.html')
+  settingsWin = new BrowserWindow({
+    alwaysOnTop: true,
+    backgroundColor: settings.get('mainColor'),
+    title: 'Settings'
+  })
+  settingsWin.loadURL(modalPath)
+  settingsWin.webContents.on('did-finish-load', () => {
+    settingsWin.webContents.send('renderSettings', settings.data)
+  })
+}
+
 function getTrayMenu (MicrobreaksPaused) {
   let trayMenu = []
 
@@ -148,6 +167,12 @@ function getTrayMenu (MicrobreaksPaused) {
       showAboutWindow()
     }
   }, {
+    label: 'Settings',
+    click: function () {
+      showSettingsWindow()
+    }
+  }
+  , {
     type: 'separator'
   })
 

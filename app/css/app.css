@@ -10,7 +10,6 @@
 
 body {
   color: #fff;
-  background-color: #478484;
   text-align: center;
   font-size: 28px;
   font-family: 'Lato Hairline'
@@ -23,6 +22,32 @@ body {
   margin: 0 auto;
 }
 
+.color-scheme {
+  padding-top: 60px;
+}
+
+.settings {
+  padding-top: 10px;
+}
+
+.scheme {
+  display: inline-block;
+  text-align: center;
+  width: 130px;
+  font-size: 20px;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  margin: 5px auto;
+  box-shadow: 1px 1px 10px 0 rgba(50, 50, 50, 0.6);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .microbreak-idea,
 .about-name,
 .start-name {
@@ -31,7 +56,7 @@ body {
 
 #close,
 #about-footer {
-  color: white;
+  color: #fff;
   position: absolute;
   bottom: 20px;
   left: 50%;

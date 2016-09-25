@@ -4,7 +4,7 @@ const defaultSettings = require('./defaultSettings')
 class Settings {
 
   constructor (configLocation) {
-    this.settingsFile = `${configLocation}.json`
+    this.settingsFile = configLocation
     this.data = null
     this.lastSync = 0
 
