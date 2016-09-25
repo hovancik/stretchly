@@ -34,10 +34,11 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [x] PR tools
 - [x] make installers/executables
 - [x] create about page
+- [x] only one instance
 - [ ] notification on 2nd instance
 - [ ] create longer breaks (5min every 30 minutes)
-- [ ] create settings for breaks
-- [ ] remember settings after restart
+- [x] create settings for breaks
+- [x] remember settings after restart
 - [ ] autostart app
 - [ ] start break anytime from menu
 - [ ] create keyboard shortcuts
@@ -46,7 +47,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 *(by date of the first contribution)*
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
-- Martina Mocinecova, (*stretchly* logo)
+- Martina Mocinecova, (*stretchly* logo), color schemes
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns

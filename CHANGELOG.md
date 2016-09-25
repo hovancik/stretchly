@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - rename strechly to stretchly (grammar, yay!)
 - allows only one instance of app
+- settings for microbreak (duration, interval)
+- 5 color scheme
 
 ## 0.0.1 - 2016-09-06
 ### Added
