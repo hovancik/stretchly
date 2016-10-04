@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 
+## [0.1.1] - 2016-10-01
+### Fixed
+- Linux builds and permissions
+
 ## [0.1.0] - 2016-09-26
 ### Added
 - update npm packages
@@ -23,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/hovancik/stretchly/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/hovancik/stretchly/compare/v0.0.1...v0.1.0
 [0.0.1]: https://github.com/hovancik/stretchly/compare/1a4817679dc840716ae7694c1bbb1f357a571097...v0.0.1

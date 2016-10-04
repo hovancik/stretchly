@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "break time reminder app",
   "scripts": {
     "start": "electron ./app --enable-logging --remote-debugging-port=9222",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "electron": "^1.4.1",
-    "electron-builder": "^7.9.0",
+    "electron-builder": "^7.10.2",
     "mocha": "^3.0.2"
   },
   "build": {
