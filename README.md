@@ -42,6 +42,8 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] autostart app
 - [ ] start break anytime from menu
 - [ ] create keyboard shortcuts
+- [ ] color-picker for themes
+- [ ] information about when will be the next break
 
 ### Contributors
 *(by date of the first contribution)*
