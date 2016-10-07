@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- sounds at the end of microbreak
+- settings for sounds
 
 ## [0.1.1] - 2016-10-04
 ### Fixed

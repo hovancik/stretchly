@@ -22,6 +22,7 @@ let microbreakIdeas = new Shuffled([
 ])
 
 let appIcon = null
+let processWin = null
 let microbreakWin = null
 let appStartupWin = null
 let aboutWin = null
@@ -39,6 +40,14 @@ function createTrayIcon () {
   appIcon = new Tray(iconPath)
   appIcon.setToolTip('stretchly - break time reminder app')
   appIcon.setContextMenu(getTrayMenu(false))
+}
+
+function startProcessWin () {
+  const modalPath = path.join('file://', __dirname, 'process.html')
+  processWin = new BrowserWindow({
+    show: false
+  })
+  processWin.loadURL(modalPath)
 }
 
 function showStartUpWindow () {
@@ -74,7 +83,10 @@ function startMicrobreak () {
   finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
 }
 
-function finishMicrobreak () {
+function finishMicrobreak (shouldPlaySound = true) {
+  if (shouldPlaySound) {
+    processWin.webContents.send('playSound', settings.get('microbreakAudio'))
+  }
   microbreakWin.close()
   microbreakWin = null
   planMicrobreakTimer = setTimeout(planMicrobreak, 100)
@@ -84,9 +96,9 @@ function planMicrobreak () {
   startMicrobreakTimer = setTimeout(startMicrobreak, settings.get('microbreakInterval'))
 }
 
-ipcMain.on('finish-microbreak', function () {
+ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
   clearTimeout(finishMicrobreakTimer)
-  finishMicrobreak()
+  finishMicrobreak(shouldPlaySound)
 })
 
 ipcMain.on('save-setting', function (event, key, value) {
@@ -105,6 +117,7 @@ if (shouldQuit) {
   app.quit()
 }
 
+app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', planMicrobreak)

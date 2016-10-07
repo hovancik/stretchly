@@ -43,6 +43,22 @@ ipcRenderer.on('renderSettings', (event, data) => {
       document.body.style.background = color
     })
   }
+
+  let audioElements = document.getElementsByClassName('audio')
+  for (var y = 0; y < audioElements.length; y++) {
+    let audioElement = audioElements[y]
+    let audio = audioElement.dataset.audio
+    if (audio === data['microbreakAudio']) {
+      audioElement.style.background = '#777'
+    } else {
+      audioElement.style.background = '#e2e2e2'
+    }
+    audioElement.addEventListener('click', function (e) {
+      new Audio(`audio/${audio}.wav`).play()
+      ipcRenderer.send('save-setting', 'microbreakAudio', audio)
+    })
+  }
+
   microbreakInterval.innerHTML = data['microbreakInterval'] / 1000 / 60
   microbreakDuration.innerHTML = data['microbreakDuration'] / 1000
 })
