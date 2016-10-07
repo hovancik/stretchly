@@ -37,10 +37,10 @@
   "build": {
     "appId": "net.hovancik.stretchly",
     "category": "public.app-category.healthcare-fitness",
+    "productName": "stretchly",
     "dmg": {
-      "title": "stretchly",
       "icon": "build/icon.icns",
-      "icon-size": 128,
+      "iconSize": 128,
       "contents": [
         {
           "x": 355,
@@ -81,7 +81,8 @@
       "it",
       "describe",
       "beforeEach",
-      "afterEach"
+      "afterEach",
+      "Audio"
     ]
   }
 }

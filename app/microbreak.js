@@ -1,7 +1,7 @@
 const {ipcRenderer} = require('electron')
 
 document.getElementById('close').addEventListener('click', function (e) {
-  ipcRenderer.send('finish-microbreak')
+  ipcRenderer.send('finish-microbreak', false)
 })
 
 ipcRenderer.on('breakIdea', (event, message) => {

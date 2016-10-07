@@ -23,11 +23,7 @@ body {
 }
 
 .color-scheme {
-  padding-top: 60px;
-}
-
-.settings {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .scheme {
@@ -37,7 +33,8 @@ body {
   font-size: 20px;
 }
 
-.color {
+.color,
+.audio {
   width: 20px;
   height: 20px;
   margin: 5px auto;

@@ -10,6 +10,10 @@ It runs in your tray and shows reminder window every 10 minutes, that is open fo
 
 You can pause/resume reminding of breaks.
 
+You can choose from different color schemes.
+
+You can pick a sound to be played at the end of the break.
+
 ## Install
 
 Latest installers can be found [here](https://github.com/hovancik/stretchly/releases).
@@ -43,6 +47,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] start break anytime from menu
 - [ ] create keyboard shortcuts
 - [ ] color-picker for themes
+- [x] sound notification at the end of the break
 - [ ] information about when will be the next break
 
 ### Contributors
@@ -57,5 +62,11 @@ Feel free to join development of this app via Issues and Pull Requests.
  - http://web.stanford.edu/dept/EHS/prod/general/ergo/microbreaks.html
  - http://www.latofonts.com/lato-free-fonts/
 
+#### Sounds credits
+Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
+- `crystal glass` by [mlteenie](http://freesound.org/people/mlteenie/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
+- `wind chime` by [GnoteSoundz](http://freesound.org/people/GnoteSoundz/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
+- `tic toc` by [magundah14](http://freesound.org/people/magundah14/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
+- `silence` by [parcodeisuoni](http://freesound.org/people/parcodeisuoni/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
 ## License
 See LICENSE file.
