@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+-
+
+## [0.2.1] - 2016-10-10
 ### Fixed
 - double init of event listeners on settings page
 
@@ -34,6 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - scripts for creating installers for OS X, Windows, Linux
 
 [Unreleased]: https://github.com/hovancik/stretchly/compare/v0.2.0...HEAD
+[0.2.1]: https://github.com/hovancik/stretchly/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/hovancik/stretchly/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/hovancik/stretchly/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/hovancik/stretchly/compare/v0.0.1...v0.1.0
