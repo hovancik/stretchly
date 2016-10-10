@@ -1,5 +1,7 @@
 const {ipcRenderer} = require('electron')
 
+let eventsAttached = false
+
 let microbreakIntervalPlus = document.getElementById('microbreakIntervalPlus')
 let microbreakIntervalMinus = document.getElementById('microbreakIntervalMinus')
 let microbreakInterval = document.getElementById('microbreakInterval')
@@ -38,10 +40,12 @@ ipcRenderer.on('renderSettings', (event, data) => {
     let element = colorElements[i]
     let color = element.dataset.color
     element.style.background = color
-    element.addEventListener('click', function (e) {
-      ipcRenderer.send('save-setting', 'mainColor', color)
-      document.body.style.background = color
-    })
+    if (!eventsAttached) {
+      element.addEventListener('click', function (e) {
+        ipcRenderer.send('save-setting', 'mainColor', color)
+        document.body.style.background = color
+      })
+    }
   }
 
   let audioElements = document.getElementsByClassName('audio')
@@ -53,12 +57,16 @@ ipcRenderer.on('renderSettings', (event, data) => {
     } else {
       audioElement.style.background = '#e2e2e2'
     }
-    audioElement.addEventListener('click', function (e) {
-      new Audio(`audio/${audio}.wav`).play()
-      ipcRenderer.send('save-setting', 'microbreakAudio', audio)
-    })
+    if (!eventsAttached) {
+      audioElement.addEventListener('click', function (e) {
+        new Audio(`audio/${audio}.wav`).play()
+        ipcRenderer.send('save-setting', 'microbreakAudio', audio)
+      })
+    }
   }
 
   microbreakInterval.innerHTML = data['microbreakInterval'] / 1000 / 60
   microbreakDuration.innerHTML = data['microbreakDuration'] / 1000
+
+  eventsAttached = true
 })
