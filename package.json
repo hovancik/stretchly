@@ -30,9 +30,11 @@
   "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "electron": "^1.4.1",
     "electron-builder": "^7.10.2",
-    "mocha": "^3.0.2"
+    "mocha": "^3.0.2",
+    "spectron": "^3.4.0"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
