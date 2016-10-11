@@ -2,6 +2,9 @@
   "name": "stretchly",
   "version": "0.2.1",
   "description": "break time reminder app",
+  "engines": {
+    "node": "6.5.0"
+  },
   "scripts": {
     "start": "electron ./app --enable-logging --remote-debugging-port=9222",
     "dev": "NODE_ENV='development' npm run start",
