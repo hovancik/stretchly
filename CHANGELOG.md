@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
--
+### Added
+- possibility to pause reminders for different times
 
 ## [0.2.1] - 2016-10-10
 ### Fixed
