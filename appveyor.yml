@@ -9,7 +9,7 @@ platform:
 skip_tags: true
 
 environment:
-  nodejs_version: "6.3.0"
+  nodejs_version: "6.5.0"
 
 cache:
   - node_modules -> package.json
