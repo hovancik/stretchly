@@ -30,6 +30,7 @@ let settingsWin = null
 let finishMicrobreakTimer
 let startMicrobreakTimer
 let planMicrobreakTimer
+let resumeMicrobreaksTimer
 let settings
 
 function createTrayIcon () {
@@ -133,17 +134,21 @@ function loadSettings () {
   settings = new AppSettings(settingsFile)
 }
 
-function pauseMicrobreaks () {
+function pauseMicrobreaks (seconds) {
   if (microbreakWin) {
     clearTimeout(finishMicrobreakTimer)
     finishMicrobreak()
   }
   clearTimeout(planMicrobreakTimer)
   clearTimeout(startMicrobreakTimer)
+  if (seconds !== 1) {
+    resumeMicrobreaksTimer = setTimeout(resumeMicrobreaks, seconds)
+  }
   appIcon.setContextMenu(getTrayMenu(true))
 }
 
 function resumeMicrobreaks () {
+  clearTimeout(resumeMicrobreaksTimer)
   appIcon.setContextMenu(getTrayMenu(false))
   planMicrobreak()
 }
@@ -199,9 +204,29 @@ function getTrayMenu (MicrobreaksPaused) {
   } else {
     trayMenu.push({
       label: 'Pause',
-      click: function () {
-        pauseMicrobreaks()
-      }
+      submenu: [
+        {
+          label: 'for an hour',
+          click: function () {
+            pauseMicrobreaks(3600 * 1000)
+          }
+        }, {
+          label: 'for 2 hours',
+          click: function () {
+            pauseMicrobreaks(3600 * 2 * 1000)
+          }
+        }, {
+          label: 'for 5 hours',
+          click: function () {
+            pauseMicrobreaks(3600 * 5 * 1000)
+          }
+        }, {
+          label: 'indefinitely',
+          click: function () {
+            pauseMicrobreaks(1)
+          }
+        }
+      ]
     })
   }
 
