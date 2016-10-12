@@ -1,25 +1,25 @@
 # stretchly [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly)[![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly)[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![bitHound Overall Score](https://www.bithound.io/github/hovancik/stretchly/badges/score.svg)](https://www.bithound.io/github/hovancik/stretchly) [![bitHound Dependencies](https://www.bithound.io/github/hovancik/stretchly/badges/dependencies.svg)](https://www.bithound.io/github/hovancik/stretchly/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/hovancik/stretchly/badges/devDependencies.svg)](https://www.bithound.io/github/hovancik/stretchly/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/hovancik/stretchly/badges/code.svg)](https://www.bithound.io/github/hovancik/stretchly)
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/readme/stretchly_128x128.png" align="right">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
 
 > break time reminder app
 
 *stretchly* is cross-platform [electron](http://electron.atom.io/) app that reminds you to take breaks when working with computer.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/readme/stretchly-break.png" height="340">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
 It runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containg idea for microbreak.
 
 You can pause/resume reminding of breaks.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/readme/stretchly-tray.png">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray.png">
 
 Microbreaks can be customized:
 - you can set duration and interval of break
 - you can choose from different color schemes
 - you can pick a sound to be played at the end of the break
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/readme/stretchly-settings-website.png" height="340">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website.png" height="340">
 
 ## Install
 
