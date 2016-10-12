@@ -162,6 +162,19 @@ function showSettingsWindow () {
 function getTrayMenu (MicrobreaksPaused) {
   let trayMenu = []
 
+  if (process.platform === 'darwin' || process.platform === 'win32') {
+    let loginItemSettings = app.getLoginItemSettings()
+    let openAtLogin = loginItemSettings.openAtLogin
+    trayMenu.push({
+      label: 'Start at login',
+      type: 'checkbox',
+      checked: openAtLogin,
+      click: function () {
+        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+      }
+    })
+  }
+
   trayMenu.push({
     label: 'About',
     click: function () {
