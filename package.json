@@ -87,7 +87,8 @@
       "describe",
       "beforeEach",
       "afterEach",
-      "Audio"
+      "Audio",
+      "fetch"
     ]
   }
 }

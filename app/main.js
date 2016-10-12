@@ -176,17 +176,6 @@ function getTrayMenu (MicrobreaksPaused) {
   }
 
   trayMenu.push({
-    label: 'About',
-    click: function () {
-      showAboutWindow()
-    }
-  }, {
-    label: 'Settings',
-    click: function () {
-      showSettingsWindow()
-    }
-  }
-  , {
     type: 'separator'
   })
 
@@ -228,6 +217,16 @@ function getTrayMenu (MicrobreaksPaused) {
 
   trayMenu.push({
     type: 'separator'
+  }, {
+    label: 'About',
+    click: function () {
+      showAboutWindow()
+    }
+  }, {
+    label: 'Settings',
+    click: function () {
+      showSettingsWindow()
+    }
   }, {
     label: 'Quit',
     click: function () {

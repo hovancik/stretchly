@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - possibility to pause reminders for different times
 - autostart for Windows and macOS
+- check for latest version on About page
 
 ## [0.2.1] - 2016-10-10
 ### Fixed
