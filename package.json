@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "break time reminder app",
   "engines": {
     "node": "6.5.0"
@@ -34,9 +34,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "electron": "^1.4.1",
-    "electron-builder": "^7.10.2",
-    "mocha": "^3.0.2",
+    "electron": "^1.4.3",
+    "electron-builder": "^7.12.2",
+    "mocha": "^3.1.2",
     "spectron": "^3.4.0"
   },
   "build": {
@@ -88,7 +88,8 @@
       "beforeEach",
       "afterEach",
       "Audio",
-      "fetch"
+      "fetch",
+      "Notification"
     ]
   }
 }
