@@ -52,7 +52,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] create longer breaks (5min every 30 minutes)
 - [x] create settings for breaks
 - [x] remember settings after restart
-- [ ] autostart app
+- [x] autostart app
 - [ ] start break anytime from menu
 - [ ] create keyboard shortcuts
 - [ ] color-picker for themes
