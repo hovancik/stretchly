@@ -13,7 +13,7 @@
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
     "dist": "build --x64 --ia32",
-    "test": "mocha tests"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",

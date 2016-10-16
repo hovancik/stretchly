@@ -18,8 +18,12 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install npm
   - .\node_modules\.bin\npm install
+  - .\node_modules\.bin\npm install -g istanbul
 
 test_script:
   - node --version
   - .\node_modules\.bin\npm --version
-  - appveyor-retry call .\node_modules\.bin\npm run test
+  - istanbul cover .\node_modules\mocha\bin\_mocha
+
+after_test:
+  - bash <(curl -s https://codecov.io/bash)
