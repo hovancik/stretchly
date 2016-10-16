@@ -5,10 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+-
+
+## [0.3.0] - 2016-10-15
 ### Added
 - possibility to pause reminders for different times
 - autostart for Windows and macOS
-- check for latest version on About page
+- check for the latest version on About page, on app start
+- remind new version via notification and tray menu
 
 ## [0.2.1] - 2016-10-10
 ### Fixed
@@ -39,7 +43,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/hovancik/stretchly/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/hovancik/stretchly/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/hovancik/stretchly/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/hovancik/stretchly/compare/v0.1.0...v0.1.1

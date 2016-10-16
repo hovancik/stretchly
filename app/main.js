@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const {app, BrowserWindow, Tray, Menu, ipcMain} = require('electron')
+const {app, BrowserWindow, Tray, Menu, ipcMain, shell} = require('electron')
 const path = require('path')
 const AppSettings = require('./utils/settings')
 let microbreakIdeas = require('./microbreakIdeas')
@@ -15,6 +15,11 @@ let startMicrobreakTimer
 let planMicrobreakTimer
 let resumeMicrobreaksTimer
 let settings
+let isPaused = false
+
+global.shared = {
+  isNewVersion: false
+}
 
 function createTrayIcon () {
   if (process.platform === 'darwin') {
@@ -23,7 +28,8 @@ function createTrayIcon () {
   const iconPath = path.join(__dirname, 'images/stretchly_18x18.png')
   appIcon = new Tray(iconPath)
   appIcon.setToolTip('stretchly - break time reminder app')
-  appIcon.setContextMenu(getTrayMenu(false))
+  isPaused = false
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function startProcessWin () {
@@ -32,6 +38,18 @@ function startProcessWin () {
     show: false
   })
   processWin.loadURL(modalPath)
+  processWin.webContents.on('did-finish-load', () => {
+    planVersionCheck()
+  })
+}
+
+function planVersionCheck (seconds = 1) {
+  setTimeout(checkVersion, seconds * 1000)
+}
+
+function checkVersion () {
+  processWin.webContents.send('checkVersion', `v${app.getVersion()}`)
+  planVersionCheck(3600 * 5)
 }
 
 function showStartUpWindow () {
@@ -90,6 +108,10 @@ ipcMain.on('save-setting', function (event, key, value) {
   settingsWin.webContents.send('renderSettings', settings.data)
 })
 
+ipcMain.on('update-tray', function (event) {
+  appIcon.setContextMenu(getTrayMenu())
+})
+
 let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
   if (appIcon) {
     // Someone tried to run a second instance
@@ -127,12 +149,14 @@ function pauseMicrobreaks (seconds) {
   if (seconds !== 1) {
     resumeMicrobreaksTimer = setTimeout(resumeMicrobreaks, seconds)
   }
-  appIcon.setContextMenu(getTrayMenu(true))
+  isPaused = true
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function resumeMicrobreaks () {
   clearTimeout(resumeMicrobreaksTimer)
-  appIcon.setContextMenu(getTrayMenu(false))
+  isPaused = false
+  appIcon.setContextMenu(getTrayMenu())
   planMicrobreak()
 }
 
@@ -141,7 +165,7 @@ function showAboutWindow () {
   aboutWin = new BrowserWindow({
     alwaysOnTop: true,
     backgroundColor: settings.get('mainColor'),
-    title: 'About stretchly'
+    title: `About stretchly v${app.getVersion()}`
   })
   aboutWin.loadURL(modalPath)
 }
@@ -159,9 +183,30 @@ function showSettingsWindow () {
   })
 }
 
-function getTrayMenu (MicrobreaksPaused) {
+function getTrayMenu () {
   let trayMenu = []
+  if (global.shared.isNewVersion) {
+    trayMenu.push({
+      label: 'Download latest version',
+      click: function () {
+        shell.openExternal('https://github.com/hovancik/stretchly/releases')
+      }
+    })
+  }
 
+  trayMenu.push({
+    label: 'About',
+    click: function () {
+      showAboutWindow()
+    }
+  }, {
+    type: 'separator'
+  }, {
+    label: 'Settings',
+    click: function () {
+      showSettingsWindow()
+    }
+  })
   if (process.platform === 'darwin' || process.platform === 'win32') {
     let loginItemSettings = app.getLoginItemSettings()
     let openAtLogin = loginItemSettings.openAtLogin
@@ -175,11 +220,7 @@ function getTrayMenu (MicrobreaksPaused) {
     })
   }
 
-  trayMenu.push({
-    type: 'separator'
-  })
-
-  if (MicrobreaksPaused) {
+  if (isPaused) {
     trayMenu.push({
       label: 'Resume',
       click: function () {
@@ -214,19 +255,8 @@ function getTrayMenu (MicrobreaksPaused) {
       ]
     })
   }
-
   trayMenu.push({
     type: 'separator'
-  }, {
-    label: 'About',
-    click: function () {
-      showAboutWindow()
-    }
-  }, {
-    label: 'Settings',
-    click: function () {
-      showSettingsWindow()
-    }
   }, {
     label: 'Quit',
     click: function () {

@@ -8,9 +8,9 @@
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
-It runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containg idea for microbreak.
+It runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing idea for microbreak.
 
-You can pause/resume reminding of breaks.
+You can pause/resume reminding of breaks. On Windows and macOS, you can set app to start at login.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray.png">
 
