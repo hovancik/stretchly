@@ -21,7 +21,7 @@ Microbreaks can be customized:
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website.png" height="340">
 
-## Install
+## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).
 
