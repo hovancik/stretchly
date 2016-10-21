@@ -94,8 +94,9 @@ function finishMicrobreak (shouldPlaySound = true) {
   planMicrobreakTimer = setTimeout(planMicrobreak, 100)
 }
 
-function planMicrobreak () {
-  startMicrobreakTimer = setTimeout(startMicrobreak, settings.get('microbreakInterval'))
+function planMicrobreak (time) {
+  let startTime = (typeof time === 'number') ? time :settings.get('microbreakInterval')
+  startMicrobreakTimer = setTimeout(startMicrobreak, startTime)
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
