@@ -95,7 +95,7 @@ function finishMicrobreak (shouldPlaySound = true) {
 }
 
 function planMicrobreak (time) {
-  let startTime = (typeof time === 'number') ? time :settings.get('microbreakInterval')
+  let startTime = (typeof time === 'number') ? time : settings.get('microbreakInterval')
   startMicrobreakTimer = setTimeout(startMicrobreak, startTime)
 }
 
