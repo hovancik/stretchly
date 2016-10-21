@@ -20,6 +20,12 @@ ipcRenderer.on('checkVersion', (event, data) => {
   }
 })
 
+ipcRenderer.on('showNotification', (event, data) => {
+  new Notification('stretchly', { // eslint-disable-line no-new
+    body: data
+  })
+})
+
 function notifyNewVersion () {
   let notification = new Notification('stretchly', {
     body: 'New version is available!'

@@ -5,11 +5,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.4.0] - 2016-11-05
 ### Fixed
 - version check when offline
 
+### Changed
+- settings window split into 2
+
 ### Added
-- start break anytime from menu
+- longer breaks
+- enable/disable microbreaks and breaks
+- skip to next break/microbreak anytime from menu
+- notification on breaks resume
+- notification when entering Settings that settings are applied once changed
+- reset settings to the defaults
+- reset (restart) breaks from menu
 
 ## [0.3.0] - 2016-10-15
 ### Added
@@ -47,7 +58,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/hovancik/stretchly/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/hovancik/stretchly/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/hovancik/stretchly/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/hovancik/stretchly/compare/v0.1.1...v0.2.0

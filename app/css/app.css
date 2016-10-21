@@ -26,7 +26,8 @@ body {
   padding-top: 20px;
 }
 
-.scheme {
+.scheme,
+.enabled {
   display: inline-block;
   text-align: center;
   width: 130px;
@@ -45,14 +46,42 @@ body {
   cursor: pointer;
 }
 
+.break-idea,
 .microbreak-idea,
 .about-name,
 .start-name {
   font-size: 70px;
 }
 
+.break-text {
+  padding-top: 30px;
+}
+
+.previous,
+.next {
+  position: absolute;
+  top: 35%;
+  font-size: 60px;
+}
+
+.previous {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.previous a,
+.next a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 90px;
+}
+
 #close,
-#about-footer {
+#about-footer,
+#defaults {
   color: #fff;
   position: absolute;
   bottom: 20px;
