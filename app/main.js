@@ -202,24 +202,14 @@ function getTrayMenu () {
     }
   }, {
     type: 'separator'
-  }, {
-    label: 'Settings',
+  })
+
+  trayMenu.push({
+    label: 'Start a break!',
     click: function () {
-      showSettingsWindow()
+      planMicrobreak(200)
     }
   })
-  if (process.platform === 'darwin' || process.platform === 'win32') {
-    let loginItemSettings = app.getLoginItemSettings()
-    let openAtLogin = loginItemSettings.openAtLogin
-    trayMenu.push({
-      label: 'Start at login',
-      type: 'checkbox',
-      checked: openAtLogin,
-      click: function () {
-        app.setLoginItemSettings({openAtLogin: !openAtLogin})
-      }
-    })
-  }
 
   if (isPaused) {
     trayMenu.push({
@@ -256,6 +246,27 @@ function getTrayMenu () {
       ]
     })
   }
+
+  trayMenu.push({
+    label: 'Settings',
+    click: function () {
+      showSettingsWindow()
+    }
+  })
+
+  if (process.platform === 'darwin' || process.platform === 'win32') {
+    let loginItemSettings = app.getLoginItemSettings()
+    let openAtLogin = loginItemSettings.openAtLogin
+    trayMenu.push({
+      label: 'Start at login',
+      type: 'checkbox',
+      checked: openAtLogin,
+      click: function () {
+        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+      }
+    })
+  }
+
   trayMenu.push({
     type: 'separator'
   }, {
