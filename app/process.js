@@ -11,7 +11,7 @@ ipcRenderer.on('checkVersion', (event, data) => {
     notifyNewVersion()
   } else {
     new VersionChecker().latest(function (version) {
-      if (data !== version) {
+      if (version !== 'Error getting latest version' && data !== version) {
         remote.getGlobal('shared').isNewVersion = true
         ipcRenderer.send('update-tray')
         notifyNewVersion()
