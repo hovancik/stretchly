@@ -69,6 +69,12 @@ function showStartUpWindow () {
 }
 
 function startMicrobreak () {
+  // don't start another break if break running
+  if (microbreakWin) {
+    console.log('microbreak already running')
+    return
+  }
+
   const modalPath = path.join('file://', __dirname, 'microbreak.html')
   microbreakWin = new BrowserWindow({
     frame: false,
