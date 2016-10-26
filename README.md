@@ -53,7 +53,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [x] create settings for breaks
 - [x] remember settings after restart
 - [x] autostart app
-- [ ] start break anytime from menu
+- [x] start break anytime from menu
 - [ ] create keyboard shortcuts
 - [ ] color-picker for themes
 - [x] sound notification at the end of the break
@@ -64,6 +64,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
 - Martina Mocinecova, (*stretchly* logo), color schemes
+- Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - version check when offline
 
+### Added
+- start break anytime from menu
+
 ## [0.3.0] - 2016-10-15
 ### Added
 - possibility to pause reminders for different times
