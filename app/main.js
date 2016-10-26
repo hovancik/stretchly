@@ -206,7 +206,7 @@ function getTrayMenu () {
   trayMenu.push({
     label: 'Start a break!',
     click: function () {
-      planMicrobreak(200)
+      startMicrobreak()
     }
   })
 
