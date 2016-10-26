@@ -69,6 +69,12 @@ function showStartUpWindow () {
 }
 
 function startMicrobreak () {
+  // don't start another break if break running
+  if (microbreakWin) {
+    console.log('microbreak already running')
+    return
+  }
+
   const modalPath = path.join('file://', __dirname, 'microbreak.html')
   microbreakWin = new BrowserWindow({
     frame: false,
@@ -201,24 +207,14 @@ function getTrayMenu () {
     }
   }, {
     type: 'separator'
-  }, {
-    label: 'Settings',
+  })
+
+  trayMenu.push({
+    label: 'Start a break!',
     click: function () {
-      showSettingsWindow()
+      startMicrobreak()
     }
   })
-  if (process.platform === 'darwin' || process.platform === 'win32') {
-    let loginItemSettings = app.getLoginItemSettings()
-    let openAtLogin = loginItemSettings.openAtLogin
-    trayMenu.push({
-      label: 'Start at login',
-      type: 'checkbox',
-      checked: openAtLogin,
-      click: function () {
-        app.setLoginItemSettings({openAtLogin: !openAtLogin})
-      }
-    })
-  }
 
   if (isPaused) {
     trayMenu.push({
@@ -255,6 +251,27 @@ function getTrayMenu () {
       ]
     })
   }
+
+  trayMenu.push({
+    label: 'Settings',
+    click: function () {
+      showSettingsWindow()
+    }
+  })
+
+  if (process.platform === 'darwin' || process.platform === 'win32') {
+    let loginItemSettings = app.getLoginItemSettings()
+    let openAtLogin = loginItemSettings.openAtLogin
+    trayMenu.push({
+      label: 'Start at login',
+      type: 'checkbox',
+      checked: openAtLogin,
+      click: function () {
+        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+      }
+    })
+  }
+
   trayMenu.push({
     type: 'separator'
   }, {
