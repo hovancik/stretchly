@@ -16,6 +16,12 @@ describe('Settings', () => {
     settings.data.should.be.deep.equal(defaultSettings)
   })
 
+  it('should load missing settings', () => {
+    settings = new Settings('test-missing')
+    defaultSettings['microbreak'] = false
+    settings.data.should.be.deep.equal(defaultSettings)
+  })
+
   it('should set a new value in the runtime', () => {
     settings.set('test_key', 'test_value')
     settings.get('test_key').should.be.equal('test_value')

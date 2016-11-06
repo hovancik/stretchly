@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Settings</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div class="settings">
+      <div class="micreobreak-audio">
+        <h2>audio scheme</h2>
+        <div class="scheme">
+          <div class="audio pointer" data-audio="crystal-glass"></div>
+          crystal glass
+        </div>
+        <div class="scheme">
+          <div class="audio pointer" data-audio="wind-chime"></div>
+          wind chime
+        </div>
+        <div class="scheme">
+          <div class="audio pointer" data-audio="tic-toc"></div>
+          tic toc
+        </div>
+        <div class="scheme">
+          <div class="audio pointer" data-audio="silence"></div>
+          silence
+        </div>
+      </div>
+      <div class="color-scheme">
+        <h2>color scheme</h2>
+        <div class="scheme">
+          <div class="color pointer" data-color="#478484"></div>
+          green <br/> clouds
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#633738"></div>
+          autumn be blessed
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#CCB6A1"></div>
+          splash of cappuccino
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#A49898"></div>
+          coffee <br/> kisses
+        </div>
+        <div class="scheme">
+          <div class="color pointer" data-color="#567890"></div>
+          morning <br/> swim
+        </div>
+      </div>
+      <div class="previous">
+        <a href="settings.html" title="more settings">&lsaquo;</a>
+      </div>
+      <div id="defaults" class="pointer">
+        reset to defaults
+      </div>
+    </div>
+    <script>
+      require('./settings2.js')
+    </script>
+  </body>
+</html>

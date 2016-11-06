@@ -6,59 +6,43 @@
   </head>
   <body>
     <div class="settings">
-      <div>
-        <h2>microbreaks</h2>
-        <p>
-          <span id="microbreakDurationMinus" class="pointer">-</span>
-          <span id="microbreakDuration"></span>
-          <span id="microbreakDurationPlus" class="pointer">+</span>
-          seconds break every
-          <span id="microbreakIntervalMinus" class="pointer">-</span>
-          <span id="microbreakInterval"></span>
-          <span id="microbreakIntervalPlus" class="pointer">+</span>
-          minutes
-        </p>
-        <div class="micreobreak-audio">
-          <h5>audio scheme</h5>
-          <div class="scheme">
-            <div class="audio pointer" data-audio="crystal-glass"></div>
-            crystal glass
-          </div>
-          <div class="scheme">
-            <div class="audio pointer" data-audio="wind-chime"></div>
-            wind chime
-          </div>
-          <div class="scheme">
-            <div class="audio pointer" data-audio="tic-toc"></div>
-            tic toc
-          </div>
-          <div class="scheme">
-            <div class="audio pointer" data-audio="silence"></div>
-            silence
-          </div>
+      <h2>microbreaks</h2>
+      <p>
+        <span id="microbreakDurationMinus" class="pointer">-</span>
+        <span id="microbreakDuration"></span>
+        <span id="microbreakDurationPlus" class="pointer">+</span>
+        seconds break every
+        <span id="microbreakIntervalMinus" class="pointer">-</span>
+        <span id="microbreakInterval"></span>
+        <span id="microbreakIntervalPlus" class="pointer">+</span>
+        minutes
+      </p>
+      <h2>breaks</h2>
+      <p>
+        <span id="breakDurationMinus" class="pointer">-</span>
+        <span id="breakDuration"></span>
+        <span id="breakDurationPlus" class="pointer">+</span>
+        minutes break after
+        <span id="breakIntervalMinus" class="pointer">-</span>
+        <span id="breakInterval"></span>
+        <span id="breakIntervalPlus" class="pointer">+</span>
+        microbreaks <br/>
+        <small>(every <span id="realBreakInterval" ></span> minutes)</small>
+      </p>
+      <div class="about">
+        <div class="enabled">
+          <input type="checkbox" value="microbreak" class="enable">
+          microbreaks enabled
         </div>
-      </div>
-      <div class="color-scheme">
-        <h5>color scheme</h5>
-        <div class="scheme">
-          <div class="color pointer" data-color="#478484"></div>
-          green <br/> clouds
+        <div class="enabled">
+          <input type="checkbox" value="break" class="enable">
+          breaks <br/>enabled
         </div>
-        <div class="scheme">
-          <div class="color pointer" data-color="#633738"></div>
-          autumn be blessed
+        <div class="next">
+          <a href="settings2.html" title="more settings">&rsaquo;</a>
         </div>
-        <div class="scheme">
-          <div class="color pointer" data-color="#CCB6A1"></div>
-          splash of cappuccino
-        </div>
-        <div class="scheme">
-          <div class="color pointer" data-color="#A49898"></div>
-          coffee <br/> kisses
-        </div>
-        <div class="scheme">
-          <div class="color pointer" data-color="#567890"></div>
-          morning <br/> swim
+        <div id="defaults" class="pointer">
+          reset to defaults
         </div>
       </div>
     </div>

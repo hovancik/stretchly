@@ -10,6 +10,9 @@ class Settings {
 
     if (fs.existsSync(this.settingsFile)) {
       this._load()
+      if (Object.keys(this.data).length !== Object.keys(defaultSettings).length) {
+        this._load_missing()
+      }
     } else {
       this.data = defaultSettings
       this._save(true)
@@ -17,7 +20,7 @@ class Settings {
   }
 
   get (key) {
-    if (!this.data[key]) {
+    if (typeof this.data[key] === 'undefined' || this.data[key] === null) {
       this.set(key, defaultSettings[key])
     }
     return this.data[key]
@@ -34,11 +37,17 @@ class Settings {
     } catch (e) {
       if (retryCount > 0) {
         setTimeout(this._load.bind(this, retryCount - 1), 10)
-        console.log('Failed to load settings JSON file, retyring in 10 milliseconds')
+        console.log('Failed to load settings JSON file, retrying in 10 milliseconds')
         return
       }
       this.data = defaultSettings
       console.log('Failed to load settings JSON file, giving up and resetting')
+    }
+  }
+
+  _load_missing () {
+    for (let prop in defaultSettings) {
+      this.get(prop)
     }
   }
 

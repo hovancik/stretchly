@@ -49,7 +49,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [x] create about page
 - [x] only one instance
 - [ ] notification on 2nd instance
-- [ ] create longer breaks (5min every 30 minutes)
+- [x] create longer breaks (5min every 30 minutes)
 - [x] create settings for breaks
 - [x] remember settings after restart
 - [x] autostart app
@@ -58,6 +58,7 @@ Feel free to join development of this app via Issues and Pull Requests.
 - [ ] color-picker for themes
 - [x] sound notification at the end of the break
 - [ ] information about when will be the next break
+- [ ] strict mode (can't finish break early)
 
 ### Contributors
 *(by date of the first contribution)*
@@ -70,6 +71,8 @@ Feel free to join development of this app via Issues and Pull Requests.
  - https://github.com/typefoo/node-icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
  - http://web.stanford.edu/dept/EHS/prod/general/ergo/microbreaks.html
+ - https://www.spineuniverse.com/wellness/ergonomics/workstation-ergonomics-take-break
+ - http://www.lifehack.org/articles/productivity/21-counter-intuitive-break-ideas-to-boost-your-productivity-at-work.html
  - http://www.latofonts.com/lato-free-fonts/
 
 #### Sounds credits
