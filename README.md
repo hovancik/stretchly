@@ -6,20 +6,34 @@
 
 *stretchly* is cross-platform [electron](http://electron.atom.io/) app that reminds you to take breaks when working with computer.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
+By default, it runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing idea for microbreak.
 
-It runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing idea for microbreak.
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-microbreak.png" height="340">
+
+Every 30 minutes, it shows window containing idea for longer 5 minute break.
+
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
 You can pause/resume reminding of breaks. On Windows and macOS, you can set app to start at login.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray.png">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-1.png">
 
-Microbreaks can be customized:
+You can also skip to the next break or microbreak anytime from menu, or reset (restart) breaks.
+
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png">
+
+Microbreaks and breaks can be customized:
 - you can set duration and interval of break
+- you can enable/disable breaks
+
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-1.png" height="340">
+
 - you can choose from different color schemes
 - you can pick a sound to be played at the end of the break
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website.png" height="340">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-2.png" height="340">
+
+All settings can be reset to defaults.
 
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
@@ -27,7 +41,7 @@ Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](http
 
 On macOS you can install it by running `brew update && brew cask install stretchly`
 
-You can create installer by running `npm run pack` or `npm run dist` after  `npm install`.
+You can create installer by running `npm run pack` or `npm run dist` after `npm install`.
 
 ## Running from source
 
