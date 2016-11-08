@@ -16,11 +16,11 @@ Every 30 minutes, it shows window containing idea for longer 5 minute break.
 
 You can pause/resume reminding of breaks. On Windows and macOS, you can set app to start at login.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-1.png">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-1.png" height="150">
 
 You can also skip to the next break or microbreak anytime from menu, or reset (restart) breaks.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png">
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png" height="150">
 
 Microbreaks and breaks can be customized:
 - you can set duration and interval of break
