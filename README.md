@@ -54,7 +54,7 @@ Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux spec
 
 ## Development
 
-Feel free to join development of this app via Issues and Pull Requests.
+Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 
 ### TODOs and Ideas
 - [x] tests
