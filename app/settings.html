@@ -16,6 +16,10 @@
         <span id="microbreakInterval"></span>
         <span id="microbreakIntervalPlus" class="pointer">+</span>
         minutes
+        <span class="strict">
+          <br/>don't let me skip microbreaks
+          <input type="checkbox" value="microbreakStrictMode" class="enable">
+        </span>
       </p>
       <h2>breaks</h2>
       <p>
@@ -28,8 +32,12 @@
         <span id="breakIntervalPlus" class="pointer">+</span>
         microbreaks <br/>
         <small>(every <span id="realBreakInterval" ></span> minutes)</small>
+        <span class="strict">
+          <br/>don't let me skip breaks
+          <input type="checkbox" value="breakStrictMode" class="enable">
+        </span>
       </p>
-      <div class="about">
+      <div>
         <div class="enabled">
           <input type="checkbox" value="microbreak" class="enable">
           microbreaks enabled

@@ -4,7 +4,10 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-break', false)
 })
 
-ipcRenderer.on('breakIdea', (event, message) => {
+ipcRenderer.on('breakIdea', (event, message, strictMode) => {
+  if (!strictMode) {
+    document.getElementById('close').style.visibility = 'visible'
+  }
   let breakIdea = document.getElementsByClassName('break-idea')[0]
   breakIdea.innerHTML = message[0]
   let breakText = document.getElementsByClassName('break-text')[0]

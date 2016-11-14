@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- strict mode - breaks/microbreaks can't be finished early
+
 
 ## [0.4.0] - 2016-11-05
 ### Fixed

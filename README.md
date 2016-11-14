@@ -72,7 +72,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - [ ] color-picker for themes
 - [x] sound notification at the end of the break
 - [ ] information about when will be the next break
-- [ ] strict mode (can't finish break early)
+- [x] strict mode (can't finish break early)
 
 ### Contributors
 *(by date of the first contribution)*
