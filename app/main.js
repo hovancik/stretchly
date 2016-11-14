@@ -110,7 +110,7 @@ function startMicrobreak () {
   microbreakWin.loadURL(modalPath)
   // microbreakWin.webContents.openDevTools()
   microbreakWin.webContents.on('did-finish-load', () => {
-    microbreakWin.webContents.send('microbreakIdea', microbreakIdeas.randomElement)
+    microbreakWin.webContents.send('microbreakIdea', microbreakIdeas.randomElement, settings.get('microbreakStrictMode'))
   })
   finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
 }
@@ -131,7 +131,7 @@ function startBreak () {
   breakWin.loadURL(modalPath)
   // breakWin.webContents.openDevTools()
   breakWin.webContents.on('did-finish-load', () => {
-    breakWin.webContents.send('breakIdea', breakIdeas.randomElement)
+    breakWin.webContents.send('breakIdea', breakIdeas.randomElement, settings.get('breakStrictMode'))
   })
   finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))
 }

@@ -5,6 +5,8 @@ module.exports = {
   breakInterval: 2,
   microbreak: true,
   break: true,
+  microbreakStrictMode: false,
+  breakStrictMode: false,
   mainColor: '#478484',
   audio: 'crystal-glass'
 }

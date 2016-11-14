@@ -91,5 +91,14 @@ ipcRenderer.on('renderSettings', (event, data) => {
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
-  ipcRenderer.send('set-default-settings', ['break', 'microbreak', 'breakInterval', 'breakDuration', 'microbreakInterval', 'microbreakDuration'])
+  ipcRenderer.send('set-default-settings', [
+    'break',
+    'microbreak',
+    'breakInterval',
+    'breakDuration',
+    'microbreakInterval',
+    'microbreakDuration',
+    'microbreakStrictMode',
+    'breakStrictMode'
+  ])
 })

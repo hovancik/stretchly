@@ -92,6 +92,15 @@ body {
   font-family: 'Lato Thin';
 }
 
+#close {
+  visibility: hidden;
+}
+
+.strict {
+  font-size: 16px;
+  text-align: right;
+}
+
 .about-stretchly {
   font-size: 18px;
   text-decoration: none;
