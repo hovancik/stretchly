@@ -45,6 +45,18 @@ if (shouldQuit) {
   app.quit()
 }
 
+function displaysX (width = 800) {
+  const electron = require('electron')
+  let bounds = electron.screen.getPrimaryDisplay().bounds
+  return bounds.x + ((bounds.width - width) / 2)
+}
+
+function displaysY (height = 600) {
+  const electron = require('electron')
+  let bounds = electron.screen.getPrimaryDisplay().bounds
+  return bounds.y + ((bounds.height - height) / 2)
+}
+
 function createTrayIcon () {
   if (process.platform === 'darwin') {
     app.dock.hide()
@@ -79,6 +91,8 @@ function checkVersion () {
 function showStartUpWindow () {
   const modalPath = path.join('file://', __dirname, 'start.html')
   let appStartupWin = new BrowserWindow({
+    x: displaysX(600),
+    y: displaysY(170),
     frame: false,
     alwaysOnTop: true,
     title: 'stretchly',
@@ -102,6 +116,8 @@ function startMicrobreak () {
 
   const modalPath = path.join('file://', __dirname, 'microbreak.html')
   microbreakWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
     frame: false,
     alwaysOnTop: true,
     backgroundColor: settings.get('mainColor'),
@@ -123,6 +139,8 @@ function startBreak () {
   }
   const modalPath = path.join('file://', __dirname, 'break.html')
   breakWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
     frame: false,
     alwaysOnTop: true,
     backgroundColor: settings.get('mainColor'),
@@ -199,6 +217,8 @@ function resumeBreaks () {
 function showAboutWindow () {
   const modalPath = path.join('file://', __dirname, 'about.html')
   aboutWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
     alwaysOnTop: true,
     backgroundColor: settings.get('mainColor'),
     title: `About stretchly v${app.getVersion()}`
@@ -209,6 +229,8 @@ function showAboutWindow () {
 function showSettingsWindow () {
   const modalPath = path.join('file://', __dirname, 'settings.html')
   settingsWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
     alwaysOnTop: true,
     backgroundColor: settings.get('mainColor'),
     title: 'Settings'
