@@ -34,6 +34,10 @@ body {
   font-size: 20px;
 }
 
+.enabled {
+  width: 300px;
+}
+
 .color,
 .audio {
   width: 20px;
