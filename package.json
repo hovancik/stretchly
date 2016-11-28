@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "break time reminder app",
   "engines": {
     "node": "6.5.0"
