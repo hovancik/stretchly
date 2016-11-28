@@ -5,8 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.5.0]
 ### Added
 - strict mode - breaks/microbreaks can't be finished early
+- build for ia32 and x64
 
 ### Fixed
 - wrong window placement when on Linux and more displays
@@ -63,7 +66,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/hovancik/stretchly/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/hovancik/stretchly/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/hovancik/stretchly/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/hovancik/stretchly/compare/v0.2.0...v0.2.1
