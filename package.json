@@ -12,7 +12,7 @@
     "pack-all": "build --dir -mwl --x64 --ia32",
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
-    "dist": "build",
+    "dist": "build --x64 --ia32",
     "test": "mocha tests"
   },
   "repository": {

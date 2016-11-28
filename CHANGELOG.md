@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.5.0]
 ### Added
 - strict mode - breaks/microbreaks can't be finished early
+- build for ia32 and x64
 
 ### Fixed
 - wrong window placement when on Linux and more displays
