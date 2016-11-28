@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - strict mode - breaks/microbreaks can't be finished early
 
+### Fixed
+- wrong window placement when on Linux and more displays
 
 ## [0.4.0] - 2016-11-05
 ### Fixed
