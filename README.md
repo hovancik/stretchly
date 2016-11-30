@@ -80,6 +80,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
 - Martina Mocinecova, (*stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
+- Alex Alekseyenko, @alexalekseyenko
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
