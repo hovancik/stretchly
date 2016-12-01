@@ -25,6 +25,7 @@ You can also skip to the next break or microbreak anytime from menu, or reset (r
 Microbreaks and breaks can be customized:
 - you can set duration and interval of break
 - you can enable/disable breaks
+- you can enable/disable strict mode (breaks can't be finished early)
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-1.png" height="340">
 
