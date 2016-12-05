@@ -10,5 +10,10 @@ module.exports = new Shuffled([
   ['Change', 'Do you have a stability ball or standing work desk? Consider replacing your desk chair with them for a while.'],
   ['Notice', 'Are you daydreaming or having trouble focusing? It is a sign that you need to take a break.'],
   ['Tech', 'How about taking a no-tech walk?'],
-  ['Fruit', 'Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness.']
+  ['Metabolism', 'Emerging research shows that sitting for long periods of time contributes to risk of metabolic syndrome, heart attack and stroke risk and overall death risk, among others. Taking regular walking breaks can help your circulation, working to counteract some of those problems.'],
+  ['Active Meetings', 'How about moving meetings from the conference room to the concourse? Walking not only burns calories but it may even foster a sense of collaboration.'],
+  ['Fruit', 'Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness.'],
+  ['Bathrooms', 'Walk to the farthest bathroom in the worksite facility when going to the restroom.'],
+  ['Coffee break', 'Going on coffee break? Consider doing a 5-minute walk every time you go for one.'],
+  ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.']
 ])
