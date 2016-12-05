@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - some grammar
 
+### Added
+- more break ideas
+
 ## [0.5.0]
 ### Added
 - strict mode - breaks/microbreaks can't be finished early

@@ -90,6 +90,8 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
  - https://www.spineuniverse.com/wellness/ergonomics/workstation-ergonomics-take-break
  - http://www.lifehack.org/articles/productivity/21-counter-intuitive-break-ideas-to-boost-your-productivity-at-work.html
  - http://www.latofonts.com/lato-free-fonts/
+ - http://www.huffingtonpost.com/2012/07/24/sitting-at-work-why-its-dangerous-alternatives_n_1695618.html
+ - http://www.unm.edu/~lkravitz/Article%20folder/sittingUNM.html
 
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
