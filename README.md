@@ -103,3 +103,8 @@ Sounds used in this application are listed [here](http://freesound.org/people/ho
 
 ## License
 See LICENSE file.
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/hovancik/stretchly/badge.svg?style=beer-square)](https://beerpay.io/hovancik/stretchly)  [![Beerpay](https://beerpay.io/hovancik/stretchly/make-wish.svg?style=flat-square)](https://beerpay.io/hovancik/stretchly?focus=wish)
