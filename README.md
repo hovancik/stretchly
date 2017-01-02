@@ -37,6 +37,21 @@ Microbreaks and breaks can be customized:
 
 All settings can be reset to defaults.
 
+### Advanced settings
+All settings are saved in JSON file. To learn more about how to find it, read [this](https://github.com/electron/electron/blob/master/docs/api/app.md#appgetpathname).
+Related code looks like this:
+
+```
+const dir = app.getPath('userData')
+const settingsFile = `${dir}/config.json`
+```
+
+#### Editing break/microbreak ideas
+In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
+`breakIdeas` and `microbreakIdeas`.
+
+
+
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).

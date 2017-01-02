@@ -3,10 +3,11 @@ const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog} = require('electr
 const path = require('path')
 const AppSettings = require('./utils/settings')
 const defaultSettings = require('./utils/defaultSettings')
-let microbreakIdeas = require('./microbreakIdeas')
-let breakIdeas = require('./breakIdeas')
-let BreaksPlanner = require('./breaksPlanner')
+const IdeasLoader = require('./utils/ideasLoader')
+const BreaksPlanner = require('./breaksPlanner')
 
+let microbreakIdeas
+let breakIdeas
 let breakPlanner
 let appIcon = null
 let processWin = null
@@ -108,6 +109,9 @@ function showStartUpWindow () {
 }
 
 function startMicrobreak () {
+  if (!microbreakIdeas) {
+    loadIdeas()
+  }
   // don't start another break if break running
   if (microbreakWin) {
     console.log('microbreak already running')
@@ -132,6 +136,9 @@ function startMicrobreak () {
 }
 
 function startBreak () {
+  if (!breakIdeas) {
+    loadIdeas()
+  }
   // don't start another break if break running
   if (breakWin) {
     console.log('break already running')
@@ -184,6 +191,20 @@ function loadSettings () {
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
   breakPlanner = new BreaksPlanner(settings, startMicrobreak, startBreak)
+}
+
+function loadIdeas () {
+  let breakIdeasData
+  let microbreakIdeasData
+  if (settings.get('useIdeasFromSettings')) {
+    breakIdeasData = settings.get('breakIdeas')
+    microbreakIdeasData = settings.get('microbreakIdeas')
+  } else {
+    breakIdeasData = require('./utils/defaultBreakIdeas')
+    microbreakIdeasData = require('./utils/defaultmicrobreakIdeas')
+  }
+  breakIdeas = new IdeasLoader(breakIdeasData).ideas()
+  microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
 }
 
 function pauseBreaks (seconds) {
