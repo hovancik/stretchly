@@ -201,7 +201,7 @@ function loadIdeas () {
     microbreakIdeasData = settings.get('microbreakIdeas')
   } else {
     breakIdeasData = require('./utils/defaultBreakIdeas')
-    microbreakIdeasData = require('./utils/defaultmicrobreakIdeas')
+    microbreakIdeasData = require('./utils/defaultMicrobreakIdeas')
   }
   breakIdeas = new IdeasLoader(breakIdeasData).ideas()
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
