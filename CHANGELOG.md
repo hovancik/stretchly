@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - possibility to change break/microbreak ideas via editing config file
 
+### Changed
+- break window is shown when it's ready
+
 ## [0.5.1] - 2016-12-05
 ### Fixed
 - some grammar
