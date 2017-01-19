@@ -123,7 +123,7 @@ function startMicrobreak () {
     x: displaysX(),
     y: displaysY(),
     frame: false,
-    alwaysOnTop: true,
+    show: false,
     backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })
@@ -131,8 +131,10 @@ function startMicrobreak () {
   // microbreakWin.webContents.openDevTools()
   microbreakWin.webContents.on('did-finish-load', () => {
     microbreakWin.webContents.send('microbreakIdea', microbreakIdeas.randomElement, settings.get('microbreakStrictMode'))
+    microbreakWin.setAlwaysOnTop(true)
+    microbreakWin.show()
+    finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
   })
-  finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
 }
 
 function startBreak () {
@@ -149,7 +151,7 @@ function startBreak () {
     x: displaysX(),
     y: displaysY(),
     frame: false,
-    alwaysOnTop: true,
+    show: false,
     backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })
@@ -157,8 +159,10 @@ function startBreak () {
   // breakWin.webContents.openDevTools()
   breakWin.webContents.on('did-finish-load', () => {
     breakWin.webContents.send('breakIdea', breakIdeas.randomElement, settings.get('breakStrictMode'))
+    breakWin.setAlwaysOnTop(true)
+    breakWin.show()
+    finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))
   })
-  finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
