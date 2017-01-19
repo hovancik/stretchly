@@ -79,17 +79,18 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - [x] make installers/executables
 - [x] create about page
 - [x] only one instance
-- [ ] notification on 2nd instance
 - [x] create longer breaks (5min every 30 minutes)
 - [x] create settings for breaks
 - [x] remember settings after restart
 - [x] autostart app
 - [x] start break anytime from menu
+- [x] sound notification at the end of the break
+- [x] strict mode (can't finish break early)
+- [ ] notification on 2nd instance
+- [ ] information about when will be the next break
 - [ ] create keyboard shortcuts
 - [ ] color-picker for themes
-- [x] sound notification at the end of the break
-- [ ] information about when will be the next break
-- [x] strict mode (can't finish break early)
+- [ ] some kind of silent mode (see #44)
 
 ### Contributors
 *(by date of the first contribution)*
