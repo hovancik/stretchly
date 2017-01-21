@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.6.0] - 2017-01-21
 ### Added
 - possibility to change break/microbreak ideas via editing config file
 
@@ -78,7 +80,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/hovancik/stretchly/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/hovancik/stretchly/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/hovancik/stretchly/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/hovancik/stretchly/compare/v0.3.0...v0.4.0
