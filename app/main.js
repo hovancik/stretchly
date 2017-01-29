@@ -363,7 +363,7 @@ function getTrayMenu () {
   trayMenu.push({
     type: 'separator'
   }, {
-    label: 'Quit',
+    label: 'Quit stretchly',
     click: function () {
       app.quit()
     }
