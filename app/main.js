@@ -242,7 +242,6 @@ function showSettingsWindow () {
   })
   settingsWin.loadURL(modalPath)
   // settingsWin.webContents.openDevTools()
-  processWin.webContents.send('showNotification', 'Settings are applied once changed. I hope that\'s fine with you!')
   settingsWin.webContents.on('did-finish-load', () => {
     settingsWin.webContents.send('renderSettings', settings.data)
   })
