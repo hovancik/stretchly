@@ -27,7 +27,6 @@ global.shared = {
 
 app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
-app.on('ready', showStartUpWindow)
 app.on('ready', planBreak)
 app.on('ready', createTrayIcon)
 
@@ -87,25 +86,6 @@ function planVersionCheck (seconds = 1) {
 function checkVersion () {
   processWin.webContents.send('checkVersion', `v${app.getVersion()}`)
   planVersionCheck(3600 * 5)
-}
-
-function showStartUpWindow () {
-  const modalPath = path.join('file://', __dirname, 'start.html')
-  let appStartupWin = new BrowserWindow({
-    x: displaysX(600),
-    y: displaysY(170),
-    frame: false,
-    alwaysOnTop: true,
-    title: 'stretchly',
-    backgroundColor: settings.get('mainColor'),
-    width: 600,
-    height: 170
-  })
-  appStartupWin.loadURL(modalPath)
-  setTimeout(function () {
-    appStartupWin.close()
-    appStartupWin = null
-  }, 5000)
 }
 
 function startMicrobreak () {

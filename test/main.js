@@ -32,14 +32,6 @@ describe('stretchly', function () {
 
   it('app starts', function () {
     return this.app.client.waitUntilWindowLoaded()
-      .getWindowCount().should.eventually.equal(2)
-      .windowByIndex(0).browserWindow.isVisible().should.eventually.be.true
-      .windowByIndex(1).browserWindow.isVisible().should.eventually.be.false
-  })
-
-  it('start-up window closes after 6 seconds', function () {
-    return this.app.client.waitUntilWindowLoaded()
-      .pause(6000)
       .getWindowCount().should.eventually.equal(1)
       .windowByIndex(0).browserWindow.isVisible().should.eventually.be.false
   })
