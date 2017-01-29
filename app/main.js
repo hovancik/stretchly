@@ -224,7 +224,7 @@ function showAboutWindow () {
   aboutWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
-    alwaysOnTop: true,
+    resizable: false,
     backgroundColor: settings.get('mainColor'),
     title: `About stretchly v${app.getVersion()}`
   })
@@ -236,7 +236,7 @@ function showSettingsWindow () {
   settingsWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
-    alwaysOnTop: true,
+    resizable: false,
     backgroundColor: settings.get('mainColor'),
     title: 'Settings'
   })
