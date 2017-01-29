@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- About and Settings windows are not resizable and not always on top
+- `Quit` -> `Quit stretchly` menu item text
+
+### Removed
+- Settings window notification
+- Startup window
 
 ## [0.6.0] - 2017-01-21
 ### Added
