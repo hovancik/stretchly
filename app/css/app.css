@@ -17,8 +17,8 @@ body {
 
 .microbreak,
 .about {
-  padding-top: 60px;
-  max-width: 550px;
+  padding-top: 10%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 .break-text {
-  padding-top: 30px;
+  padding-top: 5%;
 }
 
 .previous,
