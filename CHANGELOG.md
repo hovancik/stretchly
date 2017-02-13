@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Changed
+- app windows are shown on the monitor where the mouse is
 - About and Settings windows are not resizable and not always on top
 - `Quit` -> `Quit stretchly` menu item text
 
