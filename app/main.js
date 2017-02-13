@@ -106,6 +106,7 @@ function startMicrobreak () {
     y: displaysY(),
     frame: false,
     show: false,
+    fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })
@@ -134,6 +135,7 @@ function startBreak () {
     y: displaysY(),
     frame: false,
     show: false,
+    fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })

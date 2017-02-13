@@ -27,14 +27,16 @@ body {
 }
 
 .scheme,
-.enabled {
+.enabled,
+.fullscreen {
   display: inline-block;
   text-align: center;
   width: 130px;
   font-size: 20px;
 }
 
-.enabled {
+.enabled,
+.fullscreen {
   width: 300px;
 }
 
