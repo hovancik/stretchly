@@ -60,11 +60,14 @@ function displaysY (height = 600) {
 }
 
 function createTrayIcon () {
+  const iconFolder = path.join(__dirname, 'images')
   if (process.platform === 'darwin') {
     app.dock.hide()
+    appIcon = new Tray(iconFolder + '/trayTemplate.png')
   }
-  const iconPath = path.join(__dirname, 'images/stretchly_18x18.png')
-  appIcon = new Tray(iconPath)
+  if (process.platform === 'win32') {
+    appIcon = new Tray(iconFolder + '/tray.ico')
+  }
   appIcon.setToolTip('stretchly - break time reminder app')
   isPaused = false
   appIcon.setContextMenu(getTrayMenu())
