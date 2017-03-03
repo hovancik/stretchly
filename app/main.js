@@ -47,13 +47,15 @@ if (shouldQuit) {
 
 function displaysX (width = 800) {
   const electron = require('electron')
-  let bounds = electron.screen.getPrimaryDisplay().bounds
+  let theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  let bounds = theScreen.bounds
   return bounds.x + ((bounds.width - width) / 2)
 }
 
 function displaysY (height = 600) {
   const electron = require('electron')
-  let bounds = electron.screen.getPrimaryDisplay().bounds
+  let theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  let bounds = theScreen.bounds
   return bounds.y + ((bounds.height - height) / 2)
 }
 
@@ -104,6 +106,7 @@ function startMicrobreak () {
     y: displaysY(),
     frame: false,
     show: false,
+    fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })
@@ -132,6 +135,7 @@ function startBreak () {
     y: displaysY(),
     frame: false,
     show: false,
+    fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
     title: 'stretchly'
   })
