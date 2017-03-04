@@ -224,6 +224,10 @@ function resumeBreaks () {
 }
 
 function showAboutWindow () {
+  if (aboutWin) {
+    aboutWin.show()
+    return
+  }
   const modalPath = path.join('file://', __dirname, 'about.html')
   aboutWin = new BrowserWindow({
     x: displaysX(),
@@ -236,6 +240,10 @@ function showAboutWindow () {
 }
 
 function showSettingsWindow () {
+  if (settingsWin) {
+    settingsWin.show()
+    return
+  }
   const modalPath = path.join('file://', __dirname, 'settings.html')
   settingsWin = new BrowserWindow({
     x: displaysX(),
