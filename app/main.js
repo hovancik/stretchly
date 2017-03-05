@@ -61,9 +61,7 @@ function displaysY (height = 600) {
 
 function createTrayIcon () {
   const iconFolder = path.join(__dirname, 'images')
-  if (process.platform === 'win32') {
-    appIcon = new Tray(iconFolder + '/tray.ico')
-  } else if (process.platform === 'darwin') {
+  if (process.platform === 'darwin') {
     appIcon = new Tray(iconFolder + '/trayTemplate.png')
     app.dock.hide()
   } else {
