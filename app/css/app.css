@@ -8,6 +8,11 @@
   src: url('./fonts/Lato-Thin.ttf')
 }
 
+@font-face {
+  font-family: 'Lato Light';
+  src: url('./fonts/Lato-Light.ttf')
+}
+
 body {
   color: #fff;
   text-align: center;
@@ -45,7 +50,7 @@ body {
   width: 20px;
   height: 20px;
   margin: 5px auto;
-  box-shadow: 1px 1px 10px 0 rgba(50, 50, 50, 0.6);
+  box-shadow: 0 0 1px 1px rgba(250, 250, 250, 0.2)
 }
 
 .pointer {
@@ -79,9 +84,13 @@ body {
 
 .previous a,
 .next a {
-  color: #fff;
   text-decoration: none;
   font-size: 90px;
+}
+
+a {
+  color: #fff;
+  font-family: 'Lato Light'
 }
 
 #close,
@@ -94,7 +103,7 @@ body {
   transform: translateX(-50%);
   font-size: 18px;
   text-decoration: none;
-  font-family: 'Lato Thin';
+  font-family: 'Lato Light';
 }
 
 #close {
