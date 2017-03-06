@@ -239,6 +239,9 @@ function showAboutWindow () {
     title: `About stretchly v${app.getVersion()}`
   })
   aboutWin.loadURL(modalPath)
+  aboutWin.on('closed', () => {
+    aboutWin = null
+  })
 }
 
 function showSettingsWindow () {
@@ -258,6 +261,9 @@ function showSettingsWindow () {
   // settingsWin.webContents.openDevTools()
   settingsWin.webContents.on('did-finish-load', () => {
     settingsWin.webContents.send('renderSettings', settings.data)
+  })
+  settingsWin.on('closed', () => {
+    settingsWin = null
   })
 }
 
