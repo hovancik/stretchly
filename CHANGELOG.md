@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - About and Settings windows are not resizable and not always on top
 - `Quit` -> `Quit stretchly` menu item text
 
+### Added
+- monochrome icon for macOS (also @2x)
+
 ### Removed
 - Settings window notification
 - Startup window
