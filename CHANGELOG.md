@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - reminders can be full screen
 - About and Settings windows are not resizable and not always on top
 - `Quit` -> `Quit stretchly` menu item text
+- replaced `splash of cappuccino` with `graphite crystal` theme
 
 ### Added
 - monochrome icon for macOS (also @2x)

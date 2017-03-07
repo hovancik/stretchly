@@ -27,6 +27,7 @@ Microbreaks and breaks can be customized:
 - you can set duration and interval of break
 - you can enable/disable breaks
 - you can enable/disable strict mode (breaks can't be finished early)
+- you can set break window to be fullscreen
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-1.png" height="340">
 
