@@ -62,7 +62,8 @@
     "mac": {
       "category": "public.app-category.healthcare-fitness",
       "target": [
-        "dmg"
+        "dmg",
+        "zip"
       ]
     },
     "linux": {
