@@ -1,9 +1,9 @@
 {
   "name": "stretchly",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "break time reminder app",
   "engines": {
-    "node": "6.5.0"
+    "node": "7.4.0"
   },
   "scripts": {
     "start": "electron ./app --enable-logging --remote-debugging-port=9222",
@@ -34,14 +34,13 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
-    "electron": "^1.4.15",
-    "electron-builder": "^10.17.3",
+    "electron": "^1.6.1",
+    "electron-builder": "^15.1.1",
     "mocha": "^3.2.0",
-    "spectron": "^3.4.1"
+    "spectron": "^3.6.0"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
-    "category": "public.app-category.healthcare-fitness",
     "productName": "stretchly",
     "dmg": {
       "icon": "build/icon.icns",
@@ -60,25 +59,28 @@
         }
       ]
     },
+    "mac": {
+      "category": "public.app-category.healthcare-fitness",
+      "target": [
+        "dmg"
+      ]
+    },
     "linux": {
       "target": [
+        "AppImage",
         "deb",
         "rpm",
-        "sh",
         "freebsd",
         "pacman",
-        "tar.xz",
-        "tar.gz"
+        "tar.xz"
       ]
     },
     "win": {
       "target": [
-        "squirrel",
         "nsis",
         "7z",
         "zip"
-      ],
-      "msi": true
+      ]
     }
   },
   "standard": {
