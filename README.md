@@ -13,6 +13,9 @@ By default, it runs in your tray and shows reminder window every 10 minutes, tha
 
 Every 30 minutes, it shows window containing idea for longer 5 minute break.
 
+You can finish break or microbreak early, by clicking the link at the bottom
+or by using `Ctrl/Cmd + x` keyboard shortcut (when not in strict mode).
+
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
 You can pause/resume reminding of breaks. On Windows and macOS, you can set app to start at login.
@@ -89,7 +92,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - [x] strict mode (can't finish break early)
 - [ ] notification on 2nd instance
 - [ ] information about when will be the next break
-- [ ] create keyboard shortcuts
+- [x] create keyboard shortcuts
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
 
