@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- `Ctrl/Cmd + x` shortcut to finish break early (when not in strict mode)
 
 ## [0.7.0] - 2017-03-07
 ### Changed
-- app windows are shown on the monitor where the mouse is (Windows, macOS)
+- app windows are shown on the monitor where the mouse is (Windows, macOS, some Linux DEs)
 - reminders can be full screen
 - About and Settings windows are not resizable and not always on top
 - `Quit` -> `Quit stretchly` menu item text
