@@ -1,5 +1,8 @@
 const {ipcRenderer} = require('electron')
 
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
+
 document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-microbreak', false)
 })

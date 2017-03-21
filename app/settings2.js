@@ -2,6 +2,9 @@ const {ipcRenderer} = require('electron')
 
 let eventsAttached = false
 
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
+
 ipcRenderer.on('renderSettings', (event, data) => {
   let colorElements = document.getElementsByClassName('color')
   for (var i = 0; i < colorElements.length; i++) {

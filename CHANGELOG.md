@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - `Ctrl/Cmd + x` shortcut to finish break early (when not in strict mode)
 
+### Fixed
+- disallow drag and drop in windows to prevent errors
+
 ## [0.7.0] - 2017-03-07
 ### Changed
 - app windows are shown on the monitor where the mouse is (Windows, macOS, some Linux DEs)

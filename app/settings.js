@@ -19,6 +19,9 @@ let breakDurationMinus = document.getElementById('breakDurationMinus')
 let breakDuration = document.getElementById('breakDuration')
 let realBreakInterval = document.getElementById('realBreakInterval')
 
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
+
 microbreakIntervalPlus.addEventListener('click', function (e) {
   if (microbreakInterval.innerHTML !== '30') {
     ipcRenderer.send('save-setting', 'microbreakInterval', (parseInt(microbreakInterval.innerHTML, 10) + 5) * 1000 * 60)
