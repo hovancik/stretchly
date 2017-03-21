@@ -1,6 +1,9 @@
 let {shell} = require('electron')
 let VersionChecker = require('./utils/versionChecker')
 
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
+
 document.getElementById('homepage').addEventListener('click', function (e) {
   e.preventDefault()
   shell.openExternal('https://hovancik.net/stretchly')
