@@ -116,6 +116,7 @@ function startMicrobreak () {
   // microbreakWin.webContents.openDevTools()
   microbreakWin.webContents.on('did-finish-load', () => {
     microbreakWin.webContents.send('microbreakIdea', microbreakIdeas.randomElement, settings.get('microbreakStrictMode'))
+    microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
     microbreakWin.setAlwaysOnTop(true)
     microbreakWin.show()
     finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
@@ -145,6 +146,7 @@ function startBreak () {
   // breakWin.webContents.openDevTools()
   breakWin.webContents.on('did-finish-load', () => {
     breakWin.webContents.send('breakIdea', breakIdeas.randomElement, settings.get('breakStrictMode'))
+    breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
     breakWin.setAlwaysOnTop(true)
     breakWin.show()
     finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))

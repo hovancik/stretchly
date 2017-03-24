@@ -111,6 +111,16 @@ a {
   visibility: hidden;
 }
 
+progress {
+  height: 5px;
+  margin-top: 40px;
+}
+
+#progress-time {
+  margin: 0;
+  font-size: 15px;
+}
+
 .strict {
   font-size: 16px;
   text-align: right;
