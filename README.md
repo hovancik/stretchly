@@ -41,6 +41,8 @@ Microbreaks and breaks can be customized:
 
 All settings can be reset to defaults.
 
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
+
 ### Advanced settings
 All settings are saved in JSON file. To learn more about how to find it, read [this](https://github.com/electron/electron/blob/master/docs/api/app.md#appgetpathname).
 Related code looks like this:
