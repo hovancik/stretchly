@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - `Ctrl/Cmd + x` shortcut to finish break early (when not in strict mode)
+- time remaining and progress bar in break window
 
 ### Fixed
 - disallow drag and drop in windows to prevent errors
