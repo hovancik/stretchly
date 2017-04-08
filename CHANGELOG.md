@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+
+## [0.8.0] - 2017-04-09
 ### Added
 - `Ctrl/Cmd + x` shortcut to finish break early (when not in strict mode)
 - time remaining and progress bar in break window
@@ -101,7 +104,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/hovancik/stretchly/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/hovancik/stretchly/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/hovancik/stretchly/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/hovancik/stretchly/compare/v0.5.0...v0.5.1
