@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Time till next break/breaks resume if paused shown in tooltip
+
 ### Fixed
 - version checker erroneous 'a new version is available' messages
 
