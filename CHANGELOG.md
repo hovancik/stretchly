@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-
+### Added
+- Time till next break/breaks resume if paused shown in tooltip
 
 ## [0.8.1] - 2017-04-15
 ### Fixed
