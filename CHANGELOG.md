@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - closing non-existing window
 
+### Changed
+- break windows are not focusable
+- do not show break windows in taskbar
+
 ## [0.8.0] - 2017-04-09
 ### Added
 - `Ctrl/Cmd + x` shortcut to finish break early (when not in strict mode)

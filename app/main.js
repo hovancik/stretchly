@@ -110,6 +110,8 @@ function startMicrobreak () {
     show: false,
     fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
+    skipTaskbar: true,
+    focusable: false,
     title: 'stretchly'
   })
   microbreakWin.loadURL(modalPath)
@@ -140,6 +142,8 @@ function startBreak () {
     show: false,
     fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
+    skipTaskbar: true,
+    focusable: false,
     title: 'stretchly'
   })
   breakWin.loadURL(modalPath)
