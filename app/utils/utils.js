@@ -6,4 +6,12 @@ let formatRemaining = function (seconds) {
   }
 }
 
+let updateProgress = function (started, duration, progress, progressTime) {
+  if (Date.now() - started < duration) {
+    progress.value = (Date.now() - started) / duration * 10000
+    progressTime.innerHTML = formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
+  }
+}
+
 module.exports.formatRemaining = formatRemaining
+module.exports.updateProgress = updateProgress

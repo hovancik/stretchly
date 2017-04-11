@@ -22,14 +22,7 @@ ipcRenderer.on('microbreakIdea', (event, message, strictMode) => {
 })
 
 ipcRenderer.on('progress', (event, started, duration) => {
-  started = Date.now()
-  let intervalID = window.setInterval(updateProgress, 10)
-  function updateProgress () {
-    if (Date.now() - started < duration) {
-      document.getElementById('progress').value = (Date.now() - started) / duration * 10000
-      document.getElementById('progress-time').innerHTML = Utils.formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
-    } else {
-      clearInterval(intervalID)
-    }
-  }
+  let progress = document.getElementById('progress')
+  let progressTime = document.getElementById('progress-time')
+  window.setInterval(Utils.updateProgress.bind(null, started, duration, progress, progressTime), 10)
 })
