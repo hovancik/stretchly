@@ -154,21 +154,27 @@ function startBreak () {
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
+  clearTimeout(finishMicrobreakTimer)
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  microbreakWin.close()
-  microbreakWin = null
-  breakPlanner.nextBreak.plan()
+  if (microbreakWin) {
+    microbreakWin.close()
+    microbreakWin = null
+    breakPlanner.nextBreak.plan()
+  }
 }
 
 function finishBreak (shouldPlaySound = true) {
+  clearTimeout(finishBreakTimer)
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  breakWin.close()
-  breakWin = null
-  breakPlanner.nextBreak.plan()
+  if (breakWin) {
+    breakWin.close()
+    breakWin = null
+    breakPlanner.nextBreak.plan()
+  }
 }
 
 function planBreak () {
@@ -395,12 +401,10 @@ function getTrayMenu () {
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
-  clearTimeout(finishMicrobreakTimer)
   finishMicrobreak(shouldPlaySound)
 })
 
 ipcMain.on('finish-break', function (event, shouldPlaySound) {
-  clearTimeout(finishBreakTimer)
   finishBreak(shouldPlaySound)
 })
 
