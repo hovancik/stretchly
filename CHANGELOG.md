@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- closing non-existing window
+- trying to close non-existing window
+- after break ends, focus is brought on last window (macOS)
 
 ### Changed
 - break windows are not focusable

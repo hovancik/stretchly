@@ -169,6 +169,10 @@ function finishMicrobreak (shouldPlaySound = true) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
   if (microbreakWin) {
+    if (process.platform === 'darwin') {
+      // get focus on the last app
+      Menu.sendActionToFirstResponder('hide:')
+    }
     microbreakWin.close()
     microbreakWin = null
     breakPlanner.nextBreak.plan()
@@ -182,6 +186,10 @@ function finishBreak (shouldPlaySound = true) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
   if (breakWin) {
+    if (process.platform === 'darwin') {
+      // get focus on the last app
+      Menu.sendActionToFirstResponder('hide:')
+    }
     breakWin.close()
     breakWin = null
     breakPlanner.nextBreak.plan()
