@@ -11,11 +11,6 @@ document.getElementById('close').addEventListener('click', function (e) {
 ipcRenderer.on('breakIdea', (event, message, strictMode) => {
   if (!strictMode) {
     document.getElementById('close').style.visibility = 'visible'
-    window.addEventListener('keydown', event => {
-      if (event.key === 'x' && (event.ctrlKey || event.metaKey)) {
-        ipcRenderer.send('finish-break', false)
-      }
-    })
   }
   let breakIdea = document.getElementsByClassName('break-idea')[0]
   breakIdea.innerHTML = message[0]

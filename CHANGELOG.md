@@ -6,7 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- closing non-existing window
+- trying to close non-existing window
+- after break ends, focus is brought on last window (macOS)
+
+### Changed
+- break windows are not focusable
+- do not show break windows in taskbar
 
 ## [0.8.0] - 2017-04-09
 ### Added
