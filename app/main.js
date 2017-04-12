@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog} = require('electron')
+const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const path = require('path')
 const AppSettings = require('./utils/settings')
 const defaultSettings = require('./utils/defaultSettings')
@@ -101,7 +101,9 @@ function startMicrobreak () {
     console.log('microbreak already running')
     return
   }
-
+  globalShortcut.register('CommandOrControl+X', () => {
+    finishMicrobreak(false)
+  })
   const modalPath = path.join('file://', __dirname, 'microbreak.html')
   microbreakWin = new BrowserWindow({
     x: displaysX(),
@@ -134,6 +136,9 @@ function startBreak () {
     console.log('break already running')
     return
   }
+  globalShortcut.register('CommandOrControl+X', () => {
+    finishBreak(false)
+  })
   const modalPath = path.join('file://', __dirname, 'break.html')
   breakWin = new BrowserWindow({
     x: displaysX(),
@@ -158,6 +163,7 @@ function startBreak () {
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
+  globalShortcut.unregister('CommandOrControl+X')
   clearTimeout(finishMicrobreakTimer)
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
@@ -170,6 +176,7 @@ function finishMicrobreak (shouldPlaySound = true) {
 }
 
 function finishBreak (shouldPlaySound = true) {
+  globalShortcut.unregister('CommandOrControl+X')
   clearTimeout(finishBreakTimer)
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
