@@ -97,6 +97,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - [x] create keyboard shortcuts
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
+- [ ] history/timeline of breaks 
 
 ### Contributors
 *(by date of the first contribution)*
