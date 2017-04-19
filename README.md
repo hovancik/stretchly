@@ -98,6 +98,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
 - [ ] history/timeline of breaks 
+- [ ] localization support (l12n, gettetxt or so)
 
 ### Contributors
 *(by date of the first contribution)*
