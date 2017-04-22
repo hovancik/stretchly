@@ -13,8 +13,8 @@ let updateProgress = function (started, duration, progress, progressTime) {
   }
 }
 
-let formatTillBreak = function(milliseconds) {
-  let minutes = Math.round(milliseconds / 60000);
+let formatTillBreak = function (milliseconds) {
+  let minutes = Math.round(milliseconds / 60000)
   if (minutes < 1) {
     let seconds = ((milliseconds % 60000) / 1000).toFixed(0)
     return `${seconds}s`
@@ -43,7 +43,6 @@ let formatPauseTimeLeft = function (milliseconds) {
   }
   return timeString
 }
-
 
 module.exports.formatRemaining = formatRemaining
 module.exports.formatTillBreak = formatTillBreak
