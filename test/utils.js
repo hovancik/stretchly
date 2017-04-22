@@ -3,7 +3,7 @@ const Utils = require('../app/utils/utils')
 
 chai.should()
 
-describe.only('Utils', function () {
+describe('Utils', function () {
   beforeEach(function () {
     //
   })
