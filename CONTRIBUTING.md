@@ -1,7 +1,7 @@
 # Contributing to *stretchly*
 
 ## Pull Requests
-PRs are welcome, but before making a big change in *stretchly* codebase make sure that repo owner is interested in such a change (eg. via issue).
+PRs are welcome, but before implementing a feature, please open an Issue first, so we can be sure that no-one else is working on it and that the changes will be accepted.
 
 Other thinks to keep in mind:
 - write tests if possible

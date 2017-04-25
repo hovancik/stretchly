@@ -78,6 +78,7 @@ Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux spec
 ## Development
 
 Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
+Before implementing a feature, please open an Issue first, so we can be sure that no-one else is working on it and that the changes will be accepted.
 
 ### TODOs and Ideas
 - [x] tests
@@ -97,7 +98,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 - [x] create keyboard shortcuts
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
-- [ ] history/timeline of breaks 
+- [ ] history/timeline of breaks
 - [ ] localization support (l12n, gettetxt or so)
 
 ### Contributors
