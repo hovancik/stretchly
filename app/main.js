@@ -5,6 +5,8 @@ const AppSettings = require('./utils/settings')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
+const Utils = require('./utils/utils')
+const Scheduler = require('./utils/scheduler')
 
 let microbreakIdeas
 let breakIdeas
@@ -16,10 +18,12 @@ let breakWin = null
 let aboutWin = null
 let settingsWin = null
 let finishMicrobreakTimer
+let resumeBreaksScheduler
 let finishBreakTimer
-let resumeBreaksTimer
 let settings
 let isPaused = false
+let toolTipUpdater
+let toolTipHeader = 'stretchly - break time reminder app'
 
 global.shared = {
   isNewVersion: false
@@ -67,9 +71,9 @@ function createTrayIcon () {
   } else {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
-  appIcon.setToolTip('stretchly - break time reminder app')
   isPaused = false
   appIcon.setContextMenu(getTrayMenu())
+  toolTipUpdater = setInterval(updateToolTip, 1000)
 }
 
 function startProcessWin () {
@@ -224,7 +228,7 @@ function loadIdeas () {
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
 }
 
-function pauseBreaks (seconds) {
+function pauseBreaks (milliseconds) {
   if (microbreakWin) {
     clearTimeout(finishMicrobreakTimer)
     finishMicrobreak()
@@ -234,15 +238,15 @@ function pauseBreaks (seconds) {
     finishBreak()
   }
   breakPlanner.pause()
-  if (seconds !== 1) {
-    resumeBreaksTimer = setTimeout(resumeBreaks, seconds)
+  if (milliseconds !== 1) {
+    resumeBreaksScheduler = new Scheduler(resumeBreaks, milliseconds)
   }
   isPaused = true
   appIcon.setContextMenu(getTrayMenu())
 }
 
 function resumeBreaks () {
-  clearTimeout(resumeBreaksTimer)
+  resumeBreaksScheduler.cancel()
   isPaused = false
   let nb = breakPlanner.resume()
   if (nb) {
@@ -417,6 +421,40 @@ function getTrayMenu () {
   })
 
   return Menu.buildFromTemplate(trayMenu)
+}
+
+function updateToolTip () {
+  let toolTipString = toolTipHeader
+  if (isPaused) {
+    let timeLeft = resumeBreaksScheduler.timeLeft
+    if (timeLeft) {
+      toolTipString += `\nPaused - ${Utils.formatPauseTimeLeft(timeLeft)} till breaks resume\nas regularly scheduled`
+    } else {
+      toolTipString += '\nPaused indefinitely'
+    }
+  } else {
+    let breakType = nextBreakType()
+    if (breakType) {
+      toolTipString += `\n${Utils.formatTillBreak(breakPlanner.scheduler.timeLeft)} to ${breakType}`
+      if (breakType === 'microbreak') {
+        let breakInterval = breakPlanner.settings.get('breakInterval') + 1
+        let breakNumber = breakPlanner.breakNumber % breakInterval
+        toolTipString += `\nNext break following ${breakInterval - breakNumber} more microbreak(s)`
+      }
+    }
+  }
+  appIcon.setToolTip(toolTipString)
+}
+
+function nextBreakType () {
+  if (breakPlanner.scheduler.func === startMicrobreak) {
+    return 'microbreak'
+  }
+  if (breakPlanner.scheduler.func === startBreak) {
+    return 'break'
+  }
+  console.log('Error determining break type')
+  return false
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
