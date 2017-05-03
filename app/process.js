@@ -11,7 +11,8 @@ ipcRenderer.on('checkVersion', (event, data) => {
     notifyNewVersion()
   } else {
     new VersionChecker().latest(function (version) {
-      if (version !== 'Error getting latest version' && data !== version) {
+      const semantic = /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
+      if (version.match(semantic) && data !== version) {
         remote.getGlobal('shared').isNewVersion = true
         ipcRenderer.send('update-tray')
         notifyNewVersion()
