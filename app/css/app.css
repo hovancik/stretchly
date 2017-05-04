@@ -141,3 +141,24 @@ progress {
   font-family: 'Lato Thin';
   padding-top: 60px;
 }
+
+#danger-a {
+  position: absolute;
+  left: 1px;
+  top: 200px;
+  height: 80px;
+}
+
+#danger-b {
+  position: absolute;
+  left: 300px;
+  top: 20px;
+  height: 40px;
+}
+
+#danger-c {
+  position: absolute;
+  right: 1px;
+  bottom: -10px;
+  height: 40px;
+}

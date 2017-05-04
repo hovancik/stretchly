@@ -21,3 +21,14 @@ ipcRenderer.on('progress', (event, started, duration) => {
   let progressTime = document.getElementById('progress-time')
   window.setInterval(Utils.updateProgress.bind(null, started, duration, progress, progressTime), 10)
 })
+
+ipcRenderer.on('danger', (event, danger) => {
+  if (danger > 0) {
+    let dangerA = document.getElementById('danger-a')
+    let dangerB = document.getElementById('danger-b')
+    let dangerC = document.getElementById('danger-c')
+    dangerA.style.boxShadow = `0px 0px 500px 100px rgba(255,0,0,${0.1 * danger})`
+    dangerB.style.boxShadow = `0px 0px 1500px 50px rgba(255,0,0,${0.1 * danger})`
+    dangerC.style.boxShadow = `0px 0px 1000px 100px rgba(255,0,0,${0.1 * danger})`
+  }
+})
