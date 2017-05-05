@@ -124,6 +124,7 @@ function startMicrobreak () {
     microbreakWin.show()
     finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
   })
+  updateToolTip()
 }
 
 function startBreak () {
@@ -159,6 +160,7 @@ function startBreak () {
     breakWin.show()
     finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))
   })
+  updateToolTip()
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
@@ -176,6 +178,7 @@ function finishMicrobreak (shouldPlaySound = true) {
     microbreakWin = null
     breakPlanner.nextBreak.plan()
   }
+  updateToolTip()
 }
 
 function finishBreak (shouldPlaySound = true) {
@@ -193,6 +196,7 @@ function finishBreak (shouldPlaySound = true) {
     breakWin = null
     breakPlanner.nextBreak.plan()
   }
+  updateToolTip()
 }
 
 function planBreak () {
@@ -234,6 +238,7 @@ function pauseBreaks (milliseconds) {
   }
   breakPlanner.pause(milliseconds)
   appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
 }
 
 function resumeBreaks () {
@@ -242,6 +247,7 @@ function resumeBreaks () {
     nb.plan()
     appIcon.setContextMenu(getTrayMenu())
     processWin.webContents.send('showNotification', 'Resuming breaks')
+    updateToolTip()
   }
 }
 
@@ -320,6 +326,7 @@ function getTrayMenu () {
         label: 'microbreak',
         click: function () {
           breakPlanner.skipToMicrobreak().plan()
+          updateToolTip()
         }
       }])
     }
@@ -328,6 +335,7 @@ function getTrayMenu () {
         label: 'break',
         click: function () {
           breakPlanner.skipToBreak().plan()
+          updateToolTip()
         }
       }])
     }
@@ -376,6 +384,7 @@ function getTrayMenu () {
       label: 'Reset breaks',
       click: function () {
         breakPlanner.reset()
+        updateToolTip()
       }
     })
   }
@@ -415,7 +424,7 @@ function getTrayMenu () {
 function updateToolTip () {
   if (microbreakWin || breakWin) {
     appIcon.setToolTip(toolTipHeader)
-  } else {    
+  } else {
     appIcon.setToolTip(toolTipHeader + breakPlanner.status)
   }
 }
