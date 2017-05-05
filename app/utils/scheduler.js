@@ -3,7 +3,6 @@ class Scheduler {
   constructor (func, delay) {
     this.timer = null
     this.delay = delay
-    this.now = Date.now()
     this.func = func
     this.cleared = false
   }
@@ -14,6 +13,7 @@ class Scheduler {
   }
 
   plan () {
+    this.now = Date.now()
     this.timer = setTimeout(this.func, this.delay)
   }
 
