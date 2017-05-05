@@ -5,8 +5,6 @@ const AppSettings = require('./utils/settings')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
-const Utils = require('./utils/utils')
-const Scheduler = require('./utils/scheduler')
 
 let microbreakIdeas
 let breakIdeas
@@ -18,10 +16,8 @@ let breakWin = null
 let aboutWin = null
 let settingsWin = null
 let finishMicrobreakTimer
-let resumeBreaksScheduler
 let finishBreakTimer
 let settings
-let isPaused = false
 let toolTipUpdater
 let toolTipHeader = 'stretchly - break time reminder app'
 
@@ -71,7 +67,6 @@ function createTrayIcon () {
   } else {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
-  isPaused = false
   appIcon.setContextMenu(getTrayMenu())
   toolTipUpdater = setInterval(updateToolTip, 1000)
 }
@@ -211,7 +206,7 @@ function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
-  breakPlanner = new BreaksPlanner(settings, startMicrobreak, startBreak)
+  breakPlanner = new BreaksPlanner(settings, startMicrobreak, startBreak, resumeBreaks)
 }
 
 function loadIdeas () {
@@ -237,17 +232,11 @@ function pauseBreaks (milliseconds) {
     clearTimeout(finishBreakTimer)
     finishBreak(false)
   }
-  breakPlanner.pause()
-  if (milliseconds !== 1) {
-    resumeBreaksScheduler = new Scheduler(resumeBreaks, milliseconds)
-  }
-  isPaused = true
+  breakPlanner.pause(milliseconds)
   appIcon.setContextMenu(getTrayMenu())
 }
 
 function resumeBreaks () {
-  resumeBreaksScheduler.cancel()
-  isPaused = false
   let nb = breakPlanner.resume()
   if (nb) {
     nb.plan()
@@ -324,7 +313,7 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (!isPaused) {
+  if (breakPlanner == null || !breakPlanner.isPaused) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -350,7 +339,7 @@ function getTrayMenu () {
     }
   }
 
-  if (isPaused) {
+  if (breakPlanner != null && breakPlanner.isPaused) {
     trayMenu.push({
       label: 'Resume',
       click: function () {
@@ -424,37 +413,7 @@ function getTrayMenu () {
 }
 
 function updateToolTip () {
-  let toolTipString = toolTipHeader
-  if (isPaused) {
-    let timeLeft = resumeBreaksScheduler.timeLeft
-    if (timeLeft) {
-      toolTipString += `\nPaused - ${Utils.formatPauseTimeLeft(timeLeft)} till breaks resume\nas regularly scheduled`
-    } else {
-      toolTipString += '\nPaused indefinitely'
-    }
-  } else {
-    let breakType = nextBreakType()
-    if (breakType) {
-      toolTipString += `\n${Utils.formatTillBreak(breakPlanner.scheduler.timeLeft)} to ${breakType}`
-      if (breakType === 'microbreak') {
-        let breakInterval = breakPlanner.settings.get('breakInterval') + 1
-        let breakNumber = breakPlanner.breakNumber % breakInterval
-        toolTipString += `\nNext break following ${breakInterval - breakNumber} more microbreak(s)`
-      }
-    }
-  }
-  appIcon.setToolTip(toolTipString)
-}
-
-function nextBreakType () {
-  if (breakPlanner.scheduler.func === startMicrobreak) {
-    return 'microbreak'
-  }
-  if (breakPlanner.scheduler.func === startBreak) {
-    return 'break'
-  }
-  console.log('Error determining break type')
-  return false
+  appIcon.setToolTip(toolTipHeader + breakPlanner.status)
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {

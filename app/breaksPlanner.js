@@ -1,12 +1,15 @@
 const Scheduler = require('./utils/scheduler')
+const Utils = require('./utils/utils')
 
 class BreaksPlanner {
-  constructor (settings, microbreakFunc, breakFunc) {
+  constructor (settings, microbreakFunc, breakFunc, resumeBreaksFunc) {
     this.settings = settings
     this.microbreakFunc = microbreakFunc
     this.breakFunc = breakFunc
+    this.resumeBreaksFunc = resumeBreaksFunc
     this.breakNumber = 0
     this.scheduler = null
+    this.isPaused = false
   }
 
   get nextBreak () {
@@ -55,18 +58,65 @@ class BreaksPlanner {
     return this.scheduler
   }
 
-  pause () {
+  clear () {
     this.scheduler.cancel()
     this.breakNumber = 0
   }
 
+  pause (milliseconds) {
+    this.clear()
+    this.isPaused = true;
+    if (milliseconds !== 1) {
+      this.scheduler = new Scheduler(this.resumeBreaksFunc, milliseconds)
+      this.scheduler.plan()
+    }
+  }
+
   resume () {
+    this.scheduler.cancel()
+    this.isPaused = false
     return this.nextBreak
   }
 
   reset () {
-    this.pause()
+    this.clear()
     this.resume().plan()
+  }
+
+  get status () {
+    let statusMessage = ""
+    if (this.scheduler) {
+      if (this.isPaused) {
+        let timeLeft = this.scheduler.timeLeft
+        if (timeLeft) {
+          statusMessage += `\nPaused - ${Utils.formatPauseTimeLeft(timeLeft)} till breaks resume\nas regularly scheduled`
+        } else {
+          statusMessage += '\nPaused indefinitely'
+        }
+      } else {
+        let breakType = this.nextBreakType()
+        if (breakType) {
+          statusMessage += `\n${Utils.formatTillBreak(this.scheduler.timeLeft)} to ${breakType}`
+          if (breakType === 'microbreak') {
+            let breakInterval = this.settings.get('breakInterval') + 1
+            let breakNumber = this.breakNumber % breakInterval
+            statusMessage += `\nNext break following ${breakInterval - breakNumber} more microbreak(s)`
+          }
+        }
+      }
+    }
+    return statusMessage
+  }
+
+  nextBreakType () {
+    if (this.scheduler.func === this.microbreakFunc) {
+      return 'microbreak'
+    }
+    if (this.scheduler.func === this.breakFunc) {
+      return 'break'
+    }
+    console.log('Error determining break type')
+    return false
   }
 }
 
