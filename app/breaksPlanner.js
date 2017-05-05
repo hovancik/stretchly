@@ -65,7 +65,7 @@ class BreaksPlanner {
 
   pause (milliseconds) {
     this.clear()
-    this.isPaused = true;
+    this.isPaused = true
     if (milliseconds !== 1) {
       this.scheduler = new Scheduler(this.resumeBreaksFunc, milliseconds)
       this.scheduler.plan()
@@ -84,7 +84,7 @@ class BreaksPlanner {
   }
 
   get status () {
-    let statusMessage = ""
+    let statusMessage = ''
     if (this.scheduler) {
       if (this.isPaused) {
         let timeLeft = this.scheduler.timeLeft
