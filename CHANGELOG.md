@@ -6,10 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Time till next break/breaks resume if paused shown in tooltip
+- Tooltip shows information about:
+  - time left till next (micro)break
+  - time left in pause till breaks resume
+  - number of microbreaks until next break
 
 ### Fixed
 - version checker erroneous 'a new version is available' messages
+- Run breaks after resetting breaks
+- Scheduler timeLeft based on actual setTimeout start time
 
 ### Changed
 - do not play sound on Pause when break is in progress
