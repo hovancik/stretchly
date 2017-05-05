@@ -24,7 +24,7 @@ describe('Utils', function () {
   })
 
   it('formats time left till next break into correct format', function () {
-    Utils.formatTillBreak(15 * 1000).should.equal('~15s')    
+    Utils.formatTillBreak(15 * 1000).should.equal('~15s')
     Utils.formatTillBreak(27.4 * 1000).should.equal('~25s')
     Utils.formatTillBreak(29.4 * 1000).should.equal('~30s')
     Utils.formatTillBreak(31 * 1000).should.equal('1m')
