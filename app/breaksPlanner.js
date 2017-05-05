@@ -66,7 +66,7 @@ class BreaksPlanner {
 
   reset () {
     this.pause()
-    this.resume()
+    this.resume().plan()
   }
 }
 
