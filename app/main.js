@@ -413,7 +413,11 @@ function getTrayMenu () {
 }
 
 function updateToolTip () {
-  appIcon.setToolTip(toolTipHeader + breakPlanner.status)
+  if (microbreakWin || breakWin) {
+    appIcon.setToolTip(toolTipHeader)
+  } else {    
+    appIcon.setToolTip(toolTipHeader + breakPlanner.status)
+  }
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
