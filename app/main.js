@@ -227,11 +227,11 @@ function loadIdeas () {
 function pauseBreaks (seconds) {
   if (microbreakWin) {
     clearTimeout(finishMicrobreakTimer)
-    finishMicrobreak()
+    finishMicrobreak(false)
   }
   if (breakWin) {
     clearTimeout(finishBreakTimer)
-    finishBreak()
+    finishBreak(false)
   }
   breakPlanner.pause()
   if (seconds !== 1) {
