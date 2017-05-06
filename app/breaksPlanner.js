@@ -7,6 +7,9 @@ class BreaksPlanner {
     this.breakFunc = breakFunc
     this.breakNumber = 0
     this.scheduler = null
+    this.nextBreakDuration = 0
+    this.idleCheckTimer = null
+    this.breakStartIdleTime = 0
   }
 
   get nextBreak () {
@@ -15,16 +18,28 @@ class BreaksPlanner {
     let interval = this.settings.get('microbreakInterval')
     if (!shouldBreak && shouldMicrobreak) {
       this.scheduler = new Scheduler(this.microbreakFunc, interval)
+      this.nextBreakDuration = this.settings.get('microbreakDuration')
     } else if (shouldBreak && !shouldMicrobreak) {
       this.scheduler = new Scheduler(this.breakFunc, interval * (this.settings.get('breakInterval') + 1))
+      this.nextBreakDuration = settings.get('breakDuration')
     } else if (shouldBreak && shouldMicrobreak) {
       this.breakNumber = this.breakNumber + 1
       let breakInterval = this.settings.get('breakInterval') + 1
       if (this.breakNumber % breakInterval === 0) {
         this.scheduler = new Scheduler(this.breakFunc, interval)
+        this.nextBreakDuration = settings.get('breakDuration')
       } else {
         this.scheduler = new Scheduler(this.microbreakFunc, interval)
+        this.nextBreakDuration = this.settings.get('microbreakDuration')
       }
+    }
+    if (this.settings.get('countIdleTime') && !this.idleCheckTimer) {
+      // we need to turn on the idle check timer
+      this.idleCheckTimer = setInterval(this.checkIdleTime.bind(this), 5000)
+      if (!this.getIdleTime) {
+        this.getIdleTime = require('@paulcbetts/system-idle-time').getIdleTime
+      }
+      this.breakStartIdleTime = this.getIdleTime()
     }
     return this.scheduler
   }
@@ -53,6 +68,36 @@ class BreaksPlanner {
     }
     this.scheduler = new Scheduler(this.breakFunc, 100)
     return this.scheduler
+  }
+
+  checkIdleTime () {
+    if (!this.getIdleTime) {
+      return
+    }
+    if (!this.settings.get('countIdleTime')) {
+      clearInterval(this.idleCheckTimer)
+      return
+    }
+    let time = this.getIdleTime()
+    if (time < this.breakStartIdleTime) {
+      // reset idle because user has moved
+      this.breakStartIdleTime = 0
+    }
+    let elapsedTime = Math.min(time - this.breakStartIdleTime, 0)
+    if (elapsedTime >= this.nextBreakDuration) {
+      // time to reset the break
+      console.log("skipping microbreak")
+      if (this.scheduler) {
+        this.scheduler.cancel()
+      }
+      if (elapsedTime >= this.settings.get('breakDuration')) {
+        // we have rested a whole break
+        console.log("skipping a full break")
+        let interval = this.settings.get('microbreakInterval')
+        this.breakNumber += interval - (this.breakNumber % interval)
+      }
+      this.nextBreak.plan()
+    }
   }
 
   pause () {
