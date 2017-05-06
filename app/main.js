@@ -319,7 +319,7 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (breakPlanner == null || !breakPlanner.isPaused) {
+  if (!breakPlanner.isPaused) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -347,7 +347,7 @@ function getTrayMenu () {
     }
   }
 
-  if (breakPlanner != null && breakPlanner.isPaused) {
+  if (breakPlanner.isPaused) {
     trayMenu.push({
       label: 'Resume',
       click: function () {
