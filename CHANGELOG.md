@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - version checker erroneous 'a new version is available' messages
+
+### Changed
 - do not play sound on Pause when break is in progress
+- cosmetic style changes
 
 ## [0.8.1] - 2017-04-15
 ### Fixed
