@@ -37,7 +37,6 @@ class BreaksPlanner {
     }
     if (this.settings.get('countIdleTime') && !this.idleCheckTimer) {
       // we need to turn on the idle check timer
-      console.log('setting up to check idle time');
       this.idleCheckTimer = setInterval(this.checkIdleTime.bind(this), 5000)
       if (!this.getIdleTime) {
         this.getIdleTime = require('@paulcbetts/system-idle-time').getIdleTime
