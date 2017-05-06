@@ -70,6 +70,8 @@ You can create installer by running `npm run pack` or `npm run dist` after `npm 
 
 To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply do `npm start` to start *stretchly*.
 
+If the process fails to load native modules, run `./node_modules/.bin/electron-rebuild` to rebuild the native modules using Electron's Node version.
+
 It should run on any electron supported platform. Tested on OS X, Windows and Ubuntu Linux.
 
 ### Linux note
