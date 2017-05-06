@@ -110,6 +110,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Martina Mocinecova, (*stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 - Alex Alekseyenko, @alexalekseyenko
+- Michael Ekstrand, @mdekstrand
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns

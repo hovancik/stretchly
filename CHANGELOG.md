@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- support for monitoring system idle time for natural breaks (disabled by default)
+
 ### Fixed
 - version checker erroneous 'a new version is available' messages
 
