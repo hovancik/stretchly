@@ -94,5 +94,8 @@
       "fetch",
       "Notification"
     ]
+  },
+  "dependencies": {
+    "@paulcbetts/system-idle-time": "^1.0.4"
   }
 }
