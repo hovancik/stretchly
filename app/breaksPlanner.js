@@ -9,7 +9,9 @@ class BreaksPlanner {
     this.scheduler = null
     this.nextBreakDuration = 0
     this.idleCheckTimer = null
-    this.breakStartIdleTime = 0
+    this.scheduleStartIdleTime = 0
+    this.inNaturalBreak = false
+    this.lastIdleTime = 0
   }
 
   get nextBreak () {
@@ -42,7 +44,7 @@ class BreaksPlanner {
       }
     }
     if (this.getIdleTime) {
-      this.breakStartIdleTime = this.getIdleTime()
+      this.scheduleStartIdleTime = this.getIdleTime()
     }
     return this.scheduler
   }
@@ -82,27 +84,32 @@ class BreaksPlanner {
       return
     }
     let time = this.getIdleTime()
-    console.log('idle for %s ms', time)
-    if (time < this.breakStartIdleTime) {
-      // reset idle because user has moved
-      this.breakStartIdleTime = 0
+    if (time < this.scheduleStartIdleTime) {
+      // user has moved in this wait-for-break
+      this.scheduleStartIdleTime = 0
     }
-    console.log('break start at %s', this.breakStartIdleTime)
-    let elapsedTime = Math.max(time - this.breakStartIdleTime, 0)
-    if (elapsedTime >= this.nextBreakDuration) {
-      // time to reset the break
-      console.log("skipping microbreak")
+    let elapsedTime = Math.max(time - this.scheduleStartIdleTime, 0)
+    if (elapsedTime >= this.settings.get('breakDuration') && !this.inNaturalBreak) {
+      // we have rested a whole break
+      let interval = this.settings.get('microbreakInterval')
+      this.breakNumber += interval - (this.breakNumber % interval)
+    }
+    if (elapsedTime >= this.nextBreakDuration && !this.inNaturalBreak) {
+      // time to skip the break or microbreak
       if (this.scheduler) {
         this.scheduler.cancel()
+        this.inNaturalBreak = true
       }
-      if (elapsedTime >= this.settings.get('breakDuration')) {
-        // we have rested a whole break
-        console.log("skipping a full break")
-        let interval = this.settings.get('microbreakInterval')
-        this.breakNumber += interval - (this.breakNumber % interval)
-      }
-      this.nextBreak.plan()
     }
+    if (time < this.lastIdleTime) {
+      // the user moved
+      if (this.inNaturalBreak) {
+         // schedule the break
+         this.nextBreak.plan()
+         this.inNaturalBreak = false
+      }
+    }
+    this.lastIdleTime = time
   }
 
   pause () {
