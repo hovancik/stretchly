@@ -18,7 +18,6 @@ let settingsWin = null
 let finishMicrobreakTimer
 let finishBreakTimer
 let settings
-let toolTipUpdater
 let toolTipHeader = 'stretchly - break time reminder app'
 
 global.shared = {
@@ -68,7 +67,7 @@ function createTrayIcon () {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
   appIcon.setContextMenu(getTrayMenu())
-  toolTipUpdater = setInterval(updateToolTip, 10000)
+  setInterval(updateToolTip, 10000)
 }
 
 function startProcessWin () {
