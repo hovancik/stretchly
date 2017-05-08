@@ -1,11 +1,13 @@
 const chai = require('chai')
 const path = require('path')
+const fs = require('fs')
 // Actual Test Imports
 const Settings = require('./../app/utils/settings')
 const defaultSettings = require('./../app/utils/defaultSettings')
 
 const testFileLocation = path.join(__dirname, 'testFile')
 const testMissingFileLocation = path.join(__dirname, 'test-missing.json')
+const testMissingFileCopyLocation = path.join(__dirname, 'test-missing-copy.json')
 
 chai.should()
 
@@ -20,7 +22,10 @@ describe('Settings', () => {
   })
 
   it('should load missing settings', () => {
-    settings = new Settings(testMissingFileLocation)
+    const testData = fs.readFileSync(testMissingFileLocation)
+    fs.writeFileSync(testMissingFileCopyLocation, testData)
+    // we create copy to not worry about git changes to `test-missing.json`
+    settings = new Settings(testMissingFileCopyLocation)
     defaultSettings['microbreak'] = false
     settings.data.should.be.deep.equal(defaultSettings)
   })
