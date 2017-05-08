@@ -26,6 +26,8 @@ You can also skip to the next break or microbreak anytime from menu, or reset (r
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png" height="150">
 
+Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.
+
 Microbreaks and breaks can be customized:
 - you can set duration and interval of break
 - you can enable/disable breaks
