@@ -5,12 +5,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Tooltip shows information about:
+  - time left till next (micro)break
+  - time left in pause till breaks resume
+  - number of microbreaks until next break
+
 ### Fixed
 - version checker erroneous 'a new version is available' messages
+- Run breaks after resetting breaks
+- Scheduler timeLeft based on actual setTimeout start time
 
 ### Changed
 - do not play sound on Pause when break is in progress
 - cosmetic style changes
+- do not hide macOS dock icon, so we can have tray tooltip
 
 ## [0.8.1] - 2017-04-15
 ### Fixed

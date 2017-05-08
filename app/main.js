@@ -17,9 +17,8 @@ let aboutWin = null
 let settingsWin = null
 let finishMicrobreakTimer
 let finishBreakTimer
-let resumeBreaksTimer
 let settings
-let isPaused = false
+let toolTipHeader = 'stretchly - break time reminder app'
 
 global.shared = {
   isNewVersion: false
@@ -63,13 +62,11 @@ function createTrayIcon () {
   const iconFolder = path.join(__dirname, 'images')
   if (process.platform === 'darwin') {
     appIcon = new Tray(iconFolder + '/trayTemplate.png')
-    app.dock.hide()
   } else {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
-  appIcon.setToolTip('stretchly - break time reminder app')
-  isPaused = false
   appIcon.setContextMenu(getTrayMenu())
+  setInterval(updateToolTip, 10000)
 }
 
 function startProcessWin () {
@@ -125,6 +122,7 @@ function startMicrobreak () {
     microbreakWin.show()
     finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
   })
+  updateToolTip()
 }
 
 function startBreak () {
@@ -160,6 +158,7 @@ function startBreak () {
     breakWin.show()
     finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))
   })
+  updateToolTip()
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
@@ -177,6 +176,7 @@ function finishMicrobreak (shouldPlaySound = true) {
     microbreakWin = null
     breakPlanner.nextBreak.plan()
   }
+  updateToolTip()
 }
 
 function finishBreak (shouldPlaySound = true) {
@@ -194,6 +194,7 @@ function finishBreak (shouldPlaySound = true) {
     breakWin = null
     breakPlanner.nextBreak.plan()
   }
+  updateToolTip()
 }
 
 function planBreak () {
@@ -207,7 +208,7 @@ function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
-  breakPlanner = new BreaksPlanner(settings, startMicrobreak, startBreak)
+  breakPlanner = new BreaksPlanner(settings, startMicrobreak, startBreak, resumeBreaks)
 }
 
 function loadIdeas () {
@@ -224,7 +225,7 @@ function loadIdeas () {
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
 }
 
-function pauseBreaks (seconds) {
+function pauseBreaks (milliseconds) {
   if (microbreakWin) {
     clearTimeout(finishMicrobreakTimer)
     finishMicrobreak(false)
@@ -233,22 +234,18 @@ function pauseBreaks (seconds) {
     clearTimeout(finishBreakTimer)
     finishBreak(false)
   }
-  breakPlanner.pause()
-  if (seconds !== 1) {
-    resumeBreaksTimer = setTimeout(resumeBreaks, seconds)
-  }
-  isPaused = true
+  breakPlanner.pause(milliseconds)
   appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
 }
 
 function resumeBreaks () {
-  clearTimeout(resumeBreaksTimer)
-  isPaused = false
   let nb = breakPlanner.resume()
   if (nb) {
     nb.plan()
     appIcon.setContextMenu(getTrayMenu())
     processWin.webContents.send('showNotification', 'Resuming breaks')
+    updateToolTip()
   }
 }
 
@@ -320,13 +317,14 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (!isPaused) {
+  if (!breakPlanner.isPaused) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
         label: 'microbreak',
         click: function () {
           breakPlanner.skipToMicrobreak().plan()
+          updateToolTip()
         }
       }])
     }
@@ -335,6 +333,7 @@ function getTrayMenu () {
         label: 'break',
         click: function () {
           breakPlanner.skipToBreak().plan()
+          updateToolTip()
         }
       }])
     }
@@ -346,7 +345,7 @@ function getTrayMenu () {
     }
   }
 
-  if (isPaused) {
+  if (breakPlanner.isPaused) {
     trayMenu.push({
       label: 'Resume',
       click: function () {
@@ -383,6 +382,7 @@ function getTrayMenu () {
       label: 'Reset breaks',
       click: function () {
         breakPlanner.reset()
+        updateToolTip()
       }
     })
   }
@@ -417,6 +417,14 @@ function getTrayMenu () {
   })
 
   return Menu.buildFromTemplate(trayMenu)
+}
+
+function updateToolTip () {
+  if (microbreakWin || breakWin) {
+    appIcon.setToolTip(toolTipHeader)
+  } else {
+    appIcon.setToolTip(toolTipHeader + breakPlanner.status)
+  }
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {

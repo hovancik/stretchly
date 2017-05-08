@@ -26,6 +26,8 @@ You can also skip to the next break or microbreak anytime from menu, or reset (r
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png" height="150">
 
+Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.
+
 Microbreaks and breaks can be customized:
 - you can set duration and interval of break
 - you can enable/disable breaks
@@ -94,7 +96,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - [x] sound notification at the end of the break
 - [x] strict mode (can't finish break early)
 - [ ] notification on 2nd instance
-- [ ] information about when will be the next break
+- [x] information about when will be the next break
 - [x] create keyboard shortcuts
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
@@ -108,6 +110,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Martina Mocinecova, (*stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 - Alex Alekseyenko, @alexalekseyenko
+- Sean Manton, @sxmanton
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
