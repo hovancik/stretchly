@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - do not play sound on Pause when break is in progress
 - cosmetic style changes
+- do not hide macOS dock icon, so we can have tray tooltip
 
 ## [0.8.1] - 2017-04-15
 ### Fixed
