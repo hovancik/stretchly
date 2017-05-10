@@ -66,6 +66,7 @@ function createTrayIcon () {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
   appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
   setInterval(updateToolTip, 10000)
 }
 
