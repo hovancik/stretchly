@@ -58,8 +58,6 @@ const settingsFile = `${dir}/config.json`
 In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
 `breakIdeas` and `microbreakIdeas`.
 
-
-
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).
@@ -81,6 +79,9 @@ Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux spec
 
 Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 Before implementing a feature, please open an Issue first, so we can be sure that no-one else is working on it and that the changes will be accepted.
+
+### Known issues
+-  tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
 
 ### TODOs and Ideas
 - [x] tests
