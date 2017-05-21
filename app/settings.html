@@ -8,13 +8,9 @@
     <div class="settings">
       <h2>microbreaks</h2>
       <p>
-        <span id="microbreakDurationMinus" class="pointer">-</span>
-        <span id="microbreakDuration"></span>
-        <span id="microbreakDurationPlus" class="pointer">+</span>
+        <input type="number" id="microbreakDuration" min="0" max="59" step="1" value=30>
         seconds break every
-        <span id="microbreakIntervalMinus" class="pointer">-</span>
-        <span id="microbreakInterval"></span>
-        <span id="microbreakIntervalPlus" class="pointer">+</span>
+        <input type="number" id="microbreakInterval" min="0" max="59" step="1" value=5>
         minutes
         <span class="strict">
           <br/>don't let me skip microbreaks
@@ -23,13 +19,9 @@
       </p>
       <h2>breaks</h2>
       <p>
-        <span id="breakDurationMinus" class="pointer">-</span>
-        <span id="breakDuration"></span>
-        <span id="breakDurationPlus" class="pointer">+</span>
+        <input type="number" id="breakDuration" min="0" max="59" step="1" value=5>
         minutes break after
-        <span id="breakIntervalMinus" class="pointer">-</span>
-        <span id="breakInterval"></span>
-        <span id="breakIntervalPlus" class="pointer">+</span>
+        <input type="number" id="breakInterval" min="0" max="59" step="1" value=5>
         microbreaks <br/>
         <small>(every <span id="realBreakInterval" ></span> minutes)</small>
         <span class="strict">
