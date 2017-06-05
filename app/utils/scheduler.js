@@ -1,14 +1,14 @@
 // Schedule event to occur after delay
 class Scheduler {
-  constructor (func, delay) {
+  constructor (func, delay, reference = null) {
     this.timer = null
     this.delay = delay
     this.func = func
-    this.cleared = false
+    this.reference = reference
   }
 
   get timeLeft () {
-    if (this.cleared) return false
+    if (this.timer === null) return false
     return this.now + this.delay - Date.now()
   }
 
@@ -19,7 +19,9 @@ class Scheduler {
 
   cancel () {
     clearTimeout(this.timer)
-    this.cleared = true
+    this.timer = null
+    this.reference = null
+    this.func = null
   }
 }
 

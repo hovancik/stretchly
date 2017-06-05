@@ -15,8 +15,6 @@ let microbreakWin = null
 let breakWin = null
 let aboutWin = null
 let settingsWin = null
-let finishMicrobreakTimer
-let finishBreakTimer
 let settings
 let toolTipHeader = 'stretchly - break time reminder app'
 
@@ -26,7 +24,6 @@ global.shared = {
 
 app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
-app.on('ready', planBreak)
 app.on('ready', createTrayIcon)
 
 app.on('window-all-closed', () => {
@@ -121,7 +118,7 @@ function startMicrobreak () {
     microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
     microbreakWin.setAlwaysOnTop(true)
     microbreakWin.show()
-    finishMicrobreakTimer = setTimeout(finishMicrobreak, settings.get('microbreakDuration'))
+    breakPlanner.emit('microbreakStarted', true)
   })
   updateToolTip()
 }
@@ -157,14 +154,13 @@ function startBreak () {
     breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
     breakWin.setAlwaysOnTop(true)
     breakWin.show()
-    finishBreakTimer = setTimeout(finishBreak, settings.get('breakDuration'))
+    breakPlanner.emit('breakStarted', true)
   })
   updateToolTip()
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
   globalShortcut.unregister('CommandOrControl+X')
-  clearTimeout(finishMicrobreakTimer)
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
@@ -175,14 +171,13 @@ function finishMicrobreak (shouldPlaySound = true) {
     }
     microbreakWin.close()
     microbreakWin = null
-    breakPlanner.nextBreak.plan()
+    breakPlanner.nextBreak()
   }
   updateToolTip()
 }
 
 function finishBreak (shouldPlaySound = true) {
   globalShortcut.unregister('CommandOrControl+X')
-  clearTimeout(finishBreakTimer)
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
@@ -193,23 +188,22 @@ function finishBreak (shouldPlaySound = true) {
     }
     breakWin.close()
     breakWin = null
-    breakPlanner.nextBreak.plan()
+    breakPlanner.nextBreak()
   }
   updateToolTip()
-}
-
-function planBreak () {
-  let nb = breakPlanner.nextBreak
-  if (nb) {
-    nb.plan()
-  }
 }
 
 function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
-  breakPlanner = new BreaksPlanner(settings, startMicrobreak, startBreak, resumeBreaks)
+  breakPlanner = new BreaksPlanner(settings)
+  breakPlanner.nextBreak() // plan first break
+  breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
+  breakPlanner.on('finishMicrobreak', (shouldPlaySound) => { finishMicrobreak(shouldPlaySound) })
+  breakPlanner.on('startBreak', () => { startBreak() })
+  breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
+  breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
 }
 
 function loadIdeas () {
@@ -228,11 +222,9 @@ function loadIdeas () {
 
 function pauseBreaks (milliseconds) {
   if (microbreakWin) {
-    clearTimeout(finishMicrobreakTimer)
     finishMicrobreak(false)
   }
   if (breakWin) {
-    clearTimeout(finishBreakTimer)
     finishBreak(false)
   }
   breakPlanner.pause(milliseconds)
@@ -241,13 +233,10 @@ function pauseBreaks (milliseconds) {
 }
 
 function resumeBreaks () {
-  let nb = breakPlanner.resume()
-  if (nb) {
-    nb.plan()
-    appIcon.setContextMenu(getTrayMenu())
-    processWin.webContents.send('showNotification', 'Resuming breaks')
-    updateToolTip()
-  }
+  breakPlanner.resume()
+  appIcon.setContextMenu(getTrayMenu())
+  processWin.webContents.send('showNotification', 'Resuming breaks')
+  updateToolTip()
 }
 
 function showAboutWindow () {
@@ -324,7 +313,7 @@ function getTrayMenu () {
       submenu = submenu.concat([{
         label: 'microbreak',
         click: function () {
-          breakPlanner.skipToMicrobreak().plan()
+          breakPlanner.skipToMicrobreak()
           updateToolTip()
         }
       }])
@@ -333,7 +322,7 @@ function getTrayMenu () {
       submenu = submenu.concat([{
         label: 'break',
         click: function () {
-          breakPlanner.skipToBreak().plan()
+          breakPlanner.skipToBreak()
           updateToolTip()
         }
       }])
@@ -351,6 +340,7 @@ function getTrayMenu () {
       label: 'Resume',
       click: function () {
         resumeBreaks()
+        updateToolTip()
       }
     })
   } else {
