@@ -12,13 +12,13 @@ class BreaksPlanner extends EventEmitter {
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('microbreakDuration')
-      this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound), interval)
+      this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound), interval, 'finishMicrobreak')
       this.scheduler.plan()
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('breakDuration')
-      this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval)
+      this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval, 'finishBreak')
       this.scheduler.plan()
     })
   }
@@ -29,16 +29,16 @@ class BreaksPlanner extends EventEmitter {
     let shouldMicrobreak = this.settings.get('microbreak')
     let interval = this.settings.get('microbreakInterval')
     if (!shouldBreak && shouldMicrobreak) {
-      this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'microbreak')
+      this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
     } else if (shouldBreak && !shouldMicrobreak) {
-      this.scheduler = new Scheduler(() => this.emit('startBreak'), interval * (this.settings.get('breakInterval') + 1), 'break')
+      this.scheduler = new Scheduler(() => this.emit('startBreak'), interval * (this.settings.get('breakInterval') + 1), 'startBreak')
     } else if (shouldBreak && shouldMicrobreak) {
       this.breakNumber = this.breakNumber + 1
       let breakInterval = this.settings.get('breakInterval') + 1
       if (this.breakNumber % breakInterval === 0) {
-        this.scheduler = new Scheduler(() => this.emit('startBreak'), interval, 'break')
+        this.scheduler = new Scheduler(() => this.emit('startBreak'), interval, 'startBreak')
       } else {
-        this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'microbreak')
+        this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
       }
     }
     this.scheduler.plan()
@@ -54,7 +54,7 @@ class BreaksPlanner extends EventEmitter {
         this.breakNumber = 1
       }
     }
-    this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), 100)
+    this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), 100, 'startMicrobreak')
     this.scheduler.plan()
   }
 
@@ -66,7 +66,7 @@ class BreaksPlanner extends EventEmitter {
       let breakInterval = this.settings.get('breakInterval') + 1
       this.breakNumber = breakInterval
     }
-    this.scheduler = new Scheduler(() => this.emit('startBreak'), 100)
+    this.scheduler = new Scheduler(() => this.emit('startBreak'), 100, 'startBreak')
     this.scheduler.plan()
   }
 
@@ -79,7 +79,7 @@ class BreaksPlanner extends EventEmitter {
     this.clear()
     this.isPaused = true
     if (milliseconds !== 1) {
-      this.scheduler = new Scheduler(() => this.emit('resumeBreaks'), milliseconds)
+      this.scheduler = new Scheduler(() => this.emit('resumeBreaks'), milliseconds, 'resumeBreaks')
       this.scheduler.plan()
     }
   }
@@ -106,7 +106,21 @@ class BreaksPlanner extends EventEmitter {
           statusMessage += '\nPaused indefinitely'
         }
       } else {
-        let breakType = this.scheduler.reference
+        let breakType
+        switch (this.scheduler.reference) {
+          case 'startMicrobreak': {
+            breakType = 'microbreak'
+            break
+          }
+          case 'startBreak': {
+            breakType = 'break'
+            break
+          }
+          default: {
+            breakType = null
+            break
+          }
+        }
         if (breakType) {
           statusMessage += `\n${Utils.formatTillBreak(this.scheduler.timeLeft)} to ${breakType}`
           if (breakType === 'microbreak') {

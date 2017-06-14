@@ -73,6 +73,15 @@ a {
   font-size: 70px;
 }
 
+.debug {
+  padding-top: 40px;
+  font-size: 12px;
+  font-family: monospace;
+  visibility: hidden;
+  text-align: left;
+  opacity: 0.6;
+}
+
 .break-text {
   padding-top: 5%;
 }

@@ -2,6 +2,7 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const path = require('path')
 const AppSettings = require('./utils/settings')
+const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
@@ -449,4 +450,12 @@ ipcMain.on('set-default-settings', function (event, data) {
       settingsWin.webContents.send('renderSettings', settings.data)
     }
   })
+})
+
+ipcMain.on('show-debug', function (event) {
+  let reference = breakPlanner.scheduler.reference
+  let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  const dir = app.getPath('userData')
+  const settingsFile = `${dir}/config.json`
+  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile)
 })
