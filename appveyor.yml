@@ -16,7 +16,7 @@ cache:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm install npm
+  - npm install npm -g
   - .\node_modules\.bin\npm install
   - .\node_modules\.bin\npm install -g istanbul
 

@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- `Ctrl/Cmd + d` shortcut in About window to show debug information
 
 ## [0.9.0] - 2017-05-17
 ### Added

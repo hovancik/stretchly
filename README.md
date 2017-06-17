@@ -80,6 +80,11 @@ Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux spec
 Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 Before implementing a feature, please open an Issue first, so we can be sure that no-one else is working on it and that the changes will be accepted.
 
+### Debugging
+- one can use `Ctrl/Cmd + d` shortcut in About window to show debug information: 
+  - location of settings file
+  - time left and reference of break planner
+
 ### Known issues
 -  tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
 
