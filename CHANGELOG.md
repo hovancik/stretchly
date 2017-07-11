@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - break is not skippable via shortcut in strict mode
 
+### Changed
+- rewrite break management using Events
+
 ## [0.9.0] - 2017-05-17
 ### Added
 - Tooltip shows information about:
