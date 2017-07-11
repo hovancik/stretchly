@@ -97,9 +97,11 @@ function startMicrobreak () {
     console.log('microbreak already running')
     return
   }
-  globalShortcut.register('CommandOrControl+X', () => {
-    finishMicrobreak(false)
-  })
+  if (!settings.get('microbreakStrictMode')) {
+    globalShortcut.register('CommandOrControl+X', () => {
+      finishMicrobreak(false)
+    })
+  }
   const modalPath = path.join('file://', __dirname, 'microbreak.html')
   microbreakWin = new BrowserWindow({
     x: displaysX(),
@@ -133,9 +135,11 @@ function startBreak () {
     console.log('break already running')
     return
   }
-  globalShortcut.register('CommandOrControl+X', () => {
-    finishBreak(false)
-  })
+  if (!settings.get('breakStrictMode')) {
+    globalShortcut.register('CommandOrControl+X', () => {
+      finishBreak(false)
+    })
+  }
   const modalPath = path.join('file://', __dirname, 'break.html')
   breakWin = new BrowserWindow({
     x: displaysX(),
