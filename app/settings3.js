@@ -1,6 +1,7 @@
 const {ipcRenderer} = require('electron')
 
 let eventsAttached = false
+ipcRenderer.send('send-settings')
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())

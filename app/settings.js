@@ -1,6 +1,7 @@
 const {ipcRenderer} = require('electron')
 
 let eventsAttached = false
+ipcRenderer.send('send-settings')
 
 let microbreakIntervalPlus = document.getElementById('microbreakIntervalPlus')
 let microbreakIntervalMinus = document.getElementById('microbreakIntervalMinus')
