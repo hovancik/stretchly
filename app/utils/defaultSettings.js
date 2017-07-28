@@ -10,6 +10,7 @@ module.exports = {
   mainColor: '#478484',
   audio: 'crystal-glass',
   fullscreen: false,
+  dockicon: true,
   useIdeasFromSettings: false,
   breakIdeas: [
     {data: ['Not alone', 'Do you find it hard to take a break alone? Try to do it with a co-worker. Aside from making it easier to stick to breaks, you will have a chance to get to know them better. Taking breaks together increases productivity.'], enabled: true},
