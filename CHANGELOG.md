@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - rewrite break management using Events
+- get active settings when changing Settings window pages
 
 ## [0.9.0] - 2017-05-17
 ### Added

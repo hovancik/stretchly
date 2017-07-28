@@ -278,9 +278,6 @@ function showSettingsWindow () {
   })
   settingsWin.loadURL(modalPath)
   // settingsWin.webContents.openDevTools()
-  settingsWin.webContents.on('did-finish-load', () => {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  })
   settingsWin.on('closed', () => {
     settingsWin = null
   })
@@ -454,6 +451,10 @@ ipcMain.on('set-default-settings', function (event, data) {
       settingsWin.webContents.send('renderSettings', settings.data)
     }
   })
+})
+
+ipcMain.on('send-settings', function (event) {
+  settingsWin.webContents.send('renderSettings', settings.data)
 })
 
 ipcMain.on('show-debug', function (event) {
