@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - `Ctrl/Cmd + d` shortcut in About window to show debug information
+- ability to hide dock icon on macOS (requires restart)
 
 ### Fixed
 - break is not skippable via shortcut in strict mode

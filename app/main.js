@@ -60,6 +60,9 @@ function createTrayIcon () {
   const iconFolder = path.join(__dirname, 'images')
   if (process.platform === 'darwin') {
     appIcon = new Tray(iconFolder + '/trayTemplate.png')
+    if (!settings.get('dockicon')) {
+      app.dock.hide()
+    }
   } else {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }

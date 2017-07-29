@@ -42,16 +42,15 @@ body {
 
 .scheme,
 .enabled,
-.fullscreen {
+.fullscreen,
+.dockicon {
   display: inline-block;
   text-align: center;
-  width: 130px;
   font-size: 20px;
 }
 
-.enabled,
-.fullscreen {
-  width: 300px;
+.scheme {
+  width: 130px;
 }
 
 .color,
