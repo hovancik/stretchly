@@ -106,7 +106,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
 - [ ] history/timeline of breaks
-- [ ] localization support (l12n, gettetxt or so)
+- [ ] localization support (l12n, gettetxt via Crowdin, Weblate or so)
 
 ### Contributors
 *(by date of the first contribution)*
