@@ -17,12 +17,12 @@ cache:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install npm -g
-  - .\node_modules\.bin\npm install
-  - .\node_modules\.bin\npm install -g istanbul
+  - npm install
+  - npm install -g istanbul
 
 test_script:
   - node --version
-  - .\node_modules\.bin\npm --version
+  - npm --version
   - istanbul cover .\node_modules\mocha\bin\_mocha
 
 after_test:
