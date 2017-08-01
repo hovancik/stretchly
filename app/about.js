@@ -9,14 +9,22 @@ document.getElementById('homepage').addEventListener('click', function (e) {
   shell.openExternal('https://hovancik.net/stretchly')
 })
 
-document.getElementById('update').addEventListener('click', function (e) {
+const updateElement = document.getElementById('update')
+
+updateElement.addEventListener('click', function (e) {
   e.preventDefault()
   shell.openExternal('https://github.com/hovancik/stretchly/releases')
 })
 
-new VersionChecker().latest(function (version) {
-  document.getElementById('update').innerHTML = version
-})
+new VersionChecker()
+  .latest()
+  .then(version => {
+    updateElement.innerHTML = version
+  })
+  .catch(exception => {
+    console.error(exception)
+    updateElement.innerHTML = 'Error getting latest version'
+  })
 
 window.addEventListener('keydown', event => {
   if (event.key === 'd' && (event.ctrlKey || event.metaKey)) {

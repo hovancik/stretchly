@@ -10,14 +10,17 @@ ipcRenderer.on('checkVersion', (event, data) => {
   if (remote.getGlobal('shared').isNewVersion) {
     notifyNewVersion()
   } else {
-    new VersionChecker().latest(function (version) {
-      const semantic = /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
-      if (version.match(semantic) && data !== version) {
-        remote.getGlobal('shared').isNewVersion = true
-        ipcRenderer.send('update-tray')
-        notifyNewVersion()
-      }
-    })
+    new VersionChecker()
+      .latest()
+      .then(version => {
+        const semantic = /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
+        if (version.match(semantic) && data !== version) {
+          remote.getGlobal('shared').isNewVersion = true
+          ipcRenderer.send('update-tray')
+          notifyNewVersion()
+        }
+      })
+      .catch(exception => console.error(exception))
   }
 })
 

@@ -13,7 +13,8 @@
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
     "dist": "build --x64 --ia32",
-    "test": "mocha test"
+    "test": "eslint . && mocha test",
+    "tdd": "mocha --watch test"
   },
   "repository": {
     "type": "git",
@@ -36,7 +37,14 @@
     "chai-as-promised": "^7.1.1",
     "electron": "^1.6.11",
     "electron-builder": "^19.17.0",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
     "mocha": "^3.4.2",
+    "sinon": "^2.4.1",
     "spectron": "^3.7.2"
   },
   "build": {
