@@ -1,6 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
-const path = require('path')
 const AppSettings = require('./utils/settings')
 const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
@@ -57,7 +56,7 @@ function displaysY (height = 600) {
 }
 
 function createTrayIcon () {
-  const iconFolder = path.join(__dirname, 'images')
+  const iconFolder = `${__dirname}/images`
   if (process.platform === 'darwin') {
     appIcon = new Tray(iconFolder + '/trayTemplate.png')
     if (!settings.get('dockicon')) {
@@ -72,7 +71,7 @@ function createTrayIcon () {
 }
 
 function startProcessWin () {
-  const modalPath = path.join('file://', __dirname, 'process.html')
+  const modalPath = `file://${__dirname}/process.html`
   processWin = new BrowserWindow({
     show: false
   })
@@ -105,7 +104,7 @@ function startMicrobreak () {
       finishMicrobreak(false)
     })
   }
-  const modalPath = path.join('file://', __dirname, 'microbreak.html')
+  const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
@@ -143,7 +142,7 @@ function startBreak () {
       finishBreak(false)
     })
   }
-  const modalPath = path.join('file://', __dirname, 'break.html')
+  const modalPath = `file://${__dirname}/break.html`
   breakWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
@@ -252,7 +251,7 @@ function showAboutWindow () {
     aboutWin.show()
     return
   }
-  const modalPath = path.join('file://', __dirname, 'about.html')
+  const modalPath = `file://${__dirname}/about.html`
   aboutWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
@@ -271,7 +270,7 @@ function showSettingsWindow () {
     settingsWin.show()
     return
   }
-  const modalPath = path.join('file://', __dirname, 'settings.html')
+  const modalPath = `file://${__dirname}/settings.html`
   settingsWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),

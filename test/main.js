@@ -1,7 +1,6 @@
 let Application = require('spectron').Application
 let chai = require('chai')
 let chaiAsPromised = require('chai-as-promised')
-let path = require('path')
 let electronPath = require('electron')
 
 chai.should()
@@ -14,7 +13,7 @@ describe('stretchly', function () {
     this.app = new Application({
       path: electronPath,
       args: [
-        path.join(__dirname, '..', 'app')
+        `${__dirname}/../app`
       ]
     })
     return this.app.start()
