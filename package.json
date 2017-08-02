@@ -13,7 +13,7 @@
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
     "dist": "build --x64 --ia32",
-    "test": "eslint . && mocha test",
+    "test": "mocha test",
     "tdd": "mocha --watch test"
   },
   "repository": {
