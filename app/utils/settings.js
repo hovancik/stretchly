@@ -10,7 +10,7 @@ class Settings {
     if (fs.existsSync(this.settingsFile)) {
       this._load()
       if (Object.keys(this.data).length !== Object.keys(defaultSettings).length) {
-        this._loadMissing()
+        this._load_missing()
       }
     } else {
       this.data = defaultSettings
@@ -44,7 +44,7 @@ class Settings {
     }
   }
 
-  _loadMissing () {
+  _load_missing () {
     for (let prop in defaultSettings) {
       this.get(prop)
     }

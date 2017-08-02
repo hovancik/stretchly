@@ -4,10 +4,20 @@ const VersionChecker = require('../app/utils/versionChecker')
 
 describe('VersionChecker', () => {
   describe('latest', () => {
+    let sandbox
+
+    beforeEach(() => {
+      sandbox = sinon.sandbox.create();
+    });
+
+    afterEach(() => {
+      sandbox.restore()
+    })
+
     it('fetches tag name', (done) => {
       const tagName = 'tag name'
       const body = 'body'
-      JSON.parse = sinon.stub().returns({ tag_name: tagName })
+      sandbox.stub(JSON, 'parse').returns({ tag_name: tagName })
       const response = {
         text: sinon.stub().returns(Promise.resolve(body))
       }
