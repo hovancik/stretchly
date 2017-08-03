@@ -7,8 +7,8 @@ describe('VersionChecker', () => {
     let sandbox
 
     beforeEach(() => {
-      sandbox = sinon.sandbox.create();
-    });
+      sandbox = sinon.sandbox.create()
+    })
 
     afterEach(() => {
       sandbox.restore()
