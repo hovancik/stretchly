@@ -116,6 +116,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 - Alex Alekseyenko, @alexalekseyenko
 - Sean Manton, @sxmanton
+- Yuriy Gromchenko, @gromchen
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns

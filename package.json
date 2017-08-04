@@ -13,7 +13,8 @@
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
     "dist": "build --x64 --ia32",
-    "test": "mocha test"
+    "test": "mocha test",
+    "tdd": "mocha --watch test"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "electron": "^1.6.11",
     "electron-builder": "^19.17.0",
     "mocha": "^3.4.2",
+    "sinon": "^2.4.1",
     "spectron": "^3.7.2"
   },
   "build": {
