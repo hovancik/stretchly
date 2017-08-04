@@ -26,7 +26,7 @@ You can also skip to the next break or microbreak anytime from menu, or reset (r
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png" height="150">
 
-Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume (macOS requires dock icon enabled for this to work).
+Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.
 
 Microbreaks and breaks can be customized:
 - you can set duration and interval of break
@@ -81,7 +81,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 Before implementing a feature, please open an Issue first, so we can be sure that no-one else is working on it and that the changes will be accepted.
 
 ### Debugging
-- one can use `Ctrl/Cmd + d` shortcut in About window to show debug information: 
+- one can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
   - location of settings file
   - time left and reference of break planner
 

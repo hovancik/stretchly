@@ -42,8 +42,7 @@ body {
 
 .scheme,
 .enabled,
-.fullscreen,
-.dockicon {
+.fullscreen {
   display: inline-block;
   text-align: center;
   font-size: 20px;

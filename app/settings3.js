@@ -3,10 +3,6 @@ const {ipcRenderer} = require('electron')
 let eventsAttached = false
 ipcRenderer.send('send-settings')
 
-if (process.platform !== 'darwin') {
-  document.getElementById('dockicon').style.display = 'none'
-}
-
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
 
@@ -28,5 +24,5 @@ ipcRenderer.on('renderSettings', (event, data) => {
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
-  ipcRenderer.send('set-default-settings', ['fullscreen', 'dockicon'])
+  ipcRenderer.send('set-default-settings', ['fullscreen'])
 })

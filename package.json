@@ -66,7 +66,11 @@
       "target": [
         "dmg",
         "zip"
-      ]
+      ],
+      "extendInfo": {
+        "LSBackgroundOnly": 1,
+        "LSUIElement": 1
+      }
     },
     "linux": {
       "target": [
