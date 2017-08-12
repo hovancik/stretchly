@@ -25,6 +25,7 @@ global.shared = {
 app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
+app.on('ready', startPowerMonitoring)
 
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
@@ -39,6 +40,18 @@ let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory)
 if (shouldQuit) {
   console.log('stretchly is already running.')
   app.quit()
+}
+
+function startPowerMonitoring () {
+  const electron = require('electron')
+  electron.powerMonitor.on('suspend', () => {
+    console.log('The system is going to sleep')
+    pauseBreaks(1)
+  })
+  electron.powerMonitor.on('resume', () => {
+    console.log('The system is resuming')
+    resumeBreaks()
+  })
 }
 
 function displaysX (width = 800) {
