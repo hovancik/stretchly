@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "description": "break time reminder app",
   "engines": {
-    "node": "7.4.0"
+    "node": "7.9.0"
   },
   "scripts": {
     "start": "electron ./app --enable-logging --remote-debugging-port=9222",
@@ -34,18 +34,18 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
-    "chai": "^4.1.0",
+    "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
-    "electron": "^1.6.11",
-    "electron-builder": "^19.17.0",
-    "eslint": "^4.4.0",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.20.1",
+    "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "mocha": "^3.4.2",
-    "sinon": "^2.4.1",
+    "mocha": "^3.5.0",
+    "sinon": "^3.2.0",
     "spectron": "^3.7.2"
   },
   "build": {
