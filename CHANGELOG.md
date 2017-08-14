@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - break is not skippable via shortcut in strict mode
 - macOS tooltip works without dock icon (after packaging)
+- close break windows on `Reset breaks`
 
 ### Changed
 - rewrite break management using Events
