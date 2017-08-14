@@ -87,7 +87,7 @@ function startProcessWin () {
     show: false
   })
   processWin.loadURL(modalPath)
-  processWin.webContents.on('did-finish-load', () => {
+  processWin.once('ready-to-show', () => {
     planVersionCheck()
   })
 }
@@ -129,12 +129,12 @@ function startMicrobreak () {
   })
   microbreakWin.loadURL(modalPath)
   // microbreakWin.webContents.openDevTools()
-  microbreakWin.webContents.on('did-finish-load', () => {
+  microbreakWin.once('ready-to-show', () => {
+    microbreakWin.show()
+    breakPlanner.emit('microbreakStarted', true)
     microbreakWin.webContents.send('microbreakIdea', microbreakIdeas.randomElement, settings.get('microbreakStrictMode'))
     microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
     microbreakWin.setAlwaysOnTop(true)
-    microbreakWin.show()
-    breakPlanner.emit('microbreakStarted', true)
   })
   updateToolTip()
 }
@@ -167,12 +167,12 @@ function startBreak () {
   })
   breakWin.loadURL(modalPath)
   // breakWin.webContents.openDevTools()
-  breakWin.webContents.on('did-finish-load', () => {
+  breakWin.once('ready-to-show', () => {
+    breakWin.show()
+    breakPlanner.emit('breakStarted', true)
     breakWin.webContents.send('breakIdea', breakIdeas.randomElement, settings.get('breakStrictMode'))
     breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
     breakWin.setAlwaysOnTop(true)
-    breakWin.show()
-    breakPlanner.emit('breakStarted', true)
   })
   updateToolTip()
 }
