@@ -387,6 +387,14 @@ function getTrayMenu () {
     }, {
       label: 'Reset breaks',
       click: function () {
+        if (microbreakWin) {
+          microbreakWin.close()
+          microbreakWin = null
+        }
+        if (breakWin) {
+          breakWin.close()
+          breakWin = null
+        }
         breakPlanner.reset()
         updateToolTip()
       }
