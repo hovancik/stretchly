@@ -127,7 +127,6 @@ function startMicrobreak () {
     focusable: false,
     title: 'stretchly'
   })
-  microbreakWin.loadURL(modalPath)
   // microbreakWin.webContents.openDevTools()
   microbreakWin.once('ready-to-show', () => {
     microbreakWin.show()
@@ -136,6 +135,7 @@ function startMicrobreak () {
     microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
     microbreakWin.setAlwaysOnTop(true)
   })
+  microbreakWin.loadURL(modalPath)
   updateToolTip()
 }
 
@@ -165,7 +165,6 @@ function startBreak () {
     focusable: false,
     title: 'stretchly'
   })
-  breakWin.loadURL(modalPath)
   // breakWin.webContents.openDevTools()
   breakWin.once('ready-to-show', () => {
     breakWin.show()
@@ -174,6 +173,7 @@ function startBreak () {
     breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
     breakWin.setAlwaysOnTop(true)
   })
+  breakWin.loadURL(modalPath)
   updateToolTip()
 }
 
