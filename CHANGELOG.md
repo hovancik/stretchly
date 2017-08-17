@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - `Ctrl/Cmd + d` shortcut in About window to show debug information
-- ability to hide dock icon on macOS (requires restart)
 - monitoring suspend/resume (alfa, electron has bugs)
+- link to my.stretchly.net in menu
 
 ### Fixed
 - break is not skippable via shortcut in strict mode

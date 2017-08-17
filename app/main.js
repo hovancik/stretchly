@@ -424,6 +424,14 @@ function getTrayMenu () {
   trayMenu.push({
     type: 'separator'
   }, {
+    label: 'Your stretchly',
+    click: function () {
+      let color = settings.get('mainColor').replace('#', '')
+      shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
+    }
+  }, {
+    type: 'separator'
+  }, {
     label: 'Quit stretchly',
     click: function () {
       app.quit()
