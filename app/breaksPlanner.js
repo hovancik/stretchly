@@ -1,6 +1,7 @@
 const Scheduler = require('./utils/scheduler')
 const Utils = require('./utils/utils')
 const EventEmitter = require('events')
+const systemIdleTime = require('@paulcbetts/system-idle-time')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -55,7 +56,7 @@ class BreaksPlanner extends EventEmitter {
       // we need to turn on the idle check timer
       this.idleCheckTimer = setInterval(this.checkIdleTime.bind(this), 5000)
       if (!this.getIdleTime) {
-        this.getIdleTime = require('@paulcbetts/system-idle-time').getIdleTime
+        this.getIdleTime = systemIdleTime.getIdleTime
       }
     }
     if (this.getIdleTime) {
@@ -119,9 +120,9 @@ class BreaksPlanner extends EventEmitter {
     if (time < this.lastIdleTime) {
       // the user moved
       if (this.inNaturalBreak) {
-         // schedule the break
-         this.nextBreak()
-         this.inNaturalBreak = false
+        // schedule the break
+        this.nextBreak()
+        this.inNaturalBreak = false
       }
     }
     this.lastIdleTime = time
