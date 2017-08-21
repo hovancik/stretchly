@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- support for monitoring system idle time for natural breaks (disabled by default)
+
 ## [0.10.0] - 2017-08-18
 ### Added
 - `Ctrl/Cmd + d` shortcut in About window to show debug information
