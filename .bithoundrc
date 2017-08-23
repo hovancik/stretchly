@@ -1,5 +1,10 @@
 {
   "critics": {
     "lint": {"engine": "standard"}
+  },
+  "dependencies": {
+    "unused-ignores": [
+      "@paulcbetts/system-idle-time"
+    ]
   }
 }
