@@ -24,5 +24,5 @@ ipcRenderer.on('renderSettings', (event, data) => {
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
-  ipcRenderer.send('set-default-settings', ['fullscreen'])
+  ipcRenderer.send('set-default-settings', ['fullscreen', 'ideas'])
 })
