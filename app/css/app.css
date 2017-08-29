@@ -41,8 +41,7 @@ body {
 }
 
 .scheme,
-.enabled,
-.fullscreen {
+.enabled {
   display: inline-block;
   text-align: center;
   font-size: 20px;

@@ -129,9 +129,13 @@ function startMicrobreak () {
   })
   // microbreakWin.webContents.openDevTools()
   microbreakWin.once('ready-to-show', () => {
+    let idea = null
+    if (settings.get('ideas')) {
+      idea = microbreakIdeas.randomElement
+    }
     microbreakWin.show()
     breakPlanner.emit('microbreakStarted', true)
-    microbreakWin.webContents.send('microbreakIdea', microbreakIdeas.randomElement, settings.get('microbreakStrictMode'))
+    microbreakWin.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
     microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
     microbreakWin.setAlwaysOnTop(true)
   })
@@ -167,9 +171,13 @@ function startBreak () {
   })
   // breakWin.webContents.openDevTools()
   breakWin.once('ready-to-show', () => {
+    let idea = null
+    if (settings.get('ideas')) {
+      idea = breakIdeas.randomElement
+    }
     breakWin.show()
     breakPlanner.emit('breakStarted', true)
-    breakWin.webContents.send('breakIdea', breakIdeas.randomElement, settings.get('breakStrictMode'))
+    breakWin.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
     breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
     breakWin.setAlwaysOnTop(true)
   })

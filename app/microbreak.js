@@ -12,8 +12,10 @@ ipcRenderer.on('microbreakIdea', (event, message, strictMode) => {
   if (!strictMode) {
     document.getElementById('close').style.visibility = 'visible'
   }
-  let microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
-  microbreakIdea.innerHTML = message
+  if (message) {
+    let microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
+    microbreakIdea.innerHTML = message
+  }
 })
 
 ipcRenderer.on('progress', (event, started, duration) => {

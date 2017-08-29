@@ -12,10 +12,12 @@ ipcRenderer.on('breakIdea', (event, message, strictMode) => {
   if (!strictMode) {
     document.getElementById('close').style.visibility = 'visible'
   }
-  let breakIdea = document.getElementsByClassName('break-idea')[0]
-  breakIdea.innerHTML = message[0]
-  let breakText = document.getElementsByClassName('break-text')[0]
-  breakText.innerHTML = message[1]
+  if (message) {
+    let breakIdea = document.getElementsByClassName('break-idea')[0]
+    breakIdea.innerHTML = message[0]
+    let breakText = document.getElementsByClassName('break-text')[0]
+    breakText.innerHTML = message[1]
+  }
 })
 
 ipcRenderer.on('progress', (event, started, duration) => {
