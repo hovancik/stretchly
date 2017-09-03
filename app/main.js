@@ -101,6 +101,16 @@ function checkVersion () {
   planVersionCheck(3600 * 5)
 }
 
+function startMicrobreakNotification () {
+  processWin.webContents.send('showNotification', `Microbreak in ${settings.get('breakNotificationInterval') / 1000} seconds...`)
+  breakPlanner.nextBreakAfterNotification('startMicrobreak')
+}
+
+function startBreakNotification () {
+  processWin.webContents.send('showNotification', `Break in ${settings.get('breakNotificationInterval') / 1000} seconds...`)
+  breakPlanner.nextBreakAfterNotification('startBreak')
+}
+
 function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
@@ -225,6 +235,8 @@ function loadSettings () {
   settings = new AppSettings(settingsFile)
   breakPlanner = new BreaksPlanner(settings)
   breakPlanner.nextBreak() // plan first break
+  breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
+  breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
   breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
   breakPlanner.on('finishMicrobreak', (shouldPlaySound) => { finishMicrobreak(shouldPlaySound) })
   breakPlanner.on('startBreak', () => { startBreak() })

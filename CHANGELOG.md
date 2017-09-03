@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - option to not show break ideas
+- option to show notification 30 seconds before break starts
 
 ## [0.10.0] - 2017-08-18
 ### Added
