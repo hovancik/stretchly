@@ -13,10 +13,14 @@ By default, it runs in your tray and shows reminder window every 10 minutes, tha
 
 Every 30 minutes, it shows window containing idea for longer 5 minute break.
 
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
+
+User gets notified 30 seconds before breaks to be able to prepare to pause the work.
+
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-notification.png" height="90">
+
 You can finish break or microbreak early, by clicking the link at the bottom
 or by using `Ctrl/Cmd + x` keyboard shortcut (when not in strict mode).
-
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
 You can pause/resume reminding of breaks. On Windows and macOS, you can set app to start at login.
 
@@ -28,11 +32,12 @@ You can also skip to the next break or microbreak anytime from menu, or reset (r
 
 Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.
 
+<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-3.png" height="90">
+
 Microbreaks and breaks can be customized:
 - you can set duration and interval of break
 - you can enable/disable breaks
 - you can enable/disable strict mode (breaks can't be finished early)
-- you can set break window to be fullscreen
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-1.png" height="340">
 
@@ -41,9 +46,13 @@ Microbreaks and breaks can be customized:
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-2.png" height="340">
 
-All settings can be reset to defaults.
+- you can set break window to be fullscreen
+- you can disable showing of break ideas
+- you can disable showing of break notifications
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
+
+All settings can be reset to defaults.
 
 ### Advanced settings
 All settings are saved in JSON file. To learn more about how to find it, read [this](https://github.com/electron/electron/blob/master/docs/api/app.md#appgetpathname).
@@ -57,6 +66,9 @@ const settingsFile = `${dir}/config.json`
 #### Editing break/microbreak ideas
 In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
 `breakIdeas` and `microbreakIdeas`.
+
+#### Editing break/microbreak notification interval
+In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds.
 
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
