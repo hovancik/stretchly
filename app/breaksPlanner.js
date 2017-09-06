@@ -28,19 +28,44 @@ class BreaksPlanner extends EventEmitter {
     let shouldBreak = this.settings.get('break')
     let shouldMicrobreak = this.settings.get('microbreak')
     let interval = this.settings.get('microbreakInterval')
+    let breakNotification = this.settings.get('breakNotification')
+    let breakNotificationInterval = this.settings.get('breakNotificationInterval')
     if (!shouldBreak && shouldMicrobreak) {
-      this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
+      if (breakNotification) {
+        this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - breakNotificationInterval, 'startMicrobreakNotification')
+      } else {
+        this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
+      }
     } else if (shouldBreak && !shouldMicrobreak) {
-      this.scheduler = new Scheduler(() => this.emit('startBreak'), interval * (this.settings.get('breakInterval') + 1), 'startBreak')
+      if (breakNotification) {
+        this.scheduler = new Scheduler(() => this.emit('startBreakNotification'), interval * (this.settings.get('breakInterval') + 1) - breakNotificationInterval, 'startBreakNotification')
+      } else {
+        this.scheduler = new Scheduler(() => this.emit('startBreak'), interval * (this.settings.get('breakInterval') + 1), 'startBreak')
+      }
     } else if (shouldBreak && shouldMicrobreak) {
       this.breakNumber = this.breakNumber + 1
       let breakInterval = this.settings.get('breakInterval') + 1
       if (this.breakNumber % breakInterval === 0) {
-        this.scheduler = new Scheduler(() => this.emit('startBreak'), interval, 'startBreak')
+        if (breakNotification) {
+          this.scheduler = new Scheduler(() => this.emit('startBreakNotification'), interval - breakNotificationInterval, 'startBreakNotification')
+        } else {
+          this.scheduler = new Scheduler(() => this.emit('startBreak'), interval, 'startBreak')
+        }
       } else {
-        this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
+        if (breakNotification) {
+          this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - breakNotificationInterval, 'startMicrobreakNotification')
+        } else {
+          this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
+        }
       }
     }
+    this.scheduler.plan()
+  }
+
+  nextBreakAfterNotification (name) {
+    if (this.scheduler) this.scheduler.cancel()
+    let breakNotificationInterval = this.settings.get('breakNotificationInterval')
+    this.scheduler = new Scheduler(() => this.emit(name), breakNotificationInterval, name)
     this.scheduler.plan()
   }
 
@@ -107,6 +132,7 @@ class BreaksPlanner extends EventEmitter {
         }
       } else {
         let breakType
+        let breakNotification = false
         switch (this.scheduler.reference) {
           case 'startMicrobreak': {
             breakType = 'microbreak'
@@ -116,13 +142,29 @@ class BreaksPlanner extends EventEmitter {
             breakType = 'break'
             break
           }
+          case 'startMicrobreakNotification': {
+            breakType = 'microbreak'
+            breakNotification = true
+            break
+          }
+          case 'startBreakNotification': {
+            breakType = 'break'
+            breakNotification = true
+            break
+          }
           default: {
             breakType = null
             break
           }
         }
         if (breakType) {
-          statusMessage += `\n${Utils.formatTillBreak(this.scheduler.timeLeft)} to ${breakType}`
+          let notificationTime
+          if (breakNotification) {
+            notificationTime = this.settings.get('breakNotificationInterval')
+          } else {
+            notificationTime = 0
+          }
+          statusMessage += `\n${Utils.formatTillBreak(this.scheduler.timeLeft + notificationTime)} to ${breakType}`
           if (breakType === 'microbreak') {
             let breakInterval = this.settings.get('breakInterval') + 1
             let breakNumber = this.breakNumber % breakInterval
