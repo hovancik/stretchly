@@ -18,6 +18,7 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install npm -g
   - npm install
+  - .\node_modules\.bin\electron-rebuild
   - npm install -g istanbul
 
 test_script:
