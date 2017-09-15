@@ -117,6 +117,10 @@ function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
   }
+  if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
+    console.log('in natural break')
+    return
+  }
   // don't start another break if break running
   if (microbreakWin) {
     console.log('microbreak already running')
@@ -158,6 +162,10 @@ function startMicrobreak () {
 function startBreak () {
   if (!breakIdeas) {
     loadIdeas()
+  }
+  if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
+    console.log('in natural break')
+    return
   }
   // don't start another break if break running
   if (breakWin) {
@@ -482,6 +490,9 @@ ipcMain.on('finish-break', function (event, shouldPlaySound) {
 })
 
 ipcMain.on('save-setting', function (event, key, value) {
+  if (key === 'naturalBreaks') {
+    breakPlanner.naturalBreaks(value)
+  }
   settings.set(key, value)
   settingsWin.webContents.send('renderSettings', settings.data)
   appIcon.setContextMenu(getTrayMenu())

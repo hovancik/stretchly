@@ -1,6 +1,7 @@
 const Scheduler = require('./utils/scheduler')
 const Utils = require('./utils/utils')
 const EventEmitter = require('events')
+const NaturalBreaksManager = require('./utils/naturalBreaksManager')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -9,6 +10,7 @@ class BreaksPlanner extends EventEmitter {
     this.breakNumber = 0
     this.scheduler = null
     this.isPaused = false
+    this.naturalBreaksManager = new NaturalBreaksManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('microbreakDuration')
@@ -20,6 +22,18 @@ class BreaksPlanner extends EventEmitter {
       let interval = this.settings.get('breakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval, 'finishBreak')
       this.scheduler.plan()
+    })
+
+    this.naturalBreaksManager.on('clearBreakScheduler', () => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        this.clear()
+      }
+    })
+
+    this.naturalBreaksManager.on('naturalBreakFinished', (idleTime) => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+        this.reset()
+      }
     })
   }
 
@@ -118,6 +132,14 @@ class BreaksPlanner extends EventEmitter {
   reset () {
     this.clear()
     this.resume()
+  }
+
+  naturalBreaks (shouldUse) {
+    if (shouldUse) {
+      this.naturalBreaksManager.start()
+    } else {
+      this.naturalBreaksManager.stop()
+    }
   }
 
   get status () {

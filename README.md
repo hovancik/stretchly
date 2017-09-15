@@ -49,6 +49,7 @@ Microbreaks and breaks can be customized:
 - you can set break window to be fullscreen
 - you can disable showing of break ideas
 - you can disable showing of break notifications
+- you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
 
@@ -86,7 +87,7 @@ It should run on any electron supported platform. Tested on OS X, Windows and Ub
 
 ### Linux note
 Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*.
-
+For Natural breaks, you might need some packages too (`libxss-dev`).
 ## Development
 
 Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.

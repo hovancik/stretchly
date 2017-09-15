@@ -8,14 +8,14 @@
   "scripts": {
     "start": "electron ./app --enable-logging --remote-debugging-port=9222",
     "dev": "NODE_ENV='development' npm run start",
-    "postinstall": "install-app-deps",
+    "postinstall": "electron-builder install-app-deps",
     "pack-all": "build --dir -mwl --x64 --ia32",
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
     "dist": "build --x64 --ia32",
     "test": "mocha test",
     "tdd": "mocha --watch test",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/standard"
   },
   "repository": {
     "type": "git",
@@ -34,19 +34,15 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
+    "babel-eslint": "^8.0.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "electron": "^1.7.6",
     "electron-builder": "^19.27.7",
-    "eslint": "^4.6.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
     "mocha": "^3.5.0",
     "sinon": "^3.2.1",
-    "spectron": "^3.7.2"
+    "spectron": "^3.7.2",
+    "standard": "^10.0.3"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
@@ -99,6 +95,7 @@
     }
   },
   "standard": {
+    "parser": "babel-eslint",
     "globals": [
       "it",
       "describe",
@@ -108,5 +105,8 @@
       "fetch",
       "Notification"
     ]
+  },
+  "dependencies": {
+    "@paulcbetts/system-idle-time": "^1.0.4"
   }
 }
