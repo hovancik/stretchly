@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - error with second instance on Windows  
+- breaks wont resume with indefinite pause after system resume
 
 ## [0.11.0] - 2017-09-09
 ### Added
