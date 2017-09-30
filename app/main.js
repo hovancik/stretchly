@@ -22,15 +22,6 @@ global.shared = {
   isNewVersion: false
 }
 
-app.on('ready', startProcessWin)
-app.on('ready', loadSettings)
-app.on('ready', createTrayIcon)
-app.on('ready', startPowerMonitoring)
-
-app.on('window-all-closed', () => {
-  // do nothing, so app wont get closed
-})
-
 let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
   if (appIcon) {
     // Someone tried to run a second instance
@@ -40,7 +31,17 @@ let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory)
 if (shouldQuit) {
   console.log('stretchly is already running.')
   app.quit()
+  return
 }
+
+app.on('ready', startProcessWin)
+app.on('ready', loadSettings)
+app.on('ready', createTrayIcon)
+app.on('ready', startPowerMonitoring)
+
+app.on('window-all-closed', () => {
+  // do nothing, so app wont get closed
+})
 
 function startPowerMonitoring () {
   const electron = require('electron')
