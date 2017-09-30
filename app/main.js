@@ -17,6 +17,7 @@ let aboutWin = null
 let settingsWin = null
 let settings
 let toolTipHeader = 'stretchly - break time reminder app'
+let isOnIndefinitePause
 
 global.shared = {
   isNewVersion: false
@@ -47,11 +48,11 @@ function startPowerMonitoring () {
   const electron = require('electron')
   electron.powerMonitor.on('suspend', () => {
     console.log('The system is going to sleep')
-    pauseBreaks(1)
+    if (!isOnIndefinitePause) pauseBreaks(1)
   })
   electron.powerMonitor.on('resume', () => {
     console.log('The system is resuming')
-    resumeBreaks()
+    if (!isOnIndefinitePause) resumeBreaks()
   })
 }
 
@@ -259,7 +260,8 @@ function loadIdeas () {
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
 }
 
-function pauseBreaks (milliseconds) {
+function pauseBreaks (milliseconds, keepAfterPowerResume = false) {
+  isOnIndefinitePause = keepAfterPowerResume
   if (microbreakWin) {
     finishMicrobreak(false)
   }
@@ -272,6 +274,7 @@ function pauseBreaks (milliseconds) {
 }
 
 function resumeBreaks () {
+  isOnIndefinitePause = false
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
   processWin.webContents.send('showNotification', 'Resuming breaks')
@@ -401,7 +404,7 @@ function getTrayMenu () {
         }, {
           label: 'indefinitely',
           click: function () {
-            pauseBreaks(1)
+            pauseBreaks(1, true)
           }
         }
       ]
