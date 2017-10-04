@@ -1,5 +1,6 @@
 const {ipcRenderer} = require('electron')
-
+const lang = require('./lang')
+lang.loadsetting3();
 let eventsAttached = false
 ipcRenderer.send('send-settings')
 
@@ -25,4 +26,10 @@ ipcRenderer.on('renderSettings', (event, data) => {
 
 document.getElementById('defaults').addEventListener('click', function (e) {
   ipcRenderer.send('set-default-settings', ['fullscreen', 'ideas', 'breakNotification'])
+})
+
+document.getElementById('Language').addEventListener('click', function (e) {
+  var langsetting = document.getElementById("Language").value;
+  ipcRenderer.send('save-setting', 'lang', langsetting)
+  lang.loadsetting3();
 })

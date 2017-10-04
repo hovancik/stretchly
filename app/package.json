@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hovancik/stretchly/issues"
   },
-  "homepage": "https://hovancik.net/stretchly"
+  "homepage": "https://hovancik.net/stretchly",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13"
+  }
 }

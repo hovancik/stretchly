@@ -1,5 +1,9 @@
 const {ipcRenderer} = require('electron')
 const Utils = require('./utils/utils')
+const lang = require('./lang')
+var langs;
+let eventsAttached = false
+lang.loadbreak()
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())

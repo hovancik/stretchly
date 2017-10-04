@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Settings</title>
+    <title id="settingtitle">Settings</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
@@ -11,13 +12,13 @@
         <span id="microbreakDurationMinus" class="pointer">-</span>
         <span id="microbreakDuration"></span>
         <span id="microbreakDurationPlus" class="pointer">+</span>
-        seconds break every
+        <d id="firsttext">seconds break every</d>
         <span id="microbreakIntervalMinus" class="pointer">-</span>
         <span id="microbreakInterval"></span>
         <span id="microbreakIntervalPlus" class="pointer">+</span>
-        minutes
+        <d id="secondtext">minutes</d>
         <span class="strict">
-          <br/>don't let me skip microbreaks
+          <br/><d id="thtext">don't let me skip microbreaks</d>
           <input type="checkbox" value="microbreakStrictMode" class="enable">
         </span>
       </p>
@@ -26,31 +27,30 @@
         <span id="breakDurationMinus" class="pointer">-</span>
         <span id="breakDuration"></span>
         <span id="breakDurationPlus" class="pointer">+</span>
-        minutes break after
+        <d id="bfirsttext">minutes break after</d>
         <span id="breakIntervalMinus" class="pointer">-</span>
         <span id="breakInterval"></span>
         <span id="breakIntervalPlus" class="pointer">+</span>
         microbreaks <br/>
-        <small>(every <span id="realBreakInterval" ></span> minutes)</small>
+        <small><d id="bevery">(every </d><span id="realBreakInterval" ></span> <d id="bminute">minutes)</d></small>
         <span class="strict">
-          <br/>don't let me skip breaks
+          <br/><d id="bthtext">don't let me skip breaks</d>
           <input type="checkbox" value="breakStrictMode" class="enable">
         </span>
       </p>
       <div>
         <div class="enabled">
           <input type="checkbox" value="microbreak" class="enable">
-          microbreaks enabled
+          <d id="enabledmicrobreak">microbreaks enabled</d>
         </div>
         <div class="enabled">
           <input type="checkbox" value="break" class="enable">
-          breaks enabled
+          <d id="enabledbreak">breaks enabled</d>
         </div>
         <div class="next">
           <a href="settings2.html" title="more settings">&rsaquo;</a>
         </div>
         <div id="defaults" class="pointer">
-          reset to defaults
         </div>
       </div>
     </div>

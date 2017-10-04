@@ -1,5 +1,8 @@
 const {shell, ipcRenderer} = require('electron')
+const lang = require('./lang')
 const VersionChecker = require('./utils/versionChecker')
+lang.loadabout()
+
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())

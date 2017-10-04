@@ -1,32 +1,13 @@
 @font-face {
-  font-family: 'Lato Hairline';
-  src: url('./fonts/Lato-Hairline.ttf') format('truetype'),
-       url('./fonts/Lato-Hairline.woff2') format('woff2'),
-       url('./fonts/Lato-Hairline.woff') format('woff'),
-       url('./fonts/Lato-Hairline.svg#latohairline') format('svg');
-}
-
-@font-face {
-  font-family: 'Lato Thin';
-  src: url('./fonts/Lato-Thin.ttf') format('truetype'),
-       url('./fonts/Lato-Thin.woff2') format('woff2'),
-       url('./fonts/Lato-Thin.woff') format('woff'),
-       url('./fonts/Lato-Thin.svg#latothin') format('svg');
-}
-
-@font-face {
-  font-family: 'Lato Light';
-  src: url('./fonts/Lato-Light.ttf') format('truetype'),
-       url('./fonts/Lato-Light.woff2') format('woff2'),
-       url('./fonts/Lato-Light.woff') format('woff'),
-       url('./fonts/Lato-Light.svg#latolight') format('svg');
+  font-family: 'GenJyuuGothic';
+  src: url('./fonts/GenJyuuGothic-ExtraLight.ttf') format('truetype');
 }
 
 body {
   color: #fff;
   text-align: center;
   font-size: 28px;
-  font-family: 'Lato Hairline'
+  font-family: 'GenJyuuGothic';
 }
 
 .microbreak,
@@ -106,7 +87,7 @@ a {
 
 a {
   color: #fff;
-  font-family: 'Lato Light'
+  font-family: 'GenJyuuGothic';
 }
 
 #close,
@@ -119,7 +100,7 @@ a {
   transform: translateX(-50%);
   font-size: 18px;
   text-decoration: none;
-  font-family: 'Lato Light';
+  font-family: 'GenJyuuGothic';
 }
 
 #close {
@@ -144,6 +125,6 @@ progress {
 .about-stretchly {
   font-size: 18px;
   text-decoration: none;
-  font-family: 'Lato Thin';
+  font-family: 'GenJyuuGothic';
   padding-top: 60px;
 }

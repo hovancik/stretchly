@@ -1,5 +1,6 @@
 const {ipcRenderer} = require('electron')
-
+const lang = require('./lang')
+lang.loadsetting2();
 let eventsAttached = false
 ipcRenderer.send('send-settings')
 
