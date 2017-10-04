@@ -1,0 +1,80 @@
+{
+  "about":[
+    {
+      "adoutsecondtitle":"提醒您在用電腦時記得休息",
+      "aboutmore":"想了解更多關於 stretchly 的運作功能以及如何使用，請造訪 <a href=\"https://hovancik.net/stretchly\" id=\"homepage\">stretchly 首頁</a>.",
+      "aboutupdate":"最新版本："
+    }
+  ],
+  "break":[
+    {
+      "breaktitle":"休息時間到了！",
+      "close":"...恩, 我想繼續工作"
+    }
+  ],
+  "process":[
+    {
+      "newvus": "有新版本可更新！"
+    }
+  ],
+  "microbreakidea":[
+    {
+      "a":"趁這個時間，去喝杯水吧！",
+      "b":"慢慢地欣賞你身邊的事物",
+      "c":"抬起頭來看看上方",
+      "d":"閉上雙眼，做個深呼吸",
+      "e":"慢慢閉上眼睛，放鬆一下",
+      "f":"伸直你的腿，做個伸展",
+      "g":"伸直你的手臂，做個伸展",
+      "h":"檢查一下你的坐姿是否正常",
+      "i":"慢慢地轉動頭部，維持 10 秒",
+      "j":"慢慢地轉動頭部，維持 5 到 10 秒",
+      "k":"站在椅子上，伸展一下身體",
+      "l":"把你的目光，聚集在 20 公尺以外的事物",
+      "m":"休息片刻，在腦中思考你喜歡的事情"
+    }
+  ]
+  ,
+  "setting":[
+    {
+      "settingtitle": "設定",
+      "firsttext": "秒，每",
+      "secondtext": "分鐘",
+      "thtext": "不要讓我跳過 microbreaks",
+      "bfirsttext": "分鐘，每",
+      "bevery": "(每 ",
+      "bminute": "分鐘)",
+      "bthtext": "不要讓我跳過 breaks",
+      "defaults": "回復預設値",
+      "enabledmicrobreak": "停用 microbreak",
+      "enabledbreak": "停用 break"
+    }
+  ],
+  "setting2":[
+    {
+      "setting2title": "設定",
+      "aud": "鈴聲",
+      "ad1": "清脆玻璃",
+      "ad2": "風鈴",
+      "ad3": "踢躂",
+      "ad4": "靜音",
+      "color": "外觀樣式",
+      "c1": "青草綠",
+      "c2": "楓葉紅",
+      "c3": "石墨黑",
+      "c4": "咖啡灰",
+      "c5": "海水藍",
+      "defaults": "回復預設値"
+    }
+  ],
+  "setting3":[
+    {
+      "setting3title": "設定",
+      "other": "其他設定",
+      "o1": "休息時使用全螢幕",
+      "o2": "休息時顯示休閒想法",
+      "o3": "break 前顯示通知",
+      "defaults": "回復預設値"
+    }
+  ]
+}

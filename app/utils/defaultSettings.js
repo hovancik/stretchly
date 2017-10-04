@@ -1,4 +1,5 @@
 module.exports = {
+  lang: "en",
   microbreakDuration: 20000,
   microbreakInterval: 600000,
   breakDuration: 300000,

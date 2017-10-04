@@ -1,0 +1,79 @@
+{
+  "about":[
+    {
+      "adoutsecondtitle":"break time reminder app",
+      "aboutmore":"To learn more about all of stretchly features and about ways how you can help it, visit it's <a href=\"https://hovancik.net/stretchly\" id=\"homepage\">homepage</a>.",
+      "aboutupdate":"latest version:"
+    }
+  ],
+  "break":[
+    {
+      "breaktitle":"Time to take a break!",
+      "close":"...nah, I'll just keep going on"
+    }
+  ],
+  "process":[
+    {
+      "newvus": "New version is available!"
+    }
+  ],
+  "microbreakidea":[
+    {
+      "a":"Go grab a glass of water.",
+      "b":"Slowly look all the way left, then right.",
+      "c":"Slowly look all the way up, then down.",
+      "d":"Close your eyes and take few deep breaths.",
+      "e":"Close your eyes and relax.",
+      "f":"Stretch your legs.",
+      "g":"Stretch your arms.",
+      "h":"Is your sitting pose correct?",
+      "i":"Slowly turn head to side and hold for 10 seconds.",
+      "j":"Slowly turn head to side and hold for 5-10 seconds.",
+      "k":"Stand from chair and stretch.",
+      "l":"Refocus eyes on an object at least 20 meters away.",
+      "m":"Take a moment to think about something you appreciate."
+    }
+  ],
+  "setting":[
+    {
+      "settingtitle": "Settings",
+      "firsttext": "seconds break every",
+      "secondtext": "minutes",
+      "thtext": "don't let me skip microbreaks",
+      "bfirsttext": "minutes break after",
+      "bevery": "(every ",
+      "bminute": "minutes)",
+      "bthtext": "don't let me skip breaks",
+      "defaults": "reset to defaults",
+      "enabledmicrobreak": "microbreaks enabled",
+      "enabledbreak": "breaks enabled"
+    }
+  ],
+  "setting2":[
+    {
+      "setting2title": "Setting",
+      "aud": "audio scheme",
+      "ad1": "crystal glass",
+      "ad2": "wind chime",
+      "ad3": "tic toc",
+      "ad4": "silence",
+      "color": "color scheme",
+      "c1": "green <br/> clouds",
+      "c2": "autumn be blessed",
+      "c3": "graphite <br/>crystal",
+      "c4": "coffee <br/> kisses",
+      "c5": "morning <br/> swim",
+      "defaults": "reset to defaults"
+    }
+  ],
+  "setting3":[
+    {
+      "setting3title": "Setting",
+      "other": "miscellaneous",
+      "o1": "breaks are fullscreen",
+      "o2": "show break ideas",
+      "o3": "notify before break starts",
+      "defaults": "reset to defaults"
+    }
+  ]
+}

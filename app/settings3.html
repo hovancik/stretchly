@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Settings</title>
+    <title id="setting3title">Settings</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
     <div class="settings">
-      <h2>miscellaneous</h2>
+      <h2 id="other">miscellaneous</h2>
       <div class="enabled">
         <input type="checkbox" value="fullscreen" class="enable">
-        breaks are fullscreen
+        <d id="o1">breaks are fullscreen</d>
       </div>
       <div class="enabled">
         <input type="checkbox" value="ideas" class="enable">
-        show break ideas
+        <d id="o2">show break ideas</d>
       </div>
       <div class="enabled">
         <input type="checkbox" value="breakNotification" class="enable">
-        notify before break starts
+        <d id="o3">notify before break starts</d>
+      </div>
+      <br>
+      <div class="enabled">
+        <d id="o4">Language: </d>
+        <select id="Language">
+          <option>Choose a language</option>
+          <option value ="en">English</option>
+          <option value ="ch">正體中文</option>
+        </select>
       </div>
       <div class="previous">
         <a href="settings2.html" title="more settings">&lsaquo;</a>

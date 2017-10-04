@@ -1,6 +1,8 @@
 const {ipcRenderer} = require('electron')
 const Utils = require('./utils/utils')
-
+const lang = require('./lang')
+let eventsAttached = false
+lang.loadmicroidea()
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
 
