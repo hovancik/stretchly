@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - error with second instance on Windows  
 - breaks wont resume with indefinite pause after system resume
 
+### Added
+- monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
+
 ## [0.11.0] - 2017-09-09
 ### Added
 - option to not show break ideas

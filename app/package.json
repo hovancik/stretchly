@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hovancik/stretchly/issues"
   },
-  "homepage": "https://hovancik.net/stretchly"
+  "homepage": "https://hovancik.net/stretchly",
+  "dependencies": {
+    "@paulcbetts/system-idle-time": "^1.0.4"
+  }
 }
