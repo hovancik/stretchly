@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 
+### Changed
+- microbreak notifications are 10 seconds before and can be disabled
+
 ## [0.11.0] - 2017-09-09
 ### Added
 - option to not show break ideas

@@ -104,7 +104,7 @@ function checkVersion () {
 }
 
 function startMicrobreakNotification () {
-  processWin.webContents.send('showNotification', `Microbreak in ${settings.get('breakNotificationInterval') / 1000} seconds...`)
+  processWin.webContents.send('showNotification', `Microbreak in ${settings.get('microbreakNotificationInterval') / 1000} seconds...`)
   breakPlanner.nextBreakAfterNotification('startMicrobreak')
 }
 
