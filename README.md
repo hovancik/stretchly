@@ -48,7 +48,7 @@ Microbreaks and breaks can be customized:
 
 - you can set break window to be fullscreen
 - you can disable showing of break ideas
-- you can disable showing of break notifications
+- you can disable showing of break and microbreak notifications
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
@@ -69,7 +69,7 @@ In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: 
 `breakIdeas` and `microbreakIdeas`.
 
 #### Editing break/microbreak notification interval
-In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds.
+In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Sane goes for microbreak.
 
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 

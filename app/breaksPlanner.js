@@ -44,9 +44,11 @@ class BreaksPlanner extends EventEmitter {
     let interval = this.settings.get('microbreakInterval')
     let breakNotification = this.settings.get('breakNotification')
     let breakNotificationInterval = this.settings.get('breakNotificationInterval')
+    let microbreakNotification = this.settings.get('microbreakNotification')
+    let microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
     if (!shouldBreak && shouldMicrobreak) {
-      if (breakNotification) {
-        this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - breakNotificationInterval, 'startMicrobreakNotification')
+      if (microbreakNotification) {
+        this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
       } else {
         this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
       }
@@ -66,8 +68,8 @@ class BreaksPlanner extends EventEmitter {
           this.scheduler = new Scheduler(() => this.emit('startBreak'), interval, 'startBreak')
         }
       } else {
-        if (breakNotification) {
-          this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - breakNotificationInterval, 'startMicrobreakNotification')
+        if (microbreakNotification) {
+          this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
         } else {
           this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
         }
@@ -78,7 +80,12 @@ class BreaksPlanner extends EventEmitter {
 
   nextBreakAfterNotification (name) {
     if (this.scheduler) this.scheduler.cancel()
-    let breakNotificationInterval = this.settings.get('breakNotificationInterval')
+    let breakNotificationInterval
+    if (name === 'startMicrobreak') {
+      breakNotificationInterval = this.settings.get('microbreakNotificationInterval')
+    } else {
+      breakNotificationInterval = this.settings.get('breakNotificationInterval')
+    }
     this.scheduler = new Scheduler(() => this.emit(name), breakNotificationInterval, name)
     this.scheduler.plan()
   }
