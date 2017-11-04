@@ -351,6 +351,11 @@ function getTrayMenu () {
       showAboutWindow()
     }
   }, {
+    label: 'Become a Patron',
+    click: function () {
+      shell.openExternal('https://www.patreon.com/hovancik')
+    }
+  }, {
     type: 'separator'
   })
 

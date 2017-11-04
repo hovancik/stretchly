@@ -7,6 +7,8 @@
 
 *stretchly* is cross-platform [electron](http://electron.atom.io/) app that reminds you to take breaks when working with computer.
 
+[![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/hovancik)
+
 By default, it runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing idea for microbreak.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-microbreak.png" height="340">
@@ -150,8 +152,3 @@ Sounds used in this application are listed [here](http://freesound.org/people/ho
 
 ## License
 See LICENSE file.
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/hovancik/stretchly/badge.svg?style=beer-square)](https://beerpay.io/hovancik/stretchly)  [![Beerpay](https://beerpay.io/hovancik/stretchly/make-wish.svg?style=flat-square)](https://beerpay.io/hovancik/stretchly?focus=wish)
