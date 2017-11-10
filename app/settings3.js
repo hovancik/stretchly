@@ -1,4 +1,9 @@
 const {ipcRenderer} = require('electron')
+const HtmlTranslate = require('./utils/htmlTranslate')
+
+document.addEventListener('DOMContentLoaded', event => {
+  new HtmlTranslate(document).translate()
+})
 
 let eventsAttached = false
 ipcRenderer.send('send-settings')
@@ -19,11 +24,17 @@ ipcRenderer.on('renderSettings', (event, data) => {
   }
 
   document.body.style.background = data['mainColor']
-
+  document.getElementById('language').value = data['language']
   eventsAttached = true
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
   ipcRenderer.send('set-default-settings', ['fullscreen', 'ideas',
     'breakNotification', 'microbreakNotification', 'naturalBreaks'])
+})
+
+document.getElementById('language').addEventListener('change', function (e) {
+  ipcRenderer.send('change-language', e.target.value)
+  ipcRenderer.send('save-setting', 'language', e.target.value)
+  window.location.reload()
 })

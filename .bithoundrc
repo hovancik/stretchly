@@ -4,7 +4,9 @@
   },
   "dependencies": {
     "unused-ignores": [
-      "@paulcbetts/system-idle-time"
+      "@paulcbetts/system-idle-time",
+      "i18next-node-fs-backend",
+      "i18next"
     ]
   }
 }

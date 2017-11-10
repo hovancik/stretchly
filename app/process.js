@@ -1,6 +1,6 @@
 const {ipcRenderer, shell, remote} = require('electron')
 let VersionChecker = require('./utils/versionChecker')
-
+const i18next = remote.require('i18next')
 ipcRenderer.on('playSound', (event, data) => {
   let audio = new Audio(`audio/${data}.wav`)
   audio.play()
@@ -32,7 +32,7 @@ ipcRenderer.on('showNotification', (event, data) => {
 
 function notifyNewVersion () {
   let notification = new Notification('stretchly', {
-    body: 'New version is available!'
+    body: i18next.t('process.newVersionAvailable')
   })
   notification.onclick = () => shell.openExternal('https://github.com/hovancik/stretchly/releases')
 }

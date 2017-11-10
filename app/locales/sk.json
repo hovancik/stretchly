@@ -1,0 +1,111 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - pamätá si prestávky za vás",
+    "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd...",
+    "breakIn": "Prestávka za {{seconds}} sekúnd...",
+    "resumingBreaks": "Obnovenie prestávok",
+    "aboutStretchly": "O stretchly v{{version}}",
+    "settings": "Nastavenia",
+    "downloadLatestVersion": "Stiahnuť najnovšiu verziu",
+    "about": "O stretchly",
+    "becomePatron": "Stať sa Patrónom",
+    "toBreak": "prestávku",
+    "toMicrobreak": "mikroprestávku",
+    "skipToTheNext": "Preskočiť na ďalšiu",
+    "resume": "Pokračovať v prestávkach",
+    "pause": "Prerušiť prestávky",
+    "forHour": "na hodinu",
+    "for2Hours": "na 2 hodiny",
+    "for5Hours": "na 5 hodín",
+    "indefinitely": "na neurčito",
+    "resetBreaks": "Resetovať prestávky",
+    "settings": "Nastavenia",
+    "startAtLogin": "Spustiť pri štarte",
+    "yourStretchly": "Tvoje stretchly",
+    "quitStretchly": "Ukončiť stretchly",
+    "resetToDefaults": "Obnoviť pôvodné nastavenia",
+    "areYouSure": "Ste si istý, že chcete obnoviť pôvodné nastavenia v tejto sekcii?",
+    "yes": "áno",
+    "no": "nie",
+    "pausedUntil": "\nPrerušené - {{timeLeft}} do normálneho pripomínania prestávok",
+    "pausedIndefinitely": "\nPrerušené na neurčito",
+    "timeToNext": "\n{{timeLeft}} do {{breakType}}",
+    "microbreak": "mikroprestávky",
+    "break": "prestávky",
+    "nextBreakFollowing_0": "\nĎalšia prestávka po {{count}} mikroprestávke",
+    "nextBreakFollowing_1": "\nĎalšia prestávka po {{count}} mikroprestávkach",
+    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach"
+  },
+  "break": {
+    "keepGoing": "...nie, chcem pokračovať",
+    "title": "Čas na prestávku!"
+  },
+  "microbreak": {
+    "keepGoing": "...nie, chcem pokračovať",
+    "title": "Čas na prestávku!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "pamätá si prestávky za vás",
+    "toLearnMoreVisit": "Ak sa chcete dozvedieť viac o stretchly a ako môžte pomôcť, navštívte ",
+    "homepage": "domovskú stránku stretchly",
+    "latestVersion": "najnovšia verzia:"
+  },
+  "settings": {
+    "settings": "Nastavenia",
+    "microbreaks": "mikroprestávky",
+    "secondsEveryBreak": "sekundová prestávka každých",
+    "minutes": "minút",
+    "dontLetMeSkipMicrobreaks": "nedovoliť preskakovanie mikroprestávok",
+    "breaks": "prestávky",
+    "minutesBreakAfter": "minútová prestávka po",
+    "microbreaks2": "prestávkach",
+    "dontLetMeSkipBreaks": "nedovoliť preskakovanie prestávok",
+    "(every": "(každých",
+    "minutes)": "minút)",
+    "microbreaksEnabled": "pripomínať mikroprestávky",
+    "breaksEnabled": "pripomínať prestávky",
+    "resetToDefaults": "obnoviť pôvodné nastavenia"
+  },
+  "settings2": {
+    "settings": "Nastavenia",
+    "audioScheme": "schéma zvukov",
+    "crystalGlass": "sklíčka dotykov",
+    "windChime": "zvonkohra",
+    "ticToc": "tik tak",
+    "silence": "krása ticha",
+    "colorScheme": "farebná schéma",
+    "greenClouds": "piknik <br/> v tráve",
+    "autumnBeBlessed": "jesenná <br/> láska",
+    "graphiteCrystal": "bozky <br/> v tme",
+    "coffeeKisses": "cez kvapky kávy",
+    "morningSwim": "zamrznuté jazero",
+    "resetToDefaults": "obnoviť pôvodné nastavenia"
+  },
+  "settings3": {
+    "settings": "Nastavenia",
+    "miscellaneous": "ďalšie nastavenia",
+    "breaksAreFullscreen": "prestávky cez celú obrazovku",
+    "showBreakIdeas": "ukázať nápady na prestávky",
+    "notifyBeforeBreakStarts": "ukázať notifikáciu pred prestávkami",
+    "notifyBeforeMicrobreakStarts": "ukázať notifikáciu pred mikroprestávkami",
+    "monitorIdleTime": "monitorovať neaktívny čas pre prirodzené prestávky",
+    "language": "jazyk",
+    "resetToDefaults": "obnoviť pôvodné nastavenia"
+  },
+  "utils": {
+    "secondsLeft_0": "{{count}} sekunda do konca",
+    "secondsLeft_1": "{{count}} sekundy do konca",
+    "secondsLeft_2": "{{count}} sekúnd do konca",
+    "minutesLeft_0": "{{count}} minúta do konca",
+    "minutesLeft_1": "{{count}} minúty do konca",
+    "minutesLeft_2": "{{count}} minút do konca",
+    "lessThen1m": "menej ako 1m",
+    "h": "{{hours}}h",
+    "m": "{{minutes}}m",
+    "s": "~{{seconds}}s"
+  },
+  "process": {
+    "newVersionAvailable": "Je dostupná nová vezia!"
+  }
+}

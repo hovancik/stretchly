@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Settings</title>
+    <title data-i18next="settings3.settings"></title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
     <div class="settings">
-      <h2>miscellaneous</h2>
+      <h2 data-i18next="settings3.miscellaneous"></h2>
       <div class="enabled">
         <input type="checkbox" value="fullscreen" class="enable">
-        breaks are fullscreen
+        <span data-i18next="settings3.breaksAreFullscreen"></span>
       </div>
       <div class="enabled">
         <input type="checkbox" value="ideas" class="enable">
-        show break ideas
+        <span data-i18next="settings3.showBreakIdeas"></span>
       </div>
       <div class="enabled">
         <input type="checkbox" value="breakNotification" class="enable">
-        notify before break starts
+        <span data-i18next="settings3.notifyBeforeBreakStarts"></span>
       </div>
       <div class="enabled">
         <input type="checkbox" value="microbreakNotification" class="enable">
-        notify before microbreak starts
+        <span data-i18next="settings3.notifyBeforeMicrobreakStarts"></span>
       </div>
       <div class="enabled">
         <input type="checkbox" value="naturalBreaks" class="enable">
-        monitor system idle time for natural breaks
+        <span data-i18next="settings3.monitorIdleTime"></span>
       </div>
       <div class="previous">
         <a href="settings2.html" title="more settings">&lsaquo;</a>
       </div>
       <div id="defaults" class="pointer">
-        reset to defaults
+        <span data-i18next="settings3.resetToDefaults"></span>
+      </div>
+      <h2 data-i18next="settings3.language"></h2>
+      <div class="">
+        <select name="language" id="language"> <!--Supplement an id here instead of using 'name'-->
+        <option value="en">English</option>
+        <option value="sk" selected>Slovenčina</option>
+      </select>
       </div>
     </div>
     <script>

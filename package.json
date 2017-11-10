@@ -107,6 +107,8 @@
     ]
   },
   "dependencies": {
-    "@paulcbetts/system-idle-time": "^1.0.4"
+    "@paulcbetts/system-idle-time": "^1.0.4",
+    "i18next": "^10.0.7",
+    "i18next-node-fs-backend": "^1.0.0"
   }
 }
