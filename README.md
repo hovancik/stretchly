@@ -52,6 +52,7 @@ Microbreaks and breaks can be customized:
 - you can disable showing of break ideas
 - you can disable showing of break and microbreak notifications
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
+- you can choose language for interface
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
 
@@ -121,7 +122,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - [ ] color-picker for themes
 - [ ] some kind of silent mode (see #44)
 - [ ] history/timeline of breaks
-- [ ] localization support (l12n, gettetxt via Crowdin, Weblate or so)
+- [x] localization support (l12n, gettetxt via Crowdin, Weblate or so)
 
 ### Contributors
 *(by date of the first contribution)*
@@ -132,6 +133,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Alex Alekseyenko, @alexalekseyenko
 - Sean Manton, @sxmanton
 - Yuriy Gromchenko, @gromchen
+- Mael, @laem
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
