@@ -40,7 +40,7 @@
     "title": "Il est temps de faire une grande pause !"
   },
   "microbreak": {
-    "keepGoing": "...nah, I'll just keep going on",
+    "keepGoing": "...non, je vais continuer sans pause",
     "title": "Il est temps de faire une petite pause !"
   },
   "about": {
@@ -96,7 +96,7 @@
     "secondsLeft": "{{count}} seconde restantes",
     "secondsLeft_plural": "{{count}} secondes restantes",
     "minutesLeft": "{{count}} minute restantes",
-    "minutesLeft": "{{count}} minutes restantes",
+    "minutesLeft_plural": "{{count}} minutes restantes",
     "lessThen1m": "moins d'une min",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
