@@ -1,15 +1,10 @@
+const i18next = require('i18next')
+
 let formatRemaining = function (seconds) {
   if (seconds < 60) {
-    return `${seconds + 1} seconds left`
+    return i18next.t('utils.secondsLeft', {count: seconds + 1})
   } else {
-    return `${Math.trunc((seconds / 60) + 1)} minutes left`
-  }
-}
-
-let updateProgress = function (started, duration, progress, progressTime) {
-  if (Date.now() - started < duration) {
-    progress.value = (Date.now() - started) / duration * 10000
-    progressTime.innerHTML = formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
+    return i18next.t('utils.minutesLeft', {count: Math.trunc((seconds / 60) + 1)})
   }
 }
 
@@ -17,9 +12,9 @@ let formatTillBreak = function (milliseconds) {
   let minutes = Math.round(milliseconds / 60000)
   if (minutes < 1) {
     let seconds = Math.round((milliseconds % 60000) / 5000) * 5
-    return `~${seconds}s`
+    return i18next.t('utils.s', {seconds: seconds})
   } else {
-    return `${minutes}m`
+    return i18next.t('utils.m', {minutes: minutes})
   }
 }
 
@@ -33,13 +28,13 @@ let formatPauseTimeLeft = function (milliseconds) {
     hours += 1
   }
   if (hours >= 1) {
-    timeString += `${hours}h`
+    timeString += i18next.t('utils.h', {hours: hours})
   }
   if (minutes >= 1) {
-    timeString += `${minutes}m`
+    timeString += i18next.t('utils.m', {minutes: minutes})
   }
   if (minutes < 1 && hours < 1) {
-    timeString = 'less than 1m'
+    timeString = `${i18next.t('utils.lessThen1m')}`
   }
   return timeString
 }
@@ -47,4 +42,3 @@ let formatPauseTimeLeft = function (milliseconds) {
 module.exports.formatRemaining = formatRemaining
 module.exports.formatTillBreak = formatTillBreak
 module.exports.formatPauseTimeLeft = formatPauseTimeLeft
-module.exports.updateProgress = updateProgress

@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- icons for app windows
+- possibility to have interface translated
+- Slovak translations for interface
+- French translations for interface
 
 ## [0.12.0] - 2017-11-05
 ### Fixed

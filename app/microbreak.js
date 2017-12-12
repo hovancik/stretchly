@@ -1,5 +1,10 @@
-const {ipcRenderer} = require('electron')
-const Utils = require('./utils/utils')
+const {ipcRenderer, remote} = require('electron')
+const Utils = remote.require('./utils/utils')
+const HtmlTranslate = require('./utils/htmlTranslate')
+
+document.addEventListener('DOMContentLoaded', event => {
+  new HtmlTranslate(document).translate()
+})
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
@@ -21,5 +26,10 @@ ipcRenderer.on('microbreakIdea', (event, message, strictMode) => {
 ipcRenderer.on('progress', (event, started, duration) => {
   let progress = document.getElementById('progress')
   let progressTime = document.getElementById('progress-time')
-  window.setInterval(Utils.updateProgress.bind(null, started, duration, progress, progressTime), 10)
+  window.setInterval(function () {
+    if (Date.now() - started < duration) {
+      progress.value = (Date.now() - started) / duration * 10000
+      progressTime.innerHTML = Utils.formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
+    }
+  }, 100)
 })

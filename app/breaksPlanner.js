@@ -1,5 +1,4 @@
 const Scheduler = require('./utils/scheduler')
-const Utils = require('./utils/utils')
 const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
 
@@ -147,62 +146,6 @@ class BreaksPlanner extends EventEmitter {
     } else {
       this.naturalBreaksManager.stop()
     }
-  }
-
-  get status () {
-    let statusMessage = ''
-    if (this.scheduler) {
-      if (this.isPaused) {
-        let timeLeft = this.scheduler.timeLeft
-        if (timeLeft) {
-          statusMessage += `\nPaused - ${Utils.formatPauseTimeLeft(timeLeft)} till breaks resume\nas regularly scheduled`
-        } else {
-          statusMessage += '\nPaused indefinitely'
-        }
-      } else {
-        let breakType
-        let breakNotification = false
-        switch (this.scheduler.reference) {
-          case 'startMicrobreak': {
-            breakType = 'microbreak'
-            break
-          }
-          case 'startBreak': {
-            breakType = 'break'
-            break
-          }
-          case 'startMicrobreakNotification': {
-            breakType = 'microbreak'
-            breakNotification = true
-            break
-          }
-          case 'startBreakNotification': {
-            breakType = 'break'
-            breakNotification = true
-            break
-          }
-          default: {
-            breakType = null
-            break
-          }
-        }
-        if (breakType) {
-          let notificationTime
-          if (breakNotification) {
-            notificationTime = this.settings.get('breakNotificationInterval')
-          } else {
-            notificationTime = 0
-          }
-          statusMessage += `\n${Utils.formatTillBreak(this.scheduler.timeLeft + notificationTime)} to ${breakType}`
-          if (breakType === 'microbreak') {
-            let breakInterval = this.settings.get('breakInterval') + 1
-            let breakNumber = this.breakNumber % breakInterval
-            statusMessage += `\nNext break following ${breakInterval - breakNumber} more microbreak(s)`
-          }
-        }
-      }
-    }
-    return statusMessage
   }
 }
 

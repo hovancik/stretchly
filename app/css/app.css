@@ -147,3 +147,7 @@ progress {
   font-family: 'Lato Thin';
   padding-top: 60px;
 }
+
+select  {
+  padding: 5px 3px 5px 10px;
+}

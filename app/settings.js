@@ -1,4 +1,9 @@
 const {ipcRenderer} = require('electron')
+const HtmlTranslate = require('./utils/htmlTranslate')
+
+document.addEventListener('DOMContentLoaded', event => {
+  new HtmlTranslate(document).translate()
+})
 
 let eventsAttached = false
 ipcRenderer.send('send-settings')

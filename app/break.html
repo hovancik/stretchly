@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Time to take a break!</title>
+    <title data-i18next="microbreak.title"></title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
@@ -11,7 +11,7 @@
       <div class="break-text"></div>
       <progress id='progress' max="10000" ></progress><br/>
       <p id='progress-time'></p>
-      <a id="close" title="Ctrl/Cmd + x">...nah, I'll just keep going on</a>
+      <a id="close" title="Ctrl/Cmd + x" data-i18next="break.keepGoing"></a>
     </div>
     <script>
       require('./break.js')
