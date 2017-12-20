@@ -63,14 +63,18 @@ function startI18next () {
       if (err) {
         console.log(err.stack)
       }
-      updateToolTip()
-      appIcon.setContextMenu(getTrayMenu())
+      if (appIcon) {
+        updateToolTip()
+        appIcon.setContextMenu(getTrayMenu())
+      }
     })
 }
 
 i18next.on('languageChanged', function (lng) {
-  updateToolTip()
-  appIcon.setContextMenu(getTrayMenu())
+  if (appIcon) {
+    updateToolTip()
+    appIcon.setContextMenu(getTrayMenu())
+  }
 })
 
 function startPowerMonitoring () {
