@@ -93,14 +93,14 @@ function displaysX (width = 800) {
   const electron = require('electron')
   let theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   let bounds = theScreen.bounds
-  return bounds.x + ((bounds.width - width) / 2)
+  return Math.ceil(bounds.x + ((bounds.width - width) / 2))
 }
 
 function displaysY (height = 600) {
   const electron = require('electron')
   let theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   let bounds = theScreen.bounds
-  return bounds.y + ((bounds.height - height) / 2)
+  return Math.ceil(bounds.y + ((bounds.height - height) / 2))
 }
 
 function createTrayIcon () {
