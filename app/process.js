@@ -6,7 +6,7 @@ ipcRenderer.on('playSound', (event, data) => {
   audio.play()
 })
 
-ipcRenderer.on('checkVersion', (event, data) => {
+ipcRenderer.on('checkVersion', (event, oldVersion, notify) => {
   if (remote.getGlobal('shared').isNewVersion) {
     notifyNewVersion()
   } else {
@@ -14,10 +14,12 @@ ipcRenderer.on('checkVersion', (event, data) => {
       .latest()
       .then(version => {
         const semantic = /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
-        if (version.match(semantic) && data !== version) {
+        if (version.match(semantic) && oldVersion !== version) {
           remote.getGlobal('shared').isNewVersion = true
           ipcRenderer.send('update-tray')
-          notifyNewVersion()
+          if (notify) {
+            notifyNewVersion()
+          }
         }
       })
       .catch(exception => console.error(exception))

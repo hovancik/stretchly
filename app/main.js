@@ -133,7 +133,7 @@ function planVersionCheck (seconds = 1) {
 }
 
 function checkVersion () {
-  processWin.webContents.send('checkVersion', `v${app.getVersion()}`)
+  processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
   planVersionCheck(3600 * 5)
 }
 

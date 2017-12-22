@@ -74,6 +74,9 @@ In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: 
 #### Editing break/microbreak notification interval
 In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Sane goes for microbreak.
 
+#### New version notification
+In config file, set `notifyNewVersion: false,` to disable showing of new version's notification.
+
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).

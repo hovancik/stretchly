@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - make sure windows offset is integer
 
+### Added
+- allows user to not show new version notification via config file
+
 ## [0.13.0] - 2017-12-20
 ### Added
 - icons for app windows
