@@ -59,12 +59,12 @@
     "dontLetMeSkipMicrobreaks": "nedovoliť preskakovanie mikroprestávok",
     "breaks": "prestávky",
     "minutesBreakAfter": "minútová prestávka po",
-    "microbreaks2": "prestávkach",
+    "microbreaks2": "mikroprestávkach",
     "dontLetMeSkipBreaks": "nedovoliť preskakovanie prestávok",
     "(every": "(každých",
     "minutes)": "minút)",
-    "microbreaksEnabled": "pripomínať mikroprestávky",
-    "breaksEnabled": "pripomínať prestávky",
+    "microbreaksEnabled": "povoliť mikroprestávky",
+    "breaksEnabled": "povoliť prestávky",
     "resetToDefaults": "obnoviť pôvodné nastavenia"
   },
   "settings2": {
@@ -106,6 +106,6 @@
     "s": "~{{seconds}}s"
   },
   "process": {
-    "newVersionAvailable": "Je dostupná nová vezia!"
+    "newVersionAvailable": "Je dostupná nová verzia!"
   }
 }

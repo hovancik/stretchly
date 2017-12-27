@@ -24,7 +24,7 @@
     "yourStretchly": "Your stretchly",
     "quitStretchly": "Quit stretchly",
     "resetToDefaults": "Reset to defaults",
-    "areYouSure": "Are you sure you wanna reset setings on this window to defaults?",
+    "areYouSure": "Are you sure you wanna reset settings on this window to defaults?",
     "yes": "yes",
     "no": "no",
     "pausedUntil": "\nPaused - {{timeLeft}} till breaks resume\nas regularly scheduled",
