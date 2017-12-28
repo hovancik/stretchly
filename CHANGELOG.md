@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - allows user to not show new version notification via config file
 - Czech translations for interface
 
+### Changed
+- texts in windows are not selectable (except debug info)
+
 ## [0.13.0] - 2017-12-20
 ### Added
 - icons for app windows
