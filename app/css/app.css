@@ -26,7 +26,8 @@ body {
   color: #fff;
   text-align: center;
   font-size: 28px;
-  font-family: 'Lato Hairline'
+  font-family: 'Lato Hairline';
+  user-select: none;
 }
 
 .microbreak,
@@ -77,6 +78,7 @@ a {
   visibility: hidden;
   text-align: left;
   opacity: 0.6;
+  user-select: auto;
 }
 
 .break-text {
