@@ -47,7 +47,8 @@
     "breakTimeReminderApp": "break time reminder app",
     "toLearnMoreVisit": "To learn more about all of stretchly features and about ways how you can help it, visit it's",
     "homepage": "homepage",
-    "latestVersion": "the latest version:"
+    "latestVersion": "the latest version:",
+    "checking": "checking..."
   },
   "settings": {
     "settings": "Settings",

@@ -47,7 +47,8 @@
     "breakTimeReminderApp": "application de rappel de pauses",
     "toLearnMoreVisit": "Pour découvrir toutes les fonctionnalités de stretchly et comment vous pouvez contribuer au projet, visitez son",
     "homepage": "site web",
-    "latestVersion": "la dernière version:"
+    "latestVersion": "la dernière version:",
+    "checking": "vérification..."
   },
   "settings": {
     "settings": "Paramètres",
