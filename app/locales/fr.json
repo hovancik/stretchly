@@ -5,7 +5,6 @@
     "breakIn": "Grande pause dans {{seconds}} secondes...",
     "resumingBreaks": "Reprise des pauses",
     "aboutStretchly": "À propos de stretchly v{{version}}",
-    "settings": "Paramètres",
     "downloadLatestVersion": "Télécharger la dernière version",
     "about": "À propos",
     "becomePatron": "Soutenir l'application",
@@ -48,7 +47,8 @@
     "breakTimeReminderApp": "application de rappel de pauses",
     "toLearnMoreVisit": "Pour découvrir toutes les fonctionnalités de stretchly et comment vous pouvez contribuer au projet, visitez son",
     "homepage": "site web",
-    "latestVersion": "la dernière version:"
+    "latestVersion": "la dernière version:",
+    "checking": "vérification..."
   },
   "settings": {
     "settings": "Paramètres",

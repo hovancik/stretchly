@@ -5,7 +5,6 @@
     "breakIn": "Break in {{seconds}} seconds...",
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "About stretchly v{{version}}",
-    "settings": "Settings",
     "downloadLatestVersion": "Download latest version",
     "about": "About",
     "becomePatron": "Become a Patron",
@@ -24,7 +23,7 @@
     "yourStretchly": "Your stretchly",
     "quitStretchly": "Quit stretchly",
     "resetToDefaults": "Reset to defaults",
-    "areYouSure": "Are you sure you wanna reset setings on this window to defaults?",
+    "areYouSure": "Are you sure you wanna reset settings on this window to defaults?",
     "yes": "yes",
     "no": "no",
     "pausedUntil": "\nPaused - {{timeLeft}} till breaks resume\nas regularly scheduled",
@@ -48,7 +47,8 @@
     "breakTimeReminderApp": "break time reminder app",
     "toLearnMoreVisit": "To learn more about all of stretchly features and about ways how you can help it, visit it's",
     "homepage": "homepage",
-    "latestVersion": "the latest version:"
+    "latestVersion": "the latest version:",
+    "checking": "checking..."
   },
   "settings": {
     "settings": "Settings",
