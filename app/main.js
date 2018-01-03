@@ -172,7 +172,6 @@ function startMicrobreak () {
     y: displaysY(),
     frame: false,
     show: false,
-    fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
     skipTaskbar: true,
     focusable: false,
@@ -185,6 +184,7 @@ function startMicrobreak () {
       idea = microbreakIdeas.randomElement
     }
     microbreakWin.show()
+    microbreakWin.setFullScreen(settings.get('fullscreen'))
     breakPlanner.emit('microbreakStarted', true)
     microbreakWin.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
     microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
@@ -219,7 +219,6 @@ function startBreak () {
     y: displaysY(),
     frame: false,
     show: false,
-    fullscreen: settings.get('fullscreen'),
     backgroundColor: settings.get('mainColor'),
     skipTaskbar: true,
     focusable: false,
@@ -232,6 +231,7 @@ function startBreak () {
       idea = breakIdeas.randomElement
     }
     breakWin.show()
+    breakWin.setFullScreen(settings.get('fullscreen'))
     breakPlanner.emit('breakStarted', true)
     breakWin.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
     breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
