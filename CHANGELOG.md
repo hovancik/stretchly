@@ -8,10 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - make sure windows offset is integer
 - minor translations issues
+- macOS fullscreen mode
 
 ### Added
 - allows user to not show new version notification via config file
 - Czech translations for interface
+- Chinese translations for interface
 
 ### Changed
 - texts in windows are not selectable (except debug info)
