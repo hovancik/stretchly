@@ -140,6 +140,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Marian Dolinský, @bramborman
 - midpoint, @midpoint
 - stothew, @stothew
+- Zhivko Kabaivanov, @unholyHub
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
