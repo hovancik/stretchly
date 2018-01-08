@@ -1,0 +1,108 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - приложение за напомняне за почивка",
+    "microbreakIn": "Микропочивка след {{seconds}} секунди...",
+    "breakIn": "Почивка след {{seconds}} секунди...",
+    "resumingBreaks": "Продължи почивките",
+    "aboutStretchly": "Относно stretchly v{{version}}",
+    "downloadLatestVersion": "Изтегли последната версия",
+    "about": "Относно",
+    "becomePatron": "Стани Patron",
+    "toBreak": "почивка",
+    "toMicrobreak": "микропочивка",
+    "skipToTheNext": "Прескочи към следващата",
+    "resume": "Продължи",
+    "pause": "Паузирай",
+    "forHour": "за час",
+    "for2Hours": "за 2 часа",
+    "for5Hours": "за 5 часа",
+    "indefinitely": "за неопределено време",
+    "resetBreaks": "Нулирай почивките",
+    "settings": "Настройки",
+    "startAtLogin": "Стартирай при зареждане на ОС",
+    "yourStretchly": "Твоят stretchly",
+    "quitStretchly": "Изключи stretchly",
+    "resetToDefaults": "Нулирай към настройки по подразбиране",
+    "areYouSure": "Сигурни ли сте, че искате да нулирате настройките на този прозорец към стартовите?",
+    "yes": "да",
+    "no": "не",
+    "pausedUntil": "\nПаузирано - {{timeLeft}} докато почивките не продължат",
+    "pausedIndefinitely": "Паузирано неограничено",
+    "timeToNext": "\n{{timeLeft}} до {{breakType}}",
+    "microbreak": "микропочивка",
+    "break": "почивка",
+    "nextBreakFollowing": "\nСледващата почивка ще бъде след {{count}} микропочивка",
+    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки"
+  },
+  "break": {
+    "keepGoing": "...Не!!! Ще продължа...",
+    "title": "Време е за почивка!"
+  },
+  "microbreak": {
+    "keepGoing": "...Не!!! Ще продължа...",
+    "title": "Време е за почивка!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "приложение за напомняне за почивка",
+    "toLearnMoreVisit": "За да научите за всички функции на stretchly и начини, по които можете да помогнете, посетете ни",
+    "homepage": "начална страница",
+    "latestVersion": "последна версия:",
+    "checking": "проверка за нова версия..."
+  },
+  "settings": {
+    "settings": "Настройки",
+    "microbreaks": "микрочивки",
+    "secondsEveryBreak": "секунди почивка на всеки",
+    "minutes": "минути",
+    "dontLetMeSkipMicrobreaks": "не ми позволявай да пропускам микропочивки",
+    "breaks": "почивки",
+    "minutesBreakAfter": "минути почивка на всеки",
+    "microbreaks2": "микропочивки",
+    "dontLetMeSkipBreaks": "не ми позволявай да пропускам почивки",
+    "(every": "(всички",
+    "minutes)": "минути)",
+    "microbreaksEnabled": "активиране на микропочивките",
+    "breaksEnabled": "активиране на почивките",
+    "resetToDefaults": "нулиране към начални настройки"
+  },
+  "settings2": {
+    "settings": "Настройки",
+    "audioScheme": "аудио схема",
+    "crystalGlass": "кристално стъкло",
+    "windChime": "вятърни камбанки",
+    "ticToc": "тик ток",
+    "silence": "тишина",
+    "colorScheme": "цветова схема",
+    "greenClouds": "зелени <br/> облаци",
+    "autumnBeBlessed": "есента да бъде благословена",
+    "graphiteCrystal": "графитен <br/>кристал",
+    "coffeeKisses": "кафе <br/> целувки",
+    "morningSwim": "сутрешно <br/> плуване",
+    "resetToDefaults": "нулиране към начални настройки"
+  },
+  "settings3": {
+    "settings": "Настройки",
+    "miscellaneous": "разни",
+    "breaksAreFullscreen": "почивките се показват на цял екран",
+    "showBreakIdeas": "покаване на идеите на почивките",
+    "notifyBeforeBreakStarts": "уведомяване преди започването на почивка",
+    "notifyBeforeMicrobreakStarts": "уведомяване преди започването на микропочивка",
+    "monitorIdleTime": "следене на времето на системата за естествени почивки",
+    "language": "език",
+    "resetToDefaults": "нулиране към начални настройки"
+  },
+  "utils": {
+    "secondsLeft": "{{count}} секунда остава",
+    "secondsLeft_plural": "{{count}} секунди остават",
+    "minutesLeft": "{{count}} минута остава",
+    "minutesLeft_plural": "{{count}} минути остават",
+    "lessThen1m": "по-малко от 1 м.",
+    "h": "{{hours}} ч.",
+    "m": "{{minutes}} м.",
+    "s": "~{{seconds}} с."
+  },
+  "process": {
+    "newVersionAvailable": "Нова версия е налична!"
+  }
+}
