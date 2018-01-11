@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Bulgarian translations for interface
+- Brazilian Portuguese translations for interface
 
 ## [0.14.0] - 2018-01-07
 ### Fixed

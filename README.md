@@ -141,6 +141,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - midpoint, @midpoint
 - stothew, @stothew
 - Zhivko Kabaivanov, @unholyHub
+- sergiopjf, @sergiopjf
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
