@@ -50,6 +50,7 @@ body {
 
 .scheme {
   width: 130px;
+  vertical-align: top;
 }
 
 .color,
