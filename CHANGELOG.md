@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Bulgarian translations for interface
 
+### Fixed
+- style for long names of schemes
+
 ## [0.14.0] - 2018-01-07
 ### Fixed
 - make sure windows offset is integer
