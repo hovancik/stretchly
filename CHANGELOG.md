@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Bulgarian translations for interface
+- Brazilian Portuguese translations for interface
 
 ### Fixed
 - style for long names of schemes
