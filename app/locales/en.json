@@ -89,6 +89,7 @@
     "notifyBeforeBreakStarts": "notify before break starts",
     "notifyBeforeMicrobreakStarts": "notify before microbreak starts",
     "monitorIdleTime": "monitor system idle time for natural breaks",
+    "showOnAllScreens": "breaks are shown on all monitors",
     "language": "language",
     "resetToDefaults": "reset to defaults"
   },
