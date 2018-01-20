@@ -64,7 +64,8 @@
     "minutes)": "minutes)",
     "microbreaksEnabled": "activer les petites pauses",
     "breaksEnabled": "activer les grandes pauses",
-    "resetToDefaults": "revenir aux paramètres d'origine"
+    "resetToDefaults": "revenir aux paramètres d'origine",
+    "cantDisableBoth": "Veuillez  activer l'une des deux pauses proposées"
   },
   "settings2": {
     "settings": "Settings",

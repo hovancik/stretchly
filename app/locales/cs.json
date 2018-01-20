@@ -65,7 +65,8 @@
     "minutes)": "minut)",
     "microbreaksEnabled": "povolit mikropřestávky",
     "breaksEnabled": "povolit přestávky",
-    "resetToDefaults": "obnovit původní nastavení"
+    "resetToDefaults": "obnovit původní nastavení",
+    "cantDisableBoth": "Can't disable both break types."
   },
   "settings2": {
     "settings": "Nastavení",
@@ -109,4 +110,3 @@
     "newVersionAvailable": "Je dostupná nová verze!"
   }
 }
-  

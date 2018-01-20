@@ -64,7 +64,8 @@
     "minutes)": "minutes)",
     "microbreaksEnabled": "microbreaks enabled",
     "breaksEnabled": "breaks enabled",
-    "resetToDefaults": "reset to defaults"
+    "resetToDefaults": "reset to defaults",
+    "cantDisableBoth": "Can't disable both break types."
   },
   "settings2": {
     "settings": "Settings",

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - style for long names of schemes
+- app not starting when both break types are disabled
 
 ## [0.14.0] - 2018-01-07
 ### Fixed
