@@ -79,7 +79,8 @@
     "graphiteCrystal": "cristal <br/>de grafite",
     "coffeeKisses": "beijos <br/> de café",
     "morningSwim": "banho <br/> matinal",
-    "resetToDefaults": "restaurar a configuração padrão"
+    "resetToDefaults": "restaurar a configuração padrão",
+    "cantDisableBoth": "Can't disable both break types."
   },
   "settings3": {
     "settings": "Configurações",

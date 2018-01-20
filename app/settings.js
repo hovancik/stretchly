@@ -1,5 +1,6 @@
-const {ipcRenderer} = require('electron')
+const {ipcRenderer, remote} = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
+const i18next = remote.require('i18next')
 
 document.addEventListener('DOMContentLoaded', event => {
   new HtmlTranslate(document).translate()
@@ -78,12 +79,26 @@ breakDurationMinus.addEventListener('click', function (e) {
 
 ipcRenderer.on('renderSettings', (event, data) => {
   let enableElements = document.getElementsByClassName('enable')
-  for (var i = 0; i < enableElements.length; i++) {
+  for (let i = 0; i < enableElements.length; i++) {
     let element = enableElements[i]
     element.checked = data[element.value]
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {
         ipcRenderer.send('save-setting', element.value, element.checked)
+      })
+    }
+  }
+
+  let enableBreakTypeElements = document.getElementsByClassName('enabletype')
+  for (let i = 0; i < enableBreakTypeElements.length; i++) {
+    let element = enableBreakTypeElements[i]
+    if (!eventsAttached) {
+      element.addEventListener('click', function (e) {
+        if (enabletypeCheckedCount() === 0) {
+          element.checked = 'true'
+          ipcRenderer.send('save-setting', element.value, element.checked)
+          alert(i18next.t('settings.cantDisableBoth'))
+        }
       })
     }
   }
@@ -98,6 +113,18 @@ ipcRenderer.on('renderSettings', (event, data) => {
 
   eventsAttached = true
 })
+
+let enabletypeCheckedCount = function () {
+  let enabled = 0
+  let enableBreakTypeElements = document.getElementsByClassName('enabletype')
+  for (let i = 0; i < enableBreakTypeElements.length; i++) {
+    let element = enableBreakTypeElements[i]
+    if (element.checked) {
+      enabled += 1
+    }
+  }
+  return enabled
+}
 
 document.getElementById('defaults').addEventListener('click', function (e) {
   ipcRenderer.send('set-default-settings', [
