@@ -1,0 +1,109 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - 休息时间提醒应用",
+    "microbreakIn": "短休息间隔 {{seconds}} 秒...",
+    "breakIn": "长时间休息间隔 {{seconds}} 秒...",
+    "resumingBreaks": "正在恢复休息",
+    "aboutStretchly": "关于 stretchly v{{version}}",
+    "settings": "设置",
+    "downloadLatestVersion": "下载最新版本",
+    "about": "关于",
+    "becomePatron": "成为合作者",
+    "toBreak": "长时间休息",
+    "toMicrobreak": "短时间休息",
+    "skipToTheNext": "跳到下一次",
+    "resume": "恢复",
+    "pause": "暂停",
+    "forHour": "1小时",
+    "for2Hours": "2小时",
+    "for5Hours": "5小时",
+    "indefinitely": "无限期",
+    "resetBreaks": "重置休息",
+    "settings": "设置",
+    "startAtLogin": "开机自动运行",
+    "yourStretchly": "你的stretchly",
+    "quitStretchly": "退出stretchly",
+    "resetToDefaults": "重置到默认值",
+    "areYouSure": "您确认要重置本窗口的设置为默认值吗?",
+    "yes": "是",
+    "no": "否",
+    "pausedUntil": "\n已暂停 - {{timeLeft}} 直到恢复\n为定期",
+    "pausedIndefinitely": "无限期暂停",
+    "timeToNext": "\n{{timeLeft}} 为 {{breakType}}",
+    "microbreak": "短时间休息",
+    "break": "长时间休息",
+    "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
+  },
+  "break": {
+    "keepGoing": "...额, 我还有事做",
+    "title": "该休息一下了!"
+  },
+  "microbreak": {
+    "keepGoing": "...额, 我还有事做",
+    "title": "该休息一下了!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "休息时间提醒应用",
+    "toLearnMoreVisit": "要了解更多关于所有stretchly特点和如何你能帮助它，请访问它的",
+    "homepage": "主页",
+    "latestVersion": "最新版本:"
+  },
+  "settings": {
+    "settings": "设置",
+    "microbreaks": "短时间休息",
+    "secondsEveryBreak": "秒休息每隔",
+    "minutes": "分钟",
+    "dontLetMeSkipMicrobreaks": "禁止跳过短时间休息",
+    "breaks": "长时间休息",
+    "minutesBreakAfter": "分钟休息每隔",
+    "microbreaks2": "短时间休息",
+    "dontLetMeSkipBreaks": "禁止跳过长时间休息",
+    "(every": "(每",
+    "minutes)": "分钟)",
+    "microbreaksEnabled": "启用短时间休息",
+    "breaksEnabled": "启用长时间休息",
+    "resetToDefaults": "重置为默认值",
+    "cantDisableBoth": "Can't disable both break types."
+  },
+  "settings2": {
+    "settings": "设置",
+    "audioScheme": "声音方案",
+    "crystalGlass": "水晶玻璃",
+    "windChime": "风铃",
+    "ticToc": "计数器",
+    "silence": "静默",
+    "colorScheme": "颜色方案",
+    "greenClouds": "绿色云朵",
+    "autumnBeBlessed": "秋天祝福",
+    "graphiteCrystal": "石墨水晶",
+    "coffeeKisses": "咖啡之吻",
+    "morningSwim": "沐浴晨光",
+    "resetToDefaults": "重置为默认值"
+  },
+  "settings3": {
+    "settings": "设置",
+    "miscellaneous": "杂项",
+    "breaksAreFullscreen": "休息时全屏显示",
+    "showBreakIdeas": "显示休息建议",
+    "notifyBeforeBreakStarts": "在长时间休息前提醒",
+    "notifyBeforeMicrobreakStarts": "在短时间休息前提醒",
+    "monitorIdleTime": "监控系统空闲时间的自然休息时间",
+    "language": "语言",
+    "resetToDefaults": "重置为默认值"
+  },
+  "utils": {
+    "secondsLeft": "还有 {{count}} 秒",
+    "secondsLeft_plural": "还有 {{count}} 秒",
+    "minutesLeft": "还有 {{count}} 分钟",
+    "minutesLeft_plural": "还有 {{count}} 分钟",
+    "lessThen1m": "小于1分钟",
+    "h": "{{hours}}时",
+    "m": "{{minutes}}分",
+    "s": "~{{seconds}}秒"
+  },
+  "process": {
+    "newVersionAvailable": "有新的版本!"
+  }
+}
