@@ -1,0 +1,109 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - 休息提醒軟體",
+    "microbreakIn": "小休息相隔 {{seconds}} 秒...",
+    "breakIn": "長時間休息相隔 {{seconds}} 秒...",
+    "resumingBreaks": "正在恢复休息",
+    "aboutStretchly": "关于 stretchly v{{version}}",
+    "settings": "設定",
+    "downloadLatestVersion": "下載最新版本",
+    "about": "關於",
+    "becomePatron": "到 Patron 成為合作者",
+    "toBreak": "長時間休息",
+    "toMicrobreak": "小休息",
+    "skipToTheNext": "跳到下一次",
+    "resume": "恢復",
+    "pause": "暫停軟體",
+    "forHour": "1 小時",
+    "for2Hours": "2 小時",
+    "for5Hours": "5 小時",
+    "indefinitely": "無限期",
+    "resetBreaks": "重置休息",
+    "settings": "設定",
+    "startAtLogin": "開機時自動執行",
+    "yourStretchly": "你的 stretchly",
+    "quitStretchly": "離開",
+    "resetToDefaults": "恢復預設值",
+    "areYouSure": "您確定要把本軟體恢復預設值嗎？",
+    "yes": "確定",
+    "no": "取消",
+    "pausedUntil": "\n已暫停 - {{timeLeft}} 直到恢復\n为定期",
+    "pausedIndefinitely": "無限期暫停",
+    "timeToNext": "\n{{timeLeft}} 為 {{breakType}}",
+    "microbreak": "小休息",
+    "break": "長時間休息",
+    "nextBreakFollowing": "\n下次長時間休息在 {{count}} 次小休息後",
+    "nextBreakFollowing_plural": "\n下次長時間休息 {{count}} 次小休息後"
+  },
+  "break": {
+    "keepGoing": "...阿, 我來有事情要做",
+    "title": "該休息了！"
+  },
+  "microbreak": {
+    "keepGoing": "...阿, 我來有事情要做",
+    "title": "該休息了！"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "休息提醒軟體",
+    "toLearnMoreVisit": "取得更多關於 stretchly 的資訊，請到 ",
+    "homepage": "網站",
+    "latestVersion": "最新版本:"
+  },
+  "settings": {
+    "settings": "設定",
+    "microbreaks": "小休息",
+    "secondsEveryBreak": "秒休息每隔",
+    "minutes": "分鐘",
+    "dontLetMeSkipMicrobreaks": "禁止跳過小休息",
+    "breaks": "長時間休息",
+    "minutesBreakAfter": "分鐘休息每隔",
+    "microbreaks2": "小休息",
+    "dontLetMeSkipBreaks": "禁止跳過長時間休息",
+    "(every": "(每",
+    "minutes)": "分鐘)",
+    "microbreaksEnabled": "開啟小休息",
+    "breaksEnabled": "開啟長時間休息",
+    "resetToDefaults": "恢復預設值",
+    "cantDisableBoth": "不可同時禁用兩種模式"
+  },
+  "settings2": {
+    "settings": "設定",
+    "audioScheme": "提醒鈴聲",
+    "crystalGlass": "玻璃",
+    "windChime": "風鈴",
+    "ticToc": "時鐘-滴答",
+    "silence": "無聲",
+    "colorScheme": "配色",
+    "greenClouds": "綠色雲朵",
+    "autumnBeBlessed": "秋天祝福",
+    "graphiteCrystal": "石墨水晶",
+    "coffeeKisses": "咖啡之吻",
+    "morningSwim": "沐浴晨光",
+    "resetToDefaults": "恢復預設值"
+  },
+  "settings3": {
+    "settings": "設定",
+    "miscellaneous": "選項",
+    "breaksAreFullscreen": "休息時全螢幕顯示",
+    "showBreakIdeas": "顯示休息建議",
+    "notifyBeforeBreakStarts": "在長時間休息前跳出通知",
+    "notifyBeforeMicrobreakStarts": "在小休息前跳出通知",
+    "monitorIdleTime": "監控系統空閒，納入休息時間",
+    "language": "語言",
+    "resetToDefaults": "恢復預設值"
+  },
+  "utils": {
+    "secondsLeft": "剩下 {{count}} 秒",
+    "secondsLeft_plural": "剩下 {{count}} 秒",
+    "minutesLeft": "剩下 {{count}} 分鐘",
+    "minutesLeft_plural": "剩下 {{count}} 分鐘",
+    "lessThen1m": "低於 1 分鐘",
+    "h": "{{hours}} 小時",
+    "m": "{{minutes}} 分",
+    "s": "~{{seconds}} 秒"
+  },
+  "process": {
+    "newVersionAvailable": "有新的版本！"
+  }
+}
