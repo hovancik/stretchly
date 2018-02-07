@@ -214,7 +214,9 @@ function startMicrobreak () {
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.show()
       microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
-      breakPlanner.emit('microbreakStarted', true)
+      if (displayIdx === 0) {
+        breakPlanner.emit('microbreakStarted', true)
+      }
       microbreakWinLocal.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
       microbreakWinLocal.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
       microbreakWinLocal.setAlwaysOnTop(true)
@@ -272,7 +274,9 @@ function startBreak () {
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.show()
       breakWinLocal.setFullScreen(settings.get('fullscreen'))
-      breakPlanner.emit('breakStarted', true)
+      if (displayIdx === 0) {
+        breakPlanner.emit('breakStarted', true)
+      }
       breakWinLocal.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
       breakWinLocal.webContents.send('progress', Date.now(), settings.get('breakDuration'))
       breakWinLocal.setAlwaysOnTop(true)
