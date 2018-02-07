@@ -192,6 +192,12 @@ function startMicrobreak () {
   }
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
+
+  let idea = null
+  if (settings.get('ideas')) {
+    idea = microbreakIdeas.randomElement
+  }
+
   for (let displayIdx = 0; displayIdx < numDisplays(); displayIdx++) {
     let microbreakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
@@ -206,10 +212,6 @@ function startMicrobreak () {
     })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
-      let idea = null
-      if (settings.get('ideas')) {
-        idea = microbreakIdeas.randomElement
-      }
       microbreakWinLocal.show()
       microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
       breakPlanner.emit('microbreakStarted', true)
@@ -248,6 +250,12 @@ function startBreak () {
   }
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
+
+  let idea = null
+  if (settings.get('ideas')) {
+    idea = breakIdeas.randomElement
+  }
+
   for (let displayIdx = 0; displayIdx < numDisplays(); displayIdx++) {
     let breakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
@@ -262,10 +270,6 @@ function startBreak () {
     })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
-      let idea = null
-      if (settings.get('ideas')) {
-        idea = breakIdeas.randomElement
-      }
       breakWinLocal.show()
       breakWinLocal.setFullScreen(settings.get('fullscreen'))
       breakPlanner.emit('breakStarted', true)
