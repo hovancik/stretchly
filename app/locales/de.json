@@ -64,7 +64,8 @@
     "minutes)": "Minuten)",
     "microbreaksEnabled": "Mikropausen aktiv",
     "breaksEnabled": "Pausen aktiv",
-    "resetToDefaults": "Auf Standardeinstellung zurücksetzen"
+    "resetToDefaults": "Auf Standardeinstellung zurücksetzen",
+    "cantDisableBoth": "Can't disable both break types."
   },
   "settings2": {
     "settings": "Einstellungen",

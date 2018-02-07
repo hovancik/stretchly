@@ -64,7 +64,8 @@
     "minutes)": "分钟)",
     "microbreaksEnabled": "启用短时间休息",
     "breaksEnabled": "启用长时间休息",
-    "resetToDefaults": "重置为默认值"
+    "resetToDefaults": "重置为默认值",
+    "cantDisableBoth": "Can't disable both break types."
   },
   "settings2": {
     "settings": "设置",

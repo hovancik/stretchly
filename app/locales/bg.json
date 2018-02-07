@@ -64,7 +64,8 @@
     "minutes)": "минути)",
     "microbreaksEnabled": "активиране на микропочивките",
     "breaksEnabled": "активиране на почивките",
-    "resetToDefaults": "нулиране към начални настройки"
+    "resetToDefaults": "нулиране към начални настройки",
+    "cantDisableBoth": "Не можеш да спираш двата типа почивки."
   },
   "settings2": {
     "settings": "Настройки",

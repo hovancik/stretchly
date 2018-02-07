@@ -103,7 +103,8 @@
       "afterEach",
       "Audio",
       "fetch",
-      "Notification"
+      "Notification",
+      "alert"
     ]
   },
   "dependencies": {
