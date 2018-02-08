@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Bulgarian translations for interface
 - Brazilian Portuguese translations for interface
+- Chinese translations for interface, distinguish between two kinds of Chinese
 
 ### Fixed
 - style for long names of schemes
