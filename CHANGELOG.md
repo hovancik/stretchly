@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Bulgarian translations for interface
 - Brazilian Portuguese translations for interface
 - Chinese translations for interface, distinguish between two kinds of Chinese
+- AppX and web installer for Windows
+- ability to change install directory for Windows
+- abiltity to install per user or per machine on Windows
 
 ### Fixed
 - style for long names of schemes
