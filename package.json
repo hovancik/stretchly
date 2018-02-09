@@ -89,9 +89,19 @@
     "win": {
       "target": [
         "nsis",
+        "nsis-web",
         "7z",
-        "zip"
+        "zip",
+        "appx"
       ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "nsisWeb": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   },
   "standard": {
