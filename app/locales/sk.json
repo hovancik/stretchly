@@ -65,7 +65,8 @@
     "minutes)": "minút)",
     "microbreaksEnabled": "povoliť mikroprestávky",
     "breaksEnabled": "povoliť prestávky",
-    "resetToDefaults": "obnoviť pôvodné nastavenia"
+    "resetToDefaults": "obnoviť pôvodné nastavenia",
+    "cantDisableBoth": "Nie je možné nepovoliť obe prestávky."
   },
   "settings2": {
     "settings": "Nastavenia",
