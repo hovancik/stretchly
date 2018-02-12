@@ -89,9 +89,15 @@ function startPowerMonitoring () {
   })
 }
 
-function numDisplays () {
+function numberOfDisplays () {
   const electron = require('electron')
   return electron.screen.getAllDisplays().length
+}
+
+function closeWindows (windowArray) {
+  for (let i = windowArray.length - 1; i >= 0; i--) {
+    windowArray[i].close()
+  }
 }
 
 function displaysX (displayID = -1, width = 800) {
@@ -99,7 +105,7 @@ function displaysX (displayID = -1, width = 800) {
   let theScreen
   if (displayID === -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numDisplays() || displayID < 0) {
+  } else if (displayID >= numberOfDisplays() || displayID < 0) {
     // Graceful handling of invalid displayID
     console.log('warning: invalid displayID to displaysX')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
@@ -116,7 +122,7 @@ function displaysY (displayID = -1, height = 600) {
   let theScreen
   if (displayID === -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numDisplays()) {
+  } else if (displayID >= numberOfDisplays()) {
     // Graceful handling of invalid displayID
     console.log('warning: invalid displayID to displaysY')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
@@ -198,7 +204,7 @@ function startMicrobreak () {
     idea = microbreakIdeas.randomElement
   }
 
-  for (let displayIdx = 0; displayIdx < numDisplays(); displayIdx++) {
+  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let microbreakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
@@ -258,7 +264,7 @@ function startBreak () {
     idea = breakIdeas.randomElement
   }
 
-  for (let displayIdx = 0; displayIdx < numDisplays(); displayIdx++) {
+  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let breakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
@@ -302,9 +308,7 @@ function finishMicrobreak (shouldPlaySound = true) {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    for (let i = microbreakWins.length - 1; i >= 0; i--) {
-      microbreakWins[i].close()
-    }
+    closeWindows(microbreakWins)
     microbreakWins = null
     breakPlanner.nextBreak()
   }
@@ -321,9 +325,7 @@ function finishBreak (shouldPlaySound = true) {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    for (let i = breakWins.length - 1; i >= 0; i--) {
-      breakWins[i].close()
-    }
+    closeWindows(breakWins)
     breakWins = null
     breakPlanner.nextBreak()
   }
@@ -519,15 +521,11 @@ function getTrayMenu () {
       label: i18next.t('main.resetBreaks'),
       click: function () {
         if (microbreakWins) {
-          for (let i = microbreakWins.length - 1; i >= 0; i--) {
-            microbreakWins[i].close()
-          }
+          closeWindows(microbreakWins)
           microbreakWins = null
         }
         if (breakWins) {
-          for (let i = breakWins.length - 1; i >= 0; i--) {
-            breakWins[i].close()
-          }
+          closeWindows(breakWins)
           breakWins = null
         }
         breakPlanner.reset()
