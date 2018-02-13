@@ -90,6 +90,7 @@
     "notifyBeforeBreakStarts": "notificar-me antes de iniciar uma pausa",
     "notifyBeforeMicrobreakStarts": "notificar-me antes de iniciar uma micropausa",
     "monitorIdleTime": "monitorar o tempo de inatividade do sistema para fazer intervalos naturais",
+    "showOnAllScreens": "breaks are shown on all monitors",
     "language": "idioma",
     "resetToDefaults": "restaurar a configuração padrão"
   },
