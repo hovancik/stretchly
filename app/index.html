@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <link rel="stylesheet" href="css/app.css">
+   </head>
+   <body>
+       <p class = "intro" >
+           <div>
+                <img id="icon"/>
+           </div>
+           <h2>Welcome to Stretchly</h2>
+           <div>
+               Perfect app that reminds you to take breaks while working on computer.</br></br>
+           </div>
+        </p>
+        <div id="about-footer">
+            Version : <span id = "version"></span>     
+        </div>
+    </body>
+    <script>
+        document.getElementById('version').innerHTML = require('electron').remote.app.getVersion()
+        document.getElementById('icon').src = "./images/stretchly_128x128.png"
+    </script>
+</html>

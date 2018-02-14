@@ -2,6 +2,8 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const url = require('url')
+const path = require('path')
 
 startI18next()
 
@@ -20,6 +22,7 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
+let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
@@ -43,6 +46,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
+app.on('ready', createWindow)
 
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
@@ -432,6 +436,7 @@ function saveDefaultsFor (array, next) {
 
 function getTrayMenu () {
   let trayMenu = []
+  console.log("pause duration-"+settings.get('pauseDuration'))
   if (global.shared.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
@@ -492,31 +497,28 @@ function getTrayMenu () {
       }
     })
   } else {
-    trayMenu.push({
-      label: i18next.t('main.pause'),
-      submenu: [
-        {
-          label: i18next.t('main.forHour'),
-          click: function () {
-            pauseBreaks(3600 * 1000)
-          }
-        }, {
-          label: i18next.t('main.for2Hours'),
-          click: function () {
-            pauseBreaks(3600 * 2 * 1000)
-          }
-        }, {
-          label: i18next.t('main.for5Hours'),
-          click: function () {
-            pauseBreaks(3600 * 5 * 1000)
-          }
-        }, {
-          label: i18next.t('main.indefinitely'),
-          click: function () {
-            pauseBreaks(1, true)
-          }
+      let submenu = []
+      let pauseDuration = settings.get('pauseDuration')
+      for( i=0; i<pauseDuration.length; i++){
+        if (pauseDuration[i]==9999) {
+          submenu.push({
+            label: i18next.t('main.indefinitely'),
+            click: function () {
+              pauseBreaks(1, true)
+            }
+          })
+        } else {
+          submenu.push({
+            label: 'For ' + (pauseDuration[i]/60).toString()+' Hours',
+            click: function () {
+              pauseBreaks(60 * pauseDuration[i] * 1000)
+            }
+          })
         }
-      ]
+      }
+      trayMenu.push({
+      label: i18next.t('main.pause'),
+      submenu: submenu
     }, {
       label: i18next.t('main.resetBreaks'),
       click: function () {
@@ -671,6 +673,23 @@ ipcMain.on('set-default-settings', function (event, data) {
     }
   })
 })
+
+function createWindow() {
+  welcomeWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(), 
+    autoHideMenuBar:true,
+    icon: `${__dirname}/images/stretchly_18x18.png`,
+    backgroundColor: settings.get('mainColor'),
+    title: 'stretchly'
+  })
+  welcomeWin.loadURL(url.format ({
+     
+     pathname: path.join(__dirname, 'index.html'),
+     protocol: 'file:',
+     slashes: true  
+  }))
+}
 
 ipcMain.on('send-settings', function (event) {
   settingsWin.webContents.send('renderSettings', settings.data)
