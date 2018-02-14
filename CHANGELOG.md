@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+-Hindi Translations for interface
+
+## [Unreleased]
+### Added
 - Bulgarian translations for interface
 - Brazilian Portuguese translations for interface
 - Chinese translations for interface, distinguish between two kinds of Chinese
