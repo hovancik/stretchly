@@ -74,10 +74,12 @@ breakDurationPlus.addEventListener('click', function (e) {
 })
 
 breakDurationMinus.addEventListener('click', function (e) {
-  if (Number(breakDuration.innerHTML) <= 5) {
-    ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 1) * 1000 * 60)
-  } else {
-    ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 5) * 1000 * 60)
+  if(Number(breakDuration.innerHTML) > 1) {
+    if (Number(breakDuration.innerHTML) <= 5) {
+      ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 1) * 1000 * 60)
+    } else {
+      ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 5) * 1000 * 60)
+    }
   }
 })
 
