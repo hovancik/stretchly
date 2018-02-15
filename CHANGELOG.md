@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - AppX and web installer for Windows
 - ability to change install directory for Windows
 - abiltity to install per user or per machine on Windows
+- Hindi Translations for interface
 
 ### Fixed
 - style for long names of schemes
