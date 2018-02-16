@@ -148,6 +148,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - sergiopjf, @sergiopjf
 - William Chang, @wilicw
 - Fahim Dalvi, @fdalvi. [fdalvi.github.io](https://fdalvi.github.io)
+- Nic Desjardins, @nicdesjardins
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
