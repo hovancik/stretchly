@@ -16,8 +16,8 @@ let breakIdeas
 let breakPlanner
 let appIcon = null
 let processWin = null
-let microbreakWin = null
-let breakWin = null
+let microbreakWins = null
+let breakWins = null
 let aboutWin = null
 let settingsWin = null
 let settings
@@ -89,16 +89,47 @@ function startPowerMonitoring () {
   })
 }
 
-function displaysX (width = 800) {
+function numberOfDisplays () {
   const electron = require('electron')
-  let theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  return electron.screen.getAllDisplays().length
+}
+
+function closeWindows (windowArray) {
+  for (let i = windowArray.length - 1; i >= 0; i--) {
+    windowArray[i].close()
+  }
+}
+
+function displaysX (displayID = -1, width = 800) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays() || displayID < 0) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysX')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    let screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
   let bounds = theScreen.bounds
   return Math.ceil(bounds.x + ((bounds.width - width) / 2))
 }
 
-function displaysY (height = 600) {
+function displaysY (displayID = -1, height = 600) {
   const electron = require('electron')
-  let theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    let screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
   let bounds = theScreen.bounds
   return Math.ceil(bounds.y + ((bounds.height - height) / 2))
 }
@@ -156,7 +187,7 @@ function startMicrobreak () {
     return
   }
   // don't start another break if break running
-  if (microbreakWin) {
+  if (microbreakWins) {
     console.log('microbreak already running')
     return
   }
@@ -166,31 +197,44 @@ function startMicrobreak () {
     })
   }
   const modalPath = `file://${__dirname}/microbreak.html`
-  microbreakWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    x: displaysX(),
-    y: displaysY(),
-    frame: false,
-    show: false,
-    backgroundColor: settings.get('mainColor'),
-    skipTaskbar: true,
-    focusable: false,
-    title: 'stretchly'
-  })
-  // microbreakWin.webContents.openDevTools()
-  microbreakWin.once('ready-to-show', () => {
-    let idea = null
-    if (settings.get('ideas')) {
-      idea = microbreakIdeas.randomElement
+  microbreakWins = []
+
+  let idea = null
+  if (settings.get('ideas')) {
+    idea = microbreakIdeas.randomElement
+  }
+
+  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
+    let microbreakWinLocal = new BrowserWindow({
+      icon: `${__dirname}/images/stretchly_18x18.png`,
+      x: displaysX(displayIdx),
+      y: displaysY(displayIdx),
+      frame: false,
+      show: false,
+      backgroundColor: settings.get('mainColor'),
+      skipTaskbar: true,
+      focusable: false,
+      title: 'stretchly'
+    })
+    // microbreakWinLocal.webContents.openDevTools()
+    microbreakWinLocal.once('ready-to-show', () => {
+      microbreakWinLocal.show()
+      microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
+      if (displayIdx === 0) {
+        breakPlanner.emit('microbreakStarted', true)
+      }
+      microbreakWinLocal.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
+      microbreakWinLocal.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
+      microbreakWinLocal.setAlwaysOnTop(true)
+    })
+    microbreakWinLocal.loadURL(modalPath)
+    microbreakWins.push(microbreakWinLocal)
+
+    if (!settings.get('allScreens')) {
+      break
     }
-    microbreakWin.show()
-    microbreakWin.setFullScreen(settings.get('fullscreen'))
-    breakPlanner.emit('microbreakStarted', true)
-    microbreakWin.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
-    microbreakWin.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
-    microbreakWin.setAlwaysOnTop(true)
-  })
-  microbreakWin.loadURL(modalPath)
+  }
+
   updateToolTip()
 }
 
@@ -203,7 +247,7 @@ function startBreak () {
     return
   }
   // don't start another break if break running
-  if (breakWin) {
+  if (breakWins) {
     console.log('break already running')
     return
   }
@@ -213,31 +257,44 @@ function startBreak () {
     })
   }
   const modalPath = `file://${__dirname}/break.html`
-  breakWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    x: displaysX(),
-    y: displaysY(),
-    frame: false,
-    show: false,
-    backgroundColor: settings.get('mainColor'),
-    skipTaskbar: true,
-    focusable: false,
-    title: 'stretchly'
-  })
-  // breakWin.webContents.openDevTools()
-  breakWin.once('ready-to-show', () => {
-    let idea = null
-    if (settings.get('ideas')) {
-      idea = breakIdeas.randomElement
+  breakWins = []
+
+  let idea = null
+  if (settings.get('ideas')) {
+    idea = breakIdeas.randomElement
+  }
+
+  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
+    let breakWinLocal = new BrowserWindow({
+      icon: `${__dirname}/images/stretchly_18x18.png`,
+      x: displaysX(displayIdx),
+      y: displaysY(displayIdx),
+      frame: false,
+      show: false,
+      backgroundColor: settings.get('mainColor'),
+      skipTaskbar: true,
+      focusable: false,
+      title: 'stretchly'
+    })
+    // breakWinLocal.webContents.openDevTools()
+    breakWinLocal.once('ready-to-show', () => {
+      breakWinLocal.show()
+      breakWinLocal.setFullScreen(settings.get('fullscreen'))
+      if (displayIdx === 0) {
+        breakPlanner.emit('breakStarted', true)
+      }
+      breakWinLocal.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
+      breakWinLocal.webContents.send('progress', Date.now(), settings.get('breakDuration'))
+      breakWinLocal.setAlwaysOnTop(true)
+    })
+    breakWinLocal.loadURL(modalPath)
+    breakWins.push(breakWinLocal)
+
+    if (!settings.get('allScreens')) {
+      break
     }
-    breakWin.show()
-    breakWin.setFullScreen(settings.get('fullscreen'))
-    breakPlanner.emit('breakStarted', true)
-    breakWin.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
-    breakWin.webContents.send('progress', Date.now(), settings.get('breakDuration'))
-    breakWin.setAlwaysOnTop(true)
-  })
-  breakWin.loadURL(modalPath)
+  }
+
   updateToolTip()
 }
 
@@ -246,13 +303,13 @@ function finishMicrobreak (shouldPlaySound = true) {
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  if (microbreakWin) {
+  if (microbreakWins) {
     if (process.platform === 'darwin') {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    microbreakWin.close()
-    microbreakWin = null
+    closeWindows(microbreakWins)
+    microbreakWins = null
     breakPlanner.nextBreak()
   }
   updateToolTip()
@@ -263,13 +320,13 @@ function finishBreak (shouldPlaySound = true) {
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  if (breakWin) {
+  if (breakWins) {
     if (process.platform === 'darwin') {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    breakWin.close()
-    breakWin = null
+    closeWindows(breakWins)
+    breakWins = null
     breakPlanner.nextBreak()
   }
   updateToolTip()
@@ -307,10 +364,10 @@ function loadIdeas () {
 
 function pauseBreaks (milliseconds, keepAfterPowerResume = false) {
   isOnIndefinitePause = keepAfterPowerResume
-  if (microbreakWin) {
+  if (microbreakWins) {
     finishMicrobreak(false)
   }
-  if (breakWin) {
+  if (breakWins) {
     finishBreak(false)
   }
   breakPlanner.pause(milliseconds)
@@ -463,13 +520,13 @@ function getTrayMenu () {
     }, {
       label: i18next.t('main.resetBreaks'),
       click: function () {
-        if (microbreakWin) {
-          microbreakWin.close()
-          microbreakWin = null
+        if (microbreakWins) {
+          closeWindows(microbreakWins)
+          microbreakWins = null
         }
-        if (breakWin) {
-          breakWin.close()
-          breakWin = null
+        if (breakWins) {
+          closeWindows(breakWins)
+          breakWins = null
         }
         breakPlanner.reset()
         updateToolTip()
@@ -520,7 +577,7 @@ function getTrayMenu () {
 function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
   let toolTipHeader = i18next.t('main.toolTipHeader')
-  if (microbreakWin || breakWin) {
+  if (microbreakWins || breakWins) {
     appIcon.setToolTip(toolTipHeader)
   } else {
     let statusMessage = ''

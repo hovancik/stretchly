@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - ability to change install directory for Windows
 - abiltity to install per user or per machine on Windows
 - Hindi Translations for interface
+- Multi-display support added and enabled by default
+- ability to set break to less than 5 minutes
 
 ### Fixed
 - style for long names of schemes

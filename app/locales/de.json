@@ -90,6 +90,7 @@
     "notifyBeforeBreakStarts": "Benachrichtigen, bevor die Pause beginnt",
     "notifyBeforeMicrobreakStarts": "Benachrichtigen, bevor die Mikropause beginnt",
     "monitorIdleTime": "System-Leerlaufzeit für natürliche Pausen überwachen",
+    "showOnAllScreens": "breaks are shown on all monitors",
     "language": "Sprache",
     "resetToDefaults": "Auf Standardeinstellung zurücksetzen"
   },

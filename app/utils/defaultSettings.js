@@ -16,6 +16,7 @@ module.exports = {
   fullscreen: false,
   ideas: true,
   naturalBreaks: true,
+  allScreens: true,
   useIdeasFromSettings: false,
   language: 'en',
   notifyNewVersion: true,

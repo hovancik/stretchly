@@ -90,6 +90,7 @@
     "notifyBeforeBreakStarts": "在長時間休息前跳出通知",
     "notifyBeforeMicrobreakStarts": "在小休息前跳出通知",
     "monitorIdleTime": "監控系統空閒，納入休息時間",
+    "showOnAllScreens": "breaks are shown on all monitors",
     "language": "語言",
     "resetToDefaults": "恢復預設值"
   },

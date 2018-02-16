@@ -90,6 +90,7 @@
     "notifyBeforeBreakStarts": "уведомяване преди започването на почивка",
     "notifyBeforeMicrobreakStarts": "уведомяване преди започването на микропочивка",
     "monitorIdleTime": "следене на времето на системата за естествени почивки",
+    "showOnAllScreens": "breaks are shown on all monitors",
     "language": "език",
     "resetToDefaults": "нулиране към начални настройки"
   },
