@@ -91,7 +91,7 @@
     "notifyBeforeBreakStarts": "zobrazit notifikaci před přestávkami",
     "notifyBeforeMicrobreakStarts": "zobrazit notifikaci před mikropřestávkami",
     "monitorIdleTime": "monitorovat neaktivní čas pro přirozené přestávky",
-    "showOnAllScreens": "breaks are shown on all monitors",
+    "showOnAllScreens": "přestávky na každé obrazovce",
     "language": "jazyk",
     "resetToDefaults": "obnovit původní nastavení"
   },
