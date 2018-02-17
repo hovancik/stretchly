@@ -21,7 +21,7 @@
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
     "@paulcbetts/system-idle-time": "^1.0.4",
-    "i18next": "^10.2.2",
+    "i18next": "^10.4.1",
     "i18next-node-fs-backend": "^1.0.0"
   }
 }
