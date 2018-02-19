@@ -151,6 +151,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Riddhi, @riddhi99
 - Fahim Dalvi, @fdalvi. [fdalvi.github.io](https://fdalvi.github.io)
 - Nic Desjardins, @nicdesjardins
+- Vladislav Kuznecov, @fizvlad
 
 
 ### Humans and Tools
