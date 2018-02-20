@@ -31,8 +31,9 @@
     "timeToNext": "\n{{timeLeft}} до {{breakType}}",
     "microbreak": "микроперерыва",
     "break": "перерыва",
-    "nextBreakFollowing": "\nСледующий перерыв через {{count}} микроперерыв",
-    "nextBreakFollowing_plural": "\nСледующий перерыв через {{count}} микроперерывов"
+    "nextBreakFollowing_0": "\nСледующий перерыв через {{count}} микроперерыв",
+    "nextBreakFollowing_1": "\nСледующий перерыв через {{count}} микроперерыва",
+    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов"
   },
   "break": {
     "keepGoing": "...не, я просто продолжу",
@@ -95,10 +96,12 @@
     "resetToDefaults": "настройки по умолчанию"
   },
   "utils": {
-    "secondsLeft": "{{count}} секунда осталась",
-    "secondsLeft_plural": "{{count}} секунд осталось",
-    "minutesLeft": "{{count}} минута осталась",
-    "minutesLeft_plural": "{{count}} минут осталось",
+    "secondsLeft_0": "{{count}} секунда осталась",
+    "secondsLeft_1": "{{count}} секунды осталось",
+    "secondsLeft_2": "{{count}} секунд осталось",
+    "minutesLeft_0": "{{count}} минута осталась",
+    "minutesLeft_1": "{{count}} минуты осталось",
+    "minutesLeft_2": "{{count}} минут осталось",
     "lessThen1m": "менее минуты",
     "h": "{{hours}}ч",
     "m": "{{minutes}}м",
