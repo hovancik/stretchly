@@ -27,7 +27,7 @@
     "yes": "да",
     "no": "нет",
     "pausedUntil": "\nПауза - {{timeLeft}} до возобновления работы\nпо обычному графику",
-    "pausedIndefinitely": "Пауза на неопределённый срок",
+    "pausedIndefinitely": "\nПауза на неопределённый срок",
     "timeToNext": "\n{{timeLeft}} до {{breakType}}",
     "microbreak": "микроперерыва",
     "break": "перерыва",

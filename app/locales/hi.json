@@ -27,7 +27,7 @@
     "yes": "हाँ",
     "no": "ना",
     "pausedUntil": "\nअल्प विराम - {{timeLeft}} निर्धारित समय के अनुसार\n ब्रेक फिर से शुरू होगा",
-    "pausedIndefinitely": "अनिश्चित काल के लिए रोक दिया गया",
+    "pausedIndefinitely": "\nअनिश्चित काल के लिए रोक दिया गया",
     "timeToNext": "\n{{timeLeft}} के बाद {{breakType}}",
     "microbreak": "छोटा ब्रेक",
     "break": "ब्रेक",
