@@ -28,7 +28,7 @@
     "yes": "是",
     "no": "否",
     "pausedUntil": "\n已暂停 - {{timeLeft}} 直到恢复\n为定期",
-    "pausedIndefinitely": "无限期暂停",
+    "pausedIndefinitely": "\n无限期暂停",
     "timeToNext": "\n{{timeLeft}} 为 {{breakType}}",
     "microbreak": "短时间休息",
     "break": "长时间休息",

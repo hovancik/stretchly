@@ -28,7 +28,7 @@
     "yes": "確定",
     "no": "取消",
     "pausedUntil": "\n已暫停 - {{timeLeft}} 直到恢復\n为定期",
-    "pausedIndefinitely": "無限期暫停",
+    "pausedIndefinitely": "\n無限期暫停",
     "timeToNext": "\n再 {{timeLeft}} 執行 {{breakType}} 一次",
     "microbreak": "小休息",
     "break": "長時間休息",
