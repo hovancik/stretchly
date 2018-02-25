@@ -218,7 +218,7 @@ autoUpdater.on('update-downloaded', (info) => {
   autoUpdater.quitAndInstall();
 });
 function checkVersion () {
-  processWin.webContents.send('checkVersion', `v${app.getVersion()}`)
+  processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
   planVersionCheck(3600 * 5)
 }
 
