@@ -13,7 +13,7 @@
     "pack-all": "build --dir -mwl --x64 --ia32",
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
-    "dist": "electron-builder",
+    "dist": "build --x64 --ia32",
     "test": "mocha test",
     "tdd": "mocha --watch test",
     "lint": "./node_modules/.bin/standard",
@@ -93,7 +93,8 @@
         "nsis",
         "nsis-web",
         "7z",
-        "zip"
+        "zip",
+        "appx"
       ]
     },
     "nsis": {
