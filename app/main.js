@@ -2,6 +2,9 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const url = require('url')
+const path = require('path')
+const { autoUpdater } = require("electron-updater")
 
 startI18next()
 
@@ -22,6 +25,7 @@ let aboutWin = null
 let settingsWin = null
 let settings
 let isOnIndefinitePause
+let updaterWindow = null
 
 global.shared = {
   isNewVersion: false
@@ -43,6 +47,8 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
+app.on('ready', checkForLatestRelease)
+
 
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
@@ -155,16 +161,64 @@ function startProcessWin () {
   })
   processWin.loadURL(modalPath)
   processWin.once('ready-to-show', () => {
-    planVersionCheck()
+    planVersionCheck()  
   })
+}
+
+function checkForLatestRelease() {
+  const autoUpdatePromise = autoUpdater.checkForUpdates()
+  if(autoUpdatePromise) {
+    const modalPathUpdateWindow = `file://${__dirname}/stretchlyAutoUpdater.html#v${app.getVersion()}`
+    updaterWindow = new BrowserWindow({
+        icon: `${__dirname}/images/stretchly_18x18.png`,
+        x: displaysX(),
+        y: displaysY(),
+        resizable: false,
+    })
+    updaterWindow.loadURL(modalPathUpdateWindow)
+  }
+}
+const sendStatusToUpdaterWindow = (text) => {
+  if(updaterWindow) {
+    updaterWindow.send('message', text);
+  }
 }
 
 function planVersionCheck (seconds = 1) {
   setTimeout(checkVersion, seconds * 1000)
 }
 
+autoUpdater.on('checking-for-update', () => {
+  sendStatusToUpdaterWindow('Checking for update')
+})
+
+autoUpdater.on('update-available', (info) => {
+  sendStatusToUpdaterWindow('Update Available')
+})
+
+autoUpdater.on('update-not-available', (info) => {
+  sendStatusToUpdaterWindow('Update Not Available')
+})
+
+autoUpdater.on('error', (err) => {
+  sendStatusToUpdaterWindow('Error'+ err)
+})
+autoUpdater.on('download-progress', (progressObj) => {
+      let log_message = "Download speed: " + progressObj.bytesPerSecond;
+      log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
+      log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
+      sendStatusToUpdaterWindow(log_message);
+})
+
+autoUpdater.on('update-downloaded', (info) => {
+  sendStatusToUpdaterWindow('Update-Downloaded');
+});
+
+autoUpdater.on('update-downloaded', (info) => {
+  autoUpdater.quitAndInstall();
+});
 function checkVersion () {
-  processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
+  processWin.webContents.send('checkVersion', `v${app.getVersion()}`)
   planVersionCheck(3600 * 5)
 }
 

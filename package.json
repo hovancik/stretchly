@@ -1,7 +1,8 @@
 {
   "name": "stretchly",
-  "version": "0.15.0",
+  "version": "0.14.0",
   "description": "break time reminder app",
+  "main": "app/main.js",
   "engines": {
     "node": "8.2.1"
   },
@@ -12,10 +13,11 @@
     "pack-all": "build --dir -mwl --x64 --ia32",
     "dist-all": "build -mwl --x64 --ia32",
     "pack": "build --dir",
-    "dist": "build --x64 --ia32",
+    "dist": "electron-builder",
     "test": "mocha test",
     "tdd": "mocha --watch test",
-    "lint": "./node_modules/.bin/standard"
+    "lint": "./node_modules/.bin/standard",
+    "publish": "electron-builder --x64 --win -p always"
   },
   "repository": {
     "type": "git",
@@ -36,9 +38,9 @@
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "chai": "^4.1.2",
+    "electron-builder": "^20.0.6",
     "chai-as-promised": "^7.1.1",
     "electron": "^1.8.2",
-    "electron-builder": "^20.0.5",
     "mocha": "^5.0.1",
     "sinon": "^4.3.0",
     "spectron": "^3.8.0",
@@ -91,8 +93,7 @@
         "nsis",
         "nsis-web",
         "7z",
-        "zip",
-        "appx"
+        "zip"
       ]
     },
     "nsis": {
@@ -120,6 +121,8 @@
   "dependencies": {
     "@paulcbetts/system-idle-time": "^1.0.4",
     "i18next": "^10.4.1",
+    "electron-log": "^2.2.14",
+    "electron-updater": "^2.20.1",
     "i18next-node-fs-backend": "^1.0.0"
   }
 }
