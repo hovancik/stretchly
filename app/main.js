@@ -171,6 +171,7 @@ function checkForAutoUpdate() {
         icon: `${__dirname}/images/stretchly_18x18.png`,
         x: displaysX(),
         y: displaysY(),
+        backgroundColor: settings.get('mainColor'),
         resizable: false,
     })
     updaterWindow.loadURL(modalPathUpdateWindow)
