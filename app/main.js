@@ -2,8 +2,6 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const url = require('url')
-const path = require('path')
 const { autoUpdater } = require("electron-updater")
 
 startI18next()
@@ -47,7 +45,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-app.on('ready', checkForLatestRelease)
+app.on('ready', checkForAutoUpdate)
 
 
 app.on('window-all-closed', () => {
@@ -165,7 +163,7 @@ function startProcessWin () {
   })
 }
 
-function checkForLatestRelease() {
+function checkForAutoUpdate() {
   const autoUpdatePromise = autoUpdater.checkForUpdates()
   if(autoUpdatePromise) {
     const modalPathUpdateWindow = `file://${__dirname}/stretchlyAutoUpdater.html#v${app.getVersion()}`
