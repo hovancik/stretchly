@@ -27,7 +27,7 @@
     "yes": "sim",
     "no": "não",
     "pausedUntil": "\nPausado - {{timeLeft}} antes de retomar a pausa\nconforme agendado",
-    "pausedIndefinitely": "Pausado indefinidamente",
+    "pausedIndefinitely": "\nPausado indefinidamente",
     "timeToNext": "\n{{timeLeft}} para a {{breakType}}",
     "microbreak": "micropausa",
     "break": "pausa",
