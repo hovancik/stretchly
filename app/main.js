@@ -45,7 +45,6 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-app.on('ready', checkForAutoUpdate)
 
 
 app.on('window-all-closed', () => {
@@ -489,7 +488,7 @@ function getTrayMenu () {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {
-        shell.openExternal('https://github.com/hovancik/stretchly/releases')
+        checkForAutoUpdate()
       }
     })
   }
