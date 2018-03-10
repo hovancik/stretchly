@@ -2,8 +2,6 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const url = require('url')
-const path = require('path')
 
 startI18next()
 
@@ -22,8 +20,6 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
-let selLangWin = null
-let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
@@ -162,7 +158,6 @@ function startProcessWin () {
     planVersionCheck()
   })
 }
-
 
 function createWindow() {
   welcomeWin = new BrowserWindow({

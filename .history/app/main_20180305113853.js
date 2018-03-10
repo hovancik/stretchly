@@ -163,8 +163,26 @@ function startProcessWin () {
   })
 }
 
-
 function createWindow() {
+  // dialog.showMessageBox({
+  //   type:'question',
+  //   title: 'Select Language',
+  //   message:'A new version of Stretchly is available',
+  //   detail: 'It will be installed the next time you restart the application',
+  //   options:['English','German', 'French']
+  //   })
+  selLangWin = new BrowserWindow({
+    height : 60,
+    width : 80,
+    autoHideMenuBar : true,
+    title : 'Select Language'
+  })
+  selLangWin.loadURL(url.format ({
+     
+    pathname: path.join(__dirname, 'selLang.html'),
+    protocol: 'file:',
+    slashes: true  
+ }))
   welcomeWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(), 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "UTF-8">
+      <link rel="stylesheet" href="css/app.css">
+   </head>
+   <body>
+       <p class = "intro" >
+           <div>
+                <img id="icon"/>
+           </div>
+           <h2>Welcome to Stretchly</h2>
+           <div>
+               Perfect app that reminds you to take breaks while working on computer.</br></br>
+           </div>
+           <!--h2>Select Language</h2-->
+           <h2 data-i18next="settings3.language"></h2>
+           <div class="">
+             <select name="language" id="language">
+               <!--Keep languages in the alphabet order-->
+               <option value="bg">Български</option>
+               <option value="cs">Čeština</option>
+               <option value="de">Deutsch</option>
+               <option value="en">English</option>
+               <option value="fr">Français</option>
+               <option value="sk">Slovenčina</option>
+               <option value="pt-BR">Português Brasileiro</option>
+               <option value="zh-CN">简体中文</option>
+               <option value="zh-TW">正體中文</option>
+             </select>
+           </div>
+        </p>
+        <div id="about-footer">
+            Version : <span id = "version"></span>     
+        </div>
+    </body>
+    <script>
+        document.getElementById('version').innerHTML = require('electron').remote.app.getVersion()
+        document.getElementById('icon').src = "./images/stretchly_128x128.png"
+    </script>
+</html>

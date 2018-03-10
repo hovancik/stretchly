@@ -22,8 +22,6 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
-let selLangWin = null
-let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
@@ -162,7 +160,6 @@ function startProcessWin () {
     planVersionCheck()
   })
 }
-
 
 function createWindow() {
   welcomeWin = new BrowserWindow({

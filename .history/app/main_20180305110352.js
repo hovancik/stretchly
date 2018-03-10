@@ -22,8 +22,6 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
-let selLangWin = null
-let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
@@ -163,8 +161,15 @@ function startProcessWin () {
   })
 }
 
-
 function createWindow() {
+  dialog.showMessageBox({
+    type:'question',
+    title: 'Select Language',
+    message:'A new version of Stretchly is available',
+    detail: 'It will be installed the next time you restart the application',
+    buttons:['Update','No']
+    
+    })
   welcomeWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(), 

@@ -112,5 +112,6 @@
     "welcomeToStretchly": "Welcome to Stretchly",
     "appDesc": "Perfect app that reminds you to take breaks while working on computer.",
     "version": "Version : {{version}}"
+
   }
 }

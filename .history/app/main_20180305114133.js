@@ -47,7 +47,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-app.on('ready', createWindow)
+app.on('ready', languageWindow)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -163,8 +163,30 @@ function startProcessWin () {
   })
 }
 
-
+function languageWindow(){
+  selLangWin = new BrowserWindow({
+    height : 60,
+    width : 80,
+    autoHideMenuBar : true,
+    title : 'Select Language'
+  })
+  selLangWin.loadURL(url.format ({
+     
+    pathname: path.join(__dirname, 'selLang.html'),
+    protocol: 'file:',
+    slashes: true  
+ }))
+//  createWindow();
+}
 function createWindow() {
+  // dialog.showMessageBox({
+  //   type:'question',
+  //   title: 'Select Language',
+  //   message:'A new version of Stretchly is available',
+  //   detail: 'It will be installed the next time you restart the application',
+  //   options:['English','German', 'French']
+  //   })
+
   welcomeWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(), 
