@@ -32,8 +32,7 @@
     "microbreak": "microbreak",
     "break": "break",
     "nextBreakFollowing": "\nNext break following {{count}} more microbreak",
-    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks",
-    "selectLanguage": "\nSelect Language" 
+    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks"
   },
   "break": {
     "keepGoing": "...nah, I'll just keep going on",
@@ -107,10 +106,5 @@
   },
   "process": {
     "newVersionAvailable": "New version is available!"
-  },
-  "welcome": {
-    "welcomeToStretchly": "Welcome to Stretchly",
-    "appDesc": "Perfect app that reminds you to take breaks while working on computer.",
-    "version": "Version : "
   }
 }

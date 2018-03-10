@@ -33,7 +33,7 @@
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
     "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
-    "selectLanguage": "\nChoisir la langue"
+    "selectLanguage": "\nSelect Language"
   },
   "break": {
     "keepGoing": "...non, je vais continuer sans pause",
@@ -109,8 +109,8 @@
     "newVersionAvailable": "Une nouvelle version est disponible !"
   },
   "welcome": {
-    "welcomeToStretchly": "Bienvenue à Stretchly",
-    "appDesc": "Application parfaite qui vous rappelle de prendre des pauses tout en travaillant sur ordinateur.",
-    "version": "Version : "
+    "welcomeToStretchly": "Welcome to Stretchly",
+    "appDesc": "Perfect app that reminds you to take breaks while working on computer.",
+    "version": "Version : {{version}}"
   }
 }

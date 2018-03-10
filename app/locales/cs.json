@@ -33,7 +33,8 @@
     "break": "přestávky",
     "nextBreakFollowing_0": "\nDalší přestávka po {{count}} mikropřestávce",
     "nextBreakFollowing_1": "\nDalší přestávka po {{count}} mikropřestávkách",
-    "nextBreakFollowing_2": "\nDalší přestávka po {{count}} mikropřestávkách"
+    "nextBreakFollowing_2": "\nDalší přestávka po {{count}} mikropřestávkách",
+    "selectLanguage": "\nZvolte jazyk"
   },
   "break": {
     "keepGoing": "...ne, chci pokračovat",
@@ -109,5 +110,10 @@
   },
   "process": {
     "newVersionAvailable": "Je dostupná nová verze!"
+  },
+  "welcome": {
+    "welcomeToStretchly": "Vítejte v Stretchly",
+    "appDesc": "Dokonalá aplikace, která vám připomíná, abyste si při práci s počítačem udělali přestávky.",
+    "version": "Verze : "
   }
 }

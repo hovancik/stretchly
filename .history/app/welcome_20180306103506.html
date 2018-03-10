@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title data-i18next="about.stretchly"></title>
+      <meta charset = "UTF-8">
+      <link rel="stylesheet" href="css/app.css">
+   </head>
+   <body>
+       <p class = "intro" >
+           <div>
+                <img id="icon"/>
+           </div>
+           <h2 data-i18next="welcome.welcomeToStretchly"></h2>
+           <div data-i18next="welcome.appDesc">
+           </br></br>
+           </div>
+        </p>
+        <div id="about-footer">
+            Version : <span id = "version"></span>     
+        </div>
+    </body>
+    <script>
+        document.getElementById('version').innerHTML = require('electron').remote.app.getVersion()
+        document.getElementById('icon').src = "./images/stretchly_128x128.png"
+
+            require('./index.js')
+    </script>
+</html>

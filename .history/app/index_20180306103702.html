@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title data-i18next="settings3.language"></title>
+      <meta charset = "UTF-8">
+      <link rel="stylesheet" href="css/app.css">
+   </head>
+   <body>
+        <!--h2>Select Language</h2-->
+        <h2 data-i18next="main.selectLanguage"></h2>
+        <div class="">
+            <select name="language" id="language">
+               <!--Keep languages in the alphabet order-->
+               <option value="bg">Български</option>
+               <option value="cs">Čeština</option>
+               <option value="de">Deutsch</option>
+               <option value="en">English</option>
+               <option value="fr">Français</option>
+               <option value="sk">Slovenčina</option>
+               <option value="pt-BR">Português Brasileiro</option>
+               <option value="zh-CN">简体中文</option>
+               <option value="zh-TW">正體中文</option>
+            </select>
+        </div>
+    <script>
+        require('./index.js')
+    </script>
+</html>

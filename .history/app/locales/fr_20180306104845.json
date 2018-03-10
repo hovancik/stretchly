@@ -111,6 +111,6 @@
   "welcome": {
     "welcomeToStretchly": "Bienvenue à Stretchly",
     "appDesc": "Application parfaite qui vous rappelle de prendre des pauses tout en travaillant sur ordinateur.",
-    "version": "Version : "
+    "version": "Version : {{version}}"
   }
 }

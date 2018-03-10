@@ -32,7 +32,8 @@
     "microbreak": "Mikropause",
     "break": "Pause",
     "nextBreakFollowing": "\nDer nächsten Pause folgt {{count}} weitere Mikropause",
-    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen"
+    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen",
+    "selectLanguage": "\nSprache auswählen"
   },
   "break": {
     "keepGoing": "... nein, ich werde weitermachen",
@@ -106,5 +107,10 @@
   },
   "process": {
     "newVersionAvailable": "Neue Version verfügbar!"
+  },
+  "welcome": {
+    "welcomeToStretchly": "Willkommen bei Stretchly",
+    "appDesc": "Perfekte App, die Sie daran erinnert, während der Arbeit am Computer Pausen einzulegen.",
+    "version": "Ausführung : "
   }
 }

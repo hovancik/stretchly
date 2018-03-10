@@ -32,7 +32,8 @@
     "microbreak": "micropausa",
     "break": "pausa",
     "nextBreakFollowing": "\nPróxima pausa longa após {{count}} micropausa",
-    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas"
+    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas",
+    "selectLanguage": "\nSelecione o idioma" 
   },
   "break": {
     "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",
@@ -106,5 +107,10 @@
   },
   "process": {
     "newVersionAvailable": "Nova versão disponível!"
+  },
+  "welcome": {
+    "welcomeToStretchly": "Bem-vindo ao Stretchly",
+    "appDesc": "App perfeito que lembra você para fazer pausas enquanto trabalha no computador.",
+    "version": "Versão : "
   }
 }

@@ -2,8 +2,6 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const url = require('url')
-const path = require('path')
 
 startI18next()
 
@@ -22,8 +20,6 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
-let selLangWin = null
-let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
@@ -47,7 +43,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-app.on('ready', createWindow)
+
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -161,24 +157,6 @@ function startProcessWin () {
   processWin.once('ready-to-show', () => {
     planVersionCheck()
   })
-}
-
-
-function createWindow() {
-  welcomeWin = new BrowserWindow({
-    x: displaysX(),
-    y: displaysY(), 
-    autoHideMenuBar:true,
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    backgroundColor: settings.get('mainColor'),
-    title: 'stretchly'
-  })
-  welcomeWin.loadURL(url.format ({
-     
-     pathname: path.join(__dirname, 'index.html'),
-     protocol: 'file:',
-     slashes: true  
-  }))
 }
 
 function planVersionCheck (seconds = 1) {
@@ -671,13 +649,7 @@ ipcMain.on('save-setting', function (event, key, value) {
     breakPlanner.naturalBreaks(value)
   }
   settings.set(key, value)
-  //settingsWin.webContents.send('renderSettings', settings.data)
-  if (settingsWin) {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  }
-  else if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', settings.data)
-  }
+  settingsWin.webContents.send('renderSettings', settings.data)
   appIcon.setContextMenu(getTrayMenu())
 })
 
@@ -700,14 +672,8 @@ ipcMain.on('set-default-settings', function (event, data) {
   })
 })
 
-ipcMain.on('save-setting', function (event, data) {
-  //settingsWin.webContents.send('renderSettings', settings.data)
-  if (settingsWin) {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  }
-  else if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', settings.data)
-  }
+ipcMain.on('send-settings', function (event) {
+  settingsWin.webContents.send('renderSettings', settings.data)
 })
 
 ipcMain.on('show-debug', function (event) {
@@ -722,8 +688,5 @@ ipcMain.on('change-language', function (event, language) {
   i18next.changeLanguage(language)
   if (settingsWin) {
     settingsWin.webContents.send('renderSettings', settings.data)
-  }
-  else if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', settings.data)
   }
 })

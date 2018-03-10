@@ -19,7 +19,6 @@
     "for5Hours": "5小时",
     "indefinitely": "无限期",
     "resetBreaks": "重置休息",
-    "settings": "设置",
     "startAtLogin": "开机自动运行",
     "yourStretchly": "你的stretchly",
     "quitStretchly": "退出stretchly",
@@ -33,7 +32,8 @@
     "microbreak": "短时间休息",
     "break": "长时间休息",
     "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
-    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后",
+    "selectLanguage": "\n选择语言"
   },
   "break": {
     "keepGoing": "...额, 我还有事做",
@@ -106,5 +106,10 @@
   },
   "process": {
     "newVersionAvailable": "有新的版本!"
+  },
+  "welcome": {
+    "welcomeToStretchly": "欢迎来到Stretchly",
+    "appDesc": "完美的应用程序，提醒您在计算机上工作时休息一下",
+    "version": "版 : "
   }
 }
