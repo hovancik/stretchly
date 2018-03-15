@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.15.0",
+  "version": "0.14.0",
   "description": "break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -17,11 +17,11 @@
     "test": "mocha test",
     "tdd": "mocha --watch test",
     "lint": "./node_modules/.bin/standard",
-    "publish": "electron-builder --x64 --win -p always"
+    "publish": ["github"]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hovancik/stretchly.git"
+    "url": "git+https://github.com/tsah20/stretchly.git"
   },
   "keywords": [
     "stretchly",
@@ -93,8 +93,7 @@
         "nsis",
         "nsis-web",
         "7z",
-        "zip",
-        "appx"
+        "zip"
       ]
     },
     "nsis": {

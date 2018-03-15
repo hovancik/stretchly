@@ -6,6 +6,8 @@
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "About stretchly v{{version}}",
     "downloadLatestVersion": "Download latest version",
+    "checkForlatestVersion": "Check for latest version",
+    "newVesionAvailable": "A new version is available. Please update!",
     "about": "About",
     "becomePatron": "Become a Patron",
     "toBreak": "break",
