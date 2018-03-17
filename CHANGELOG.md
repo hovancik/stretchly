@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Russian translations for interface
 
+### Changed
+- upper limit of microbreak duration set to 60 seconds
+
+### Fixed
+- notifications not working on latest Windows 10
+
 ## [0.15.0] - 2018-02-18
 ### Added
 - Bulgarian translations for interface
@@ -24,9 +30,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - style for long names of schemes
 - app not starting when both break types are disabled
 - missing "reset to defaults"
-
-### Changed
-- upper limit of microbreak duration set to 60 seconds
 
 ## [0.14.0] - 2018-01-07
 ### Fixed
