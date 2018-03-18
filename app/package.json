@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "break time reminder app",
   "main": "main.js",
   "repository": {
@@ -21,7 +21,7 @@
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
     "@paulcbetts/system-idle-time": "^1.0.4",
-    "i18next": "^10.4.1",
+    "i18next": "^10.5.1",
     "i18next-node-fs-backend": "^1.0.0"
   }
 }

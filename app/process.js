@@ -36,5 +36,5 @@ function notifyNewVersion () {
   let notification = new Notification('stretchly', {
     body: i18next.t('process.newVersionAvailable')
   })
-  notification.onclick = () => shell.openExternal('https://github.com/hovancik/stretchly/releases')
+  notification.onclick = () => shell.openExternal('https://hovancik.net/stretchly/downloads')
 }
