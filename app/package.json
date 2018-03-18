@@ -5,7 +5,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsah20/stretchly.git"
+    "url": "git+https://github.com/hovancik/stretchly.git"
   },
   "keywords": [
     "stretchly",

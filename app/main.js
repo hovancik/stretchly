@@ -1,8 +1,9 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
+let VersionChecker = require('./utils/versionChecker')
 const Backend = require('i18next-node-fs-backend')
-const { autoUpdater } = require('electron-updater')
+const {autoUpdater} = require('electron-updater')
 autoUpdater.autoDownload = false
 startI18next()
 
@@ -23,9 +24,7 @@ let aboutWin = null
 let settingsWin = null
 let settings
 let isOnIndefinitePause
-let updaterWindow = null
-let newVersionAvailable = false
-
+let isNewVersionAvailable = null
 
 global.shared = {
   isNewVersion: false
@@ -47,7 +46,6 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-
 
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
@@ -160,7 +158,7 @@ function startProcessWin () {
   })
   processWin.loadURL(modalPath)
   processWin.once('ready-to-show', () => {
-    planVersionCheck()  
+    planVersionCheck()
   })
 }
 
@@ -435,74 +433,92 @@ function saveDefaultsFor (array, next) {
   }
 }
 
-function checkForLatestUpdate() {
-  const autoUpdaterPromise =  autoUpdater.checkForUpdates();
-  if(autoUpdaterPromise) {
-    processWin.webContents.send('showNotification', i18next.t('main.newVesionAvailable'))
-    return true;
-  }
-  return false;
+function checkForLatestUpdate () {
+  const oldVersion = app.getVersion()
+  new VersionChecker()
+    .latest()
+    .then(version => {
+      const semantic = /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
+      if (version.match(semantic) && oldVersion !== version) {
+        updateTrayForDownload()
+      }
+    })
+    .catch(exception => console.error(exception))
 }
 
-function downloadLatestUpdate() {
-    autoUpdater.checkForUpdates()
-    autoUpdater.on('update-available', () => {
-      dialog.showMessageBox({
-        type:'info',
-        title: 'Update Available',
-        message:'A new version of Stretchly is available. Do you want to download the update?',
-        buttons:['Yes','No']
-      }, (buttonIndex) => {
-          if(buttonIndex!=0) return;
-          autoUpdater.downloadUpdate()
-          let downloadProgressWindow = new BrowserWindow({
-            width:400,
-            height:70,
-            useContentSize: false,
-            autoHideMenuBar: true,
-            maximizable: false,
-            fullscreen: false,
-            resizable: false
-          })
+function updateTrayForDownload () {
+  processWin.webContents.send('showNotification', i18next.t('main.newVesionAvailable'))
+  isNewVersionAvailable = true
+  appIcon.setContextMenu(getTrayMenu())
+}
 
-        downloadProgressWindow.loadURL(`file://${__dirname}/stretchlyAutoUpdater.html`)
-        downloadProgressWindow.on('closed', () => {
-          downloadProgressWindow = null
-        })
-        let downloadProgress
+function downloadLatestUpdate () {
+  autoUpdater.checkForUpdates()
+  autoUpdater.on('update-available', () => {
+    dialog.showMessageBox({
+      type: 'info',
+      title: 'Update Available',
+      message: 'A new version of Stretchly is available. Do you want to download the update?',
+      buttons: ['Yes', 'No']
+    }, (buttonIndex) => {
+      if (buttonIndex !== 0) return
+      autoUpdater.downloadUpdate()
+      let downloadProgressWindow = new BrowserWindow({
+        width: 400,
+        height: 70,
+        useContentSize: false,
+        autoHideMenuBar: true,
+        maximizable: false,
+        fullscreen: false,
+        resizable: false
+      })
 
-        autoUpdater.on('download-progress', (d) => {
-          downloadProgress = d.percent;
-        })
-        
-        ipcMain.on('download-progress-request', (e) => {
-          e.returnValue = downloadProgress;
-        })
+      downloadProgressWindow.loadURL(`file://${__dirname}/stretchlyAutoUpdater.html`)
+      downloadProgressWindow.on('closed', () => {
+        downloadProgressWindow = null
+      })
+      let downloadProgress
 
-        autoUpdater.on('update-downloaded', () => {
-          if(downloadProgressWindow) {
-            downloadProgressWindow.close()
-          }
-        
+      autoUpdater.on('download-progress', (d) => {
+        downloadProgress = d.percent
+      })
+
+      ipcMain.on('download-progress-request', (e) => {
+        e.returnValue = downloadProgress
+      })
+
+      autoUpdater.on('update-downloaded', () => {
+        if (downloadProgressWindow) {
+          downloadProgressWindow.close()
+        }
+
         dialog.showMessageBox({
           type: 'info',
           title: 'Update Ready',
           message: 'A new version is stretchly is ready. Quit and Install now?',
           buttons: ['Yes', 'No']
         }, (buttonIndex) => {
-          if(buttonIndex === 0) {
-            autoUpdater.quitAndInstall();
+          if (buttonIndex === 0) {
+            autoUpdater.quitAndInstall()
           }
         })
       })
-    })  
+    })
   })
 }
 
 function getTrayMenu () {
   let trayMenu = []
-  let isNewVersionAvailable = checkForLatestUpdate();
-  if(isNewVersionAvailable) {
+  if (!isNewVersionAvailable) {
+    trayMenu.push({
+      label: i18next.t('main.checkForlatestVersion'),
+      click: function () {
+        checkForLatestUpdate()
+      }
+    })
+  }
+
+  if (isNewVersionAvailable) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {

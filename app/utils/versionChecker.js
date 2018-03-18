@@ -1,3 +1,5 @@
+const fetch = require('node-fetch');
+
 class VersionChecker {
   latest () {
     return fetch(
