@@ -16,12 +16,11 @@
     "dist": "build --x64 --ia32",
     "test": "mocha test",
     "tdd": "mocha --watch test",
-    "lint": "./node_modules/.bin/standard",
-    "publish": "build -p always"
+    "lint": "./node_modules/.bin/standard"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hovancik/stretchly.git"
+    "url": "git+https://github.com/tsah20/stretchly.git"
   },
   "keywords": [
     "stretchly",
@@ -120,8 +119,6 @@
   "dependencies": {
     "@paulcbetts/system-idle-time": "^1.0.4",
     "ajv": "^6.2.1",
-    "electron-builder": "^20.0.6",
-    "electron-log": "^2.2.14",
     "electron-updater": "^2.20.1",
     "i18next": "^10.4.1",
     "i18next-node-fs-backend": "^1.0.0",
