@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tsah20/stretchly.git"
+    "url": "git+https://github.com/hovancik/stretchly.git"
   },
   "keywords": [
     "stretchly",
