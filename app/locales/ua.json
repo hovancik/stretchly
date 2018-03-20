@@ -1,0 +1,113 @@
+{
+  "Main": {
+    "ToolTipHeader": "stretchly - нагадування про перервах",
+    "MicrobreakIn": "Мікроперерва через {{seconds}} с ...",
+    "BreakIn": "Перерва через {{seconds}} с ...",
+    "ResumingBreaks": "Роботу відновлено",
+    "AboutStretchly": "Про програму stretchly v {{version}}",
+    "DownloadLatestVersion": "Завантажити останню версію",
+    "About": "Про програму",
+    "BecomePatron": "Підтримати на Patreon",
+    "ToBreak": "перерви",
+    "ToMicrobreak": "мікроперериви",
+    "SkipToTheNext": "Перейти до наступної",
+    "Resume": "Відновити",
+    "Pause": "Пауза",
+    "ForHour": "на годину",
+    "For2Hours": "на 2 години",
+    "For5Hours": "на 5 годин",
+    "Indefinitely": "на невизначений термін",
+    "ResetBreaks": "Скинути перерви",
+    "Settings": "Налаштування",
+    "StartAtLogin": "Запуск при вході в систему",
+    "YourStretchly": "Мій stretchly",
+    "QuitStretchly": "Вихід з stretchly",
+    "ResetToDefaults": "налаштування",
+    "AreYouSure": "Ви впевнені, що бажаєте скинути налаштування на цій сторінці?",
+    "Yes": "так",
+    "No": "ні",
+    "PausedUntil": "\ nПауза - {{timeLeft}} до відновлення роботи \ nза звичайним графіком",
+    "PausedIndefinitely": "\ nПауза на невизначений термін",
+    "TimeToNext": "\ n {{timeLeft}} до {{breakType}}",
+    "Microbreak": "мікроперерва",
+    "Break": "перерви",
+    "NextBreakFollowing_0": "\ nНаступна перерва через {{count}} мікроперерву",
+    "NextBreakFollowing_1": "\ nНаступна перерва через {{count}} мікроперерви",
+    "NextBreakFollowing_2": "\ nСледующій перерву через {{count}} мікроперервів"
+  },
+  "Break": {
+    "KeepGoing": "... ні, я просто продовжу",
+    "Title": "Перерва!"
+  },
+  "Microbreak": {
+    "KeepGoing": "... ні, я просто продовжу",
+    "Title": "Перерва!"
+  },
+  "About": {
+    "Stretchly": "stretchly",
+    "BreakTimeReminderApp": "програма для нагадування о перервах",
+    "ToLearnMoreVisit": "Якщо хочете дізнатися більше про можливості stretchly або про те, як допомогти додатку, відвідайте",
+    "Homepage": "домашню сторінку",
+    "LatestVersion": "остання версія:",
+    "Checking": "перевіряємо ..."
+  },
+  "Settings": {
+    "Settings": "Налаштування",
+    "Microbreaks": "мікроперерви",
+    "SecondsEveryBreak": "секундна перерва кожні",
+    "Minutes": "хвилин",
+    "DontLetMeSkipMicrobreaks": "відключити можливість пропуску мікроперервів",
+    "Breaks": "перерви",
+    "MinutesBreakAfter": "хвилинна перерва після",
+    "Microbreaks2": "мікропереривів",
+    "DontLetMeSkipBreaks": "відключити можливість пропуску перерв",
+    "(Every": "(кожні",
+    "Minutes)": "хвилин)",
+    "MicrobreaksEnabled": "включити мікроперерви",
+    "BreaksEnabled": "включити перерви",
+    "ResetToDefaults": "налаштування",
+    "CantDisableBoth": "Неможливо відключити обидва типи перерв."
+  },
+  "Settings2": {
+    "Settings": "Налаштування",
+    "AudioScheme": "аудіо",
+    "CrystalGlass": "кришталь",
+    "WindChime": "вітерець",
+    "TicToc": "тік так",
+    "Silence": "тиша",
+    "ColorScheme": "кольорова палітра",
+    "GreenClouds": "зелені <br/> хмари",
+    "AutumnBeBlessed": "щаслива осінь",
+    "GraphiteCrystal": "кристали <br/> графіту",
+    "CoffeeKisses": "кавовий <br/> поцілунок",
+    "MorningSwim": "ранковий <br/> заплив",
+    "ResetToDefaults": "налаштування за умовчанням"
+  },
+  "Settings3": {
+    "Settings": "Налаштування",
+    "Miscellaneous": "інші",
+    "BreaksAreFullscreen": "повноекранні перерви",
+    "ShowBreakIdeas": "показувати ідеї для перерв",
+    "NotifyBeforeBreakStarts": "повідомляти перед початком перерви",
+    "NotifyBeforeMicrobreakStarts": "повідомляти перед початком мікроперерви",
+    "MonitorIdleTime": "вважати бездіяльність за природну перерву",
+    "ShowOnAllScreens": "відображати на всіх екранах",
+    "Language": "мова",
+    "ResetToDefaults": "налаштування за умовчанням"
+  },
+  "Utils": {
+    "SecondsLeft_0": "{{count}} секунда залишилась",
+    "SecondsLeft_1": "{{count}} секунди залишилося",
+    "SecondsLeft_2": "{{count}} секунд залишилося",
+    "MinutesLeft_0": "{{count}} хвилина залишилася",
+    "MinutesLeft_1": "{{count}} хвилини залишилося",
+    "MinutesLeft_2": "{{count}} хвилин залишилося",
+    "LessThen1m": "менше хвилини",
+    "H": "{{hours}} г",
+    "M": "{{minutes}} м",
+    "S": "~ {{seconds}} с"
+  },
+  "Process": {
+    "NewVersionAvailable": "Доступна нова версія!"
+  }
+}
