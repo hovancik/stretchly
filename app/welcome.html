@@ -15,18 +15,18 @@
            </br></br>
            </div>
         </p>
-        <div id="about-footer" data-i18next="welcome.version">
+        <div id="about-footer">
+            <span data-i18next="welcome.version"> 
+            </span>
+            <span id="version" ></span>
+            </br>
+            <div class="enabled" id="dontShowDiv">
+                    <input type="checkbox" value="dontShow" class="enable" id="dontShow">
+                    <span data-i18next="welcome.dontShowAgain"></span>
+                  </div>
         </div>
+        <script>
+            require('./welcome.js')
+        </script>
     </body>
-    <script>
-        document.getElementById('icon').src = "./images/stretchly_128x128.png"
-        const {ipcRenderer} = require('electron')
-        const HtmlTranslate = require('./utils/htmlTranslate')
-
-        document.getElementById('about-footer').innerText += require('electron').remote.app.getVersion();
-
-        document.addEventListener('DOMContentLoaded', event => {
-        new HtmlTranslate(document).translate()
-        })
-    </script>
 </html>

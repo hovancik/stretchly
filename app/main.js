@@ -165,20 +165,25 @@ function startProcessWin () {
 
 
 function createWindow() {
-  welcomeWin = new BrowserWindow({
-    x: displaysX(),
-    y: displaysY(), 
-    autoHideMenuBar:true,
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    backgroundColor: settings.get('mainColor'),
-    title: 'stretchly'
-  })
-  welcomeWin.loadURL(url.format ({
-     
-     pathname: path.join(__dirname, 'index.html'),
-     protocol: 'file:',
-     slashes: true  
-  }))
+  const dir = app.getPath('userData')
+  const settingsFile = `${dir}/config.json`
+  settings = new AppSettings(settingsFile)
+  if(settings.get('showWelcomeWindow')){
+    welcomeWin = new BrowserWindow({
+      x: displaysX(),
+      y: displaysY(), 
+      autoHideMenuBar:true,
+      icon: `${__dirname}/images/stretchly_18x18.png`,
+      backgroundColor: settings.get('mainColor'),
+      title: 'stretchly'
+    })
+    welcomeWin.loadURL(url.format ({
+       
+       pathname: path.join(__dirname, 'index.html'),
+       protocol: 'file:',
+       slashes: true  
+    }))
+  }
 }
 
 function planVersionCheck (seconds = 1) {
