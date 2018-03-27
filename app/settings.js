@@ -42,7 +42,7 @@ microbreakIntervalMinus.addEventListener('click', function (e) {
 })
 
 microbreakDurationPlus.addEventListener('click', function (e) {
-  if (microbreakDuration.innerHTML !== '30') {
+  if (microbreakDuration.innerHTML !== '60') {
     ipcRenderer.send('save-setting', 'microbreakDuration', (parseInt(microbreakDuration.innerHTML, 10) + 5) * 1000)
   }
 })
@@ -66,14 +66,20 @@ breakIntervalMinus.addEventListener('click', function (e) {
 })
 
 breakDurationPlus.addEventListener('click', function (e) {
-  if (breakDuration.innerHTML !== '15') {
+  if (Number(breakDuration.innerHTML) < 5) {
+    ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) + 1) * 1000 * 60)
+  } else {
     ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) + 5) * 1000 * 60)
   }
 })
 
 breakDurationMinus.addEventListener('click', function (e) {
-  if (breakDuration.innerHTML !== '5') {
-    ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 5) * 1000 * 60)
+  if (Number(breakDuration.innerHTML) > 1) {
+    if (Number(breakDuration.innerHTML) <= 5) {
+      ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 1) * 1000 * 60)
+    } else {
+      ipcRenderer.send('save-setting', 'breakDuration', (parseInt(breakDuration.innerHTML, 10) - 5) * 1000 * 60)
+    }
   }
 })
 

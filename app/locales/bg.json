@@ -27,7 +27,7 @@
     "yes": "да",
     "no": "не",
     "pausedUntil": "\nПаузирано - {{timeLeft}} докато почивките не продължат",
-    "pausedIndefinitely": "Паузирано неограничено",
+    "pausedIndefinitely": "\nПаузирано неограничено",
     "timeToNext": "\n{{timeLeft}} до {{breakType}}",
     "microbreak": "микропочивка",
     "break": "почивка",

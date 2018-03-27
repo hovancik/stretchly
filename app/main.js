@@ -27,6 +27,8 @@ let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
+app.setAppUserModelId('net.hovancik.stretchly')
+
 global.shared = {
   isNewVersion: false
 }

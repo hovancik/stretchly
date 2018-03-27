@@ -27,7 +27,7 @@
     "yes": "Ja",
     "no": "Nein",
     "pausedUntil": "\nPausiert - {{timeLeft}} bis die Pausen wie geplant\nwieder aufgenommen werden",
-    "pausedIndefinitely": "unbegrenzt pausiert",
+    "pausedIndefinitely": "\nUnbegrenzt pausiert",
     "timeToNext": "\n{{timeLeft}} bis zur {{breakType}}",
     "microbreak": "Mikropause",
     "break": "Pause",
