@@ -27,7 +27,7 @@
     "yes": "yes",
     "no": "no",
     "pausedUntil": "\nPaused - {{timeLeft}} till breaks resume\nas regularly scheduled",
-    "pausedIndefinitely": "Paused indefinitely",
+    "pausedIndefinitely": "\nPaused indefinitely",
     "timeToNext": "\n{{timeLeft}} to {{breakType}}",
     "microbreak": "microbreak",
     "break": "break",

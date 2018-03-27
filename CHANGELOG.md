@@ -5,18 +5,34 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.16.0] - 2018-03-17
+### Added
+- Russian translations for interface
+
+### Changed
+- upper limit of microbreak duration set to 60 seconds
+- download link from github's releases to hovancik.net/stretchly/downloads
+
+### Fixed
+- notifications not working on latest Windows 10
+
+## [0.15.0] - 2018-02-18
 ### Added
 - Bulgarian translations for interface
 - Brazilian Portuguese translations for interface
 - Chinese translations for interface, distinguish between two kinds of Chinese
 - AppX and web installer for Windows
 - ability to change install directory for Windows
-- abiltity to install per user or per machine on Windows
+- ability to install per user or per machine on Windows
 - Multi-display support added and enabled by default
+- ability to set break to less than 5 minutes
+- Hindi Translations for interface
 
 ### Fixed
 - style for long names of schemes
 - app not starting when both break types are disabled
+- missing "reset to defaults"
 
 ## [0.14.0] - 2018-01-07
 ### Fixed
@@ -198,7 +214,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.14.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.16.0...HEAD
+[0.15.0]: https://github.com/hovancik/stretchly/compare/v0.15.0...v0.16.0
+[0.14.0]: https://github.com/hovancik/stretchly/compare/v0.14.0...v0.15.0
 [0.13.0]: https://github.com/hovancik/stretchly/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/hovancik/stretchly/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/hovancik/stretchly/compare/v0.11.0...v0.12.0

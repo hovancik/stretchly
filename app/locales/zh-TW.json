@@ -20,15 +20,15 @@
     "resetBreaks": "重置休息",
     "settings": "設定",
     "startAtLogin": "開機時自動執行",
-    "yourStretchly": "你的 stretchly",
+    "yourStretchly": "我的 stretchly",
     "quitStretchly": "離開",
     "resetToDefaults": "恢復預設值",
     "areYouSure": "您確定要把本軟體恢復預設值嗎？",
     "yes": "確定",
     "no": "取消",
     "pausedUntil": "\n已暫停 - {{timeLeft}} 直到恢復\n为定期",
-    "pausedIndefinitely": "無限期暫停",
-    "timeToNext": "\n{{timeLeft}} 為 {{breakType}}",
+    "pausedIndefinitely": "\n無限期暫停",
+    "timeToNext": "\n再 {{timeLeft}} 執行 {{breakType}} 一次",
     "microbreak": "小休息",
     "break": "長時間休息",
     "nextBreakFollowing": "\n下次長時間休息在 {{count}} 次小休息後",
@@ -36,11 +36,11 @@
     "selectLanguage": "\n選擇語言"
   },
   "break": {
-    "keepGoing": "...阿, 我來有事情要做",
+    "keepGoing": "... 阿, 我還有事情要做",
     "title": "該休息了！"
   },
   "microbreak": {
-    "keepGoing": "...阿, 我來有事情要做",
+    "keepGoing": "... 阿, 我還有事情要做",
     "title": "該休息了！"
   },
   "about": {
@@ -89,8 +89,8 @@
     "showBreakIdeas": "顯示休息建議",
     "notifyBeforeBreakStarts": "在長時間休息前跳出通知",
     "notifyBeforeMicrobreakStarts": "在小休息前跳出通知",
-    "monitorIdleTime": "監控系統空閒，納入休息時間",
-    "showOnAllScreens": "breaks are shown on all monitors",
+    "monitorIdleTime": "監控系統空閒時間，納入休息時間",
+    "showOnAllScreens": "在每個螢幕上顯示休息畫面 （如果有多螢幕）",
     "language": "語言",
     "resetToDefaults": "恢復預設值"
   },

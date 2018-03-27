@@ -1,0 +1,120 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - напоминания о перерывах",
+    "microbreakIn": "Микроперерыв через {{seconds}}с...",
+    "breakIn": "Перерыв через {{seconds}}с...",
+    "resumingBreaks": "Работа возобновлена",
+    "aboutStretchly": "О программе stretchly v{{version}}",
+    "downloadLatestVersion": "Загрузить последнюю версию",
+    "about": "О программе",
+    "becomePatron": "Поддержать на Patreon",
+    "toBreak": "перерыву",
+    "toMicrobreak": "микроперерыву",
+    "skipToTheNext": "Перейти к ближайшему",
+    "resume": "Возобновить",
+    "pause": "Пауза",
+    "forHour": "на час",
+    "for2Hours": "на 2 часа",
+    "for5Hours": "на 5 часов",
+    "indefinitely": "на неопределённый срок",
+    "resetBreaks": "Сбросить перерывы",
+    "settings": "Настройки",
+    "startAtLogin": "Запуск при входе в систему",
+    "yourStretchly": "Мой stretchly",
+    "quitStretchly": "Выход из stretchly",
+    "resetToDefaults": "Настройки по умолчанию",
+    "areYouSure": "Вы уверены, что желаете сбросить настройки на данной странице?",
+    "yes": "да",
+    "no": "нет",
+    "pausedUntil": "\nПауза - {{timeLeft}} до возобновления работы\nпо обычному графику",
+    "pausedIndefinitely": "\nПауза на неопределённый срок",
+    "timeToNext": "\n{{timeLeft}} до {{breakType}}",
+    "microbreak": "микроперерыва",
+    "break": "перерыва",
+    "nextBreakFollowing_0": "\nСледующий перерыв через {{count}} микроперерыв",
+    "nextBreakFollowing_1": "\nСледующий перерыв через {{count}} микроперерыва",
+    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов",
+    "selectLanguage":"Выберите язык"
+  },
+  "break": {
+    "keepGoing": "...не, я просто продолжу",
+    "title": "Перерыв!"
+  },
+  "microbreak": {
+    "keepGoing": "...не, я просто продолжу",
+    "title": "Перерыв!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "программа для напоминания о перерывах",
+    "toLearnMoreVisit": "Если хотите узнать больше о возможностях stretchly или о том, как помочь приложению, посетите",
+    "homepage": "домашнюю страницу",
+    "latestVersion": "последняя версия:",
+    "checking": "проверяем..."
+  },
+  "settings": {
+    "settings": "Настройки",
+    "microbreaks": "микроперерывы",
+    "secondsEveryBreak": "секундный перерыв каждые",
+    "minutes": "минут",
+    "dontLetMeSkipMicrobreaks": "отключить возможность пропуска микроперерывов",
+    "breaks": "перерывы",
+    "minutesBreakAfter": "минутный перерыв после",
+    "microbreaks2": "микроперерывов",
+    "dontLetMeSkipBreaks": "отключить возможность пропуска перерывов",
+    "(every": "(каждые",
+    "minutes)": "минут)",
+    "microbreaksEnabled": "включить микроперерывы",
+    "breaksEnabled": "включить перерывы",
+    "resetToDefaults": "настройки по умолчанию",
+    "cantDisableBoth": "Невозможно отключить оба типа перерывов."
+  },
+  "settings2": {
+    "settings": "Настройки",
+    "audioScheme": "аудио",
+    "crystalGlass": "хрусталь",
+    "windChime": "ветерок",
+    "ticToc": "тик так",
+    "silence": "тишина",
+    "colorScheme": "цветовая палитра",
+    "greenClouds": "зелёные <br/> облака",
+    "autumnBeBlessed": "счастливая осень",
+    "graphiteCrystal": "кристаллы <br/>графита",
+    "coffeeKisses": "кофейный <br/> поцелуй",
+    "morningSwim": "утренний <br/> заплыв",
+    "resetToDefaults": "настройки по умолчанию"
+  },
+  "settings3": {
+    "settings": "Настройки",
+    "miscellaneous": "прочие",
+    "breaksAreFullscreen": "полноэкранные перерывы",
+    "showBreakIdeas": "показывать идеи для перерывов",
+    "notifyBeforeBreakStarts": "уведомлять перед началом перерыва",
+    "notifyBeforeMicrobreakStarts": "уведомлять перед началом микроперерыва",
+    "monitorIdleTime": "считать бездействие за естественный перерыв",
+    "showOnAllScreens": "отображать на всех экранах",
+    "language": "язык",
+    "resetToDefaults": "настройки по умолчанию"
+  },
+  "utils": {
+    "secondsLeft_0": "{{count}} секунда осталась",
+    "secondsLeft_1": "{{count}} секунды осталось",
+    "secondsLeft_2": "{{count}} секунд осталось",
+    "minutesLeft_0": "{{count}} минута осталась",
+    "minutesLeft_1": "{{count}} минуты осталось",
+    "minutesLeft_2": "{{count}} минут осталось",
+    "lessThen1m": "менее минуты",
+    "h": "{{hours}}ч",
+    "m": "{{minutes}}м",
+    "s": "~{{seconds}}с"
+  },
+  "process": {
+    "newVersionAvailable": "Доступна новая версия!"
+  },
+  "welcome": {
+    "welcomeToStretchly": "Добро пожаловать в Stretchly",
+    "appDesc": "Идеальное приложение, которое напоминает вам делать перерывы во время работы на компьютере",
+    "version": "Версия : ",
+    "dontShowAgain": "Не показывать это снова" 
+  }
+}
