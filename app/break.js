@@ -13,9 +13,17 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-break', false)
 })
 
-ipcRenderer.on('breakIdea', (event, message, strictMode) => {
+document.getElementById('postpone').addEventListener('click', function (e) {
+  ipcRenderer.send('postpone-break')
+})
+
+ipcRenderer.on('breakIdea', (event, message, strictMode, postponable) => {
   if (!strictMode) {
-    document.getElementById('close').style.visibility = 'visible'
+    if (postponable) {
+      document.getElementById('postpone').style.visibility = 'visible'
+    } else {
+      document.getElementById('close').style.visibility = 'visible'
+    }
   }
   if (message) {
     let breakIdea = document.getElementsByClassName('break-idea')[0]

@@ -121,6 +121,7 @@ a {
   font-family: 'Lato Light'
 }
 
+#postpone,
 #close,
 #about-footer,
 #defaults,
@@ -135,6 +136,7 @@ a {
   transform: translateX(-50%);
 }
 
+#postpone,
 #close {
   visibility: hidden;
 }
