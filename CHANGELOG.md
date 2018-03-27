@@ -35,6 +35,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface
+- Ability to postpone breaks/microbreaks in non-strict mode
+  * change pospone time with break/microbreak PostponeTime settings
+  * limit postpone times with break/microbreak PostponesLimit settings
 
 ### Changed
 - upper limit of microbreak duration set to 60 seconds
