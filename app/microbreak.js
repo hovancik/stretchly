@@ -13,9 +13,17 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-microbreak', false)
 })
 
-ipcRenderer.on('microbreakIdea', (event, message, strictMode) => {
+document.getElementById('postpone').addEventListener('click', function (e) {
+  ipcRenderer.send('postpone-microbreak')
+})
+
+ipcRenderer.on('microbreakIdea', (event, message, strictMode, postponable) => {
   if (!strictMode) {
-    document.getElementById('close').style.visibility = 'visible'
+    if (postponable) {
+      document.getElementById('postpone').style.visibility = 'visible'
+    } else {
+      document.getElementById('close').style.visibility = 'visible'
+    }
   }
   if (message) {
     let microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]

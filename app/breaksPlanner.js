@@ -7,6 +7,7 @@ class BreaksPlanner extends EventEmitter {
     super()
     this.settings = settings
     this.breakNumber = 0
+    this.postponesNumber = 0
     this.scheduler = null
     this.isPaused = false
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
@@ -37,6 +38,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   nextBreak () {
+    this.postponesNumber = 0
     if (this.scheduler) this.scheduler.cancel()
     let shouldBreak = this.settings.get('break')
     let shouldMicrobreak = this.settings.get('microbreak')
@@ -89,6 +91,19 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler.plan()
   }
 
+  postponeCurrentBreak (type) {
+    if (!this.scheduler) {
+      console.log('no current break to postpone')
+      return
+    }
+    this.scheduler.cancel()
+    this.postponesNumber += 1
+    const postponeTime = this.settings.get(`${type}PostponeTime`)
+    const eventName = `start${type.charAt(0).toUpperCase() + type.slice(1)}`
+    this.scheduler = new Scheduler(() => this.emit(eventName), postponeTime, eventName)
+    this.scheduler.plan()
+  }
+
   skipToMicrobreak () {
     this.scheduler.cancel()
     let shouldBreak = this.settings.get('break')
@@ -118,6 +133,7 @@ class BreaksPlanner extends EventEmitter {
   clear () {
     this.scheduler.cancel()
     this.breakNumber = 0
+    this.postponesNumber = 0
   }
 
   pause (milliseconds) {
