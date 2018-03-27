@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Italian translations for interface
 - Welcome and Tutorial windows on first run and in About window
 - Dutch translations for interface
+- Ability to postpone breaks/microbreaks in non-strict mode
+  * change postpone time with break/microbreak PostponeTime settings
+  * limit postpone times with break/microbreak PostponesLimit settings
+  * change postpone/dismiss limit with break/microbreak PostponesDurationPercent settings
 
 ### Fixed
 - User pause will no longer be removed upon suspend/resume
