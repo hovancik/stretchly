@@ -18,13 +18,12 @@ document.getElementById('postpone').addEventListener('click', function (e) {
 })
 
 ipcRenderer.on('microbreakIdea', (event, message, strictMode, postponable) => {
-  if (!strictMode) {
-    if (postponable) {
-      document.getElementById('postpone').style.visibility = 'visible'
-    } else {
-      document.getElementById('close').style.visibility = 'visible'
-    }
+  if (postponable) {
+    document.getElementById('postpone').style.visibility = 'visible'
+  } else if (!strictMode) {
+    document.getElementById('close').style.visibility = 'visible'
   }
+
   if (message) {
     let microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
     microbreakIdea.innerHTML = message

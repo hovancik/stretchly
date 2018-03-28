@@ -240,11 +240,10 @@ function startMicrobreak () {
     return
   }
 
-  let postponable = false
-  if (!settings.get('microbreakStrictMode')) {
-    const postponesLimit = settings.get('microbreakPostponesLimit')
-    postponable = settings.get('microbreakPostpone') &&
-      (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
+  const postponesLimit = settings.get('microbreakPostponesLimit')
+  let postponable = settings.get('microbreakPostpone') &&
+    (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
+  if (!settings.get('microbreakStrictMode') || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
       if (postponable) {
         postponeMicrobreak()
@@ -310,11 +309,10 @@ function startBreak () {
     return
   }
 
-  let postponable = false
-  if (!settings.get('breakStrictMode')) {
-    const postponesLimit = settings.get('breakPostponesLimit')
-    postponable = settings.get('breakPostpone') &&
-      (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
+  const postponesLimit = settings.get('breakPostponesLimit')
+  let postponable = settings.get('breakPostpone') &&
+    (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
+  if (!settings.get('breakStrictMode') || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
       if (postponable) {
         postponeBreak()
@@ -323,6 +321,7 @@ function startBreak () {
       }
     })
   }
+
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
