@@ -170,6 +170,9 @@ function createWindow() {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
+  if(settings.get('showWelcomeWindow') == null){
+    settings.set('showWelcomeWindow', true)
+  }
   if(settings.get('showWelcomeWindow')){
     welcomeWin = new BrowserWindow({
       x: displaysX(),
