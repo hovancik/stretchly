@@ -2,8 +2,7 @@
 <html>
    <head>
        <title data-i18next="about.stretchly"></title>
-      <meta charset = "UTF-8">
-      <link rel="stylesheet" href="css/app.css">
+       <link rel="stylesheet" type="text/css" href="css/app.css">
    </head>
    <body>
        <p class = "intro" >
@@ -20,11 +19,14 @@
             </span>
             <span id="version" ></span>
             </br>
-            <div class="enabled" id="dontShowDiv">
+            <div class="enabled">
                     <input type="checkbox" value="dontShow" class="enable" id="dontShow">
                     <span data-i18next="welcome.dontShowAgain"></span>
-                  </div>
+            </div>
         </div>
+        <div class="next">
+            <a href="userGuide.html" title="User Guide" id="userGuide">&rsaquo;</a>
+          </div>
         <script>
             require('./welcome.js')
         </script>

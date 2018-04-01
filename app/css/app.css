@@ -154,3 +154,27 @@ progress {
 select  {
   padding: 5px 3px 5px 10px;
 }
+
+img.image {
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  width: 50%;
+  
+}
+
+#imgDisplay {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoDisplay {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 15px
+}

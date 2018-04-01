@@ -112,6 +112,23 @@
     "welcomeToStretchly": "Welcome to Stretchly",
     "appDesc": "Perfect app that reminds you to take breaks while working on computer.",
     "version": "Version : ",
-    "dontShowAgain": "Don't show this again" 
+    "dontShowAgain": "Don't show this again",
+    "userGuide": "User Guide"
+  },
+  "userGuideInfo":{
+    "microbreak": "By default, it runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing idea for microbreak.",
+    "break": "Every 30 minutes, it shows window containing idea for longer 5 minute break.",
+    "notif": "User gets notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode). ",
+    "tray1": "You can pause/resume reminding of breaks. On Windows and macOS, you can set app to start at login.",
+    "tray2": "You can also skip to the next break or microbreak anytime from menu, or reset (restart) breaks.",
+    "tray3": "Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.",
+    "setting1": "Microbreaks and breaks can be customized: \nyou can set duration and interval of break \n ou can enable/disable breaks \nyou can enable/disable strict mode (breaks can't be finished early)",
+    "setting2": "you can choose from different color schemes \nyou can pick a sound to be played at the end of the break",
+    "setting3" : "you can set break window to be fullscreen \nyou can disable showing of break ideas \nyou can disable showing of break notifications \nyou can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, stretchly will reset breaks) \nyou can disable showing breaks on all of your monitors \nyou can choose language for interface",
+    "hMicrobreak" : "Microbreaks",
+    "hBreak" : "Breaks",
+    "hNotif" : "Notifications",
+    "hTray" : "Tray",
+    "hSetting" : "Settings"
   }
 }
