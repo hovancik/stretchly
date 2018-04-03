@@ -152,6 +152,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Fahim Dalvi, @fdalvi. [fdalvi.github.io](https://fdalvi.github.io)
 - Nic Desjardins, @nicdesjardins
 - Vladislav Kuznecov, @fizvlad
+- Oleg V., @neooleg
 
 
 ### Humans and Tools

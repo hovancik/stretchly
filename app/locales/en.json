@@ -115,7 +115,7 @@
     "dontShowAgain": "Don't show this again",
     "userGuide": "User Guide"
   },
-  "userGuideInfo":{
+  "userGuideInfo": {
     "microbreak": "By default, it runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing an idea for microbreak.",
     "break": "Every 30 minutes, it shows a window containing an idea for a longer 5-minute break.",
     "notif": "The user gets notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode).",
