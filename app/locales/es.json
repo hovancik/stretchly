@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "stretchly - aplicación para recordar cuando hacer descansos",
+    "toolTipHeader": "stretchly - aplicación para notificar cuándo hacer descansos",
     "microbreakIn": "Microdescanso en {{seconds}} segundos...",
     "breakIn": "Descanso en {{seconds}} segundos...",
     "resumingBreaks": "Resuming breaks",
@@ -44,7 +44,7 @@
   },
   "about": {
     "stretchly": "stretchly",
-    "breakTimeReminderApp": "aplicación para recordar cuando hacer descansos",
+    "breakTimeReminderApp": "aplicación para notificar cuándo hacer descansos",
     "toLearnMoreVisit": "Para saber más sobre stretchly y cómo colaborar, visita su",
     "homepage": "página web",
     "latestVersion": "última versión:",
