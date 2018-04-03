@@ -111,6 +111,7 @@
     "welcomeToStretchly": "欢迎来到Stretchly",
     "appDesc": "完美的应用程序，提醒您在计算机上工作时休息一下",
     "version": "版 : ",
+    "dontShowAgain": "不要再显示这个",
     "userGuide": "用户指南"
   },
   "userGuideInfo":{
@@ -127,6 +128,7 @@
     "hBreak" : "长时间休息",
     "hNotif" : "通知",
     "hTray" : "托盘",
-    "hSetting" : "设置"
+    "hSetting" : "设置",
+    "inAbout" : "在大约窗口中可用"
   }
 }

@@ -112,6 +112,7 @@
     "welcomeToStretchly": "Willkommen bei Stretchly",
     "appDesc": "Perfekte App, die Sie daran erinnert, während der Arbeit am Computer Pausen einzulegen.",
     "version": "Ausführung : ",
+    "dontShowAgain": "Zeig es nicht noch einmal",
     "userGuide": "Benutzerhandbuch"
   },
   "userGuideInfo":{
@@ -128,6 +129,7 @@
     "hBreak" : "Pausen",
     "hNotif" : "Benachrichtigungen",
     "hTray" : "Tablett",
-    "hSetting" : "Einstellungen"
+    "hSetting" : "Einstellungen",
+    "inAbout" : "Verfügbar in ungefährem Fenster"
   }
 }

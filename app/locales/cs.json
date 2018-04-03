@@ -115,6 +115,7 @@
     "welcomeToStretchly": "Vítejte v Stretchly",
     "appDesc": "Dokonalá aplikace, která vám připomíná, abyste si při práci s počítačem udělali přestávky.",
     "version": "Verze : ",
+    "dontShowAgain": "Nezobrazujte to znovu",
     "userGuide": "Uživatelská příručka"
   },
   "userGuideInfo":{
@@ -131,6 +132,7 @@
     "hBreak" : "Přestávky",
     "hNotif" : "Oznámení",
     "hTray" : "Zásobník",
-    "hSetting" : "Nastavení"
+    "hSetting" : "Nastavení",
+    "inAbout" : "K dispozici v okně"
   }
 }

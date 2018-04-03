@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
-   <head>
-       <title data-i18next="about.stretchly"></title>
-       <link rel="stylesheet" type="text/css" href="css/app.css">
-   </head>
-   <body>
-       <p class = "intro" >
-           <div>
-                <img id="icon"/>
-           </div>
-           <h2 data-i18next="welcome.welcomeToStretchly"></h2>
-           <div data-i18next="welcome.appDesc">
-           </br></br>
-           </div>
-        </p>
-        <div id="about-footer">
-            <span data-i18next="welcome.version"> 
-            </span>
-            <span id="version" ></span>
-            </br>
-            <div class="enabled">
-                    <input type="checkbox" value="dontShow" class="enable" id="dontShow">
-                    <span data-i18next="welcome.dontShowAgain"></span>
-            </div>
+
+<head>
+    <title data-i18next="about.stretchly"></title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+
+<body>
+    <div class="intro">
+        <div>
+            <img id="icon" />
         </div>
-        <div class="next">
-            <a href="userGuide.html" title="User Guide" id="userGuide">&rsaquo;</a>
-          </div>
-        <script>
-            require('./welcome.js')
-        </script>
-    </body>
+        <h2 data-i18next="welcome.welcomeToStretchly"></h2>
+        <div data-i18next="welcome.appDesc">
+            </br>
+            </br>
+        </div>
+    </div>
+    <div id="about-footer">
+        <span data-i18next="welcome.version"></span>
+        <span id="version"></span>
+        </br>
+        <div class="enabled">
+            <input type="checkbox" value="dontShow" class="enable" id="dontShow"/>
+            <span data-i18next="welcome.dontShowAgain"></span>
+        </div>
+        <div id="inAbout" style="display: none">
+            <span data-i18next="userGuideInfo.inAbout"></span>
+        </div>
+    </div>
+    <div class="next">
+        <a href="userGuide.html" title="User Guide" id="userGuide">&rsaquo;</a>
+    </div>
+    <script>
+        require('./welcome.js')
+    </script>
+</body>
+
 </html>

@@ -127,6 +127,7 @@
     "hBreak" : "長時間休息",
     "hNotif" : "通知",
     "hTray" : "托盤",
-    "hSetting" : "設定"
+    "hSetting" : "設定",
+    "inAbout" : "在大約窗口中可用"
   }
 }

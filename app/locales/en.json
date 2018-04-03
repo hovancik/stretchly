@@ -129,6 +129,7 @@
     "hBreak" : "Breaks",
     "hNotif" : "Notifications",
     "hTray" : "Tray",
-    "hSetting" : "Settings"
+    "hSetting" : "Settings",
+    "inAbout" : "Available in about window"
   }
 }

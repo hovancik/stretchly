@@ -9,13 +9,16 @@ document.addEventListener('DOMContentLoaded', event => {
     })
 
 let element = document.querySelector('input[id=dontShow]')
+let inAbout = document.querySelector('div[id=inAbout]')
 element.checked=false
 element.addEventListener('change', function (e) {
     console.log('clicked '+element.checked)
     if(element.checked){
             ipcRenderer.send('save-setting', 'showWelcomeWindow', false)
+            inAbout.style.display='block'
         }
         else{
             ipcRenderer.send('save-setting', 'showWelcomeWindow', true)
+            inAbout.style.display='none'
         }
   })
