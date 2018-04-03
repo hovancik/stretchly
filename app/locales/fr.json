@@ -111,6 +111,23 @@
   "welcome": {
     "welcomeToStretchly": "Bienvenue à Stretchly",
     "appDesc": "Application parfaite qui vous rappelle de prendre des pauses tout en travaillant sur ordinateur.",
-    "version": "Version : "
+    "version": "Version : ",
+    "userGuide": "Mode d'emploi"
+  },
+  "userGuideInfo":{
+    "microbreak": "Par défaut, il fonctionne dans votre bac et affiche une fenêtre de rappel toutes les 10 minutes, ouverte pendant 20 secondes, contenant une idée de microbreak. ",
+    "break": "Toutes les 30 minutes, il affiche une fenêtre contenant une idée pour une pause plus longue de 5 minutes.",
+    "notif": "L'utilisateur est averti 30 secondes avant les pauses (et 10 secondes avant le microbreak) pour pouvoir se préparer à faire une pause dans le travail. \nVous pouvez terminer le break ou le microbreak en cliquant sur le lien en bas ou en utilisant Ctrl / Cmd + x raccourci clavier (en mode non strict). ",
+    "tray1": "Vous pouvez mettre en pause / reprendre le rappel des pauses. Sous Windows et Mac OS, vous pouvez configurer l'application pour qu'elle démarre à la connexion.",
+    "tray2": "Vous pouvez également passer à la prochaine pause ou au microbreak à tout moment à partir du menu ou réinitialiser (redémarrer) les pauses.",
+    "tray3": "L'info-bulle du plateau affiche des informations sur le temps restant jusqu'à la prochaine (micro) pause, le nombre de microbreaks jusqu'à la prochaine pause ou le temps restant en pause jusqu'à la reprise des pauses. ",
+    "setting1": "Les pauses micro et les pauses peuvent être personnalisées: \nVous pouvez définir la durée et l'intervalle de pause \nVous pouvez activer / désactiver les pauses \nVous pouvez activer / désactiver le mode strict (les pauses ne peuvent pas être terminées plus tôt) ",
+    "setting2": "Vous pouvez choisir parmi différents modèles de couleurs \nVous pouvez choisir un son à jouer à la fin de la pause",
+    "setting3" : "Vous pouvez définir la fenêtre de pause pour qu'elle soit en plein écran \nVous pouvez désactiver l'affichage des idées de pause ou des notifications de rupture ou la surveillance du temps d'inactivité du système pour des interruptions naturelles ou des interruptions sur tous vos moniteurs \nVous pouvez choisir la langue de l'interface",
+    "hMicrobreak" : "petites pauses",
+    "hBreak" : "grandes pauses",
+    "hNotif" : "Notifications",
+    "hTray" : "Plateau",
+    "hSetting" : "Paramètres"
   }
 }

@@ -111,6 +111,23 @@
   "welcome": {
     "welcomeToStretchly": "Bem-vindo ao Stretchly",
     "appDesc": "App perfeito que lembra você para fazer pausas enquanto trabalha no computador.",
-    "version": "Versão : "
+    "version": "Versão : ",
+    "userGuide": "Guia de usuario"
+  },
+  "userGuideInfo":{
+    "microbreak": "Por padrão, ele é executado na sua bandeja e mostra uma janela de lembrete a cada 10 minutos, que fica aberta por 20 segundos, contendo uma ideia para o microbreak. ",
+    "break": "A cada 30 minutos, mostra uma janela com uma ideia para uma pausa de 5 minutos.",
+    "notif": "O usuário é notificado 30 segundos antes dos intervalos (e 10 segundos antes do micro-falha) para poder se preparar para pausar o trabalho. \nVocê pode terminar breakbreak ou microbreak antecipadamente, clicando no link na parte inferior ou usando Ctrl / Cmd + x atalho de teclado (quando não estiver no modo estrito). ",
+    "tray1": "Você pode pausar / retomar a lembrança de quebras. No Windows e Mac OS, você pode definir o aplicativo para iniciar no login.",
+    "tray2": "Você também pode pular para a próxima pausa ou micro-queda a qualquer momento no menu, ou reinicializar (reiniciar) as quebras. ",
+    "tray3": "A dica de ferramenta da bandeja mostra informações sobre o tempo restante até a próxima (micro) quebra, o número de microbreaks até a próxima pausa ou o tempo restante em pausa até o retorno das pausas. ",
+    "setting1": "Micropausas e quebras podem ser personalizadas: \nVocê pode definir duração e intervalo de intervalo \nVocê pode habilitar / desabilitar quebras \nvocê pode ativar / desativar o modo estrito (quebras não podem ser concluídas antes) ",
+    "setting2": "Você pode escolher entre diferentes esquemas de cores \nVocê pode escolher um som para ser tocado no final do intervalo ",
+    "setting3" : "Você pode definir a janela de quebra para ser fullscreen \nVocê pode desativar a exibição de idéias de quebra ou quebrar notificações ou monitoramento de tempo ocioso do sistema para quebras naturais ou mostrando quebras em todos os seus monitores \nvocê pode escolher idioma para interface",
+    "hMicrobreak" : "Micropausas",
+    "hBreak" : "Pausas",
+    "hNotif" : "Notificações",
+    "hTray" : "Bandeja",
+    "hSetting" : "Configurações"
   }
 }

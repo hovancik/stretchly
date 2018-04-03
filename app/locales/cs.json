@@ -114,6 +114,23 @@
   "welcome": {
     "welcomeToStretchly": "Vítejte v Stretchly",
     "appDesc": "Dokonalá aplikace, která vám připomíná, abyste si při práci s počítačem udělali přestávky.",
-    "version": "Verze : "
+    "version": "Verze : ",
+    "userGuide": "Uživatelská příručka"
+  },
+  "userGuideInfo":{
+    "microbreak": "Ve výchozím nastavení běží ve vašem zásobníku a zobrazuje okno připomenutí každých 10 minut, které je otevřeno po dobu 20 sekund a obsahuje nápad pro mikrobreak.",
+    "break": "Každých 30 minut se zobrazí okno s nápadem delší 5minutové přestávky.",
+    "notif": "Uživatel dostane oznámení 30 sekund před přestávkami (a 10 sekund před mikrobreakem), aby se připravil na pozastavení práce. \nMůžete dokončit přestávku nebo microbreak dříve, kliknutím na odkaz v dolní části nebo pomocí klávesové zkratky Ctrl / Cmd + x (pokud není v přísném režimu).",
+    "tray1": "Můžete pozastavit / obnovit připomenutí přestávek. V systémech Windows a Mac OS můžete nastavit, aby aplikace začala při přihlašování.",
+    "tray2": "Můžete také přeskočit na další přestávku nebo mikrobreak kdykoliv z nabídky nebo restartovat (restartovat) přestávky.",
+    "tray3": "Nástrojový popis zásobníku zobrazuje informace o době zbývající do dalšího (mikro) zlomu, počtu mikrobrášek až do dalšího zlomu nebo zbývajícího času v pauze až do obnovení přestávky.",
+    "setting1": "Mikropřestávky a přestávky lze přizpůsobit: \nMůžete nastavit dobu trvání a interval přestávky \nMůžete povolit / deaktivovat přestávky \nMůžete povolit / zakázat přísný režim (přestávky nelze dokončit brzy)",
+    "setting2": "Můžete si vybrat z různých barevných schémat. Na konci přestávky můžete vybrat zvuk, který se má přehrát",
+    "setting3" : "Můžete nastavit přerušení okna na celou obrazovku \nMůžete zakázat zobrazování nápady na přerušení nebo oznámení o přerušení nebo sledování doby nečinnosti systému pro přirozené přestávky nebo zobrazování přestávek ve všech monitorech \nMůžete zvolit jazyk pro rozhraní",
+    "hMicrobreak" : "Mikropřestávky",
+    "hBreak" : "Přestávky",
+    "hNotif" : "Oznámení",
+    "hTray" : "Zásobník",
+    "hSetting" : "Nastavení"
   }
 }

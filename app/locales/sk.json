@@ -114,6 +114,23 @@
   "welcome": {
     "welcomeToStretchly": "Vitajte v Stretchly",
     "appDesc": "Perfektná aplikácia, ktorá vám pripomína, aby ste pri práci na počítači vykonali prestávku.",
-    "version": "verzia : "
+    "version": "verzia : ",
+    "userGuide": "Užívateľská príručka"
+  },
+  "userGuideInfo":{
+    "microbreak": "Štandardne to beží vo vašom zásobníku a zobrazí okno pripomienky každých 10 minút, ktoré je otvorené na 20 sekúnd, obsahujúce nápad pre mikrobreak. ",
+    "break": "Každých 30 minút sa zobrazí okno obsahujúce nápad na dlhšiu 5-minútovú prestávku. ",
+    "notif": "Používateľ dostal upozornenie 30 sekúnd pred prestávkami (a 10 sekúnd pred mikrobreakom), aby sa pripravil na pozastavenie práce. \nNa predčasnú prestávku môžete ukončiť kliknutím na odkaz v spodnej časti alebo pomocou klávesovej skratky Ctrl / Cmd + x (ak nie je v prísnom režime).",
+    "tray1": "Môžete pozastaviť / obnoviť pripomenutie prestávok. V systéme Windows a Mac OS môžete nastaviť, aby sa aplikácia začala prihlasovať.",
+    "tray2": "Môžete tiež preskočiť na ďalšiu prestávku alebo mikrobreak kedykoľvek z menu alebo obnoviť (reštart) prestávky.",
+    "tray3": "Nástrojový popis podnosu zobrazuje informácie o čase, ktorý zostane do nasledujúceho (mikro) zlomu, počte mikroboviek až do ďalšej prestávky alebo času ponechaného v pauze, kým prestávky prestávajú.",
+    "setting1": "Mikroprestávky a prestávky je možné prispôsobiť: \nMôžete nastaviť trvanie a interval prerušenia \nMôžete zapnúť / vypnúť prestávky \n môžete zapnúť / vypnúť striktný režim (prestávky nie je možné dokončiť skoro)",
+    "setting2": "Môžete si vybrať z rôznych farebných schém. Môžete vybrať zvuk, ktorý sa má prehrávať na konci prestávky",
+    "setting3" : "Môžete nastaviť okno pre prerušenie na celú obrazovku \nMôžete zakázať zobrazenie náplasti na prerušenie alebo upozornenia na prerušenie alebo sledovanie času nečinnosti systému pri prirodzených prestávkach alebo zobrazovaní prestávok na všetkých monitoroch \nMôžete si vybrať jazyk pre rozhranie",
+    "hMicrobreak" : "Mikroprestávky",
+    "hBreak" : "Prestávky",
+    "hNotif" : "Oznámenia",
+    "hTray" : "Podnos",
+    "hSetting" : "Nastavenia"
   }
 }
