@@ -49,7 +49,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-app.on('ready', createWindow)
+//app.on('ready', createWelcomeWindow)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -166,13 +166,12 @@ function startProcessWin () {
 }
 
 
-function createWindow() {
+function createWelcomeWindow() {
+  defSettings = new AppSettings(defaultSettings)
+  showWelcomeWindow = defSettings.get('showWelcomeWindow')
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
-  if(settings.get('showWelcomeWindow') == null){
-    settings.set('showWelcomeWindow', true)
-  }
   if(settings.get('showWelcomeWindow')){
     welcomeWin = new BrowserWindow({
       x: displaysX(),
@@ -189,6 +188,9 @@ function createWindow() {
        slashes: true  
     }))
   }
+  welcomeWin.on('closed', () => {
+    welcomeWin = false
+  })
 }
 
 function planVersionCheck (seconds = 1) {
@@ -378,6 +380,7 @@ function loadSettings () {
   breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
   breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
   i18next.changeLanguage(settings.get('language'))
+  createWelcomeWindow()
 }
 
 function loadIdeas () {
@@ -681,13 +684,13 @@ ipcMain.on('save-setting', function (event, key, value) {
     breakPlanner.naturalBreaks(value)
   }
   settings.set(key, value)
-  //settingsWin.webContents.send('renderSettings', settings.data)
-  if (settingsWin) {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  }
-  else if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', settings.data)
-  }
+  // if (settingsWin) {
+  //   settingsWin.webContents.send('renderSettings', settings.data)
+  // }
+  // if (welcomeWin) {
+  //   welcomeWin.webContents.send('renderSettings', settings.data)
+  // }
+  event.sender.send('renderSettings', settings.data)
   appIcon.setContextMenu(getTrayMenu())
 })
 
@@ -711,13 +714,13 @@ ipcMain.on('set-default-settings', function (event, data) {
 })
 
 ipcMain.on('save-setting', function (event, data) {
-  //settingsWin.webContents.send('renderSettings', settings.data)
-  if (settingsWin) {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  }
-  else if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', settings.data)
-  }
+  // if (settingsWin) {
+  //   settingsWin.webContents.send('renderSettings', settings.data)
+  // }
+  // if (welcomeWin) {
+  //   welcomeWin.webContents.send('renderSettings', settings.data)
+  // }
+  event.sender.send('renderSettings', settings.data)
 })
 
 ipcMain.on('show-debug', function (event) {
@@ -730,10 +733,11 @@ ipcMain.on('show-debug', function (event) {
 
 ipcMain.on('change-language', function (event, language) {
   i18next.changeLanguage(language)
-  if (settingsWin) {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  }
-  else if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', settings.data)
-  }
+  // if (settingsWin) {
+  //   settingsWin.webContents.send('renderSettings', settings.data)
+  // }
+  // if (welcomeWin) {
+  //   welcomeWin.webContents.send('renderSettings', settings.data)
+  // }
+  event.sender.send('renderSettings', settings.data)
 })

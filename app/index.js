@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', event => {
     eventsAttached = true
   })
 
+  let winId = require('electron').remote.getCurrentWindow().id
+  console.log('id--'+winId)
 document.getElementById('language').addEventListener('change', function (e) {
     ipcRenderer.send('change-language', e.target.value)
     ipcRenderer.send('save-setting', 'language', e.target.value)
