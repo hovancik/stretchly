@@ -73,7 +73,7 @@ In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: 
 `breakIdeas` and `microbreakIdeas`.
 
 #### Editing break/microbreak notification interval
-In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Sane goes for microbreak.
+In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for microbreak.
 
 #### New version notification
 In config file, set `notifyNewVersion: false,` to disable showing of new version's notification.
