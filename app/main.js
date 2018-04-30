@@ -169,9 +169,9 @@ function startProcessWin () {
 function createWelcomeWindow() {
   defSettings = new AppSettings(defaultSettings)
   showWelcomeWindow = defSettings.get('showWelcomeWindow')
-  const dir = app.getPath('userData')
-  const settingsFile = `${dir}/config.json`
-  settings = new AppSettings(settingsFile)
+  // const dir = app.getPath('userData')
+  // const settingsFile = `${dir}/config.json`
+  // settings = new AppSettings(settingsFile)
   if(settings.get('showWelcomeWindow')){
     welcomeWin = new BrowserWindow({
       x: displaysX(),
@@ -188,9 +188,11 @@ function createWelcomeWindow() {
        slashes: true  
     }))
   }
-  welcomeWin.on('closed', () => {
-    welcomeWin = false
-  })
+  if (welcomeWin){
+    welcomeWin.on('closed', () => {
+      welcomeWin = false
+    })
+  }
 }
 
 function planVersionCheck (seconds = 1) {
