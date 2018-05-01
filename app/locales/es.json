@@ -1,0 +1,110 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - aplicación para notificar cuándo hacer descansos",
+    "microbreakIn": "Microdescanso en {{seconds}} segundos...",
+    "breakIn": "Descanso en {{seconds}} segundos...",
+    "resumingBreaks": "Resuming breaks",
+    "aboutStretchly": "Acerca de stretchly v{{version}}",
+    "downloadLatestVersion": "Descarga la última versión",
+    "about": "Acerca de",
+    "becomePatron": "Hazte Patron",
+    "toBreak": "pausa",
+    "toMicrobreak": "microdescanso",
+    "skipToTheNext": "Saltar hasta el siguiente",
+    "resume": "Reanudar",
+    "pause": "Descanso",
+    "forHour": "por 1 hora",
+    "for2Hours": "por 2 horas",
+    "for5Hours": "por 5 horas",
+    "indefinitely": "indefinidamente",
+    "resetBreaks": "Resetear descansos",
+    "settings": "Configuración",
+    "startAtLogin": "Iniciar al hacer login",
+    "yourStretchly": "Tu stretchly",
+    "quitStretchly": "Salir de stretchly",
+    "resetToDefaults": "Volver a las opciones por defecto",
+    "areYouSure": "Estás seguro/a de que quieres volver a las opciones por defecto en esta ventana?",
+    "yes": "sí",
+    "no": "no",
+    "pausedUntil": "\nPausado - {{timeLeft}} hasta reanudar el descanso\ncon su programación habitual",
+    "pausedIndefinitely": "\nPausado indefinidamente",
+    "timeToNext": "\n{{timeLeft}} hasta {{breakType}}",
+    "microbreak": "microdescanso",
+    "break": "descanso",
+    "nextBreakFollowing": "\nPróximo descanso después de {{count}} microdescanso",
+    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más"
+  },
+  "break": {
+    "keepGoing": "...bah, prefiero seguir",
+    "title": "Hora de hacer un descanso!"
+  },
+  "microbreak": {
+    "keepGoing": "...bah, prefiero seguir",
+    "title": "Hora de hacer un microdescanso!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "aplicación para notificar cuándo hacer descansos",
+    "toLearnMoreVisit": "Para saber más sobre stretchly y cómo colaborar, visita su",
+    "homepage": "página web",
+    "latestVersion": "última versión:",
+    "checking": "comprobando..."
+  },
+  "settings": {
+    "settings": "Configuración",
+    "microbreaks": "microdescansos",
+    "secondsEveryBreak": "descanso cada segundos break every",
+    "minutes": "minutos",
+    "dontLetMeSkipMicrobreaks": "no me permitas saltar microdescansos",
+    "breaks": "descansos",
+    "minutesBreakAfter": "minutos después de descanso",
+    "microbreaks2": "microdescansos",
+    "dontLetMeSkipBreaks": "no me permitas saltar descansos",
+    "(every": "(cada",
+    "minutes)": "minutos)",
+    "microbreaksEnabled": "microdescansos habilitados",
+    "breaksEnabled": "descansos habilitados",
+    "resetToDefaults": "volver a las opciones por defecto",
+    "cantDisableBoth": "No puedes deshabilitar los dos tipos de descansos."
+  },
+  "settings2": {
+    "settings": "Configuración",
+    "audioScheme": "Esquema de sonido",
+    "crystalGlass": "crystal glass",
+    "windChime": "wind chime",
+    "ticToc": "tic toc",
+    "silence": "silencio",
+    "colorScheme": "Esquema de color",
+    "greenClouds": "green <br/> clouds",
+    "autumnBeBlessed": "autumn be blessed",
+    "graphiteCrystal": "graphite <br/>crystal",
+    "coffeeKisses": "coffee <br/> kisses",
+    "morningSwim": "morning <br/> swim",
+    "resetToDefaults": "volver a las opciones por defecto"
+  },
+  "settings3": {
+    "settings": "Configuración",
+    "miscellaneous": "miscelánea",
+    "breaksAreFullscreen": "descansos a pantalla completa",
+    "showBreakIdeas": "mostrar ideas en los descansos",
+    "notifyBeforeBreakStarts": "Avisar antes de empezar el descanso",
+    "notifyBeforeMicrobreakStarts": "Avisar antes de empezar el microdescanso",
+    "monitorIdleTime": "monitorizar las pausas del equipo para hacer descansos naturales",
+    "showOnAllScreens": "los descansos se muestran en todos los monitores",
+    "language": "idioma",
+    "resetToDefaults": "volver a las opciones por defecto"
+  },
+  "utils": {
+    "secondsLeft": "queda {{count}} segundo",
+    "secondsLeft_plural": "quedan {{count}} segundos",
+    "minutesLeft": "queda {{count}} minuto",
+    "minutesLeft_plural": "quedan {{count}} minutos",
+    "lessThen1m": "menos de 1m",
+    "h": "{{hours}}h",
+    "m": "{{minutes}}m",
+    "s": "~{{seconds}}s"
+  },
+  "process": {
+    "newVersionAvailable": "Nueva versión disponible!"
+  }
+}

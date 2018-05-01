@@ -153,6 +153,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Nic Desjardins, @nicdesjardins
 - Vladislav Kuznecov, @fizvlad
 - Oleg V., @neooleg
+- Manuel Jesús Aguilera Castro, @manueljaguilera
 
 
 ### Humans and Tools
