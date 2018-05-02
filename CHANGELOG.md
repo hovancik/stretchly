@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Ukrainian translations for interface
 - Spanish translations for interface
+- Romanian translations for interface
 
 ## [0.16.0] - 2018-03-17
 ### Added

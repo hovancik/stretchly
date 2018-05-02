@@ -154,6 +154,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Vladislav Kuznecov, @fizvlad
 - Oleg V., @neooleg
 - Manuel Jesús Aguilera Castro, @manueljaguilera
+- Ciprian Rusen
 
 
 ### Humans and Tools
