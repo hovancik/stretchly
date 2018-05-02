@@ -167,11 +167,6 @@ function startProcessWin () {
 
 
 function createWelcomeWindow() {
-  defSettings = new AppSettings(defaultSettings)
-  showWelcomeWindow = defSettings.get('showWelcomeWindow')
-  // const dir = app.getPath('userData')
-  // const settingsFile = `${dir}/config.json`
-  // settings = new AppSettings(settingsFile)
   if(settings.get('showWelcomeWindow')){
     welcomeWin = new BrowserWindow({
       x: displaysX(),
@@ -190,7 +185,7 @@ function createWelcomeWindow() {
   }
   if (welcomeWin){
     welcomeWin.on('closed', () => {
-      welcomeWin = false
+      welcomeWin = null
     })
   }
 }
