@@ -1,9 +1,9 @@
 {
   "name": "stretchly",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "break time reminder app",
   "engines": {
-    "node": "8.2.1"
+    "node": "8.9.3"
   },
   "scripts": {
     "start": "electron ./app",
@@ -34,13 +34,13 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^8.2.3",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
-    "electron": "^1.8.4",
-    "electron-builder": "^20.5.1",
+    "electron": "^2.0.0",
+    "electron-builder": "^20.11.1",
     "mocha": "5.0.1",
-    "sinon": "^4.4.6",
+    "sinon": "^5.0.3",
     "spectron": "^3.8.0",
     "standard": "^11.0.1"
   },
@@ -119,7 +119,7 @@
   },
   "dependencies": {
     "@paulcbetts/system-idle-time": "^1.0.4",
-    "i18next": "^10.5.1",
+    "i18next": "^11.2.3",
     "i18next-node-fs-backend": "^1.0.0"
   }
 }

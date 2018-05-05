@@ -9,7 +9,7 @@ platform:
 skip_tags: true
 
 environment:
-  nodejs_version: "8.2.1"
+  nodejs_version: "8.9.3"
 
 cache:
   - node_modules -> package.json
