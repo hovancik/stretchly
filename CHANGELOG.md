@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - upper limit of microbreak duration set to 300 seconds (5 minutes)
 
+### Fixed
+- closes running break window when skipping to the another one
+
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface
