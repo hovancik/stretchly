@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Spanish translations for interface
 - Romanian translations for interface
 
+### Changed
+- upper limit of microbreak duration set to 300 seconds (5 minutes)
+
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface

@@ -42,7 +42,7 @@ microbreakIntervalMinus.addEventListener('click', function (e) {
 })
 
 microbreakDurationPlus.addEventListener('click', function (e) {
-  if (microbreakDuration.innerHTML !== '60') {
+  if (microbreakDuration.innerHTML !== '300') {
     ipcRenderer.send('save-setting', 'microbreakDuration', (parseInt(microbreakDuration.innerHTML, 10) + 5) * 1000)
   }
 })
