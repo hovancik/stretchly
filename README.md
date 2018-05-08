@@ -149,12 +149,12 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - William Chang, @wilicw
 - Purva, @purva98
 - Riddhi, @riddhi99
-- Fahim Dalvi, @fdalvi. [fdalvi.github.io](https://fdalvi.github.io)
+- Fahim Dalvi, @fdalvi, [fdalvi.github.io](https://fdalvi.github.io)
 - Nic Desjardins, @nicdesjardins
 - Vladislav Kuznecov, @fizvlad
 - Oleg V., @neooleg
 - Manuel Jesús Aguilera Castro, @manueljaguilera
-- Ciprian Rusen
+- Ciprian Rusen, [www.digitalcitizen.life](https://www.digitalcitizen.life)
 
 
 ### Humans and Tools
