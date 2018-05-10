@@ -18,7 +18,7 @@ const updateElement = document.getElementById('update')
 
 updateElement.addEventListener('click', function (e) {
   e.preventDefault()
-  shell.openExternal('https://github.com/hovancik/stretchly/releases')
+  shell.openExternal('https://hovancik.net/stretchly/downloads')
 })
 
 new VersionChecker()

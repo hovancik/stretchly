@@ -493,6 +493,14 @@ function getTrayMenu () {
       submenu = submenu.concat([{
         label: i18next.t('main.toMicrobreak'),
         click: function () {
+          if (microbreakWins) {
+            closeWindows(microbreakWins)
+            microbreakWins = null
+          }
+          if (breakWins) {
+            closeWindows(breakWins)
+            breakWins = null
+          }
           breakPlanner.skipToMicrobreak()
           updateToolTip()
         }
@@ -502,6 +510,14 @@ function getTrayMenu () {
       submenu = submenu.concat([{
         label: i18next.t('main.toBreak'),
         click: function () {
+          if (microbreakWins) {
+            closeWindows(microbreakWins)
+            microbreakWins = null
+          }
+          if (breakWins) {
+            closeWindows(breakWins)
+            breakWins = null
+          }
           breakPlanner.skipToBreak()
           updateToolTip()
         }

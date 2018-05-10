@@ -1,0 +1,110 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - aplicația care-ți aduce aminte să iei o pauză",
+    "microbreakIn": "Micropauză în {{seconds}} secunde...",
+    "breakIn": "Pauză în {{seconds}} secunde...",
+    "resumingBreaks": "Reluarea pauzelor",
+    "aboutStretchly": "Despre stretchly v{{version}}",
+    "downloadLatestVersion": "Descarcă cea mai nouă versiune",
+    "about": "Despre",
+    "becomePatron": "Devin-o Patron",
+    "toBreak": "pauză",
+    "toMicrobreak": "micropauză",
+    "skipToTheNext": "Sări la următoarea",
+    "resume": "Reia",
+    "pause": "Pauză",
+    "forHour": "pentru o oră",
+    "for2Hours": "pentru 2 ore",
+    "for5Hours": "pentru 5 ore",
+    "indefinitely": "nelimitat",
+    "resetBreaks": "Resetează pauzele",
+    "settings": "Setări",
+    "startAtLogin": "Pornește cu Windows",
+    "yourStretchly": "Stretchly-ul tău",
+    "quitStretchly": "Ieși din stretchly",
+    "resetToDefaults": "Resetează la valorile implicite",
+    "areYouSure": "Ești sigur(ă) că vrei să resetezi setările din fereastră la valorile implicite?",
+    "yes": "da",
+    "no": "nu",
+    "pausedUntil": "\nPauză - {{timeLeft}} până când se reiau pauzele\nas programată regulat",
+    "pausedIndefinitely": "\nPauză nelimitată",
+    "timeToNext": "\n{{timeLeft}} până la {{breakType}}",
+    "microbreak": "micropauză",
+    "break": "pauză",
+    "nextBreakFollowing": "\n Următoarea pauză după {{count}} mai multe micropauze",
+    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze"
+  },
+  "break": {
+    "keepGoing": "...nah, Voi continua",
+    "title": "Este timpul să iei o pauză!"
+  },
+  "microbreak": {
+    "keepGoing": "...nah, Voi continua",
+    "title": "Este timpul să iei o pauză!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "aplicația care-ți aduce aminte să iei o pauză",
+    "toLearnMoreVisit": "Pentru a afla mai multe despre caracteristicile stretchly și modurile în care te poate ajuta, vizitează-i",
+    "homepage": "pagina acasă",
+    "latestVersion": "cea mai nouă versiune:",
+    "checking": "verific..."
+  },
+  "settings": {
+    "settings": "Setari",
+    "microbreaks": "micropauze",
+    "secondsEveryBreak": "secunde pauză la fiecare",
+    "minutes": "minute",
+    "dontLetMeSkipMicrobreaks": "nu mă lăsa să sar micropauze",
+    "breaks": "pauze",
+    "minutesBreakAfter": "minute pauză după",
+    "microbreaks2": "micropauze",
+    "dontLetMeSkipBreaks": "nu mă lăsa să sar pauze",
+    "(every": "(fiecare",
+    "minutes)": "minute)",
+    "microbreaksEnabled": "micropauze activate",
+    "breaksEnabled": "pauze activate",
+    "resetToDefaults": "resetează la valorile implicite",
+    "cantDisableBoth": "Nu poți dezactiva ambele tipuri de pauze."
+  },
+  "settings2": {
+    "settings": "Setări",
+    "audioScheme": "schemă audio",
+    "crystalGlass": "cristal",
+    "windChime": "clopoțel",
+    "ticToc": "tic toc",
+    "silence": "tăcere",
+    "colorScheme": "schemă culori",
+    "greenClouds": "nori <br/> verzi",
+    "autumnBeBlessed": "toamna <br/> binecuvântată",
+    "graphiteCrystal": "grafit <br/> cristal",
+    "coffeeKisses": "pupici de <br/> cafea",
+    "morningSwim": "înotul de <br/> dimineață",
+    "resetToDefaults": "resetează la valorile implicite"
+  },
+  "settings3": {
+    "settings": "Setări",
+    "miscellaneous": "diverse",
+    "breaksAreFullscreen": "pauzele pe tot ecranul",
+    "showBreakIdeas": "afișează idei de pauză",
+    "notifyBeforeBreakStarts": "notifică-mă înainte de pauză",
+    "notifyBeforeMicrobreakStarts": "notifică-mă înainte de micropauză",
+    "monitorIdleTime": "monitorizează neutilizarea sistemului pentru pauze naturale",
+    "showOnAllScreens": "pauzele sunt afișate pe toate monitoarele",
+    "language": "limbă",
+    "resetToDefaults": "resetează la valorile implicite"
+  },
+  "utils": {
+    "secondsLeft": "{{count}} secunde rămase",
+    "secondsLeft_plural": "{{count}} secunde rămase",
+    "minutesLeft": "{{count}} minute rămase",
+    "minutesLeft_plural": "{{count}} minute rămase",
+    "lessThen1m": "mai puțin de 1m",
+    "h": "{{hours}}o",
+    "m": "{{minutes}}m",
+    "s": "~{{seconds}}s"
+  },
+  "process": {
+    "newVersionAvailable": "Nouă versiune este disponibilă!"
+  }
+}
