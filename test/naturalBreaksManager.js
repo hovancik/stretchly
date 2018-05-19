@@ -38,6 +38,7 @@ describe('naturalBreaksManager', function () {
   })
 
   it('should start when start()', () => {
+    naturalBreaksManager.stop()
     naturalBreaksManager.start()
     naturalBreaksManager.isOnNaturalBreak.should.be.equal(false)
     naturalBreaksManager.usingNaturalBreaks.should.be.equal(true)
@@ -51,10 +52,12 @@ describe('naturalBreaksManager', function () {
   })
 
   afterEach(() => {
+    naturalBreaksManager.stop()
+    naturalBreaksManager = null
+
     if (settings && settings.destroy) {
       settings.destroy()
       settings = null
     }
-    naturalBreaksManager = null
   })
 })
