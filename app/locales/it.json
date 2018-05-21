@@ -1,0 +1,110 @@
+{
+  "main": {
+    "toolTipHeader": "stretchly - app che ti ricorda quando prenderti una pausa",
+    "microbreakIn": "Micropausa in {{seconds}} secondi...",
+    "breakIn": "Pausa in {{seconds}} secondi...",
+    "resumingBreaks": "Riprendi le pause",
+    "aboutStretchly": "Informazioni su stretchly v{{version}}",
+    "downloadLatestVersion": "Scarica l'ultima versione",
+    "about": "Informazioni",
+    "becomePatron": "Diventa un sostenitore",
+    "toBreak": "pausa",
+    "toMicrobreak": "micropausa",
+    "skipToTheNext": "Salta al prossimo",
+    "resume": "Riprendi",
+    "pause": "Pausa",
+    "forHour": "per un'ora",
+    "for2Hours": "per 2 ore",
+    "for5Hours": "per 5 ore",
+    "indefinitely": "indefinita",
+    "resetBreaks": "Azzera le pause",
+    "settings": "Impostazioni",
+    "startAtLogin": "Avvia al login",
+    "yourStretchly": "Il tuo stretchly",
+    "quitStretchly": "Esci da stretchly",
+    "resetToDefaults": "Ripristina le impostazioni predefinite",
+    "areYouSure": "Sei sicuro di voler ripristinare le impostazioni su questa finestra ai valori predefiniti?",
+    "yes": "si",
+    "no": "no",
+    "pausedUntil": "\nPaused - {{timeLeft}} till breaks resume\nas regularly scheduled",
+    "pausedIndefinitely": "\nPausa indefinita",
+    "timeToNext": "\n{{timeLeft}} a {{breakType}}",
+    "microbreak": "micropausa",
+    "break": "pausa",
+    "nextBreakFollowing": "\nProssima pausa dopo {{count}} micropausa",
+    "nextBreakFollowing_plural": "\nProssima pausa dopo altre {{count}} micropause"
+  },
+  "break": {
+    "keepGoing": "...no, continuerò semplicemente ad andare avanti",
+    "title": "È ora di fare una pausa!"
+  },
+  "microbreak": {
+    "keepGoing": "...no, continuerò semplicemente ad andare avanti",
+    "title": "È ora di fare una pausa!"
+  },
+  "about": {
+    "stretchly": "stretchly",
+    "breakTimeReminderApp": "app che ti ricorda quando prenderti una pausa",
+    "toLearnMoreVisit": "Per saperne di più su tutte le caratteristiche di stretchly e sui modi in cui puoi supportarla, visita la sua",
+    "homepage": "homepage",
+    "latestVersion": "ultima versione:",
+    "checking": "sto controllando..."
+  },
+  "settings": {
+    "settings": "Impostazioni",
+    "microbreaks": "micropause",
+    "secondsEveryBreak": "secondi di pausa ogni",
+    "minutes": "minuti",
+    "dontLetMeSkipMicrobreaks": "non permettermi di saltare le micropause",
+    "breaks": "pause",
+    "minutesBreakAfter": "minuti di pasua dopo",
+    "microbreaks2": "micropausa",
+    "dontLetMeSkipBreaks": "non permettermi di saltare le pause",
+    "(every": "(ogni",
+    "minutes)": "minuti)",
+    "microbreaksEnabled": "micropause abilitate",
+    "breaksEnabled": "pause abilitate",
+    "resetToDefaults": "ripristina le impostazioni",
+    "cantDisableBoth": "Impossibile disabilitare entrambi i tipi di pausa."
+  },
+  "settings2": {
+    "settings": "Impostazioni",
+    "audioScheme": "impostazioni audio",
+    "crystalGlass": "vetro di cristallo",
+    "windChime": "carillon del vento",
+    "ticToc": "tic toc",
+    "silence": "silenzio",
+    "colorScheme": "impostazioni colore",
+    "greenClouds": "nuvole <br/> verdi",
+    "autumnBeBlessed": "colori d'autunno",
+    "graphiteCrystal": "cristallo di <br/>grafite",
+    "coffeeKisses": "baci <br/> di caffé",
+    "morningSwim": "nuotata <br/> del mattino",
+    "resetToDefaults": "ripristina le impostazioni"
+  },
+  "settings3": {
+    "settings": "Impostazioni",
+    "miscellaneous": "varie",
+    "breaksAreFullscreen": "pause a schermo intero",
+    "showBreakIdeas": "mostra suggerimenti",
+    "notifyBeforeBreakStarts": "avvisa prima che inizi la pausa",
+    "notifyBeforeMicrobreakStarts": "avvisa prima che inizi la micropausa",
+    "monitorIdleTime": "controlla le interruzioni del sistema per fare pause più regolari",
+    "showOnAllScreens": "le pause sono mostrate su tutti i monitor",
+    "language": "lingua",
+    "resetToDefaults": "ripristina le impostazioni"
+  },
+  "utils": {
+    "secondsLeft": "manca {{count}} secondo",
+    "secondsLeft_plural": "mancano {{count}} secondi",
+    "minutesLeft": "manca {{count}} minuto",
+    "minutesLeft_plural": "mancano {{count}} minuti",
+    "lessThen1m": "meno di 1m",
+    "h": "{{hours}}h",
+    "m": "{{minutes}}m",
+    "s": "~{{seconds}}s"
+  },
+  "process": {
+    "newVersionAvailable": "È disponibile una nuova versione!"
+  }
+}
