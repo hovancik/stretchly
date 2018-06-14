@@ -1,24 +1,29 @@
-const {ipcRenderer} = require('electron')
+const {ipcRenderer, remote} = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 
-document.getElementById('icon').src = "./images/stretchly_128x128.png"
-document.getElementById('version').innerText = require('electron').remote.app.getVersion();
-
 document.addEventListener('DOMContentLoaded', event => {
-    new HtmlTranslate(document).translate()
-    })
+  new HtmlTranslate(document).translate()
+})
 
-let element = document.querySelector('input[id=dontShow]')
-let inAbout = document.querySelector('div[id=inAbout]')
-element.checked=false
-element.addEventListener('change', function (e) {
-    console.log('clicked '+element.checked)
-    if(element.checked){
-            ipcRenderer.send('save-setting', 'showWelcomeWindow', false)
-            inAbout.style.display='block'
-        }
-        else{
-            ipcRenderer.send('save-setting', 'showWelcomeWindow', true)
-            inAbout.style.display='none'
-        }
-  })
+ipcRenderer.send('send-settings')
+
+ipcRenderer.on('renderSettings', (event, data) => {
+  document.getElementById('language').value = data['language']
+})
+
+document.getElementById('language').addEventListener('change', function (e) {
+  ipcRenderer.send('change-language', e.target.value)
+  ipcRenderer.send('save-setting', 'language', e.target.value)
+  window.location.reload()
+})
+
+document.getElementById('skip').addEventListener('click', function (e) {
+  ipcRenderer.send('save-setting', 'isFirstRun', false)
+  remote.getCurrentWindow().close()
+})
+
+document.getElementById('tutorial').addEventListener('click', function (e) {
+  ipcRenderer.send('save-setting', 'isFirstRun', false)
+  ipcRenderer.send('open-tutorial')
+  remote.getCurrentWindow().close()
+})

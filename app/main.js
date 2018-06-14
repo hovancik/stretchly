@@ -20,7 +20,7 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
-let selLangWin = null
+let tutorialWin = null
 let welcomeWin = null
 let settings
 let isOnIndefinitePause
@@ -162,23 +162,38 @@ function startProcessWin () {
   })
 }
 
-
-function createWelcomeWindow() {
-  if(settings.get('showWelcomeWindow')){
-    const modalPath = `file://${__dirname}/index.html`
+function createWelcomeWindow () {
+  if (settings.get('isFirstRun')) {
+    const modalPath = `file://${__dirname}/welcome.html`
     welcomeWin = new BrowserWindow({
       x: displaysX(),
       y: displaysY(),
-      autoHideMenuBar:true,
+      autoHideMenuBar: true,
       icon: `${__dirname}/images/stretchly_18x18.png`,
-      backgroundColor: settings.get('mainColor'),
-      title: 'stretchly'
+      backgroundColor: settings.get('mainColor')
     })
     welcomeWin.loadURL(modalPath)
   }
-  if (welcomeWin){
+  if (welcomeWin) {
     welcomeWin.on('closed', () => {
       welcomeWin = null
+    })
+  }
+}
+
+function createTutorialWindow () {
+  const modalPath = `file://${__dirname}/tutorial.html`
+  tutorialWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
+    autoHideMenuBar: true,
+    icon: `${__dirname}/images/stretchly_18x18.png`,
+    backgroundColor: settings.get('mainColor')
+  })
+  tutorialWin.loadURL(modalPath)
+  if (tutorialWin) {
+    tutorialWin.on('closed', () => {
+      tutorialWin = null
     })
   }
 }
@@ -728,4 +743,8 @@ ipcMain.on('show-debug', function (event) {
 ipcMain.on('change-language', function (event, language) {
   i18next.changeLanguage(language)
   event.sender.send('renderSettings', settings.data)
+})
+
+ipcMain.on('open-tutorial', function (event) {
+  createTutorialWindow()
 })
