@@ -32,8 +32,7 @@
     "microbreak": "छोटा ब्रेक",
     "break": "ब्रेक",
     "nextBreakFollowing": "\nअगला ब्रेक {{count}} छोटे ब्रेक के बाद है",
-    "nextBreakFollowing_plural": "\nअगला ब्रेक {{count}} छोटे ब्रेक्स के बाद है",
-    "selectLanguage": "\nभाषा चुनिए"
+    "nextBreakFollowing_plural": "\nअगला ब्रेक {{count}} छोटे ब्रेक्स के बाद है"
   },
   "break": {
     "keepGoing": "...नहीं, मुझे ब्रेक नहीं चाहिए",
@@ -48,6 +47,8 @@
     "breakTimeReminderApp": "विराम समय अनुस्मारक एप्लिकेशन",
     "toLearnMoreVisit": "stretchly कि सारी विशेषताएँ और मदद्त करने के तरीके जानने के लिए मुलाकात करें",
     "homepage": "होमपेज",
+    "orRead": "or read its",
+    "tutorial": "tutorial",
     "latestVersion": "नया वर्शन:",
     "checking": "जाँच चालू है ..."
   },
@@ -109,27 +110,37 @@
     "newVersionAvailable": "नया वर्शन उपलब्ध है!"
   },
   "welcome": {
-    "welcomeToStretchly": "स्ट्रेचली में आपका स्वागत है",
-    "appDesc": "एक अद्भुत ऐप जो आपको कंप्यूटर पर काम करते समय ब्रेक लेने की याद दिलाता है",
-    "version": "संस्करण : ",
-    "dontShowAgain": "इसे फिर से न देखें",
-    "userGuide": "उपयोगकर्ता गाइड"
+    "title": "welcome to stretchly",
+    "stretchly": "welcome to stretchly",
+    "breakTimeReminderApp": "break time reminder app",
+    "chooseLanguage": "To start, please, choose the language you would like to use with stretchly:",
+    "readTutorial": "Let stretchly become your favourite app by taking time making it your own. Learn how to personalize it in a quick tutorial.",
+    "tutorial": "tutorial",
+    "skipTutorial": "skip tutorial, I can always find it in About window"
   },
-  "userGuideInfo":{
-    "microbreak": "डिफ़ॉल्ट रूप से, यह आपके ट्रे में चलता है और हर 10 मिनट में रिमाइंडर विंडो दिखाता है, जो कि 20 सेकेंड्स के लिए खुला है, जिसमें माइक्रोब्रैक के लिए विचार शामिल है।",
-    "break": "हर 30 मिनट में, यह 5 मिनट के ब्रेक के लिए विंडो युक्त विचार दिखाता है।",
-    "notif": "काम को ठहरने के लिए तैयार करने में सक्षम होने के लिए उपयोगकर्ता को ब्रेक से 30 सेकंड पहले (और 10 सेकंड पहले माइक्रोब्रैक) अधिसूचित किया जाता है। \nआप नीचे दिए गए लिंक पर क्लिक करके या Ctrl / Cmd + x कुंजीपटल शॉर्टकट (सख्त मोड में नहीं) का उपयोग करके, ब्रेक या माइक्रोब्रैक को समाप्त कर सकते हैं।",
-    "tray1": "आप ब्रेक की याद दिलाने / फिर से शुरू कर सकते हैं। विंडोज और मैक ओएस पर, आप लॉगिन पर शुरू करने के लिए ऐप सेट कर सकते हैं।",
-    "tray2": "आप मेनू से किसी भी समय अगले ब्रेक या माइक्रोब्रैक पर जा सकते हैं, या रीसेट (पुनः आरंभ) ब्रेक कर सकते हैं।",
-    "tray3": "ट्रे टूलटिप, अगले (माइक्रो) ब्रेक, माइक्रोब्रैक की संख्या तक बचे समय के बारे में जानकारी दिखाता है जब तक ब्रेक फिर से शुरू नहीं हो जाता है जब तक अगले ब्रेक या समय बचे में नहीं रहता।",
-    "setting1": "माइक्रोब्रैक और ब्रेक्स को कस्टमाइज़ किया जा सकता है: \nआप ब्रेक की अवधि और अंतराल निर्धारित कर सकते हैं \nया तो ब्रेक को सक्षम / निष्क्रिय कर सकते हैं \nआप कड़े मोड को सक्षम / निष्क्रिय कर सकते हैं (ब्रेक जल्दी समाप्त नहीं किया जा सकता)",
-    "setting2": "आप अलग रंग योजनाओं से चुन सकते हैं \nआप ब्रेक के अंत में खेला जाने वाला ध्वनि चुन सकते हैं",
-    "setting3" : "आप पूर्ण स्क्रीन होने के लिए ब्रेक विंडो सेट कर सकते हैं \nआप ब्रेक विचारों को तोड़ना अक्षम कर सकते हैं या नोटिफिकेशन को तोड़ सकते हैं या प्राकृतिक ब्रेक के लिए प्रणाली निष्क्रिय समय की निगरानी कर सकते हैं या अपने मॉनिटर्स पर ब्रेक दिखा सकते हैं \nआप इंटरफ़ेस के लिए भाषा चुन सकते हैं",
-    "hMicrobreak" : "छोटा ब्रेक",
-    "hBreak" : "ब्रेक",
-    "hNotif" : "सूचनाएं",
-    "hTray" : "ट्रे",
-    "hSetting" : "सेटिंग्स",
-    "inAbout" : "अबाउट विंडो में उपलब्ध"
+  "tutorial": {
+    "title": "stretchly tutorial",
+    "welcomeTitle": "stretchly tutorial",
+    "welcomeText": "Taking regular breaks and microbreaks makes you more effective - that is science. But only you know your flow. Get to know stretchly with this quick tutorial and make it your way.",
+    "microbreaksTitle": "microbreaks",
+    "microbreaksText": "By default, stretchly runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing an idea for microbreak.",
+    "breaksTitle": "breaks",
+    "breaksText": "Every 30 minutes, it shows a window containing an idea for a longer 5-minute break.",
+    "notificationsTitle": "notifications",
+    "notificationsText": "You will get notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode).",
+    "tray1Title": "system tray",
+    "tray1Text": "You can pause/resume reminding of breaks. On Windows and Mac OS, you can set the app to start at login.",
+    "tray2Title": "system tray",
+    "tray2Text": "You can also skip to the next break or microbreak anytime from the menu, or reset (restart) breaks.",
+    "tray3Title": "system tray",
+    "tray3Text": "Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.",
+    "settings1Title": "settings",
+    "settings1Text": "Microbreaks and breaks can be customized: \nYou can set duration and interval of break \nYou can enable/disable breaks \nyou can enable/disable strict mode (breaks can't be finished early)",
+    "settings2Title": "settings",
+    "settings2Text": "You can choose from different color schemes \nYou can pick a sound to be played at the end of the break",
+    "settings3Title": "settings",
+    "settings3Text": "You can set break window to be fullscreen \nYou can disable showing of break ideas or break notifications or monitoring of system idle time for natural breaks or showing breaks on all of your monitors \nyou can choose language for interface",
+    "thanksTitle": "Thanks!",
+    "thanksText": "Every month, it takes a lot of work to remind you to take a break. I hope stretchly will help you lead more balanced life. If that is so you can support me with 'Become a Patron' button in tray menu."
   }
 }

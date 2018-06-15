@@ -32,8 +32,7 @@
     "microbreak": "micropausa",
     "break": "pausa",
     "nextBreakFollowing": "\nPróxima pausa longa após {{count}} micropausa",
-    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas",
-    "selectLanguage": "\nSelecione o idioma" 
+    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas"
   },
   "break": {
     "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",
@@ -48,6 +47,8 @@
     "breakTimeReminderApp": "aplicativo para lembrá-lo de fazer pausas",
     "toLearnMoreVisit": "Para saber mais sobre os recursos do stretchly e sobre como você pode ajudá-lo, visite seu",
     "homepage": "site",
+    "orRead": "or read its",
+    "tutorial": "tutorial",
     "latestVersion": "a última versão:",
     "checking": "verificar..."
   },
@@ -109,27 +110,37 @@
     "newVersionAvailable": "Nova versão disponível!"
   },
   "welcome": {
-    "welcomeToStretchly": "Bem-vindo ao Stretchly",
-    "appDesc": "App perfeito que lembra você para fazer pausas enquanto trabalha no computador.",
-    "version": "Versão : ",
-    "dontShowAgain": "Não mostre isso de novo",
-    "userGuide": "Guia de usuario"
+    "title": "welcome to stretchly",
+    "stretchly": "welcome to stretchly",
+    "breakTimeReminderApp": "break time reminder app",
+    "chooseLanguage": "To start, please, choose the language you would like to use with stretchly:",
+    "readTutorial": "Let stretchly become your favourite app by taking time making it your own. Learn how to personalize it in a quick tutorial.",
+    "tutorial": "tutorial",
+    "skipTutorial": "skip tutorial, I can always find it in About window"
   },
-  "userGuideInfo":{
-    "microbreak": "Por padrão, ele é executado na sua bandeja e mostra uma janela de lembrete a cada 10 minutos, que fica aberta por 20 segundos, contendo uma ideia para o microbreak. ",
-    "break": "A cada 30 minutos, mostra uma janela com uma ideia para uma pausa de 5 minutos.",
-    "notif": "O usuário é notificado 30 segundos antes dos intervalos (e 10 segundos antes do micro-falha) para poder se preparar para pausar o trabalho. \nVocê pode terminar breakbreak ou microbreak antecipadamente, clicando no link na parte inferior ou usando Ctrl / Cmd + x atalho de teclado (quando não estiver no modo estrito). ",
-    "tray1": "Você pode pausar / retomar a lembrança de quebras. No Windows e Mac OS, você pode definir o aplicativo para iniciar no login.",
-    "tray2": "Você também pode pular para a próxima pausa ou micro-queda a qualquer momento no menu, ou reinicializar (reiniciar) as quebras. ",
-    "tray3": "A dica de ferramenta da bandeja mostra informações sobre o tempo restante até a próxima (micro) quebra, o número de microbreaks até a próxima pausa ou o tempo restante em pausa até o retorno das pausas. ",
-    "setting1": "Micropausas e quebras podem ser personalizadas: \nVocê pode definir duração e intervalo de intervalo \nVocê pode habilitar / desabilitar quebras \nvocê pode ativar / desativar o modo estrito (quebras não podem ser concluídas antes) ",
-    "setting2": "Você pode escolher entre diferentes esquemas de cores \nVocê pode escolher um som para ser tocado no final do intervalo ",
-    "setting3" : "Você pode definir a janela de quebra para ser fullscreen \nVocê pode desativar a exibição de idéias de quebra ou quebrar notificações ou monitoramento de tempo ocioso do sistema para quebras naturais ou mostrando quebras em todos os seus monitores \nvocê pode escolher idioma para interface",
-    "hMicrobreak" : "Micropausas",
-    "hBreak" : "Pausas",
-    "hNotif" : "Notificações",
-    "hTray" : "Bandeja",
-    "hSetting" : "Configurações",
-    "inAbout" : "Disponível em cerca de janela"
+  "tutorial": {
+    "title": "stretchly tutorial",
+    "welcomeTitle": "stretchly tutorial",
+    "welcomeText": "Taking regular breaks and microbreaks makes you more effective - that is science. But only you know your flow. Get to know stretchly with this quick tutorial and make it your way.",
+    "microbreaksTitle": "microbreaks",
+    "microbreaksText": "By default, stretchly runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing an idea for microbreak.",
+    "breaksTitle": "breaks",
+    "breaksText": "Every 30 minutes, it shows a window containing an idea for a longer 5-minute break.",
+    "notificationsTitle": "notifications",
+    "notificationsText": "You will get notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode).",
+    "tray1Title": "system tray",
+    "tray1Text": "You can pause/resume reminding of breaks. On Windows and Mac OS, you can set the app to start at login.",
+    "tray2Title": "system tray",
+    "tray2Text": "You can also skip to the next break or microbreak anytime from the menu, or reset (restart) breaks.",
+    "tray3Title": "system tray",
+    "tray3Text": "Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.",
+    "settings1Title": "settings",
+    "settings1Text": "Microbreaks and breaks can be customized: \nYou can set duration and interval of break \nYou can enable/disable breaks \nyou can enable/disable strict mode (breaks can't be finished early)",
+    "settings2Title": "settings",
+    "settings2Text": "You can choose from different color schemes \nYou can pick a sound to be played at the end of the break",
+    "settings3Title": "settings",
+    "settings3Text": "You can set break window to be fullscreen \nYou can disable showing of break ideas or break notifications or monitoring of system idle time for natural breaks or showing breaks on all of your monitors \nyou can choose language for interface",
+    "thanksTitle": "Thanks!",
+    "thanksText": "Every month, it takes a lot of work to remind you to take a break. I hope stretchly will help you lead more balanced life. If that is so you can support me with 'Become a Patron' button in tray menu."
   }
 }

@@ -32,8 +32,7 @@
     "microbreak": "短时间休息",
     "break": "长时间休息",
     "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
-    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后",
-    "selectLanguage": "\n选择语言"
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
   },
   "break": {
     "keepGoing": "...额, 我还有事做",
@@ -48,6 +47,8 @@
     "breakTimeReminderApp": "休息时间提醒应用",
     "toLearnMoreVisit": "要了解更多关于所有stretchly特点和如何你能帮助它，请访问它的",
     "homepage": "主页",
+    "orRead": "or read its",
+    "tutorial": "tutorial",
     "latestVersion": "最新版本:"
   },
   "settings": {
@@ -108,27 +109,37 @@
     "newVersionAvailable": "有新的版本!"
   },
   "welcome": {
-    "welcomeToStretchly": "欢迎来到Stretchly",
-    "appDesc": "完美的应用程序，提醒您在计算机上工作时休息一下",
-    "version": "版 : ",
-    "dontShowAgain": "不要再显示这个",
-    "userGuide": "用户指南"
+    "title": "welcome to stretchly",
+    "stretchly": "welcome to stretchly",
+    "breakTimeReminderApp": "break time reminder app",
+    "chooseLanguage": "To start, please, choose the language you would like to use with stretchly:",
+    "readTutorial": "Let stretchly become your favourite app by taking time making it your own. Learn how to personalize it in a quick tutorial.",
+    "tutorial": "tutorial",
+    "skipTutorial": "skip tutorial, I can always find it in About window"
   },
-  "userGuideInfo":{
-    "microbreak": "默认情况下，它会在您的托盘中运行，并每隔10分钟显示一次提醒窗口，该窗口打开20秒，其中包含微型断点的提示",
-    "break": "每隔30分钟，它会显示一个窗口，其中包含一个长时间5分钟休息的想法",
-    "notif": "用户在休息前30秒（微间断前10秒）得到通知，能够准备暂停工作。 \n您可以通过点击底部的链接或使用Ctrl / Cmd + x键盘快捷方式（非严格模式时）尽早完成中断或微型中断，",
-    "tray1": "您可以暂停/恢复提醒休息。 在Windows和Mac OS上，您可以将应用程序设置为在登录时开始",
-    "tray2": "您也可以随时从菜单中跳至下一个休息点或微型断点，或重置（重新开始）休息",
-    "tray3": "托盘工具提示显示有关剩余时间到下一个（微）休息时间的信息，微休息次数直到下一次休息或暂停时间，直到暂停恢复",
-    "setting1": "微间歇和休息可以自定义：\n您可以设置休息时间和间隔\n您可以启用/禁用休息\n您可以启用/禁用严格模式（休息不能提前完成）",
-    "setting2": "你可以选择不同的配色方案\n你可以选择一个声音在休息结束时播放",
-    "setting3" : "您可以将中断窗口设置为全屏\n您可以禁用显示中断提示\n您可以禁用显示中断通知\n您可以禁止自然中断的系统空闲时间监视（当用户离开并且返回空闲时间大于中断时间 ，Stretchly将重新设置休息时间）\n您可以禁用在所有监视器上显示休息时间\n您可以选择界面语言",
-    "hMicrobreak" : "短时间休息",
-    "hBreak" : "长时间休息",
-    "hNotif" : "通知",
-    "hTray" : "托盘",
-    "hSetting" : "设置",
-    "inAbout" : "在大约窗口中可用"
+  "tutorial": {
+    "title": "stretchly tutorial",
+    "welcomeTitle": "stretchly tutorial",
+    "welcomeText": "Taking regular breaks and microbreaks makes you more effective - that is science. But only you know your flow. Get to know stretchly with this quick tutorial and make it your way.",
+    "microbreaksTitle": "microbreaks",
+    "microbreaksText": "By default, stretchly runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing an idea for microbreak.",
+    "breaksTitle": "breaks",
+    "breaksText": "Every 30 minutes, it shows a window containing an idea for a longer 5-minute break.",
+    "notificationsTitle": "notifications",
+    "notificationsText": "You will get notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode).",
+    "tray1Title": "system tray",
+    "tray1Text": "You can pause/resume reminding of breaks. On Windows and Mac OS, you can set the app to start at login.",
+    "tray2Title": "system tray",
+    "tray2Text": "You can also skip to the next break or microbreak anytime from the menu, or reset (restart) breaks.",
+    "tray3Title": "system tray",
+    "tray3Text": "Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.",
+    "settings1Title": "settings",
+    "settings1Text": "Microbreaks and breaks can be customized: \nYou can set duration and interval of break \nYou can enable/disable breaks \nyou can enable/disable strict mode (breaks can't be finished early)",
+    "settings2Title": "settings",
+    "settings2Text": "You can choose from different color schemes \nYou can pick a sound to be played at the end of the break",
+    "settings3Title": "settings",
+    "settings3Text": "You can set break window to be fullscreen \nYou can disable showing of break ideas or break notifications or monitoring of system idle time for natural breaks or showing breaks on all of your monitors \nyou can choose language for interface",
+    "thanksTitle": "Thanks!",
+    "thanksText": "Every month, it takes a lot of work to remind you to take a break. I hope stretchly will help you lead more balanced life. If that is so you can support me with 'Become a Patron' button in tray menu."
   }
 }

@@ -33,8 +33,7 @@
     "break": "перерви",
     "nextBreakFollowing_0": "\nНаступна перерва через {{count}} мікроперерву",
     "nextBreakFollowing_1": "\nНаступна перерва через {{count}} мікроперерви",
-    "nextBreakFollowing_2": "\nСледующій перерву через {{count}} мікроперервів",
-    "selectLanguage": "\nОберіть мову"
+    "nextBreakFollowing_2": "\nСледующій перерву через {{count}} мікроперервів"
   },
   "break": {
     "keepGoing": "... ні, я просто продовжу",
@@ -49,6 +48,8 @@
     "breakTimeReminderApp": "програма для нагадування о перервах",
     "toLearnMoreVisit": "Якщо хочете дізнатися більше про можливості stretchly або про те, як допомогти додатку, відвідайте",
     "homepage": "домашню сторінку",
+    "orRead": "or read its",
+    "tutorial": "tutorial",
     "latestVersion": "остання версія:",
     "checking": "перевіряємо ..."
   },
@@ -112,27 +113,37 @@
     "newVersionAvailable": "Доступна нова версія!"
   },
   "welcome": {
-    "welcomeToStretchly": "Ласкаво просимо до Stretchly",
-    "appDesc": "Ідеальне додаток, який нагадує вам про перерви під час роботи на комп'ютері.",
-    "version": "Версія : ",
-    "dontShowAgain": "Не показувати це знову",
-    "userGuide": "Керівництво користувача"
+    "title": "welcome to stretchly",
+    "stretchly": "welcome to stretchly",
+    "breakTimeReminderApp": "break time reminder app",
+    "chooseLanguage": "To start, please, choose the language you would like to use with stretchly:",
+    "readTutorial": "Let stretchly become your favourite app by taking time making it your own. Learn how to personalize it in a quick tutorial.",
+    "tutorial": "tutorial",
+    "skipTutorial": "skip tutorial, I can always find it in About window"
   },
-  "userGuideInfo": {
-    "microbreak": "За замовчуванням він запускається у вашому лотку та показує вікно нагадування кожні 10 хвилин, тобто відкривається протягом 20 секунд, що містить ідею про мікропошкодження.",
-    "break": "Кожні 30 хвилин він показує вікно, що містить ідею про більш довгу 5-хвилинну перерву.",
-    "notif": "Користувач отримує сповіщення за 30 секунд до перерв (і 10 секунд до мікроперерви), щоб мати змогу готуватись до призупинення роботи. \nВи можете закінчити перерву або мікропошкодження рано, натиснувши посилання внизу або за допомогою комбінації клавіш Ctrl / Cmd + x (якщо не в суворій режимі).",
-    "tray1": "Ви можете призупинити / відновити нагадування про перерви. У Windows та Mac OS ви можете встановити програму, щоб вона почалася після входу в систему.",
-    "tray2": "Ви також можете перейти до наступної перерви або мікроперерви в будь-який час з меню або скидання (перезавантаження) перерви.",
-    "tray3": "Підказка підказки показує інформацію про час, що залишився, до наступної (мікро) перерви, кількість мікропошкоджень до наступної перерви або час, що залишився у паузі до відновлення резюме.",
-    "setting1": "Можна налаштувати мікроперерви і перерви: \nВи можете встановити тривалість і інтервал перерви \nВи можете включити / вимкнути перерви \nВи можете включити / вимкнути суворий режим (перерви не можуть бути завершені рано)",
-    "setting2": "Ви можете вибрати з різних кольорових схем \nВи можете вибрати звук, який буде відтворюватися в кінці перерви",
-    "setting3" : "Ви можете встановити вікно вимикання у повноекранному режимі \nВи можете вимкнути показ ідей перерви або зламати сповіщення або відстежувати час простою системи для природних перерв або показів перерв на всіх ваших моніторах \nВи можете вибрати мову для інтерфейсу",
-    "hMicrobreak" : "мікроперерви",
-    "hBreak" : "перерви",
-    "hNotif" : "Сповіщення",
-    "hTray" : "Лоток",
-    "hSetting" : "Налаштування",
-    "inAbout" : "Доступно приблизно у вікні"
+  "tutorial": {
+    "title": "stretchly tutorial",
+    "welcomeTitle": "stretchly tutorial",
+    "welcomeText": "Taking regular breaks and microbreaks makes you more effective - that is science. But only you know your flow. Get to know stretchly with this quick tutorial and make it your way.",
+    "microbreaksTitle": "microbreaks",
+    "microbreaksText": "By default, stretchly runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing an idea for microbreak.",
+    "breaksTitle": "breaks",
+    "breaksText": "Every 30 minutes, it shows a window containing an idea for a longer 5-minute break.",
+    "notificationsTitle": "notifications",
+    "notificationsText": "You will get notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode).",
+    "tray1Title": "system tray",
+    "tray1Text": "You can pause/resume reminding of breaks. On Windows and Mac OS, you can set the app to start at login.",
+    "tray2Title": "system tray",
+    "tray2Text": "You can also skip to the next break or microbreak anytime from the menu, or reset (restart) breaks.",
+    "tray3Title": "system tray",
+    "tray3Text": "Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.",
+    "settings1Title": "settings",
+    "settings1Text": "Microbreaks and breaks can be customized: \nYou can set duration and interval of break \nYou can enable/disable breaks \nyou can enable/disable strict mode (breaks can't be finished early)",
+    "settings2Title": "settings",
+    "settings2Text": "You can choose from different color schemes \nYou can pick a sound to be played at the end of the break",
+    "settings3Title": "settings",
+    "settings3Text": "You can set break window to be fullscreen \nYou can disable showing of break ideas or break notifications or monitoring of system idle time for natural breaks or showing breaks on all of your monitors \nyou can choose language for interface",
+    "thanksTitle": "Thanks!",
+    "thanksText": "Every month, it takes a lot of work to remind you to take a break. I hope stretchly will help you lead more balanced life. If that is so you can support me with 'Become a Patron' button in tray menu."
   }
 }

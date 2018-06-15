@@ -32,8 +32,7 @@
     "microbreak": "Mikropause",
     "break": "Pause",
     "nextBreakFollowing": "\nDer nächsten Pause folgt {{count}} weitere Mikropause",
-    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen",
-    "selectLanguage": "\nSprache auswählen"
+    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen"
   },
   "break": {
     "keepGoing": "... nein, ich werde weitermachen",
@@ -48,6 +47,8 @@
     "breakTimeReminderApp": "Pausenzeit Erinnerungs App",
     "toLearnMoreVisit": "Um mehr über stretchly's Funktionen und Möglichkeiten zu erfahren und wie Sie uns unterstützen können besuchen Sie unsere",
     "homepage": "Website",
+    "orRead": "or read its",
+    "tutorial": "tutorial",
     "latestVersion": "die neuste Version:",
     "checking": "prüfe..."
   },
@@ -109,27 +110,37 @@
     "newVersionAvailable": "Neue Version verfügbar!"
   },
   "welcome": {
-    "welcomeToStretchly": "Willkommen bei Stretchly",
-    "appDesc": "Perfekte App, die Sie daran erinnert, während der Arbeit am Computer Pausen einzulegen.",
-    "version": "Ausführung : ",
-    "dontShowAgain": "Zeig es nicht noch einmal",
-    "userGuide": "Benutzerhandbuch"
+    "title": "welcome to stretchly",
+    "stretchly": "welcome to stretchly",
+    "breakTimeReminderApp": "break time reminder app",
+    "chooseLanguage": "To start, please, choose the language you would like to use with stretchly:",
+    "readTutorial": "Let stretchly become your favourite app by taking time making it your own. Learn how to personalize it in a quick tutorial.",
+    "tutorial": "tutorial",
+    "skipTutorial": "skip tutorial, I can always find it in About window"
   },
-  "userGuideInfo":{
-    "microbreak": "Standardmäßig läuft es in Ihrem Tray und zeigt alle 10 Minuten ein Erinnerungsfenster an, das für 20 Sekunden geöffnet ist und eine Idee für den Mikrobreak enthält. ",
-    "break": "Alle 30 Minuten zeigt es ein Fenster mit einer Idee für eine längere 5-minütige Pause. ",
-    "notif": "Der Benutzer wird 30 Sekunden vor den Pausen benachrichtigt (und 10 Sekunden vor dem Mikrobruch), um sich darauf vorzubereiten, die Arbeit anzuhalten. \nSie können die Unterbrechung oder den Mikrobreak frühzeitig beenden, indem Sie auf den Link unten klicken oder die Tastenkombination Strg / Cmd + x drücken (wenn nicht im strikten Modus). ",
-    "tray1": "Sie können die Erinnerung an Pausen unterbrechen / fortsetzen. Unter Windows und Mac OS können Sie festlegen, dass die App bei der Anmeldung gestartet wird. ",
-    "tray2": "Sie können auch jederzeit vom Menü zur nächsten Pause oder zum Mikrobrechen springen oder die Pausen zurücksetzen (neu starten). ",
-    "tray3": "Tray-Tooltip zeigt Informationen über die verbleibende Zeit bis zur nächsten (Mikro) Pause, die Anzahl der Mikrobrüche bis zur nächsten Pause oder die verbleibende Zeit in der Pause, bis die Pausen wieder aufgenommen werden. ",
-    "setting1": "Micro Breaks und Breaks können angepasst werden: \nSie können die Dauer und das Intervall einstellen \nSie können Breaks aktivieren / deaktivieren \nSie können den strikten Modus aktivieren / deaktivieren (Breaks können nicht vorzeitig beendet werden) ",
-    "setting2": "Du kannst zwischen verschiedenen Farbschemata wählen \nDu kannst einen Ton auswählen, der am Ende der Pause gespielt wird ",
-    "setting3" : "Sie können das Unterbrechungsfenster auf Vollbild setzen \nSie können das Anzeigen von Unterbrechungsideen oder das Unterbrechen von Benachrichtigungen oder das Überwachen der Systemleerlaufzeit für natürliche Unterbrechungen oder das Zeigen von Unterbrechungen auf allen Ihren Bildschirmen deaktivieren \nSie können die Sprache für die Schnittstelle auswählen",
-    "hMicrobreak" : "Mikropausen",
-    "hBreak" : "Pausen",
-    "hNotif" : "Benachrichtigungen",
-    "hTray" : "Tablett",
-    "hSetting" : "Einstellungen",
-    "inAbout" : "Verfügbar in ungefährem Fenster"
+  "tutorial": {
+    "title": "stretchly tutorial",
+    "welcomeTitle": "stretchly tutorial",
+    "welcomeText": "Taking regular breaks and microbreaks makes you more effective - that is science. But only you know your flow. Get to know stretchly with this quick tutorial and make it your way.",
+    "microbreaksTitle": "microbreaks",
+    "microbreaksText": "By default, stretchly runs in your tray and shows reminder window every 10 minutes, that is open for 20 seconds, containing an idea for microbreak.",
+    "breaksTitle": "breaks",
+    "breaksText": "Every 30 minutes, it shows a window containing an idea for a longer 5-minute break.",
+    "notificationsTitle": "notifications",
+    "notificationsText": "You will get notified 30 seconds before breaks (and 10 seconds before microbreak) to be able to prepare to pause the work. \nYou can finish break or microbreak early, by clicking the link at the bottom or by using Ctrl/Cmd + x keyboard shortcut (when not in strict mode).",
+    "tray1Title": "system tray",
+    "tray1Text": "You can pause/resume reminding of breaks. On Windows and Mac OS, you can set the app to start at login.",
+    "tray2Title": "system tray",
+    "tray2Text": "You can also skip to the next break or microbreak anytime from the menu, or reset (restart) breaks.",
+    "tray3Title": "system tray",
+    "tray3Text": "Tray tooltip shows information about time left till next (micro)break, number of microbreaks until next break or time left in pause till breaks resume.",
+    "settings1Title": "settings",
+    "settings1Text": "Microbreaks and breaks can be customized: \nYou can set duration and interval of break \nYou can enable/disable breaks \nyou can enable/disable strict mode (breaks can't be finished early)",
+    "settings2Title": "settings",
+    "settings2Text": "You can choose from different color schemes \nYou can pick a sound to be played at the end of the break",
+    "settings3Title": "settings",
+    "settings3Text": "You can set break window to be fullscreen \nYou can disable showing of break ideas or break notifications or monitoring of system idle time for natural breaks or showing breaks on all of your monitors \nyou can choose language for interface",
+    "thanksTitle": "Thanks!",
+    "thanksText": "Every month, it takes a lot of work to remind you to take a break. I hope stretchly will help you lead more balanced life. If that is so you can support me with 'Become a Patron' button in tray menu."
   }
 }
