@@ -9,27 +9,25 @@ document.addEventListener('DOMContentLoaded', event => {
 
 let current = 0
 const images = [
-  './images/stretchly.png',
-  './images/stretchly-microbreak.png',
-  './images/stretchly-break.png',
-  './images/stretchly-notification.png',
-  './images/stretchly-tray-1.png',
-  './images/stretchly-tray-2.png',
-  './images/stretchly-tray-3.png',
-  './images/stretchly-settings-website-1.png',
-  './images/stretchly-settings-website-2.png',
-  './images/stretchly-settings-website-3.png',
-  './images/stretchly.png'
+  './images/tutorial/stretchly_128x128.png',
+  './images/tutorial/microbreak.png',
+  './images/tutorial/break.png',
+  './images/tutorial/notification.png',
+  './images/tutorial/tooltip.png',
+  './images/tutorial/tray-menu.png',
+  './images/tutorial/settings-1.png',
+  './images/tutorial/settings-2.png',
+  './images/tutorial/settings-3.png',
+  './images/tutorial/stretchly_128x128.png'
 ]
 
 const infos = [
   'welcome',
-  'microbreaks',
+  'defaults',
   'breaks',
   'notifications',
   'tray1',
   'tray2',
-  'tray3',
   'settings1',
   'settings2',
   'settings3',

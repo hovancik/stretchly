@@ -39,7 +39,8 @@ body {
   padding-top: 10%;
 }
 
-.tutorial {
+.tutorial,
+.welcome {
   padding-top: 5px;
 }
 
@@ -168,13 +169,14 @@ select  {
 .tutorial-image {
   align-items: center;
   display: flex;
-  justify-content: center;
-  margin: 20px auto;
   max-height: 50vh;
+  min-height: 40vh;
+  justify-content: center;
+  margin: 10px auto;
 }
 
 .tutorial img {
-  width: 40%;
+  max-width: 60%;
 }
 
 #tutorial {
