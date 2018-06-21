@@ -4,7 +4,7 @@
     "microbreakIn": "小休息相隔 {{seconds}} 秒...",
     "breakIn": "長時間休息相隔 {{seconds}} 秒...",
     "resumingBreaks": "正在恢复休息",
-    "aboutStretchly": "关于 stretchly v{{version}}",
+    "aboutStretchly": "關於 stretchly v{{version}}",
     "downloadLatestVersion": "下載最新版本",
     "about": "關於",
     "becomePatron": "到 Patron 成為合作者",
