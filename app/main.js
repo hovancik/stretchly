@@ -20,6 +20,8 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let settingsWin = null
+let tutorialWin = null
+let welcomeWin = null
 let settings
 let isOnIndefinitePause
 
@@ -45,7 +47,6 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
-
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -159,6 +160,42 @@ function startProcessWin () {
   processWin.once('ready-to-show', () => {
     planVersionCheck()
   })
+}
+
+function createWelcomeWindow () {
+  if (settings.get('isFirstRun')) {
+    const modalPath = `file://${__dirname}/welcome.html`
+    welcomeWin = new BrowserWindow({
+      x: displaysX(),
+      y: displaysY(),
+      autoHideMenuBar: true,
+      icon: `${__dirname}/images/stretchly_18x18.png`,
+      backgroundColor: settings.get('mainColor')
+    })
+    welcomeWin.loadURL(modalPath)
+  }
+  if (welcomeWin) {
+    welcomeWin.on('closed', () => {
+      welcomeWin = null
+    })
+  }
+}
+
+function createTutorialWindow () {
+  const modalPath = `file://${__dirname}/tutorial.html`
+  tutorialWin = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
+    autoHideMenuBar: true,
+    icon: `${__dirname}/images/stretchly_18x18.png`,
+    backgroundColor: settings.get('mainColor')
+  })
+  tutorialWin.loadURL(modalPath)
+  if (tutorialWin) {
+    tutorialWin.on('closed', () => {
+      tutorialWin = null
+    })
+  }
 }
 
 function planVersionCheck (seconds = 1) {
@@ -348,6 +385,7 @@ function loadSettings () {
   breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
   breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
   i18next.changeLanguage(settings.get('language'))
+  createWelcomeWindow()
 }
 
 function loadIdeas () {
@@ -667,7 +705,7 @@ ipcMain.on('save-setting', function (event, key, value) {
     breakPlanner.naturalBreaks(value)
   }
   settings.set(key, value)
-  settingsWin.webContents.send('renderSettings', settings.data)
+  event.sender.send('renderSettings', settings.data)
   appIcon.setContextMenu(getTrayMenu())
 })
 
@@ -691,7 +729,7 @@ ipcMain.on('set-default-settings', function (event, data) {
 })
 
 ipcMain.on('send-settings', function (event) {
-  settingsWin.webContents.send('renderSettings', settings.data)
+  event.sender.send('renderSettings', settings.data)
 })
 
 ipcMain.on('show-debug', function (event) {
@@ -704,7 +742,9 @@ ipcMain.on('show-debug', function (event) {
 
 ipcMain.on('change-language', function (event, language) {
   i18next.changeLanguage(language)
-  if (settingsWin) {
-    settingsWin.webContents.send('renderSettings', settings.data)
-  }
+  event.sender.send('renderSettings', settings.data)
+})
+
+ipcMain.on('open-tutorial', function (event) {
+  createTutorialWindow()
 })

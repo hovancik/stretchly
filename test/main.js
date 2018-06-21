@@ -31,7 +31,8 @@ describe('stretchly', function () {
 
   it('app starts', function () {
     return this.app.client.waitUntilWindowLoaded()
-      .getWindowCount().should.eventually.equal(1)
-      .windowByIndex(0).browserWindow.isVisible().should.eventually.be.false
+      .getWindowCount().should.eventually.equal(2)
+      .windowByIndex(0).browserWindow.isVisible().should.eventually.be.true
+      .windowByIndex(1).browserWindow.isVisible().should.eventually.be.false
   })
 })

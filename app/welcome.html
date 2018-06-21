@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title data-i18next="welcome.title"></title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div class="welcome">
+      <div class="welcome-name" data-i18next="welcome.stretchly"></div>
+      <div data-i18next="welcome.breakTimeReminderApp"></div>
+      <div class="welcome-stretchly">
+        <p data-i18next="welcome.chooseLanguage"></p>
+        <select name="language" id="language">
+          <!--Keep languages in the alphabet order-->
+          <option value="bg">Български</option>
+          <option value="cs">Čeština</option>
+          <option value="de">Deutsch</option>
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="hi">हिन्दी</option>
+          <option value="it">Italiano</option>
+          <option value="pt-BR">Português Brasileiro</option>
+          <option value="ro">Română</option>
+          <option value="ru">Русский</option>
+          <option value="sk">Slovenčina</option>
+          <option value="uk">Українська</option>
+          <option value="zh-CN">简体中文</option>
+          <option value="zh-TW">正體中文</option>
+        </select>
+        <p data-i18next="welcome.readTutorial"></p>
+        <a href="" data-i18next="welcome.tutorial" id="tutorial"></a>
+      </div>
+      <a id="skip" data-i18next="welcome.skipTutorial"></a>
+    </div>
+    <script>
+      require('./welcome.js')
+    </script>
+  </body>
+</html>

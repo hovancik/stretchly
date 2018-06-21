@@ -1,4 +1,4 @@
-const {shell, ipcRenderer} = require('electron')
+const {shell, ipcRenderer, remote} = require('electron')
 const VersionChecker = require('./utils/versionChecker')
 const HtmlTranslate = require('./utils/htmlTranslate')
 
@@ -50,4 +50,9 @@ ipcRenderer.on('debugInfo', (event, reference, timeleft, settingsfile) => {
     let settingsfileElement = document.getElementById('settingsfile')
     settingsfileElement.innerHTML = settingsfile
   }
+})
+
+document.getElementById('open-tutorial').addEventListener('click', function (e) {
+  ipcRenderer.send('open-tutorial')
+  remote.getCurrentWindow().close()
 })
