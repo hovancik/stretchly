@@ -302,9 +302,11 @@ function startBreak () {
   if (settings.get('ideas')) {
     idea = breakIdeas.randomElement
   }
+  const electron = require('electron');
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let breakWinLocal = new BrowserWindow({
+
+    const options = {
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
@@ -314,17 +316,26 @@ function startBreak () {
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
-    })
+    }
+
+    if (settings.get('fullscreen')) {
+      const displaySize = electron.screen.getAllDisplays()[displayIdx].size
+      options.width = displaySize.width
+      options.height = displaySize.height
+    }
+
+    let breakWinLocal = new BrowserWindow(options)
+
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.show()
-      breakWinLocal.setFullScreen(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
       breakWinLocal.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
       breakWinLocal.webContents.send('progress', Date.now(), settings.get('breakDuration'))
       breakWinLocal.setAlwaysOnTop(true)
+      breakWinLocal.setVisibleOnAllWorkspaces(true)
     })
     breakWinLocal.loadURL(modalPath)
     breakWins.push(breakWinLocal)
