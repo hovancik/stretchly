@@ -90,7 +90,7 @@ describe('scheduler', function () {
     }, 50)
     setTimeout(function () {
       schedule.timeLeft.should.be.a('number').and
-        .to.be.below(time - correction - 100)
+        .to.be.most(time - correction - 100)
       done()
     }, 100)
   })
