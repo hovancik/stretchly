@@ -82,9 +82,7 @@ i18next.on('languageChanged', function (lng) {
 
 function startPowerMonitoring () {
   const electron = require('electron')
-  let suspendStart = Date.now()
   electron.powerMonitor.on('suspend', () => {
-    suspendStart = Date.now()
     if (!breakPlanner.isPaused) {
       pausedForSuspend = true
       pauseBreaks(1)
@@ -95,8 +93,8 @@ function startPowerMonitoring () {
       pausedForSuspend = false
       resumeBreaks()
     } else if (breakPlanner.isPaused) {
-      const suspendDuration = Date.now() - suspendStart
-      breakPlanner.correctBy(suspendDuration)
+      // restart the planner to correct for time spent in suspend
+      breakPlanner.restart()
     }
   })
 }
