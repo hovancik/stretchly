@@ -240,14 +240,21 @@ function startMicrobreak () {
     return
   }
 
+  let startTime = Date.now()
+  const breakDuration = settings.get('microbreakDuration')
+  const strictMode = settings.get('microbreakStrictMode')
+  // in strict mode you cannot skip, so allow to postpone anytime
+  const postponableDurationPercent =
+    strictMode ? 100 : settings.get('microbreakPostponableDurationPercent') / 100
   const postponesLimit = settings.get('microbreakPostponesLimit')
-  let postponable = settings.get('microbreakPostpone') &&
+  const postponable = settings.get('microbreakPostpone') &&
     (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
-  if (!settings.get('microbreakStrictMode') || postponable) {
+  if (!strictMode || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
-      if (postponable) {
+      const passedPercent = (Date.now() - startTime) / breakDuration
+      if (postponable && passedPercent < postponableDurationPercent) {
         postponeMicrobreak()
-      } else {
+      } else if (!strictMode) {
         finishMicrobreak(false)
       }
     })
@@ -280,8 +287,11 @@ function startMicrobreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
-      microbreakWinLocal.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'), postponable)
-      microbreakWinLocal.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
+      microbreakWinLocal.webContents.send(
+        'microbreakIdea', idea, strictMode, postponable)
+      microbreakWinLocal.webContents.send(
+        'progress', startTime = Date.now(), breakDuration,
+        postponableDurationPercent)
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -309,14 +319,21 @@ function startBreak () {
     return
   }
 
+  let startTime = Date.now()
+  const breakDuration = settings.get('breakDuration')
+  const strictMode = settings.get('breakStrictMode')
+  // in strict mode you cannot skip, so allow to postpone anytime
+  const postponableDurationPercent =
+    strictMode ? 100 : settings.get('breakPostponableDurationPercent') / 100
   const postponesLimit = settings.get('breakPostponesLimit')
-  let postponable = settings.get('breakPostpone') &&
+  const postponable = settings.get('breakPostpone') &&
     (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
-  if (!settings.get('breakStrictMode') || postponable) {
+  if (!strictMode || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
-      if (postponable) {
+      const passedPercent = (Date.now() - startTime) / breakDuration
+      if (postponable && passedPercent < postponableDurationPercent) {
         postponeBreak()
-      } else {
+      } else if (!strictMode) {
         finishBreak(false)
       }
     })
@@ -349,8 +366,11 @@ function startBreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
-      breakWinLocal.webContents.send('breakIdea', idea, settings.get('breakStrictMode'), postponable)
-      breakWinLocal.webContents.send('progress', Date.now(), settings.get('breakDuration'))
+      breakWinLocal.webContents.send(
+        'breakIdea', idea, strictMode, postponable)
+      breakWinLocal.webContents.send(
+        'progress', startTime = Date.now(), breakDuration,
+        postponableDurationPercent)
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
