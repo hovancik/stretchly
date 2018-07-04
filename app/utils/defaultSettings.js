@@ -11,7 +11,18 @@ module.exports = {
   break: true,
   microbreakStrictMode: false,
   breakStrictMode: false,
+<<<<<<< HEAD
   morningHour: 6,
+=======
+  microbreakPostpone: true,
+  breakPostpone: true,
+  microbreakPostponeTime: 120000,
+  breakPostponeTime: 300000,
+  microbreakPostponesLimit: 1,
+  microbreakPostponableDurationPercent: 20,
+  breakPostponesLimit: 1,
+  breakPostponableDurationPercent: 20,
+>>>>>>> fixup! fix strict mode, postpone duration limit
   mainColor: '#478484',
   audio: 'crystal-glass',
   fullscreen: false,

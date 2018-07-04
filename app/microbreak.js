@@ -30,12 +30,17 @@ ipcRenderer.on('microbreakIdea', (event, message, strictMode, postponable) => {
   }
 })
 
-ipcRenderer.on('progress', (event, started, duration) => {
+ipcRenderer.on('progress', (event, started, duration, postponePercent) => {
   let progress = document.getElementById('progress')
   let progressTime = document.getElementById('progress-time')
   window.setInterval(function () {
     if (Date.now() - started < duration) {
-      progress.value = (Date.now() - started) / duration * 10000
+      const passedPercent = (Date.now() - started) / duration
+      if (postponePercent && passedPercent >= postponePercent) {
+        document.getElementById('postpone').style.visibility = 'hidden'
+        document.getElementById('close').style.visibility = 'visible'
+      }
+      progress.value = passedPercent * progress.max
       progressTime.innerHTML = Utils.formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
     }
   }, 100)
