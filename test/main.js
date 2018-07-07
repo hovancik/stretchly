@@ -3,6 +3,7 @@ let chai = require('chai')
 let chaiAsPromised = require('chai-as-promised')
 let electronPath = require('electron')
 const AppSettings = require('../app/utils/settings')
+const { modifySettings } = require('./helper')
 
 
 chai.should()
@@ -12,34 +13,7 @@ const timeout = process.env.CI ? 30000 : 10000
 
 
 describe('stretchly', function () {
-  function modifySettings(key, value) {
-    this.app = new Application({
-      path: electronPath,
-      args: [
-        `${__dirname}/../app`
-      ]
-    })
-
-    return this.app.start()
-      .then(() => {
-        this.app.client.addCommand('getUserDataPath', function () {
-          return this.execute(function () {
-            return require('electron').remote.app.getPath('userData')
-          })
-        })
-
-        return this.app.client.getUserDataPath()
-      })
-      .then((path) => {
-        const settingsFile = `${path.value}/config.json`
-        const settings = new AppSettings(settingsFile)
-        settings.set(key, value)
-        return this.app.stop()
-      })
-  }
-
   this.timeout(timeout)
-
   beforeEach(function () {
     return modifySettings('isFirstRun', false)
   })
