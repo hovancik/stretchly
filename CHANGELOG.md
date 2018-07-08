@@ -4,14 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
-### Added
-- Dutch translations for interface
+
 
 ## [Unreleased]
 ### Added
 - Italian translations for interface
 - Welcome and Tutorial windows on first run and in About window
+- Dutch translations for interface
 
 ## [0.17.0] - 2018-05-06
 ### Added
