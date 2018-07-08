@@ -9,15 +9,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - New tests on process start
 - Create helper to modify settings in tests
 
-
-## [Unreleased]
-### Added
-- Dutch translations for interface
-
 ## [Unreleased]
 ### Added
 - Italian translations for interface
 - Welcome and Tutorial windows on first run and in About window
+- Dutch translations for interface
 
 ## [0.17.0] - 2018-05-06
 ### Added
