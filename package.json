@@ -35,15 +35,15 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "chai": "^4.1.2",
-    "chai-as-promised": "^7.1.1",
-    "electron": "^2.0.0",
-    "electron-builder": "^20.11.1",
-    "mocha": "^5.2.0",
-    "sinon": "^5.0.3",
-    "spectron": "^3.8.0",
-    "standard": "^11.0.1"
+    "babel-eslint": "8.2.3",
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "electron": "2.0.0",
+    "electron-builder": "20.11.1",
+    "mocha": "5.2.0",
+    "sinon": "5.0.3",
+    "spectron": "3.8.0",
+    "standard": "11.0.1"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
@@ -119,8 +119,8 @@
     ]
   },
   "dependencies": {
-    "@paulcbetts/system-idle-time": "^1.0.4",
-    "i18next": "^11.2.3",
-    "i18next-node-fs-backend": "^1.0.0"
+    "@paulcbetts/system-idle-time": "1.0.4",
+    "i18next": "11.2.3",
+    "i18next-node-fs-backend": "1.0.0"
   }
 }
