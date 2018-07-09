@@ -83,18 +83,20 @@ i18next.on('languageChanged', function (lng) {
 function startPowerMonitoring () {
   const electron = require('electron')
   electron.powerMonitor.on('suspend', () => {
+    console.log('The system is going to sleep')
     if (!breakPlanner.isPaused) {
       pausedForSuspend = true
       pauseBreaks(1)
     }
   })
   electron.powerMonitor.on('resume', () => {
+    console.log('The system is resuming')
     if (pausedForSuspend) {
       pausedForSuspend = false
       resumeBreaks()
     } else if (breakPlanner.isPaused) {
-      // restart the planner to correct for time spent in suspend
-      breakPlanner.restart()
+      // corrrect the planner for the time spent in suspend
+      breakPlanner.correctScheduler()
     }
   })
 }

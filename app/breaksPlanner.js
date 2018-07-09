@@ -135,8 +135,8 @@ class BreaksPlanner extends EventEmitter {
     this.nextBreak()
   }
 
-  restart (correctByMillis = 0) {
-    if (this.scheduler) this.scheduler.reload(correctByMillis)
+  correctScheduler () {
+    if (this.scheduler) this.scheduler.correct()
   }
 
   reset () {
