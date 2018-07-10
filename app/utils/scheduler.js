@@ -17,6 +17,12 @@ class Scheduler {
     this.timer = setTimeout(this.func, this.delay)
   }
 
+  correct () {
+    if (this.timer === null) return
+    clearTimeout(this.timer)
+    this.timer = setTimeout(this.func, this.timeLeft)
+  }
+
   cancel () {
     clearTimeout(this.timer)
     this.timer = null
