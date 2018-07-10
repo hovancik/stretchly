@@ -158,7 +158,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Carlo Gandolfi, @cgand
 - Kavya Jain, @kavya-jain
 - Denys Otrishko, @lundibundi
-
+- p-bo, @p-bo
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
