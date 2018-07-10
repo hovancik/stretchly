@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Welcome and Tutorial windows on first run and in About window
 - Dutch translations for interface
 
+### Fixed
+- User pause will no longer be removed upon suspend/resume
+- User pause time will be corrected upon suspend/resume for the duration
+  of system sleep
+
 ## [0.17.0] - 2018-05-06
 ### Added
 - Ukrainian translations for interface

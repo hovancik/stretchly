@@ -135,6 +135,10 @@ class BreaksPlanner extends EventEmitter {
     this.nextBreak()
   }
 
+  correctScheduler () {
+    if (this.scheduler) this.scheduler.correct()
+  }
+
   reset () {
     this.clear()
     this.resume()
