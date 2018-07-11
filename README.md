@@ -157,7 +157,8 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Ciprian Rusen, [www.digitalcitizen.life](https://www.digitalcitizen.life)
 - Carlo Gandolfi, @cgand
 - Kavya Jain, @kavya-jain
-
+- Denys Otrishko, @lundibundi
+- p-bo, @p-bo
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
