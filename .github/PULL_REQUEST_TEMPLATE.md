@@ -21,7 +21,7 @@ Issue: #
 - [ ] `npm run lint` reports no offenses.
 - [ ] `npm run test` is error-free.
 - [ ]  README and CHANGELOG were updated accordingly.
-- [ ]  package versions and package-lock.json were not changed((`npm install --no-save`)
+- [ ]  package versions and package-lock.json were not changed (`npm install --no-save`)
 
 ### Description of the Change
 
