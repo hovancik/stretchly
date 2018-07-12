@@ -20,7 +20,7 @@ describe('scheduler', function () {
     let schedule = new Scheduler(callback, time)
     schedule.plan()
     setTimeout(function () {
-      test.should.be.false
+      test.should.equal(false)
       done()
     }, 200)
   })
@@ -40,7 +40,7 @@ describe('scheduler', function () {
       schedule.correct()
     }, 200)
     setTimeout(function () {
-      test.should.be.false
+      test.should.equal(false)
       done()
     }, time + 100)
   })
@@ -56,7 +56,7 @@ describe('scheduler', function () {
       schedule.cancel()
     }, 50)
     setTimeout(function () {
-      test.should.be.true
+      test.should.equal(true)
       done()
     }, 200)
   })
@@ -72,7 +72,7 @@ describe('scheduler', function () {
       schedule.timeLeft.should.be.a('number').and.to.be.below(100)
     }, 50)
     setTimeout(function () {
-      test.should.be.false
+      test.should.equal(false)
       done()
     }, 160)
   })
