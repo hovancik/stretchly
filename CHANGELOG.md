@@ -19,7 +19,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Czech translations updated
 - Slovak translations updated
 
-
 ## [0.17.0] - 2018-05-06
 ### Added
 - Ukrainian translations for interface
@@ -85,7 +84,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.12.0] - 2017-11-05
 ### Fixed
-- error with second instance on Windows  
+- error with second instance on Windows
 - breaks wont resume with indefinite pause after system resume
 
 ### Added
