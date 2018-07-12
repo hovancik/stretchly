@@ -14,6 +14,10 @@ function modifySettings (key, value) {
     .then(() => {
       app.client.addCommand('getUserDataPath', function () {
         return this.execute(function () {
+          // spectron does not have the ability to "get path", so we
+          // instruct spectron to get the contents of the electron module
+          // and get the location of the settings file directory
+          // (https://github.com/electron/spectron/issues/16)
           return require('electron').remote.app.getPath('userData')
         })
       })
