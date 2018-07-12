@@ -15,7 +15,6 @@ Issue: #
 
 - [ ]  issue was opened to discuss proposed changes before starting implementation.
 - [ ]  during development, `node` version specified in `package.json` was used.
-- [ ]  package versions were not changed.
 - [ ]  app version number was not changed.
 - [ ]  all new code has tests to ensure against regressions.
 - [ ] `npm run lint` reports no offenses.
