@@ -159,6 +159,8 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Kavya Jain, @kavya-jain
 - Denys Otrishko, @lundibundi
 - p-bo, @p-bo
+- Alina Leuca, @alinaleuca
+- Sabine van der Eijk, @Sabin_E
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
