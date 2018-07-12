@@ -40,7 +40,7 @@ describe('scheduler', function () {
       schedule.correct()
     }, 200)
     setTimeout(function () {
-      test.should.be.false
+      test.should.equal(false)
       done()
     }, time + 100)
   })
