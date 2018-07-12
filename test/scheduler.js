@@ -25,6 +25,26 @@ describe('scheduler', function () {
     }, 200)
   })
 
+  it('kinda runs schedule on time with correct', function (done) {
+    let time = 1000
+    let start = Date.now()
+    let callback = function () {
+      // allow margin due to event loop delay
+      (Date.now() - start).should.be
+        .within(time - 100, time + 100)
+      test = false
+    }
+    let schedule = new Scheduler(callback, time)
+    schedule.plan()
+    setTimeout(function () {
+      schedule.correct()
+    }, 200)
+    setTimeout(function () {
+      test.should.be.false
+      done()
+    }, time + 100)
+  })
+
   it('it cancels schedule on cancel()', function (done) {
     let time = 100
     let callback = function () {

@@ -23,7 +23,7 @@ let settingsWin = null
 let tutorialWin = null
 let welcomeWin = null
 let settings
-let isOnIndefinitePause
+let pausedForSuspend = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -84,11 +84,20 @@ function startPowerMonitoring () {
   const electron = require('electron')
   electron.powerMonitor.on('suspend', () => {
     console.log('The system is going to sleep')
-    if (!isOnIndefinitePause) pauseBreaks(1)
+    if (!breakPlanner.isPaused) {
+      pausedForSuspend = true
+      pauseBreaks(1)
+    }
   })
   electron.powerMonitor.on('resume', () => {
     console.log('The system is resuming')
-    if (!isOnIndefinitePause) resumeBreaks()
+    if (pausedForSuspend) {
+      pausedForSuspend = false
+      resumeBreaks()
+    } else if (breakPlanner.isPaused) {
+      // corrrect the planner for the time spent in suspend
+      breakPlanner.correctScheduler()
+    }
   })
 }
 
@@ -402,8 +411,7 @@ function loadIdeas () {
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
 }
 
-function pauseBreaks (milliseconds, keepAfterPowerResume = false) {
-  isOnIndefinitePause = keepAfterPowerResume
+function pauseBreaks (milliseconds) {
   if (microbreakWins) {
     finishMicrobreak(false)
   }
@@ -416,7 +424,6 @@ function pauseBreaks (milliseconds, keepAfterPowerResume = false) {
 }
 
 function resumeBreaks () {
-  isOnIndefinitePause = false
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
   processWin.webContents.send('showNotification', i18next.t('main.resumingBreaks'))
@@ -569,7 +576,7 @@ function getTrayMenu () {
         }, {
           label: i18next.t('main.indefinitely'),
           click: function () {
-            pauseBreaks(1, true)
+            pauseBreaks(1)
           }
         }
       ]
