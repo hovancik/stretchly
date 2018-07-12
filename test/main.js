@@ -2,15 +2,11 @@ let Application = require('spectron').Application
 let chai = require('chai')
 let chaiAsPromised = require('chai-as-promised')
 let electronPath = require('electron')
-const AppSettings = require('../app/utils/settings')
-const { modifySettings } = require('./helper')
-
+const { modifySettings } = require('./modifySettingsHelper')
 
 chai.should()
 chai.use(chaiAsPromised)
 const timeout = process.env.CI ? 30000 : 10000
-
-
 
 describe('stretchly', function () {
   this.timeout(timeout)
@@ -65,21 +61,22 @@ describe('stretchly', function () {
 
   it('welcome window does not open after first run', function () {
     return modifySettings('isFirstRun', false)
-    this.app = new Application({
-      path: electronPath,
-      args: [
-        `${__dirname}/../app`
-      ]
-    })
-    const dir = app.getPath('userData')
-    const settingsFile = `${dir}/config.json`
-    return this.app.start()
       .then(() => {
-        chaiAsPromised.transferPromiseness = this.app.transferPromiseness
-        return this.app.client
-          .waitUntilWindowLoaded()
-          .getWindowCount().should.eventually.equal(1)
-          .windowByIndex(0).browserWindow.isVisible().should.eventually.be.false
+        this.app = new Application({
+          path: electronPath,
+          args: [
+            `${__dirname}/../app`
+          ]
+        })
+
+        return this.app.start()
+          .then(() => {
+            chaiAsPromised.transferPromiseness = this.app.transferPromiseness
+            return this.app.client
+              .waitUntilWindowLoaded()
+              .getWindowCount().should.eventually.equal(1)
+              .windowByIndex(0).browserWindow.isVisible().should.eventually.be.false
+          })
       })
   })
 })
