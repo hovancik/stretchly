@@ -84,7 +84,7 @@ Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](http
 
 On macOS you can install it by running `brew update && brew cask install stretchly`
 
-You can create installer by running `npm run pack` or `npm run dist` after `npm install`.
+You can create installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
 ## Running from source
 
@@ -159,6 +159,8 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - Kavya Jain, @kavya-jain
 - Denys Otrishko, @lundibundi
 - p-bo, @p-bo
+- Alina Leuca, @alinaleuca
+- Sabine van der Eijk, @Sabin_E
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
