@@ -2,6 +2,7 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const suncalc = require('suncalc')
 
 startI18next()
 
@@ -648,7 +649,7 @@ function getTrayMenu () {
   return Menu.buildFromTemplate(trayMenu)
 }
 
-function loadMorningTime() {
+function loadMorningTime () {
   const morningHour = settings.get('morningHour')
   if (morningHour !== 'sunrise') return [morningHour]
 
