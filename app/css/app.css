@@ -116,6 +116,11 @@ a {
   text-decoration: none;
 }
 
+.settings-options {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 a {
   color: #fff;
   font-family: 'Lato Light'
