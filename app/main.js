@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
+const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const suncalc = require('suncalc')
@@ -52,7 +52,7 @@ app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
 
-function startI18next() {
+function startI18next () {
   i18next
     .use(Backend)
     .init({
@@ -81,7 +81,7 @@ i18next.on('languageChanged', function (lng) {
   }
 })
 
-function startPowerMonitoring() {
+function startPowerMonitoring () {
   const electron = require('electron')
   electron.powerMonitor.on('suspend', () => {
     console.log('The system is going to sleep')
@@ -102,18 +102,18 @@ function startPowerMonitoring() {
   })
 }
 
-function numberOfDisplays() {
+function numberOfDisplays () {
   const electron = require('electron')
   return electron.screen.getAllDisplays().length
 }
 
-function closeWindows(windowArray) {
+function closeWindows (windowArray) {
   for (let i = windowArray.length - 1; i >= 0; i--) {
     windowArray[i].close()
   }
 }
 
-function displaysX(displayID = -1, width = 800) {
+function displaysX (displayID = -1, width = 800) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -130,7 +130,7 @@ function displaysX(displayID = -1, width = 800) {
   return Math.ceil(bounds.x + ((bounds.width - width) / 2))
 }
 
-function displaysY(displayID = -1, height = 600) {
+function displaysY (displayID = -1, height = 600) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -147,7 +147,7 @@ function displaysY(displayID = -1, height = 600) {
   return Math.ceil(bounds.y + ((bounds.height - height) / 2))
 }
 
-function createTrayIcon() {
+function createTrayIcon () {
   const iconFolder = `${__dirname}/images`
   if (process.platform === 'darwin') {
     appIcon = new Tray(iconFolder + '/trayTemplate.png')
@@ -160,7 +160,7 @@ function createTrayIcon() {
   setInterval(updateToolTip, 10000)
 }
 
-function startProcessWin() {
+function startProcessWin () {
   const modalPath = `file://${__dirname}/process.html`
   processWin = new BrowserWindow({
     icon: `${__dirname}/images/stretchly_18x18.png`,
@@ -172,7 +172,7 @@ function startProcessWin() {
   })
 }
 
-function createWelcomeWindow() {
+function createWelcomeWindow () {
   if (settings.get('isFirstRun')) {
     const modalPath = `file://${__dirname}/welcome.html`
     welcomeWin = new BrowserWindow({
@@ -191,7 +191,7 @@ function createWelcomeWindow() {
   }
 }
 
-function createTutorialWindow() {
+function createTutorialWindow () {
   const modalPath = `file://${__dirname}/tutorial.html`
   tutorialWin = new BrowserWindow({
     x: displaysX(),
@@ -208,26 +208,26 @@ function createTutorialWindow() {
   }
 }
 
-function planVersionCheck(seconds = 1) {
+function planVersionCheck (seconds = 1) {
   setTimeout(checkVersion, seconds * 1000)
 }
 
-function checkVersion() {
+function checkVersion () {
   processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
   planVersionCheck(3600 * 5)
 }
 
-function startMicrobreakNotification() {
-  processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+function startMicrobreakNotification () {
+  processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
   breakPlanner.nextBreakAfterNotification('startMicrobreak')
 }
 
-function startBreakNotification() {
-  processWin.webContents.send('showNotification', i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+function startBreakNotification () {
+  processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
   breakPlanner.nextBreakAfterNotification('startBreak')
 }
 
-function startMicrobreak() {
+function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
   }
@@ -287,7 +287,7 @@ function startMicrobreak() {
   updateToolTip()
 }
 
-function startBreak() {
+function startBreak () {
   if (!breakIdeas) {
     loadIdeas()
   }
@@ -347,7 +347,7 @@ function startBreak() {
   updateToolTip()
 }
 
-function finishMicrobreak(shouldPlaySound = true) {
+function finishMicrobreak (shouldPlaySound = true) {
   globalShortcut.unregister('CommandOrControl+X')
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
@@ -364,7 +364,7 @@ function finishMicrobreak(shouldPlaySound = true) {
   updateToolTip()
 }
 
-function finishBreak(shouldPlaySound = true) {
+function finishBreak (shouldPlaySound = true) {
   globalShortcut.unregister('CommandOrControl+X')
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
@@ -381,7 +381,7 @@ function finishBreak(shouldPlaySound = true) {
   updateToolTip()
 }
 
-function loadSettings() {
+function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
@@ -398,7 +398,7 @@ function loadSettings() {
   createWelcomeWindow()
 }
 
-function loadIdeas() {
+function loadIdeas () {
   let breakIdeasData
   let microbreakIdeasData
   if (settings.get('useIdeasFromSettings')) {
@@ -412,7 +412,7 @@ function loadIdeas() {
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
 }
 
-function pauseBreaks(milliseconds) {
+function pauseBreaks (milliseconds) {
   if (microbreakWins) {
     finishMicrobreak(false)
   }
@@ -424,14 +424,14 @@ function pauseBreaks(milliseconds) {
   updateToolTip()
 }
 
-function resumeBreaks() {
+function resumeBreaks () {
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
   processWin.webContents.send('showNotification', i18next.t('main.resumingBreaks'))
   updateToolTip()
 }
 
-function showAboutWindow() {
+function showAboutWindow () {
   if (aboutWin) {
     aboutWin.show()
     return
@@ -443,7 +443,7 @@ function showAboutWindow() {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
+    title: i18next.t('main.aboutStretchly', {version: app.getVersion()})
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -451,7 +451,7 @@ function showAboutWindow() {
   })
 }
 
-function showSettingsWindow() {
+function showSettingsWindow () {
   if (settingsWin) {
     settingsWin.show()
     return
@@ -472,13 +472,13 @@ function showSettingsWindow() {
   })
 }
 
-function saveDefaultsFor(array, next) {
+function saveDefaultsFor (array, next) {
   for (let index in array) {
     settings.set(array[index], defaultSettings[array[index]])
   }
 }
 
-function getTrayMenu() {
+function getTrayMenu () {
   let trayMenu = []
   if (global.shared.isNewVersion) {
     trayMenu.push({
@@ -495,13 +495,13 @@ function getTrayMenu() {
       showAboutWindow()
     }
   }, {
-      label: i18next.t('main.becomePatron'),
-      click: function () {
-        shell.openExternal('https://www.patreon.com/hovancik')
-      }
-    }, {
-      type: 'separator'
-    })
+    label: i18next.t('main.becomePatron'),
+    click: function () {
+      shell.openExternal('https://www.patreon.com/hovancik')
+    }
+  }, {
+    type: 'separator'
+  })
 
   if (!breakPlanner.isPaused) {
     let submenu = []
@@ -593,20 +593,20 @@ function getTrayMenu() {
         }
       ]
     }, {
-        label: i18next.t('main.resetBreaks'),
-        click: function () {
-          if (microbreakWins) {
-            closeWindows(microbreakWins)
-            microbreakWins = null
-          }
-          if (breakWins) {
-            closeWindows(breakWins)
-            breakWins = null
-          }
-          breakPlanner.reset()
-          updateToolTip()
+      label: i18next.t('main.resetBreaks'),
+      click: function () {
+        if (microbreakWins) {
+          closeWindows(microbreakWins)
+          microbreakWins = null
         }
-      })
+        if (breakWins) {
+          closeWindows(breakWins)
+          breakWins = null
+        }
+        breakPlanner.reset()
+        updateToolTip()
+      }
+    })
   }
 
   trayMenu.push({
@@ -624,7 +624,7 @@ function getTrayMenu() {
       type: 'checkbox',
       checked: openAtLogin,
       click: function () {
-        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
+        app.setLoginItemSettings({openAtLogin: !openAtLogin})
       }
     })
   }
@@ -632,24 +632,24 @@ function getTrayMenu() {
   trayMenu.push({
     type: 'separator'
   }, {
-      label: i18next.t('main.yourStretchly'),
-      click: function () {
-        let color = settings.get('mainColor').replace('#', '')
-        shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
-      }
-    }, {
-      type: 'separator'
-    }, {
-      label: i18next.t('main.quitStretchly'),
-      click: function () {
-        app.quit()
-      }
-    })
+    label: i18next.t('main.yourStretchly'),
+    click: function () {
+      let color = settings.get('mainColor').replace('#', '')
+      shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
+    }
+  }, {
+    type: 'separator'
+  }, {
+    label: i18next.t('main.quitStretchly'),
+    click: function () {
+      app.quit()
+    }
+  })
 
   return Menu.buildFromTemplate(trayMenu)
 }
 
-function loadMorningTime() {
+function loadMorningTime () {
   const morningHour = settings.get('morningHour')
   if (morningHour !== 'sunrise') return [morningHour]
 
@@ -659,7 +659,7 @@ function loadMorningTime() {
   return [times.sunrise.getHours(), times.sunrise.getMinutes()]
 }
 
-function updateToolTip() {
+function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
   let toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
@@ -670,7 +670,7 @@ function updateToolTip() {
       if (breakPlanner.isPaused) {
         let timeLeft = breakPlanner.scheduler.timeLeft
         if (timeLeft) {
-          statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
+          statusMessage += i18next.t('main.pausedUntil', {'timeLeft': Utils.formatPauseTimeLeft(timeLeft)})
         } else {
           statusMessage += i18next.t('main.pausedIndefinitely')
         }
@@ -708,11 +708,11 @@ function updateToolTip() {
           } else {
             notificationTime = 0
           }
-          statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`) })
+          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`)})
           if (breakType === 'microbreak') {
             let breakInterval = settings.get('breakInterval') + 1
             let breakNumber = breakPlanner.breakNumber % breakInterval
-            statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
+            statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
           }
         }
       }
