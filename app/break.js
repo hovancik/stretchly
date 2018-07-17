@@ -13,17 +13,10 @@ document.getElementById('close').addEventListener('click', function (e) {
   ipcRenderer.send('finish-break', false)
 })
 
-document.getElementById('postpone').addEventListener('click', function (e) {
-  ipcRenderer.send('postpone-break')
-})
-
-ipcRenderer.on('breakIdea', (event, message, strictMode, postponable) => {
-  if (postponable) {
-    document.getElementById('postpone').style.visibility = 'visible'
-  } else if (!strictMode) {
+ipcRenderer.on('breakIdea', (event, message, strictMode) => {
+  if (!strictMode) {
     document.getElementById('close').style.visibility = 'visible'
   }
-
   if (message) {
     let breakIdea = document.getElementsByClassName('break-idea')[0]
     breakIdea.innerHTML = message[0]
@@ -32,17 +25,12 @@ ipcRenderer.on('breakIdea', (event, message, strictMode, postponable) => {
   }
 })
 
-ipcRenderer.on('progress', (event, started, duration, postponePercent) => {
+ipcRenderer.on('progress', (event, started, duration) => {
   let progress = document.getElementById('progress')
   let progressTime = document.getElementById('progress-time')
   window.setInterval(function () {
     if (Date.now() - started < duration) {
-      const passedPercent = (Date.now() - started) / duration
-      if (postponePercent && passedPercent >= postponePercent) {
-        document.getElementById('postpone').style.visibility = 'hidden'
-        document.getElementById('close').style.visibility = 'visible'
-      }
-      progress.value = passedPercent * progress.max
+      progress.value = (Date.now() - started) / duration * 10000
       progressTime.innerHTML = Utils.formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
     }
   }, 100)

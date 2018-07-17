@@ -2,7 +2,6 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const suncalc = require('suncalc')
 
 startI18next()
 
@@ -240,27 +239,11 @@ function startMicrobreak () {
     console.log('microbreak already running')
     return
   }
-
-  let startTime = Date.now()
-  const breakDuration = settings.get('microbreakDuration')
-  const strictMode = settings.get('microbreakStrictMode')
-  // in strict mode you cannot skip, so allow to postpone anytime
-  const postponableDurationPercent =
-    strictMode ? 100 : settings.get('microbreakPostponableDurationPercent') / 100
-  const postponesLimit = settings.get('microbreakPostponesLimit')
-  const postponable = settings.get('microbreakPostpone') &&
-    (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
-  if (!strictMode || postponable) {
+  if (!settings.get('microbreakStrictMode')) {
     globalShortcut.register('CommandOrControl+X', () => {
-      const passedPercent = (Date.now() - startTime) / breakDuration
-      if (postponable && passedPercent < postponableDurationPercent) {
-        postponeMicrobreak()
-      } else if (!strictMode) {
-        finishMicrobreak(false)
-      }
+      finishMicrobreak(false)
     })
   }
-
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
@@ -288,11 +271,8 @@ function startMicrobreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
-      microbreakWinLocal.webContents.send(
-        'microbreakIdea', idea, strictMode, postponable)
-      microbreakWinLocal.webContents.send(
-        'progress', startTime = Date.now(), breakDuration,
-        postponableDurationPercent)
+      microbreakWinLocal.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
+      microbreakWinLocal.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -319,27 +299,11 @@ function startBreak () {
     console.log('break already running')
     return
   }
-
-  let startTime = Date.now()
-  const breakDuration = settings.get('breakDuration')
-  const strictMode = settings.get('breakStrictMode')
-  // in strict mode you cannot skip, so allow to postpone anytime
-  const postponableDurationPercent =
-    strictMode ? 100 : settings.get('breakPostponableDurationPercent') / 100
-  const postponesLimit = settings.get('breakPostponesLimit')
-  const postponable = settings.get('breakPostpone') &&
-    (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
-  if (!strictMode || postponable) {
+  if (!settings.get('breakStrictMode')) {
     globalShortcut.register('CommandOrControl+X', () => {
-      const passedPercent = (Date.now() - startTime) / breakDuration
-      if (postponable && passedPercent < postponableDurationPercent) {
-        postponeBreak()
-      } else if (!strictMode) {
-        finishBreak(false)
-      }
+      finishBreak(false)
     })
   }
-
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
@@ -367,11 +331,8 @@ function startBreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
-      breakWinLocal.webContents.send(
-        'breakIdea', idea, strictMode, postponable)
-      breakWinLocal.webContents.send(
-        'progress', startTime = Date.now(), breakDuration,
-        postponableDurationPercent)
+      breakWinLocal.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
+      breakWinLocal.webContents.send('progress', Date.now(), settings.get('breakDuration'))
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
@@ -385,48 +346,37 @@ function startBreak () {
   updateToolTip()
 }
 
-function clearBreak (wins) {
+function finishMicrobreak (shouldPlaySound = true) {
   globalShortcut.unregister('CommandOrControl+X')
-  if (wins) {
+  if (shouldPlaySound) {
+    processWin.webContents.send('playSound', settings.get('audio'))
+  }
+  if (microbreakWins) {
     if (process.platform === 'darwin') {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    closeWindows(wins)
+    closeWindows(microbreakWins)
+    microbreakWins = null
+    breakPlanner.nextBreak()
   }
-}
-
-function postponeMicrobreak () {
-  clearBreak(microbreakWins)
-  if (microbreakWins) breakPlanner.postponeCurrentBreak('microbreak')
-  microbreakWins = null
-  updateToolTip()
-}
-
-function postponeBreak () {
-  clearBreak(breakWins)
-  if (breakWins) breakPlanner.postponeCurrentBreak('break')
-  breakWins = null
-  updateToolTip()
-}
-
-function finishMicrobreak (shouldPlaySound = true) {
-  if (shouldPlaySound) {
-    processWin.webContents.send('playSound', settings.get('audio'))
-  }
-  clearBreak(microbreakWins)
-  if (microbreakWins) breakPlanner.nextBreak()
-  microbreakWins = null
   updateToolTip()
 }
 
 function finishBreak (shouldPlaySound = true) {
+  globalShortcut.unregister('CommandOrControl+X')
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  clearBreak(breakWins)
-  if (breakWins) breakPlanner.nextBreak()
-  breakWins = null
+  if (breakWins) {
+    if (process.platform === 'darwin') {
+      // get focus on the last app
+      Menu.sendActionToFirstResponder('hide:')
+    }
+    closeWindows(breakWins)
+    breakWins = null
+    breakPlanner.nextBreak()
+  }
   updateToolTip()
 }
 
@@ -698,7 +648,7 @@ function getTrayMenu () {
   return Menu.buildFromTemplate(trayMenu)
 }
 
-function loadMorningTime () {
+function loadMorningTime() {
   const morningHour = settings.get('morningHour')
   if (morningHour !== 'sunrise') return [morningHour]
 
@@ -769,14 +719,6 @@ function updateToolTip () {
     appIcon.setToolTip(toolTipHeader + statusMessage)
   }
 }
-
-ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
-  postponeMicrobreak()
-})
-
-ipcMain.on('postpone-break', function (event, shouldPlaySound) {
-  postponeBreak()
-})
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
   finishMicrobreak(shouldPlaySound)
