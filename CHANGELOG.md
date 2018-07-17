@@ -35,9 +35,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface
-- Ability to postpone breaks/microbreaks in non-strict mode
-  * change pospone time with break/microbreak PostponeTime settings
-  * limit postpone times with break/microbreak PostponesLimit settings
+- Ability to pause until morning:
+  * you can set morningHour setting to pause until that hour this or next day
+  * you can set morningHour: "sunrise" and set posLatitude, posLongitude in
+    settings to pause until actual sunrise in your area
 
 - Ability to pause until morning:
   * you can set morningHour setting to pause until that hour this or next day
