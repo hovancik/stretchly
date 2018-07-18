@@ -223,9 +223,7 @@ async function startMicrobreakNotification () {
   if (!notificationsDisabled) {
     processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
     breakPlanner.nextBreakAfterNotification('startMicrobreak')
-  } else {
-    return
-  }
+  } 
 }
 
 async function startBreakNotification () {
@@ -234,8 +232,6 @@ async function startBreakNotification () {
   if (!notificationsDisabled) {
     processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
     breakPlanner.nextBreakAfterNotification('startBreak')
-  } else {
-    return
   }
 }
 
