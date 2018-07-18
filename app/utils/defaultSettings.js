@@ -1,6 +1,6 @@
 module.exports = {
   microbreakDuration: 20000,
-  microbreakInterval: 100000, // 600000
+  microbreakInterval: 600000,
   breakDuration: 300000,
   breakInterval: 2,
   breakNotification: true,
