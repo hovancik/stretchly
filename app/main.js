@@ -223,7 +223,7 @@ async function startMicrobreakNotification () {
   if (!notificationsDisabled) {
     processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
     breakPlanner.nextBreakAfterNotification('startMicrobreak')
-  } 
+  }
 }
 
 async function startBreakNotification () {
