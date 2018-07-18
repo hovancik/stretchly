@@ -2,6 +2,7 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const doNotDisturb = require('@sindresorhus/do-not-disturb')
 
 startI18next()
 
@@ -216,14 +217,26 @@ function checkVersion () {
   planVersionCheck(3600 * 5)
 }
 
-function startMicrobreakNotification () {
-  processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
-  breakPlanner.nextBreakAfterNotification('startMicrobreak')
+async function startMicrobreakNotification () {
+  const notificationsDisabled = await doNotDisturb.isEnabled()
+
+  if (!notificationsDisabled) {
+    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
+    breakPlanner.nextBreakAfterNotification('startMicrobreak')
+  } else {
+    return
+  }
 }
 
-function startBreakNotification () {
-  processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
-  breakPlanner.nextBreakAfterNotification('startBreak')
+async function startBreakNotification () {
+  const notificationsDisabled = await doNotDisturb.isEnabled()
+
+  if (!notificationsDisabled) {
+    processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
+    breakPlanner.nextBreakAfterNotification('startBreak')
+  } else {
+    return
+  }
 }
 
 function startMicrobreak () {
