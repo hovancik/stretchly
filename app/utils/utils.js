@@ -39,7 +39,7 @@ let formatPauseTimeLeft = function (milliseconds) {
   return timeString
 }
 
-const millisUntil = function (hours, minutes = 0, seconds = 0) {
+const millisecondsUntil = function (hours, minutes = 0, seconds = 0) {
   const now = new Date()
   const target = new Date()
   target.setHours(hours, minutes, seconds, 0)
@@ -47,7 +47,9 @@ const millisUntil = function (hours, minutes = 0, seconds = 0) {
   return target - now
 }
 
-module.exports.formatRemaining = formatRemaining
-module.exports.formatTillBreak = formatTillBreak
-module.exports.formatPauseTimeLeft = formatPauseTimeLeft
-module.exports.millisUntil = millisUntil
+module.exports = {
+  formatRemaining,
+  formatTillBreak,
+  formatPauseTimeLeft,
+  millisecondsUntil
+}

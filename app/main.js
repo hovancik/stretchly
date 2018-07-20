@@ -2,7 +2,6 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const suncalc = require('suncalc')
 
 startI18next()
 
@@ -11,6 +10,7 @@ const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
+const { UntilMorning } = require('./utils/untilMorning')
 
 let microbreakIdeas
 let breakIdeas
@@ -577,13 +577,7 @@ function getTrayMenu () {
         }, {
           label: i18next.t('main.untilMorning'),
           click: function () {
-            const morningTimes = loadMorningTime()
-            if (morningTimes === null) {
-              console.log('Failed to load morning time, cannot pause')
-              return
-            }
-            const untilMorning = Utils.millisUntil(...morningTimes)
-            pauseBreaks(untilMorning)
+            new UntilMorning(settings, pauseBreaks).execute()
           }
         }, {
           label: i18next.t('main.indefinitely'),
@@ -647,16 +641,6 @@ function getTrayMenu () {
   })
 
   return Menu.buildFromTemplate(trayMenu)
-}
-
-function loadMorningTime () {
-  const morningHour = settings.get('morningHour')
-  if (morningHour !== 'sunrise') return [morningHour]
-
-  const lat = settings.get('posLatitude')
-  const long = settings.get('posLongitude')
-  const times = suncalc.getTimes(new Date(), lat, long)
-  return [times.sunrise.getHours(), times.sunrise.getMinutes()]
 }
 
 function updateToolTip () {
