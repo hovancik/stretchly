@@ -79,4 +79,25 @@ describe('stretchly', function () {
           })
       })
   })
+
+  it('main window is stretchly ', function () {
+    return modifySettings('isFirstRun', false)
+      .then(() => {
+        this.app = new Application({
+          path: electronPath,
+          args: [
+            `${__dirname}/../app`
+          ]
+        })
+
+        return this.app.start()
+          .then(() => {
+            chaiAsPromised.transferPromiseness = this.app.transferPromiseness
+            return this.app.client
+              .waitUntilWindowLoaded()
+              .windowByIndex(0).browserWindow
+              .getTitle().should.eventually.equal('stretchly')
+          })
+      })
+  })
 })
