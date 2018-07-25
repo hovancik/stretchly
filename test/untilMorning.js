@@ -3,7 +3,6 @@ const Settings = require('./../app/utils/settings')
 let chai = require('chai')
 const mockSettingsFile = `${__dirname}/assets/settings.untilMorning.json`
 const fs = require('fs')
-const suncalc = require('suncalc')
 
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
@@ -89,7 +88,7 @@ describe.only('UntilMorning', function () {
       // test for when the functionality to input sunrise is added
       // test data for 03/25/2019
 
-      let hawaiiSunrise = [4, 24]
+      let hawaiiSunrise = [20, 37]
       new UntilMorning(settings).loadMorningTime(new Date('03/25/2019')).should.deep.equal(hawaiiSunrise)
     })
   })
