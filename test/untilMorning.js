@@ -38,7 +38,7 @@ describe.only('UntilMorning', function () {
         sunrise = new Date(currentTime + 24 * 60 * 60 * 1000).setHours(6, 0, 0, 0)
       }
 
-      const actual = new UntilMorning(settings).execute()
+      const actual = new UntilMorning(settings).timeUntilMorning()
       const expected = sunrise - currentTime
 
       Math.abs(expected - actual).should.be.lessThan(10)
@@ -67,7 +67,7 @@ describe.only('UntilMorning', function () {
         sunrise = new Date(currentTime + 24 * 60 * 60 * 1000).setHours(15, 0, 0, 0)
       }
 
-      const actual = new UntilMorning(settings).execute()
+      const actual = new UntilMorning(settings).timeUntilMorning()
       const expected = sunrise - currentTime
 
       Math.abs(expected - actual).should.be.lessThan(10)
@@ -88,8 +88,10 @@ describe.only('UntilMorning', function () {
       // test for when the functionality to input sunrise is added
       // test data for 03/25/2019
 
-      let hawaiiSunrise = [20, 37]
-      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019')).should.deep.equal(hawaiiSunrise)
+      let hawaiiSunrise = [19, 36]
+      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))[0].should.equal(hawaiiSunrise[0])
+      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))[1].should.be.at.least(hawaiiSunrise[1] - 2)
+      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))[1].should.be.at.most(hawaiiSunrise[1] + 2)
     })
   })
 })

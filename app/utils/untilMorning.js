@@ -1,12 +1,13 @@
 const suncalc = require('suncalc')
 const { millisecondsUntil } = require('./utils')
+const { getSunrise } = require('sunrise-sunset-js')
 
 class UntilMorning {
   constructor (settings) {
     this.settings = settings
   }
 
-  execute () {
+  timeUntilMorning () {
     const morningTimes = this.loadMorningTime()
     if (morningTimes === null) {
       console.log('Failed to load morning time, cannot pause')
@@ -17,19 +18,22 @@ class UntilMorning {
   }
 
   loadMorningTime (date) {
-    let times
+    let sunrise
     const morningHour = this.settings.get('morningHour')
     if (morningHour !== 'sunrise') return [morningHour]
 
     const lat = this.settings.get('posLatitude')
     const long = this.settings.get('posLongitude')
 
+    // calculator calculates time based on 0,0 Golf if Guinea.
+    // 2 timezones removed from central European time
+
     if (date) {
-      times = suncalc.getTimes(date, lat, long)
+      sunrise = getSunrise(lat, long, new Date(date))
     } else {
-      times = suncalc.getTimes(new Date(), lat, long)
+      sunrise = getSunrise(lat, long, new Date())
     }
-    return [times.sunrise.getHours(), times.sunrise.getMinutes()]
+    return [sunrise.getHours(), sunrise.getMinutes()]
   }
 }
 

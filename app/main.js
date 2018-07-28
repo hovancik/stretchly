@@ -577,7 +577,7 @@ function getTrayMenu () {
         }, {
           label: i18next.t('main.untilMorning'),
           click: function () {
-            const untilMorning = new UntilMorning(settings).execute()
+            const untilMorning = new UntilMorning(settings).timeUntilMorning()
             pauseBreaks(untilMorning)
           }
         }, {

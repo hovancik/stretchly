@@ -122,6 +122,6 @@
     "@paulcbetts/system-idle-time": "^1.0.4",
     "i18next": "^11.2.3",
     "i18next-node-fs-backend": "^1.0.0",
-    "suncalc": "^1.8.0"  
+    "sunrise-sunset-js": "^1.0.1"
   }
 }
