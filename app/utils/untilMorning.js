@@ -1,4 +1,3 @@
-const suncalc = require('suncalc')
 const { millisecondsUntil } = require('./utils')
 const { getSunrise } = require('sunrise-sunset-js')
 
