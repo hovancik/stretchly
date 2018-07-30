@@ -110,6 +110,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
 - notifications not working on the latest Win 10 ([electron/electron#10864](https://github.com/electron/electron/issues/10864))
+- tray icon is not rendered correctly on linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
 ### TODOs and Ideas
 - [x] tests
