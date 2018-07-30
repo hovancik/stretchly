@@ -93,6 +93,7 @@
     "notifyBeforeMicrobreakStarts": "vooraf doorgeven dat kleine pauze begint",
     "monitorIdleTime": "monitor de niet-actieve tijd van het systeem voor natuurlijke onderbrekingen",
     "showOnAllScreens": "pauzes worden op alle monitoren weergegeven",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "taal",
     "resetToDefaults": "reset naar standaard instellingen"
   },

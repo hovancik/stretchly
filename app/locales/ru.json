@@ -94,6 +94,7 @@
     "notifyBeforeMicrobreakStarts": "уведомлять перед началом микроперерыва",
     "monitorIdleTime": "считать бездействие за естественный перерыв",
     "showOnAllScreens": "отображать на всех экранах",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "язык",
     "resetToDefaults": "настройки по умолчанию"
   },

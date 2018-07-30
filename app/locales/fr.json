@@ -93,6 +93,7 @@
     "notifyBeforeMicrobreakStarts": "notification juste avant une petite pause",
     "monitorIdleTime": "suivre les périodes d'inactivité pour des pauses plus naturelles",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "langue",
     "resetToDefaults": "revenir aux paramètres d'origine"
   },

@@ -92,6 +92,7 @@
     "notifyBeforeMicrobreakStarts": "在短时间休息前提醒",
     "monitorIdleTime": "监控系统空闲时间的自然休息时间",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "语言",
     "resetToDefaults": "重置为默认值"
   },
