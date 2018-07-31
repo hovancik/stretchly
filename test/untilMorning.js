@@ -7,7 +7,7 @@ const fs = require('fs')
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
-describe.only('UntilMorning', function () {
+describe('UntilMorning', function () {
   let settings
   this.timeout(timeout)
 
@@ -28,7 +28,7 @@ describe.only('UntilMorning', function () {
       settings = new Settings(mockSettingsFile)
     })
 
-    it('execute() calculates time until morning', function () {
+    it('timeUntilMorning() calculates time until morning', function () {
       const currentTime = Date.now()
       let sunrise
 
@@ -41,15 +41,15 @@ describe.only('UntilMorning', function () {
       const actual = new UntilMorning(settings).timeUntilMorning()
       const expected = sunrise - currentTime
 
-      Math.abs(expected - actual).should.be.lessThan(10)
+      Math.abs(expected - actual).should.be.lessThan(1000)
     })
 
     it('loadMorningTime() returns morning time', function () {
-      new UntilMorning(settings).loadMorningTime().should.deep.equal([6])
+      new UntilMorning(settings).loadMorningTime(new Date()).getHours().should.equal(6)
     })
   })
 
-  describe('Random Morning Hour', function () {
+  describe('Custom Morning Hour', function () {
     beforeEach(() => {
       createSettingsFile(mockSettingsFile, {
         morningHour: 15
@@ -57,7 +57,7 @@ describe.only('UntilMorning', function () {
       settings = new Settings(mockSettingsFile)
     })
 
-    it('execute() calculates time until morning when input is a random hour', function () {
+    it('timeUntilMorning() calculates time until morning when input is a random hour', function () {
       const currentTime = Date.now()
       let sunrise
 
@@ -71,6 +71,10 @@ describe.only('UntilMorning', function () {
       const expected = sunrise - currentTime
 
       Math.abs(expected - actual).should.be.lessThan(10)
+    })
+
+    it('loadMorningTime() returns morning time', function () {
+      new UntilMorning(settings).loadMorningTime(new Date()).getHours().should.equal(15)
     })
   })
 
@@ -88,10 +92,11 @@ describe.only('UntilMorning', function () {
       // test for when the functionality to input sunrise is added
       // test data for 03/25/2019
 
-      let hawaiiSunrise = [19, 36]
-      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))[0].should.equal(hawaiiSunrise[0])
-      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))[1].should.be.at.least(hawaiiSunrise[1] - 2)
-      new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))[1].should.be.at.most(hawaiiSunrise[1] + 2)
+      const date = new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))
+      // because of timezones checking against 03/24/2019 -- this is correct
+      date.getDate().should.equal(24)
+      date.getHours().should.equal(19)
+      date.getMinutes().should.equal(37)
     })
   })
 })
