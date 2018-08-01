@@ -759,9 +759,10 @@ ipcMain.on('send-settings', function (event) {
 ipcMain.on('show-debug', function (event) {
   let reference = breakPlanner.scheduler.reference
   let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  let getDnD = getDoNotDisturb.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
-  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile)
+  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, getDnD)
 })
 
 ipcMain.on('change-language', function (event, language) {

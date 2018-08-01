@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Italian translations for interface
 - Welcome and Tutorial windows on first run and in About window
 - Dutch translations for interface
-- DND for Mac users preventing breaks from happening
+- DND functionality for Mac & Windows users preventing breaks from happening
 
 ### Fixed
 - User pause will no longer be removed upon suspend/resume
