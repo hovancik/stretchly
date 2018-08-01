@@ -222,8 +222,7 @@ function startMicrobreakNotification () {
   if (!notificationDisabled) {
     processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
     breakPlanner.nextBreakAfterNotification('startMicrobreak')
-  }
-  else {
+  } else {
     setTimeout(function () {
       startMicrobreakNotification()
     }, settings.get('microbreakNotificationInterval'))
@@ -235,8 +234,7 @@ function startBreakNotification () {
   if (!notificationDisabled) {
     processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
     breakPlanner.nextBreakAfterNotification('startBreak')
-  }
-  else {
+  } else {
     setTimeout(function () {
       startMicrobreakNotification()
     }, settings.get('breakNotificationInterval'))
