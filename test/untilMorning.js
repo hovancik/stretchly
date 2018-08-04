@@ -10,7 +10,7 @@ const timeout = process.env.CI ? 30000 : 10000
 const ONE_DAY = 24 * 60 * 60 * 1000
 const timezoneOffset = (new Date().getTimezoneOffset()) / 60
 
-describe.only('UntilMorning', function () {
+describe('UntilMorning', function () {
   let settings
   this.timeout(timeout)
 
@@ -63,16 +63,15 @@ describe.only('UntilMorning', function () {
 
     // Checking against UTC time
     it('timeUntilMorning() calculates time until morning when input is a random hour', function () {
-      const currentTime = new Date()
       let sunrise
 
       if (Date.now() < new Date().setHours(15, 0, 0, 0)) {
         sunrise = new Date().setHours(15, 0, 0, 0)
       } else {
-        sunrise = new Date(currentTime + ONE_DAY).setHours(15, 0, 0, 0)
+        sunrise = new Date(Date.now() + ONE_DAY).setHours(15, 0, 0, 0)
       }
 
-      const expected = sunrise - currentTime
+      const expected = sunrise - new Date()
       const actual = new UntilMorning(settings).timeUntilMorning()
 
       Math.abs(expected - actual).should.be.lessThan(1000)
@@ -95,12 +94,16 @@ describe.only('UntilMorning', function () {
 
     it('loadMorningTime() returns morning time when sunrise is an input', function () {
       // test for when the functionality to input sunrise is added
-      // test data for 008/04/2018 Amsterdam, Netherlands
-      // Checking against UTC time
+      // test data for 08/04/2018 Amsterdam, Netherlands
+      // Checking against UTC time: expected time is August 4 2018, 04:05:0000 UTC
+      const date = new Date()
+      date.setFullYear(2018)
+      date.setDate(4)
+      date.setMonth(7)
 
-      const date = new UntilMorning(settings).loadMorningTime(new Date('08/04/2018'))
-      date.hour().should.equal(6 + timezoneOffset)
-      date.minute().should.equal(8)
+      const morning = new UntilMorning(settings).loadMorningTime(date)
+      morning.hour().should.equal(4)
+      morning.minute().should.equal(9)
     })
   })
 })
