@@ -34,7 +34,7 @@ describe.only('UntilMorning', function () {
     it('timeUntilMorning() calculates time until morning', function () {
       const currentTime = Date.now()
       let sunrise
-      
+
       // Checking against UTC time
       if (Date.now() < new Date().setHours(6, 0, 0, 0)) {
         sunrise = new Date().setHours(6, 0, 0, 0)
