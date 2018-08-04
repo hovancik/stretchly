@@ -1,13 +1,16 @@
 const { UntilMorning } = require('../app/utils/untilMorning')
 const Settings = require('./../app/utils/settings')
 let chai = require('chai')
-const mockSettingsFile = `${__dirname}/assets/settings.untilMorning.json`
+const mockSettingsFilePath = `${__dirname}/assets/settings.untilMorning.json`
 const fs = require('fs')
 
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
-describe('UntilMorning', function () {
+const ONE_DAY = 24 * 60 * 60 * 1000
+const timezoneOffset = (new Date().getTimezoneOffset()) / 60
+
+describe.only('UntilMorning', function () {
   let settings
   this.timeout(timeout)
 
@@ -24,18 +27,19 @@ describe('UntilMorning', function () {
 
   describe('Default Settings', function () {
     beforeEach(() => {
-      createSettingsFile(mockSettingsFile, {})
-      settings = new Settings(mockSettingsFile)
+      createSettingsFile(mockSettingsFilePath, {})
+      settings = new Settings(mockSettingsFilePath)
     })
 
     it('timeUntilMorning() calculates time until morning', function () {
       const currentTime = Date.now()
       let sunrise
-
+      
+      // Checking against UTC time
       if (Date.now() < new Date().setHours(6, 0, 0, 0)) {
         sunrise = new Date().setHours(6, 0, 0, 0)
       } else {
-        sunrise = new Date(currentTime + 24 * 60 * 60 * 1000).setHours(6, 0, 0, 0)
+        sunrise = new Date(currentTime + ONE_DAY).setHours(6, 0, 0, 0)
       }
 
       const actual = new UntilMorning(settings).timeUntilMorning()
@@ -45,58 +49,58 @@ describe('UntilMorning', function () {
     })
 
     it('loadMorningTime() returns morning time', function () {
-      new UntilMorning(settings).loadMorningTime(new Date()).getHours().should.equal(6)
+      new UntilMorning(settings).loadMorningTime(new Date()).hour().should.equal(6 + timezoneOffset)
     })
   })
 
   describe('Custom Morning Hour', function () {
     beforeEach(() => {
-      createSettingsFile(mockSettingsFile, {
+      createSettingsFile(mockSettingsFilePath, {
         morningHour: 15
       })
-      settings = new Settings(mockSettingsFile)
+      settings = new Settings(mockSettingsFilePath)
     })
 
+    // Checking against UTC time
     it('timeUntilMorning() calculates time until morning when input is a random hour', function () {
-      const currentTime = Date.now()
+      const currentTime = new Date()
       let sunrise
 
       if (Date.now() < new Date().setHours(15, 0, 0, 0)) {
         sunrise = new Date().setHours(15, 0, 0, 0)
       } else {
-        sunrise = new Date(currentTime + 24 * 60 * 60 * 1000).setHours(15, 0, 0, 0)
+        sunrise = new Date(currentTime + ONE_DAY).setHours(15, 0, 0, 0)
       }
 
-      const actual = new UntilMorning(settings).timeUntilMorning()
       const expected = sunrise - currentTime
+      const actual = new UntilMorning(settings).timeUntilMorning()
 
-      Math.abs(expected - actual).should.be.lessThan(10)
+      Math.abs(expected - actual).should.be.lessThan(1000)
     })
 
     it('loadMorningTime() returns morning time', function () {
-      new UntilMorning(settings).loadMorningTime(new Date()).getHours().should.equal(15)
+      new UntilMorning(settings).loadMorningTime(new Date()).hour().should.equal(15 + timezoneOffset)
     })
   })
 
   describe('Sunrise Settings', function () {
     beforeEach(() => {
-      createSettingsFile(mockSettingsFile, {
+      createSettingsFile(mockSettingsFilePath, {
         morningHour: 'sunrise',
-        posLatitude: 20,
-        posLongitude: 156
+        posLatitude: 52,
+        posLongitude: 4
       })
-      settings = new Settings(mockSettingsFile)
+      settings = new Settings(mockSettingsFilePath)
     })
 
     it('loadMorningTime() returns morning time when sunrise is an input', function () {
       // test for when the functionality to input sunrise is added
-      // test data for 03/25/2019
+      // test data for 008/04/2018 Amsterdam, Netherlands
+      // Checking against UTC time
 
-      const date = new UntilMorning(settings).loadMorningTime(new Date('03/25/2019'))
-      // because of timezones checking against 03/24/2019 -- this is correct
-      date.getDate().should.equal(24)
-      date.getHours().should.equal(19)
-      date.getMinutes().should.equal(37)
+      const date = new UntilMorning(settings).loadMorningTime(new Date('08/04/2018'))
+      date.hour().should.equal(6 + timezoneOffset)
+      date.minute().should.equal(8)
     })
   })
 })

@@ -101,7 +101,7 @@
     "secondsLeft_plural": "剩下 {{count}} 秒",
     "minutesLeft": "剩下 {{count}} 分鐘",
     "minutesLeft_plural": "剩下 {{count}} 分鐘",
-    "lessThen1m": "低於 1 分鐘",
+    "lessThan1m": "低於 1 分鐘",
     "h": "{{hours}} 小時",
     "m": "{{minutes}} 分",
     "s": "~{{seconds}} 秒"

@@ -34,7 +34,7 @@ let formatPauseTimeLeft = function (milliseconds) {
     timeString += i18next.t('utils.m', {minutes: minutes})
   }
   if (minutes < 1 && hours < 1) {
-    timeString = `${i18next.t('utils.lessThen1m')}`
+    timeString = `${i18next.t('utils.lessThan1m')}`
   }
   return timeString
 }

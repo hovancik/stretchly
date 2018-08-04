@@ -1,4 +1,6 @@
 const { getSunrise } = require('sunrise-sunset-js')
+const moment = require('moment')
+moment().format()
 
 class UntilMorning {
   constructor (settings) {
@@ -6,58 +8,43 @@ class UntilMorning {
   }
 
   /**
-   *
-   * @param {Date} now - date with current time
-   * @param {Date} sunrise - date with sunrise time
-   * @return {Integer} number of milliseconds between dates
-   */
-  millisecondsBetween (now, sunrise) {
-    return sunrise - now
-  }
-
-  /**
    * @return {Integer} milliseconds until morning
    */
   timeUntilMorning () {
     // try for today
-    const now = new Date()
+    const now = moment.utc(new Date())
     const todaySunrise = this.loadMorningTime(now)
-
-    let untilMorning = this.millisecondsBetween(now, todaySunrise)
+    const untilMorning = todaySunrise - now
 
     if (untilMorning > 0) {
       return untilMorning
     }
 
     // sunrise already happened -- calculate for tomorrow
-    const tomorrow = new Date()
-    tomorrow.setDate(now.getDate() + 1)
-
+    const tomorrow = moment.utc(new Date()).date(now.date() + 1)
     const tomorrowSunrise = this.loadMorningTime(tomorrow)
 
-    return this.millisecondsBetween(now, tomorrowSunrise)
+    return tomorrowSunrise - now
   }
 
   /**
    *
    * @param {Date} date - date for morning calculation
-   * @return {Date} date and time of sunrise
+   * @return {Date} date and time of sunrise or default time
    */
   loadMorningTime (date) {
-    const sunriseDate = new Date(date) // prevent mutating date object
+    const sunriseDate = moment.utc(new Date(date)) // prevent mutating date object
     const lat = this.settings.get('posLatitude')
     const long = this.settings.get('posLongitude')
     const morningHour = this.settings.get('morningHour')
+    const timezoneOffset = (new Date().getTimezoneOffset()) / 60
 
     if (morningHour === 'sunrise') {
-      // calculator calculates time based on 0,0 Golf if Guinea.
-      // 2 timezones removed from central European time
-      return getSunrise(lat, long, sunriseDate)
+      // do not convert to UTC -- sunrise-sunset-js already has date in correct timezone
+      return moment(getSunrise(lat, long, new Date(sunriseDate)))
     }
 
-    // get a date here
-    sunriseDate.setHours(morningHour, 0, 0, 0)
-    return sunriseDate
+    return sunriseDate.hours(morningHour + timezoneOffset).minutes(0).seconds(0)
   }
 }
 

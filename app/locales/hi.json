@@ -102,7 +102,7 @@
     "secondsLeft_plural": "{{count}} सेकंड शेष",
     "minutesLeft": "{{count}} मिनट शेष",
     "minutesLeft_plural": "{{count}} मिनट शेष",
-    "lessThen1m": "1 मिनट से भी कम",
+    "lessThan1m": "1 मिनट से भी कम",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

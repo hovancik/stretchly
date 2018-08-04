@@ -102,7 +102,7 @@
     "secondsLeft_plural": "{{count}} secunde rămase",
     "minutesLeft": "{{count}} minute rămase",
     "minutesLeft_plural": "{{count}} minute rămase",
-    "lessThen1m": "mai puțin de 1m",
+    "lessThan1m": "mai puțin de 1m",
     "h": "{{hours}}o",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

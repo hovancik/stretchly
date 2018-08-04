@@ -36,9 +36,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Russian translations for interface
 - Ability to pause until morning:
-  * you can set morningHour setting to pause until that hour this or next day
-  * you can set morningHour: "sunrise" and set posLatitude, posLongitude in
-    settings to pause until actual sunrise in your area
 
 ### Changed
 - upper limit of microbreak duration set to 60 seconds

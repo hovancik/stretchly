@@ -102,7 +102,7 @@
     "secondsLeft_plural": "{{count}} secondes restantes",
     "minutesLeft": "{{count}} minute restantes",
     "minutesLeft_plural": "{{count}} minutes restantes",
-    "lessThen1m": "moins d'une min",
+    "lessThan1m": "moins d'une min",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"
