@@ -6,7 +6,7 @@ const { modifySettings } = require('./modifySettingsHelper')
 
 chai.should()
 chai.use(chaiAsPromised)
-const timeout = process.env.CI ? 30000 : 10000
+const timeout = process.env.CI ? 60000 : 10000
 
 describe('stretchly', function () {
   this.timeout(timeout)
