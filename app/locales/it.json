@@ -3,6 +3,7 @@
     "toolTipHeader": "stretchly - app che ti ricorda quando prenderti una pausa",
     "microbreakIn": "Micropausa in {{seconds}} secondi...",
     "breakIn": "Pausa in {{seconds}} secondi...",
+    "breakAt": "Next break at {{hours}}:{{minutes}}",
     "resumingBreaks": "Riprendi le pause",
     "aboutStretchly": "Informazioni su stretchly v{{version}}",
     "downloadLatestVersion": "Scarica l'ultima versione",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "mancano {{count}} secondi",
     "minutesLeft": "manca {{count}} minuto",
     "minutesLeft_plural": "mancano {{count}} minuti",
-    "lessThen1m": "meno di 1m",
+    "lessThan1m": "meno di 1m",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

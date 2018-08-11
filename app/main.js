@@ -31,11 +31,7 @@ global.shared = {
   isNewVersion: false
 }
 
-let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
-  if (appIcon) {
-    // Someone tried to run a second instance
-  }
-})
+const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {})
 
 if (shouldQuit) {
   console.log('stretchly is already running.')
@@ -154,6 +150,7 @@ function createTrayIcon () {
   } else {
     appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
+
   appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
   setInterval(updateToolTip, 10000)
@@ -360,6 +357,7 @@ function finishMicrobreak (shouldPlaySound = true) {
     microbreakWins = null
     breakPlanner.nextBreak()
   }
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
@@ -377,6 +375,7 @@ function finishBreak (shouldPlaySound = true) {
     breakWins = null
     breakPlanner.nextBreak()
   }
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
@@ -479,12 +478,22 @@ function saveDefaultsFor (array, next) {
 
 function getTrayMenu () {
   let trayMenu = []
+  let timeLeft = breakPlanner.scheduler.timeLeft
+  let hours = new Date(Date.now() + timeLeft).getHours()
+  let minutes = new Date(Date.now() + timeLeft).getMinutes()
+  minutes = String(minutes).padStart(2, '0')
   if (global.shared.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {
         shell.openExternal('https://github.com/hovancik/stretchly/releases')
       }
+    })
+  }
+
+  if (timeLeft) {
+    trayMenu.push({
+      label: i18next.t('main.breakAt', { 'hours': hours, 'minutes': minutes })
     })
   }
 
@@ -693,6 +702,7 @@ function updateToolTip () {
             statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
           }
         }
+        return breakType
       }
     }
     appIcon.setToolTip(toolTipHeader + statusMessage)

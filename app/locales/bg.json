@@ -3,6 +3,7 @@
     "toolTipHeader": "stretchly - приложение за напомняне за почивка",
     "microbreakIn": "Микропочивка след {{seconds}} секунди...",
     "breakIn": "Почивка след {{seconds}} секунди...",
+    "breakAt": "Next break at {{hours}}:{{minutes}}",
     "resumingBreaks": "Продължи почивките",
     "aboutStretchly": "Относно stretchly v{{version}}",
     "downloadLatestVersion": "Изтегли последната версия",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "{{count}} секунди остават",
     "minutesLeft": "{{count}} минута остава",
     "minutesLeft_plural": "{{count}} минути остават",
-    "lessThen1m": "по-малко от 1 м.",
+    "lessThan1m": "по-малко от 1 м.",
     "h": "{{hours}} ч.",
     "m": "{{minutes}} м.",
     "s": "~{{seconds}} с."

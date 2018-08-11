@@ -100,7 +100,7 @@
     "secondsLeft_plural": "还有 {{count}} 秒",
     "minutesLeft": "还有 {{count}} 分钟",
     "minutesLeft_plural": "还有 {{count}} 分钟",
-    "lessThen1m": "小于1分钟",
+    "lessThan1m": "小于1分钟",
     "h": "{{hours}}时",
     "m": "{{minutes}}分",
     "s": "~{{seconds}}秒"

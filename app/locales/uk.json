@@ -104,7 +104,7 @@
     "minutesLeft_0": "{{count}} хвилина залишилася",
     "minutesLeft_1": "{{count}} хвилини залишилося",
     "minutesLeft_2": "{{count}} хвилин залишилося",
-    "lessThen1m": "менше хвилини",
+    "lessThan1m": "менше хвилини",
     "h": "{{hours}} г",
     "m": "{{minutes}} м",
     "s": "~ {{seconds}} с"

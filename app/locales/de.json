@@ -3,6 +3,7 @@
     "toolTipHeader": "stretchly - Pausenzeit Erinnerungs App",
     "microbreakIn": "Mikropause in {{seconds}} Sekunden...",
     "breakIn": "Pause in {{seconds}} Sekunden...",
+    "breakAt": "Next break at {{hours}}:{{minutes}}",
     "resumingBreaks": "Pausen fortsetzen",
     "aboutStretchly": "Über stretchly v{{version}}",
     "downloadLatestVersion": "Neuste Version herunterladen",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "noch {{count}} Sekunden",
     "minutesLeft": "noch {{count}} Minute",
     "minutesLeft_plural": "noch {{count}} Minuten",
-    "lessThen1m": "weniger als 1m",
+    "lessThan1m": "weniger als 1m",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"
