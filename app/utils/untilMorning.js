@@ -1,4 +1,4 @@
-require('./sun')
+const sun = require('./sun')
 const moment = require('moment')
 moment().format()
 
@@ -41,7 +41,7 @@ class UntilMorning {
 
     if (morningHour === 'sunrise') {
       // do not convert to UTC -- sunrise-sunset-js already has date in correct timezone
-      return moment.utc(new Date(date).sunrise(lat, long))
+      return moment.utc(sun.sunrise(new Date(date), lat, long))
     }
 
     return sunriseDate.hours(morningHour + timezoneOffset).minutes(0).seconds(0)
