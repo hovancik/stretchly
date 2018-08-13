@@ -162,6 +162,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - p-bo, @p-bo
 - Alina Leuca, @alinaleuca
 - Sabine van der Eijk, @Sabin_E
+- JavaScript Joe, [@jsjoeio](https://github.com/jsjoeio)
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
