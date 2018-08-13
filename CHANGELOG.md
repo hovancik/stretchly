@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface
-- Ability to pause until morning:
+- Ability to pause until morning
 
 ### Changed
 - upper limit of microbreak duration set to 60 seconds

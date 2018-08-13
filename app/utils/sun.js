@@ -18,6 +18,9 @@
  * or connect to: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
  */
 
+
+ /* eslint-disable */
+
 let DEGREES_PER_HOUR = 360 / 24
 
 function getDayOfYear (date) {
@@ -61,7 +64,7 @@ function sunset (date, latitude, longitude, zenith) {
   return sunriseSet(date, latitude, longitude, false, zenith)
 }
 
-function sunriseSet (date, latitude, longitude, sunrise, zenith) {
+function sunriseSet (date, latitude, longitude, sunrise, zenith) { // eslint-disable-line no-use-before-define
   if (!zenith) {
     zenith = 90.8333
   }
