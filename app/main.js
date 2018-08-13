@@ -702,7 +702,6 @@ function updateToolTip () {
             statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
           }
         }
-        return breakType
       }
     }
     appIcon.setToolTip(toolTipHeader + statusMessage)
