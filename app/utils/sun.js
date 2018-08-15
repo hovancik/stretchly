@@ -53,14 +53,6 @@ function mod (a, b) {
   return result
 }
 
-function sunrise (date, latitude, longitude, zenith) {
-  return sunriseSet(date, latitude, longitude, true, zenith)
-}
-
-function sunset (date, latitude, longitude, zenith) {
-  return sunriseSet(date, latitude, longitude, false, zenith)
-}
-
 function sunriseSet (date, latitude, longitude, sunrise, zenith) { // eslint-disable-line no-use-before-define
   if (!zenith) {
     zenith = 90.8333
@@ -128,6 +120,14 @@ function sunriseSet (date, latitude, longitude, sunrise, zenith) { // eslint-dis
   let milli = midnight.getTime() + (time * 60 * 60 * 1000)
 
   return new Date(milli)
+}
+
+function sunrise (date, latitude, longitude, zenith) {
+  return sunriseSet(date, latitude, longitude, true, zenith)
+}
+
+function sunset (date, latitude, longitude, zenith) {
+  return sunriseSet(date, latitude, longitude, false, zenith)
 }
 
 module.exports = {
