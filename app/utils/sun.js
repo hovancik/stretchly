@@ -55,7 +55,7 @@ function mod (a, b) {
   return result
 }
 
-function sunriseSet (date, latitude, longitude, sunrise, zenith) {
+function sunriseSet (date, latitude, longitude, sunrise, zenith) { // eslint-disable-line max-params
   if (!zenith) {
     zenith = 90.8333
   }
