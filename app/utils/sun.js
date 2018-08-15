@@ -53,7 +53,7 @@ function mod (a, b) {
   return result
 }
 
-function sunriseSet (date, latitude, longitude, sunrise, zenith) { // eslint-disable-line no-use-before-define
+function sunriseSet (date, latitude, longitude, sunrise, zenith) {
   if (!zenith) {
     zenith = 90.8333
   }
