@@ -1,4 +1,4 @@
 eslint:
   enabled: true
-  exclude_paths:
+  exclude_patterns:
 - "./app/utils/sun.js"
