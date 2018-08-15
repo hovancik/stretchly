@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly – pamatuje na přestávky za vás",
     "microbreakIn": "Mikropřestávka za {{seconds}} sekund…",
     "breakIn": "Přestávka za {{seconds}} sekund…",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Obnovení přestávek",
     "aboutStretchly": "O stretchly v{{version}}",
     "downloadLatestVersion": "Stáhnout nejnovější verzi",

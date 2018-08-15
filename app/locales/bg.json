@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly - приложение за напомняне за почивка",
     "microbreakIn": "Микропочивка след {{seconds}} секунди...",
     "breakIn": "Почивка след {{seconds}} секунди...",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Продължи почивките",
     "aboutStretchly": "Относно stretchly v{{version}}",
     "downloadLatestVersion": "Изтегли последната версия",

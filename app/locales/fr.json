@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly - application de rappel de pauses",
     "microbreakIn": "Petite pause dans {{seconds}} secondes...",
     "breakIn": "Grande pause dans {{seconds}} secondes...",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Reprise des pauses",
     "aboutStretchly": "À propos de stretchly v{{version}}",
     "downloadLatestVersion": "Télécharger la dernière version",

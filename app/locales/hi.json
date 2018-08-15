@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly - विराम समय अनुस्मारक एप्लिकेशन",
     "microbreakIn": " {{seconds}} सेकंड का छोटा ब्रेक ...",
     "breakIn": "{{seconds}} सेकंड का ब्रेक ...",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "पुनः ब्रेक शुरू करें",
     "aboutStretchly": "stretchly के बारे में v{{version}}",
     "downloadLatestVersion": "नया वर्शन डाउनलोड करें",

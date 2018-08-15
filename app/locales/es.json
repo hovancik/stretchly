@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly - aplicación para notificar cuándo hacer descansos",
     "microbreakIn": "Microdescanso en {{seconds}} segundos...",
     "breakIn": "Descanso en {{seconds}} segundos...",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "Acerca de stretchly v{{version}}",
     "downloadLatestVersion": "Descarga la última versión",

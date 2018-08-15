@@ -3,6 +3,7 @@
     "toolTipHeader": "stretchly - нагадування про перервах",
     "microbreakIn": "Мікроперерва через {{seconds}} с ...",
     "breakIn": "Перерва через {{seconds}} с ...",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Роботу відновлено",
     "aboutStretchly": "Про програму stretchly v {{version}}",
     "downloadLatestVersion": "Завантажити останню версію",

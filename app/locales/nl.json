@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly - pauze herinnering app",
     "microbreakIn": "Kleine pauze over {{seconds}} seconden...",
     "breakIn": "Pauze over {{seconds}} seconden...",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Pauzes hervatten",
     "aboutStretchly": "Over stretchly v{{version}}",
     "downloadLatestVersion": "Download de laatste versie",

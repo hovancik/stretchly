@@ -3,7 +3,7 @@
     "toolTipHeader": "stretchly - break time reminder app",
     "microbreakIn": "Microbreak in {{seconds}} seconds...",
     "breakIn": "Break in {{seconds}} seconds...",
-    "breakAt": "Next break at {{hours}}:{{minutes}}",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "About stretchly v{{version}}",
     "downloadLatestVersion": "Download latest version",
