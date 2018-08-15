@@ -1,4 +1,5 @@
-eslint:
-  enabled: true
-  exclude_patterns:
-- "./app/utils/sun.js"
+plugins:
+  eslint:
+    enabled: true
+    exclude_patterns:
+    - "./app/utils/sun.js"
