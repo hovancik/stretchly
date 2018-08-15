@@ -18,9 +18,6 @@
  * or connect to: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html
  */
 
-
- /* eslint-disable */
-
 let DEGREES_PER_HOUR = 360 / 24
 
 function getDayOfYear (date) {
