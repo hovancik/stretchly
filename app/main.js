@@ -684,33 +684,34 @@ function updateToolTip () {
   }
 }
 
-function typeOfBreak() {
+function typeOfBreak () {
   let breakType
   let breakNotification = false
   switch (breakPlanner.scheduler.reference) {
     case 'startMicrobreak': {
       breakType = 'microbreak'
-      return {breakType, breakNotification}
+      break
     }
     case 'startBreak': {
       breakType = 'break'
-      return {breakType, breakNotification}
+      break
     }
     case 'startMicrobreakNotification': {
       breakType = 'microbreak'
       breakNotification = true
-      return {breakType, breakNotification}
+      break
     }
     case 'startBreakNotification': {
       breakType = 'break'
       breakNotification = true
-      return {breakType, breakNotification}
+      break
     }
     default: {
-      breakType = ""
-      return {breakType, breakNotification}
+      breakType = ''
+      break
     }
   }
+  return {breakType, breakNotification}
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
