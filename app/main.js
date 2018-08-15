@@ -479,7 +479,7 @@ function saveDefaultsFor (array, next) {
 function getTrayMenu () {
   let trayMenu = []
   let timeLeft = breakPlanner.scheduler.timeLeft
-  let reference = breakType()[0]
+  let reference = typeOfBreak()
   let hours = new Date(Date.now() + timeLeft).getHours()
   let minutes = new Date(Date.now() + timeLeft).getMinutes()
   minutes = String(minutes).padStart(2, '0')
@@ -494,7 +494,7 @@ function getTrayMenu () {
 
   if (timeLeft) {
     trayMenu.push({
-      label: i18next.t('main.breakAt', { 'hours': hours, 'minutes': minutes, 'reference': reference })
+      label: i18next.t('main.breakAt', { 'hours': hours, 'minutes': minutes, 'reference': reference.breakType })
     })
   }
 
@@ -663,16 +663,16 @@ function updateToolTip () {
           statusMessage += i18next.t('main.pausedIndefinitely')
         }
       } else {
-        let typeofBreak = breakType()
-        if (typeofBreak.breakType) {
+        let type = typeOfBreak()
+        if (type.breakType) {
           let notificationTime
-          if (typeofBreak.breakNotification) {
+          if (type.breakNotification) {
             notificationTime = settings.get('breakNotificationInterval')
           } else {
             notificationTime = 0
           }
-          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`)})
-          if (typeofBreak.breakType === 'microbreak') {
+          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`)})
+          if (type.breakType === 'microbreak') {
             let breakInterval = settings.get('breakInterval') + 1
             let breakNumber = breakPlanner.breakNumber % breakInterval
             statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
@@ -684,31 +684,31 @@ function updateToolTip () {
   }
 }
 
-function breakType() {
+function typeOfBreak() {
   let breakType
   let breakNotification = false
   switch (breakPlanner.scheduler.reference) {
     case 'startMicrobreak': {
       breakType = 'microbreak'
-      return [breakType, breakNotification]
+      return {breakType, breakNotification}
     }
     case 'startBreak': {
       breakType = 'break'
-      return [breakType, breakNotification]
+      return {breakType, breakNotification}
     }
     case 'startMicrobreakNotification': {
       breakType = 'microbreak'
       breakNotification = true
-      return [breakType, breakNotification]
+      return {breakType, breakNotification}
     }
     case 'startBreakNotification': {
       breakType = 'break'
       breakNotification = true
-      return [breakType, breakNotification]
+      return {breakType, breakNotification}
     }
     default: {
-      breakType = null
-      return [breakType, breakNotification]
+      breakType = ""
+      return {breakType, breakNotification}
     }
   }
 }
