@@ -343,40 +343,31 @@ function startBreak () {
   updateToolTip()
 }
 
-function finishMicrobreak (shouldPlaySound = true) {
+function breakComplete (shouldPlaySound, windows) {
   globalShortcut.unregister('CommandOrControl+X')
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  if (microbreakWins) {
+  if (windows) {
     if (process.platform === 'darwin') {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    closeWindows(microbreakWins)
-    microbreakWins = null
+    closeWindows(windows)
     breakPlanner.nextBreak()
   }
   appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
+function finishMicrobreak (shouldPlaySound = true) {
+  breakComplete(shouldPlaySound, microbreakWins)
+  microbreakWins = null
+}
+
 function finishBreak (shouldPlaySound = true) {
-  globalShortcut.unregister('CommandOrControl+X')
-  if (shouldPlaySound) {
-    processWin.webContents.send('playSound', settings.get('audio'))
-  }
-  if (breakWins) {
-    if (process.platform === 'darwin') {
-      // get focus on the last app
-      Menu.sendActionToFirstResponder('hide:')
-    }
-    closeWindows(breakWins)
-    breakWins = null
-    breakPlanner.nextBreak()
-  }
-  appIcon.setContextMenu(getTrayMenu())
-  updateToolTip()
+  breakComplete(shouldPlaySound, breakWins)
+  breakWins = null
 }
 
 function loadSettings () {
@@ -652,32 +643,35 @@ function updateToolTip () {
   let toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
     appIcon.setToolTip(toolTipHeader)
-  } else {
-    let statusMessage = ''
-    if (breakPlanner && breakPlanner.scheduler) {
-      if (breakPlanner.isPaused) {
-        let timeLeft = breakPlanner.scheduler.timeLeft
-        if (timeLeft) {
-          statusMessage += i18next.t('main.pausedUntil', {'timeLeft': Utils.formatPauseTimeLeft(timeLeft)})
-        } else {
-          statusMessage += i18next.t('main.pausedIndefinitely')
-        }
+    return
+  }
+
+  let statusMessage = ''
+  if (breakPlanner && breakPlanner.scheduler) {
+    if (breakPlanner.isPaused) {
+      let timeLeft = breakPlanner.scheduler.timeLeft
+      if (timeLeft) {
+        statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
+        return
+      }
+      statusMessage += i18next.t('main.pausedIndefinitely')
+      return
+    }
+
+    let type = typeOfBreak()
+    if (type.breakType) {
+      let notificationTime
+      if (type.breakNotification) {
+        notificationTime = settings.get('breakNotificationInterval')
       } else {
-        let type = typeOfBreak()
-        if (type.breakType) {
-          let notificationTime
-          if (type.breakNotification) {
-            notificationTime = settings.get('breakNotificationInterval')
-          } else {
-            notificationTime = 0
-          }
-          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`)})
-          if (type.breakType === 'microbreak') {
-            let breakInterval = settings.get('breakInterval') + 1
-            let breakNumber = breakPlanner.breakNumber % breakInterval
-            statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
-          }
-        }
+        notificationTime = 0
+      }
+
+      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
+      if (type.breakType === 'microbreak') {
+        let breakInterval = settings.get('breakInterval') + 1
+        let breakNumber = breakPlanner.breakNumber % breakInterval
+        statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
       }
     }
     appIcon.setToolTip(toolTipHeader + statusMessage)
@@ -685,7 +679,7 @@ function updateToolTip () {
 }
 
 function typeOfBreak () {
-  let breakType
+  let breakType = ''
   let breakNotification = false
   switch (breakPlanner.scheduler.reference) {
     case 'startMicrobreak': {
@@ -704,10 +698,6 @@ function typeOfBreak () {
     case 'startBreakNotification': {
       breakType = 'break'
       breakNotification = true
-      break
-    }
-    default: {
-      breakType = ''
       break
     }
   }
