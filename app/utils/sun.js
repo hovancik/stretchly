@@ -21,6 +21,7 @@
 /* eslint-disable */
 
 let DEGREES_PER_HOUR = 360 / 24
+const ZENITH = 90.8333
 
 function getDayOfYear (date) {
   var onejan = new Date(date.getFullYear(), 0, 1)
@@ -55,81 +56,67 @@ function mod (a, b) {
   return result
 }
 
-function sunriseSet (date, latitude, longitude, sunrise, zenith) { // eslint-disable-line max-params
-  if (!zenith) {
-    zenith = 90.8333
-  }
-
-  let hoursFromMeridian = longitude / DEGREES_PER_HOUR
-  let dayOfYear = getDayOfYear(date)
-  let approxTimeOfEventInDays
-  let sunMeanAnomaly
-  let sunTrueLongitude
-  let ascension
-  let rightAscension
-  let lQuadrant
-  let raQuadrant
-  let sinDec
-  let cosDec
-  let localHourAngle
-  let localHour
-  let localMeanTime
-  let time
-  let cosLocalHourAngle
+function getTimeOfEventInDays(date, longitude, sunrise) {
+  const hoursFromMeridian = longitude / DEGREES_PER_HOUR
+  const dayOfYear = getDayOfYear(date)
+  let approxTimeOfEventInDays = dayOfYear + ((18.0 - hoursFromMeridian) / 24)
 
   if (sunrise) {
     approxTimeOfEventInDays = dayOfYear + ((6 - hoursFromMeridian) / 24)
-  } else {
-    approxTimeOfEventInDays = dayOfYear + ((18.0 - hoursFromMeridian) / 24)
   }
 
-  sunMeanAnomaly = (0.9856 * approxTimeOfEventInDays) - 3.289
+  return { 
+    sunMeanAnomaly: (0.9856 * approxTimeOfEventInDays) - 3.289, 
+    approxTimeOfEventInDays 
+  }
+}
 
-  sunTrueLongitude = sunMeanAnomaly + (1.916 * sinDeg(sunMeanAnomaly)) + (0.020 * sinDeg(2 * sunMeanAnomaly)) + 282.634
-  sunTrueLongitude = mod(sunTrueLongitude, 360)
-
-  ascension = 0.91764 * tanDeg(sunTrueLongitude)
-  rightAscension = 360 / (2 * Math.PI) * Math.atan(ascension)
-  rightAscension = mod(rightAscension, 360)
-
-  lQuadrant = Math.floor(sunTrueLongitude / 90) * 90
-  raQuadrant = Math.floor(rightAscension / 90) * 90
-  rightAscension = rightAscension + (lQuadrant - raQuadrant)
-  rightAscension /= DEGREES_PER_HOUR
-
-  sinDec = 0.39782 * sinDeg(sunTrueLongitude)
-  cosDec = cosDeg(asinDeg(sinDec))
-  cosLocalHourAngle = ((cosDeg(zenith)) - (sinDec * (sinDeg(latitude)))) / (cosDec * (cosDeg(latitude)))
-
-  localHourAngle = acosDeg(cosLocalHourAngle)
+function getLocalMeanTime(latitude, sunMeanAnomaly, approxTimeOfEventInDays, sunrise) {
+  const sunTrueLongitude = mod(sunMeanAnomaly + (1.916 * sinDeg(sunMeanAnomaly)) + (0.020 * sinDeg(2 * sunMeanAnomaly)) + 282.634, 360)
+  const ascension = 0.91764 * tanDeg(sunTrueLongitude)
+  const rightAscension = mod(360 / (2 * Math.PI) * Math.atan(ascension), 360)
+  const lQuadrant = Math.floor(sunTrueLongitude / 90) * 90
+  const raQuadrant = Math.floor(rightAscension / 90) * 90
+  const sinDec = 0.39782 * sinDeg(sunTrueLongitude)
+  const cosDec = cosDeg(asinDeg(sinDec))
+  const cosLocalHourAngle = ((cosDeg(ZENITH)) - (sinDec * (sinDeg(latitude)))) / (cosDec * (cosDeg(latitude)))
+  let localHourAngle = acosDeg(cosLocalHourAngle)
 
   if (sunrise) {
     localHourAngle = 360 - localHourAngle
   }
 
-  localHour = localHourAngle / DEGREES_PER_HOUR
+  const rightAscensionLocal = (rightAscension + (lQuadrant - raQuadrant)) / DEGREES_PER_HOUR
+  const localHour = localHourAngle / DEGREES_PER_HOUR
+  return localHour + rightAscensionLocal - (0.06571 * approxTimeOfEventInDays) - 6.622
+}
 
-  localMeanTime = localHour + rightAscension - (0.06571 * approxTimeOfEventInDays) - 6.622
+function sunriseSet (date, latitude, longitude, sunrise) {
+  const {
+    sunMeanAnomaly,
+    approxTimeOfEventInDays
+  } = getTimeOfEventInDays(date, longitude, sunrise)
 
-  time = localMeanTime - (longitude / DEGREES_PER_HOUR)
-  time = mod(time, 24)
+  const localMeanTime = getLocalMeanTime(latitude, sunMeanAnomaly, approxTimeOfEventInDays, sunrise)
 
-  var midnight = new Date(0)
+  return dateInTimezone(date, mod(localMeanTime - (longitude / DEGREES_PER_HOUR), 24))
+}
+
+function dateInTimezone(date, time){
+  let midnight = new Date(0)
   midnight.setUTCFullYear(date.getUTCFullYear())
   midnight.setUTCMonth(date.getUTCMonth())
   midnight.setUTCDate(date.getUTCDate())
 
-  let milli = midnight.getTime() + (time * 60 * 60 * 1000)
-
-  return new Date(milli)
+  return new Date(midnight.getTime() + (time * 60 * 60 * 1000))
 }
 
-function sunrise (date, latitude, longitude, zenith) {
-  return sunriseSet(date, latitude, longitude, true, zenith)
+function sunrise (date, latitude, longitude) {
+  return sunriseSet(date, latitude, longitude, true)
 }
 
-function sunset (date, latitude, longitude, zenith) {
-  return sunriseSet(date, latitude, longitude, false, zenith)
+function sunset (date, latitude, longitude) {
+  return sunriseSet(date, latitude, longitude, false)
 }
 
 module.exports = {

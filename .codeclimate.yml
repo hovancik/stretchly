@@ -1,5 +1,0 @@
-plugins:
-  eslint:
-    enabled: true
-    exclude_paths:
-    - "./app/utils/sun.js"
