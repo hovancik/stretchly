@@ -75,6 +75,16 @@ In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: 
 #### Editing break/microbreak notification interval
 In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for microbreak.
 
+#### Editing sunrise time to pause breaks until morning
+In config file you can set morningHour setting to pause until that hour this or next day
+Otherwise, you can set `morningHour`: "sunrise" and set `posLatitude`, `posLongitude` in
+settings to pause until actual sunrise in your area. 
+Ex. if you live in Boston you would set:
+`morningHour`: "sunrise",
+`posLatitude`: 42.3, 
+`posLongitude`: 71
+
+
 #### New version notification
 In config file, set `notifyNewVersion: false,` to disable showing of new version's notification.
 

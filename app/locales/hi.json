@@ -17,6 +17,7 @@
     "for2Hours": "दो घंटो के लिए",
     "for5Hours": "पांच घंटो के लिए ",
     "indefinitely": "अनिश्चित काल के लिए",
+    "untilMorning": "until morning",
     "resetBreaks": "ब्रेक्स पुनः कायम करें",
     "settings": "सेट्टिंग्स",
     "startAtLogin": "लॉग इन के वक्त शुरू करें",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "{{count}} सेकंड शेष",
     "minutesLeft": "{{count}} मिनट शेष",
     "minutesLeft_plural": "{{count}} मिनट शेष",
-    "lessThen1m": "1 मिनट से भी कम",
+    "lessThan1m": "1 मिनट से भी कम",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

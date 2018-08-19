@@ -16,6 +16,7 @@
     "forHour": "for an hour",
     "for2Hours": "for 2 hours",
     "for5Hours": "for 5 hours",
+    "untilMorning": "until morning",
     "indefinitely": "indefinitely",
     "resetBreaks": "Reset breaks",
     "settings": "Settings",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "{{count}} seconds left",
     "minutesLeft": "{{count}} minute left",
     "minutesLeft_plural": "{{count}} minutes left",
-    "lessThen1m": "less then 1m",
+    "lessThan1m": "less then 1m",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"
