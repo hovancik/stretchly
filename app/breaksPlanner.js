@@ -1,6 +1,7 @@
 const Scheduler = require('./utils/scheduler')
 const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
+const NotificationStateManager = require('./utils/notificationStateManager')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -9,7 +10,9 @@ class BreaksPlanner extends EventEmitter {
     this.breakNumber = 0
     this.scheduler = null
     this.isPaused = false
+    this.notificatonState = false
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
+    this.notificationStateManager = new NotificationStateManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('microbreakDuration')
@@ -26,6 +29,12 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager.on('clearBreakScheduler', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
+      }
+    })
+
+    this.notificationStateManager.on('doNotDisturbFinished', () => {
+      if (!this.notificatonState) {
+        this.reset()
       }
     })
 

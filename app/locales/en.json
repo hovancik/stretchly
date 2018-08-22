@@ -32,7 +32,8 @@
     "microbreak": "microbreak",
     "break": "break",
     "nextBreakFollowing": "\nNext break following {{count}} more microbreak",
-    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks"
+    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...nah, I'll just keep going on",
