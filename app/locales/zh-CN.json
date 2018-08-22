@@ -17,6 +17,7 @@
     "forHour": "1小时",
     "for2Hours": "2小时",
     "for5Hours": "5小时",
+    "untilMorning": "until morning",
     "indefinitely": "无限期",
     "resetBreaks": "重置休息",
     "startAtLogin": "开机自动运行",
@@ -100,7 +101,7 @@
     "secondsLeft_plural": "还有 {{count}} 秒",
     "minutesLeft": "还有 {{count}} 分钟",
     "minutesLeft_plural": "还有 {{count}} 分钟",
-    "lessThen1m": "小于1分钟",
+    "lessThan1m": "小于1分钟",
     "h": "{{hours}}时",
     "m": "{{minutes}}分",
     "s": "~{{seconds}}秒"

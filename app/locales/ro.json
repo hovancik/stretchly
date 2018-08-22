@@ -16,6 +16,7 @@
     "forHour": "pentru o oră",
     "for2Hours": "pentru 2 ore",
     "for5Hours": "pentru 5 ore",
+    "untilMorning": "pânā dimineaţa",
     "indefinitely": "nelimitat",
     "resetBreaks": "Resetează pauzele",
     "settings": "Setări",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "{{count}} secunde rămase",
     "minutesLeft": "{{count}} minute rămase",
     "minutesLeft_plural": "{{count}} minute rămase",
-    "lessThen1m": "mai puțin de 1m",
+    "lessThan1m": "mai puțin de 1m",
     "h": "{{hours}}o",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"
