@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dutch translations for interface
 - Tray menu displays the time and type of next break
 
-## [0.17.0] - 2018-08-11
 ### Fixed
 - User pause will no longer be removed upon suspend/resume
 - User pause time will be corrected upon suspend/resume for the duration
