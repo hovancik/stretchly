@@ -32,7 +32,8 @@
     "microbreak": "micropauză",
     "break": "pauză",
     "nextBreakFollowing": "\n Următoarea pauză după {{count}} mai multe micropauze",
-    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze"
+    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...nah, Voi continua",

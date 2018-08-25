@@ -33,7 +33,8 @@
     "break": "перерыва",
     "nextBreakFollowing_0": "\nСледующий перерыв через {{count}} микроперерыв",
     "nextBreakFollowing_1": "\nСледующий перерыв через {{count}} микроперерыва",
-    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов"
+    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...не, я просто продолжу",

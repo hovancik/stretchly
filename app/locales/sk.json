@@ -33,7 +33,8 @@
     "break": "prestávky",
     "nextBreakFollowing_0": "\nĎalšia prestávka po {{count}} mikroprestávke",
     "nextBreakFollowing_1": "\nĎalšia prestávka po {{count}} mikroprestávkach",
-    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach"
+    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...nie, chcem pokračovať",

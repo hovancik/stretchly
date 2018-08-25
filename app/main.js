@@ -2,7 +2,7 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const getDoNotDisturb = require('@meetfranz/electron-notification-state')
+const notificationState = require('@meetfranz/electron-notification-state')
 
 startI18next()
 
@@ -218,26 +218,34 @@ function checkVersion () {
 }
 
 function startMicrobreakNotification () {
-  const notificationDisabled = getDoNotDisturb.getDoNotDisturb()
+  const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
+    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification('startMicrobreak')
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
   } else {
     setTimeout(function () {
       startMicrobreakNotification()
     }, settings.get('microbreakNotificationInterval'))
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
   }
 }
 
 function startBreakNotification () {
-  const notificationDisabled = getDoNotDisturb.getDoNotDisturb()
+  const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
+    processWin.webContents.send('showNotification', i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification('startBreak')
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
   } else {
     setTimeout(function () {
       startMicrobreakNotification()
     }, settings.get('breakNotificationInterval'))
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
   }
 }
 
@@ -659,6 +667,9 @@ function updateToolTip () {
     appIcon.setToolTip(toolTipHeader)
   } else {
     let statusMessage = ''
+    if (notificationState.getDoNotDisturb()) {
+      statusMessage += i18next.t('main.notificationStatus')
+    }
     if (breakPlanner && breakPlanner.scheduler) {
       if (breakPlanner.isPaused) {
         let timeLeft = breakPlanner.scheduler.timeLeft
@@ -757,7 +768,7 @@ ipcMain.on('send-settings', function (event) {
 ipcMain.on('show-debug', function (event) {
   let reference = breakPlanner.scheduler.reference
   let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
-  let getDnD = getDoNotDisturb.getDoNotDisturb()
+  let getDnD = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, getDnD)

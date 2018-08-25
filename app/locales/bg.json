@@ -32,7 +32,8 @@
     "microbreak": "микропочивка",
     "break": "почивка",
     "nextBreakFollowing": "\nСледващата почивка ще бъде след {{count}} микропочивка",
-    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки"
+    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...Не!!! Ще продължа...",

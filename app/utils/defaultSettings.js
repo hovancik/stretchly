@@ -1,6 +1,6 @@
 module.exports = {
   microbreakDuration: 20000,
-  microbreakInterval: 10000,
+  microbreakInterval: 600000,
   breakDuration: 300000,
   breakInterval: 2,
   breakNotification: true,
@@ -16,7 +16,6 @@ module.exports = {
   fullscreen: false,
   ideas: true,
   naturalBreaks: true,
-  notificationState: false,
   allScreens: true,
   useIdeasFromSettings: false,
   language: 'en',

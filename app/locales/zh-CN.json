@@ -32,7 +32,8 @@
     "microbreak": "短时间休息",
     "break": "长时间休息",
     "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
-    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...额, 我还有事做",

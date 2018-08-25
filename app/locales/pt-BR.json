@@ -32,7 +32,8 @@
     "microbreak": "micropausa",
     "break": "pausa",
     "nextBreakFollowing": "\nPróxima pausa longa após {{count}} micropausa",
-    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas"
+    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",

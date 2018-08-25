@@ -32,7 +32,8 @@
     "microbreak": "Mikropause",
     "break": "Pause",
     "nextBreakFollowing": "\nDer nächsten Pause folgt {{count}} weitere Mikropause",
-    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen"
+    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen",
+    "notificationStatus": "Im nicht stören Modus"
   },
   "break": {
     "keepGoing": "... nein, ich werde weitermachen",

@@ -32,7 +32,8 @@
     "microbreak": "kleine pauze",
     "break": "pauze",
     "nextBreakFollowing": "\nNa de volgende pauze nog {{count}} keer een kleine pauze",
-    "nextBreakFollowing_plural": "\nNa de volgende pauze nog {{count}} keer een kleine pauze"
+    "nextBreakFollowing_plural": "\nNa de volgende pauze nog {{count}} keer een kleine pauze",
+    "notificationStatus": "Niet storen staat aan"
   },
   "break": {
     "keepGoing": "...nee, ik werk gewoon door",

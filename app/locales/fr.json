@@ -32,7 +32,8 @@
     "microbreak": "petite pause",
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
-    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites"
+    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
+    "notificationStatus": "En mode ne pas troubler"
   },
   "break": {
     "keepGoing": "...non, je vais continuer sans pause",

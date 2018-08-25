@@ -32,7 +32,8 @@
     "microbreak": "microdescanso",
     "break": "descanso",
     "nextBreakFollowing": "\nPróximo descanso después de {{count}} microdescanso",
-    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más"
+    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más",
+    "notificationStatus": "En el modo No Molestar"
   },
   "break": {
     "keepGoing": "...bah, prefiero seguir",

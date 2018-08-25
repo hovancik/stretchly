@@ -32,7 +32,8 @@
     "microbreak": "छोटा ब्रेक",
     "break": "ब्रेक",
     "nextBreakFollowing": "\nअगला ब्रेक {{count}} छोटे ब्रेक के बाद है",
-    "nextBreakFollowing_plural": "\nअगला ब्रेक {{count}} छोटे ब्रेक्स के बाद है"
+    "nextBreakFollowing_plural": "\nअगला ब्रेक {{count}} छोटे ब्रेक्स के बाद है",
+    "notificationStatus": "In do not disturb mode"
   },
   "break": {
     "keepGoing": "...नहीं, मुझे ब्रेक नहीं चाहिए",
