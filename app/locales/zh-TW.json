@@ -16,6 +16,7 @@
     "forHour": "1 小時",
     "for2Hours": "2 小時",
     "for5Hours": "5 小時",
+    "untilMorning": "until morning",
     "indefinitely": "無限期",
     "resetBreaks": "重置休息",
     "settings": "設定",
@@ -101,7 +102,7 @@
     "secondsLeft_plural": "剩下 {{count}} 秒",
     "minutesLeft": "剩下 {{count}} 分鐘",
     "minutesLeft_plural": "剩下 {{count}} 分鐘",
-    "lessThen1m": "低於 1 分鐘",
+    "lessThan1m": "低於 1 分鐘",
     "h": "{{hours}} 小時",
     "m": "{{minutes}} 分",
     "s": "~{{seconds}} 秒"

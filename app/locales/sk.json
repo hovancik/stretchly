@@ -16,6 +16,7 @@
     "forHour": "na hodinu",
     "for2Hours": "na 2 hodiny",
     "for5Hours": "na 5 hodín",
+    "untilMorning": "do rána",
     "indefinitely": "na neurčito",
     "resetBreaks": "Resetovať prestávky",
     "settings": "Nastavenia",
@@ -105,7 +106,7 @@
     "minutesLeft_0": "{{count}} minúta do konca",
     "minutesLeft_1": "{{count}} minúty do konca",
     "minutesLeft_2": "{{count}} minút do konca",
-    "lessThen1m": "menej ako 1m",
+    "lessThan1m": "menej ako 1m",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

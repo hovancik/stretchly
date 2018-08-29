@@ -16,6 +16,7 @@
     "forHour": "voor een uur",
     "for2Hours": "voor 2 uur",
     "for5Hours": "voor 5 uur",
+    "untilMorning": "voor morgen",
     "indefinitely": "voor onbepaalde tijd",
     "resetBreaks": "Reset pauzes",
     "settings": "Instellingen",
@@ -102,7 +103,7 @@
     "secondsLeft_plural": "{{count}} seconden over",
     "minutesLeft": "{{count}} minuut over",
     "minutesLeft_plural": "{{count}} minuten over",
-    "lessThen1m": "minder dan 1min",
+    "lessThan1m": "minder dan 1min",
     "h": "{{hours}}u",
     "m": "{{minutes}}min",
     "s": "~{{seconds}}s"

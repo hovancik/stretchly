@@ -116,6 +116,9 @@
       "fetch",
       "Notification",
       "alert"
+    ],
+    "ignore": [
+      "sun.js"
     ]
   },
   "dependencies": {
@@ -123,6 +126,7 @@
     "@paulcbetts/system-idle-time": "^1.0.4",
     "@sindresorhus/do-not-disturb": "^0.2.0",
     "i18next": "^11.2.3",
-    "i18next-node-fs-backend": "^1.0.0"
+    "i18next-node-fs-backend": "^1.0.0",
+    "moment": "^2.22.2"
   }
 }

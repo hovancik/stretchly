@@ -1,6 +1,6 @@
 module.exports = {
   microbreakDuration: 20000,
-  microbreakInterval: 10000,
+  microbreakInterval: 600000,
   breakDuration: 300000,
   breakInterval: 2,
   breakNotification: true,
@@ -11,6 +11,7 @@ module.exports = {
   break: true,
   microbreakStrictMode: false,
   breakStrictMode: false,
+  morningHour: 6,
   mainColor: '#478484',
   audio: 'crystal-glass',
   fullscreen: false,
@@ -21,6 +22,8 @@ module.exports = {
   language: 'en',
   notifyNewVersion: true,
   isFirstRun: true,
+  posLatitude: 0.0,
+  posLongitude: 0.0,
   breakIdeas: [
     {data: ['Not alone', 'Do you find it hard to take a break alone? Try to do it with a co-worker. Aside from making it easier to stick to breaks, you will have a chance to get to know them better. Taking breaks together increases productivity.'], enabled: true},
     {data: ['Step away', 'Do you ever notice how your brain can figure things out by itself? All it takes is to step away from the computer and take a break to think about something totally unrelated.'], enabled: true},
@@ -47,11 +50,12 @@ module.exports = {
     { data: 'Close your eyes and relax.', enabled: true },
     { data: 'Stretch your legs.', enabled: true },
     { data: 'Stretch your arms.', enabled: true },
-    { data: 'Is your sitting pose correct?', enabled: true },
+    { data: 'Is your sitting posture correct?', enabled: true },
     { data: 'Slowly turn head to side and hold for 10 seconds.', enabled: true },
     { data: 'Slowly tilt head to side and hold for 5-10 seconds.', enabled: true },
     { data: 'Stand from chair and stretch.', enabled: true },
     { data: 'Refocus eyes on an object at least 20 meters away.', enabled: true },
-    { data: 'Take a moment to think about something you appreciate.', enabled: true }
+    { data: 'Take a moment to think about something you appreciate.', enabled: true },
+    { data: 'Take a moment to smile at being alive.', enabled: true }
   ]
 }

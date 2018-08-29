@@ -11,6 +11,7 @@ const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
+const { UntilMorning } = require('./utils/untilMorning')
 
 let microbreakIdeas
 let breakIdeas
@@ -595,6 +596,12 @@ function getTrayMenu () {
           label: i18next.t('main.for5Hours'),
           click: function () {
             pauseBreaks(3600 * 5 * 1000)
+          }
+        }, {
+          label: i18next.t('main.untilMorning'),
+          click: function () {
+            const untilMorning = new UntilMorning(settings).timeUntilMorning()
+            pauseBreaks(untilMorning)
           }
         }, {
           label: i18next.t('main.indefinitely'),
