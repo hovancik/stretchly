@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - User pause will no longer be removed upon suspend/resume
 - User pause time will be corrected upon suspend/resume for the duration
   of system sleep
+- Style padding inserted for settings page 3
 
 ### Changed
 - Czech translations updated
@@ -36,6 +37,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface
+- Ability to pause until morning
 
 ### Changed
 - upper limit of microbreak duration set to 60 seconds

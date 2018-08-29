@@ -4,9 +4,9 @@ const fs = require('fs')
 const Settings = require('./../app/utils/settings')
 const defaultSettings = require('./../app/utils/defaultSettings')
 
-const testFileLocation = `${__dirname}/testFile`
-const testMissingFileLocation = `${__dirname}/test-missing.json`
-const testMissingFileCopyLocation = `${__dirname}/test-missing-copy.json`
+const testFileLocation = `${__dirname}/assets/doesNotExist`
+const testMissingFileLocation = `${__dirname}/assets/settings.test-missing.json`
+const testMissingFileCopyLocation = `${__dirname}/assets/settings.test-missing-copy.json`
 
 chai.should()
 

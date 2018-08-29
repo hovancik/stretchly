@@ -44,7 +44,9 @@ function formatTimeOfNextBreak (time) {
   return [hours, minutes]
 }
 
-module.exports.formatRemaining = formatRemaining
-module.exports.formatTillBreak = formatTillBreak
-module.exports.formatPauseTimeLeft = formatPauseTimeLeft
-module.exports.formatTimeOfNextBreak = formatTimeOfNextBreak
+module.exports = {
+  formatRemaining,
+  formatTillBreak,
+  formatPauseTimeLeft, 
+  formatTimeOfNextBreak
+}

@@ -116,6 +116,9 @@
       "fetch",
       "Notification",
       "alert"
+    ],
+    "ignore": [
+      "sun.js"
     ]
   },
   "dependencies": {
