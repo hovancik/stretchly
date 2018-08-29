@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
+const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
@@ -466,7 +466,7 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', {version: app.getVersion()})
+    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -526,7 +526,11 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (!breakPlanner.isPaused) {
+  if (notificationState.getDoNotDisturb()) {
+    trayMenu.push({
+      label: i18next.t('main.notificationStatus')
+    })
+  } else if (!breakPlanner.isPaused) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -577,6 +581,10 @@ function getTrayMenu () {
         resumeBreaks()
         updateToolTip()
       }
+    })
+  } else if (notificationState.getDoNotDisturb()) {
+    trayMenu.push({
+      type: 'separator'
     })
   } else {
     trayMenu.push({
@@ -642,7 +650,7 @@ function getTrayMenu () {
       type: 'checkbox',
       checked: openAtLogin,
       click: function () {
-        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
       }
     })
   }
@@ -676,12 +684,11 @@ function updateToolTip () {
     let statusMessage = ''
     if (notificationState.getDoNotDisturb()) {
       statusMessage += i18next.t('main.notificationStatus')
-    }
-    if (breakPlanner && breakPlanner.scheduler) {
+    } else if (breakPlanner && breakPlanner.scheduler) {
       if (breakPlanner.isPaused) {
         let timeLeft = breakPlanner.scheduler.timeLeft
         if (timeLeft) {
-          statusMessage += i18next.t('main.pausedUntil', {'timeLeft': Utils.formatPauseTimeLeft(timeLeft)})
+          statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
         } else {
           statusMessage += i18next.t('main.pausedIndefinitely')
         }
@@ -719,11 +726,11 @@ function updateToolTip () {
           } else {
             notificationTime = 0
           }
-          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`)})
+          statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`) })
           if (breakType === 'microbreak') {
             let breakInterval = settings.get('breakInterval') + 1
             let breakNumber = breakPlanner.breakNumber % breakInterval
-            statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
+            statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
           }
         }
       }
