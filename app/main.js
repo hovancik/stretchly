@@ -10,6 +10,7 @@ const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
+const { db } = require('./database');
 
 let microbreakIdeas
 let breakIdeas
@@ -420,6 +421,7 @@ function resumeBreaks () {
   updateToolTip()
 }
 
+
 function showAboutWindow () {
   if (aboutWin) {
     aboutWin.show()
@@ -759,4 +761,14 @@ ipcMain.on('change-language', function (event, language) {
 
 ipcMain.on('open-tutorial', function (event) {
   createTutorialWindow()
+})
+
+ipcMain.on('stats-window-loaded', () => {
+  console.log("LOADED!")
+  const result = db.select('id').from('breaks')
+  console.log(result)
+  result.then((rows) => {
+      console.log('result sent!', rows)
+      settingsWin.webContents.send('resultSent', rows)
+  })
 })

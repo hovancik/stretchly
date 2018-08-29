@@ -19,6 +19,7 @@ install:
   - npm install npm -g
   - npm install
   - npm install -g istanbul
+  - npm run rebuild
 
 test_script:
   - node --version

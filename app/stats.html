@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div class="about">
+        <div class="previous">
+            <a href="settings3.html" title="more settings">&lsaquo;</a>
+          </div>
+      <!-- <div class="about-name" data-i18next="about.stretchly"></div>
+      <div data-i18next="about.breakTimeReminderApp"></div>
+      <div class="about-stretchly"> -->
+        
+          <!-- <span data-i18next="about.toLearnMoreVisit"></span> <a href="https://hovancik.net/stretchly" id="homepage" data-i18next="about.homepage"></a>
+          <span data-i18next="about.orRead"></span> <a href="" data-i18next="about.tutorial" id="open-tutorial"></a>. -->
+      </div>
+    <script>
+      const electron = require('electron')
+      const ipc = electron.ipcRenderer
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('hello')
+        ipc.send('stats-window-loaded')
+        ipc.on('resultSent', (event, result) => {
+          let resultElement = document.getElementById('result')
+          console.log(result)
+          resultElement.innertext = result
+        })
+      })
+    </script>
+    <p id="result"></p>
+  </body>
+</html>
