@@ -471,9 +471,8 @@ function getTrayMenu () {
   let trayMenu = []
   let timeLeft = breakPlanner.scheduler.timeLeft
   let reference = typeOfBreak()
-  let hours = new Date(Date.now() + timeLeft).getHours()
-  let minutes = new Date(Date.now() + timeLeft).getMinutes()
-  minutes = String(minutes).padStart(2, '0')
+  let nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
+
   if (global.shared.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
@@ -485,7 +484,7 @@ function getTrayMenu () {
 
   if (timeLeft) {
     trayMenu.push({
-      label: i18next.t('main.breakAt', { 'hours': hours, 'minutes': minutes, 'reference': reference.breakType })
+      label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': reference.breakType })
     })
   }
 

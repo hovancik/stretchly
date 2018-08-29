@@ -50,3 +50,28 @@
 //     Utils.formatTillBreak(60 * 1.5 * 1000).should.equal('2m')
 //   })
 // })
+
+const chai = require('chai')
+const { formatTimeOfNextBreak } = require('../app/utils/utils')
+
+chai.should()
+
+describe('Time Until Next Break', () => {
+  // stubbing date
+  beforeEach(() => {
+    this.fn = Date.now()
+    Date.now = function () {
+      return 819165720000
+    }
+  })
+
+  it('formatTimeOfNextBreak() should load the right formatted time of the next break', () => {
+    const time = 300000
+    formatTimeOfNextBreak(time).should.deep.equal([3, '07'])
+  })
+
+  afterEach(() => {
+    // restore Date.now functionality globally
+    Date.now = this.fn
+  })
+})
