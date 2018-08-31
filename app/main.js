@@ -485,7 +485,7 @@ function getTrayMenu () {
   }
 
   if (timeLeft) {
-    if(isPaused) {
+    if (isPaused) {
       trayMenu.push({
         label: i18next.t('main.resumingAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1] })
       })

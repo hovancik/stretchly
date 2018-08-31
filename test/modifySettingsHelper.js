@@ -3,7 +3,7 @@ let electronPath = require('electron')
 const AppSettings = require('../app/utils/settings')
 
 async function modifySettings (key, value) {
-  let app;
+  let app
 
   try {
     app = new Application({
@@ -15,7 +15,7 @@ async function modifySettings (key, value) {
 
     await app.start()
   } catch (err) {
-    console.log("error starting app:", err)
+    console.log('error starting app:', err)
     throw err
   }
 
@@ -30,7 +30,7 @@ async function modifySettings (key, value) {
       })
     })
   } catch (err) {
-    console.log("error stubbing getUserDataPath command:", err)
+    console.log('error stubbing getUserDataPath command:', err)
     throw err
   }
 
@@ -40,14 +40,14 @@ async function modifySettings (key, value) {
     const settings = new AppSettings(settingsFile)
     settings.set(key, value)
   } catch (err) {
-    console.log("error updating settings:", err)
+    console.log('error updating settings:', err)
     throw err
   }
 
   try {
     await app.stop()
   } catch (err) {
-    console.log("error stopping application:", err)
+    console.log('error stopping application:', err)
     throw err
   }
 }

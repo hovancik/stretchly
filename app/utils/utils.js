@@ -47,6 +47,6 @@ function formatTimeOfNextBreak (time) {
 module.exports = {
   formatRemaining,
   formatTillBreak,
-  formatPauseTimeLeft, 
+  formatPauseTimeLeft,
   formatTimeOfNextBreak
 }
