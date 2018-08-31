@@ -53,8 +53,6 @@
 
 const chai = require('chai')
 const { formatTimeOfNextBreak } = require('../app/utils/utils')
-const moment = require('moment')
-moment().format()
 
 chai.should()
 
@@ -63,14 +61,17 @@ describe.only('Time Until Next Break', () => {
   beforeEach(() => {
     this.fn = Date.now()
     Date.now = function () {
-      return moment.utc(819165720000)
+      return new Date(819165720000)
     }
   })
 
   it('formatTimeOfNextBreak() should load the right formatted time of the next break', () => {
     const time = 300000
-    console.log(formatTimeOfNextBreak(time))
-    formatTimeOfNextBreak(time).should.deep.equal([3, '07'])
+    const expectedHour = formatTimeOfNextBreak(time)[0] + (new Date().getTimezoneOffset() / 60)
+    const expectedMinute = formatTimeOfNextBreak(time)[1]
+    expectedHour.should.equal(1)
+    expectedMinute.should.equal('07')
+
   })
 
   afterEach(() => {
