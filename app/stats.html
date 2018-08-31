@@ -24,7 +24,7 @@
         ipc.on('resultSent', (event, result) => {
           let resultElement = document.getElementById('result')
           console.log(result)
-          resultElement.innertext = result
+          resultElement.innerHTML = result[0].id
         })
       })
     </script>
