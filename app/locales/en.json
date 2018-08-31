@@ -4,6 +4,7 @@
     "microbreakIn": "Microbreak in {{seconds}} seconds...",
     "breakIn": "Break in {{seconds}} seconds...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "About stretchly v{{version}}",
     "downloadLatestVersion": "Download latest version",

@@ -471,6 +471,7 @@ function saveDefaultsFor (array, next) {
 function getTrayMenu () {
   let trayMenu = []
   let timeLeft = breakPlanner.scheduler.timeLeft
+  let isPaused = breakPlanner.isPaused
   let reference = typeOfBreak()
   let nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
 
@@ -484,9 +485,15 @@ function getTrayMenu () {
   }
 
   if (timeLeft) {
-    trayMenu.push({
-      label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': reference.breakType })
-    })
+    if(isPaused) {
+      trayMenu.push({
+        label: i18next.t('main.resumingAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1] })
+      })
+    } else {
+      trayMenu.push({
+        label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': reference.breakType })
+      })
+    }
   }
 
   trayMenu.push({

@@ -4,6 +4,7 @@
     "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd...",
     "breakIn": "Prestávka za {{seconds}} sekúnd...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Obnovenie prestávok",
     "aboutStretchly": "O stretchly v{{version}}",
     "downloadLatestVersion": "Stiahnuť najnovšiu verziu",
