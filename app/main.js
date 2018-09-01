@@ -528,7 +528,7 @@ function getTrayMenu () {
 
   if (notificationState.getDoNotDisturb()) {
     trayMenu.push({
-      label: i18next.t('main.notificationStatus')
+      label: i18next.t('main.notificationStateMode')
     })
   } else if (!breakPlanner.isPaused) {
     let submenu = []
@@ -782,10 +782,10 @@ ipcMain.on('send-settings', function (event) {
 ipcMain.on('show-debug', function (event) {
   let reference = breakPlanner.scheduler.reference
   let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
-  let getDnD = notificationState.getDoNotDisturb()
+  let doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
-  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, getDnD)
+  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
 })
 
 ipcMain.on('change-language', function (event, language) {

@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Neuste Version herunterladen",
     "about": "Über",
     "becomePatron": "Werde ein Patron",
+    "notificationStateMode": "Im nicht stören Modus",
     "toBreak": "Pause",
     "toMicrobreak": "Mikropause",
     "skipToTheNext": "Springe zur nächsten",
@@ -34,7 +35,7 @@
     "break": "Pause",
     "nextBreakFollowing": "\nDer nächsten Pause folgt {{count}} weitere Mikropause",
     "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen",
-    "notificationStatus": "Im nicht stören Modus"
+    "notificationStatus": "\nIm nicht stören Modus"
   },
   "break": {
     "keepGoing": "... nein, ich werde weitermachen",

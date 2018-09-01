@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Download de laatste versie",
     "about": "Over",
     "becomePatron": "Word een sponsor",
+    "notificationStateMode": "Niet storen staat aan",
     "toBreak": "pauze",
     "toMicrobreak": "kleine pauze",
     "skipToTheNext": "Ga naar de volgende",
@@ -34,7 +35,7 @@
     "break": "pauze",
     "nextBreakFollowing": "\nNa de volgende pauze nog {{count}} keer een kleine pauze",
     "nextBreakFollowing_plural": "\nNa de volgende pauze nog {{count}} keer een kleine pauze",
-    "notificationStatus": "Niet storen staat aan"
+    "notificationStatus": "\nNiet storen staat aan"
   },
   "break": {
     "keepGoing": "...nee, ik werk gewoon door",

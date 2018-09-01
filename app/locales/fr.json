@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Télécharger la dernière version",
     "about": "À propos",
     "becomePatron": "Soutenir l'application",
+    "notificationStateMode": "En mode ne pas troubler",
     "toBreak": "grande pause suivante",
     "toMicrobreak": "petite pause suivante",
     "skipToTheNext": "Passer à la",
@@ -34,7 +35,7 @@
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
     "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
-    "notificationStatus": "En mode ne pas troubler"
+    "notificationStatus": "\nEn mode ne pas troubler"
   },
   "break": {
     "keepGoing": "...non, je vais continuer sans pause",
