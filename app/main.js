@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
+const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
@@ -466,7 +466,7 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
+    title: i18next.t('main.aboutStretchly', {version: app.getVersion()})
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -650,7 +650,7 @@ function getTrayMenu () {
       type: 'checkbox',
       checked: openAtLogin,
       click: function () {
-        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
+        app.setLoginItemSettings({openAtLogin: !openAtLogin})
       }
     })
   }
@@ -726,11 +726,11 @@ function updateToolTip () {
           } else {
             notificationTime = 0
           }
-          statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`) })
+          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`)})
           if (breakType === 'microbreak') {
             let breakInterval = settings.get('breakInterval') + 1
             let breakNumber = breakPlanner.breakNumber % breakInterval
-            statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
+            statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
           }
         }
       }
