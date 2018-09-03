@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Загрузить последнюю версию",
     "about": "О программе",
     "becomePatron": "Поддержать на Patreon",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "перерыву",
     "toMicrobreak": "микроперерыву",
     "skipToTheNext": "Перейти к ближайшему",
@@ -16,6 +17,7 @@
     "forHour": "на час",
     "for2Hours": "на 2 часа",
     "for5Hours": "на 5 часов",
+    "untilMorning": "до утра",
     "indefinitely": "на неопределённый срок",
     "resetBreaks": "Сбросить перерывы",
     "settings": "Настройки",
@@ -33,7 +35,8 @@
     "break": "перерыва",
     "nextBreakFollowing_0": "\nСледующий перерыв через {{count}} микроперерыв",
     "nextBreakFollowing_1": "\nСледующий перерыв через {{count}} микроперерыва",
-    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов"
+    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...не, я просто продолжу",
@@ -105,7 +108,7 @@
     "minutesLeft_0": "{{count}} минута осталась",
     "minutesLeft_1": "{{count}} минуты осталось",
     "minutesLeft_2": "{{count}} минут осталось",
-    "lessThen1m": "менее минуты",
+    "lessThan1m": "менее минуты",
     "h": "{{hours}}ч",
     "m": "{{minutes}}м",
     "s": "~{{seconds}}с"

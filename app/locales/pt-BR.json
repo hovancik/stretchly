@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Baixar a versão mais recente",
     "about": "Sobre",
     "becomePatron": "Apoie o aplicativo",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "pausa",
     "toMicrobreak": "micropausa",
     "skipToTheNext": "Avançar para a próxima",
@@ -16,6 +17,7 @@
     "forHour": "por uma hora",
     "for2Hours": "por 2 horas",
     "for5Hours": "por 5 horas",
+    "untilMorning": "until morning",
     "indefinitely": "indefinidamente",
     "resetBreaks": "Redefinir as pausas",
     "settings": "Configurações",
@@ -32,7 +34,8 @@
     "microbreak": "micropausa",
     "break": "pausa",
     "nextBreakFollowing": "\nPróxima pausa longa após {{count}} micropausa",
-    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas"
+    "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",
@@ -102,7 +105,7 @@
     "secondsLeft_plural": "{{count}} segundos faltando",
     "minutesLeft": "{{count}} minuto faltando",
     "minutesLeft_plural": "{{count}} minutos faltando",
-    "lessThen1m": "menos de 1min",
+    "lessThan1m": "menos de 1min",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

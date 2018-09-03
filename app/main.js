@@ -2,6 +2,7 @@
 const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const notificationState = require('@meetfranz/electron-notification-state')
 
 startI18next()
 
@@ -10,6 +11,7 @@ const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
+const { UntilMorning } = require('./utils/untilMorning')
 
 let microbreakIdeas
 let breakIdeas
@@ -223,13 +225,35 @@ function checkVersion () {
 }
 
 function startMicrobreakNotification () {
-  processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
-  breakPlanner.nextBreakAfterNotification('startMicrobreak')
+  const notificationDisabled = notificationState.getDoNotDisturb()
+  if (!notificationDisabled) {
+    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+    breakPlanner.nextBreakAfterNotification('startMicrobreak')
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  } else {
+    setTimeout(function () {
+      startMicrobreakNotification()
+    }, settings.get('microbreakNotificationInterval'))
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  }
 }
 
 function startBreakNotification () {
-  processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
-  breakPlanner.nextBreakAfterNotification('startBreak')
+  const notificationDisabled = notificationState.getDoNotDisturb()
+  if (!notificationDisabled) {
+    processWin.webContents.send('showNotification', i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+    breakPlanner.nextBreakAfterNotification('startBreak')
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  } else {
+    setTimeout(function () {
+      startMicrobreakNotification()
+    }, settings.get('breakNotificationInterval'))
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  }
 }
 
 function startMicrobreak () {
@@ -508,7 +532,11 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (!breakPlanner.isPaused) {
+  if (notificationState.getDoNotDisturb()) {
+    trayMenu.push({
+      label: i18next.t('main.notificationStateMode')
+    })
+  } else if (!breakPlanner.isPaused) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -560,6 +588,10 @@ function getTrayMenu () {
         updateToolTip()
       }
     })
+  } else if (notificationState.getDoNotDisturb()) {
+    trayMenu.push({
+      type: 'separator'
+    })
   } else {
     trayMenu.push({
       label: i18next.t('main.pause'),
@@ -578,6 +610,12 @@ function getTrayMenu () {
           label: i18next.t('main.for5Hours'),
           click: function () {
             pauseBreaks(3600 * 5 * 1000)
+          }
+        }, {
+          label: i18next.t('main.untilMorning'),
+          click: function () {
+            const untilMorning = new UntilMorning(settings).timeUntilMorning()
+            pauseBreaks(untilMorning)
           }
         }, {
           label: i18next.t('main.indefinitely'),
@@ -650,11 +688,13 @@ function updateToolTip () {
     appIcon.setToolTip(toolTipHeader)
   } else {
     let statusMessage = ''
-    if (breakPlanner && breakPlanner.scheduler) {
+    if (notificationState.getDoNotDisturb()) {
+      statusMessage += i18next.t('main.notificationStatus')
+    } else if (breakPlanner && breakPlanner.scheduler) {
       if (breakPlanner.isPaused) {
         let timeLeft = breakPlanner.scheduler.timeLeft
         if (timeLeft) {
-          statusMessage += i18next.t('main.pausedUntil', {'timeLeft': Utils.formatPauseTimeLeft(timeLeft)})
+          statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
         } else {
           statusMessage += i18next.t('main.pausedIndefinitely')
         }
@@ -752,9 +792,10 @@ ipcMain.on('send-settings', function (event) {
 ipcMain.on('show-debug', function (event) {
   let reference = breakPlanner.scheduler.reference
   let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  let doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
-  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile)
+  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
 })
 
 ipcMain.on('change-language', function (event, language) {

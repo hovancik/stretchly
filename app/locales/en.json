@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Download latest version",
     "about": "About",
     "becomePatron": "Become a Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "break",
     "toMicrobreak": "microbreak",
     "skipToTheNext": "Skip to the next",
@@ -16,6 +17,7 @@
     "forHour": "for an hour",
     "for2Hours": "for 2 hours",
     "for5Hours": "for 5 hours",
+    "untilMorning": "until morning",
     "indefinitely": "indefinitely",
     "resetBreaks": "Reset breaks",
     "settings": "Settings",
@@ -32,7 +34,8 @@
     "microbreak": "microbreak",
     "break": "break",
     "nextBreakFollowing": "\nNext break following {{count}} more microbreak",
-    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks"
+    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nah, I'll just keep going on",
@@ -102,7 +105,7 @@
     "secondsLeft_plural": "{{count}} seconds left",
     "minutesLeft": "{{count}} minute left",
     "minutesLeft_plural": "{{count}} minutes left",
-    "lessThen1m": "less then 1m",
+    "lessThan1m": "less then 1m",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

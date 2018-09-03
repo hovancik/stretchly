@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Descarga la última versión",
     "about": "Acerca de",
     "becomePatron": "Hazte Patron",
+    "notificationStateMode": "En el modo No Molestar",
     "toBreak": "pausa",
     "toMicrobreak": "microdescanso",
     "skipToTheNext": "Saltar hasta el siguiente",
@@ -16,6 +17,7 @@
     "forHour": "por 1 hora",
     "for2Hours": "por 2 horas",
     "for5Hours": "por 5 horas",
+    "untilMorning": "hasta la mañana",
     "indefinitely": "indefinidamente",
     "resetBreaks": "Resetear descansos",
     "settings": "Configuración",
@@ -32,7 +34,8 @@
     "microbreak": "microdescanso",
     "break": "descanso",
     "nextBreakFollowing": "\nPróximo descanso después de {{count}} microdescanso",
-    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más"
+    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más",
+    "notificationStatus": "\nEn el modo No Molestar"
   },
   "break": {
     "keepGoing": "...bah, prefiero seguir",
@@ -102,7 +105,7 @@
     "secondsLeft_plural": "quedan {{count}} segundos",
     "minutesLeft": "queda {{count}} minuto",
     "minutesLeft_plural": "quedan {{count}} minutos",
-    "lessThen1m": "menos de 1m",
+    "lessThan1m": "menos de 1m",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

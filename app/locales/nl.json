@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Download de laatste versie",
     "about": "Over",
     "becomePatron": "Word een sponsor",
+    "notificationStateMode": "Niet storen staat aan",
     "toBreak": "pauze",
     "toMicrobreak": "kleine pauze",
     "skipToTheNext": "Ga naar de volgende",
@@ -16,6 +17,7 @@
     "forHour": "voor een uur",
     "for2Hours": "voor 2 uur",
     "for5Hours": "voor 5 uur",
+    "untilMorning": "voor morgen",
     "indefinitely": "voor onbepaalde tijd",
     "resetBreaks": "Reset pauzes",
     "settings": "Instellingen",
@@ -32,7 +34,8 @@
     "microbreak": "kleine pauze",
     "break": "pauze",
     "nextBreakFollowing": "\nNa de volgende pauze nog {{count}} keer een kleine pauze",
-    "nextBreakFollowing_plural": "\nNa de volgende pauze nog {{count}} keer een kleine pauze"
+    "nextBreakFollowing_plural": "\nNa de volgende pauze nog {{count}} keer een kleine pauze",
+    "notificationStatus": "\nNiet storen staat aan"
   },
   "break": {
     "keepGoing": "...nee, ik werk gewoon door",
@@ -102,7 +105,7 @@
     "secondsLeft_plural": "{{count}} seconden over",
     "minutesLeft": "{{count}} minuut over",
     "minutesLeft_plural": "{{count}} minuten over",
-    "lessThen1m": "minder dan 1min",
+    "lessThan1m": "minder dan 1min",
     "h": "{{hours}}u",
     "m": "{{minutes}}min",
     "s": "~{{seconds}}s"

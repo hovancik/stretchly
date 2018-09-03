@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Télécharger la dernière version",
     "about": "À propos",
     "becomePatron": "Soutenir l'application",
+    "notificationStateMode": "En mode ne pas troubler",
     "toBreak": "grande pause suivante",
     "toMicrobreak": "petite pause suivante",
     "skipToTheNext": "Passer à la",
@@ -16,6 +17,7 @@
     "forHour": "pour une heure",
     "for2Hours": "pour deux heures",
     "for5Hours": "pour 5 heures",
+    "untilMorning": "jusqu'au matin",
     "indefinitely": "indéfiniment",
     "resetBreaks": "Réinitiliser les pauses",
     "settings": "Paramètres",
@@ -32,7 +34,8 @@
     "microbreak": "petite pause",
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
-    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites"
+    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
+    "notificationStatus": "\nEn mode ne pas troubler"
   },
   "break": {
     "keepGoing": "...non, je vais continuer sans pause",
@@ -102,7 +105,7 @@
     "secondsLeft_plural": "{{count}} secondes restantes",
     "minutesLeft": "{{count}} minute restantes",
     "minutesLeft_plural": "{{count}} minutes restantes",
-    "lessThen1m": "moins d'une min",
+    "lessThan1m": "moins d'une min",
     "h": "{{hours}}h",
     "m": "{{minutes}}m",
     "s": "~{{seconds}}s"

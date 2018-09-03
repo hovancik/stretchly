@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Italian translations for interface
 - Welcome and Tutorial windows on first run and in About window
 - Dutch translations for interface
+- DND functionality for Mac & Windows users preventing breaks from happening while in Do Not Disturb mode.
 - user can change the default monochrome tray icon to colorful
 
 ### Fixed
@@ -38,6 +39,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.16.0] - 2018-03-17
 ### Added
 - Russian translations for interface
+- Ability to pause until morning
 
 ### Changed
 - upper limit of microbreak duration set to 60 seconds
