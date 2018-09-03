@@ -8,7 +8,7 @@
     "downloadLatestVersion": "Загрузить последнюю версию",
     "about": "О программе",
     "becomePatron": "Поддержать на Patreon",
-    "notificationStateMode": "On do not disturb mode",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "перерыву",
     "toMicrobreak": "микроперерыву",
     "skipToTheNext": "Перейти к ближайшему",
@@ -36,7 +36,7 @@
     "nextBreakFollowing_0": "\nСледующий перерыв через {{count}} микроперерыв",
     "nextBreakFollowing_1": "\nСледующий перерыв через {{count}} микроперерыва",
     "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов",
-    "notificationStatus": "\nIn do not disturb mode"
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...не, я просто продолжу",

@@ -8,7 +8,7 @@
     "downloadLatestVersion": "Baixar a versão mais recente",
     "about": "Sobre",
     "becomePatron": "Apoie o aplicativo",
-    "notificationStateMode": "On do not disturb mode",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "pausa",
     "toMicrobreak": "micropausa",
     "skipToTheNext": "Avançar para a próxima",
@@ -35,7 +35,7 @@
     "break": "pausa",
     "nextBreakFollowing": "\nPróxima pausa longa após {{count}} micropausa",
     "nextBreakFollowing_plural": "\nPróxima pausa longa após {{count}} micropausas",
-    "notificationStatus": "\nIn do not disturb mode"
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",

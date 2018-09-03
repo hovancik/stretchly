@@ -8,7 +8,7 @@
     "downloadLatestVersion": "Изтегли последната версия",
     "about": "Относно",
     "becomePatron": "Стани Patron",
-    "notificationStateMode": "On do not disturb mode",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "почивка",
     "toMicrobreak": "микропочивка",
     "skipToTheNext": "Прескочи към следващата",
@@ -35,7 +35,7 @@
     "break": "почивка",
     "nextBreakFollowing": "\nСледващата почивка ще бъде след {{count}} микропочивка",
     "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки",
-    "notificationStatus": "\nIn do not disturb mode"
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...Не!!! Ще продължа...",

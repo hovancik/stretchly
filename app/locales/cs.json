@@ -8,7 +8,7 @@
     "downloadLatestVersion": "Stáhnout nejnovější verzi",
     "about": "O stretchly",
     "becomePatron": "Stát se Patronem",
-    "notificationStateMode": "On do not disturb mode",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "přestávku",
     "toMicrobreak": "mikropřestávku",
     "skipToTheNext": "Přeskočit na další",
@@ -36,7 +36,7 @@
     "nextBreakFollowing_0": "\nDalší přestávka po {{count}} mikropřestávce",
     "nextBreakFollowing_1": "\nDalší přestávka po {{count}} mikropřestávkách",
     "nextBreakFollowing_2": "\nDalší přestávka po {{count}} mikropřestávkách",
-    "notificationStatus": "\nIn do not disturb mode"
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "…ne, chci pokračovat",

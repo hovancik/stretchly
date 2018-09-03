@@ -8,7 +8,7 @@
     "downloadLatestVersion": "Descarcă cea mai nouă versiune",
     "about": "Despre",
     "becomePatron": "Devin-o Patron",    
-    "notificationStateMode": "On do not disturb mode",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "pauză",
     "toMicrobreak": "micropauză",
     "skipToTheNext": "Sări la următoarea",
@@ -35,7 +35,7 @@
     "break": "pauză",
     "nextBreakFollowing": "\n Următoarea pauză după {{count}} mai multe micropauze",
     "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze",
-    "notificationStatus": "\nIn do not disturb mode"
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nah, Voi continua",
