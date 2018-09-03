@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Descarga la última versión",
     "about": "Acerca de",
     "becomePatron": "Hazte Patron",
+    "notificationStateMode": "En el modo No Molestar",
     "toBreak": "pausa",
     "toMicrobreak": "microdescanso",
     "skipToTheNext": "Saltar hasta el siguiente",
@@ -33,7 +34,8 @@
     "microbreak": "microdescanso",
     "break": "descanso",
     "nextBreakFollowing": "\nPróximo descanso después de {{count}} microdescanso",
-    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más"
+    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más",
+    "notificationStatus": "\nEn el modo No Molestar"
   },
   "break": {
     "keepGoing": "...bah, prefiero seguir",

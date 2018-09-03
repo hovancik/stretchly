@@ -9,6 +9,7 @@
     "downloadLatestVersion": "下载最新版本",
     "about": "关于",
     "becomePatron": "成为合作者",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "长时间休息",
     "toMicrobreak": "短时间休息",
     "skipToTheNext": "跳到下一次",
@@ -33,7 +34,8 @@
     "microbreak": "短时间休息",
     "break": "长时间休息",
     "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
-    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...额, 我还有事做",

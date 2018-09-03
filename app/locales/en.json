@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Download latest version",
     "about": "About",
     "becomePatron": "Become a Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "break",
     "toMicrobreak": "microbreak",
     "skipToTheNext": "Skip to the next",
@@ -33,7 +34,8 @@
     "microbreak": "microbreak",
     "break": "break",
     "nextBreakFollowing": "\nNext break following {{count}} more microbreak",
-    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks"
+    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nah, I'll just keep going on",

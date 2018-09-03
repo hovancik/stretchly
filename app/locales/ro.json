@@ -7,7 +7,8 @@
     "aboutStretchly": "Despre stretchly v{{version}}",
     "downloadLatestVersion": "Descarcă cea mai nouă versiune",
     "about": "Despre",
-    "becomePatron": "Devin-o Patron",
+    "becomePatron": "Devin-o Patron",    
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "pauză",
     "toMicrobreak": "micropauză",
     "skipToTheNext": "Sări la următoarea",
@@ -33,7 +34,8 @@
     "microbreak": "micropauză",
     "break": "pauză",
     "nextBreakFollowing": "\n Următoarea pauză după {{count}} mai multe micropauze",
-    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze"
+    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nah, Voi continua",
