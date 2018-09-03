@@ -149,16 +149,22 @@ function displaysY (displayID = -1, height = 600) {
 }
 
 function createTrayIcon () {
-  const iconFolder = `${__dirname}/images`
+  appIcon = new Tray(trayIconPath())
   if (process.platform === 'darwin') {
-    appIcon = new Tray(iconFolder + '/trayTemplate.png')
     app.dock.hide()
-  } else {
-    appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
   appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
   setInterval(updateToolTip, 10000)
+}
+
+function trayIconPath () {
+  const iconFolder = `${__dirname}/images`
+  if (settings.get('useMonochromeTrayIcon')) {
+    return `${iconFolder}/trayTemplate.png`
+  } else {
+    return `${iconFolder}/stretchly_18x18.png`
+  }
 }
 
 function startProcessWin () {
@@ -753,10 +759,12 @@ ipcMain.on('save-setting', function (event, key, value) {
   }
   settings.set(key, value)
   event.sender.send('renderSettings', settings.data)
+  appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
 })
 
 ipcMain.on('update-tray', function (event) {
+  appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
 })
 
@@ -770,6 +778,8 @@ ipcMain.on('set-default-settings', function (event, data) {
   dialog.showMessageBox(options, function (index) {
     if (index === 0) {
       saveDefaultsFor(data)
+      appIcon.setImage(trayIconPath())
+      appIcon.setContextMenu(getTrayMenu())
       settingsWin.webContents.send('renderSettings', settings.data)
     }
   })

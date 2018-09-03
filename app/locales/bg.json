@@ -96,6 +96,7 @@
     "notifyBeforeMicrobreakStarts": "уведомяване преди започването на микропочивка",
     "monitorIdleTime": "следене на времето на системата за естествени почивки",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "език",
     "resetToDefaults": "нулиране към начални настройки"
   },

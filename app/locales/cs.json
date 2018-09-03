@@ -97,6 +97,7 @@
     "notifyBeforeMicrobreakStarts": "zobrazit upozornění před mikropřestávkami",
     "monitorIdleTime": "monitorovat neaktivní čas pro přirozené přestávky",
     "showOnAllScreens": "přestávky na každé obrazovce",
+    "useMonochromeTrayIcon": "použít monochromatickou ikonu",
     "language": "jazyk",
     "resetToDefaults": "obnovit výchozí nastavení"
   },
