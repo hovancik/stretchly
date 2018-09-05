@@ -11,7 +11,6 @@ const Utils = require('./utils/utils')
 const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
-const { db } = require('./database');
 const { UntilMorning } = require('./utils/untilMorning')
 
 let microbreakIdeas
@@ -34,7 +33,11 @@ global.shared = {
   isNewVersion: false
 }
 
-const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {})
+let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
+  if (appIcon) {
+    // Someone tried to run a second instance
+  }
+})
 
 if (shouldQuit) {
   console.log('stretchly is already running.')
@@ -150,7 +153,6 @@ function createTrayIcon () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-
   appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
   setInterval(updateToolTip, 10000)
@@ -374,31 +376,38 @@ function startBreak () {
   updateToolTip()
 }
 
-function breakComplete (shouldPlaySound, windows) {
+function finishMicrobreak (shouldPlaySound = true) {
   globalShortcut.unregister('CommandOrControl+X')
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  if (windows) {
+  if (microbreakWins) {
     if (process.platform === 'darwin') {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    closeWindows(windows)
+    closeWindows(microbreakWins)
+    microbreakWins = null
     breakPlanner.nextBreak()
   }
-  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
-function finishMicrobreak (shouldPlaySound = true) {
-  breakComplete(shouldPlaySound, microbreakWins)
-  microbreakWins = null
-}
-
 function finishBreak (shouldPlaySound = true) {
-  breakComplete(shouldPlaySound, breakWins)
-  breakWins = null
+  globalShortcut.unregister('CommandOrControl+X')
+  if (shouldPlaySound) {
+    processWin.webContents.send('playSound', settings.get('audio'))
+  }
+  if (breakWins) {
+    if (process.platform === 'darwin') {
+      // get focus on the last app
+      Menu.sendActionToFirstResponder('hide:')
+    }
+    closeWindows(breakWins)
+    breakWins = null
+    breakPlanner.nextBreak()
+  }
+  updateToolTip()
 }
 
 function loadSettings () {
@@ -451,7 +460,6 @@ function resumeBreaks () {
   updateToolTip()
 }
 
-
 function showAboutWindow () {
   if (aboutWin) {
     aboutWin.show()
@@ -501,23 +509,12 @@ function saveDefaultsFor (array, next) {
 
 function getTrayMenu () {
   let trayMenu = []
-  let timeLeft = breakPlanner.scheduler.timeLeft
-  let reference = typeOfBreak()
-  let hours = new Date(Date.now() + timeLeft).getHours()
-  let minutes = new Date(Date.now() + timeLeft).getMinutes()
-  minutes = String(minutes).padStart(2, '0')
   if (global.shared.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {
         shell.openExternal('https://github.com/hovancik/stretchly/releases')
       }
-    })
-  }
-
-  if (timeLeft) {
-    trayMenu.push({
-      label: i18next.t('main.breakAt', { 'hours': hours, 'minutes': minutes, 'reference': reference.breakType })
     })
   }
 
@@ -702,44 +699,50 @@ function updateToolTip () {
           statusMessage += i18next.t('main.pausedIndefinitely')
         }
       } else {
-        notificationTime = 0
-      }
-
-      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
-      if (type.breakType === 'microbreak') {
-        let breakInterval = settings.get('breakInterval') + 1
-        let breakNumber = breakPlanner.breakNumber % breakInterval
-        statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
+        let breakType
+        let breakNotification = false
+        switch (breakPlanner.scheduler.reference) {
+          case 'startMicrobreak': {
+            breakType = 'microbreak'
+            break
+          }
+          case 'startBreak': {
+            breakType = 'break'
+            break
+          }
+          case 'startMicrobreakNotification': {
+            breakType = 'microbreak'
+            breakNotification = true
+            break
+          }
+          case 'startBreakNotification': {
+            breakType = 'break'
+            breakNotification = true
+            break
+          }
+          default: {
+            breakType = null
+            break
+          }
+        }
+        if (breakType) {
+          let notificationTime
+          if (breakNotification) {
+            notificationTime = settings.get('breakNotificationInterval')
+          } else {
+            notificationTime = 0
+          }
+          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`)})
+          if (breakType === 'microbreak') {
+            let breakInterval = settings.get('breakInterval') + 1
+            let breakNumber = breakPlanner.breakNumber % breakInterval
+            statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
+          }
+        }
       }
     }
     appIcon.setToolTip(toolTipHeader + statusMessage)
   }
-}
-
-function typeOfBreak () {
-  let breakType = ''
-  let breakNotification = false
-  switch (breakPlanner.scheduler.reference) {
-    case 'startMicrobreak': {
-      breakType = 'microbreak'
-      break
-    }
-    case 'startBreak': {
-      breakType = 'break'
-      break
-    }
-    case 'startMicrobreakNotification': {
-      breakType = 'microbreak'
-      breakNotification = true
-      break
-    }
-    case 'startBreakNotification': {
-      breakType = 'break'
-      breakNotification = true
-      break
-    }
-  }
-  return {breakType, breakNotification}
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
@@ -802,14 +805,4 @@ ipcMain.on('change-language', function (event, language) {
 
 ipcMain.on('open-tutorial', function (event) {
   createTutorialWindow()
-})
-
-ipcMain.on('stats-window-loaded', () => {
-  console.log("LOADED!")
-  const result = db.select('id').from('breaks')
-  console.log(result)
-  result.then((rows) => {
-      console.log('result sent!', rows)
-      settingsWin.webContents.send('resultSent', rows)
-  })
 })

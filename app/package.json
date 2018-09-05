@@ -20,11 +20,8 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
-    "@meetfranz/electron-notification-state": "^1.0.0",
     "@paulcbetts/system-idle-time": "^1.0.4",
     "i18next": "^11.2.3",
-    "i18next-node-fs-backend": "^1.0.0",
-    "moment": "^2.22.2"
-  },
-  "devDependencies": {}
+    "i18next-node-fs-backend": "^1.0.0"
+  }
 }

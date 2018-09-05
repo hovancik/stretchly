@@ -118,9 +118,6 @@
       "fetch",
       "Notification",
       "alert"
-    ],
-    "ignore": [
-      "sun.js"
     ]
   },
   "dependencies": {
@@ -129,7 +126,7 @@
     "i18next": "^11.2.3",
     "i18next-node-fs-backend": "^1.0.0",
     "knex": "^0.15.2",
-    "sqlite3": "^4.0.2",
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "sqlite3": "^4.0.2"
   }
 }
