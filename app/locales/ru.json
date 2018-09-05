@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Загрузить последнюю версию",
     "about": "О программе",
     "becomePatron": "Поддержать на Patreon",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "перерыву",
     "toMicrobreak": "микроперерыву",
     "skipToTheNext": "Перейти к ближайшему",
@@ -34,7 +35,8 @@
     "break": "перерыва",
     "nextBreakFollowing_0": "\nСледующий перерыв через {{count}} микроперерыв",
     "nextBreakFollowing_1": "\nСледующий перерыв через {{count}} микроперерыва",
-    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов"
+    "nextBreakFollowing_2": "\nСледующий перерыв через {{count}} микроперерывов",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...не, я просто продолжу",
@@ -95,6 +97,7 @@
     "notifyBeforeMicrobreakStarts": "уведомлять перед началом микроперерыва",
     "monitorIdleTime": "считать бездействие за естественный перерыв",
     "showOnAllScreens": "отображать на всех экранах",
+    "useMonochromeTrayIcon": "использовать черно-белой значок",
     "language": "язык",
     "resetToDefaults": "настройки по умолчанию"
   },

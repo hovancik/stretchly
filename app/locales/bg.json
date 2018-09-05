@@ -8,6 +8,7 @@
     "downloadLatestVersion": "Изтегли последната версия",
     "about": "Относно",
     "becomePatron": "Стани Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "почивка",
     "toMicrobreak": "микропочивка",
     "skipToTheNext": "Прескочи към следващата",
@@ -33,7 +34,8 @@
     "microbreak": "микропочивка",
     "break": "почивка",
     "nextBreakFollowing": "\nСледващата почивка ще бъде след {{count}} микропочивка",
-    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки"
+    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...Не!!! Ще продължа...",
@@ -94,6 +96,7 @@
     "notifyBeforeMicrobreakStarts": "уведомяване преди започването на микропочивка",
     "monitorIdleTime": "следене на времето на системата за естествени почивки",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "език",
     "resetToDefaults": "нулиране към начални настройки"
   },

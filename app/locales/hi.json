@@ -8,6 +8,7 @@
     "downloadLatestVersion": "नया वर्शन डाउनलोड करें",
     "about": "stretchly-की जानकारी ",
     "becomePatron": "पैट्रन बनें",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "ब्रेक",
     "toMicrobreak": "छोटा ब्रेक",
     "skipToTheNext": "ये छोड़ के अगले ब्रेक पे जाए",
@@ -33,7 +34,8 @@
     "microbreak": "छोटा ब्रेक",
     "break": "ब्रेक",
     "nextBreakFollowing": "\nअगला ब्रेक {{count}} छोटे ब्रेक के बाद है",
-    "nextBreakFollowing_plural": "\nअगला ब्रेक {{count}} छोटे ब्रेक्स के बाद है"
+    "nextBreakFollowing_plural": "\nअगला ब्रेक {{count}} छोटे ब्रेक्स के बाद है",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...नहीं, मुझे ब्रेक नहीं चाहिए",
@@ -94,6 +96,7 @@
     "notifyBeforeMicrobreakStarts": "छोटे ब्रेक से पहले सूचित करें",
     "monitorIdleTime": "प्राकृतिक ब्रेक के लिए सिस्टम निष्क्रिय समय की निगरानी करें",
     "showOnAllScreens": "ब्रेक्स हर मॉनिटर पर दिखाए जाएंगे",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "भाषा",
     "resetToDefaults": "डिफ़ॉल्ट पर पुनः सेट करें"
   },

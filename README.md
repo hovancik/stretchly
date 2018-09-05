@@ -53,6 +53,7 @@ Microbreaks and breaks can be customized:
 - you can disable showing of break and microbreak notifications
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 - you can disable showing breaks on all of your monitors
+- you can change default monochrome tray icon to colorful
 - you can choose language for interface
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
