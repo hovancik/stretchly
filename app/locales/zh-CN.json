@@ -10,6 +10,7 @@
     "downloadLatestVersion": "下载最新版本",
     "about": "关于",
     "becomePatron": "成为合作者",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "长时间休息",
     "toMicrobreak": "短时间休息",
     "skipToTheNext": "跳到下一次",
@@ -18,6 +19,7 @@
     "forHour": "1小时",
     "for2Hours": "2小时",
     "for5Hours": "5小时",
+    "untilMorning": "until morning",
     "indefinitely": "无限期",
     "resetBreaks": "重置休息",
     "startAtLogin": "开机自动运行",
@@ -33,7 +35,8 @@
     "microbreak": "短时间休息",
     "break": "长时间休息",
     "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
-    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...额, 我还有事做",
@@ -93,6 +96,7 @@
     "notifyBeforeMicrobreakStarts": "在短时间休息前提醒",
     "monitorIdleTime": "监控系统空闲时间的自然休息时间",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "语言",
     "resetToDefaults": "重置为默认值"
   },

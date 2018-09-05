@@ -9,6 +9,7 @@
     "downloadLatestVersion": "Stiahnuť najnovšiu verziu",
     "about": "O stretchly",
     "becomePatron": "Stať sa Patrónom",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "prestávku",
     "toMicrobreak": "mikroprestávku",
     "skipToTheNext": "Preskočiť na ďalšiu",
@@ -17,6 +18,7 @@
     "forHour": "na hodinu",
     "for2Hours": "na 2 hodiny",
     "for5Hours": "na 5 hodín",
+    "untilMorning": "do rána",
     "indefinitely": "na neurčito",
     "resetBreaks": "Resetovať prestávky",
     "settings": "Nastavenia",
@@ -34,7 +36,8 @@
     "break": "prestávky",
     "nextBreakFollowing_0": "\nĎalšia prestávka po {{count}} mikroprestávke",
     "nextBreakFollowing_1": "\nĎalšia prestávka po {{count}} mikroprestávkach",
-    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach"
+    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nie, chcem pokračovať",
@@ -95,6 +98,7 @@
     "notifyBeforeMicrobreakStarts": "ukázať notifikáciu pred mikroprestávkami",
     "monitorIdleTime": "monitorovať neaktívny čas pre prirodzené prestávky",
     "showOnAllScreens": "prestávky na každej obrazovke",
+    "useMonochromeTrayIcon": "použiť monochromatickú ikonu",
     "language": "jazyk",
     "resetToDefaults": "obnoviť pôvodné nastavenia"
   },

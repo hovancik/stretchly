@@ -39,6 +39,8 @@ let formatPauseTimeLeft = function (milliseconds) {
   return timeString
 }
 
-module.exports.formatRemaining = formatRemaining
-module.exports.formatTillBreak = formatTillBreak
-module.exports.formatPauseTimeLeft = formatPauseTimeLeft
+module.exports = {
+  formatRemaining,
+  formatTillBreak,
+  formatPauseTimeLeft
+}

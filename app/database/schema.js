@@ -5,6 +5,9 @@ const db = new sqlite.Database('stretchly.sqlite', (err) => {
     }
 })
 
+
+
+
 db.serialize(() => {
     db.run('CREATE TABLE breaks(total_count INT, total_time INT)')
         .run('INSERT INTO breaks()')

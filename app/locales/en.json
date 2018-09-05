@@ -9,6 +9,7 @@
     "downloadLatestVersion": "Download latest version",
     "about": "About",
     "becomePatron": "Become a Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "break",
     "toMicrobreak": "microbreak",
     "skipToTheNext": "Skip to the next",
@@ -17,6 +18,7 @@
     "forHour": "for an hour",
     "for2Hours": "for 2 hours",
     "for5Hours": "for 5 hours",
+    "untilMorning": "until morning",
     "indefinitely": "indefinitely",
     "resetBreaks": "Reset breaks",
     "settings": "Settings",
@@ -33,7 +35,8 @@
     "microbreak": "microbreak",
     "break": "break",
     "nextBreakFollowing": "\nNext break following {{count}} more microbreak",
-    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks"
+    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nah, I'll just keep going on",
@@ -94,6 +97,7 @@
     "notifyBeforeMicrobreakStarts": "notify before microbreak starts",
     "monitorIdleTime": "monitor system idle time for natural breaks",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "language",
     "resetToDefaults": "reset to defaults"
   },

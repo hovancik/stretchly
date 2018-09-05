@@ -31,11 +31,9 @@
         <input type="checkbox" value="allScreens" class="enable">
         <span data-i18next="settings3.showOnAllScreens"></span>
       </div>
-      <div class="previous">
-        <a href="settings2.html" title="more settings">&lsaquo;</a>
-      </div>
-      <div id="defaults" class="pointer">
-        <span data-i18next="settings3.resetToDefaults"></span>
+      <div class="enabled">
+        <input type="checkbox" value="useMonochromeTrayIcon" class="enable">
+        <span data-i18next="settings3.useMonochromeTrayIcon"></span>
       </div>
       <h2 data-i18next="settings3.language"></h2>
       <div class="">
@@ -62,6 +60,11 @@
     </div>
     <div class="next">
       <a href="stats.html" title="stats">&rsaquo;</a>
+    <div class="previous">
+      <a href="settings2.html" title="more settings">&lsaquo;</a>
+    </div>
+    <div id="defaults" class="pointer">
+      <span data-i18next="settings3.resetToDefaults"></span>
     </div>
     <script>
       require('./settings3.js')

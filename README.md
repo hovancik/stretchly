@@ -53,6 +53,7 @@ Microbreaks and breaks can be customized:
 - you can disable showing of break and microbreak notifications
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 - you can disable showing breaks on all of your monitors
+- you can change default monochrome tray icon to colorful
 - you can choose language for interface
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
@@ -74,6 +75,16 @@ In config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: 
 
 #### Editing break/microbreak notification interval
 In config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for microbreak.
+
+#### Editing sunrise time to pause breaks until morning
+In config file you can set morningHour setting to pause until that hour this or next day
+Otherwise, you can set `morningHour`: "sunrise" and set `posLatitude`, `posLongitude` in
+settings to pause until actual sunrise in your area. 
+Ex. if you live in Boston you would set:
+`morningHour`: "sunrise",
+`posLatitude`: 42.3, 
+`posLongitude`: 71
+
 
 #### New version notification
 In config file, set `notifyNewVersion: false,` to disable showing of new version's notification.
@@ -110,6 +121,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
 - notifications not working on the latest Win 10 ([electron/electron#10864](https://github.com/electron/electron/issues/10864))
+- tray icon is not rendered correctly on linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
 ### TODOs and Ideas
 - [x] tests
@@ -161,6 +173,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 - p-bo, @p-bo
 - Alina Leuca, @alinaleuca
 - Sabine van der Eijk, @Sabin_E
+- JavaScript Joe, [@jsjoeio](https://github.com/jsjoeio)
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns

@@ -9,6 +9,7 @@
     "downloadLatestVersion": "下載最新版本",
     "about": "關於",
     "becomePatron": "到 Patron 成為合作者",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "長時間休息",
     "toMicrobreak": "小休息",
     "skipToTheNext": "跳到下一次",
@@ -17,6 +18,7 @@
     "forHour": "1 小時",
     "for2Hours": "2 小時",
     "for5Hours": "5 小時",
+    "untilMorning": "until morning",
     "indefinitely": "無限期",
     "resetBreaks": "重置休息",
     "settings": "設定",
@@ -33,7 +35,8 @@
     "microbreak": "小休息",
     "break": "長時間休息",
     "nextBreakFollowing": "\n下次長時間休息在 {{count}} 次小休息後",
-    "nextBreakFollowing_plural": "\n下次長時間休息 {{count}} 次小休息後"
+    "nextBreakFollowing_plural": "\n下次長時間休息 {{count}} 次小休息後",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "... 阿, 我還有事情要做",
@@ -93,6 +96,7 @@
     "notifyBeforeMicrobreakStarts": "在小休息前跳出通知",
     "monitorIdleTime": "監控系統空閒時間，納入休息時間",
     "showOnAllScreens": "在每個螢幕上顯示休息畫面 （如果有多螢幕）",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "語言",
     "resetToDefaults": "恢復預設值"
   },

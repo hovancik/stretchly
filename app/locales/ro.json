@@ -8,7 +8,8 @@
     "aboutStretchly": "Despre stretchly v{{version}}",
     "downloadLatestVersion": "Descarcă cea mai nouă versiune",
     "about": "Despre",
-    "becomePatron": "Devin-o Patron",
+    "becomePatron": "Devin-o Patron",    
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "pauză",
     "toMicrobreak": "micropauză",
     "skipToTheNext": "Sări la următoarea",
@@ -17,6 +18,7 @@
     "forHour": "pentru o oră",
     "for2Hours": "pentru 2 ore",
     "for5Hours": "pentru 5 ore",
+    "untilMorning": "pânā dimineaţa",
     "indefinitely": "nelimitat",
     "resetBreaks": "Resetează pauzele",
     "settings": "Setări",
@@ -33,7 +35,8 @@
     "microbreak": "micropauză",
     "break": "pauză",
     "nextBreakFollowing": "\n Următoarea pauză după {{count}} mai multe micropauze",
-    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze"
+    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "keepGoing": "...nah, Voi continua",
@@ -94,6 +97,7 @@
     "notifyBeforeMicrobreakStarts": "notifică-mă înainte de micropauză",
     "monitorIdleTime": "monitorizează neutilizarea sistemului pentru pauze naturale",
     "showOnAllScreens": "pauzele sunt afișate pe toate monitoarele",
+    "useMonochromeTrayIcon": "utilizează imaginea monocromă",
     "language": "limbă",
     "resetToDefaults": "resetează la valorile implicite"
   },
