@@ -53,26 +53,44 @@
 
 const chai = require('chai')
 const { formatTimeOfNextBreak } = require('../app/utils/utils')
+const moment = require('moment')
+moment().format()
 
 chai.should()
 
 describe('Time Until Next Break', () => {
   // stubbing date
-  beforeEach(() => {
-    this.fn = Date.now()
+  before(() => {
+    this.fn = Date.now
     Date.now = function () {
       // 1995-08-17T02:02:00.000Z
-      return new Date(819162120000).getTime()
+      return 819162120000
     }
   })
 
-  it('formatTimeOfNextBreak() should load the right formatted time of the next break', () => {
-    const time = 300000
-    const timeOffset = new Date(819162120000).getTimezoneOffset() / 60
-    formatTimeOfNextBreak(time).should.deep.equal([3 + timeOffset, '07'])
+  describe('formatTimeOfNextBreak()', () => {
+    it('is correct (padded start of minutes)', () => {
+      const timeLeft = 300000
+      const offset = moment(819162120000).utcOffset() / 60
+      formatTimeOfNextBreak(timeLeft).should.deep.equal([String(3 - offset), '07'])
+    })
+  
+    it('is correct (no padding)', () => {
+      const timeLeft = 600000
+      const offset = moment(819162120000).utcOffset() / 60
+      formatTimeOfNextBreak(timeLeft).should.deep.equal([String(3 - offset), '12'])
+    })
+  
+    it('is correct (rollover to next hour)', () => {
+      const timeLeft = 3600000
+      const offset = moment(819162120000).utcOffset() / 60
+      formatTimeOfNextBreak(timeLeft).should.deep.equal([String(4 - offset), '02'])
+    })
   })
 
-  afterEach(() => {
+
+
+  after(() => {
     // restore Date.now functionality globally
     Date.now = this.fn
   })

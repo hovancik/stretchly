@@ -1,4 +1,6 @@
 const i18next = require('i18next')
+const moment = require('moment')
+moment().format()
 
 const formatRemaining = function (seconds) {
   if (seconds < 60) {
@@ -37,10 +39,11 @@ const formatPauseTimeLeft = function (milliseconds) {
   return timeString
 }
 
-function formatTimeOfNextBreak (time) {
-  let hours = new Date(Date.now() + time).getHours()
-  let minutes = new Date(Date.now() + time).getMinutes()
-  minutes = String(minutes).padStart(2, '0')
+function formatTimeOfNextBreak (timeLeft) {
+  const date = moment.utc(Date.now() + timeLeft).local()
+  const hours = String(date.hours())
+  const minutes = String(date.minutes()).padStart(2, '0')
+
   return [hours, minutes]
 }
 
