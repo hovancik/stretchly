@@ -10,6 +10,7 @@
     "downloadLatestVersion": "Neuste Version herunterladen",
     "about": "Über",
     "becomePatron": "Werde ein Patron",
+    "notificationStateMode": "Im nicht stören Modus",
     "toBreak": "Pause",
     "toMicrobreak": "Mikropause",
     "skipToTheNext": "Springe zur nächsten",
@@ -35,7 +36,8 @@
     "microbreak": "Mikropause",
     "break": "Pause",
     "nextBreakFollowing": "\nDer nächsten Pause folgt {{count}} weitere Mikropause",
-    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen"
+    "nextBreakFollowing_plural": "\nDer nächsten Pause folgen {{count}} weitere Mikropausen",
+    "notificationStatus": "\nIm nicht stören Modus"
   },
   "break": {
     "keepGoing": "... nein, ich werde weitermachen",
@@ -96,6 +98,7 @@
     "notifyBeforeMicrobreakStarts": "Benachrichtigen, bevor die Mikropause beginnt",
     "monitorIdleTime": "System-Leerlaufzeit für natürliche Pausen überwachen",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "Verwenden das einfarbige Tray-icon",
     "language": "Sprache",
     "resetToDefaults": "Auf Standardeinstellung zurücksetzen"
   },

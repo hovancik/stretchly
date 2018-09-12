@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Welcome and Tutorial windows on first run and in About window
 - Dutch translations for interface
 - Tray menu displays the time and type of next break
+- DND functionality for Mac & Windows users preventing breaks from happening while in Do Not Disturb mode.
+- user can change the default monochrome tray icon to colorful
 
 ### Fixed
 - User pause will no longer be removed upon suspend/resume
@@ -20,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Czech translations updated
 - Slovak translations updated
+- default tray icon is monochrome
 
 ## [0.17.0] - 2018-05-06
 ### Added

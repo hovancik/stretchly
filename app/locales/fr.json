@@ -10,6 +10,7 @@
     "downloadLatestVersion": "Télécharger la dernière version",
     "about": "À propos",
     "becomePatron": "Soutenir l'application",
+    "notificationStateMode": "En mode ne pas troubler",
     "toBreak": "grande pause suivante",
     "toMicrobreak": "petite pause suivante",
     "skipToTheNext": "Passer à la",
@@ -35,7 +36,8 @@
     "microbreak": "petite pause",
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
-    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites"
+    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
+    "notificationStatus": "\nEn mode ne pas troubler"
   },
   "break": {
     "keepGoing": "...non, je vais continuer sans pause",
@@ -96,6 +98,7 @@
     "notifyBeforeMicrobreakStarts": "notification juste avant une petite pause",
     "monitorIdleTime": "suivre les périodes d'inactivité pour des pauses plus naturelles",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "useMonochromeTrayIcon": "utiliser icône monochrome",
     "language": "langue",
     "resetToDefaults": "revenir aux paramètres d'origine"
   },

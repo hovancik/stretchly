@@ -10,6 +10,7 @@
     "downloadLatestVersion": "Descarga la última versión",
     "about": "Acerca de",
     "becomePatron": "Hazte Patron",
+    "notificationStateMode": "En el modo No Molestar",
     "toBreak": "pausa",
     "toMicrobreak": "microdescanso",
     "skipToTheNext": "Saltar hasta el siguiente",
@@ -35,7 +36,8 @@
     "microbreak": "microdescanso",
     "break": "descanso",
     "nextBreakFollowing": "\nPróximo descanso después de {{count}} microdescanso",
-    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más"
+    "nextBreakFollowing_plural": "\nPróximo descanso después de {{count}} microdescansos más",
+    "notificationStatus": "\nEn el modo No Molestar"
   },
   "break": {
     "keepGoing": "...bah, prefiero seguir",
@@ -96,6 +98,7 @@
     "notifyBeforeMicrobreakStarts": "Avisar antes de empezar el microdescanso",
     "monitorIdleTime": "monitorizar las pausas del equipo para hacer descansos naturales",
     "showOnAllScreens": "los descansos se muestran en todos los monitores",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "idioma",
     "resetToDefaults": "volver a las opciones por defecto"
   },
