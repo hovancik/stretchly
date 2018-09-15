@@ -23,8 +23,8 @@
         ipc.send('stats-window-loaded')
         ipc.on('resultSent', (event, result) => {
           let resultElement = document.getElementById('result')
-          console.log(result)
-          resultElement.innerHTML = result[0].id
+          console.log('this is the result',result)
+          resultElement.innerHTML = result.length
         })
       })
     </script>

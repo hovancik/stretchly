@@ -12,6 +12,9 @@ const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
 const { UntilMorning } = require('./utils/untilMorning')
+const schema = require('./database/schema')
+const db = require('./database/index')
+
 
 let microbreakIdeas
 let breakIdeas
@@ -29,6 +32,8 @@ let pausedForSuspend = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
+
+schema.run()
 global.shared = {
   isNewVersion: false
 }
@@ -391,6 +396,7 @@ function finishMicrobreak (shouldPlaySound = true) {
     breakPlanner.nextBreak()
   }
   updateToolTip()
+  db.microbreaks.insertEnd(Date.now())
 }
 
 function finishBreak (shouldPlaySound = true) {
@@ -806,3 +812,21 @@ ipcMain.on('change-language', function (event, language) {
 ipcMain.on('open-tutorial', function (event) {
   createTutorialWindow()
 })
+
+ipcMain.on('stats-window-loaded', () => {
+  console.log("LOADED!")
+  db.microbreaks.find()
+    .then((rows) => {
+      const rowType = rows.map((row) => row.type)
+      settingsWin.webContents.send('resultSent', rowType)
+      console.log('result sent', rowType)
+    })
+    .catch((err) => {
+      console.log("ERROR IN MAIN:", err)
+    })
+})
+
+
+module.exports = {
+  loadSettings
+}

@@ -21,6 +21,7 @@
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
     "@paulcbetts/system-idle-time": "^1.0.4",
+    "es6-promise": "^4.2.5",
     "i18next": "^11.2.3",
     "i18next-node-fs-backend": "^1.0.0"
   }

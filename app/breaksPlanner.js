@@ -1,6 +1,8 @@
 const Scheduler = require('./utils/scheduler')
 const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
+const db = require('./database/index')
+
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -15,12 +17,14 @@ class BreaksPlanner extends EventEmitter {
       let interval = this.settings.get('microbreakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound), interval, 'finishMicrobreak')
       this.scheduler.plan()
+      db.microbreaks.insertBeginning(Date.now())
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('breakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval, 'finishBreak')
       this.scheduler.plan()
+      //query database to add break
     })
 
     this.naturalBreaksManager.on('clearBreakScheduler', () => {
@@ -32,6 +36,7 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager.on('naturalBreakFinished', (idleTime) => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
+        //query database to add natural break
       }
     })
   }
