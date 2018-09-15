@@ -7,7 +7,7 @@
     "node": "8.9.3"
   },
   "scripts": {
-    "start": "electron ./app",
+    "start": "electromon ./app",
     "dev": "NODE_ENV='development' electron ./app --enable-logging --remote-debugging-port=9222",
     "postinstall": "electron-builder install-app-deps",
     "pack-all": "build --dir -mwl --x64 --ia32",
@@ -38,6 +38,7 @@
     "babel-eslint": "^8.2.3",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "electromon": "^1.0.10",
     "electron": "^2.0.0",
     "electron-builder": "^20.11.1",
     "mocha": "^5.2.0",
