@@ -7,8 +7,9 @@
     "node": "8.9.3"
   },
   "scripts": {
-    "start": "electromon ./app",
+    "start": "electron ./app",
     "dev": "NODE_ENV='development' electron ./app --enable-logging --remote-debugging-port=9222",
+    "electromon": "electromon ./app",
     "postinstall": "electron-builder install-app-deps",
     "pack-all": "build --dir -mwl --x64 --ia32",
     "dist-all": "build -mwl --x64 --ia32",
