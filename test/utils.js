@@ -54,44 +54,45 @@
 const chai = require('chai')
 const { formatTimeOfNextBreak } = require('../app/utils/utils')
 const moment = require('moment')
-moment().format()
+const sinon = require('sinon')
 
+moment().format()
 chai.should()
 
 describe('Time Until Next Break', () => {
   // stubbing date
   before(() => {
-    this.fn = Date.now
-    Date.now = function () {
-      // 1995-08-17T02:02:00.000Z
-      return 819162120000
-    }
+    this.sandbox = sinon.createSandbox()
+    this.sandbox.stub(Date, 'now').returns(1537347700000)
+  })
+
+  after(() => {
+    this.sandbox.restore()
   })
 
   describe('formatTimeOfNextBreak()', () => {
-    it('is correct (padded start of minutes)', () => {
-      const timeLeft = 300000
-      const offset = moment(819162120000).utcOffset() / 60
-      formatTimeOfNextBreak(timeLeft).should.deep.equal([String(3 - offset), '07'])
-    })
-  
-    it('is correct (no padding)', () => {
-      const timeLeft = 600000
-      const offset = moment(819162120000).utcOffset() / 60
-      formatTimeOfNextBreak(timeLeft).should.deep.equal([String(3 - offset), '12'])
-    })
-  
-    it('is correct (rollover to next hour)', () => {
-      const timeLeft = 3600000
-      const offset = moment(819162120000).utcOffset() / 60
-      formatTimeOfNextBreak(timeLeft).should.deep.equal([String(4 - offset), '02'])
-    })
-  })
+    this.offset = moment(Date.now()).utcOffset() / 60
+    /* EXAMPLE SCENARIOS
+      Date.now() => 1537347700000 (2018-09-19 @ 09:01:40)
 
+      With timeLeft = 0 milliseconds:
+        AMSTERDAM (2 hour time difference)
+        formatTimeOfNextBreak(0) => 11:01:40 => = ['11', '01']
 
+        THESSALONIKI (3 hour time difference)
+        formatTimeOfNextBreak(0) => 12:01:40 => ['12', '01']
+    */
 
-  after(() => {
-    // restore Date.now functionality globally
-    Date.now = this.fn
+    it('5 min (minutes are padded)', () => {
+      formatTimeOfNextBreak(300000).should.deep.equal([String(9 + this.offset), '06'])
+    })
+
+    it('10 minutes (no padding)', () => {
+      formatTimeOfNextBreak(600000).should.deep.equal([String(9 + this.offset), '11'])
+    })
+
+    it('60 minutes (rollover to next hour)', () => {
+      formatTimeOfNextBreak(3600000).should.deep.equal([String(10 + this.offset), '01'])
+    })
   })
 })

@@ -688,7 +688,7 @@ function getTrayMenu () {
   return Menu.buildFromTemplate(trayMenu)
 }
 
-function updateToolTip() {
+function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
   let toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
@@ -714,7 +714,7 @@ function updateToolTip() {
       if (type.breakNotification) {
         notificationTime = settings.get('breakNotificationInterval')
       } else {
-        let statusMessage = ''
+        statusMessage = ''
         if (notificationState.getDoNotDisturb()) {
           statusMessage += i18next.t('main.notificationStatus')
         } else if (breakPlanner && breakPlanner.scheduler) {
