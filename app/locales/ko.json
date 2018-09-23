@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "stretchly - 쉬는 시간 알리미",
+    "toolTipHeader": "stretchly - 쉬는 시간 알리미!",
     "microbreakIn": "{{seconds}}초 뒤에 잠깐 쉬는 시간이 시작되요...",
     "breakIn": "{{seconds}}초 뒤에 휴식 시간이 시작되요...",
     "resumingBreaks": "쉬는 시간 마저 시작",
