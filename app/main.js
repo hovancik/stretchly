@@ -699,16 +699,14 @@ function updateToolTip () {
   let statusMessage = ''
   if (breakPlanner && breakPlanner.scheduler) {
     if (breakPlanner.isPaused) {
-      let timeLeft = breakPlanner.scheduler.timeLeft
+      const timeLeft = breakPlanner.scheduler.timeLeft
       if (timeLeft) {
         statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
-        return
       }
       statusMessage += i18next.t('main.pausedIndefinitely')
-      return
     }
 
-    let type = typeOfBreak()
+    const type = typeOfBreak()
     if (type.breakType) {
       let notificationTime
       if (type.breakNotification) {
@@ -719,7 +717,7 @@ function updateToolTip () {
           statusMessage += i18next.t('main.notificationStatus')
         } else if (breakPlanner && breakPlanner.scheduler) {
           if (breakPlanner.isPaused) {
-            let timeLeft = breakPlanner.scheduler.timeLeft
+            const timeLeft = breakPlanner.scheduler.timeLeft
             if (timeLeft) {
               statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
             } else {
@@ -731,8 +729,8 @@ function updateToolTip () {
 
           statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
           if (type.breakType === 'microbreak') {
-            let breakInterval = settings.get('breakInterval') + 1
-            let breakNumber = breakPlanner.breakNumber % breakInterval
+            const breakInterval = settings.get('breakInterval') + 1
+            const breakNumber = breakPlanner.breakNumber % breakInterval
             statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
           }
         }
@@ -762,6 +760,10 @@ function typeOfBreak () {
     case 'startBreakNotification': {
       breakType = 'break'
       breakNotification = true
+      break
+    }
+    default : {
+      breakType = null
       break
     }
   }
