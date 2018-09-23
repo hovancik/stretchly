@@ -679,66 +679,57 @@ function getTrayMenu () {
   }, {
     type: 'separator'
   }, {
-    label: i18next.t('main.quitStretchly'),
-    click: function () {
-      app.quit()
-    }
-  })
+      label: i18next.t('main.quitStretchly'),
+      click: function () {
+        app.quit()
+      }
+    })
 
   return Menu.buildFromTemplate(trayMenu)
 }
 
-function updateToolTip () {
+function updateToolTip() {
   // TODO this needs to be refactored, was moved here to be able to use i18next
-  let toolTipHeader = i18next.t('main.toolTipHeader')
+  const toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
+    console.log('Have windows!')
     appIcon.setToolTip(toolTipHeader)
     return
   }
 
   let statusMessage = ''
   if (breakPlanner && breakPlanner.scheduler) {
+    const type = typeOfBreak()
+    let notificationTime
     if (breakPlanner.isPaused) {
       const timeLeft = breakPlanner.scheduler.timeLeft
       if (timeLeft) {
         statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
+      } else {
+        statusMessage += i18next.t('main.pausedIndefinitely')
       }
-      statusMessage += i18next.t('main.pausedIndefinitely')
     }
 
-    const type = typeOfBreak()
     if (type.breakType) {
-      let notificationTime
-      if (type.breakNotification) {
-        notificationTime = settings.get('breakNotificationInterval')
-      } else {
-        statusMessage = ''
-        if (notificationState.getDoNotDisturb()) {
-          statusMessage += i18next.t('main.notificationStatus')
-        } else if (breakPlanner && breakPlanner.scheduler) {
-          if (breakPlanner.isPaused) {
-            const timeLeft = breakPlanner.scheduler.timeLeft
-            if (timeLeft) {
-              statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
-            } else {
-              statusMessage += i18next.t('main.pausedIndefinitely')
-            }
-          } else {
-            notificationTime = 0
-          }
-
-          statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
-          if (type.breakType === 'microbreak') {
-            const breakInterval = settings.get('breakInterval') + 1
-            const breakNumber = breakPlanner.breakNumber % breakInterval
-            statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
-          }
-        }
-        appIcon.setToolTip(toolTipHeader + statusMessage)
+      notificationTime = 0
+      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
+      if (type.breakType === 'microbreak') {
+        const breakInterval = settings.get('breakInterval') + 1
+        const breakNumber = breakPlanner.breakNumber % breakInterval
+        statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
       }
     }
   }
+
+  if (notificationState.getDoNotDisturb()) {
+    statusMessage = i18next.t('main.notificationStatus')
+  }
+  
+  appIcon.setToolTip(toolTipHeader + statusMessage)
 }
+
+
+
 
 function typeOfBreak () {
   let breakType = ''
