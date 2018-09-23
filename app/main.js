@@ -679,16 +679,16 @@ function getTrayMenu () {
   }, {
     type: 'separator'
   }, {
-      label: i18next.t('main.quitStretchly'),
-      click: function () {
-        app.quit()
-      }
-    })
+    label: i18next.t('main.quitStretchly'),
+    click: function () {
+      app.quit()
+    }
+  })
 
   return Menu.buildFromTemplate(trayMenu)
 }
 
-function updateToolTip() {
+function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
   const toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
@@ -724,12 +724,9 @@ function updateToolTip() {
   if (notificationState.getDoNotDisturb()) {
     statusMessage = i18next.t('main.notificationStatus')
   }
-  
+
   appIcon.setToolTip(toolTipHeader + statusMessage)
 }
-
-
-
 
 function typeOfBreak () {
   let breakType = ''
