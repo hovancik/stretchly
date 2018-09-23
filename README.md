@@ -79,10 +79,10 @@ In the config file, change `breakNotificationInterval: 30000,` to whatever value
 #### Editing sunrise time to pause breaks until morning
 In the config file you can set the `morningHour` setting to pause until that hour this or next day
 Otherwise, you can set `morningHour: "sunrise"` and set `posLatitude`, `posLongitude` in
-settings to pause until the actual sunrise in your area. 
+settings to pause until the actual sunrise in your area.
 E.g. if you live in Boston you would set:
 `morningHour: "sunrise",`
-`posLatitude: 42.3,` 
+`posLatitude: 42.3,`
 `posLongitude: 71`
 
 
@@ -93,7 +93,9 @@ In the config file, set `notifyNewVersion: false,` to disable new version notifi
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).
 
-On macOS you can install *stretchly* by running `brew update && brew cask install stretchly`
+On macOS you can install *stretchly* by running `brew update && brew cask install stretchly`.
+
+On Windows, you can install *stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
 
 You can create an installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
