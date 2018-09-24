@@ -112,6 +112,8 @@
     "globals": [
       "it",
       "describe",
+      "before",
+      "after",
       "beforeEach",
       "afterEach",
       "Audio",
