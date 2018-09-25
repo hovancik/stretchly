@@ -1,7 +1,7 @@
 const { connect } = require('./connection')
-var Promise = require('es6-promise').Promise;
+let Promise = require('es6-promise').Promise;
 
-function insertBeginning(startDate) {
+function insertBeginningMicrobreak(startDate) {
     console.log('Inserting beginning!')
 
     const db = connect()
@@ -16,9 +16,7 @@ function insertBeginning(startDate) {
     })
 }
 
-//add cleanup function to add incomplete break if app quits unexpectedly -- use in main on startup
-
-function insertEnd(endDate) {
+function insertEndMicrobreak(endDate) {
     console.log('Inserting ending!')
 
     const db = connect()
@@ -43,25 +41,23 @@ function insertEnd(endDate) {
 
                 console.log(dataRow)
             })
-
-
         })
     })
 
-
 }
 
-function find() {
+function findMicrobreaks() {
     return new Promise((resolve, reject) => {
         const db = connect()
         // find only type=microbreaks
-        db.all('SELECT * FROM breaks WHERE type IS NOT NULL', [], (err, rows) => {
+        db.all('SELECT * FROM breaks WHERE type=(?)', ['microbreak'], (err, rows) => {
+
             if (err) {
                 reject(err);
                 return
             }
 
-            console.log('find rows', rows)
+            console.log('result of findMicrobreaks()', rows)
 
             resolve(rows)
         });
@@ -84,9 +80,9 @@ function find() {
 
 module.exports = {
     // read,
-    insertBeginning,
-    find,
-    insertEnd
+    insertBeginningMicrobreak,
+    findMicrobreaks,
+    insertEndMicrobreak
     // insertEnd,
     // count,
 }

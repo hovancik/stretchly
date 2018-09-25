@@ -18,13 +18,12 @@
     <script>
       const electron = require('electron')
       const ipc = electron.ipcRenderer
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', (event) => {
         console.log('hello')
         ipc.send('stats-window-loaded')
-        ipc.on('resultSent', (event, result) => {
+        ipc.on('resultSent', (event, data) => {
           let resultElement = document.getElementById('result')
-          console.log('this is the result',result)
-          resultElement.innerHTML = result.length
+          resultElement.innerHTML = data[0] + data[1] + data[2]
         })
       })
     </script>

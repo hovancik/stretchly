@@ -17,14 +17,15 @@ class BreaksPlanner extends EventEmitter {
       let interval = this.settings.get('microbreakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound), interval, 'finishMicrobreak')
       this.scheduler.plan()
-      db.microbreaks.insertBeginning(Date.now())
+      db.microbreaks.insertBeginningMicrobreak(Date.now())
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('breakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval, 'finishBreak')
-      this.scheduler.plan()
+    this.scheduler.plan()
       //query database to add break
+      db.breaks.insertBeginningBreak(Date.now())
     })
 
     this.naturalBreaksManager.on('clearBreakScheduler', () => {

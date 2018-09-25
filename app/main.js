@@ -15,6 +15,7 @@ const { UntilMorning } = require('./utils/untilMorning')
 const schema = require('./database/schema')
 const db = require('./database/index')
 
+db.cleanupDatabase()
 
 let microbreakIdeas
 let breakIdeas
@@ -167,9 +168,8 @@ function trayIconPath () {
   const iconFolder = `${__dirname}/images`
   if (settings.get('useMonochromeTrayIcon')) {
     return `${iconFolder}/trayTemplate.png`
-  } else {
-    return `${iconFolder}/stretchly_18x18.png`
-  }
+  } 
+  return `${iconFolder}/stretchly_18x18.png`
 }
 
 function startProcessWin () {
@@ -396,7 +396,7 @@ function finishMicrobreak (shouldPlaySound = true) {
     breakPlanner.nextBreak()
   }
   updateToolTip()
-  db.microbreaks.insertEnd(Date.now())
+  db.microbreaks.insertEndMicrobreak(Date.now())
 }
 
 function finishBreak (shouldPlaySound = true) {
@@ -414,6 +414,7 @@ function finishBreak (shouldPlaySound = true) {
     breakPlanner.nextBreak()
   }
   updateToolTip()
+  db.breaks.insertEndBreak(Date.now())
 }
 
 function loadSettings () {
@@ -814,15 +815,27 @@ ipcMain.on('open-tutorial', function (event) {
 })
 
 ipcMain.on('stats-window-loaded', () => {
-  console.log("LOADED!")
-  db.microbreaks.find()
-    .then((rows) => {
-      const rowType = rows.map((row) => row.type)
-      settingsWin.webContents.send('resultSent', rowType)
-      console.log('result sent', rowType)
+  console.log('LOADED!')
+  Promise.all([
+    db.microbreaks.findMicrobreaks(),
+    db.breaks.findBreaks(), 
+    db.breaks.calculateBreakTime()
+  ])
+    .then(([microbreaks, breaks, breaksTime]) => {
+      const microbreaksCount = microbreaks.length
+      const breaksCount = breaks.length
+      console.log('sending info over to ipc renderer', microbreaksCount, breaksCount, breaksTime)
+      return [microbreaksCount, breaksCount, breaksTime]
+    })
+    .then((data) => {
+      console.log('this is data',data)
+      settingsWin.webContents.send('resultSent', data)
+    })
+    .then(() => {
+      console.log('result sent!')
     })
     .catch((err) => {
-      console.log("ERROR IN MAIN:", err)
+      console.log('ERROR IN MAIN:', err)
     })
 })
 
