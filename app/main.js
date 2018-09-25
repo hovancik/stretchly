@@ -33,7 +33,6 @@ let pausedForSuspend = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
-
 schema.run()
 global.shared = {
   isNewVersion: false
@@ -168,7 +167,7 @@ function trayIconPath () {
   const iconFolder = `${__dirname}/images`
   if (settings.get('useMonochromeTrayIcon')) {
     return `${iconFolder}/trayTemplate.png`
-  } 
+  }
   return `${iconFolder}/stretchly_18x18.png`
 }
 
@@ -818,18 +817,18 @@ ipcMain.on('stats-window-loaded', () => {
   console.log('LOADED!')
   Promise.all([
     db.microbreaks.findMicrobreaks(),
-    db.breaks.findBreaks(), 
+    db.breaks.findBreaks(),
     db.microbreaks.calculateMicrobreaksTime(),
-    db.breaks.calculateBreakTime() 
+    db.breaks.calculateBreakTime()
   ])
     .then(([microbreaks, breaks, microbreaksTime, breaksTime]) => {
       const microbreaksCount = microbreaks.length
       const breaksCount = breaks.length
       console.log('sending info over to ipc renderer', microbreaksCount, breaksCount, microbreaksTime, breaksTime)
-      return [microbreaksCount, breaksCount, microbreaksTime, breaksTime ]
+      return [microbreaksCount, breaksCount, microbreaksTime, breaksTime]
     })
     .then((data) => {
-      console.log('this is data',data)
+      console.log('this is data', data)
       settingsWin.webContents.send('resultSent', data)
     })
     .then(() => {
@@ -839,7 +838,6 @@ ipcMain.on('stats-window-loaded', () => {
       console.log('ERROR IN MAIN:', err)
     })
 })
-
 
 module.exports = {
   loadSettings
