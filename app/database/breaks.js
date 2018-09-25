@@ -50,15 +50,12 @@ function insertEndBreak(endDate) {
 
 function calculateBreakTime() {
     return new Promise((resolve, reject) => {
-        console.log('calculating total break time!')
         const db = connect()
 
         db.all('SELECT * FROM breaks WHERE type=(?)', ['break'], (err, rows) => {
-            console.log('HERE ARE THE ROWS', rows)
             let totalDuration = 0
             let duration = 0
 
-            console.log('getting all breaks with type break')
             if (err) {
                 reject(err)
                 return
@@ -70,8 +67,7 @@ function calculateBreakTime() {
                 totalDuration += duration
             })
 
-            console.log('result of calculateBreakTime()', totalDuration)
-            resolve(totalDuration) 
+            resolve(Math.round(totalDuration / 1000 / 60 * 100) / 100) 
         })
     })
 }

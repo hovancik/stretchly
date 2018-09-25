@@ -819,13 +819,14 @@ ipcMain.on('stats-window-loaded', () => {
   Promise.all([
     db.microbreaks.findMicrobreaks(),
     db.breaks.findBreaks(), 
-    db.breaks.calculateBreakTime()
+    db.microbreaks.calculateMicrobreaksTime(),
+    db.breaks.calculateBreakTime() 
   ])
-    .then(([microbreaks, breaks, breaksTime]) => {
+    .then(([microbreaks, breaks, microbreaksTime, breaksTime]) => {
       const microbreaksCount = microbreaks.length
       const breaksCount = breaks.length
-      console.log('sending info over to ipc renderer', microbreaksCount, breaksCount, breaksTime)
-      return [microbreaksCount, breaksCount, breaksTime]
+      console.log('sending info over to ipc renderer', microbreaksCount, breaksCount, microbreaksTime, breaksTime)
+      return [microbreaksCount, breaksCount, microbreaksTime, breaksTime ]
     })
     .then((data) => {
       console.log('this is data',data)

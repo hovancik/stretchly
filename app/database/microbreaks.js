@@ -46,6 +46,30 @@ function insertEndMicrobreak(endDate) {
 
 }
 
+function calculateMicrobreaksTime() {
+    return new Promise((resolve, reject) => {
+        const db = connect()
+
+        db.all('SELECT * FROM breaks WHERE type=(?)', ['microbreak'], (err, rows) => {
+            let totalDuration = 0
+            let duration = 0
+
+            if (err) {
+                reject(err)
+                return
+            }
+
+
+            rows.forEach((row) => {
+                duration = row.finished_at - row.started_at
+                totalDuration += duration
+            })
+
+            resolve(Math.round(totalDuration / 1000 / 60 * 100) / 100) 
+        })
+    })
+}
+
 function findMicrobreaks() {
     return new Promise((resolve, reject) => {
         const db = connect()
@@ -82,7 +106,8 @@ module.exports = {
     // read,
     insertBeginningMicrobreak,
     findMicrobreaks,
-    insertEndMicrobreak
+    insertEndMicrobreak,
+    calculateMicrobreaksTime
     // insertEnd,
     // count,
 }
