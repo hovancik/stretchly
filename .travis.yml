@@ -9,14 +9,16 @@ node_js: "8.9.3"
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq update && sudo apt-get install -q libxss-dev; fi
-  - npm install
-  - npm run rebuild
 
 before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0 && sh -e /etc/init.d/xvfb start && sleep 3; fi
 
+install:
+  - npm i
+  - npm i -g istanbul
+  - npm run rebuild
+
 script:
-  - npm install -g istanbul
   - istanbul cover ./node_modules/mocha/bin/_mocha
 
 notifications:
