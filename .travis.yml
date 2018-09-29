@@ -9,6 +9,7 @@ node_js: "8.9.3"
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq update && sudo apt-get install -q libxss-dev; fi
+  - npm install
   - npm run rebuild
 
 before_script:
