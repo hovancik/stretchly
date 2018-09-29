@@ -814,7 +814,6 @@ ipcMain.on('open-tutorial', function (event) {
 })
 
 ipcMain.on('stats-window-loaded', () => {
-  console.log('LOADED!')
   Promise.all([
     db.microbreaks.findMicrobreaks(),
     db.breaks.findBreaks(),
@@ -824,15 +823,10 @@ ipcMain.on('stats-window-loaded', () => {
     .then(([microbreaks, breaks, microbreaksTime, breaksTime]) => {
       const microbreaksCount = microbreaks.length
       const breaksCount = breaks.length
-      console.log('sending info over to ipc renderer', microbreaksCount, breaksCount, microbreaksTime, breaksTime)
-      return [microbreaksCount, breaksCount, microbreaksTime, breaksTime]
+      return { microbreaksCount, breaksCount, microbreaksTime, breaksTime }
     })
     .then((data) => {
-      console.log('this is data', data)
       settingsWin.webContents.send('resultSent', data)
-    })
-    .then(() => {
-      console.log('result sent!')
     })
     .catch((err) => {
       console.log('ERROR IN MAIN:', err)

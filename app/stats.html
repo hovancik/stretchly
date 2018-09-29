@@ -18,8 +18,7 @@
     <script>
       const electron = require('electron')
       const ipc = electron.ipcRenderer
-      document.addEventListener('DOMContentLoaded', (event) => {
-        console.log('hello')
+      document.addEventListener('DOMContentLoaded', () => {
         ipc.send('stats-window-loaded')
         ipc.on('resultSent', (event, data) => {
           let microBreakCountElement = document.getElementById('microbreak-count')
@@ -27,10 +26,10 @@
           let microBreakTimeElement = document.getElementById('microbreak-time')
           let breakTimeElement = document.getElementById('break-time')
 
-          microBreakCountElement.innerHTML = 'Total count of microbreaks taken: ' + data[0]
-          breakCountElement.innerHTML = 'Total count of breaks taken: ' + data[1]
-          microBreakTimeElement.innerHTML = 'Total time of microbreaks taken: ' + data[2] + ' minutes'
-          breakTimeElement.innerHTML = 'Total time of breaks taken: ' + data[3] + ' minutes'
+          microBreakCountElement.innerHTML = 'Total count of microbreaks taken: ' + data.microbreaksCount
+          breakCountElement.innerHTML = 'Total count of breaks taken: ' + data.breaksCount
+          microBreakTimeElement.innerHTML = 'Total time of microbreaks taken: ' + data.microbreaksTime + ' minutes'
+          breakTimeElement.innerHTML = 'Total time of breaks taken: ' + data.breaksTime + ' minutes'
 
         })
       })
