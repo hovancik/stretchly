@@ -92,6 +92,8 @@ function startPowerMonitoring () {
     if (pausedForSuspend) {
       pausedForSuspend = false
       resumeBreaks()
+      updateToolTip()
+      appIcon.setContextMenu(getTrayMenu())
     } else if (breakPlanner.isPaused) {
       // corrrect the planner for the time spent in suspend
       breakPlanner.correctScheduler()
@@ -120,10 +122,10 @@ function displaysX (displayID = -1, width = 800) {
     console.log('warning: invalid displayID to displaysX')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
-    let screens = electron.screen.getAllDisplays()
+    const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  let bounds = theScreen.bounds
+  const bounds = theScreen.bounds
   return Math.ceil(bounds.x + ((bounds.width - width) / 2))
 }
 
@@ -137,10 +139,10 @@ function displaysY (displayID = -1, height = 600) {
     console.log('warning: invalid displayID to displaysY')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
-    let screens = electron.screen.getAllDisplays()
+    const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  let bounds = theScreen.bounds
+  const bounds = theScreen.bounds
   return Math.ceil(bounds.y + ((bounds.height - height) / 2))
 }
 
@@ -280,7 +282,7 @@ function startMicrobreak () {
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let microbreakWinLocal = new BrowserWindow({
+    const microbreakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
@@ -340,7 +342,7 @@ function startBreak () {
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let breakWinLocal = new BrowserWindow({
+    const breakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
@@ -492,17 +494,17 @@ function showSettingsWindow () {
 }
 
 function saveDefaultsFor (array, next) {
-  for (let index in array) {
+  for (const index in array) {
     settings.set(array[index], defaultSettings[array[index]])
   }
 }
 
 function getTrayMenu () {
-  let trayMenu = []
-  let timeLeft = breakPlanner.scheduler.timeLeft
-  let isPaused = breakPlanner.isPaused
-  let reference = typeOfBreak()
-  let nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
+  const trayMenu = []
+  const timeLeft = breakPlanner.scheduler.timeLeft
+  const isPaused = breakPlanner.isPaused
+  const reference = typeOfBreak()
+  const nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
 
   if (global.shared.isNewVersion) {
     trayMenu.push({
@@ -656,8 +658,8 @@ function getTrayMenu () {
   })
 
   if (process.platform === 'darwin' || process.platform === 'win32') {
-    let loginItemSettings = app.getLoginItemSettings()
-    let openAtLogin = loginItemSettings.openAtLogin
+    const loginItemSettings = app.getLoginItemSettings()
+    const openAtLogin = loginItemSettings.openAtLogin
     trayMenu.push({
       label: i18next.t('main.startAtLogin'),
       type: 'checkbox',
@@ -673,7 +675,7 @@ function getTrayMenu () {
   }, {
     label: i18next.t('main.yourStretchly'),
     click: function () {
-      let color = settings.get('mainColor').replace('#', '')
+      const color = settings.get('mainColor').replace('#', '')
       shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
     }
   }, {
@@ -777,6 +779,7 @@ ipcMain.on('save-setting', function (event, key, value) {
 })
 
 ipcMain.on('update-tray', function (event) {
+  updateToolTip()
   appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
 })
@@ -803,9 +806,9 @@ ipcMain.on('send-settings', function (event) {
 })
 
 ipcMain.on('show-debug', function (event) {
-  let reference = breakPlanner.scheduler.reference
-  let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
-  let doNotDisturb = notificationState.getDoNotDisturb()
+  const reference = breakPlanner.scheduler.reference
+  const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)

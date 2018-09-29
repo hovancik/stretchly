@@ -35,7 +35,7 @@ class NaturalBreaksManager extends EventEmitter {
   _checkIdleTime () {
     let lastIdleTime = 0
     this.timer = setInterval(() => {
-      let idleTime = this.idleTime
+      const idleTime = this.idleTime
       if (!this.isOnNaturalBreak && idleTime > 20000) {
         this.isOnNaturalBreak = true
       }
