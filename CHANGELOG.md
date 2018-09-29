@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dutch translations for interface
 - DND functionality for Mac & Windows users preventing breaks from happening while in Do Not Disturb mode.
 - user can change the default monochrome tray icon to colorful
+- database integration with stats window in stretchly settings
+  - displays number of breaks taken
+  - displays number of microbreaks taken
+  - displays total time of breaks
+  - displays total time of microbreaks
 
 ## [0.17.0] - 2018-08-11
 - Tray menu displays the time and type of next break
