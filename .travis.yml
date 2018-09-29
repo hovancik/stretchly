@@ -14,8 +14,8 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0 && sh -e /etc/init.d/xvfb start && sleep 3; fi
 
 install:
-  - npm i
-  - npm i -g istanbul
+  - npm install
+  - npm install -g istanbul
   - npm run rebuild
 
 script:
