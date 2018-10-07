@@ -263,6 +263,7 @@ function startMicrobreak () {
     console.log('in natural break')
     return
   }
+
   // don't start another break if break running
   if (microbreakWins) {
     console.log('microbreak already running')
@@ -762,6 +763,11 @@ function typeOfBreak () {
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
   finishMicrobreak(shouldPlaySound)
+})
+
+ipcMain.on('updateToolTip', function (event) {
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 })
 
 ipcMain.on('finish-break', function (event, shouldPlaySound) {

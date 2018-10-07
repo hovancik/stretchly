@@ -1,6 +1,8 @@
 const Scheduler = require('./utils/scheduler')
 const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
+const { ipcMain } = require('electron')
+
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -32,6 +34,7 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager.on('naturalBreakFinished', (idleTime) => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
+        ipcMain.emit('updateToolTip')
       }
     })
   }
