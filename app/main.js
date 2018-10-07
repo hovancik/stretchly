@@ -416,6 +416,10 @@ function loadSettings () {
   breakPlanner.on('startBreak', () => { startBreak() })
   breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
   breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
+  breakPlanner.on('updateToolTip', function () {
+    updateToolTip()
+    appIcon.setContextMenu(getTrayMenu())
+  })
   i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
 }
@@ -763,11 +767,6 @@ function typeOfBreak () {
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
   finishMicrobreak(shouldPlaySound)
-})
-
-ipcMain.on('updateToolTip', function (event) {
-  updateToolTip()
-  appIcon.setContextMenu(getTrayMenu())
 })
 
 ipcMain.on('finish-break', function (event, shouldPlaySound) {
