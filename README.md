@@ -101,7 +101,7 @@ You can create an installer by running `npm run pack` or `npm run dist` after `n
 
 ## Running from source
 
-To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply run `npm start` to start *stretchly*.
+To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and `npm run rebuild` and then simply run `npm start` to start *stretchly*.
 
 It should run on any electron supported platform. Tested on macOS, Windows and Ubuntu Linux.
 
