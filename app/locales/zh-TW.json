@@ -3,6 +3,8 @@
     "toolTipHeader": "stretchly - 休息提醒軟體",
     "microbreakIn": "小休息相隔 {{seconds}} 秒...",
     "breakIn": "長時間休息相隔 {{seconds}} 秒...",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "正在恢复休息",
     "aboutStretchly": "關於 stretchly v{{version}}",
     "downloadLatestVersion": "下載最新版本",

@@ -3,6 +3,8 @@
     "toolTipHeader": "stretchly - aplicația care-ți aduce aminte să iei o pauză",
     "microbreakIn": "Micropauză în {{seconds}} secunde...",
     "breakIn": "Pauză în {{seconds}} secunde...",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Reluarea pauzelor",
     "aboutStretchly": "Despre stretchly v{{version}}",
     "downloadLatestVersion": "Descarcă cea mai nouă versiune",

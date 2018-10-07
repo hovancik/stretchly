@@ -32,6 +32,7 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager.on('naturalBreakFinished', (idleTime) => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
+        this.emit('updateToolTip')
       }
     })
   }

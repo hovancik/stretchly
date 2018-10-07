@@ -1,27 +1,27 @@
 const i18next = require('i18next')
+const moment = require('moment')
+moment().format()
 
-let formatRemaining = function (seconds) {
+const formatRemaining = function (seconds) {
   if (seconds < 60) {
     return i18next.t('utils.secondsLeft', {count: seconds + 1})
-  } else {
-    return i18next.t('utils.minutesLeft', {count: Math.trunc((seconds / 60) + 1)})
   }
+  return i18next.t('utils.minutesLeft', {count: Math.trunc((seconds / 60) + 1)})
 }
 
-let formatTillBreak = function (milliseconds) {
-  let minutes = Math.round(milliseconds / 60000)
+const formatTillBreak = function (milliseconds) {
+  const minutes = Math.round(milliseconds / 60000)
   if (minutes < 1) {
-    let seconds = Math.round((milliseconds % 60000) / 5000) * 5
+    const seconds = Math.round((milliseconds % 60000) / 5000) * 5
     return i18next.t('utils.s', {seconds: seconds})
-  } else {
-    return i18next.t('utils.m', {minutes: minutes})
   }
+  return i18next.t('utils.m', {minutes: minutes})
 }
 
-let formatPauseTimeLeft = function (milliseconds) {
+const formatPauseTimeLeft = function (milliseconds) {
   let timeString = ''
   let hours = Math.floor(milliseconds / (1000 * 3600))
-  let remainder = (milliseconds - hours * 1000 * 3600)
+  const remainder = (milliseconds - hours * 1000 * 3600)
   let minutes = Math.floor(remainder / 60000)
   if (minutes >= 60) {
     minutes -= 60
@@ -39,8 +39,17 @@ let formatPauseTimeLeft = function (milliseconds) {
   return timeString
 }
 
+function formatTimeOfNextBreak (timeLeft) {
+  const date = moment.utc(Date.now() + timeLeft).local()
+  const hours = String(date.hours())
+  const minutes = String(date.minutes()).padStart(2, '0')
+
+  return [hours, minutes]
+}
+
 module.exports = {
   formatRemaining,
   formatTillBreak,
-  formatPauseTimeLeft
+  formatPauseTimeLeft,
+  formatTimeOfNextBreak
 }
