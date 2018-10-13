@@ -1,30 +1,16 @@
 @font-face {
-  font-family: 'Lato Hairline';
-  src: url('./fonts/Lato-Hairline.ttf') format('truetype'),
-       url('./fonts/Lato-Hairline.woff2') format('woff2'),
-       url('./fonts/Lato-Hairline.woff') format('woff'),
-       url('./fonts/Lato-Hairline.svg#latohairline') format('svg');
+  font-family: 'Lato Regular';
+  src: url('./fonts/Lato-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Lato Thin';
-  src: url('./fonts/Lato-Thin.ttf') format('truetype'),
-       url('./fonts/Lato-Thin.woff2') format('woff2'),
-       url('./fonts/Lato-Thin.woff') format('woff'),
-       url('./fonts/Lato-Thin.svg#latothin') format('svg');
-}
-
-@font-face {
-  font-family: 'Lato Light';
-  src: url('./fonts/Lato-Light.ttf') format('truetype'),
-       url('./fonts/Lato-Light.woff2') format('woff2'),
-       url('./fonts/Lato-Light.woff') format('woff'),
-       url('./fonts/Lato-Light.svg#latolight') format('svg');
+  font-family: 'Lato Bold';
+  src: url('./fonts/Lato-Bold.ttf') format('truetype');
 }
 
 body {
   color: #fff;
-  font-family: 'Lato Hairline';
+  font-family: 'Lato Regular';
   font-size: 28px;
   text-align: center;
   user-select: none;
@@ -123,7 +109,7 @@ a {
 
 a {
   color: #fff;
-  font-family: 'Lato Light'
+  font-family: 'Lato Bold'
 }
 
 #close,
@@ -132,7 +118,7 @@ a {
 #skip {
   bottom: 20px;
   color: #fff;
-  font-family: 'Lato Light';
+  font-family: 'Lato Bold';
   font-size: 18px;
   left: 50%;
   position: absolute;
@@ -161,7 +147,7 @@ progress {
 
 .about-stretchly,
 .welcome-stretchly {
-  font-family: 'Lato Thin';
+  font-family: 'Lato Regular';
   font-size: 18px;
   padding-top: 60px;
   text-decoration: none;
