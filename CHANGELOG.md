@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - User pause time will be corrected upon suspend/resume for the duration
   of system sleep
 - Style padding inserted for settings page 3
+- better font visibility across platforms
 
 ### Changed
 - Czech translations updated
