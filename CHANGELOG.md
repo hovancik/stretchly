@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   of system sleep
 - Style padding inserted for settings page 3
 - better font visibility across platforms
+- blocking of all workspaces on macOS
 
 ### Changed
 - Czech translations updated
