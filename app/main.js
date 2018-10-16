@@ -297,7 +297,7 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.show()
-      microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
+      microbreakWinLocal.setKiosk(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
@@ -357,7 +357,7 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.show()
-      breakWinLocal.setFullScreen(settings.get('fullscreen'))
+      breakWinLocal.setKiosk(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
