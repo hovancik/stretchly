@@ -4,6 +4,8 @@
     "microbreakIn": "Micropausa em {{seconds}} segundos...",
     "breakIn": "Pausa em {{seconds}} segundos...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
     "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "Sobre o stretchly v{{version}}",

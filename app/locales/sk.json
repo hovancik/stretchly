@@ -3,14 +3,16 @@
     "toolTipHeader": "stretchly - pamätá si prestávky za vás",
     "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd...",
     "breakIn": "Prestávka za {{seconds}} sekúnd...",
-    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
-    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
+    "breakAt": "Ďalšia {{reference}} o {{hours}}:{{minutes}}",
+    "breakReference": "prestávka",
+    "microbreakReference": "mikroprestávka",
+    "resumingAt": "Obnovenie prestávok {{hours}}:{{minutes}}",
     "resumingBreaks": "Obnovenie prestávok",
     "aboutStretchly": "O stretchly v{{version}}",
     "downloadLatestVersion": "Stiahnuť najnovšiu verziu",
     "about": "O stretchly",
     "becomePatron": "Stať sa Patrónom",
-    "notificationStateMode": "On Do Not Disturb mode",
+    "notificationStateMode": "V režime Nerušiť",
     "toBreak": "prestávku",
     "toMicrobreak": "mikroprestávku",
     "skipToTheNext": "Preskočiť na ďalšiu",
@@ -38,7 +40,7 @@
     "nextBreakFollowing_0": "\nĎalšia prestávka po {{count}} mikroprestávke",
     "nextBreakFollowing_1": "\nĎalšia prestávka po {{count}} mikroprestávkach",
     "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach",
-    "notificationStatus": "\nIn Do Not Disturb mode"
+    "notificationStatus": "\nV režime Nerušiť"
   },
   "break": {
     "keepGoing": "...nie, chcem pokračovať",
