@@ -5,26 +5,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.18.0] - 2018-10-21
 ### Added
 - Italian translations for interface
-- Welcome and Tutorial windows on first run and in About window
 - Dutch translations for interface
-- Tray menu displays the time and type of next break
-- DND functionality for Mac & Windows users preventing breaks from happening while in Do Not Disturb mode.
-- user can change the default monochrome tray icon to colorful
+- Welcome and Tutorial windows on first run and in About window
+- tray menu displays the time and type of next break
+- Do Not Disturb functionality for Mac & Windows (breaks wont happen while in DND mode)
+- ability can change the default monochrome tray icon to colorful
 
 ### Fixed
 - User pause will no longer be removed upon suspend/resume
 - User pause time will be corrected upon suspend/resume for the duration
   of system sleep
-- Style padding inserted for settings page 3
 - better font visibility across platforms
 - blocking of all workspaces on macOS
 
 ### Changed
 - Czech translations updated
 - Slovak translations updated
-- default tray icon is monochrome
+- default tray icon is now monochrome
 
 ## [0.17.0] - 2018-05-06
 ### Added
@@ -248,7 +249,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.17.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.18.0...HEAD
+[0.18.0]: https://github.com/hovancik/stretchly/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/hovancik/stretchly/compare/v0.16.0...v0.17.0
 [0.16.0]: https://github.com/hovancik/stretchly/compare/v0.15.0...v0.16.0
 [0.15.0]: https://github.com/hovancik/stretchly/compare/v0.14.0...v0.15.0

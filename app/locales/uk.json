@@ -4,6 +4,8 @@
     "microbreakIn": "Мікроперерва через {{seconds}} с ...",
     "breakIn": "Перерва через {{seconds}} с ...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
     "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Роботу відновлено",
     "aboutStretchly": "Про програму stretchly v {{version}}",

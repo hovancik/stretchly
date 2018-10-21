@@ -4,6 +4,8 @@
     "microbreakIn": "短休息间隔 {{seconds}} 秒...",
     "breakIn": "长时间休息间隔 {{seconds}} 秒...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
     "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "正在恢复休息",
     "aboutStretchly": "关于 stretchly v{{version}}",

@@ -527,7 +527,7 @@ function getTrayMenu () {
       })
     } else {
       trayMenu.push({
-        label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': reference.breakType })
+        label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': i18next.t(`main.${reference.breakType}Reference`) })
       })
     }
   }

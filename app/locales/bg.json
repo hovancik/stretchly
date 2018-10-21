@@ -4,6 +4,8 @@
     "microbreakIn": "Микропочивка след {{seconds}} секунди...",
     "breakIn": "Почивка след {{seconds}} секунди...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
     "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Продължи почивките",
     "aboutStretchly": "Относно stretchly v{{version}}",

@@ -4,6 +4,8 @@
     "microbreakIn": "Kleine pauze over {{seconds}} seconden...",
     "breakIn": "Pauze over {{seconds}} seconden...",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
     "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Pauzes hervatten",
     "aboutStretchly": "Over stretchly v{{version}}",
