@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - upper limit of microbreak duration set to 900 seconds (15 minutes)
 - Italian translations updated
+- Russian translations updated
 
 ### Added
 - Turkish translations
