@@ -1,78 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title data-i18next="settings.settings"></title>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
-  </head>
-  <body>
-    <div class="carousel my-carousel carousel--translate">
-      <input class="carousel__activator" type="radio" name="carousel" id="settings1" checked="checked" />
-      <input class="carousel__activator" type="radio" name="carousel" id="settings2" />
-      <input class="carousel__activator" type="radio" name="carousel" id="settings3" />
-      <div class="carousel__controls">
-          <label class="carousel__control carousel__control--backward" for="settings3"></label>
-          <label class="carousel__control carousel__control--forward" for="settings2"></label>
-      </div>
-      <div class="carousel__controls">
-          <label class="carousel__control carousel__control--backward" for="settings1"></label>
-          <label class="carousel__control carousel__control--forward" for="settings3"></label>
-      </div>
-      <div class="carousel__controls">
-          <label class="carousel__control carousel__control--backward" for="settings2"></label>
-          <label class="carousel__control carousel__control--forward" for="settings1"></label>
-      </div>
-      <div class="carousel__track">
 
-        <div class="settings1 carousel__slide">
-      <div class="settings">
-        <h2 data-i18next="settings.microbreaks"></h2>
-        <p>
-          <span id="microbreakDurationMinus" class="pointer">-</span>
-          <span id="microbreakDuration"></span>
-          <span id="microbreakDurationPlus" class="pointer">+</span>
-          <span data-i18next="settings.secondsEveryBreak"></span>
-          <span id="microbreakIntervalMinus" class="pointer">-</span>
-          <span id="microbreakInterval"></span>
-          <span id="microbreakIntervalPlus" class="pointer">+</span>
-          <span data-i18next="settings.minutes"></span>
-          <span class="strict">
-            <br/><span data-i18next="settings.dontLetMeSkipMicrobreaks"></span>
-            <input type="checkbox" value="microbreakStrictMode" class="enable">
-          </span>
-        </p>
-        <h2 data-i18next="settings.breaks"></h2>
-        <p>
-          <span id="breakDurationMinus" class="pointer">-</span>
-          <span id="breakDuration"></span>
-          <span id="breakDurationPlus" class="pointer">+</span>
-          <span data-i18next="settings.minutesBreakAfter"></span>
-          <span id="breakIntervalMinus" class="pointer">-</span>
-          <span id="breakInterval"></span>
-          <span id="breakIntervalPlus" class="pointer">+</span>
-          <span data-i18next="settings.microbreaks2"></span> <br/>
-          <small><span data-i18next="settings.(every"></span> <span id="realBreakInterval" ></span> <span data-i18next="settings.minutes)"></small>
-          <span class="strict">
-            <br/><span data-i18next="settings.dontLetMeSkipBreaks"></span>
-            <input type="checkbox" value="breakStrictMode" class="enable">
-          </span>
-        </p>
-        <div>
-          <div class="enabled">
-            <input type="checkbox" value="microbreak" class="enable enabletype">
-            <span data-i18next="settings.microbreaksEnabled">
-          </div>
-          <div class="enabled">
-            <input type="checkbox" value="break" class="enable enabletype">
-            <span data-i18next="settings.breaksEnabled">
-          </div>
-          <div id="defaults1" class="pointer">
-            <span data-i18next="settings.resetToDefaults"></span>
+<head>
+  <title data-i18next="settings.settings"></title>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+
+<body>
+  <div class="carousel my-carousel carousel--translate">
+    <input class="carousel__activator" type="radio" name="carousel" id="settings1" checked="checked" />
+    <input class="carousel__activator" type="radio" name="carousel" id="settings2" />
+    <input class="carousel__activator" type="radio" name="carousel" id="settings3" />
+    <div class="carousel__controls">
+      <label class="carousel__control carousel__control--backward" for="settings3"></label>
+      <label class="carousel__control carousel__control--forward" for="settings2"></label>
+    </div>
+    <div class="carousel__controls">
+      <label class="carousel__control carousel__control--backward" for="settings1"></label>
+      <label class="carousel__control carousel__control--forward" for="settings3"></label>
+    </div>
+    <div class="carousel__controls">
+      <label class="carousel__control carousel__control--backward" for="settings2"></label>
+      <label class="carousel__control carousel__control--forward" for="settings1"></label>
+    </div>
+    <div class="carousel__track">
+
+      <div class="settings1 carousel__slide">
+        <div class="settings">
+          <h2 data-i18next="settings.microbreaks"></h2>
+          <p>
+            <span id="microbreakDurationMinus" class="pointer">-</span>
+            <span id="microbreakDuration"></span>
+            <span id="microbreakDurationPlus" class="pointer">+</span>
+            <span data-i18next="settings.secondsEveryBreak"></span>
+            <span id="microbreakIntervalMinus" class="pointer">-</span>
+            <span id="microbreakInterval"></span>
+            <span id="microbreakIntervalPlus" class="pointer">+</span>
+            <span data-i18next="settings.minutes"></span>
+            <span class="strict">
+              <br /><span data-i18next="settings.dontLetMeSkipMicrobreaks"></span>
+              <input type="checkbox" value="microbreakStrictMode" class="enable">
+            </span>
+          </p>
+          <h2 data-i18next="settings.breaks"></h2>
+          <p>
+            <span id="breakDurationMinus" class="pointer">-</span>
+            <span id="breakDuration"></span>
+            <span id="breakDurationPlus" class="pointer">+</span>
+            <span data-i18next="settings.minutesBreakAfter"></span>
+            <span id="breakIntervalMinus" class="pointer">-</span>
+            <span id="breakInterval"></span>
+            <span id="breakIntervalPlus" class="pointer">+</span>
+            <span data-i18next="settings.microbreaks2"></span> <br />
+            <small><span data-i18next="settings.(every"></span> <span id="realBreakInterval"></span> <span data-i18next="settings.minutes)"></small>
+            <span class="strict">
+              <br /><span data-i18next="settings.dontLetMeSkipBreaks"></span>
+              <input type="checkbox" value="breakStrictMode" class="enable">
+            </span>
+          </p>
+          <div>
+            <div class="enabled">
+              <input type="checkbox" value="microbreak" class="enable enabletype">
+              <span data-i18next="settings.microbreaksEnabled">
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="break" class="enable enabletype">
+              <span data-i18next="settings.breaksEnabled">
+            </div>
+            <div id="defaults1" class="pointer">
+              <span data-i18next="settings.resetToDefaults"></span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="settings2 carousel__slide">
-      <div class="settings">
+      <div class="settings2 carousel__slide">
+        <div class="settings">
           <div class="micreobreak-audio">
             <h2 data-i18next="settings2.audioScheme"></h2>
             <div class="scheme">
@@ -120,76 +122,78 @@
             <span data-i18next="settings2.resetToDefaults"></span>
           </div>
         </div>
-    </div>
-    <div class="settings3 carousel__slide">
+      </div>
+      <div class="settings3 carousel__slide">
         <div class="settings">
-            <h2 data-i18next="settings3.miscellaneous"></h2>
-            <div class="enabled">
-              <input type="checkbox" value="fullscreen" class="enable">
-              <span data-i18next="settings3.breaksAreFullscreen"></span>
-            </div>
-            <div class="enabled">
-              <input type="checkbox" value="ideas" class="enable">
-              <span data-i18next="settings3.showBreakIdeas"></span>
-            </div>
-            <div class="enabled">
-              <input type="checkbox" value="breakNotification" class="enable">
-              <span data-i18next="settings3.notifyBeforeBreakStarts"></span>
-            </div>
-            <div class="enabled">
-              <input type="checkbox" value="microbreakNotification" class="enable">
-              <span data-i18next="settings3.notifyBeforeMicrobreakStarts"></span>
-            </div>
-            <div class="enabled">
-              <input type="checkbox" value="naturalBreaks" class="enable">
-              <span data-i18next="settings3.monitorIdleTime"></span>
-            </div>
-            <div class="enabled">
-              <input type="checkbox" value="allScreens" class="enable">
-              <span data-i18next="settings3.showOnAllScreens"></span>
-            </div>
-            <div class="enabled">
-              <input type="checkbox" value="useMonochromeTrayIcon" class="enable">
-              <span data-i18next="settings3.useMonochromeTrayIcon"></span>
-            </div>
-            <h2 data-i18next="settings3.language"></h2>
-            <div class="">
-              <select name="language" id="language">
-                <!--Keep languages in the alphabet order-->
-                <option value="bg">Български</option>
-                <option value="cs">Čeština</option>
-                <option value="de">Deutsch</option>
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="fr">Français</option>
-                <option value="hi">हिन्दी</option>
-                <option value="it">Italiano</option>
-                <option value="nl">Nederlands</option>
-                <option value="pt-BR">Português Brasileiro</option>
-                <option value="ro">Română</option>
-                <option value="ru">Русский</option>
-                <option value="sk">Slovenčina</option>
-                <option value="tr">Türkçe</option>
-                <option value="uk">Українська</option>
-                <option value="zh-CN">简体中文</option>
-                <option value="zh-TW">正體中文</option>
-              </select>
-            </div>
+          <h2 data-i18next="settings3.miscellaneous"></h2>
+          <div class="enabled">
+            <input type="checkbox" value="fullscreen" class="enable">
+            <span data-i18next="settings3.breaksAreFullscreen"></span>
           </div>
-          <div id="defaults3" class="pointer">
-            <span data-i18next="settings3.resetToDefaults"></span>
+          <div class="enabled">
+            <input type="checkbox" value="ideas" class="enable">
+            <span data-i18next="settings3.showBreakIdeas"></span>
           </div>
-    </div>
-      </div>
-      <div class="carousel__indicators">
-          <label class="carousel__indicator" for="settings1"></label>
-          <label class="carousel__indicator" for="settings2"></label>
-          <label class="carousel__indicator" for="settings3"></label>
+          <div class="enabled">
+            <input type="checkbox" value="breakNotification" class="enable">
+            <span data-i18next="settings3.notifyBeforeBreakStarts"></span>
+          </div>
+          <div class="enabled">
+            <input type="checkbox" value="microbreakNotification" class="enable">
+            <span data-i18next="settings3.notifyBeforeMicrobreakStarts"></span>
+          </div>
+          <div class="enabled">
+            <input type="checkbox" value="naturalBreaks" class="enable">
+            <span data-i18next="settings3.monitorIdleTime"></span>
+          </div>
+          <div class="enabled">
+            <input type="checkbox" value="allScreens" class="enable">
+            <span data-i18next="settings3.showOnAllScreens"></span>
+          </div>
+          <div class="enabled">
+            <input type="checkbox" value="useMonochromeTrayIcon" class="enable">
+            <span data-i18next="settings3.useMonochromeTrayIcon"></span>
+          </div>
+          <h2 data-i18next="settings3.language"></h2>
+          <div class="">
+            <select name="language" id="language">
+              <!--Keep languages in the alphabet order-->
+              <option value="bg">Български</option>
+              <option value="cs">Čeština</option>
+              <option value="de">Deutsch</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="hi">हिन्दी</option>
+              <option value="it">Italiano</option>
+              <option value="nl">Nederlands</option>
+              <option value="pt-BR">Português Brasileiro</option>
+              <option value="ro">Română</option>
+              <option value="ru">Русский</option>
+              <option value="sk">Slovenčina</option>
+              <option value="tr">Türkçe</option>
+              <option value="uk">Українська</option>
+              <option value="zh-CN">简体中文</option>
+              <option value="zh-TW">正體中文</option>
+            </select>
+          </div>
+        </div>
+        <div id="defaults3" class="pointer">
+          <span data-i18next="settings3.resetToDefaults"></span>
+        </div>
       </div>
     </div>
-    <script>
-      require('./platform.js')
-      require('./settings.js')
-    </script>
-  </body>
+    <div class="carousel__indicators">
+      <label class="carousel__indicator" for="settings1"></label>
+      <label class="carousel__indicator" for="settings2"></label>
+      <label class="carousel__indicator" for="settings3"></label>
+    </div>
+  </div>
+  <script>
+    require('./platform.js')
+    require('./settings.js')
+
+  </script>
+</body>
+
 </html>
