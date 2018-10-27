@@ -5,54 +5,162 @@
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
-    <div class="settings">
-      <h2 data-i18next="settings.microbreaks"></h2>
-      <p>
-        <span id="microbreakDurationMinus" class="pointer">-</span>
-        <span id="microbreakDuration"></span>
-        <span id="microbreakDurationPlus" class="pointer">+</span>
-        <span data-i18next="settings.secondsEveryBreak"></span>
-        <span id="microbreakIntervalMinus" class="pointer">-</span>
-        <span id="microbreakInterval"></span>
-        <span id="microbreakIntervalPlus" class="pointer">+</span>
-        <span data-i18next="settings.minutes"></span>
-        <span class="strict">
-          <br/><span data-i18next="settings.dontLetMeSkipMicrobreaks"></span>
-          <input type="checkbox" value="microbreakStrictMode" class="enable">
-        </span>
-      </p>
-      <h2 data-i18next="settings.breaks"></h2>
-      <p>
-        <span id="breakDurationMinus" class="pointer">-</span>
-        <span id="breakDuration"></span>
-        <span id="breakDurationPlus" class="pointer">+</span>
-        <span data-i18next="settings.minutesBreakAfter"></span>
-        <span id="breakIntervalMinus" class="pointer">-</span>
-        <span id="breakInterval"></span>
-        <span id="breakIntervalPlus" class="pointer">+</span>
-        <span data-i18next="settings.microbreaks2"></span> <br/>
-        <small><span data-i18next="settings.(every"></span> <span id="realBreakInterval" ></span> <span data-i18next="settings.minutes)"></small>
-        <span class="strict">
-          <br/><span data-i18next="settings.dontLetMeSkipBreaks"></span>
-          <input type="checkbox" value="breakStrictMode" class="enable">
-        </span>
-      </p>
-      <div>
-        <div class="enabled">
-          <input type="checkbox" value="microbreak" class="enable enabletype">
-          <span data-i18next="settings.microbreaksEnabled">
-        </div>
-        <div class="enabled">
-          <input type="checkbox" value="break" class="enable enabletype">
-          <span data-i18next="settings.breaksEnabled">
-        </div>
-        <div id="defaults" class="pointer">
-          <span data-i18next="settings.resetToDefaults"></span>
+    <div class="settings1">
+      <div class="settings">
+        <h2 data-i18next="settings.microbreaks"></h2>
+        <p>
+          <span id="microbreakDurationMinus" class="pointer">-</span>
+          <span id="microbreakDuration"></span>
+          <span id="microbreakDurationPlus" class="pointer">+</span>
+          <span data-i18next="settings.secondsEveryBreak"></span>
+          <span id="microbreakIntervalMinus" class="pointer">-</span>
+          <span id="microbreakInterval"></span>
+          <span id="microbreakIntervalPlus" class="pointer">+</span>
+          <span data-i18next="settings.minutes"></span>
+          <span class="strict">
+            <br/><span data-i18next="settings.dontLetMeSkipMicrobreaks"></span>
+            <input type="checkbox" value="microbreakStrictMode" class="enable">
+          </span>
+        </p>
+        <h2 data-i18next="settings.breaks"></h2>
+        <p>
+          <span id="breakDurationMinus" class="pointer">-</span>
+          <span id="breakDuration"></span>
+          <span id="breakDurationPlus" class="pointer">+</span>
+          <span data-i18next="settings.minutesBreakAfter"></span>
+          <span id="breakIntervalMinus" class="pointer">-</span>
+          <span id="breakInterval"></span>
+          <span id="breakIntervalPlus" class="pointer">+</span>
+          <span data-i18next="settings.microbreaks2"></span> <br/>
+          <small><span data-i18next="settings.(every"></span> <span id="realBreakInterval" ></span> <span data-i18next="settings.minutes)"></small>
+          <span class="strict">
+            <br/><span data-i18next="settings.dontLetMeSkipBreaks"></span>
+            <input type="checkbox" value="breakStrictMode" class="enable">
+          </span>
+        </p>
+        <div>
+          <div class="enabled">
+            <input type="checkbox" value="microbreak" class="enable enabletype">
+            <span data-i18next="settings.microbreaksEnabled">
+          </div>
+          <div class="enabled">
+            <input type="checkbox" value="break" class="enable enabletype">
+            <span data-i18next="settings.breaksEnabled">
+          </div>
+          <div id="defaults1" class="pointer">
+            <span data-i18next="settings.resetToDefaults"></span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="next">
-      <a href="settings2.html" title="more settings">&rsaquo;</a>
+    <div class="settings2">
+      <div class="settings">
+          <div class="micreobreak-audio">
+            <h2 data-i18next="settings2.audioScheme"></h2>
+            <div class="scheme">
+              <div class="audio pointer" data-audio="crystal-glass"></div>
+              <span data-i18next="settings2.crystalGlass"></span>
+            </div>
+            <div class="scheme">
+              <div class="audio pointer" data-audio="wind-chime"></div>
+              <span data-i18next="settings2.windChime"></span>
+            </div>
+            <div class="scheme">
+              <div class="audio pointer" data-audio="tic-toc"></div>
+              <span data-i18next="settings2.ticToc"></span>
+            </div>
+            <div class="scheme">
+              <div class="audio pointer" data-audio="silence"></div>
+              <span data-i18next="settings2.silence"></span>
+            </div>
+          </div>
+          <div class="color-scheme">
+            <h2 data-i18next="settings2.colorScheme"></h2>
+            <div class="scheme">
+              <div class="color pointer" data-color="#478484"></div>
+              <span data-i18next="settings2.greenClouds"></span>
+            </div>
+            <div class="scheme">
+              <div class="color pointer" data-color="#633738"></div>
+              <span data-i18next="settings2.autumnBeBlessed"></span>
+            </div>
+            <div class="scheme">
+              <div class="color pointer" data-color="#1D1F21"></div>
+              <span data-i18next="settings2.graphiteCrystal"></span>
+
+            </div>
+            <div class="scheme">
+              <div class="color pointer" data-color="#A49898"></div>
+              <span data-i18next="settings2.coffeeKisses"></span>
+            </div>
+            <div class="scheme">
+              <div class="color pointer" data-color="#567890"></div>
+              <span data-i18next="settings2.morningSwim"></span>
+            </div>
+          </div>
+          <div id="defaults2" class="pointer">
+            <span data-i18next="settings2.resetToDefaults"></span>
+          </div>
+        </div>
+    </div>
+    <div class="settings3">
+        <div class="settings">
+            <h2 data-i18next="settings3.miscellaneous"></h2>
+            <div class="enabled">
+              <input type="checkbox" value="fullscreen" class="enable">
+              <span data-i18next="settings3.breaksAreFullscreen"></span>
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="ideas" class="enable">
+              <span data-i18next="settings3.showBreakIdeas"></span>
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="breakNotification" class="enable">
+              <span data-i18next="settings3.notifyBeforeBreakStarts"></span>
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="microbreakNotification" class="enable">
+              <span data-i18next="settings3.notifyBeforeMicrobreakStarts"></span>
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="naturalBreaks" class="enable">
+              <span data-i18next="settings3.monitorIdleTime"></span>
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="allScreens" class="enable">
+              <span data-i18next="settings3.showOnAllScreens"></span>
+            </div>
+            <div class="enabled">
+              <input type="checkbox" value="useMonochromeTrayIcon" class="enable">
+              <span data-i18next="settings3.useMonochromeTrayIcon"></span>
+            </div>
+            <h2 data-i18next="settings3.language"></h2>
+            <div class="">
+              <select name="language" id="language">
+                <!--Keep languages in the alphabet order-->
+                <option value="bg">Български</option>
+                <option value="cs">Čeština</option>
+                <option value="de">Deutsch</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="hi">हिन्दी</option>
+                <option value="it">Italiano</option>
+                <option value="nl">Nederlands</option>
+                <option value="pt-BR">Português Brasileiro</option>
+                <option value="ro">Română</option>
+                <option value="ru">Русский</option>
+                <option value="sk">Slovenčina</option>
+                <option value="tr">Türkçe</option>
+                <option value="uk">Українська</option>
+                <option value="zh-CN">简体中文</option>
+                <option value="zh-TW">正體中文</option>
+              </select>
+            </div>
+          </div>
+          <div id="defaults3" class="pointer">
+            <span data-i18next="settings3.resetToDefaults"></span>
+          </div>
     </div>
     <script>
       require('./platform.js')

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', event => {
   new HtmlTranslate(document).translate()
 })
 
-let eventsAttached = false
+let eventsAttached1 = false
 ipcRenderer.send('send-settings')
 
 let microbreakIntervalPlus = document.getElementById('microbreakIntervalPlus')
@@ -88,7 +88,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
   for (let i = 0; i < enableElements.length; i++) {
     let element = enableElements[i]
     element.checked = data[element.value]
-    if (!eventsAttached) {
+    if (!eventsAttached1) {
       element.addEventListener('click', function (e) {
         ipcRenderer.send('save-setting', element.value, element.checked)
       })
@@ -98,7 +98,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
   let enableBreakTypeElements = document.getElementsByClassName('enabletype')
   for (let i = 0; i < enableBreakTypeElements.length; i++) {
     let element = enableBreakTypeElements[i]
-    if (!eventsAttached) {
+    if (!eventsAttached1) {
       element.addEventListener('click', function (e) {
         if (enabletypeCheckedCount() === 0) {
           element.checked = 'true'
@@ -117,7 +117,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
 
   document.body.style.background = data['mainColor']
 
-  eventsAttached = true
+  eventsAttached1 = true
 })
 
 let enabletypeCheckedCount = function () {
@@ -132,7 +132,7 @@ let enabletypeCheckedCount = function () {
   return enabled
 }
 
-document.getElementById('defaults').addEventListener('click', function (e) {
+document.getElementById('defaults1').addEventListener('click', function (e) {
   ipcRenderer.send('set-default-settings', [
     'break',
     'microbreak',
@@ -143,4 +143,97 @@ document.getElementById('defaults').addEventListener('click', function (e) {
     'microbreakStrictMode',
     'breakStrictMode'
   ])
+})
+
+// const {ipcRenderer} = require('electron')
+// const HtmlTranslate = require('./utils/htmlTranslate')
+
+document.addEventListener('DOMContentLoaded', event => {
+  new HtmlTranslate(document).translate()
+})
+let eventsAttached2 = false
+ipcRenderer.send('send-settings')
+
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
+
+ipcRenderer.on('renderSettings', (event, data) => {
+  let colorElements = document.getElementsByClassName('color')
+  for (var i = 0; i < colorElements.length; i++) {
+    let element = colorElements[i]
+    let color = element.dataset.color
+    element.style.background = color
+    if (!eventsAttached2) {
+      element.addEventListener('click', function (e) {
+        ipcRenderer.send('save-setting', 'mainColor', color)
+        document.body.style.background = color
+      })
+    }
+    document.body.style.background = data['mainColor']
+  }
+
+  let audioElements = document.getElementsByClassName('audio')
+  for (var y = 0; y < audioElements.length; y++) {
+    let audioElement = audioElements[y]
+    let audio = audioElement.dataset.audio
+    if (audio === data['audio']) {
+      audioElement.style.background = '#777'
+    } else {
+      audioElement.style.background = '#e2e2e2'
+    }
+    if (!eventsAttached2) {
+      audioElement.addEventListener('click', function (e) {
+        new Audio(`audio/${audio}.wav`).play()
+        ipcRenderer.send('save-setting', 'audio', audio)
+      })
+    }
+  }
+
+  eventsAttached2 = true
+})
+
+document.getElementById('defaults2').addEventListener('click', function (e) {
+  ipcRenderer.send('set-default-settings', ['audio', 'mainColor'])
+})
+
+// const {ipcRenderer} = require('electron')
+// const HtmlTranslate = require('./utils/htmlTranslate')
+
+document.addEventListener('DOMContentLoaded', event => {
+  new HtmlTranslate(document).translate()
+})
+
+let eventsAttached3 = false
+ipcRenderer.send('send-settings')
+
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
+
+ipcRenderer.on('renderSettings', (event, data) => {
+  let enableElements = document.getElementsByClassName('enable')
+  for (var i = 0; i < enableElements.length; i++) {
+    let element = enableElements[i]
+    element.checked = data[element.value]
+    if (!eventsAttached3) {
+      element.addEventListener('click', function (e) {
+        ipcRenderer.send('save-setting', element.value, element.checked)
+      })
+    }
+  }
+
+  document.body.style.background = data['mainColor']
+  document.getElementById('language').value = data['language']
+  eventsAttached3 = true
+})
+
+document.getElementById('defaults3').addEventListener('click', function (e) {
+  ipcRenderer.send('set-default-settings', ['fullscreen', 'ideas',
+    'breakNotification', 'microbreakNotification', 'naturalBreaks',
+    'allScreens', 'useMonochromeTrayIcon'])
+})
+
+document.getElementById('language').addEventListener('change', function (e) {
+  ipcRenderer.send('change-language', e.target.value)
+  ipcRenderer.send('save-setting', 'language', e.target.value)
+  window.location.reload()
 })
