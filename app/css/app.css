@@ -123,7 +123,7 @@ a {
 
 #close,
 #about-footer,
-#defaults,
+.reset-defaults,
 #skip {
   bottom: 20px;
   color: #fff;
@@ -327,9 +327,10 @@ select  {
 }
 .carousel__indicators {
   position: absolute;
-  bottom: 20px;
+  bottom: 50px;
   width: 100%;
   text-align: center;
+  left: 0px;
 }
 .carousel__indicator {
   height: 15px;
