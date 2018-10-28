@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - 休息时间提醒应用",
-    "microbreakIn": "短休息间隔 {{seconds}} 秒...",
-    "breakIn": "长时间休息间隔 {{seconds}} 秒...",
+    "microbreakIn": "短休息间隔 {{seconds}} 秒…",
+    "breakIn": "长时间休息间隔 {{seconds}} 秒…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...额, 我还有事做",
+    "keepGoing": "…额, 我还有事做",
     "title": "该休息一下了!"
   },
   "microbreak": {
-    "keepGoing": "...额, 我还有事做",
+    "keepGoing": "…额, 我还有事做",
     "title": "该休息一下了!"
   },
   "about": {

@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - aplicación para notificar cuándo hacer descansos",
-    "microbreakIn": "Microdescanso en {{seconds}} segundos...",
-    "breakIn": "Descanso en {{seconds}} segundos...",
+    "microbreakIn": "Microdescanso en {{seconds}} segundos…",
+    "breakIn": "Descanso en {{seconds}} segundos…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nEn el modo No Molestar"
   },
   "break": {
-    "keepGoing": "...bah, prefiero seguir",
+    "keepGoing": "…bah, prefiero seguir",
     "title": "Hora de hacer un descanso!"
   },
   "microbreak": {
-    "keepGoing": "...bah, prefiero seguir",
+    "keepGoing": "…bah, prefiero seguir",
     "title": "Hora de hacer un microdescanso!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "última versión:",
-    "checking": "comprobando..."
+    "checking": "comprobando…"
   },
   "settings": {
     "settings": "Configuración",

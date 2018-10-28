@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - pauze herinnering app",
-    "microbreakIn": "Kleine pauze over {{seconds}} seconden...",
-    "breakIn": "Pauze over {{seconds}} seconden...",
+    "microbreakIn": "Kleine pauze over {{seconds}} seconden…",
+    "breakIn": "Pauze over {{seconds}} seconden…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nNiet storen staat aan"
   },
   "break": {
-    "keepGoing": "...nee, ik werk gewoon door",
+    "keepGoing": "…nee, ik werk gewoon door",
     "title": "Tijd voor een pauze!"
   },
   "microbreak": {
-    "keepGoing": "...nee, ik werk gewoon door",
+    "keepGoing": "…nee, ik werk gewoon door",
     "title": "Tijd voor een pauze!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "of lees de",
     "tutorial": "handleiding",
     "latestVersion": "de laatste versie:",
-    "checking": "controleren..."
+    "checking": "controleren…"
   },
   "settings": {
     "settings": "Instellingen",

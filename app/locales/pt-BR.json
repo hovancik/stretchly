@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - aplicativo para lembrá-lo de fazer pausas",
-    "microbreakIn": "Micropausa em {{seconds}} segundos...",
-    "breakIn": "Pausa em {{seconds}} segundos...",
+    "microbreakIn": "Micropausa em {{seconds}} segundos…",
+    "breakIn": "Pausa em {{seconds}} segundos…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",
+    "keepGoing": "…obrigado por me lembrar, mas vou continuar sem fazer a pausa",
     "title": "É hora de fazer uma pausa longa!"
   },
   "microbreak": {
-    "keepGoing": "...obrigado por me lembrar, mas vou continuar sem fazer a pausa",
+    "keepGoing": "…obrigado por me lembrar, mas vou continuar sem fazer a pausa",
     "title": "É hora de fazer uma pausa rápida!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "a última versão:",
-    "checking": "verificar..."
+    "checking": "verificar…"
   },
   "settings": {
     "settings": "Configurações",

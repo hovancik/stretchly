@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - aplicația care-ți aduce aminte să iei o pauză",
-    "microbreakIn": "Micropauză în {{seconds}} secunde...",
-    "breakIn": "Pauză în {{seconds}} secunde...",
+    "microbreakIn": "Micropauză în {{seconds}} secunde…",
+    "breakIn": "Pauză în {{seconds}} secunde…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...nah, Voi continua",
+    "keepGoing": "…nah, Voi continua",
     "title": "Este timpul să iei o pauză!"
   },
   "microbreak": {
-    "keepGoing": "...nah, Voi continua",
+    "keepGoing": "…nah, Voi continua",
     "title": "Este timpul să iei o pauză!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "cea mai nouă versiune:",
-    "checking": "verific..."
+    "checking": "verific…"
   },
   "settings": {
     "settings": "Setari",

@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - break time reminder app",
-    "microbreakIn": "Microbreak in {{seconds}} seconds...",
-    "breakIn": "Break in {{seconds}} seconds...",
+    "microbreakIn": "Microbreak in {{seconds}} seconds…",
+    "breakIn": "Break in {{seconds}} seconds…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...nah, I'll just keep going on",
+    "keepGoing": "…nah, I'll just keep going on",
     "title": "Time to take a break!"
   },
   "microbreak": {
-    "keepGoing": "...nah, I'll just keep going on",
+    "keepGoing": "…nah, I'll just keep going on",
     "title": "Time to take a break!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "the latest version:",
-    "checking": "checking..."
+    "checking": "checking…"
   },
   "settings": {
     "settings": "Settings",

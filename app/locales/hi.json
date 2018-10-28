@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - विराम समय अनुस्मारक एप्लिकेशन",
-    "microbreakIn": " {{seconds}} सेकंड का छोटा ब्रेक ...",
-    "breakIn": "{{seconds}} सेकंड का ब्रेक ...",
+    "microbreakIn": " {{seconds}} सेकंड का छोटा ब्रेक …",
+    "breakIn": "{{seconds}} सेकंड का ब्रेक …",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...नहीं, मुझे ब्रेक नहीं चाहिए",
+    "keepGoing": "…नहीं, मुझे ब्रेक नहीं चाहिए",
     "title": "ब्रेक लेने का समय आ गया है!"
   },
   "microbreak": {
-    "keepGoing": "...नहीं, मुझे ब्रेक नहीं चाहिए",
+    "keepGoing": "…नहीं, मुझे ब्रेक नहीं चाहिए",
     "title": "ब्रेक लेने का समय आ गया है!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "नया वर्शन:",
-    "checking": "जाँच चालू है ..."
+    "checking": "जाँच चालू है …"
   },
   "settings": {
     "settings": "सेट्टिंग्स",
