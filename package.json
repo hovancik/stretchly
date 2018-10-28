@@ -94,8 +94,7 @@
         "nsis",
         "nsis-web",
         "7z",
-        "zip",
-        "appx"
+        "zip"
       ]
     },
     "nsis": {
