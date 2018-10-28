@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - приложение за напомняне за почивка",
-    "microbreakIn": "Микропочивка след {{seconds}} секунди...",
-    "breakIn": "Почивка след {{seconds}} секунди...",
+    "microbreakIn": "Микропочивка след {{seconds}} секунди…",
+    "breakIn": "Почивка след {{seconds}} секунди…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...Не!!! Ще продължа...",
+    "keepGoing": "…Не!!! Ще продължа…",
     "title": "Време е за почивка!"
   },
   "microbreak": {
-    "keepGoing": "...Не!!! Ще продължа...",
+    "keepGoing": "…Не!!! Ще продължа…",
     "title": "Време е за почивка!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "последна версия:",
-    "checking": "проверка за нова версия..."
+    "checking": "проверка за нова версия…"
   },
   "settings": {
     "settings": "Настройки",

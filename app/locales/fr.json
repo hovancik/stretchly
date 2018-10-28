@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - application de rappel de pauses",
-    "microbreakIn": "Petite pause dans {{seconds}} secondes...",
-    "breakIn": "Grande pause dans {{seconds}} secondes...",
+    "microbreakIn": "Petite pause dans {{seconds}} secondes…",
+    "breakIn": "Grande pause dans {{seconds}} secondes…",
     "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nEn mode ne pas troubler"
   },
   "break": {
-    "keepGoing": "...non, je vais continuer sans pause",
+    "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une grande pause !"
   },
   "microbreak": {
-    "keepGoing": "...non, je vais continuer sans pause",
+    "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une petite pause !"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "la dernière version:",
-    "checking": "vérification..."
+    "checking": "vérification…"
   },
   "settings": {
     "settings": "Paramètres",

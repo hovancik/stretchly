@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - mola hatırlatıcı uygulama",
-    "microbreakIn": "{{seconds}} saniiye içinde kısa bir ara...",
-    "breakIn": "{{seconds}} saniye...",
+    "microbreakIn": "{{seconds}} saniiye içinde kısa bir ara…",
+    "breakIn": "{{seconds}} saniye…",
     "breakAt": "Bir sonraki {{reference}}: {{hours}}:{{minutes}}",
     "breakReference": "mola",
     "microbreakReference": "kısa mola",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nBeni Rahatsız Etme modunda"
   },
   "break": {
-    "keepGoing": "...yok, devam edeceğim",
+    "keepGoing": "…yok, devam edeceğim",
     "title": "Mola zamanı!"
   },
   "microbreak": {
-    "keepGoing": "...yok, devam edeceğim",
+    "keepGoing": "…yok, devam edeceğim",
     "title": "Mola zamanı!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "veya",
     "tutorial": "öğretici'yi okuyun",
     "latestVersion": "son sürüm:",
-    "checking": "kontrol ediliyor..."
+    "checking": "kontrol ediliyor…"
   },
   "settings": {
     "settings": "Ayarlar",

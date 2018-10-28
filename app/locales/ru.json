@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - напоминания о перерывах",
-    "microbreakIn": "Микроперерыв через {{seconds}}с...",
-    "breakIn": "Перерыв через {{seconds}}с...",
+    "microbreakIn": "Микроперерыв через {{seconds}}с…",
+    "breakIn": "Перерыв через {{seconds}}с…",
     "breakAt": "Следующий {{reference}} в {{hours}}:{{minutes}}",
     "breakReference": "перерыв",
     "microbreakReference": "микроперерыв",
@@ -43,11 +43,11 @@
     "notificationStatus": "\nВ режиме 'Не беспокоить'"
   },
   "break": {
-    "keepGoing": "...не, я просто продолжу",
+    "keepGoing": "…не, я просто продолжу",
     "title": "Перерыв!"
   },
   "microbreak": {
-    "keepGoing": "...не, я просто продолжу",
+    "keepGoing": "…не, я просто продолжу",
     "title": "Перерыв!"
   },
   "about": {
@@ -58,7 +58,7 @@
     "orRead": "или прочитайте",
     "tutorial": "руководство",
     "latestVersion": "последняя версия:",
-    "checking": "проверяем..."
+    "checking": "проверяем…"
   },
   "settings": {
     "settings": "Настройки",

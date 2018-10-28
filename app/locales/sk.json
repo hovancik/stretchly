@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - pamätá si prestávky za vás",
-    "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd...",
-    "breakIn": "Prestávka za {{seconds}} sekúnd...",
+    "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd…",
+    "breakIn": "Prestávka za {{seconds}} sekúnd…",
     "breakAt": "Ďalšia {{reference}} o {{hours}}:{{minutes}}",
     "breakReference": "prestávka",
     "microbreakReference": "mikroprestávka",
@@ -43,11 +43,11 @@
     "notificationStatus": "\nV režime Nerušiť"
   },
   "break": {
-    "keepGoing": "...nie, chcem pokračovať",
+    "keepGoing": "…nie, chcem pokračovať",
     "title": "Čas na prestávku!"
   },
   "microbreak": {
-    "keepGoing": "...nie, chcem pokračovať",
+    "keepGoing": "…nie, chcem pokračovať",
     "title": "Čas na prestávku!"
   },
   "about": {
@@ -58,7 +58,7 @@
     "orRead": "alebo si prečitajte",
     "tutorial": "tutoriál",
     "latestVersion": "najnovšia verzia:",
-    "checking": "kontrolujem..."
+    "checking": "kontrolujem…"
   },
   "settings": {
     "settings": "Nastavenia",

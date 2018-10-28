@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - l'app che ti ricorda quando prenderti una pausa",
-    "microbreakIn": "Micropausa in {{seconds}} secondi...",
-    "breakIn": "Pausa in {{seconds}} secondi...",
+    "microbreakIn": "Micropausa in {{seconds}} secondi…",
+    "breakIn": "Pausa in {{seconds}} secondi…",
     "breakAt": "Prossima {{reference}} alle {{hours}}:{{minutes}}",
     "breakReference": "pausa",
     "microbreakReference": "micropausa",
@@ -42,11 +42,11 @@
     "notificationStatus": "\nIn modalità non disturbare"
   },
   "break": {
-    "keepGoing": "...no, preferisco non fermarmi",
+    "keepGoing": "…no, preferisco non fermarmi",
     "title": "È ora di fare una pausa!"
   },
   "microbreak": {
-    "keepGoing": "...no, preferisco non fermarmi",
+    "keepGoing": "…no, preferisco non fermarmi",
     "title": "È ora di fare una pausa!"
   },
   "about": {
@@ -57,7 +57,7 @@
     "orRead": "o leggi il",
     "tutorial": "tutorial",
     "latestVersion": "ultima versione:",
-    "checking": "sto controllando..."
+    "checking": "sto controllando…"
   },
   "settings": {
     "settings": "Impostazioni",
