@@ -187,6 +187,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - JavaScript Joe, [@jsjoeio](https://github.com/jsjoeio)
 - Ismail Demirbilek, [@dbtek](https://github.com/dbtek)
 - Giacomo Rossetto, [@jackymancs4](https://github.com/jackymancs4)
+- Hum4n01d, [@hum4n01d](https://github.com/hum4n01d)
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
