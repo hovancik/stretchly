@@ -219,14 +219,18 @@ function planVersionCheck (seconds = 1) {
 }
 
 function checkVersion () {
-  processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
+  processWin.webContents.send('checkVersion', {
+    oldVersion: `v${app.getVersion()}`,
+    notify: settings.get('notifyNewVersion'),
+    silent: settings.get('silentNotifications')
+  })
   planVersionCheck(3600 * 5)
 }
 
 function startMicrobreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+    showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification('startMicrobreak')
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
@@ -242,7 +246,7 @@ function startMicrobreakNotification () {
 function startBreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+    showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification('startBreak')
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
@@ -453,7 +457,7 @@ function pauseBreaks (milliseconds) {
 function resumeBreaks () {
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
-  processWin.webContents.send('showNotification', i18next.t('main.resumingBreaks'))
+  showNotification(i18next.t('main.resumingBreaks'))
   updateToolTip()
 }
 
@@ -763,6 +767,13 @@ function typeOfBreak () {
     }
   }
   return { breakType, breakNotification }
+}
+
+function showNotification (text) {
+  processWin.webContents.send('showNotification', {
+    text: text,
+    silent: settings.get('silentNotifications')
+  })
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {

@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Turkish translations
+- silent notifications option
 
 ## [0.18.0] - 2018-10-21
 ### Added

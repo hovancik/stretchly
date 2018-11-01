@@ -100,6 +100,7 @@
     "notifyBeforeMicrobreakStarts": "avvisa prima che inizi la micropausa",
     "monitorIdleTime": "controlla le interruzioni del sistema per fare pause più regolari",
     "showOnAllScreens": "le pause sono mostrate su tutti i monitor",
+    "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "utilizza l'icona della barra in bianco e nero",
     "language": "lingua",
     "resetToDefaults": "ripristina le impostazioni"
