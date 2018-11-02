@@ -1,4 +1,4 @@
-const {ipcRenderer, shell, remote} = require('electron')
+const { ipcRenderer, shell, remote } = require('electron')
 let VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 ipcRenderer.on('playSound', (event, data) => {

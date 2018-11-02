@@ -1,4 +1,4 @@
-const {remote} = require('electron')
+const { remote } = require('electron')
 const i18next = remote.require('i18next')
 class HtmlTranslate {
   constructor (document) {

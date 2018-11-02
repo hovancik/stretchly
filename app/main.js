@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
+const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
@@ -469,7 +469,7 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', {version: app.getVersion()})
+    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -670,7 +670,7 @@ function getTrayMenu () {
       type: 'checkbox',
       checked: openAtLogin,
       click: function () {
-        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
       }
     })
   }
@@ -762,7 +762,7 @@ function typeOfBreak () {
       break
     }
   }
-  return {breakType, breakNotification}
+  return { breakType, breakNotification }
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
