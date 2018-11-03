@@ -100,6 +100,7 @@
     "notifyBeforeMicrobreakStarts": "Avisar antes de empezar el microdescanso",
     "monitorIdleTime": "monitorizar las pausas del equipo para hacer descansos naturales",
     "showOnAllScreens": "los descansos se muestran en todos los monitores",
+    "silentNotifications": "notificaciones silenciosas",
     "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "idioma",
     "resetToDefaults": "volver a las opciones por defecto"
