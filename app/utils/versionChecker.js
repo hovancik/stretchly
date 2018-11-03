@@ -4,7 +4,7 @@ class VersionChecker {
       'https://api.github.com/repos/hovancik/stretchly/releases/latest',
       {
         method: 'GET',
-        headers: {'User-Agent': 'hovancik/stretchly'},
+        headers: { 'User-Agent': 'hovancik/stretchly' },
         mode: 'cors',
         cache: 'default'
       })
