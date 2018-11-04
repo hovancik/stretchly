@@ -5,7 +5,7 @@ Have you read Code of Conduct? By filing an Pull Request, you are expected to co
 -->
 
 Issue: #
-<!-- Link to relevant issue. All PRs should be asociated with an issue -->
+<!-- Link to relevant issue. All PRs should be associated with an issue -->
 
 ### Requirements
 
