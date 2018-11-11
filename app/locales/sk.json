@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - pamätá si prestávky za vás",
-    "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd...",
-    "breakIn": "Prestávka za {{seconds}} sekúnd...",
+    "microbreakIn": "Mikroprestávka za {{seconds}} sekúnd…",
+    "breakIn": "Prestávka za {{seconds}} sekúnd…",
+    "breakAt": "Ďalšia {{reference}} o {{hours}}:{{minutes}}",
+    "breakReference": "prestávka",
+    "microbreakReference": "mikroprestávka",
+    "resumingAt": "Obnovenie prestávok {{hours}}:{{minutes}}",
     "resumingBreaks": "Obnovenie prestávok",
     "aboutStretchly": "O stretchly v{{version}}",
     "downloadLatestVersion": "Stiahnuť najnovšiu verziu",
     "about": "O stretchly",
     "becomePatron": "Stať sa Patrónom",
+    "notificationStateMode": "V režime Nerušiť",
     "toBreak": "prestávku",
     "toMicrobreak": "mikroprestávku",
     "skipToTheNext": "Preskočiť na ďalšiu",
@@ -34,14 +39,15 @@
     "break": "prestávky",
     "nextBreakFollowing_0": "\nĎalšia prestávka po {{count}} mikroprestávke",
     "nextBreakFollowing_1": "\nĎalšia prestávka po {{count}} mikroprestávkach",
-    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach"
+    "nextBreakFollowing_2": "\nĎalšia prestávka po {{count}} mikroprestávkach",
+    "notificationStatus": "\nV režime Nerušiť"
   },
   "break": {
-    "keepGoing": "...nie, chcem pokračovať",
+    "keepGoing": "…nie, chcem pokračovať",
     "title": "Čas na prestávku!"
   },
   "microbreak": {
-    "keepGoing": "...nie, chcem pokračovať",
+    "keepGoing": "…nie, chcem pokračovať",
     "title": "Čas na prestávku!"
   },
   "about": {
@@ -52,7 +58,7 @@
     "orRead": "alebo si prečitajte",
     "tutorial": "tutoriál",
     "latestVersion": "najnovšia verzia:",
-    "checking": "kontrolujem..."
+    "checking": "kontrolujem…"
   },
   "settings": {
     "settings": "Nastavenia",
@@ -95,6 +101,8 @@
     "notifyBeforeMicrobreakStarts": "ukázať notifikáciu pred mikroprestávkami",
     "monitorIdleTime": "monitorovať neaktívny čas pre prirodzené prestávky",
     "showOnAllScreens": "prestávky na každej obrazovke",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "použiť monochromatickú ikonu",
     "language": "jazyk",
     "resetToDefaults": "obnoviť pôvodné nastavenia"
   },

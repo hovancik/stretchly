@@ -1,12 +1,4 @@
 @font-face {
-  font-family: 'Lato Hairline';
-  src: url('./fonts/Lato-Hairline.ttf') format('truetype'),
-       url('./fonts/Lato-Hairline.woff2') format('woff2'),
-       url('./fonts/Lato-Hairline.woff') format('woff'),
-       url('./fonts/Lato-Hairline.svg#latohairline') format('svg');
-}
-
-@font-face {
   font-family: 'Lato Thin';
   src: url('./fonts/Lato-Thin.ttf') format('truetype'),
        url('./fonts/Lato-Thin.woff2') format('woff2'),
@@ -24,10 +16,14 @@
 
 body {
   color: #fff;
-  font-family: 'Lato Hairline';
+  font-family: 'Lato Light';
   font-size: 28px;
   text-align: center;
   user-select: none;
+}
+
+body.darwin {
+  font-family: 'Lato Thin';
 }
 
 .microbreak,
@@ -123,7 +119,6 @@ a {
 
 a {
   color: #fff;
-  font-family: 'Lato Light'
 }
 
 #postpone,
@@ -133,7 +128,6 @@ a {
 #skip {
   bottom: 20px;
   color: #fff;
-  font-family: 'Lato Light';
   font-size: 18px;
   left: 50%;
   position: absolute;
@@ -163,7 +157,6 @@ progress {
 
 .about-stretchly,
 .welcome-stretchly {
-  font-family: 'Lato Thin';
   font-size: 18px;
   padding-top: 60px;
   text-decoration: none;

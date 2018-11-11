@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -9,6 +9,7 @@
   "scripts": {
     "start": "electron ./app",
     "dev": "NODE_ENV='development' electron ./app --enable-logging --remote-debugging-port=9222",
+    "electromon": "electromon ./app",
     "postinstall": "electron-builder install-app-deps",
     "pack-all": "build --dir -mwl --x64 --ia32",
     "dist-all": "build -mwl --x64 --ia32",
@@ -35,15 +36,16 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "devDependencies": {
-    "babel-eslint": "^8.2.3",
-    "chai": "^4.1.2",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "electron": "^2.0.0",
-    "electron-builder": "^20.11.1",
+    "electromon": "^1.0.10",
+    "electron": "^2.0.11",
+    "electron-builder": "^20.28.4",
     "mocha": "^5.2.0",
-    "sinon": "^5.0.3",
-    "spectron": "^3.8.0",
-    "standard": "^11.0.1"
+    "sinon": "^7.0.0",
+    "spectron": "^4.0.0",
+    "standard": "^12.0.1"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
@@ -92,8 +94,7 @@
         "nsis",
         "nsis-web",
         "7z",
-        "zip",
-        "appx"
+        "zip"
       ]
     },
     "nsis": {
@@ -110,6 +111,8 @@
     "globals": [
       "it",
       "describe",
+      "before",
+      "after",
       "beforeEach",
       "afterEach",
       "Audio",
@@ -122,9 +125,10 @@
     ]
   },
   "dependencies": {
+    "@meetfranz/electron-notification-state": "^1.0.0",
     "@paulcbetts/system-idle-time": "^1.0.4",
-    "i18next": "^11.2.3",
-    "i18next-node-fs-backend": "^1.0.0",
+    "i18next": "^11.9.1",
+    "i18next-node-fs-backend": "^2.1.0",
     "moment": "^2.22.2"
   }
 }

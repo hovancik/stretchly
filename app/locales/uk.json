@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - нагадування про перервах",
-    "microbreakIn": "Мікроперерва через {{seconds}} с ...",
-    "breakIn": "Перерва через {{seconds}} с ...",
+    "microbreakIn": "Мікроперерва через {{seconds}} с …",
+    "breakIn": "Перерва через {{seconds}} с …",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Роботу відновлено",
     "aboutStretchly": "Про програму stretchly v {{version}}",
     "downloadLatestVersion": "Завантажити останню версію",
     "about": "Про програму",
     "becomePatron": "Підтримати на Patreon",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "перерви",
     "toMicrobreak": "мікроперериви",
     "skipToTheNext": "Перейти до наступної",
@@ -34,14 +39,15 @@
     "break": "перерви",
     "nextBreakFollowing_0": "\nНаступна перерва через {{count}} мікроперерву",
     "nextBreakFollowing_1": "\nНаступна перерва через {{count}} мікроперерви",
-    "nextBreakFollowing_2": "\nСледующій перерву через {{count}} мікроперервів"
+    "nextBreakFollowing_2": "\nСледующій перерву через {{count}} мікроперервів",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "... ні, я просто продовжу",
+    "keepGoing": "… ні, я просто продовжу",
     "title": "Перерва!"
   },
   "microbreak": {
-    "keepGoing": "... ні, я просто продовжу",
+    "keepGoing": "… ні, я просто продовжу",
     "title": "Перерва!"
   },
   "about": {
@@ -52,7 +58,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "остання версія:",
-    "checking": "перевіряємо ..."
+    "checking": "перевіряємо …"
   },
   "settings": {
     "settings": "Налаштування",
@@ -95,6 +101,8 @@
     "notifyBeforeMicrobreakStarts": "повідомляти перед початком мікроперерви",
     "monitorIdleTime": "вважати бездіяльність за природну перерву",
     "showOnAllScreens": "відображати на всіх екранах",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "мова",
     "resetToDefaults": "налаштування за умовчанням"
   },

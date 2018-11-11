@@ -1,14 +1,19 @@
 {
   "main": {
     "toolTipHeader": "stretchly - 休息时间提醒应用",
-    "microbreakIn": "短休息间隔 {{seconds}} 秒...",
-    "breakIn": "长时间休息间隔 {{seconds}} 秒...",
+    "microbreakIn": "短休息间隔 {{seconds}} 秒…",
+    "breakIn": "长时间休息间隔 {{seconds}} 秒…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "正在恢复休息",
     "aboutStretchly": "关于 stretchly v{{version}}",
     "settings": "设置",
     "downloadLatestVersion": "下载最新版本",
     "about": "关于",
     "becomePatron": "成为合作者",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "长时间休息",
     "toMicrobreak": "短时间休息",
     "skipToTheNext": "跳到下一次",
@@ -33,14 +38,15 @@
     "microbreak": "短时间休息",
     "break": "长时间休息",
     "nextBreakFollowing": "\n下次长时间休息在 {{count}} 次短时间休息后",
-    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后"
+    "nextBreakFollowing_plural": "\n下次上时间休息 {{count}} 次短时间休息后",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...额, 我还有事做",
+    "keepGoing": "…额, 我还有事做",
     "title": "该休息一下了!"
   },
   "microbreak": {
-    "keepGoing": "...额, 我还有事做",
+    "keepGoing": "…额, 我还有事做",
     "title": "该休息一下了!"
   },
   "about": {
@@ -93,6 +99,8 @@
     "notifyBeforeMicrobreakStarts": "在短时间休息前提醒",
     "monitorIdleTime": "监控系统空闲时间的自然休息时间",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "语言",
     "resetToDefaults": "重置为默认值"
   },

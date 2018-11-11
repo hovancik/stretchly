@@ -1,4 +1,4 @@
-const {ipcRenderer, remote} = require('electron')
+const { ipcRenderer, remote } = require('electron')
 const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
 
@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', event => {
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
 
-document.getElementById('close').addEventListener('click', function (e) {
+document.getElementById('close').addEventListener('click', event =>
   ipcRenderer.send('finish-microbreak', false)
-})
+)
 
-document.getElementById('postpone').addEventListener('click', function (e) {
+document.getElementById('postpone').addEventListener('click', event =>
   ipcRenderer.send('postpone-microbreak')
-})
+)
 
 ipcRenderer.on('microbreakIdea', (event, message, strictMode, postponable) => {
   if (postponable) {

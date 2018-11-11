@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - 休息提醒軟體",
-    "microbreakIn": "小休息相隔 {{seconds}} 秒...",
-    "breakIn": "長時間休息相隔 {{seconds}} 秒...",
+    "microbreakIn": "小休息相隔 {{seconds}} 秒…",
+    "breakIn": "長時間休息相隔 {{seconds}} 秒…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "正在恢复休息",
     "aboutStretchly": "關於 stretchly v{{version}}",
     "downloadLatestVersion": "下載最新版本",
     "about": "關於",
     "becomePatron": "到 Patron 成為合作者",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "長時間休息",
     "toMicrobreak": "小休息",
     "skipToTheNext": "跳到下一次",
@@ -33,14 +38,15 @@
     "microbreak": "小休息",
     "break": "長時間休息",
     "nextBreakFollowing": "\n下次長時間休息在 {{count}} 次小休息後",
-    "nextBreakFollowing_plural": "\n下次長時間休息 {{count}} 次小休息後"
+    "nextBreakFollowing_plural": "\n下次長時間休息 {{count}} 次小休息後",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "... 阿, 我還有事情要做",
+    "keepGoing": "… 阿, 我還有事情要做",
     "title": "該休息了！"
   },
   "microbreak": {
-    "keepGoing": "... 阿, 我還有事情要做",
+    "keepGoing": "… 阿, 我還有事情要做",
     "title": "該休息了！"
   },
   "about": {
@@ -93,6 +99,8 @@
     "notifyBeforeMicrobreakStarts": "在小休息前跳出通知",
     "monitorIdleTime": "監控系統空閒時間，納入休息時間",
     "showOnAllScreens": "在每個螢幕上顯示休息畫面 （如果有多螢幕）",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "語言",
     "resetToDefaults": "恢復預設值"
   },

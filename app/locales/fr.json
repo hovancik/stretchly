@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - application de rappel de pauses",
-    "microbreakIn": "Petite pause dans {{seconds}} secondes...",
-    "breakIn": "Grande pause dans {{seconds}} secondes...",
+    "microbreakIn": "Petite pause dans {{seconds}} secondes…",
+    "breakIn": "Grande pause dans {{seconds}} secondes…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Reprise des pauses",
     "aboutStretchly": "À propos de stretchly v{{version}}",
     "downloadLatestVersion": "Télécharger la dernière version",
     "about": "À propos",
     "becomePatron": "Soutenir l'application",
+    "notificationStateMode": "En mode ne pas troubler",
     "toBreak": "grande pause suivante",
     "toMicrobreak": "petite pause suivante",
     "skipToTheNext": "Passer à la",
@@ -33,14 +38,15 @@
     "microbreak": "petite pause",
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
-    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites"
+    "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
+    "notificationStatus": "\nEn mode ne pas troubler"
   },
   "break": {
-    "keepGoing": "...non, je vais continuer sans pause",
+    "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une grande pause !"
   },
   "microbreak": {
-    "keepGoing": "...non, je vais continuer sans pause",
+    "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une petite pause !"
   },
   "about": {
@@ -51,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "la dernière version:",
-    "checking": "vérification..."
+    "checking": "vérification…"
   },
   "settings": {
     "settings": "Paramètres",
@@ -94,6 +100,8 @@
     "notifyBeforeMicrobreakStarts": "notification juste avant une petite pause",
     "monitorIdleTime": "suivre les périodes d'inactivité pour des pauses plus naturelles",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "utiliser icône monochrome",
     "language": "langue",
     "resetToDefaults": "revenir aux paramètres d'origine"
   },

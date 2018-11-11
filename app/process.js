@@ -1,4 +1,4 @@
-const {ipcRenderer, shell, remote} = require('electron')
+const { ipcRenderer, shell, remote } = require('electron')
 let VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 ipcRenderer.on('playSound', (event, data) => {
@@ -6,9 +6,9 @@ ipcRenderer.on('playSound', (event, data) => {
   audio.play()
 })
 
-ipcRenderer.on('checkVersion', (event, oldVersion, notify) => {
+ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
   if (remote.getGlobal('shared').isNewVersion) {
-    notifyNewVersion()
+    notifyNewVersion(silent)
   } else {
     new VersionChecker()
       .latest()
@@ -18,7 +18,7 @@ ipcRenderer.on('checkVersion', (event, oldVersion, notify) => {
           remote.getGlobal('shared').isNewVersion = true
           ipcRenderer.send('update-tray')
           if (notify) {
-            notifyNewVersion()
+            notifyNewVersion(silent)
           }
         }
       })
@@ -26,15 +26,17 @@ ipcRenderer.on('checkVersion', (event, oldVersion, notify) => {
   }
 })
 
-ipcRenderer.on('showNotification', (event, data) => {
+ipcRenderer.on('showNotification', (event, { text, silent }) => {
   new Notification('stretchly', { // eslint-disable-line no-new
-    body: data
+    body: text,
+    silent
   })
 })
 
-function notifyNewVersion () {
+function notifyNewVersion (silent) {
   let notification = new Notification('stretchly', {
-    body: i18next.t('process.newVersionAvailable')
+    body: i18next.t('process.newVersionAvailable'),
+    silent
   })
   notification.onclick = () => shell.openExternal('https://hovancik.net/stretchly/downloads')
 }

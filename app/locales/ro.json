@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - aplicația care-ți aduce aminte să iei o pauză",
-    "microbreakIn": "Micropauză în {{seconds}} secunde...",
-    "breakIn": "Pauză în {{seconds}} secunde...",
+    "microbreakIn": "Micropauză în {{seconds}} secunde…",
+    "breakIn": "Pauză în {{seconds}} secunde…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Reluarea pauzelor",
     "aboutStretchly": "Despre stretchly v{{version}}",
     "downloadLatestVersion": "Descarcă cea mai nouă versiune",
     "about": "Despre",
     "becomePatron": "Devin-o Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "pauză",
     "toMicrobreak": "micropauză",
     "skipToTheNext": "Sări la următoarea",
@@ -33,14 +38,15 @@
     "microbreak": "micropauză",
     "break": "pauză",
     "nextBreakFollowing": "\n Următoarea pauză după {{count}} mai multe micropauze",
-    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze"
+    "nextBreakFollowing_plural": "\nUrmătoarea pauză după {{count}} micropauze",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...nah, Voi continua",
+    "keepGoing": "…nah, Voi continua",
     "title": "Este timpul să iei o pauză!"
   },
   "microbreak": {
-    "keepGoing": "...nah, Voi continua",
+    "keepGoing": "…nah, Voi continua",
     "title": "Este timpul să iei o pauză!"
   },
   "about": {
@@ -51,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "cea mai nouă versiune:",
-    "checking": "verific..."
+    "checking": "verific…"
   },
   "settings": {
     "settings": "Setari",
@@ -94,6 +100,8 @@
     "notifyBeforeMicrobreakStarts": "notifică-mă înainte de micropauză",
     "monitorIdleTime": "monitorizează neutilizarea sistemului pentru pauze naturale",
     "showOnAllScreens": "pauzele sunt afișate pe toate monitoarele",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "utilizează imaginea monocromă",
     "language": "limbă",
     "resetToDefaults": "resetează la valorile implicite"
   },

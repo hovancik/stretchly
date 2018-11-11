@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - break time reminder app",
-    "microbreakIn": "Microbreak in {{seconds}} seconds...",
-    "breakIn": "Break in {{seconds}} seconds...",
+    "microbreakIn": "Microbreak in {{seconds}} seconds…",
+    "breakIn": "Break in {{seconds}} seconds…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Resuming breaks",
     "aboutStretchly": "About stretchly v{{version}}",
     "downloadLatestVersion": "Download latest version",
     "about": "About",
     "becomePatron": "Become a Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "break",
     "toMicrobreak": "microbreak",
     "skipToTheNext": "Skip to the next",
@@ -33,16 +38,17 @@
     "microbreak": "microbreak",
     "break": "break",
     "nextBreakFollowing": "\nNext break following {{count}} more microbreak",
-    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks"
+    "nextBreakFollowing_plural": "\nNext break following {{count}} more microbreaks",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
     "postpone": "...wait for a bit",
-    "keepGoing": "...nah, I'll just keep going on",
+    "keepGoing": "…nah, I'll just keep going on",
     "title": "Time to take a break!"
   },
   "microbreak": {
     "postpone": "...wait for a bit",
-    "keepGoing": "...nah, I'll just keep going on",
+    "keepGoing": "…nah, I'll just keep going on",
     "title": "Time to take a break!"
   },
   "about": {
@@ -53,7 +59,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "the latest version:",
-    "checking": "checking..."
+    "checking": "checking…"
   },
   "settings": {
     "settings": "Settings",
@@ -96,6 +102,8 @@
     "notifyBeforeMicrobreakStarts": "notify before microbreak starts",
     "monitorIdleTime": "monitor system idle time for natural breaks",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "language",
     "resetToDefaults": "reset to defaults"
   },

@@ -1,7 +1,8 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
+const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const notificationState = require('@meetfranz/electron-notification-state')
 
 startI18next()
 
@@ -32,11 +33,7 @@ global.shared = {
   isNewVersion: false
 }
 
-let shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {
-  if (appIcon) {
-    // Someone tried to run a second instance
-  }
-})
+const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {})
 
 if (shouldQuit) {
   console.log('stretchly is already running.')
@@ -95,6 +92,8 @@ function startPowerMonitoring () {
     if (pausedForSuspend) {
       pausedForSuspend = false
       resumeBreaks()
+      updateToolTip()
+      appIcon.setContextMenu(getTrayMenu())
     } else if (breakPlanner.isPaused) {
       // corrrect the planner for the time spent in suspend
       breakPlanner.correctScheduler()
@@ -123,10 +122,10 @@ function displaysX (displayID = -1, width = 800) {
     console.log('warning: invalid displayID to displaysX')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
-    let screens = electron.screen.getAllDisplays()
+    const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  let bounds = theScreen.bounds
+  const bounds = theScreen.bounds
   return Math.ceil(bounds.x + ((bounds.width - width) / 2))
 }
 
@@ -140,24 +139,31 @@ function displaysY (displayID = -1, height = 600) {
     console.log('warning: invalid displayID to displaysY')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
-    let screens = electron.screen.getAllDisplays()
+    const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  let bounds = theScreen.bounds
+  const bounds = theScreen.bounds
   return Math.ceil(bounds.y + ((bounds.height - height) / 2))
 }
 
 function createTrayIcon () {
-  const iconFolder = `${__dirname}/images`
+  appIcon = new Tray(trayIconPath())
   if (process.platform === 'darwin') {
-    appIcon = new Tray(iconFolder + '/trayTemplate.png')
     app.dock.hide()
-  } else {
-    appIcon = new Tray(iconFolder + '/stretchly_18x18.png')
   }
+
   appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
   setInterval(updateToolTip, 10000)
+}
+
+function trayIconPath () {
+  const iconFolder = `${__dirname}/images`
+  if (settings.get('useMonochromeTrayIcon')) {
+    return `${iconFolder}/trayTemplate.png`
+  } else {
+    return `${iconFolder}/stretchly_18x18.png`
+  }
 }
 
 function startProcessWin () {
@@ -213,18 +219,44 @@ function planVersionCheck (seconds = 1) {
 }
 
 function checkVersion () {
-  processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
+  processWin.webContents.send('checkVersion', {
+    oldVersion: `v${app.getVersion()}`,
+    notify: settings.get('notifyNewVersion'),
+    silent: settings.get('silentNotifications')
+  })
   planVersionCheck(3600 * 5)
 }
 
 function startMicrobreakNotification () {
-  processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', {seconds: settings.get('microbreakNotificationInterval') / 1000}))
-  breakPlanner.nextBreakAfterNotification('startMicrobreak')
+  const notificationDisabled = notificationState.getDoNotDisturb()
+  if (!notificationDisabled) {
+    showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+    breakPlanner.nextBreakAfterNotification('startMicrobreak')
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  } else {
+    setTimeout(function () {
+      startMicrobreakNotification()
+    }, settings.get('microbreakNotificationInterval'))
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  }
 }
 
 function startBreakNotification () {
-  processWin.webContents.send('showNotification', i18next.t('main.breakIn', {seconds: settings.get('breakNotificationInterval') / 1000}))
-  breakPlanner.nextBreakAfterNotification('startBreak')
+  const notificationDisabled = notificationState.getDoNotDisturb()
+  if (!notificationDisabled) {
+    showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+    breakPlanner.nextBreakAfterNotification('startBreak')
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  } else {
+    setTimeout(function () {
+      startMicrobreakNotification()
+    }, settings.get('breakNotificationInterval'))
+    appIcon.setContextMenu(getTrayMenu())
+    updateToolTip()
+  }
 }
 
 function startMicrobreak () {
@@ -235,6 +267,7 @@ function startMicrobreak () {
     console.log('in natural break')
     return
   }
+
   // don't start another break if break running
   if (microbreakWins) {
     console.log('microbreak already running')
@@ -270,7 +303,7 @@ function startMicrobreak () {
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let microbreakWinLocal = new BrowserWindow({
+    const microbreakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
@@ -284,7 +317,7 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.show()
-      microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
+      microbreakWinLocal.setKiosk(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
@@ -303,6 +336,7 @@ function startMicrobreak () {
     }
   }
 
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
@@ -349,7 +383,7 @@ function startBreak () {
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let breakWinLocal = new BrowserWindow({
+    const breakWinLocal = new BrowserWindow({
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
@@ -363,7 +397,7 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.show()
-      breakWinLocal.setFullScreen(settings.get('fullscreen'))
+      breakWinLocal.setKiosk(settings.get('fullscreen'))
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
@@ -382,51 +416,50 @@ function startBreak () {
     }
   }
 
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
-function clearBreak (wins) {
+function breakComplete (shouldPlaySound, windows) {
   globalShortcut.unregister('CommandOrControl+X')
-  if (wins) {
+  if (shouldPlaySound) {
+    processWin.webContents.send('playSound', settings.get('audio'))
+  }
+  if (windows) {
     if (process.platform === 'darwin') {
       // get focus on the last app
       Menu.sendActionToFirstResponder('hide:')
     }
-    closeWindows(wins)
+    closeWindows(windows)
+    breakPlanner.nextBreak()
   }
-}
-
-function postponeMicrobreak () {
-  clearBreak(microbreakWins)
-  if (microbreakWins) breakPlanner.postponeCurrentBreak('microbreak')
-  microbreakWins = null
-  updateToolTip()
-}
-
-function postponeBreak () {
-  clearBreak(breakWins)
-  if (breakWins) breakPlanner.postponeCurrentBreak('break')
-  breakWins = null
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
-  if (shouldPlaySound) {
-    processWin.webContents.send('playSound', settings.get('audio'))
-  }
-  clearBreak(microbreakWins)
-  if (microbreakWins) breakPlanner.nextBreak()
+  breakComplete(shouldPlaySound, microbreakWins)
   microbreakWins = null
-  updateToolTip()
 }
 
 function finishBreak (shouldPlaySound = true) {
-  if (shouldPlaySound) {
-    processWin.webContents.send('playSound', settings.get('audio'))
-  }
-  clearBreak(breakWins)
-  if (breakWins) breakPlanner.nextBreak()
+  breakComplete(shouldPlaySound, breakWins)
   breakWins = null
+}
+
+function postponeMicrobreak (shouldPlaySound = false) {
+  breakComplete(shouldPlaySound, microbreakWins)
+  if (microbreakWins) breakPlanner.postponeCurrentBreak('microbreak')
+  microbreakWins = null
+  appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
+}
+
+function postponeBreak (shouldPlaySound = false) {
+  breakComplete(shouldPlaySound, breakWins)
+  if (breakWins) breakPlanner.postponeCurrentBreak('break')
+  breakWins = null
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
@@ -443,6 +476,10 @@ function loadSettings () {
   breakPlanner.on('startBreak', () => { startBreak() })
   breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
   breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
+  breakPlanner.on('updateToolTip', function () {
+    updateToolTip()
+    appIcon.setContextMenu(getTrayMenu())
+  })
   i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
 }
@@ -476,7 +513,7 @@ function pauseBreaks (milliseconds) {
 function resumeBreaks () {
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
-  processWin.webContents.send('showNotification', i18next.t('main.resumingBreaks'))
+  showNotification(i18next.t('main.resumingBreaks'))
   updateToolTip()
 }
 
@@ -492,7 +529,7 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', {version: app.getVersion()})
+    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -522,13 +559,18 @@ function showSettingsWindow () {
 }
 
 function saveDefaultsFor (array, next) {
-  for (let index in array) {
+  for (const index in array) {
     settings.set(array[index], defaultSettings[array[index]])
   }
 }
 
 function getTrayMenu () {
-  let trayMenu = []
+  const trayMenu = []
+  const timeLeft = breakPlanner.scheduler.timeLeft
+  const isPaused = breakPlanner.isPaused
+  const reference = typeOfBreak()
+  const nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
+
   if (global.shared.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
@@ -536,6 +578,18 @@ function getTrayMenu () {
         shell.openExternal('https://github.com/hovancik/stretchly/releases')
       }
     })
+  }
+
+  if (timeLeft && !notificationState.getDoNotDisturb()) {
+    if (isPaused) {
+      trayMenu.push({
+        label: i18next.t('main.resumingAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1] })
+      })
+    } else {
+      trayMenu.push({
+        label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': i18next.t(`main.${reference.breakType}Reference`) })
+      })
+    }
   }
 
   trayMenu.push({
@@ -552,7 +606,11 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (!breakPlanner.isPaused) {
+  if (notificationState.getDoNotDisturb()) {
+    trayMenu.push({
+      label: i18next.t('main.notificationStateMode')
+    })
+  } else if (!breakPlanner.isPaused) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -567,6 +625,7 @@ function getTrayMenu () {
             breakWins = null
           }
           breakPlanner.skipToMicrobreak()
+          appIcon.setContextMenu(getTrayMenu())
           updateToolTip()
         }
       }])
@@ -584,6 +643,7 @@ function getTrayMenu () {
             breakWins = null
           }
           breakPlanner.skipToBreak()
+          appIcon.setContextMenu(getTrayMenu())
           updateToolTip()
         }
       }])
@@ -601,8 +661,13 @@ function getTrayMenu () {
       label: i18next.t('main.resume'),
       click: function () {
         resumeBreaks()
+        appIcon.setContextMenu(getTrayMenu())
         updateToolTip()
       }
+    })
+  } else if (notificationState.getDoNotDisturb()) {
+    trayMenu.push({
+      type: 'separator'
     })
   } else {
     trayMenu.push({
@@ -648,6 +713,7 @@ function getTrayMenu () {
           breakWins = null
         }
         breakPlanner.reset()
+        appIcon.setContextMenu(getTrayMenu())
         updateToolTip()
       }
     })
@@ -661,14 +727,14 @@ function getTrayMenu () {
   })
 
   if (process.platform === 'darwin' || process.platform === 'win32') {
-    let loginItemSettings = app.getLoginItemSettings()
-    let openAtLogin = loginItemSettings.openAtLogin
+    const loginItemSettings = app.getLoginItemSettings()
+    const openAtLogin = loginItemSettings.openAtLogin
     trayMenu.push({
       label: i18next.t('main.startAtLogin'),
       type: 'checkbox',
       checked: openAtLogin,
       click: function () {
-        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
       }
     })
   }
@@ -678,7 +744,7 @@ function getTrayMenu () {
   }, {
     label: i18next.t('main.yourStretchly'),
     click: function () {
-      let color = settings.get('mainColor').replace('#', '')
+      const color = settings.get('mainColor').replace('#', '')
       shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
     }
   }, {
@@ -695,64 +761,79 @@ function getTrayMenu () {
 
 function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
-  let toolTipHeader = i18next.t('main.toolTipHeader')
+  const toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
+    console.log('Have windows!')
     appIcon.setToolTip(toolTipHeader)
-  } else {
-    let statusMessage = ''
-    if (breakPlanner && breakPlanner.scheduler) {
-      if (breakPlanner.isPaused) {
-        let timeLeft = breakPlanner.scheduler.timeLeft
-        if (timeLeft) {
-          statusMessage += i18next.t('main.pausedUntil', {'timeLeft': Utils.formatPauseTimeLeft(timeLeft)})
-        } else {
-          statusMessage += i18next.t('main.pausedIndefinitely')
-        }
+    return
+  }
+
+  let statusMessage = ''
+  if (breakPlanner && breakPlanner.scheduler) {
+    const type = typeOfBreak()
+    let notificationTime
+    if (breakPlanner.isPaused) {
+      const timeLeft = breakPlanner.scheduler.timeLeft
+      if (timeLeft) {
+        statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
       } else {
-        let breakType
-        let breakNotification = false
-        switch (breakPlanner.scheduler.reference) {
-          case 'startMicrobreak': {
-            breakType = 'microbreak'
-            break
-          }
-          case 'startBreak': {
-            breakType = 'break'
-            break
-          }
-          case 'startMicrobreakNotification': {
-            breakType = 'microbreak'
-            breakNotification = true
-            break
-          }
-          case 'startBreakNotification': {
-            breakType = 'break'
-            breakNotification = true
-            break
-          }
-          default: {
-            breakType = null
-            break
-          }
-        }
-        if (breakType) {
-          let notificationTime
-          if (breakNotification) {
-            notificationTime = settings.get('breakNotificationInterval')
-          } else {
-            notificationTime = 0
-          }
-          statusMessage += i18next.t('main.timeToNext', {'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`)})
-          if (breakType === 'microbreak') {
-            let breakInterval = settings.get('breakInterval') + 1
-            let breakNumber = breakPlanner.breakNumber % breakInterval
-            statusMessage += i18next.t('main.nextBreakFollowing', {'count': breakInterval - breakNumber})
-          }
-        }
+        statusMessage += i18next.t('main.pausedIndefinitely')
       }
     }
-    appIcon.setToolTip(toolTipHeader + statusMessage)
+
+    if (type.breakType) {
+      notificationTime = 0
+      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
+      if (type.breakType === 'microbreak') {
+        const breakInterval = settings.get('breakInterval') + 1
+        const breakNumber = breakPlanner.breakNumber % breakInterval
+        statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
+      }
+    }
   }
+
+  if (notificationState.getDoNotDisturb()) {
+    statusMessage = i18next.t('main.notificationStatus')
+  }
+
+  appIcon.setToolTip(toolTipHeader + statusMessage)
+}
+
+function typeOfBreak () {
+  let breakType = ''
+  let breakNotification = false
+  switch (breakPlanner.scheduler.reference) {
+    case 'startMicrobreak': {
+      breakType = 'microbreak'
+      break
+    }
+    case 'startBreak': {
+      breakType = 'break'
+      break
+    }
+    case 'startMicrobreakNotification': {
+      breakType = 'microbreak'
+      breakNotification = true
+      break
+    }
+    case 'startBreakNotification': {
+      breakType = 'break'
+      breakNotification = true
+      break
+    }
+    default : {
+      breakType = null
+      break
+    }
+  }
+  return { breakType, breakNotification }
+}
+
+function showNotification (text) {
+  processWin.webContents.send('showNotification', {
+    text: text,
+    silent: settings.get('silentNotifications')
+  })
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
@@ -777,10 +858,13 @@ ipcMain.on('save-setting', function (event, key, value) {
   }
   settings.set(key, value)
   event.sender.send('renderSettings', settings.data)
+  appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
 })
 
 ipcMain.on('update-tray', function (event) {
+  updateToolTip()
+  appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
 })
 
@@ -794,6 +878,8 @@ ipcMain.on('set-default-settings', function (event, data) {
   dialog.showMessageBox(options, function (index) {
     if (index === 0) {
       saveDefaultsFor(data)
+      appIcon.setImage(trayIconPath())
+      appIcon.setContextMenu(getTrayMenu())
       settingsWin.webContents.send('renderSettings', settings.data)
     }
   })
@@ -804,11 +890,12 @@ ipcMain.on('send-settings', function (event) {
 })
 
 ipcMain.on('show-debug', function (event) {
-  let reference = breakPlanner.scheduler.reference
-  let timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  const reference = breakPlanner.scheduler.reference
+  const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
-  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile)
+  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
 })
 
 ipcMain.on('change-language', function (event, language) {

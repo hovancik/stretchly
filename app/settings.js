@@ -1,4 +1,4 @@
-const {ipcRenderer, remote} = require('electron')
+const { ipcRenderer, remote } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const i18next = remote.require('i18next')
 
@@ -42,7 +42,7 @@ microbreakIntervalMinus.addEventListener('click', function (e) {
 })
 
 microbreakDurationPlus.addEventListener('click', function (e) {
-  if (microbreakDuration.innerHTML !== '300') {
+  if (microbreakDuration.innerHTML !== '900') {
     ipcRenderer.send('save-setting', 'microbreakDuration', (parseInt(microbreakDuration.innerHTML, 10) + 5) * 1000)
   }
 })

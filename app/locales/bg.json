@@ -1,13 +1,18 @@
 {
   "main": {
     "toolTipHeader": "stretchly - приложение за напомняне за почивка",
-    "microbreakIn": "Микропочивка след {{seconds}} секунди...",
-    "breakIn": "Почивка след {{seconds}} секунди...",
+    "microbreakIn": "Микропочивка след {{seconds}} секунди…",
+    "breakIn": "Почивка след {{seconds}} секунди…",
+    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
+    "breakReference": "break",
+    "microbreakReference": "microbreak",
+    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
     "resumingBreaks": "Продължи почивките",
     "aboutStretchly": "Относно stretchly v{{version}}",
     "downloadLatestVersion": "Изтегли последната версия",
     "about": "Относно",
     "becomePatron": "Стани Patron",
+    "notificationStateMode": "On Do Not Disturb mode",
     "toBreak": "почивка",
     "toMicrobreak": "микропочивка",
     "skipToTheNext": "Прескочи към следващата",
@@ -33,14 +38,15 @@
     "microbreak": "микропочивка",
     "break": "почивка",
     "nextBreakFollowing": "\nСледващата почивка ще бъде след {{count}} микропочивка",
-    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки"
+    "nextBreakFollowing_plural": "\nСледващата почивка ще бъде след {{count}} микропочивки",
+    "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "keepGoing": "...Не!!! Ще продължа...",
+    "keepGoing": "…Не!!! Ще продължа…",
     "title": "Време е за почивка!"
   },
   "microbreak": {
-    "keepGoing": "...Не!!! Ще продължа...",
+    "keepGoing": "…Не!!! Ще продължа…",
     "title": "Време е за почивка!"
   },
   "about": {
@@ -51,7 +57,7 @@
     "orRead": "or read its",
     "tutorial": "tutorial",
     "latestVersion": "последна версия:",
-    "checking": "проверка за нова версия..."
+    "checking": "проверка за нова версия…"
   },
   "settings": {
     "settings": "Настройки",
@@ -94,6 +100,8 @@
     "notifyBeforeMicrobreakStarts": "уведомяване преди започването на микропочивка",
     "monitorIdleTime": "следене на времето на системата за естествени почивки",
     "showOnAllScreens": "breaks are shown on all monitors",
+    "silentNotifications": "silent notifications",
+    "useMonochromeTrayIcon": "use monochrome tray icon",
     "language": "език",
     "resetToDefaults": "нулиране към начални настройки"
   },
