@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Russian translations updated
 
 ### Added
+- Swedish translations
 - Turkish translations
 - silent notifications option
 
