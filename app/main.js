@@ -735,7 +735,7 @@ function getTrayMenu () {
         resizable: false,
         backgroundColor: settings.get('mainColor'),
         webPreferences: {
-          preload: path.resolve(__dirname,'./my-stretchly.js'),
+          preload: path.resolve(__dirname,'./electron-bridge.js'),
           nodeIntegration: false
         }
       })
