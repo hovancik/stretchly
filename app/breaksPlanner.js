@@ -93,12 +93,9 @@ class BreaksPlanner extends EventEmitter {
   }
 
   postponeCurrentBreak (type) {
-    if (!this.scheduler) {
-      console.log('no current break to postpone')
-      return
-    }
     this.scheduler.cancel()
     this.postponesNumber += 1
+    this.breakNumber -= 1
     const postponeTime = this.settings.get(`${type}PostponeTime`)
     const eventName = `start${type.charAt(0).toUpperCase() + type.slice(1)}`
     this.scheduler = new Scheduler(() => this.emit(eventName), postponeTime, eventName)
