@@ -1,5 +1,6 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
 const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
+const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const path = require('path')
@@ -724,7 +725,22 @@ function getTrayMenu () {
     label: i18next.t('main.yourStretchly'),
     click: function () {
       const color = settings.get('mainColor').replace('#', '')
-      shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
+      const myStretchlyUrl = `https://my.stretchly.net/?bg=${color}`
+      const myStretchlyWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        icon: `${__dirname}/images/stretchly_18x18.png`,
+        x: displaysX(),
+        y: displaysY(),
+        resizable: false,
+        backgroundColor: settings.get('mainColor'),
+        webPreferences: {
+          preload: path.resolve(__dirname,'./my-stretchly.js'),
+          nodeIntegration: false
+        }
+      })
+      myStretchlyWindow.webContents.openDevTools()
+      myStretchlyWindow.loadURL(myStretchlyUrl)
     }
   }, {
     type: 'separator'
