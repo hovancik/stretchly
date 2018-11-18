@@ -35,7 +35,8 @@ body.darwin {
 .microbreak,
 .about,
 .welcome,
-.tutorial {
+.tutorial,
+.contributor-settings {
   margin: 0 auto;
   max-width: 80%;
   padding-top: 10%;

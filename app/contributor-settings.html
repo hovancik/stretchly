@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title data-i18next="microbreak.title"></title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+  <body>
+    <div class="contributor-settings">
+      Notifications<br><br/>
+      <span id="microbreakNotificationIntervalMinus" class="pointer">-</span>
+      <span id="microbreakNotificationInterval"></span>
+      <span id="microbreakNotificationIntervalPlus" class="pointer">+</span>
+      seconds before microbreak <br/>
+
+      <span id="breakNotificationIntervalMinus" class="pointer">-</span>
+      <span id="breakNotificationInterval"></span>
+      <span id="breakNotificationIntervalPlus" class="pointer">+</span>
+      seconds before break
+    </div>
+    <script>
+      require('./platform.js')
+      require('./contributor-settings.js')
+    </script>
+  </body>
+</html>
