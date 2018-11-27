@@ -7,9 +7,9 @@ chai.should()
 describe('ideasLoader', function () {
   beforeEach(function () {
     this.ideas = new IdeasLoader([
-      {data: 'a', enabled: true},
-      {data: 'b', enabled: false},
-      {data: 'c', enabled: true}
+      { data: 'a', enabled: true },
+      { data: 'b', enabled: false },
+      { data: 'c', enabled: true }
     ])
   })
 

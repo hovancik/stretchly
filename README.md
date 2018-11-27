@@ -1,4 +1,4 @@
-# stretchly [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
@@ -53,6 +53,7 @@ Microbreaks and breaks can be customized:
 - you can set the break window to be fullscreen
 - you can disable (micro)break ideas
 - you can disable pre-(micro)break notifications
+- you can disable (micro)break notification sounds
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 - you can disable the display of breaks on all of your monitors
 - you can change the default monochrome tray icon to a colorful version
@@ -150,7 +151,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - [x] information about when will be the next break
 - [x] create keyboard shortcuts
 - [ ] color-picker for themes
-- [ ] some kind of silent mode (see #44)
+- [x] some kind of silent mode (see #44 and #327)
 - [ ] history/timeline of breaks
 - [x] localization support (l12n, gettetxt via Crowdin, Weblate or so)
 
@@ -188,6 +189,8 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - Ismail Demirbilek, [@dbtek](https://github.com/dbtek)
 - Giacomo Rossetto, [@jackymancs4](https://github.com/jackymancs4)
 - Hum4n01d, [@hum4n01d](https://github.com/hum4n01d)
+- Ary Borenszweig, [@asterite](https://github.com/asterite)
+- Jonatan Nyberg, @jony0008
 - William Lin, [@FanciestW](https://github.com/FanciestW)
 
 ### Humans and Tools

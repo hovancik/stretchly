@@ -5,7 +5,7 @@ Have you read Code of Conduct? By filing an Pull Request, you are expected to co
 -->
 
 Issue: #
-<!-- Link to relevant issue. All PRs should be asociated with an issue -->
+<!-- Link to relevant issue. All PRs should be associated with an issue -->
 
 ### Requirements
 
@@ -14,7 +14,7 @@ Issue: #
 <!-- If there’s a checkbox you can’t complete for any reason, that's okay, just explain in detail why you weren’t able to do so. -->
 
 - [ ]  issue was opened to discuss proposed changes before starting implementation.
-- [ ]  during development, `node` version specified in `package.json` was used.
+- [ ]  during development, `node` version specified in `package.json` was used (ie using [nvm](https://github.com/creationix/nvm)).
 - [ ]  package versions and package-lock.json were not changed (`npm install --no-save`).
 - [ ]  app version number was not changed.
 - [ ]  all new code has tests to ensure against regressions.

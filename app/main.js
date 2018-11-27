@@ -1,5 +1,5 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const {app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut} = require('electron')
+const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
@@ -219,14 +219,18 @@ function planVersionCheck (seconds = 1) {
 }
 
 function checkVersion () {
-  processWin.webContents.send('checkVersion', `v${app.getVersion()}`, settings.get('notifyNewVersion'))
+  processWin.webContents.send('checkVersion', {
+    oldVersion: `v${app.getVersion()}`,
+    notify: settings.get('notifyNewVersion'),
+    silent: settings.get('silentNotifications')
+  })
   planVersionCheck(3600 * 5)
 }
 
 function startMicrobreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+    showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification('startMicrobreak')
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
@@ -242,7 +246,7 @@ function startMicrobreakNotification () {
 function startBreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
-    processWin.webContents.send('showNotification', i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+    showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification('startBreak')
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
@@ -453,7 +457,7 @@ function pauseBreaks (milliseconds) {
 function resumeBreaks () {
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
-  processWin.webContents.send('showNotification', i18next.t('main.resumingBreaks'))
+  showNotification(i18next.t('main.resumingBreaks'))
   updateToolTip()
 }
 
@@ -469,7 +473,7 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', {version: app.getVersion()})
+    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -670,7 +674,7 @@ function getTrayMenu () {
       type: 'checkbox',
       checked: openAtLogin,
       click: function () {
-        app.setLoginItemSettings({openAtLogin: !openAtLogin})
+        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
       }
     })
   }
@@ -762,7 +766,14 @@ function typeOfBreak () {
       break
     }
   }
-  return {breakType, breakNotification}
+  return { breakType, breakNotification }
+}
+
+function showNotification (text) {
+  processWin.webContents.send('showNotification', {
+    text: text,
+    silent: settings.get('silentNotifications')
+  })
 }
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {

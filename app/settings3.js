@@ -1,4 +1,4 @@
-const {ipcRenderer} = require('electron')
+const { ipcRenderer } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 
 document.addEventListener('DOMContentLoaded', event => {
