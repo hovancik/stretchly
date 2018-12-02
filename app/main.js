@@ -892,10 +892,13 @@ ipcMain.on('send-settings', function (event) {
 ipcMain.on('show-debug', function (event) {
   const reference = breakPlanner.scheduler.reference
   const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  const breaknumber = breakPlanner.breakNumber
+  const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
-  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
+  aboutWin.webContents.send('debugInfo', reference, timeleft,
+    breaknumber, postponesnumber, settingsFile, doNotDisturb)
 })
 
 ipcMain.on('change-language', function (event, language) {
