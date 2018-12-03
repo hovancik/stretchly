@@ -431,6 +431,8 @@ function breakComplete (shouldPlaySound, windows) {
       Menu.sendActionToFirstResponder('hide:')
     }
     closeWindows(windows)
+    # TODO
+    # would be nice to make windows null here so we don't need to do it later every time
     breakPlanner.nextBreak()
   }
   appIcon.setContextMenu(getTrayMenu())
@@ -440,27 +442,25 @@ function breakComplete (shouldPlaySound, windows) {
 function finishMicrobreak (shouldPlaySound = true) {
   breakComplete(shouldPlaySound, microbreakWins)
   microbreakWins = null
+  breakPlanner.nextBreak()
 }
 
 function finishBreak (shouldPlaySound = true) {
   breakComplete(shouldPlaySound, breakWins)
   breakWins = null
+  breakPlanner.nextBreak()
 }
 
 function postponeMicrobreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, microbreakWins)
-  if (microbreakWins) breakPlanner.postponeCurrentBreak('microbreak')
   microbreakWins = null
-  appIcon.setContextMenu(getTrayMenu())
-  updateToolTip()
+  breakPlanner.postponeCurrentBreak('microbreak')
 }
 
 function postponeBreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, breakWins)
-  if (breakWins) breakPlanner.postponeCurrentBreak('break')
   breakWins = null
-  appIcon.setContextMenu(getTrayMenu())
-  updateToolTip()
+  breakPlanner.postponeCurrentBreak('break')
 }
 
 function loadSettings () {
