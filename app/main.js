@@ -431,8 +431,8 @@ function breakComplete (shouldPlaySound, windows) {
       Menu.sendActionToFirstResponder('hide:')
     }
     closeWindows(windows)
-    # TODO
-    # would be nice to make windows null here so we don't need to do it later every time
+    // TODO
+    // would be nice to make windows null here so we don't need to do it later every time
     breakPlanner.nextBreak()
   }
   appIcon.setContextMenu(getTrayMenu())
