@@ -902,7 +902,7 @@ ipcMain.on('show-debug', function (event) {
   const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
-  const settingsFile = `${dir}/config.json`
+  const settingsFile = path.join(dir, 'config.json')
   aboutWin.webContents.send('debugInfo', reference, timeleft,
     breaknumber, postponesnumber, settingsFile, doNotDisturb)
 })
