@@ -3,6 +3,7 @@ const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut }
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
+const path = require('path')
 
 startI18next()
 
@@ -826,7 +827,7 @@ ipcMain.on('show-debug', function (event) {
   const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
   const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
-  const settingsFile = `${dir}/config.json`
+  const settingsFile = path.join(dir, 'config.json')
   aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
 })
 
