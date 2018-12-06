@@ -3,6 +3,7 @@ const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut }
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
+const path = require('path')
 
 startI18next()
 
