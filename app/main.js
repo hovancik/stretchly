@@ -455,12 +455,17 @@ function postponeMicrobreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, microbreakWins)
   microbreakWins = null
   breakPlanner.postponeCurrentBreak('microbreak')
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function postponeBreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, breakWins)
   breakWins = null
   breakPlanner.postponeCurrentBreak('break')
+  // TODO look into how we can not call next 2 lines everywhere
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function loadSettings () {
