@@ -16,9 +16,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Turkish translations
 - silent notifications option
 - Ability to postpone breaks/microbreaks in non-strict mode
-  * change postpone time with break/microbreak PostponeTime settings
-  * limit postpone times with break/microbreak PostponesLimit settings
-  * change postpone/dismiss limit with break/microbreak PostponesDurationPercent settings
 
 ## [0.18.0] - 2018-10-21
 ### Added

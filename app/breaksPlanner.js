@@ -83,6 +83,7 @@ class BreaksPlanner extends EventEmitter {
   nextBreakAfterNotification (name) {
     if (this.scheduler) this.scheduler.cancel()
     let breakNotificationInterval
+    // get type from break number
     if (name === 'startMicrobreak') {
       breakNotificationInterval = this.settings.get('microbreakNotificationInterval')
     } else {
@@ -93,9 +94,9 @@ class BreaksPlanner extends EventEmitter {
   }
 
   postponeCurrentBreak (type) {
+    // get type from break number
     this.scheduler.cancel()
     this.postponesNumber += 1
-    this.breakNumber -= 1
     const postponeTime = this.settings.get(`${type}PostponeTime`)
     const eventName = `start${type.charAt(0).toUpperCase() + type.slice(1)}`
     this.scheduler = new Scheduler(() => this.emit(eventName), postponeTime, eventName)

@@ -426,30 +426,29 @@ function breakComplete (shouldPlaySound, windows) {
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  if (windows) {
-    if (process.platform === 'darwin') {
-      // get focus on the last app
-      Menu.sendActionToFirstResponder('hide:')
-    }
-    closeWindows(windows)
-    // TODO
-    // would be nice to make windows null here so we don't need to do it later every time
-    breakPlanner.nextBreak()
+  if (process.platform === 'darwin') {
+    // get focus on the last app
+    Menu.sendActionToFirstResponder('hide:')
   }
-  appIcon.setContextMenu(getTrayMenu())
-  updateToolTip()
+  closeWindows(windows)
+  // TODO
+  // would be nice to make windows null here so we don't need to do it later every time
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
   breakComplete(shouldPlaySound, microbreakWins)
   microbreakWins = null
   breakPlanner.nextBreak()
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function finishBreak (shouldPlaySound = true) {
   breakComplete(shouldPlaySound, breakWins)
   breakWins = null
   breakPlanner.nextBreak()
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function postponeMicrobreak (shouldPlaySound = false) {
@@ -769,7 +768,6 @@ function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
   const toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
-    console.log('Have windows!')
     appIcon.setToolTip(toolTipHeader)
     return
   }
