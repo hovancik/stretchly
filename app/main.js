@@ -232,7 +232,7 @@ function startMicrobreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
     showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
-    breakPlanner.nextBreakAfterNotification('startMicrobreak')
+    breakPlanner.nextBreakAfterNotification()
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
   } else {
@@ -248,7 +248,7 @@ function startBreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
     showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
-    breakPlanner.nextBreakAfterNotification('startBreak')
+    breakPlanner.nextBreakAfterNotification()
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
   } else {
@@ -454,7 +454,7 @@ function finishBreak (shouldPlaySound = true) {
 function postponeMicrobreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, microbreakWins)
   microbreakWins = null
-  breakPlanner.postponeCurrentBreak('microbreak')
+  breakPlanner.postponeCurrentBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
 }
@@ -462,7 +462,7 @@ function postponeMicrobreak (shouldPlaySound = false) {
 function postponeBreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, breakWins)
   breakWins = null
-  breakPlanner.postponeCurrentBreak('break')
+  breakPlanner.postponeCurrentBreak()
   // TODO look into how we can not call next 2 lines everywhere
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())

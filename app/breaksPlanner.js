@@ -80,25 +80,25 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler.plan()
   }
 
-  nextBreakAfterNotification (name) {
-    if (this.scheduler) this.scheduler.cancel()
-    let breakNotificationInterval
-    // get type from break number
-    if (name === 'startMicrobreak') {
-      breakNotificationInterval = this.settings.get('microbreakNotificationInterval')
-    } else {
-      breakNotificationInterval = this.settings.get('breakNotificationInterval')
-    }
-    this.scheduler = new Scheduler(() => this.emit(name), breakNotificationInterval, name)
+  nextBreakAfterNotification () {
+    this.scheduler.cancel()
+    let scheduledBreakType= this._scheduledBreakType
+    console.log(scheduledBreakType)
+    let breakNotificationInterval = this.settings.get(`${scheduledBreakType}NotificationInterval`)
+    const eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}`
+    console.log(eventName)
+    this.scheduler = new Scheduler(() => this.emit(eventName), breakNotificationInterval, eventName)
     this.scheduler.plan()
   }
 
-  postponeCurrentBreak (type) {
-    // get type from break number
+  postponeCurrentBreak () {
     this.scheduler.cancel()
     this.postponesNumber += 1
-    const postponeTime = this.settings.get(`${type}PostponeTime`)
-    const eventName = `start${type.charAt(0).toUpperCase() + type.slice(1)}`
+    let scheduledBreakType= this._scheduledBreakType
+    console.log(scheduledBreakType)
+    const postponeTime = this.settings.get(`${scheduledBreakType}PostponeTime`)
+    const eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}`
+    console.log(eventName)
     this.scheduler = new Scheduler(() => this.emit(eventName), postponeTime, eventName)
     this.scheduler.plan()
   }
@@ -157,6 +157,21 @@ class BreaksPlanner extends EventEmitter {
   reset () {
     this.clear()
     this.resume()
+  }
+
+  get _scheduledBreakType () {
+    let shouldBreak = this.settings.get('break')
+    let shouldMicrobreak = this.settings.get('microbreak')
+    let breakInterval = this.settings.get('breakInterval') + 1
+    let scheduledBreakType
+    if (shouldBreak && shouldMicrobreak) {
+      scheduledBreakType = this.breakNumber % breakInterval !== 0 ? 'microbreak' : 'break'
+    } else if (!shouldBreak) {
+      scheduledBreakType = 'microbreak'
+    } else if (!shouldMicrobreak) {
+      scheduledBreakType = 'break'
+    }
+    return scheduledBreakType
   }
 
   naturalBreaks (shouldUse) {
