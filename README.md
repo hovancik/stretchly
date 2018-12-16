@@ -126,7 +126,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 ### Debugging
 One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
   - location of settings file
-  - time left and reference of break planner
+  - debug information for break planner
 
 ### Known issues
 - tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
