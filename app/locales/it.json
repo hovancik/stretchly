@@ -42,10 +42,12 @@
     "notificationStatus": "\nIn modalità non disturbare"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…no, preferisco non fermarmi",
     "title": "È ora di fare una pausa!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…no, preferisco non fermarmi",
     "title": "È ora di fare una pausa!"
   },

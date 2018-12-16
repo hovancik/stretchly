@@ -42,12 +42,12 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
-    "postpone": "...wait for a bit",
+    "postpone": "…wait for a bit",
     "keepGoing": "…nah, I'll just keep going on",
     "title": "Time to take a break!"
   },
   "microbreak": {
-    "postpone": "...wait for a bit",
+    "postpone": "…wait for a bit",
     "keepGoing": "…nah, I'll just keep going on",
     "title": "Time to take a break!"
   },

@@ -42,10 +42,12 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…obrigado por me lembrar, mas vou continuar sem fazer a pausa",
     "title": "É hora de fazer uma pausa longa!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…obrigado por me lembrar, mas vou continuar sem fazer a pausa",
     "title": "É hora de fazer uma pausa rápida!"
   },
