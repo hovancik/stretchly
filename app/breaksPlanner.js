@@ -83,10 +83,8 @@ class BreaksPlanner extends EventEmitter {
   nextBreakAfterNotification () {
     this.scheduler.cancel()
     let scheduledBreakType = this._scheduledBreakType
-    console.log(scheduledBreakType)
     let breakNotificationInterval = this.settings.get(`${scheduledBreakType}NotificationInterval`)
     const eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}`
-    console.log(eventName)
     this.scheduler = new Scheduler(() => this.emit(eventName), breakNotificationInterval, eventName)
     this.scheduler.plan()
   }
@@ -96,18 +94,14 @@ class BreaksPlanner extends EventEmitter {
     this.postponesNumber += 1
     let postponeTime, eventName
     let scheduledBreakType = this._scheduledBreakType
-    console.log(scheduledBreakType)
     let notification = this.settings.get(`${scheduledBreakType}Notification`)
-    console.log(notification)
     if (notification && this.settings.get(`${scheduledBreakType}PostponeTime`) > this.settings.get(`${scheduledBreakType}NotificationInterval`)) {
-      console.log('should notify')
       postponeTime = this.settings.get(`${scheduledBreakType}PostponeTime`) - this.settings.get(`${scheduledBreakType}NotificationInterval`)
       eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}Notification`
     } else {
       postponeTime = this.settings.get(`${scheduledBreakType}PostponeTime`)
       eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}`
     }
-    console.log(eventName)
     this.scheduler = new Scheduler(() => this.emit(eventName), postponeTime, eventName)
     this.scheduler.plan()
   }
