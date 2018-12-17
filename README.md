@@ -9,6 +9,8 @@
 
 [![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/hovancik)
 
+*You're reading the documentation for the master branch. View the documentation for the latest release [here](https://github.com/hovancik/stretchly/tree/v0.18.0).*
+
 By default, it runs in your tray and displays a reminder window containing an idea for a microbreak for 20 seconds every 10 minutes.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-microbreak.png" height="340">
@@ -21,8 +23,10 @@ The user gets notified 30 seconds before each break to be able to prepare to pau
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-notification.png" height="90">
 
-You can close the break or microbreak window early by clicking the link at the bottom
-or by using `Ctrl/Cmd + x` keyboard shortcut (when not in strict mode).
+When break/microbreak starts, you can postpone it once for 5 and 2 minutes respectively. After a specific time interval passes, you can finish it early.
+
+Both actions are available by clicking the link at the bottom of window
+or by using `Ctrl/Cmd + x` keyboard shortcut (except finishing early in strict mode).
 
 You can pause/resume *stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login. Also, Do Not Disturb mode is respected on those platforms.
 
@@ -94,6 +98,8 @@ E.g. if you live in Boston you would set:
 `posLatitude: 42.3,`
 `posLongitude: 71`
 
+#### Editing postpone functionality
+In the config file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable ability to postopne breaks, `microbreakPostponeTime` and `breakPostponeTime` to change postopone time in seconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change percentage of break in which user can postpone the break.
 
 #### New version notification
 In the config file, set `notifyNewVersion: false,` to disable new version notification.
