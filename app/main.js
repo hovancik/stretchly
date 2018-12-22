@@ -185,6 +185,7 @@ function createWelcomeWindow () {
     welcomeWin = new BrowserWindow({
       x: displaysX(),
       y: displaysY(),
+      resizable: false,
       autoHideMenuBar: true,
       icon: `${__dirname}/images/stretchly_18x18.png`,
       backgroundColor: settings.get('mainColor')
@@ -203,6 +204,7 @@ function createTutorialWindow () {
   tutorialWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
+    resizable: false,
     autoHideMenuBar: true,
     icon: `${__dirname}/images/stretchly_18x18.png`,
     backgroundColor: settings.get('mainColor')
@@ -292,6 +294,7 @@ function startMicrobreak () {
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
+      resizable: false,
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
@@ -352,6 +355,7 @@ function startBreak () {
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
+      resizable: false,
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
