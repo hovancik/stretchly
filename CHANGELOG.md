@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Russian translations updated
 - Bulgarian translations updated
 
+### Fixed
+- disabled resizing for some windows
+
 ### Added
 - Swedish translations
 - Turkish translations
