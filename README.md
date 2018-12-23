@@ -9,8 +9,6 @@
 
 [![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/hovancik)
 
-*You're reading the documentation for the master branch. View the documentation for the latest release [here](https://github.com/hovancik/stretchly/tree/v0.18.0).*
-
 By default, it runs in your tray and displays a reminder window containing an idea for a microbreak for 20 seconds every 10 minutes.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-microbreak.png" height="340">
