@@ -17,30 +17,25 @@ document.getElementById('postpone').addEventListener('click', event =>
   ipcRenderer.send('postpone-microbreak')
 )
 
-ipcRenderer.on('microbreakIdea', (event, message, strictMode, postponable) => {
-  if (postponable) {
-    document.getElementById('postpone').style.visibility = 'visible'
-  } else if (!strictMode) {
-    document.getElementById('close').style.visibility = 'visible'
-  }
-
-  if (message) {
-    let microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
-    microbreakIdea.innerHTML = message
-  }
+ipcRenderer.on('microbreakIdea', (event, message) => {
+  let microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
+  microbreakIdea.innerHTML = message
 })
 
-ipcRenderer.on('progress', (event, started, duration, postponePercent) => {
+ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
   let progress = document.getElementById('progress')
   let progressTime = document.getElementById('progress-time')
+  let postponeElement = document.getElementById('postpone')
+  let closeElement = document.getElementById('close')
+
   window.setInterval(function () {
     if (Date.now() - started < duration) {
-      const passedPercent = (Date.now() - started) / duration
-      if (postponePercent && passedPercent >= postponePercent) {
-        document.getElementById('postpone').style.visibility = 'hidden'
-        document.getElementById('close').style.visibility = 'visible'
-      }
-      progress.value = passedPercent * progress.max
+      const passedPercent = (Date.now() - started) / duration * 100
+      postponeElement.style.visibility =
+        Utils.canPostpone(postpone, passedPercent, postponePercent) ? 'visible' : 'hidden'
+      closeElement.style.visibility =
+        Utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'visible' : 'hidden'
+      progress.value = passedPercent * progress.max / 100
       progressTime.innerHTML = Utils.formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
     }
   }, 100)

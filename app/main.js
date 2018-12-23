@@ -275,21 +275,20 @@ function startMicrobreak () {
     return
   }
 
-  let startTime = Date.now()
+  const startTime = Date.now()
   const breakDuration = settings.get('microbreakDuration')
   const strictMode = settings.get('microbreakStrictMode')
-  // in strict mode you cannot skip, so allow to postpone anytime
-  const postponableDurationPercent =
-    strictMode ? 100 : settings.get('microbreakPostponableDurationPercent') / 100
   const postponesLimit = settings.get('microbreakPostponesLimit')
+  const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
   const postponable = settings.get('microbreakPostpone') &&
-    (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
+    breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+
   if (!strictMode || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
-      const passedPercent = (Date.now() - startTime) / breakDuration
-      if (postponable && passedPercent < postponableDurationPercent) {
+      const passedPercent = (Date.now() - startTime) / breakDuration * 100
+      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
         postponeMicrobreak()
-      } else if (!strictMode) {
+      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
         finishMicrobreak(false)
       }
     })
@@ -298,10 +297,7 @@ function startMicrobreak () {
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
-  let idea = null
-  if (settings.get('ideas')) {
-    idea = microbreakIdeas.randomElement
-  }
+  let idea = microbreakIdeas.randomElement
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const microbreakWinLocal = new BrowserWindow({
@@ -322,11 +318,9 @@ function startMicrobreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
-      microbreakWinLocal.webContents.send(
-        'microbreakIdea', idea, strictMode, postponable)
-      microbreakWinLocal.webContents.send(
-        'progress', startTime = Date.now(), breakDuration,
-        postponableDurationPercent)
+      microbreakWinLocal.webContents.send('microbreakIdea', idea)
+      microbreakWinLocal.webContents.send('progress', startTime,
+        breakDuration, strictMode, postponable, postponableDurationPercent)
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -355,21 +349,20 @@ function startBreak () {
     return
   }
 
-  let startTime = Date.now()
+  const startTime = Date.now()
   const breakDuration = settings.get('breakDuration')
   const strictMode = settings.get('breakStrictMode')
-  // in strict mode you cannot skip, so allow to postpone anytime
-  const postponableDurationPercent =
-    strictMode ? 100 : settings.get('breakPostponableDurationPercent') / 100
   const postponesLimit = settings.get('breakPostponesLimit')
+  const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
   const postponable = settings.get('breakPostpone') &&
-    (!postponesLimit || breakPlanner.postponesNumber < postponesLimit)
+    breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+
   if (!strictMode || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
-      const passedPercent = (Date.now() - startTime) / breakDuration
-      if (postponable && passedPercent < postponableDurationPercent) {
+      const passedPercent = (Date.now() - startTime) / breakDuration * 100
+      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
         postponeBreak()
-      } else if (!strictMode) {
+      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
         finishBreak(false)
       }
     })
@@ -378,10 +371,7 @@ function startBreak () {
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
-  let idea = null
-  if (settings.get('ideas')) {
-    idea = breakIdeas.randomElement
-  }
+  let idea = breakIdeas.randomElement
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const breakWinLocal = new BrowserWindow({
@@ -402,11 +392,9 @@ function startBreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
-      breakWinLocal.webContents.send(
-        'breakIdea', idea, strictMode, postponable)
-      breakWinLocal.webContents.send(
-        'progress', startTime = Date.now(), breakDuration,
-        postponableDurationPercent)
+      breakWinLocal.webContents.send('breakIdea', idea)
+      breakWinLocal.webContents.send('progress', startTime,
+        breakDuration, strictMode, postponable, postponableDurationPercent)
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
