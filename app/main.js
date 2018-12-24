@@ -3,6 +3,7 @@ const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut }
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const notificationState = require('@meetfranz/electron-notification-state')
+const path = require('path')
 
 startI18next()
 
@@ -184,6 +185,7 @@ function createWelcomeWindow () {
     welcomeWin = new BrowserWindow({
       x: displaysX(),
       y: displaysY(),
+      resizable: false,
       autoHideMenuBar: true,
       icon: `${__dirname}/images/stretchly_18x18.png`,
       backgroundColor: settings.get('mainColor')
@@ -202,6 +204,7 @@ function createTutorialWindow () {
   tutorialWin = new BrowserWindow({
     x: displaysX(),
     y: displaysY(),
+    resizable: false,
     autoHideMenuBar: true,
     icon: `${__dirname}/images/stretchly_18x18.png`,
     backgroundColor: settings.get('mainColor')
@@ -291,6 +294,7 @@ function startMicrobreak () {
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
+      resizable: false,
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
@@ -351,6 +355,7 @@ function startBreak () {
       icon: `${__dirname}/images/stretchly_18x18.png`,
       x: displaysX(displayIdx),
       y: displaysY(displayIdx),
+      resizable: false,
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
@@ -826,7 +831,7 @@ ipcMain.on('show-debug', function (event) {
   const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
   const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
-  const settingsFile = `${dir}/config.json`
+  const settingsFile = path.join(dir, 'config.json')
   aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
 })
 
