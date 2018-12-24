@@ -42,10 +42,12 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…额, 我还有事做",
     "title": "该休息一下了!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…额, 我还有事做",
     "title": "该休息一下了!"
   },

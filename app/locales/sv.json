@@ -42,10 +42,12 @@
     "notificationStatus": "\nI Stör ej läge"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…nja, jag fortsätter bara",
     "title": "Dags att ta en rast!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…nja, jag fortsätter bara",
     "title": "Dags att ta en rast!"
   },

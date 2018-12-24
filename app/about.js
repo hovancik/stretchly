@@ -37,7 +37,8 @@ window.addEventListener('keydown', event => {
   }
 })
 
-ipcRenderer.on('debugInfo', (event, reference, timeleft, settingsfile, doNotDisturb) => {
+ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
+  postponesnumber, settingsfile, doNotDisturb) => {
   let visible = document.getElementsByClassName('debug')[0].style.visibility === 'visible'
   if (visible) {
     document.getElementsByClassName('debug')[0].style.visibility = 'hidden'
@@ -47,6 +48,10 @@ ipcRenderer.on('debugInfo', (event, reference, timeleft, settingsfile, doNotDist
     referenceElement.innerHTML = reference
     let timeleftElement = document.getElementById('timeleft')
     timeleftElement.innerHTML = timeleft
+    let breakNumber = document.getElementById('breakNumber')
+    breakNumber.innerHTML = breaknumber
+    let postponesNumber = document.getElementById('postponesNumber')
+    postponesNumber.innerHTML = postponesnumber
     let settingsfileElement = document.getElementById('settingsfile')
     settingsfileElement.innerHTML = settingsfile
     let donotdisturbElement = document.getElementById('donotdisturb')

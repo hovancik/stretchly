@@ -42,10 +42,12 @@
     "notificationStatus": "\nEn mode ne pas troubler"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une grande pause !"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une petite pause !"
   },

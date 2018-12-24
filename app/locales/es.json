@@ -42,10 +42,12 @@
     "notificationStatus": "\nEn el modo No Molestar"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…bah, prefiero seguir",
     "title": "Hora de hacer un descanso!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…bah, prefiero seguir",
     "title": "Hora de hacer un microdescanso!"
   },

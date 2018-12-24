@@ -42,10 +42,12 @@
     "notificationStatus": "\nBeni Rahatsız Etme modunda"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…yok, devam edeceğim",
     "title": "Mola zamanı!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…yok, devam edeceğim",
     "title": "Mola zamanı!"
   },
