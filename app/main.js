@@ -231,8 +231,8 @@ function checkVersion () {
 }
 
 function startMicrobreakNotification () {
-  const notificationDisabled = notificationState.getDoNotDisturb()
-  if (!notificationDisabled) {
+  const doNotDisturb = settings.get('monitorDnd') && notificationState.getDoNotDisturb()
+  if (!doNotDisturb) {
     showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification()
     appIcon.setContextMenu(getTrayMenu())
@@ -247,8 +247,8 @@ function startMicrobreakNotification () {
 }
 
 function startBreakNotification () {
-  const notificationDisabled = notificationState.getDoNotDisturb()
-  if (!notificationDisabled) {
+  const doNotDisturb = settings.get('monitorDnd') && notificationState.getDoNotDisturb()
+  if (!doNotDisturb) {
     showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
     breakPlanner.nextBreakAfterNotification()
     appIcon.setContextMenu(getTrayMenu())
@@ -567,6 +567,7 @@ function getTrayMenu () {
   const isPaused = breakPlanner.isPaused
   const reference = typeOfBreak()
   const nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
+  const doNotDisturb = settings.get('monitorDnd') && notificationState.getDoNotDisturb()
 
   if (global.shared.isNewVersion) {
     trayMenu.push({
@@ -577,7 +578,7 @@ function getTrayMenu () {
     })
   }
 
-  if (timeLeft && !notificationState.getDoNotDisturb()) {
+  if (timeLeft && !doNotDisturb) {
     if (isPaused) {
       trayMenu.push({
         label: i18next.t('main.resumingAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1] })
@@ -603,7 +604,7 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (notificationState.getDoNotDisturb()) {
+  if (doNotDisturb) {
     trayMenu.push({
       label: i18next.t('main.notificationStateMode')
     })
@@ -662,7 +663,7 @@ function getTrayMenu () {
         updateToolTip()
       }
     })
-  } else if (notificationState.getDoNotDisturb()) {
+  } else if (doNotDisturb) {
     trayMenu.push({
       type: 'separator'
     })
@@ -763,6 +764,7 @@ function updateToolTip () {
     appIcon.setToolTip(toolTipHeader)
     return
   }
+  const doNotDisturb = settings.get('monitorDnd') && notificationState.getDoNotDisturb()
 
   let statusMessage = ''
   if (breakPlanner && breakPlanner.scheduler) {
@@ -788,7 +790,7 @@ function updateToolTip () {
     }
   }
 
-  if (notificationState.getDoNotDisturb()) {
+  if (doNotDisturb) {
     statusMessage = i18next.t('main.notificationStatus')
   }
 

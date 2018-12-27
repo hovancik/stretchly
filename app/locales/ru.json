@@ -102,6 +102,7 @@
     "notifyBeforeBreakStarts": "уведомлять перед началом перерыва",
     "notifyBeforeMicrobreakStarts": "уведомлять перед началом микроперерыва",
     "monitorIdleTime": "считать бездействие за естественный перерыв",
+    "monitorDnd": "monitor Do Not Disturb for notifications",
     "showOnAllScreens": "отображать на всех экранах",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "использовать черно-белой значок",
