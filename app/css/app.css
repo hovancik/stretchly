@@ -121,6 +121,7 @@ a {
   color: #fff;
 }
 
+#postpone,
 #close,
 #about-footer,
 #defaults,
@@ -134,6 +135,7 @@ a {
   transform: translateX(-50%);
 }
 
+#postpone,
 #close {
   visibility: hidden;
 }

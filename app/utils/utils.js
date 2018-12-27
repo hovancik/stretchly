@@ -47,9 +47,21 @@ function formatTimeOfNextBreak (timeLeft) {
   return [hours, minutes]
 }
 
+// does not consider `postponesLimit`
+function canPostpone (postpone, passedPercent, postponePercent) {
+  return postpone && passedPercent <= postponePercent
+}
+
+// does not consider `postponesLimit`
+function canSkip (strictMode, postpone, passedPercent, postponePercent) {
+  return !((postpone && passedPercent <= postponePercent) || strictMode)
+}
+
 module.exports = {
   formatRemaining,
   formatTillBreak,
   formatPauseTimeLeft,
-  formatTimeOfNextBreak
+  formatTimeOfNextBreak,
+  canPostpone,
+  canSkip
 }

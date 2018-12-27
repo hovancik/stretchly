@@ -234,7 +234,7 @@ function startMicrobreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
     showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
-    breakPlanner.nextBreakAfterNotification('startMicrobreak')
+    breakPlanner.nextBreakAfterNotification()
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
   } else {
@@ -250,7 +250,7 @@ function startBreakNotification () {
   const notificationDisabled = notificationState.getDoNotDisturb()
   if (!notificationDisabled) {
     showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
-    breakPlanner.nextBreakAfterNotification('startBreak')
+    breakPlanner.nextBreakAfterNotification()
     appIcon.setContextMenu(getTrayMenu())
     updateToolTip()
   } else {
@@ -276,18 +276,30 @@ function startMicrobreak () {
     console.log('microbreak already running')
     return
   }
-  if (!settings.get('microbreakStrictMode')) {
+
+  const startTime = Date.now()
+  const breakDuration = settings.get('microbreakDuration')
+  const strictMode = settings.get('microbreakStrictMode')
+  const postponesLimit = settings.get('microbreakPostponesLimit')
+  const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
+  const postponable = settings.get('microbreakPostpone') &&
+    breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+
+  if (!strictMode || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
-      finishMicrobreak(false)
+      const passedPercent = (Date.now() - startTime) / breakDuration * 100
+      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+        postponeMicrobreak()
+      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+        finishMicrobreak(false)
+      }
     })
   }
+
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
-  let idea = null
-  if (settings.get('ideas')) {
-    idea = microbreakIdeas.randomElement
-  }
+  let idea = microbreakIdeas.randomElement
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const microbreakWinLocal = new BrowserWindow({
@@ -309,8 +321,9 @@ function startMicrobreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
-      microbreakWinLocal.webContents.send('microbreakIdea', idea, settings.get('microbreakStrictMode'))
-      microbreakWinLocal.webContents.send('progress', Date.now(), settings.get('microbreakDuration'))
+      microbreakWinLocal.webContents.send('microbreakIdea', idea)
+      microbreakWinLocal.webContents.send('progress', startTime,
+        breakDuration, strictMode, postponable, postponableDurationPercent)
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -321,6 +334,7 @@ function startMicrobreak () {
     }
   }
 
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
@@ -337,18 +351,30 @@ function startBreak () {
     console.log('break already running')
     return
   }
-  if (!settings.get('breakStrictMode')) {
+
+  const startTime = Date.now()
+  const breakDuration = settings.get('breakDuration')
+  const strictMode = settings.get('breakStrictMode')
+  const postponesLimit = settings.get('breakPostponesLimit')
+  const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
+  const postponable = settings.get('breakPostpone') &&
+    breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+
+  if (!strictMode || postponable) {
     globalShortcut.register('CommandOrControl+X', () => {
-      finishBreak(false)
+      const passedPercent = (Date.now() - startTime) / breakDuration * 100
+      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+        postponeBreak()
+      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+        finishBreak(false)
+      }
     })
   }
+
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
-  let idea = null
-  if (settings.get('ideas')) {
-    idea = breakIdeas.randomElement
-  }
+  let idea = breakIdeas.randomElement
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const breakWinLocal = new BrowserWindow({
@@ -370,8 +396,9 @@ function startBreak () {
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
-      breakWinLocal.webContents.send('breakIdea', idea, settings.get('breakStrictMode'))
-      breakWinLocal.webContents.send('progress', Date.now(), settings.get('breakDuration'))
+      breakWinLocal.webContents.send('breakIdea', idea)
+      breakWinLocal.webContents.send('progress', startTime,
+        breakDuration, strictMode, postponable, postponableDurationPercent)
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
@@ -382,6 +409,7 @@ function startBreak () {
     }
   }
 
+  appIcon.setContextMenu(getTrayMenu())
   updateToolTip()
 }
 
@@ -390,26 +418,46 @@ function breakComplete (shouldPlaySound, windows) {
   if (shouldPlaySound) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
-  if (windows) {
-    if (process.platform === 'darwin') {
-      // get focus on the last app
-      Menu.sendActionToFirstResponder('hide:')
-    }
-    closeWindows(windows)
-    breakPlanner.nextBreak()
+  if (process.platform === 'darwin') {
+    // get focus on the last app
+    Menu.sendActionToFirstResponder('hide:')
   }
-  appIcon.setContextMenu(getTrayMenu())
-  updateToolTip()
+  closeWindows(windows)
+  // TODO
+  // would be nice to make windows null here so we don't need to do it later every time
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
   breakComplete(shouldPlaySound, microbreakWins)
   microbreakWins = null
+  breakPlanner.nextBreak()
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function finishBreak (shouldPlaySound = true) {
   breakComplete(shouldPlaySound, breakWins)
   breakWins = null
+  breakPlanner.nextBreak()
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
+}
+
+function postponeMicrobreak (shouldPlaySound = false) {
+  breakComplete(shouldPlaySound, microbreakWins)
+  microbreakWins = null
+  breakPlanner.postponeCurrentBreak()
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
+}
+
+function postponeBreak (shouldPlaySound = false) {
+  breakComplete(shouldPlaySound, breakWins)
+  breakWins = null
+  breakPlanner.postponeCurrentBreak()
+  // TODO look into how we can not call next 2 lines everywhere
+  updateToolTip()
+  appIcon.setContextMenu(getTrayMenu())
 }
 
 function loadSettings () {
@@ -574,6 +622,7 @@ function getTrayMenu () {
             breakWins = null
           }
           breakPlanner.skipToMicrobreak()
+          appIcon.setContextMenu(getTrayMenu())
           updateToolTip()
         }
       }])
@@ -591,6 +640,7 @@ function getTrayMenu () {
             breakWins = null
           }
           breakPlanner.skipToBreak()
+          appIcon.setContextMenu(getTrayMenu())
           updateToolTip()
         }
       }])
@@ -608,6 +658,7 @@ function getTrayMenu () {
       label: i18next.t('main.resume'),
       click: function () {
         resumeBreaks()
+        appIcon.setContextMenu(getTrayMenu())
         updateToolTip()
       }
     })
@@ -659,6 +710,7 @@ function getTrayMenu () {
           breakWins = null
         }
         breakPlanner.reset()
+        appIcon.setContextMenu(getTrayMenu())
         updateToolTip()
       }
     })
@@ -708,7 +760,6 @@ function updateToolTip () {
   // TODO this needs to be refactored, was moved here to be able to use i18next
   const toolTipHeader = i18next.t('main.toolTipHeader')
   if (microbreakWins || breakWins) {
-    console.log('Have windows!')
     appIcon.setToolTip(toolTipHeader)
     return
   }
@@ -781,6 +832,14 @@ function showNotification (text) {
   })
 }
 
+ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
+  postponeMicrobreak()
+})
+
+ipcMain.on('postpone-break', function (event, shouldPlaySound) {
+  postponeBreak()
+})
+
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
   finishMicrobreak(shouldPlaySound)
 })
@@ -829,10 +888,13 @@ ipcMain.on('send-settings', function (event) {
 ipcMain.on('show-debug', function (event) {
   const reference = breakPlanner.scheduler.reference
   const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
+  const breaknumber = breakPlanner.breakNumber
+  const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = notificationState.getDoNotDisturb()
   const dir = app.getPath('userData')
   const settingsFile = path.join(dir, 'config.json')
-  aboutWin.webContents.send('debugInfo', reference, timeleft, settingsFile, doNotDisturb)
+  aboutWin.webContents.send('debugInfo', reference, timeleft,
+    breaknumber, postponesnumber, settingsFile, doNotDisturb)
 })
 
 ipcMain.on('change-language', function (event, language) {

@@ -42,10 +42,12 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…nah, Voi continua",
     "title": "Este timpul să iei o pauză!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…nah, Voi continua",
     "title": "Este timpul să iei o pauză!"
   },

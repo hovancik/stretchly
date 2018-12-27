@@ -43,10 +43,12 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "… ні, я просто продовжу",
     "title": "Перерва!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "… ні, я просто продовжу",
     "title": "Перерва!"
   },

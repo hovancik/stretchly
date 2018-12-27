@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Swedish translations
 - Turkish translations
 - silent notifications option
+- Ability to postpone breaks/microbreaks in non-strict mode
+- more data for debug information in About window
 
 ## [0.18.0] - 2018-10-21
 ### Added

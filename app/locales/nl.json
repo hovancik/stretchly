@@ -42,10 +42,12 @@
     "notificationStatus": "\nNiet storen staat aan"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…nee, ik werk gewoon door",
     "title": "Tijd voor een pauze!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…nee, ik werk gewoon door",
     "title": "Tijd voor een pauze!"
   },

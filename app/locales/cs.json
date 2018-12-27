@@ -43,10 +43,12 @@
     "notificationStatus": "\nV režimu Nerušit"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…ne, chci pokračovat",
     "title": "Čas na přestávku!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…ne, chci pokračovat",
     "title": "Čas na přestávku!"
   },

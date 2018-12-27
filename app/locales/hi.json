@@ -42,10 +42,12 @@
     "notificationStatus": "\nIn Do Not Disturb mode"
   },
   "break": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…नहीं, मुझे ब्रेक नहीं चाहिए",
     "title": "ब्रेक लेने का समय आ गया है!"
   },
   "microbreak": {
+    "postpone": "…wait for a bit",
     "keepGoing": "…नहीं, मुझे ब्रेक नहीं चाहिए",
     "title": "ब्रेक लेने का समय आ गया है!"
   },
