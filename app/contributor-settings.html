@@ -2,21 +2,66 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title data-i18next="microbreak.title"></title>
+    <title>Your stretchly</title>
     <link rel="stylesheet" type="text/css" href="css/app.css">
   </head>
   <body>
     <div class="contributor-settings">
-      Notifications<br><br/>
+      <p class="heading">Notifications</p>
+      notify
       <span id="microbreakNotificationIntervalMinus" class="pointer">-</span>
       <span id="microbreakNotificationInterval"></span>
       <span id="microbreakNotificationIntervalPlus" class="pointer">+</span>
       seconds before microbreak <br/>
-
+      notify
       <span id="breakNotificationIntervalMinus" class="pointer">-</span>
       <span id="breakNotificationInterval"></span>
       <span id="breakNotificationIntervalPlus" class="pointer">+</span>
       seconds before break
+      <p class="heading">New version</p>
+      <div class="enabled">
+        <input type="checkbox" value="notifyNewVersion" class="enable enabletype">
+        notify when new version available
+      </div>
+      <p class="heading">Custom break ideas</p>
+      <div class="enabled">
+        <input type="checkbox" value="useIdeasFromSettings" class="enable enabletype">
+        use ideas from settings file
+      </div>
+      <p class="heading">Break posponement</p>
+      <div class="enabled">
+        <input type="checkbox" value="breakPostpone" class="enable enabletype">
+        allow to postpone breaks
+      </div>
+      <br/>
+      potponable for first
+      <span id="breakPostponableDurationPercentMinus" class="pointer">-</span>
+      <span id="breakPostponableDurationPercent"></span>
+      <span id="breakPostponableDurationPercentPlus" class="pointer">+</span>
+      percent of break
+      <br/>
+      potpone for
+      <span id="breakPostponeTimeMinus" class="pointer">-</span>
+      <span id="breakPostponeTime"></span>
+      <span id="breakPostponeTimePlus" class="pointer">+</span>
+      seconds
+      <p class="heading">Microbreak posponement</p>
+      <div class="enabled">
+        <input type="checkbox" value="microbreakPostpone" class="enable enabletype">
+        allow to postpone microbreaks
+      </div>
+      <br/>
+      potponable for first
+      <span id="microbreakPostponableDurationPercentMinus" class="pointer">-</span>
+      <span id="microbreakPostponableDurationPercent"></span>
+      <span id="microbreakPostponableDurationPercentPlus" class="pointer">+</span>
+      percent of microbreak
+      <br/>
+      potpone for
+      <span id="microbreakPostponeTimeMinus" class="pointer">-</span>
+      <span id="microbreakPostponeTime"></span>
+      <span id="microbreakPostponeTimePlus" class="pointer">+</span>
+      seconds
     </div>
     <script>
       require('./platform.js')

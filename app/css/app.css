@@ -189,3 +189,14 @@ select  {
 #tutorial {
   font-size: 1.6rem;
 }
+
+.contributor-settings,
+.contributor-settings .enabled {
+  font-size: 18px;
+  text-align: left;
+}
+
+.contributor-settings .heading {
+  font-size: 22px;
+  padding: 10px 0;
+}
