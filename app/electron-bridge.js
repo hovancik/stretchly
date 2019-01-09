@@ -1,4 +1,4 @@
-const {remote, ipcRenderer} = require('electron')
+const {remote, ipcRenderer, shell} = require('electron')
 
 window.ElectronBridge = {
   helloWorld () {
@@ -8,5 +8,9 @@ window.ElectronBridge = {
   openContriborSettings () {
     ipcRenderer.send('open-contributor-settings')
     remote.getCurrentWindow().close()
+  },
+
+  openExternal (link) {
+    shell.openExternal(link)
   }
 }
