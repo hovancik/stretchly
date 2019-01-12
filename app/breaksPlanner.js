@@ -42,11 +42,14 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager.on('dndStarted', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
+        this.emit('updateToolTip')
+      } else {
+        this.dndManager.isOnDnd = false
       }
     })
 
     this.dndManager.on('dndFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
         this.emit('updateToolTip')
       }

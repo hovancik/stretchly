@@ -102,7 +102,7 @@
     "notifyBeforeBreakStarts": "ukázať notifikáciu pred prestávkami",
     "notifyBeforeMicrobreakStarts": "ukázať notifikáciu pred mikroprestávkami",
     "monitorIdleTime": "monitorovať neaktívny čas pre prirodzené prestávky",
-    "monitorDnd": "monitorovať režim Nerušiť pre notifikácie",
+    "monitorDnd": "monitorovať režim Nerušiť",
     "showOnAllScreens": "prestávky na každej obrazovke",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "použiť monochromatickú ikonu",

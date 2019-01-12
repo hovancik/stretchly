@@ -101,7 +101,7 @@
     "notifyBeforeBreakStarts": "avvisa prima che inizi la pausa",
     "notifyBeforeMicrobreakStarts": "avvisa prima che inizi la micropausa",
     "monitorIdleTime": "controlla le interruzioni del sistema per fare pause più regolari",
-    "monitorDnd": "monitor Do Not Disturb for notifications",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "le pause sono mostrate su tutti i monitor",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "utilizza l'icona della barra in bianco e nero",

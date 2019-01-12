@@ -102,7 +102,7 @@
     "notifyBeforeBreakStarts": "повідомляти перед початком перерви",
     "notifyBeforeMicrobreakStarts": "повідомляти перед початком мікроперерви",
     "monitorIdleTime": "вважати бездіяльність за природну перерву",
-    "monitorDnd": "monitor Do Not Disturb for notifications",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "відображати на всіх екранах",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "use monochrome tray icon",

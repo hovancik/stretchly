@@ -101,7 +101,7 @@
     "notifyBeforeBreakStarts": "vooraf doorgeven dat pauze begint",
     "notifyBeforeMicrobreakStarts": "vooraf doorgeven dat kleine pauze begint",
     "monitorIdleTime": "monitor de niet-actieve tijd van het systeem voor natuurlijke onderbrekingen",
-    "monitorDnd": "monitor Do Not Disturb for notifications",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "pauzes worden op alle monitoren weergegeven",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "gebruik monochrome pictogram",

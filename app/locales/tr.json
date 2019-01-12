@@ -101,7 +101,7 @@
     "notifyBeforeBreakStarts": "mola başlamadan önce bildir",
     "notifyBeforeMicrobreakStarts": "kısa mola başlamadan önce bildir",
     "monitorIdleTime": "doğal mola zamanlaması için sistem kullanımını izle",
-    "monitorDnd": "monitor Do Not Disturb for notifications",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "molalar tüm ekranlarda gözüksün",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "görev çubuğunda monokrom simge kullan",

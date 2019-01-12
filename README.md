@@ -57,7 +57,7 @@ Microbreaks and breaks can be customized:
 - you can disable pre-(micro)break notifications
 - you can disable (micro)break notification sounds
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
-- you can disable monitoring of DND mode (notifications are not shown in DND mode)
+- you can disable monitoring of DND (Do Not Disturb) mode (breaks are not shown in DND mode)
 - you can disable the display of breaks on all of your monitors
 - you can change the default monochrome tray icon to a colorful version
 - you can change the interface language

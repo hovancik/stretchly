@@ -37,12 +37,13 @@ class DndManager extends EventEmitter {
     this.timer = setInterval(() => {
       const doNotDisturb = this.doNotDisturb
       if (!this.isOnDnd && doNotDisturb) {
+        this.isOnDnd = true
         this.emit('dndStarted')
       }
       if (this.isOnDnd && !doNotDisturb) {
+        this.isOnDnd = false
         this.emit('dndFinished')
       }
-      this.isOnDnd = doNotDisturb
       lastDndStatus = doNotDisturb
     }, 1000)
   }

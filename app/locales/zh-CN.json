@@ -100,7 +100,7 @@
     "notifyBeforeBreakStarts": "在长时间休息前提醒",
     "notifyBeforeMicrobreakStarts": "在短时间休息前提醒",
     "monitorIdleTime": "监控系统空闲时间的自然休息时间",
-    "monitorDnd": "monitor Do Not Disturb for notifications",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "breaks are shown on all monitors",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "use monochrome tray icon",
