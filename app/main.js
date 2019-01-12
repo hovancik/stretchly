@@ -548,7 +548,7 @@ function getTrayMenu () {
   const isPaused = breakPlanner.isPaused
   const reference = typeOfBreak()
   const nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
-  const doNotDisturb = settings.get('monitorDnd') && breakPlanner.dndManager.isOnDnd
+  const doNotDisturb = breakPlanner.dndManager.isOnDnd
 
   if (global.shared.isNewVersion) {
     trayMenu.push({
@@ -745,7 +745,7 @@ function updateToolTip () {
     appIcon.setToolTip(toolTipHeader)
     return
   }
-  const doNotDisturb = settings.get('monitorDnd') && breakPlanner.dndManager.isOnDnd
+  const doNotDisturb = breakPlanner.dndManager.isOnDnd
 
   let statusMessage = ''
   if (breakPlanner && breakPlanner.scheduler && breakPlanner.isPaused) {
