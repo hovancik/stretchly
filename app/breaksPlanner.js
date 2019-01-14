@@ -208,6 +208,9 @@ class BreaksPlanner extends EventEmitter {
       this.dndManager.start()
     } else {
       this.dndManager.stop()
+      if (!this.isPaused && this.scheduler.reference === null) {
+        this.reset()
+      }
     }
   }
 }
