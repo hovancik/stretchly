@@ -101,6 +101,7 @@
     "notifyBeforeBreakStarts": "notifică-mă înainte de pauză",
     "notifyBeforeMicrobreakStarts": "notifică-mă înainte de micropauză",
     "monitorIdleTime": "monitorizează neutilizarea sistemului pentru pauze naturale",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "pauzele sunt afișate pe toate monitoarele",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "utilizează imaginea monocromă",

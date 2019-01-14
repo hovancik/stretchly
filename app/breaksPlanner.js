@@ -1,6 +1,7 @@
 const Scheduler = require('./utils/scheduler')
 const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
+const DndManager = require('./utils/dndManager')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -11,6 +12,7 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler = null
     this.isPaused = false
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
+    this.dndManager = new DndManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       let interval = this.settings.get('microbreakDuration')
@@ -31,6 +33,22 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', (idleTime) => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
+        this.reset()
+        this.emit('updateToolTip')
+      }
+    })
+
+    this.dndManager.on('dndStarted', () => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        this.clear()
+        this.emit('updateToolTip')
+      } else {
+        this.dndManager.isOnDnd = false
+      }
+    })
+
+    this.dndManager.on('dndFinished', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
         this.emit('updateToolTip')
@@ -182,6 +200,17 @@ class BreaksPlanner extends EventEmitter {
       this.naturalBreaksManager.start()
     } else {
       this.naturalBreaksManager.stop()
+    }
+  }
+
+  doNotDisturb (shouldUse) {
+    if (shouldUse) {
+      this.dndManager.start()
+    } else {
+      this.dndManager.stop()
+      if (!this.isPaused && this.scheduler.reference === null) {
+        this.reset()
+      }
     }
   }
 }

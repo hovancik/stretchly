@@ -101,6 +101,7 @@
     "notifyBeforeBreakStarts": "meddela innan raster börjar",
     "notifyBeforeMicrobreakStarts": "meddela innan mikroraster börjar",
     "monitorIdleTime": "övervaka systemets ledig tid för naturliga raster",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "raster visas på alla bildskärmar",
     "silentNotifications": "tysta aviseringar",
     "useMonochromeTrayIcon": "använda monokrom systemfältsikon",

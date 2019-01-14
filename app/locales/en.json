@@ -101,6 +101,7 @@
     "notifyBeforeBreakStarts": "notify before break starts",
     "notifyBeforeMicrobreakStarts": "notify before microbreak starts",
     "monitorIdleTime": "monitor system idle time for natural breaks",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "breaks are shown on all monitors",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "use monochrome tray icon",

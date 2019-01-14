@@ -26,6 +26,12 @@ body.darwin {
   font-family: 'Lato Thin';
 }
 
+.linux .linux-hidden,
+.freebsd .linux-hidden,
+.openbsd .linux-hidden {
+  display: none;
+}
+
 .microbreak,
 .about,
 .welcome,

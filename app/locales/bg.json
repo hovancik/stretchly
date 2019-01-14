@@ -101,6 +101,7 @@
     "notifyBeforeBreakStarts": "уведомяване преди започването на почивка",
     "notifyBeforeMicrobreakStarts": "уведомяване преди започването на микропочивка",
     "monitorIdleTime": "следене на времето на системата за естествени почивки",
+    "monitorDnd": "monitor Do Not Disturb mode",
     "showOnAllScreens": "прозорците за почивка се показват на всички монитори",
     "silentNotifications": "тихи нотификации",
     "useMonochromeTrayIcon": "използвай монохромна иконка на приложението",

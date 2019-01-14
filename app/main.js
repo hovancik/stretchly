@@ -2,7 +2,6 @@
 const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const notificationState = require('@meetfranz/electron-notification-state')
 const path = require('path')
 
 startI18next()
@@ -231,35 +230,17 @@ function checkVersion () {
 }
 
 function startMicrobreakNotification () {
-  const notificationDisabled = notificationState.getDoNotDisturb()
-  if (!notificationDisabled) {
-    showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
-    breakPlanner.nextBreakAfterNotification()
-    appIcon.setContextMenu(getTrayMenu())
-    updateToolTip()
-  } else {
-    setTimeout(function () {
-      startMicrobreakNotification()
-    }, settings.get('microbreakNotificationInterval'))
-    appIcon.setContextMenu(getTrayMenu())
-    updateToolTip()
-  }
+  showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+  breakPlanner.nextBreakAfterNotification()
+  appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
 }
 
 function startBreakNotification () {
-  const notificationDisabled = notificationState.getDoNotDisturb()
-  if (!notificationDisabled) {
-    showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
-    breakPlanner.nextBreakAfterNotification()
-    appIcon.setContextMenu(getTrayMenu())
-    updateToolTip()
-  } else {
-    setTimeout(function () {
-      startMicrobreakNotification()
-    }, settings.get('breakNotificationInterval'))
-    appIcon.setContextMenu(getTrayMenu())
-    updateToolTip()
-  }
+  showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+  breakPlanner.nextBreakAfterNotification()
+  appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
 }
 
 function startMicrobreak () {
@@ -567,6 +548,7 @@ function getTrayMenu () {
   const isPaused = breakPlanner.isPaused
   const reference = typeOfBreak()
   const nextBreak = Utils.formatTimeOfNextBreak(timeLeft)
+  const doNotDisturb = breakPlanner.dndManager.isOnDnd
 
   if (global.shared.isNewVersion) {
     trayMenu.push({
@@ -577,7 +559,7 @@ function getTrayMenu () {
     })
   }
 
-  if (timeLeft && !notificationState.getDoNotDisturb()) {
+  if (timeLeft) {
     if (isPaused) {
       trayMenu.push({
         label: i18next.t('main.resumingAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1] })
@@ -589,7 +571,15 @@ function getTrayMenu () {
     }
   }
 
+  if (doNotDisturb) {
+    trayMenu.push({
+      label: i18next.t('main.notificationStateMode')
+    })
+  }
+
   trayMenu.push({
+    type: 'separator'
+  }, {
     label: i18next.t('main.about'),
     click: function () {
       showAboutWindow()
@@ -603,11 +593,7 @@ function getTrayMenu () {
     type: 'separator'
   })
 
-  if (notificationState.getDoNotDisturb()) {
-    trayMenu.push({
-      label: i18next.t('main.notificationStateMode')
-    })
-  } else if (!breakPlanner.isPaused) {
+  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd)) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -662,11 +648,7 @@ function getTrayMenu () {
         updateToolTip()
       }
     })
-  } else if (notificationState.getDoNotDisturb()) {
-    trayMenu.push({
-      type: 'separator'
-    })
-  } else {
+  } else if (!doNotDisturb) {
     trayMenu.push({
       label: i18next.t('main.pause'),
       submenu: [
@@ -763,24 +745,25 @@ function updateToolTip () {
     appIcon.setToolTip(toolTipHeader)
     return
   }
+  const doNotDisturb = breakPlanner.dndManager.isOnDnd
 
   let statusMessage = ''
-  if (breakPlanner && breakPlanner.scheduler) {
-    const type = typeOfBreak()
-    let notificationTime
-    if (breakPlanner.isPaused) {
-      const timeLeft = breakPlanner.scheduler.timeLeft
-      if (timeLeft) {
-        statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
-      } else {
-        statusMessage += i18next.t('main.pausedIndefinitely')
-      }
+  if (breakPlanner && breakPlanner.scheduler && breakPlanner.isPaused) {
+    const timeLeft = breakPlanner.scheduler.timeLeft
+    if (timeLeft) {
+      statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
+    } else {
+      statusMessage += i18next.t('main.pausedIndefinitely')
     }
+  }
 
-    if (type.breakType) {
-      notificationTime = 0
-      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${type.breakType}`) })
-      if (type.breakType === 'microbreak') {
+  if (breakPlanner && breakPlanner.scheduler && !breakPlanner.isPaused) {
+    const breakType = typeOfBreak().breakType
+    const breakNotification = typeOfBreak().breakNotification
+    const notificationTime = breakNotification ? settings.get(`${breakType}NotificationInterval`) : 0
+    if (breakType) {
+      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`) })
+      if (breakType === 'microbreak') {
         const breakInterval = settings.get('breakInterval') + 1
         const breakNumber = breakPlanner.breakNumber % breakInterval
         statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
@@ -788,7 +771,7 @@ function updateToolTip () {
     }
   }
 
-  if (notificationState.getDoNotDisturb()) {
+  if (doNotDisturb) {
     statusMessage = i18next.t('main.notificationStatus')
   }
 
@@ -819,6 +802,7 @@ function typeOfBreak () {
     }
     default : {
       breakType = null
+      breakNotification = null
       break
     }
   }
@@ -851,6 +835,9 @@ ipcMain.on('finish-break', function (event, shouldPlaySound) {
 ipcMain.on('save-setting', function (event, key, value) {
   if (key === 'naturalBreaks') {
     breakPlanner.naturalBreaks(value)
+  }
+  if (key === 'monitorDnd') {
+    breakPlanner.doNotDisturb(value)
   }
   settings.set(key, value)
   event.sender.send('renderSettings', settings.data)
@@ -890,7 +877,7 @@ ipcMain.on('show-debug', function (event) {
   const timeleft = Utils.formatRemaining(breakPlanner.scheduler.timeLeft / 1000.0)
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
-  const doNotDisturb = notificationState.getDoNotDisturb()
+  const doNotDisturb = breakPlanner.dndManager.doNotDisturb
   const dir = app.getPath('userData')
   const settingsFile = path.join(dir, 'config.json')
   aboutWin.webContents.send('debugInfo', reference, timeleft,
