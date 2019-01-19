@@ -12,5 +12,9 @@ window.ElectronBridge = {
 
   openExternal (link) {
     shell.openExternal(link)
+  },
+
+  stretchlyVersion () {
+    return remote.app.getVersion()
   }
 }
