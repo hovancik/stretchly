@@ -35,8 +35,7 @@ body.darwin {
 .microbreak,
 .about,
 .welcome,
-.tutorial,
-.contributor-settings {
+.tutorial {
   margin: 0 auto;
   max-width: 80%;
   padding-top: 10%;
@@ -190,13 +189,10 @@ select  {
   font-size: 1.6rem;
 }
 
-.contributor-settings,
-.contributor-settings .enabled {
-  font-size: 18px;
-  text-align: left;
+.contributor-settings .normal {
+  font-size: 20px;
 }
 
 .contributor-settings .heading {
-  font-size: 22px;
-  padding: 10px 0;
+  font-size: 28px;
 }
