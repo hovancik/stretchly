@@ -1,8 +1,8 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
 const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
+const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
-const path = require('path')
 
 startI18next()
 
@@ -24,6 +24,7 @@ let aboutWin = null
 let settingsWin = null
 let tutorialWin = null
 let welcomeWin = null
+let contributorSettingsWindow = null
 let settings
 let pausedForSuspend = false
 
@@ -216,6 +217,22 @@ function createTutorialWindow () {
   }
 }
 
+function createContributorSettingsWindow() {
+  const modalPath = `file://${__dirname}/contributor-settings.html`
+  contributorSettingsWindow = new BrowserWindow({
+    x: displaysX(),
+    y: displaysY(),
+    autoHideMenuBar: true,
+    icon: `${__dirname}/images/stretchly_18x18.png`,
+    backgroundColor: settings.get('mainColor')
+  })
+  contributorSettingsWindow.loadURL(modalPath)
+  if (contributorSettingsWindow) {
+    contributorSettingsWindow.on('closed', () => {
+      contributorSettingsWindow = null
+    })
+  }
+}
 function planVersionCheck (seconds = 1) {
   setTimeout(checkVersion, seconds * 1000)
 }
@@ -723,8 +740,23 @@ function getTrayMenu () {
   }, {
     label: i18next.t('main.yourStretchly'),
     click: function () {
-      const color = settings.get('mainColor').replace('#', '')
-      shell.openExternal(`https://my.stretchly.net/?bg=${color}`)
+      const myStretchlyUrl = 'https://my.stretchly.net'
+      const myStretchlyWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        icon: `${__dirname}/images/stretchly_18x18.png`,
+        x: displaysX(),
+        y: displaysY(),
+        resizable: false,
+        backgroundColor: settings.get('mainColor'),
+        webPreferences: {
+          preload: path.resolve(__dirname,'./electron-bridge.js'),
+          nodeIntegration: false
+        }
+      })
+      myStretchlyWindow.loadURL(myStretchlyUrl)
+      // myStretchlyWindow.webContents.openDevTools()
+      // myStretchlyWindow.webContents.session.clearCache(()=> {})
     }
   }, {
     type: 'separator'
@@ -891,4 +923,8 @@ ipcMain.on('change-language', function (event, language) {
 
 ipcMain.on('open-tutorial', function (event) {
   createTutorialWindow()
+})
+
+ipcMain.on('open-contributor-settings', function (event) {
+  createContributorSettingsWindow()
 })

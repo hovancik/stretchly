@@ -188,3 +188,11 @@ select  {
 #tutorial {
   font-size: 1.6rem;
 }
+
+.contributor-settings .normal {
+  font-size: 20px;
+}
+
+.contributor-settings .heading {
+  font-size: 28px;
+}
