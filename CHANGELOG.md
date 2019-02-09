@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.19.0] - 2019-02-10
 ### Changed
 - upper limit of microbreak duration set to 900 seconds (15 minutes)
 - Italian translations updated
@@ -266,7 +268,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.18.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.19.0...HEAD
+[0.19.0]: https://github.com/hovancik/stretchly/compare/v0.18.0...v0.19.0
 [0.18.0]: https://github.com/hovancik/stretchly/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/hovancik/stretchly/compare/v0.16.0...v0.17.0
 [0.16.0]: https://github.com/hovancik/stretchly/compare/v0.15.0...v0.16.0
