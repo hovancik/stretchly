@@ -1,9 +1,9 @@
 const {remote, ipcRenderer, shell} = require('electron')
 
 window.ElectronBridge = {
-  helloWorld () {
-    console.log("Hello World")
-  },
+  // helloWorld () {
+  //   console.log("Hello World")
+  // },
 
   openContriborSettings () {
     ipcRenderer.send('open-contributor-settings')

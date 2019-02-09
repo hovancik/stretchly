@@ -24,8 +24,6 @@ let morningHourPlus = document.getElementById('morningHourPlus')
 let morningHourMinus = document.getElementById('morningHourMinus')
 let morningHour = document.getElementById('morningHour')
 
-
-
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
 
