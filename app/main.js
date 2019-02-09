@@ -741,8 +741,7 @@ function getTrayMenu () {
   }, {
     label: i18next.t('main.yourStretchly'),
     click: function () {
-      const color = settings.get('mainColor').replace('#', '')
-      const myStretchlyUrl = `https://my.stretchly.net/?bg=${color}`
+      const myStretchlyUrl = 'https://my.stretchly.net'
       const myStretchlyWindow = new BrowserWindow({
         width: 800,
         height: 600,
@@ -756,8 +755,9 @@ function getTrayMenu () {
           nodeIntegration: false
         }
       })
-      myStretchlyWindow.webContents.openDevTools()
       myStretchlyWindow.loadURL(myStretchlyUrl)
+      // myStretchlyWindow.webContents.openDevTools()
+      // myStretchlyWindow.webContents.session.clearCache(()=> {})
     }
   }, {
     type: 'separator'
