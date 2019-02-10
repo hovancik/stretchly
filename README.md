@@ -17,7 +17,7 @@ Every 30 minutes, it displays a window containing an idea for a longer 5 minute 
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
-The user gets notified 30 seconds before each break to be able to prepare to pause the work.
+User gets notified 30 seconds before break (and 10 seconds before microbreak) to be able to prepare to pause the work.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-notification.png" height="90">
 
@@ -55,7 +55,7 @@ Microbreaks and breaks can be customized:
 - you can set the break window to be fullscreen
 - you can disable (micro)break ideas
 - you can disable pre-(micro)break notifications
-- you can disable (micro)break notification sounds
+- you can disable notification sounds
 - you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 - you can disable monitoring of DND (Do Not Disturb) mode on MacOS and Windows (breaks are not shown in DND mode)
 - you can disable the display of breaks on all of your monitors
