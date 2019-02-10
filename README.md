@@ -17,7 +17,7 @@ Every 30 minutes, it displays a window containing an idea for a longer 5 minute 
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
 
-The user gets notified 30 seconds before each break to be able to prepare to pause the work.
+User gets notified 30 seconds before break (and 10 seconds before microbreak) to be able to prepare to pause the work.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-notification.png" height="90">
 
