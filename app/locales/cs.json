@@ -43,12 +43,12 @@
     "notificationStatus": "\nV režimu Nerušit"
   },
   "break": {
-    "postpone": "…wait for a bit",
+    "postpone": "…počkat chvilku",
     "keepGoing": "…ne, chci pokračovat",
     "title": "Čas na přestávku!"
   },
   "microbreak": {
-    "postpone": "…wait for a bit",
+    "postpone": "…počkat chvilku",
     "keepGoing": "…ne, chci pokračovat",
     "title": "Čas na přestávku!"
   },
@@ -102,9 +102,9 @@
     "notifyBeforeBreakStarts": "zobrazit upozornění před přestávkami",
     "notifyBeforeMicrobreakStarts": "zobrazit upozornění před mikropřestávkami",
     "monitorIdleTime": "monitorovat neaktivní čas pro přirozené přestávky",
-    "monitorDnd": "monitor Do Not Disturb mode",
+    "monitorDnd": "monitorovat režim Nerušit",
     "showOnAllScreens": "přestávky na každé obrazovce",
-    "silentNotifications": "silent notifications",
+    "silentNotifications": "tichá oznamování",
     "useMonochromeTrayIcon": "použít monochromatickou ikonu",
     "language": "jazyk",
     "resetToDefaults": "obnovit výchozí nastavení"
