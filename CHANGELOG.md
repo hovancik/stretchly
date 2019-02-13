@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fullscreen mode on Windows
 - ability to hide break ideas from break windows
 
+### Added
+- more debug info (chrome, electron, nodejs versions)
+
 ## [0.19.0] - 2019-02-10
 ### Changed
 - upper limit of microbreak duration set to 900 seconds (15 minutes)
