@@ -297,7 +297,7 @@ function startMicrobreak () {
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
-  let idea = microbreakIdeas.randomElement
+  let idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
@@ -377,7 +377,7 @@ function startBreak () {
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
-  let idea = breakIdeas.randomElement
+  let idea = settings.get('ideas') ? breakIdeas.randomElement : ['','']
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {

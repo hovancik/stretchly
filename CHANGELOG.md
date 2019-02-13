@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - fullscreen mode on Windows
+- ability to hide break ideas from break windows
 
 ## [0.19.0] - 2019-02-10
 ### Changed
