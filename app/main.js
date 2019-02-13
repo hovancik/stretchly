@@ -300,10 +300,8 @@ function startMicrobreak () {
   let idea = microbreakIdeas.randomElement
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    const microbreakWinLocal = new BrowserWindow({
+    let windowOptions = {
       icon: `${__dirname}/images/stretchly_18x18.png`,
-      x: displaysX(displayIdx),
-      y: displaysY(displayIdx),
       resizable: false,
       frame: false,
       show: false,
@@ -311,7 +309,14 @@ function startMicrobreak () {
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
-    })
+    }
+
+    if (!settings.get('fullscreen')) {
+      windowOptions.x = displaysX(displayIdx)
+      windowOptions.y = displaysY(displayIdx)
+    }
+
+    const microbreakWinLocal = new BrowserWindow(windowOptions)
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.show()
@@ -375,10 +380,8 @@ function startBreak () {
   let idea = breakIdeas.randomElement
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    const breakWinLocal = new BrowserWindow({
+    let windowOptions = {
       icon: `${__dirname}/images/stretchly_18x18.png`,
-      x: displaysX(displayIdx),
-      y: displaysY(displayIdx),
       resizable: false,
       frame: false,
       show: false,
@@ -386,7 +389,14 @@ function startBreak () {
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly'
-    })
+    }
+
+    if (!settings.get('fullscreen')) {
+      windowOptions.x = displaysX(displayIdx)
+      windowOptions.y = displaysY(displayIdx)
+    }
+
+    const breakWinLocal = new BrowserWindow(windowOptions)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.show()
