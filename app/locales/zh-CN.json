@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "stretchly - 休息提醒应用",
-    "microbreakIn": "将于 {{seconds}} 秒内小憩",
-    "breakIn": "将于 {{seconds}} 秒内休息",
+    "microbreakIn": "将在 {{seconds}} 秒内小憩",
+    "breakIn": "将在 {{seconds}} 秒内休息",
     "breakAt": "下次 {{reference}} 在 {{hours}}:{{minutes}}",
     "breakReference": "break",
     "microbreakReference": "microbreak",
