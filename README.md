@@ -44,6 +44,7 @@ Microbreaks and breaks can be customized:
 - you can set the duration and interval of breaks
 - you can enable/disable breaks
 - you can enable/disable strict mode (breaks can't be finished early)
+- you can enable/disable ability to postpone breaks
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-1.png" height="340">
 

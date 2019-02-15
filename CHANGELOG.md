@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - more debug info (chrome, electron, nodejs versions)
+- allow user to disable ability to postpone breaks
 
 ## [0.19.0] - 2019-02-10
 ### Changed

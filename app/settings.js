@@ -141,6 +141,8 @@ document.getElementById('defaults').addEventListener('click', function (e) {
     'microbreakInterval',
     'microbreakDuration',
     'microbreakStrictMode',
-    'breakStrictMode'
+    'breakStrictMode',
+    'microbreakPostpone',
+    'breakPostpone'
   ])
 })
