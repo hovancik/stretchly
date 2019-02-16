@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - more debug info (chrome, electron, nodejs versions)
 - allow user to disable ability to postpone breaks
 
+### Changed
+- Simplified Chinese translations updated
+- Czech translations updated
+
 ## [0.19.0] - 2019-02-10
 ### Changed
 - upper limit of microbreak duration set to 900 seconds (15 minutes)
