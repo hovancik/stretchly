@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.19.1] - 2019-02-17
 ### Fixed
 - fullscreen mode on Windows
 - ability to hide break ideas from break windows
@@ -16,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Simplified Chinese translations updated
 - Czech translations updated
+- Slovak translations updated
 
 ## [0.19.0] - 2019-02-10
 ### Changed
