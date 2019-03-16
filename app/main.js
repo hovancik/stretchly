@@ -161,9 +161,9 @@ function createTrayIcon () {
 function trayIconPath () {
   const iconFolder = `${__dirname}/images`
   if (settings.get('useMonochromeTrayIcon')) {
-    return `${iconFolder}/trayTemplate.png`
+    return `${iconFolder}/trayMonochromeTemplate.png`
   } else {
-    return `${iconFolder}/stretchly_18x18.png`
+    return `${iconFolder}/tray.png`
   }
 }
 
