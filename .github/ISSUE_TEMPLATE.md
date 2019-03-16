@@ -7,6 +7,7 @@ Have you read Code of Conduct? By filing an Issue, you are expected to comply wi
 ### Prerequisites
 
 - [ ] I'm using latest version: v <!-- type your version from `About` window -->
+- [ ] I've checked [Known issues](https://github.com/hovancik/stretchly#known-issues)
 
 ### Description
 
