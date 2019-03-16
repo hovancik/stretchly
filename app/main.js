@@ -311,7 +311,7 @@ function startMicrobreak () {
       title: 'stretchly'
     }
 
-    if (!settings.get('fullscreen')) {
+    if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
@@ -391,7 +391,7 @@ function startBreak () {
       title: 'stretchly'
     }
 
-    if (!settings.get('fullscreen')) {
+    if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
