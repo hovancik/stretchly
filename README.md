@@ -199,6 +199,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - Ary Borenszweig, [@asterite](https://github.com/asterite)
 - Jonatan Nyberg, @jony0008
 - Gowee [@Gowee](https://github.com/Gowee)
+- William Lin, [@FanciestW](https://github.com/FanciestW)
 
 ### Humans and Tools
  - https://github.com/typefoo/node-icns
