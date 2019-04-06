@@ -199,9 +199,11 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - Ary Borenszweig, [@asterite](https://github.com/asterite)
 - Jonatan Nyberg, @jony0008
 - Gowee [@Gowee](https://github.com/Gowee)
+- William Lin, [@FanciestW](https://github.com/FanciestW)
 
 ### Humans and Tools
- - https://github.com/typefoo/node-icns
+ - https://www.icoconverter.com/ to generate .ico
+ - http://www.img2icnsapp.com/ to create .icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
  - http://web.stanford.edu/dept/EHS/prod/general/ergo/microbreaks.html
  - https://www.spineuniverse.com/wellness/ergonomics/workstation-ergonomics-take-break

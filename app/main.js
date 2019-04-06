@@ -161,9 +161,17 @@ function createTrayIcon () {
 function trayIconPath () {
   const iconFolder = `${__dirname}/images`
   if (settings.get('useMonochromeTrayIcon')) {
-    return `${iconFolder}/trayTemplate.png`
+    if (process.platform === 'darwin') {
+      return `${iconFolder}/trayMacMonochromeTemplate.png`
+    } else {
+      return `${iconFolder}/trayMonochrome.png`
+    }
   } else {
-    return `${iconFolder}/stretchly_18x18.png`
+    if (process.platform === 'darwin') {
+      return `${iconFolder}/trayMac.png`
+    } else {
+      return `${iconFolder}/tray.png`
+    }
   }
 }
 
