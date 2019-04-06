@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - workaround multiple screens and fullscreen (macOS)
+- try icon size on Linux
 
 ### Changed
 - update icons and graphic materials
