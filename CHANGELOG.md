@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - update icons and graphic materials
 
+### Added
+- Korean translations
+
 ## [0.19.1] - 2019-02-17
 ### Fixed
 - fullscreen mode on Windows
