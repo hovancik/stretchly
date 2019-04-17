@@ -212,6 +212,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
  - http://www.latofonts.com/lato-free-fonts/
  - http://www.huffingtonpost.com/2012/07/24/sitting-at-work-why-its-dangerous-alternatives_n_1695618.html
  - http://www.unm.edu/~lkravitz/Article%20folder/sittingUNM.html
+ - https://www.ninds.nih.gov/News-Events/News-and-Press-Releases/Press-Releases/Want-learn-new-skill-Take-some-short-breaks
 
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).

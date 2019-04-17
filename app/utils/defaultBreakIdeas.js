@@ -14,5 +14,6 @@ module.exports = [
   { data: ['Fruit', 'Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness.'], enabled: true },
   { data: ['Bathrooms', 'Walk to the farthest bathroom in the worksite facility when going to the restroom.'], enabled: true },
   { data: ['Coffee break', 'Going on coffee break? Consider doing a 5-minute walk every time you go for one.'], enabled: true },
-  { data: ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.'], enabled: true }
+  { data: ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.'], enabled: true },
+  { data: ['Learning', 'In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills.'], enabled: true }
 ]
