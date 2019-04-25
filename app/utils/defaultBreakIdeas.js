@@ -15,5 +15,7 @@ module.exports = [
   { data: ['Bathrooms', 'Walk to the farthest bathroom in the worksite facility when going to the restroom.'], enabled: true },
   { data: ['Coffee break', 'Going on coffee break? Consider doing a 5-minute walk every time you go for one.'], enabled: true },
   { data: ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.'], enabled: true },
-  { data: ['Learning', 'In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills.'], enabled: true }
+  { data: ['Learning', 'In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills.'], enabled: true },
+  { data: ['Exercise', 'Evidence suggests small amounts of regular exercise can bring dramatic health benefits, including measurably reducing stress.'], enabled: true },
+  { data: ['Repeat', 'Have you found your stretch-ly-routine? Do not forget to repeat it for more than once to better fight effects of prolonged sitting.'], enabled: true }
 ]
