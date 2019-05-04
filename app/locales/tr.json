@@ -1,7 +1,7 @@
 {
   "main": {
     "toolTipHeader": "stretchly - mola hatırlatıcı uygulama",
-    "microbreakIn": "{{seconds}} saniiye içinde kısa bir ara…",
+    "microbreakIn": "{{seconds}} saniye içinde kısa bir ara…",
     "breakIn": "{{seconds}} saniye…",
     "breakAt": "Bir sonraki {{reference}}: {{hours}}:{{minutes}}",
     "breakReference": "mola",
