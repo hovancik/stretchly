@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - update icons and graphic materials
+- Turkish translations updated
 
 ### Added
 - Korean translations

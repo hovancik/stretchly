@@ -201,6 +201,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - Gowee [@Gowee](https://github.com/Gowee)
 - William Lin, [@FanciestW](https://github.com/FanciestW)
 - Hisman Yosika, [@dnjstlr555](https://github.com/dnjstlr555)
+- Mehmet Fatih Yıldız, [@mfyz](https://github.com/mfyz)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
