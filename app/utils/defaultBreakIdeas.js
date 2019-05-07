@@ -17,5 +17,7 @@ module.exports = [
   { data: ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.'], enabled: true },
   { data: ['Learning', 'In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills.'], enabled: true },
   { data: ['Exercise', 'Evidence suggests small amounts of regular exercise can bring dramatic health benefits, including measurably reducing stress.'], enabled: true },
-  { data: ['Repeat', 'Have you found your stretch-ly-routine? Do not forget to repeat it for more than once to better fight effects of prolonged sitting.'], enabled: true }
+  { data: ['Repeat', 'Have you found your stretch-ly-routine? Do not forget to repeat it for more than once to better fight effects of prolonged sitting.'], enabled: true },
+  { data: ['Wrist and forearm', 'Extend your arms with the palms facing towards you, then slowly rotate the hands four times clockwise, then four times counter-clockwise.'], enabled: true },
+  { data: ['Back stretching', 'Join your hands behind your head, then lift them together up above your head ending with your palms facing upward.'], enabled: true }
 ]
