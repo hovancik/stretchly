@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Korean translations
 - more break and microbreak ideas
+- more settings in Contributor's settings
 
 ## [0.19.1] - 2019-02-17
 ### Fixed
