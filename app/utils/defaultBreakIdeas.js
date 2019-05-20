@@ -14,5 +14,11 @@ module.exports = [
   { data: ['Fruit', 'Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness.'], enabled: true },
   { data: ['Bathrooms', 'Walk to the farthest bathroom in the worksite facility when going to the restroom.'], enabled: true },
   { data: ['Coffee break', 'Going on coffee break? Consider doing a 5-minute walk every time you go for one.'], enabled: true },
-  { data: ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.'], enabled: true }
+  { data: ['Colleagues', 'Do not email or message office colleagues, walk to their desks to communicate with them.'], enabled: true },
+  { data: ['Learning', 'In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills.'], enabled: true },
+  { data: ['Exercise', 'Evidence suggests small amounts of regular exercise can bring dramatic health benefits, including measurably reducing stress.'], enabled: true },
+  { data: ['Repeat', 'Have you found your stretch-ly-routine? Do not forget to repeat it for more than once to better fight effects of prolonged sitting.'], enabled: true },
+  { data: ['Wrist and forearm', 'Extend your arms with the palms facing towards you, then slowly rotate the hands four times clockwise, then four times counter-clockwise.'], enabled: true },
+  { data: ['Back stretching', 'Join your hands behind your head, then lift them together up above your head ending with your palms facing upward.'], enabled: true },
+  { data: ['Mobilize', 'For every thirty minutes of stagnation, you should have at least one minute of stimulation.'], enabled: true }
 ]
