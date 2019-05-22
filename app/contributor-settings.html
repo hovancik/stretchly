@@ -26,7 +26,7 @@
         <input type="checkbox" value="notifyNewVersion" class="enable enabletype">
         notify when new version is available
       </div>
-      <p class="heading">custom break ideas</p>
+      <p class="heading">custom break/microbreak ideas</p>
       <div class="enabled">
         <input type="checkbox" value="useIdeasFromSettings" class="enable enabletype">
         use ideas from settings file
@@ -49,6 +49,12 @@
         <span id="breakPostponeTime"></span>
         <span id="breakPostponeTimePlus" class="pointer">+</span>
         seconds
+        <br/>
+        allow up to
+        <span id="breakPostponesLimitMinus" class="pointer">-</span>
+        <span id="breakPostponesLimit"></span>
+        <span id="breakPostponesLimitPlus" class="pointer">+</span>
+        postpones
       </div>
       <p class="heading">microbreak postponement</p>
       <div class="enabled">
@@ -68,6 +74,12 @@
         <span id="microbreakPostponeTime"></span>
         <span id="microbreakPostponeTimePlus" class="pointer">+</span>
         seconds
+        <br/>
+        allow up to
+        <span id="microbreakPostponesLimitMinus" class="pointer">-</span>
+        <span id="microbreakPostponesLimit"></span>
+        <span id="microbreakPostponesLimitPlus" class="pointer">+</span>
+        postpones
       </div>
       <p class="heading">pause until morning</p>
       <div class="normal">
@@ -76,6 +88,11 @@
         <span id="morningHour"></span>
         <span id="morningHourPlus" class="pointer">+</span>
         in the morning
+      </div>
+      <p class="heading">tutorial</p>
+      <div class="normal">
+        <input type="checkbox" value="isFirstRun" class="enable enabletype">
+        show tutorial on next start of stretchly
       </div>
     </div>
     <script>

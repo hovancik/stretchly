@@ -17,9 +17,15 @@ let microbreakPostponeTime = document.getElementById('microbreakPostponeTime')
 let breakPostponableDurationPercentPlus = document.getElementById('breakPostponableDurationPercentPlus')
 let breakPostponableDurationPercentMinus = document.getElementById('breakPostponableDurationPercentMinus')
 let breakPostponableDurationPercent = document.getElementById('breakPostponableDurationPercent')
+let breakPostponesLimitPlus = document.getElementById('breakPostponesLimitPlus')
+let breakPostponesLimitMinus = document.getElementById('breakPostponesLimitMinus')
+let breakPostponesLimit = document.getElementById('breakPostponesLimit')
 let microbreakPostponableDurationPercentPlus = document.getElementById('microbreakPostponableDurationPercentPlus')
 let microbreakPostponableDurationPercentMinus = document.getElementById('microbreakPostponableDurationPercentMinus')
 let microbreakPostponableDurationPercent = document.getElementById('microbreakPostponableDurationPercent')
+let microbreakPostponesLimitPlus = document.getElementById('microbreakPostponesLimitPlus')
+let microbreakPostponesLimitMinus = document.getElementById('microbreakPostponesLimitMinus')
+let microbreakPostponesLimit = document.getElementById('microbreakPostponesLimit')
 let morningHourPlus = document.getElementById('morningHourPlus')
 let morningHourMinus = document.getElementById('morningHourMinus')
 let morningHour = document.getElementById('morningHour')
@@ -88,6 +94,18 @@ breakPostponableDurationPercentMinus.addEventListener('click', function (e) {
   }
 })
 
+breakPostponesLimitPlus.addEventListener('click', function (e) {
+  if (breakPostponesLimit.innerHTML !== '5') {
+    ipcRenderer.send('save-setting', 'breakPostponesLimit', (parseInt(breakPostponesLimit.innerHTML, 10) + 1))
+  }
+})
+
+breakPostponesLimitMinus.addEventListener('click', function (e) {
+  if (breakPostponesLimit.innerHTML !== '1') {
+    ipcRenderer.send('save-setting', 'breakPostponesLimit', (parseInt(breakPostponesLimit.innerHTML, 10) - 1))
+  }
+})
+
 microbreakPostponableDurationPercentPlus.addEventListener('click', function (e) {
   if (microbreakPostponableDurationPercent.innerHTML !== '80') {
     ipcRenderer.send('save-setting', 'microbreakPostponableDurationPercent', (parseInt(microbreakPostponableDurationPercent.innerHTML, 10) + 5))
@@ -97,6 +115,18 @@ microbreakPostponableDurationPercentPlus.addEventListener('click', function (e) 
 microbreakPostponableDurationPercentMinus.addEventListener('click', function (e) {
   if (microbreakPostponableDurationPercent.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'microbreakPostponableDurationPercent', (parseInt(microbreakPostponableDurationPercent.innerHTML, 10) - 5))
+  }
+})
+
+microbreakPostponesLimitPlus.addEventListener('click', function (e) {
+  if (microbreakPostponesLimit.innerHTML !== '5') {
+    ipcRenderer.send('save-setting', 'microbreakPostponesLimit', (parseInt(microbreakPostponesLimit.innerHTML, 10) + 1))
+  }
+})
+
+microbreakPostponesLimitMinus.addEventListener('click', function (e) {
+  if (microbreakPostponesLimit.innerHTML !== '1') {
+    ipcRenderer.send('save-setting', 'microbreakPostponesLimit', (parseInt(microbreakPostponesLimit.innerHTML, 10) - 1))
   }
 })
 
@@ -129,7 +159,9 @@ ipcRenderer.on('renderSettings', (event, data) => {
   breakPostponeTime.innerHTML = data['breakPostponeTime'] / 1000
   microbreakPostponeTime.innerHTML = data['microbreakPostponeTime'] / 1000
   breakPostponableDurationPercent.innerHTML = data['breakPostponableDurationPercent']
+  breakPostponesLimit.innerHTML = data['breakPostponesLimit']
   microbreakPostponableDurationPercent.innerHTML = data['microbreakPostponableDurationPercent']
+  microbreakPostponesLimit.innerHTML = data['microbreakPostponesLimit']
   morningHour.innerHTML = data['morningHour']
   document.body.style.background = data['mainColor']
   eventsAttached = true

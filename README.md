@@ -1,6 +1,5 @@
 # stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
 
 > break time reminder app
@@ -213,7 +212,9 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
  - http://www.latofonts.com/lato-free-fonts/
  - http://www.huffingtonpost.com/2012/07/24/sitting-at-work-why-its-dangerous-alternatives_n_1695618.html
  - http://www.unm.edu/~lkravitz/Article%20folder/sittingUNM.html
-
+ - https://www.ninds.nih.gov/News-Events/News-and-Press-Releases/Press-Releases/Want-learn-new-skill-Take-some-short-breaks
+ - https://www.painscience.com/articles/chair-trouble.php
+ - https://www.painscience.com/articles/microbreaking.php
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
 - `crystal glass` by [mlteenie](http://freesound.org/people/mlteenie/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
