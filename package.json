@@ -16,6 +16,7 @@
     "pack": "build --dir",
     "dist": "build --x64 --ia32",
     "test": "mocha test",
+    "test-single": "mocha $1",
     "tdd": "mocha --watch test",
     "lint": "./node_modules/.bin/standard"
   },
