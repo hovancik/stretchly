@@ -34,9 +34,9 @@ global.shared = {
   isNewVersion: false
 }
 
-const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {})
+const gotTheLock = app.requestSingleInstanceLock()
 
-if (shouldQuit) {
+if (!gotTheLock) {
   console.log('stretchly is already running.')
   app.quit()
   return
