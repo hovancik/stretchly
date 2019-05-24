@@ -201,6 +201,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
 - William Lin, [@FanciestW](https://github.com/FanciestW)
 - Hisman Yosika, [@dnjstlr555](https://github.com/dnjstlr555)
 - Mehmet Fatih Yıldız, [@mfyz](https://github.com/mfyz)
+- Sunny Dhoke, [@sunn-e](https://github.com/sunn-e)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
@@ -215,6 +216,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
  - https://www.ninds.nih.gov/News-Events/News-and-Press-Releases/Press-Releases/Want-learn-new-skill-Take-some-short-breaks
  - https://www.painscience.com/articles/chair-trouble.php
  - https://www.painscience.com/articles/microbreaking.php
+ - https://github.com/CognirelTech/Quillpad-Server
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
 - `crystal glass` by [mlteenie](http://freesound.org/people/mlteenie/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
