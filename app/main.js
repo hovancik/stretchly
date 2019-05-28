@@ -179,7 +179,10 @@ function startProcessWin () {
   const modalPath = `file://${__dirname}/process.html`
   processWin = new BrowserWindow({
     icon: `${__dirname}/images/stretchly_18x18.png`,
-    show: false
+    show: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   processWin.loadURL(modalPath)
   processWin.once('ready-to-show', () => {
@@ -196,7 +199,10 @@ function createWelcomeWindow () {
       resizable: false,
       autoHideMenuBar: true,
       icon: `${__dirname}/images/stretchly_18x18.png`,
-      backgroundColor: settings.get('mainColor')
+      backgroundColor: settings.get('mainColor'),
+      webPreferences: {
+        nodeIntegration: true
+      }
     })
     welcomeWin.loadURL(modalPath)
   }
@@ -215,7 +221,10 @@ function createTutorialWindow () {
     resizable: false,
     autoHideMenuBar: true,
     icon: `${__dirname}/images/stretchly_18x18.png`,
-    backgroundColor: settings.get('mainColor')
+    backgroundColor: settings.get('mainColor'),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   tutorialWin.loadURL(modalPath)
   if (tutorialWin) {
@@ -232,7 +241,10 @@ function createContributorSettingsWindow() {
     y: displaysY(),
     autoHideMenuBar: true,
     icon: `${__dirname}/images/stretchly_18x18.png`,
-    backgroundColor: settings.get('mainColor')
+    backgroundColor: settings.get('mainColor'),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   contributorSettingsWindow.loadURL(modalPath)
   if (contributorSettingsWindow) {
@@ -316,7 +328,10 @@ function startMicrobreak () {
       backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
-      title: 'stretchly'
+      title: 'stretchly',
+      webPreferences: {
+        nodeIntegration: true
+      }
     }
 
     if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
@@ -396,7 +411,10 @@ function startBreak () {
       backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
-      title: 'stretchly'
+      title: 'stretchly',
+      webPreferences: {
+        nodeIntegration: true
+      }
     }
 
     if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
@@ -542,7 +560,10 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
+    title: i18next.t('main.aboutStretchly', { version: app.getVersion() }),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -562,7 +583,10 @@ function showSettingsWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.settings')
+    title: i18next.t('main.settings'),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   settingsWin.loadURL(modalPath)
   // settingsWin.webContents.openDevTools()
