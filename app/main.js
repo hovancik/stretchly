@@ -178,7 +178,7 @@ function trayIconPath () {
 function startProcessWin () {
   const modalPath = `file://${__dirname}/process.html`
   processWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     show: false,
     webPreferences: {
       nodeIntegration: true
@@ -198,7 +198,7 @@ function createWelcomeWindow () {
       y: displaysY(),
       resizable: false,
       autoHideMenuBar: true,
-      icon: `${__dirname}/images/stretchly_18x18.png`,
+      icon: `${__dirname}/images/windowIcon.png`,
       backgroundColor: settings.get('mainColor'),
       webPreferences: {
         nodeIntegration: true
@@ -220,7 +220,7 @@ function createTutorialWindow () {
     y: displaysY(),
     resizable: false,
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     backgroundColor: settings.get('mainColor'),
     webPreferences: {
       nodeIntegration: true
@@ -240,7 +240,7 @@ function createContributorSettingsWindow() {
     x: displaysX(),
     y: displaysY(),
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     backgroundColor: settings.get('mainColor'),
     webPreferences: {
       nodeIntegration: true
@@ -321,7 +321,7 @@ function startMicrobreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
-      icon: `${__dirname}/images/stretchly_18x18.png`,
+      icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
       frame: false,
       show: false,
@@ -404,7 +404,7 @@ function startBreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
-      icon: `${__dirname}/images/stretchly_18x18.png`,
+      icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
       frame: false,
       show: false,
@@ -555,7 +555,7 @@ function showAboutWindow () {
   }
   const modalPath = `file://${__dirname}/about.html`
   aboutWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     x: displaysX(),
     y: displaysY(),
     resizable: false,
@@ -578,7 +578,7 @@ function showSettingsWindow () {
   }
   const modalPath = `file://${__dirname}/settings.html`
   settingsWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     x: displaysX(),
     y: displaysY(),
     resizable: false,
@@ -786,7 +786,7 @@ function getTrayMenu () {
       const myStretchlyWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: `${__dirname}/images/stretchly_18x18.png`,
+        icon: `${__dirname}/images/windowIcon.png`,
         x: displaysX(),
         y: displaysY(),
         resizable: false,
