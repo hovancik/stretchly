@@ -121,7 +121,10 @@ It should run on any electron supported platform. Tested on macOS, Windows and U
 
 ### Linux note
 Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*.
+
 For Natural breaks, you might need some packages too (`libxss-dev`).
+
+If *stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the settings are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
 ## Development
 
