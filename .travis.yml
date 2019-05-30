@@ -4,7 +4,7 @@ os:
   - linux
   - osx
 
-node_js: "8.9.3"
+node_js: "12.0.0"
 
 
 before_install:

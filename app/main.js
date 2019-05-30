@@ -34,9 +34,9 @@ global.shared = {
   isNewVersion: false
 }
 
-const shouldQuit = app.makeSingleInstance(function (commandLine, workingDirectory) {})
+const gotTheLock = app.requestSingleInstanceLock()
 
-if (shouldQuit) {
+if (!gotTheLock) {
   console.log('stretchly is already running.')
   app.quit()
   return
@@ -178,8 +178,11 @@ function trayIconPath () {
 function startProcessWin () {
   const modalPath = `file://${__dirname}/process.html`
   processWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    show: false
+    icon: `${__dirname}/images/windowIcon.png`,
+    show: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   processWin.loadURL(modalPath)
   processWin.once('ready-to-show', () => {
@@ -195,8 +198,11 @@ function createWelcomeWindow () {
       y: displaysY(),
       resizable: false,
       autoHideMenuBar: true,
-      icon: `${__dirname}/images/stretchly_18x18.png`,
-      backgroundColor: settings.get('mainColor')
+      icon: `${__dirname}/images/windowIcon.png`,
+      backgroundColor: settings.get('mainColor'),
+      webPreferences: {
+        nodeIntegration: true
+      }
     })
     welcomeWin.loadURL(modalPath)
   }
@@ -214,8 +220,11 @@ function createTutorialWindow () {
     y: displaysY(),
     resizable: false,
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    backgroundColor: settings.get('mainColor')
+    icon: `${__dirname}/images/windowIcon.png`,
+    backgroundColor: settings.get('mainColor'),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   tutorialWin.loadURL(modalPath)
   if (tutorialWin) {
@@ -231,8 +240,11 @@ function createContributorSettingsWindow() {
     x: displaysX(),
     y: displaysY(),
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/stretchly_18x18.png`,
-    backgroundColor: settings.get('mainColor')
+    icon: `${__dirname}/images/windowIcon.png`,
+    backgroundColor: settings.get('mainColor'),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   contributorSettingsWindow.loadURL(modalPath)
   if (contributorSettingsWindow) {
@@ -309,14 +321,17 @@ function startMicrobreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
-      icon: `${__dirname}/images/stretchly_18x18.png`,
+      icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
-      title: 'stretchly'
+      title: 'stretchly',
+      webPreferences: {
+        nodeIntegration: true
+      }
     }
 
     if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
@@ -389,14 +404,17 @@ function startBreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
-      icon: `${__dirname}/images/stretchly_18x18.png`,
+      icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
       frame: false,
       show: false,
       backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
-      title: 'stretchly'
+      title: 'stretchly',
+      webPreferences: {
+        nodeIntegration: true
+      }
     }
 
     if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
@@ -537,12 +555,15 @@ function showAboutWindow () {
   }
   const modalPath = `file://${__dirname}/about.html`
   aboutWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     x: displaysX(),
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', { version: app.getVersion() })
+    title: i18next.t('main.aboutStretchly', { version: app.getVersion() }),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   aboutWin.loadURL(modalPath)
   aboutWin.on('closed', () => {
@@ -557,12 +578,15 @@ function showSettingsWindow () {
   }
   const modalPath = `file://${__dirname}/settings.html`
   settingsWin = new BrowserWindow({
-    icon: `${__dirname}/images/stretchly_18x18.png`,
+    icon: `${__dirname}/images/windowIcon.png`,
     x: displaysX(),
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.settings')
+    title: i18next.t('main.settings'),
+    webPreferences: {
+      nodeIntegration: true
+    }
   })
   settingsWin.loadURL(modalPath)
   // settingsWin.webContents.openDevTools()
@@ -762,7 +786,7 @@ function getTrayMenu () {
       const myStretchlyWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        icon: `${__dirname}/images/stretchly_18x18.png`,
+        icon: `${__dirname}/images/windowIcon.png`,
         x: displaysX(),
         y: displaysY(),
         resizable: false,

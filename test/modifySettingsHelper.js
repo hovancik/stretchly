@@ -10,6 +10,9 @@ async function modifySettings (key, value) {
       path: electronPath,
       args: [
         `${__dirname}/../app`
+      ],
+      chromeDriverArgs: [
+        `--user-data-dir=${__dirname}/stretchly-test-tmp`
       ]
     })
 
