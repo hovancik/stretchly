@@ -221,6 +221,7 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
  - https://www.painscience.com/articles/chair-trouble.php
  - https://www.painscience.com/articles/microbreaking.php
  - https://github.com/CognirelTech/Quillpad-Server
+ - https://www.webmd.com/fitness-exercise/a-z/seven-minute-workout
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
 - `crystal glass` by [mlteenie](http://freesound.org/people/mlteenie/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).

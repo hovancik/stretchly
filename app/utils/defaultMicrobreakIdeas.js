@@ -13,5 +13,7 @@ module.exports = [
   { data: 'Refocus eyes on an object at least 20 meters away.', enabled: true },
   { data: 'Take a moment to think about something you appreciate.', enabled: true },
   { data: 'Take a moment to smile at being alive.', enabled: true },
-  { data: 'Truly ergonomic workstation is one that you regularly push away from.', enabled: true}
+  { data: 'Truly ergonomic workstation is one that you regularly push away from.', enabled: true },
+  { data: 'Close your eyes and count your breaths.', enabled: true },
+  { data: 'Close your eyes and name the things you hear.', enabled: true }
 ]
