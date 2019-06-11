@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - workaround multiple screens and fullscreen (macOS)
 - tray icon size on Linux
+- problem with Window missing when resetting settings to defaults
 
 ### Changed
 - update icons and graphic materials
