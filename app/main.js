@@ -937,7 +937,9 @@ ipcMain.on('set-default-settings', function (event, data) {
       saveDefaultsFor(data)
       appIcon.setImage(trayIconPath())
       appIcon.setContextMenu(getTrayMenu())
-      settingsWin.webContents.send('renderSettings', settings.data)
+      if (settingsWin) {
+        settingsWin.webContents.send('renderSettings', settings.data)
+      }
     }
   })
 })
