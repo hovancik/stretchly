@@ -103,6 +103,9 @@ In the config file, you can edit `microbreakPostpone` and `breakPostpone` to ena
 #### New version notification
 In the config file, set `notifyNewVersion: false,` to disable new version notification.
 
+#### Play sound at the start of the micro/break
+In the config file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound. Same for `breakStartSoundPlaying`.
+
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).

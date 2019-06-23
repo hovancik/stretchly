@@ -319,6 +319,10 @@ function startMicrobreak () {
 
   let idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
 
+  if (settings.get('microbreakStartSoundPlaying')) {
+    processWin.webContents.send('playSound', settings.get('audio'))
+  }
+
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
       icon: `${__dirname}/images/windowIcon.png`,
@@ -401,6 +405,10 @@ function startBreak () {
   breakWins = []
 
   let idea = settings.get('ideas') ? breakIdeas.randomElement : ['','']
+
+  if (settings.get('breakStartSoundPlaying')) {
+    processWin.webContents.send('playSound', settings.get('audio'))
+  }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {

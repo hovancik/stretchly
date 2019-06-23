@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - more break and microbreak ideas
 - more settings in Contributor's settings
 - Polish translation
+- start a break/microbreak with a sound (set via config file or Contributor's settings)
 
 ## [0.19.1] - 2019-02-17
 ### Fixed
@@ -298,7 +299,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - scripts for creating installers for OS X, Windows, Linux
 
 [Unreleased]: https://github.com/hovancik/stretchly/compare/v0.19.1...HEAD
-[0.19.0]: https://github.com/hovancik/stretchly/compare/v0.19.0...v0.19.1
+[0.19.1]: https://github.com/hovancik/stretchly/compare/v0.19.0...v0.19.1
 [0.19.0]: https://github.com/hovancik/stretchly/compare/v0.18.0...v0.19.0
 [0.18.0]: https://github.com/hovancik/stretchly/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/hovancik/stretchly/compare/v0.16.0...v0.17.0
