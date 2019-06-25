@@ -11,6 +11,9 @@ skip_tags: true
 environment:
   nodejs_version: "12.0.0"
 
+cache:
+  - node_modules -> package.json
+
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install npm -g
