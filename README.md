@@ -66,7 +66,7 @@ Microbreaks and breaks can be customized:
 
 All settings can be reset to defaults.
 
-On firts run, stretchly will present you with Welcome window, where you can set your locale and read Tutorial.
+On first run, stretchly will present you with Welcome window, where you can set your locale and read Tutorial.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-welcome.png" height="340">
 
