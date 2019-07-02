@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.20.0] - 2019-07-02
 ### Fixed
 - workaround multiple screens and fullscreen (macOS)
 - tray icon size on Linux
@@ -298,7 +300,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.19.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.20.0...HEAD
+[0.20.0]: https://github.com/hovancik/stretchly/compare/v0.19.1...v0.20.0
 [0.19.1]: https://github.com/hovancik/stretchly/compare/v0.19.0...v0.19.1
 [0.19.0]: https://github.com/hovancik/stretchly/compare/v0.18.0...v0.19.0
 [0.18.0]: https://github.com/hovancik/stretchly/compare/v0.17.0...v0.18.0
