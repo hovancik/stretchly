@@ -73,23 +73,17 @@ On first run, stretchly will present you with Welcome window, where you can set 
 You can view Tutorial again anytime from About window.
 
 ### Advanced settings
-All settings are saved in a JSON file. To learn more about how to find it, read [this](https://github.com/electron/electron/blob/master/docs/api/app.md#appgetpathname) or use `Ctrl/Cmd + d` shortcut in About window.
-Related code looks like this:
-
-```
-const dir = app.getPath('userData')
-const settingsFile = `${dir}/config.json`
-```
+All settings are saved in a JSON file. To open it, use `Ctrl/Cmd + d` shortcut in About window and click on link to it.
 
 #### Editing break/microbreak ideas
-In the config file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
+In the settings file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
 `breakIdeas` and `microbreakIdeas`.
 
 #### Editing break/microbreak notification interval
-In the config file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for microbreak.
+In the settings file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for microbreak.
 
 #### Editing sunrise time to pause breaks until morning
-In the config file you can set the `morningHour` setting to pause until that hour this or next day
+In the settings file you can set the `morningHour` setting to pause until that hour this or next day
 Otherwise, you can set `morningHour: "sunrise"` and set `posLatitude`, `posLongitude` in
 settings to pause until the actual sunrise in your area.
 E.g. if you live in Boston you would set:
@@ -98,13 +92,13 @@ E.g. if you live in Boston you would set:
 `posLongitude: 71`
 
 #### Editing postpone functionality
-In the config file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable ability to postopne breaks, `microbreakPostponeTime` and `breakPostponeTime` to change postopone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change percentage of break in which user can postpone the break.
+In the settings file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable ability to postopne breaks, `microbreakPostponeTime` and `breakPostponeTime` to change postopone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change percentage of break in which user can postpone the break.
 
 #### New version notification
-In the config file, set `notifyNewVersion: false,` to disable new version notification.
+In the settings file, set `notifyNewVersion: false,` to disable new version notification.
 
 #### Play sound at the start of the micro/break
-In the config file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound. Same for `breakStartSoundPlaying`.
+In the settings file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound. Same for `breakStartSoundPlaying`.
 
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
@@ -136,7 +130,7 @@ Before implementing a feature, please open an Issue first, so we can be sure tha
 
 ### Debugging
 One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
-  - location of settings file
+  - location of settings file (Clicking on settings file location will open it.)
   - debug information for break planner
 
 ### Known issues
