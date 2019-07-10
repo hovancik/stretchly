@@ -14,6 +14,10 @@ document.getElementById('homepage').addEventListener('click', function (e) {
   shell.openExternal('https://hovancik.net/stretchly')
 })
 
+document.querySelector('#node').innerHTML = process.versions.node
+document.querySelector('#chrome').innerHTML = process.versions.chrome
+document.querySelector('#electron').innerHTML = process.versions.electron
+
 const updateElement = document.getElementById('update')
 
 updateElement.addEventListener('click', function (e) {
@@ -27,6 +31,27 @@ settingsfileElement.addEventListener('click', function (e) {
   e.preventDefault()
   shell.openItem(settingsfileElement.innerHTML)
 })
+
+// TODO refactor out?
+const copyToClipBoard = (str) => {
+  const el = document.createElement('textarea')
+  el.value = str
+  document.body.appendChild(el)
+  el.select()
+  document.execCommand('copy')
+  document.body.removeChild(el)
+}
+
+document.querySelector('#copy').addEventListener('click', function (e) {
+  e.preventDefault()
+  const toCopy = document.querySelector('#to-copy')
+  copyToClipBoard(toCopy.textContent)
+  const copiedEl = document.createElement('span')
+  copiedEl.innerHTML = ' copied!'
+  this.parentNode.appendChild(copiedEl)
+  setTimeout(() => copiedEl.remove(), 1275)
+})
+
 new VersionChecker()
   .latest()
   .then(version => {
