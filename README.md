@@ -133,6 +133,8 @@ One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
   - location of settings file (Clicking on settings file location will open it.)
   - debug information for break planner
 
+You can copy debug information to clipboard.
+
 ### Known issues
 - users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3th settings page and uncheck "monitor Do Not Disturb mode"
 - tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447)) and Linux ([lectron/electron#15161](https://github.com/electron/electron/issues/15161))

@@ -14,17 +14,20 @@
         </p>
       </div>
       <div class="debug">
-        <p>
+        <p id="to-copy">
           breakPlanner: {reference: <span id="reference"></span>,
           timeleft: <span id="timeleft"></span>,
           breakNumber: <span id="breakNumber"></span>,
           postponesNumber: <span id="postponesNumber"></span>,
           Do Not Disturb: <span id="donotdisturb"></span>}
           <br/>
-          <br/>Node.js: <script>document.write(process.versions.node)</script>,
-          Chromium: <script>document.write(process.versions.chrome)</script>,
-          Electron: <script>document.write(process.versions.electron)</script>
           settingsFile: <a href="" id="settingsfile"></a>
+          <br/>Node.js: <span id="node"></span>
+          Chromium: <span id="chrome"></span>,
+          Electron: <span id="electron"></span>
+        </p>
+        <p>
+            <a href="" id="copy">copy to clipboard</a>
         </p>
       </div>
       <div id="about-footer">
