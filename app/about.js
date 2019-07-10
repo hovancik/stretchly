@@ -21,6 +21,12 @@ updateElement.addEventListener('click', function (e) {
   shell.openExternal('https://hovancik.net/stretchly/downloads')
 })
 
+const settingsfileElement = document.getElementById('settingsfile')
+
+settingsfileElement.addEventListener('click', function (e) {
+  e.preventDefault()
+  shell.openItem(settingsfileElement.innerHTML)
+})
 new VersionChecker()
   .latest()
   .then(version => {

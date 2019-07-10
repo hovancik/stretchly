@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- clicking on settings file location will open it
 
 ## [0.20.0] - 2019-07-02
 ### Fixed
