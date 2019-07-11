@@ -325,6 +325,7 @@ function startMicrobreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
+      autoHideMenuBar: true,
       icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
       frame: false,
@@ -412,6 +413,7 @@ function startBreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     let windowOptions = {
+      autoHideMenuBar: true,
       icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
       frame: false,
@@ -563,6 +565,7 @@ function showAboutWindow () {
   }
   const modalPath = `file://${__dirname}/about.html`
   aboutWin = new BrowserWindow({
+    autoHideMenuBar: true,
     icon: `${__dirname}/images/windowIcon.png`,
     x: displaysX(),
     y: displaysY(),
@@ -586,6 +589,7 @@ function showSettingsWindow () {
   }
   const modalPath = `file://${__dirname}/settings.html`
   settingsWin = new BrowserWindow({
+    autoHideMenuBar: true,
     icon: `${__dirname}/images/windowIcon.png`,
     x: displaysX(),
     y: displaysY(),
@@ -792,6 +796,7 @@ function getTrayMenu () {
     click: function () {
       const myStretchlyUrl = 'https://my.stretchly.net'
       const myStretchlyWindow = new BrowserWindow({
+        autoHideMenuBar: true,
         width: 800,
         height: 600,
         icon: `${__dirname}/images/windowIcon.png`,
