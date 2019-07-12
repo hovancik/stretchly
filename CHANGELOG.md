@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - clicking on settings file location will open it
 - ability to copy debug info to clipboard
+- Added Lithuanian language
 
 ### Fixed
 - auto hide menu bar in app's windows
