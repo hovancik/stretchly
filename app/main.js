@@ -334,6 +334,7 @@ function startMicrobreak () {
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly',
+      alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true
       }
@@ -422,6 +423,7 @@ function startBreak () {
       skipTaskbar: true,
       focusable: false,
       title: 'stretchly',
+      alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true
       }

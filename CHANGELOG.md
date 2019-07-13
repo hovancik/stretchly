@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - auto hide menu bar in app's windows
+- break window not always shown on top of other windows (for Windows OS)
 
 ## [0.20.0] - 2019-07-02
 ### Fixed
