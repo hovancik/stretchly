@@ -627,7 +627,7 @@ function getTrayMenu () {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {
-        shell.openExternal('https://github.com/hovancik/stretchly/releases')
+        shell.openExternal('https://hovancik.net/stretchly/downloads')
       }
     })
   }
