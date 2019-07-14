@@ -1,6 +1,6 @@
 {
   "name": "stretchly",
-  "version": "0.20.0",
+  "version": "0.20.1",
   "description": "break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -11,10 +11,10 @@
     "dev": "NODE_ENV='development' electron ./app --enable-logging --remote-debugging-port=9222",
     "electromon": "electromon ./app",
     "postinstall": "electron-builder install-app-deps",
-    "pack-all": "build --dir -mwl --x64 --ia32",
-    "dist-all": "build -mwl --x64 --ia32",
-    "pack": "build --dir",
-    "dist": "build --x64 --ia32",
+    "pack-all": "electron-builder build --dir -mwl --x64 --ia32",
+    "dist-all": "electron-builder build -mwl --x64 --ia32",
+    "pack": "electron-builder build --dir",
+    "dist": "electron-builder build --x64 --ia32",
     "test": "mocha test",
     "test-single": "mocha $1",
     "tdd": "mocha --watch test",
@@ -42,12 +42,12 @@
     "chai-as-promised": "^7.1.1",
     "electromon": "^1.0.10",
     "electron": "^5.0.6",
-    "electron-builder": "^20.44.4",
+    "electron-builder": "^21.0.15",
     "mocha": "^6.1.4",
     "rimraf": "^2.6.3",
     "sinon": "^7.3.2",
     "spectron": "^7.0.0",
-    "standard": "^12.0.1"
+    "standard": "^13.0.2"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
