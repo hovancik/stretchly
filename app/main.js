@@ -234,7 +234,7 @@ function createTutorialWindow () {
   }
 }
 
-function createContributorSettingsWindow() {
+function createContributorSettingsWindow () {
   const modalPath = `file://${__dirname}/contributor-settings.html`
   contributorSettingsWindow = new BrowserWindow({
     x: displaysX(),
@@ -317,14 +317,14 @@ function startMicrobreak () {
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
-  let idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
+  const idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
 
   if (settings.get('microbreakStartSoundPlaying')) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let windowOptions = {
+    const windowOptions = {
       autoHideMenuBar: true,
       icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
@@ -340,7 +340,7 @@ function startMicrobreak () {
       }
     }
 
-    if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
@@ -406,14 +406,14 @@ function startBreak () {
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
-  let idea = settings.get('ideas') ? breakIdeas.randomElement : ['','']
+  const idea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
 
   if (settings.get('breakStartSoundPlaying')) {
     processWin.webContents.send('playSound', settings.get('audio'))
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    let windowOptions = {
+    const windowOptions = {
       autoHideMenuBar: true,
       icon: `${__dirname}/images/windowIcon.png`,
       resizable: false,
@@ -429,7 +429,7 @@ function startBreak () {
       }
     }
 
-    if  (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
@@ -635,11 +635,11 @@ function getTrayMenu () {
   if (timeLeft) {
     if (isPaused) {
       trayMenu.push({
-        label: i18next.t('main.resumingAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1] })
+        label: i18next.t('main.resumingAt', { hours: nextBreak[0], minutes: nextBreak[1] })
       })
     } else {
       trayMenu.push({
-        label: i18next.t('main.breakAt', { 'hours': nextBreak[0], 'minutes': nextBreak[1], 'reference': i18next.t(`main.${reference.breakType}Reference`) })
+        label: i18next.t('main.breakAt', { hours: nextBreak[0], minutes: nextBreak[1], reference: i18next.t(`main.${reference.breakType}Reference`) })
       })
     }
   }
@@ -807,7 +807,7 @@ function getTrayMenu () {
         resizable: false,
         backgroundColor: settings.get('mainColor'),
         webPreferences: {
-          preload: path.resolve(__dirname,'./electron-bridge.js'),
+          preload: path.resolve(__dirname, './electron-bridge.js'),
           nodeIntegration: false
         }
       })
@@ -840,7 +840,7 @@ function updateToolTip () {
   if (breakPlanner && breakPlanner.scheduler && breakPlanner.isPaused) {
     const timeLeft = breakPlanner.scheduler.timeLeft
     if (timeLeft) {
-      statusMessage += i18next.t('main.pausedUntil', { 'timeLeft': Utils.formatPauseTimeLeft(timeLeft) })
+      statusMessage += i18next.t('main.pausedUntil', { timeLeft: Utils.formatPauseTimeLeft(timeLeft) })
     } else {
       statusMessage += i18next.t('main.pausedIndefinitely')
     }
@@ -851,11 +851,11 @@ function updateToolTip () {
     const breakNotification = typeOfBreak().breakNotification
     const notificationTime = breakNotification ? settings.get(`${breakType}NotificationInterval`) : 0
     if (breakType) {
-      statusMessage += i18next.t('main.timeToNext', { 'timeLeft': Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), 'breakType': i18next.t(`main.${breakType}`) })
+      statusMessage += i18next.t('main.timeToNext', { timeLeft: Utils.formatTillBreak(breakPlanner.scheduler.timeLeft + notificationTime), breakType: i18next.t(`main.${breakType}`) })
       if (breakType === 'microbreak') {
         const breakInterval = settings.get('breakInterval') + 1
         const breakNumber = breakPlanner.breakNumber % breakInterval
-        statusMessage += i18next.t('main.nextBreakFollowing', { 'count': breakInterval - breakNumber })
+        statusMessage += i18next.t('main.nextBreakFollowing', { count: breakInterval - breakNumber })
       }
     }
   }

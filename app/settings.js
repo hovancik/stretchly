@@ -9,22 +9,22 @@ document.addEventListener('DOMContentLoaded', event => {
 let eventsAttached = false
 ipcRenderer.send('send-settings')
 
-let microbreakIntervalPlus = document.getElementById('microbreakIntervalPlus')
-let microbreakIntervalMinus = document.getElementById('microbreakIntervalMinus')
-let microbreakInterval = document.getElementById('microbreakInterval')
+const microbreakIntervalPlus = document.getElementById('microbreakIntervalPlus')
+const microbreakIntervalMinus = document.getElementById('microbreakIntervalMinus')
+const microbreakInterval = document.getElementById('microbreakInterval')
 
-let microbreakDurationPlus = document.getElementById('microbreakDurationPlus')
-let microbreakDurationMinus = document.getElementById('microbreakDurationMinus')
-let microbreakDuration = document.getElementById('microbreakDuration')
+const microbreakDurationPlus = document.getElementById('microbreakDurationPlus')
+const microbreakDurationMinus = document.getElementById('microbreakDurationMinus')
+const microbreakDuration = document.getElementById('microbreakDuration')
 
-let breakIntervalPlus = document.getElementById('breakIntervalPlus')
-let breakIntervalMinus = document.getElementById('breakIntervalMinus')
-let breakInterval = document.getElementById('breakInterval')
+const breakIntervalPlus = document.getElementById('breakIntervalPlus')
+const breakIntervalMinus = document.getElementById('breakIntervalMinus')
+const breakInterval = document.getElementById('breakInterval')
 
-let breakDurationPlus = document.getElementById('breakDurationPlus')
-let breakDurationMinus = document.getElementById('breakDurationMinus')
-let breakDuration = document.getElementById('breakDuration')
-let realBreakInterval = document.getElementById('realBreakInterval')
+const breakDurationPlus = document.getElementById('breakDurationPlus')
+const breakDurationMinus = document.getElementById('breakDurationMinus')
+const breakDuration = document.getElementById('breakDuration')
+const realBreakInterval = document.getElementById('realBreakInterval')
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
@@ -84,9 +84,9 @@ breakDurationMinus.addEventListener('click', function (e) {
 })
 
 ipcRenderer.on('renderSettings', (event, data) => {
-  let enableElements = document.getElementsByClassName('enable')
+  const enableElements = document.getElementsByClassName('enable')
   for (let i = 0; i < enableElements.length; i++) {
-    let element = enableElements[i]
+    const element = enableElements[i]
     element.checked = data[element.value]
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {
@@ -95,9 +95,9 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
   }
 
-  let enableBreakTypeElements = document.getElementsByClassName('enabletype')
+  const enableBreakTypeElements = document.getElementsByClassName('enabletype')
   for (let i = 0; i < enableBreakTypeElements.length; i++) {
-    let element = enableBreakTypeElements[i]
+    const element = enableBreakTypeElements[i]
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {
         if (enabletypeCheckedCount() === 0) {
@@ -120,11 +120,11 @@ ipcRenderer.on('renderSettings', (event, data) => {
   eventsAttached = true
 })
 
-let enabletypeCheckedCount = function () {
+const enabletypeCheckedCount = function () {
   let enabled = 0
-  let enableBreakTypeElements = document.getElementsByClassName('enabletype')
+  const enableBreakTypeElements = document.getElementsByClassName('enabletype')
   for (let i = 0; i < enableBreakTypeElements.length; i++) {
-    let element = enableBreakTypeElements[i]
+    const element = enableBreakTypeElements[i]
     if (element.checked) {
       enabled += 1
     }

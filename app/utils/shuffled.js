@@ -9,8 +9,8 @@ class Shuffled {
     if (this.temp.length === 0) {
       this.temp = this.array.slice(0)
     }
-    let randomIndex = Math.floor(Math.random() * this.temp.length)
-    let element = this.temp[randomIndex]
+    const randomIndex = Math.floor(Math.random() * this.temp.length)
+    const element = this.temp[randomIndex]
     this.temp.splice(randomIndex, 1)
     return element
   }

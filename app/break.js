@@ -18,17 +18,17 @@ document.getElementById('postpone').addEventListener('click', event =>
 )
 
 ipcRenderer.on('breakIdea', (event, message) => {
-  let breakIdea = document.getElementsByClassName('break-idea')[0]
+  const breakIdea = document.getElementsByClassName('break-idea')[0]
   breakIdea.innerHTML = message[0]
-  let breakText = document.getElementsByClassName('break-text')[0]
+  const breakText = document.getElementsByClassName('break-text')[0]
   breakText.innerHTML = message[1]
 })
 
 ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
-  let progress = document.getElementById('progress')
-  let progressTime = document.getElementById('progress-time')
-  let postponeElement = document.getElementById('postpone')
-  let closeElement = document.getElementById('close')
+  const progress = document.getElementById('progress')
+  const progressTime = document.getElementById('progress-time')
+  const postponeElement = document.getElementById('postpone')
+  const closeElement = document.getElementById('close')
 
   window.setInterval(function () {
     if (Date.now() - started < duration) {

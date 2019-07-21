@@ -1,5 +1,5 @@
 const chai = require('chai')
-let DndManager = require('../app/utils/dndManager')
+const DndManager = require('../app/utils/dndManager')
 const Settings = require('./../app/utils/settings')
 const testSettingsLocaction = `${__dirname}/test-settings.json`
 

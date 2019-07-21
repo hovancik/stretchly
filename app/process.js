@@ -1,8 +1,8 @@
 const { ipcRenderer, shell, remote } = require('electron')
-let VersionChecker = require('./utils/versionChecker')
+const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 ipcRenderer.on('playSound', (event, data) => {
-  let audio = new Audio(`audio/${data}.wav`)
+  const audio = new Audio(`audio/${data}.wav`)
   audio.play()
 })
 
@@ -34,7 +34,7 @@ ipcRenderer.on('showNotification', (event, { text, silent }) => {
 })
 
 function notifyNewVersion (silent) {
-  let notification = new Notification('stretchly', {
+  const notification = new Notification('stretchly', {
     body: i18next.t('process.newVersionAvailable'),
     silent
   })

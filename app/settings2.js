@@ -11,10 +11,10 @@ document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
 
 ipcRenderer.on('renderSettings', (event, data) => {
-  let colorElements = document.getElementsByClassName('color')
+  const colorElements = document.getElementsByClassName('color')
   for (var i = 0; i < colorElements.length; i++) {
-    let element = colorElements[i]
-    let color = element.dataset.color
+    const element = colorElements[i]
+    const color = element.dataset.color
     element.style.background = color
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {
@@ -25,10 +25,10 @@ ipcRenderer.on('renderSettings', (event, data) => {
     document.body.style.background = data['mainColor']
   }
 
-  let audioElements = document.getElementsByClassName('audio')
+  const audioElements = document.getElementsByClassName('audio')
   for (var y = 0; y < audioElements.length; y++) {
-    let audioElement = audioElements[y]
-    let audio = audioElement.dataset.audio
+    const audioElement = audioElements[y]
+    const audio = audioElement.dataset.audio
     if (audio === data['audio']) {
       audioElement.style.background = '#777'
     } else {

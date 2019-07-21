@@ -12,9 +12,9 @@ document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
 
 ipcRenderer.on('renderSettings', (event, data) => {
-  let enableElements = document.getElementsByClassName('enable')
+  const enableElements = document.getElementsByClassName('enable')
   for (var i = 0; i < enableElements.length; i++) {
-    let element = enableElements[i]
+    const element = enableElements[i]
     element.checked = data[element.value]
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {

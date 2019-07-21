@@ -1,4 +1,4 @@
-let Shuffled = require('./shuffled')
+const Shuffled = require('./shuffled')
 
 class IdeasLoader {
   constructor (data) {
