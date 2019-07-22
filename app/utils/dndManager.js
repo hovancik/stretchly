@@ -33,7 +33,7 @@ class DndManager extends EventEmitter {
   }
 
   _checkDnd () {
-    let lastDndStatus = this.isOnDnd
+    let lastDndStatus = this.isOnDnd  //eslint-disable-line
     this.timer = setInterval(() => {
       const doNotDisturb = this.doNotDisturb
       if (!this.isOnDnd && doNotDisturb) {
