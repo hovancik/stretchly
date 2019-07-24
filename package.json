@@ -43,6 +43,7 @@
     "electromon": "^1.0.10",
     "electron": "^5.0.6",
     "electron-builder": "^21.0.15",
+    "husky": "^3.0.1",
     "mocha": "^6.1.4",
     "rimraf": "^2.6.3",
     "sinon": "^7.3.2",
