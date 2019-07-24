@@ -126,6 +126,11 @@
       "sun.js"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "dependencies": {
     "@meetfranz/electron-notification-state": "^1.0.0",
     "@paulcbetts/system-idle-time": "^1.0.5",
