@@ -206,6 +206,7 @@ You can copy debug information to clipboard.
 - Sunny Dhoke, [@sunn-e](https://github.com/sunn-e)
 - Przemysław Rząd, [@rzadp](https://github.com/rzadp)
 - Artūras Stifanovičius, [@troyanas](https://github.com/troyanas)
+- pan93412, [@pan93412](https://github.com/pan93412)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico

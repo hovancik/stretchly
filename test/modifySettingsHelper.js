@@ -1,5 +1,5 @@
-let Application = require('spectron').Application
-let electronPath = require('electron')
+const Application = require('spectron').Application
+const electronPath = require('electron')
 const AppSettings = require('../app/utils/settings')
 
 async function modifySettings (key, value) {

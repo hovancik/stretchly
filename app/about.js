@@ -70,22 +70,22 @@ window.addEventListener('keydown', event => {
 
 ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
   postponesnumber, settingsfile, doNotDisturb) => {
-  let visible = document.getElementsByClassName('debug')[0].style.visibility === 'visible'
+  const visible = document.getElementsByClassName('debug')[0].style.visibility === 'visible'
   if (visible) {
     document.getElementsByClassName('debug')[0].style.visibility = 'hidden'
   } else {
     document.getElementsByClassName('debug')[0].style.visibility = 'visible'
-    let referenceElement = document.getElementById('reference')
+    const referenceElement = document.getElementById('reference')
     referenceElement.innerHTML = reference
-    let timeleftElement = document.getElementById('timeleft')
+    const timeleftElement = document.getElementById('timeleft')
     timeleftElement.innerHTML = timeleft
-    let breakNumber = document.getElementById('breakNumber')
+    const breakNumber = document.getElementById('breakNumber')
     breakNumber.innerHTML = breaknumber
-    let postponesNumber = document.getElementById('postponesNumber')
+    const postponesNumber = document.getElementById('postponesNumber')
     postponesNumber.innerHTML = postponesnumber
-    let settingsfileElement = document.getElementById('settingsfile')
+    const settingsfileElement = document.getElementById('settingsfile')
     settingsfileElement.innerHTML = settingsfile
-    let donotdisturbElement = document.getElementById('donotdisturb')
+    const donotdisturbElement = document.getElementById('donotdisturb')
     donotdisturbElement.innerHTML = doNotDisturb
   }
 })

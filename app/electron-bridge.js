@@ -1,4 +1,4 @@
-const {remote, ipcRenderer, shell} = require('electron')
+const { remote, ipcRenderer, shell } = require('electron')
 
 window.ElectronBridge = {
   // helloWorld () {

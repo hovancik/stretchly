@@ -34,8 +34,8 @@ const infos = [
   'thanks'
 ]
 
-let previous = document.querySelector('.previous')
-let next = document.querySelector('.next')
+const previous = document.querySelector('.previous')
+const next = document.querySelector('.next')
 
 previous.addEventListener('click', function (event) {
   event.preventDefault()

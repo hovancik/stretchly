@@ -1,7 +1,7 @@
-let Application = require('spectron').Application
-let chai = require('chai')
-let chaiAsPromised = require('chai-as-promised')
-let electronPath = require('electron')
+const Application = require('spectron').Application
+const chai = require('chai')
+const chaiAsPromised = require('chai-as-promised')
+const electronPath = require('electron')
 const rimraf = require('rimraf')
 
 const { modifySettings } = require('./modifySettingsHelper')

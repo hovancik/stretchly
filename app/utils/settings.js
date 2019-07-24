@@ -45,7 +45,7 @@ class Settings {
   }
 
   _loadMissing () {
-    for (let prop in defaultSettings) {
+    for (const prop in defaultSettings) {
       this.get(prop)
     }
   }

@@ -14,7 +14,7 @@ describe('ideasLoader', function () {
   })
 
   it('returns enabled ideas', function () {
-    let enabled = new Shuffled(['a', 'c'])
+    const enabled = new Shuffled(['a', 'c'])
     this.ideas.ideas().should.be.deep.equal(enabled)
   })
 })

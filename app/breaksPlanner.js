@@ -15,13 +15,13 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager = new DndManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
-      let interval = this.settings.get('microbreakDuration')
+      const interval = this.settings.get('microbreakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound), interval, 'finishMicrobreak')
       this.scheduler.plan()
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
-      let interval = this.settings.get('breakDuration')
+      const interval = this.settings.get('breakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval, 'finishBreak')
       this.scheduler.plan()
     })
@@ -59,13 +59,13 @@ class BreaksPlanner extends EventEmitter {
   nextBreak () {
     this.postponesNumber = 0
     if (this.scheduler) this.scheduler.cancel()
-    let shouldBreak = this.settings.get('break')
-    let shouldMicrobreak = this.settings.get('microbreak')
-    let interval = this.settings.get('microbreakInterval')
-    let breakNotification = this.settings.get('breakNotification')
-    let breakNotificationInterval = this.settings.get('breakNotificationInterval')
-    let microbreakNotification = this.settings.get('microbreakNotification')
-    let microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
+    const shouldBreak = this.settings.get('break')
+    const shouldMicrobreak = this.settings.get('microbreak')
+    const interval = this.settings.get('microbreakInterval')
+    const breakNotification = this.settings.get('breakNotification')
+    const breakNotificationInterval = this.settings.get('breakNotificationInterval')
+    const microbreakNotification = this.settings.get('microbreakNotification')
+    const microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
     if (!shouldBreak && shouldMicrobreak) {
       if (microbreakNotification) {
         this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
@@ -80,7 +80,7 @@ class BreaksPlanner extends EventEmitter {
       }
     } else if (shouldBreak && shouldMicrobreak) {
       this.breakNumber = this.breakNumber + 1
-      let breakInterval = this.settings.get('breakInterval') + 1
+      const breakInterval = this.settings.get('breakInterval') + 1
       if (this.breakNumber % breakInterval === 0) {
         if (breakNotification) {
           this.scheduler = new Scheduler(() => this.emit('startBreakNotification'), interval - breakNotificationInterval, 'startBreakNotification')
@@ -100,8 +100,8 @@ class BreaksPlanner extends EventEmitter {
 
   nextBreakAfterNotification () {
     this.scheduler.cancel()
-    let scheduledBreakType = this._scheduledBreakType
-    let breakNotificationInterval = this.settings.get(`${scheduledBreakType}NotificationInterval`)
+    const scheduledBreakType = this._scheduledBreakType
+    const breakNotificationInterval = this.settings.get(`${scheduledBreakType}NotificationInterval`)
     const eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}`
     this.scheduler = new Scheduler(() => this.emit(eventName), breakNotificationInterval, eventName)
     this.scheduler.plan()
@@ -111,8 +111,8 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler.cancel()
     this.postponesNumber += 1
     let postponeTime, eventName
-    let scheduledBreakType = this._scheduledBreakType
-    let notification = this.settings.get(`${scheduledBreakType}Notification`)
+    const scheduledBreakType = this._scheduledBreakType
+    const notification = this.settings.get(`${scheduledBreakType}Notification`)
     if (notification && this.settings.get(`${scheduledBreakType}PostponeTime`) > this.settings.get(`${scheduledBreakType}NotificationInterval`)) {
       postponeTime = this.settings.get(`${scheduledBreakType}PostponeTime`) - this.settings.get(`${scheduledBreakType}NotificationInterval`)
       eventName = `start${scheduledBreakType.charAt(0).toUpperCase() + scheduledBreakType.slice(1)}Notification`
@@ -126,9 +126,9 @@ class BreaksPlanner extends EventEmitter {
 
   skipToMicrobreak () {
     this.scheduler.cancel()
-    let shouldBreak = this.settings.get('break')
-    let shouldMicrobreak = this.settings.get('microbreak')
-    let breakInterval = this.settings.get('breakInterval') + 1
+    const shouldBreak = this.settings.get('break')
+    const shouldMicrobreak = this.settings.get('microbreak')
+    const breakInterval = this.settings.get('breakInterval') + 1
     if (shouldBreak && shouldMicrobreak) {
       if (this.breakNumber % breakInterval === 0) {
         this.breakNumber = 1
@@ -140,10 +140,10 @@ class BreaksPlanner extends EventEmitter {
 
   skipToBreak () {
     this.scheduler.cancel()
-    let shouldBreak = this.settings.get('break')
-    let shouldMicrobreak = this.settings.get('microbreak')
+    const shouldBreak = this.settings.get('break')
+    const shouldMicrobreak = this.settings.get('microbreak')
     if (shouldBreak && shouldMicrobreak) {
-      let breakInterval = this.settings.get('breakInterval') + 1
+      const breakInterval = this.settings.get('breakInterval') + 1
       this.breakNumber = breakInterval
     }
     this.scheduler = new Scheduler(() => this.emit('startBreak'), 100, 'startBreak')
@@ -181,9 +181,9 @@ class BreaksPlanner extends EventEmitter {
   }
 
   get _scheduledBreakType () {
-    let shouldBreak = this.settings.get('break')
-    let shouldMicrobreak = this.settings.get('microbreak')
-    let breakInterval = this.settings.get('breakInterval') + 1
+    const shouldBreak = this.settings.get('break')
+    const shouldMicrobreak = this.settings.get('microbreak')
+    const breakInterval = this.settings.get('breakInterval') + 1
     let scheduledBreakType
     if (shouldBreak && shouldMicrobreak) {
       scheduledBreakType = this.breakNumber % breakInterval !== 0 ? 'microbreak' : 'break'

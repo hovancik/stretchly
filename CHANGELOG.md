@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - tray menu link for update to website, instead of github
+- Chinese (Taiwan) translations updated
 
 ## [0.20.1] - 2019-07-14
 ### Added
