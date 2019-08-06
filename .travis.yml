@@ -4,14 +4,10 @@ os:
   - linux
   - osx
 
-node_js: "12.0.0"
+node_js: "12.4.0"
 
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get -qq update && sudo apt-get install -q libxss-dev; fi
-
-before_script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0 && sh -e /etc/init.d/xvfb start && sleep 3; fi
+services:
+  - xvfb
 
 script:
   - npm install -g istanbul
