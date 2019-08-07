@@ -26,7 +26,7 @@ let tutorialWin = null
 let welcomeWin = null
 let contributorSettingsWindow = null
 let settings
-let pausedForSuspend = false
+let pausedForSuspendOrLock = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -79,27 +79,31 @@ i18next.on('languageChanged', function (lng) {
   }
 })
 
+function onSuspendOrLock () {
+  if (!breakPlanner.isPaused) {
+    pausedForSuspendOrLock = true
+    pauseBreaks(1)
+  }
+}
+
+function onResumeOrUnlock () {
+  if (pausedForSuspendOrLock) {
+    pausedForSuspendOrLock = false
+    resumeBreaks(false)
+    updateToolTip()
+    appIcon.setContextMenu(getTrayMenu())
+  } else if (breakPlanner.isPaused) {
+    // corrrect the planner for the time spent in suspend
+    breakPlanner.correctScheduler()
+  }
+}
+
 function startPowerMonitoring () {
   const electron = require('electron')
-  electron.powerMonitor.on('suspend', () => {
-    console.log('The system is going to sleep')
-    if (!breakPlanner.isPaused) {
-      pausedForSuspend = true
-      pauseBreaks(1)
-    }
-  })
-  electron.powerMonitor.on('resume', () => {
-    console.log('The system is resuming')
-    if (pausedForSuspend) {
-      pausedForSuspend = false
-      resumeBreaks()
-      updateToolTip()
-      appIcon.setContextMenu(getTrayMenu())
-    } else if (breakPlanner.isPaused) {
-      // corrrect the planner for the time spent in suspend
-      breakPlanner.correctScheduler()
-    }
-  })
+  electron.powerMonitor.on('suspend', onSuspendOrLock)
+  electron.powerMonitor.on('lock-screen', onSuspendOrLock)
+  electron.powerMonitor.on('resume', onResumeOrUnlock)
+  electron.powerMonitor.on('unlock-screen', onResumeOrUnlock)
 }
 
 function numberOfDisplays () {
@@ -553,10 +557,12 @@ function pauseBreaks (milliseconds) {
   updateToolTip()
 }
 
-function resumeBreaks () {
+function resumeBreaks (notify = true) {
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
-  showNotification(i18next.t('main.resumingBreaks'))
+  if (notify) {
+    showNotification(i18next.t('main.resumingBreaks'))
+  }
   updateToolTip()
 }
 
@@ -716,7 +722,7 @@ function getTrayMenu () {
     trayMenu.push({
       label: i18next.t('main.resume'),
       click: function () {
-        resumeBreaks()
+        resumeBreaks(false)
         appIcon.setContextMenu(getTrayMenu())
         updateToolTip()
       }
