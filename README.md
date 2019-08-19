@@ -100,6 +100,9 @@ In the settings file, set `notifyNewVersion: false,` to disable new version noti
 #### Play sound at the start of the micro/break
 In the settings file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound. Same for `breakStartSoundPlaying`.
 
+#### Fit screen for non-full screen break windows
+In the settings file, change `fitscreen: false,` to `fitscreen: true,`. This will make break windows to render to fill/fit the screen(s) instead of 800x600 windows.
+
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).

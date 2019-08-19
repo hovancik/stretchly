@@ -23,6 +23,7 @@ module.exports = {
   mainColor: '#478484',
   audio: 'crystal-glass',
   fullscreen: false,
+  fitscreen: false,
   ideas: true,
   naturalBreaks: true,
   allScreens: true,

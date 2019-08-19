@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - pause breaks when screen is locked (Windows, macOS)
+- fitscreen advanced setting is added
 
 ## [0.20.1] - 2019-07-14
 ### Added
