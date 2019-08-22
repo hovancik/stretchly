@@ -41,6 +41,13 @@ body.darwin {
   padding-top: 10%;
 }
 
+.microbreak .center-content {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 80%;
+}
+
 .tutorial,
 .welcome {
   padding-top: 5px;
