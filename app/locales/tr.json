@@ -42,12 +42,12 @@
     "notificationStatus": "\nBeni Rahatsız Etme modunda"
   },
   "break": {
-    "postpone": "…wait for a bit",
+    "postpone": "…az sonra",
     "keepGoing": "…yok, devam edeceğim",
     "title": "Mola zamanı!"
   },
   "microbreak": {
-    "postpone": "…wait for a bit",
+    "postpone": "…az sonra",
     "keepGoing": "…yok, devam edeceğim",
     "title": "Mola zamanı!"
   },
@@ -66,8 +66,8 @@
     "microbreaks": "kısa molalar",
     "secondsEveryBreak": "saniyeliğine her",
     "minutes": "dakikada",
-    "dontLetMeSkip": "don't let me skip",
-    "allowToPostpone": "allow to postpone",
+    "dontLetMeSkip": "geçmeme izin verme",
+    "allowToPostpone": "ertelememe izin verme",
     "breaks": "molalar",
     "minutesBreakAfter": "dakikalığına her",
     "microbreaks2": "kısa molada",
@@ -101,9 +101,9 @@
     "notifyBeforeBreakStarts": "mola başlamadan önce bildir",
     "notifyBeforeMicrobreakStarts": "kısa mola başlamadan önce bildir",
     "monitorIdleTime": "doğal mola zamanlaması için sistem kullanımını izle",
-    "monitorDnd": "monitor Do Not Disturb mode",
+    "monitorDnd": "Rahatsız-etme modunu izle",
     "showOnAllScreens": "molalar tüm ekranlarda gözüksün",
-    "silentNotifications": "silent notifications",
+    "silentNotifications": "sessiz hatırlatıcılar",
     "useMonochromeTrayIcon": "görev çubuğunda monokrom simge kullan",
     "language": "dil",
     "resetToDefaults": "varsayılanlara sıfırla"
