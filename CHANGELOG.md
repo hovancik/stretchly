@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - German translations updated
 - no notification is shown after system resume/unlock
 - no notification is shown after manual resume of pause from tray menu
-- when showing windows, keeping the focus on active window, so typing behavior won't stop when displaying break windows
+- keep the focus on active window during breaks
 
 ### Added
 - pause breaks when screen is locked (Windows, macOS)
