@@ -49,6 +49,23 @@ app.on('ready', startPowerMonitoring)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
+app.on('second-instance', (e, args) => processSignals(args))
+
+function processSignals (args) {
+  const signals = [
+    {
+      name: 'reset-breaks',
+      handler: resetBreaks
+    }
+  ]
+  for (const i in signals) {
+    const signal = signals[i]
+    if (args.indexOf(`--${signal.name}`) !== -1) {
+      console.log(`signal received: ${signal.name}`)
+      signal.handler()
+    }
+  }
+}
 
 function startI18next () {
   i18next
@@ -56,7 +73,7 @@ function startI18next () {
     .init({
       lng: 'en',
       fallbackLng: 'en',
-      debug: true,
+      debug: false,
       backend: {
         loadPath: `${__dirname}/locales/{{lng}}.json`,
         jsonIndent: 2
@@ -761,19 +778,7 @@ function getTrayMenu () {
       ]
     }, {
       label: i18next.t('main.resetBreaks'),
-      click: function () {
-        if (microbreakWins) {
-          breakComplete(false, microbreakWins)
-          microbreakWins = null
-        }
-        if (breakWins) {
-          breakComplete(false, breakWins)
-          breakWins = null
-        }
-        breakPlanner.reset()
-        appIcon.setContextMenu(getTrayMenu())
-        updateToolTip()
-      }
+      click: resetBreaks
     })
   }
 
@@ -909,6 +914,20 @@ function showNotification (text) {
     text: text,
     silent: settings.get('silentNotifications')
   })
+}
+
+function resetBreaks () {
+  if (microbreakWins) {
+    breakComplete(false, microbreakWins)
+    microbreakWins = null
+  }
+  if (breakWins) {
+    breakComplete(false, breakWins)
+    breakWins = null
+  }
+  breakPlanner.reset()
+  appIcon.setContextMenu(getTrayMenu())
+  updateToolTip()
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
