@@ -209,6 +209,7 @@ You can copy debug information to clipboard.
 - pan93412, [@pan93412](https://github.com/pan93412)
 - robot-5, [robot-5](https://github.com/robot-5)
 - mfyz, [mfyz](https://github.com/mfyz)
+- Luke Arms, [lkrms](https://github.com/lkrms)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
@@ -225,6 +226,7 @@ You can copy debug information to clipboard.
  - https://www.painscience.com/articles/microbreaking.php
  - https://github.com/CognirelTech/Quillpad-Server
  - https://www.webmd.com/fitness-exercise/a-z/seven-minute-workout
+
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
 - `crystal glass` by [mlteenie](http://freesound.org/people/mlteenie/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).

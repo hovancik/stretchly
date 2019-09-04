@@ -763,11 +763,11 @@ function getTrayMenu () {
       label: i18next.t('main.resetBreaks'),
       click: function () {
         if (microbreakWins) {
-          closeWindows(microbreakWins)
+          breakComplete(false, microbreakWins)
           microbreakWins = null
         }
         if (breakWins) {
-          closeWindows(breakWins)
+          breakComplete(false, breakWins)
           breakWins = null
         }
         breakPlanner.reset()

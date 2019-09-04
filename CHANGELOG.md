@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - no notification is shown after manual resume of pause from tray menu
 - keep the focus on active window during breaks
 
+### Fixed
+- Ctrl+X global shortcut not being released after `Reset breaks`
+
 ### Added
 - pause breaks when screen is locked (Windows, macOS)
 
