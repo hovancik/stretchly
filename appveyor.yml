@@ -1,5 +1,3 @@
-build: off
-
 os: unstable
 
 platform:
@@ -27,3 +25,6 @@ test_script:
 
 after_test:
   - bash <(curl -s https://codecov.io/bash)
+
+build_script:
+  - IF %APPVEYOR_REPO_BRANCH%==release (npm run dist)
