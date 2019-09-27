@@ -16,15 +16,11 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install npm -g
   - npm install
-  - npm install -g istanbul
 
 test_script:
   - node --version
   - npm --version
-  - istanbul cover .\node_modules\mocha\bin\_mocha
-
-after_test:
-  - bash <(curl -s https://codecov.io/bash)
+  - npx nyc --reporter=lcov npm test && npx codecov
 
 build_script:
   - IF %APPVEYOR_REPO_BRANCH%==release (npm run dist)
