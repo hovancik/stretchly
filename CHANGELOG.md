@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - keep the focus on active window during breaks
 
 ### Added
+- new break ideas
 - pause breaks when screen is locked (Windows, macOS)
 
 ## [0.20.1] - 2019-07-14
