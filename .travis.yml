@@ -10,8 +10,7 @@ services:
   - xvfb
 
 script:
-  - npm install -g istanbul
-  - istanbul cover ./node_modules/mocha/bin/_mocha
+  - npx nyc --reporter=lcov npm test && npx codecov
 
 notifications:
   email:
