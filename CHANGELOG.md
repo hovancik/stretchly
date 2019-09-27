@@ -6,14 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Changed
+- checkbox labels are clickable as well
 - tray menu link for update to website, instead of github
 - Chinese (Taiwan) translations updated
 - German translations updated
 - no notification is shown after system resume/unlock
 - no notification is shown after manual resume of pause from tray menu
 - keep the focus on active window during breaks
+- smaller font size for longer microbreak ideas
 
 ### Added
+- new break ideas
 - pause breaks when screen is locked (Windows, macOS)
 
 ## [0.20.1] - 2019-07-14
