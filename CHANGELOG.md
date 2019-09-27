@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - no notification is shown after system resume/unlock
 - no notification is shown after manual resume of pause from tray menu
 - keep the focus on active window during breaks
+- smaller font size for longer microbreak ideas
 
 ### Added
 - new break ideas
