@@ -209,6 +209,7 @@ You can copy debug information to clipboard.
 - pan93412, [@pan93412](https://github.com/pan93412)
 - robot-5, [robot-5](https://github.com/robot-5)
 - mfyz, [mfyz](https://github.com/mfyz)
+- ValarMarkhulis [ValarMarkhulis](https://github.com/ValarMarkhulis)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
