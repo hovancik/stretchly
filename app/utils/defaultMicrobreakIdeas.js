@@ -15,5 +15,9 @@ module.exports = [
   { data: 'Take a moment to smile at being alive.', enabled: true },
   { data: 'Truly ergonomic workstation is one that you regularly push away from.', enabled: true },
   { data: 'Close your eyes and count your breaths.', enabled: true },
-  { data: 'Close your eyes and name the things you hear.', enabled: true }
+  { data: 'Close your eyes and name the things you hear.', enabled: true },
+  { data: 'Place fingertips on shoulders. Roll shoulders forward for 10 seconds, then backward.', enabled: true },
+  { data: 'Raise right arm, stretch it over your head to the left, and hold for 10 seconds. Repeat on other side.', enabled: true },
+  { data: 'With right hand, grab each finger of left hand in turn and squeeze. Repeat on other side.', enabled: true },
+  { data: 'Stand up and do lunge. Hold for 10 seconds, then do other leg.', enabled: true }
 ]

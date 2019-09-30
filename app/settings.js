@@ -109,13 +109,13 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
   }
 
-  microbreakInterval.innerHTML = data['microbreakInterval'] / 1000 / 60
-  microbreakDuration.innerHTML = data['microbreakDuration'] / 1000
-  breakInterval.innerHTML = data['breakInterval']
-  breakDuration.innerHTML = data['breakDuration'] / 1000 / 60
-  realBreakInterval.innerHTML = data['microbreakInterval'] / 1000 / 60 * (data['breakInterval'] + 1)
+  microbreakInterval.innerHTML = data.microbreakInterval / 1000 / 60
+  microbreakDuration.innerHTML = data.microbreakDuration / 1000
+  breakInterval.innerHTML = data.breakInterval
+  breakDuration.innerHTML = data.breakDuration / 1000 / 60
+  realBreakInterval.innerHTML = data.microbreakInterval / 1000 / 60 * (data.breakInterval + 1)
 
-  document.body.style.background = data['mainColor']
+  document.body.style.background = data.mainColor
 
   eventsAttached = true
 })

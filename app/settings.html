@@ -18,10 +18,10 @@
         <span data-i18next="settings.minutes"></span>
         <span class="strict">
           <br/>
-          <input type="checkbox" value="microbreakPostpone" class="enable">
-          <span data-i18next="settings.allowToPostpone"></span>
-          <input type="checkbox" value="microbreakStrictMode" class="enable">
-          <span data-i18next="settings.dontLetMeSkip"></span>
+          <input type="checkbox" value="microbreakPostpone" class="enable" id="microbreakPostpone">
+          <label data-i18next="settings.allowToPostpone" for="microbreakPostpone"></label>
+          <input type="checkbox" value="microbreakStrictMode" class="enable" id="microbreakStrictMode">
+          <label data-i18next="settings.dontLetMeSkip" for="microbreakStrictMode"></label>
         </span>
       </p>
       <h2 data-i18next="settings.breaks"></h2>
@@ -37,20 +37,20 @@
         <small><span data-i18next="settings.(every"></span> <span id="realBreakInterval" ></span> <span data-i18next="settings.minutes)"></small>
         <span class="strict">
           <br/>
-          <input type="checkbox" value="breakPostpone" class="enable">
-          <span data-i18next="settings.allowToPostpone"></span>
-          <input type="checkbox" value="breakStrictMode" class="enable">
-          <span data-i18next="settings.dontLetMeSkip"></span>
+          <input type="checkbox" value="breakPostpone" class="enable" id="breakPostpone">
+          <label data-i18next="settings.allowToPostpone" for="breakPostpone"></label>
+          <input type="checkbox" value="breakStrictMode" class="enable" id="breakStrictMode">
+          <label data-i18next="settings.dontLetMeSkip" for="breakStrictMode"></label>
         </span>
       </p>
       <div>
         <div class="enabled">
-          <input type="checkbox" value="microbreak" class="enable enabletype">
-          <span data-i18next="settings.microbreaksEnabled">
+          <input type="checkbox" value="microbreak" class="enable enabletype" id="microbreakCheckbox">
+          <label data-i18next="settings.microbreaksEnabled" for="microbreakCheckbox"></label>
         </div>
         <div class="enabled">
-          <input type="checkbox" value="break" class="enable enabletype">
-          <span data-i18next="settings.breaksEnabled">
+          <input type="checkbox" value="break" class="enable enabletype" id="breakCheckbox">
+          <label data-i18next="settings.breaksEnabled" for="breakCheckbox"></label>
         </div>
         <div id="defaults" class="pointer">
           <span data-i18next="settings.resetToDefaults"></span>

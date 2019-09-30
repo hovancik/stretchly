@@ -19,6 +19,9 @@ document.getElementById('postpone').addEventListener('click', event =>
 
 ipcRenderer.on('microbreakIdea', (event, message) => {
   const microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
+  if (message.length > 70) {
+    microbreakIdea.style.fontSize = '60px'
+  }
   microbreakIdea.innerHTML = message
 })
 

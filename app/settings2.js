@@ -22,14 +22,14 @@ ipcRenderer.on('renderSettings', (event, data) => {
         document.body.style.background = color
       })
     }
-    document.body.style.background = data['mainColor']
+    document.body.style.background = data.mainColor
   }
 
   const audioElements = document.getElementsByClassName('audio')
   for (var y = 0; y < audioElements.length; y++) {
     const audioElement = audioElements[y]
     const audio = audioElement.dataset.audio
-    if (audio === data['audio']) {
+    if (audio === data.audio) {
       audioElement.style.background = '#777'
     } else {
       audioElement.style.background = '#e2e2e2'
