@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hindi translations updated
 
 ### Added
+- Danish translations
 - Korean translations
 - more break and microbreak ideas
 - more settings in Contributor's settings
