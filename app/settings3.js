@@ -23,8 +23,8 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
   }
 
-  document.body.style.background = data['mainColor']
-  document.getElementById('language').value = data['language']
+  document.body.style.background = data.mainColor
+  document.getElementById('language').value = data.language
   eventsAttached = true
 })
 

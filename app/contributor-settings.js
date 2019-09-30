@@ -154,15 +154,15 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
   }
 
-  microbreakNotificationInterval.innerHTML = data['microbreakNotificationInterval'] / 1000
-  breakNotificationInterval.innerHTML = data['breakNotificationInterval'] / 1000
-  breakPostponeTime.innerHTML = data['breakPostponeTime'] / 1000
-  microbreakPostponeTime.innerHTML = data['microbreakPostponeTime'] / 1000
-  breakPostponableDurationPercent.innerHTML = data['breakPostponableDurationPercent']
-  breakPostponesLimit.innerHTML = data['breakPostponesLimit']
-  microbreakPostponableDurationPercent.innerHTML = data['microbreakPostponableDurationPercent']
-  microbreakPostponesLimit.innerHTML = data['microbreakPostponesLimit']
-  morningHour.innerHTML = data['morningHour']
-  document.body.style.background = data['mainColor']
+  microbreakNotificationInterval.innerHTML = data.microbreakNotificationInterval / 1000
+  breakNotificationInterval.innerHTML = data.breakNotificationInterval / 1000
+  breakPostponeTime.innerHTML = data.breakPostponeTime / 1000
+  microbreakPostponeTime.innerHTML = data.microbreakPostponeTime / 1000
+  breakPostponableDurationPercent.innerHTML = data.breakPostponableDurationPercent
+  breakPostponesLimit.innerHTML = data.breakPostponesLimit
+  microbreakPostponableDurationPercent.innerHTML = data.microbreakPostponableDurationPercent
+  microbreakPostponesLimit.innerHTML = data.microbreakPostponesLimit
+  morningHour.innerHTML = data.morningHour
+  document.body.style.background = data.mainColor
   eventsAttached = true
 })

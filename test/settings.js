@@ -25,7 +25,7 @@ describe('Settings', () => {
     fs.writeFileSync(testMissingFileCopyLocation, testData)
     // we create copy to not worry about git changes to `test-missing.json`
     settings = new Settings(testMissingFileCopyLocation)
-    defaultSettings['microbreak'] = false
+    defaultSettings.microbreak = false
     settings.data.should.be.deep.equal(defaultSettings)
   })
 
