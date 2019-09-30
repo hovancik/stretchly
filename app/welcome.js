@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', event => {
 ipcRenderer.send('send-settings')
 
 ipcRenderer.on('renderSettings', (event, data) => {
-  document.getElementById('language').value = data['language']
+  document.getElementById('language').value = data.language
 })
 
 document.getElementById('language').addEventListener('change', function (e) {
