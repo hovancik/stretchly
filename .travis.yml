@@ -10,7 +10,10 @@ services:
   - xvfb
 
 script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" && "$TRAVIS_BRANCH" == "release" ]]; then sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" && "$TRAVIS_BRANCH" == "release" ]]; then brew install rpm; fi
   - npx nyc --reporter=lcov npm test && npx codecov
+  - if [[ "$TRAVIS_BRANCH" == "release" ]]; then npm run dist; fi
 
 notifications:
   email:
