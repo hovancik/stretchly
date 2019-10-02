@@ -67,6 +67,7 @@ function startI18next () {
       }
       if (appIcon) {
         updateToolTip()
+        appIcon.setImage(trayIconPath())
         appIcon.setContextMenu(getTrayMenu())
       }
     })
@@ -75,6 +76,7 @@ function startI18next () {
 i18next.on('languageChanged', function (lng) {
   if (appIcon) {
     updateToolTip()
+    appIcon.setImage(trayIconPath())
     appIcon.setContextMenu(getTrayMenu())
   }
 })
@@ -92,6 +94,7 @@ function onResumeOrUnlock () {
     resumeBreaks(false)
     updateToolTip()
     appIcon.setContextMenu(getTrayMenu())
+    appIcon.setImage(trayIconPath())
   } else if (breakPlanner.isPaused) {
     // corrrect the planner for the time spent in suspend
     breakPlanner.correctScheduler()
@@ -158,23 +161,25 @@ function createTrayIcon () {
   }
 
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   updateToolTip()
   setInterval(updateToolTip, 10000)
 }
 
 function trayIconPath () {
+  const pausedString = breakPlanner.isPaused ? 'Paused' : ''
   const iconFolder = `${__dirname}/images`
   if (settings.get('useMonochromeTrayIcon')) {
     if (process.platform === 'darwin') {
-      return `${iconFolder}/trayMacMonochromeTemplate.png`
+      return `${iconFolder}/trayMacMonochrome${pausedString}Template.png`
     } else {
-      return `${iconFolder}/trayMonochrome.png`
+      return `${iconFolder}/trayMonochrome${pausedString}.png`
     }
   } else {
     if (process.platform === 'darwin') {
-      return `${iconFolder}/trayMac.png`
+      return `${iconFolder}/trayMac${pausedString}.png`
     } else {
-      return `${iconFolder}/tray.png`
+      return `${iconFolder}/tray${pausedString}.png`
     }
   }
 }
@@ -274,6 +279,7 @@ function startMicrobreakNotification () {
   showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
   breakPlanner.nextBreakAfterNotification()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   updateToolTip()
 }
 
@@ -281,6 +287,7 @@ function startBreakNotification () {
   showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
   breakPlanner.nextBreakAfterNotification()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   updateToolTip()
 }
 
@@ -371,6 +378,7 @@ function startMicrobreak () {
   }
 
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   updateToolTip()
 }
 
@@ -460,6 +468,7 @@ function startBreak () {
   }
 
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   updateToolTip()
 }
 
@@ -483,6 +492,7 @@ function finishMicrobreak (shouldPlaySound = true) {
   breakPlanner.nextBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
 }
 
 function finishBreak (shouldPlaySound = true) {
@@ -491,6 +501,7 @@ function finishBreak (shouldPlaySound = true) {
   breakPlanner.nextBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
 }
 
 function postponeMicrobreak (shouldPlaySound = false) {
@@ -499,15 +510,17 @@ function postponeMicrobreak (shouldPlaySound = false) {
   breakPlanner.postponeCurrentBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
 }
 
 function postponeBreak (shouldPlaySound = false) {
   breakComplete(shouldPlaySound, breakWins)
   breakWins = null
   breakPlanner.postponeCurrentBreak()
-  // TODO look into how we can not call next 2 lines everywhere
+  // TODO look into how we can not call next 3 lines everywhere
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
 }
 
 function loadSettings () {
@@ -526,6 +539,7 @@ function loadSettings () {
   breakPlanner.on('updateToolTip', function () {
     updateToolTip()
     appIcon.setContextMenu(getTrayMenu())
+    appIcon.setImage(trayIconPath())
   })
   i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
@@ -554,12 +568,14 @@ function pauseBreaks (milliseconds) {
   }
   breakPlanner.pause(milliseconds)
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   updateToolTip()
 }
 
 function resumeBreaks (notify = true) {
   breakPlanner.resume()
   appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
   if (notify) {
     showNotification(i18next.t('main.resumingBreaks'))
   }
@@ -688,6 +704,7 @@ function getTrayMenu () {
           }
           breakPlanner.skipToMicrobreak()
           appIcon.setContextMenu(getTrayMenu())
+          appIcon.setImage(trayIconPath())
           updateToolTip()
         }
       }])
@@ -706,6 +723,7 @@ function getTrayMenu () {
           }
           breakPlanner.skipToBreak()
           appIcon.setContextMenu(getTrayMenu())
+          appIcon.setImage(trayIconPath())
           updateToolTip()
         }
       }])
@@ -724,6 +742,7 @@ function getTrayMenu () {
       click: function () {
         resumeBreaks(false)
         appIcon.setContextMenu(getTrayMenu())
+        appIcon.setImage(trayIconPath())
         updateToolTip()
       }
     })
@@ -772,6 +791,7 @@ function getTrayMenu () {
         }
         breakPlanner.reset()
         appIcon.setContextMenu(getTrayMenu())
+        appIcon.setImage(trayIconPath())
         updateToolTip()
       }
     })
