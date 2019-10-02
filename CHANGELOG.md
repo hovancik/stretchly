@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - new break ideas
 - pause breaks when screen is locked (Windows, macOS)
+- change tray icon when stretchly is paused
 
 ## [0.20.1] - 2019-07-14
 ### Added
