@@ -210,6 +210,7 @@ You can copy debug information to clipboard.
 - robot-5, [robot-5](https://github.com/robot-5)
 - mfyz, [mfyz](https://github.com/mfyz)
 - ValarMarkhulis [ValarMarkhulis](https://github.com/ValarMarkhulis)
+- Lucas Costi, [@lucascosti](https://github.com/lucascosti)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico

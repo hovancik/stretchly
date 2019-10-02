@@ -66,8 +66,8 @@ module.exports = {
     { data: 'Is your sitting posture correct?', enabled: true },
     { data: 'Slowly turn head to side and hold for 10 seconds.', enabled: true },
     { data: 'Slowly tilt head to side and hold for 5-10 seconds.', enabled: true },
-    { data: 'Stand from chair and stretch.', enabled: true },
-    { data: 'Refocus eyes on an object at least 20 meters away.', enabled: true },
+    { data: 'Stand from your chair and stretch.', enabled: true },
+    { data: 'Refocus your eyes on an object at least 20 meters away.', enabled: true },
     { data: 'Take a moment to think about something you appreciate.', enabled: true },
     { data: 'Take a moment to smile at being alive.', enabled: true }
   ]

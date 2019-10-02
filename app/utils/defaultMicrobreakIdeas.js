@@ -9,15 +9,15 @@ module.exports = [
   { data: 'Is your sitting posture correct?', enabled: true },
   { data: 'Slowly turn head to side and hold for 10 seconds.', enabled: true },
   { data: 'Slowly tilt head to side and hold for 5-10 seconds.', enabled: true },
-  { data: 'Stand from chair and stretch.', enabled: true },
-  { data: 'Refocus eyes on an object at least 20 meters away.', enabled: true },
+  { data: 'Stand from your chair and stretch.', enabled: true },
+  { data: 'Refocus your eyes on an object at least 20 meters away.', enabled: true },
   { data: 'Take a moment to think about something you appreciate.', enabled: true },
   { data: 'Take a moment to smile at being alive.', enabled: true },
-  { data: 'Truly ergonomic workstation is one that you regularly push away from.', enabled: true },
+  { data: 'A truly ergonomic workstation is one that you regularly push away from.', enabled: true },
   { data: 'Close your eyes and count your breaths.', enabled: true },
   { data: 'Close your eyes and name the things you hear.', enabled: true },
-  { data: 'Place fingertips on shoulders. Roll shoulders forward for 10 seconds, then backward.', enabled: true },
-  { data: 'Raise right arm, stretch it over your head to the left, and hold for 10 seconds. Repeat on other side.', enabled: true },
-  { data: 'With right hand, grab each finger of left hand in turn and squeeze. Repeat on other side.', enabled: true },
-  { data: 'Stand up and do lunge. Hold for 10 seconds, then do other leg.', enabled: true }
+  { data: 'Place your fingertips on your shoulders. Roll your shoulders forward for 10 seconds, then backward.', enabled: true },
+  { data: 'Raise your right arm, stretch it over your head to the left, and hold for 10 seconds. Repeat on the other side.', enabled: true },
+  { data: 'With your right hand, grab each finger of your left hand in turn and squeeze. Repeat on the other side.', enabled: true },
+  { data: 'Stand up and do a lunge. Hold for 10 seconds, then do the other leg.', enabled: true }
 ]
