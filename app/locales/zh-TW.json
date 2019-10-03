@@ -104,6 +104,7 @@
     "showOnAllScreens": "在每個螢幕上顯示休息畫面（如果有多螢幕）",
     "silentNotifications": "關閉通知",
     "useMonochromeTrayIcon": "使用單色工具列圖示",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "語言",
     "resetToDefaults": "重設至預設值"
   },

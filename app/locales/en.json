@@ -105,6 +105,7 @@
     "showOnAllScreens": "breaks are shown on all monitors",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "use monochrome tray icon",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "language",
     "resetToDefaults": "reset to defaults"
   },

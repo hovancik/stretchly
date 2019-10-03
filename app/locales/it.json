@@ -105,6 +105,7 @@
     "showOnAllScreens": "le pause sono mostrate su tutti i monitor",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "utilizza l'icona della barra in bianco e nero",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "lingua",
     "resetToDefaults": "ripristina le impostazioni"
   },

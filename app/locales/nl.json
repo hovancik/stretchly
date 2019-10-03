@@ -105,6 +105,7 @@
     "showOnAllScreens": "pauzes worden op alle monitoren weergegeven",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "gebruik monochrome pictogram",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "taal",
     "resetToDefaults": "reset naar standaard instellingen"
   },

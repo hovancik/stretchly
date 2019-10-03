@@ -105,6 +105,7 @@
     "showOnAllScreens": "ब्रेक्स हर मॉनिटर पर दिखाए जाएंगे",
     "silentNotifications": "मौन सूचनाएँ",
     "useMonochromeTrayIcon": "मोनोक्रोम ट्रे आइकन का उपयोग करें",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "भाषा",
     "resetToDefaults": "डिफ़ॉल्ट पर पुनः सेट करें"
   },

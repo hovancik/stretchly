@@ -105,6 +105,7 @@
     "showOnAllScreens": "Pausen auf allen Monitoren anzeigen",
     "silentNotifications": "Stille Benachrichtigungen",
     "useMonochromeTrayIcon": "Einfarbiges Tray-icon verwenden",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "Sprache",
     "resetToDefaults": "Auf Standardeinstellungen zurücksetzen"
   },

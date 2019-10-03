@@ -105,6 +105,7 @@
     "showOnAllScreens": "raster visas på alla bildskärmar",
     "silentNotifications": "tysta aviseringar",
     "useMonochromeTrayIcon": "använda monokrom systemfältsikon",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "språk",
     "resetToDefaults": "återställ till standardvärden"
   },

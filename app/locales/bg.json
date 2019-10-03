@@ -105,6 +105,7 @@
     "showOnAllScreens": "прозорците за почивка се показват на всички монитори",
     "silentNotifications": "тихи нотификации",
     "useMonochromeTrayIcon": "използвай монохромна иконка на приложението",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "език",
     "resetToDefaults": "нулиране към начални настройки"
   },

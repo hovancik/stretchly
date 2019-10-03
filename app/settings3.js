@@ -31,7 +31,8 @@ ipcRenderer.on('renderSettings', (event, data) => {
 document.getElementById('defaults').addEventListener('click', function (e) {
   ipcRenderer.send('set-default-settings', ['fullscreen', 'ideas',
     'breakNotification', 'microbreakNotification', 'naturalBreaks',
-    'allScreens', 'useMonochromeTrayIcon', 'monitorDnd'])
+    'allScreens', 'useMonochromeTrayIcon', 'useMonochromeInvertedTrayIcon',
+    'monitorDnd'])
 })
 
 document.getElementById('language').addEventListener('change', function (e) {

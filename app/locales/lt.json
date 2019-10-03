@@ -105,6 +105,7 @@
     "showOnAllScreens": "pertraukas rodyti per visuose monitoriuose",
     "silentNotifications": "tylūs prenešimai",
     "useMonochromeTrayIcon": "naudoti vienspalvę ikonėlę",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "kalba",
     "resetToDefaults": "atstatyti numatytuosius parametrus"
   },

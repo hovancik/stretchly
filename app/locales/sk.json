@@ -106,6 +106,7 @@
     "showOnAllScreens": "prestávky na každej obrazovke",
     "silentNotifications": "tiché notifikácie",
     "useMonochromeTrayIcon": "použiť monochromatickú ikonu",
+    "useMonochromeInvertedTrayIcon": "invertovať monochromatickú ikonu",
     "language": "jazyk",
     "resetToDefaults": "obnoviť pôvodné nastavenia"
   },

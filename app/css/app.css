@@ -26,6 +26,7 @@ body.darwin {
   font-family: 'Lato Thin';
 }
 
+.darwin .darwin-hidden,
 .linux .linux-hidden,
 .freebsd .linux-hidden,
 .openbsd .linux-hidden {

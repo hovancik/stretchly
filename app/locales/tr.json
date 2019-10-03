@@ -105,6 +105,7 @@
     "showOnAllScreens": "molalar tüm ekranlarda gözüksün",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "görev çubuğunda monokrom simge kullan",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "dil",
     "resetToDefaults": "varsayılanlara sıfırla"
   },

@@ -168,12 +168,14 @@ function createTrayIcon () {
 
 function trayIconPath () {
   const pausedString = breakPlanner.isPaused ? 'Paused' : ''
+  const invertedMonochromeString = settings.get('useMonochromeInvertedTrayIcon') ? 'Inverted' : ''
+
   const iconFolder = `${__dirname}/images`
   if (settings.get('useMonochromeTrayIcon')) {
     if (process.platform === 'darwin') {
       return `${iconFolder}/trayMacMonochrome${pausedString}Template.png`
     } else {
-      return `${iconFolder}/trayMonochrome${pausedString}.png`
+      return `${iconFolder}/trayMonochrome${invertedMonochromeString}${pausedString}.png`
     }
   } else {
     if (process.platform === 'darwin') {

@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - new break ideas
 - pause breaks when screen is locked (Windows, macOS)
 - change tray icon when stretchly is paused
+- allow to use inverted (white) monochrome tray icon (Linux, Windows)
 
 ## [0.20.1] - 2019-07-14
 ### Added
