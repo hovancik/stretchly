@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - pause breaks when screen is locked (Windows, macOS)
 - change tray icon when stretchly is paused
 - allow to use inverted (white) monochrome tray icon (Linux, Windows)
+- Danish translations
 
 ## [0.20.1] - 2019-07-14
 ### Added
@@ -44,7 +45,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hindi translations updated
 
 ### Added
-- Danish translations
 - Korean translations
 - more break and microbreak ideas
 - more settings in Contributor's settings
