@@ -106,6 +106,7 @@
     "showOnAllScreens": "відображати на всіх екранах",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "use monochrome tray icon",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "мова",
     "resetToDefaults": "налаштування за умовчанням"
   },

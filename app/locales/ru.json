@@ -106,6 +106,7 @@
     "showOnAllScreens": "отображать на всех экранах",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "использовать черно-белой значок",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "язык",
     "resetToDefaults": "настройки по умолчанию"
   },

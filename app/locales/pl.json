@@ -105,6 +105,7 @@
     "showOnAllScreens": "okna przerw na każdym ekranie",
     "silentNotifications": "ciche notyfikacje",
     "useMonochromeTrayIcon": "używaj monochromatycznej ikony w trayu",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "język",
     "resetToDefaults": "resetuj do domyślnych"
   },

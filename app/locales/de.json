@@ -104,7 +104,8 @@
     "monitorDnd": "\"Nicht Stören\"-Modus beachten",
     "showOnAllScreens": "Pausen auf allen Monitoren anzeigen",
     "silentNotifications": "Stille Benachrichtigungen",
-    "useMonochromeTrayIcon": "Einfarbiges Tray-icon verwenden",
+    "useMonochromeTrayIcon": "Einfarbiges Tray-Icon verwenden",
+    "useMonochromeInvertedTrayIcon": "Einfarbiges Tray-Icon invertieren",
     "language": "Sprache",
     "resetToDefaults": "Auf Standardeinstellungen zurücksetzen"
   },

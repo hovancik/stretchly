@@ -33,6 +33,7 @@ module.exports = {
   posLatitude: 0.0,
   posLongitude: 0.0,
   useMonochromeTrayIcon: true,
+  useMonochromeInvertedTrayIcon: false,
   silentNotifications: false,
   monitorDnd: true,
   microbreakStartSoundPlaying: false,

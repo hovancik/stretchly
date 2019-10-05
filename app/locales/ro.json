@@ -105,6 +105,7 @@
     "showOnAllScreens": "pauzele sunt afișate pe toate monitoarele",
     "silentNotifications": "silent notifications",
     "useMonochromeTrayIcon": "utilizează imaginea monocromă",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "limbă",
     "resetToDefaults": "resetează la valorile implicite"
   },

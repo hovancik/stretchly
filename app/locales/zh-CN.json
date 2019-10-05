@@ -104,6 +104,7 @@
     "showOnAllScreens": "在所有屏幕显示休息界面",
     "silentNotifications": "无声提示",
     "useMonochromeTrayIcon": "黑白托盘图标",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "语言",
     "resetToDefaults": "重置为默认值"
   },

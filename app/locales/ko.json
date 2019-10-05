@@ -105,6 +105,7 @@
     "showOnAllScreens": "모든 모니터에 쉬는 시간 화면 표시하기",
     "silentNotifications": "알림 표시 안함",
     "useMonochromeTrayIcon": "메뉴 아이콘을 단색으로 표시하기",
+    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
     "language": "언어",
     "resetToDefaults": "기본 설정으로 되돌리기"
   },
