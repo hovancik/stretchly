@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - smaller font size for longer microbreak ideas
 - Improved grammar of microbreak ideas
 
+### Fixed
+- Ctrl+X global shortcut not being released after `Reset breaks` and `Skip to`
+
 ### Added
 - new break ideas
 - pause breaks when screen is locked (Windows, macOS)

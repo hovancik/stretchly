@@ -56,7 +56,7 @@ function startI18next () {
     .init({
       lng: 'en',
       fallbackLng: 'en',
-      debug: true,
+      debug: false,
       backend: {
         loadPath: `${__dirname}/locales/{{lng}}.json`,
         jsonIndent: 2
@@ -118,6 +118,7 @@ function closeWindows (windowArray) {
   for (let i = windowArray.length - 1; i >= 0; i--) {
     windowArray[i].close()
   }
+  return null
 }
 
 function displaysX (displayID = -1, width = 800) {
@@ -358,7 +359,7 @@ function startMicrobreak () {
       windowOptions.y = displaysY(displayIdx)
     }
 
-    const microbreakWinLocal = new BrowserWindow(windowOptions)
+    let microbreakWinLocal = new BrowserWindow(windowOptions)
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
@@ -372,6 +373,11 @@ function startMicrobreak () {
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
+    if (microbreakWinLocal) {
+      microbreakWinLocal.on('closed', () => {
+        microbreakWinLocal = null
+      })
+    }
     microbreakWins.push(microbreakWinLocal)
 
     if (!settings.get('allScreens')) {
@@ -448,7 +454,7 @@ function startBreak () {
       windowOptions.y = displaysY(displayIdx)
     }
 
-    const breakWinLocal = new BrowserWindow(windowOptions)
+    let breakWinLocal = new BrowserWindow(windowOptions)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
@@ -462,6 +468,11 @@ function startBreak () {
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
+    if (breakWinLocal) {
+      breakWinLocal.on('closed', () => {
+        breakWinLocal = null
+      })
+    }
     breakWins.push(breakWinLocal)
 
     if (!settings.get('allScreens')) {
@@ -483,14 +494,11 @@ function breakComplete (shouldPlaySound, windows) {
     // get focus on the last app
     Menu.sendActionToFirstResponder('hide:')
   }
-  closeWindows(windows)
-  // TODO
-  // would be nice to make windows null here so we don't need to do it later every time
+  return closeWindows(windows)
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
-  breakComplete(shouldPlaySound, microbreakWins)
-  microbreakWins = null
+  microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
   breakPlanner.nextBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
@@ -498,8 +506,7 @@ function finishMicrobreak (shouldPlaySound = true) {
 }
 
 function finishBreak (shouldPlaySound = true) {
-  breakComplete(shouldPlaySound, breakWins)
-  breakWins = null
+  breakWins = breakComplete(shouldPlaySound, breakWins)
   breakPlanner.nextBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
@@ -507,8 +514,7 @@ function finishBreak (shouldPlaySound = true) {
 }
 
 function postponeMicrobreak (shouldPlaySound = false) {
-  breakComplete(shouldPlaySound, microbreakWins)
-  microbreakWins = null
+  microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
   breakPlanner.postponeCurrentBreak()
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
@@ -516,13 +522,51 @@ function postponeMicrobreak (shouldPlaySound = false) {
 }
 
 function postponeBreak (shouldPlaySound = false) {
-  breakComplete(shouldPlaySound, breakWins)
-  breakWins = null
+  breakWins = breakComplete(shouldPlaySound, breakWins)
   breakPlanner.postponeCurrentBreak()
   // TODO look into how we can not call next 3 lines everywhere
   updateToolTip()
   appIcon.setContextMenu(getTrayMenu())
   appIcon.setImage(trayIconPath())
+}
+
+function skipToMicrobreak () {
+  if (microbreakWins) {
+    microbreakWins = breakComplete(false, microbreakWins)
+  }
+  if (breakWins) {
+    breakWins = breakComplete(false, breakWins)
+  }
+  breakPlanner.skipToMicrobreak()
+  appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
+  updateToolTip()
+}
+
+function skipToBreak () {
+  if (microbreakWins) {
+    microbreakWins = breakComplete(false, microbreakWins)
+  }
+  if (breakWins) {
+    breakWins = breakComplete(false, breakWins)
+  }
+  breakPlanner.skipToBreak()
+  appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
+  updateToolTip()
+}
+
+function resetBreaks () {
+  if (microbreakWins) {
+    microbreakWins = breakComplete(false, microbreakWins)
+  }
+  if (breakWins) {
+    breakWins = breakComplete(false, breakWins)
+  }
+  breakPlanner.reset()
+  appIcon.setContextMenu(getTrayMenu())
+  appIcon.setImage(trayIconPath())
+  updateToolTip()
 }
 
 function loadSettings () {
@@ -695,39 +739,13 @@ function getTrayMenu () {
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
         label: i18next.t('main.toMicrobreak'),
-        click: function () {
-          if (microbreakWins) {
-            closeWindows(microbreakWins)
-            microbreakWins = null
-          }
-          if (breakWins) {
-            closeWindows(breakWins)
-            breakWins = null
-          }
-          breakPlanner.skipToMicrobreak()
-          appIcon.setContextMenu(getTrayMenu())
-          appIcon.setImage(trayIconPath())
-          updateToolTip()
-        }
+        click: skipToMicrobreak
       }])
     }
     if (settings.get('break')) {
       submenu = submenu.concat([{
         label: i18next.t('main.toBreak'),
-        click: function () {
-          if (microbreakWins) {
-            closeWindows(microbreakWins)
-            microbreakWins = null
-          }
-          if (breakWins) {
-            closeWindows(breakWins)
-            breakWins = null
-          }
-          breakPlanner.skipToBreak()
-          appIcon.setContextMenu(getTrayMenu())
-          appIcon.setImage(trayIconPath())
-          updateToolTip()
-        }
+        click: skipToBreak
       }])
     }
     if (settings.get('break') || settings.get('microbreak')) {
@@ -782,20 +800,7 @@ function getTrayMenu () {
       ]
     }, {
       label: i18next.t('main.resetBreaks'),
-      click: function () {
-        if (microbreakWins) {
-          closeWindows(microbreakWins)
-          microbreakWins = null
-        }
-        if (breakWins) {
-          closeWindows(breakWins)
-          breakWins = null
-        }
-        breakPlanner.reset()
-        appIcon.setContextMenu(getTrayMenu())
-        appIcon.setImage(trayIconPath())
-        updateToolTip()
-      }
+      click: resetBreaks
     })
   }
 
