@@ -212,6 +212,7 @@ You can copy debug information to clipboard.
 - ValarMarkhulis [ValarMarkhulis](https://github.com/ValarMarkhulis)
 - Lucas Costi, [@lucascosti](https://github.com/lucascosti)
 - Luke Arms, [lkrms](https://github.com/lkrms)
+- Chris Heyer, [@cheyer](https://github.com/cheyer)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
