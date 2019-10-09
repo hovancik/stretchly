@@ -40,6 +40,7 @@ class Settings {
         return
       }
       this.data = defaultSettings
+      // TODO maybe I should `this._save(true)` here?
       console.log('Failed to load settings JSON file, giving up and resetting')
     }
   }
