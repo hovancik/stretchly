@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - keep the focus on active window during breaks
 - smaller font size for longer microbreak ideas
 - Improved grammar of microbreak ideas
+- display checkbox list vertically in settings screen 3
 
 ### Fixed
 - Ctrl+X global shortcut not being released after `Reset breaks` and `Skip to`
