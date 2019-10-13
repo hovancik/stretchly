@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.21.0] - 2019-10-13
 ### Changed
 - checkbox labels are clickable as well
 - tray menu link for update to website, instead of github
@@ -332,7 +334,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.20.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.21.0...HEAD
+[0.21.0]: https://github.com/hovancik/stretchly/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/hovancik/stretchly/compare/v0.20.0...v0.20.1
 [0.20.0]: https://github.com/hovancik/stretchly/compare/v0.19.1...v0.20.0
 [0.19.1]: https://github.com/hovancik/stretchly/compare/v0.19.0...v0.19.1
