@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Improved grammar of microbreak ideas
 - display checkbox list vertically in settings screen 3
 - Dutch translations updated
+- drop shadow on hover for time changing buttons
 
 ### Fixed
 - Ctrl+X global shortcut not being released after `Reset breaks` and `Skip to`
