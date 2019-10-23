@@ -76,6 +76,21 @@ a {
   cursor: pointer;
 }
 
+.change-button {
+  font-size: inherit;
+  font-family: inherit;
+  background-color: inherit;
+  border: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 100px;
+  width: 2rem;
+  transition: box-shadow 0.5s;
+}
+.change-button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
 .break-idea,
 .microbreak-idea,
 .about-name,
