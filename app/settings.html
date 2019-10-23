@@ -18,10 +18,16 @@
         <span data-i18next="settings.minutes"></span>
         <span class="strict">
           <br/>
-          <input type="checkbox" value="microbreakPostpone" class="enable" id="microbreakPostpone">
-          <label data-i18next="settings.allowToPostpone" for="microbreakPostpone"></label>
-          <input type="checkbox" value="microbreakStrictMode" class="enable" id="microbreakStrictMode">
-          <label data-i18next="settings.dontLetMeSkip" for="microbreakStrictMode"></label>
+          <span class="checkbox-wrapper">
+            <input type="checkbox" value="microbreakPostpone" class="enable" id="microbreakPostpone">
+            <span class="checkbox-custom"></span>
+            <label data-i18next="settings.allowToPostpone" for="microbreakPostpone"></label>
+          </span>
+          <span class="checkbox-wrapper">
+            <input type="checkbox" value="microbreakStrictMode" class="enable" id="microbreakStrictMode">
+            <span class="checkbox-custom"></span>
+            <label data-i18next="settings.dontLetMeSkip" for="microbreakStrictMode"></label>
+          </span>
         </span>
       </p>
       <h2 data-i18next="settings.breaks"></h2>
@@ -37,20 +43,32 @@
         <small><span data-i18next="settings.(every"></span> <span id="realBreakInterval" ></span> <span data-i18next="settings.minutes)"></small>
         <span class="strict">
           <br/>
-          <input type="checkbox" value="breakPostpone" class="enable" id="breakPostpone">
-          <label data-i18next="settings.allowToPostpone" for="breakPostpone"></label>
-          <input type="checkbox" value="breakStrictMode" class="enable" id="breakStrictMode">
-          <label data-i18next="settings.dontLetMeSkip" for="breakStrictMode"></label>
+          <span class="checkbox-wrapper">
+            <input type="checkbox" value="breakPostpone" class="enable" id="breakPostpone">
+            <span class="checkbox-custom"></span>
+            <label data-i18next="settings.allowToPostpone" for="breakPostpone"></label>
+          </span>
+          <span class="checkbox-wrapper">
+            <input type="checkbox" value="breakStrictMode" class="enable" id="breakStrictMode">
+            <span class="checkbox-custom"></span>
+            <label data-i18next="settings.dontLetMeSkip" for="breakStrictMode"></label>
+          </span>
         </span>
       </p>
       <div>
         <div class="enabled">
-          <input type="checkbox" value="microbreak" class="enable enabletype" id="microbreakCheckbox">
-          <label data-i18next="settings.microbreaksEnabled" for="microbreakCheckbox"></label>
+          <span class="checkbox-wrapper">
+            <input type="checkbox" value="microbreak" class="enable enabletype" id="microbreakCheckbox">
+            <span class="checkbox-custom"></span>
+            <label data-i18next="settings.microbreaksEnabled" for="microbreakCheckbox"></label>
+          </span>
         </div>
         <div class="enabled">
-          <input type="checkbox" value="break" class="enable enabletype" id="breakCheckbox">
-          <label data-i18next="settings.breaksEnabled" for="breakCheckbox"></label>
+          <span class="checkbox-wrapper">
+            <input type="checkbox" value="break" class="enable enabletype" id="breakCheckbox">
+            <span class="checkbox-custom"></span>
+            <label data-i18next="settings.breaksEnabled" for="breakCheckbox"></label>
+          </span>
         </div>
         <div id="defaults" class="pointer">
           <span data-i18next="settings.resetToDefaults"></span>
