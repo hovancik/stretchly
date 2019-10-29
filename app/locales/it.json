@@ -32,7 +32,7 @@
     "areYouSure": "Sei sicuro di voler ripristinare le impostazioni su questa finestra ai valori predefiniti?",
     "yes": "si",
     "no": "no",
-    "pausedUntil": "\nPaused - {{timeLeft}} till breaks resume\nas regularly scheduled",
+    "pausedUntil": "\nIn pausa - {{timeLeft}} prima di riprendere le pause\ncome da programma",
     "pausedIndefinitely": "\nPausa indefinita",
     "timeToNext": "\n{{timeLeft}} a {{breakType}}",
     "microbreak": "micropausa",
@@ -42,12 +42,12 @@
     "notificationStatus": "\nIn modalità non disturbare"
   },
   "break": {
-    "postpone": "…wait for a bit",
+    "postpone": "…aspetta un po'",
     "keepGoing": "…no, preferisco non fermarmi",
     "title": "È ora di fare una pausa!"
   },
   "microbreak": {
-    "postpone": "…wait for a bit",
+    "postpone": "…aspetta un po'",
     "keepGoing": "…no, preferisco non fermarmi",
     "title": "È ora di fare una pausa!"
   },
@@ -66,8 +66,8 @@
     "microbreaks": "micropause",
     "secondsEveryBreak": "secondi di pausa ogni",
     "minutes": "minuti",
-    "dontLetMeSkip": "don't let me skip",
-    "allowToPostpone": "allow to postpone",
+    "dontLetMeSkip": "non lasciarmi saltare",
+    "allowToPostpone": "permettimi di posporre",
     "breaks": "pause",
     "minutesBreakAfter": "minuti di pausa dopo",
     "microbreaks2": "micropausa",
@@ -101,11 +101,11 @@
     "notifyBeforeBreakStarts": "avvisa prima che inizi la pausa",
     "notifyBeforeMicrobreakStarts": "avvisa prima che inizi la micropausa",
     "monitorIdleTime": "controlla le interruzioni del sistema per fare pause più regolari",
-    "monitorDnd": "monitor Do Not Disturb mode",
+    "monitorDnd": "controlla modalità non disturbare",
     "showOnAllScreens": "le pause sono mostrate su tutti i monitor",
-    "silentNotifications": "silent notifications",
+    "silentNotifications": "notifiche silenziose",
     "useMonochromeTrayIcon": "utilizza l'icona della barra in bianco e nero",
-    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
+    "useMonochromeInvertedTrayIcon": "inverti l'icona della barra in bianco e nero",
     "language": "lingua",
     "resetToDefaults": "ripristina le impostazioni"
   },
