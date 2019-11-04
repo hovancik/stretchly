@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - Italian translations updated
+- break window is shown on all Workspaces in macOS
 
 ## [0.21.0] - 2019-10-13
 ### Changed
