@@ -373,6 +373,7 @@ function startMicrobreak () {
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
+    microbreakWinLocal.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true })
     if (microbreakWinLocal) {
       microbreakWinLocal.on('closed', () => {
         microbreakWinLocal = null
@@ -468,6 +469,7 @@ function startBreak () {
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
+    breakWinLocal.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true })
     if (breakWinLocal) {
       breakWinLocal.on('closed', () => {
         breakWinLocal = null
