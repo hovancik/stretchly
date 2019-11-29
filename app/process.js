@@ -1,8 +1,10 @@
 const { ipcRenderer, shell, remote } = require('electron')
 const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
-ipcRenderer.on('playSound', (event, data) => {
-  const audio = new Audio(`audio/${data}.wav`)
+
+ipcRenderer.on('playSound', (event, file, volume) => {
+  const audio = new Audio(`audio/${file}.wav`)
+  audio.volume = volume
   audio.play()
 })
 

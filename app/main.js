@@ -334,7 +334,7 @@ function startMicrobreak () {
   const idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
 
   if (settings.get('microbreakStartSoundPlaying')) {
-    processWin.webContents.send('playSound', settings.get('audio'))
+    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
@@ -430,7 +430,7 @@ function startBreak () {
   const idea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
 
   if (settings.get('breakStartSoundPlaying')) {
-    processWin.webContents.send('playSound', settings.get('audio'))
+    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
@@ -490,7 +490,7 @@ function startBreak () {
 function breakComplete (shouldPlaySound, windows) {
   globalShortcut.unregister('CommandOrControl+X')
   if (shouldPlaySound) {
-    processWin.webContents.send('playSound', settings.get('audio'))
+    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
   if (process.platform === 'darwin') {
     // get focus on the last app
@@ -996,6 +996,10 @@ ipcMain.on('set-default-settings', function (event, data) {
 
 ipcMain.on('send-settings', function (event) {
   event.sender.send('renderSettings', settings.data)
+})
+
+ipcMain.on('play-sound', function (event, sound) {
+  processWin.webContents.send('playSound', sound, settings.get('volume'))
 })
 
 ipcMain.on('show-debug', function (event) {

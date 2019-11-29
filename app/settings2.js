@@ -25,6 +25,14 @@ ipcRenderer.on('renderSettings', (event, data) => {
     document.body.style.background = data.mainColor
   }
 
+  const audioVolumeElement = document.querySelector('input')
+  audioVolumeElement.value = data.volume * 100
+  if (!eventsAttached) {
+    audioVolumeElement.addEventListener('change', debounce((e) => {
+      ipcRenderer.send('save-setting', 'volume', audioVolumeElement.value / 100)
+    }, 500))
+  }
+
   const audioElements = document.getElementsByClassName('audio')
   for (var y = 0; y < audioElements.length; y++) {
     const audioElement = audioElements[y]
@@ -36,7 +44,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
     if (!eventsAttached) {
       audioElement.addEventListener('click', function (e) {
-        new Audio(`audio/${audio}.wav`).play()
+        ipcRenderer.send('play-sound', audio)
         ipcRenderer.send('save-setting', 'audio', audio)
       })
     }
@@ -48,3 +56,12 @@ ipcRenderer.on('renderSettings', (event, data) => {
 document.getElementById('defaults').addEventListener('click', function (e) {
   ipcRenderer.send('set-default-settings', ['audio', 'mainColor'])
 })
+
+const debounce = (fn, time) => {
+  let timeout
+  return function () {
+    const functionCall = () => fn.apply(this, arguments)
+    clearTimeout(timeout)
+    timeout = setTimeout(functionCall, time)
+  }
+}

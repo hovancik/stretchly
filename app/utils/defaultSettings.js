@@ -22,6 +22,7 @@ module.exports = {
   breakPostponableDurationPercent: 30,
   mainColor: '#478484',
   audio: 'crystal-glass',
+  volume: 1,
   fullscreen: false,
   ideas: true,
   naturalBreaks: true,

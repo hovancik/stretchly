@@ -71,6 +71,11 @@ body.darwin {
   width: 20px;
 }
 
+.volume-audio {
+  padding: 20px 0 0;
+  font-size: 20px;
+}
+
 .pointer,
 a {
   cursor: pointer;

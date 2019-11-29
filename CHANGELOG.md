@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Italian translations updated
 - break window is shown on all Workspaces in macOS
 
+### Added
+- user can set volume for break sounds
+
 ## [0.21.0] - 2019-10-13
 ### Changed
 - checkbox labels are clickable as well
