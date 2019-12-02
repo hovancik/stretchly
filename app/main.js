@@ -976,14 +976,14 @@ ipcMain.on('update-tray', function (event) {
 })
 
 ipcMain.on('set-default-settings', function (event, data) {
-  const options = {
-    type: 'info',
+  const dialogOpts = {
+    type: 'question',
     title: i18next.t('main.resetToDefaults'),
     message: i18next.t('main.areYouSure'),
     buttons: [i18next.t('main.yes'), i18next.t('main.no')]
   }
-  dialog.showMessageBox(options, function (index) {
-    if (index === 0) {
+  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) {
       saveDefaultsFor(data)
       appIcon.setImage(trayIconPath())
       appIcon.setContextMenu(getTrayMenu())
