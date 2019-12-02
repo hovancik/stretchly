@@ -54,7 +54,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
 })
 
 document.getElementById('defaults').addEventListener('click', function (e) {
-  ipcRenderer.send('set-default-settings', ['audio', 'mainColor'])
+  ipcRenderer.send('set-default-settings', ['audio', 'mainColor', 'volume'])
 })
 
 const debounce = (fn, time) => {
