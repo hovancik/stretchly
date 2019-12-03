@@ -49,6 +49,7 @@ Microbreaks and breaks can be customized:
 
 - you can choose from different color schemes
 - you can pick a sound to be played at the end of the break
+- you can set volume for the sound
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-2.png" height="340">
 
