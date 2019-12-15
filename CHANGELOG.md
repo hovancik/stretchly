@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Italian translations updated
 - break window is shown on all Workspaces in macOS
+- Improved readability of English text
 
 ### Added
 - user can set volume for break sounds
