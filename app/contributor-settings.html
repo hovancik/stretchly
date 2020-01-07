@@ -94,16 +94,24 @@
         <label><input type="checkbox" value="isFirstRun" class="enable enabletype">
         show tutorial on next start of stretchly</label>
       </div>
-    </div>
-    <p class="heading">start of the breaks</p>
-    <div class="enabled">
-      <label><input type="checkbox" value="microbreakStartSoundPlaying" class="enable enabletype">
-      play sound at the start of the microbreak</label>
-    </div>
-    <br/>
-    <div class="enabled">
-      <label><input type="checkbox" value="breakStartSoundPlaying" class="enable enabletype">
-      play sound at the start of the break</label>
+      <p class="heading">start of the breaks</p>
+      <div class="enabled">
+        <label><input type="checkbox" value="microbreakStartSoundPlaying" class="enable enabletype">
+        play end-of-break sound also at the start of the microbreak</label>
+      </div>
+      <br/>
+      <div class="enabled">
+        <label><input type="checkbox" value="breakStartSoundPlaying" class="enable enabletype">
+        play end-of-break sound also at the start of the break</label>
+      </div>
+      <p class="heading">natural breaks</p>
+      <div class="normal">
+        pause timers after
+        <span id="naturalBreaksInactivityResetTimeMinus" class="pointer">-</span>
+        <span id="naturalBreaksInactivityResetTime"></span>
+        <span id="naturalBreaksInactivityResetTimePlus" class="pointer">+</span>
+        minute(s)
+      </div>
     </div>
     <script>
       require('./platform.js')

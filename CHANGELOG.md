@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - user can set volume for break sounds
+- user can set time after which breaks are paused in Natural Break (in Contributor settings)
 
 ## [0.21.0] - 2019-10-13
 ### Changed

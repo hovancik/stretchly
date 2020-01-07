@@ -26,6 +26,7 @@ module.exports = {
   fullscreen: false,
   ideas: true,
   naturalBreaks: true,
+  naturalBreaksInactivityResetTime: 300000,
   allScreens: true,
   useIdeasFromSettings: false,
   language: 'en',

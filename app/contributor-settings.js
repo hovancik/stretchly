@@ -29,6 +29,9 @@ const microbreakPostponesLimit = document.getElementById('microbreakPostponesLim
 const morningHourPlus = document.getElementById('morningHourPlus')
 const morningHourMinus = document.getElementById('morningHourMinus')
 const morningHour = document.getElementById('morningHour')
+const naturalBreaksInactivityResetTimePlus = document.getElementById('naturalBreaksInactivityResetTimePlus')
+const naturalBreaksInactivityResetTimeMinus = document.getElementById('naturalBreaksInactivityResetTimeMinus')
+const naturalBreaksInactivityResetTime = document.getElementById('naturalBreaksInactivityResetTime')
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
@@ -142,6 +145,18 @@ morningHourMinus.addEventListener('click', function (e) {
   }
 })
 
+naturalBreaksInactivityResetTimePlus.addEventListener('click', function (e) {
+  if (naturalBreaksInactivityResetTime.innerHTML !== '60') {
+    ipcRenderer.send('save-setting', 'naturalBreaksInactivityResetTime', (parseInt(naturalBreaksInactivityResetTime.innerHTML, 10) + 1) * 1000 * 60)
+  }
+})
+
+naturalBreaksInactivityResetTimeMinus.addEventListener('click', function (e) {
+  if (naturalBreaksInactivityResetTime.innerHTML !== '1') {
+    ipcRenderer.send('save-setting', 'naturalBreaksInactivityResetTime', (parseInt(naturalBreaksInactivityResetTime.innerHTML, 10) - 1) * 1000 * 60)
+  }
+})
+
 ipcRenderer.on('renderSettings', (event, data) => {
   const enableElements = document.getElementsByClassName('enable')
   for (let i = 0; i < enableElements.length; i++) {
@@ -163,6 +178,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
   microbreakPostponableDurationPercent.innerHTML = data.microbreakPostponableDurationPercent
   microbreakPostponesLimit.innerHTML = data.microbreakPostponesLimit
   morningHour.innerHTML = data.morningHour
+  naturalBreaksInactivityResetTime.innerHTML = data.naturalBreaksInactivityResetTime / 1000 / 60
   document.body.style.background = data.mainColor
   eventsAttached = true
 })
