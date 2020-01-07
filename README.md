@@ -99,7 +99,10 @@ In the settings file, you can edit `microbreakPostpone` and `breakPostpone` to e
 In the settings file, set `notifyNewVersion: false,` to disable new version notification.
 
 #### Play sound at the start of the micro/break
-In the settings file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound. Same for `breakStartSoundPlaying`.
+In the settings file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound (The same sounds will be played as at the end of the break). Same for `breakStartSoundPlaying`.
+
+#### Natural breaks inactivity time
+In the settings file, set `naturalBreaksInactivityResetTime` to your proffered value (in milliseconds, needs to be bigger than 20000ms). This is a idle time length, after which stretchly timers will be cleared and waiting for user to come back.
 
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 
