@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - user can set volume for break sounds
 - user can set time after which breaks are paused in Natural Break (in Contributor settings)
 
+### Fixed
+- texts appearing on top of each other in Settings for Chinese
+
 ## [0.21.0] - 2019-10-13
 ### Changed
 - checkbox labels are clickable as well
