@@ -11,8 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Improved readability of English text
 
 ### Added
-- user can set volume for break sounds
-- user can set time after which breaks are paused in Natural Break (in Contributor settings)
+- user can set volume for break sounds (set via Settings file or Contributor's settings)
+- user can set time after which breaks are paused in Natural Break (set via Settings file or Contributor's settings)
 
 ### Fixed
 - texts appearing on top of each other in Settings for Chinese
