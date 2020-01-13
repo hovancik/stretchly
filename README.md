@@ -49,7 +49,6 @@ Microbreaks and breaks can be customized:
 
 - you can choose from different color schemes
 - you can pick a sound to be played at the end of the break
-- you can set volume for the sound
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-2.png" height="340">
 
@@ -102,7 +101,10 @@ In the settings file, set `notifyNewVersion: false,` to disable new version noti
 In the settings file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound (The same sounds will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
 #### Natural breaks inactivity time
-In the settings file, set `naturalBreaksInactivityResetTime` to your proffered value (in milliseconds, needs to be bigger than 20000ms). This is a idle time length, after which stretchly timers will be cleared and waiting for user to come back.
+In the settings file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds, needs to be bigger than 20000ms). This is a idle time length, after which stretchly timers will be cleared and waiting for user to come back.
+
+#### Volume for break sounds
+In the settings file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.
 
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)
 

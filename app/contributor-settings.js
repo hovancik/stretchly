@@ -32,6 +32,7 @@ const morningHour = document.getElementById('morningHour')
 const naturalBreaksInactivityResetTimePlus = document.getElementById('naturalBreaksInactivityResetTimePlus')
 const naturalBreaksInactivityResetTimeMinus = document.getElementById('naturalBreaksInactivityResetTimeMinus')
 const naturalBreaksInactivityResetTime = document.getElementById('naturalBreaksInactivityResetTime')
+const audioVolumeElement = document.querySelector('.volume-audio input')
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
@@ -162,6 +163,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
   for (let i = 0; i < enableElements.length; i++) {
     const element = enableElements[i]
     element.checked = data[element.value]
+
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {
         ipcRenderer.send('save-setting', element.value, element.checked)
@@ -169,6 +171,13 @@ ipcRenderer.on('renderSettings', (event, data) => {
     }
   }
 
+  if (!eventsAttached) {
+    audioVolumeElement.addEventListener('change', debounce((e) => {
+      ipcRenderer.send('save-setting', 'volume', audioVolumeElement.value / 100)
+    }, 500))
+  }
+
+  audioVolumeElement.value = data.volume * 100
   microbreakNotificationInterval.innerHTML = data.microbreakNotificationInterval / 1000
   breakNotificationInterval.innerHTML = data.breakNotificationInterval / 1000
   breakPostponeTime.innerHTML = data.breakPostponeTime / 1000
@@ -182,3 +191,12 @@ ipcRenderer.on('renderSettings', (event, data) => {
   document.body.style.background = data.mainColor
   eventsAttached = true
 })
+
+const debounce = (fn, time) => {
+  let timeout
+  return function () {
+    const functionCall = () => fn.apply(this, arguments)
+    clearTimeout(timeout)
+    timeout = setTimeout(functionCall, time)
+  }
+}
