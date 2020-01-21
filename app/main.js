@@ -121,7 +121,7 @@ function closeWindows (windowArray) {
   return null
 }
 
-function displaysX (displayID = -1, width = 800) {
+function displaysX (displayID = -1, width = 800, fullscreen = false) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -135,10 +135,14 @@ function displaysX (displayID = -1, width = 800) {
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
-  return Math.ceil(bounds.x + ((bounds.width - width) / 2))
+  if (fullscreen) {
+    return Math.ceil(bounds.x)
+  } else {
+    return Math.ceil(bounds.x + ((bounds.width - width) / 2))
+  }
 }
 
-function displaysY (displayID = -1, height = 600) {
+function displaysY (displayID = -1, height = 600, fullscreen = false) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -152,7 +156,45 @@ function displaysY (displayID = -1, height = 600) {
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
-  return Math.ceil(bounds.y + ((bounds.height - height) / 2))
+  if (fullscreen) {
+    return Math.ceil(bounds.y)
+  } else {
+    return Math.ceil(bounds.y + ((bounds.height - height) / 2))
+  }
+}
+
+function displaysWidth (displayID = -1) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    const screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
+  const bounds = theScreen.bounds
+  return Math.ceil(bounds.width)
+}
+
+function displaysHeight (displayID = -1) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    const screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
+  const bounds = theScreen.bounds
+  return Math.ceil(bounds.height)
 }
 
 function createTrayIcon () {
@@ -354,7 +396,12 @@ function startMicrobreak () {
       }
     }
 
-    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (settings.get('fullscreen') && process.platform === 'linux') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
@@ -450,7 +497,12 @@ function startBreak () {
       }
     }
 
-    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (settings.get('fullscreen') && process.platform === 'linux') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
