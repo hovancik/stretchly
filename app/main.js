@@ -134,7 +134,7 @@ function displaysX (displayID = -1, width = 800, fullscreen = false) {
     const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  const bounds = theScreen.bounds
+  const bounds = theScreen.workArea
   if (fullscreen) {
     return Math.ceil(bounds.x)
   } else {
@@ -155,7 +155,7 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
     const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  const bounds = theScreen.bounds
+  const bounds = theScreen.workArea
   if (fullscreen) {
     return Math.ceil(bounds.y)
   } else {
