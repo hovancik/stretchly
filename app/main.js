@@ -103,6 +103,8 @@ function onResumeOrUnlock () {
 
 function startPowerMonitoring () {
   const electron = require('electron')
+
+  console.log('monitors', electron.screen.getAllDisplays())
   electron.powerMonitor.on('suspend', onSuspendOrLock)
   electron.powerMonitor.on('lock-screen', onSuspendOrLock)
   electron.powerMonitor.on('resume', onResumeOrUnlock)
@@ -406,8 +408,13 @@ function startMicrobreak () {
       windowOptions.y = displaysY(displayIdx)
     }
 
+    console.log('monitors id', displayIdx)
+    console.log('monitors windowOptions', windowOptions)
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // microbreakWinLocal.webContents.openDevTools()
+    console.log('microbreakWinLocal.Bounds after creation', microbreakWinLocal.getBounds())
+    microbreakWinLocal.setSize(width=windowOptions.width, height=windowOptions.height)
+    console.log('microbreakWinLocal.Bounds after reapplying bounds', microbreakWinLocal.getBounds())
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
       microbreakWinLocal.setKiosk(settings.get('fullscreen'))
