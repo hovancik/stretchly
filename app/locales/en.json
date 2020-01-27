@@ -47,8 +47,8 @@
     "title": "Time to take a break!"
   },
   "microbreak": {
-    "postpone": "…wait for a bit",
-    "keepGoing": "…nah, I'll just keep going on",
+    "postpone": "Postpone this break",
+    "skip": "Skip this break",
     "title": "Time to take a break!"
   },
   "about": {
