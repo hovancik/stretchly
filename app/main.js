@@ -8,7 +8,6 @@ startI18next()
 
 const AppSettings = require('./utils/settings')
 const Utils = require('./utils/utils')
-const defaultSettings = require('./utils/defaultSettings')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
 const { UntilMorning } = require('./utils/untilMorning')
@@ -21,7 +20,7 @@ let processWin = null
 let microbreakWins = null
 let breakWins = null
 let aboutWin = null
-let settingsWin = null
+let preferencesWin = null
 let tutorialWin = null
 let welcomeWin = null
 let contributorSettingsWindow = null
@@ -333,7 +332,7 @@ function startMicrobreak () {
 
   const idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
 
-  if (settings.get('microbreakStartSoundPlaying')) {
+  if (settings.get('microbreakStartSoundPlaying') && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
@@ -429,7 +428,7 @@ function startBreak () {
 
   const idea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
 
-  if (settings.get('breakStartSoundPlaying')) {
+  if (settings.get('breakStartSoundPlaying') && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
@@ -489,7 +488,7 @@ function startBreak () {
 
 function breakComplete (shouldPlaySound, windows) {
   globalShortcut.unregister('CommandOrControl+X')
-  if (shouldPlaySound) {
+  if (shouldPlaySound && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
   if (process.platform === 'darwin') {
@@ -643,7 +642,7 @@ function showAboutWindow () {
     y: displaysY(),
     resizable: false,
     backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.aboutStretchly', { version: app.getVersion() }),
+    title: i18next.t('preferences.title'),
     webPreferences: {
       nodeIntegration: true
     }
@@ -654,35 +653,27 @@ function showAboutWindow () {
   })
 }
 
-function showSettingsWindow () {
-  if (settingsWin) {
-    settingsWin.show()
+function showPreferencesWindow () {
+  if (preferencesWin) {
+    preferencesWin.show()
     return
   }
-  const modalPath = `file://${__dirname}/settings.html`
-  settingsWin = new BrowserWindow({
+  const modalPath = `file://${__dirname}/preferences.html`
+  preferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
     icon: `${__dirname}/images/windowIcon.png`,
+    width: 600,
     x: displaysX(),
     y: displaysY(),
-    resizable: false,
-    backgroundColor: settings.get('mainColor'),
-    title: i18next.t('main.settings'),
+    backgroundColor: '#EDEDED',
     webPreferences: {
       nodeIntegration: true
     }
   })
-  settingsWin.loadURL(modalPath)
-  // settingsWin.webContents.openDevTools()
-  settingsWin.on('closed', () => {
-    settingsWin = null
+  preferencesWin.loadURL(modalPath)
+  preferencesWin.on('closed', () => {
+    preferencesWin = null
   })
-}
-
-function saveDefaultsFor (array, next) {
-  for (const index in array) {
-    settings.set(array[index], defaultSettings[array[index]])
-  }
 }
 
 function getTrayMenu () {
@@ -807,24 +798,11 @@ function getTrayMenu () {
   }
 
   trayMenu.push({
-    label: i18next.t('main.settings'),
+    label: i18next.t('main.preferences'),
     click: function () {
-      showSettingsWindow()
+      showPreferencesWindow()
     }
   })
-
-  if (process.platform === 'darwin' || process.platform === 'win32') {
-    const loginItemSettings = app.getLoginItemSettings()
-    const openAtLogin = loginItemSettings.openAtLogin
-    trayMenu.push({
-      label: i18next.t('main.startAtLogin'),
-      type: 'checkbox',
-      checked: openAtLogin,
-      click: function () {
-        app.setLoginItemSettings({ openAtLogin: !openAtLogin })
-      }
-    })
-  }
 
   trayMenu.push({
     type: 'separator'
@@ -960,11 +938,21 @@ ipcMain.on('save-setting', function (event, key, value) {
   if (key === 'naturalBreaks') {
     breakPlanner.naturalBreaks(value)
   }
+
   if (key === 'monitorDnd') {
     breakPlanner.doNotDisturb(value)
   }
-  settings.set(key, value)
-  event.sender.send('renderSettings', settings.data)
+
+  if (key === 'language') {
+    i18next.changeLanguage(value)
+  }
+
+  if (key === 'openAtLogin') {
+    app.setLoginItemSettings({ openAtLogin: value })
+  } else {
+    settings.set(key, value)
+  }
+
   appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
 })
@@ -975,28 +963,33 @@ ipcMain.on('update-tray', function (event) {
   appIcon.setContextMenu(getTrayMenu())
 })
 
-ipcMain.on('set-default-settings', function (event, data) {
+ipcMain.on('restore-defaults', (event) => {
   const dialogOpts = {
     type: 'question',
-    title: i18next.t('main.resetToDefaults'),
-    message: i18next.t('main.areYouSure'),
-    buttons: [i18next.t('main.yes'), i18next.t('main.no')]
+    title: i18next.t('main.restoreDefaults'),
+    message: i18next.t('main.warning'),
+    buttons: [i18next.t('main.continue'), i18next.t('main.cancel')]
   }
   dialog.showMessageBox(dialogOpts).then((returnValue) => {
     if (returnValue.response === 0) {
-      saveDefaultsFor(data)
+      settings.restoreDefaults()
+      i18next.changeLanguage(settings.get('language'))
       appIcon.setImage(trayIconPath())
       appIcon.setContextMenu(getTrayMenu())
-      if (settingsWin) {
-        settingsWin.webContents.send('renderSettings', settings.data)
-      }
+      event.sender.webContents.send('renderSettings', settingsToSend())
     }
   })
 })
 
 ipcMain.on('send-settings', function (event) {
-  event.sender.send('renderSettings', settings.data)
+  event.sender.send('renderSettings', settingsToSend())
 })
+
+function settingsToSend () {
+  const loginItemSettings = app.getLoginItemSettings()
+  const openAtLogin = loginItemSettings.openAtLogin
+  return Object.assign({}, settings.data, { openAtLogin: openAtLogin })
+}
 
 ipcMain.on('play-sound', function (event, sound) {
   processWin.webContents.send('playSound', sound, settings.get('volume'))
@@ -1010,13 +1003,8 @@ ipcMain.on('show-debug', function (event) {
   const doNotDisturb = breakPlanner.dndManager.doNotDisturb
   const dir = app.getPath('userData')
   const settingsFile = path.join(dir, 'config.json')
-  aboutWin.webContents.send('debugInfo', reference, timeleft,
+  event.sender.send('debugInfo', reference, timeleft,
     breaknumber, postponesnumber, settingsFile, doNotDisturb)
-})
-
-ipcMain.on('change-language', function (event, language) {
-  i18next.changeLanguage(language)
-  event.sender.send('renderSettings', settings.data)
 })
 
 ipcMain.on('open-tutorial', function (event) {

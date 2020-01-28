@@ -40,48 +40,56 @@ document.addEventListener('drop', event => event.preventDefault())
 microbreakNotificationIntervalPlus.addEventListener('click', function (e) {
   if (microbreakNotificationInterval.innerHTML !== '120') {
     ipcRenderer.send('save-setting', 'microbreakNotificationInterval', (parseInt(microbreakNotificationInterval.innerHTML, 10) + 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakNotificationIntervalMinus.addEventListener('click', function (e) {
   if (microbreakNotificationInterval.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'microbreakNotificationInterval', (parseInt(microbreakNotificationInterval.innerHTML, 10) - 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakNotificationIntervalPlus.addEventListener('click', function (e) {
   if (breakNotificationInterval.innerHTML !== '120') {
     ipcRenderer.send('save-setting', 'breakNotificationInterval', (parseInt(breakNotificationInterval.innerHTML, 10) + 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakNotificationIntervalMinus.addEventListener('click', function (e) {
   if (breakNotificationInterval.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'breakNotificationInterval', (parseInt(breakNotificationInterval.innerHTML, 10) - 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakPostponeTimePlus.addEventListener('click', function (e) {
   if (breakNotificationInterval.innerHTML !== '600') {
     ipcRenderer.send('save-setting', 'breakPostponeTime', (parseInt(breakPostponeTime.innerHTML, 10) + 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakPostponeTimeMinus.addEventListener('click', function (e) {
   if (breakPostponeTime.innerHTML !== '60') {
     ipcRenderer.send('save-setting', 'breakPostponeTime', (parseInt(breakPostponeTime.innerHTML, 10) - 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakPostponeTimePlus.addEventListener('click', function (e) {
   if (breakNotificationInterval.innerHTML !== '600') {
     ipcRenderer.send('save-setting', 'microbreakPostponeTime', (parseInt(microbreakPostponeTime.innerHTML, 10) + 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakPostponeTimeMinus.addEventListener('click', function (e) {
   if (microbreakPostponeTime.innerHTML !== '60') {
     ipcRenderer.send('save-setting', 'microbreakPostponeTime', (parseInt(microbreakPostponeTime.innerHTML, 10) - 5) * 1000)
+    ipcRenderer.send('send-settings')
   }
 })
 
@@ -89,72 +97,84 @@ breakPostponableDurationPercentPlus.addEventListener('click', function (e) {
   console.log(breakNotificationInterval.innerHTML)
   if (breakPostponableDurationPercentPlus.innerHTML !== '80') {
     ipcRenderer.send('save-setting', 'breakPostponableDurationPercent', (parseInt(breakPostponableDurationPercent.innerHTML, 10) + 5))
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakPostponableDurationPercentMinus.addEventListener('click', function (e) {
   if (breakPostponableDurationPercent.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'breakPostponableDurationPercent', (parseInt(breakPostponableDurationPercent.innerHTML, 10) - 5))
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakPostponesLimitPlus.addEventListener('click', function (e) {
   if (breakPostponesLimit.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'breakPostponesLimit', (parseInt(breakPostponesLimit.innerHTML, 10) + 1))
+    ipcRenderer.send('send-settings')
   }
 })
 
 breakPostponesLimitMinus.addEventListener('click', function (e) {
   if (breakPostponesLimit.innerHTML !== '1') {
     ipcRenderer.send('save-setting', 'breakPostponesLimit', (parseInt(breakPostponesLimit.innerHTML, 10) - 1))
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakPostponableDurationPercentPlus.addEventListener('click', function (e) {
   if (microbreakPostponableDurationPercent.innerHTML !== '80') {
     ipcRenderer.send('save-setting', 'microbreakPostponableDurationPercent', (parseInt(microbreakPostponableDurationPercent.innerHTML, 10) + 5))
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakPostponableDurationPercentMinus.addEventListener('click', function (e) {
   if (microbreakPostponableDurationPercent.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'microbreakPostponableDurationPercent', (parseInt(microbreakPostponableDurationPercent.innerHTML, 10) - 5))
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakPostponesLimitPlus.addEventListener('click', function (e) {
   if (microbreakPostponesLimit.innerHTML !== '5') {
     ipcRenderer.send('save-setting', 'microbreakPostponesLimit', (parseInt(microbreakPostponesLimit.innerHTML, 10) + 1))
+    ipcRenderer.send('send-settings')
   }
 })
 
 microbreakPostponesLimitMinus.addEventListener('click', function (e) {
   if (microbreakPostponesLimit.innerHTML !== '1') {
     ipcRenderer.send('save-setting', 'microbreakPostponesLimit', (parseInt(microbreakPostponesLimit.innerHTML, 10) - 1))
+    ipcRenderer.send('send-settings')
   }
 })
 
 morningHourPlus.addEventListener('click', function (e) {
   if (morningHour.innerHTML !== '10') {
     ipcRenderer.send('save-setting', 'morningHour', (parseInt(morningHour.innerHTML, 10) + 1))
+    ipcRenderer.send('send-settings')
   }
 })
 
 morningHourMinus.addEventListener('click', function (e) {
   if (morningHour.innerHTML !== '3') {
     ipcRenderer.send('save-setting', 'morningHour', (parseInt(morningHour.innerHTML, 10) - 1))
+    ipcRenderer.send('send-settings')
   }
 })
 
 naturalBreaksInactivityResetTimePlus.addEventListener('click', function (e) {
   if (naturalBreaksInactivityResetTime.innerHTML !== '60') {
     ipcRenderer.send('save-setting', 'naturalBreaksInactivityResetTime', (parseInt(naturalBreaksInactivityResetTime.innerHTML, 10) + 1) * 1000 * 60)
+    ipcRenderer.send('send-settings')
   }
 })
 
 naturalBreaksInactivityResetTimeMinus.addEventListener('click', function (e) {
   if (naturalBreaksInactivityResetTime.innerHTML !== '1') {
     ipcRenderer.send('save-setting', 'naturalBreaksInactivityResetTime', (parseInt(naturalBreaksInactivityResetTime.innerHTML, 10) - 1) * 1000 * 60)
+    ipcRenderer.send('send-settings')
   }
 })
 
@@ -167,6 +187,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
     if (!eventsAttached) {
       element.addEventListener('click', function (e) {
         ipcRenderer.send('save-setting', element.value, element.checked)
+        ipcRenderer.send('send-settings')
       })
     }
   }
@@ -174,6 +195,7 @@ ipcRenderer.on('renderSettings', (event, data) => {
   if (!eventsAttached) {
     audioVolumeElement.addEventListener('change', debounce((e) => {
       ipcRenderer.send('save-setting', 'volume', audioVolumeElement.value / 100)
+      ipcRenderer.send('send-settings')
     }, 500))
   }
 

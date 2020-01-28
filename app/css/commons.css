@@ -1,6 +1,6 @@
 /* open-sans-300 - latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans Light';
   font-style: normal;
   font-weight: 300;
   src: local('Open Sans Light'), local('OpenSans-Light'),
@@ -18,12 +18,18 @@
        url('./fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+.darwin .darwin-hidden,
+.linux .linux-hidden,
+.freebsd .linux-hidden,
+.openbsd .linux-hidden {
+  display: none;
+}
+
 a {
   cursor: pointer;
 }
 
 /* https://css-tricks.com/html5-progress-element/ */
-
 progress {
   -webkit-appearance: none;
   height: 5px;
@@ -81,4 +87,132 @@ progress[value]::-webkit-progress-value {
     top: 100%;
     left: 50%;
     border-color: #2E2E2E transparent transparent transparent;
+}
+
+/* https://jsbin.com/itejak/1/edit?html,css,output */
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  background: #FFFFFF;
+  border: 0 solid rgba(0,0,0,0.20);
+  box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.38);
+  border-radius: 3px;
+  content: "\00a0";
+  display: inline-block;
+  font: 13px sans-serif;
+  height: 14px;
+  margin: 0 4px 0 0;
+  padding:0;
+  vertical-align: top;
+  width: 14px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #3B99FC;
+  color: #FFF;
+  content: "\2713";
+  text-align: center;
+}
+
+input[type="radio"] + label:before {
+  background: #FFFFFF;
+  border: 0 solid rgba(0,0,0,0.20);
+  box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.38);
+  border-radius: 13px;
+  content: "\00a0";
+  display: inline-block;
+  font: 13px sans-serif;
+  height: 16px;
+  margin: 0 4px 0 0;
+  padding:0;
+  width: 16px;
+}
+
+input[type="radio"]:checked + label:before {
+  background: #3B99FC;
+  color: #FFF;
+  content: "\25CF";
+  text-align: center;
+}
+
+input[type="radio"]:disabled + label {
+  color: rgba(255,255,255,0.99);
+}
+
+input[type="range"]  {
+  margin: 0 16px 0 13px;
+  vertical-align: middle;
+  width: 200px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling#Selects_and_datalists */
+.has-select {
+  margin-left: 4px;
+  display: inline-block;
+  position: relative;
+  min-width: 200px;
+}
+
+.has-select::after {
+  color: #FFFFFF;
+  position: absolute;
+  content: "⌄";
+  right: 3px;
+  pointer-events: none;
+}
+
+.has-select::before {
+  color: #FFFFFF;
+  position: absolute;
+  content: "";
+  background-image: linear-gradient(180deg, #6CB3FA 0%, #057EFF 100%);
+  border-radius: 0 3px 3px 0;
+  height: 19px;
+  width: 16.5px;
+  right: 0;
+  pointer-events: none;
+}
+
+select {
+  -webkit-appearance:none;
+  font-family: sans-serif;
+  background: #FFFFFF;
+  outline: none;
+  border: 0 solid rgba(0,0,0,0.15);
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.20);
+  border-radius: 3px 0  0 3px;
+  height: 19px;
+  width: 100%;
+  padding-left: 8px;
+}
+
+button {
+  background: #FFFFFF;
+  border: 0 solid rgba(0,0,0,0.15);
+  box-shadow: 0 0 1px 0 rgba(0,0,0,0.20);
+  border-radius: 3px;
+  color: rgba(0,0,0,0.85);
+  font-size: 13px;
+  letter-spacing: -0.08px;
+  text-align: center;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  /* TODO */
+}
+
+button:active {
+  background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  border-radius: 3.5px;
+  color: #FFFFFF;
+}
+
+hr {
+  background: #d2d1d29e;
+  border: 0 solid rgba(0,0,0,0.20);
+  height: 2px;
 }
