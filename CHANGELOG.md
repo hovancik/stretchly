@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- default icon is colorful
+
+### Added
+- new break ideas
+
+### Fixed
+- notify of new version only if new version is higher then current
 
 ## [0.21.1] - 2020-01-16
 ### Changed
