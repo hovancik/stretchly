@@ -19,5 +19,6 @@ module.exports = [
   { data: 'Place your fingertips on your shoulders. Roll your shoulders forward for 10 seconds, then backward.', enabled: true },
   { data: 'Raise your right arm, stretch it over your head to the left, and hold for 10 seconds. Repeat on the other side.', enabled: true },
   { data: 'With your right hand, grab each finger of your left hand in turn and squeeze. Repeat on the other side.', enabled: true },
-  { data: 'Stand up and do a lunge. Hold for 10 seconds, then do the other leg.', enabled: true }
+  { data: 'Stand up and do a lunge. Hold for 10 seconds, then do the other leg.', enabled: true },
+  { data: 'Close your eyes and simply notice whatever arises in current moment, without judgement.', enabled: true }
 ]
