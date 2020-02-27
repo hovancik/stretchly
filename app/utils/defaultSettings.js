@@ -34,7 +34,7 @@ module.exports = {
   isFirstRun: true,
   posLatitude: 0.0,
   posLongitude: 0.0,
-  useMonochromeTrayIcon: true,
+  useMonochromeTrayIcon: false,
   useMonochromeInvertedTrayIcon: false,
   silentNotifications: false,
   monitorDnd: true,
