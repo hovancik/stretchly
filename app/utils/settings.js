@@ -13,7 +13,7 @@ class Settings {
         this._loadMissing()
       }
     } else {
-      this.data = defaultSettings
+      this.data = Object.assign({}, defaultSettings)
       this._save(true)
     }
   }
@@ -30,6 +30,12 @@ class Settings {
     this._save()
   }
 
+  restoreDefaults () {
+    this.data = Object.assign({}, defaultSettings)
+    this.data.isFirstRun = false
+    this._save(true)
+  }
+
   _load (retryCount = 5) {
     try {
       this.data = JSON.parse(fs.readFileSync(this.settingsFile, 'utf8'))
@@ -39,7 +45,7 @@ class Settings {
         console.log('Failed to load settings JSON file, retrying in 10 milliseconds')
         return
       }
-      this.data = defaultSettings
+      this.data = Object.assign({}, defaultSettings)
       // TODO maybe I should `this._save(true)` here?
       console.log('Failed to load settings JSON file, giving up and resetting')
     }
