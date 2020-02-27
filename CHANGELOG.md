@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - new break ideas
 
+### Fixed
+- notify of new version only if new version is higher then current
+
 ## [0.21.1] - 2020-01-16
 ### Changed
 - Italian translations updated

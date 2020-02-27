@@ -1,6 +1,7 @@
 const { ipcRenderer, shell, remote } = require('electron')
 const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
+const semver = require('semver')
 
 ipcRenderer.on('playSound', (event, file, volume) => {
   const audio = new Audio(`audio/${file}.wav`)
@@ -15,8 +16,8 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
     new VersionChecker()
       .latest()
       .then(version => {
-        const semantic = /^v([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
-        if (version.match(semantic) && oldVersion !== version) {
+        const cleanVersion = semver.clean(version)
+        if (semver.valid(cleanVersion) && semver.gt(cleanVersion, oldVersion)) {
           remote.getGlobal('shared').isNewVersion = true
           ipcRenderer.send('update-tray')
           if (notify) {
