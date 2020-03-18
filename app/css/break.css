@@ -1,11 +1,11 @@
 .breaks {
   align-items: center;
+  color: #FFFFFF;
   display: grid;
+  font-family: "Open Sans Light";
+  font-weight: 300;
   grid-template: 85vh 10vh / 100px auto 100px;
   justify-items: center;
-  font-family: "Open Sans";
-  font-weight: 300;
-  color: #FFFFFF;
 }
 
 .breaks > * {

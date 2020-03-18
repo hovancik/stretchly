@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title data-i18next="preferences.title"></title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/preferences.css">
+  </head>
+  <body>
+    <nav class="navigation">
+      <a href="#" class="active" data-section="settings">
+        <div>
+          <img src="images/Settings.svg">
+          <span data-i18next="preferences.nav.settings"></span>
+        </div>
+      </a>
+      <a href="#" data-section="schedule">
+        <div>
+          <img src="images/Schedule.svg">
+          <span data-i18next="preferences.nav.schedule"></span>
+        </div>
+      </a>
+      <a href="#" data-section="theme">
+        <div>
+          <img src="images/Theme.svg">
+          <span data-i18next="preferences.nav.theme"></span>
+        </div>
+      </a>
+      <a href="#" data-section="about">
+        <div>
+          <img src="images/About.svg">
+          <span data-i18next="preferences.nav.about"></span>
+        </div>
+      </a>
+      <a href="#" data-section="heart">
+        <div>
+          <img src="images/Heart.svg">
+          <span data-i18next="preferences.nav.heart"></span>
+        </div>
+      </a>
+    </nav>
+    <div class="settings">
+      <div class="linux-hidden">
+        <input type="checkbox" value="openAtLogin" id="openAtLogin">
+        <label data-i18next="preferences.settings.openAtLogin" for="openAtLogin"></label>
+      </div>
+      <div>
+        <span data-i18next="preferences.settings.showBreaksIn"></span>
+      </div>
+      <div>
+        <input type="radio" value="false" name="fullscreen" id="window">
+        <label data-i18next="preferences.settings.window" for="window"></label>
+        <input type="radio" value="true" name="fullscreen" id="fullscreen">
+        <label data-i18next="preferences.settings.fullscreen" for="fullscreen"></label>
+      </div>
+      <div>
+        <input type="checkbox" value="ideas" id="showIdeas">
+        <label data-i18next="preferences.settings.showIdeas" for="showIdeas"></label>
+      </div>
+      <div>
+        <input type="checkbox" value="allScreens" id="allScreens">
+        <label data-i18next="preferences.settings.allScreens" for="allScreens"></label>
+      </div>
+      <div>
+        <input type="checkbox" value="naturalBreaks" id="monitorIdleTime">
+        <label data-i18next="preferences.settings.monitorIdleTime" for="monitorIdleTime"></label>
+      </div>
+      <div class="linux-hidden">
+        <input type="checkbox" class="negative" value="monitorDnd" id="monitorDnd">
+        <label data-i18next="preferences.settings.monitorDnd" for="monitorDnd"></label>
+      </div>
+      <div>
+        <hr/>
+      </div>
+      <div>
+        <label data-i18next="preferences.settings.language" for="language"></label>
+        <div class="has-select">
+          <select name="language" id="language">
+            <!--Keep languages in the alphabet order-->
+            <option value="bg">Български</option>
+            <option value="cs">Čeština</option>
+            <option value="da">Dansk</option>
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="hi">हिन्दी</option>
+            <option value="it">Italiano</option>
+            <option value="ko">한국어</option>
+            <option value="lt">Lietuvių</option>
+            <option value="nl">Nederlands</option>
+            <option value="pl">Polski</option>
+            <option value="pt-BR">Português Brasileiro</option>
+            <option value="ro">Română</option>
+            <option value="ru">Русский</option>
+            <option value="sk">Slovenčina</option>
+            <option value="sv">Svenska</option>
+            <option value="tr">Türkçe</option>
+            <option value="uk">Українська</option>
+            <option value="zh-CN">简体中文</option>
+            <option value="zh-TW">正體中文</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <hr/>
+      </div>
+      <div>
+        <button type="button" data-i18next="preferences.settings.restoreDefaults"></button>
+      </div>
+    </div>
+    <div class="schedule hidden">
+      <div>
+        <span data-i18next="preferences.schedule.miniBreaks">
+        </span>
+      </div>
+      <div>
+        <p data-i18next="preferences.schedule.miniBreaksInfo">
+        </p>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="microbreak" id="enableMiniBreaks">
+        <label data-i18next="preferences.schedule.enableMiniBreaks" for="enableMiniBreaks"></label>
+      </div>
+      <div>
+        <label data-i18next="preferences.schedule.breakFor" for="miniBreakFor"></label>
+        <input type="range" min="5" max="105" step="5" list="tickmarksMiniBreakFor" name="microbreakDuration" data-divisor="1000" id="miniBreakFor">
+        <datalist id="tickmarksMiniBreakFor">
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="preferences.schedule.seconds"></span>
+      </div>
+      <div>
+        <label data-i18next="preferences.schedule.every" for="miniBreakEvery"></label>
+        <input type="range" min="5" max="65" step="5" list="tickmarksMiniBreakEvery" name="microbreakInterval" data-divisor="60000" id="miniBreakEvery">
+        <datalist id="tickmarksMiniBreakEvery">
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="preferences.schedule.minutes"></span>
+      </div>
+      <div>
+        <input type="checkbox" value="microbreakNotification" id="showNotificationBeforeMiniBreak">
+        <label data-i18next="preferences.schedule.showNotificationBeforeMiniBreak" for="showNotificationBeforeMiniBreak"></label>
+      </div>
+      <div>
+        <hr/>
+      </div>
+      <div>
+        <span data-i18next="preferences.schedule.longBreaks">
+        </span>
+      </div>
+      <div>
+        <p data-i18next="preferences.schedule.longBreaksInfo">
+        </p>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="break" id="enableLongBreaks">
+        <label data-i18next="preferences.schedule.enableLongBreaks" for="enableLongBreaks"></label>
+      </div>
+      <div>
+        <label data-i18next="preferences.schedule.breakFor" for="longBreakFor"></label>
+        <input type="range" min="1" max="60" step="1" list="tickmarksLongBreakFor" name="breakDuration" data-divisor="60000" id="longBreakFor">
+        <datalist id="tickmarksLongBreakFor">
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="preferences.schedule.minutes"></span>
+      </div>
+      <div>
+        <label data-i18next="preferences.schedule.every" for="longBreakEvery"></label>
+        <input type="range" min="1" max="30" step="1" list="tickmarksLongBreakEvery" name="breakInterval" data-divisor="1" id="longBreakEvery">
+        <datalist id="tickmarksLongBreakEvery">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="preferences.schedule.minutes"></span>
+      </div>
+      <div>
+        <input type="checkbox" value="breakNotification" id="showNotificationBeforeLongBreak">
+        <label data-i18next="preferences.schedule.showNotificationBeforeLongBreak" for="showNotificationBeforeLongBreak"></label>
+      </div>
+      <div>
+        <hr/>
+      </div>
+      <div>
+        <span data-i18next="preferences.schedule.strictMode">
+        </span>
+      </div>
+      <div>
+        <p data-i18next="preferences.schedule.strictModeInfo">
+        </p>
+      </div>
+      <div>
+        <input type="checkbox" value="microbreakStrictMode" id="enableStrictMini">
+        <label data-i18next="preferences.schedule.enableStrictMini" for="enableStrictMini"></label>
+      </div>
+      <div>
+        <input type="checkbox" value="breakStrictMode" id="enableStrictLong">
+        <label data-i18next="preferences.schedule.enableStrictLong" for="enableStrictLong"></label>
+      </div>
+    </div>
+    <div class="theme hidden">
+      <div>
+        <span data-i18next="preferences.theme.appearance">
+        </span>
+      </div>
+      <div class="appearance">
+        <input type="radio" value="#478484" name="mainColor" id="greenClouds">
+        <label data-i18next="preferences.theme.greenClouds" for="greenClouds"></label>
+      </div>
+      <div class="appearance">
+        <input type="radio" value="#633738" name="mainColor" id="autumnBeBlessed">
+        <label data-i18next="preferences.theme.autumnBeBlessed" for="autumnBeBlessed"></label>
+      </div>
+      <div class="appearance">
+        <input type="radio" value="#1D1F21" name="mainColor" id="graphiteCrystal">
+        <label data-i18next="preferences.theme.graphiteCrystal" for="graphiteCrystal"></label>
+      </div>
+      <div class="appearance">
+        <input type="radio" value="#A49898" name="mainColor" id="coffeeKisses">
+        <label data-i18next="preferences.theme.coffeeKisses" for="coffeeKisses"></label>
+      </div>
+      <div class="appearance">
+        <input type="radio" value="#567890" name="mainColor" id="morningSwim">
+        <label data-i18next="preferences.theme.morningSwim" for="morningSwim"></label>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="preferences.theme.sounds">
+        </span>
+      </div>
+      <div>
+        <input type="checkbox" class="negative" value="silentNotifications" id="enableSounds">
+        <label data-i18next="preferences.theme.enableSounds" for="enableSounds"></label>
+      </div>
+      <div class="sounds">
+        <input type="radio" value="crystal-glass" name="audio" id="crystalGlass">
+        <label data-i18next="preferences.theme.crystalGlass" for="crystalGlass"></label>
+        <img src="images/Aqua.png" alt="Play sound">
+      </div>
+      <div class="sounds">
+        <input type="radio" value="wind-chime" name="audio" id="windChime">
+        <label data-i18next="preferences.theme.windChime" for="windChime"></label>
+        <img src="images/Aqua.png" alt="Play sound">
+      </div>
+      <div class="sounds">
+        <input type="radio" value="tic-toc" name="audio" id="ticToc">
+        <label data-i18next="preferences.theme.ticToc" for="ticToc"></label>
+        <img src="images/Aqua.png" alt="Play sound">
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="preferences.theme.menubarIcon">
+        </span>
+      </div>
+      <div>
+        <input type="radio" value="false" name="useMonochromeTrayIcon" id="colour">
+        <label data-i18next="preferences.theme.colour" for="colour"></label>
+      </div>
+      <div>
+        <input type="radio" value="true" name="useMonochromeTrayIcon" id="monochrome">
+        <label data-i18next="preferences.theme.monochrome" for="monochrome"></label>
+      </div>
+      <div class="darwin-hidden">
+        <input type="checkbox" value="useMonochromeInvertedTrayIcon" id="invertedMonochrome">
+        <label data-i18next="preferences.theme.invertedMonochrome" for="invertedMonochrome"></label>
+      </div>
+    </div>
+    <div class="about hidden">
+      <div>
+        <div>
+          <img src="images/Aqua.svg" alt="Stretchy logo">
+          <span>Stretchly</span>
+        </div>
+        <span data-i18next="preferences.about.tagline"></span>
+      </div>
+      <div>
+        <span data-i18next="preferences.about.version"></span>
+        <span class="version"></span>
+      </div>
+      <div>
+        <input type="checkbox" value="notifyNewVersion" id="checkForUpdates">
+        <label data-i18next="preferences.about.checkForUpdates" for="checkForUpdates"></label>
+        <br/>(<span data-i18next="preferences.about.latestVersion"></span>
+        <span class="latestVersion"></span>)
+      </div>
+      <div>
+        <img src="images/home/Aqua.svg" alt="Home">
+        <div>
+          <span data-i18next="preferences.about.learnMore"></span>
+          <a data-i18next="preferences.about.ourWebsite" href="https://hovancik.net/stretchly/"></a>
+          <span data-i18next="preferences.about.dot"></span>
+        </div>
+      </div>
+      <div class="debug">
+        <p id="to-copy">
+          breakPlanner: {reference: <span id="reference"></span>,
+          timeleft: <span id="timeleft"></span>,
+          breakNumber: <span id="breakNumber"></span>,
+          postponesNumber: <span id="postponesNumber"></span>,
+          Do Not Disturb: <span id="donotdisturb"></span>}
+          <br/>
+          settingsFile: <a href="" class="file" id="settingsfile"></a>
+          <br/>Node.js: <span id="node"></span>
+          Chromium: <span id="chrome"></span>,
+          Electron: <span id="electron"></span>
+        </p>
+        <p>
+          <button>copy to clipboard</button>
+        </p>
+      </div>
+      <div>
+        <span data-i18next="preferences.about.developedBy"></span>
+        <a data-i18next="preferences.about.janH" href="https://hovancik.net/"></a>
+      </div>
+    </div>
+    <div class="heart hidden">
+      <div>
+        <img src="images/Aqua.svg" alt="Stretchy logo">
+      </div>
+      <div>
+        <span data-i18next="preferences.heart.loveStretchly"></span>
+      </div>
+      <div>
+        <span data-i18next="preferences.heart.desc1"></span>
+      </div>
+      <div>
+        <span data-i18next="preferences.heart.desc2"></span>
+      </div>
+      <div>
+      </div>
+      <div class="become">
+        <button type="button" name="becomePatron" data-i18next="preferences.heart.becomePatron"></button>
+      </div>
+      <div class="become">
+        <button type="button" name="alreadyContributor" data-i18next="preferences.heart.alreadyContributor"></button>
+      </div>
+      <div class="authenticate hidden">
+        <span data-i18next="preferences.heart.authenticateUsing"></span>
+      </div>
+      <div class="authenticate hidden">
+        <a>
+          <img src="images/Icons/Patreon/Aqua.svg" alt="Patreon">
+        </a>
+        <a>
+          <img src="images/Icons/Github/Aqua.svg" alt="Github">
+        </a>
+      </div>
+    </div>
+    <script>
+      require('./platform.js')
+      require('./preferences.js')
+    </script>
+  </body>
+</html>

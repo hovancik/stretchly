@@ -62,6 +62,75 @@
     "latestVersion": "najnovšia verzia:",
     "checking": "kontrolujem…"
   },
+  "preferences": {
+    "title": "Nastavenia Stretchly",
+    "nav": {
+      "settings": "Nastavenia",
+      "schedule": "Plánovanie",
+      "theme": "Téma",
+      "about": "Informácie",
+      "heart": "Pomôcť Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Start Stretchly automatically when loggin in",
+      "showBreaksIn": "Shows breaks in:",
+      "window": "Okno",
+      "fullscreen": "Celá obrazovka",
+      "showIdeas": "Show exercise tips during breaks",
+      "allScreens": "Shows breaks on all monitors",
+      "monitorIdleTime": "Monitor system idle time (countdown is paused if system is idle)",
+      "monitorDnd": "Show breaks even in Do Not Disturb mode",
+      "language": "Select langauge:",
+      "restoreDefaults": "Restore defaults"
+    },
+    "schedule": {
+      "miniBreaks": "Mini Breaks:",
+      "miniBreaksInfo": "Mini Breaks are short breaks taken regularly to give you a chance to stretch and relax.",
+      "enableMiniBreaks": "Enable Mini Breaks",
+      "breakFor": "Break for:",
+      "seconds": "seconds",
+      "minutes": "minutes",
+      "every": "Every:",
+      "showNotificationBeforeMiniBreak": "Show notification before Mini Break starts",
+      "longBreaks": "Long Breaks:",
+      "longBreaksInfo": "Long Breaks are taken less regularly, but are of greater duration, allowing you to take an extended break from your work.",
+      "enableLongBreaks": "Enable Long Breaks",
+      "showNotificationBeforeLongBreak": "Show notification before Long Break starts",
+      "strictMode": "Strict Mode:",
+      "strictModeInfo": "Strict Mode prevents you from postponing or skipping either Mini Breaks or Long Breaks and is designed to help discipline.",
+      "enableStrictMini": "Enable Strict Mode for Mini Breaks",
+      "enableStrictLong": "Enable Strict Mode for Long Breaks"
+    },
+    "theme": {
+      "appearance": "Appearance:",
+      "greenClouds": "Green clouds",
+      "autumnBeBlessed": "Autumn be blessed",
+      "graphiteCrystal": "Graphite crystal",
+      "coffeeKisses": "Coffee kisses",
+      "morningSwim": "Morning swim",
+      "sounds": "Sounds:",
+      "enableSounds": "Enable sounds",
+      "crystalGlass": "Crystal glass",
+      "windChime": "Wind chime",
+      "ticToc": "Tic toc",
+      "menubarIcon": "Menubar icon:",
+      "colour": "Colour",
+      "monochrome": "Monochrome",
+      "invertedMonochrome": "Inverted Monochrome"
+    },
+    "about": {
+      "tagline": "The break time reminder app",
+      "version": "Version ",
+      "latestVersion": "Latest version ",
+      "checkForUpdates":"Automatically check for app updates",
+      "checkNow": "Check now",
+      "learnMore": "To learn more about Stretchly features, view a tutorial, download the latest version or contact us for support, ",
+      "ourWebsite": "visit our website",
+      "dot": ".",
+      "developedBy": "Developed by",
+      "janH": "Jan Hovancik"
+    }
+  },
   "settings": {
     "settings": "Nastavenia",
     "microbreaks": "mikroprestávky",
