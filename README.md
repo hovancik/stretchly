@@ -123,7 +123,7 @@ To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm
 It should run on any electron supported platform. Tested on macOS, Windows and Ubuntu Linux.
 
 ### Linux note
-Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*.
+Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*. Electron now also uses Chromium's `StatusIconLinuxDbus` on Linux, which might be better. Check [this comment](https://github.com/electron/electron/issues/21445#issuecomment-565710027) for more tips to get it working.
 
 For Natural breaks, you might need some packages too (`libxss-dev`).
 

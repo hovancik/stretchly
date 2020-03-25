@@ -4,9 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [0.99.0] - 2020-03-19
 ### Changed
 - default icon is colorful
+- restyle break windows
+- restyle Preferences window
 
 ### Added
 - new break ideas
