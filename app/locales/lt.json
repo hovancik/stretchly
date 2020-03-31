@@ -131,28 +131,5 @@
     "readTutorial": "Leisk stretchly tapti tavo mėgstamiausia programėle leidžiant laiką sau. Išmok kaip pritaykyi programėlę savo poreikiams trumpame vadovėlyje.",
     "tutorial": "vadovėlis",
     "skipTutorial": "praleisti vadovėli. Jį visada galima rasti skiltyje Apie"
-  },
-  "tutorial": {
-    "title": "stretchly vadovėlis",
-    "welcomeTitle": "stretchly vadovėlis",
-    "welcomeText": "Pertraukų ir mikropertraukų darymas padeda tau būti produktyvesniam - tai moksliškai įrodyta. Bet tik tu žinai savo dienotvarkės balansą. Susipažink su stretchly ir suderink pertraukas, kad jos veiktų produktyviausiai.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly sukurtas būti neįkyrus, nes tik įjungus programėlę nesimatys jokių iššokančių langų. Pagal nutylėjimą bus nustatytos 20 sekundžių mikropertraukos kas 10 minučių ir 5 minučių pertrauka po 2 mikropertraukų.",
-    "breaksTitle": "",
-    "breaksText": "Pertraukų metu išvysiįdėjas padėsiančias jums atsipalaiduoti. Taip pat matysi likusį pertraukos laiką. Pertraukas gali praleisti, bet kam tai daryti? Pertraukos padeda suvaldyti stresą, pailsinti pavarguses akis ir suteikia galimybę prajudinti kūną. Kam praleisti galimybę būti labiau susifokusavusiam ir kūrybingam?",
-    "notificationsTitle": "",
-    "notificationsText": "Pranešimai rodomi 10 sekundžių prieš mikropertraukas ir 30 sekundžių iki pertraukos, kad negundytų mintys praleisti pertrauką, nes tau <i>tikrai-reikia-tik-30-sekundžių-baigti-tai</i>.",
-    "tray1Title": "",
-    "tray1Text": "Nori pamatyti, kada bus kita pertrauka? Tiesiog užvesk pelytę ant programos ikonėlės užduočių juostoje.",
-    "tray2Title": "",
-    "tray2Text": "Tavo dienotvarkė neatitinką nustatymų? Ruošiesi rodyti prezentaciją? Užmigdyk stretchly tam tikram laikui. Tau reikalinga įdėja poilsiui? Spustelk ikonėlę užduočių juostoje, kur galėsi atlikti visą tai.",
-    "settings1Title": "",
-    "settings1Text": "Jeigu pastebėjai, kad nuolait praleidi pertraukas, pažaisk su nustatymais ir pasirink pertraukų laiko intervalus, kurie tiks tau. Arba įjunk griežtą režimą, kur tau neleis praleisti pertraukų. Tavo protas ir kūnas tau padėkos. ",
-    "settings2Title": "",
-    "settings2Text": "Mums visiems patinka spalvų paletės garsų schemos pertraukų pabaigai, todėl mes nesugebėjome jų nustatyti kaip numatytuojų. Padaryk dieną geresne ir išsirink savo favoritus.",
-    "settings3Title": "",
-    "settings3Text": "Paskutiniame nustatymų puslapyje tu gali pakeisti programėlės kalbą ir kelis papildomus nustatymus. Tikriausiai tau nereikės jų keisti, bet hej, kodėl jų neperžiūrėjus?",
-    "thanksTitle": "Ačiū!",
-    "thanksText": "Mes skiriame daug pastangų, kad priminti tau daryti pertraukas. Mes tikimės, kad stretchly padės tau valdyti labiau subalansuotą gyvenimą. Jeigu taip ir yra, tu gali mus paremti spustelėjus 'Tapti Patron' mygtuką užduočių juostoje."
   }
 }

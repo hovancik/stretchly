@@ -131,28 +131,5 @@
     "readTutorial": "Let stretchly become your favorite app and take a little bit of time to make it your own. Learn how to personalize stretchly in a quick tutorial.",
     "tutorial": "tutorial",
     "skipTutorial": "Skip the tutorial, I can always find it again in the About window"
-  },
-  "tutorial": {
-    "title": "stretchly tutorial",
-    "welcomeTitle": "stretchly tutorial",
-    "welcomeText": "Taking regular breaks and microbreaks makes you more effective - that is science. But only you know your flow. Get to know stretchly with this quick tutorial and make it your way.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly is meant to be unobtrusive, so you won't see any windows when you start it. By default you'll get a 20-second microbreak every 10 minutes and a 5-minute break after 2 microbreaks.",
-    "breaksTitle": "",
-    "breaksText": "During breaks you'll see ideas to help you relax. You'll also see the remaining time. You can skip it, but why would you? Breaks help with better stress control, relieve your tired eyes and give you a chance to move your body. Why skip the chance to be more focused and creative?",
-    "notificationsTitle": "",
-    "notificationsText": "A notification is shown 10 seconds before a microbreak and 30 seconds before a break, so you can avoid the temptation to skip the break because you <i>really-need-just-30-seconds-to-finish-this</i>.",
-    "tray1Title": "",
-    "tray1Text": "Want to see when the next break is coming? Hover over the icon in your tray.",
-    "tray2Title": "",
-    "tray2Text": "Is your flow different? Are you about to present something? Snooze stretchly for a period of time. Need a quick break idea? Click on the tray menu and you can do all of it. You can even reset breaks as if you were just starting.",
-    "settings1Title": "",
-    "settings1Text": "If you find yourself constantly skipping breaks, play with the settings and choose the timing and breaks that suit you. Or turn on so-called 'strict mode' where you are not allowed to skip breaks. Your body and mind will thank you.",
-    "settings2Title": "",
-    "settings2Text": "We love all the color schemes and sounds at the end of a break, so we couldn't decide which one to put on default. Make our day and pick your favourite, so they won't feel left out.",
-    "settings3Title": "",
-    "settings3Text": "On the last settings page, you can change the language of the interface and other miscellaneous settings. You probably won't need to change them, but hey, why not check them out?",
-    "thanksTitle": "Thanks!",
-    "thanksText": "Every month, it takes a lot of work to remind you to take a break. We hope stretchly will help you live a more balanced life. If stretchly has helped you, you can support us with the 'Become a Patron' button in the tray menu."
   }
 }

@@ -134,28 +134,5 @@
     "readTutorial": "Udělejte si ze stretchly svou oblíbenou aplikaci tím, že jí přizpůsobíte svým potřebám. Naučíte se to v tomto stručném úvodu.",
     "tutorial": "stručný úvod",
     "skipTutorial": "přeskočit stručný úvod – případně k nalezení v okně O aplikaci"
-  },
-  "tutorial": {
-    "title": "stručný úvod do stretchly",
-    "welcomeTitle": "stručný úvod do stretchly",
-    "welcomeText": "Děláním pravidelných přestávek a mikropřestávek jste efektivnější – to je vědecky dokázáno. Ale pouze pokud znáte svůj způsob práce. Pomocí tohoto stručného úvodu poznejte stretchly a přizpůsobte si ho.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly je zamýšleno aby bylo nerušivé, proto při jeho spuštění neuvidíte žádné jeho okno. Ve výchozím stavu obdržíte 20 sekundovou mikropřestávku každých 10 minut a 5 minutovou přestávku po 2 mikro.",
-    "breaksTitle": "",
-    "breaksText": "Okna s přestávkami obsahují nápady, které pomohou odpočívat. Zobrazen je také zbývající čas přestávky. Můžete ji přeskočit, ale proč byste to měli dělat? Přestávky pomohou lépe zvládat stres, uleví vašim unaveným očím a poskytnou prostor pro pohyb. Proč přeskočit šanci být více soustředění a tvořiví?",
-    "notificationsTitle": "",
-    "notificationsText": "10 sekund před mikro a 30 sekund před přestávkou je zobrazeno upozornění, díky kterému se vyhnete pokušení přeskočit přestávku z důvodu že <i>potřebujete opravdu jenom 30 sekund na dokončení toho, co právě děláte</i>.",
-    "tray1Title": "",
-    "tray1Text": "Chcete vědět, kdy přijde příští přestávka? Najeďte ukazatelem myši na ikonu v oznamovací oblasti systémového panelu.",
-    "tray2Title": "",
-    "tray2Text": "Je váš způsob práce jiný? Chcete zrovna něco představit ostatním? Na nějaký čas stretchly pozastavte. Potřebujete nápad na rychlou přestávku? Klikněte na nabídku v oznamovací oblasti systémového panelu a můžete toto všechno udělat. I resetování přestávek, jako byste právě začali.",
-    "settings1Title": "",
-    "settings1Text": "Pokud zjistíte, že přestávky neustále přeskakujete, upravte si nastavení a zvolte časování a přestávky tak, aby vám vyhovovaly. Nebo zapněte tzv. „nesmlouvavý režim“ ve kterém není možné přeskakovat přestávky. Vaše tělo a mysl vám poděkují. ",
-    "settings2Title": "",
-    "settings2Text": "Máme rádi všechna barevná schémata a zvuky pro konec přestávky, takže se nemůžeme rozhodnout, které udělat výchozím. Vylepšete si den a zvolte si své oblíbené, takže na ně dojde.",
-    "settings3Title": "",
-    "settings3Text": "Na poslední stránce nastavení je možné změnit jazyk rozhraní a nějaká další nastavení. Nejspíš je nepotřebujete měnit, ale proč se do nich nepodívat?",
-    "thanksTitle": "Díky!",
-    "thanksText": "Každý měsíc zabere mnoho práce připomínat vám, abyste si dělali přestávky. Doufáme, že stretchly vám pomůže vést lépe vyvážený život. Pokud se to daří, můžete nás podpořit prostřednictvím tlačítka „Stát se Patronem“ v nabídce ikony v oznamovací oblasti systémového panelu."
   }
 }

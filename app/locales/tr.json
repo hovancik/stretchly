@@ -131,28 +131,5 @@
     "readTutorial": "stretchly'nin favori uygulamanız olması için biraz vakit ayırıp onu kişiselleştirin.",
     "tutorial": "öğretici",
     "skipTutorial": "öğreticiyi atla, ona hakkında menüsünden her zaman ulaşabilirim"
-  },
-  "tutorial": {
-    "title": "stretchly öğreticisi",
-    "welcomeTitle": "stretchly öğreticisi",
-    "welcomeText": "Düzenli molalar sizin daha verimli olmanızı sağlar - bu bilimseldir. Ama kendi akışınızı sadece siz bilirsiniz. stretchly'yi bu öğretici ile tanıyın ve kendinize göre uyarlayın.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly kasıtlı olarak dikkat çekmemek üzere geliştirildi, bu yüzden onu başlattığınızda hiç bir pencere görmezsiniz. Varsayılan olarak 20 saniyede bir kısa mola ve her iki kısa molada 5 dakikalık bir mola vermenizi sağlar.",
-    "breaksTitle": "",
-    "breaksText": "Mola pencereleri rahatlamanızı sağlayan fikirler verir. Ayrıca kalan mola süresini de görürsünüz. İsterseniz molayı atlayabilirsiniz, ama bunu niye yapasınız ki? Molalar stres kontrolüne yardım eder, yorulmuş gözlerinizi rahatlatır ve vücudunuzu hareket ettirmeniz için bir fırsat verir. Daha odaklı ve kreatif olma fırsatını niçin atlayalım?",
-    "notificationsTitle": "",
-    "notificationsText": "Bildirimler kısa molalardan 10 saniye önce molalardan ise 30 saniye önce gösterilir. Böylece molayı atlamanın cezbediciliğinden kaçınırsınız, çünkü <i>bunu-bitirmek-için-sadece-30-saniyeniz-var</i>.",
-    "tray1Title": "",
-    "tray1Text": "Bir sonraki aranın ne zaman olacağını görmek ister misiniz? Fareyi sistem çubuğundaki ikonun üzerine getirin.",
-    "tray2Title": "",
-    "tray2Text": "Akışınız farklı mı? Bir sunum yapmak üzere misiniz? stretchly'yi bir süreliğine durdurun. Bir mola fikrine mi ihtiyacınız var. Görev çubuğundaki ikona tıklatıp açılan menüden bunların hepsini yapabilirsiniz. Hatta molaları daha yeni başlıyormuşsunuz gibi sıfırlayabilirsiniz.",
-    "settings1Title": "",
-    "settings1Text": "Eğer sürekli molaları atlıyorsanız, ayarlardan size uygun zamanlamayı ve molaları seçin. Molaların atlanmasına izin verilmeyen katı modu etkinleştirin. Vücudunuz ve zihniniz size minnettar olacaktır. ",
-    "settings2Title": "",
-    "settings2Text": "Hepimiz renk şemalarını ve mola sonu seslerini seviyoruz, bu yüzden varsayılan olarak hangisini seçeceğimize karar veremedik. Favorinizi seçin ki bu da aradan çıksın.",
-    "settings3Title": "",
-    "settings3Text": "Son ayarlar sayfasında dil seçimini ve bir takım ek ayarları değiştirebilirsiniz. Muhtemelen bunları değiştirmeye ihtiyacınız olmayacak, ama yine de, niçin bir göz atmayalım?",
-    "thanksTitle": "Teşekkürler!",
-    "thanksText": "Size bir ara vermeyi hatırlatmak için her ay yapılacak bir çok iş çıkıyor. Umuyoruz ki stretchly daha dengeli bir hayat sürmenize yardım eder. Eğer siz de böyle düşünüyorsanız görev çubuğundaki ikon münüsünden 'Hami olun' butonu ile destek olabilirsiniz."
   }
 }
