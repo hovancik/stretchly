@@ -197,17 +197,25 @@ button {
   letter-spacing: -0.08px;
   text-align: center;
   outline: none;
+  min-width: 139px;
+  min-height: 19px;
 }
 
 button:hover {
   cursor: pointer;
-  /* TODO */
 }
 
 button:active {
-  background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
-  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  background-image: linear-gradient(180deg, #84bffb 0%, #1a88ff 100%);
   border-radius: 3.5px;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  color: #FFFFFF;
+}
+
+.push {
+  background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
+  border-radius: 3.5px;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
   color: #FFFFFF;
 }
 
