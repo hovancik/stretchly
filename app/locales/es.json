@@ -131,28 +131,5 @@
     "readTutorial": "Deja que stretchly se vuelva tu aplicación favorita tomando el tiempo y haciendolo tuyo. Aprende a personalizarla en una tutorial rápida.",
     "tutorial": "tutorial",
     "skipTutorial": "saltear tutorial, siempre la puedo encontrar en el menú Acerca de"
-  },
-  "tutorial": {
-    "title": "tutorial de stretchly",
-    "welcomeTitle": "tutorial de stretchly",
-    "welcomeText": "Tomar descansos y microdescansos regularmente te vuelve más eficiente. Pero sólo tú conoces tu rutina. Conoce stretchly con esta tutorial rápida y hazlo a tu manera.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly pretende no ser invasivo. Por defecto obtienes 20 segundos de microdescanso cada 10 minutos y descansos de 5 minutos después de 2 microdescansos.",
-    "breaksTitle": "",
-    "breaksText": "Las ventanas de descanso contienen ideas que te ayudan a relajarte. También verás el tiempo restante. Puedes saltearlo, pero por qué lo harías? Los descansos ayudan a controlar el estrés, relajar la vista y te dan una oportunidad de mover tu cuerpo. Por qué dejar pasar la oportunidad de ser más enfocado y creativo?",
-    "notificationsTitle": "",
-    "notificationsText": "Se muestra una notificación 10 segundos antes de un microdescanso y 30 segundos antes de un descanso, para que puedas evitar la tentación de saltear un descanso porque <i>realmente-necesito-sólo-30-segundos-más-para-terminar-esto</i>.",
-    "tray1Title": "",
-    "tray1Text": "Quieres ver cuánto falta para el próximo descanso? Desliza el cursor sobre el ícono.",
-    "tray2Title": "",
-    "tray2Text": "Tu rutina es diferente? Estás por hacer una presentación? Postpone stretchly por un período de tiempo. Necesitas una idea rápida de descanso? Haz click en el ícono y puedes hacer todo eso. Incluso reiniciar los descansos como si recién empezaras.",
-    "settings1Title": "",
-    "settings1Text": "Si te encuentras salteando descansos constantemente, juega con las configuraciones y elige los tiempos y descansos que se ajusten a tí. O enciende el llamado 'modo estricto' donde no puedes saltear descansos. Tu cuerpo y mente te lo agradecerán. ",
-    "settings2Title": "",
-    "settings2Text": "Amamos todos los esquemas de colores y sonidos para el fin del descanso, así que no nos decidimos cuál usar por defecto. Complácenos y elige tus favoritos, así no quedan de lado.",
-    "settings3Title": "",
-    "settings3Text": "En la última página de configuraciones, puedes cambiar el idioma de la interfaz y algunas otras cosas. Probablemente no necesites cambiarlas, pero, ey, por qué no verlas?",
-    "thanksTitle": "Gracias!",
-    "thanksText": "Cada mes, toma mucho esfuerzo recordarte que te tomes un descanso. Esperamos que stretchly te ayude a llevar una vida más balanceada. Si es así, puede ayudarme yendo a 'Hazte Patron' en el ícono."
   }
 }

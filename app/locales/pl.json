@@ -131,28 +131,5 @@
     "readTutorial": "Spraw by stretchly stało się Twoją ulubioną aplikacją poprzez dostowanie jej do swoich potrzeb. Krótki tutorial w tym pomoże.",
     "tutorial": "tutorial",
     "skipTutorial": "pomiń tutorial, zawsze można do niego wrócić z okna O stretchly"
-  },
-  "tutorial": {
-    "title": "tutorial stretchly",
-    "welcomeTitle": "tutorial stretchly",
-    "welcomeText": "Regularne przerwy i mikroprzerwy czynią Cię bardziej efektywnym - tak mówi nauka. Ale nikt nie zna Ciebie lepiej niż Ty sam. Poznaj stretchly w tym krótkim tutorialu i dostosuj go do siebie.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly ma pomagać, nie przeszkadzać w pracy. Dlatego nie zobaczysz żadnych okein podczas startu aplikacji. Domyślnie dostajesz 20-sekundowe mikroprzerwy co 10 minut i 5-minutowe przerwy po 2 mikroprzerwach.",
-    "breaksTitle": "",
-    "breaksText": "Okienka przerw zawierają pomysły na odpoczynek. Pokazują też pozostały czas. Możesz je pominąć, ale po co? Przerwy pomagają na stres, dają szansę oczom na odpoczynek i dają szansę na ruszenie się z krzesła. Nie warto pomijać szanse na większe skupienie i kreatywność.",
-    "notificationsTitle": "",
-    "notificationsText": "Notyfikacje powiadamiają o mikroprzerwie na 10 sekund przed, a o przerwie na 30 sekund przed. Koniec z wymówkami w stylu <i>potrzebuję-jeszcze-30-sekund-żeby-to-skończyć</i>",
-    "tray1Title": "",
-    "tray1Text": "Chcesz się dowiedzieć za ile następna przerwa? Najedź na ikonę w trayu.",
-    "tray2Title": "",
-    "tray2Text": "Pracujesz inaczej? Masz prezentację? Spauzuj stretchly. Potrzebujesz krótkiej przerwy teraz? Kliknij ikonę w trayu aby rozpocząć ręcznie. Możesz też zresetować przerwy, tak jakbyś dopiero zaczął.",
-    "settings1Title": "",
-    "settings1Text": "Jeśli okazuje się że ciągle pomijasz przerwy, spróbuj edytować ustawienia przerw. Albo wyłącz możliwość pomijania przerw w ogóle. Twoje ciało i rozum Ci podziękują. ",
-    "settings2Title": "",
-    "settings2Text": "Wszystkie przygotowane motywy i dźwięki są super, więc żadne nie jest domyślne. Wybierz swoje ulubione.",
-    "settings3Title": "",
-    "settings3Text": "Na ostatniej stronie ustawień, moeżesz zmienić język interfejsu i parę innych rzeczy. Prawdobodobnie nie musisz ich zmieniać, ale warto chociaż je zobaczyć.",
-    "thanksTitle": "Dzięki!",
-    "thanksText": "Każdego miesiąca sporo pracy kosztuje przypominanie Ci o przerwach. Mamy nadzieję, że stretchly pomoże Ci lepiej zbalansować życie. Jeśli masz ochotę mżesz wspierać rozwój Zostając Patronem."
   }
 }

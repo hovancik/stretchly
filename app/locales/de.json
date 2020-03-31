@@ -131,28 +131,5 @@
     "readTutorial": "Lassen Sie stretchly Ihre Lieblings-App werden, indem Sie es ganz für sich anpassen. Lernen Sie in einem kurzen Tutorial, wie Sie stretchly personalisieren können.",
     "tutorial": "Tutorial",
     "skipTutorial": "Tutorial überspringen; ich kann es im \"Über\"-Fenster nachholen"
-  },
-  "tutorial": {
-    "title": "stretchly Tutorial",
-    "welcomeTitle": "stretchly Tutorial",
-    "welcomeText": "Regelmäßige Pausen und Mikropausen machen Sie effektiver - das ist erwiesen. Aber nur Sie kennen Ihren Arbeitsablauf. Lernen Sie stretchly mit diesem kurzen Tutorial kennen und stellen Sie es für sich ein.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly soll unaufdringlich sein, daher werden Sie beim Starten kein Fenster sehen. Standardmäßig bekommen Sie eine 20-sekündige Mikropause alle 10 Minuten und eine 5-minütige Pause nach zwei Mikropausen.",
-    "breaksTitle": "",
-    "breaksText": "Pausenfenster zeigen Ihnen Ideen zum Entspannen. Außerdem sehen Sie die verbleibende Pausenzeit. Sie können sie überspringen, aber warum sollten Sie? Pausen helfen Ihnen, Stress abzubauen, Ihre müden Augen zu entspannen und sich zu bewegen. Warum die Möglichkeit auslassen, konzentrierter und kreativer zu sein?",
-    "notificationsTitle": "",
-    "notificationsText": "10 Sekunden vor einer Mikropause und 30 Sekunden vor einer Pause wird eine Benachrichtigung angezeigt. So können Sie der Versuchung widerstehen, die Pause zu überspringen, weil Sie <i>wirklich nur noch 30 Sekunden brauchen, um hiermit fertig zu werden</i>.",
-    "tray1Title": "",
-    "tray1Text": "Wollen Sie wissen wann die nächste Pause kommt? Bewegen Sie den Mauszeiger auf das Icon in der Menüleiste.",
-    "tray2Title": "",
-    "tray2Text": "Ist Ihr Arbeitsablauf anders? Haben Sie eine Präsentation? Stellen Sie stretchly für eine Weile ab. Brauchen Sie schnell eine Pausenidee? Klicken Sie einfach auf das App-Icon. Sie können sogar die Pausen zurücksetzen, so als würden Sie gerade erst beginnen.",
-    "settings1Title": "",
-    "settings1Text": "Wenn Sie sich dabei erwischen, dass Sie ständig Pausen überspringen, dann stellen Sie einfach Pausenzeiten und -abstände passend ein. Oder stellen Sie den \"strengen Modus\" ein, der das Überspringen von Pausen verbietet. Ihr Körper und Ihr Geist werden es Ihnen danken. ",
-    "settings2Title": "",
-    "settings2Text": "Wir lieben all die Farbschemata und die Geräuscheffekte beim Pausenende, deshalb konnten wir uns nicht entscheiden, welches der Standard sein soll. Retten Sie unseren Tag und wählen Sie Ihren Favoriten!",
-    "settings3Title": "",
-    "settings3Text": "Auf der letzten Seite der Einstellungen können Sie die Sprache und einige weitere Optionen ändern. Vermutlich werden Sie das nicht müssen, aber warum nicht einen Blick darauf werfen?",
-    "thanksTitle": "Danke!",
-    "thanksText": "Jeden Monat ist viel Arbeit nötig, um Sie an Ihre Pausen zu erinnern. Wir hoffen, dass stretchly Ihnen helfen wird, ein ausgeglicheneres Leben zu führen. Wenn dem so ist, können Sie mich mit dem \"Werde ein Patron\"-Button in der Menüleiste unterstützen."
   }
 }

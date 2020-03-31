@@ -131,28 +131,5 @@
     "readTutorial": "Lad stretchly blive din favorit app ved, at tage tiden tilbage og gøre den til din egen. Lær hvordan du kan personliggøre den med en hurtigt vejledning.",
     "tutorial": "vejledning",
     "skipTutorial": "skip vejledningen, men kan altid findes i Om vinduet"
-  },
-  "tutorial": {
-    "title": "stretchly vejledning",
-    "welcomeTitle": "stretchly vejledning",
-    "welcomeText": "At tage normale pauser og mikropauser kan gøre dig mere effektiv - det er videnskab. Men det er kun dig der kender din arbejdsrytme. Lær stretchly at kende med denne hurtige vejledning og tilpas den til dig.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly er lavet til ikke at være stilfærdig, så du vil ikke se nogle vinduer når du starter det. Som standard vil du få 20 sekunders mikropauser hvert 10 minut og 5 minutters pause efter 2 mikropauser.",
-    "breaksTitle": "",
-    "breaksText": "Pause vinduer indeholder idéer til at hjælpe dig med at slappe af. Du vil også kunne se tiden der er tilbage. Du kan springe pausen over, men hvorfor vil du det? Pauser hjælper med bedre stress kontrol, lindrer dine trætte øjne og giver dig en chance for, at flytte din krop. Hvorfor springe chancen over for at blive mere fokuseret og kreativ?",
-    "notificationsTitle": "",
-    "notificationsText": "Notifikationer vises 10 sekunder før mikropauser og 30 sekunder før pauser, så du kan undgå fristelsen med at springe pauserne over fordi du <i>virkelig-bare-mangler-30-sekunder-for-at-blive-færdige</i>.",
-    "tray1Title": "",
-    "tray1Text": "Vil du se hvornår den næste pause kommer? Hold over ikonet i din processerlinje",
-    "tray2Title": "",
-    "tray2Text": "Er din arbejdsrytme anderledes? Er du ved at skulle præsentere noget? Udsæt stretchly i en periode. Mangler du en hurtigt pause ide? Klik på processerlinjen og du kan gøre alt dette. Du kan også nustille pauserne som om du lige er startet",
-    "settings1Title": "",
-    "settings1Text": "Hvis du konstant springer pauserne over, så prøv at juster på indstillingerne og brug den tids periode der passer dig. Eller skift til 'streng tilstand' hvor du ikke kan springe pauser over. Din krop og sind vil takke dig senere. ",
-    "settings2Title": "",
-    "settings2Text": "Vi elsker alle farve og lyd indstillingerne, så vi kunne ikke vælge hvilken en der skulle være standard. Hjælp os og vælg din egen favorit, så de ikke bliver valgt fra.",
-    "settings3Title": "",
-    "settings3Text": "På sidste indstillings side kan du skifte sprog for interfacet og nogle ekstra indstillinger. Du behøver nok ikke at ændre dem, men hvorfor ikke lige kigge dem igennem?",
-    "thanksTitle": "Tak!",
-    "thanksText": "Hver måned tager det masser af arbejde, at minde dig om at holde pauser. Vi håber at stretchly vil hjælpe dig til et mere balanceret liv. Hvis du føler for det så kan du støtte mig med 'Become a Patron' knappen i processerlinjen."
   }
 }

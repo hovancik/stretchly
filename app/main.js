@@ -21,7 +21,6 @@ let microbreakWins = null
 let breakWins = null
 let aboutWin = null
 let preferencesWin = null
-let tutorialWin = null
 let welcomeWin = null
 let contributorSettingsWindow = null
 let settings
@@ -221,27 +220,6 @@ function createWelcomeWindow () {
         welcomeWin = null
       })
     }
-  }
-}
-
-function createTutorialWindow () {
-  const modalPath = `file://${__dirname}/tutorial.html`
-  tutorialWin = new BrowserWindow({
-    x: displaysX(),
-    y: displaysY(),
-    resizable: false,
-    autoHideMenuBar: true,
-    icon: `${__dirname}/images/windowIcon.png`,
-    backgroundColor: settings.get('mainColor'),
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
-  tutorialWin.loadURL(modalPath)
-  if (tutorialWin) {
-    tutorialWin.on('closed', () => {
-      tutorialWin = null
-    })
   }
 }
 
@@ -1005,10 +983,6 @@ ipcMain.on('show-debug', function (event) {
   const settingsFile = path.join(dir, 'config.json')
   event.sender.send('debugInfo', reference, timeleft,
     breaknumber, postponesnumber, settingsFile, doNotDisturb)
-})
-
-ipcMain.on('open-tutorial', function (event) {
-  createTutorialWindow()
 })
 
 ipcMain.on('open-preferences', function (event) {

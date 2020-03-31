@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - notify of new version only if new version is higher then current
 
+### Removed
+- removed tutorial, now linking to Features webpage
+
 ## [0.21.1] - 2020-01-16
 ### Changed
 - Italian translations updated

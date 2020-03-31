@@ -131,28 +131,5 @@
     "readTutorial": "Fai diventare stretchly la tua app preferita dedicandogli del tempo per renderla tua. Impara come personalizzarla con questo breve tutorial.",
     "tutorial": "tutorial",
     "skipTutorial": "salta il tutorial, lo puoi sempre trovare nella finestra delle Informazioni"
-  },
-  "tutorial": {
-    "title": "stretchly tutorial",
-    "welcomeTitle": "stretchly tutorial",
-    "welcomeText": "Prendersi delle pause e micropause in modo regolare ti rende più efficace - lo dice la scienza. Ma solo tu conosci il tuo ritmo. Impara l'uso di stretchly con questo veloce tutorial e rendilo su misura per te.",
-    "defaultsTitle": "",
-    "defaultsText": "stretchly è pensato per essere discreto, quindi non vedrai nessuna finestra quando lo avvii. Quello che avrai di default sono delle micropause di 20 secondi ogni 10 minuti e 5 minuti di pausa dopo 2 micropause.",
-    "breaksTitle": "",
-    "breaksText": "nelle finestre di pausa troverai dei suggerimenti per aiutarti a rilassarti. Viene indicato anche il tempo rimanente. Puoi saltarlo, ma perché dovresti? Le pause aiutano a migliorare il controllo dello stress, fanno riposare i tuoi occhi stanchi e ti danno la possibilità di muovere il tuo corpo. Perché saltare la possibilità di essere più concentrati e creativi?",
-    "notificationsTitle": "",
-    "notificationsText": "Un avviso viene visualizzato 10 secondi prima del micropausa e 30 secondi prima della pausa, quindi puoi evitare la tentazione di saltare le pause perché <i>hai-davvero-bisogno-di-solo-30-secondi-per-finire</i>.",
-    "tray1Title": "",
-    "tray1Text": "Vuoi vedere quando arriverà la prossima pausa? Passa il mouse sull'icona della app nella barra.",
-    "tray2Title": "",
-    "tray2Text": "Il tuo ritmo è cambiato? Devi fare una presentazione di qualcosa? Metti in pausa stretchly per un periodo di tempo. Hai bisogno di una pausa veloce per un'idea? Fai clic sul menu della app e puoi fare tutto. Anche azzerare le pause come se stesti iniziando ora.",
-    "settings1Title": "",
-    "settings1Text": "Se ti trovi costantemente a saltare le pause, modifica le impostazioni e scegli i tempi e le pause che più ti si addicono. Oppure attiva la cosiddetta 'modalità rigorosa' con cui non puoi saltare le pause. Il tuo corpo e la tua mente ti ringrazieranno.",
-    "settings2Title": "",
-    "settings2Text": "Amiamo tutte le combinazioni di colori ed i suoni alla fine della pausa, quindi non abbiamo saputo decidere quali impostare come predefiniti. Facci felici e scegli il tuo preferito.",
-    "settings3Title": "",
-    "settings3Text": "Nell'ultima pagina delle impostazioni, puoi cambiare la lingua del programma ed alcune impostazioni aggiuntive. Probabilmente non avrai bisogno di cambiarle, ma ehi, perché non dargli un'occhiata?",
-    "thanksTitle": "Grazie!",
-    "thanksText": "Ogni mese occorre molto lavoro per ricordarti di fare una pausa. Speriamo che tutto ciò ti possa aiutare a condurre una vita più equilibrata. Se è così puoi aiutarmi con il pulsante 'Diventa un sostenitore' nel menu della barra."
   }
 }
