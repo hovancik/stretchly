@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 300;
   src: local('Open Sans Light'), local('OpenSans-Light'),
-       url('./fonts/open-sans-v17-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/open-sans-v17-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-regular - latin */
@@ -14,8 +14,8 @@
   font-style: normal;
   font-weight: 400;
   src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('./fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 .darwin .darwin-hidden,
@@ -197,17 +197,25 @@ button {
   letter-spacing: -0.08px;
   text-align: center;
   outline: none;
+  min-width: 139px;
+  min-height: 19px;
 }
 
 button:hover {
   cursor: pointer;
-  /* TODO */
 }
 
 button:active {
-  background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
-  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  background-image: linear-gradient(180deg, #84bffb 0%, #1a88ff 100%);
   border-radius: 3.5px;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  color: #FFFFFF;
+}
+
+.push {
+  background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
+  border-radius: 3.5px;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
   color: #FFFFFF;
 }
 

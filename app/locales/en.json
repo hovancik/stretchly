@@ -151,13 +151,11 @@
     "newVersionAvailable": "New version is available!"
   },
   "welcome": {
-    "title": "welcome to stretchly",
-    "stretchly": "welcome to stretchly",
-    "breakTimeReminderApp": "break time reminder app",
-    "chooseLanguage": "To start, please choose the language you would like to use with stretchly:",
-    "readTutorial": "Let stretchly become your favorite app and take a little bit of time to make it your own. Learn how to personalize stretchly in a quick tutorial.",
-    "tutorial": "tutorial",
-    "skipTutorial": "Skip the tutorial, I can always find it again in the About window"
+    "title": "Welcome to Stretchly",
+    "breakTimeReminderApp": "The break time reminder app",
+    "viewTutorial": "View Tutorial",
+    "openPreferences": "Open Preferences",
+    "getStarted": "Get Started"
   },
   "tutorial": {
     "title": "stretchly tutorial",
