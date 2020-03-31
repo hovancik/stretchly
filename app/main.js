@@ -205,22 +205,22 @@ function createWelcomeWindow () {
   if (settings.get('isFirstRun')) {
     const modalPath = `file://${__dirname}/welcome.html`
     welcomeWin = new BrowserWindow({
-      x: displaysX(),
+      x: displaysX(-1, 1000),
       y: displaysY(),
-      resizable: false,
+      width: 1000,
       autoHideMenuBar: true,
       icon: `${__dirname}/images/windowIcon.png`,
-      backgroundColor: settings.get('mainColor'),
+      backgroundColor: 'EDEDED',
       webPreferences: {
         nodeIntegration: true
       }
     })
     welcomeWin.loadURL(modalPath)
-  }
-  if (welcomeWin) {
-    welcomeWin.on('closed', () => {
-      welcomeWin = null
-    })
+    if (welcomeWin) {
+      welcomeWin.on('closed', () => {
+        welcomeWin = null
+      })
+    }
   }
 }
 
@@ -653,7 +653,7 @@ function showAboutWindow () {
   })
 }
 
-function showPreferencesWindow () {
+function createPreferencesWindow () {
   if (preferencesWin) {
     preferencesWin.show()
     return
@@ -800,7 +800,7 @@ function getTrayMenu () {
   trayMenu.push({
     label: i18next.t('main.preferences'),
     click: function () {
-      showPreferencesWindow()
+      createPreferencesWindow()
     }
   })
 
@@ -1009,6 +1009,10 @@ ipcMain.on('show-debug', function (event) {
 
 ipcMain.on('open-tutorial', function (event) {
   createTutorialWindow()
+})
+
+ipcMain.on('open-preferences', function (event) {
+  createPreferencesWindow()
 })
 
 ipcMain.on('open-contributor-settings', function (event) {

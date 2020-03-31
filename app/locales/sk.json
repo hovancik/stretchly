@@ -119,8 +119,8 @@
       "invertedMonochrome": "Inverted Monochrome"
     },
     "about": {
-      "tagline": "The break time reminder app",
-      "version": "Version ",
+      "tagline": "Pamätá si prestávky za vás",
+      "version": "Verzia ",
       "latestVersion": "Latest version ",
       "checkForUpdates":"Automatically check for app updates",
       "checkNow": "Check now",
@@ -196,13 +196,11 @@
     "newVersionAvailable": "Je dostupná nová verzia!"
   },
   "welcome": {
-    "title": "vitajte v stretchly",
-    "stretchly": "vitajte v stretchly",
-    "breakTimeReminderApp": "pamätá si prestávky za vás",
-    "chooseLanguage": "Prosím, vyberte azyk, ktorý by ste chceli používať so stretchly",
-    "readTutorial": "Prispôsobte si stretchly a nechajte ju byť svojou obľúbenou aplikáciou. Naučte sa ako v krátkom tutoriále.",
-    "tutorial": "tutoriál",
-    "skipTutorial": "preskočiť tutoriál, môžem ho neskôr nájsť v okne O stretchly"
+    "title": "Vitajte v Stretchly",
+    "breakTimeReminderApp": "Pamätá si prestávky za vás",
+    "viewTutorial": "Prezrieť Tutoriál",
+    "openPreferences": "Otvoriť Nastavenia",
+    "getStarted": "Pokračovať"
   },
   "tutorial": {
     "title": "stretchly tutoriál",
