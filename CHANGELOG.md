@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+### Changed
+- restyle Welcome window
+
+### Removed
+- removed tutorial, now linking to Features webpage
+
 ## [0.99.0] - 2020-03-19
 ### Changed
 - default icon is colorful
@@ -15,9 +22,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - notify of new version only if new version is higher then current
-
-### Removed
-- removed tutorial, now linking to Features webpage
 
 ## [0.21.1] - 2020-01-16
 ### Changed
