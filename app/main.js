@@ -1,15 +1,20 @@
 // process.on('uncaughtException', (...args) => console.error(...args))
-const { app, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
+const { app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 
 startI18next()
 
+nativeTheme.on('updated', function theThemeHasChanged () {
+  appIcon.setImage(trayIconPath())
+})
+
 const AppSettings = require('./utils/settings')
 const Utils = require('./utils/utils')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
+const AppIcon = require('./utils/appIcon')
 const { UntilMorning } = require('./utils/untilMorning')
 
 let microbreakIdeas
@@ -166,29 +171,32 @@ function createTrayIcon () {
 }
 
 function trayIconPath () {
-  const pausedString = breakPlanner.isPaused ? 'Paused' : ''
-  const invertedMonochromeString = settings.get('useMonochromeInvertedTrayIcon') ? 'Inverted' : ''
-
-  const iconFolder = `${__dirname}/images`
-  if (settings.get('useMonochromeTrayIcon')) {
-    if (process.platform === 'darwin') {
-      return `${iconFolder}/trayMacMonochrome${pausedString}Template.png`
-    } else {
-      return `${iconFolder}/trayMonochrome${invertedMonochromeString}${pausedString}.png`
-    }
-  } else {
-    if (process.platform === 'darwin') {
-      return `${iconFolder}/trayMac${pausedString}.png`
-    } else {
-      return `${iconFolder}/tray${pausedString}.png`
-    }
+  const params = {
+    paused: breakPlanner.isPaused,
+    monochrome: settings.get('useMonochromeTrayIcon'),
+    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    darkMode: nativeTheme.shouldUseDarkColors,
+    platform: process.platform
   }
+  const trayIconFileName = new AppIcon(params).trayIconFileName
+  return `${__dirname}/images/app-icons/${trayIconFileName}`
+}
+
+function windowIconPath () {
+  const params = {
+    paused: breakPlanner.isPaused,
+    monochrome: settings.get('useMonochromeTrayIcon'),
+    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    darkMode: nativeTheme.shouldUseDarkColors,
+    platform: process.platform
+  }
+  const windowIconFileName = new AppIcon(params).windowIconFileName
+  return `${__dirname}/images/app-icons/${windowIconFileName}`
 }
 
 function startProcessWin () {
   const modalPath = `file://${__dirname}/process.html`
   processWin = new BrowserWindow({
-    icon: `${__dirname}/images/windowIcon.png`,
     show: false,
     webPreferences: {
       nodeIntegration: true
@@ -208,7 +216,7 @@ function createWelcomeWindow () {
       y: displaysY(),
       width: 1000,
       autoHideMenuBar: true,
-      icon: `${__dirname}/images/windowIcon.png`,
+      icon: windowIconPath(),
       backgroundColor: 'EDEDED',
       webPreferences: {
         nodeIntegration: true
@@ -229,7 +237,7 @@ function createContributorSettingsWindow () {
     x: displaysX(),
     y: displaysY(),
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/windowIcon.png`,
+    icon: windowIconPath(),
     backgroundColor: settings.get('mainColor'),
     webPreferences: {
       nodeIntegration: true
@@ -317,7 +325,7 @@ function startMicrobreak () {
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const windowOptions = {
       autoHideMenuBar: true,
-      icon: `${__dirname}/images/windowIcon.png`,
+      icon: windowIconPath(),
       resizable: false,
       frame: false,
       show: false,
@@ -413,7 +421,7 @@ function startBreak () {
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const windowOptions = {
       autoHideMenuBar: true,
-      icon: `${__dirname}/images/windowIcon.png`,
+      icon: windowIconPath(),
       resizable: false,
       frame: false,
       show: false,
@@ -615,7 +623,7 @@ function showAboutWindow () {
   const modalPath = `file://${__dirname}/about.html`
   aboutWin = new BrowserWindow({
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/windowIcon.png`,
+    icon: windowIconPath(),
     x: displaysX(),
     y: displaysY(),
     resizable: false,
@@ -639,7 +647,7 @@ function createPreferencesWindow () {
   const modalPath = `file://${__dirname}/preferences.html`
   preferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
-    icon: `${__dirname}/images/windowIcon.png`,
+    icon: windowIconPath(),
     width: 600,
     x: displaysX(),
     y: displaysY(),
@@ -792,7 +800,7 @@ function getTrayMenu () {
         autoHideMenuBar: true,
         width: 800,
         height: 600,
-        icon: `${__dirname}/images/windowIcon.png`,
+        icon: windowIconPath(),
         x: displaysX(),
         y: displaysY(),
         resizable: false,

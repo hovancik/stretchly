@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Changed
 - restyle Welcome window
+- replace Build, Window and Tray icons and images
 
 ### Removed
 - removed tutorial, now linking to Features webpage
