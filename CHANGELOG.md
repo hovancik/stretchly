@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - removed tutorial, now linking to Features webpage
 
+### Fixed
+- Adds missing Postpone preferences
+
 ## [0.99.0] - 2020-03-19
 ### Changed
 - default icon is colorful
