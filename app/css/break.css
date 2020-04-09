@@ -41,6 +41,10 @@
   line-height: 18px;
 }
 
+.breaks > :nth-child(2) > a {
+  display: none;
+}
+
 .breaks > :nth-child(2) > a:hover {
   color: #FFFF00;
 }
