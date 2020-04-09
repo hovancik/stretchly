@@ -41,7 +41,7 @@
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
     "electromon": "^1.0.10",
-    "electron": "^8.1.1",
+    "electron": "^8.2.1",
     "electron-builder": "^22.4.1",
     "husky": "^4.2.3",
     "mocha": "^7.1.1",
@@ -134,9 +134,9 @@
   },
   "dependencies": {
     "@meetfranz/electron-notification-state": "^1.0.0",
-    "i18next": "^19.3.3",
+    "i18next": "^19.3.4",
     "i18next-node-fs-backend": "^2.1.3",
     "moment": "^2.24.0",
-    "semver": "^7.1.3"
+    "semver": "^7.2.1"
   }
 }
