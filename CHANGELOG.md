@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.99.1] - 2020-04-09
 ### Changed
 - restyle Welcome window
 - replace Build, Window and Tray icons and images
