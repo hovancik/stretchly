@@ -32,21 +32,19 @@ a {
 /* https://css-tricks.com/html5-progress-element/ */
 progress {
   -webkit-appearance: none;
-  height: 5px;
-  margin-top: 50px;
+  height: 6px;
   width: 50vh;
 }
 
 progress[value]::-webkit-progress-bar {
   background: transparent;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  border-radius: 3px;
+  border: 0.5px solid #bcbcbc;
 }
 
 progress[value]::-webkit-progress-value {
-  background-color: gray;
-  border-radius: 2px;
-  background-size: 35px 20px, 100% 100%, 100% 100%;
+  background-color: #cecece;
+  border-radius: 3px;
 }
 
 /* https://www.codexworld.com/create-simple-css-tooltip/ */
@@ -56,37 +54,37 @@ progress[value]::-webkit-progress-value {
 }
 
 .tooltip .tiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 3px;
-    padding: 6px 0;
-    position: absolute;
-    z-index: 1;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 6px 0;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .tooltip .tiptext::after {
-    content: "";
-    position: absolute;
-    border-width: 5px;
-    border-style: solid;
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
 }
 .tooltip:hover .tiptext {
-    visibility: visible;
+  visibility: visible;
 }
 
 .tooltip.top .tiptext{
-    margin-left: -60px;
-    bottom: 150%;
-    left: 50%;
+  margin-left: -60px;
+  bottom: 150%;
+  left: 50%;
 }
 .tooltip.top .tiptext::after{
-    margin-left: -5px;
-    top: 100%;
-    left: 50%;
-    border-color: #2E2E2E transparent transparent transparent;
+  margin-left: -5px;
+  top: 100%;
+  left: 50%;
+  border-color: #2E2E2E transparent transparent transparent;
 }
 
 /* https://jsbin.com/itejak/1/edit?html,css,output */
