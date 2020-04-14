@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+.breaks > :nth-child(1) > progress {
+  margin-top: 50px;
+}
+
 .breaks > :nth-child(1) >  .microbreak-idea {
   font-size: 30px;
   letter-spacing: 0.44px;

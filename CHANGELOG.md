@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- better style for progress
+
 ## [0.99.1] - 2020-04-09
 ### Changed
 - restyle Welcome window
