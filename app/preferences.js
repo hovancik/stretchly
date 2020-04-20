@@ -46,6 +46,29 @@ ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
   }
 })
 
+ipcRenderer.on('enableContributorPreferences', () => {
+  showContributorPreferencesButton()
+})
+
+const showContributorPreferencesButton = () => {
+  document.querySelector('.contributor').classList.remove('hidden')
+  document.querySelectorAll('.become').forEach((item) => {
+    item.classList.add('hidden')
+  })
+  document.querySelectorAll('.authenticate').forEach((item) => {
+    item.classList.add('hidden')
+  })
+}
+
+if (remote.getGlobal('shared').isContributor) {
+  showContributorPreferencesButton()
+}
+
+document.querySelector('[name="contributorPreferences"]').onclick = (event) => {
+  event.preventDefault()
+  ipcRenderer.send('open-contributor-preferences')
+}
+
 // TODO refactor out?
 const copyToClipBoard = (str) => {
   const el = document.createElement('textarea')
@@ -200,7 +223,7 @@ document.querySelector('[name="alreadyContributor"]').onclick = () => {
 document.querySelectorAll('.authenticate a').forEach((button) => {
   button.onclick = (event) => {
     event.preventDefault()
-    ipcRenderer.send('open-contributor-settings')
+    ipcRenderer.send('open-contributor-auth', button.dataset.provider)
   }
 })
 

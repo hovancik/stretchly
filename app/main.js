@@ -27,14 +27,15 @@ let breakWins = null
 let aboutWin = null
 let preferencesWin = null
 let welcomeWin = null
-let contributorSettingsWindow = null
+let contributorPreferencesWindow = null
 let settings
 let pausedForSuspendOrLock = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
 global.shared = {
-  isNewVersion: false
+  isNewVersion: false,
+  isContributor: false
 }
 
 const gotTheLock = app.requestSingleInstanceLock()
@@ -232,21 +233,22 @@ function createWelcomeWindow () {
 }
 
 function createContributorSettingsWindow () {
-  const modalPath = `file://${__dirname}/contributor-settings.html`
-  contributorSettingsWindow = new BrowserWindow({
-    x: displaysX(),
+  const modalPath = `file://${__dirname}/contributor-preferences.html`
+  contributorPreferencesWindow = new BrowserWindow({
+    x: displaysX(-1, 700),
     y: displaysY(),
+    width: 700,
     autoHideMenuBar: true,
     icon: windowIconPath(),
-    backgroundColor: settings.get('mainColor'),
+    backgroundColor: 'EDEDED',
     webPreferences: {
       nodeIntegration: true
     }
   })
-  contributorSettingsWindow.loadURL(modalPath)
-  if (contributorSettingsWindow) {
-    contributorSettingsWindow.on('closed', () => {
-      contributorSettingsWindow = null
+  contributorPreferencesWindow.loadURL(modalPath)
+  if (contributorPreferencesWindow) {
+    contributorPreferencesWindow.on('closed', () => {
+      contributorPreferencesWindow = null
     })
   }
 }
@@ -649,7 +651,7 @@ function createPreferencesWindow () {
     autoHideMenuBar: true,
     icon: windowIconPath(),
     width: 600,
-    x: displaysX(),
+    x: displaysX(-1, 600),
     y: displaysY(),
     backgroundColor: '#EDEDED',
     webPreferences: {
@@ -791,30 +793,6 @@ function getTrayMenu () {
   })
 
   trayMenu.push({
-    type: 'separator'
-  }, {
-    label: i18next.t('main.yourStretchly'),
-    click: function () {
-      const myStretchlyUrl = 'https://my.stretchly.net'
-      const myStretchlyWindow = new BrowserWindow({
-        autoHideMenuBar: true,
-        width: 800,
-        height: 600,
-        icon: windowIconPath(),
-        x: displaysX(),
-        y: displaysY(),
-        resizable: false,
-        backgroundColor: settings.get('mainColor'),
-        webPreferences: {
-          preload: path.resolve(__dirname, './electron-bridge.js'),
-          nodeIntegration: false
-        }
-      })
-      myStretchlyWindow.loadURL(myStretchlyUrl)
-      // myStretchlyWindow.webContents.openDevTools()
-      // myStretchlyWindow.webContents.session.clearCache(()=> {})
-    }
-  }, {
     type: 'separator'
   }, {
     label: i18next.t('main.quitStretchly'),
@@ -997,6 +975,31 @@ ipcMain.on('open-preferences', function (event) {
   createPreferencesWindow()
 })
 
-ipcMain.on('open-contributor-settings', function (event) {
+ipcMain.on('set-contributor', function (event) {
+  global.shared.isContributor = true
+  if (preferencesWin) {
+    preferencesWin.send('enableContributorPreferences')
+  }
+})
+
+ipcMain.on('open-contributor-preferences', function (event) {
   createContributorSettingsWindow()
+})
+
+ipcMain.on('open-contributor-auth', function (event, provider) {
+  const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
+  const myStretchlyWindow = new BrowserWindow({
+    autoHideMenuBar: true,
+    width: 800,
+    height: 600,
+    icon: windowIconPath(),
+    x: displaysX(),
+    y: displaysY(),
+    backgroundColor: 'whitesmoke',
+    webPreferences: {
+      preload: path.resolve(__dirname, './electron-bridge.js'),
+      nodeIntegration: false
+    }
+  })
+  myStretchlyWindow.loadURL(myStretchlyUrl)
 })
