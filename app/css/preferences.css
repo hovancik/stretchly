@@ -317,6 +317,6 @@ body > .hidden,
 }
 
 .heart > .authenticate > a {
-  text-decoration: none;
   padding-right: 20px;
+  text-decoration: none;
 }

@@ -5,9 +5,13 @@ window.ElectronBridge = {
   //   console.log("Hello World")
   // },
 
-  openContriborSettings () {
-    ipcRenderer.send('open-contributor-settings')
+  showContributorPreferences () {
+    ipcRenderer.send('open-contributor-preferences')
     remote.getCurrentWindow().close()
+  },
+
+  setContributor () {
+    ipcRenderer.send('set-contributor')
   },
 
   openExternal (link) {

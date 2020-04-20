@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title data-i18next="contributorPreferences.title"></title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/contributor.css">
+  </head>
+  <body>
+    <div class="contributor-preferences">
+      <div>
+        <span data-i18next="contributorPreferences.notifications"></span>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.notificationsInfo"></p>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.beforeMiniBreak" for="beforeMiniBreak"></label>
+        <input type="range" min="5" max="120" step="5" list="tickmarksBeforeMiniBreak" name="microbreakNotificationInterval" data-divisor="1000" id="beforeMiniBreak">
+        <datalist id="tickmarksBeforeMiniBreak">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+          <option value="65"></option>
+          <option value="70"></option>
+          <option value="75"></option>
+          <option value="80"></option>
+          <option value="85"></option>
+          <option value="90"></option>
+          <option value="95"></option>
+          <option value="100"></option>
+          <option value="105"></option>
+          <option value="110"></option>
+          <option value="115"></option>
+          <option value="120"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.seconds"></span>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.beforeLongBreak" for="beforeLongBreak"></label>
+        <input type="range" min="5" max="120" step="5" list="tickmarksBeforeLongBreak" name="breakNotificationInterval" data-divisor="1000" id="beforeLongBreak">
+        <datalist id="tickmarksBeforeLongBreak">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+          <option value="65"></option>
+          <option value="70"></option>
+          <option value="75"></option>
+          <option value="80"></option>
+          <option value="85"></option>
+          <option value="90"></option>
+          <option value="95"></option>
+          <option value="100"></option>
+          <option value="105"></option>
+          <option value="110"></option>
+          <option value="115"></option>
+          <option value="120"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.seconds"></span>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.breakPostpone"></span>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.breakPostponeInfo"></p>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.miniBreaks"></p>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.postponableFor" for="miniBreakPostponableDurationPercent"></label>
+        <input type="range" min="5" max="100" step="5" list="tickmarksMiniBreakPostponableDurationPercent" name="microbreakPostponableDurationPercent" data-divisor="1" id="miniBreakPostponableDurationPercent">
+        <datalist id="tickmarksMiniBreakPostponableDurationPercent">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+          <option value="65"></option>
+          <option value="70"></option>
+          <option value="75"></option>
+          <option value="80"></option>
+          <option value="85"></option>
+          <option value="90"></option>
+          <option value="95"></option>
+          <option value="100"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.percent"></span>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.postponeFor" for="miniBreakPostponeTime"></label>
+        <input type="range" min="1" max="10" step="1" list="tickmarksMiniBreakPostponeTime" name="microbreakPostponeTime" data-divisor="60000" id="miniBreakPostponeTime">
+        <datalist id="tickmarksMiniBreakPostponeTime">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.minutes"></span>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.maxPostpones" for="miniBreakPostponesLimit"></label>
+        <input type="range" min="1" max="5" step="1" list="tickmarksMiniBreakPostponesLimit" name="breakPostponesLimit" data-divisor="60000" id="miniBreakPostponesLimit">
+        <datalist id="tickmarksMiniBreakPostponesLimit">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+        </datalist>
+        <output></output>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.longBreaks"></p>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.postponableFor" for="longBreakPostponableDurationPercent"></label>
+        <input type="range" min="5" max="100" step="5" list="tickmarksLongBreakPostponableDurationPercent" name="breakPostponableDurationPercent" data-divisor="1" id="longBreakPostponableDurationPercent">
+        <datalist id="tickmarksLongBreakPostponableDurationPercent">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+          <option value="65"></option>
+          <option value="70"></option>
+          <option value="75"></option>
+          <option value="80"></option>
+          <option value="85"></option>
+          <option value="90"></option>
+          <option value="95"></option>
+          <option value="100"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.percent"></span>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.postponeFor" for="longBreakPostponeTime"></label>
+        <input type="range" min="1" max="10" step="1" list="tickmarksLongBreakPostponeTime" name="breakPostponeTime" data-divisor="60000" id="longBreakPostponeTime">
+        <datalist id="tickmarksLongBreakPostponeTime">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.minutes"></span>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.maxPostpones" for="longBreakPostponesLimit"></label>
+        <input type="range" min="1" max="5" step="1" list="tickmarksLongBreakPostponesLimit" name="breakPostponesLimit" data-divisor="60000" id="longBreakPostponesLimit">
+        <datalist id="tickmarksLongBreakPostponesLimit">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+        </datalist>
+        <output></output>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.naturalBreaks"></span>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.naturalBreaksInfo"></p>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.pauseAfter" for="pauseAfter"></label>
+        <input type="range" min="1" max="10" step="1" list="tickmarksPauseAfter" name="naturalBreaksInactivityResetTime" data-divisor="60000" id="pauseAfter">
+        <datalist id="tickmarksPauseAfter">
+          <option value="1"></option>
+          <option value="2"></option>
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.minutes"></span>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.pauseUntilMoring"></span>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.pauseUntilMorningInfo"></p>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.pauseUntil" for="pauseUntil"></label>
+        <input type="range" min="3" max="10" step="1" list="tickmarksPauseUntil" name="morningHour" data-divisor="1" id="pauseUntil">
+        <datalist id="tickmarksPauseUntil">
+          <option value="3"></option>
+          <option value="4"></option>
+          <option value="5"></option>
+          <option value="6"></option>
+          <option value="7"></option>
+          <option value="8"></option>
+          <option value="9"></option>
+          <option value="10"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.oclock"></span>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.sounds"></span>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="microbreakStartSoundPlaying" id="miniBreakStartSound">
+        <label data-i18next="contributorPreferences.miniBreakStartSound" for="miniBreakStartSound"></label>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="breakStartSoundPlaying" id="longBreakStartSound">
+        <label data-i18next="contributorPreferences.longBreakStartSound" for="longBreakStartSound"></label>
+      </div>
+      <div>
+        <label data-i18next="contributorPreferences.volume" for="volume"></label>
+        <input type="range" min="5" max="100" step="5" list="tickmarksVolume" name="volume" data-divisor="0.01" id="volume">
+        <datalist id="tickmarksVolume">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+          <option value="35"></option>
+          <option value="40"></option>
+          <option value="45"></option>
+          <option value="50"></option>
+          <option value="55"></option>
+          <option value="60"></option>
+          <option value="65"></option>
+          <option value="70"></option>
+          <option value="75"></option>
+          <option value="80"></option>
+          <option value="85"></option>
+          <option value="90"></option>
+          <option value="95"></option>
+          <option value="100"></option>
+        </datalist>
+        <output></output>
+        <span data-i18next="contributorPreferences.percent"></span>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.customIdeas"></span>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.customIdeasInfo"></p>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="useIdeasFromSettings" id="useIdeasFromSettings">
+        <label data-i18next="contributorPreferences.useIdeasFromSettings" for="useIdeasFromSettings"></label>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.newVersion"></span>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="notifyNewVersion" id="newVersionNotification">
+        <label data-i18next="contributorPreferences.newVersionNotification" for="newVersionNotification"></label>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.welcomeWindow"></span>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="isFirstRun" id="showWelcomeWindow">
+        <label data-i18next="contributorPreferences.showWelcomeWindow" for="showWelcomeWindow"></label>
+      </div>
+    </div>
+    <script>
+      require('./platform.js')
+      require('./contributor-preferences.js')
+    </script>
+  </body>
+</html>
