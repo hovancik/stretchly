@@ -24,7 +24,6 @@ let appIcon = null
 let processWin = null
 let microbreakWins = null
 let breakWins = null
-let aboutWin = null
 let preferencesWin = null
 let welcomeWin = null
 let contributorPreferencesWindow = null
@@ -577,30 +576,6 @@ function resumeBreaks (notify = true) {
     showNotification(i18next.t('main.resumingBreaks'))
   }
   updateTray()
-}
-
-function showAboutWindow () {
-  if (aboutWin) {
-    aboutWin.show()
-    return
-  }
-  const modalPath = `file://${__dirname}/about.html`
-  aboutWin = new BrowserWindow({
-    autoHideMenuBar: true,
-    icon: windowIconPath(),
-    x: displaysX(),
-    y: displaysY(),
-    resizable: false,
-    backgroundColor: settings.get('mainColor'),
-    title: i18next.t('preferences.title'),
-    webPreferences: {
-      nodeIntegration: true
-    }
-  })
-  aboutWin.loadURL(modalPath)
-  aboutWin.on('closed', () => {
-    aboutWin = null
-  })
 }
 
 function createPreferencesWindow () {

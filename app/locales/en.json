@@ -28,16 +28,6 @@
     "skip": "Skip this break",
     "title": "Time to take a break!"
   },
-  "about": {
-    "stretchly": "stretchly",
-    "breakTimeReminderApp": "break time reminder app",
-    "toLearnMoreVisit": "To learn more about all of stretchly features and about ways how you can help it, visit it's",
-    "homepage": "homepage",
-    "orRead": "or read its",
-    "tutorial": "tutorial",
-    "latestVersion": "the latest version:",
-    "checking": "checking…"
-  },
   "preferences": {
     "title": "Stretchly Preferences",
     "nav": {
