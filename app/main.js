@@ -630,7 +630,8 @@ function getTrayMenu () {
 
   if (statusMessage !== '') {
     trayMenu.push({
-      label: statusMessage
+      label: statusMessage,
+      enabled: false
     }, {
       type: 'separator'
     })
@@ -717,6 +718,7 @@ function getTrayMenu () {
     type: 'separator'
   }, {
     label: i18next.t('main.quitStretchly'),
+    role: 'quit',
     click: function () {
       app.quit()
     }
