@@ -6,9 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Removed
+- old About window
+
 ### Changed
 - better style for progress
 - rework Contributor preferences
+- reworked tray menu
+- synchronized tray status messages (tooltip, menu)
+- better format remaining time
 
 ## [0.99.1] - 2020-04-09
 ### Changed

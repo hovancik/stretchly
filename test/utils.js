@@ -28,35 +28,18 @@
 //   })
 //
 //   it('formats remaining seconds into correct format', function () {
-//     Utils.formatRemaining(10).should.equal('11 seconds left')
-//     Utils.formatRemaining(60).should.equal('2 minutes left')
-//     Utils.formatRemaining(61).should.equal('2 minutes left')
-//     Utils.formatRemaining(150).should.equal('3 minutes left')
+//     Utils.formatTimeRemaining(10).should.equal('11 seconds left')
+//     Utils.formatTimeRemaining(60).should.equal('2 minutes left')
+//     Utils.formatTimeRemaining(61).should.equal('2 minutes left')
+//     Utils.formatTimeRemaining(150).should.equal('3 minutes left')
 //   })
 //
-//   it('formats time left in pause into correct format', function () {
-//     Utils.formatPauseTimeLeft(59999).should.equal('less than 1m')
-//     Utils.formatPauseTimeLeft(45 * 60 * 1000).should.equal('45m')
-//     Utils.formatPauseTimeLeft(61 * 60 * 1000).should.equal('1h1m')
-//     Utils.formatPauseTimeLeft(60 * 60 * 1000).should.equal('1h')
-//     Utils.formatPauseTimeLeft(210 * 60 * 1000).should.equal('3h30m')
-//   })
-//
-//   it('formats time left till next break into correct format', function () {
-//     Utils.formatTillBreak(15 * 1000).should.equal('~15s')
-//     Utils.formatTillBreak(27.4 * 1000).should.equal('~25s')
-//     Utils.formatTillBreak(29.4 * 1000).should.equal('~30s')
-//     Utils.formatTillBreak(31 * 1000).should.equal('1m')
-//     Utils.formatTillBreak(60 * 1.5 * 1000).should.equal('2m')
-//   })
 // })
 
 const chai = require('chai')
-const { formatTimeOfNextBreak, canPostpone, canSkip } = require('../app/utils/utils')
-const moment = require('moment')
+const { canPostpone, canSkip } = require('../app/utils/utils')
 const sinon = require('sinon')
 
-moment().format()
 chai.should()
 
 describe('Time Until Next Break', () => {
@@ -70,73 +53,47 @@ describe('Time Until Next Break', () => {
     this.sandbox.restore()
   })
 
-  describe('formatTimeOfNextBreak()', () => {
-    this.offset = moment(Date.now()).utcOffset() / 60
-    /* EXAMPLE SCENARIOS
-      Date.now() => 1537347700000 (2018-09-19 @ 09:01:40)
-
-      With timeLeft = 0 milliseconds:
-        AMSTERDAM (2 hour time difference)
-        formatTimeOfNextBreak(0) => 11:01:40 => = ['11', '01']
-
-        THESSALONIKI (3 hour time difference)
-        formatTimeOfNextBreak(0) => 12:01:40 => ['12', '01']
-    */
-
-    it('5 min (minutes are padded)', () => {
-      formatTimeOfNextBreak(300000).should.deep.equal([String(9 + this.offset), '06'])
+  describe('canSkip', () => {
+    // strictMode, postpone, passedPercent, postponePercent
+    it('is false when in strict mode I', () => {
+      canSkip(true, true, 20, 30).should.equal(false)
     })
-
-    it('10 minutes (no padding)', () => {
-      formatTimeOfNextBreak(600000).should.deep.equal([String(9 + this.offset), '11'])
+    it('is false when in strict mode II', () => {
+      canSkip(true, true, 40, 30).should.equal(false)
     })
-
-    it('60 minutes (rollover to next hour)', () => {
-      formatTimeOfNextBreak(3600000).should.deep.equal([String(10 + this.offset), '01'])
+    it('is false when in strict mode III', () => {
+      canSkip(true, false, 20, 30).should.equal(false)
+    })
+    it('is false when in strict mode IV', () => {
+      canSkip(true, false, 40, 30).should.equal(false)
+    })
+    it('is true when not in strict mode and after postpone percent', () => {
+      canSkip(false, true, 40, 30).should.equal(true)
+    })
+    it('is false when not in strict mode and before postpone percent', () => {
+      canSkip(false, true, 20, 30).should.equal(false)
+    })
+    it('is true when not in strict mode I', () => {
+      canSkip(false, false, 40, 30).should.equal(true)
+    })
+    it('is true when not in strict mode II', () => {
+      canSkip(false, false, 20, 30).should.equal(true)
     })
   })
-})
 
-describe('canSkip', () => {
-  // strictMode, postpone, passedPercent, postponePercent
-  it('is false when in strict mode I', () => {
-    canSkip(true, true, 20, 30).should.equal(false)
-  })
-  it('is false when in strict mode II', () => {
-    canSkip(true, true, 40, 30).should.equal(false)
-  })
-  it('is false when in strict mode III', () => {
-    canSkip(true, false, 20, 30).should.equal(false)
-  })
-  it('is false when in strict mode IV', () => {
-    canSkip(true, false, 40, 30).should.equal(false)
-  })
-  it('is true when not in strict mode and after postpone percent', () => {
-    canSkip(false, true, 40, 30).should.equal(true)
-  })
-  it('is false when not in strict mode and before postpone percent', () => {
-    canSkip(false, true, 20, 30).should.equal(false)
-  })
-  it('is true when not in strict mode I', () => {
-    canSkip(false, false, 40, 30).should.equal(true)
-  })
-  it('is true when not in strict mode II', () => {
-    canSkip(false, false, 20, 30).should.equal(true)
-  })
-})
-
-describe('canPostpone', () => {
-  // postpone, passedPercent, postponePercent
-  it('is true when postpone and before postpone percent', () => {
-    canPostpone(true, 20, 30).should.equal(true)
-  })
-  it('is false when postpone and after postpone percent', () => {
-    canPostpone(true, 40, 30).should.equal(false)
-  })
-  it('is false when not postpone I', () => {
-    canPostpone(false, 20, 30).should.equal(false)
-  })
-  it('is false when not postpone II', () => {
-    canPostpone(false, 40, 30).should.equal(false)
+  describe('canPostpone', () => {
+    // postpone, passedPercent, postponePercent
+    it('is true when postpone and before postpone percent', () => {
+      canPostpone(true, 20, 30).should.equal(true)
+    })
+    it('is false when postpone and after postpone percent', () => {
+      canPostpone(true, 40, 30).should.equal(false)
+    })
+    it('is false when not postpone I', () => {
+      canPostpone(false, 20, 30).should.equal(false)
+    })
+    it('is false when not postpone II', () => {
+      canPostpone(false, 40, 30).should.equal(false)
+    })
   })
 })
