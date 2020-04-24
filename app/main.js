@@ -46,6 +46,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
+app.on('second-instance', runCommand)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -924,7 +925,7 @@ function typeOfBreak () {
       breakNotification = true
       break
     }
-    default : {
+    default: {
       breakType = null
       breakNotification = null
       break
@@ -938,6 +939,85 @@ function showNotification (text) {
     text: text,
     silent: settings.get('silentNotifications')
   })
+}
+
+function runCommand (event, argv, workingDirectory) {
+  argv.shift()
+  argv.shift()
+  let command = argv.shift()
+  if (!command) {
+    command = 'help'
+  }
+  switch (command) {
+    case 'reset-breaks':
+      console.log('Calling resetBreaks()')
+      resetBreaks()
+      break
+
+    case 'skip-to-microbreak':
+      console.log('Calling skipToMicrobreak()')
+      skipToMicrobreak()
+      break
+
+    case 'skip-to-break':
+      console.log('Calling skipToBreak()')
+      skipToBreak()
+      break
+
+    case 'pause-breaks': {
+      let duration = argv.shift()
+      if (!duration) {
+        duration = 'indefinitely'
+      }
+      let milliseconds
+      switch (duration) {
+        case 'indefinitely':
+          milliseconds = 1
+          break
+        case 'until-morning':
+          milliseconds = new UntilMorning(settings).timeUntilMorning()
+          break
+        default: {
+          const seconds = parseInt(duration)
+          if (isNaN(seconds)) {
+            console.error(command + ': invalid duration \'' + duration + '\'')
+          } else {
+            milliseconds = seconds * 1000
+          }
+          break
+        }
+      }
+      if (milliseconds) {
+        console.log('Calling pauseBreaks(' + milliseconds + ')')
+        pauseBreaks(milliseconds)
+      }
+      break
+    }
+    case 'resume-breaks':
+      if (!breakPlanner.isPaused) {
+        console.log(command + ': breaks not currently paused, resume unavailable')
+      } else {
+        console.log('Calling resumeBreaks()')
+        resumeBreaks(false)
+      }
+      break
+
+    case 'help':
+      console.log('Usage: ' + path.basename(process.execPath) + ' <command> [arguments]\n' +
+        '\n  Commands available:' +
+        '\n    reset-breaks' +
+        '\n    skip-to-microbreak' +
+        '\n    skip-to-break' +
+        '\n    pause-breaks [indefinitely|until-morning|<seconds>]' +
+        '\n      Default: indefinitely' +
+        '\n    resume-breaks'
+      )
+      break
+
+    default:
+      console.error('Unknown command: ' + command)
+      break
+  }
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
