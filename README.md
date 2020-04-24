@@ -84,13 +84,19 @@ Clicking the *Stretchly* icon in your tray area will display the current status 
 
 <img src="tray.png" height="140">
 
-*Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be paused until you return.  
+*Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be paused until you return.
 
 *Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On.
 
 *Stretchly* follows the theme of your system and is also available in dark mode.
 
 <img src="dark.png" height="340">
+
+### Interact with stretchly from command line
+
+When a Stretchly instance is running, the `stretchly` command can be use to interact with it from the command line.
+
+Type `stretchly help` to get a list of all commands and options available as well as some examples.
 
 ## Preferences
 
@@ -112,7 +118,7 @@ To make sure that all works as expected, it's always good idea to check that for
 
 Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
 
-**Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.  
+**Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.
 
 #### Editing Break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
@@ -151,7 +157,7 @@ In the preferences file, set `volume` to your preferred value. Default value is 
 In the preferences file, set `endBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier.
 
 #### Appearance [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
-In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.  
+In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.
 
 #### Welcome window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
@@ -317,7 +323,7 @@ Sounds used in this application are listed [here](http://freesound.org/people/ho
 - `silence` by [parcodeisuoni](http://freesound.org/people/parcodeisuoni/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
 
 #### Fonts credits
-This app uses [Open Sans](https://fonts.google.com/specimen/Open+Sans) fonts licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).  
+This app uses [Open Sans](https://fonts.google.com/specimen/Open+Sans) fonts licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## License
 See [LICENSE](https://github.com/hovancik/stretchly/blob/master/LICENSE) file.
