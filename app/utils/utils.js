@@ -1,53 +1,56 @@
-const i18next = require('i18next')
+// TODO if I am not wrong, formating function are mathemticaly the same
+// Would be nice to not have the same code
+const formatTimeRemaining = function (milliseconds, i18next = require('i18next')) {
+  const seconds = Math.ceil(milliseconds / 1000.0)
+  const minutes = Math.ceil(seconds / 60.0)
+  const hours = Math.ceil(minutes / 60.0)
 
-// Returns `XXX remaining`
-// `About 2 hours 53 mintes remaining`
-// `About 53 mintes remaining`
-// `10 seconds remaining`
-const formatTimeRemaining = function (milliseconds) {
-  const seconds = milliseconds / 1000
   if (seconds < 60) {
-    return i18next.t('utils.secondsRemaining', { seconds: Math.trunc(seconds + 1) })
+    return i18next.t('utils.secondsRemaining', { seconds: seconds })
   }
-  if (seconds >= 60 && seconds < 3600) {
-    return i18next.t('utils.aboutMinutesRemaining', { minutes: Math.trunc((seconds / 60) + 1) })
-  }
-  if (seconds >= 3600) {
-    const hours = Math.trunc(seconds / 3600)
-    const minutes = Math.trunc(((seconds - hours * 3600) / 60) + 1)
-    if (seconds % 3600 === 0) {
-      return i18next.t('utils.aboutHoursRemaining', { hours: hours })
-    } else if (minutes === 60) {
-      return i18next.t('utils.aboutHoursRemaining', { hours: hours + 1 })
-    } else {
-      return i18next.t('utils.aboutHoursMinutesRemaining', { minutes: minutes, hours: hours })
+
+  if (seconds >= 60 && minutes < 60) {
+    if (seconds === 60) {
+      return i18next.t('utils.aboutMinutesRemaining', { minutes: 2 })
     }
+    return i18next.t('utils.aboutMinutesRemaining', { minutes: minutes })
   }
+
+  if (minutes >= 60) {
+    if (minutes % 60 === 0) {
+      return i18next.t('utils.aboutHoursRemaining', { hours: hours })
+    }
+    return i18next.t('utils.aboutHoursMinutesRemaining',
+      { minutes: minutes - (hours - 1) * 60, hours: hours - 1 })
+  }
+  return 'Uknown time remainig'
 }
 
-// Returns `XXX remaining`
-// `in about 2 hours 53 mintes`
-// `in about 53 mintes`
-// `in 10 seconds`
-const formatTimeIn = function (milliseconds) {
-  const seconds = milliseconds / 1000
+const formatTimeIn = function (milliseconds, i18next = require('i18next')) {
+  const seconds = Math.ceil(milliseconds / 1000.0)
+  const minutes = Math.ceil(seconds / 60.0)
+  const hours = Math.ceil(minutes / 60.0)
+
   if (seconds < 60) {
-    return i18next.t('utils.inSeconds', { seconds: Math.trunc(seconds + 1) })
+    return i18next.t('utils.inSeconds', { seconds: seconds })
   }
-  if (seconds >= 60 && seconds < 3600) {
-    return i18next.t('utils.inAboutMinutes', { minutes: Math.trunc((seconds / 60) + 1) })
+
+  if (seconds >= 60 && minutes < 60) {
+    if (seconds === 60) {
+      return i18next.t('utils.inAboutMinutes', { minutes: 2 })
+    }
+    return i18next.t('utils.inAboutMinutes', { minutes: minutes })
   }
-  if (seconds >= 3600) {
-    const hours = Math.trunc(seconds / 3600)
-    const minutes = Math.trunc(((seconds - hours * 3600) / 60) + 1)
-    if (seconds % 3600 === 0) {
+
+  if (minutes >= 60) {
+    if (minutes % 60 === 0) {
       return i18next.t('utils.inAboutHours', { hours: hours })
-    } else if (minutes === 60) {
-      return i18next.t('utils.inAboutHours', { hours: hours + 1 })
     } else {
-      return i18next.t('utils.inAboutHoursMinutes', { minutes: minutes, hours: hours })
+      return i18next.t('utils.inAboutHoursMinutes',
+        { minutes: minutes - (hours - 1) * 60, hours: hours - 1 })
     }
   }
+  return 'in unknown time'
 }
 
 // does not consider `postponesLimit`

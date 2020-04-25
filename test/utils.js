@@ -1,48 +1,76 @@
-// TODO temp. disabled. see https://github.com/hovancik/i18next-test
-// const chai = require('chai')
-// const Utils = require('../app/utils/utils')
-// const i18next = require('i18next')
-// const Backend = require('i18next-node-fs-backend')
-//
-// chai.should()
-//
-// describe('Utils', function () {
-//   beforeEach(function (done) {
-//     i18next
-//       .use(Backend)
-//       .init({
-//         lng: 'en',
-//         fallbackLng: 'en',
-//         debug: false,
-//         backend: {
-//           loadPath: `${__dirname}/../app/locales/{{lng}}.json`,
-//           jsonIndent: 2
-//         }
-//       }, function (err, t) {
-//         i18next.changeLanguage('en')
-//         if (err) {
-//           console.log(err.stack)
-//         }
-//         done()
-//       })
-//   })
-//
-//   it('formats remaining seconds into correct format', function () {
-//     Utils.formatTimeRemaining(10).should.equal('11 seconds left')
-//     Utils.formatTimeRemaining(60).should.equal('2 minutes left')
-//     Utils.formatTimeRemaining(61).should.equal('2 minutes left')
-//     Utils.formatTimeRemaining(150).should.equal('3 minutes left')
-//   })
-//
-// })
-
 const chai = require('chai')
-const { canPostpone, canSkip } = require('../app/utils/utils')
+const { formatTimeRemaining, formatTimeIn, canSkip, canPostpone } = require('../app/utils/utils')
+const i18next = require('i18next')
+const Backend = require('i18next-node-fs-backend')
 const sinon = require('sinon')
 
 chai.should()
 
-describe('Time Until Next Break', () => {
+describe('Times formatters', function () {
+  beforeEach(function (done) {
+    i18next
+      .use(Backend)
+      .init({
+        lng: 'en',
+        fallbackLng: 'en',
+        debug: false,
+        backend: {
+          loadPath: `${__dirname}/../app/locales/{{lng}}.json`,
+          jsonIndent: 2
+        }
+      }, function (err, t) {
+        if (err) {
+          console.log(err)
+          return done(err)
+        }
+        done()
+      })
+  })
+
+  it('formats "remaining" milliseconds into correct format', function () {
+    formatTimeRemaining(800, i18next).should.equal('1 second remaining')
+    formatTimeRemaining(1000, i18next).should.equal('1 second remaining')
+    formatTimeRemaining(1001, i18next).should.equal('2 seconds remaining')
+    formatTimeRemaining(2000, i18next).should.equal('2 seconds remaining')
+    formatTimeRemaining(59001, i18next).should.equal('About 2 minutes remaining')
+    formatTimeRemaining(60001, i18next).should.equal('About 2 minutes remaining')
+    formatTimeRemaining(118001, i18next).should.equal('About 2 minutes remaining')
+    formatTimeRemaining(119001, i18next).should.equal('About 2 minutes remaining')
+    formatTimeRemaining(120000, i18next).should.equal('About 2 minutes remaining')
+    formatTimeRemaining(120001, i18next).should.equal('About 3 minutes remaining')
+    formatTimeRemaining(3480001, i18next).should.equal('About 59 minutes remaining')
+    formatTimeRemaining(3540001, i18next).should.equal('About 1 hour remaining')
+    formatTimeRemaining(3600000, i18next).should.equal('About 1 hour remaining')
+    formatTimeRemaining(3600001, i18next).should.equal('About 1 hour 1 minute remaining')
+    formatTimeRemaining(7080001, i18next).should.equal('About 1 hour 59 minutes remaining')
+    formatTimeRemaining(7080001, i18next).should.equal('About 1 hour 59 minutes remaining')
+    formatTimeRemaining(7180001, i18next).should.equal('About 2 hours remaining')
+  })
+
+  it('formats "in" milliseconds into correct format', function () {
+    formatTimeIn(800, i18next).should.equal('in 1 second')
+    formatTimeIn(1000, i18next).should.equal('in 1 second')
+    formatTimeIn(1001, i18next).should.equal('in 2 seconds')
+    formatTimeIn(2000, i18next).should.equal('in 2 seconds')
+    formatTimeIn(58001, i18next).should.equal('in 59 seconds')
+    formatTimeIn(59000, i18next).should.equal('in 59 seconds')
+    formatTimeIn(59001, i18next).should.equal('in about 2 minutes')
+    formatTimeIn(60001, i18next).should.equal('in about 2 minutes')
+    formatTimeIn(118001, i18next).should.equal('in about 2 minutes')
+    formatTimeIn(119001, i18next).should.equal('in about 2 minutes')
+    formatTimeIn(120001, i18next).should.equal('in about 3 minutes')
+    formatTimeIn(3480000, i18next).should.equal('in about 58 minutes')
+    formatTimeIn(3540001, i18next).should.equal('in about 1 hour')
+    formatTimeIn(3600001, i18next).should.equal('in about 1 hour 1 minute')
+    formatTimeIn(3660000, i18next).should.equal('in about 1 hour 1 minute')
+    formatTimeIn(3660001, i18next).should.equal('in about 1 hour 2 minutes')
+    formatTimeIn(7140000, i18next).should.equal('in about 1 hour 59 minutes')
+    formatTimeIn(7200000, i18next).should.equal('in about 2 hours')
+    formatTimeIn(7260000, i18next).should.equal('in about 2 hours 1 minute')
+  })
+})
+
+describe('canSkip and canPostpone', () => {
   // stubbing date
   before(() => {
     this.sandbox = sinon.createSandbox()
