@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - The break time reminder app",
-    "microbreakIn": "Mini Break in {{seconds}} seconds…",
-    "breakIn": "Long Break in {{seconds}} seconds…",
+    "microbreakIn": "Mini Break in $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Long Break in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Resuming breaks",
     "downloadLatestVersion": "Download latest version",
     "toBreak": "Long Break",
@@ -155,7 +155,7 @@
     "aboutMinutesRemaining": "About $t(utils.minutes, {'count': {{minutes}} }) remaining",
     "aboutHoursRemaining": "About $t(utils.hours, {'count': {{hours}} }) remaining",
     "aboutHoursMinutesRemaining": "About $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) remaining",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) remaining",
+    "inSeconds": "in $t(utils.seconds, {'count': {{seconds}} })",
     "inAboutMinutes": "in about $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "in about $t(utils.hours, {'count': {{hours}} })",
     "inAboutHoursMinutes": "in about $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
