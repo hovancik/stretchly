@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - multi-line status messages in Tray (Mac, Windows)
 
 ## Added
-- show Paused icon when Breaks are paused in Natural break
+- show Paused icon when Breaks are paused in Natural breaks mode
+- show Paused icon when Breaks are paused in Do Not Disturb mode
 
 ## [0.99.2] - 2020-04-27
 ### Removed

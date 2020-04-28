@@ -24,7 +24,7 @@ class DndManager extends EventEmitter {
     this.timer = null
   }
 
-  get doNotDisturb () {
+  get _doNotDisturb () {
     if (this.monitorDnd) {
       return require('@meetfranz/electron-notification-state').getDoNotDisturb()
     } else {
@@ -35,7 +35,7 @@ class DndManager extends EventEmitter {
   _checkDnd () {
     let lastDndStatus = this.isOnDnd  //eslint-disable-line
     this.timer = setInterval(() => {
-      const doNotDisturb = this.doNotDisturb
+      const doNotDisturb = this._doNotDisturb
       if (!this.isOnDnd && doNotDisturb) {
         this.isOnDnd = true
         this.emit('dndStarted')

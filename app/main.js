@@ -164,7 +164,7 @@ function createTrayIcon () {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused || breakPlanner.naturalBreaksManager.isSchedulerCleared,
+    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.naturalBreaksManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
@@ -787,8 +787,7 @@ ipcMain.on('save-setting', function (event, key, value) {
     settings.set(key, value)
   }
 
-  appIcon.setImage(trayIconPath())
-  appIcon.setContextMenu(getTrayMenu())
+  updateTray()
 })
 
 ipcMain.on('update-tray', function (event) {
@@ -806,8 +805,7 @@ ipcMain.on('restore-defaults', (event) => {
     if (returnValue.response === 0) {
       settings.restoreDefaults()
       i18next.changeLanguage(settings.get('language'))
-      appIcon.setImage(trayIconPath())
-      appIcon.setContextMenu(getTrayMenu())
+      updateTray()
       event.sender.webContents.send('renderSettings', settingsToSend())
     }
   })
@@ -832,7 +830,7 @@ ipcMain.on('show-debug', function (event) {
   const timeleft = Utils.formatTimeRemaining(breakPlanner.scheduler.timeLeft)
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
-  const doNotDisturb = breakPlanner.dndManager.doNotDisturb
+  const doNotDisturb = breakPlanner.dndManager.isOnDnd
   const dir = app.getPath('userData')
   const settingsFile = path.join(dir, 'config.json')
   event.sender.send('debugInfo', reference, timeleft,
