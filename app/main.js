@@ -629,10 +629,15 @@ function getTrayMenu () {
   }).trayMessage
 
   if (statusMessage !== '') {
+    const messages = statusMessage.split('\n')
+    for (const index in messages) {
+      trayMenu.push({
+        label: messages[index],
+        enabled: false
+      })
+    }
+
     trayMenu.push({
-      label: statusMessage,
-      enabled: false
-    }, {
       type: 'separator'
     })
   }

@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Fixed
+- multi-line status messages in Tray (Mac, Windows) 
+
 ## [0.99.2] - 2020-04-27
 ### Removed
 - old About window
