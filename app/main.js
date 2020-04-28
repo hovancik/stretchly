@@ -27,6 +27,7 @@ let welcomeWin = null
 let contributorSettingsWindow = null
 let settings
 let pausedForSuspendOrLock = false
+let nextIdea = null
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -43,14 +44,22 @@ if (!gotTheLock) {
     console.log('\nCommand sent to the running instance of stretchly:', args)
   } else {
     console.log('\nTo send a command to the running instance of stretchly:' +
-      '\n  stretchly <command> [arguments]\n' +
+      '\n  stretchly <command> [arguments]' +
+      '\n' +
       '\nCommands available:' +
       '\n  reset-breaks' +
-      '\n  skip-to-microbreak' +
-      '\n  skip-to-break' +
+      '\n  skip-to-microbreak [<idea>]' +
+      '\n  skip-to-break [<idea> [<idea-text>]]' +
       '\n  pause-breaks [indefinitely|until-morning|<seconds>]' +
       '\n    Default: indefinitely' +
-      '\n  resume-breaks'
+      '\n  resume-breaks' +
+      '\n  set-next-idea <idea> [<idea-text>]' +
+      '\n    If the next break is a microbreak, <idea-text> will be ignored.' +
+      '\n' +
+      '\nExamples:' +
+      '\n  stretchly pause-breaks until-morning' +
+      '\n  stretchly skip-to-break "Remember" "It\'s time for lunch"' +
+      '\n  stretchly set-next-idea "1. Take a breath. 2. Start on $TASK."'
     )
   }
   app.quit()
@@ -347,7 +356,8 @@ function startMicrobreak () {
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
-  const idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
+  const idea = nextIdea ? [nextIdea[0]] : (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
+  nextIdea = null
 
   if (settings.get('microbreakStartSoundPlaying')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
@@ -443,7 +453,8 @@ function startBreak () {
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
-  const idea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
+  const idea = nextIdea || (settings.get('ideas') ? breakIdeas.randomElement : ['', ''])
+  nextIdea = null
 
   if (settings.get('breakStartSoundPlaying')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
@@ -969,11 +980,19 @@ function runCommand (event, argv, workingDirectory) {
       break
 
     case 'skip-to-microbreak':
+      if (args.length && args[0]) {
+        console.log('Setting nextIdea')
+        nextIdea = [args[0], '']
+      }
       console.log('Calling skipToMicrobreak()')
       skipToMicrobreak()
       break
 
     case 'skip-to-break':
+      if (args.length && args[0]) {
+        console.log('Setting nextIdea')
+        nextIdea = [args[0], (args.length > 1 && args[1]) ? args[1] : '']
+      }
       console.log('Calling skipToBreak()')
       skipToBreak()
       break
@@ -1014,6 +1033,21 @@ function runCommand (event, argv, workingDirectory) {
         console.log('Calling resumeBreaks()')
         resumeBreaks(false)
       }
+      break
+
+    case 'set-next-idea':
+      switch (args.length) {
+        case 1:
+          nextIdea = [args[0], '']
+          break
+        case 2:
+          nextIdea = args
+          break
+        default:
+          console.error(command + ': incorrect number of arguments')
+          return
+      }
+      console.log('nextIdea set')
       break
 
     default:
