@@ -124,7 +124,7 @@
         <label data-i18next="preferences.schedule.enableMiniBreaks" for="enableMiniBreaks"></label>
       </div>
       <div>
-        <label data-i18next="preferences.schedule.breakFor" for="miniBreakFor"></label>
+        <label data-i18next="preferences.schedule.breakFor" data-same-width-label for="miniBreakFor"></label>
         <input type="range" min="5" max="105" step="5" list="tickmarksMiniBreakFor" name="microbreakDuration" data-divisor="1000" id="miniBreakFor">
         <datalist id="tickmarksMiniBreakFor">
           <option value="10"></option>
@@ -142,7 +142,7 @@
         <span data-i18next="preferences.schedule.seconds"></span>
       </div>
       <div>
-        <label data-i18next="preferences.schedule.every" for="miniBreakEvery"></label>
+        <label data-i18next="preferences.schedule.every" data-same-width-label for="miniBreakEvery"></label>
         <input type="range" min="5" max="65" step="5" list="tickmarksMiniBreakEvery" name="microbreakInterval" data-divisor="60000" id="miniBreakEvery">
         <datalist id="tickmarksMiniBreakEvery">
           <option value="10"></option>
@@ -179,7 +179,7 @@
         <label data-i18next="preferences.schedule.enableLongBreaks" for="enableLongBreaks"></label>
       </div>
       <div>
-        <label data-i18next="preferences.schedule.breakFor" for="longBreakFor"></label>
+        <label data-i18next="preferences.schedule.breakFor" data-same-width-label for="longBreakFor"></label>
         <input type="range" min="1" max="60" step="1" list="tickmarksLongBreakFor" name="breakDuration" data-divisor="60000" id="longBreakFor">
         <datalist id="tickmarksLongBreakFor">
           <option value="10"></option>
@@ -192,7 +192,7 @@
         <span data-i18next="preferences.schedule.minutes"></span>
       </div>
       <div>
-        <label data-i18next="preferences.schedule.every" for="longBreakEvery"></label>
+        <label data-i18next="preferences.schedule.every" data-same-width-label for="longBreakEvery"></label>
         <input type="range" min="1" max="30" step="1" list="tickmarksLongBreakEvery" name="breakInterval" data-divisor="1" id="longBreakEvery">
         <datalist id="tickmarksLongBreakEvery">
           <option value="5"></option>
@@ -368,10 +368,10 @@
       <div>
       </div>
       <div class="become">
-        <button type="button" name="becomePatron" data-i18next="preferences.heart.becomePatron"></button>
+        <button type="button" name="becomePatron" data-same-width-button data-i18next="preferences.heart.becomePatron"></button>
       </div>
       <div class="become">
-        <button type="button" name="alreadyContributor" data-i18next="preferences.heart.alreadyContributor"></button>
+        <button type="button" name="alreadyContributor" data-same-width-button data-i18next="preferences.heart.alreadyContributor"></button>
       </div>
       <div class="authenticate hidden">
         <span data-i18next="preferences.heart.authenticateUsing"></span>

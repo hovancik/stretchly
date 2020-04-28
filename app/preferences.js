@@ -1,6 +1,7 @@
 const { remote, ipcRenderer, shell } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const VersionChecker = require('./utils/versionChecker')
+const { setSameWidths } = require('./utils/sameWidths')
 const i18next = remote.require('i18next')
 
 const bounds = remote.getCurrentWindow().getBounds()
@@ -108,6 +109,7 @@ document.querySelectorAll('.navigation a').forEach(element => {
       toBeDisplayed.classList.remove('hidden')
     })
 
+    setSameWidths()
     setWindowHeight()
   }
 })

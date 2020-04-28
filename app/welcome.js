@@ -1,5 +1,6 @@
 const { remote, ipcRenderer, shell } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
+const { setSameWidths } = require('./utils/sameWidths')
 
 const htmlTranslate = new HtmlTranslate(document)
 let eventsAttached = false
@@ -37,6 +38,7 @@ ipcRenderer.on('renderSettings', (event, settings) => {
       }
     }
   })
+  setSameWidths()
 })
 
 document.querySelectorAll('button').forEach(button => {
