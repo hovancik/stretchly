@@ -164,7 +164,7 @@ function createTrayIcon () {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused,
+    paused: breakPlanner.isPaused || breakPlanner.naturalBreaksManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
