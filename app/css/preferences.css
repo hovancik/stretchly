@@ -222,7 +222,7 @@ body > .hidden,
   grid-gap: 16px 0;
   grid-template: auto auto/ 25% auto 25%;
   letter-spacing: 0px;
-  padding-top: 85px;
+  padding-top: 82px;
   text-align: center;
 }
 
@@ -273,14 +273,18 @@ body > .hidden,
 
 .about > :last-child {
   margin-bottom: 6px;
-  padding-top: 20px;
+  /* padding-top: 74px; */
 }
 
 .about > .debug {
-  display: none;
+  min-height: 74px;
   font-size: 11px;
   grid-column: 1/-1;
   margin: auto 20px;
+}
+
+.about > .debug > :first-child {
+  display: none;
 }
 
 .heart {

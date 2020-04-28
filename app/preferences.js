@@ -30,7 +30,7 @@ document.onkeydown = event => {
 
 ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
   postponesnumber, settingsfile, doNotDisturb) => {
-  const debugInfo = document.querySelector('.debug')
+  const debugInfo = document.querySelector('.debug > :first-child')
   if (debugInfo.style.display === 'block') {
     debugInfo.style.display = 'none'
   } else {
@@ -45,6 +45,7 @@ ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
     document.querySelector('#chrome').innerHTML = process.versions.chrome
     document.querySelector('#electron').innerHTML = process.versions.electron
   }
+  setWindowHeight()
 })
 
 ipcRenderer.on('enableContributorPreferences', () => {
@@ -59,6 +60,7 @@ const showContributorPreferencesButton = () => {
   document.querySelectorAll('.authenticate').forEach((item) => {
     item.classList.add('hidden')
   })
+  setWindowHeight()
 }
 
 if (remote.getGlobal('shared').isContributor) {
@@ -220,6 +222,7 @@ document.querySelector('[name="alreadyContributor"]').onclick = () => {
   document.querySelectorAll('.authenticate').forEach((item) => {
     item.classList.remove('hidden')
   })
+  setWindowHeight()
 }
 
 document.querySelectorAll('.authenticate a').forEach((button) => {

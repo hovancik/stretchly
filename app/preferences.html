@@ -331,21 +331,23 @@
         </div>
       </div>
       <div class="debug">
-        <p id="to-copy">
-          breakPlanner: {reference: <span id="reference"></span>,
-          timeleft: <span id="timeleft"></span>,
-          breakNumber: <span id="breakNumber"></span>,
-          postponesNumber: <span id="postponesNumber"></span>,
-          Do Not Disturb: <span id="donotdisturb"></span>}
-          <br/>
-          settingsFile: <a href="" class="file" id="settingsfile"></a>
-          <br/>Node.js: <span id="node"></span>
-          Chromium: <span id="chrome"></span>,
-          Electron: <span id="electron"></span>
-        </p>
-        <p>
-          <button>copy to clipboard</button>
-        </p>
+        <div>
+          <p id="to-copy">
+            breakPlanner: {reference: <span id="reference"></span>,
+            timeleft: <span id="timeleft"></span>,
+            breakNumber: <span id="breakNumber"></span>,
+            postponesNumber: <span id="postponesNumber"></span>,
+            Do Not Disturb: <span id="donotdisturb"></span>}
+            <br/>
+            settingsFile: <a href="" class="file" id="settingsfile"></a>
+            <br/>Node.js: <span id="node"></span>
+            Chromium: <span id="chrome"></span>,
+            Electron: <span id="electron"></span>
+          </p>
+          <p>
+            <button>copy to clipboard</button>
+          </p>
+        </div>
       </div>
       <div>
         <span data-i18next="preferences.about.developedBy"></span>
@@ -387,6 +389,7 @@
           <img src="images/preferences/github.svg" alt="Github">
         </a>
       </div>
+      <div></div>
     </div>
     <script>
       require('./platform.js')
