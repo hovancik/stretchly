@@ -33,10 +33,10 @@
 }
 
 .breaks > :nth-child(1) >  .break-text {
-  margin-top: 60px;
   font-size: 24px;
   letter-spacing: 0.35px;
   line-height: 33px;
+  margin-top: 60px;
 }
 
 .breaks > :nth-child(2) {
@@ -54,11 +54,11 @@
 }
 
 .breaks > :nth-child(2) > a img {
-  height: 20px;
-  width: 20px;
-  padding-left: 20px;
   /* https://codepen.io/sosuke/pen/Pjoqqp */
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+  height: 20px;
+  padding-left: 20px;
+  width: 20px;
 }
 
 .breaks > :nth-child(2) > a:hover img {

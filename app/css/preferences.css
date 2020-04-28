@@ -1,6 +1,6 @@
 body {
-  font-family: "Open Sans";
   background: #EDEDED;
+  font-family: "Open Sans";
 }
 
 body > div > :last-child {
@@ -8,23 +8,23 @@ body > div > :last-child {
 }
 
 .navigation {
-  padding: 0 16px;
-  display: grid;
-  grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
-  grid-gap: 16px;
   background-image: linear-gradient(180deg, #EDECED 1%, #D2D1D2 97%);
-  box-shadow: inset 0 0 0 0 rgba(255,255,255,0.50), inset 0 0 0 0 #B7B4B7, inset 0 -1px 0 0 rgba(183,180,183,0.30);
   border-radius: 4.5px 0 0 4px;
+  box-shadow: inset 0 0 0 0 rgba(255,255,255,0.50), inset 0 0 0 0 #B7B4B7, inset 0 -1px 0 0 rgba(183,180,183,0.30);
+  display: grid;
+  grid-gap: 16px;
+  grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
+  padding: 0 16px;
 }
 
 .navigation > a > div {
-  height: 57px;
+  align-items: center;
+  color: #2E2C2E;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
   font-size: 11px;
-  color: #2E2C2E;
+  height: 57px;
+  justify-content: space-evenly;
   letter-spacing: 0.07px;
   text-align: center;
 }
@@ -57,11 +57,11 @@ body > .hidden,
 }
 
 .settings {
-  display: grid;
-  grid-template: auto / 89px auto 16px;
-  grid-gap: 20px 0;
-  font-size: 13px;
   color: #252525;
+  display: grid;
+  font-size: 13px;
+  grid-gap: 20px 0;
+  grid-template: auto / 89px auto 16px;
   letter-spacing: -0.08px;
   padding-top: 30px;
 }
@@ -79,11 +79,11 @@ body > .hidden,
 }
 
 .schedule {
-  display: grid;
-  grid-template: auto / 25% auto 16px;
-  grid-gap: 16px 0;
-  font-size: 13px;
   color: #252525;
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto / 25% auto 16px;
   letter-spacing: -0.08px;
   padding-top: 30px;
 }
@@ -118,11 +118,11 @@ body > .hidden,
 }
 
 .theme {
-  display: grid;
-  grid-template: auto / 25% auto 16px;
-  grid-gap: 16px 0;
-  font-size: 13px;
   color: #252525;
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto / 25% auto 16px;
   letter-spacing: -0.08px;
   padding-top: 30px;
 }
@@ -132,25 +132,25 @@ body > .hidden,
 }
 
 .theme > :nth-child(1) {
+  align-self: center;
   grid-column: 1/2;
   grid-row: 1/2;
   padding: 0 16px;
   text-align: right;
-  align-self: center;
 }
 
 .theme > :nth-child(8) {
   grid-column: 1/2;
   grid-row: 7/9;
-  text-align: right;
   padding: 0 16px;
+  text-align: right;
 }
 
 .theme > :nth-child(14) {
   grid-column: 1/2;
   grid-row: 12/16;
-  text-align: right;
   padding: 0 16px;
+  text-align: right;
 }
 
 .appearance {
@@ -161,17 +161,17 @@ body > .hidden,
 
 .appearance > input[type="radio"] + label:before {
   background: attr(data-background color, red);
-  color: attr(data-background color, red);
   border: 5px solid #FFF;
-  box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.38);
   border-radius: 0;
+  box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.38);
+  color: attr(data-background color, red);
   content: "\2713";
   display: inline-block;
   font: 13px sans-serif;
   height: 15px;
   margin: 0 17px 0;
-  width: 30px;
   padding: 10px;
+  width: 30px;
 }
 
 #greenClouds + label:before {
@@ -216,11 +216,11 @@ body > .hidden,
 }
 
 .about {
-  display: grid;
-  grid-template: auto auto/ 25% auto 25%;
-  grid-gap: 16px 0;
-  font-size: 13px;
   color: rgba(0,0,0,0.85);
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto auto/ 25% auto 25%;
   letter-spacing: 0px;
   padding-top: 85px;
   text-align: center;
@@ -272,8 +272,8 @@ body > .hidden,
 }
 
 .about > :last-child {
-  padding-top: 20px;
   margin-bottom: 6px;
+  padding-top: 20px;
 }
 
 .about > .debug {
@@ -284,11 +284,11 @@ body > .hidden,
 }
 
 .heart {
-  display: grid;
-  grid-template: auto / 6px 128px auto 14px;
-  grid-gap: 15px 18px;
-  font-size: 18px;
   color: rgba(0,0,0,0.85);
+  display: grid;
+  font-size: 18px;
+  grid-gap: 15px 18px;
+  grid-template: auto / 6px 128px auto 14px;
   letter-spacing: 0;
   padding-top: 52px;
 }
