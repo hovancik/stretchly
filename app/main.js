@@ -38,6 +38,21 @@ const gotTheLock = app.requestSingleInstanceLock()
 
 if (!gotTheLock) {
   console.log('stretchly is already running.')
+  const args = process.argv.slice(app.isPackaged ? 1 : 2)
+  if (args.length) {
+    console.log('\nCommand sent to the running instance of stretchly:', args)
+  } else {
+    console.log('\nTo send a command to the running instance of stretchly:' +
+      '\n  stretchly <command> [arguments]\n' +
+      '\nCommands available:' +
+      '\n  reset-breaks' +
+      '\n  skip-to-microbreak' +
+      '\n  skip-to-break' +
+      '\n  pause-breaks [indefinitely|until-morning|<seconds>]' +
+      '\n    Default: indefinitely' +
+      '\n  resume-breaks'
+    )
+  }
   app.quit()
   return
 }
@@ -942,84 +957,69 @@ function showNotification (text) {
 }
 
 function runCommand (event, argv, workingDirectory) {
-  const args = argv.slice(0)
-  let command
-  do {
-    command = args.shift()
-    if (!command) {
-      command = 'help'
-    }
-    switch (command) {
-      case 'reset-breaks':
-        console.log('Calling resetBreaks()')
-        resetBreaks()
-        break
+  const args = argv.slice(app.isPackaged ? 1 : 2)
+  const command = args.shift()
+  if (!command) {
+    return
+  }
+  switch (command) {
+    case 'reset-breaks':
+      console.log('Calling resetBreaks()')
+      resetBreaks()
+      break
 
-      case 'skip-to-microbreak':
-        console.log('Calling skipToMicrobreak()')
-        skipToMicrobreak()
-        break
+    case 'skip-to-microbreak':
+      console.log('Calling skipToMicrobreak()')
+      skipToMicrobreak()
+      break
 
-      case 'skip-to-break':
-        console.log('Calling skipToBreak()')
-        skipToBreak()
-        break
+    case 'skip-to-break':
+      console.log('Calling skipToBreak()')
+      skipToBreak()
+      break
 
-      case 'pause-breaks': {
-        let duration = args.shift()
-        if (!duration) {
-          duration = 'indefinitely'
-        }
-        let milliseconds
-        switch (duration) {
-          case 'indefinitely':
-            milliseconds = 1
-            break
-          case 'until-morning':
-            milliseconds = new UntilMorning(settings).timeUntilMorning()
-            break
-          default: {
-            const seconds = parseInt(duration)
-            if (isNaN(seconds)) {
-              console.error(command + ': invalid duration \'' + duration + '\'')
-            } else {
-              milliseconds = seconds * 1000
-            }
-            break
-          }
-        }
-        if (milliseconds) {
-          console.log('Calling pauseBreaks(' + milliseconds + ')')
-          pauseBreaks(milliseconds)
-        }
-        break
+    case 'pause-breaks': {
+      let duration = args.shift()
+      if (!duration) {
+        duration = 'indefinitely'
       }
-      case 'resume-breaks':
-        if (!breakPlanner.isPaused) {
-          console.log(command + ': breaks not currently paused, resume unavailable')
-        } else {
-          console.log('Calling resumeBreaks()')
-          resumeBreaks(false)
+      let milliseconds
+      switch (duration) {
+        case 'indefinitely':
+          milliseconds = 1
+          break
+        case 'until-morning':
+          milliseconds = new UntilMorning(settings).timeUntilMorning()
+          break
+        default: {
+          const seconds = parseInt(duration)
+          if (isNaN(seconds)) {
+            console.error(command + ': invalid duration \'' + duration + '\'')
+          } else {
+            milliseconds = seconds * 1000
+          }
+          break
         }
-        break
-
-      case 'help':
-        console.log('Usage: ' + path.basename(process.execPath) + ' <command> [arguments]\n' +
-          '\n  Commands available:' +
-          '\n    reset-breaks' +
-          '\n    skip-to-microbreak' +
-          '\n    skip-to-break' +
-          '\n    pause-breaks [indefinitely|until-morning|<seconds>]' +
-          '\n      Default: indefinitely' +
-          '\n    resume-breaks'
-        )
-        break
-
-      default:
-        command = false
-        break
+      }
+      if (milliseconds) {
+        console.log('Calling pauseBreaks(' + milliseconds + ')')
+        pauseBreaks(milliseconds)
+      }
+      break
     }
-  } while (!command)
+    case 'resume-breaks':
+      if (!breakPlanner.isPaused) {
+        console.log(command + ': breaks not currently paused, resume unavailable')
+      } else {
+        console.log('Calling resumeBreaks()')
+        resumeBreaks(false)
+      }
+      break
+
+    default:
+      console.log('Unknown command \'' + command + '\'')
+      break
+  }
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
