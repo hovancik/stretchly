@@ -141,8 +141,11 @@
     "longBreakStartSound": "Play end-of-break sound also at the start of Long break",
     "naturalBreaks": "Natural breaks:",
     "naturalBreaksInfo": "If monitoring of idle time is enabled in main Preferences, you can specify after what time the countdown should be paused.",
-    "pauseAfter": "Pause after:"
-
+    "pauseAfter": "Pause after:",
+    "appearance": "Appearance:",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   },
   "utils": {
     "seconds": "{{count}} second",

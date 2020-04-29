@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title data-i18next="contributorPreferences.title"></title>
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/color-scheme.css">
     <link rel="stylesheet" type="text/css" href="css/commons.css">
     <link rel="stylesheet" type="text/css" href="css/contributor.css">
   </head>
@@ -333,6 +334,24 @@
       <div>
         <input type="checkbox" class="enabletype" value="isFirstRun" id="showWelcomeWindow">
         <label data-i18next="contributorPreferences.showWelcomeWindow" for="showWelcomeWindow"></label>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="contributorPreferences.appearance"></span>
+      </div>
+      <div>
+        <input type="radio" value="light" name="themeSource" id="light">
+        <label data-i18next="contributorPreferences.light" for="light"></label>
+      </div>
+      <div>
+        <input type="radio" value="dark" name="themeSource" id="dark">
+        <label data-i18next="contributorPreferences.dark" for="dark"></label>
+      </div>
+      <div>
+        <input type="radio" value="system" name="themeSource" id="system">
+        <label data-i18next="contributorPreferences.system" for="system"></label>
       </div>
     </div>
     <script>

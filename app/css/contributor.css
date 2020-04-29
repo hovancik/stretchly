@@ -1,6 +1,7 @@
 body {
-  background: #EDEDED;
-  font-family: "Open Sans";
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  font-family: Open Sans;
 }
 
 body > div > :last-child {
@@ -8,7 +9,6 @@ body > div > :last-child {
 }
 
 .contributor-preferences {
-  color: #252525;
   display: grid;
   font-size: 13px;
   grid-gap: 16px 0;
@@ -78,6 +78,13 @@ body > div > :last-child {
 .contributor-preferences > :nth-child(36) {
   grid-column: 1/2;
   grid-row: 29/30;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.contributor-preferences > :nth-child(39) {
+  grid-column: 1/2;
+  grid-row: 31/32;
   padding: 0 16px;
   text-align: right;
 }

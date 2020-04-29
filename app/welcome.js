@@ -5,6 +5,29 @@ const { setSameWidths } = require('./utils/sameWidths')
 const htmlTranslate = new HtmlTranslate(document)
 let eventsAttached = false
 
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
+  imagesWithDarkVersion.forEach(image => {
+    const newSource = image.src.replace('.', '-dark.')
+    image.src = newSource
+  })
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+  const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
+  if (e.matches) {
+    imagesWithDarkVersion.forEach(image => {
+      const newSource = image.src.replace('.', '-dark.')
+      image.src = newSource
+    })
+  } else {
+    imagesWithDarkVersion.forEach(image => {
+      const newSource = image.src.replace('-dark.', '.')
+      image.src = newSource
+    })
+  }
+})
+
 window.onload = (event) => {
   ipcRenderer.send('send-settings')
   htmlTranslate.translate()

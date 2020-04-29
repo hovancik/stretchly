@@ -543,6 +543,7 @@ function loadSettings () {
   })
   i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
+  nativeTheme.themeSource = settings.get('themeSource')
 }
 
 function loadIdeas () {
@@ -784,6 +785,10 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'language') {
     i18next.changeLanguage(value)
+  }
+
+  if (key === 'themeSource') {
+    nativeTheme.themeSource = value
   }
 
   if (key === 'openAtLogin') {
