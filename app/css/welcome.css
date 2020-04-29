@@ -4,11 +4,11 @@ body {
 }
 
 .welcome {
-  display: grid;
-  grid-template: auto auto/ 4% auto 4%;
-  grid-gap: 16px 0;
-  font-size: 13px;
   color: rgba(0,0,0,0.85);
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto auto/ 4% auto 4%;
   letter-spacing: 0px;
   padding-top: 30px;
   text-align: center;
@@ -47,8 +47,8 @@ body {
 
 .welcome > :nth-child(2) {
   display: grid;
-  grid-template: repeat(3, minmax(86px, min-content))/ repeat(8, 1fr);
   grid-gap: 10px 20px;
+  grid-template: repeat(3, minmax(86px, min-content))/ repeat(8, 1fr);
 }
 
 .welcome > :nth-child(2) > div {
@@ -58,16 +58,16 @@ body {
 }
 
 .welcome > :nth-child(2) > div > img {
-  height: 42px;
-  width: 42px;
   border: 1px solid #979797;
   border-radius: 42px;
+  height: 42px;
   margin: 0 auto;
+  width: 42px;
 }
 
 .welcome > :last-child {
-  margin-top: 26px;
   display: flex;
+  margin-top: 26px;
 }
 
 .welcome > :last-child > :last-child {

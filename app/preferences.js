@@ -1,6 +1,7 @@
 const { remote, ipcRenderer, shell } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const VersionChecker = require('./utils/versionChecker')
+const { setSameWidths } = require('./utils/sameWidths')
 const i18next = remote.require('i18next')
 
 const bounds = remote.getCurrentWindow().getBounds()
@@ -29,7 +30,7 @@ document.onkeydown = event => {
 
 ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
   postponesnumber, settingsfile, doNotDisturb) => {
-  const debugInfo = document.querySelector('.debug')
+  const debugInfo = document.querySelector('.debug > :first-child')
   if (debugInfo.style.display === 'block') {
     debugInfo.style.display = 'none'
   } else {
@@ -44,6 +45,7 @@ ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
     document.querySelector('#chrome').innerHTML = process.versions.chrome
     document.querySelector('#electron').innerHTML = process.versions.electron
   }
+  setWindowHeight()
 })
 
 ipcRenderer.on('enableContributorPreferences', () => {
@@ -58,6 +60,7 @@ const showContributorPreferencesButton = () => {
   document.querySelectorAll('.authenticate').forEach((item) => {
     item.classList.add('hidden')
   })
+  setWindowHeight()
 }
 
 if (remote.getGlobal('shared').isContributor) {
@@ -108,6 +111,7 @@ document.querySelectorAll('.navigation a').forEach(element => {
       toBeDisplayed.classList.remove('hidden')
     })
 
+    setSameWidths()
     setWindowHeight()
   }
 })
@@ -218,6 +222,7 @@ document.querySelector('[name="alreadyContributor"]').onclick = () => {
   document.querySelectorAll('.authenticate').forEach((item) => {
     item.classList.remove('hidden')
   })
+  setWindowHeight()
 }
 
 document.querySelectorAll('.authenticate a').forEach((button) => {
@@ -238,11 +243,14 @@ versionChecker.latest()
   })
 
 function setWindowHeight () {
-  const height = document.querySelector('body').scrollHeight + 22
-  // remote.getCurrentWindow().setBounds({ x: bounds.x, y: bounds.y, width: bounds.width, height: height })
-  if (document.querySelector('body').classList.contains('darwin')) {
-    remote.getCurrentWindow().setSize(bounds.width, height)
+  const classes = document.querySelector('body').classList
+  const height = document.querySelector('body').scrollHeight
+  if (classes.contains('darwin')) {
+    remote.getCurrentWindow().setSize(bounds.width, height + 22)
+  } else if (classes.contains('win32')) {
+    remote.getCurrentWindow().setSize(bounds.width, height + 40)
   }
+  // linux is broken ;/
 }
 
 function realBreakInterval () {
