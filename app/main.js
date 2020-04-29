@@ -579,6 +579,7 @@ function resumeBreaks (notify = true) {
 }
 
 function createPreferencesWindow () {
+  const electron = require('electron')
   if (preferencesWin) {
     preferencesWin.show()
     return
@@ -588,8 +589,12 @@ function createPreferencesWindow () {
     autoHideMenuBar: true,
     icon: windowIconPath(),
     width: 600,
+    height: 530,
+    maxHeight: electron.screen
+      .getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+      .workAreaSize.height - 40,
     x: displaysX(-1, 600),
-    y: displaysY(),
+    y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
     webPreferences: {
       nodeIntegration: true

@@ -243,11 +243,14 @@ versionChecker.latest()
   })
 
 function setWindowHeight () {
-  const height = document.querySelector('body').scrollHeight + 22
-  // remote.getCurrentWindow().setBounds({ x: bounds.x, y: bounds.y, width: bounds.width, height: height })
-  if (document.querySelector('body').classList.contains('darwin')) {
-    remote.getCurrentWindow().setSize(bounds.width, height)
+  const classes = document.querySelector('body').classList
+  const height = document.querySelector('body').scrollHeight
+  if (classes.contains('darwin')) {
+    remote.getCurrentWindow().setSize(bounds.width, height + 22)
+  } else if (classes.contains('win32')) {
+    remote.getCurrentWindow().setSize(bounds.width, height + 40)
   }
+  // linux is broken ;/
 }
 
 function realBreakInterval () {
