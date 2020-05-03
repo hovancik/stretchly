@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Added
 - show Paused icon when Breaks are paused in Natural breaks mode
 - show Paused icon when Breaks are paused in Do Not Disturb mode
+- Dark mode
+- Contributor settings to set Dark/Light/System mode for color mode
 
 ## [0.99.2] - 2020-04-27
 ### Removed

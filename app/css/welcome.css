@@ -1,10 +1,10 @@
 body {
-  font-family: "Open Sans";
-  background: #EDEDED;
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  font-family: Open Sans;
 }
 
 .welcome {
-  color: rgba(0,0,0,0.85);
   display: grid;
   font-size: 13px;
   grid-gap: 16px 0;

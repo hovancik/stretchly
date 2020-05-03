@@ -96,10 +96,10 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 input[type="checkbox"] + label:before {
-  background: #FFFFFF;
+  background: var(--checkbox-bg);
   border: 0 solid rgba(0,0,0,0.20);
   border-radius: 3px;
-  box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.38);
+  box-shadow: var(--checkbox-shadow);
   content: "\00a0";
   display: inline-block;
   font: 13px sans-serif;
@@ -111,17 +111,17 @@ input[type="checkbox"] + label:before {
 }
 
 input[type="checkbox"]:checked + label:before {
-  background: #3B99FC;
-  color: #FFF;
+  background: var(--checkbox-checked-bg);
+  color: #FFFFFF;
   content: "\2713";
   text-align: center;
 }
 
 input[type="radio"] + label:before {
-  background: #FFFFFF;
+  background: var(--checkbox-bg);
   border: 0 solid rgba(0,0,0,0.20);
   border-radius: 13px;
-  box-shadow: inset 0 0 1px 0 rgba(0,0,0,0.38);
+  box-shadow: var(--checkbox-shadow);
   content: "\00a0";
   display: inline-block;
   font: 13px sans-serif;
@@ -132,8 +132,8 @@ input[type="radio"] + label:before {
 }
 
 input[type="radio"]:checked + label:before {
-  background: #3B99FC;
-  color: #FFF;
+  background: var(--checkbox-checked-bg);
+  color: #FFFFFF;
   content: "\25CF";
   text-align: center;
 }
@@ -165,9 +165,8 @@ input[type="range"]  {
 }
 
 .has-select::before {
-  background-image: linear-gradient(180deg, #6CB3FA 0%, #057EFF 100%);
+  background: var(--has-select-before-bg);
   border-radius: 0 3px 3px 0;
-  color: #FFFFFF;
   content: "";
   height: 19px;
   pointer-events: none;
@@ -178,14 +177,20 @@ input[type="range"]  {
 
 select {
   -webkit-appearance: none;
-  background: #FFFFFF;
-  border: 0 solid rgba(0,0,0,0.15);
+  color: var(--select-color);
+  background: var(--select-bg);
+  border: var(--select-border);
   border-radius: 3px 0  0 3px;
-  box-shadow: 0 0 1px 0 rgba(0,0,0,0.20);
+  box-shadow: var(--select-shadow);
   font-family: sans-serif;
   height: 19px;
   padding-left: 8px;
   width: 100%;
+}
+
+select option {
+  color: var(--select-color);
+  background: var(--select-option-bg) ;
 }
 
 select:focus {
@@ -193,15 +198,14 @@ select:focus {
 }
 
 button {
-  background: #FFFFFF;
+  background: var(--button-bg-color);
   border: 0 solid rgba(0,0,0,0.15);
   border-radius: 3px;
-  box-shadow: 0 0 1px 0 rgba(0,0,0,0.20);
-  color: rgba(0,0,0,0.85);
+  box-shadow: var(--button-shadow);
+  color: var(--button-color);
   font-size: 13px;
   letter-spacing: -0.08px;
-  min-height: 19px;
-  min-width: 139px;
+  padding: 2px 12.5px;
   text-align: center;
 }
 
@@ -221,14 +225,14 @@ button:active {
 }
 
 .push {
-  background-image: linear-gradient(180deg, #6CB3FA 0%, #067DFF 100%);
+  background: var(--button-push-bg);
   border-radius: 3.5px;
-  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  box-shadow: var(--button-push-shadow);
   color: #FFFFFF;
 }
 
 hr {
-  background: #d2d1d29e;
+  background: var(--hr-bg-color);
   border: 0 solid rgba(0,0,0,0.20);
   height: 2px;
 }

@@ -28,6 +28,26 @@ ipcRenderer.on('renderSettings', (event, settings) => {
     }
   })
 
+  document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    let value
+    switch (radio.value) {
+      case 'true':
+        value = true
+        break
+      case 'false':
+        value = false
+        break
+      default:
+        value = radio.value
+    }
+    radio.checked = settings[radio.name] === value
+    if (!eventsAttached) {
+      radio.onchange = (event) => {
+        ipcRenderer.send('save-setting', radio.name, value)
+      }
+    }
+  })
+
   document.querySelectorAll('input[type="range"]').forEach(range => {
     const divisor = range.dataset.divisor
     range.value = settings[range.name] / divisor
