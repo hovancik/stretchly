@@ -224,6 +224,10 @@ function createWelcomeWindow () {
 }
 
 function createContributorSettingsWindow () {
+  if (contributorPreferencesWindow) {
+    contributorPreferencesWindow.show()
+    return
+  }
   const modalPath = `file://${__dirname}/contributor-preferences.html`
   contributorPreferencesWindow = new BrowserWindow({
     x: displaysX(-1, 700),
