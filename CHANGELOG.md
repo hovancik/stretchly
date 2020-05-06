@@ -6,14 +6,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## Fixed
+## [0.99.3] - 2020-05-05
+### Fixed
 - multi-line status messages in Tray (Mac, Windows)
 
-## Added
+### Added
 - show Paused icon when Breaks are paused in Natural breaks mode
 - show Paused icon when Breaks are paused in Do Not Disturb mode
-- Dark mode
+- Dark mode for interface
 - Contributor settings to set Dark/Light/System mode for color mode
+
+### Changed
+- changed app name from `stretchly` to `Stretchly`
+  - this will change location of preferences file, so you will need to set up your preferences again or copy the file
 
 ## [0.99.2] - 2020-04-27
 ### Removed
