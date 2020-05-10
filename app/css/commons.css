@@ -102,7 +102,7 @@ input[type="checkbox"] + label:before {
   box-shadow: var(--checkbox-shadow);
   content: "\00a0";
   display: inline-block;
-  font: 13px sans-serif;
+  font: 12px sans-serif;
   height: 14px;
   margin: 0 4px 0 0;
   padding:0;
@@ -113,7 +113,7 @@ input[type="checkbox"] + label:before {
 input[type="checkbox"]:checked + label:before {
   background: var(--checkbox-checked-bg);
   color: #FFFFFF;
-  content: "\2713";
+  content: "\2714";
   text-align: center;
 }
 
@@ -124,7 +124,7 @@ input[type="radio"] + label:before {
   box-shadow: var(--checkbox-shadow);
   content: "\00a0";
   display: inline-block;
-  font: 13px sans-serif;
+  font: 12px sans-serif;
   height: 16px;
   margin: 0 4px 0 0;
   padding:0;
