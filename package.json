@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "electron ./app",
-    "dev": "NODE_ENV='development' electron ./app --enable-logging --remote-debugging-port=9222",
+    "dev": "cross-env NODE_ENV=development electron ./app --enable-logging --remote-debugging-port=9222",
     "electromon": "electromon ./app",
     "postinstall": "electron-builder install-app-deps",
     "pack-all": "electron-builder build --dir -mwl --x64 --ia32",
@@ -40,6 +40,7 @@
     "babel-eslint": "^10.0.3",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "cross-env": "^7.0.2",
     "electromon": "^1.0.10",
     "electron": "^7.1.9",
     "electron-builder": "20.44.4",
