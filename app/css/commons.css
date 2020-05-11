@@ -102,12 +102,16 @@ input[type="checkbox"] + label:before {
   box-shadow: var(--checkbox-shadow);
   content: "\00a0";
   display: inline-block;
-  font: 12px sans-serif;
+  font: 13px sans-serif;
   height: 14px;
   margin: 0 4px 0 0;
   padding:0;
   vertical-align: top;
   width: 14px;
+}
+
+.darwin input[type="checkbox"] + label:before {
+  font: 12px sans-serif;
 }
 
 input[type="checkbox"]:checked + label:before {
@@ -124,7 +128,7 @@ input[type="radio"] + label:before {
   box-shadow: var(--checkbox-shadow);
   content: "\00a0";
   display: inline-block;
-  font: 12px sans-serif;
+  font: 13px sans-serif;
   height: 16px;
   margin: 0 4px 0 0;
   padding:0;
