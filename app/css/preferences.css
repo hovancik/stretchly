@@ -172,6 +172,11 @@ body > .hidden,
   width: 30px;
 }
 
+.win32 .appearance > input[type="radio"] + label:before {
+  content: "\2713";
+  font: 13px sans-serif;
+}
+
 .darwin .appearance > input[type="radio"] + label:before {
   font: 13px sans-serif;
 }

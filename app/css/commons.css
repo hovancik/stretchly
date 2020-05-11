@@ -114,11 +114,19 @@ input[type="checkbox"] + label:before {
   font: 12px sans-serif;
 }
 
+.win32 input[type="checkbox"] + label:before {
+  font: 11px sans-serif;
+}
+
 input[type="checkbox"]:checked + label:before {
   background: var(--checkbox-checked-bg);
   color: #FFFFFF;
   content: "\2714";
   text-align: center;
+}
+
+.win32 input[type="checkbox"]:checked + label:before {
+  content: "\2713";
 }
 
 input[type="radio"] + label:before {
