@@ -163,13 +163,22 @@ body > .hidden,
   border-radius: 0;
   box-shadow: var(--checkbox-shadow);
   color: attr(data-background color, red);
-  content: "\2713";
+  content: "\2714";
   display: inline-block;
-  font: 13px sans-serif;
+  font: 14px sans-serif;
   height: 15px;
   margin: 0 17px 0;
   padding: 10px;
   width: 30px;
+}
+
+.win32 .appearance > input[type="radio"] + label:before {
+  content: "\2713";
+  font: 13px sans-serif;
+}
+
+.darwin .appearance > input[type="radio"] + label:before {
+  font: 13px sans-serif;
 }
 
 #greenClouds + label:before {

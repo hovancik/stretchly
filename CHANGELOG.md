@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- checkbox across macOS, Windows, Linux
+- maximum window size of Preferences
+
 ## [0.99.3] - 2020-05-05
 ### Fixed
 - multi-line status messages in Tray (Mac, Windows)

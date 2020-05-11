@@ -590,14 +590,15 @@ function createPreferencesWindow () {
     return
   }
   const modalPath = `file://${__dirname}/preferences.html`
+  const maxHeight = (electron.screen
+    .getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    .workAreaSize.height - 530) / 2.0 + 490
   preferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
     icon: windowIconPath(),
     width: 600,
     height: 530,
-    maxHeight: electron.screen
-      .getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-      .workAreaSize.height - 40,
+    maxHeight: Math.round(maxHeight),
     x: displaysX(-1, 600),
     y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
