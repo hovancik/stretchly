@@ -40,7 +40,7 @@ global.shared = {
 const gotTheLock = app.requestSingleInstanceLock()
 
 if (!gotTheLock) {
-  console.log('stretchly is already running.')
+  console.log('Stretchly is already running.')
   app.quit()
   return
 }
@@ -325,7 +325,7 @@ function startMicrobreak () {
       backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
-      title: 'stretchly',
+      title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true
@@ -418,7 +418,7 @@ function startBreak () {
       backgroundColor: settings.get('mainColor'),
       skipTaskbar: true,
       focusable: false,
-      title: 'stretchly',
+      title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true
