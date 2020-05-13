@@ -246,7 +246,7 @@ Sounds used in this application are listed [here](http://freesound.org/people/ho
 - `silence` by [parcodeisuoni](http://freesound.org/people/parcodeisuoni/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
 
 #### Fonts credits
-This app uses [Lato](https://www.latofonts.com) fonts under the OFL license. See OFL.txt file.  
+This app uses [Open Sans](https://fonts.google.com/specimen/Open+Sans) fonts licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).  
 
 ## License
 See LICENSE file.
