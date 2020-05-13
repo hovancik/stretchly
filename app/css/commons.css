@@ -104,9 +104,9 @@ input[type="checkbox"] + label:before {
   display: inline-block;
   font: 13px sans-serif;
   height: 14px;
+  line-height: 16px;
   margin: 0 4px 0 0;
   padding:0;
-  vertical-align: top;
   width: 14px;
 }
 
