@@ -3,16 +3,16 @@
     "toolTipHeader": "stretchly - application de rappel de pauses",
     "microbreakIn": "Petite pause dans {{seconds}} secondes…",
     "breakIn": "Grande pause dans {{seconds}} secondes…",
-    "breakAt": "Next {{reference}} at {{hours}}:{{minutes}}",
-    "breakReference": "break",
-    "microbreakReference": "microbreak",
-    "resumingAt": "Resuming breaks at {{hours}}:{{minutes}}",
+    "breakAt": "Prochaine {{reference}} à {{hours}}:{{minutes}}",
+    "breakReference": "grande pause",
+    "microbreakReference": "petite pause",
+    "resumingAt": "Reprise des pauses à {{hours}}:{{minutes}}",
     "resumingBreaks": "Reprise des pauses",
     "aboutStretchly": "À propos de stretchly v{{version}}",
     "downloadLatestVersion": "Télécharger la dernière version",
     "about": "À propos",
     "becomePatron": "Soutenir l'application",
-    "notificationStateMode": "En mode ne pas troubler",
+    "notificationStateMode": "En mode ne pas déranger",
     "toBreak": "grande pause suivante",
     "toMicrobreak": "petite pause suivante",
     "skipToTheNext": "Passer à la",
@@ -39,15 +39,15 @@
     "break": "grande pause",
     "nextBreakFollowing": "\nProchaine grande pause après encore {{count}} petite",
     "nextBreakFollowing_plural": "\nProchaine grande pause après encore {{count}} petites",
-    "notificationStatus": "\nEn mode ne pas troubler"
+    "notificationStatus": "\nEn mode ne pas déranger"
   },
   "break": {
-    "postpone": "…wait for a bit",
+    "postpone": "…attendre un peu",
     "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une grande pause !"
   },
   "microbreak": {
-    "postpone": "…wait for a bit",
+    "postpone": "…attendre un peu",
     "keepGoing": "…non, je vais continuer sans pause",
     "title": "Il est temps de faire une petite pause !"
   },
@@ -56,9 +56,9 @@
     "breakTimeReminderApp": "application de rappel de pauses",
     "toLearnMoreVisit": "Pour découvrir toutes les fonctionnalités de stretchly et comment vous pouvez contribuer au projet, visitez son",
     "homepage": "site web",
-    "orRead": "or read its",
+    "orRead": "ou lisez son",
     "tutorial": "tutorial",
-    "latestVersion": "la dernière version:",
+    "latestVersion": "la dernière version :",
     "checking": "vérification…"
   },
   "settings": {
@@ -66,8 +66,8 @@
     "microbreaks": "petites pauses",
     "secondsEveryBreak": "secondes de pause toutes les",
     "minutes": "minutes",
-    "dontLetMeSkip": "don't let me skip",
-    "allowToPostpone": "allow to postpone",
+    "dontLetMeSkip": "ne pas me laisser passer les pauses",
+    "allowToPostpone": "autoriser à repousser les pauses",
     "breaks": "grandes pauses",
     "minutesBreakAfter": "minutes de pause après",
     "microbreaks2": "petites pauses",
@@ -79,7 +79,7 @@
     "cantDisableBoth": "Veuillez  activer l'une des deux pauses proposées"
   },
   "settings2": {
-    "settings": "Settings",
+    "settings": "Paramètres",
     "audioScheme": "thème sonore",
     "crystalGlass": "verre crystal",
     "windChime": "tintement aérien",
@@ -90,7 +90,7 @@
     "greenClouds": "nuages <br/> verts",
     "autumnBeBlessed": "couleurs d'automne",
     "graphiteCrystal": "crystal de <br/>graphite",
-    "coffeeKisses": "bisous de <br/> café",
+    "coffeeKisses": "baisers de <br/> café",
     "morningSwim": "baignade <br/> matinale",
     "resetToDefaults": "revenir aux paramètres d'origine"
   },
@@ -102,11 +102,11 @@
     "notifyBeforeBreakStarts": "notification juste avant une pause",
     "notifyBeforeMicrobreakStarts": "notification juste avant une petite pause",
     "monitorIdleTime": "suivre les périodes d'inactivité pour des pauses plus naturelles",
-    "monitorDnd": "monitor Do Not Disturb mode",
-    "showOnAllScreens": "breaks are shown on all monitors",
-    "silentNotifications": "silent notifications",
-    "useMonochromeTrayIcon": "utiliser icône monochrome",
-    "useMonochromeInvertedTrayIcon": "invert monochrome tray icon",
+    "monitorDnd": "prendre en compte le mode « Ne pas déranger »",
+    "showOnAllScreens": "afficher les pauses sur tous les écrans",
+    "silentNotifications": "notifications silencieuses",
+    "useMonochromeTrayIcon": "utiliser l'icône monochrome",
+    "useMonochromeInvertedTrayIcon": "inverser les couleurs de l'icône monochrome",
     "language": "langue",
     "resetToDefaults": "revenir aux paramètres d'origine"
   },
@@ -124,12 +124,12 @@
     "newVersionAvailable": "Une nouvelle version est disponible !"
   },
   "welcome": {
-    "title": "welcome to stretchly",
-    "stretchly": "welcome to stretchly",
-    "breakTimeReminderApp": "break time reminder app",
-    "chooseLanguage": "To start, please choose the language you would like to use with stretchly:",
-    "readTutorial": "Let stretchly become your favorite app and take a little bit of time to make it your own. Learn how to personalize stretchly in a quick tutorial.",
-    "tutorial": "tutorial",
-    "skipTutorial": "Skip the tutorial, I can always find it again in the About window"
+    "title": "bienvenue sur stretchly",
+    "stretchly": "bienvenue sur stretchly",
+    "breakTimeReminderApp": "application de rappel de pauses",
+    "chooseLanguage": "Pour commencer, sélectionnez la langue que vous souhaiteriez utiliser avec stretchly :",
+    "readTutorial": "Faites de stretchly votre app favorite en vous laissant le temps de vous l'approprier. Apprenez comment personnaliser stretchly avec un tutoriel rapide.",
+    "tutorial": "tutoriel",
+    "skipTutorial": "Passer le tutoriel, je peux toujours le retrouver dans la fenêtre « À propos »"
   }
 }
