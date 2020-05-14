@@ -1,6 +1,7 @@
-const { ipcRenderer } = require('electron')
+const { remote, ipcRenderer } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const { setSameWidths } = require('./utils/sameWidths')
+const i18next = remote.require('i18next')
 
 const htmlTranslate = new HtmlTranslate(document)
 let eventsAttached = false
@@ -50,15 +51,17 @@ ipcRenderer.on('renderSettings', (event, settings) => {
 
   document.querySelectorAll('input[type="range"]').forEach(range => {
     const divisor = range.dataset.divisor
+    const output = range.closest('div').querySelector('output')
     range.value = settings[range.name] / divisor
-    range.closest('div').querySelector('output').innerHTML = range.value
+    const unit = output.dataset.unit
+    output.innerHTML = i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
     if (!eventsAttached) {
       range.onchange = event => {
-        range.closest('div').querySelector('output').innerHTML = range.value
+        output.innerHTML = i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
         ipcRenderer.send('save-setting', range.name, range.value * divisor)
       }
       range.oninput = event => {
-        range.closest('div').querySelector('output').innerHTML = range.value
+        output.innerHTML = i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
       }
     }
   })

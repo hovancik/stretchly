@@ -181,18 +181,23 @@ ipcRenderer.on('renderSettings', (event, settings) => {
 
   document.querySelectorAll('input[type="range"]').forEach(range => {
     const divisor = range.dataset.divisor
+    const output = range.closest('div').querySelector('output')
     range.value = settings[range.name] / divisor
-    range.closest('div').querySelector('output').innerHTML = range.value
-    document.querySelector('#longBreakEvery').closest('div').querySelector('output').innerHTML = realBreakInterval()
+    const unit = output.dataset.unit
+    output.innerHTML = i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
+    document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+      .innerHTML = i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
     if (!eventsAttached) {
       range.onchange = event => {
-        range.closest('div').querySelector('output').innerHTML = range.value
-        document.querySelector('#longBreakEvery').closest('div').querySelector('output').innerHTML = realBreakInterval()
+        output.innerHTML = i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
+        document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+          .innerHTML = i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
         ipcRenderer.send('save-setting', range.name, range.value * divisor)
       }
       range.oninput = event => {
-        range.closest('div').querySelector('output').innerHTML = range.value
-        document.querySelector('#longBreakEvery').closest('div').querySelector('output').innerHTML = realBreakInterval()
+        output.innerHTML = i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
+        document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+          .innerHTML = i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
       }
     }
   })
@@ -214,7 +219,7 @@ document.querySelectorAll('.enabletype').forEach((element) => {
     if (enabletypeChecked.length === 0) {
       element.checked = true
       ipcRenderer.send('save-setting', element.value, element.checked)
-      window.alert(i18next.t('settings.cantDisableBoth'))
+      window.alert(i18next.t('preferences.schedule.cantDisableBoth'))
     }
   }
 })
