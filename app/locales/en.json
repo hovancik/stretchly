@@ -67,7 +67,6 @@
       "enableStrictMini": "Enable Strict Mode for Mini Breaks",
       "enableStrictLong": "Enable Strict Mode for Long Breaks",
       "cantDisableBoth": "It is not possible to disable both types of breaks"
-
     },
     "theme": {
       "appearance": "Appearance:",
