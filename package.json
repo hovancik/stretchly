@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "0.99.3",
+  "version": "0.99.4",
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -42,14 +42,14 @@
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.2",
     "electromon": "^1.0.10",
-    "electron": "^8.2.5",
+    "electron": "^8.3.0",
     "electron-builder": "^22.6.0",
     "husky": "^4.2.5",
     "mocha": "^7.1.2",
     "rimraf": "^3.0.2",
     "sinon": "^9.0.2",
     "spectron": "^10.0.1",
-    "standard": "^14.3.3"
+    "standard": "^14.3.4"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
@@ -90,7 +90,8 @@
         "rpm",
         "freebsd",
         "pacman",
-        "tar.xz"
+        "tar.xz",
+        "snap"
       ]
     },
     "win": {
