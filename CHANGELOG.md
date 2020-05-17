@@ -6,9 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.99.4] - 2020-05-15
 ### Fixed
 - checkbox across macOS, Windows, Linux
 - maximum window size of Preferences
+- updated translation files
+- translations for ranges
+- small style issues
+
+### Added
+- snap package build
 
 ## [0.99.3] - 2020-05-05
 ### Fixed
