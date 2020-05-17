@@ -42,9 +42,9 @@
       "showBreaksIn": "Ukázať prestávky ako:",
       "window": "Okno",
       "fullscreen": "Celá obrazovka",
-      "showIdeas": "Ukázať nápady na cvičnie počas prestávok",
+      "showIdeas": "Ukázať nápady na cvičenie počas prestávok",
       "allScreens": "Ukázať prestávky na každom monitore",
-      "monitorIdleTime": "Sledovať neaktívny čas (odpočítavnie je zastavené počas vašej neaktivity)",
+      "monitorIdleTime": "Sledovať neaktívny čas (odpočítavanie je zastavené počas vašej neaktivity)",
       "monitorDnd": "Ukázať prestávky aj počas režimu Nerušiť",
       "language": "Vyberte jazyk:",
       "restoreDefaults": "Obnoviť pôvodné nastavenia"
@@ -63,7 +63,7 @@
       "showNotificationBeforeLongBreak": "Ukázať upozornenie pred začiatkom Dlhej Prestávky",
       "enablePostponeLong": "Umožniť posunutie Dlhej Prestávky",
       "strictMode": "Prísny Režim:",
-      "strictModeInfo": "V Prísnom Režime vám nebude umožnené preskočiť prestávku a vylepšiť tak vašu disciplínu.",
+      "strictModeInfo": "V Prísnom Režime vám nebude umožnené preskočiť prestávku a vylepší tak vašu disciplínu.",
       "enableStrictMini": "Zapnúť Prísny Režim pre Mini Prestávky",
       "enableStrictLong": "Zapnúť Prísny Režim pre Dlhé Prestávky",
       "cantDisableBoth": "Nie je možné nepovoliť obe druhy prestávok"
@@ -91,14 +91,14 @@
       "latestVersion": "Najnovšia verzia ",
       "notifyNewVersion":"Automaticky ma upozorni na novú verziu",
       "learnMore": "Ak sa chcete dozvedieť viac o funkciách Stretchly, prezrieť tutoriál, stiahnuť najnovšiu verziu alebo nás kontaktovať kvôli podpore, ",
-      "ourWebsite": "navštívne našu webstránku",
+      "ourWebsite": "navštívte našu webstránku",
       "dot": ".",
       "developedBy": "Vyvinul",
       "janH": "Ján Hovančík"
     },
     "heart": {
       "loveStretchly": "Chcete pomôcť Stretchly?",
-      "desc1": "Prestávky počas práce s počítačom sú vedecky overnenou metódou na zlepšenie fyzického a psychického zdravia.",
+      "desc1": "Prestávky počas práce s počítačom sú vedecky overenou metódou na zlepšenie fyzického a psychického zdravia.",
       "desc2": "Stretchly je zdarma. Môžete však darovať svoj čas alebo peniaze a pomôcť tak k zlepšeniu Stretchly a ďalších programov.",
       "becomePatron": "Stante sa Patrónom",
       "alreadyContributor": "Už som prispel",
@@ -109,7 +109,7 @@
   "contributorPreferences": {
     "title": "Nastavenia pre prispievateľov",
     "notifications": "Upozornenie na prestávku:",
-    "notificationsInfo": "Systémová notifikácia zobrazená krátko pred prestávok, ktorá vám umožní sa lepšie pripraviť na prestávku.",
+    "notificationsInfo": "Systémová notifikácia zobrazená krátko pred prestávkou, ktorá vám umožní sa lepšie pripraviť na prestávku.",
     "beforeLongBreak": "Dlhá Prestávka:",
     "beforeMiniBreak": "Mini Prestávka:",
     "newVersion": "Nová verzia:",
