@@ -101,6 +101,8 @@ function onResumeOrUnlock () {
 
 function startPowerMonitoring () {
   const electron = require('electron')
+
+  console.log('monitors', electron.screen.getAllDisplays())
   electron.powerMonitor.on('suspend', onSuspendOrLock)
   electron.powerMonitor.on('lock-screen', onSuspendOrLock)
   electron.powerMonitor.on('resume', onResumeOrUnlock)
@@ -119,7 +121,7 @@ function closeWindows (windowArray) {
   return null
 }
 
-function displaysX (displayID = -1, width = 800) {
+function displaysX (displayID = -1, width = 800, fullscreen = false) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -132,11 +134,36 @@ function displaysX (displayID = -1, width = 800) {
     const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  const bounds = theScreen.bounds
-  return Math.ceil(bounds.x + ((bounds.width - width) / 2))
+  const bounds = theScreen.workArea
+  if (fullscreen) {
+    return Math.ceil(bounds.x)
+  } else {
+    return Math.ceil(bounds.x + ((bounds.width - width) / 2))
+  }
 }
 
-function displaysY (displayID = -1, height = 600) {
+function displaysY (displayID = -1, height = 600, fullscreen = false) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    const screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
+  const bounds = theScreen.workArea
+  if (fullscreen) {
+    return Math.ceil(bounds.y)
+  } else {
+    return Math.ceil(bounds.y + ((bounds.height - height) / 2))
+  }
+}
+
+function displaysWidth (displayID = -1) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -150,7 +177,24 @@ function displaysY (displayID = -1, height = 600) {
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
-  return Math.ceil(bounds.y + ((bounds.height - height) / 2))
+  return Math.ceil(bounds.width)
+}
+
+function displaysHeight (displayID = -1) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    const screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
+  const bounds = theScreen.bounds
+  return Math.ceil(bounds.height)
 }
 
 function createTrayIcon () {
@@ -332,13 +376,23 @@ function startMicrobreak () {
       }
     }
 
-    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (settings.get('fullscreen') && process.platform === 'linux') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
 
+    console.log('monitors id', displayIdx)
+    console.log('monitors windowOptions', windowOptions)
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // microbreakWinLocal.webContents.openDevTools()
+    console.log('microbreakWinLocal.Bounds after creation', microbreakWinLocal.getBounds())
+    microbreakWinLocal.setSize(width=windowOptions.width, height=windowOptions.height)
+    console.log('microbreakWinLocal.Bounds after reapplying bounds', microbreakWinLocal.getBounds())
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
       microbreakWinLocal.setKiosk(settings.get('fullscreen'))
@@ -425,7 +479,12 @@ function startBreak () {
       }
     }
 
-    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (settings.get('fullscreen') && process.platform === 'linux') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
