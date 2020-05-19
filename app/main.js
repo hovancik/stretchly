@@ -391,11 +391,13 @@ function startMicrobreak () {
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // microbreakWinLocal.webContents.openDevTools()
     console.log('microbreakWinLocal.Bounds after creation', microbreakWinLocal.getBounds())
-    microbreakWinLocal.setSize(width=windowOptions.width, height=windowOptions.height)
+    microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     console.log('microbreakWinLocal.Bounds after reapplying bounds', microbreakWinLocal.getBounds())
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
-      microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+      if (process.platform !== 'linux') {
+        microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+      }
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
