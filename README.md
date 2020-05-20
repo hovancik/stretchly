@@ -221,6 +221,7 @@ You can copy debug information to clipboard.
 - Chris Heyer, [@cheyer](https://github.com/cheyer)
 - Sheri Richardson, [@sheriallis](https://github.com/sheriallis/)
 - Felix W. Dekker, [@FWDekker](https://github.com/FWDekker)
+- Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
 
 ### Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
