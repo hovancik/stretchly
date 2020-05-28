@@ -66,7 +66,10 @@
       "strictModeInfo": "A Szigorú mód megakadályozza, hogy kihagyd a Rövid és/vagy Hosszú szüneteket, fejlesztve ezzel a fegyelmed.",
       "enableStrictMini": "Szigorú mód engedélyezése Rövid szünetekre",
       "enableStrictLong": "Szigorú mód engedélyezése Hosszú szünetekre",
-      "cantDisableBoth": "Nem tudod mindkét típusú szünetet letiltani"
+      "cantDisableBoth": "Nem tudod mindkét típusú szünetet letiltani",
+      "hardcoreMode": "Extrém mód:",
+      "hardcoreModeInfo": "Az Extrém mód letiltja a szünetek felfüggesztését, visszaállítását, elhalasztását, kihagyását, valamint a Stretchly bezárását. Amikor az Extrém mód engedélyezve van, az Időzítés fülön található Szünetek elhalasztása és a Szigorú mód beállítások figyelmen kívül lesznek hagyva.",
+      "enableHardcoreMode": "Extrém mód engedélyezése"
     },
     "theme": {
       "appearance": "Kinézet:",

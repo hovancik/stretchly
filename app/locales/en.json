@@ -66,7 +66,10 @@
       "strictModeInfo": "Strict Mode prevents you from skipping either Mini Breaks or Long Breaks and is designed to help discipline.",
       "enableStrictMini": "Enable Strict Mode for Mini Breaks",
       "enableStrictLong": "Enable Strict Mode for Long Breaks",
-      "cantDisableBoth": "It is not possible to disable both types of breaks"
+      "cantDisableBoth": "It is not possible to disable both types of breaks",
+      "hardcoreMode": "Hardcore Mode:",
+      "hardcoreModeInfo": "Hardcore Mode disables Pause breaks, Reset breaks, Postpone/Skip breaks, Quit app features. When Hardcore Mode is enabled, the Postponement and Strict mode preferences set in the Schedule tab are ignored.",
+      "enableHardcoreMode": "Enable Hardcore Mode"
     },
     "theme": {
       "appearance": "Appearance:",
