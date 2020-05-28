@@ -495,7 +495,9 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
-      breakWinLocal.setKiosk(settings.get('fullscreen'))
+      if (process.platform !== 'linux') {
+        breakWinLocal.setKiosk(settings.get('fullscreen'))
+      }
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
