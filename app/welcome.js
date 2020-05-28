@@ -31,6 +31,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
 window.onload = (event) => {
   ipcRenderer.send('send-settings')
   htmlTranslate.translate()
+  setSameWidths()
   setTimeout(() => { eventsAttached = true }, 500)
 }
 
@@ -58,6 +59,7 @@ ipcRenderer.on('renderSettings', (event, settings) => {
       radio.onchange = (event) => {
         ipcRenderer.send('save-setting', radio.name, value)
         htmlTranslate.translate()
+        setSameWidths()
       }
     }
   })

@@ -1,8 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - 休息提醒应用",
+    "microbreakIn": "Mini Break in $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Long Break in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "正在恢复休息",
     "downloadLatestVersion": "下载最新版本",
+    "toBreak": "Long Break",
+    "toMicrobreak": "Mini Break",
     "skipToTheNext": "跳到下一次",
     "resume": "恢复",
     "pause": "暂停",
@@ -13,6 +17,10 @@
     "indefinitely": "无限期",
     "resetBreaks": "重置休息",
     "quitStretchly": "退出 Stretchly",
+    "restoreDefaults": "Restore defaults",
+    "warning": "This will restore app defaults and all your settings will be lost.",
+    "continue": "Continue",
+    "cancel": "Cancel",
     "preferences": "设置"
   },
   "break": {

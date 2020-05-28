@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Added Hungarian translation
+
+### Changed
+- update Chinese (Traditional) translation (#590)
 
 ## [0.99.4] - 2020-05-15
 ### Fixed

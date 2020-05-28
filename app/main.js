@@ -274,9 +274,9 @@ function createContributorSettingsWindow () {
   }
   const modalPath = `file://${__dirname}/contributor-preferences.html`
   contributorPreferencesWindow = new BrowserWindow({
-    x: displaysX(-1, 700),
+    x: displaysX(-1, 735),
     y: displaysY(),
-    width: 700,
+    width: 735,
     autoHideMenuBar: true,
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
