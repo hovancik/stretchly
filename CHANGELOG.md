@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Added Hungarian translation
+- Added Hardcore mode checkbox UI to the Contributor Preferences window.
 
 ### Changed
 - update Chinese (Traditional) translation (#590)
