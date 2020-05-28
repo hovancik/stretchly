@@ -54,13 +54,13 @@ const formatTimeIn = function (milliseconds, i18next = require('i18next')) {
 }
 
 // does not consider `postponesLimit`
-function canPostpone (postpone, passedPercent, postponePercent) {
-  return postpone && passedPercent <= postponePercent
+function canPostpone (postpone, passedPercent, postponePercent, hardcoreMode) {
+  return postpone && passedPercent <= postponePercent && !hardcoreMode
 }
 
 // does not consider `postponesLimit`
-function canSkip (strictMode, postpone, passedPercent, postponePercent) {
-  return !((postpone && passedPercent <= postponePercent) || strictMode)
+function canSkip (strictMode, postpone, passedPercent, postponePercent, hardcoreMode) {
+  return !((postpone && passedPercent <= postponePercent) || strictMode || hardcoreMode)
 }
 
 module.exports = {

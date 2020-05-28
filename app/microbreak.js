@@ -29,7 +29,7 @@ ipcRenderer.on('microbreakIdea', (event, message) => {
   microbreakIdea.innerHTML = message
 })
 
-ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
+ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, hardcoreMode) => {
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')
   const postponeElement = document.querySelector('#postpone')
@@ -39,9 +39,9 @@ ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, post
     if (Date.now() - started < duration) {
       const passedPercent = (Date.now() - started) / duration * 100
       postponeElement.style.display =
-        Utils.canPostpone(postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+        Utils.canPostpone(postpone, passedPercent, postponePercent, hardcoreMode) ? 'flex' : 'none'
       closeElement.style.display =
-        Utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+        Utils.canSkip(strictMode, postpone, passedPercent, postponePercent, hardcoreMode) ? 'flex' : 'none'
       progress.value = (100 - passedPercent) * progress.max / 100
       progressTime.innerHTML = Utils.formatTimeRemaining(Math.trunc(duration - Date.now() + started))
     }

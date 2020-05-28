@@ -294,13 +294,14 @@ function startMicrobreak () {
   const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
   const postponable = settings.get('microbreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+  const hardcoreMode = settings.get('hardcoreMode')
 
-  if (!strictMode || postponable) {
+  if (!strictMode || postponable || !hardcoreMode) {
     globalShortcut.register('CommandOrControl+X', () => {
       const passedPercent = (Date.now() - startTime) / breakDuration * 100
-      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent, hardcoreMode)) {
         postponeMicrobreak()
-      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent, hardcoreMode)) {
         finishMicrobreak(false)
       }
     })
@@ -347,7 +348,7 @@ function startMicrobreak () {
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+        breakDuration, strictMode, postponable, postponableDurationPercent, hardcoreMode)
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -387,13 +388,14 @@ function startBreak () {
   const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
   const postponable = settings.get('breakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+  const hardcoreMode = settings.get('hardcoreMode')
 
-  if (!strictMode || postponable) {
+  if (!strictMode || postponable || !hardcoreMode) {
     globalShortcut.register('CommandOrControl+X', () => {
       const passedPercent = (Date.now() - startTime) / breakDuration * 100
-      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent, hardcoreMode)) {
         postponeBreak()
-      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent, hardcoreMode)) {
         finishBreak(false)
       }
     })
@@ -440,7 +442,7 @@ function startBreak () {
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+        breakDuration, strictMode, postponable, postponableDurationPercent, hardcoreMode)
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
@@ -686,6 +688,7 @@ function getTrayMenu () {
   } else if (!doNotDisturb) {
     trayMenu.push({
       label: i18next.t('main.pause'),
+      visible: !settings.get('hardcoreMode'),
       submenu: [
         {
           label: i18next.t('main.forHour'),
@@ -719,7 +722,8 @@ function getTrayMenu () {
       ]
     }, {
       label: i18next.t('main.resetBreaks'),
-      click: resetBreaks
+      click: resetBreaks,
+      visible: !settings.get('hardcoreMode')
     })
   }
 
@@ -731,16 +735,21 @@ function getTrayMenu () {
       createPreferencesWindow()
     }
   }, {
-    type: 'separator'
+    type: 'separator',
+    visible: !settings.get('hardcoreMode')
   }, {
     label: i18next.t('main.quitStretchly'),
+    visible: !settings.get('hardcoreMode'),
     role: 'quit',
     click: function () {
       app.quit()
     }
   })
 
-  return Menu.buildFromTemplate(trayMenu)
+  // Hide the invisible items. Electron has a bug which ignores visible: false parameter for separator menuitems. Hide them here.
+  const filteredTrayMenu = trayMenu.filter(menuItem => menuItem.visible !== false)
+
+  return Menu.buildFromTemplate(filteredTrayMenu)
 }
 
 function updateToolTip () {
