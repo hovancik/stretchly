@@ -361,6 +361,8 @@ function startMicrobreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const windowOptions = {
+      width: 800,
+      height: 600,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -389,9 +391,10 @@ function startMicrobreak () {
     console.log('monitors id', displayIdx)
     console.log('monitors windowOptions', windowOptions)
     let microbreakWinLocal = new BrowserWindow(windowOptions)
-    // microbreakWinLocal.webContents.openDevTools()
     console.log('microbreakWinLocal.Bounds after creation', microbreakWinLocal.getBounds())
+    // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    // microbreakWinLocal.webContents.openDevTools()
     console.log('microbreakWinLocal.Bounds after reapplying bounds', microbreakWinLocal.getBounds())
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
@@ -466,6 +469,8 @@ function startBreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const windowOptions = {
+      width: 800,
+      height: 600,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -492,6 +497,8 @@ function startBreak () {
     }
 
     let breakWinLocal = new BrowserWindow(windowOptions)
+    // seems to help with multiple-displays problems
+    breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
