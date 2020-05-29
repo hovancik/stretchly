@@ -70,3 +70,7 @@
   font-size: 15px;
   padding-top: 20px;
 }
+
+.tiptext {
+  text-transform: capitalize;
+}

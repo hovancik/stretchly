@@ -296,7 +296,7 @@ function startMicrobreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
 
   if (!strictMode || postponable) {
-    globalShortcut.register('CommandOrControl+X', () => {
+    globalShortcut.register(getKeyboardShortcut(), () => {
       const passedPercent = (Date.now() - startTime) / breakDuration * 100
       if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
         postponeMicrobreak()
@@ -347,7 +347,7 @@ function startMicrobreak () {
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+        breakDuration, strictMode, postponable, postponableDurationPercent, getKeyboardShortcut())
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -389,7 +389,7 @@ function startBreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
 
   if (!strictMode || postponable) {
-    globalShortcut.register('CommandOrControl+X', () => {
+    globalShortcut.register(getKeyboardShortcut(), () => {
       const passedPercent = (Date.now() - startTime) / breakDuration * 100
       if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
         postponeBreak()
@@ -440,7 +440,7 @@ function startBreak () {
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+        breakDuration, strictMode, postponable, postponableDurationPercent, getKeyboardShortcut())
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
@@ -461,7 +461,7 @@ function startBreak () {
 }
 
 function breakComplete (shouldPlaySound, windows) {
-  globalShortcut.unregister('CommandOrControl+X')
+  globalShortcut.unregister(getKeyboardShortcut())
   if (shouldPlaySound && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
@@ -761,6 +761,20 @@ function showNotification (text) {
     text: text,
     silent: settings.get('silentNotifications')
   })
+}
+
+function getKeyboardShortcut () {
+  const keyBoardShortcutModifier = settings.get('keyBoardShortcutModifier')
+  const keyBoardShortcutKey = settings.get('keyBoardShortcutKey')
+
+  if (Utils.isValidKeyboardShortcut(keyBoardShortcutModifier, keyBoardShortcutKey)) {
+    return keyBoardShortcutModifier + '+' + keyBoardShortcutKey
+  }
+
+  // The keyboard shortcut you set in the config.json is not valid. It must be set back to the default "CommandOrControl+X".
+  settings.set('keyBoardShortcutModifier', 'CommandOrControl')
+  settings.set('keyBoardShortcutKey', 'X')
+  return 'CommandOrControl+X'
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
