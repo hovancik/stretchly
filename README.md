@@ -23,7 +23,7 @@ User gets notified 30 seconds before break (and 10 seconds before microbreak) to
 When break/microbreak starts, you can postpone it once for 5 and 2 minutes respectively. After a specific time interval passes, you can finish it early.
 
 Both actions are available by clicking the link at the bottom of window
-or by using `Ctrl/Cmd + x` keyboard shortcut (except finishing early in strict mode).
+or by using `Ctrl/Cmd + X` keyboard shortcut (except finishing early in strict mode).
 
 You can pause/resume *stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login. Also, Do Not Disturb mode is respected on those platforms.
 
@@ -73,7 +73,7 @@ On first run, stretchly will present you with Welcome window, where you can set 
 You can view Tutorial again anytime from About window.
 
 ### Advanced settings
-All settings are saved in a JSON file. To open it, use `Ctrl/Cmd + d` shortcut in About window and click on link to it.
+All settings are saved in a JSON file. To open it, use `Ctrl/Cmd + D` shortcut in About window and click on link to it.
 
 #### Editing break/microbreak ideas
 In the settings file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
@@ -135,10 +135,11 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and so that the changes will be accepted.
 
 ### Debugging
-One can use `Ctrl/Cmd + d` shortcut in About window to show debug information:
-  - location of settings file (Clicking on settings file location will open it.)
-  - debug information for break planner
+If you start Stretchly in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
 
+Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About window to show information such as:
+  - Location of the settings file (Clicking on settings file location will open it.)
+  - Debug information for break planner
 You can copy debug information to clipboard.
 
 ### Known issues
