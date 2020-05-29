@@ -221,6 +221,9 @@ document.querySelectorAll('.enabletype').forEach((element) => {
       ipcRenderer.send('save-setting', element.value, element.checked)
       window.alert(i18next.t('preferences.schedule.cantDisableBoth'))
     }
+
+    // Reset breaks after enabling/disabling either Mini or Long breaks
+    ipcRenderer.send('reset-breaks')
   }
 })
 

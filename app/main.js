@@ -884,3 +884,10 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   })
   myStretchlyWindow.loadURL(myStretchlyUrl)
 })
+
+ipcMain.on('reset-breaks', function (event) {
+  const seconds = 1
+  // Enabling/disabling Mini/Long Breaks fires a save-setting event which is async, so have to wait a second before
+  // resetting the breaks, otherwise it will reset them too early and makes a buggy behavior.
+  setTimeout(resetBreaks, seconds * 1000)
+})
