@@ -5,7 +5,7 @@
     "breakIn": "Длинный перерыв через $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Продолжаем перерывы",
     "downloadLatestVersion": "Загрузить последнюю версию",
-    "toBreak": "длинному перерыву",  // lowercased and assuming continuation of "skip to "
+    "toBreak": "длинному перерыву",
     "toMicrobreak": "мини-перерыву",
     "skipToTheNext": "Перейти к ближайшему",
     "resume": "Возобновить",
@@ -24,7 +24,7 @@
     "preferences": "Настройки"
   },
   "break": {
-    "postpone": "Отложить",  // assuming that the context implies the word "break"
+    "postpone": "Отложить",
     "skip": "Пропустить",
     "title": "Перерыв!"
   },
@@ -35,12 +35,12 @@
       "schedule": "Расписание",
       "theme": "Тема",
       "about": "О программе",
-      "heart": "Love Stretchly"  // not sure what this is
+      "heart": "Love Stretchly"
     },
     "settings": {
       "openAtLogin": "Запускать Stretchly автоматически при входе в систему",
       "showBreaksIn": "Показывать перерывы:",
-      "window": "в окне",  // lowercased and assuming continuation of "show breaks in"
+      "window": "в окне",
       "fullscreen": "на весь экран",
       "showIdeas": "Показывать идеи для упражнений во время перерывов",
       "allScreens": "Показывать перерывы на всех экранах",
@@ -53,8 +53,8 @@
       "miniBreaks": "Мини-перерывы:",
       "miniBreaksInfo": "Мини-перерывы это регулярные короткие перерывы, чтоб размяться и отдохнуть.",
       "enableMiniBreaks": "Включить мини-перерывы",
-      "breakFor": "Break for:",  // idk
-      "every": "Every:",  // idk
+      "breakFor": "Break for:",
+      "every": "Every:",
       "showNotificationBeforeMiniBreak": "Показывать уведомление перед началом мини-перерыва",
       "enablePostponeMini": "Разрешить откладывать мини-перерывы",
       "longBreaks": "Длинные перерывы:",
@@ -80,8 +80,8 @@
       "crystalGlass": "хрусталь",
       "windChime": "ветер",
       "ticToc": "тик так",
-      "menubarIcon": "Иконка в трее:",  // assuming that menubar == tray
-      "colour": "Цветная",  // assuming the context of the "menubar icon"
+      "menubarIcon": "Иконка в трее:",
+      "colour": "Цветная",
       "monochrome": "Монохромная",
       "invertedMonochrome": "Инвертированная монохромная"
     },
@@ -91,7 +91,7 @@
       "latestVersion": "Последняя версия ",
       "notifyNewVersion": "Уведомлять о наличии обновлений",
       "learnMore": "Чтоб узнать больше о функционале Stretchly, пройдите обучение, скачайте последнюю версию или свяжитесь с нами для получения поддержки, ",
-      "ourWebsite": "посетив наш сайт",  // assuming this continues "learnMore"
+      "ourWebsite": "посетив наш сайт",
       "dot": ".",
       "developedBy": "Разработано",
       "janH": "Jan Hovancik"
@@ -107,10 +107,10 @@
     }
   },
   "contributorPreferences": {
-    "title": "Настройки участников",  // here and in some other places, the title case was omitted
+    "title": "Настройки участников",
     "notifications": "Уведомления о перерывах:",
     "notificationsInfo": "Системные уведомления, показвающиеся перед перерывами, чтоб дать время приготовиться.",
-    "beforeLongBreak": "Long Break:",  // unsure about the context
+    "beforeLongBreak": "Long Break:",
     "beforeMiniBreak": "Mini Break:",
     "newVersion": "Новая версия:",
     "newVersionNotification": "Уведомлять о наличии обновлений",
@@ -124,7 +124,7 @@
     "postponeFor": "Откладывать на:",
     "maxPostpones": "Сколько раз можно откладывать:",
     "longBreaks": "Длинные перерывы:",
-    "pauseUntilMoring": "Приостановить до утра:",  // not sure why there's a colon here. are the following 3 entries all part of one form field?
+    "pauseUntilMoring": "Приостановить до утра:",
     "pauseUntil": "Приостановить до:",
     "pauseUntilMorningInfo": "Укажите время, до которого будут приостановлены перерывы при выборе 'до утра'.",
     "welcomeWindow": "Окно приветствия:",
@@ -145,10 +145,10 @@
     "none_0": "{{count}}",
     "none_1": "{{count}}",
     "none_2": "{{count}}",
-    "percent_0": "{{count}} процент",  // what's the difference?
-    "percent_1": "{{count}} процента", // assuming that X_0 is for values [1; 1], X_1 is for values [2; 4], X_2 is for values [5; +inf)
+    "percent_0": "{{count}} процент",
+    "percent_1": "{{count}} процента",
     "percent_2": "{{count}} процентов",
-    "oclock_0": "{{count}} час",  // what values will 'count' take? the o'clock expression isn't commonplace in Russian
+    "oclock_0": "{{count}} час",
     "oclock_1": "{{count}} часа",
     "oclock_2": "{{count}} часов",
     "seconds_0": "{{count}} секунда",
@@ -181,7 +181,7 @@
   },
   "statusMessages": {
     "paused": "Приостановлено",
-    "indefinitely": "на неопределённый срок",  // lowercased
+    "indefinitely": "на неопределённый срок",
     "dndMode": "Режим \"Не беспокоить\" включен",
     "nextLongBreak": "Следующий длинный перерыв",
     "nextMiniBreak": "Следующий мини-перерыв",
