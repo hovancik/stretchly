@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - напоминания о перерывах",
+    "toolTipHeader": "Stretchly – напоминания о перерывах",
     "microbreakIn": "Мини-перерыв через $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Длинный перерыв через $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Продолжаем перерывы",
@@ -24,8 +24,8 @@
     "preferences": "Настройки"
   },
   "break": {
-    "postpone": "Отложить",
-    "skip": "Пропустить",
+    "postpone": "Отложить этот перерыв",
+    "skip": "Пропустить этот перерыв",
     "title": "Перерыв!"
   },
   "preferences": {
@@ -35,7 +35,7 @@
       "schedule": "Расписание",
       "theme": "Тема",
       "about": "О программе",
-      "heart": "Love Stretchly"
+      "heart": "Поддержать Stretchly"
     },
     "settings": {
       "openAtLogin": "Запускать Stretchly автоматически при входе в систему",
@@ -51,14 +51,14 @@
     },
     "schedule": {
       "miniBreaks": "Мини-перерывы:",
-      "miniBreaksInfo": "Мини-перерывы это регулярные короткие перерывы, чтоб размяться и отдохнуть.",
+      "miniBreaksInfo": "Мини-перерывы – это регулярные короткие перерывы, чтоб размяться и отдохнуть.",
       "enableMiniBreaks": "Включить мини-перерывы",
-      "breakFor": "Break for:",
-      "every": "Every:",
+      "breakFor": "Продолжительность:",
+      "every": "Каждые:",
       "showNotificationBeforeMiniBreak": "Показывать уведомление перед началом мини-перерыва",
       "enablePostponeMini": "Разрешить откладывать мини-перерывы",
       "longBreaks": "Длинные перерывы:",
-      "longBreaksInfo": "Длинные перерывы менее регулярны, предназначены для продолжительного отдыха от работы.",
+      "longBreaksInfo": "Длинные перерывы менее регулярны, и предназначены для продолжительного отдыха от работы.",
       "enableLongBreaks": "Включить длинные перерывы",
       "showNotificationBeforeLongBreak": "Показывать уведомление перед началом длинного перерыва",
       "enablePostponeLong": "Разрешить откладывать длинные перерывы",
@@ -70,16 +70,16 @@
     },
     "theme": {
       "appearance": "Внешний вид:",
-      "greenClouds": "зелёные облака",
-      "autumnBeBlessed": "счастливая осень",
-      "graphiteCrystal": "кристаллы графита",
-      "coffeeKisses": "кофейный поцелуй",
-      "morningSwim": "утренний заплыв",
+      "greenClouds": "Зелёные облака",
+      "autumnBeBlessed": "Счастливая осень",
+      "graphiteCrystal": "Кристаллы графита",
+      "coffeeKisses": "Кофейный поцелуй",
+      "morningSwim": "Утренний заплыв",
       "sounds": "Звуки:",
       "enableSounds": "Включить звуки",
-      "crystalGlass": "хрусталь",
-      "windChime": "ветер",
-      "ticToc": "тик так",
+      "crystalGlass": "Хрусталь",
+      "windChime": "Ветер",
+      "ticToc": "Тик-так",
       "menubarIcon": "Иконка в трее:",
       "colour": "Цветная",
       "monochrome": "Монохромная",
@@ -110,15 +110,15 @@
     "title": "Настройки участников",
     "notifications": "Уведомления о перерывах:",
     "notificationsInfo": "Системные уведомления, показвающиеся перед перерывами, чтоб дать время приготовиться.",
-    "beforeLongBreak": "Long Break:",
-    "beforeMiniBreak": "Mini Break:",
+    "beforeLongBreak": "Перед длинным перерывом:",
+    "beforeMiniBreak": "Перед мини-перерывом:",
     "newVersion": "Новая версия:",
     "newVersionNotification": "Уведомлять о наличии обновлений",
     "customIdeas": "Свои идеи для упражнений:",
     "customIdeasInfo": "Позволяет настроить свои собственные идеи для перерывов в конфигурационном файле (для продвинутых пользователей).",
     "useIdeasFromSettings": "Использовать идеи упражнений из конфигурационного файла",
     "breakPostpone": "Возможность откладывать перерывы:",
-    "breakPostponeInfo": "Если этот пункт включен в основных настройках, вы можете откладывать перерывы. Последующие настройки позволяют указать, когда, на какой промежуток временни и сколько раз можно откладывать перерывы.",
+    "breakPostponeInfo": "Если этот пункт включен в основных настройках, вы можете откладывать перерывы. Последующие настройки позволяют указать, когда, на какой промежуток времени и сколько раз можно откладывать перерывы.",
     "miniBreaks": "Мини-перерывы:",
     "postponableFor": "Можно отложить в течение:",
     "postponeFor": "Откладывать на:",
@@ -148,8 +148,8 @@
     "percent_0": "{{count}} процент",
     "percent_1": "{{count}} процента",
     "percent_2": "{{count}} процентов",
-    "oclock_0": "{{count}} час",
-    "oclock_1": "{{count}} часа",
+    "oclock_0": "{{count}} часа",
+    "oclock_1": "{{count}} часов",
     "oclock_2": "{{count}} часов",
     "seconds_0": "{{count}} секунда",
     "seconds_1": "{{count}} секунды",
@@ -177,7 +177,7 @@
     "breakTimeReminderApp": "напоминания о перерывах",
     "viewTutorial": "Пройти обучение",
     "openPreferences": "Открыть настройки",
-    "getStarted": "Приступить к работе"
+    "getStarted": "Начать"
   },
   "statusMessages": {
     "paused": "Приостановлено",
