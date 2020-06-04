@@ -101,8 +101,6 @@ function onResumeOrUnlock () {
 
 function startPowerMonitoring () {
   const electron = require('electron')
-
-  console.log('monitors', electron.screen.getAllDisplays())
   electron.powerMonitor.on('suspend', onSuspendOrLock)
   electron.powerMonitor.on('lock-screen', onSuspendOrLock)
   electron.powerMonitor.on('resume', onResumeOrUnlock)
@@ -324,7 +322,6 @@ function startMicrobreak () {
     console.log('in natural break')
     return
   }
-
   // don't start another break if break running
   if (microbreakWins) {
     console.log('microbreak already running')
@@ -388,14 +385,10 @@ function startMicrobreak () {
       windowOptions.y = displaysY(displayIdx)
     }
 
-    console.log('monitors id', displayIdx)
-    console.log('monitors windowOptions', windowOptions)
     let microbreakWinLocal = new BrowserWindow(windowOptions)
-    console.log('microbreakWinLocal.Bounds after creation', microbreakWinLocal.getBounds())
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
-    console.log('microbreakWinLocal.Bounds after reapplying bounds', microbreakWinLocal.getBounds())
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
       if (process.platform !== 'linux') {
