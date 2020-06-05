@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - update Chinese (Traditional) translation (#590)
 
 ## Fixed
-- adds workaround for electron's Linux fullscreen issue
+- adds workaround for electron's Linux/Windows fullscreen issues
 
 ## [0.99.4] - 2020-05-15
 ### Fixed

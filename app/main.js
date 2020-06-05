@@ -375,7 +375,7 @@ function startMicrobreak () {
       }
     }
 
-    if (settings.get('fullscreen') && process.platform === 'linux') {
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
       windowOptions.width = displaysWidth(displayIdx)
       windowOptions.height = displaysHeight(displayIdx)
       windowOptions.x = displaysX(displayIdx, 0, true)
@@ -391,7 +391,7 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
-      if (process.platform !== 'linux') {
+      if (process.platform === 'darwin') {
         microbreakWinLocal.setKiosk(settings.get('fullscreen'))
       }
       if (displayIdx === 0) {
@@ -479,7 +479,7 @@ function startBreak () {
       }
     }
 
-    if (settings.get('fullscreen') && process.platform === 'linux') {
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
       windowOptions.width = displaysWidth(displayIdx)
       windowOptions.height = displaysHeight(displayIdx)
       windowOptions.x = displaysX(displayIdx, 0, true)
@@ -495,7 +495,7 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
-      if (process.platform !== 'linux') {
+      if (process.platform === 'darwin') {
         breakWinLocal.setKiosk(settings.get('fullscreen'))
       }
       if (displayIdx === 0) {
