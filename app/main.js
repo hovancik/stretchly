@@ -119,7 +119,7 @@ function closeWindows (windowArray) {
   return null
 }
 
-function displaysX (displayID = -1, width = 800) {
+function displaysX (displayID = -1, width = 800, fullscreen = false) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -132,11 +132,36 @@ function displaysX (displayID = -1, width = 800) {
     const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  const bounds = theScreen.bounds
-  return Math.ceil(bounds.x + ((bounds.width - width) / 2))
+  const bounds = theScreen.workArea
+  if (fullscreen) {
+    return Math.ceil(bounds.x)
+  } else {
+    return Math.ceil(bounds.x + ((bounds.width - width) / 2))
+  }
 }
 
-function displaysY (displayID = -1, height = 600) {
+function displaysY (displayID = -1, height = 600, fullscreen = false) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    const screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
+  const bounds = theScreen.workArea
+  if (fullscreen) {
+    return Math.ceil(bounds.y)
+  } else {
+    return Math.ceil(bounds.y + ((bounds.height - height) / 2))
+  }
+}
+
+function displaysWidth (displayID = -1) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -150,7 +175,24 @@ function displaysY (displayID = -1, height = 600) {
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
-  return Math.ceil(bounds.y + ((bounds.height - height) / 2))
+  return Math.ceil(bounds.width)
+}
+
+function displaysHeight (displayID = -1) {
+  const electron = require('electron')
+  let theScreen
+  if (displayID === -1) {
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else if (displayID >= numberOfDisplays()) {
+    // Graceful handling of invalid displayID
+    console.log('warning: invalid displayID to displaysY')
+    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  } else {
+    const screens = electron.screen.getAllDisplays()
+    theScreen = screens[displayID]
+  }
+  const bounds = theScreen.bounds
+  return Math.ceil(bounds.height)
 }
 
 function createTrayIcon () {
@@ -280,7 +322,6 @@ function startMicrobreak () {
     console.log('in natural break')
     return
   }
-
   // don't start another break if break running
   if (microbreakWins) {
     console.log('microbreak already running')
@@ -317,6 +358,8 @@ function startMicrobreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const windowOptions = {
+      width: 800,
+      height: 600,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -332,16 +375,25 @@ function startMicrobreak () {
       }
     }
 
-    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
 
     let microbreakWinLocal = new BrowserWindow(windowOptions)
+    // seems to help with multiple-displays problems
+    microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
-      microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+      if (process.platform === 'darwin') {
+        microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+      }
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
       }
@@ -410,6 +462,8 @@ function startBreak () {
 
   for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
     const windowOptions = {
+      width: 800,
+      height: 600,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -425,16 +479,25 @@ function startBreak () {
       }
     }
 
-    if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
       windowOptions.x = displaysX(displayIdx)
       windowOptions.y = displaysY(displayIdx)
     }
 
     let breakWinLocal = new BrowserWindow(windowOptions)
+    // seems to help with multiple-displays problems
+    breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
-      breakWinLocal.setKiosk(settings.get('fullscreen'))
+      if (process.platform === 'darwin') {
+        breakWinLocal.setKiosk(settings.get('fullscreen'))
+      }
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
       }
