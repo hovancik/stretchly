@@ -58,11 +58,10 @@ progress[value]::-webkit-progress-value {
   border-radius: 3px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   color: #fff;
-  padding: 6px 0;
+  padding: 6px 4px;
   position: absolute;
   text-align: center;
   visibility: hidden;
-  width: 120px;
   z-index: 1;
 }
 

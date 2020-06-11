@@ -764,17 +764,7 @@ function showNotification (text) {
 }
 
 function getKeyboardShortcut () {
-  const keyBoardShortcutModifier = settings.get('keyBoardShortcutModifier')
-  const keyBoardShortcutKey = settings.get('keyBoardShortcutKey')
-
-  if (Utils.isValidKeyboardShortcut(keyBoardShortcutModifier, keyBoardShortcutKey)) {
-    return keyBoardShortcutModifier + '+' + keyBoardShortcutKey
-  }
-
-  // The keyboard shortcut you set in the config.json is not valid. It must be set back to the default "CommandOrControl+X".
-  settings.set('keyBoardShortcutModifier', 'CommandOrControl')
-  settings.set('keyBoardShortcutKey', 'X')
-  return 'CommandOrControl+X'
+  return `${settings.get('endBreakModifier')}+${settings.get('endBreakKey')}`
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {

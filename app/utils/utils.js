@@ -63,34 +63,8 @@ function canSkip (strictMode, postpone, passedPercent, postponePercent) {
   return !((postpone && passedPercent <= postponePercent) || strictMode)
 }
 
-function isValidKeyboardShortcut (modifier, key) {
-  const validModifiers = ['CommandOrControl', 'Alt', 'Shift', 'commandorcontrol', 'alt', 'shift']
-  const validKeys = new RegExp(/[a-zA-Z0-9]/g)
-  if ((modifier && validModifiers.includes(modifier)) && (key && key.length === 1 && key.match(validKeys))) {
-    return true
-  }
-
-  // The keyboard shortcut you set in the config.json is not valid. It must be set back to the default "CommandOrControl+X".
-  return false
-}
-
 function formatKeyboardShortcut (keyboardShortcut) {
-  let modifier = keyboardShortcut.split('+')[0]
-  let key = keyboardShortcut.split('+')[1]
-
-  if (modifier === 'CommandOrControl') {
-    modifier = 'Ctrl/Cmd'
-  } else {
-    // Capitalize Modifier
-    const modifierFirstChar = modifier.charAt(0).toUpperCase()
-    const modifierOtherChars = modifier.substr(1)
-    modifier = modifierFirstChar.concat(modifierOtherChars)
-  }
-
-  // Capitalize Key
-  key = key.toUpperCase()
-
-  return modifier + ' + ' + key
+  return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
 }
 
 module.exports = {
@@ -98,6 +72,5 @@ module.exports = {
   formatTimeIn,
   canPostpone,
   canSkip,
-  isValidKeyboardShortcut,
   formatKeyboardShortcut
 }
