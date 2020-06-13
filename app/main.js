@@ -296,7 +296,7 @@ function startMicrobreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
 
   if (!strictMode || postponable) {
-    globalShortcut.register(getKeyboardShortcut(), () => {
+    globalShortcut.register(settings.get('endBreakShortcut'), () => {
       const passedPercent = (Date.now() - startTime) / breakDuration * 100
       if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
         postponeMicrobreak()
@@ -347,7 +347,7 @@ function startMicrobreak () {
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, getKeyboardShortcut())
+        breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
       microbreakWinLocal.setAlwaysOnTop(true)
     })
     microbreakWinLocal.loadURL(modalPath)
@@ -389,7 +389,7 @@ function startBreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
 
   if (!strictMode || postponable) {
-    globalShortcut.register(getKeyboardShortcut(), () => {
+    globalShortcut.register(settings.get('endBreakShortcut'), () => {
       const passedPercent = (Date.now() - startTime) / breakDuration * 100
       if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
         postponeBreak()
@@ -440,7 +440,7 @@ function startBreak () {
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, getKeyboardShortcut())
+        breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
       breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
@@ -461,7 +461,7 @@ function startBreak () {
 }
 
 function breakComplete (shouldPlaySound, windows) {
-  globalShortcut.unregister(getKeyboardShortcut())
+  globalShortcut.unregister(settings.get('endBreakShortcut'))
   if (shouldPlaySound && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
@@ -761,10 +761,6 @@ function showNotification (text) {
     text: text,
     silent: settings.get('silentNotifications')
   })
-}
-
-function getKeyboardShortcut () {
-  return `${settings.get('endBreakModifier')}+${settings.get('endBreakKey')}`
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
