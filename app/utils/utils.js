@@ -63,9 +63,14 @@ function canSkip (strictMode, postpone, passedPercent, postponePercent) {
   return !((postpone && passedPercent <= postponePercent) || strictMode)
 }
 
+function formatKeyboardShortcut (keyboardShortcut) {
+  return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
+}
+
 module.exports = {
   formatTimeRemaining,
   formatTimeIn,
   canPostpone,
-  canSkip
+  canSkip,
+  formatKeyboardShortcut
 }

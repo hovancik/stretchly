@@ -1,5 +1,8 @@
 const chai = require('chai')
-const { formatTimeRemaining, formatTimeIn, canSkip, canPostpone } = require('../app/utils/utils')
+const {
+  formatTimeRemaining, formatTimeIn,
+  canSkip, canPostpone, formatKeyboardShortcut
+} = require('../app/utils/utils')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const sinon = require('sinon')
@@ -122,6 +125,15 @@ describe('canSkip and canPostpone', () => {
     })
     it('is false when not postpone II', () => {
       canPostpone(false, 40, 30).should.equal(false)
+    })
+  })
+
+  describe('formatKeyboardShortcut', () => {
+    it('formats Or to /', () => {
+      formatKeyboardShortcut('CmdOrCtrl+X').should.equal('Cmd/Ctrl + X')
+    })
+    it('formats + to have spaces', () => {
+      formatKeyboardShortcut('Command+X').should.equal('Command + X')
     })
   })
 })

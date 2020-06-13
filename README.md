@@ -106,6 +106,9 @@ In the settings file, set `naturalBreaksInactivityResetTime` to your preferred v
 #### Volume for break sounds
 In the settings file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.
 
+#### Postpone/Finish Break Shortcut
+In the settings file, set `endBreakShortcut` to your preferred value. For available values for key and modifier check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) as we do not validate your value.
+
 ## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)[![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).

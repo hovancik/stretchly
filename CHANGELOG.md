@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Added Hungarian translation
+- Added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
 
 ### Changed
 - update Chinese (Traditional) translation (#590)

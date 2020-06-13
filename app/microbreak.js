@@ -29,11 +29,15 @@ ipcRenderer.on('microbreakIdea', (event, message) => {
   microbreakIdea.innerHTML = message
 })
 
-ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
+ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, keyboardShortcut) => {
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
+
+  document.querySelectorAll('.tiptext').forEach(tt => {
+    tt.innerHTML = Utils.formatKeyboardShortcut(keyboardShortcut)
+  })
 
   window.setInterval(() => {
     if (Date.now() - started < duration) {
