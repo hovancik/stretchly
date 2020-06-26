@@ -232,7 +232,7 @@ document.querySelectorAll('.about a').forEach((item) => {
   item.onclick = (event) => {
     event.preventDefault()
     if (event.target.classList.contains('file')) {
-      shell.openItem(event.target.innerHTML)
+      shell.openPath(event.target.innerHTML)
     } else {
       shell.openExternal(event.target.href)
     }
