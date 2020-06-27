@@ -1,31 +1,30 @@
-# stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
+<img src="stretchly_128x128.png" align="right" alt="Stretchly logo">
 
-> break time reminder app
+> The break time reminder app
 
-*stretchly* is a cross-platform [electron](http://electron.atom.io/) app that reminds you to take breaks when working on your computer.
+*Stretchly* is a cross-platform [Electron](https://www.electronjs.org/) app that reminds you to take breaks when working on your computer.
 
 [![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/hovancik)
 
-By default, it runs in your tray and displays a reminder window containing an idea for a microbreak for 20 seconds every 10 minutes.
+When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change language, view online tutorial or simply continue with the default one.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-microbreak.png" height="340">
+*Stretchly* itself lives in your tray, only displaying a reminder window from time to time containing an idea for a break.
 
-Every 30 minutes, it displays a window containing an idea for a longer 5 minute break.
+<img src="minibreak.png" height="340">
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
+By default, there is a 20 second Mini Break every 10 minutes and 5 minute Long Break every 30 minutes (after 2 Mini Breaks).
 
-User gets notified 30 seconds before break (and 10 seconds before microbreak) to be able to prepare to pause the work.
+<img src="longbreak.png" height="340">
+
+You'll get notified 30 seconds before Long Break (and 10 seconds before Mini Break) to be able to prepare to pause the work.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-notification.png" height="90">
 
-When break/microbreak starts, you can postpone it once for 5 and 2 minutes respectively. After a specific time interval passes, you can finish it early.
+When Mini Break starts, you can postpone it once for 2 minutes ( or 5 minutes for Long Break). After a specific time interval passes, you can skip it. Both actions are available by clicking the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
 
-Both actions are available by clicking the link at the bottom of window
-or by using `Ctrl/Cmd + X` keyboard shortcut (except finishing early in strict mode).
-
-You can pause/resume *stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login. Also, Do Not Disturb mode is respected on those platforms.
+You can pause/resume *Stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login. Also, Do Not Disturb mode is respected on those platforms.
 
 <img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-1.png" height="150">
 
@@ -56,7 +55,7 @@ Microbreaks and breaks can be customized:
 - you can disable (micro)break ideas
 - you can disable pre-(micro)break notifications
 - you can disable notification sounds
-- you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
+- you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *Stretchly* will reset breaks)
 - you can disable monitoring of DND (Do Not Disturb) mode on MacOS and Windows (breaks are not shown in DND mode)
 - you can disable the display of breaks on all of your monitors
 - you can change the default monochrome tray icon to an inverted (Linux, Windows) or a colorful version
@@ -113,24 +112,24 @@ In the settings file, set `endBreakShortcut` to your preferred value. For availa
 
 Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).
 
-On macOS you can install *stretchly* by running `brew update && brew cask install stretchly`.
+On macOS you can install *Stretchly* by running `brew update && brew cask install stretchly`.
 
-On Windows, you can install *stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
+On Windows, you can install *Stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
 
 You can create an installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
 ## Running from source
 
-To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply run `npm start` to start *stretchly*.
+To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
 
 It should run on any electron supported platform. Tested on macOS, Windows and Ubuntu Linux.
 
 ### Linux note
-Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*. Electron now also uses Chromium's `StatusIconLinuxDbus` on Linux, which might be better. Check [this comment](https://github.com/electron/electron/issues/21445#issuecomment-565710027) for more tips to get it working.
+Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *Stretchly*. Electron now also uses Chromium's `StatusIconLinuxDbus` on Linux, which might be better. Check [this comment](https://github.com/electron/electron/issues/21445#issuecomment-565710027) for more tips to get it working.
 
 For Natural breaks, you might need some packages too (`libxss-dev`).
 
-If *stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the settings are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
+If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the settings are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
 ## Development
 
@@ -177,7 +176,7 @@ You can copy debug information to clipboard.
 *(by date of the first contribution)*
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
-- Martina Mocinecova, (*stretchly* logo), color schemes
+- Martina Mocinecova, (first *Stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 - Alex Alekseyenko, @alexalekseyenko
 - Sean Manton, @sxmanton
