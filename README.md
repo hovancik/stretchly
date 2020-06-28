@@ -65,25 +65,25 @@ By default, there is a 20 seconds Mini Break every 10 minutes and 5 minutes Long
 
 <img src="longbreak.png" height="340">
 
-You'll be notified 30 seconds before Long Break (and 10 seconds before Mini Break) so that you can prepare to pause your work.
+You'll be notified 10 seconds before Mini Break (and 30 seconds before Long Break) so that you can prepare to pause your work.
 
 <img src="notification.png" height="90">
 
-When Mini Break starts, you can postpone it once for 2 minutes (or 5 minutes for Long Break). After a specific time interval passes, you can skip it. Both actions are available by clicking the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
+When Mini Break starts, you can postpone it once for 2 minutes (or 5 minutes for Long Break). Then, after a specific time interval passes, you can skip it. Both actions are available by clicking on the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
 
 SKIP IMAGE
 
-Clicking on *Stretchly* icon in your tray area will show information about current status of breaks and provide menu items with extra functionality or link to Preferences.
+Clicking on *Stretchly* icon in your tray area will show information about current status of breaks and provide menu items with extra functionality or link to the Preferences.
 
 <img src="tray.png" height="140">
 
-*Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be reset when you return.  
+*Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be reset until you return.  
 
 *Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On.
 
 *Stretchly* follows the theme of your system and is also available in dark mode.
 
-IMG dark mode
+<img src="dark.png" height="340">
 
 ## Preferences
 
