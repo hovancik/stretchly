@@ -45,11 +45,11 @@ If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unpriv
 
 ### Running from source
 
-To run *Stretchly* you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
+To run *Stretchly* from source you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
 
 ### Custom installer
 
-You can create an installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
+You can create a custom installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
 ## Default behavior
 
@@ -69,7 +69,7 @@ You'll be notified 30 seconds before Long Break (and 10 seconds before Mini Brea
 
 <img src="notification.png" height="90">
 
-When Mini Break starts, you can postpone it once for 2 minutes ( or 5 minutes for Long Break). After a specific time interval passes, you can skip it. Both actions are available by clicking the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
+When Mini Break starts, you can postpone it once for 2 minutes (or 5 minutes for Long Break). After a specific time interval passes, you can skip it. Both actions are available by clicking the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
 
 SKIP IMAGE
 
@@ -87,7 +87,7 @@ IMG dark mode
 
 ## Preferences
 
-Most of the preferences can be customized by clicking on "Preferences" item in tray meny.
+Most of the preferences can be customized by clicking on "Preferences" item in tray menu.
 
 <img src="preferences.png" height="340">
 
@@ -232,6 +232,8 @@ You can copy debug information to clipboard.
 - Sheri Richardson, [@sheriallis](https://github.com/sheriallis/)
 - Felix W. Dekker, [@FWDekker](https://github.com/FWDekker)
 - Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
+
+Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
 ## Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
