@@ -71,7 +71,7 @@ You'll be notified 10 seconds before Mini Break (and 30 seconds before Long Brea
 
 When Mini Break starts, you can postpone it once for 2 minutes (or 5 minutes for Long Break). Then, after a specific time interval passes, you can skip it. Both actions are available by clicking on the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
 
-SKIP IMAGE
+<img src="skip.png" height="340">
 
 Clicking on *Stretchly* icon in your tray area will show information about current status of breaks and provide menu items with extra functionality or link to the Preferences.
 
