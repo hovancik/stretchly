@@ -8,6 +8,7 @@
 
 [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
+## Table of contents
 - [Install](#install--)
 - [Default behavior](#default-behavior)
 - [Preferences](#preferences)
