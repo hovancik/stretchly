@@ -145,7 +145,7 @@ In the preferences file, set `volume` to your preferred value. Default value is 
 In the preferences file, set `endBreakShortcut` to your preferred value. For available values for key and modifier check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) as we do not validate your value.
 
 #### Appearance [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
-In the preferences file, change `themeSource: 'system'` to either `light` or `dark` to always use specified theme.  
+In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use specified theme.  
 
 #### Welcome window [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
 To show Welcome window again on next start, change `"isFirstRun"` to `true`.
@@ -155,7 +155,7 @@ To show Welcome window again on next start, change `"isFirstRun"` to `true`.
 
 [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
-You will be rewarded by getting access to extra preferences available only to Contributors. You can access those after authenticating with Patreon or Github in "Love Stretchly" section of Preferences.
+You will be rewarded by getting access to extra preferences available only to Contributors (+ other perks). You can access those after authenticating with Patreon or Github in "Love Stretchly" section of Preferences.
 
 <img src="contributors.png" height="340">
 
@@ -165,7 +165,7 @@ Feel free to join [development](https://github.com/hovancik/stretchly/blob/maste
 **Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted.**
 
 ### Debugging
-If you start **Stretchly** in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
+If you start *Stretchly* in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
 
 Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
   - Location of the preferences file (Clicking on preferences file location will open it.)
