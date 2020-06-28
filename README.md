@@ -14,10 +14,14 @@
 - [Advanced preferences](#advanced-preferences)
 - [Contributor Preferences](#contributor-preferences)
 - [Development](#development)
+- [Known issues](#known-issues)
+- [Contributors](#contributors)
+- [Humans and Tools](#humans-and-tool)
+- [License](#license)
 
-## Install ![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total)[![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
+## Install ![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total) [![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
 
-Latest **installers** and **portable versions** for macOS, Windows, Linux and FreeBSD can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page.
+The latest official **installers** and **portable versions** for macOS, Windows, Linux and FreeBSD can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page.
 
 ### macOS
 
@@ -41,7 +45,11 @@ If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unpriv
 
 ### Running from source
 
-To run *Stretchly* you will need [nodejs](https://nodejs.org/), idealy the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
+To run *Stretchly* you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
+
+### Custom installer
+
+You can create an installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
 ## Default behavior
 
@@ -62,6 +70,8 @@ You'll be notified 30 seconds before Long Break (and 10 seconds before Mini Brea
 <img src="notification.png" height="90">
 
 When Mini Break starts, you can postpone it once for 2 minutes ( or 5 minutes for Long Break). After a specific time interval passes, you can skip it. Both actions are available by clicking the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
+
+SKIP IMAGE
 
 Clicking on *Stretchly* icon in your tray area will show information about current status of breaks and provide menu items with extra functionality or link to Preferences.
 
@@ -94,6 +104,8 @@ It's recommended to Quit *Stretchly* before editing preferences file.
 To make sure that all works as expected, it's always good idea to check that format of preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
 
 Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by ![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success) badge.
+
+**Note:** Before 1.0, Mini Breaks and Long Breaks were called Breaks and Microbreaks. To keep the upgrade smooth they still use that name in preferences file and in code.  
 
 #### Editing Break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
@@ -142,26 +154,25 @@ To show Welcome window again on next start, change `"isFirstRun"` to `true`.
 
 [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
-You will be rewarding by getting access to extra preferences available only to Contributors.
+You will be rewarded by getting access to extra preferences available only to Contributors. You can access those after authenticating with Patreon or Github in "Love Stretchly" section of Preferences.
 
-IMG
-
-It should run on any electron supported platform. Tested on macOS, Windows and Ubuntu Linux.
+<img src="contributors.png" height="340">
 
 ## Development
 Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 
-**Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and so that the changes will be accepted.**
+**Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted.**
 
 ### Debugging
-If you start Stretchly in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
+If you start **Stretchly** in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
 
-Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About window to show information such as:
+Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
   - Location of the preferences file (Clicking on preferences file location will open it.)
   - Debug information for break planner
+
 You can copy debug information to clipboard.
 
-### Known issues
+## Known issues
 - users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3th settings page and uncheck "monitor Do Not Disturb mode"
 - tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447)) and Linux ([lectron/electron#15161](https://github.com/electron/electron/issues/15161))
 - fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
@@ -169,35 +180,10 @@ You can copy debug information to clipboard.
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
 - tray icon is not rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
-### Custom installer
-
-You can create an installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
-
-### TODOs and Ideas
-- [x] tests
-- [x] PR tools
-- [x] make installers/executables
-- [x] create about page
-- [x] only one instance
-- [x] create longer breaks (5min every 30 minutes)
-- [x] create settings for breaks
-- [x] remember settings after restart
-- [x] autostart app
-- [x] start break anytime from menu
-- [x] sound notification at the end of the break
-- [x] strict mode (can't finish break early)
-- [x] information about when will be the next break
-- [x] create keyboard shortcuts
-- [ ] color-picker for themes
-- [x] some kind of silent mode (see #44 and #327)
-- [ ] history/timeline of breaks
-- [x] localization support (l12n, gettetxt via Crowdin, Weblate or so)
-
-### Contributors
-*(by date of the first contribution)*
+## Contributors
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
-- Martina Mocinecova, (first *Stretchly* logo), color schemes
+- Martina Mocinecova, (pre-1.0 *Stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 - Alex Alekseyenko, @alexalekseyenko
 - Sean Manton, @sxmanton
@@ -247,7 +233,7 @@ You can create an installer by running `npm run pack` or `npm run dist` after `n
 - Felix W. Dekker, [@FWDekker](https://github.com/FWDekker)
 - Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
 
-### Humans and Tools
+## Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
  - http://www.img2icnsapp.com/ to create .icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
