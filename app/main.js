@@ -197,9 +197,6 @@ function displaysHeight (displayID = -1) {
 
 function createTrayIcon () {
   appIcon = new Tray(trayIconPath())
-  if (process.platform === 'darwin') {
-    app.dock.hide()
-  }
   updateTray()
   setInterval(updateTray, 10000)
 }
