@@ -56,15 +56,15 @@ You can create a custom installer by running `npm run pack` or `npm run dist` af
 
 ## Default behavior
 
-When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change language, review settings, view online tutorial or simply continue with the default one.
+When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change language, review settings, view online tutorial or simply continue with the default settings.
 
 <img src="welcome.png" height="340">
 
-*Stretchly* itself lives in your tray, only displaying a reminder window from time to time containing an idea for a break.
+*Stretchly* itself lives in your tray, only displaying a reminder window from time to time, which contains an idea for a break.
 
 <img src="minibreak.png" height="340">
 
-By default, there is a 20 seconds Mini Break every 10 minutes and 5 minutes Long Break every 30 minutes (after 2 Mini Breaks).
+By default, there is a 20 second Mini Break every 10 minutes and a 5 minute Long Break every 30 minutes (after 2 Mini Breaks).
 
 <img src="longbreak.png" height="340">
 
@@ -76,7 +76,7 @@ When Mini Break starts, you can postpone it once for 2 minutes (or 5 minutes for
 
 <img src="skip.png" height="340">
 
-Clicking on *Stretchly* icon in your tray area will show information about current status of breaks and provide menu items with extra functionality or link to the Preferences.
+Clicking on *Stretchly* icon in your tray area will show information about current status of breaks, provide menu items with extra functionality, and link to the Preferences.
 
 <img src="tray.png" height="140">
 
@@ -176,7 +176,7 @@ Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D`
 You can copy debug information to clipboard.
 
 ## Known issues
-- users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3th settings page and uncheck "monitor Do Not Disturb mode"
+- users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3rd settings page and uncheck "monitor Do Not Disturb mode"
 - tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447)) and Linux ([lectron/electron#15161](https://github.com/electron/electron/issues/15161))
 - fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
 - fullscreen is not shown on all displays on Windows ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
