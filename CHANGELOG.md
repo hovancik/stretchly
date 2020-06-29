@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - update Chinese (Traditional) translation (#590)
+- don't hide dock icon on macOS
 
 ## Fixed
 - adds workaround for electron's Linux/Windows fullscreen issues
