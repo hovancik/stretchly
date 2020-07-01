@@ -56,27 +56,27 @@ You can create a custom installer by running `npm run pack` or `npm run dist` af
 
 ## Default behavior
 
-When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change language, review settings, view online tutorial or simply continue with the default one.
+When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change the language, review the settings, view the online tutorial or simply continue with the default settings.
 
 <img src="welcome.png" height="340">
 
-*Stretchly* itself lives in your tray, only displaying a reminder window from time to time containing an idea for a break.
+*Stretchly* itself lives in your tray, only displaying a reminder window from time to time, which contains an idea for a break.
 
 <img src="minibreak.png" height="340">
 
-By default, there is a 20 seconds Mini Break every 10 minutes and 5 minutes Long Break every 30 minutes (after 2 Mini Breaks).
+By default, there is a 20 second Mini Break every 10 minutes and a 5 minute Long Break every 30 minutes (after 2 Mini Breaks).
 
 <img src="longbreak.png" height="340">
 
-You'll be notified 10 seconds before Mini Break (and 30 seconds before Long Break) so that you can prepare to pause your work.
+You'll be notified 10 seconds before a Mini Break (and 30 seconds before a Long Break) so that you can prepare to pause your work.
 
 <img src="notification.png" height="90">
 
-When Mini Break starts, you can postpone it once for 2 minutes (or 5 minutes for Long Break). Then, after a specific time interval passes, you can skip it. Both actions are available by clicking on the link at the bottom of window or by using `Ctrl/Cmd + X` keyboard shortcut.
+When a break starts, you can postpone it once for 2 minutes (Mini Breaks) or 5 minutes (Long Breaks). Then, after a specific time interval passes, you can skip the break. Both actions are available by clicking on the link at the bottom of window or by using the `Ctrl/Cmd + X` keyboard shortcut.
 
 <img src="skip.png" height="340">
 
-Clicking on *Stretchly* icon in your tray area will show information about current status of breaks and provide menu items with extra functionality or link to the Preferences.
+Clicking the *Stretchly* icon in your tray area will display the current status of breaks, provide menu items with extra functionality, and link to the Preferences.
 
 <img src="tray.png" height="140">
 
@@ -90,37 +90,37 @@ Clicking on *Stretchly* icon in your tray area will show information about curre
 
 ## Preferences
 
-Most of the preferences can be customized by clicking on "Preferences" item in tray menu.
+Most of the preferences can be customized by clicking on the "Preferences" item in the tray menu.
 
 <img src="preferences.png" height="340">
 
 Preferences are divided into multiple categories and you are encouraged to take some time to make *Stretchly* your own by customizing them.
 
-You can also Restore defaults to get to the default preferences state.
+You can also Restore the defaults to return to the default preferences state.
 
 ## Advanced preferences
 
-All preferences are saved in a JSON file. To open it, use `Ctrl/Cmd + D` shortcut in About section of Preferences to show debug info and click on link to it.
+All preferences are saved in a JSON file. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the file.
 
-It's recommended to Quit *Stretchly* before editing preferences file.
+It's recommended to Quit *Stretchly* before editing the preferences file.
 
-To make sure that all works as expected, it's always good idea to check that format of preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
+To make sure that all works as expected, it's always good idea to check that format of the preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
 
 Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences) badge.
 
-**Note:** Before 1.0, Mini Breaks and Long Breaks were called Breaks and Microbreaks. To keep the upgrade smooth they still use that name in preferences file and in code.  
+**Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.  
 
 #### Editing Break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
 
-Note that when new *Stretchly* version with new break ideas is out, your custom ideas won't get updated.
+Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten.
 
 #### Editing Break notification interval [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
 
 In the preferences file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini Breaks.
 
 #### Editing sunrise time to pause breaks until morning
-In the preferences file you can set the `morningHour` setting to pause until that hour this or next day
+In the preferences file you can set the `morningHour` setting to pause until that hour today or the next day
 Otherwise, you can set `morningHour: "sunrise"` and set `posLatitude`, `posLongitude` in
 settings to pause until the actual sunrise in your area.
 E.g. if you live in Boston you would set:
@@ -129,54 +129,54 @@ E.g. if you live in Boston you would set:
 `posLongitude: 71`
 
 #### Editing postpone functionality [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
-In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable ability to postopne breaks, `microbreakPostponeTime` and `breakPostponeTime` to change postopone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change percentage of break in which user can postpone the break.
+In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable the ability to postpone breaks, `microbreakPostponeTime` and `breakPostponeTime` to change the postpone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change the number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
 
 #### New version notification [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
 
 #### Play sound at the start of the Break [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
-In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sounds will be played as at the end of the break). Same for `breakStartSoundPlaying`.
+In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sound will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
 #### Natural breaks inactivity time [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
-In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds, needs to be bigger than 20000ms). This is a idle time length, after which *Stretchly* timers will be cleared and waiting for user to come back.
+In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* timers will be cleared and will stay at 0 until the user resumes activity.
 
 #### Volume for break sounds [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
 In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.
 
 #### Postpone/Finish Break Shortcut
-In the preferences file, set `endBreakShortcut` to your preferred value. For available values for key and modifier check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) as we do not validate your value.
+In the preferences file, set `endBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier.
 
 #### Appearance [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
-In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use specified theme.  
+In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.  
 
 #### Welcome window [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
-To show Welcome window again on next start, change `"isFirstRun"` to `true`.
+To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
 
 ## Contributor Preferences
 *Stretchly* is free but you can support it by contributing code or money.
 
 [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
-You will be rewarded by getting access to extra preferences available only to Contributors (+ other perks). You can access those after authenticating with Patreon or Github in "Love Stretchly" section of Preferences.
+You will be rewarded by getting access to extra preferences (+ other perks) available only to Contributors. You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.
 
 <img src="contributors.png" height="340">
 
 ## Development
-Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
+Feel free to join in the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 
 **Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted.**
 
 ### Debugging
-If you start *Stretchly* in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
+If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
 Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
   - Location of the preferences file (Clicking on preferences file location will open it.)
   - Debug information for break planner
 
-You can copy debug information to clipboard.
+You can copy debug information to the clipboard.
 
 ## Known issues
-- users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3th settings page and uncheck "monitor Do Not Disturb mode"
+- users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3rd settings page and uncheck "monitor Do Not Disturb mode"
 - tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447)) and Linux ([lectron/electron#15161](https://github.com/electron/electron/issues/15161))
 - fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
 - fullscreen is not shown on all displays on Windows ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
