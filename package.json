@@ -94,9 +94,6 @@
         "snap"
       ]
     },
-    "snap": {
-      "publish": "github"
-    },
     "win": {
       "target": [
         "nsis",
