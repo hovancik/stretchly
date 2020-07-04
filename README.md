@@ -1,89 +1,126 @@
-# stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Stretchly [![Humane Tech](https://raw.githubusercontent.com/engagingspaces/awesome-humane-tech/master/humane-tech-badge.svg?sanitize=true)](https://github.com/engagingspaces/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly_128x128.png" align="right">
+<img src="stretchly_128x128.png" align="right" alt="Stretchly logo">
 
-> break time reminder app
+> **The break time reminder app**
 
-*stretchly* is a cross-platform [electron](http://electron.atom.io/) app that reminds you to take breaks when working on your computer.
+*Stretchly* is a cross-platform [Electron](https://www.electronjs.org/) app that reminds you to take breaks when working on your computer.
 
-[![Become a Patron!](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/hovancik)
+[![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
-By default, it runs in your tray and displays a reminder window containing an idea for a microbreak for 20 seconds every 10 minutes.
+## Table of contents
+- [Install](#install--)
+- [Default behavior](#default-behavior)
+- [Preferences](#preferences)
+- [Advanced preferences](#advanced-preferences)
+- [Contributor Preferences](#contributor-preferences)
+- [Development](#development)
+- [Known issues](#known-issues)
+- [Contributors](#contributors)
+- [Humans and Tools](#humans-and-tools)
+- [License](#license)
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-microbreak.png" height="340">
+## Install [![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total)](https://github.com/hovancik/stretchly/releases) [![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
 
-Every 30 minutes, it displays a window containing an idea for a longer 5 minute break.
+The latest official **installers** and **portable versions** for macOS, Windows, Linux and FreeBSD can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-break.png" height="340">
+### macOS
 
-User gets notified 30 seconds before break (and 10 seconds before microbreak) to be able to prepare to pause the work.
+You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew cask install stretchly`. When upgrading, run `brew update && brew cask upgrade`.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-notification.png" height="90">
+ *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 
-When break/microbreak starts, you can postpone it once for 5 and 2 minutes respectively. After a specific time interval passes, you can finish it early.
+### Windows
 
-Both actions are available by clicking the link at the bottom of window
-or by using `Ctrl/Cmd + X` keyboard shortcut (except finishing early in strict mode).
+You can install *Stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
 
-You can pause/resume *stretchly*'s break reminders. On Windows and macOS, you can set the app to start at login. Also, Do Not Disturb mode is respected on those platforms.
+You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-1.png" height="150">
+Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
 
-You can also skip to the next break or microbreak anytime from the menu, or reset (restart) breaks.
+### Linux note
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-2.png" height="150">
+Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *Stretchly*.
 
-The tray tooltip shows information about how much time is left till the next (micro)break, the number of microbreaks until the next break, or the time remaining in pause till breaks resume.
+For Natural breaks, you might need some packages too (`libxss-dev`).
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-tray-3.png" height="90">
+If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the settings are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
-Tray menu displays the time and type of next break as well.
+### Running from source
 
-Microbreaks and breaks can be customized:
-- you can set the duration and interval of breaks
-- you can enable/disable breaks
-- you can enable/disable strict mode (breaks can't be finished early)
-- you can enable/disable ability to postpone breaks
+To run *Stretchly* from source you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-1.png" height="340">
+### Custom installer
 
-- you can choose from different color schemes
-- you can pick a sound to be played at the end of the break
+You can create a custom installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-2.png" height="340">
+## Default behavior
 
-- you can set the break window to be fullscreen
-- you can disable (micro)break ideas
-- you can disable pre-(micro)break notifications
-- you can disable notification sounds
-- you can disable monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
-- you can disable monitoring of DND (Do Not Disturb) mode on MacOS and Windows (breaks are not shown in DND mode)
-- you can disable the display of breaks on all of your monitors
-- you can change the default monochrome tray icon to an inverted (Linux, Windows) or a colorful version
-- you can change the interface language
+When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change the language, review the settings, view the online tutorial or simply continue with the default settings.
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-settings-website-3.png" height="340">
+<img src="welcome.png" height="340">
 
-All settings can be reset to defaults.
+*Stretchly* itself lives in your tray, only displaying a reminder window from time to time, which contains an idea for a break.
 
-On first run, stretchly will present you with Welcome window, where you can set your locale and read Tutorial.
+<img src="minibreak.png" height="340">
 
-<img src="https://raw.githubusercontent.com/hovancik/stretchly/master/stretchly-welcome.png" height="340">
+By default, there is a 20 second Mini Break every 10 minutes and a 5 minute Long Break every 30 minutes (after 2 Mini Breaks).
 
-You can view Tutorial again anytime from About window.
+<img src="longbreak.png" height="340">
 
-### Advanced settings
-All settings are saved in a JSON file. To open it, use `Ctrl/Cmd + D` shortcut in About window and click on link to it.
+You'll be notified 10 seconds before a Mini Break (and 30 seconds before a Long Break) so that you can prepare to pause your work.
 
-#### Editing break/microbreak ideas
-In the settings file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit
-`breakIdeas` and `microbreakIdeas`.
+<img src="notification.png" height="90">
 
-#### Editing break/microbreak notification interval
-In the settings file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for microbreak.
+When a break starts, you can postpone it once for 2 minutes (Mini Breaks) or 5 minutes (Long Breaks). Then, after a specific time interval passes, you can skip the break. Both actions are available by clicking on the link at the bottom of window or by using the `Ctrl/Cmd + X` keyboard shortcut.
+
+<img src="skip.png" height="340">
+
+Clicking the *Stretchly* icon in your tray area will display the current status of breaks, provide menu items with extra functionality, and link to the Preferences.
+
+<img src="tray.png" height="140">
+
+*Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be reset until you return.  
+
+*Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On.
+
+*Stretchly* follows the theme of your system and is also available in dark mode.
+
+<img src="dark.png" height="340">
+
+## Preferences
+
+Most of the preferences can be customized by clicking on the "Preferences" item in the tray menu.
+
+<img src="preferences.png" height="340">
+
+Preferences are divided into multiple categories and you are encouraged to take some time to make *Stretchly* your own by customizing them.
+
+You can also Restore the defaults to return to the default preferences state.
+
+## Advanced preferences
+
+All preferences are saved in a JSON file. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the file.
+
+It's recommended to Quit *Stretchly* before editing the preferences file.
+
+To make sure that all works as expected, it's always good idea to check that format of the preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
+
+Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences) badge.
+
+**Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.  
+
+#### Editing Break ideas
+In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
+
+Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten.
+
+#### Editing Break notification interval [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+
+In the preferences file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini Breaks.
 
 #### Editing sunrise time to pause breaks until morning
-In the settings file you can set the `morningHour` setting to pause until that hour this or next day
+In the preferences file you can set the `morningHour` setting to pause until that hour today or the next day
 Otherwise, you can set `morningHour: "sunrise"` and set `posLatitude`, `posLongitude` in
 settings to pause until the actual sunrise in your area.
 E.g. if you live in Boston you would set:
@@ -91,93 +128,65 @@ E.g. if you live in Boston you would set:
 `posLatitude: 42.3,`
 `posLongitude: 71`
 
-#### Editing postpone functionality
-In the settings file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable ability to postopne breaks, `microbreakPostponeTime` and `breakPostponeTime` to change postopone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change percentage of break in which user can postpone the break.
+#### Editing postpone functionality [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable the ability to postpone breaks, `microbreakPostponeTime` and `breakPostponeTime` to change the postpone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change the number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
 
-#### New version notification
-In the settings file, set `notifyNewVersion: false,` to disable new version notification.
+#### New version notification [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
 
-#### Play sound at the start of the micro/break
-In the settings file, set `microbreakStartSoundPlaying: true,` to start a microbreak with a sound (The same sounds will be played as at the end of the break). Same for `breakStartSoundPlaying`.
+#### Play sound at the start of the Break [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sound will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
-#### Natural breaks inactivity time
-In the settings file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds, needs to be bigger than 20000ms). This is a idle time length, after which stretchly timers will be cleared and waiting for user to come back.
+#### Natural breaks inactivity time [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* timers will be cleared and will stay at 0 until the user resumes activity.
 
-#### Volume for break sounds
-In the settings file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.
+#### Volume for break sounds [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.
 
 #### Postpone/Finish Break Shortcut
-In the settings file, set `endBreakShortcut` to your preferred value. For available values for key and modifier check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) as we do not validate your value.
+In the preferences file, set `endBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier.
 
-## Install [![Github All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total.svg)](https://github.com/hovancik/stretchly/releases/latest)[![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
+#### Appearance [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.  
 
-Latest installers for macOS, Windows, Linux and FreeBSD can be found [here](https://github.com/hovancik/stretchly/releases).
+#### Welcome window [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
 
-On macOS you can install *stretchly* by running `brew update && brew cask install stretchly`.
+## Contributor Preferences
+*Stretchly* is free but you can support it by contributing code or money.
 
-On Windows, you can install *stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
+[![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
-You can create an installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
+You will be rewarded by getting access to extra preferences (+ other perks) available only to Contributors. You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.
 
-## Running from source
-
-To run app you will need [nodejs](https://nodejs.org/). Clone the repo, run `npm install` and then simply run `npm start` to start *stretchly*.
-
-It should run on any electron supported platform. Tested on macOS, Windows and Ubuntu Linux.
-
-### Linux note
-Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *stretchly*. Electron now also uses Chromium's `StatusIconLinuxDbus` on Linux, which might be better. Check [this comment](https://github.com/electron/electron/issues/21445#issuecomment-565710027) for more tips to get it working.
-
-For Natural breaks, you might need some packages too (`libxss-dev`).
-
-If *stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the settings are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
+<img src="contributors.png" height="340">
 
 ## Development
+Feel free to join in the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 
-Feel free to join [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
-Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and so that the changes will be accepted.
+**Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted.**
 
 ### Debugging
-If you start Stretchly in development mode with the `npm run dev` command, it makes possible to debug the application in your browser on `http://localhost:9222`.
+If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
-Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About window to show information such as:
-  - Location of the settings file (Clicking on settings file location will open it.)
+Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
+  - Location of the preferences file (Clicking on preferences file location will open it.)
   - Debug information for break planner
-You can copy debug information to clipboard.
 
-### Known issues
-- users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3th settings page and uncheck "monitor Do Not Disturb mode"
-- tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447)) and Linux ([lectron/electron#15161](https://github.com/electron/electron/issues/15161))
-- fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
+You can copy debug information to the clipboard.
+
+## Known issues
+- users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
+- tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
+- tray tooltip does not work correctly on Linux ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
 - fullscreen is not shown on all displays on Windows ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
-- tray icon is not rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
+- tray icon is not always rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
-### TODOs and Ideas
-- [x] tests
-- [x] PR tools
-- [x] make installers/executables
-- [x] create about page
-- [x] only one instance
-- [x] create longer breaks (5min every 30 minutes)
-- [x] create settings for breaks
-- [x] remember settings after restart
-- [x] autostart app
-- [x] start break anytime from menu
-- [x] sound notification at the end of the break
-- [x] strict mode (can't finish break early)
-- [x] information about when will be the next break
-- [x] create keyboard shortcuts
-- [ ] color-picker for themes
-- [x] some kind of silent mode (see #44 and #327)
-- [ ] history/timeline of breaks
-- [x] localization support (l12n, gettetxt via Crowdin, Weblate or so)
-
-### Contributors
-*(by date of the first contribution)*
+## Contributors
 
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
-- Martina Mocinecova, (*stretchly* logo), color schemes
+- Martina Mocinecova, (pre-1.0 *Stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
 - Alex Alekseyenko, @alexalekseyenko
 - Sean Manton, @sxmanton
@@ -227,7 +236,9 @@ You can copy debug information to clipboard.
 - Felix W. Dekker, [@FWDekker](https://github.com/FWDekker)
 - Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
 
-### Humans and Tools
+Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
+
+## Humans and Tools
  - https://www.icoconverter.com/ to generate .ico
  - http://www.img2icnsapp.com/ to create .icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
