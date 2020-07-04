@@ -6,7 +6,7 @@ Have you read Code of Conduct? By filing an Issue, you are expected to comply wi
 
 ### Prerequisites
 
-- [ ] I'm using latest version: v <!-- type your version from `Preferences` ->  `About` -->
+- [ ] I'm using latest version: v <!-- type your version from `Preferences` -  `About` -->
 - [ ] I've checked [Known issues](https://github.com/hovancik/stretchly#known-issues)
 - [ ] I've checked [Open issues](https://github.com/hovancik/stretchly/issues)
 
