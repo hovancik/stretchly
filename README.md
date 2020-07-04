@@ -28,7 +28,7 @@ The latest official **installers** and **portable versions** for macOS, Windows,
 
 You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew cask install stretchly`. When upgrading, run `brew update && brew cask upgrade`.
 
- *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac). 
+ *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 
 ### Windows
 
@@ -176,12 +176,12 @@ Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D`
 You can copy debug information to the clipboard.
 
 ## Known issues
-- users who upgraded to Windows 10 from previous versions might be in "Do not disturb mode" all the time so they need to go to the 3rd settings page and uncheck "monitor Do Not Disturb mode"
-- tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447)) and Linux ([lectron/electron#15161](https://github.com/electron/electron/issues/15161))
-- fullscreen does not work on Linux ([electron/electron#11632](https://github.com/electron/electron/issues/11632))
+- users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
+- tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
+- tray tooltip does not work correctly on Linux ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
 - fullscreen is not shown on all displays on Windows ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
-- tray icon is not rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
+- tray icon is not always rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
 ## Contributors
 
