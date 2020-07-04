@@ -5,13 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.99.5] - 2020-07-04
 ### Added
 - Added Hungarian translation
 - Added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
 
 ### Changed
-- update Chinese (Traditional) translation (#590)
 - don't hide dock icon on macOS
+- Updated translations
 
 ## Fixed
 - adds workaround for electron's Linux/Windows fullscreen issues
@@ -417,7 +419,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.21.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.99.5...HEAD
+[0.99.5]: https://github.com/hovancik/stretchly/compare/v0.99.4...v0.99.5
+[0.99.4]: https://github.com/hovancik/stretchly/compare/v0.99.3...v0.99.4
+[0.99.3]: https://github.com/hovancik/stretchly/compare/v0.99.2...v0.99.3
+[0.99.2]: https://github.com/hovancik/stretchly/compare/v0.99.1...v0.99.2
+[0.99.1]: https://github.com/hovancik/stretchly/compare/v0.99.0...v0.99.1
+[0.99.0]: https://github.com/hovancik/stretchly/compare/v0.21.1...v0.99.0
 [0.21.1]: https://github.com/hovancik/stretchly/compare/v0.21.0...v0.21.1
 [0.21.0]: https://github.com/hovancik/stretchly/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/hovancik/stretchly/compare/v0.20.0...v0.20.1
