@@ -92,7 +92,10 @@
         "pacman",
         "tar.xz",
         "snap"
-      ]
+      ],
+      "snap": {
+        "publish": "github"
+      }
     },
     "win": {
       "target": [
