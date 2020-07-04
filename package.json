@@ -14,7 +14,7 @@
     "pack-all": "electron-builder build --dir -mwl --x64 --ia32",
     "dist-all": "electron-builder build -mwl --x64 --ia32",
     "pack": "electron-builder build --dir",
-    "dist": "electron-builder build --x64 --ia32 -c.snap.publish=github",
+    "dist": "electron-builder build --x64 --ia32",
     "test": "mocha test",
     "test-single": "mocha $1",
     "tdd": "mocha --watch test",
@@ -92,7 +92,10 @@
         "pacman",
         "tar.xz",
         "snap"
-      ]
+      ],
+      "snap": {
+        "publish": "github"
+      }
     },
     "win": {
       "target": [
