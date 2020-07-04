@@ -90,10 +90,8 @@
         "rpm",
         "freebsd",
         "pacman",
-        "tar.xz",
-        "snap"
-      ],
-      "publish": ["github"]
+        "tar.xz"
+      ]
     },
     "win": {
       "target": [
