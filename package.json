@@ -93,9 +93,7 @@
         "tar.xz",
         "snap"
       ],
-      "snap": {
-        "publish": "github"
-      }
+      "publish": ["github"]
     },
     "win": {
       "target": [
