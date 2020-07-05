@@ -90,7 +90,9 @@
         "rpm",
         "freebsd",
         "pacman",
-        "tar.xz"
+        "tar.xz",
+        "p5p",
+        "apk"
       ]
     },
     "win": {
