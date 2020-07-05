@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.99.5] - 2020-07-04
 ### Added
-- p5p and apk package formats
+- apk package format
 - Added Hungarian translation
 - Added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
 

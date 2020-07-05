@@ -91,7 +91,6 @@
         "freebsd",
         "pacman",
         "tar.xz",
-        "p5p",
         "apk"
       ]
     },
