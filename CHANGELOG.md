@@ -6,6 +6,35 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2020-07-18
+
+## Added
+- apk and snap package format
+- added Hungarian translation
+- added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
+- show Paused icon when Breaks are paused in Natural breaks mode
+- show Paused icon when Breaks are paused in Do Not Disturb mode
+- Dark mode for interface
+- new break ideas
+- new Icon
+
+### Changed
+- changed app name from `stretchly` to `Stretchly`
+  - this might change location of preferences file, so you might need to set up your preferences again or copy the file
+- don't hide dock icon on macOS
+- updated some translations
+- rework UI in all windows and Tray menu
+- synchronized tray status messages (tooltip, menu)
+- better format remaining time
+- default icon to colorful
+
+## Fixed
+- adds workaround for electron's Linux/Windows fullscreen issues
+- notify of new version only if new version is higher then current
+
+### Removed
+- removed tutorial, now linking to Features webpage
+
 ## [0.99.5] - 2020-07-04
 ### Added
 - apk package format
@@ -420,7 +449,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.99.5...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/hovancik/stretchly/compare/v0.99.5...v1.0.0
 [0.99.5]: https://github.com/hovancik/stretchly/compare/v0.99.4...v0.99.5
 [0.99.4]: https://github.com/hovancik/stretchly/compare/v0.99.3...v0.99.4
 [0.99.3]: https://github.com/hovancik/stretchly/compare/v0.99.2...v0.99.3
