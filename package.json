@@ -53,11 +53,6 @@
   },
   "build": {
     "appId": "net.hovancik.stretchly",
-    "publish": [
-      {
-        "provider": "github"
-      }
-    ],
     "productName": "Stretchly",
     "dmg": {
       "icon": "build/icon.icns",
