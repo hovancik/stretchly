@@ -21,5 +21,10 @@ module.exports = [
   { data: ['Wrist and forearm', 'Extend your arms with the palms facing towards you, then slowly rotate the hands four times clockwise, then four times counter-clockwise.'], enabled: true },
   { data: ['Back stretching', 'Join your hands behind your head, then lift them together up above your head ending with your palms facing upward.'], enabled: true },
   { data: ['Mobilize', 'For every thirty minutes of stagnation, you should have at least one minute of stimulation.'], enabled: true },
-  { data: ['7 Minute Workout', 'This workout packs in a full-body exercise routine in a fraction of the time. But as with any excercise, be careful. There are numerous apps to get you started.'], enabled: true }
+  { data: ['7 Minute Workout', 'This workout packs in a full-body exercise routine in a fraction of the time. But as with any excercise, be careful. There are numerous apps to get you started.'], enabled: true },
+  { data: ['Pulse', ' Raise your pulse rate to 120 beats per minute for 20 straight minutes four or five times a week doing anything you enjoy.'], enabled: true },
+  { data: ['Take the stairs ', 'Studies have shown that stair climbing, which is considered vigorous-intensity physical activity, burns more calories per minute than jogging, thus helping to fight a sedentary lifestyle'], enabled: true },
+  { data: ['Make art', 'Art therapy is known to have great mental health benefits, especially when it comes to stress management. How about writing a quick poem, taking a picture or painting something small?'], enabled: true },
+  { data: ['Declutter', 'A clean space help your focus at work and are often linked to positive emotions like happiness.'], enabled: true },
+  { data: ['Lunch outside', 'Nature is linked to positive emotions and decreased stress and anxiety. Whenever possible, try to take your daily lunch break outside, surrounded by some greenery.'], enabled: true }
 ]
