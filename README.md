@@ -253,6 +253,8 @@ Also see Github's list of [contributors](https://github.com/hovancik/stretchly/g
  - https://www.painscience.com/articles/microbreaking.php
  - https://github.com/CognirelTech/Quillpad-Server
  - https://www.webmd.com/fitness-exercise/a-z/seven-minute-workout
+ - https://www.poetryfoundation.org/poems/57243/how-to-be-perfect
+ - https://justworks.com/blog/improve-mental-health-work-midday-break-ideas
 
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).

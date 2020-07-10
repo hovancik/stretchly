@@ -21,5 +21,7 @@ module.exports = [
   { data: 'With your right hand, grab each finger of your left hand in turn and squeeze. Repeat on the other side.', enabled: true },
   { data: 'Stand up and do a lunge. Hold for 10 seconds, then do the other leg.', enabled: true },
   { data: 'Close your eyes and simply notice whatever arises in current moment, without judgement.', enabled: true },
-  { data: 'One should focus every 20 minutes for 20 seconds on an object that is 20 feet distance.', enabled: true }
+  { data: 'One should focus every 20 minutes for 20 seconds on an object that is 20 feet distance.', enabled: true },
+  { data: 'If you need help, ask for it.', enabled: true },
+  { data: 'Do one thing at a time.', enabled: true }
 ]
