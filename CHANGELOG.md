@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2020-07-18
 
 ### Added
-- apk and snap package format
+- apk package format
 - added Hungarian translation
 - added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
 - show Paused icon when Breaks are paused in Natural breaks mode
