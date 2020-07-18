@@ -91,8 +91,7 @@
         "freebsd",
         "pacman",
         "tar.xz",
-        "apk",
-        "snap"
+        "apk"
       ]
     },
     "win": {
