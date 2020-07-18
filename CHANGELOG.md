@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.0] - 2020-07-18
 
-## Added
+### Added
 - apk and snap package format
 - added Hungarian translation
 - added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - better format remaining time
 - default icon to colorful
 
-## Fixed
+### Fixed
 - adds workaround for electron's Linux/Windows fullscreen issues
 - notify of new version only if new version is higher then current
 
