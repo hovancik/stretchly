@@ -12,7 +12,8 @@ let eventsAttached = false
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
   imagesWithDarkVersion.forEach(image => {
-    const newSource = image.src.replace('.', '-dark.')
+    // replace last occurance https://github.com/electron-userland/electron-builder/issues/5152
+    const newSource = image.src.replace(/.([^.]*)$/, '-dark.' + '$1')
     image.src = newSource
   })
 }
@@ -21,7 +22,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
   const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
   if (e.matches) {
     imagesWithDarkVersion.forEach(image => {
-      const newSource = image.src.replace('.', '-dark.')
+      const newSource = image.src.replace(/.([^.]*)$/, '-dark.' + '$1')
       image.src = newSource
     })
   } else {
