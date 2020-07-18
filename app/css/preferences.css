@@ -1,0 +1,330 @@
+body {
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  font-family: Open Sans;
+}
+
+body > div > :last-child {
+  margin-bottom: 56px;
+}
+
+.navigation {
+  background: var(--nav-bg);
+  border-radius: 4.5px 0 0 4px;
+  box-shadow: var(--box-shadow);
+  display: grid;
+  grid-gap: 16px;
+  grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
+  padding: 0 16px;
+}
+
+.navigation > a > div {
+  align-items: center;
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  height: 57px;
+  justify-content: space-evenly;
+  letter-spacing: 0.07px;
+  text-align: center;
+}
+
+.navigation > a > div > span {
+  padding: 0 2px;
+}
+
+.navigation .active {
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 4px 4px 0 0;
+}
+
+.navigation a {
+  text-decoration: none
+}
+
+.navigation > :nth-child(5) {
+  justify-self: end;
+}
+
+.navigation > a > div > img {
+  height: 32px;
+  width: 32px;
+}
+
+body > .hidden,
+.heart > .hidden {
+  display: none;
+}
+
+.settings {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 20px 0;
+  grid-template: auto / 89px auto 16px;
+  letter-spacing: -0.08px;
+  padding-top: 30px;
+}
+
+.settings > div {
+  grid-column: 2/-2;
+}
+
+.settings > :nth-child(3) {
+  padding-left: 80px;
+}
+
+.settings > :nth-child(3) > label {
+  margin-right: 32px;
+}
+
+.schedule {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto / 25% auto 16px;
+  letter-spacing: -0.08px;
+  padding-top: 30px;
+}
+
+.schedule > div {
+  grid-column: 2/-2;
+}
+
+.schedule > div > p {
+  margin: 0;
+  max-width: 280px;
+}
+
+.schedule > :nth-child(1) {
+  grid-column: 1/2;
+  grid-row: 1/6;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.schedule > :nth-child(9) {
+  grid-column: 1/2;
+  grid-row: 8/12;
+  padding: 0 16px;
+  text-align: right;
+}
+.schedule > :nth-child(17) {
+  grid-column: 1/2;
+  grid-row: 15/18;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.theme {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto / 25% auto 16px;
+  letter-spacing: -0.08px;
+  padding-top: 30px;
+}
+
+.theme > div {
+  grid-column: 2/-2;
+}
+
+.theme > :nth-child(1) {
+  align-self: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.theme > :nth-child(8) {
+  grid-column: 1/2;
+  grid-row: 7/9;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.theme > :nth-child(14) {
+  grid-column: 1/2;
+  grid-row: 12/16;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.appearance {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.appearance > input[type="radio"] + label:before {
+  background: attr(data-background color, red);
+  border: 5px solid var(--appearance-border-color);
+  border-radius: 0;
+  box-shadow: var(--checkbox-shadow);
+  color: attr(data-background color, red);
+  content: "\2714";
+  display: inline-block;
+  font: 14px sans-serif;
+  height: 15px;
+  margin: 0 17px 0;
+  padding: 10px;
+  width: 30px;
+}
+
+.win32 .appearance > input[type="radio"] + label:before {
+  content: "\2713";
+  font: 13px sans-serif;
+}
+
+.darwin .appearance > input[type="radio"] + label:before {
+  font: 13px sans-serif;
+}
+
+#greenClouds + label:before {
+  background: #478484;
+  color: #478484;
+}
+
+#autumnBeBlessed + label:before {
+  background: #633738;
+  color: #633738;
+}
+
+#graphiteCrystal + label:before {
+  background: #1D1F21;
+  color: #1D1F21;
+}
+
+#coffeeKisses + label:before {
+  background: #A49898;
+  color: #A49898;
+}
+
+#morningSwim + label:before {
+  background: #567890;
+  color: #567890;
+}
+
+.appearance > #greenClouds:checked + label:before,
+.appearance > #autumnBeBlessed:checked + label:before,
+.appearance > #graphiteCrystal:checked + label:before,
+.appearance > #coffeeKisses:checked + label:before,
+.appearance > #morningSwim:checked + label:before {
+  color: #FFFFFF;
+}
+
+.sounds {
+  display: flex;
+}
+
+.sounds > img {
+  padding-left: 15px;
+}
+
+.about {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto auto/ 25% auto 25%;
+  letter-spacing: 0px;
+  padding-top: 82px;
+  text-align: center;
+}
+
+.about > div {
+  grid-column: 2/-2;
+}
+
+.about > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+
+.about > :nth-child(1) > div {
+  display: flex;
+  justify-content: center;
+}
+
+.about > :nth-child(1) > div > img {
+  height: 64px;
+  width: 64px;
+}
+
+.about > :nth-child(1) > div > span {
+  font-family: Open Sans;
+  font-size: 48px;
+  padding-left: 12px;
+}
+
+.about > :nth-child(1) > span {
+  font-family: Open Sans Light;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.about > :nth-child(4) {
+  display: inline-flex;
+}
+
+.about > :nth-child(4) > div {
+  padding-left: 8px;
+  text-align: left;
+}
+
+.about a {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+.about > :last-child {
+  margin-bottom: 6px;
+}
+
+.about > .debug {
+  min-height: 74px;
+  font-size: 11px;
+  grid-column: 1/-1;
+  margin: auto 20px;
+}
+
+.about > .debug > :first-child {
+  display: none;
+}
+
+.heart {
+  display: grid;
+  font-size: 18px;
+  grid-gap: 15px 18px;
+  grid-template: auto / 6px 128px auto 14px;
+  letter-spacing: 0;
+  padding-top: 52px;
+}
+
+.heart > div {
+  grid-column: 3;
+}
+
+.heart > :nth-child(1) {
+  grid-column: 2;
+  grid-row: 1/4;
+}
+
+.heart > div > img {
+  height: 128px;
+  width: 128px;
+}
+
+.heart > :nth-child(2) > span {
+  font-size: 36px;
+}
+
+.heart > .authenticate > span {
+  font-size: 13px;
+  letter-spacing: -0.08px;
+}
+
+.heart > .authenticate > a {
+  padding-right: 20px;
+  text-decoration: none;
+}

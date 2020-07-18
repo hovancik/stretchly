@@ -30,14 +30,14 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-  new Notification('stretchly', { // eslint-disable-line no-new
+  new Notification('Stretchly', { // eslint-disable-line no-new
     body: text,
     silent
   })
 })
 
 function notifyNewVersion (silent) {
-  const notification = new Notification('stretchly', {
+  const notification = new Notification('Stretchly', {
     body: i18next.t('process.newVersionAvailable'),
     silent
   })

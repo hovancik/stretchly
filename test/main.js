@@ -111,7 +111,7 @@ describe('stretchly', function () {
             return this.app.client
               .waitUntilWindowLoaded()
               .windowByIndex(0).browserWindow
-              .getTitle().should.eventually.equal('stretchly')
+              .getTitle().should.eventually.equal('Stretchly')
           })
       })
   })

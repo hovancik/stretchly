@@ -1,44 +1,195 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
     <title data-i18next="welcome.title"></title>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/color-scheme.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/welcome.css">
   </head>
   <body>
     <div class="welcome">
-      <div class="welcome-name" data-i18next="welcome.stretchly"></div>
-      <div data-i18next="welcome.breakTimeReminderApp"></div>
-      <div class="welcome-stretchly">
-        <p data-i18next="welcome.chooseLanguage"></p>
-        <select name="language" id="language">
-          <!--Keep languages in the alphabet order-->
-          <option value="bg">Български</option>
-          <option value="cs">Čeština</option>
-          <option value="da">Dansk</option>
-          <option value="de">Deutsch</option>
-          <option value="en">English</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="hi">हिन्दी</option>
-          <option value="it">Italiano</option>
-          <option value="ko">한국어</option>
-          <option value="lt">Lietuvių</option>
-          <option value="nl">Nederlands</option>
-          <option value="pl">Polski</option>
-          <option value="pt-BR">Português Brasileiro</option>
-          <option value="ro">Română</option>
-          <option value="ru">Русский</option>
-          <option value="sk">Slovenčina</option>
-          <option value="sv">Svenska</option>
-          <option value="tr">Türkçe</option>
-          <option value="uk">Українська</option>
-          <option value="zh-CN">简体中文</option>
-          <option value="zh-TW">正體中文</option>
-        </select>
-        <p data-i18next="welcome.readTutorial"></p>
-        <a href="" data-i18next="welcome.tutorial" id="tutorial"></a>
+      <div>
+        <div>
+          <img src="images/stretchly.svg" data-has-dark-version alt="Stretchy logo">
+          <span>Stretchly</span>
+        </div>
+        <span data-i18next="welcome.breakTimeReminderApp"></span>
       </div>
-      <a id="skip" data-i18next="welcome.skipTutorial"></a>
+      <div>
+        <div>
+          <img src="images/flags/flag-bulgaria.svg" alt="Bulgaria">
+          <input type="radio" value="bg" name="language" id="bg">
+          <label for="bg">
+            Български
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-czech-republic.svg" alt="Czechia">
+          <input type="radio" value="cs" name="language" id="cs">
+          <label for="cs">
+            Čeština
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-denmark.svg" alt="Denmark">
+          <input type="radio" value="da" name="language" id="da">
+          <label for="da">
+            Dansk
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-germany.svg" alt="Germany">
+          <input type="radio" value="de" name="language" id="de">
+          <label for="de">
+            Deutsch
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-united-kingdom.svg" alt="UK">
+          <input type="radio" value="en" name="language" id="en">
+          <label for="en">
+            English
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-spain.svg" alt="Spain">
+          <input type="radio" value="es" name="language" id="es">
+          <label for="es">
+            Español
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-france.svg" alt="France">
+          <input type="radio" value="fr" name="language" id="fr">
+          <label for="fr">
+            Français
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-india.svg" alt="India">
+          <input type="radio" value="hi" name="language" id="hi">
+          <label for="hi">
+            हिन्दी
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-hungary.svg" alt="Hungary">
+          <input type="radio" value="hu" name="language" id="hu">
+          <label for="hu">
+            Magyar
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-italy.svg" alt="Italy">
+          <input type="radio" value="it" name="language" id="it">
+          <label for="it">
+            Italiano
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-south-korea.svg" alt="South Korea">
+          <input type="radio" value="ko" name="language" id="ko">
+          <label for="ko">
+            한국어
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-lithuania.svg" alt="Lithuania">
+          <input type="radio" value="lt" name="language" id="lt">
+          <label for="lt">
+            Lietuvių
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-netherlands.svg" alt="Netherlands">
+          <input type="radio" value="nl" name="language" id="nl">
+          <label for="nl">
+            Nederlands
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-poland.svg" alt="Poland">
+          <input type="radio" value="pl" name="language" id="pl">
+          <label for="pl">
+            Polski
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-brazil.svg" alt="Brazil">
+          <input type="radio" value="pt-BR" name="language" id="pt-BR">
+          <label for="pt-BR">
+            Brasileiro
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-romania.svg" alt="Romania">
+          <input type="radio" value="ro" name="language" id="ro">
+          <label for="ro">
+            Română
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-russia.svg" alt="Russia">
+          <input type="radio" value="ru" name="language" id="ru">
+          <label for="ru">
+            Русский
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-slovakia.svg" alt="Slovakia">
+          <input type="radio" value="sk" name="language" id="sk">
+          <label for="sk">
+            Slovenčina
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-sweden.svg" alt="Sweden">
+          <input type="radio" value="sv" name="language" id="sv">
+          <label for="sv">
+            Svenska
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-turkey.svg" alt="Turkey">
+          <input type="radio" value="sv" name="language" id="sv">
+          <label for="sv">
+            Türkçe
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-ukraine.svg" alt="Ukraine">
+          <input type="radio" value="uk" name="language" id="uk">
+          <label for="uk">
+            Українська
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-china.svg" alt="China">
+          <input type="radio" value="zh-CN" name="language" id="zh-CN">
+          <label for="zh-CN">
+            简体中文
+          </label>
+        </div>
+        <div>
+          <img src="images/flags/flag-taiwan.svg" alt="Taiwan">
+          <input type="radio" value="zh-TW" name="language" id="zh-TW">
+          <label for="zh-TW">
+            正體中文
+          </label>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button type="button" data-location="tutorial" data-same-width-button data-i18next="welcome.viewTutorial"></button>
+        </div>
+        <div>
+          <button type="button" data-location="preferences" data-same-width-button data-i18next="welcome.openPreferences"></button>
+          <p></p>
+          <button class="push" type="button" data-same-width-button data-i18next="welcome.getStarted" autofocus></button>
+        </div>
+      </div>
     </div>
     <script>
       require('./platform.js')

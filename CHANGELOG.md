@@ -5,8 +5,73 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.99.5] - 2020-07-04
+### Added
+- apk package format
+- Added Hungarian translation
+- Added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
+
+### Changed
+- don't hide dock icon on macOS
+- Updated translations
+
+## Fixed
+- adds workaround for electron's Linux/Windows fullscreen issues
+
+## [0.99.4] - 2020-05-15
+### Fixed
+- checkbox across macOS, Windows, Linux
+- maximum window size of Preferences
+- updated translation files
+- translations for ranges
+- small style issues
+
+### Added
+- snap package build
+
+## [0.99.3] - 2020-05-05
+### Fixed
+- multi-line status messages in Tray (Mac, Windows)
+
+### Added
+- show Paused icon when Breaks are paused in Natural breaks mode
+- show Paused icon when Breaks are paused in Do Not Disturb mode
+- Dark mode for interface
+- Contributor settings to set Dark/Light/System mode for color mode
+
+### Changed
+- changed app name from `stretchly` to `Stretchly`
+  - this will change location of preferences file, so you will need to set up your preferences again or copy the file
+
+## [0.99.2] - 2020-04-27
+### Removed
+- old About window
+
+### Changed
+- better style for progress
+- rework Contributor preferences
+- reworked tray menu
+- synchronized tray status messages (tooltip, menu)
+- better format remaining time
+
+## [0.99.1] - 2020-04-09
+### Changed
+- restyle Welcome window
+- replace Build, Window and Tray icons and images
+- better styling for Breaks and countdown
+
+### Removed
+- removed tutorial, now linking to Features webpage
+
+### Fixed
+- Adds missing Postpone preferences
+
+## [0.99.0] - 2020-03-19
 ### Changed
 - default icon is colorful
+- restyle break windows
+- restyle Preferences window
 
 ### Added
 - new break ideas
@@ -355,7 +420,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.21.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v0.99.5...HEAD
+[0.99.5]: https://github.com/hovancik/stretchly/compare/v0.99.4...v0.99.5
+[0.99.4]: https://github.com/hovancik/stretchly/compare/v0.99.3...v0.99.4
+[0.99.3]: https://github.com/hovancik/stretchly/compare/v0.99.2...v0.99.3
+[0.99.2]: https://github.com/hovancik/stretchly/compare/v0.99.1...v0.99.2
+[0.99.1]: https://github.com/hovancik/stretchly/compare/v0.99.0...v0.99.1
+[0.99.0]: https://github.com/hovancik/stretchly/compare/v0.21.1...v0.99.0
 [0.21.1]: https://github.com/hovancik/stretchly/compare/v0.21.0...v0.21.1
 [0.21.0]: https://github.com/hovancik/stretchly/compare/v0.20.1...v0.21.0
 [0.20.1]: https://github.com/hovancik/stretchly/compare/v0.20.0...v0.20.1

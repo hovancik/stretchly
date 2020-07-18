@@ -2,16 +2,30 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title data-i18next="microbreak.title"></title>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <title data-i18next="break.title"></title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/break.css">
   </head>
   <body>
-    <div class="microbreak">
-      <div class="microbreak-idea"></div>
-      <progress id='progress' max="10000" ></progress><br/>
-      <p id='progress-time'></p>
-      <a id="postpone" title="Ctrl/Cmd + x" data-i18next="microbreak.postpone"></a>
-      <a id="close" title="Ctrl/Cmd + x" data-i18next="microbreak.keepGoing"></a>
+    <div class="breaks">
+      <div>
+        <div class="microbreak-idea"></div>
+        <progress id='progress' max="10000" ></progress>
+        <span id='progress-time'></span>
+      </div>
+      <div>
+        <a id="postpone" class="tooltip top">
+          <span data-i18next="break.postpone"></span>
+          <img src="images/breaks/break-postpone.svg" />
+          <span class="tiptext"></span>
+        </a>
+        <a id="close" class="tooltip top">
+          <span data-i18next="break.skip"></span>
+          <img src="images/breaks/break-skip.svg" />
+          <span class="tiptext"></span>
+        </a>
+      </div>
     </div>
     <script>
       require('./platform.js')

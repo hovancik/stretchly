@@ -1,0 +1,72 @@
+.breaks {
+  align-items: center;
+  color: #FFFFFF;
+  display: grid;
+  font-family: "Open Sans Light";
+  font-weight: 300;
+  grid-template: 85vh 10vh / 100px auto 100px;
+  justify-items: center;
+}
+
+.breaks > * {
+  grid-column: 2 / span 1;
+}
+
+.breaks > :nth-child(1) {
+  text-align: center;
+}
+
+.breaks > :nth-child(1) > progress {
+  margin-top: 50px;
+}
+
+.breaks > :nth-child(1) >  .microbreak-idea {
+  font-size: 30px;
+  letter-spacing: 0.44px;
+  line-height: 46px;
+}
+
+.breaks > :nth-child(1) >  .break-idea {
+  font-size: 36px;
+  letter-spacing: 0.52px;
+  line-height: 49px;
+}
+
+.breaks > :nth-child(1) >  .break-text {
+  font-size: 24px;
+  letter-spacing: 0.35px;
+  line-height: 33px;
+  margin-top: 60px;
+}
+
+.breaks > :nth-child(2) {
+  font-size: 18px;
+  letter-spacing: 0.26px;
+  line-height: 18px;
+}
+
+.breaks > :nth-child(2) > a {
+  display: none;
+}
+
+.breaks > :nth-child(2) > a:hover {
+  color: #FFFF00;
+}
+
+.breaks > :nth-child(2) > a img {
+  /* https://codepen.io/sosuke/pen/Pjoqqp */
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+  height: 20px;
+  padding-left: 20px;
+  width: 20px;
+}
+
+.breaks > :nth-child(2) > a:hover img {
+  filter: invert(87%) sepia(71%) saturate(3206%) hue-rotate(359deg) brightness(101%) contrast(103%);
+}
+
+#progress-time {
+  display: block;
+  font-size: 15px;
+  padding-top: 20px;
+}

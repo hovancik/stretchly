@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0"
+   y="0"
+   width="300"
+   height="300"
+   viewBox="0, 0, 300, 300"
+   id="svg11"
+   sodipodi:docname="appicon-colour-dark-mode.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="495"
+     id="namedview13"
+     showgrid="false"
+     inkscape:zoom="0.78666667"
+     inkscape:cx="150"
+     inkscape:cy="150"
+     inkscape:window-x="26"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1" />
+  <g
+     id="Layer_1">
+    <g
+       id="g8">
+      <path
+         d="M215.192,213.915 C215.192,124.35 128.854,141.901 128.854,94.157 C128.854,74.291 136.239,53.333 171.345,53.333 C230.69,53.333 279.895,108.384 279.895,174.774 C279.895,241.175 231.105,295 171.764,295 C197.97,279.811 215.192,249.196 215.192,213.915"
+         fill="#8C8C8C"
+         id="path4" />
+      <path
+         d="M128.233,5 C102.027,20.188 84.809,50.799 84.809,86.091 C84.809,175.655 171.145,158.094 171.145,205.837 C171.145,225.712 163.761,246.667 128.645,246.667 C69.308,246.667 20.104,191.613 20.104,125.224 C20.104,58.831 68.893,5 128.233,5"
+         fill="#D81E00"
+         id="path6" />
+    </g>
+  </g>
+</svg>

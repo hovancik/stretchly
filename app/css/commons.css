@@ -1,0 +1,249 @@
+/* open-sans-300 - latin */
+@font-face {
+  font-family: 'Open Sans Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.darwin .darwin-hidden,
+.linux .linux-hidden,
+.freebsd .linux-hidden,
+.openbsd .linux-hidden {
+  display: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* https://css-tricks.com/html5-progress-element/ */
+progress {
+  -webkit-appearance: none;
+  height: 6px;
+  width: 50vh;
+}
+
+progress[value]::-webkit-progress-bar {
+  background: transparent;
+  border: 0.5px solid #bcbcbc;
+  border-radius: 3px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #cecece;
+  border-radius: 3px;
+}
+
+/* https://www.codexworld.com/create-simple-css-tooltip/ */
+.tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip .tiptext {
+  background-color: black;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  padding: 6px 4px;
+  position: absolute;
+  text-align: center;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.tooltip .tiptext::after {
+  border-style: solid;
+  border-width: 5px;
+  content: "";
+  position: absolute;
+}
+
+.tooltip:hover .tiptext {
+  visibility: visible;
+}
+
+.tooltip.top .tiptext{
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip.top .tiptext::after{
+  border-color: #2E2E2E transparent transparent transparent;
+  left: 50%;
+  margin-left: -5px;
+  top: 100%;
+}
+
+/* https://jsbin.com/itejak/1/edit?html,css,output */
+input[type="checkbox"], input[type="radio"] {
+  display: none;
+}
+
+input[type="checkbox"] + label:before {
+  background: var(--checkbox-bg);
+  border: 0 solid rgba(0,0,0,0.20);
+  border-radius: 3px;
+  box-shadow: var(--checkbox-shadow);
+  content: "\00a0";
+  display: inline-block;
+  font: 13px sans-serif;
+  height: 14px;
+  line-height: 16px;
+  margin: 0 4px 0 0;
+  padding:0;
+  width: 14px;
+}
+
+.darwin input[type="checkbox"] + label:before {
+  font: 12px sans-serif;
+}
+
+.win32 input[type="checkbox"] + label:before {
+  font: 11px sans-serif;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: var(--checkbox-checked-bg);
+  color: #FFFFFF;
+  content: "\2714";
+  text-align: center;
+}
+
+.win32 input[type="checkbox"]:checked + label:before {
+  content: "\2713";
+}
+
+input[type="radio"] + label:before {
+  background: var(--checkbox-bg);
+  border: 0 solid rgba(0,0,0,0.20);
+  border-radius: 13px;
+  box-shadow: var(--checkbox-shadow);
+  content: "\00a0";
+  display: inline-block;
+  font: 13px sans-serif;
+  height: 16px;
+  margin: 0 4px 0 0;
+  padding:0;
+  width: 16px;
+}
+
+input[type="radio"]:checked + label:before {
+  background: var(--checkbox-checked-bg);
+  color: #FFFFFF;
+  content: "\25CF";
+  text-align: center;
+}
+
+input[type="radio"]:disabled + label {
+  color: rgba(255,255,255,0.99);
+}
+
+input[type="range"]  {
+  margin: 0 16px 0 13px;
+  vertical-align: middle;
+  width: 200px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling#Selects_and_datalists */
+.has-select {
+  display: inline-block;
+  margin-left: 4px;
+  min-width: 200px;
+  position: relative;
+}
+
+.has-select::after {
+  color: #FFFFFF;
+  content: "⌄";
+  pointer-events: none;
+  position: absolute;
+  right: 3px;
+}
+
+.has-select::before {
+  background: var(--has-select-before-bg);
+  border-radius: 0 3px 3px 0;
+  content: "";
+  height: 19px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  width: 16.5px;
+}
+
+select {
+  -webkit-appearance: none;
+  color: var(--select-color);
+  background: var(--select-bg);
+  border: var(--select-border);
+  border-radius: 3px 0  0 3px;
+  box-shadow: var(--select-shadow);
+  font-family: sans-serif;
+  height: 19px;
+  padding-left: 8px;
+  width: 100%;
+}
+
+select option {
+  color: var(--select-color);
+  background: var(--select-option-bg) ;
+}
+
+select:focus {
+  outline: none;
+}
+
+button {
+  background: var(--button-bg-color);
+  border: 0 solid rgba(0,0,0,0.15);
+  border-radius: 3px;
+  box-shadow: var(--button-shadow);
+  color: var(--button-color);
+  font-size: 13px;
+  letter-spacing: -0.08px;
+  padding: 2px 12.5px;
+  text-align: center;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  background-image: linear-gradient(180deg, #84bffb 0%, #1a88ff 100%);
+  border-radius: 3.5px;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.15);
+  color: #FFFFFF;
+}
+
+.push {
+  background: var(--button-push-bg);
+  border-radius: 3.5px;
+  box-shadow: var(--button-push-shadow);
+  color: #FFFFFF;
+}
+
+hr {
+  background: var(--hr-bg-color);
+  border: 0 solid rgba(0,0,0,0.20);
+  height: 2px;
+}

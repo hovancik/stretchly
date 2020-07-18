@@ -7,6 +7,7 @@ class NaturalBreaksManager extends EventEmitter {
     this.usingNaturalBreaks = settings.get('naturalBreaks')
     this.timer = null
     this.isOnNaturalBreak = false
+    this.isSchedulerCleared = false
     if (this.usingNaturalBreaks) {
       this.start()
     }
@@ -20,6 +21,7 @@ class NaturalBreaksManager extends EventEmitter {
   stop () {
     this.usingNaturalBreaks = false
     this.isOnNaturalBreak = false
+    this.isSchedulerCleared = false
     clearTimeout(this.timer)
     this.timer = null
   }
@@ -42,10 +44,12 @@ class NaturalBreaksManager extends EventEmitter {
       if (this.isOnNaturalBreak && idleTime < 20000) {
         this.isOnNaturalBreak = false
         if (lastIdleTime > this.settings.get('naturalBreaksInactivityResetTime')) {
-          this.emit('naturalBreakFinished', idleTime)
+          this.isSchedulerCleared = false
+          this.emit('naturalBreakFinished')
         }
       }
       if (this.isOnNaturalBreak && idleTime > this.settings.get('naturalBreaksInactivityResetTime')) {
+        this.isSchedulerCleared = true
         this.emit('clearBreakScheduler')
       }
       lastIdleTime = idleTime

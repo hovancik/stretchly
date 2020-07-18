@@ -1,0 +1,80 @@
+body {
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  font-family: Open Sans;
+}
+
+.welcome {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto auto/ 4% auto 4%;
+  letter-spacing: 0px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.welcome > div {
+  grid-column: 2/-2;
+}
+
+.welcome > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.welcome > :nth-child(1) > div {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome > :nth-child(1) > div > img {
+  height: 64px;
+  width: 64px;
+}
+
+.welcome > :nth-child(1) > div > span {
+  font-size: 48px;
+  padding-left: 12px;
+}
+
+.welcome > :nth-child(1) > span {
+  font-family: Open Sans Light;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.welcome > :nth-child(2) {
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template: repeat(3, minmax(86px, min-content))/ repeat(8, 1fr);
+}
+
+.welcome > :nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.welcome > :nth-child(2) > div > img {
+  border: 1px solid #979797;
+  border-radius: 42px;
+  height: 42px;
+  margin: 0 auto;
+  width: 42px;
+}
+
+.welcome > :last-child {
+  display: flex;
+  margin-top: 26px;
+}
+
+.welcome > :last-child > :last-child {
+  margin-left: auto;
+}
+
+.welcome input[type="radio"] + label:before {
+  display: block;
+  margin: 0 auto;
+}

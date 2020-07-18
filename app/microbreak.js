@@ -2,48 +2,52 @@ const { ipcRenderer, remote } = require('electron')
 const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
 
-document.addEventListener('DOMContentLoaded', event => {
+window.onload = (event) =>
   new HtmlTranslate(document).translate()
-})
 
-document.addEventListener('dragover', event => event.preventDefault())
-document.addEventListener('drop', event => event.preventDefault())
+document.ondragover = event =>
+  event.preventDefault()
 
-document.getElementById('close').addEventListener('click', event =>
+document.ondrop = event =>
+  event.preventDefault()
+
+document.querySelector('#close').onclick = event =>
   ipcRenderer.send('finish-microbreak', false)
-)
 
-document.getElementById('postpone').addEventListener('click', event =>
+document.querySelector('#postpone').onclick = event =>
   ipcRenderer.send('postpone-microbreak')
-)
 
 ipcRenderer.on('microbreakIdea', (event, message) => {
-  const microbreakIdea = document.getElementsByClassName('microbreak-idea')[0]
+  const microbreakIdea = document.querySelector('.microbreak-idea')
   // TODO use some library to auto scale test
-  if (message.length > 80) {
-    microbreakIdea.style.fontSize = '60px'
-  }
-  if (message.length > 100) {
-    microbreakIdea.style.fontSize = '55px'
-  }
+  // if (message.length > 80) {
+  //   microbreakIdea.style.fontSize = '60px'
+  // }
+  // if (message.length > 100) {
+  //   microbreakIdea.style.fontSize = '55px'
+  // }
   microbreakIdea.innerHTML = message
 })
 
-ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
-  const progress = document.getElementById('progress')
-  const progressTime = document.getElementById('progress-time')
-  const postponeElement = document.getElementById('postpone')
-  const closeElement = document.getElementById('close')
+ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, keyboardShortcut) => {
+  const progress = document.querySelector('#progress')
+  const progressTime = document.querySelector('#progress-time')
+  const postponeElement = document.querySelector('#postpone')
+  const closeElement = document.querySelector('#close')
 
-  window.setInterval(function () {
+  document.querySelectorAll('.tiptext').forEach(tt => {
+    tt.innerHTML = Utils.formatKeyboardShortcut(keyboardShortcut)
+  })
+
+  window.setInterval(() => {
     if (Date.now() - started < duration) {
       const passedPercent = (Date.now() - started) / duration * 100
-      postponeElement.style.visibility =
-        Utils.canPostpone(postpone, passedPercent, postponePercent) ? 'visible' : 'hidden'
-      closeElement.style.visibility =
-        Utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'visible' : 'hidden'
-      progress.value = passedPercent * progress.max / 100
-      progressTime.innerHTML = Utils.formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
+      postponeElement.style.display =
+        Utils.canPostpone(postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+      closeElement.style.display =
+        Utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+      progress.value = (100 - passedPercent) * progress.max / 100
+      progressTime.innerHTML = Utils.formatTimeRemaining(Math.trunc(duration - Date.now() + started))
     }
   }, 100)
 })
