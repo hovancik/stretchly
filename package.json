@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "0.99.5",
+  "version": "1.0.0",
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -42,13 +42,13 @@
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.2",
     "electromon": "^1.0.10",
-    "electron": "^9.0.5",
+    "electron": "^9.1.0",
     "electron-builder": "^22.7.0",
     "husky": "^4.2.5",
     "mocha": "^8.0.1",
     "rimraf": "^3.0.2",
     "sinon": "^9.0.2",
-    "spectron": "^11.0.0",
+    "spectron": "^11.1.0",
     "standard": "^14.3.4"
   },
   "build": {
@@ -91,8 +91,7 @@
         "freebsd",
         "pacman",
         "tar.xz",
-        "apk",
-        "snap"
+        "apk"
       ]
     },
     "win": {
@@ -137,7 +136,7 @@
   },
   "dependencies": {
     "@meetfranz/electron-notification-state": "^1.0.0",
-    "i18next": "^19.5.4",
+    "i18next": "^19.6.2",
     "i18next-node-fs-backend": "^2.1.3",
     "moment": "^2.27.0",
     "semver": "^7.3.2"
