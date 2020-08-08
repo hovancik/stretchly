@@ -272,6 +272,12 @@ body > .hidden,
   text-align: left;
 }
 
+.about > :nth-child(7) {
+  font-size: 11px;
+  grid-column: 1/-1;
+  text-align: center;
+}
+
 .about a {
   color: var(--main-color);
   text-decoration: underline;
@@ -282,7 +288,7 @@ body > .hidden,
 }
 
 .about > .debug {
-  min-height: 74px;
+  min-height: 60px;
   font-size: 11px;
   grid-column: 1/-1;
   margin: auto 20px;
