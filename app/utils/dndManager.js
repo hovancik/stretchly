@@ -26,7 +26,12 @@ class DndManager extends EventEmitter {
 
   get _doNotDisturb () {
     if (this.monitorDnd) {
-      return require('@meetfranz/electron-notification-state').getDoNotDisturb()
+      let focusAssist
+      try {
+        focusAssist = require('windows-focus-assist').getFocusAssist().value
+      } catch (e) { focusAssist = -1 } // getFocusAssist() throw an error if OS isn't windows
+
+      return require('@meetfranz/electron-notification-state').getDoNotDisturb() || (focusAssist !== -1 && focusAssist !== 0)
     } else {
       return false
     }

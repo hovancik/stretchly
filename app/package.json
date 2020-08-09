@@ -24,7 +24,8 @@
     "i18next": "^19.6.2",
     "i18next-node-fs-backend": "^2.1.3",
     "moment": "^2.27.0",
-    "semver": "^7.3.2"
+    "semver": "^7.3.2",
+    "windows-focus-assist": "1.2.1"
   },
   "devDependencies": {}
 }
