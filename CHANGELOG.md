@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added
+- breaks are paused if the Windows 10 Focus Assist mode is enabled
+
 ### Changed
 - updated Polish translation
 - updated Chinese translations

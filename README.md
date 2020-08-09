@@ -236,6 +236,7 @@ You can copy debug information to the clipboard.
 - Felix W. Dekker, [@FWDekker](https://github.com/FWDekker)
 - Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
 - Daniel Bankmann, [@dbankmann](https://github.com/dbankmann)
+- Aziks, [@Aziks0](https://github.com/Aziks0)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
