@@ -276,6 +276,8 @@ body > .hidden,
   font-size: 11px;
   grid-column: 1/-1;
   text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
 }
 
 .about a {
@@ -284,7 +286,7 @@ body > .hidden,
 }
 
 .about > :last-child {
-  margin-bottom: 6px;
+  margin-bottom: 16px;
 }
 
 .about > .debug {
