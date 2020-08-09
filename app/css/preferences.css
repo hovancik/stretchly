@@ -272,17 +272,25 @@ body > .hidden,
   text-align: left;
 }
 
+.about > :nth-child(7) {
+  font-size: 11px;
+  grid-column: 1/-1;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 15px;
+}
+
 .about a {
   color: var(--main-color);
   text-decoration: underline;
 }
 
 .about > :last-child {
-  margin-bottom: 6px;
+  margin-bottom: 16px;
 }
 
 .about > .debug {
-  min-height: 74px;
+  min-height: 60px;
   font-size: 11px;
   grid-column: 1/-1;
   margin: auto 20px;
