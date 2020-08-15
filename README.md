@@ -106,7 +106,7 @@ It's recommended to Quit *Stretchly* before editing the preferences file.
 
 To make sure that all works as expected, it's always good idea to check that format of the preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
 
-Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences) badge.
+Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
 
 **Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.  
 
@@ -115,7 +115,7 @@ In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromS
 
 Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten.
 
-#### Editing Break notification interval [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Editing Break notification interval [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 
 In the preferences file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini Breaks.
 
@@ -128,28 +128,28 @@ E.g. if you live in Boston you would set:
 `posLatitude: 42.3,`
 `posLongitude: 71`
 
-#### Editing postpone functionality [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Editing postpone functionality [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable the ability to postpone breaks, `microbreakPostponeTime` and `breakPostponeTime` to change the postpone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change the number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
 
-#### New version notification [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### New version notification [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
 
-#### Play sound at the start of the Break [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Play sound at the start of the Break [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sound will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
-#### Natural breaks inactivity time [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Natural breaks inactivity time [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* timers will be cleared and will stay at 0 until the user resumes activity.
 
-#### Volume for break sounds [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Volume for break sounds [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.
 
 #### Postpone/Finish Break Shortcut
 In the preferences file, set `endBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier.
 
-#### Appearance [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Appearance [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.  
 
-#### Welcome window [![GitHub All Releases](https://img.shields.io/badge/Contributor_Prefereces-✔-success)](#contributor-preferences)
+#### Welcome window [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
 
 ## Contributor Preferences
