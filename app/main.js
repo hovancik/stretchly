@@ -3,6 +3,7 @@ const { app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, glo
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const log = require('electron-log')
 
 startI18next()
 
@@ -81,6 +82,7 @@ i18next.on('languageChanged', function (lng) {
 })
 
 function onSuspendOrLock () {
+  log.info('System: suspend or lock')
   if (!breakPlanner.isPaused) {
     pausedForSuspendOrLock = true
     pauseBreaks(1)
@@ -89,6 +91,7 @@ function onSuspendOrLock () {
 }
 
 function onResumeOrUnlock () {
+  log.info('System: resume or unlock')
   if (pausedForSuspendOrLock) {
     pausedForSuspendOrLock = false
     resumeBreaks(false)
@@ -632,11 +635,13 @@ function pauseBreaks (milliseconds) {
     finishBreak(false)
   }
   breakPlanner.pause(milliseconds)
+  log.info(`Stretchly: pausing breaks for ${milliseconds}`)
   updateTray()
 }
 
 function resumeBreaks (notify = true) {
   breakPlanner.resume()
+  log.info('Stretchly: resuming breaks')
   if (notify) {
     showNotification(i18next.t('main.resumingBreaks'))
   }

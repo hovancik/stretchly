@@ -2,6 +2,7 @@ const Scheduler = require('./utils/scheduler')
 const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
 const DndManager = require('./utils/dndManager')
+const log = require('electron-log')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -29,12 +30,14 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager.on('clearBreakScheduler', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
+        log.info('Stretchly: pausing breaks because of idle time')
       }
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
         this.reset()
+        log.info('Stretchly: resuming breaks after idle time')
         this.emit('updateToolTip')
       }
     })
@@ -42,6 +45,7 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager.on('dndStarted', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
+        log.info('Stretchly: pausing breaks for DND')
         this.emit('updateToolTip')
       } else {
         this.dndManager.isOnDnd = false
@@ -51,6 +55,7 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager.on('dndFinished', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
+        log.info('Stretchly: resuming breaks for DND')
         this.emit('updateToolTip')
       }
     })

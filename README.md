@@ -175,6 +175,14 @@ Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D`
 
 You can copy debug information to the clipboard.
 
+### Logging
+
+*Stretchly* uses `log` package for some extra logging.
+Format as following:
+- `System: my message` for messages regarding Operating System, ie: `System: resume or unlock`
+- `Stretchly: my message` for messages regarding *Stretchly*
+
+
 ## Known issues
 - users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
 - tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
