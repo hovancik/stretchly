@@ -44,7 +44,7 @@
       "fullscreen": "Full screen",
       "showIdeas": "Show exercise tips during breaks",
       "allScreens": "Shows breaks on all monitors",
-      "monitorIdleTime": "Monitor system idle time (countdown is paused if system is idle)",
+      "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
       "monitorDnd": "Show breaks even in Do Not Disturb mode",
       "language": "Select langauge:",
       "restoreDefaults": "Restore defaults"
@@ -135,7 +135,7 @@
     "miniBreakStartSound": "Play end-of-break sound also at the start of Mini break",
     "longBreakStartSound": "Play end-of-break sound also at the start of Long break",
     "naturalBreaks": "Natural breaks:",
-    "naturalBreaksInfo": "If monitoring of idle time is enabled in main Preferences, you can specify after what time the countdown should be paused.",
+    "naturalBreaksInfo": "If monitoring of idle time is enabled in main Preferences, you can specify after what time the breaks should be paused.",
     "pauseAfter": "Pause after:",
     "appearance": "Appearance:",
     "light": "Light",
