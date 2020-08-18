@@ -362,7 +362,8 @@ function startMicrobreak () {
       resizable: false,
       frame: false,
       show: false,
-      backgroundColor: settings.get('mainColor'),
+      transparent: true,
+      backgroundColor: calculateBackgroundColor(),
       skipTaskbar: true,
       focusable: false,
       title: 'Stretchly',
@@ -466,7 +467,8 @@ function startBreak () {
       resizable: false,
       frame: false,
       show: false,
-      backgroundColor: settings.get('mainColor'),
+      transparent: true,
+      backgroundColor: calculateBackgroundColor(),
       skipTaskbar: true,
       focusable: false,
       title: 'Stretchly',
@@ -587,6 +589,12 @@ function resetBreaks () {
   }
   breakPlanner.reset()
   updateTray()
+}
+
+function calculateBackgroundColor () {
+  const themeColor = settings.get('mainColor')
+  const opacity = settings.get('opacity')
+  return '#' + Math.round(opacity * 255).toString(16) + themeColor.substr(1)
 }
 
 function loadSettings () {
