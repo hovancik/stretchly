@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Added
 - breaks are paused if the Windows 10 Focus Assist mode is enabled
+- ability to change the opacity of the breaks windows
 
 ### Changed
 - updated Polish translation
