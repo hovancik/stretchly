@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - updated Polish translation
 - updated Chinese translations
+- bigger range for Mini Break duration
 
 ## [1.0.0] - 2020-07-18
 
