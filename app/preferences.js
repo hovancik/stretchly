@@ -53,7 +53,7 @@ document.onkeydown = event => {
 }
 
 ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
-  postponesnumber, settingsfile, doNotDisturb) => {
+  postponesnumber, settingsfile, logsfile, doNotDisturb) => {
   const debugInfo = document.querySelector('.debug > :first-child')
   if (debugInfo.style.display === 'block') {
     debugInfo.style.display = 'none'
@@ -64,6 +64,7 @@ ipcRenderer.on('debugInfo', (event, reference, timeleft, breaknumber,
     document.querySelector('#breakNumber').innerHTML = breaknumber
     document.querySelector('#postponesNumber').innerHTML = postponesnumber
     document.querySelector('#settingsfile').innerHTML = settingsfile
+    document.querySelector('#logsfile').innerHTML = logsfile
     document.querySelector('#donotdisturb').innerHTML = doNotDisturb
     document.querySelector('#node').innerHTML = process.versions.node
     document.querySelector('#chrome').innerHTML = process.versions.chrome

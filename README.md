@@ -170,7 +170,7 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
 Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
-  - Location of the preferences file (Clicking on preferences file location will open it.)
+  - Location of the preferences and log file (Clicking on file location will open it.)
   - Debug information for break planner
 
 You can copy debug information to the clipboard.

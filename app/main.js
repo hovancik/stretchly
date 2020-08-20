@@ -925,8 +925,9 @@ ipcMain.on('show-debug', function (event) {
   const doNotDisturb = breakPlanner.dndManager.isOnDnd
   const dir = app.getPath('userData')
   const settingsFile = path.join(dir, 'config.json')
+  const logsFile = log.transports.file.getFile().path
   event.sender.send('debugInfo', reference, timeleft,
-    breaknumber, postponesnumber, settingsFile, doNotDisturb)
+    breaknumber, postponesnumber, settingsFile, logsFile, doNotDisturb)
 })
 
 ipcMain.on('open-preferences', function (event) {
