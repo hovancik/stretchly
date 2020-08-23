@@ -12,7 +12,7 @@
 - [Install](#install--)
 - [Default behavior](#default-behavior)
 - [Preferences](#preferences)
-- [Advanced preferences](#advanced-preferences)
+- [Advanced Preferences](#advanced-preferences)
 - [Contributor Preferences](#contributor-preferences)
 - [Development](#development)
 - [Known issues](#known-issues)
@@ -98,7 +98,7 @@ Preferences are divided into multiple categories and you are encouraged to take 
 
 You can also Restore the defaults to return to the default preferences state.
 
-## Advanced preferences
+## Advanced Preferences
 
 All preferences are saved in a JSON file. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the file.
 
