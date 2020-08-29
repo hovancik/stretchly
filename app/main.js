@@ -3,6 +3,7 @@ const { app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, glo
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
+const log = require('electron-log')
 
 startI18next()
 
@@ -81,6 +82,7 @@ i18next.on('languageChanged', function (lng) {
 })
 
 function onSuspendOrLock () {
+  log.info('System: suspend or lock')
   if (!breakPlanner.isPaused) {
     pausedForSuspendOrLock = true
     pauseBreaks(1)
@@ -89,6 +91,7 @@ function onSuspendOrLock () {
 }
 
 function onResumeOrUnlock () {
+  log.info('System: resume or unlock')
   if (pausedForSuspendOrLock) {
     pausedForSuspendOrLock = false
     resumeBreaks(false)
@@ -126,7 +129,7 @@ function displaysX (displayID = -1, width = 800, fullscreen = false) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays() || displayID < 0) {
     // Graceful handling of invalid displayID
-    console.log('warning: invalid displayID to displaysX')
+    log.warn('Stretchly: invalid displayID to displaysX')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -147,7 +150,7 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays()) {
     // Graceful handling of invalid displayID
-    console.log('warning: invalid displayID to displaysY')
+    log.warn('Stretchly: invalid displayID to displaysY')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -168,7 +171,7 @@ function displaysWidth (displayID = -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays()) {
     // Graceful handling of invalid displayID
-    console.log('warning: invalid displayID to displaysY')
+    log.warn('Stretchly: invalid displayID to displaysY')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -185,7 +188,7 @@ function displaysHeight (displayID = -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays()) {
     // Graceful handling of invalid displayID
-    console.log('warning: invalid displayID to displaysY')
+    log.warn('Stretchly: invalid displayID to displaysY')
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -301,12 +304,14 @@ function checkVersion () {
 
 function startMicrobreakNotification () {
   showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+  log.info('Stretchly: showing Mini Break notification')
   breakPlanner.nextBreakAfterNotification()
   updateTray()
 }
 
 function startBreakNotification () {
   showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+  log.info('Stretchly: showing Long Break notification')
   breakPlanner.nextBreakAfterNotification()
   updateTray()
 }
@@ -316,12 +321,12 @@ function startMicrobreak () {
     loadIdeas()
   }
   if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
-    console.log('in natural break')
+    log.warn('Stretchly: in natural break, not starting Mini Break')
     return
   }
   // don't start another break if break running
   if (microbreakWins) {
-    console.log('microbreak already running')
+    log.warn('Stretchly: Mini Break already running, not starting Mini Break')
     return
   }
 
@@ -388,11 +393,13 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
+      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         microbreakWinLocal.setKiosk(settings.get('fullscreen'))
       }
       if (displayIdx === 0) {
         breakPlanner.emit('microbreakStarted', true)
+        log.info('Stretchly: starting Mini Break')
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
@@ -420,12 +427,11 @@ function startBreak () {
     loadIdeas()
   }
   if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
-    console.log('in natural break')
+    log.warn('Stretchly: in natural break, not starting Long Break')
     return
   }
-  // don't start another break if break running
   if (breakWins) {
-    console.log('break already running')
+    log.warn('Stretchly: Long Break already running, not starting Long Break')
     return
   }
 
@@ -492,11 +498,13 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
+      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         breakWinLocal.setKiosk(settings.get('fullscreen'))
       }
       if (displayIdx === 0) {
         breakPlanner.emit('breakStarted', true)
+        log.info('Stretchly: starting Mini Break')
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
@@ -534,12 +542,14 @@ function breakComplete (shouldPlaySound, windows) {
 
 function finishMicrobreak (shouldPlaySound = true) {
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
+  log.info('Stretchly: finishing Mini Break')
   breakPlanner.nextBreak()
   updateTray()
 }
 
 function finishBreak (shouldPlaySound = true) {
   breakWins = breakComplete(shouldPlaySound, breakWins)
+  log.info('Stretchly: finishing Long Break')
   breakPlanner.nextBreak()
   updateTray()
 }
@@ -547,12 +557,14 @@ function finishBreak (shouldPlaySound = true) {
 function postponeMicrobreak (shouldPlaySound = false) {
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
   breakPlanner.postponeCurrentBreak()
+  log.info('Stretchly: postponing Mini Break')
   updateTray()
 }
 
 function postponeBreak (shouldPlaySound = false) {
   breakWins = breakComplete(shouldPlaySound, breakWins)
   breakPlanner.postponeCurrentBreak()
+  log.info('Stretchly: postponing Long Break')
   updateTray()
 }
 
@@ -564,6 +576,7 @@ function skipToMicrobreak () {
     breakWins = breakComplete(false, breakWins)
   }
   breakPlanner.skipToMicrobreak()
+  log.info('Stretchly: skipping to Mini Break')
   updateTray()
 }
 
@@ -575,6 +588,7 @@ function skipToBreak () {
     breakWins = breakComplete(false, breakWins)
   }
   breakPlanner.skipToBreak()
+  log.info('Stretchly: skipping to Long Break')
   updateTray()
 }
 
@@ -586,6 +600,7 @@ function resetBreaks () {
     breakWins = breakComplete(false, breakWins)
   }
   breakPlanner.reset()
+  log.info('Stretchly: reseting breaks')
   updateTray()
 }
 
@@ -632,11 +647,13 @@ function pauseBreaks (milliseconds) {
     finishBreak(false)
   }
   breakPlanner.pause(milliseconds)
+  log.info(`Stretchly: pausing breaks for ${milliseconds}`)
   updateTray()
 }
 
 function resumeBreaks (notify = true) {
   breakPlanner.resume()
+  log.info('Stretchly: resuming breaks')
   if (notify) {
     showNotification(i18next.t('main.resumingBreaks'))
   }
@@ -908,8 +925,9 @@ ipcMain.on('show-debug', function (event) {
   const doNotDisturb = breakPlanner.dndManager.isOnDnd
   const dir = app.getPath('userData')
   const settingsFile = path.join(dir, 'config.json')
+  const logsFile = log.transports.file.getFile().path
   event.sender.send('debugInfo', reference, timeleft,
-    breaknumber, postponesnumber, settingsFile, doNotDisturb)
+    breaknumber, postponesnumber, settingsFile, logsFile, doNotDisturb)
 })
 
 ipcMain.on('open-preferences', function (event) {

@@ -1,4 +1,5 @@
 const EventEmitter = require('events')
+const log = require('electron-log')
 
 class DndManager extends EventEmitter {
   constructor (settings) {
@@ -15,6 +16,7 @@ class DndManager extends EventEmitter {
   start () {
     this.monitorDnd = true
     this._checkDnd()
+    log.info('Stretchly: starting DND monitoring')
   }
 
   stop () {
@@ -22,6 +24,7 @@ class DndManager extends EventEmitter {
     this.isOnDnd = false
     clearTimeout(this.timer)
     this.timer = null
+    log.info('Stretchly: stopping DND monitoring')
   }
 
   get _doNotDisturb () {
