@@ -12,7 +12,7 @@
 - [Install](#install--)
 - [Default behavior](#default-behavior)
 - [Preferences](#preferences)
-- [Advanced preferences](#advanced-preferences)
+- [Advanced Preferences](#advanced-preferences)
 - [Contributor Preferences](#contributor-preferences)
 - [Development](#development)
 - [Known issues](#known-issues)
@@ -98,7 +98,7 @@ Preferences are divided into multiple categories and you are encouraged to take 
 
 You can also Restore the defaults to return to the default preferences state.
 
-## Advanced preferences
+## Advanced Preferences
 
 All preferences are saved in a JSON file. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the file.
 
@@ -138,7 +138,7 @@ In the preferences file, set `notifyNewVersion: false,` to disable new version n
 In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sound will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
 #### Natural breaks inactivity time [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
-In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* timers will be cleared and will stay at 0 until the user resumes activity.
+In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* breaks will be paused until the user resumes activity.
 
 #### Volume for break sounds [![GitHub All Releases](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume.

@@ -44,7 +44,7 @@
       "fullscreen": "Celá obrazovka",
       "showIdeas": "Zobrazovat během přestávek nápady na cvičení",
       "allScreens": "Zobrazovat přestávky na všech monitorech",
-      "monitorIdleTime": "Sledovat neaktivitu (odpočítávání je během vaší neaktivity přerušeno)",
+      "monitorIdleTime": "Sledovat neaktivitu (přestávky jsou během vaší neaktivity přerušeny)",
       "monitorDnd": "Zobrazovat přestávky i během režimu Nerušit",
       "language": "Vyberte jazyk:",
       "restoreDefaults": "Obnovit původní nastavení"
@@ -135,7 +135,7 @@
     "miniBreakStartSound": "Přehrát koncový zvuk i na začátku Mini Přestávky",
     "longBreakStartSound": "Přehrát koncový zvuk i na začátku Dlouhé Přestávky",
     "naturalBreaks": "Přirozené přestávky:",
-    "naturalBreaksInfo": "Pokud je v hlavním nastavení povoleno sledování neaktivity, můžete určit po jaké době by se mělo odpočítávání přerušit.",
+    "naturalBreaksInfo": "Pokud je v hlavním nastavení povoleno sledování neaktivity, můžete určit po jaké době by se měli přestávky přerušit.",
     "pauseAfter": "Přerušit po:",
     "appearance": "Motiv:",
     "light": "Světlý",

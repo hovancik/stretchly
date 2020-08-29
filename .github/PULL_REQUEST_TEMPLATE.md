@@ -21,6 +21,7 @@ Issue: #
 - [ ] `npm run lint` reports no offenses.
 - [ ] `npm run test` is error-free.
 - [ ]  README and CHANGELOG were updated accordingly.
+- [ ]  after PR is approved, all commits in it are [squashed](https://gitbetter.substack.com/p/how-to-squash-git-commits)
 
 ### Description of the Change
 

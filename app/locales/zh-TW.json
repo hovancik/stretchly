@@ -127,7 +127,7 @@
         "longBreaks": "長休息：",
         "pauseUntilMoring": "暫停到早上：",
         "pauseUntil": "暫停到：",
-        "pauseUntilMorningInfo": "Specify till what hour 'Pause until morning' should pause.",
+        "pauseUntilMorningInfo": "指定「暫停至早上」的具體時間",
         "welcomeWindow": "歡迎視窗：",
         "showWelcomeWindow": "下次啟動時顯示歡迎視窗",
         "sounds": "音效：",
