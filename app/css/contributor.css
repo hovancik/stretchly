@@ -61,9 +61,9 @@ body > div > :last-child {
   text-align: right;
 }
 
-.contributor-preferences > :nth-child(30) {
+.contributor-preferences > :nth-child(29) {
   grid-column: 1/2;
-  grid-row: 25/26;
+  grid-row: 24/25;
   padding: 0 16px;
   text-align: right;
 }
@@ -75,16 +75,23 @@ body > div > :last-child {
   text-align: right;
 }
 
-.contributor-preferences > :nth-child(36) {
+.contributor-preferences > :nth-child(38) {
   grid-column: 1/2;
-  grid-row: 29/30;
+  grid-row: 31/32;
   padding: 0 16px;
   text-align: right;
 }
 
-.contributor-preferences > :nth-child(39) {
+.contributor-preferences > :nth-child(40) {
   grid-column: 1/2;
-  grid-row: 31/32;
+  grid-row: 32/33;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.contributor-preferences > :nth-child(43) {
+  grid-column: 1/2;
+  grid-row: 34/35;
   padding: 0 16px;
   text-align: right;
 }
