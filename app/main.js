@@ -34,7 +34,7 @@ app.setAppUserModelId('net.hovancik.stretchly')
 
 global.shared = {
   isNewVersion: false,
-  isContributor: true // TODO ne pas oublier de remettre sur false
+  isContributor: false
 }
 
 const gotTheLock = app.requestSingleInstanceLock()
@@ -362,7 +362,7 @@ function startMicrobreak () {
       resizable: false,
       frame: false,
       show: false,
-      transparent: true,
+      transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
       skipTaskbar: true,
       focusable: false,
@@ -467,7 +467,7 @@ function startBreak () {
       resizable: false,
       frame: false,
       show: false,
-      transparent: true,
+      transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
       skipTaskbar: true,
       focusable: false,
