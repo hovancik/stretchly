@@ -4,6 +4,6 @@
     "breakDuration": 300000,
     "breakInterval": 2,
     "microbreak": true,
-    "mainColor": "#FF478484",
+    "mainColor": "#478484",
     "audio": "crystal-glass"
 }
