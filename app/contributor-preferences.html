@@ -259,6 +259,30 @@
         <hr>
       </div>
       <div>
+        <span data-i18next="contributorPreferences.opacityTheme"></span>
+      </div>
+      <div>
+        <p data-i18next="contributorPreferences.opacityInfo"></p>
+      </div>
+      <div>
+        <label data-i18next="preferences.theme.opacity" data-same-width-label for="opacity"></label>
+        <input type="range" min="10" max="100" step="10" list="tickmarksOpacity" name="opacity" data-divisor="0.01" id="opacity">
+        <datalist id="tickmarksOpacity">
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+        </datalist>
+        <output data-unit="percent"></output>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
         <span data-i18next="contributorPreferences.sounds"></span>
       </div>
       <div>
