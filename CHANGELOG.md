@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Added
 - breaks are paused if the Windows 10 Focus Assist mode is enabled
 - added log file for debug
-- ability to change the opacity of the breaks windows
+- users can choose between a transparent or a fully opaque theme in the Theme Preferences
+- users can choose the opacity value for the transparent theme in the Contributor Preferences
 
 ### Changed
 - updated Polish translation
