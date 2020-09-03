@@ -132,7 +132,7 @@
     "welcomeWindow": "Welcome window:",
     "showWelcomeWindow": "Show Welcome window on next start",
     "opacityTheme": "Theme transparency:",
-    "opacityInfo": "If transparency is enabled in Preferences, how solid should the break window be ?",
+    "opacityInfo": "How solid should the break window be ?",
     "opacity": "Opacity:",
     "sounds": "Sounds:",
     "volume": "Volume:",
