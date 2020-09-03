@@ -21,7 +21,8 @@
     "warning": "Az alkalmazás alapértelmezett beállításai vissza lesznek állítva és az összes jelenlegi beállítás el fog veszni.",
     "continue": "Folytatás",
     "cancel": "Mégsem",
-    "preferences": "Beállítások"
+    "preferences": "Beállítások",
+    "contributorPreferences": "Támogatói beállítások"
   },
   "break": {
     "postpone": "Szünet elhalasztása",

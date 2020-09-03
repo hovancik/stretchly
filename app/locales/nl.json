@@ -21,7 +21,8 @@
     "warning": "Dit zal the standaardinstellingen herstellen en all je instellingen zullen verloren gaan",
     "continue": "Doorgaan",
     "cancel": "Annuleer",
-    "preferences": "Instellingen"
+    "preferences": "Instellingen",
+    "contributorPreferences": "Bijdrager Instellingen"
   },
   "break": {
     "postpone": "Deze pauze uitstellen",

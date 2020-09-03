@@ -21,7 +21,8 @@
     "warning": "This will restore app defaults and all your settings will be lost.",
     "continue": "Continue",
     "cancel": "Cancel",
-    "preferences": "सेट्टिंग्स"
+    "preferences": "सेट्टिंग्स",
+    "contributorPreferences": "Contributor Preferences"
   },
   "break": {
     "postpone": "Postpone this break",

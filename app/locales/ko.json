@@ -21,7 +21,8 @@
     "warning": "This will restore app defaults and all your settings will be lost.",
     "continue": "Continue",
     "cancel": "Cancel",
-    "preferences": "설정"
+    "preferences": "설정",
+    "contributorPreferences": "Contributor Preferences"
   },
   "break": {
     "postpone": "Postpone this break",

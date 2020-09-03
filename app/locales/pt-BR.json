@@ -21,7 +21,8 @@
     "warning": "Isso vai restaurar os padrões do aplicativo e os seus ajustes serão perdidos.",
     "continue": "Continue",
     "cancel": "Cancelar",
-    "preferences": "Configurações"
+    "preferences": "Configurações",
+    "contributorPreferences": "Preferências do Contribuinte"
   },
   "break": {
     "postpone": "Adiar esta pausa",

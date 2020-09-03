@@ -21,7 +21,8 @@
         "warning": "這會將 App 還原至預設值，而您所有的設定則會遺失。",
         "continue": "繼續",
         "cancel": "取消",
-        "preferences": "偏好設定"
+        "preferences": "偏好設定",
+        "contributorPreferences": "貢獻者偏好設定"
     },
     "break": {
         "postpone": "延後此休息",

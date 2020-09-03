@@ -21,7 +21,8 @@
     "warning": "移除自定义设置，还原至预设配置？",
     "continue": "确认",
     "cancel": "取消",
-    "preferences": "自定义设置"
+    "preferences": "自定义设置",
+    "contributorPreferences": "贡献者偏好"
   },
   "break": {
     "postpone": "延后此次休息",

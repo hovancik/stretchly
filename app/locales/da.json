@@ -21,7 +21,8 @@
     "warning": "Dette vil nulstille til standardindstillinger og alle dine indstillinger vil blive slettet.",
     "continue": "Fortsæt",
     "cancel": "Afbryd",
-    "preferences": "Indstillinger"
+    "preferences": "Indstillinger",
+    "contributorPreferences": "Sponser præferencer"
   },
   "break": {
     "postpone": "…vent en lille smule",

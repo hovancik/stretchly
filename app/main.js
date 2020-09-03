@@ -815,7 +815,18 @@ function getTrayMenu () {
     click: function () {
       createPreferencesWindow()
     }
-  }, {
+  })
+
+  if (global.shared.isContributor) {
+    trayMenu.push({
+      label: i18next.t('main.contributorPreferences'),
+      click: function () {
+        createContributorSettingsWindow()
+      }
+    })
+  }
+
+  trayMenu.push({
     type: 'separator'
   }, {
     label: i18next.t('main.quitStretchly'),
@@ -947,6 +958,7 @@ ipcMain.on('set-contributor', function (event) {
   if (preferencesWin) {
     preferencesWin.send('enableContributorPreferences')
   }
+  updateTray()
 })
 
 ipcMain.on('open-contributor-preferences', function (event) {
