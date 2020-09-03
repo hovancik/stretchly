@@ -75,7 +75,7 @@
       "graphiteCrystal": "Crystal de graphite",
       "coffeeKisses": "Baisers de café",
       "morningSwim": "Baignade matinale",
-
+      "transparentMode": "Activé la transparence",
       "sounds": "Sons :",
       "enableSounds": "Activer les sons",
       "crystalGlass": "Verre de crystal",
@@ -131,6 +131,9 @@
     "pauseUntilMorningInfo": "Spécifiez jusqu'à quelle heure « Suspendre jusqu'au matin » doit suspendre les pauses.",
     "welcomeWindow": "Écran de bienvenue :",
     "showWelcomeWindow": "Afficher l'écran de bienvenue au prochain démarrage",
+    "opacityTheme": "Opacité du thème :",
+    "opacityInfo": "Si la transparance est activé dans les Paramètres, vous pouvez spécifier le pourcentage d'opacité de la fenêtre de pause",
+    "opacity": "Opacité :",
     "sounds": "Sons :",
     "volume": "Volume :",
     "miniBreakStartSound": "Jouer le son de fin de pause également au début d'une petite pause",
