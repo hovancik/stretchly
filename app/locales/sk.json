@@ -21,7 +21,8 @@
     "areYouSure": "Táto akcia obnoví pôvodné nastavenia a všetky vaše zmeny budú stratené.",
     "continue": "Pokračovať",
     "cancel": "Zrušiť",
-    "preferences": "Nastavenia"
+    "preferences": "Nastavenia",
+    "contributorPreferences": "Nastavenia pre prispievateľov"
   },
   "break": {
     "postpone": "Posunúť prestávku na neskôr",

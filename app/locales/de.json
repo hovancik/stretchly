@@ -21,7 +21,8 @@
     "warning": "Dadurch werden die App-Standardeinstellungen wiederhergestellt und alle Einstellungen gehen verloren.",
     "continue": "Fortsetzen",
     "cancel": "Abbrechen",
-    "preferences": "Einstellungen"
+    "preferences": "Einstellungen",
+    "contributorPreferences": "Einstellungen für Mitwirkende"
   },
   "break": {
     "postpone": "Verschiebe diese Pause",
