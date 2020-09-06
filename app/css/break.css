@@ -70,3 +70,11 @@
   font-size: 15px;
   padding-top: 20px;
 }
+
+.action-buttons {
+  flex-direction: row;
+}
+
+.daily-limit-idea {
+  font-size: 2em;
+}

@@ -221,6 +221,54 @@
         <hr/>
       </div>
       <div>
+        <span data-i18next="preferences.schedule.dailyLimit">
+        </span>
+      </div>
+      <div>
+        <p data-i18next="preferences.schedule.dailyLimitInfo">
+        </p>
+      </div>
+      <div>
+        <input type="checkbox" class="enabletype" value="break" id="enableDailyLimit">
+        <label data-i18next="preferences.schedule.enableDailyLimit" for="enableDailyLimit"></label>
+      </div>
+      <div>
+        <label data-i18next="preferences.schedule.breakFor" data-same-width-label for="dailyLimitFor"></label>
+        <input type="range" min="1" max="60" step="1" list="tickmarksdailyLimitFor" name="breakDuration" data-divisor="60000" id="dailyLimitFor">
+        <datalist id="tickmarksDailyLimitFor">
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+        </datalist>
+        <output data-unit="minutes"></output>
+      </div>
+      <div>
+        <label data-i18next="preferences.schedule.every" data-same-width-label for="dailyLimitEvery"></label>
+        <input type="range" min="1" max="30" step="1" list="tickmarksDailyLimitEvery" name="breakInterval" data-divisor="1" id="dailyLimitEvery">
+        <datalist id="tickmarksDailyLimitEvery">
+          <option value="5"></option>
+          <option value="10"></option>
+          <option value="15"></option>
+          <option value="20"></option>
+          <option value="25"></option>
+          <option value="30"></option>
+        </datalist>
+        <output data-unit="minutes"></output>
+      </div>
+      <div>
+        <input type="checkbox" value="breakNotification" id="showNotificationBeforeDailyLimit">
+        <label data-i18next="preferences.schedule.showNotificationBeforeDailyLimit" for="showNotificationBeforeDailyLimit"></label>
+      </div>
+      <div>
+        <input type="checkbox" value="breakPostpone" id="enablePostponeDaily">
+        <label data-i18next="preferences.schedule.enablePostponeDaily" for="enablePostponeDaily"></label>
+      </div>
+      <div>
+        <hr/>
+      </div>
+      <div>
         <span data-i18next="preferences.schedule.strictMode">
         </span>
       </div>
@@ -235,6 +283,10 @@
       <div>
         <input type="checkbox" value="breakStrictMode" id="enableStrictLong">
         <label data-i18next="preferences.schedule.enableStrictLong" for="enableStrictLong"></label>
+      </div>
+      <div>
+        <input type="checkbox" value="dailyLimitStrictMode" id="enableStrictDaily">
+        <label data-i18next="preferences.schedule.enableStrictDaily" for="enableStrictDaily"></label>
       </div>
     </div>
     <div class="theme hidden">

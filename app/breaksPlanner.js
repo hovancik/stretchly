@@ -27,6 +27,12 @@ class BreaksPlanner extends EventEmitter {
       this.scheduler.plan()
     })
 
+    this.on('dailyLimitStarted', (shouldPlaySound) => {
+      const interval = this.settings.get('dailyLimitDuration')
+      this.scheduler = new Scheduler(() => this.emit('finishDailyLimit', shouldPlaySound), interval, 'finishDailyLimit')
+      this.scheduler.plan()
+    })
+
     this.naturalBreaksManager.on('clearBreakScheduler', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
@@ -66,11 +72,15 @@ class BreaksPlanner extends EventEmitter {
     if (this.scheduler) this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
+    const shouldDailyLimit = this.settings.get('dailyLimit')
     const interval = this.settings.get('microbreakInterval')
     const breakNotification = this.settings.get('breakNotification')
     const breakNotificationInterval = this.settings.get('breakNotificationInterval')
     const microbreakNotification = this.settings.get('microbreakNotification')
     const microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
+    const dailyLimitNotification = this.settings.get('dailyLimitNotification')
+    const dailyLimitNotificationInterval = this.settings.get('dailyLimitNotificationInterval')
+     
     if (!shouldBreak && shouldMicrobreak) {
       if (microbreakNotification) {
         this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
@@ -99,6 +109,10 @@ class BreaksPlanner extends EventEmitter {
           this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
         }
       }
+    }
+    // TODO: HELP REQUIRED !!:(
+    if (shouldDailyLimit) { 
+      this.scheduler = new Scheduler(() => this.emit('startDailyLimit'), interval, 'startDailyLimit')
     }
     this.scheduler.plan()
   }
@@ -155,6 +169,20 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler.plan()
   }
 
+  skipToDailyLimit () {
+    this.scheduler.cancel()
+    const shouldBreak = this.settings.get('break')
+    const shouldMicrobreak = this.settings.get('microbreak')
+    const breakInterval = this.settings.get('breakInterval') + 1
+    if (shouldBreak && shouldMicrobreak) {
+      if (this.breakNumber % breakInterval === 0) {
+        this.breakNumber = 1
+      }
+    }
+    this.scheduler = new Scheduler(() => this.emit('startDailyLimit'), 100, 'startDailyLimit')
+    this.scheduler.plan()
+  }
+
   clear () {
     this.scheduler.cancel()
     this.breakNumber = 0
@@ -188,6 +216,7 @@ class BreaksPlanner extends EventEmitter {
   get _scheduledBreakType () {
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
+    // const shouldDailyLimit= this.settings.get('dailyLimit')
     const breakInterval = this.settings.get('breakInterval') + 1
     let scheduledBreakType
     if (shouldBreak && shouldMicrobreak) {
@@ -196,6 +225,8 @@ class BreaksPlanner extends EventEmitter {
       scheduledBreakType = 'microbreak'
     } else if (!shouldMicrobreak) {
       scheduledBreakType = 'break'
+    }else {
+      scheduledBreakType = "dailyLimit"
     }
     return scheduledBreakType
   }

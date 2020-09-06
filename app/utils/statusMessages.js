@@ -13,7 +13,7 @@ class StatusMessages {
 
   get trayMessage () {
     let message = ''
-    if (this.reference === 'finishMicrobreak' || this.reference === 'finishBreak') {
+    if (this.reference === 'finishMicrobreak' || this.reference === 'finishBreak' || this.reference === 'finishDailyLimit') {
       return message
     }
 
@@ -41,6 +41,9 @@ class StatusMessages {
       ? this.settings.get('breakNotificationInterval') : 0
     const microbreakNotificationInterval = this.settings.get('microbreakNotification')
       ? this.settings.get('microbreakNotificationInterval') : 0
+    const dailyLimitNotificationInterval = this.settings.get('dailyLimitNotification')
+      ? this.settings.get('dailyLimitNotificationInterval') : 0
+
     i18next.t('main.nextBreakFollowing', { count: breakInterval - breakNumber })
 
     if (this.reference === 'startBreak') {
@@ -51,6 +54,16 @@ class StatusMessages {
 
     if (this.reference === 'startMicrobreak') {
       message += i18next.t('statusMessages.nextMiniBreak') + ' ' +
+        Utils.formatTimeIn(this.timeLeft)
+      if (this.settings.get('break')) {
+        message += '\n' + i18next.t('statusMessages.nextLongBreak') + ' ' +
+          i18next.t('statusMessages.afterMiniBreak', { count: breakInterval - breakNumber })
+      }
+      return message
+    }
+
+    if (this.reference !== 'startDailyLimit') {
+      message += i18next.t('statusMessages.nextDailyLimit') + ' ' +
         Utils.formatTimeIn(this.timeLeft)
       if (this.settings.get('break')) {
         message += '\n' + i18next.t('statusMessages.nextLongBreak') + ' ' +

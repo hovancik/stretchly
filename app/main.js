@@ -30,6 +30,8 @@ let welcomeWin = null
 let contributorPreferencesWindow = null
 let settings
 let pausedForSuspendOrLock = false
+let dailyLimitIdeas
+let dailyLimitWins = null
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -316,6 +318,14 @@ function startBreakNotification () {
   updateTray()
 }
 
+function startDailyLimitNotification () {
+  showNotification(i18next.t('main.DailyLimitIn', { seconds: settings.get('dailyLimitNotificationInterval') / 1000 }))
+  log.info('Stretchly: showing Daily limit notification')
+  breakPlanner.nextBreakAfterNotification()
+  updateTray()
+}
+
+
 function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
@@ -528,6 +538,103 @@ function startBreak () {
   updateTray()
 }
 
+function startDailyLimit() {
+  if (!dailyLimitIdeas) {
+    loadIdeas()
+  }
+  if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
+    log.warn('Stretchly: in natural break, not starting Daily Limit')
+    return
+  }
+  // don't start another break if break running
+  if (dailyLimitWins) {
+    log.warn('Stretchly: Daily limit already running, not starting Daily Limit')
+    return
+  }
+
+  const strictMode = settings.get('dailyLimitStrictMode')
+  const postponesLimit = settings.get('dailyLimitPostponesLimit')
+  const postponable = settings.get('dailyLimitPostpone') &&
+    breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+
+  if (!strictMode || postponable) {
+    globalShortcut.register(settings.get('endBreakShortcut'), () => {
+      postponeDailyLimit()
+    })
+  }
+
+  const modalPath = `file://${__dirname}/dailylimit.html`
+  dailyLimitWins = []
+
+  const idea = settings.get('ideas') ? dailyLimitIdeas.randomElement : ['']
+
+  if (settings.get('dailyLimitStartSoundPlaying') && !settings.get('silentNotifications')) {
+    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
+  }
+
+  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
+    const windowOptions = {
+      width: 800,
+      height: 600,
+      autoHideMenuBar: true,
+      icon: windowIconPath(),
+      resizable: false,
+      frame: false,
+      show: false,
+      backgroundColor: settings.get('mainColor'),
+      skipTaskbar: true,
+      focusable: false,
+      title: 'Stretchly',
+      alwaysOnTop: true,
+      webPreferences: {
+        nodeIntegration: true
+      }
+    }
+
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+      windowOptions.width = displaysWidth(displayIdx)
+      windowOptions.height = displaysHeight(displayIdx)
+      windowOptions.x = displaysX(displayIdx, 0, true)
+      windowOptions.y = displaysY(displayIdx, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+      windowOptions.x = displaysX(displayIdx)
+      windowOptions.y = displaysY(displayIdx)
+    }
+
+    let dailyLimitWinLocal = new BrowserWindow(windowOptions)
+    // seems to help with multiple-displays problems
+    dailyLimitWinLocal.setSize(windowOptions.width, windowOptions.height)
+    // dailyLimitWinLocal.webContents.openDevTools()
+    dailyLimitWinLocal.once('ready-to-show', () => {
+      dailyLimitWinLocal.showInactive()
+      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
+      if (process.platform === 'darwin') {
+        dailyLimitWinLocal.setKiosk(settings.get('fullscreen'))
+      }
+      if (displayIdx === 0) {
+        breakPlanner.emit('dailyLimitStarted', true)
+        log.info('Stretchly: starting Daily')
+      }
+      dailyLimitWinLocal.webContents.send('dailylimitIdea', idea)
+      dailyLimitWinLocal.webContents.send('progress', settings.get('endBreakShortcut'))
+      dailyLimitWinLocal.setAlwaysOnTop(true)
+    })
+    dailyLimitWinLocal.loadURL(modalPath)
+    dailyLimitWinLocal.setVisibleOnAllWorkspaces(true)
+    if (dailyLimitWinLocal) {
+      dailyLimitWinLocal.on('closed', () => {
+        dailyLimitWinLocal = null
+      })
+    }
+    dailyLimitWins.push(dailyLimitWinLocal)
+
+    if (!settings.get('allScreens')) {
+      break
+    }
+  }
+  updateTray()
+}
+
 function breakComplete (shouldPlaySound, windows) {
   globalShortcut.unregister(settings.get('endBreakShortcut'))
   if (shouldPlaySound && !settings.get('silentNotifications')) {
@@ -543,6 +650,13 @@ function breakComplete (shouldPlaySound, windows) {
 function finishMicrobreak (shouldPlaySound = true) {
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
   log.info('Stretchly: finishing Mini Break')
+  breakPlanner.nextBreak()
+  updateTray()
+}
+
+function finishDailyLimit (shouldPlaySound = true) {
+  dailyLimitWins = breakComplete(shouldPlaySound, dailyLimitWins)
+  log.info('Stretchly: finishing Daily Limit')
   breakPlanner.nextBreak()
   updateTray()
 }
@@ -565,6 +679,13 @@ function postponeBreak (shouldPlaySound = false) {
   breakWins = breakComplete(shouldPlaySound, breakWins)
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Long Break')
+  updateTray()
+}
+
+function postponeDailyLimit (shouldPlaySound = false) {
+  dailyLimitWins = breakComplete(shouldPlaySound, dailyLimitWins)
+  breakPlanner.postponeCurrentBreak()
+  log.info('Stretchly: postponing Mini Break')
   updateTray()
 }
 
@@ -592,12 +713,28 @@ function skipToBreak () {
   updateTray()
 }
 
+function skipToDailyLimit () {
+  if (dailyLimitWins) {
+    dailyLimitWins = breakComplete(false, dailyLimitWins)
+  }
+  if (breakWins) {
+    breakWins = breakComplete(false, breakWins)
+  }
+  breakPlanner.skipToDailyLimit()
+  log.info('Stretchly: skipping to Daily Limit')
+  updateTray()
+}
+
+
 function resetBreaks () {
   if (microbreakWins) {
     microbreakWins = breakComplete(false, microbreakWins)
   }
   if (breakWins) {
     breakWins = breakComplete(false, breakWins)
+  }
+  if (dailyLimitWins) {
+    dailyLimitWins = breakComplete(false, dailyLimitWins)
   }
   breakPlanner.reset()
   log.info('Stretchly: reseting breaks')
@@ -616,6 +753,9 @@ function loadSettings () {
   breakPlanner.on('finishMicrobreak', (shouldPlaySound) => { finishMicrobreak(shouldPlaySound) })
   breakPlanner.on('startBreak', () => { startBreak() })
   breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
+  breakPlanner.on('startDailyLimit', () => { startDailyLimit() })
+  breakPlanner.on('startDailyLimitNotification', () => { startDailyLimitNotification() })
+  breakPlanner.on('finishDailyLimit', (shouldPlaySound) => { finishDailyLimit(shouldPlaySound) })
   breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
   breakPlanner.on('updateToolTip', function () {
     updateTray()
@@ -628,15 +768,19 @@ function loadSettings () {
 function loadIdeas () {
   let breakIdeasData
   let microbreakIdeasData
+  let dailyLimitIdeasData
   if (settings.get('useIdeasFromSettings')) {
     breakIdeasData = settings.get('breakIdeas')
     microbreakIdeasData = settings.get('microbreakIdeas')
+    dailyLimitIdeasData = settings.get('dailyLimitIdeas')
   } else {
     breakIdeasData = require('./utils/defaultBreakIdeas')
     microbreakIdeasData = require('./utils/defaultMicrobreakIdeas')
+    dailyLimitIdeasData = require('./utils/defaultDailyLimitIdeas')
   }
   breakIdeas = new IdeasLoader(breakIdeasData).ideas()
   microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
+  dailyLimitIdeas = new IdeasLoader(dailyLimitIdeasData).ideas()
 }
 
 function pauseBreaks (milliseconds) {
@@ -645,6 +789,9 @@ function pauseBreaks (milliseconds) {
   }
   if (breakWins) {
     finishBreak(false)
+  }
+  if (dailyLimitWins) {
+    finishDailyLimit(false)
   }
   breakPlanner.pause(milliseconds)
   log.info(`Stretchly: pausing breaks for ${milliseconds}`)
@@ -742,6 +889,12 @@ function getTrayMenu () {
       submenu = submenu.concat([{
         label: i18next.t('main.toBreak'),
         click: skipToBreak
+      }])
+    }
+    if (settings.get('dailyLimit')) {
+      submenu = submenu.concat([{
+        label: i18next.t('main.toDailyLimit'),
+        click: skipToDailyLimit
       }])
     }
     if (settings.get('break') || settings.get('microbreak')) {
@@ -848,12 +1001,20 @@ ipcMain.on('postpone-break', function (event, shouldPlaySound) {
   postponeBreak()
 })
 
+ipcMain.on('postpone-dailylimit', function (event, shouldPlaySound) {
+  postponeDailyLimit()
+})
+
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
-  finishMicrobreak(shouldPlaySound)
+  finishDailyLimit(shouldPlaySound)
 })
 
 ipcMain.on('finish-break', function (event, shouldPlaySound) {
   finishBreak(shouldPlaySound)
+})
+
+ipcMain.on('finish-dailylimit', function (event, shouldPlaySound) {
+  finishDailyLimit(shouldPlaySound)
 })
 
 ipcMain.on('save-setting', function (event, key, value) {

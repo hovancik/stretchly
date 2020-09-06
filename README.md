@@ -245,6 +245,7 @@ Format as following:
 - Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
 - Daniel Bankmann, [@dbankmann](https://github.com/dbankmann)
 - Aziks, [@Aziks0](https://github.com/Aziks0)
+- mwoz123, [@mwoz123](https://github.com/mwoz123)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

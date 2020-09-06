@@ -21,7 +21,8 @@
     "warning": "This will restore app defaults and all your settings will be lost.",
     "continue": "Continue",
     "cancel": "Cancel",
-    "preferences": "Preferences"
+    "preferences": "Preferences",
+    "toDailyLimit" : "Daily Limit"
   },
   "break": {
     "postpone": "Postpone this break",
@@ -66,7 +67,13 @@
       "strictModeInfo": "Strict Mode prevents you from skipping either Mini Breaks or Long Breaks and is designed to help discipline.",
       "enableStrictMini": "Enable Strict Mode for Mini Breaks",
       "enableStrictLong": "Enable Strict Mode for Long Breaks",
-      "cantDisableBoth": "It is not possible to disable both types of breaks"
+      "cantDisableBoth": "It is not possible to disable both types of breaks",
+      "dailyLimit" : "Daily Limit",
+      "dailyLimitInfo" : "Daily limit is time to turn of you computer",
+      "enableDailyLimit" : "Enable Daily Limit",
+      "showNotificationBeforeDailyLimit" : "Show notification before Daily Limit",
+      "enableStrictDaily": "Enable Strict Mode for Daily Limit",
+      "enablePostponeDaily" : "Enable Postponement for Daily Limit"
     },
     "theme": {
       "appearance": "Appearance:",
@@ -182,6 +189,7 @@
     "nextMiniBreak": "Next Mini Break",
     "afterMiniBreak": "after {{count}} Mini Break",
     "afterMiniBreak_plural": "after {{count}} Mini Breaks",
-    "resuming": "Resuming"
+    "resuming": "Resuming",
+    "nextDailyLimit": "Daily Limit"
   }
 }

@@ -3,6 +3,17 @@ module.exports = {
   microbreakInterval: 600000,
   breakDuration: 300000,
   breakInterval: 2,
+  dailyLimit: 600000,
+  dailyLimitInterval:600000,
+  dailyLimitDuration: 600000,
+  dailyLimitNotification: true,
+  dailyLimit: true,
+  dailyLimitStrictMode: false,
+  dailyLimitPostpone: true,
+  dailyLimitPostponeTime: 30000, 
+  dailyLimitStartSoundPlaying: true,
+  dailyLimitPostponesLimit: 5,
+  dailyLimitPostponableDurationPercent: 30,
   breakNotification: true,
   microbreakNotification: true,
   breakNotificationInterval: 30000,
@@ -75,5 +86,8 @@ module.exports = {
     { data: 'Refocus your eyes on an object at least 20 meters away.', enabled: true },
     { data: 'Take a moment to think about something you appreciate.', enabled: true },
     { data: 'Take a moment to smile at being alive.', enabled: true }
+  ],
+  dailyLimitIdeas: [
+    {data: 'You have reached daily limit. If you still need to work find some else e.g. reviewing documents so you could turn off computer', enabled: true}
   ]
 }

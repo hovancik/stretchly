@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title data-i18next="break.title"></title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/break.css">
+  </head>
+  <body>
+    <div class="breaks daily-limit">
+      <div>
+        <div class="daily-limit-idea"></div>
+      </div>
+      <div class="action-buttons">
+        <a id="postpone" class="tooltip top">
+          <span data-i18next="break.postpone"></span>
+          <img src="images/breaks/break-postpone.svg" />
+          <span class="tiptext"></span>
+        </a>
+        <a id="close" class="tooltip top">
+          <span data-i18next="break.skip"></span>
+          <img src="images/breaks/break-skip.svg" />
+          <span class="tiptext"></span>
+        </a>
+      </div>
+    </div>
+    <script>
+      require('./platform.js')
+      require('./dailylimit.js')
+    </script>
+  </body>
+</html>
