@@ -21,7 +21,8 @@
     "warning": "Dadurch werden die App-Standardeinstellungen wiederhergestellt und alle Einstellungen gehen verloren.",
     "continue": "Fortsetzen",
     "cancel": "Abbrechen",
-    "preferences": "Einstellungen"
+    "preferences": "Einstellungen",
+    "contributorPreferences": "Einstellungen für Mitwirkende"
   },
   "break": {
     "postpone": "Verschiebe diese Pause",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "Graphit Kristall",
       "coffeeKisses": "Kaffee Küsse",
       "morningSwim": "Morgen Schwimmer",
+      "transparentMode": "Enable transparency",
       "sounds": "Ton:",
       "enableSounds": "Töne anschalten",
       "crystalGlass": "Kristallglas",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "Geben Sie an, bis zu welcher Stunde 'Pause bis Morgen' pausieren soll.",
     "welcomeWindow": "Willkommensfenster:",
     "showWelcomeWindow": "Willkommensfenster beim nächsten Start anzeigen",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Töne:",
     "volume": "Lautstärke:",
     "miniBreakStartSound": "Töne am Beginn und Ende einer Mini-Pause spielen",

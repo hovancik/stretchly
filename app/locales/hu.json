@@ -21,7 +21,8 @@
     "warning": "Az alkalmazás alapértelmezett beállításai vissza lesznek állítva és az összes jelenlegi beállítás el fog veszni.",
     "continue": "Folytatás",
     "cancel": "Mégsem",
-    "preferences": "Beállítások"
+    "preferences": "Beállítások",
+    "contributorPreferences": "Támogatói beállítások"
   },
   "break": {
     "postpone": "Szünet elhalasztása",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "Grafitkristály",
       "coffeeKisses": "Kávé csók",
       "morningSwim": "Reggeli úszás",
+      "transparentMode": "Enable transparency",
       "sounds": "Hangok:",
       "enableSounds": "Hangok engedélyezése",
       "crystalGlass": "Üveg csilingelés",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "Állítsd be, hogy a 'Felfüggesztés reggelig' hány óráig függessze fel a szüneteket.",
     "welcomeWindow": "Üdvözlő ablak:",
     "showWelcomeWindow": "Üdvözlő ablak megjelenítése a következő indításkor",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Hangok:",
     "volume": "Hangerő:",
     "miniBreakStartSound": "Hang lejátszása a Rövid szünetek kezdetekor is",
