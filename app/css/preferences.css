@@ -140,16 +140,16 @@ body > .hidden,
   text-align: right;
 }
 
-.theme > :nth-child(8) {
+.theme > :nth-child(9) {
   grid-column: 1/2;
-  grid-row: 7/9;
+  grid-row: 8/9;
   padding: 0 16px;
   text-align: right;
 }
 
-.theme > :nth-child(14) {
+.theme > :nth-child(15) {
   grid-column: 1/2;
-  grid-row: 12/16;
+  grid-row: 13/16;
   padding: 0 16px;
   text-align: right;
 }
