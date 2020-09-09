@@ -233,27 +233,22 @@
         <label data-i18next="preferences.schedule.enableDailyLimit" for="enableDailyLimit"></label>
       </div>
       <div>
-        <label data-i18next="preferences.schedule.breakFor" data-same-width-label for="dailyLimitFor"></label>
-        <input type="range" min="1" max="60" step="1" list="tickmarksdailyLimitFor" name="breakDuration" data-divisor="60000" id="dailyLimitFor">
-        <datalist id="tickmarksDailyLimitFor">
-          <option value="10"></option>
-          <option value="20"></option>
+        <label data-i18next="preferences.schedule.after" data-same-width-label for="dailyLimitAfter"></label>
+        <input type="range" min="30" max="720" step="30" list="tickmarksDailyLimitAfter" name="dailyLimitAfter" data-divisor="1" id="dailyLimitAfter">
+        <datalist id="tickmarksDailyLimitAfter">
           <option value="30"></option>
-          <option value="40"></option>
-          <option value="50"></option>
-        </datalist>
-        <output data-unit="minutes"></output>
-      </div>
-      <div>
-        <label data-i18next="preferences.schedule.every" data-same-width-label for="dailyLimitEvery"></label>
-        <input type="range" min="1" max="30" step="1" list="tickmarksDailyLimitEvery" name="breakInterval" data-divisor="1" id="dailyLimitEvery">
-        <datalist id="tickmarksDailyLimitEvery">
-          <option value="5"></option>
-          <option value="10"></option>
-          <option value="15"></option>
-          <option value="20"></option>
-          <option value="25"></option>
-          <option value="30"></option>
+          <option value="60"></option>
+          <option value="90"></option>
+          <option value="120"></option>
+          <option value="180"></option>
+          <option value="240"></option>
+          <option value="300"></option>
+          <option value="360"></option>
+          <option value="420"></option>
+          <option value="480"></option>
+          <option value="540"></option>
+          <option value="600"></option>
+          <option value="720"></option>
         </datalist>
         <output data-unit="minutes"></output>
       </div>

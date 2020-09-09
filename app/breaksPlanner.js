@@ -172,9 +172,9 @@ class BreaksPlanner extends EventEmitter {
   skipToDailyLimit () {
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
-    const shouldMicrobreak = this.settings.get('microbreak')
-    const breakInterval = this.settings.get('breakInterval') + 1
-    if (shouldBreak && shouldMicrobreak) {
+    const shouldDailyLimit = this.settings.get('dailyLimit')
+    const breakInterval = this.settings.get('breakInterval') + 1 
+    if (shouldBreak && shouldDailyLimit) {
       if (this.breakNumber % breakInterval === 0) {
         this.breakNumber = 1
       }
