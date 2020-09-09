@@ -66,7 +66,7 @@
       "strictModeInfo": "A Szigorú mód megakadályozza, hogy kihagyd a Rövid és/vagy Hosszú szüneteket, fejlesztve ezzel a fegyelmed.",
       "enableStrictMini": "Szigorú mód engedélyezése Rövid szünetekre",
       "enableStrictLong": "Szigorú mód engedélyezése Hosszú szünetekre",
-      "cantDisableBoth": "Nem tudod mindkét típusú szünetet letiltani"
+      "cantDisableAll": "Nem tudod mindkét típusú szünetet letiltani"
     },
     "theme": {
       "appearance": "Kinézet:",

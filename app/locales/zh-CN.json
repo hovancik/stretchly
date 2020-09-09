@@ -66,7 +66,7 @@
       "strictModeInfo": "「严格模式」不能跳过任何休息类型，协助您遵循休息规则。",
       "enableStrictMini": "启用「小憩」的严格模式",
       "enableStrictLong": "启用「休息」的严格模式",
-      "cantDisableBoth": "不能同时停用两种休息类型"
+      "cantDisableAll": "不能同时停用两种休息类型"
     },
     "theme": {
       "appearance": "外观：",

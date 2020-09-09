@@ -66,7 +66,7 @@
       "strictModeInfo": "Strenge Modus voorkomt dat je de Mini Pauzes en Lange Pauzes kunt overslaan en is ontworpen om te helpen met discipline.",
       "enableStrictMini": "Strenge Modus inschakelen voor Mini Pauzes",
       "enableStrictLong": "Strenge Modus inschakelen voor Lange Pauzes",
-      "cantDisableBoth": "Het is niet mogelijk om allebei de pauze soorten uit te schakelen"
+      "cantDisableAll": "Het is niet mogelijk om allebei de pauze soorten uit te schakelen"
     },
     "theme": {
       "appearance": "Uiterlijk:",

@@ -66,7 +66,7 @@
       "strictModeInfo": "Le mode strict interdit le report des pauses et permet d'aider à respecter les temps de repos.",
       "enableStrictMini": "Activer le mode strict pour les petites pauses",
       "enableStrictLong": "Activer le mode strict pour les grandes pauses",
-      "cantDisableBoth": "Veuillez  activer l'un des deux types de pause"
+      "cantDisableAll": "Veuillez  activer l'un des deux types de pause"
     },
     "theme": {
       "appearance": "Apparence :",

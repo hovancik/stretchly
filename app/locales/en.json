@@ -67,7 +67,7 @@
       "strictModeInfo": "Strict Mode prevents you from skipping either Mini Breaks or Long Breaks and is designed to help discipline.",
       "enableStrictMini": "Enable Strict Mode for Mini Breaks",
       "enableStrictLong": "Enable Strict Mode for Long Breaks",
-      "cantDisableBoth": "It is not possible to disable both types of breaks",
+      "cantDisableAll": "It is not possible to disable all types of breaks",
       "dailyLimit" : "Daily Limit",
       "dailyLimitInfo" : "Daily limit is time to turn of you computer",
       "enableDailyLimit" : "Enable Daily Limit",

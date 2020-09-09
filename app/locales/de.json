@@ -66,7 +66,7 @@
       "strictModeInfo": "Der strikte Modus verhindert, dass Sie Mini Pausen oder große Pausen überspringen, und soll Disziplin unterstützen.",
       "enableStrictMini": "Strikten Modus für Mini Pausen aktivieren",
       "enableStrictLong": "Strikten Modus für große Pausen aktivieren",
-      "cantDisableBoth": "Es ist nicht möglich, beide Pausen Arten zu deaktivieren."
+      "cantDisableAll": "Es ist nicht möglich, beide Pausen Arten zu deaktivieren."
     },
     "theme": {
       "appearance": "Aussehen:",

@@ -66,7 +66,7 @@
       "strictModeInfo": "Strikt läge hindrar dig från att hoppa över antingen korta pauser eller långa pauser och är utformad för att hjälpa disciplin.",
       "enableStrictMini": "Aktivera strikt läge för korta pauser",
       "enableStrictLong": "Aktivera strikt läge för långa pauser",
-      "cantDisableBoth": "Det är inte möjligt att inaktivera båda typerna av pauser"
+      "cantDisableAll": "Det är inte möjligt att inaktivera båda typerna av pauser"
     },
     "theme": {
       "appearance": "Utseende:",

@@ -221,7 +221,7 @@ document.querySelectorAll('.enabletype').forEach((element) => {
     if (enabletypeChecked.length === 0) {
       element.checked = true
       ipcRenderer.send('save-setting', element.value, element.checked)
-      window.alert(i18next.t('preferences.schedule.cantDisableBoth'))
+      window.alert(i18next.t('preferences.schedule.cantDisableAll'))
     }
   }
 })

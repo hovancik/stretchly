@@ -66,7 +66,7 @@
       "strictModeInfo": "O Modo Estrito impede você de pular Mini Pausas ou Longas e foi pensado como um modo de desenvolver disciplina.",
       "enableStrictMini": "Habilitar o Modo Estrito para Mini Pausas",
       "enableStrictLong": "Habilitar o Modo Estrito para Pausas Longas",
-      "cantDisableBoth": "Não é possível desabilitar ambos tipos de pausas"
+      "cantDisableAll": "Não é possível desabilitar ambos tipos de pausas"
     },
     "theme": {
       "appearance": "Aparência:",

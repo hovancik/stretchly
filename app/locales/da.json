@@ -66,7 +66,7 @@
       "strictModeInfo": "Striks tilstand sørger for, at du ikke kan skippe minipauser eller lange pauser.",
       "enableStrictMini": "Tillad Striks tilstand for minipauser",
       "enableStrictLong": "Tillad Striks tilstand for lange pauser",
-      "cantDisableBoth": "Du skal have en af mulighederne sat til"
+      "cantDisableAll": "Du skal have en af mulighederne sat til"
     },
     "theme": {
       "appearance": "Udseende:",
