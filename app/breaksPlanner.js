@@ -78,9 +78,9 @@ class BreaksPlanner extends EventEmitter {
     const breakNotificationInterval = this.settings.get('breakNotificationInterval')
     const microbreakNotification = this.settings.get('microbreakNotification')
     const microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
-    const dailyLimitNotification = this.settings.get('dailyLimitNotification')
-    const dailyLimitNotificationInterval = this.settings.get('dailyLimitNotificationInterval')
-     
+    // const dailyLimitNotification = this.settings.get('dailyLimitNotification')
+    // const dailyLimitNotificationInterval = this.settings.get('dailyLimitNotificationInterval')
+
     if (!shouldBreak && shouldMicrobreak) {
       if (microbreakNotification) {
         this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
@@ -111,7 +111,7 @@ class BreaksPlanner extends EventEmitter {
       }
     }
     // TODO: HELP REQUIRED !!:(
-    if (shouldDailyLimit) { 
+    if (shouldDailyLimit) {
       this.scheduler = new Scheduler(() => this.emit('startDailyLimit'), interval, 'startDailyLimit')
     }
     this.scheduler.plan()
@@ -225,8 +225,8 @@ class BreaksPlanner extends EventEmitter {
       scheduledBreakType = 'microbreak'
     } else if (!shouldMicrobreak) {
       scheduledBreakType = 'break'
-    }else {
-      scheduledBreakType = "dailyLimit"
+    } else {
+      scheduledBreakType = 'dailyLimit'
     }
     return scheduledBreakType
   }

@@ -41,8 +41,8 @@ class StatusMessages {
       ? this.settings.get('breakNotificationInterval') : 0
     const microbreakNotificationInterval = this.settings.get('microbreakNotification')
       ? this.settings.get('microbreakNotificationInterval') : 0
-    const dailyLimitNotificationInterval = this.settings.get('dailyLimitNotification')
-      ? this.settings.get('dailyLimitNotificationInterval') : 0
+    // const dailyLimitNotificationInterval = this.settings.get('dailyLimitNotification')
+    //   ? this.settings.get('dailyLimitNotificationInterval') : 0
 
     i18next.t('main.nextBreakFollowing', { count: breakInterval - breakNumber })
 

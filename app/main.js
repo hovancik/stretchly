@@ -325,7 +325,6 @@ function startDailyLimitNotification () {
   updateTray()
 }
 
-
 function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
@@ -538,7 +537,7 @@ function startBreak () {
   updateTray()
 }
 
-function startDailyLimit() {
+function startDailyLimit () {
   if (!dailyLimitIdeas) {
     loadIdeas()
   }
@@ -724,7 +723,6 @@ function skipToDailyLimit () {
   log.info('Stretchly: skipping to Daily Limit')
   updateTray()
 }
-
 
 function resetBreaks () {
   if (microbreakWins) {

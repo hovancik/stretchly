@@ -23,7 +23,6 @@ ipcRenderer.on('dailylimitIdea', (event, message) => {
 })
 
 ipcRenderer.on('progress', (event, keyboardShortcut) => {
-
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
 
@@ -33,5 +32,4 @@ ipcRenderer.on('progress', (event, keyboardShortcut) => {
 
   postponeElement.style.display = 'flex'
   closeElement.style.display = 'flex'
-
 })
