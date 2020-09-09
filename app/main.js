@@ -376,7 +376,8 @@ function startMicrobreak () {
       resizable: false,
       frame: false,
       show: false,
-      backgroundColor: settings.get('mainColor'),
+      transparent: settings.get('transparentMode'),
+      backgroundColor: calculateBackgroundColor(),
       skipTaskbar: true,
       focusable: false,
       title: 'Stretchly',
@@ -481,7 +482,8 @@ function startBreak () {
       resizable: false,
       frame: false,
       show: false,
-      backgroundColor: settings.get('mainColor'),
+      transparent: settings.get('transparentMode'),
+      backgroundColor: calculateBackgroundColor(),
       skipTaskbar: true,
       focusable: false,
       title: 'Stretchly',
@@ -739,6 +741,12 @@ function resetBreaks () {
   updateTray()
 }
 
+function calculateBackgroundColor () {
+  const themeColor = settings.get('mainColor')
+  const opacity = settings.get('opacity')
+  return '#' + Math.round(opacity * 255).toString(16) + themeColor.substr(1)
+}
+
 function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
@@ -958,7 +966,18 @@ function getTrayMenu () {
     click: function () {
       createPreferencesWindow()
     }
-  }, {
+  })
+
+  if (global.shared.isContributor) {
+    trayMenu.push({
+      label: i18next.t('main.contributorPreferences'),
+      click: function () {
+        createContributorSettingsWindow()
+      }
+    })
+  }
+
+  trayMenu.push({
     type: 'separator'
   }, {
     label: i18next.t('main.quitStretchly'),
@@ -1098,6 +1117,7 @@ ipcMain.on('set-contributor', function (event) {
   if (preferencesWin) {
     preferencesWin.send('enableContributorPreferences')
   }
+  updateTray()
 })
 
 ipcMain.on('open-contributor-preferences', function (event) {

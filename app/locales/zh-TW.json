@@ -21,7 +21,8 @@
         "warning": "這會將 App 還原至預設值，而您所有的設定則會遺失。",
         "continue": "繼續",
         "cancel": "取消",
-        "preferences": "偏好設定"
+        "preferences": "偏好設定",
+        "contributorPreferences": "貢獻者偏好設定"
     },
     "break": {
         "postpone": "延後此休息",
@@ -75,6 +76,7 @@
             "graphiteCrystal": "石墨水晶",
             "coffeeKisses": "咖啡之吻",
             "morningSwim": "沐浴晨光",
+            "transparentMode": "Enable transparency",
             "sounds": "音效：",
             "enableSounds": "啟用音效",
             "crystalGlass": "水晶玻璃",
@@ -130,6 +132,9 @@
         "pauseUntilMorningInfo": "指定「暫停至早上」的具體時間",
         "welcomeWindow": "歡迎視窗：",
         "showWelcomeWindow": "下次啟動時顯示歡迎視窗",
+        "opacityTheme": "Theme transparency:",
+        "opacityInfo": "How solid should the break window be ?",
+        "opacity": "Opacity:",
         "sounds": "音效：",
         "volume": "音量：",
         "miniBreakStartSound": "也在小休息開始時播放休息結束的音效",

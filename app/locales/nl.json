@@ -21,7 +21,8 @@
     "warning": "Dit zal the standaardinstellingen herstellen en all je instellingen zullen verloren gaan",
     "continue": "Doorgaan",
     "cancel": "Annuleer",
-    "preferences": "Instellingen"
+    "preferences": "Instellingen",
+    "contributorPreferences": "Bijdrager Instellingen"
   },
   "break": {
     "postpone": "Deze pauze uitstellen",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "Grafiet kristal",
       "coffeeKisses": "Koffie zoenen",
       "morningSwim": "Ochtend zwemmen",
+      "transparentMode": "Enable transparency",
       "sounds": "Geluiden:",
       "enableSounds": "Geluiden inschakelen",
       "crystalGlass": "Kristalglas",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "Specifeer tot welk uur 'Pauze tot ochtend' zou moeten pauzeren.",
     "welcomeWindow": "Welkom venster:",
     "showWelcomeWindow": "Toon Welkom venster op volgende start",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Geluiden:",
     "volume": "Volume:",
     "miniBreakStartSound": "Speel einde-van-pauze geluid ook bij het begin van een Mini Pauze",

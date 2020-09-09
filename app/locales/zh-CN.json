@@ -21,7 +21,8 @@
     "warning": "移除自定义设置，还原至预设配置？",
     "continue": "确认",
     "cancel": "取消",
-    "preferences": "自定义设置"
+    "preferences": "自定义设置",
+    "contributorPreferences": "贡献者偏好"
   },
   "break": {
     "postpone": "延后此次休息",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "石墨水晶",
       "coffeeKisses": "咖啡之吻",
       "morningSwim": "沐浴晨光",
+      "transparentMode": "Enable transparency",
       "sounds": "音效:",
       "enableSounds": "启用音效",
       "crystalGlass": "水晶玻璃",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "指定「暂停至早晨」的具体时间",
     "welcomeWindow": "欢迎窗口：",
     "showWelcomeWindow": "下次启动时显示欢迎窗口",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "音效：",
     "volume": "音量：",
     "miniBreakStartSound": "在小憩开始时播放休息结束的音效",

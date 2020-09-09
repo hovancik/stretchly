@@ -21,7 +21,8 @@
     "warning": "This will restore app defaults and all your settings will be lost.",
     "continue": "Continue",
     "cancel": "Cancel",
-    "preferences": "설정"
+    "preferences": "설정",
+    "contributorPreferences": "Contributor Preferences"
   },
   "break": {
     "postpone": "Postpone this break",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "흑연 크리스탈",
       "coffeeKisses": "커피 키스",
       "morningSwim": "아침 수영",
+      "transparentMode": "Enable transparency",
       "sounds": "Sounds:",
       "enableSounds": "Enable sounds",
       "crystalGlass": "유리잔 소리",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "Specify till what hour 'Pause until morning' should pause.",
     "welcomeWindow": "Welcome window:",
     "showWelcomeWindow": "Show Welcome window on next start",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Sounds:",
     "volume": "Volume:",
     "miniBreakStartSound": "Play end-of-break sound also at the start of Mini break",

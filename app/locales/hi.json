@@ -21,7 +21,8 @@
     "warning": "This will restore app defaults and all your settings will be lost.",
     "continue": "Continue",
     "cancel": "Cancel",
-    "preferences": "सेट्टिंग्स"
+    "preferences": "सेट्टिंग्स",
+    "contributorPreferences": "Contributor Preferences"
   },
   "break": {
     "postpone": "Postpone this break",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "ग्रेफाइट क्रिस्टल",
       "coffeeKisses": "कॉफ़ी किस्सेस",
       "morningSwim": "सुबह का तैरना",
+      "transparentMode": "Enable transparency",
       "sounds": "Sounds:",
       "enableSounds": "Enable sounds",
       "crystalGlass": "क्रिस्टल  ग्लास",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "Specify till what hour 'Pause until morning' should pause.",
     "welcomeWindow": "Welcome window:",
     "showWelcomeWindow": "Show Welcome window on next start",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Sounds:",
     "volume": "Volume:",
     "miniBreakStartSound": "Play end-of-break sound also at the start of Mini break",

@@ -21,7 +21,8 @@
     "warning": "Dette vil nulstille til standardindstillinger og alle dine indstillinger vil blive slettet.",
     "continue": "Fortsæt",
     "cancel": "Afbryd",
-    "preferences": "Indstillinger"
+    "preferences": "Indstillinger",
+    "contributorPreferences": "Sponser præferencer"
   },
   "break": {
     "postpone": "…vent en lille smule",
@@ -75,6 +76,7 @@
       "graphiteCrystal": "Graphite crystal",
       "coffeeKisses": "Coffee kisses",
       "morningSwim": "Morning swim",
+      "transparentMode": "Enable transparency",
       "sounds": "Lyde:",
       "enableSounds": "Slå lyd til",
       "crystalGlass": "Crystal glass",
@@ -130,6 +132,9 @@
     "pauseUntilMorningInfo": "Vælg hvilken time, som 'Stop indtil imorgen' skal slås fra igen.",
     "welcomeWindow": "Velkomst vindue:",
     "showWelcomeWindow": "Vis velkomst vindue på næste start",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Lyde:",
     "volume": "Lydniveau:",
     "miniBreakStartSound": "Spil pause-afslutnings lyden også som mini pause-start lyd",

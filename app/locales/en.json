@@ -22,7 +22,8 @@
     "continue": "Continue",
     "cancel": "Cancel",
     "preferences": "Preferences",
-    "toDailyLimit" : "Daily Limit"
+    "toDailyLimit" : "Daily Limit",
+    "contributorPreferences": "Contributor Preferences"
   },
   "break": {
     "postpone": "Postpone this break",
@@ -83,6 +84,7 @@
       "graphiteCrystal": "Graphite crystal",
       "coffeeKisses": "Coffee kisses",
       "morningSwim": "Morning swim",
+      "transparentMode": "Enable transparency",
       "sounds": "Sounds:",
       "enableSounds": "Enable sounds",
       "crystalGlass": "Crystal glass",
@@ -138,6 +140,9 @@
     "pauseUntilMorningInfo": "Specify till what hour 'Pause until morning' should pause.",
     "welcomeWindow": "Welcome window:",
     "showWelcomeWindow": "Show Welcome window on next start",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be ?",
+    "opacity": "Opacity:",
     "sounds": "Sounds:",
     "volume": "Volume:",
     "miniBreakStartSound": "Play end-of-break sound also at the start of Mini break",

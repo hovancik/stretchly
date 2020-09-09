@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ## Added
+- show Contributor Settings in tray menu for Contributors
 - breaks are paused if the Windows 10 Focus Assist mode is enabled
 - added log file for debug
 - daily limit 
+- users can choose between a transparent or a fully opaque theme in the Theme Preferences
+- users can choose the opacity value for the transparent theme in the Contributor Preferences
 
 ### Changed
 - updated Polish translation
