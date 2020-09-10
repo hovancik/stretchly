@@ -1023,7 +1023,7 @@ ipcMain.on('postpone-dailylimit', function (event, shouldPlaySound) {
 })
 
 ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
-  finishDailyLimit(shouldPlaySound)
+  finishMicrobreak(shouldPlaySound)
 })
 
 ipcMain.on('finish-break', function (event, shouldPlaySound) {
