@@ -104,7 +104,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: ['Declutter', 'A clean space help your focus at work and is often linked to positive emotions like happiness.'],
+    data: ['Declutter', 'A clean space helps your focus at work and is often linked to positive emotions like happiness.'],
     enabled: true
   },
   {
