@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - users can choose the opacity value for the transparent theme in the Contributor Preferences
 
 ### Changed
+- updated German translation
 - updated Polish translation
 - updated Chinese translations
 - bigger range for Mini Break duration
