@@ -57,7 +57,7 @@
       "breakFor": "Pause für:",
       "every": "Alle:",
       "showNotificationBeforeMiniBreak": "Benachrichtigung anzeigen, bevor Mini Pause startet",
-      "enablePostponeMini": "Aufschub bei Mini-Pause aktivieren",
+      "enablePostponeMini": "Aufschub bei Mini Pause aktivieren",
       "longBreaks": "Große Pause:",
       "longBreaksInfo": "Große Pausen werden weniger regelmäßig eingelegt, dauern jedoch länger, sodass Sie eine längere Pause von Ihrer Arbeit einlegen können.",
       "enableLongBreaks": "Große Pausen aktivieren",
@@ -137,7 +137,7 @@
     "opacity": "Opacity:",
     "sounds": "Töne:",
     "volume": "Lautstärke:",
-    "miniBreakStartSound": "Töne am Beginn und Ende einer Mini-Pause spielen",
+    "miniBreakStartSound": "Töne am Beginn und Ende einer Mini Pause spielen",
     "longBreakStartSound": "Töne am Beginn und Ende einer Großen Pause spielen",
     "naturalBreaks": "Natürliche Pausen:",
     "naturalBreaksInfo": "Wenn 'Abwesenheit vom System überwachen' in den Haupteinstellungen aktiviert ist, können Sie angeben, nach welcher Zeit der Countdown angehalten werden soll.",
@@ -184,9 +184,9 @@
     "indefinitely": "Unbegrenzt",
     "dndMode": "Bitte nicht stören, ist eingeschaltet",
     "nextLongBreak": "Nächste große Pause",
-    "nextMiniBreak": "Nächste Mini-Pause",
-    "afterMiniBreak": "nach {{count}} Mini-Pause",
-    "afterMiniBreak_plural": "nach {{count}} Mini-Pausen",
+    "nextMiniBreak": "Nächste Mini Pause",
+    "afterMiniBreak": "nach {{count}} Mini Pause",
+    "afterMiniBreak_plural": "nach {{count}} Mini Pausen",
     "resuming": "Fortsetzen"
   }
 }
