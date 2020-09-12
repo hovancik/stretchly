@@ -74,8 +74,7 @@
     "mac": {
       "category": "public.app-category.healthcare-fitness",
       "target": [
-        "dmg",
-        "zip"
+        "dmg"
       ],
       "extendInfo": {
         "LSBackgroundOnly": 1,
