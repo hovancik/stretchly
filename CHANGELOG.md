@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## Added
+## [1.1.0] - 2020-09-12
+
+### Added
 - show Contributor Settings in tray menu for Contributors
 - breaks are paused if the Windows 10 Focus Assist mode is enabled
 - added log file for debug
@@ -18,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - updated Polish translation
 - updated Chinese translations
 - bigger range for Mini Break duration
-- preferences navigation menu visible when scrolled down
+- preferences navigation menu visible when scrolling down
 
 ## [1.0.0] - 2020-07-18
 
@@ -463,7 +465,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/hovancik/stretchly/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/hovancik/stretchly/compare/v0.99.5...v1.0.0
 [0.99.5]: https://github.com/hovancik/stretchly/compare/v0.99.4...v0.99.5
 [0.99.4]: https://github.com/hovancik/stretchly/compare/v0.99.3...v0.99.4
