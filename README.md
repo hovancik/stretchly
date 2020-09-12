@@ -246,6 +246,7 @@ Format as following:
 - Daniel Bankmann, [@dbankmann](https://github.com/dbankmann)
 - Aziks, [@Aziks0](https://github.com/Aziks0)
 - mwoz123, [@mwoz123](https://github.com/mwoz123)
+- pramit-marattha, [@pramit-marattha](https://github.com/pramit-marattha)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
