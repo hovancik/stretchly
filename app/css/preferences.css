@@ -16,6 +16,9 @@ body > div > :last-child {
   grid-gap: 16px;
   grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
   padding: 0 16px;
+  width: calc(100% - 16px);
+  position: fixed;
+  z-index: 10;
 }
 
 .navigation > a > div {
@@ -63,7 +66,7 @@ body > .hidden,
   grid-gap: 20px 0;
   grid-template: auto / 89px auto 16px;
   letter-spacing: -0.08px;
-  padding-top: 30px;
+  padding-top: 86px;
 }
 
 .settings > div {
@@ -84,7 +87,7 @@ body > .hidden,
   grid-gap: 16px 0;
   grid-template: auto / 25% auto 16px;
   letter-spacing: -0.08px;
-  padding-top: 30px;
+  padding-top: 86px;
 }
 
 .schedule > div {
@@ -122,7 +125,7 @@ body > .hidden,
   grid-gap: 16px 0;
   grid-template: auto / 25% auto 16px;
   letter-spacing: -0.08px;
-  padding-top: 30px;
+  padding-top: 86px;
 }
 
 .theme > div {
@@ -228,7 +231,7 @@ body > .hidden,
   grid-gap: 16px 0;
   grid-template: auto auto/ 25% auto 25%;
   letter-spacing: 0px;
-  padding-top: 82px;
+  padding-top: 108px;
   text-align: center;
 }
 
@@ -306,7 +309,7 @@ body > .hidden,
   grid-gap: 15px 18px;
   grid-template: auto / 6px 128px auto 14px;
   letter-spacing: 0;
-  padding-top: 52px;
+  padding-top: 108px;
 }
 
 .heart > div {
