@@ -26,7 +26,7 @@ The latest official **installers** and **portable versions** for macOS, Windows,
 
 ### macOS
 
-You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew cask install stretchly`. When upgrading, run `brew update && brew cask upgrade`.
+You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew cask install stretchly`. When upgrading, run `brew update && brew upgrade --cask`.
 
  *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 
