@@ -48,7 +48,8 @@
       "monitorIdleTime": "Sledovat neaktivitu (přestávky jsou během vaší neaktivity přerušeny)",
       "monitorDnd": "Zobrazovat přestávky i během režimu Nerušit",
       "language": "Vyberte jazyk:",
-      "restoreDefaults": "Obnovit původní nastavení"
+      "restoreDefaults": "Obnovit původní nastavení",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Mini Přestávky:",

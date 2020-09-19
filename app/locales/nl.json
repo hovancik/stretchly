@@ -48,7 +48,8 @@
       "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen word gepauzeerd als het systeem inactief is)",
       "monitorDnd": "Toon pauzes in Niet Storen modus",
       "language": "Selecteer taal:",
-      "restoreDefaults": "Standaardinstellingen herstellen"
+      "restoreDefaults": "Standaardinstellingen herstellen",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Mini Pauzes:",

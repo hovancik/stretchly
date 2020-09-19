@@ -48,7 +48,8 @@
       "monitorIdleTime": "Surveiller les périodes d'inactivité (le décompte des pauses s'arrêtera si le système est inactif)",
       "monitorDnd": "Afficher les pauses même en mode « Ne pas déranger »",
       "language": "Choisissez votre langue :",
-      "restoreDefaults": "Réinitialiser"
+      "restoreDefaults": "Réinitialiser",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Petites pauses :",

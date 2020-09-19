@@ -48,7 +48,8 @@
       "monitorIdleTime": "监控系统的闲置时间(系统闲置时暂时计时)",
       "monitorDnd": "若处于「勿扰」模式，仍显示休息画面",
       "language": "选择语言：",
-      "restoreDefaults": "还原至预设配置"
+      "restoreDefaults": "还原至预设配置",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "小憩:",

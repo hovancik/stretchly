@@ -48,7 +48,8 @@
       "monitorIdleTime": "Távollét naplózása (a visszaszámlálás szüneteltetve lesz, amíg távol vagy a számítógéptől)",
       "monitorDnd": "Szünetek megjelenítése Ne Zavarjanak Módban is",
       "language": "Nyelv kiválasztása:",
-      "restoreDefaults": "Alapértelmezések visszaállítása"
+      "restoreDefaults": "Alapértelmezések visszaállítása",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Rövid szünetek:",

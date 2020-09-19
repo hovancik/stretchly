@@ -48,7 +48,8 @@
       "monitorIdleTime": "Övervaka systemets vilotid (nedräkning pausas om systemet är inaktivt)",
       "monitorDnd": "Visa pauser även i läget Stör inte",
       "language": "Välj språk:",
-      "restoreDefaults": "Återställ till standardvärden"
+      "restoreDefaults": "Återställ till standardvärden",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Kortpaus:",

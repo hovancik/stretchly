@@ -48,7 +48,8 @@
       "monitorIdleTime": "Abwesenheit vom System überwachen (Zeit wird angehalten, wenn das System inaktiv ist)",
       "monitorDnd": "Pausen auch bei 'Nicht stöhren' anzeigen",
       "language": "Sprache auswählen:",
-      "restoreDefaults": "Standardeinstellungen wiederherstellen"
+      "restoreDefaults": "Standardeinstellungen wiederherstellen",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Mini Pausen:",

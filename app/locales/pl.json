@@ -48,7 +48,8 @@
       "monitorIdleTime": "Monitoruj nieaktywność systemu (odliczanie jest wstrzymane gdy brak aktywności)",
       "monitorDnd": "Pokaż przerwy nawet w trybie Nie przeszkadzać",
       "language": "Wybierz język:",
-      "restoreDefaults": "Przywróć domyślne"
+      "restoreDefaults": "Przywróć domyślne",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Mikroprzerwy:",

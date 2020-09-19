@@ -48,7 +48,8 @@
       "monitorIdleTime": "O monitor do ssistema está inativo (a contagem para se o sistema está inativo)",
       "monitorDnd": "Mostrar pausas mesmo quando no modo Não Perturbe",
       "language": "Selecionar idioma:",
-      "restoreDefaults": "Restaurar padrões"
+      "restoreDefaults": "Restaurar padrões",
+      "displayOnSystemTray": "Display On System Tray"
     },
     "schedule": {
       "miniBreaks": "Mini Pausas:",

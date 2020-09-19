@@ -700,6 +700,12 @@ function createPreferencesWindow () {
 function updateTray () {
   updateToolTip()
   appIcon.setImage(trayIconPath())
+  if(settings.get('displayOnSystemTray') === true){
+    appIcon.setTitle(Utils.formatShortTimeRemaining(breakPlanner.scheduler.timeLeft))
+  }else{
+    appIcon.setTitle('')
+  }
+
   appIcon.setContextMenu(getTrayMenu())
 }
 
