@@ -76,13 +76,10 @@ function formatShortTimeRemaining (milliseconds) {
   if (hours >= 1) {
     availableTime.push(hours)
     availableTime.push(minutes)
-    availableTime.push(seconds % 60)
   } else if (minutes >= 1) {
     availableTime.push(minutes)
-    availableTime.push(seconds % 60)
-  } else {
-    availableTime.push(seconds % 60)
   }
+  availableTime.push(seconds % 60)
   return availableTime.map(format).join(':')
 }
 
