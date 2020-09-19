@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Nepali translations
+
 ## [1.1.0] - 2020-09-12
 
 ### Added
