@@ -49,7 +49,9 @@
       "monitorDnd": "Pausen auch bei 'Nicht stöhren' anzeigen",
       "language": "Sprache auswählen:",
       "restoreDefaults": "Standardeinstellungen wiederherstellen",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Mini Pausen:",

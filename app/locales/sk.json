@@ -49,7 +49,9 @@
       "monitorDnd": "Ukázať prestávky aj počas režimu Nerušiť",
       "language": "Vyberte jazyk:",
       "restoreDefaults": "Obnoviť pôvodné nastavenia",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Mini Prestávky:",

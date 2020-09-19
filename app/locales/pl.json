@@ -49,7 +49,9 @@
       "monitorDnd": "Pokaż przerwy nawet w trybie Nie przeszkadzać",
       "language": "Wybierz język:",
       "restoreDefaults": "Przywróć domyślne",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Mikroprzerwy:",

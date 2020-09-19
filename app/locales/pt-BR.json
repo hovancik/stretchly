@@ -49,7 +49,9 @@
       "monitorDnd": "Mostrar pausas mesmo quando no modo Não Perturbe",
       "language": "Selecionar idioma:",
       "restoreDefaults": "Restaurar padrões",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Mini Pausas:",

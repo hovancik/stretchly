@@ -49,7 +49,9 @@
       "monitorDnd": "Toon pauzes in Niet Storen modus",
       "language": "Selecteer taal:",
       "restoreDefaults": "Standaardinstellingen herstellen",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Mini Pauzes:",

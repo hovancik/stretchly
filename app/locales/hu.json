@@ -49,7 +49,9 @@
       "monitorDnd": "Szünetek megjelenítése Ne Zavarjanak Módban is",
       "language": "Nyelv kiválasztása:",
       "restoreDefaults": "Alapértelmezések visszaállítása",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Rövid szünetek:",

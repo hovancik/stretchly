@@ -201,7 +201,7 @@ function displaysHeight (displayID = -1) {
 function createTrayIcon () {
   appIcon = new Tray(trayIconPath())
   updateTray()
-  setInterval(updateTray, 10000)
+  setInterval(updateTray, settings.get('refreshRate') ?? 10000)
 }
 
 function trayIconPath () {

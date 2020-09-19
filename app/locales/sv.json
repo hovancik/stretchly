@@ -49,7 +49,9 @@
       "monitorDnd": "Visa pauser även i läget Stör inte",
       "language": "Välj språk:",
       "restoreDefaults": "Återställ till standardvärden",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Kortpaus:",

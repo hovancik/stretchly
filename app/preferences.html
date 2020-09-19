@@ -79,6 +79,35 @@
         <hr/>
       </div>
       <div>
+        <label data-i18next="preferences.settings.refreshRate" data-same-width-label for="refreshRate"></label>
+        <input type="range" min="1" max="600" step="10" list="refreshRate" name="refreshRate" data-divisor="1000" id="refreshRate">
+        <datalist id="refreshRate">
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+          <option value="80"></option>
+          <option value="120"></option>
+          <option value="180"></option>
+          <option value="240"></option>
+          <option value="300"></option>
+          <option value="360"></option>
+          <option value="420"></option>
+          <option value="480"></option>
+          <option value="540"></option>
+          <option value="600"></option>
+        </datalist>
+        <output data-unit="seconds"></output>
+      </div>
+      <div>
+        <label data-i18next="preferences.settings.refreshRateHowTo" data-same-width-label for="refreshRate"></label>
+      </div>
+      <div>
+        <hr/>
+      </div>
+      <div>
         <label data-i18next="preferences.settings.language" for="language"></label>
         <div class="has-select">
           <select name="language" id="language">

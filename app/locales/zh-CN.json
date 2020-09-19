@@ -49,7 +49,9 @@
       "monitorDnd": "若处于「勿扰」模式，仍显示休息画面",
       "language": "选择语言：",
       "restoreDefaults": "还原至预设配置",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "小憩:",

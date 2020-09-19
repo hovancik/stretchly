@@ -48,7 +48,9 @@
       "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
       "monitorDnd": "Show breaks even in Do Not Disturb mode",
       "language": "Select langauge:",
-      "displayOnSystemTray": "Display On System Tray"
+      "displayOnSystemTray": "Display On System Tray",
+      "refreshRate": "Refresh Rate: ",
+      "refreshRateHowTo": "Please restart application to apply refresh rate."
     },
     "schedule": {
       "miniBreaks": "Mini Breaks:",
