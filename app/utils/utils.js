@@ -79,8 +79,12 @@ function formatShortTimeRemaining (milliseconds) {
   } else if (minutes >= 1) {
     availableTime.push(minutes)
   }
-  availableTime.push(seconds % 60)
-  return availableTime.map(format).join(':')
+  
+  if (seconds < 60) {
+    availableTime.push(seconds % 60)
+    return availableTime.map(format).join(':')
+  } 
+  return 'Unknown Time'
 }
 
 module.exports = {
