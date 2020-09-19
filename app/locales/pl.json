@@ -88,7 +88,12 @@
       "menubarIcon": "Ikona w pasku:",
       "colour": "Kolorowa",
       "monochrome": "Monochromatyczna",
-      "invertedMonochrome": "Odwrócona monochromatyczna"
+      "invertedMonochrome": "Odwrócona monochromatyczna",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "Przerwo-przypominajka",

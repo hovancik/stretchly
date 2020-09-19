@@ -88,7 +88,12 @@
       "menubarIcon": "通知栏图标：",
       "colour": "彩色",
       "monochrome": "单色",
-      "invertedMonochrome": "灰度"
+      "invertedMonochrome": "灰度",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "休息提醒应用",

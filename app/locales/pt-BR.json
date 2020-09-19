@@ -88,7 +88,12 @@
       "menubarIcon": "Ícone da barra de menus:",
       "colour": "Cor",
       "monochrome": "Monocromático",
-      "invertedMonochrome": "Monocromático invertido"
+      "invertedMonochrome": "Monocromático invertido",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "Aplicativo para lembrá-lo de fazer pausas",

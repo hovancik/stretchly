@@ -87,7 +87,12 @@
       "menubarIcon": "Menubar icon:",
       "colour": "Colour",
       "monochrome": "Monochrome",
-      "invertedMonochrome": "Inverted Monochrome"
+      "invertedMonochrome": "Inverted Monochrome",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "विराम समय अनुस्मारक एप्लिकेशन",

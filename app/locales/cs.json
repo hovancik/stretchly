@@ -88,7 +88,12 @@
       "menubarIcon": "Ikonka:",
       "colour": "Barevná",
       "monochrome": "Černobílá",
-      "invertedMonochrome": "Převrácená černobílá"
+      "invertedMonochrome": "Převrácená černobílá",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "Pamatuje na přestávky za vás",

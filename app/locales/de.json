@@ -88,7 +88,12 @@
       "menubarIcon": "Symbol in Menüleiste:",
       "colour": "Farbig",
       "monochrome": "Einfarbig",
-      "invertedMonochrome": "Einfarbig Invertiert"
+      "invertedMonochrome": "Einfarbig Invertiert",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "Die Pausenzeit Erinnerungs App",

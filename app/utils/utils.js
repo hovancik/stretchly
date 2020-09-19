@@ -83,7 +83,6 @@ function formatShortTimeRemaining (milliseconds) {
   } else {
     availableTime.push(seconds % 60)
   }
-
   return availableTime.map(format).join(':')
 }
 

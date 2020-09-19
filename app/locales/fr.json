@@ -88,7 +88,12 @@
       "menubarIcon": "Icône de la bar de menu :",
       "colour": "Couleur",
       "monochrome": "Monochrome",
-      "invertedMonochrome": "Monochrome inversé"
+      "invertedMonochrome": "Monochrome inversé",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "Application de rappel de pauses",

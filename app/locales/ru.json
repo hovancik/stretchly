@@ -88,7 +88,12 @@
       "menubarIcon": "Иконка в трее:",
       "colour": "Цветная",
       "monochrome": "Монохромная",
-      "invertedMonochrome": "Инвертированная монохромная"
+      "invertedMonochrome": "Инвертированная монохромная",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "напоминания о перерывах",

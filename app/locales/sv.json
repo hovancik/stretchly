@@ -88,7 +88,12 @@
       "menubarIcon": "Menyradsikon:",
       "colour": "Färg",
       "monochrome": "Svartvit",
-      "invertedMonochrome": "Inverterad svartvit"
+      "invertedMonochrome": "Inverterad svartvit",
+      "relaxNotification": "Relax Tone",
+      "notifyTingle":"Tingle",
+      "notifySystem": "System",
+      "notifyQuick": "Quick",
+      "spiritedAwayLofi": "Spirited Away Lofi"
     },
     "about": {
       "tagline": "Appen för paustidspåminnelse",
