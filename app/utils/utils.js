@@ -67,20 +67,20 @@ function formatKeyboardShortcut (keyboardShortcut) {
   return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
 }
 
-function formatShortTimeRemaining(milliseconds) {
+function formatShortTimeRemaining (milliseconds) {
   const seconds = Math.ceil(milliseconds / 1000.0)
   const format = val => `0${Math.floor(val)}`.slice(-2)
   const hours = seconds / 3600
   const minutes = (seconds % 3600) / 60
-  availableTime = new Array()
-  if (hours >= 1){
+  const availableTime = []
+  if (hours >= 1) {
     availableTime.push(hours)
     availableTime.push(minutes)
     availableTime.push(seconds % 60)
-  }else if (minutes >= 1){
+  } else if (minutes >= 1) {
     availableTime.push(minutes)
     availableTime.push(seconds % 60)
-  }else{
+  } else {
     availableTime.push(seconds % 60)
   }
 
@@ -93,5 +93,5 @@ module.exports = {
   canPostpone,
   canSkip,
   formatKeyboardShortcut,
-  formatShortTimeRemaining,
+  formatShortTimeRemaining
 }
