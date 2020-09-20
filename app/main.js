@@ -411,9 +411,11 @@ function startMicrobreak () {
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      setTimeout(() => {
-        microbreakWinLocal.center()
-      }, 0)
+      if (!settings.get('fullscreen')) {
+        setTimeout(() => {
+          microbreakWinLocal.center()
+        }, 0)
+      }
     })
 
     microbreakWinLocal.loadURL(modalPath)
@@ -526,9 +528,11 @@ function startBreak () {
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      setTimeout(() => {
-        breakWinLocal.center()
-      }, 0)
+      if (!settings.get('fullscreen')) {
+        setTimeout(() => {
+          breakWinLocal.center()
+        }, 0)
+      }
     })
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
