@@ -289,6 +289,7 @@ function createContributorSettingsWindow () {
     })
   }
 }
+
 function planVersionCheck (seconds = 1) {
   setTimeout(checkVersion, seconds * 1000)
 }
@@ -405,10 +406,11 @@ function startMicrobreak () {
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      microbreakWinLocal.setAlwaysOnTop(true)
     })
+
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('closed', () => {
         microbreakWinLocal = null
@@ -511,10 +513,10 @@ function startBreak () {
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      breakWinLocal.setAlwaysOnTop(true)
     })
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
+    breakWinLocal.setAlwaysOnTop(true, 'screen-saver')
     if (breakWinLocal) {
       breakWinLocal.on('closed', () => {
         breakWinLocal = null
