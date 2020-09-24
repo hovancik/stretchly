@@ -35,7 +35,7 @@ app.setAppUserModelId('net.hovancik.stretchly')
 
 global.shared = {
   isNewVersion: false,
-  isContributor: false
+  isContributor: true
 }
 
 const gotTheLock = app.requestSingleInstanceLock()
@@ -366,8 +366,8 @@ function startMicrobreak () {
     const { width, height } = theScreen.workAreaSize
 
     const windowOptions = {
-      width: Number.parseInt(width * 0.8),
-      height: Number.parseInt(height * 0.8),
+      width: Number.parseInt(width * settings.get('breakWindowWidth')),
+      height: Number.parseInt(height * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -483,8 +483,8 @@ function startBreak () {
     const { width, height } = theScreen.workAreaSize
 
     const windowOptions = {
-      width: Number.parseInt(width * 0.8),
-      height: Number.parseInt(height * 0.8),
+      width: Number.parseInt(width * settings.get('breakWindowWidth')),
+      height: Number.parseInt(height * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,

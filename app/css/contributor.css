@@ -75,14 +75,7 @@ body > div > :last-child {
   text-align: right;
 }
 
-.contributor-preferences > :nth-child(38) {
-  grid-column: 1/2;
-  grid-row: 31/32;
-  padding: 0 16px;
-  text-align: right;
-}
-
-.contributor-preferences > :nth-child(40) {
+.contributor-preferences > :nth-child(39) {
   grid-column: 1/2;
   grid-row: 32/33;
   padding: 0 16px;
@@ -91,7 +84,21 @@ body > div > :last-child {
 
 .contributor-preferences > :nth-child(43) {
   grid-column: 1/2;
-  grid-row: 34/35;
+  grid-row: 35/36;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.contributor-preferences > :nth-child(45) {
+  grid-column: 1/2;
+  grid-row: 36/37;
+  padding: 0 16px;
+  text-align: right;
+}
+
+.contributor-preferences > :nth-child(48) {
+  grid-column: 1/2;
+  grid-row: 38/39;
   padding: 0 16px;
   text-align: right;
 }
