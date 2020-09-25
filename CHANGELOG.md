@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Nepali translations
 
+### Fixed
+- fullscreen breaks (Windows)
+
 ## [1.1.0] - 2020-09-12
 
 ### Added
