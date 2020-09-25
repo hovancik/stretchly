@@ -35,7 +35,7 @@ app.setAppUserModelId('net.hovancik.stretchly')
 
 global.shared = {
   isNewVersion: false,
-  isContributor: true
+  isContributor: false
 }
 
 const gotTheLock = app.requestSingleInstanceLock()
