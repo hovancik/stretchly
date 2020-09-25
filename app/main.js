@@ -987,7 +987,7 @@ ipcMain.on('open-contributor-preferences', function (event) {
 })
 
 ipcMain.on('open-contributor-auth', function (event, provider) {
-  const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
+  const myStretchlyUrl = `http://127.0.0.1:4000/app/v1?provider=${provider}`
   const myStretchlyWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 800,
@@ -1002,4 +1002,8 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     }
   })
   myStretchlyWindow.loadURL(myStretchlyUrl)
+})
+
+ipcMain.handle('current-settings', (event) => {
+  return settings.data
 })

@@ -1,4 +1,5 @@
 const { remote, ipcRenderer, shell } = require('electron')
+const defaultSettings = require('./utils/defaultSettings')
 
 window.ElectronBridge = {
   // helloWorld () {
@@ -20,5 +21,16 @@ window.ElectronBridge = {
 
   stretchlyVersion () {
     return remote.app.getVersion()
+  },
+
+  defaultSettings () {
+    return defaultSettings
+  },
+
+  async currentSettings () {
+    const settings = await ipcRenderer.invoke('current-settings')
+    console.log(`settings ${settings}`)
+    return settings
   }
+
 }
