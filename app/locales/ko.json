@@ -7,7 +7,7 @@
     "downloadLatestVersion": "최신 버전 다운로드",
     "toBreak": "Long Break",
     "toMicrobreak": "Mini Break",
-    "skipToTheNext": "쉬는 시간 갖기",
+    "skipToTheNext": "다음 쉬는시간 으로",
     "resume": "시작",
     "pause": "일시 정지",
     "forHour": "한시간동안",
@@ -91,7 +91,7 @@
       "tagline": "쉬는 시간 알리미",
       "version": "Version ",
       "latestVersion": "Latest version ",
-      "notifyNewVersion":"Automatically notify on app updates",
+      "notifyNewVersion": "Automatically notify on app updates",
       "learnMore": "To learn more about Stretchly features, view a tutorial, download the latest version or contact us for support, ",
       "ourWebsite": "visit our website",
       "dot": ".",
@@ -167,8 +167,8 @@
     "newVersionAvailable": "새로운 버전이 나왔어요!"
   },
   "welcome": {
-    "title": "Stretchly에 온것을 환영합니다",
-    "breakTimeReminderApp": "쉬는 시간 알리미",
+    "title": "Stretchly에 오신것을 환영합니다",
+    "breakTimeReminderApp": "쉬는 시간 알림이",
     "viewTutorial": "View Tutorial",
     "openPreferences": "Open Preferences",
     "getStarted": "Get Started"
