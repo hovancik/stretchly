@@ -359,15 +359,10 @@ function startMicrobreak () {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
-  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    const electron = require('electron')
-    const screens = electron.screen.getAllDisplays()
-    const theScreen = screens[displayIdx]
-    const { width, height } = theScreen.workAreaSize
-
+  for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
-      width: Number.parseInt(width * settings.get('breakWindowWidth')),
-      height: Number.parseInt(height * settings.get('breakWindowHeight')),
+      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -385,13 +380,13 @@ function startMicrobreak () {
     }
 
     if (settings.get('fullscreen') && process.platform !== 'darwin') {
-      windowOptions.width = displaysWidth(displayIdx)
-      windowOptions.height = displaysHeight(displayIdx)
-      windowOptions.x = displaysX(displayIdx, 0, true)
-      windowOptions.y = displaysY(displayIdx, 0, true)
+      windowOptions.width = displaysWidth(localDisplayId)
+      windowOptions.height = displaysHeight(localDisplayId)
+      windowOptions.x = displaysX(localDisplayId, 0, true)
+      windowOptions.y = displaysY(localDisplayId, 0, true)
     } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(displayIdx)
-      windowOptions.y = displaysY(displayIdx)
+      windowOptions.x = displaysX(localDisplayId)
+      windowOptions.y = displaysY(localDisplayId)
     }
 
     let microbreakWinLocal = new BrowserWindow(windowOptions)
@@ -400,11 +395,11 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
-      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
+      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         microbreakWinLocal.setKiosk(settings.get('fullscreen'))
       }
-      if (displayIdx === 0) {
+      if (localDisplayId === 0) {
         breakPlanner.emit('microbreakStarted', true)
         log.info('Stretchly: starting Mini Break')
       }
@@ -476,15 +471,10 @@ function startBreak () {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
-  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
-    const electron = require('electron')
-    const screens = electron.screen.getAllDisplays()
-    const theScreen = screens[displayIdx]
-    const { width, height } = theScreen.workAreaSize
-
+  for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
-      width: Number.parseInt(width * settings.get('breakWindowWidth')),
-      height: Number.parseInt(height * settings.get('breakWindowHeight')),
+      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -502,13 +492,13 @@ function startBreak () {
     }
 
     if (settings.get('fullscreen') && process.platform !== 'darwin') {
-      windowOptions.width = displaysWidth(displayIdx)
-      windowOptions.height = displaysHeight(displayIdx)
-      windowOptions.x = displaysX(displayIdx, 0, true)
-      windowOptions.y = displaysY(displayIdx, 0, true)
+      windowOptions.width = displaysWidth(localDisplayId)
+      windowOptions.height = displaysHeight(localDisplayId)
+      windowOptions.x = displaysX(localDisplayId, 0, true)
+      windowOptions.y = displaysY(localDisplayId, 0, true)
     } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(displayIdx)
-      windowOptions.y = displaysY(displayIdx)
+      windowOptions.x = displaysX(localDisplayId)
+      windowOptions.y = displaysY(localDisplayId)
     }
 
     let breakWinLocal = new BrowserWindow(windowOptions)
@@ -517,11 +507,11 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
-      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
+      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         breakWinLocal.setKiosk(settings.get('fullscreen'))
       }
-      if (displayIdx === 0) {
+      if (localDisplayId === 0) {
         breakPlanner.emit('breakStarted', true)
         log.info('Stretchly: starting Mini Break')
       }
