@@ -289,6 +289,7 @@ function createContributorSettingsWindow () {
     })
   }
 }
+
 function planVersionCheck (seconds = 1) {
   setTimeout(checkVersion, seconds * 1000)
 }
@@ -358,10 +359,10 @@ function startMicrobreak () {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
-  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
+  for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
-      width: 800,
-      height: 600,
+      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -379,13 +380,13 @@ function startMicrobreak () {
     }
 
     if (settings.get('fullscreen') && process.platform !== 'darwin') {
-      windowOptions.width = displaysWidth(displayIdx)
-      windowOptions.height = displaysHeight(displayIdx)
-      windowOptions.x = displaysX(displayIdx, 0, true)
-      windowOptions.y = displaysY(displayIdx, 0, true)
+      windowOptions.width = displaysWidth(localDisplayId)
+      windowOptions.height = displaysHeight(localDisplayId)
+      windowOptions.x = displaysX(localDisplayId, 0, true)
+      windowOptions.y = displaysY(localDisplayId, 0, true)
     } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(displayIdx)
-      windowOptions.y = displaysY(displayIdx)
+      windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
+      windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
     }
 
     let microbreakWinLocal = new BrowserWindow(windowOptions)
@@ -394,21 +395,27 @@ function startMicrobreak () {
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       microbreakWinLocal.showInactive()
-      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
+      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         microbreakWinLocal.setKiosk(settings.get('fullscreen'))
       }
-      if (displayIdx === 0) {
+      if (localDisplayId === 0) {
         breakPlanner.emit('microbreakStarted', true)
         log.info('Stretchly: starting Mini Break')
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      microbreakWinLocal.setAlwaysOnTop(true)
+      if (!settings.get('fullscreen') && process.platform !== 'darwin') {
+        setTimeout(() => {
+          microbreakWinLocal.center()
+        }, 0)
+      }
     })
+
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('closed', () => {
         microbreakWinLocal = null
@@ -464,10 +471,10 @@ function startBreak () {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
-  for (let displayIdx = 0; displayIdx < numberOfDisplays(); displayIdx++) {
+  for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
-      width: 800,
-      height: 600,
+      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -485,13 +492,13 @@ function startBreak () {
     }
 
     if (settings.get('fullscreen') && process.platform !== 'darwin') {
-      windowOptions.width = displaysWidth(displayIdx)
-      windowOptions.height = displaysHeight(displayIdx)
-      windowOptions.x = displaysX(displayIdx, 0, true)
-      windowOptions.y = displaysY(displayIdx, 0, true)
+      windowOptions.width = displaysWidth(localDisplayId)
+      windowOptions.height = displaysHeight(localDisplayId)
+      windowOptions.x = displaysX(localDisplayId, 0, true)
+      windowOptions.y = displaysY(localDisplayId, 0, true)
     } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(displayIdx)
-      windowOptions.y = displaysY(displayIdx)
+      windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
+      windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
     }
 
     let breakWinLocal = new BrowserWindow(windowOptions)
@@ -500,21 +507,26 @@ function startBreak () {
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
-      log.info(`Stretchly: showing window ${displayIdx + 1} of ${numberOfDisplays()}`)
+      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         breakWinLocal.setKiosk(settings.get('fullscreen'))
       }
-      if (displayIdx === 0) {
+      if (localDisplayId === 0) {
         breakPlanner.emit('breakStarted', true)
         log.info('Stretchly: starting Mini Break')
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      breakWinLocal.setAlwaysOnTop(true)
+      if (!settings.get('fullscreen') && process.platform !== 'darwin') {
+        setTimeout(() => {
+          breakWinLocal.center()
+        }, 0)
+      }
     })
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
+    breakWinLocal.setAlwaysOnTop(true, 'screen-saver')
     if (breakWinLocal) {
       breakWinLocal.on('closed', () => {
         breakWinLocal = null

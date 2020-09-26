@@ -1,5 +1,4 @@
 # Change Log
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
@@ -8,17 +7,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
-
 - Nepali translations
 
-### Changed
+### Fixed
+- fullscreen breaks (Windows)
 
-- updated Korean translations
+### Changed
+- break window size is now dynamic (relative to screen size)
+- updated Korean translation
 
 ## [1.1.0] - 2020-09-12
 
 ### Added
-
 - show Contributor Settings in tray menu for Contributors
 - breaks are paused if the Windows 10 Focus Assist mode is enabled
 - added log file for debug
@@ -26,7 +26,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - users can choose the opacity value for the transparent theme in the Contributor Preferences
 
 ### Changed
-
 - updated German translation
 - updated Polish translation
 - updated Chinese translations
@@ -36,7 +35,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2020-07-18
 
 ### Added
-
 - apk package format
 - added Hungarian translation
 - added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
@@ -47,7 +45,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - new Icon
 
 ### Changed
-
 - changed app name from `stretchly` to `Stretchly`
   - this might change location of preferences file, so you might need to set up your preferences again or copy the file
 - don't hide dock icon on macOS
@@ -58,35 +55,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - default icon to colorful
 
 ### Fixed
-
 - adds workaround for electron's Linux/Windows fullscreen issues
 - notify of new version only if new version is higher then current
 
 ### Removed
-
 - removed tutorial, now linking to Features webpage
 
 ## [0.99.5] - 2020-07-04
-
 ### Added
-
 - apk package format
 - Added Hungarian translation
 - Added ability to change the keyboard shortcuts for Skip/Postpone breaks via config.json
 
 ### Changed
-
 - don't hide dock icon on macOS
 - Updated translations
 
 ## Fixed
-
 - adds workaround for electron's Linux/Windows fullscreen issues
 
 ## [0.99.4] - 2020-05-15
-
 ### Fixed
-
 - checkbox across macOS, Windows, Linux
 - maximum window size of Preferences
 - updated translation files
@@ -94,35 +83,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - small style issues
 
 ### Added
-
 - snap package build
 
 ## [0.99.3] - 2020-05-05
-
 ### Fixed
-
 - multi-line status messages in Tray (Mac, Windows)
 
 ### Added
-
 - show Paused icon when Breaks are paused in Natural breaks mode
 - show Paused icon when Breaks are paused in Do Not Disturb mode
 - Dark mode for interface
 - Contributor settings to set Dark/Light/System mode for color mode
 
 ### Changed
-
 - changed app name from `stretchly` to `Stretchly`
   - this will change location of preferences file, so you will need to set up your preferences again or copy the file
 
 ## [0.99.2] - 2020-04-27
-
 ### Removed
-
 - old About window
 
 ### Changed
-
 - better style for progress
 - rework Contributor preferences
 - reworked tray menu
@@ -130,58 +111,44 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - better format remaining time
 
 ## [0.99.1] - 2020-04-09
-
 ### Changed
-
 - restyle Welcome window
 - replace Build, Window and Tray icons and images
 - better styling for Breaks and countdown
 
 ### Removed
-
 - removed tutorial, now linking to Features webpage
 
 ### Fixed
-
 - Adds missing Postpone preferences
 
 ## [0.99.0] - 2020-03-19
-
 ### Changed
-
 - default icon is colorful
 - restyle break windows
 - restyle Preferences window
 
 ### Added
-
 - new break ideas
 
 ### Fixed
-
 - notify of new version only if new version is higher then current
 
 ## [0.21.1] - 2020-01-16
-
 ### Changed
-
 - Italian translations updated
 - break window is shown on all Workspaces in macOS
 - Improved readability of English text
 
 ### Added
-
 - user can set volume for break sounds (set via Settings file or Contributor's settings)
 - user can set time after which breaks are paused in Natural Break (set via Settings file or Contributor's settings)
 
 ### Fixed
-
 - texts appearing on top of each other in Settings for Chinese
 
 ## [0.21.0] - 2019-10-13
-
 ### Changed
-
 - checkbox labels are clickable as well
 - tray menu link for update to website, instead of github
 - Chinese (Taiwan) translations updated
@@ -195,11 +162,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Dutch translations updated
 
 ### Fixed
-
 - Ctrl+X global shortcut not being released after `Reset breaks` and `Skip to`
 
 ### Added
-
 - new break ideas
 - pause breaks when screen is locked (Windows, macOS)
 - change tray icon when stretchly is paused
@@ -207,34 +172,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Danish translations
 
 ## [0.20.1] - 2019-07-14
-
 ### Added
-
 - clicking on settings file location will open it
 - ability to copy debug info to clipboard
 - Added Lithuanian language
 
 ### Fixed
-
 - auto hide menu bar in app's windows
 - break window not always shown on top of other windows (for Windows OS)
 
 ## [0.20.0] - 2019-07-02
-
 ### Fixed
-
 - workaround multiple screens and fullscreen (macOS)
 - tray icon size on Linux
 - problem with Window missing when resetting settings to defaults
 
 ### Changed
-
 - update icons and graphic materials
 - Turkish translations updated
 - Hindi translations updated
 
 ### Added
-
 - Korean translations
 - more break and microbreak ideas
 - more settings in Contributor's settings
@@ -242,38 +200,30 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - start a break/microbreak with a sound (set via config file or Contributor's settings)
 
 ## [0.19.1] - 2019-02-17
-
 ### Fixed
-
 - fullscreen mode on Windows
 - ability to hide break ideas from break windows
 
 ### Added
-
 - more debug info (chrome, electron, nodejs versions)
 - allow user to disable ability to postpone breaks
 
 ### Changed
-
 - Simplified Chinese translations updated
 - Czech translations updated
 - Slovak translations updated
 
 ## [0.19.0] - 2019-02-10
-
 ### Changed
-
 - upper limit of microbreak duration set to 900 seconds (15 minutes)
 - Italian translations updated
 - Russian translations updated
 - Bulgarian translations updated
 
 ### Fixed
-
 - disabled resizing for some windows
 
 ### Added
-
 - Swedish translations
 - Turkish translations
 - silent notifications option
@@ -283,9 +233,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - stretchly supporters can access extra settings
 
 ## [0.18.0] - 2018-10-21
-
 ### Added
-
 - Italian translations for interface
 - Dutch translations for interface
 - Welcome and Tutorial windows on first run and in About window
@@ -294,7 +242,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - ability can change the default monochrome tray icon to colorful
 
 ### Fixed
-
 - User pause will no longer be removed upon suspend/resume
 - User pause time will be corrected upon suspend/resume for the duration
   of system sleep
@@ -302,48 +249,37 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - blocking of all workspaces on macOS
 
 ### Changed
-
 - Czech translations updated
 - Slovak translations updated
 - default tray icon is now monochrome
 
 ## [0.17.0] - 2018-05-06
-
 ### Added
-
 - Ukrainian translations for interface
 - Spanish translations for interface
 - Romanian translations for interface
 
 ### Changed
-
 - upper limit of microbreak duration set to 300 seconds (5 minutes)
 
 ### Fixed
-
 - closes running break window when skipping to the another one
 - download link from github's releases to hovancik.net/stretchly/downloads
 
 ## [0.16.0] - 2018-03-17
-
 ### Added
-
 - Russian translations for interface
 - Ability to pause until morning
 
 ### Changed
-
 - upper limit of microbreak duration set to 60 seconds
 - download link from github's releases to hovancik.net/stretchly/downloads
 
 ### Fixed
-
 - notifications not working on latest Windows 10
 
 ## [0.15.0] - 2018-02-18
-
 ### Added
-
 - Bulgarian translations for interface
 - Brazilian Portuguese translations for interface
 - Chinese translations for interface, distinguish between two kinds of Chinese
@@ -355,133 +291,103 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hindi Translations for interface
 
 ### Fixed
-
 - style for long names of schemes
 - app not starting when both break types are disabled
 - missing "reset to defaults"
 
 ## [0.14.0] - 2018-01-07
-
 ### Fixed
-
 - make sure windows offset is integer
 - minor translations issues
 - macOS fullscreen mode
 
 ### Added
-
 - allows user to not show new version notification via config file
 - Czech translations for interface
 - Chinese translations for interface
 - German translations for interface
 
 ### Changed
-
 - texts in windows are not selectable (except debug info)
 
 ## [0.13.0] - 2017-12-20
-
 ### Added
-
 - icons for app windows
 - possibility to have interface translated
 - Slovak translations for interface
 - French translations for interface
 
 ## [0.12.0] - 2017-11-05
-
 ### Fixed
-
 - error with second instance on Windows
 - breaks wont resume with indefinite pause after system resume
 
 ### Added
-
-- monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, _stretchly_ will reset breaks)
+- monitoring of system idle time for natural breaks (when user leaves and after return idle time is greater then break duration, *stretchly* will reset breaks)
 - menu link to Patreon
 
 ### Changed
-
 - microbreak notifications are 10 seconds before and can be disabled
 
 ## [0.11.0] - 2017-09-09
-
 ### Added
-
 - option to not show break ideas
 - option to show notification 30 seconds before break starts
 
 ## [0.10.0] - 2017-08-18
-
 ### Added
-
 - `Ctrl/Cmd + d` shortcut in About window to show debug information
 - monitoring suspend/resume (alfa, electron has bugs)
 - link to my.stretchly.net in menu
 
 ### Fixed
-
 - break is not skippable via shortcut in strict mode
 - macOS tooltip works without dock icon (after packaging)
 - close break windows on `Reset breaks`
 
 ### Changed
-
 - rewrite break management using Events
 - get active settings when changing Settings window pages
 
 ## [0.9.0] - 2017-05-17
-
 ### Added
-
 - Tooltip shows information about:
   - time left till next (micro)break
   - time left in pause till breaks resume
   - number of microbreaks until next break
 
 ### Fixed
-
 - version checker erroneous 'a new version is available' messages
 - Run breaks after resetting breaks
 - Scheduler timeLeft based on actual setTimeout start time
 
 ### Changed
-
 - do not play sound on Pause when break is in progress
 - cosmetic style changes
 - do not hide macOS dock icon, so we can have tray tooltip
 
 ### Known issues
-
 - tray tooltip does not work correctly on macOS
 
 ## [0.8.1] - 2017-04-15
-
 ### Fixed
-
 - trying to close non-existing window
 - after break ends, focus is brought on last window (macOS)
 
 ### Changed
-
 - break windows are not focusable
 - do not show break windows in taskbar
 
 ## [0.8.0] - 2017-04-09
-
 ### Added
-
 - `Ctrl/Cmd + x` shortcut to finish break early (when not in strict mode)
 - time remaining and progress bar in break window
 
 ### Fixed
-
 - disallow drag and drop in windows to prevent errors
 
 ## [0.7.0] - 2017-03-07
-
 ### Changed
-
 - app windows are shown on the monitor where the mouse is (Windows, macOS, some Linux DEs)
 - reminders can be full screen
 - About and Settings windows are not resizable and not always on top
@@ -489,57 +395,42 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - replaced `splash of cappuccino` with `graphite crystal` theme
 
 ### Added
-
 - monochrome icon for macOS (also @2x)
 
 ### Removed
-
 - Settings window notification
 - Startup window
 
 ## [0.6.0] - 2017-01-21
-
 ### Added
-
 - possibility to change break/microbreak ideas via editing config file
 
 ### Changed
-
 - break window is shown when it's ready
 
 ## [0.5.1] - 2016-12-05
-
 ### Fixed
-
 - some grammar
 
 ### Added
-
 - more break ideas
 
 ## [0.5.0] - 2016-11-28
-
 ### Added
-
 - strict mode - breaks/microbreaks can't be finished early
 - build for ia32 and x64
 
 ### Fixed
-
 - wrong window placement when on Linux and more displays
 
 ## [0.4.0] - 2016-11-05
-
 ### Fixed
-
 - version check when offline
 
 ### Changed
-
 - settings window split into 2
 
 ### Added
-
 - longer breaks
 - enable/disable microbreaks and breaks
 - skip to next break/microbreak anytime from menu
@@ -549,37 +440,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - reset (restart) breaks from menu
 
 ## [0.3.0] - 2016-10-15
-
 ### Added
-
 - possibility to pause reminders for different times
 - autostart for Windows and macOS
 - check for the latest version on About page, on app start
 - remind new version via notification and tray menu
 
 ## [0.2.1] - 2016-10-10
-
 ### Fixed
-
 - double init of event listeners on settings page
 
 ## [0.2.0] - 2016-10-08
-
 ### Added
-
 - sounds at the end of microbreak
 - settings for sounds
 
 ## [0.1.1] - 2016-10-04
-
 ### Fixed
-
 - Linux builds and permissions
 
 ## [0.1.0] - 2016-09-26
-
 ### Added
-
 - update npm packages
 - rename strechly to stretchly (grammar, yay!)
 - allows only one instance of app
@@ -587,16 +468,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - 5 color scheme
 
 ## [0.0.1] - 2016-09-06
-
 ### Added
-
 - simple electron app with break reminder after 10 minutes
 - randomized reminders (without repetition)
 - startup window
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[unreleased]: https://github.com/hovancik/stretchly/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/hovancik/stretchly/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/hovancik/stretchly/compare/v0.99.5...v1.0.0
 [0.99.5]: https://github.com/hovancik/stretchly/compare/v0.99.4...v0.99.5

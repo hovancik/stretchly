@@ -31,6 +31,7 @@ class Settings {
 
   set (key, value) {
     this.data[key] = value
+    log.info(`Stretchly: setting ${key} to ${value}`)
     this._save()
   }
 
