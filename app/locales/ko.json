@@ -1,21 +1,21 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - 쉬는 시간 알림이",
+    "toolTipHeader": "Stretchly - 쉬는시간 알림이",
     "microbreakIn": "Mini Break in $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Long Break in $t(utils.seconds, {'count': {{seconds}} })",
-    "resumingBreaks": "쉬는 시간 마저 시작",
+    "resumingBreaks": "쉬는시간 마저 시작",
     "downloadLatestVersion": "최신 버전 다운로드",
     "toBreak": "Long Break",
     "toMicrobreak": "Mini Break",
     "skipToTheNext": "다음 쉬는시간 으로",
-    "resume": "시작",
-    "pause": "일시 정지",
+    "resume": "다시 시작",
+    "pause": "일시정지",
     "forHour": "한시간동안",
     "for2Hours": "두시간동안",
     "for5Hours": "다섯시간동안",
     "untilMorning": "아침까지",
     "indefinitely": "영원히",
-    "resetBreaks": "쉬는 시간 재설정",
+    "resetBreaks": "쉬는시간 재설정",
     "quitStretchly": "stretchly 나가기",
     "restoreDefaults": "Restore defaults",
     "warning": "This will restore app defaults and all your settings will be lost.",
@@ -88,7 +88,7 @@
       "invertedMonochrome": "Inverted Monochrome"
     },
     "about": {
-      "tagline": "쉬는 시간 알리미",
+      "tagline": "쉬는시간 알리미",
       "version": "Version ",
       "latestVersion": "Latest version ",
       "notifyNewVersion": "Automatically notify on app updates",
@@ -154,10 +154,10 @@
     "seconds_0": "{{count}}초",
     "minutes_0": "{{count}}분",
     "hours_0": "{{count}}시간",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) 남았습니다",
-    "aboutMinutesRemaining": "약 $t(utils.minutes, {'count': {{minutes}} }) 남았습니다",
-    "aboutHoursRemaining": "약 $t(utils.hours, {'count': {{hours}} }) 남았습니다",
-    "aboutHoursMinutesRemaining": "약 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) 남았습니다",
+    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) 남았어요",
+    "aboutMinutesRemaining": "약 $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
+    "aboutHoursRemaining": "약 $t(utils.hours, {'count': {{hours}} }) 남았어요",
+    "aboutHoursMinutesRemaining": "약 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
     "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) 후",
     "inAboutMinutes": "약 $t(utils.minutes, {'count': {{minutes}} }) 후",
     "inAboutHours": "약 $t(utils.hours, {'count': {{hours}} }) 후",
@@ -167,19 +167,19 @@
     "newVersionAvailable": "새로운 버전이 나왔어요!"
   },
   "welcome": {
-    "title": "Stretchly에 오신것을 환영합니다",
-    "breakTimeReminderApp": "쉬는 시간 알림이",
+    "title": "Stretchly에 오신것을 환영해요",
+    "breakTimeReminderApp": "쉬는시간 알림이",
     "viewTutorial": "View Tutorial",
     "openPreferences": "Open Preferences",
     "getStarted": "Get Started"
   },
   "statusMessages": {
-    "paused": "Paused",
+    "paused": "일시정지",
     "indefinitely": "Indefinitely",
     "dndMode": "Do Not Disturb is on",
-    "nextLongBreak": "다음 긴 휴식시간:",
-    "nextMiniBreak": "다음 짧은 휴식시간:",
-    "afterMiniBreak_0": "after {{count}} Mini Breaks",
-    "resuming": "Resuming"
+    "nextLongBreak": "다음 Long Break:",
+    "nextMiniBreak": "다음 Mini Break:",
+    "afterMiniBreak_0": "{{count}} Mini Breaks 후",
+    "resuming": "다시 시작:"
   }
 }
