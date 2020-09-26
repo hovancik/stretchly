@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - fullscreen breaks (Windows)
 
+### Changed
+- break window size is now dynamic (relative to screen size)
+
 ## [1.1.0] - 2020-09-12
 
 ### Added
