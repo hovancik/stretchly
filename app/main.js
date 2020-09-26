@@ -385,8 +385,8 @@ function startMicrobreak () {
       windowOptions.x = displaysX(localDisplayId, 0, true)
       windowOptions.y = displaysY(localDisplayId, 0, true)
     } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(localDisplayId)
-      windowOptions.y = displaysY(localDisplayId)
+      windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
+      windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
     }
 
     let microbreakWinLocal = new BrowserWindow(windowOptions)
@@ -406,7 +406,7 @@ function startMicrobreak () {
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      if (!settings.get('fullscreen')) {
+      if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           microbreakWinLocal.center()
         }, 0)
@@ -497,8 +497,8 @@ function startBreak () {
       windowOptions.x = displaysX(localDisplayId, 0, true)
       windowOptions.y = displaysY(localDisplayId, 0, true)
     } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(localDisplayId)
-      windowOptions.y = displaysY(localDisplayId)
+      windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
+      windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
     }
 
     let breakWinLocal = new BrowserWindow(windowOptions)
@@ -518,7 +518,7 @@ function startBreak () {
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
-      if (!settings.get('fullscreen')) {
+      if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           breakWinLocal.center()
         }, 0)
