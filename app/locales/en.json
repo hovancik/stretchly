@@ -133,7 +133,7 @@
     "welcomeWindow": "Welcome window:",
     "showWelcomeWindow": "Show Welcome window on next start",
     "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be ?",
+    "opacityInfo": "How solid should the break window be?",
     "opacity": "Opacity:",
     "breakWindowSize": "Break window size",
     "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
