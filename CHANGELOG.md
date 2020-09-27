@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - break window size is now dynamic (relative to screen size)
+- updated Korean translation
 
 ## [1.1.0] - 2020-09-12
 

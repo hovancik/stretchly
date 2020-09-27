@@ -259,6 +259,7 @@ Format as following:
 - mwoz123, [@mwoz123](https://github.com/mwoz123)
 - pramit-marattha, [@pramit-marattha](https://github.com/pramit-marattha)
 - Benedikt Allendorf, [@BenediktAllendorf](https://github.com/BenediktAllendorf)
+- Haechan Song, [@hcsong213](https://github.com/hcsong213)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
