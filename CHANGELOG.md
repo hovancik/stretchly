@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - fullscreen breaks (Windows)
+- downgraded Electron and disabled macOS dock icon to fix fullscreen issues
 
 ### Changed
 - break window size is now dynamic (relative to screen size)
