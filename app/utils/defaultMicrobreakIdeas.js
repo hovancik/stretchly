@@ -98,5 +98,13 @@ module.exports = [
   {
     data: 'Do one thing at a time.',
     enabled: true
+  },
+  {
+    data: 'Is your attention spent wisely?',
+    enabled: true
+  },
+  {
+    data: 'Change your sitting posture.',
+    enabled: true
   }
 ]

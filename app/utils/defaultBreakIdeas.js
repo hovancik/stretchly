@@ -110,5 +110,9 @@ module.exports = [
   {
     data: ['Lunch outside', 'Nature is linked to positive emotions and decreased stress and anxiety. Whenever possible, try to take your daily lunch break outside, surrounded by some greenery.'],
     enabled: true
+  },
+  {
+    data: ['Public Transport', 'If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling.'],
+    enabled: true
   }
 ]

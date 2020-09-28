@@ -5,9 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- new break ideas
 
 ### Changed
-- disallow "Reset breaks" when in break with Strick Mode 
+- disallow "Reset breaks" when in break with Strick Mode
 
 ## [1.1.99] - 2020-9-27 Patreon
 ### Added
