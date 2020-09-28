@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.99] - 2020-9-27 Patreon
 ### Added
 - Nepali translations
 
@@ -62,7 +63,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - removed tutorial, now linking to Features webpage
 
-## [0.99.5] - 2020-07-04
+## [0.99.5] - 2020-07-04 Patreon
 ### Added
 - apk package format
 - Added Hungarian translation
@@ -75,7 +76,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Fixed
 - adds workaround for electron's Linux/Windows fullscreen issues
 
-## [0.99.4] - 2020-05-15
+## [0.99.4] - 2020-05-15 Patreon
 ### Fixed
 - checkbox across macOS, Windows, Linux
 - maximum window size of Preferences
@@ -86,7 +87,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - snap package build
 
-## [0.99.3] - 2020-05-05
+## [0.99.3] - 2020-05-05 Patreon
 ### Fixed
 - multi-line status messages in Tray (Mac, Windows)
 
@@ -100,7 +101,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - changed app name from `stretchly` to `Stretchly`
   - this will change location of preferences file, so you will need to set up your preferences again or copy the file
 
-## [0.99.2] - 2020-04-27
+## [0.99.2] - 2020-04-27 Patreon
 ### Removed
 - old About window
 
@@ -111,7 +112,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - synchronized tray status messages (tooltip, menu)
 - better format remaining time
 
-## [0.99.1] - 2020-04-09
+## [0.99.1] - 2020-04-09 Patreon
 ### Changed
 - restyle Welcome window
 - replace Build, Window and Tray icons and images
@@ -123,7 +124,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Adds missing Postpone preferences
 
-## [0.99.0] - 2020-03-19
+## [0.99.0] - 2020-03-19 Patreon
 ### Changed
 - default icon is colorful
 - restyle break windows
