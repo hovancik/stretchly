@@ -22,7 +22,8 @@
         "continue": "जारी राख्नुहोस् ।",
         "cancel": "रद्द गर्नुहोस् ।",
         "preferences": "सेटिंग्स",
-        "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू"
+        "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू",
+        "syncPreferences": "Sync Preferences"
     },
     "break": {
         "postpone": "यस ब्रेकलाई स्थगित गर्नुहोस् ।",
@@ -106,7 +107,8 @@
             "becomePatron": "संरक्षक बन्नुहोस्",
             "alreadyContributor": "म पहिले नै एक योगदानकर्ता हुँ",
             "authenticateUsing": "प्रमाणित गर्नुहोस्, मार्फत:",
-            "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू"
+            "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू",
+            "syncPreferences": "Sync Preferences"
         }
     },
     "contributorPreferences": {

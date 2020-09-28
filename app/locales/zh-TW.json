@@ -22,7 +22,8 @@
         "continue": "繼續",
         "cancel": "取消",
         "preferences": "偏好設定",
-        "contributorPreferences": "貢獻者偏好設定"
+        "contributorPreferences": "貢獻者偏好設定",
+        "syncPreferences": "Sync Preferences"
     },
     "break": {
         "postpone": "延後此休息",
@@ -106,7 +107,8 @@
             "becomePatron": "成為捐助者",
             "alreadyContributor": "我已經是貢獻者了",
             "authenticateUsing": "身分核對方式：",
-            "contributorPreferences": "貢獻者偏好設定"
+            "contributorPreferences": "貢獻者偏好設定",
+            "syncPreferences": "Sync Preferences"
         }
     },
     "contributorPreferences": {

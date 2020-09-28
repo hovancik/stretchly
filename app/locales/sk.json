@@ -22,7 +22,8 @@
     "continue": "Pokračovať",
     "cancel": "Zrušiť",
     "preferences": "Nastavenia",
-    "contributorPreferences": "Nastavenia pre prispievateľov"
+    "contributorPreferences": "Nastavenia pre prispievateľov",
+    "syncPreferences": "Synchronizácia nastavení"
   },
   "break": {
     "postpone": "Posunúť prestávku na neskôr",
@@ -106,7 +107,8 @@
       "becomePatron": "Stante sa Patrónom",
       "alreadyContributor": "Už som prispel",
       "authenticateUsing": "Autentifikovať pomocou:",
-      "contributorPreferences": "Nastavenia pre prispievateľov"
+      "contributorPreferences": "Nastavenia pre prispievateľov",
+      "syncPreferences": "Synchronizácia nastavení"
     }
   },
   "contributorPreferences": {

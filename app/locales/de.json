@@ -22,7 +22,8 @@
     "continue": "Fortsetzen",
     "cancel": "Abbrechen",
     "preferences": "Einstellungen",
-    "contributorPreferences": "Einstellungen für Mitwirkende"
+    "contributorPreferences": "Einstellungen für Mitwirkende",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "Verschiebe diese Pause",
@@ -106,7 +107,8 @@
       "becomePatron": "Werde ein Patron",
       "alreadyContributor": "Ich bin bereits ein Mitwirkender",
       "authenticateUsing": "Authentifizierung durch:",
-      "contributorPreferences": "Einstellungen für Mitwirkende"
+      "contributorPreferences": "Einstellungen für Mitwirkende",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

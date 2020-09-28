@@ -22,7 +22,8 @@
     "continue": "Doorgaan",
     "cancel": "Annuleer",
     "preferences": "Instellingen",
-    "contributorPreferences": "Bijdrager Instellingen"
+    "contributorPreferences": "Bijdrager Instellingen",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "Deze pauze uitstellen",
@@ -106,7 +107,8 @@
       "becomePatron": "Word een Patron",
       "alreadyContributor": "Ik ben al een bijdrager",
       "authenticateUsing": "Authenticeren met:",
-      "contributorPreferences": "Bijdrager Instellingen"
+      "contributorPreferences": "Bijdrager Instellingen",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

@@ -28,9 +28,7 @@ window.ElectronBridge = {
   },
 
   async currentSettings () {
-    const settings = await ipcRenderer.invoke('current-settings')
-    console.log(`settings ${settings}`)
-    return settings
+    return await ipcRenderer.invoke('current-settings')
   }
 
 }

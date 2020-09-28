@@ -28,6 +28,8 @@ let breakWins = null
 let preferencesWin = null
 let welcomeWin = null
 let contributorPreferencesWindow = null
+let syncPreferencesWindow = null
+let myStretchlyWindow = null
 let settings
 let pausedForSuspendOrLock = false
 
@@ -289,6 +291,34 @@ function createContributorSettingsWindow () {
   if (contributorPreferencesWindow) {
     contributorPreferencesWindow.on('closed', () => {
       contributorPreferencesWindow = null
+    })
+  }
+}
+
+function createSyncPreferencesWindow () {
+  if (syncPreferencesWindow) {
+    syncPreferencesWindow.show()
+    return
+  }
+
+  const syncPreferencesUrl = 'http://127.0.0.1:4000/app/v1/sync'
+  syncPreferencesWindow = new BrowserWindow({
+    autoHideMenuBar: true,
+    width: 1000,
+    height: 600,
+    icon: windowIconPath(),
+    x: displaysX(),
+    y: displaysY(),
+    backgroundColor: 'whitesmoke',
+    webPreferences: {
+      preload: path.resolve(__dirname, './electron-bridge.js'),
+      nodeIntegration: false
+    }
+  })
+  syncPreferencesWindow.loadURL(syncPreferencesUrl)
+  if (syncPreferencesWindow) {
+    syncPreferencesWindow.on('closed', () => {
+      syncPreferencesWindow = null
     })
   }
 }
@@ -844,6 +874,11 @@ function getTrayMenu () {
       click: function () {
         createContributorSettingsWindow()
       }
+    }, {
+      label: i18next.t('main.syncPreferences'),
+      click: function () {
+        createSyncPreferencesWindow()
+      }
     })
   }
 
@@ -987,10 +1022,14 @@ ipcMain.on('open-contributor-preferences', function (event) {
 })
 
 ipcMain.on('open-contributor-auth', function (event, provider) {
+  if (myStretchlyWindow) {
+    myStretchlyWindow.show()
+    return
+  }
   const myStretchlyUrl = `http://127.0.0.1:4000/app/v1?provider=${provider}`
-  const myStretchlyWindow = new BrowserWindow({
+  myStretchlyWindow = new BrowserWindow({
     autoHideMenuBar: true,
-    width: 800,
+    width: 1000,
     height: 600,
     icon: windowIconPath(),
     x: displaysX(),
@@ -1002,6 +1041,15 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     }
   })
   myStretchlyWindow.loadURL(myStretchlyUrl)
+  if (myStretchlyWindow) {
+    myStretchlyWindow.on('closed', () => {
+      myStretchlyWindow = null
+    })
+  }
+})
+
+ipcMain.on('open-sync-preferences', function (event, provider) {
+  createSyncPreferencesWindow()
 })
 
 ipcMain.handle('current-settings', (event) => {

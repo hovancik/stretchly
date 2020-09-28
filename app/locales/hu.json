@@ -22,7 +22,8 @@
     "continue": "Folytatás",
     "cancel": "Mégsem",
     "preferences": "Beállítások",
-    "contributorPreferences": "Támogatói beállítások"
+    "contributorPreferences": "Támogatói beállítások",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "Szünet elhalasztása",
@@ -106,7 +107,8 @@
       "becomePatron": "Legyél támogató (Patreon)",
       "alreadyContributor": "Már támogató vagyok",
       "authenticateUsing": "Azonosítás a következővel:",
-      "contributorPreferences": "Támogatói beállítások"
+      "contributorPreferences": "Támogatói beállítások",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

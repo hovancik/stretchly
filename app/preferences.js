@@ -78,7 +78,9 @@ ipcRenderer.on('enableContributorPreferences', () => {
 })
 
 const showContributorPreferencesButton = () => {
-  document.querySelector('.contributor').classList.remove('hidden')
+  document.querySelectorAll('.contributor').forEach((item) => {
+    item.classList.remove('hidden')
+  })
   document.querySelectorAll('.become').forEach((item) => {
     item.classList.add('hidden')
   })
@@ -95,6 +97,11 @@ if (remote.getGlobal('shared').isContributor) {
 document.querySelector('[name="contributorPreferences"]').onclick = (event) => {
   event.preventDefault()
   ipcRenderer.send('open-contributor-preferences')
+}
+
+document.querySelector('[name="syncPreferences"]').onclick = (event) => {
+  event.preventDefault()
+  ipcRenderer.send('open-sync-preferences')
 }
 
 // TODO refactor out?
