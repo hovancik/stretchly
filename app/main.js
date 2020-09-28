@@ -817,7 +817,13 @@ function getTrayMenu () {
           }
         }
       ]
-    }, {
+    })
+  }
+
+  if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode')) {
+  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
+  } else {
+    trayMenu.push({
       label: i18next.t('main.resetBreaks'),
       click: resetBreaks
     })

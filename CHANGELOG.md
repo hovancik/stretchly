@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- disallow "Reset breaks" when in break with Strick Mode 
+
 ## [1.1.99] - 2020-9-27 Patreon
 ### Added
 - Nepali translations
