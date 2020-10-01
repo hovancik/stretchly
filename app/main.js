@@ -305,7 +305,7 @@ function createSyncPreferencesWindow () {
   syncPreferencesWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
-    height: 600,
+    height: 700,
     icon: windowIconPath(),
     x: displaysX(),
     y: displaysY(),
@@ -1030,7 +1030,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   myStretchlyWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
-    height: 600,
+    height: 700,
     icon: windowIconPath(),
     x: displaysX(),
     y: displaysY(),
@@ -1054,4 +1054,13 @@ ipcMain.on('open-sync-preferences', function (event, provider) {
 
 ipcMain.handle('current-settings', (event) => {
   return settings.data
+})
+
+ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
+  settings.restoreRemote(remoteSettings)
+  setTimeout(() => {
+    app.relaunch()
+    log.info('Stretchly: relaunching app')
+    app.exit(0)
+  }, 1000)
 })

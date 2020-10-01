@@ -42,6 +42,12 @@ class Settings {
     log.info('Stretchly: restoring default settings')
   }
 
+  restoreRemote (remoteSettings) {
+    this.data = Object.assign({}, remoteSettings)
+    this._save(true)
+    log.info('Stretchly: restoring remote settings')
+  }
+
   _load (retryCount = 5) {
     try {
       this.data = JSON.parse(fs.readFileSync(this.settingsFile, 'utf8'))
