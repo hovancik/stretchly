@@ -301,7 +301,7 @@ function createSyncPreferencesWindow () {
     return
   }
 
-  const syncPreferencesUrl = 'http://127.0.0.1:4000/app/v1/sync'
+  const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
   syncPreferencesWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
@@ -1026,7 +1026,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     myStretchlyWindow.show()
     return
   }
-  const myStretchlyUrl = `http://127.0.0.1:4000/app/v1?provider=${provider}`
+  const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
   myStretchlyWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
