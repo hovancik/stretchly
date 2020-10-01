@@ -57,6 +57,8 @@ describe('Settings', () => {
   it('should set remote values in the runtime while restoring defaults', (done) => {
     settings.set('allScreens', false)
     settings.restoreDefaults(remoteSettings)
+    settings.set('isFirstRun', true)
+    // becauuse I used defaultSettings :)
     setTimeout(() => {
       settings.data.should.be.deep.equal(remoteSettings)
       done()
