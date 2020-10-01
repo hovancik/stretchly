@@ -168,7 +168,7 @@ To specify the size of the break window, set the value of `breakWindowHeight` an
 
 [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik/button)
 
-You will be rewarded by getting access to extra preferences (+ other perks) available only to Contributors. You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.
+You will be rewarded by getting access to extra preferences (+ other perks like Preferences Sync) available only to Contributors. You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.
 
 <img src="contributors.png" height="340">
 

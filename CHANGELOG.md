@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - new break ideas
+- Contributors can sync preferences
 
 ### Changed
 - disallow "Reset breaks" when in break with Strick Mode
