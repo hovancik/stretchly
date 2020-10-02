@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - new break ideas
 - Contributors can sync preferences
 - Nepali translations
+- snap package
 
 ### Changed
 - disallow "Reset breaks" when in break with Strick Mode
