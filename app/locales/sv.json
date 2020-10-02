@@ -22,7 +22,8 @@
     "continue": "Fortsätt",
     "cancel": "Avbryt",
     "preferences": "Inställningar",
-    "contributorPreferences": "Inställningar för bidgradsgivare"
+    "contributorPreferences": "Inställningar för bidgradsgivare",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "Skjut upp den här pausen",
@@ -106,7 +107,8 @@
       "becomePatron": "Bli en beskyddare",
       "alreadyContributor": "Jag är redan en bidragsgivare",
       "authenticateUsing": "Autentisera med:",
-      "contributorPreferences": "Inställningar för bidgradsgivare"
+      "contributorPreferences": "Inställningar för bidgradsgivare",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

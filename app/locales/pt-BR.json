@@ -22,7 +22,8 @@
     "continue": "Continue",
     "cancel": "Cancelar",
     "preferences": "Configurações",
-    "contributorPreferences": "Preferências do Contribuinte"
+    "contributorPreferences": "Preferências do Contribuinte",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "Adiar esta pausa",
@@ -106,7 +107,8 @@
       "becomePatron": "Torne-se um Patrono",
       "alreadyContributor": "Eu já contribuo",
       "authenticateUsing": "Autenticar usando:",
-      "contributorPreferences": "Preferências do Contribuinte"
+      "contributorPreferences": "Preferências do Contribuinte",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

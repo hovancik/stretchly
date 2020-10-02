@@ -22,7 +22,8 @@
     "continue": "Продолжить",
     "cancel": "Отменить",
     "preferences": "Настройки",
-    "contributorPreferences": "Настройки участников"
+    "contributorPreferences": "Настройки участников",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "Отложить этот перерыв",
@@ -106,7 +107,8 @@
       "becomePatron": "Стать Покровителем",
       "alreadyContributor": "Я уже участник",
       "authenticateUsing": "Войти с помощью:",
-      "contributorPreferences": "Настройки участников"
+      "contributorPreferences": "Настройки участников",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

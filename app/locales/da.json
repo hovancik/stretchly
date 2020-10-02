@@ -22,7 +22,8 @@
     "continue": "Fortsæt",
     "cancel": "Afbryd",
     "preferences": "Indstillinger",
-    "contributorPreferences": "Sponser præferencer"
+    "contributorPreferences": "Sponser præferencer",
+    "syncPreferences": "Sync Preferences"
   },
   "break": {
     "postpone": "…vent en lille smule",
@@ -106,7 +107,8 @@
       "becomePatron": "Bliv sponsor (Patron)",
       "alreadyContributor": "Jeg er allerede sponsor",
       "authenticateUsing": "Autentificeringen via:",
-      "contributorPreferences": "Sponser præferencer"
+      "contributorPreferences": "Sponser præferencer",
+      "syncPreferences": "Sync Preferences"
     }
   },
   "contributorPreferences": {

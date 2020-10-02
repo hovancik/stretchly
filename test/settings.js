@@ -3,6 +3,7 @@ const fs = require('fs')
 // Actual Test Imports
 const Settings = require('./../app/utils/settings')
 const defaultSettings = require('./../app/utils/defaultSettings')
+const remoteSettings = require('./../app/utils/defaultSettings')
 
 const testFileLocation = `${__dirname}/assets/doesNotExist`
 const testMissingFileLocation = `${__dirname}/assets/settings.test-missing.json`
@@ -49,6 +50,17 @@ describe('Settings', () => {
     // when restoring defaults, we don't reset `isFirstRun`
     setTimeout(() => {
       settings.data.should.be.deep.equal(defaultSettings)
+      done()
+    }, 300)
+  })
+
+  it('should set remote values in the runtime while restoring defaults', (done) => {
+    settings.set('allScreens', false)
+    settings.restoreDefaults(remoteSettings)
+    settings.set('isFirstRun', true)
+    // becauuse I used defaultSettings :)
+    setTimeout(() => {
+      settings.data.should.be.deep.equal(remoteSettings)
       done()
     }, 300)
   })

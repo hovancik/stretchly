@@ -20,5 +20,13 @@ window.ElectronBridge = {
 
   stretchlyVersion () {
     return remote.app.getVersion()
+  },
+
+  async currentSettings () {
+    return await ipcRenderer.invoke('current-settings')
+  },
+
+  restoreRemoteSettings (remoteSettings) {
+    ipcRenderer.invoke('restore-remote-settings', remoteSettings)
   }
 }
