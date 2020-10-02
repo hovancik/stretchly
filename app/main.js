@@ -1048,7 +1048,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   }
 })
 
-ipcMain.on('open-sync-preferences', function (event, provider) {
+ipcMain.on('open-sync-preferences', function (event) {
   createSyncPreferencesWindow()
 })
 
