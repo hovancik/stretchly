@@ -5,12 +5,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.2.0] - 2020-10-03
 ### Added
 - new break ideas
 - Contributors can sync preferences
+- Nepali translations
 
 ### Changed
 - disallow "Reset breaks" when in break with Strick Mode
+- break window size is now dynamic (relative to screen size)
+- updated Korean translation
+
+### Fixed
+- fullscreen breaks (Windows)
+- downgraded Electron and disabled macOS dock icon to fix fullscreen issues
 
 ## [1.1.99] - 2020-9-27 Patreon
 ### Added
@@ -483,7 +492,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/hovancik/stretchly/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/hovancik/stretchly/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/hovancik/stretchly/compare/v0.99.5...v1.0.0
 [0.99.5]: https://github.com/hovancik/stretchly/compare/v0.99.4...v0.99.5
