@@ -3,7 +3,7 @@
 Have you read Code of Conduct? When contributing, you are expected to comply with it, including treating everyone with respect: https://github.com/hovancik/stretchly/blob/master/CODE_OF_CONDUCT.md
 
 ## Pull Requests
-PRs are welcome, but before implementing a feature, please, **open an Issue first**, so we can be sure that no-one else is working on it and that the changes will be accepted. Failing to do so might get your PR closed.
+PRs are welcome, but before implementing a feature, please, **open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted. It is important do discuss changes before implementing them (Why should we add it? How should it work? How should it look? Where will it be? ...).** Failing to do so might get your PR closed.
 
 Once you are sure that the maintainer of *Stretchly* will accept your proposed changes, feel free to open PR once you start working on it, so anyone can review and comment on your code.
 
