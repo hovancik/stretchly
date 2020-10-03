@@ -31,7 +31,7 @@ describe('scheduler', function () {
     const callback = function () {
       // allow margin due to event loop delay
       (Date.now() - start).should.be
-        .within(time - 100, time + 100)
+        .within(time - 200, time + 200)
       test = false
     }
     const schedule = new Scheduler(callback, time)
