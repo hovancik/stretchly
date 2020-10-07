@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Updated Italian translation
+
 ## [1.2.0] - 2020-10-03
 ### Added
 - new break ideas
