@@ -707,10 +707,14 @@ function pauseBreaks (milliseconds) {
 }
 
 function resumeBreaks (notify = true) {
-  breakPlanner.resume()
-  log.info('Stretchly: resuming breaks')
-  if (notify) {
-    showNotification(i18next.t('main.resumingBreaks'))
+  if (breakPlanner.dndManager.isOnDnd) {
+    log.info('Stretchly: not resuming breaks because in DND')
+  } else {
+    breakPlanner.resume()
+    log.info('Stretchly: resuming breaks')
+    if (notify) {
+      showNotification(i18next.t('main.resumingBreaks'))
+    }
   }
   updateTray()
 }
