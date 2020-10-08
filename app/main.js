@@ -328,12 +328,14 @@ function planVersionCheck (seconds = 1) {
 }
 
 function checkVersion () {
-  processWin.webContents.send('checkVersion', {
-    oldVersion: `v${app.getVersion()}`,
-    notify: settings.get('notifyNewVersion'),
-    silent: settings.get('silentNotifications')
-  })
-  planVersionCheck(3600 * 5)
+  if (settings.get('checkNewVersion')) {
+    processWin.webContents.send('checkVersion', {
+      oldVersion: `v${app.getVersion()}`,
+      notify: settings.get('notifyNewVersion'),
+      silent: settings.get('silentNotifications')
+    })
+    planVersionCheck(3600 * 5)
+  }
 }
 
 function startMicrobreakNotification () {

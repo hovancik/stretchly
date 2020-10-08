@@ -218,6 +218,9 @@ ipcRenderer.on('renderSettings', (event, settings) => {
     }
   })
 
+  if (!settings.checkNewVersion) {
+    document.querySelector('#notifyNewVersion').closest('div').style.display = 'none'
+  }
   htmlTranslate.translate()
   setWindowHeight()
 })
