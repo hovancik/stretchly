@@ -41,7 +41,7 @@
     },
     "settings": {
       "openAtLogin": "Start Stretchly automatisk når du logger ind",
-      "showBreaksIn": "Viser pauser om:",
+      "showBreaksIn": "Viser pauser i:",
       "window": "Vindue",
       "fullscreen": "Fuld skærm",
       "showIdeas": "Vis træningstips i pauserne",
