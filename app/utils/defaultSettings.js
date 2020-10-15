@@ -163,6 +163,18 @@ module.exports = {
     {
       data: ['Public Transport', 'If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling.'],
       enabled: true
+    },
+    {
+      data: ['Yawning', 'Yawning can be really helpful, as it produces tears to help moisten and lubricate the eyes.'],
+      enabled: true
+    },
+    {
+      data: ['Focus change', 'Hold one finger close to the eye an focus on it. Slowly move the finger away, focus far into the distance and then back to the finger. Bring the finger back and focus on something far away.'],
+      enabled: true
+    },
+    {
+      data: ['Palming', 'While seated, brace elbows on the desk and close to the desk edge. Let your weight fall forward and cup hands over eyes. Close your eyes and inhale slowly through nose and hold for few seconds. Continue deep breathing.'],
+      enabled: true
     }
   ],
   microbreakIdeas: [
@@ -272,6 +284,18 @@ module.exports = {
     },
     {
       data: 'Change your sitting posture.',
+      enabled: true
+    },
+    {
+      data: 'Expose your eyes to natural light.',
+      enabled: true
+    },
+    {
+      data: 'With your eyes closed, slowly and gently move eyes up to the ceiling, then slowly down to the floor.',
+      enabled: true
+    },
+    {
+      data: 'With your eyes closed, slowly and gently move eyes to the left, then slowly to the right.',
       enabled: true
     }
   ]

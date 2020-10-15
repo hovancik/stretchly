@@ -106,5 +106,17 @@ module.exports = [
   {
     data: 'Change your sitting posture.',
     enabled: true
+  },
+  {
+    data: 'Expose your eyes to natural light.',
+    enabled: true
+  },
+  {
+    data: 'With your eyes closed, slowly and gently move eyes up to the ceiling, then slowly down to the floor.',
+    enabled: true
+  },
+  {
+    data: 'With your eyes closed, slowly and gently move eyes to the left, then slowly to the right.',
+    enabled: true
   }
 ]

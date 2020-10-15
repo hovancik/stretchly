@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - advanced option to disable check for new version
+- new break ideas
 
 ### Changed
 - Updated Italian translation
