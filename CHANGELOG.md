@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - problem with DoNotDisturb being ignored when resuming breaks
+- taskbar visibility issue on Windows
 
 ## [1.2.0] - 2020-10-03
 ### Added
