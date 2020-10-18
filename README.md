@@ -171,7 +171,7 @@ If you don't want to ever check for new version, set `checkNewVersion` to `false
 
 You can access contributor features after authenticating with  Github or Patreon in the "Love Stretchly" section of Preferences.
 
-<img src="contributors.png"/>
+<img src="contributors.png" height="340"/>
 
 ### [Sponsoring on Github](https://github.com/sponsors/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik)
 
