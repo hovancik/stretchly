@@ -6,7 +6,7 @@
 
 *Stretchly* is a cross-platform [Electron](https://www.electronjs.org/) app that reminds you to take breaks when working on your computer.
 
-[![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik)
+[![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik) [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik)
 
 ## Table of contents
 - [Install](#install--)
@@ -166,13 +166,37 @@ To specify the size of the break window, set the value of `breakWindowHeight` an
 If you don't want to ever check for new version, set `checkNewVersion` to `false`.
 
 ## Contributor Preferences
-*Stretchly* is free but you can support it by contributing code or money.
 
-[![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik)
+*Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
 
-You will be rewarded by getting access to extra preferences (+ other perks like Preferences Sync) available only to Contributors. You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.
+You can access contributor features after authenticating with  Github or Patreon in the "Love Stretchly" section of Preferences.
 
-<img src="contributors.png" height="340">
+<img src="contributors.png"/>
+
+### [Sponsoring on Github](https://github.com/sponsors/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik)
+
+GitHub Sponsors **does not charge any fees** for sponsorships from user accounts, so 100% of these sponsorships go to the sponsored developer or organization. [Github Sponsors Matching Fund](https://docs.github.com/en/free-pro-team@latest/github/supporting-the-open-source-community-with-github-sponsors/about-github-sponsors#about-the-github-sponsors-matching-fund) will also **match every donation**.
+
+*You will be able to access Contributor Preferences, Sync Preferences.
+You won't be able to chat on Discord.*
+
+### [Sponsoring on Patreon](https://www.patreon.com/hovancik) [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik)
+
+Patreon [has fees](https://support.patreon.com/hc/en-us/articles/360027674431-Creator-fees-breakdown) plus it uses PayPal, which has its fees as well.
+
+*You will be able to access Contributor Preferences, Sync Preferences and Discord chat.*
+
+### [Donating with PayPal](https://paypal.me/JanHovancik) [![Donate with PayPal](https://img.shields.io/static/v1?label=Donate&message=%E2%9D%A4&logo=Paypal&color=success)](https://paypal.me/JanHovancik)
+PayPal has fees.
+
+*Currently, there are no rewards for donating via PayPal, as we can't programmatically match them.*
+
+### [Contributing code](#development)
+
+*By contributing code (or translations), you will be able to access Contributor Preferences, Sync Preferences.
+You won't be able to chat on Discord.*
+
+**You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.**
 
 ## Development
 Feel free to join in the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.

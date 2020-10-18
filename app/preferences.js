@@ -252,7 +252,7 @@ document.querySelectorAll('.about a').forEach((item) => {
 })
 
 document.querySelector('[name="becomePatron"]').onclick = () => {
-  shell.openExternal('https://patreon.com/hovancik')
+  shell.openExternal('https://hovancik.net/stretchly/sponsor')
 }
 
 document.querySelector('[name="alreadyContributor"]').onclick = () => {
