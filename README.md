@@ -196,8 +196,6 @@ PayPal has fees.
 *By contributing code (or translations), you will be able to access Contributor Preferences, Sync Preferences.
 You won't be able to chat on Discord.*
 
-**You can access the extra preferences after authenticating with Patreon or Github in the "Love Stretchly" section of Preferences.**
-
 ## Development
 Feel free to join in the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 
