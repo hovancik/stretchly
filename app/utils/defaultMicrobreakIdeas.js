@@ -88,7 +88,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: 'One should focus every 20 minutes for 20 seconds on an object that is 20 feet distance.',
+    data: 'One should focus every 20 minutes for 20 seconds on an object that is at least 20 meters away.',
     enabled: true
   },
   {
