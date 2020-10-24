@@ -356,10 +356,6 @@ function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
   }
-  if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
-    log.warn('Stretchly: in natural break, not starting Mini Break')
-    return
-  }
   // don't start another break if break running
   if (microbreakWins) {
     log.warn('Stretchly: Mini Break already running, not starting Mini Break')
@@ -468,10 +464,6 @@ function startMicrobreak () {
 function startBreak () {
   if (!breakIdeas) {
     loadIdeas()
-  }
-  if (breakPlanner.naturalBreaksManager.idleTime > settings.get('breakDuration')) {
-    log.warn('Stretchly: in natural break, not starting Long Break')
-    return
   }
   if (breakWins) {
     log.warn('Stretchly: Long Break already running, not starting Long Break')
