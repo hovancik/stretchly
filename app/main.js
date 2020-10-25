@@ -17,6 +17,7 @@ const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
 const AppIcon = require('./utils/appIcon')
 const { UntilMorning } = require('./utils/untilMorning')
+const Command = require('./utils/commands')
 
 let microbreakIdeas
 let breakIdeas
@@ -32,6 +33,7 @@ let syncPreferencesWindow = null
 let myStretchlyWindow = null
 let settings
 let pausedForSuspendOrLock = false
+let nextIdea = null
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -43,7 +45,10 @@ global.shared = {
 const gotTheLock = app.requestSingleInstanceLock()
 
 if (!gotTheLock) {
-  console.log('Stretchly is already running.')
+  console.log('Stretchly command instance: started\n')
+  const args = process.argv.slice(app.isPackaged ? 1 : 2)
+  const cmd = new Command(args, app.getVersion())
+  cmd.runOrForward()
   app.quit()
   return
 }
@@ -52,6 +57,7 @@ app.on('ready', startProcessWin)
 app.on('ready', loadSettings)
 app.on('ready', createTrayIcon)
 app.on('ready', startPowerMonitoring)
+app.on('second-instance', runCommand)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -384,7 +390,8 @@ function startMicrobreak () {
   const modalPath = `file://${__dirname}/microbreak.html`
   microbreakWins = []
 
-  const idea = settings.get('ideas') ? microbreakIdeas.randomElement : ['']
+  const idea = nextIdea || (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
+  nextIdea = null
 
   if (settings.get('microbreakStartSoundPlaying') && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
@@ -492,7 +499,9 @@ function startBreak () {
   const modalPath = `file://${__dirname}/break.html`
   breakWins = []
 
-  const idea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
+  const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
+  const idea = nextIdea.map((val, index) => val || defaultNextIdea[index])
+  nextIdea = null
 
   if (settings.get('breakStartSoundPlaying') && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
@@ -911,6 +920,61 @@ function showNotification (text) {
     text: text,
     silent: settings.get('silentNotifications')
   })
+}
+
+function runCommand (event, argv, workingDirectory) {
+  const args = argv.slice(app.isPackaged ? 1 : 2)
+  const cmd = new Command(args, app.getVersion())
+
+  // if this command is already executed by the second-instance, return early
+  if (!cmd.checkInMain()) {
+    log.info('Stretchly: command executed in second-instance, dropped in main instance')
+    return
+  }
+
+  switch (cmd.command) {
+    case 'reset':
+      log.info('Stretchly: reseting breaks (requested by second instance)')
+      resetBreaks()
+      break
+
+    case 'mini':
+      log.info('Stretchly: skip to Mini Break (requested by second instance)')
+      if (cmd.options.title) nextIdea = [cmd.options.title]
+      if (!cmd.options.noskip) skipToMicrobreak()
+      break
+
+    case 'long':
+      log.info('Stretchly: skip to Long Break (requested by second instance)')
+      nextIdea = [cmd.options.title ? cmd.options.title : null, cmd.options.text ? cmd.options.text : null]
+      if (!cmd.options.noskip) skipToBreak()
+      break
+
+    case 'resume':
+      log.info('Stretchly: resume Breaks (requested by second instance)')
+      if (breakPlanner.isPaused) resumeBreaks(false)
+      break
+
+    case 'toggle':
+      log.info('Stretchly: toggle Breaks (requested by second instance)')
+      if (breakPlanner.isPaused) resumeBreaks(false)
+      else pauseBreaks(1)
+      break
+
+    case 'pause':
+      log.info('Stretchly: pause Breaks (requested by second instance)')
+      var ms = cmd.durationToMs(settings)
+      // -1 indicates an invalid value
+      if (ms === -1) {
+        log.error('Stretchly: error when parsing duration to ms because of unvalid value')
+        return
+      }
+      pauseBreaks(ms)
+      break
+
+    default:
+      log.error(`Stretchly: Command ${cmd.command} is not supported`)
+  }
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {

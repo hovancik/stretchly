@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- control a running instance from command line  
 - advanced option to disable check for new version
 - new break ideas
 
