@@ -23,7 +23,7 @@ describe('commands', () => {
     cmd.options.duration.should.be.equal('until-morning')
   })
 
-  it('should drop all flags before command', () => {
+  it('should drop all flags before the command', () => {
     const input = ['--some-electron-flag=value', 'mini', '-T', 'test', '--noskip']
     const cmd = new Command(input, '1.2.3')
     cmd.command.should.be.equal('mini')
@@ -31,10 +31,89 @@ describe('commands', () => {
   })
 
   it('should get options from a command', () => {
-    const opts = ['-T', 'test', '-n']
-    const cmd = new Command(['mini'], '1.2.3')
-    const options = cmd.getOpts(opts)
-    options.title.should.be.equal('test')
-    options.noskip.should.be.equal(true)
+    const cmd = new Command(['mini', '-T', 'test', '-n'], '1.2.3')
+    cmd.options.title.should.be.equal('test')
+    cmd.options.noskip.should.be.equal(true)
+  })
+
+  it('includes only the specified options in the resulting options object', () => {
+    const cmd = new Command(['mini', '-T', 'test'], '1.2.3')
+    cmd.options.should.deep.equal({ title: 'test' })
+  })
+
+  it.skip('errors out when an invalid command is given', () => {
+    const cmd = new Command(['foo'], '1.2.3')
+    console.log(cmd.command)
+  })
+
+  it.skip('errors out when an invalid argument is given for a command', () => {
+    const cmd = new Command(['help', '--bar', 'baz'], '1.2.3')
+    console.log(cmd.command)
+  })
+
+  it('parses a number duration as the number of minutes to pause', () => {
+    const input = ['pause', '-d', '60']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(60 * 60 * 1000)
+  })
+
+  it('parses a duration argument with hours and minutes', () => {
+    const input = ['pause', '-d', '4h39m']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(4 * 60 * 60 * 1000 + 39 * 60 * 1000)
+  })
+
+  it('parses a duration argument with hours and minutes in the upper case', () => {
+    const input = ['pause', '-d', '4H39M']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(4 * 60 * 60 * 1000 + 39 * 60 * 1000)
+  })
+
+  it('parses a duration argument with just the minutes', () => {
+    const input = ['pause', '-d', '60m']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(60 * 60 * 1000)
+  })
+
+  it('parses a duration argument with just the hours', () => {
+    const input = ['pause', '-d', '184h']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(184 * 60 * 60 * 1000)
+  })
+
+  it('returns -1 if there\'s extra text in the duration argument', () => {
+    new Command(['pause', '-d', 'foo4h39mbar'], '1.2.3').durationToMs(null).should.be.equal(-1)
+    new Command(['pause', '-d', 'foo4h39m'], '1.2.3').durationToMs(null).should.be.equal(-1)
+    new Command(['pause', '-d', '4h39mbar'], '1.2.3').durationToMs(null).should.be.equal(-1)
+  })
+
+  it('returns -1 if a number duration argument is zero', () => {
+    const input = ['pause', '-d', '0']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(-1)
+  })
+
+  it('returns -1 if the duration argument with the hours and minutes evaluates to zero', () => {
+    const input = ['pause', '-d', '0h0m']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(-1)
+  })
+
+  it('returns -1 if the duration argument with just the minutes evaluates to zero', () => {
+    const input = ['pause', '-d', '0m']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(-1)
+  })
+
+  it('returns -1 if the duration argument with just the hours evaluates to zero', () => {
+    const input = ['pause', '-d', '0h']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(-1)
+  })
+
+  it('should return -1 if the duration argument is not in a known format', () => {
+    const input = ['pause', '-d', '10i20k']
+    const cmd = new Command(input, '1.2.3')
+    cmd.durationToMs(null).should.be.equal(-1)
   })
 })

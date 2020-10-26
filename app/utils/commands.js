@@ -23,7 +23,7 @@ const allOptions = {
   duration: {
     long: '--duration',
     short: '-d',
-    description: 'Specify duration for pausing breaks (Pause only) [infinitely|until-morning|seconds (as number)]',
+    description: 'Specify duration for pausing breaks (Pause only) [indefinitely|until-morning|HHhMMm|HHh|MMm|MM]',
     withValue: true
   }
 }
@@ -46,37 +46,45 @@ const allCommands = {
     description: 'Resume from a pause'
   },
   toggle: {
-    description: 'Toggle breaks between resume/paused'
+    description: 'Pause/unpause breaks'
   },
   mini: {
-    description: 'Skips to and customize next Mini Break',
+    description: 'Skip to the Mini Break, customize it',
     options: [allOptions.title, allOptions.noskip]
   },
   long: {
-    description: 'Skips to and customize next Long Break',
+    description: 'Skip to the Long Break, customize it',
     options: [allOptions.text, allOptions.title, allOptions.noskip]
   }
 }
 
 const allExamples = [{
   cmd: 'stretchly pause',
-  description: 'Pause breaks indefinitly'
+  description: 'Pause breaks indefinitely'
 },
 {
-  cmd: 'stretchly pause -d 3600',
+  cmd: 'stretchly pause -d 60',
   description: 'Pause breaks for one hour'
 },
 {
-  cmd: 'stretchly mini -T "Stretch up !"',
-  description: 'Skips to next Mini Break with "Stretch up!" title'
+  cmd: 'stretchly pause -d 1h',
+  description: 'Pause breaks for one hour'
 },
 {
-  cmd: 'stretchly long -T "Stretch up !" --noskip',
-  description: 'Sets next Break title to "Stretch up!"'
+  cmd: 'stretchly pause -d 1h20m',
+  description: 'Pause breaks for one hour and twenty minutes'
 },
 {
-  cmd: 'stretchly long -T "Stretch up !" -t "Go stretch !"',
-  description: 'Skips to next long break, sets title to "Stretch up !" and text to "Go stretch !"'
+  cmd: 'stretchly mini -T "Stretch up!"',
+  description: 'Start a Mini Break, with the title "Stretch up!"'
+},
+{
+  cmd: 'stretchly long -T "Stretch up!" --noskip',
+  description: 'Set the next Break\'s title to "Stretch up!"'
+},
+{
+  cmd: 'stretchly long -T "Stretch up!" -t "Go stretch!"',
+  description: 'Start a long break, with the title "Stretch up!" and text "Go stretch!"'
 }]
 
 // Parse cmd line, check if valid and put variables in a dedicated object
@@ -169,12 +177,7 @@ class Command {
         return new UntilMorning(settings).timeUntilMorning()
 
       default:
-        var seconds = Number.parseInt(this.options.duration)
-        if (isNaN(seconds)) {
-          // returning -1 indicates an invalid value
-          return -1
-        }
-        return seconds * 1000
+        return parseDuration(this.options.duration)
     }
   }
 
@@ -245,5 +248,26 @@ class Command {
     console.log([this.cmdHelp(), this.optionsHelp(), this.examplesHelp()].join(''))
   }
 }
+
+// this function should return -1 if duration can't be parsed
+function parseDuration (input) {
+  if (input.match(/^\d+$/) != null) {
+    const mins = Number.parseInt(input)
+    const result = mins * minToMs
+    return result > 0 ? result : -1
+  }
+
+  const parts = input.toLowerCase().match(/^(?:(\d+)h)?(?:(\d+)m)?$/)
+  if (parts === null || parts[0] === '') {
+    return -1
+  }
+
+  const hours = parts[1] ? Number.parseInt(parts[1]) : 0
+  const minutes = parts[2] ? Number.parseInt(parts[2]) : 0
+  const result = hours * minToMs * 60 + minutes * minToMs
+  return isNaN(result) || result <= 0 ? -1 : result
+}
+
+const minToMs = 60000
 
 module.exports = Command
