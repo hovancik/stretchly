@@ -118,5 +118,21 @@ module.exports = [
   {
     data: 'With your eyes closed, slowly and gently move eyes to the left, then slowly to the right.',
     enabled: true
+  },
+  {
+    data: 'Shake your hands out to get some relief.',
+    enabled: true
+  },
+  {
+    data: 'One at a time, touch the tip of each finger to the tip of your thumb so they make an O-shape.',
+    enabled: true
+  },
+  {
+    data: 'Make a fist and then slide your fingers up until they point toward the ceiling, like you\'re telling someone to stop.',
+    enabled: true
+  },
+  {
+    data: 'Make a fist and then fan your fingers out and stretch them as far as you can.',
+    enabled: true
   }
 ]

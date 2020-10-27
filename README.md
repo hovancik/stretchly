@@ -314,6 +314,7 @@ Also see Github's list of [contributors](https://github.com/hovancik/stretchly/g
  - https://justworks.com/blog/improve-mental-health-work-midday-break-ideas
  - https://www.nutritiousmovement.com/dynamic-at-home-work-and-school-spaces/
  - https://www.onhealth.com/content/1/eye_exercises_and_stretches
+ - https://www.webmd.com/pain-management/exercises-carpal-tunnel-syndrome
 
 #### Sounds credits
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
