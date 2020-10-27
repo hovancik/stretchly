@@ -161,7 +161,7 @@ module.exports = {
       enabled: true
     },
     {
-      data: ['Public Transport', 'If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling.'],
+      data: ['Public transport', 'If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling.'],
       enabled: true
     },
     {
@@ -174,6 +174,10 @@ module.exports = {
     },
     {
       data: ['Palming', 'While seated, brace elbows on the desk and close to the desk edge. Let your weight fall forward and cup hands over eyes. Close your eyes and inhale slowly through nose and hold for few seconds. Continue deep breathing.'],
+      enabled: true
+    },
+    {
+      data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times.'],
       enabled: true
     }
   ],
@@ -296,6 +300,22 @@ module.exports = {
     },
     {
       data: 'With your eyes closed, slowly and gently move eyes to the left, then slowly to the right.',
+      enabled: true
+    },
+    {
+      data: 'Shake your hands out to get some relief.',
+      enabled: true
+    },
+    {
+      data: 'One at a time, touch the tip of each finger to the tip of your thumb so they make an O-shape.',
+      enabled: true
+    },
+    {
+      data: 'Make a fist and then slide your fingers up until they point toward the ceiling, like you\'re telling someone to stop.',
+      enabled: true
+    },
+    {
+      data: 'Make a fist and then fan your fingers out and stretch them as far as you can.',
       enabled: true
     }
   ]

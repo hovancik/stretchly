@@ -112,7 +112,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: ['Public Transport', 'If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling.'],
+    data: ['Public transport', 'If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling.'],
     enabled: true
   },
   {
@@ -125,6 +125,10 @@ module.exports = [
   },
   {
     data: ['Palming', 'While seated, brace elbows on the desk and close to the desk edge. Let your weight fall forward and cup hands over eyes. Close your eyes and inhale slowly through nose and hold for few seconds. Continue deep breathing.'],
+    enabled: true
+  },
+  {
+    data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times.'],
     enabled: true
   }
 ]
