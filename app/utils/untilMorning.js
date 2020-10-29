@@ -1,5 +1,5 @@
-const sun = require('./sun')
 const { DateTime } = require('luxon')
+const MeeusSunMoon = require('meeussunmoon')
 const log = require('electron-log')
 
 class UntilMorning {
@@ -14,10 +14,10 @@ class UntilMorning {
     if (morningHour === 'sunrise') {
       const lat = this.settings.get('posLatitude')
       const long = this.settings.get('posLongitude')
-      const sunrise = sun.sunrise(new Date(dt.toISO()), lat, long)
-      nextMornigDt = DateTime.local(sunrise.getFullYear(), sunrise.getMonth() + 1,
-        sunrise.getDate(), sunrise.getHours(), sunrise.getMinutes())
-      morningHour = sunrise.getHours()
+      nextMornigDt = MeeusSunMoon.sunrise(dt, lat, long)
+      // nextMornigDt = DateTime.local(sunrise.getFullYear(), sunrise.getMonth() + 1,
+      //   sunrise.getDate(), sunrise.getHours(), sunrise.getMinutes())
+      morningHour = nextMornigDt.hour
     } else {
       nextMornigDt = dt.set({ hours: morningHour, minutes: 0, seconds: 0 })
     }

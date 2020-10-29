@@ -25,6 +25,7 @@
     "i18next": "^19.8.0",
     "i18next-node-fs-backend": "^2.1.3",
     "luxon": "^1.25.0",
+    "meeussunmoon": "^3.0.2",
     "semver": "^7.3.2",
     "windows-focus-assist": "^1.2.1"
   },
