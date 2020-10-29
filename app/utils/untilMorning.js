@@ -15,8 +15,6 @@ class UntilMorning {
       const lat = this.settings.get('posLatitude')
       const long = this.settings.get('posLongitude')
       nextMornigDt = MeeusSunMoon.sunrise(dt, lat, long)
-      // nextMornigDt = DateTime.local(sunrise.getFullYear(), sunrise.getMonth() + 1,
-      //   sunrise.getDate(), sunrise.getHours(), sunrise.getMinutes())
       morningHour = nextMornigDt.hour
     } else {
       nextMornigDt = dt.set({ hours: morningHour, minutes: 0, seconds: 0 })
