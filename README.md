@@ -207,6 +207,10 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 
 **Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted. It is important do discuss changes before implementing them (Why should we add it? How should it work? How should it look? Where will it be? ...).**
 
+### Pre-requisites
+- `brew install node`
+- `npm install cross-env`
+
 ### Debugging
 If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
