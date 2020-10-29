@@ -9,6 +9,9 @@ skip_tags: true
 environment:
   nodejs_version: "12.14.1"
 
+init:
+- tzutil /s "W. Europe Standard Time"
+
 cache:
   - node_modules -> package.json
 
