@@ -500,7 +500,7 @@ function startBreak () {
   breakWins = []
 
   const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
-  const idea = nextIdea.map((val, index) => val || defaultNextIdea[index])
+  const idea = nextIdea ? (nextIdea.map((val, index) => val || defaultNextIdea[index])) : defaultNextIdea
   nextIdea = null
 
   if (settings.get('breakStartSoundPlaying') && !settings.get('silentNotifications')) {
