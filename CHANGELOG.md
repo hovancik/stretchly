@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - problem with DoNotDisturb being ignored when resuming breaks
 - taskbar visibility issue on Windows
 - issue with idle time and breaks causing negative timers
+- issue with Pause until morning in some timezones
 
 ## [1.2.0] - 2020-10-03
 ### Added

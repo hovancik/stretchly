@@ -174,7 +174,7 @@ class Command {
         return 1
 
       case 'until-morning':
-        return new UntilMorning(settings).timeUntilMorning()
+        return new UntilMorning(settings).msToSunrise()
 
       default:
         return parseDuration(this.options.duration)

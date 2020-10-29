@@ -1,50 +1,31 @@
-const sun = require('./sun')
-const moment = require('moment')
-moment().format()
+const { DateTime } = require('luxon')
+const MeeusSunMoon = require('meeussunmoon')
+const log = require('electron-log')
 
 class UntilMorning {
   constructor (settings) {
     this.settings = settings
   }
 
-  /**
-   * @return {Integer} milliseconds until morning
-   */
-  timeUntilMorning () {
-    // try for today
-    const now = moment.utc(new Date())
-    const todaySunrise = this.loadMorningTime(now)
-    const untilMorning = todaySunrise - now
-
-    if (untilMorning > 0) {
-      return untilMorning
-    }
-
-    // sunrise already happened -- calculate for tomorrow
-    const tomorrow = moment.utc(new Date()).date(now.date() + 1)
-    const tomorrowSunrise = this.loadMorningTime(tomorrow)
-
-    return tomorrowSunrise - now
-  }
-
-  /**
-   *
-   * @param {Moment} date - Moment.utc date for morning calculation
-   * @return {Moment} Moment.utc date and time of sunrise or static default time
-   */
-  loadMorningTime (date) {
-    const sunriseDate = moment.utc(new Date(date)) // prevent mutating date object
-    const lat = this.settings.get('posLatitude')
-    const long = this.settings.get('posLongitude')
-    const morningHour = this.settings.get('morningHour')
-    const timezoneOffset = (new Date().getTimezoneOffset()) / 60
+  msToSunrise (dt = DateTime.local()) {
+    let morningHour = this.settings.get('morningHour')
+    let nextMornigDt
 
     if (morningHour === 'sunrise') {
-      // do not convert to UTC -- sunrise-sunset-js already has date in correct timezone
-      return moment.utc(sun.sunrise(new Date(date), lat, long))
+      const lat = this.settings.get('posLatitude')
+      const long = this.settings.get('posLongitude')
+      nextMornigDt = MeeusSunMoon.sunrise(dt, lat, long)
+      morningHour = nextMornigDt.hour
+    } else {
+      nextMornigDt = dt.set({ hours: morningHour, minutes: 0, seconds: 0 })
     }
 
-    return sunriseDate.hours(morningHour + timezoneOffset).minutes(0).seconds(0)
+    if (dt.hour >= morningHour) {
+      nextMornigDt = nextMornigDt.plus({ days: 1 })
+    }
+
+    log.info(`Stretchly: got ${nextMornigDt.toLocaleString(DateTime.DATETIME_FULL)} as sunrise time for ${dt.toLocaleString(DateTime.DATETIME_FULL)}`)
+    return nextMornigDt.diff(dt).toObject().milliseconds
   }
 }
 
