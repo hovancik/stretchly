@@ -47,7 +47,7 @@
       "showIdeas": "Pausenideen in den Pausen zeigen",
       "allScreens": "Pausen auf allen Monitoren anzeigen",
       "monitorIdleTime": "Abwesenheit vom System überwachen (Zeit wird angehalten, wenn das System inaktiv ist)",
-      "monitorDnd": "Pausen auch bei 'Nicht stöhren' anzeigen",
+      "monitorDnd": "Pausen auch bei 'Nicht stören' anzeigen",
       "language": "Sprache auswählen:",
       "restoreDefaults": "Standardeinstellungen wiederherstellen"
     },
