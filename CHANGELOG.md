@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Updated Italian translations
 - Updated Spanish translations
+- Updated German translations
 
 ### Fixed
 - problem with DoNotDisturb being ignored when resuming breaks
