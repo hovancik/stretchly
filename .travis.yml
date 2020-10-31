@@ -9,6 +9,9 @@ node_js: "12.14.1"
 services:
   - xvfb
 
+before_install:
+- export TZ=Europe/Amsterdam
+
 script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" && "$TRAVIS_BRANCH" == "release" ]]; then sudo apt update && sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" && "$TRAVIS_BRANCH" == "release" ]]; then brew install rpm; fi
