@@ -119,7 +119,7 @@ class Command {
   }
 
   getOpts (opts) {
-    var options = {}
+    const options = {}
 
     if (!this.supported[this.command].options) {
       return null
@@ -127,7 +127,7 @@ class Command {
 
     for (let i = 0; i < opts.length; i++) {
       const name = opts[i]
-      var valid = false
+      let valid = false
 
       this.supported[this.command].options.forEach(opt => {
         if (opt.long === name || opt.short === name) {
@@ -198,16 +198,16 @@ class Command {
   }
 
   cmdHelp () {
-    var i = 0
+    let i = 0
     const options = '[options]'
-    var part = `Usage: stretchly <command> ${options}\n\nCommands:`
+    let part = `Usage: stretchly <command> ${options}\n\nCommands:`
 
     const cmds = Object.keys(this.supported).map(key => `${key}${this.supported[key].options === undefined ? '' : ` ${options}`}`)
     const longuest = cmds.reduce((acc, cur) => acc > cur.length ? acc : cur.length, 0)
 
     part = Object.keys(this.supported).reduce((acc, key) => {
       const padding = longuest - cmds[i].length
-      var line = `stretchly ${cmds[i]}${' '.repeat(padding)} ${this.supported[key].description}`
+      const line = `stretchly ${cmds[i]}${' '.repeat(padding)} ${this.supported[key].description}`
       i++
       return `${acc}\n\t${line}`
     }, part)
@@ -216,14 +216,14 @@ class Command {
   }
 
   optionsHelp () {
-    var part = '\n\nOptions:'
+    let part = '\n\nOptions:'
 
     const longuest = Object.keys(allOptions).reduce((acc, key) => acc > allOptions[key].long.length ? acc : allOptions[key].long.length, 0)
 
     part = Object.keys(allOptions).reduce((acc, key) => {
       const opt = allOptions[key]
       const padding = longuest - opt.long.length
-      var line = `${opt.short}, ${opt.long}${' '.repeat(padding)} ${opt.description}`
+      const line = `${opt.short}, ${opt.long}${' '.repeat(padding)} ${opt.description}`
       return `${acc}\n\t${line}`
     }, part)
 
@@ -231,13 +231,13 @@ class Command {
   }
 
   examplesHelp () {
-    var part = '\n\nExamples:'
+    let part = '\n\nExamples:'
 
     const longuest = allExamples.reduce((acc, cur) => acc > cur.cmd.length ? acc : cur.cmd.length, 0)
 
     part = allExamples.reduce((acc, ex) => {
       const padding = longuest - ex.cmd.length
-      var line = `${ex.cmd}${' '.repeat(padding)} ${ex.description}`
+      const line = `${ex.cmd}${' '.repeat(padding)} ${ex.description}`
       return `${acc}\n\t${line}`
     }, part)
 

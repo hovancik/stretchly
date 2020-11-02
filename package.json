@@ -49,7 +49,7 @@
     "rimraf": "^3.0.2",
     "sinon": "^9.1.0",
     "spectron": "^12.0.0",
-    "standard": "^14.3.4"
+    "standard": "^16.0.1"
   },
   "build": {
     "appId": "net.hovancik.stretchly",

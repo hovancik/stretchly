@@ -1,13 +1,13 @@
 const chai = require('chai')
 const fs = require('fs')
-// Actual Test Imports
+const path = require('path')
 const Settings = require('./../app/utils/settings')
 const defaultSettings = require('./../app/utils/defaultSettings')
 const remoteSettings = require('./../app/utils/defaultSettings')
 
-const testFileLocation = `${__dirname}/assets/doesNotExist`
-const testMissingFileLocation = `${__dirname}/assets/settings.test-missing.json`
-const testMissingFileCopyLocation = `${__dirname}/assets/settings.test-missing-copy.json`
+const testFileLocation = path.join(__dirname, '/assets/doesNotExist')
+const testMissingFileLocation = path.join(__dirname, '/assets/settings.test-missing.json')
+const testMissingFileCopyLocation = path.join(__dirname, '/assets/settings.test-missing-copy.json')
 
 chai.should()
 
