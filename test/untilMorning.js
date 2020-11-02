@@ -1,7 +1,8 @@
 const { UntilMorning } = require('../app/utils/untilMorning')
 const Settings = require('./../app/utils/settings')
 const chai = require('chai')
-const mockSettingsFilePath = `${__dirname}/assets/settings.untilMorning.json`
+const path = require('path')
+const mockSettingsFilePath = path.join(__dirname, '/assets/settings.untilMorning.json')
 const fs = require('fs')
 const { DateTime } = require('luxon')
 

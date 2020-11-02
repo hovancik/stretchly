@@ -70,7 +70,7 @@ function startI18next () {
       fallbackLng: 'en',
       debug: false,
       backend: {
-        loadPath: `${__dirname}/locales/{{lng}}.json`,
+        loadPath: path.join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
       }
     }, function (err, t) {
@@ -224,7 +224,7 @@ function trayIconPath () {
     platform: process.platform
   }
   const trayIconFileName = new AppIcon(params).trayIconFileName
-  return `${__dirname}/images/app-icons/${trayIconFileName}`
+  return path.join(__dirname, '/images/app-icons/', trayIconFileName)
 }
 
 function windowIconPath () {
@@ -236,11 +236,11 @@ function windowIconPath () {
     platform: process.platform
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
-  return `${__dirname}/images/app-icons/${windowIconFileName}`
+  return path.join(__dirname, '/images/app-icons', windowIconFileName)
 }
 
 function startProcessWin () {
-  const modalPath = `file://${__dirname}/process.html`
+  const modalPath = path.join('file://', __dirname, '/process.html')
   processWin = new BrowserWindow({
     show: false,
     webPreferences: {
@@ -255,7 +255,7 @@ function startProcessWin () {
 
 function createWelcomeWindow () {
   if (settings.get('isFirstRun')) {
-    const modalPath = `file://${__dirname}/welcome.html`
+    const modalPath = path.join('file://', __dirname, '/welcome.html')
     welcomeWin = new BrowserWindow({
       x: displaysX(-1, 1000),
       y: displaysY(),
@@ -281,7 +281,7 @@ function createContributorSettingsWindow () {
     contributorPreferencesWindow.show()
     return
   }
-  const modalPath = `file://${__dirname}/contributor-preferences.html`
+  const modalPath = path.join('file://', __dirname, '/contributor-preferences.html')
   contributorPreferencesWindow = new BrowserWindow({
     x: displaysX(-1, 735),
     y: displaysY(),
@@ -387,7 +387,7 @@ function startMicrobreak () {
     })
   }
 
-  const modalPath = `file://${__dirname}/microbreak.html`
+  const modalPath = path.join('file://', __dirname, '/microbreak.html')
   microbreakWins = []
 
   const idea = nextIdea || (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
@@ -496,7 +496,7 @@ function startBreak () {
     })
   }
 
-  const modalPath = `file://${__dirname}/break.html`
+  const modalPath = path.join('file://', __dirname, '/break.html')
   breakWins = []
 
   const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
@@ -726,7 +726,7 @@ function createPreferencesWindow () {
     preferencesWin.show()
     return
   }
-  const modalPath = `file://${__dirname}/preferences.html`
+  const modalPath = path.join('file://', __dirname, '/preferences.html')
   const maxHeight = (electron.screen
     .getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
     .workAreaSize.height - 530) / 2.0 + 490
@@ -858,7 +858,9 @@ function getTrayMenu () {
   }
 
   if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode')) {
+    // nothing
   } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
+    // nothing
   } else {
     trayMenu.push({
       label: i18next.t('main.resetBreaks'),
@@ -961,9 +963,9 @@ function runCommand (event, argv, workingDirectory) {
       else pauseBreaks(1)
       break
 
-    case 'pause':
+    case 'pause': {
       log.info('Stretchly: pause Breaks (requested by second instance)')
-      var ms = cmd.durationToMs(settings)
+      const ms = cmd.durationToMs(settings)
       // -1 indicates an invalid value
       if (ms === -1) {
         log.error('Stretchly: error when parsing duration to ms because of unvalid value')
@@ -971,6 +973,7 @@ function runCommand (event, argv, workingDirectory) {
       }
       pauseBreaks(ms)
       break
+    }
 
     default:
       log.error(`Stretchly: Command ${cmd.command} is not supported`)

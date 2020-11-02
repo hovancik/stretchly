@@ -41,7 +41,6 @@ class DndManager extends EventEmitter {
   }
 
   _checkDnd () {
-    let lastDndStatus = this.isOnDnd  //eslint-disable-line
     this.timer = setInterval(() => {
       const doNotDisturb = this._doNotDisturb
       if (!this.isOnDnd && doNotDisturb) {
@@ -52,7 +51,6 @@ class DndManager extends EventEmitter {
         this.isOnDnd = false
         this.emit('dndFinished')
       }
-      lastDndStatus = doNotDisturb
     }, 1000)
   }
 }

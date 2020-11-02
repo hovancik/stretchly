@@ -4,6 +4,7 @@ const {
   canSkip, canPostpone, formatKeyboardShortcut
 } = require('../app/utils/utils')
 const i18next = require('i18next')
+const path = require('path')
 const Backend = require('i18next-node-fs-backend')
 const sinon = require('sinon')
 
@@ -18,7 +19,7 @@ describe('Times formatters', function () {
         fallbackLng: 'en',
         debug: false,
         backend: {
-          loadPath: `${__dirname}/../app/locales/{{lng}}.json`,
+          loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
           jsonIndent: 2
         }
       }, function (err, t) {

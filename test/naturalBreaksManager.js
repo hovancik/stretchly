@@ -1,7 +1,8 @@
 const chai = require('chai')
+const path = require('path')
 const NaturalBreaksManager = require('../app/utils/naturalBreaksManager')
 const Settings = require('./../app/utils/settings')
-const testSettingsLocaction = `${__dirname}/test-settings.json`
+const testSettingsLocaction = path.join(__dirname, '/test-settings.json')
 
 chai.should()
 

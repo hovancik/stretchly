@@ -1,5 +1,6 @@
 const Application = require('spectron').Application
 const electronPath = require('electron')
+const path = require('path')
 const AppSettings = require('../app/utils/settings')
 
 async function modifySettings (key, value) {
@@ -9,10 +10,10 @@ async function modifySettings (key, value) {
     app = new Application({
       path: electronPath,
       args: [
-        `${__dirname}/../app`
+        path.join(__dirname, '/../app')
       ],
       chromeDriverArgs: [
-        `--user-data-dir=${__dirname}/stretchly-test-tmp`
+        `--user-data-dir=${path.join(__dirname, '/stretchly-test-tmp')}`
       ]
     })
 
