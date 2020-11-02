@@ -207,6 +207,17 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 
 **Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted. It is important do discuss changes before implementing them (Why should we add it? How should it work? How should it look? Where will it be? ...).**
 
+### Pre-requisites
+- [Node.js](https://nodejs.org/) (please use version specified in `package.json`)
+  - Linux/MacOS - you might want to use [Node Version Manager](https://github.com/nvm-sh/nvm) to install specific version
+  - Windows - download [installer](https://nodejs.org/en/download/) for specific version; during installation *check* “Install Additional Tools for Node.js”
+- [git](https://git-scm.com/)
+- [Github account](https://github.com/), if you'd like to upstream your changes
+
+Now you can clone the repo with `git clone https://github.com/hovancik/stretchly.git`. Change to the new created directory and run `npm i` to install node packages needed.
+
+Read on. 
+
 ### Debugging
 If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
