@@ -151,7 +151,7 @@ function displaysX (displayID = -1, width = 800, fullscreen = false) {
   }
 }
 
-function displaysY (displayID = -1, height = 600, fullscreen = false) {
+function getBounds(displayID) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -164,7 +164,11 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
     const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  const bounds = theScreen.bounds
+  return theScreen.bounds;
+}
+
+function displaysY (displayID = -1, height = 600, fullscreen = false) {
+  const bounds = getBounds(displayID);
   if (fullscreen) {
     return Math.ceil(bounds.y)
   } else {
@@ -173,36 +177,12 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
 }
 
 function displaysWidth (displayID = -1) {
-  const electron = require('electron')
-  let theScreen
-  if (displayID === -1) {
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays()) {
-    // Graceful handling of invalid displayID
-    log.warn('Stretchly: invalid displayID to displaysY')
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else {
-    const screens = electron.screen.getAllDisplays()
-    theScreen = screens[displayID]
-  }
-  const bounds = theScreen.bounds
+  const bounds = getBounds(displayID);
   return Math.ceil(bounds.width)
 }
 
 function displaysHeight (displayID = -1) {
-  const electron = require('electron')
-  let theScreen
-  if (displayID === -1) {
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays()) {
-    // Graceful handling of invalid displayID
-    log.warn('Stretchly: invalid displayID to displaysY')
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else {
-    const screens = electron.screen.getAllDisplays()
-    theScreen = screens[displayID]
-  }
-  const bounds = theScreen.bounds
+  const bounds = getBounds(displayID);
   return Math.ceil(bounds.height)
 }
 
