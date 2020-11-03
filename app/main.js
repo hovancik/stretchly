@@ -342,6 +342,51 @@ function startBreakNotification () {
   updateTray()
 }
 
+function generateWindowsOptions(localDisplayId) {
+    const windowOptions = {
+        width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+        height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
+        autoHideMenuBar: true,
+        icon: windowIconPath(),
+        resizable: false,
+        frame: false,
+        show: false,
+        transparent: settings.get('transparentMode'),
+        backgroundColor: calculateBackgroundColor(),
+        skipTaskbar: true,
+        focusable: false,
+        title: 'Stretchly',
+        alwaysOnTop: true,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    }
+
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+        windowOptions.width = displaysWidth(localDisplayId)
+        windowOptions.height = displaysHeight(localDisplayId)
+        windowOptions.x = displaysX(localDisplayId, 0, true)
+        windowOptions.y = displaysY(localDisplayId, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+        windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
+        windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
+    }
+    return windowOptions;
+}
+
+function setupBreakWindow(microbreakWinLocal, modalPath) {
+    microbreakWinLocal.loadURL(modalPath)
+    microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
+    if (microbreakWinLocal) {
+        microbreakWinLocal.on('closed', () => {
+            microbreakWinLocal = null
+        })
+    }
+    microbreakWins.push(microbreakWinLocal)
+    return microbreakWinLocal;
+}
+
 function startMicrobreak () {
   if (!microbreakIdeas) {
     loadIdeas()
@@ -382,36 +427,7 @@ function startMicrobreak () {
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
-    const windowOptions = {
-      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
-      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
-      autoHideMenuBar: true,
-      icon: windowIconPath(),
-      resizable: false,
-      frame: false,
-      show: false,
-      transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
-      skipTaskbar: true,
-      focusable: false,
-      title: 'Stretchly',
-      alwaysOnTop: true,
-      webPreferences: {
-        nodeIntegration: true
-      }
-    }
-
-    if (settings.get('fullscreen') && process.platform !== 'darwin') {
-      windowOptions.width = displaysWidth(localDisplayId)
-      windowOptions.height = displaysHeight(localDisplayId)
-      windowOptions.x = displaysX(localDisplayId, 0, true)
-      windowOptions.y = displaysY(localDisplayId, 0, true)
-    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
-      windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
-    }
-
-    let microbreakWinLocal = new BrowserWindow(windowOptions)
+    let microbreakWinLocal = new BrowserWindow(generateWindowsOptions(localDisplayId))
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
@@ -435,15 +451,7 @@ function startMicrobreak () {
       }
     })
 
-    microbreakWinLocal.loadURL(modalPath)
-    microbreakWinLocal.setVisibleOnAllWorkspaces(true)
-    microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
-    if (microbreakWinLocal) {
-      microbreakWinLocal.on('closed', () => {
-        microbreakWinLocal = null
-      })
-    }
-    microbreakWins.push(microbreakWinLocal)
+    setupBreakWindow(microbreakWinLocal, modalPath);
 
     if (!settings.get('allScreens')) {
       break
@@ -492,36 +500,7 @@ function startBreak () {
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
-    const windowOptions = {
-      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
-      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
-      autoHideMenuBar: true,
-      icon: windowIconPath(),
-      resizable: false,
-      frame: false,
-      show: false,
-      transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
-      skipTaskbar: true,
-      focusable: false,
-      title: 'Stretchly',
-      alwaysOnTop: true,
-      webPreferences: {
-        nodeIntegration: true
-      }
-    }
-
-    if (settings.get('fullscreen') && process.platform !== 'darwin') {
-      windowOptions.width = displaysWidth(localDisplayId)
-      windowOptions.height = displaysHeight(localDisplayId)
-      windowOptions.x = displaysX(localDisplayId, 0, true)
-      windowOptions.y = displaysY(localDisplayId, 0, true)
-    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-      windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
-      windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
-    }
-
-    let breakWinLocal = new BrowserWindow(windowOptions)
+    let breakWinLocal = new BrowserWindow(generateWindowsOptions(localDisplayId))
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
@@ -544,15 +523,8 @@ function startBreak () {
         }, 0)
       }
     })
-    breakWinLocal.loadURL(modalPath)
-    breakWinLocal.setVisibleOnAllWorkspaces(true)
-    breakWinLocal.setAlwaysOnTop(true, 'screen-saver')
-    if (breakWinLocal) {
-      breakWinLocal.on('closed', () => {
-        breakWinLocal = null
-      })
-    }
-    breakWins.push(breakWinLocal)
+
+    setupBreakWindow(breakWinLocal, modalPath);
 
     if (!settings.get('allScreens')) {
       break
