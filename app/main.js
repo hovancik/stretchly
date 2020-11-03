@@ -281,13 +281,7 @@ function createContributorSettingsWindow () {
   }
 }
 
-function createSyncPreferencesWindow () {
-  if (syncPreferencesWindow) {
-    syncPreferencesWindow.show()
-    return
-  }
-
-  const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
+function newStretchlyWindow(syncPreferencesUrl) {
   syncPreferencesWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
@@ -307,6 +301,16 @@ function createSyncPreferencesWindow () {
       syncPreferencesWindow = null
     })
   }
+}
+
+function createSyncPreferencesWindow () {
+  if (syncPreferencesWindow) {
+    syncPreferencesWindow.show()
+    return
+  }
+
+  const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
+  newStretchlyWindow(syncPreferencesUrl);
 }
 
 function planVersionCheck (seconds = 1) {
@@ -1072,25 +1076,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     return
   }
   const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
-  myStretchlyWindow = new BrowserWindow({
-    autoHideMenuBar: true,
-    width: 1000,
-    height: 700,
-    icon: windowIconPath(),
-    x: displaysX(),
-    y: displaysY(),
-    backgroundColor: 'whitesmoke',
-    webPreferences: {
-      preload: path.resolve(__dirname, './electron-bridge.js'),
-      nodeIntegration: false
-    }
-  })
-  myStretchlyWindow.loadURL(myStretchlyUrl)
-  if (myStretchlyWindow) {
-    myStretchlyWindow.on('closed', () => {
-      myStretchlyWindow = null
-    })
-  }
+  myStretchlyWindow = newStretchlyWindow(myStretchlyUrl)
 })
 
 ipcMain.on('open-sync-preferences', function (event) {
