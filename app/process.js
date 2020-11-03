@@ -30,7 +30,10 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-  new Notification('Stretchly', { // eslint-disable-line no-new
+  // only set a visible title for non-windows platforms and windows before 10.0.19042 (20H2 Update)
+  const showTitle = (process.platform !== 'win32' || process.getSystemVersion().split('.')[2] < 19042)
+
+  new Notification(showTitle ? 'Stretchly' : '', { // eslint-disable-line no-new
     body: text,
     silent
   })
