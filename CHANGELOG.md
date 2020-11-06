@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated Italian translations
 - Updated Spanish translations
 - Updated German translations
+- prevent redundant title notification on Windows 10 (20H2 Update)
 
 ### Fixed
 - problem with DoNotDisturb being ignored when resuming breaks
