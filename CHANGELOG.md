@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Updated Bulgarian translations
+
 ## [1.3.0] - 2020-11-08
 ### Added
 - control a running instance from command line  

@@ -137,7 +137,7 @@ module.exports = {
       enabled: true
     },
     {
-      data: ['7 Minute Workout', 'This workout packs in a full-body exercise routine in a fraction of the time. But as with any excercise, be careful. There are numerous apps to get you started.'],
+      data: ['7 Minute Workout', 'This workout packs in a full-body exercise routine in a fraction of the time. But as with any exercise, be careful. There are numerous apps to get you started.'],
       enabled: true
     },
     {
