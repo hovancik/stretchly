@@ -151,7 +151,7 @@ function displaysX (displayID = -1, width = 800, fullscreen = false) {
   }
 }
 
-function getBounds(displayID) {
+function getBounds (displayID) {
   const electron = require('electron')
   let theScreen
   if (displayID === -1) {
@@ -164,11 +164,11 @@ function getBounds(displayID) {
     const screens = electron.screen.getAllDisplays()
     theScreen = screens[displayID]
   }
-  return theScreen.bounds;
+  return theScreen.bounds
 }
 
 function displaysY (displayID = -1, height = 600, fullscreen = false) {
-  const bounds = getBounds(displayID);
+  const bounds = getBounds(displayID)
   if (fullscreen) {
     return Math.ceil(bounds.y)
   } else {
@@ -177,12 +177,12 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
 }
 
 function displaysWidth (displayID = -1) {
-  const bounds = getBounds(displayID);
+  const bounds = getBounds(displayID)
   return Math.ceil(bounds.width)
 }
 
 function displaysHeight (displayID = -1) {
-  const bounds = getBounds(displayID);
+  const bounds = getBounds(displayID)
   return Math.ceil(bounds.height)
 }
 
@@ -281,7 +281,7 @@ function createContributorSettingsWindow () {
   }
 }
 
-function newStretchlyWindow(syncPreferencesUrl) {
+function newStretchlyWindow (syncPreferencesUrl) {
   syncPreferencesWindow = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
@@ -310,7 +310,7 @@ function createSyncPreferencesWindow () {
   }
 
   const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
-  newStretchlyWindow(syncPreferencesUrl);
+  newStretchlyWindow(syncPreferencesUrl)
 }
 
 function planVersionCheck (seconds = 1) {
@@ -342,49 +342,49 @@ function startBreakNotification () {
   updateTray()
 }
 
-function generateWindowsOptions(localDisplayId) {
-    const windowOptions = {
-        width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
-        height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
-        autoHideMenuBar: true,
-        icon: windowIconPath(),
-        resizable: false,
-        frame: false,
-        show: false,
-        transparent: settings.get('transparentMode'),
-        backgroundColor: calculateBackgroundColor(),
-        skipTaskbar: true,
-        focusable: false,
-        title: 'Stretchly',
-        alwaysOnTop: true,
-        webPreferences: {
-            nodeIntegration: true
-        }
+function generateWindowsOptions (localDisplayId) {
+  const windowOptions = {
+    width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+    height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
+    autoHideMenuBar: true,
+    icon: windowIconPath(),
+    resizable: false,
+    frame: false,
+    show: false,
+    transparent: settings.get('transparentMode'),
+    backgroundColor: calculateBackgroundColor(),
+    skipTaskbar: true,
+    focusable: false,
+    title: 'Stretchly',
+    alwaysOnTop: true,
+    webPreferences: {
+      nodeIntegration: true
     }
+  }
 
-    if (settings.get('fullscreen') && process.platform !== 'darwin') {
-        windowOptions.width = displaysWidth(localDisplayId)
-        windowOptions.height = displaysHeight(localDisplayId)
-        windowOptions.x = displaysX(localDisplayId, 0, true)
-        windowOptions.y = displaysY(localDisplayId, 0, true)
-    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
-        windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
-        windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
-    }
-    return windowOptions;
+  if (settings.get('fullscreen') && process.platform !== 'darwin') {
+    windowOptions.width = displaysWidth(localDisplayId)
+    windowOptions.height = displaysHeight(localDisplayId)
+    windowOptions.x = displaysX(localDisplayId, 0, true)
+    windowOptions.y = displaysY(localDisplayId, 0, true)
+  } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+    windowOptions.x = displaysX(localDisplayId, windowOptions.width, false)
+    windowOptions.y = displaysY(localDisplayId, windowOptions.height, false)
+  }
+  return windowOptions
 }
 
-function setupBreakWindow(microbreakWinLocal, modalPath) {
-    microbreakWinLocal.loadURL(modalPath)
-    microbreakWinLocal.setVisibleOnAllWorkspaces(true)
-    microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
-    if (microbreakWinLocal) {
-        microbreakWinLocal.on('closed', () => {
-            microbreakWinLocal = null
-        })
-    }
-    microbreakWins.push(microbreakWinLocal)
-    return microbreakWinLocal;
+function setupBreakWindow (microbreakWinLocal, modalPath, wins) {
+  microbreakWinLocal.loadURL(modalPath)
+  microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+  microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
+  if (microbreakWinLocal) {
+    microbreakWinLocal.on('closed', () => {
+      microbreakWinLocal = null
+    })
+  }
+  wins.push(microbreakWinLocal)
+  return microbreakWinLocal
 }
 
 function startMicrobreak () {
@@ -427,7 +427,8 @@ function startMicrobreak () {
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
-    let microbreakWinLocal = new BrowserWindow(generateWindowsOptions(localDisplayId))
+    const windowOptions = generateWindowsOptions(localDisplayId)
+    const microbreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
@@ -451,7 +452,7 @@ function startMicrobreak () {
       }
     })
 
-    setupBreakWindow(microbreakWinLocal, modalPath);
+    setupBreakWindow(microbreakWinLocal, modalPath, microbreakWins)
 
     if (!settings.get('allScreens')) {
       break
@@ -500,7 +501,8 @@ function startBreak () {
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
-    let breakWinLocal = new BrowserWindow(generateWindowsOptions(localDisplayId))
+    const windowOptions = generateWindowsOptions(localDisplayId)
+    const breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
@@ -524,7 +526,7 @@ function startBreak () {
       }
     })
 
-    setupBreakWindow(breakWinLocal, modalPath);
+    setupBreakWindow(breakWinLocal, modalPath, breakWins)
 
     if (!settings.get('allScreens')) {
       break
