@@ -48,7 +48,7 @@
       "allScreens": "Shows breaks on all monitors",
       "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
       "monitorDnd": "Show breaks even in Do Not Disturb mode",
-      "language": "Select langauge:",
+      "language": "Select language:",
       "restoreDefaults": "Restore defaults"
     },
     "schedule": {
