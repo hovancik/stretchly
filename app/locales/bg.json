@@ -86,7 +86,8 @@
       "menubarIcon": "Иконка:",
       "colour": "Цветна",
       "monochrome": "Черно-бяла",
-      "invertedMonochrome": "Обърнати цветове"
+      "invertedMonochrome": "Обърнати цветове",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "Приложение, което напомня да си почивате",

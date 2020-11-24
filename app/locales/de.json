@@ -86,7 +86,8 @@
       "menubarIcon": "Symbol in Menüleiste:",
       "colour": "Farbig",
       "monochrome": "Einfarbig",
-      "invertedMonochrome": "Einfarbig Invertiert"
+      "invertedMonochrome": "Einfarbig Invertiert",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "Die Pausenzeit Erinnerungs App",

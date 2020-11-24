@@ -86,7 +86,8 @@
             "menubarIcon": "मेनूबार आइकन:",
             "colour": "रंग",
             "monochrome": "मोनोक्रोम",
-            "invertedMonochrome": "इन्भर्ट गरिएको मोनोक्रोम"
+            "invertedMonochrome": "इन्भर्ट गरिएको मोनोक्रोम",
+            "whiteAndBlack": "Black on White"
         },
         "about": {
             "tagline": "ब्रेक समय रिमाइन्डर एप्लिकेशन ।",

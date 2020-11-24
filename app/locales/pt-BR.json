@@ -86,7 +86,8 @@
       "menubarIcon": "Ícone da barra de menus:",
       "colour": "Cor",
       "monochrome": "Monocromático",
-      "invertedMonochrome": "Monocromático invertido"
+      "invertedMonochrome": "Monocromático invertido",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "Aplicativo para lembrá-lo de fazer pausas",

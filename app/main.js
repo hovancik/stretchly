@@ -443,7 +443,7 @@ function startMicrobreak () {
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
+        breakDuration, strictMode, postponable, postponableDurationPercent, settings)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           microbreakWinLocal.center()
@@ -553,7 +553,7 @@ function startBreak () {
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
+        breakDuration, strictMode, postponable, postponableDurationPercent, settings)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           breakWinLocal.center()

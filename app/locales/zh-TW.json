@@ -86,7 +86,8 @@
             "menubarIcon": "選單列圖示：",
             "colour": "色彩",
             "monochrome": "單色",
-            "invertedMonochrome": "負片單色"
+            "invertedMonochrome": "負片單色",
+            "whiteAndBlack": "Black on White"
         },
         "about": {
             "tagline": "休息提醒軟體",

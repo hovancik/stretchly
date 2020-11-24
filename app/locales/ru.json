@@ -86,7 +86,8 @@
       "menubarIcon": "Иконка в трее:",
       "colour": "Цветная",
       "monochrome": "Монохромная",
-      "invertedMonochrome": "Инвертированная монохромная"
+      "invertedMonochrome": "Инвертированная монохромная",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "напоминания о перерывах",
