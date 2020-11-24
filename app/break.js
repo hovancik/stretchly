@@ -24,13 +24,16 @@ ipcRenderer.on('breakIdea', (event, message) => {
   breakText.innerHTML = message[1]
 })
 
-ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, keyboardShortcut) => {
+ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, settings) => {
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
+  const breaksElement = document.querySelector('.breaks')
+  breaksElement.style.setProperty('--font-color', settings.data['mainColor.font'])
 
   document.querySelectorAll('.tiptext').forEach(tt => {
+    const keyboardShortcut = settings.data.endBreakShortcut
     tt.innerHTML = Utils.formatKeyboardShortcut(keyboardShortcut)
   })
 

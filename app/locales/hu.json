@@ -86,7 +86,8 @@
       "menubarIcon": "Menüsáv ikon:",
       "colour": "Színes",
       "monochrome": "Egyszínű",
-      "invertedMonochrome": "Fordított egyszínű"
+      "invertedMonochrome": "Fordított egyszínű",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "A szünet emlékeztető alkalmazás",

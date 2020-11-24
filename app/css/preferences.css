@@ -175,6 +175,10 @@ body > .hidden,
   width: 30px;
 }
 
+.appearance > #whiteAndBlack + label:before {
+    color: #ffffff
+}
+
 .win32 .appearance > input[type="radio"] + label:before {
   content: "\2713";
   font: 13px sans-serif;
@@ -209,12 +213,20 @@ body > .hidden,
   color: #567890;
 }
 
+#whiteAndBlack + label:before {
+  background: #ffffff;
+  color: #000000;
+}
+
 .appearance > #greenClouds:checked + label:before,
 .appearance > #autumnBeBlessed:checked + label:before,
 .appearance > #graphiteCrystal:checked + label:before,
 .appearance > #coffeeKisses:checked + label:before,
 .appearance > #morningSwim:checked + label:before {
   color: #FFFFFF;
+}
+.appearance > #whiteAndBlack:checked + label:before {
+  color: #000000;
 }
 
 .sounds {

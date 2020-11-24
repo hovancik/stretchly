@@ -86,7 +86,8 @@
       "menubarIcon": "Menubar ikon:",
       "colour": "Farve",
       "monochrome": "Monokrom",
-      "invertedMonochrome": "invertere Monokrom"
+      "invertedMonochrome": "invertere Monokrom",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "Pause påmindelses app",

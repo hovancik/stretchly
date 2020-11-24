@@ -86,7 +86,8 @@
       "menubarIcon": "Menubar icon:",
       "colour": "Colour",
       "monochrome": "Monochrome",
-      "invertedMonochrome": "Inverted Monochrome"
+      "invertedMonochrome": "Inverted Monochrome",
+      "whiteAndBlack": "Black on White"
     },
     "about": {
       "tagline": "विराम समय अनुस्मारक एप्लिकेशन",
