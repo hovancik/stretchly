@@ -302,6 +302,7 @@ Format as following:
 - pramit-marattha, [@pramit-marattha](https://github.com/pramit-marattha)
 - Benedikt Allendorf, [@BenediktAllendorf](https://github.com/BenediktAllendorf)
 - Haechan Song, [@hcsong213](https://github.com/hcsong213)
+- Will, [@qubist](https://github.com/qubist)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
