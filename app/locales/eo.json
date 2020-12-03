@@ -53,7 +53,8 @@
     },
     "schedule": {
       "miniBreaks": "Paŭzetoj:",
-      "miniBreaksInfo": "Paŭzetoj estas oftaj mallongaj paŭzoj, kuij donas al vi ŝancon streĉi kaj malstreĉiĝi.", "enableMiniBreaks": "Ŝalti Paŭzetoj",
+      "miniBreaksInfo": "Paŭzetoj estas oftaj mallongaj paŭzoj, kuij donas al vi ŝancon streĉi kaj malstreĉiĝi.",
+      "enableMiniBreaks": "Ŝalti Paŭzetoj",
       "breakFor": "Paŭzi por:",
       "every": "Ĉiujn:",
       "showNotificationBeforeMiniBreak": "Montri sciigon antaŭ ol Paŭzeto komenciĝos",
@@ -91,7 +92,8 @@
       "tagline": "La aplikaĵo por memorigi pri paŭzoj",
       "version": "Versio ",
       "latestVersion": "Plej freŝa versio ",
-      "notifyNewVersion":"Aŭtomate sciigi kiam ĝisdatiginta", "learnMore": "Por lerni pli pri ebloj de Stretchly, spekti instruilon, elŝuti la plej freŝan version, aŭ kontakti nin por subteno, ",
+      "notifyNewVersion":"Aŭtomate sciigi kiam ĝisdatiginta",
+      "learnMore": "Por lerni pli pri ebloj de Stretchly, spekti instruilon, elŝuti la plej freŝan version, aŭ kontakti nin por subteno, ",
       "ourWebsite": "visitu nian retejon",
       "dot": ".",
       "developedBy": "Programis de",
@@ -121,7 +123,7 @@
     "customIdeasInfo": "Vi povas uzi vian propran paŭzajn ideojn se vi redaktas agordan dosieron. (Por altnivelaj uzantoj.)",
     "useIdeasFromSettings": "Uzi paŭzajn ideojn el agorda dosiero",
     "breakPostpone": "Paŭza prokrasteco:",
-    "breakPostponeInfo": "Se ŝaltinta en ĉefaj agordoj, vi povas prokrasti paŭzojn. La sekvontaj agordoj permesi vin ŝanĝi kiam, kiel longe, kaj kiom da fojoj vi povas prokrasti paŭzon.",
+    "breakPostponeInfo": "Se ŝaltinta en la ĉefaj agordoj, vi povas prokrasti paŭzojn. La sekvontaj agordoj permesas vin ŝanĝi kiam, kiel longe, kaj kiom da fojoj vi povas prokrasti paŭzon.",
     "miniBreaks": "Paŭzetoj:",
     "postponableFor": "Prokrastebla ĝis:",
     "postponeFor": "Prokrasti ĝis:",
@@ -189,7 +191,8 @@
     "dndMode": "Senĝena reĝimo estas aktiva",
     "nextLongBreak": "Sekva Longa Paŭzo",
     "nextMiniBreak": "Sekva Paŭzeto",
-    "afterMiniBreak": "post {{count}} Paŭzeto", "afterMiniBreak_plural": "post {{count}} Paŭzetoj",
+    "afterMiniBreak": "post {{count}} Paŭzeto",
+    "afterMiniBreak_plural": "post {{count}} Paŭzetoj",
     "resuming": "Daŭriĝos"
   }
 }
