@@ -260,6 +260,7 @@ function createWelcomeWindow () {
       x: displaysX(-1, 1000),
       y: displaysY(),
       width: 1000,
+      height: 685,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
