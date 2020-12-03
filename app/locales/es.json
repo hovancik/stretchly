@@ -87,7 +87,7 @@
       "colour": "Color",
       "monochrome": "Monocromatico",
       "invertedMonochrome": "Monocromatico Invertido",
-      "whiteAndBlack": "Black on White"
+      "heavenWhite": "Heaven White"
     },
     "about": {
       "tagline": "Aplicación para notificar cuándo hacer descansos",
