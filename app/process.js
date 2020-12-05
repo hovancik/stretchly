@@ -10,7 +10,7 @@ ipcRenderer.on('playSound', (event, file, volume) => {
 })
 
 ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
-  if (remote.getGlobal('shared').isNewVersion) {
+  if (remote.getGlobal('shared').isNewVersion && notify) {
     notifyNewVersion(silent)
   } else {
     new VersionChecker()
