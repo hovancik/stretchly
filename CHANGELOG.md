@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Updated Bulgarian translations
+- Updated Swedish translations
+
+### Fixed
+- notification of new version being showed even disabled
 
 ## [1.3.0] - 2020-11-08
 ### Added
