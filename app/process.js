@@ -30,14 +30,22 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-  // only set a visible title for non-windows platforms and windows before 10.0.19042 (20H2 Update)
-  const showTitle = (process.platform !== 'win32' || process.getSystemVersion().split('.')[2] < 19042)
 
-  new Notification(showTitle ? 'Stretchly' : '', { // eslint-disable-line no-new
+  new Notification(notificationTitle(), { // eslint-disable-line no-new
     body: text,
     silent
   })
 })
+
+function notificationTitle () {
+  // don't show title for windows after 10.0.19042 (20H2 Update) and macOS 11
+  const newWin = process.platform === 'win32' && process.getSystemVersion().split('.')[2] >= 19042
+  const newMac = process.platform === 'darwin' && process.getSystemVersion().split('.')[0] >= 11
+  if (newWin || newMac) {
+    return ''
+  }
+  return 'Stretchly'
+}
 
 function notifyNewVersion (silent) {
   const notification = new Notification('Stretchly', {
