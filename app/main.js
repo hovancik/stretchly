@@ -125,6 +125,7 @@ function numberOfDisplays () {
 
 function closeWindows (windowArray) {
   for (let i = windowArray.length - 1; i >= 0; i--) {
+    windowArray[i].hide()
     windowArray[i].close()
   }
   return null
