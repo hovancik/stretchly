@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - notification of new version being showed even disabled
+- browser tab non-responsive after resuming
 
 ## [1.3.0] - 2020-11-08
 ### Added
