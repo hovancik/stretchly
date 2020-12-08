@@ -141,18 +141,18 @@ describe('canSkip and canPostpone', () => {
 
   describe('shouldShowNotificationTitle', () => {
     it('works for older windows', () => {
-      shouldShowNotificationTitle('win32', '10.0.19041').should.equal(false)
-      shouldShowNotificationTitle('win32', '6.3.9600').should.equal(false)
+      shouldShowNotificationTitle('win32', '10.0.19041').should.equal(true)
+      shouldShowNotificationTitle('win32', '6.3.9600').should.equal(true)
     })
     it('works for new windows', () => {
-      shouldShowNotificationTitle('win32', '10.0.19042').should.equal(true)
+      shouldShowNotificationTitle('win32', '10.0.19042').should.equal(false)
     })
     it('works for older mac', () => {
-      shouldShowNotificationTitle('darwin', '10.15.1').should.equal(false)
+      shouldShowNotificationTitle('darwin', '10.15.1').should.equal(true)
     })
     it('works for new mac', () => {
-      shouldShowNotificationTitle('darwin', '10.16').should.equal(true)
-      shouldShowNotificationTitle('darwin', '11.0.1').should.equal(true)
+      shouldShowNotificationTitle('darwin', '10.16').should.equal(false)
+      shouldShowNotificationTitle('darwin', '11.0.1').should.equal(false)
     })
   })
 })

@@ -31,16 +31,18 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-  new Notification(shouldShowNotificationTitle(process.platform, process.getSystemVersion()), { // eslint-disable-line no-new
+  const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
+  new Notification(title, { // eslint-disable-line no-new
     body: text,
-    silent
+    silent: silent
   })
 })
 
 function notifyNewVersion (silent) {
-  const notification = new Notification('Stretchly', {
+  const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
+  const notification = new Notification(title, {
     body: i18next.t('process.newVersionAvailable'),
-    silent
+    silent: silent
   })
   notification.onclick = () => shell.openExternal('https://hovancik.net/stretchly/downloads')
 }

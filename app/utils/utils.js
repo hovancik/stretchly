@@ -71,12 +71,12 @@ function formatKeyboardShortcut (keyboardShortcut) {
 
 function shouldShowNotificationTitle (platform, systemVersion) {
   if (platform === 'win32' && semver.gte(semver.coerce(systemVersion), '10.0.19042')) {
-    return true
+    return false
   }
   if (platform === 'darwin' && semver.gte(semver.coerce(systemVersion), '10.16.0')) {
-    return true
+    return false
   }
-  return false
+  return true
 }
 
 module.exports = {
