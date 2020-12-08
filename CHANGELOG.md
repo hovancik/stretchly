@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - notification of new version being showed even disabled
 - browser tab non-responsive after resuming
+- don't show notification title for macOS Big Sur
 
 ## [1.3.0] - 2020-11-08
 ### Added
