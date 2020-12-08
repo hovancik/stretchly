@@ -154,5 +154,8 @@ describe('canSkip and canPostpone', () => {
       shouldShowNotificationTitle('darwin', '10.16').should.equal(false)
       shouldShowNotificationTitle('darwin', '11.0.1').should.equal(false)
     })
+    it('works for new linux', () => {
+      shouldShowNotificationTitle('linux', '1.0.0').should.equal(true)
+    })
   })
 })
