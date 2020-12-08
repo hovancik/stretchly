@@ -30,7 +30,6 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-
   new Notification(notificationTitle(), { // eslint-disable-line no-new
     body: text,
     silent

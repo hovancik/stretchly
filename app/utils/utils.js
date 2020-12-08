@@ -1,3 +1,5 @@
+const semver = require('semver')
+
 // TODO if I am not wrong, formatting function are mathematically the same
 // Would be nice to not have the same code
 const formatTimeRemaining = function (milliseconds, i18next = require('i18next')) {
@@ -67,10 +69,21 @@ function formatKeyboardShortcut (keyboardShortcut) {
   return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
 }
 
+function shouldShowNotificationTitle (platform, systemVersion) {
+  if (platform === 'win32' && semver.gte(semver.coerce(systemVersion), '10.0.19042')) {
+    return true
+  }
+  if (platform === 'darwin' && semver.gte(semver.coerce(systemVersion), '10.16.0')) {
+    return true
+  }
+  return false
+}
+
 module.exports = {
   formatTimeRemaining,
   formatTimeIn,
   canPostpone,
   canSkip,
-  formatKeyboardShortcut
+  formatKeyboardShortcut,
+  shouldShowNotificationTitle
 }
