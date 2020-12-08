@@ -2,6 +2,7 @@ const { ipcRenderer, shell, remote } = require('electron')
 const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 const semver = require('semver')
+const { shouldShowNotificationTitle } = require('./utils/utils')
 
 ipcRenderer.on('playSound', (event, file, volume) => {
   const audio = new Audio(`audio/${file}.wav`)
@@ -30,21 +31,11 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-  new Notification(notificationTitle(), { // eslint-disable-line no-new
+  new Notification(shouldShowNotificationTitle(process.platform, process.getSystemVersion()), { // eslint-disable-line no-new
     body: text,
     silent
   })
 })
-
-function notificationTitle () {
-  // don't show title for windows after 10.0.19042 (20H2 Update) and macOS 11
-  const newWin = process.platform === 'win32' && process.getSystemVersion().split('.')[2] >= 19042
-  const newMac = process.platform === 'darwin' && process.getSystemVersion().split('.')[0] >= 11
-  if (newWin || newMac) {
-    return ''
-  }
-  return 'Stretchly'
-}
 
 function notifyNewVersion (silent) {
   const notification = new Notification('Stretchly', {
