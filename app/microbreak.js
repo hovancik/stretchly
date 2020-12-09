@@ -30,7 +30,7 @@ ipcRenderer.on('microbreakIdea', (event, message) => {
 })
 
 ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, settings) => {
-  const theme = settings.data.mainColor
+  const theme = settings.data.themeName
   document.body.classList.add(theme)
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')

@@ -655,7 +655,7 @@ function resetBreaks () {
 }
 
 function calculateBackgroundColor () {
-  const themeColor = settings.get('mainColor')
+  const themeColor = settings.get('themeName')
   const opacity = settings.get('opacity')
   return '#' + Math.round(opacity * 255).toString(16) + themeColor.substr(1)
 }
