@@ -175,9 +175,6 @@ ipcRenderer.on('renderSettings', (event, settings) => {
     if (!eventsAttached) {
       radio.onchange = (event) => {
         ipcRenderer.send('save-setting', radio.name, value)
-        for (const data in radio.dataset) {
-          ipcRenderer.send('save-setting', `${radio.name}.${data}`, radio.dataset[data])
-        }
       }
     }
   })

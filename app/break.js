@@ -25,12 +25,12 @@ ipcRenderer.on('breakIdea', (event, message) => {
 })
 
 ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, settings) => {
+  const theme = settings.data.mainColor
+  document.body.classList.add(theme)
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
-  const breaksElement = document.querySelector('.breaks')
-  breaksElement.style.setProperty('--font-color', settings.data['mainColor.font'])
 
   document.querySelectorAll('.tiptext').forEach(tt => {
     const keyboardShortcut = settings.data.endBreakShortcut
