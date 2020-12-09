@@ -2,6 +2,7 @@ const { ipcRenderer, shell, remote } = require('electron')
 const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 const semver = require('semver')
+const { shouldShowNotificationTitle } = require('./utils/utils')
 
 ipcRenderer.on('playSound', (event, file, volume) => {
   const audio = new Audio(`audio/${file}.wav`)
@@ -10,7 +11,7 @@ ipcRenderer.on('playSound', (event, file, volume) => {
 })
 
 ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
-  if (remote.getGlobal('shared').isNewVersion) {
+  if (remote.getGlobal('shared').isNewVersion && notify) {
     notifyNewVersion(silent)
   } else {
     new VersionChecker()
@@ -30,19 +31,18 @@ ipcRenderer.on('checkVersion', (event, { oldVersion, notify, silent }) => {
 })
 
 ipcRenderer.on('showNotification', (event, { text, silent }) => {
-  // only set a visible title for non-windows platforms and windows before 10.0.19042 (20H2 Update)
-  const showTitle = (process.platform !== 'win32' || process.getSystemVersion().split('.')[2] < 19042)
-
-  new Notification(showTitle ? 'Stretchly' : '', { // eslint-disable-line no-new
+  const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
+  new Notification(title, { // eslint-disable-line no-new
     body: text,
-    silent
+    silent: silent
   })
 })
 
 function notifyNewVersion (silent) {
-  const notification = new Notification('Stretchly', {
+  const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
+  const notification = new Notification(title, {
     body: i18next.t('process.newVersionAvailable'),
-    silent
+    silent: silent
   })
   notification.onclick = () => shell.openExternal('https://hovancik.net/stretchly/downloads')
 }

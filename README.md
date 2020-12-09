@@ -1,4 +1,4 @@
-# Stretchly [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# Stretchly [![Awesome Humane Tech](https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true)](https://github.com/humanetech-community/awesome-humane-tech) [![Build Status](https://travis-ci.org/hovancik/stretchly.svg?branch=master)](https://travis-ci.org/hovancik/stretchly) [![Build status](https://ci.appveyor.com/api/projects/status/d3eq9bs1kcysulb1?svg=true)](https://ci.appveyor.com/project/hovancik/stretchly) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![codecov](https://codecov.io/gh/hovancik/stretchly/branch/master/graph/badge.svg)](https://codecov.io/gh/hovancik/stretchly) [![Join the chat at https://gitter.im/stretchly/Lobby](https://badges.gitter.im/stretchly/Lobby.svg)](https://gitter.im/stretchly/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Translation status](https://hosted.weblate.org/widgets/stretchly/-/stretchly/svg-badge.svg)](https://hosted.weblate.org/engage/stretchly/)
 
 <img src="stretchly_128x128.png" align="right" alt="Stretchly logo">
 
@@ -216,7 +216,7 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 
 Now you can clone the repo with `git clone https://github.com/hovancik/stretchly.git`. Change to the new created directory and run `npm i` to install node packages needed.
 
-Read on. 
+Read on.
 
 ### Debugging
 If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
@@ -233,6 +233,11 @@ You can copy debug information to the clipboard.
 Format as following:
 - `System: my message` for messages regarding Operating System, ie: `System: resume or unlock`
 - `Stretchly: my message` for messages regarding *Stretchly*
+
+### Translations
+
+You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/engage/stretchly). Consider joining with your Github account to be correctly credited.
+[![Translation status](https://hosted.weblate.org/widgets/stretchly/-/stretchly/horizontal-auto.svg)](https://hosted.weblate.org/engage/stretchly/)
 
 
 ## Known issues
@@ -302,6 +307,7 @@ Format as following:
 - pramit-marattha, [@pramit-marattha](https://github.com/pramit-marattha)
 - Benedikt Allendorf, [@BenediktAllendorf](https://github.com/BenediktAllendorf)
 - Haechan Song, [@hcsong213](https://github.com/hcsong213)
+- Will, [@qubist](https://github.com/qubist)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
