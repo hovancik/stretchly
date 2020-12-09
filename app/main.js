@@ -407,7 +407,7 @@ function startMicrobreak () {
       frame: false,
       show: false,
       transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
+      opacity: settings.get('transparentMode') ? settings.get('opacity') : 1,
       skipTaskbar: true,
       focusable: false,
       title: 'Stretchly',
@@ -517,7 +517,7 @@ function startBreak () {
       frame: false,
       show: false,
       transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
+      opacity: settings.get('transparentMode') ? settings.get('opacity') : 1,
       skipTaskbar: true,
       focusable: false,
       title: 'Stretchly',
@@ -541,6 +541,7 @@ function startBreak () {
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
+  
     breakWinLocal.once('ready-to-show', () => {
       breakWinLocal.showInactive()
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
@@ -652,12 +653,6 @@ function resetBreaks () {
   breakPlanner.reset()
   log.info('Stretchly: reseting breaks')
   updateTray()
-}
-
-function calculateBackgroundColor () {
-  const themeColor = settings.get('themeName')
-  const opacity = settings.get('opacity')
-  return '#' + Math.round(opacity * 255).toString(16) + themeColor.substr(1)
 }
 
 function loadSettings () {
