@@ -8,11 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Esperanto translations
+- Norwegian translations
 
 ### Changed
 - Updated Bulgarian translations
 - Updated Swedish translations
 - Updated Chinese translations
+- Updated Slovak translations
+- Updated Czech translations
 
 ### Fixed
 - notification of new version being showed even disabled
