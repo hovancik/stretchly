@@ -23,7 +23,7 @@
     "cancel": "取消",
     "preferences": "自定义设置",
     "contributorPreferences": "贡献者偏好",
-    "syncPreferences": "Sync Preferences"
+    "syncPreferences": "同步设置"
   },
   "break": {
     "postpone": "延后此次休息",
@@ -77,7 +77,7 @@
       "graphiteCrystal": "石墨水晶",
       "coffeeKisses": "咖啡之吻",
       "morningSwim": "沐浴晨光",
-      "transparentMode": "Enable transparency",
+      "transparentMode": "启用透明度",
       "sounds": "音效:",
       "enableSounds": "启用音效",
       "crystalGlass": "水晶玻璃",
@@ -98,7 +98,7 @@
       "dot": ".",
       "developedBy": "开发者：",
       "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "designedBy": "图标和用户界面由 Colin Shanley 设计"
     },
     "heart": {
       "loveStretchly": "喜欢 Stretchly?",
@@ -108,7 +108,7 @@
       "alreadyContributor": "我已经是贡献者",
       "authenticateUsing": "通过下列方法认证：",
       "contributorPreferences": "贡献者偏好",
-      "syncPreferences": "Sync Preferences"
+      "syncPreferences": "同步设置"
     }
   },
   "contributorPreferences": {
@@ -134,13 +134,13 @@
     "pauseUntilMorningInfo": "指定「暂停至早晨」的具体时间",
     "welcomeWindow": "欢迎窗口：",
     "showWelcomeWindow": "下次启动时显示欢迎窗口",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
+    "opacityTheme": "主题不透明度:",
+    "opacityInfo": "休息窗口应该有多不透明?",
+    "opacity": "不透明度:",
+    "breakWindowSize": "休息窗口尺寸",
+    "breakWindowSizeInfo": "休息窗口的屏幕占比是多少?",
+    "breakWindowWidth": "宽:",
+    "breakWindowHeight": "高:",
     "sounds": "音效：",
     "volume": "音量：",
     "miniBreakStartSound": "在小憩开始时播放休息结束的音效",
