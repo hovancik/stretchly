@@ -23,7 +23,8 @@
     "cancel": "Zrušit",
     "preferences": "Nastavení",
     "contributorPreferences": "Nastavení pro přispěvatele",
-    "syncPreferences": "Synchronizace nastavení"
+    "syncPreferences": "Synchronizace nastavení",
+    "warning": "Tím se obnoví původní nastavení aplikace a všechna vaše nastavení budou ztracena."
   },
   "break": {
     "postpone": "Odložit tuto přestávku",
@@ -46,7 +47,7 @@
       "fullscreen": "Celá obrazovka",
       "showIdeas": "Zobrazovat během přestávek nápady na cvičení",
       "allScreens": "Zobrazovat přestávky na všech monitorech",
-      "monitorIdleTime": "Sledovat neaktivitu (přestávky jsou během vaší neaktivity přerušeny)",
+      "monitorIdleTime": "Sledovat neaktivitu (přestávky jsou během vaší neaktivity přerušeny).",
       "monitorDnd": "Zobrazovat přestávky i během režimu Nerušit",
       "language": "Vyberte jazyk:",
       "restoreDefaults": "Obnovit původní nastavení"
@@ -77,7 +78,7 @@
       "graphiteCrystal": "Polibky ve tmě",
       "coffeeKisses": "Skrz kapky kávy",
       "morningSwim": "Zamrzlé jezero",
-      "transparentMode": "Enable transparency",
+      "transparentMode": "Povolit průhlednost",
       "sounds": "Zvuky:",
       "enableSounds": "Povolit zvuky",
       "crystalGlass": "Křišťál",
@@ -92,13 +93,13 @@
       "tagline": "Pamatuje na přestávky za vás",
       "version": "Verze ",
       "latestVersion": "Nejnovější verze ",
-      "notifyNewVersion":"Automaticky upozorňovat na nové verze",
+      "notifyNewVersion": "Automaticky upozorňovat na nové verze",
       "learnMore": "Pokud se chcete o funkcích Stretchly dozvědět víc, zhlédnout tutoriál, stáhnout nejnovější verzi nebo nás kontaktovat kvůli podpoře, ",
       "ourWebsite": "navštivte naši webovou stránku",
       "dot": ".",
       "developedBy": "Vyvinul",
       "janH": "Ján Hovančík",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "designedBy": "Ikony a uživatelské rozhraní Colin Shanley"
     },
     "heart": {
       "loveStretchly": "Chcete Stretchly pomoci?",
@@ -134,10 +135,10 @@
     "pauseUntilMorningInfo": "Specifikujte hodinu pro 'Přerušit do rána'.",
     "welcomeWindow": "Úvodní obrazovka:",
     "showWelcomeWindow": "Při příštím spuštění zobrazit Úvodní obrazovku",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
+    "opacityTheme": "Průhledný téma",
+    "opacityInfo": "Jak moc by měla být téma neprůhledná?",
+    "opacity": "Opacity (neprůhlednost):",
+    "breakWindowSize": "Velikost okna přestávek",
     "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
     "breakWindowWidth": "Width:",
     "breakWindowHeight": "Height:",
