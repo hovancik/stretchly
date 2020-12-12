@@ -5,8 +5,6 @@ const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 
-startI18next()
-
 nativeTheme.on('updated', function theThemeHasChanged () {
   appIcon.setImage(trayIconPath())
 })
@@ -66,7 +64,7 @@ function startI18next () {
   i18next
     .use(Backend)
     .init({
-      lng: 'en',
+      lng: settings.get('language'),
       fallbackLng: 'en',
       debug: false,
       backend: {
@@ -666,6 +664,7 @@ function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
+  startI18next()
   breakPlanner = new BreaksPlanner(settings)
   breakPlanner.nextBreak() // plan first break
   breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
@@ -678,7 +677,6 @@ function loadSettings () {
   breakPlanner.on('updateToolTip', function () {
     updateTray()
   })
-  i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 }

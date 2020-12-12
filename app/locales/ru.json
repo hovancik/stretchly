@@ -22,8 +22,7 @@
     "continue": "Продолжить",
     "cancel": "Отменить",
     "preferences": "Настройки",
-    "contributorPreferences": "Настройки участников",
-    "syncPreferences": "Sync Preferences"
+    "contributorPreferences": "Настройки участников"
   },
   "break": {
     "postpone": "Отложить этот перерыв",
@@ -77,7 +76,6 @@
       "graphiteCrystal": "Кристаллы графита",
       "coffeeKisses": "Кофейный поцелуй",
       "morningSwim": "Утренний заплыв",
-      "transparentMode": "Enable transparency",
       "sounds": "Звуки:",
       "enableSounds": "Включить звуки",
       "crystalGlass": "Хрусталь",
@@ -97,8 +95,7 @@
       "ourWebsite": "посетив наш сайт",
       "dot": ".",
       "developedBy": "Разработано",
-      "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "janH": "Jan Hovancik"
     },
     "heart": {
       "loveStretchly": "Понравился Stretchly?",
@@ -107,8 +104,7 @@
       "becomePatron": "Стать Покровителем",
       "alreadyContributor": "Я уже участник",
       "authenticateUsing": "Войти с помощью:",
-      "contributorPreferences": "Настройки участников",
-      "syncPreferences": "Sync Preferences"
+      "contributorPreferences": "Настройки участников"
     }
   },
   "contributorPreferences": {
@@ -134,13 +130,6 @@
     "pauseUntilMorningInfo": "Укажите время, до которого будут приостановлены перерывы при выборе 'до утра'.",
     "welcomeWindow": "Окно приветствия:",
     "showWelcomeWindow": "Показывать окно приветствия при следующем запуске",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Звуки:",
     "volume": "Громкость:",
     "miniBreakStartSound": "Также проигрывать звук окончания перерыва в начале мини-перерыва",
