@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Updated Bulgarian translations
 - Updated Swedish translations
+- Updated Chinese translations
 
 ### Fixed
 - notification of new version being showed even disabled

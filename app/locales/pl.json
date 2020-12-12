@@ -22,8 +22,7 @@
     "continue": "Kontynuuj",
     "cancel": "Anuluj",
     "preferences": "Ustawienia",
-    "contributorPreferences": "Ustawienia wspierającego",
-    "syncPreferences": "Sync Preferences"
+    "contributorPreferences": "Ustawienia wspierającego"
   },
   "break": {
     "postpone": "Przełóż przerwę na później",
@@ -97,8 +96,7 @@
       "ourWebsite": "odwiedź naszą stronę",
       "dot": ".",
       "developedBy": "Stworzona przez",
-      "janH": "Jana Hovancika",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "janH": "Jana Hovancika"
     },
     "heart": {
       "loveStretchly": "Kochasz Stretchly?",
@@ -107,8 +105,7 @@
       "becomePatron": "Zostań Patronem",
       "alreadyContributor": "Już jestem wspierającym",
       "authenticateUsing": "Uwierzytelnij się używając:",
-      "contributorPreferences": "Ustawienia wspierającego",
-      "syncPreferences": "Sync Preferences"
+      "contributorPreferences": "Ustawienia wspierającego"
     }
   },
   "contributorPreferences": {
@@ -134,13 +131,6 @@
     "pauseUntilMorningInfo": "Ustaw do której godziny 'Wstrzymaj do rana' powinno wstrzymywać przerwy.",
     "welcomeWindow": "Okno powitalne:",
     "showWelcomeWindow": "Pokaż okno powitalne przy następnym uruchomieniu",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Dźwięki:",
     "volume": "Głośność:",
     "miniBreakStartSound": "Odtwórz dźwięk końca przerwy również na początku mikroprzerwy",
