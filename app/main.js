@@ -469,6 +469,9 @@ function startMicrobreak () {
       break
     }
   }
+  if (process.platform === 'darwin') {
+    app.dock.hide()
+  }
   updateTray()
 }
 
@@ -579,7 +582,9 @@ function startBreak () {
       break
     }
   }
-
+  if (process.platform === 'darwin') {
+    app.dock.hide()
+  }
   updateTray()
 }
 
