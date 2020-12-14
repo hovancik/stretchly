@@ -243,7 +243,8 @@ function startProcessWin () {
   processWin = new BrowserWindow({
     show: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   processWin.loadURL(modalPath)
@@ -264,7 +265,8 @@ function createWelcomeWindow () {
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     })
     welcomeWin.loadURL(modalPath)
@@ -290,7 +292,8 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   contributorPreferencesWindow.loadURL(modalPath)
@@ -413,7 +416,8 @@ function startMicrobreak () {
       title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     }
 
@@ -523,7 +527,8 @@ function startBreak () {
       title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     }
 
@@ -740,7 +745,8 @@ function createPreferencesWindow () {
     y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   preferencesWin.loadURL(modalPath)
