@@ -1,4 +1,4 @@
-os: unstable
+os: Visual Studio 2019
 
 platform:
   - x86
@@ -7,7 +7,7 @@ platform:
 skip_tags: true
 
 environment:
-  nodejs_version: "12.14.1"
+  nodejs_version: "12.18.3"
 
 init:
 - tzutil /s "W. Europe Standard Time"
