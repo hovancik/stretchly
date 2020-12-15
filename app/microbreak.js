@@ -34,8 +34,8 @@ ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, post
   const progressTime = document.querySelector('#progress-time')
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
-  const breaksElement = document.querySelector('.breaks')
-  breaksElement.style.setProperty('--font-color', settings.data['mainColor.font'])
+  const mainColor = settings.data.mainColor
+  document.body.classList.add(mainColor.substring(1))
 
   document.querySelectorAll('.tiptext').forEach(tt => {
     const keyboardShortcut = settings.data.endBreakShortcut
