@@ -5,11 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-- Heaven White theme
 
 ### Added
 - Esperanto translations
 - Norwegian translations
+- Heaven White theme
 
 ### Changed
 - Updated Bulgarian translations
