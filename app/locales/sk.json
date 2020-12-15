@@ -23,7 +23,8 @@
     "cancel": "Zrušiť",
     "preferences": "Nastavenia",
     "contributorPreferences": "Nastavenia pre prispievateľov",
-    "syncPreferences": "Synchronizácia nastavení"
+    "syncPreferences": "Synchronizácia nastavení",
+    "warning": "Týmto sa obnovia pôvodné nastavenia aplikácie a všetky vaše nastavenia sa stratia."
   },
   "break": {
     "postpone": "Posunúť prestávku na neskôr",
@@ -46,7 +47,7 @@
       "fullscreen": "Celá obrazovka",
       "showIdeas": "Ukázať nápady na cvičenie počas prestávok",
       "allScreens": "Ukázať prestávky na každom monitore",
-      "monitorIdleTime": "Sledovať neaktívny čas (prestávky sú počas vašej neaktivity prerušené)",
+      "monitorIdleTime": "Sledovať neaktívny čas (prestávky sú počas vašej neaktivity prerušené).",
       "monitorDnd": "Ukázať prestávky aj počas režimu Nerušiť",
       "language": "Vyberte jazyk:",
       "restoreDefaults": "Obnoviť pôvodné nastavenia"
@@ -93,7 +94,7 @@
       "tagline": "Pamätá si prestávky za vás",
       "version": "Verzia ",
       "latestVersion": "Najnovšia verzia ",
-      "notifyNewVersion":"Automaticky ma upozorni na novú verziu",
+      "notifyNewVersion": "Automaticky ma upozorni na novú verziu",
       "learnMore": "Ak sa chcete dozvedieť viac o funkciách Stretchly, prezrieť tutoriál, stiahnuť najnovšiu verziu alebo nás kontaktovať kvôli podpore, ",
       "ourWebsite": "navštívte našu webstránku",
       "dot": ".",

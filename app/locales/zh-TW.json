@@ -77,7 +77,6 @@
             "graphiteCrystal": "石墨水晶",
             "coffeeKisses": "咖啡之吻",
             "morningSwim": "沐浴晨光",
-            "transparentMode": "Enable transparency",
             "sounds": "音效：",
             "enableSounds": "啟用音效",
             "crystalGlass": "水晶玻璃",
@@ -98,8 +97,7 @@
             "ourWebsite": "造訪我們的網站",
             "dot": ".",
             "developedBy": "開發者：",
-            "janH": "Jan Hovancik",
-            "designedBy": "Icon and UI design by Colin Shanley"
+            "janH": "Jan Hovancik"
         },
         "heart": {
             "loveStretchly": "喜歡您的 Stretchly 嗎？",
@@ -108,8 +106,7 @@
             "becomePatron": "成為捐助者",
             "alreadyContributor": "我已經是貢獻者了",
             "authenticateUsing": "身分核對方式：",
-            "contributorPreferences": "貢獻者偏好設定",
-            "syncPreferences": "Sync Preferences"
+            "contributorPreferences": "貢獻者偏好設定"
         }
     },
     "contributorPreferences": {
@@ -135,13 +132,6 @@
         "pauseUntilMorningInfo": "指定「暫停至早上」的具體時間",
         "welcomeWindow": "歡迎視窗：",
         "showWelcomeWindow": "下次啟動時顯示歡迎視窗",
-        "opacityTheme": "Theme transparency:",
-        "opacityInfo": "How solid should the break window be?",
-        "opacity": "Opacity:",
-        "breakWindowSize": "Break window size",
-        "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-        "breakWindowWidth": "Width:",
-        "breakWindowHeight": "Height:",
         "sounds": "音效：",
         "volume": "音量：",
         "miniBreakStartSound": "也在小休息開始時播放休息結束的音效",

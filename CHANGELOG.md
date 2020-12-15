@@ -7,8 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 - Heaven White theme
 
+### Added
+- Esperanto translations
+- Norwegian translations
+
 ### Changed
 - Updated Bulgarian translations
+- Updated Swedish translations
+- Updated Chinese translations
+- Updated Slovak translations
+- Updated Czech translations
+
+### Fixed
+- notification of new version being showed even disabled
+- browser tab non-responsive after resuming
+- don't show notification title for macOS Big Sur
 
 ## [1.3.0] - 2020-11-08
 ### Added

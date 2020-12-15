@@ -22,8 +22,7 @@
     "continue": "Folytatás",
     "cancel": "Mégsem",
     "preferences": "Beállítások",
-    "contributorPreferences": "Támogatói beállítások",
-    "syncPreferences": "Sync Preferences"
+    "contributorPreferences": "Támogatói beállítások"
   },
   "break": {
     "postpone": "Szünet elhalasztása",
@@ -77,7 +76,6 @@
       "graphiteCrystal": "Grafitkristály",
       "coffeeKisses": "Kávé csók",
       "morningSwim": "Reggeli úszás",
-      "transparentMode": "Enable transparency",
       "sounds": "Hangok:",
       "enableSounds": "Hangok engedélyezése",
       "crystalGlass": "Üveg csilingelés",
@@ -98,8 +96,7 @@
       "ourWebsite": "látogasd meg a weboldalunkat",
       "dot": ".",
       "developedBy": "Fejlesztette",
-      "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "janH": "Jan Hovancik"
     },
     "heart": {
       "loveStretchly": "Szereted a Stretchlyt?",
@@ -108,8 +105,7 @@
       "becomePatron": "Legyél támogató (Patreon)",
       "alreadyContributor": "Már támogató vagyok",
       "authenticateUsing": "Azonosítás a következővel:",
-      "contributorPreferences": "Támogatói beállítások",
-      "syncPreferences": "Sync Preferences"
+      "contributorPreferences": "Támogatói beállítások"
     }
   },
   "contributorPreferences": {
@@ -135,13 +131,6 @@
     "pauseUntilMorningInfo": "Állítsd be, hogy a 'Felfüggesztés reggelig' hány óráig függessze fel a szüneteket.",
     "welcomeWindow": "Üdvözlő ablak:",
     "showWelcomeWindow": "Üdvözlő ablak megjelenítése a következő indításkor",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Hangok:",
     "volume": "Hangerő:",
     "miniBreakStartSound": "Hang lejátszása a Rövid szünetek kezdetekor is",

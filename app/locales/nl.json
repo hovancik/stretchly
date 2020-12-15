@@ -17,13 +17,11 @@
     "indefinitely": "voor onbepaalde tijd",
     "resetBreaks": "Reset pauzes",
     "quitStretchly": "Stop Stretchly",
-    "restoreDefaults": "Restore defaults",
     "warning": "Dit zal the standaardinstellingen herstellen en all je instellingen zullen verloren gaan",
     "continue": "Doorgaan",
     "cancel": "Annuleer",
     "preferences": "Instellingen",
-    "contributorPreferences": "Bijdrager Instellingen",
-    "syncPreferences": "Sync Preferences"
+    "contributorPreferences": "Bijdrager Instellingen"
   },
   "break": {
     "postpone": "Deze pauze uitstellen",
@@ -54,7 +52,6 @@
     "schedule": {
       "miniBreaks": "Mini Pauzes:",
       "miniBreaksInfo": "Mini pauzes zijn korte pauzes die regelmatig genomen worden om je de kans te geven om uit te rekken en te ontspannen.",
-      "enableMiniBreaks": "Enable Mini Breaks",
       "breakFor": "Pauze voor:",
       "every": "Elke:",
       "showNotificationBeforeMiniBreak": "Toon notificaties voordat een Mini Pauze begint",
@@ -77,7 +74,6 @@
       "graphiteCrystal": "Grafiet kristal",
       "coffeeKisses": "Koffie zoenen",
       "morningSwim": "Ochtend zwemmen",
-      "transparentMode": "Enable transparency",
       "sounds": "Geluiden:",
       "enableSounds": "Geluiden inschakelen",
       "crystalGlass": "Kristalglas",
@@ -98,8 +94,7 @@
       "ourWebsite": "bezoek onze website",
       "dot": ".",
       "developedBy": "Ontwikkeld door",
-      "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "janH": "Jan Hovancik"
     },
     "heart": {
       "loveStretchly": "Hou je van Stretchly?",
@@ -108,8 +103,7 @@
       "becomePatron": "Word een Patron",
       "alreadyContributor": "Ik ben al een bijdrager",
       "authenticateUsing": "Authenticeren met:",
-      "contributorPreferences": "Bijdrager Instellingen",
-      "syncPreferences": "Sync Preferences"
+      "contributorPreferences": "Bijdrager Instellingen"
     }
   },
   "contributorPreferences": {
@@ -135,13 +129,6 @@
     "pauseUntilMorningInfo": "Specifeer tot welk uur 'Pauze tot ochtend' zou moeten pauzeren.",
     "welcomeWindow": "Welkom venster:",
     "showWelcomeWindow": "Toon Welkom venster op volgende start",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Geluiden:",
     "volume": "Volume:",
     "miniBreakStartSound": "Speel einde-van-pauze geluid ook bij het begin van een Mini Pauze",

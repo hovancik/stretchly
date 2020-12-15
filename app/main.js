@@ -5,8 +5,6 @@ const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 
-startI18next()
-
 nativeTheme.on('updated', function theThemeHasChanged () {
   appIcon.setImage(trayIconPath())
 })
@@ -66,7 +64,7 @@ function startI18next () {
   i18next
     .use(Backend)
     .init({
-      lng: 'en',
+      lng: settings.get('language'),
       fallbackLng: 'en',
       debug: false,
       backend: {
@@ -125,6 +123,7 @@ function numberOfDisplays () {
 
 function closeWindows (windowArray) {
   for (let i = windowArray.length - 1; i >= 0; i--) {
+    windowArray[i].hide()
     windowArray[i].close()
   }
   return null
@@ -244,7 +243,8 @@ function startProcessWin () {
   processWin = new BrowserWindow({
     show: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   processWin.loadURL(modalPath)
@@ -260,11 +260,13 @@ function createWelcomeWindow () {
       x: displaysX(-1, 1000),
       y: displaysY(),
       width: 1000,
+      height: 685,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     })
     welcomeWin.loadURL(modalPath)
@@ -290,7 +292,8 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   contributorPreferencesWindow.loadURL(modalPath)
@@ -413,7 +416,8 @@ function startMicrobreak () {
       title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     }
 
@@ -464,6 +468,9 @@ function startMicrobreak () {
     if (!settings.get('allScreens')) {
       break
     }
+  }
+  if (process.platform === 'darwin') {
+    app.dock.hide()
   }
   updateTray()
 }
@@ -523,7 +530,8 @@ function startBreak () {
       title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     }
 
@@ -574,7 +582,9 @@ function startBreak () {
       break
     }
   }
-
+  if (process.platform === 'darwin') {
+    app.dock.hide()
+  }
   updateTray()
 }
 
@@ -664,6 +674,7 @@ function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
+  startI18next()
   breakPlanner = new BreaksPlanner(settings)
   breakPlanner.nextBreak() // plan first break
   breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
@@ -676,7 +687,6 @@ function loadSettings () {
   breakPlanner.on('updateToolTip', function () {
     updateTray()
   })
-  i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 }
@@ -740,7 +750,8 @@ function createPreferencesWindow () {
     y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   preferencesWin.loadURL(modalPath)

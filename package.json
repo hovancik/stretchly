@@ -4,7 +4,7 @@
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
-    "node": "12.14.1"
+    "node": "12.18.3"
   },
   "scripts": {
     "start": "electron ./app",
@@ -40,16 +40,16 @@
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
-    "cross-env": "^7.0.2",
+    "cross-env": "^7.0.3",
     "electromon": "^1.0.10",
-    "electron": "9.1.0",
+    "electron": "^11.1.0",
     "electron-builder": "^22.9.1",
-    "husky": "^4.3.0",
+    "husky": "^4.3.6",
     "mocha": "^8.2.1",
     "rimraf": "^3.0.2",
-    "sinon": "^9.2.1",
-    "spectron": "^12.0.0",
-    "standard": "^16.0.1"
+    "sinon": "^9.2.2",
+    "spectron": "^13.0.0",
+    "standard": "^16.0.3"
   },
   "build": {
     "appId": "net.hovancik.stretchly",
@@ -136,11 +136,11 @@
   "dependencies": {
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.3.0",
-    "i18next": "^19.8.3",
+    "i18next": "^19.8.4",
     "i18next-node-fs-backend": "^2.1.3",
     "luxon": "^1.25.0",
     "meeussunmoon": "^3.0.2",
-    "semver": "^7.3.2",
+    "semver": "^7.3.4",
     "windows-focus-assist": "^1.2.1"
   }
 }

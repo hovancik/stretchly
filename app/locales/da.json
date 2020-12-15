@@ -22,8 +22,7 @@
     "continue": "Fortsæt",
     "cancel": "Afbryd",
     "preferences": "Indstillinger",
-    "contributorPreferences": "Sponser præferencer",
-    "syncPreferences": "Sync Preferences"
+    "contributorPreferences": "Sponser præferencer"
   },
   "break": {
     "postpone": "…vent en lille smule",
@@ -72,17 +71,8 @@
     },
     "theme": {
       "appearance": "Udseende:",
-      "greenClouds": "Green clouds",
-      "autumnBeBlessed": "Autumn be blessed",
-      "graphiteCrystal": "Graphite crystal",
-      "coffeeKisses": "Coffee kisses",
-      "morningSwim": "Morning swim",
-      "transparentMode": "Enable transparency",
       "sounds": "Lyde:",
       "enableSounds": "Slå lyd til",
-      "crystalGlass": "Crystal glass",
-      "windChime": "Wind chime",
-      "ticToc": "Tic toc",
       "menubarIcon": "Menubar ikon:",
       "colour": "Farve",
       "monochrome": "Monokrom",
@@ -98,8 +88,7 @@
       "ourWebsite": "besøg vores hjemmeside",
       "dot": ".",
       "developedBy": "Udviklet af",
-      "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "janH": "Jan Hovancik"
     },
     "heart": {
       "loveStretchly": "Elsker du Stretchly?",
@@ -108,8 +97,7 @@
       "becomePatron": "Bliv sponsor (Patron)",
       "alreadyContributor": "Jeg er allerede sponsor",
       "authenticateUsing": "Autentificeringen via:",
-      "contributorPreferences": "Sponser præferencer",
-      "syncPreferences": "Sync Preferences"
+      "contributorPreferences": "Sponser præferencer"
     }
   },
   "contributorPreferences": {
@@ -135,13 +123,6 @@
     "pauseUntilMorningInfo": "Vælg hvilken time, som 'Stop indtil imorgen' skal slås fra igen.",
     "welcomeWindow": "Velkomst vindue:",
     "showWelcomeWindow": "Vis velkomst vindue på næste start",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Lyde:",
     "volume": "Lydniveau:",
     "miniBreakStartSound": "Spil pause-afslutnings lyden også som mini pause-start lyd",
