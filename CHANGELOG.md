@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Esperanto translations
 - Norwegian translations
-- Heaven White theme
+- Snow white theme
 
 ### Changed
 - Updated Bulgarian translations

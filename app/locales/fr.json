@@ -87,7 +87,7 @@
             "colour": "Couleur",
             "monochrome": "Monochrome",
             "invertedMonochrome": "Monochrome inversé",
-      "heavenWhite": "Heaven White"
+      "snowWhite": "Snow white"
         },
         "about": {
             "tagline": "Application de rappel de pauses",

@@ -175,7 +175,7 @@ body > .hidden,
   width: 30px;
 }
 
-.appearance > #heavenWhite + label:before {
+.appearance > #snowWhite + label:before {
     color: #ffffff
 }
 
@@ -213,7 +213,7 @@ body > .hidden,
   color: #567890;
 }
 
-#heavenWhite + label:before {
+#snowWhite + label:before {
   background: #ffffff;
   color: #000000;
 }
@@ -225,7 +225,7 @@ body > .hidden,
 .appearance > #morningSwim:checked + label:before {
   color: #FFFFFF;
 }
-.appearance > #heavenWhite:checked + label:before {
+.appearance > #snowWhite:checked + label:before {
   color: #000000;
 }
 
