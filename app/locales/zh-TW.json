@@ -41,7 +41,7 @@
         },
         "settings": {
             "openAtLogin": "登入時自動啟動 Stretchly",
-            "showBreaksIn": "多久後顯示休息畫面：",
+            "showBreaksIn": "用什麼方式顯示休息畫面：",
             "window": "視窗",
             "fullscreen": "全螢幕",
             "showIdeas": "休息時顯示運動提示",
