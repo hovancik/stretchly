@@ -13,10 +13,22 @@
     "indefinitely": "Sonsuza kadar",
     "resetBreaks": "Molaları sıfırla",
     "quitStretchly": "Stretchly'den çık",
-    "preferences": "Ayarlar"
+    "preferences": "Ayarlar",
+    "syncPreferences": "Ayarları Eşzamanla",
+    "contributorPreferences": "Destekçi Ayarları",
+    "cancel": "İptal",
+    "continue": "Devam",
+    "warning": "Varsayılanlara dönülecek ve tüm ayarlarınız kaybolacak.",
+    "restoreDefaults": "Varsayılanlara dön",
+    "toMicrobreak": "Kısa Mola",
+    "toBreak": "Uzun Mola",
+    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
+    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra kısa mola"
   },
   "break": {
-    "title": "Mola zamanı!"
+    "title": "Mola zamanı!",
+    "skip": "Bu molayı geç",
+    "postpone": "Bu molayı ertele"
   },
   "preferences": {
     "theme": {
@@ -31,7 +43,23 @@
     },
     "about": {
       "tagline": "Mola hatırlatıcı uygulama"
-    }
+    },
+    "settings": {
+      "allScreens": "Molaları tüm monitörlerde göster",
+      "showIdeas": "Molalarda egzersiz ipuçları göster",
+      "fullscreen": "Tam Ekran",
+      "window": "Pencere",
+      "showBreaksIn": "Molaları Gör:",
+      "openAtLogin": "Giriş yapıldığında Stretchly'i otomatik başlat"
+    },
+    "nav": {
+      "heart": "Stretchly'i Seviyor Musun",
+      "about": "Hakkında",
+      "theme": "Tema",
+      "schedule": "Zamanla",
+      "settings": "Ayarlar"
+    },
+    "title": "Stretchly Ayarları"
   },
   "process": {
     "newVersionAvailable": "Yeni sürüm çıktı!"
