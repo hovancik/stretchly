@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Added
+- Better handling of app errors: error will ask user to report issue 
 - Esperanto translations
 - Norwegian translations
 
