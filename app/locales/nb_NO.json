@@ -27,13 +27,13 @@
     "miniBreakStartSound": "Spill lyd for pauseslutt også på begynnelsen av minipause",
     "breakWindowSizeInfo": "Hvor mange prosent av skjermen skal pausevinduet skjule?",
     "opacityInfo": "Hvor solid skal pausevinduet være?",
-    "showWelcomeWindow": "Vis velkomstvindu ved neste start",
+    "showWelcomeWindow": "Vis velkomstvindu ved neste oppstart",
     "pauseUntilMorningInfo": "Angi hva «Pause til i morgen» skal bety.",
     "maxPostpones": "Maksimalt antall utsettelser:",
     "postponeFor": "Utsett i:",
     "postponableFor": "Utsettbar i:",
     "miniBreaks": "Minipauser:",
-    "breakPostponeInfo": "Hvis det er skrudd på i hovedinnstillingene kan du utsette pauser. Å følge innstillinger lar deg angi når, hvor lenge, og hvor mange ganger du ønsker å utsette en pause.",
+    "breakPostponeInfo": "Du kan utsette pauser i innstillingene. I innstillinger kan du angi når, hvor lenge, og hvor mange ganger du ønsker å utsette en pause.",
     "useIdeasFromSettings": "Bruk pauseidéer fra oppsettsfilen",
     "customIdeasInfo": "Lar deg bruke tilpassede pauser ved å redigere oppsettsfilen. (For avanserte brukere.)",
     "beforeLongBreak": "Lang pause:",
@@ -65,7 +65,7 @@
   },
   "preferences": {
     "heart": {
-      "desc2": "Stretchly er fritt. Du kan støtte det ved å donere og hjelpe oss å forbedre Stretchly og gi ut annen fri programvare.",
+      "desc2": "Stretchly er gratis. Du kangi din støtte ved å donere og hjelpe oss å forbedre Stretchly og gi ut annen fri programvare.",
       "desc1": "Det finnes vitenskapelige bevis for at det å ta regelmessige pauser er viktig for din fysiske og mentale helse når du bruker en datamaskin.",
       "contributorPreferences": "Bidragsyterinnstillinger",
       "syncPreferences": "Synkoriniseringsinnstillinger",
@@ -76,7 +76,7 @@
     },
     "about": {
       "learnMore": "Lær mer om funksjonene i Stretchly i veiledningen. Last ned siste versjon eller kontakt oss for brukerstøtte, ",
-      "notifyNewVersion": "Gi merknad om nye versjoner automatisk",
+      "notifyNewVersion": "Gi varsling om nye versjoner automatisk",
       "version": "Versjon ",
       "tagline": "Pausepåminnelsesprogrammet",
       "designedBy": "Ikon og grensesnittsdesign av Colin Shanley",
@@ -90,7 +90,7 @@
       "invertedMonochrome": "Invertert ensfarget",
       "monochrome": "Ensfarget",
       "colour": "Farge",
-      "menubarIcon": "Menybjelke-ikon:",
+      "menubarIcon": "Ikoner på meny:",
       "ticToc": "Tikk-takk",
       "windChime": "Vindspill",
       "crystalGlass": "Krystallglass",
@@ -127,7 +127,7 @@
       "restoreDefaults": "Tilbakestill forvalg",
       "language": "Velg spåk:",
       "monitorDnd": "Viser pauser selv i \"Ikke forstyrr\"-modus",
-      "monitorIdleTime": "Hold øye med lediggangstid (utsetter pauser hvis systemet ikke brukes).",
+      "monitorIdleTime": "Kontrollerer om maskinen ikke er i bruk (utsetter pauser hvis maskinen ikke brukes).",
       "allScreens": "Vis pauser på alle skjermer",
       "showIdeas": "Vis treningstips i pausene",
       "fullscreen": "Fullskjerm",
@@ -162,10 +162,10 @@
     "title": "Velkommen til Stretchly"
   },
   "process": {
-    "newVersionAvailable": "Ny versjon tilgjengelig."
+    "newVersionAvailable": "Ny versjon tilgjengelig!"
   },
   "break": {
-    "title": "På tide med en pause.",
+    "title": "På tide med en pause!",
     "skip": "Hopp over denne pausen",
     "postpone": "Utsett denne pausen"
   },
@@ -190,7 +190,7 @@
     "toMicrobreak": "Minipause",
     "toBreak": "Lang pause",
     "downloadLatestVersion": "Last ned siste versjon",
-    "resumingBreaks": "Gjennopptagelse av pauser",
+    "resumingBreaks": "Gjennoppta pauser",
     "breakIn": "Lang pause om $t(utils.seconds, {'count': {{seconds}} })",
     "microbreakIn": "Minipause om $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Pausepåminnelsesprogrammet"

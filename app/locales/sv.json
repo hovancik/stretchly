@@ -46,7 +46,7 @@
       "fullscreen": "Helskärm",
       "showIdeas": "Visa träningstips under pauser",
       "allScreens": "Visar pauser på alla bildskärmar",
-      "monitorIdleTime": "Övervaka systemets vilotid (nedräkning pausas om systemet är inaktivt)",
+      "monitorIdleTime": "Övervaka systemets vilotid (nedräkning pausas om systemet är inaktivt).",
       "monitorDnd": "Visa pauser även i läget Stör inte",
       "language": "Välj språk:",
       "restoreDefaults": "Återställ till standardvärden"
@@ -92,7 +92,7 @@
       "tagline": "Appen för paustidspåminnelse",
       "version": "Version ",
       "latestVersion": "Senaste version ",
-      "notifyNewVersion":"Meddela automatiskt om appuppdateringar",
+      "notifyNewVersion": "Meddela automatiskt om appuppdateringar",
       "learnMore": "För att lära dig mer om funktioner i Stretchly, se en handledning, hämta den senaste versionen eller kontakta oss för support, ",
       "ourWebsite": "besök vår hemsida",
       "dot": ".",
