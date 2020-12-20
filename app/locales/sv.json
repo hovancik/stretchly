@@ -87,6 +87,7 @@
       "colour": "Färg",
       "monochrome": "Svartvit",
       "invertedMonochrome": "Inverterad svartvit",
+      "snowWhite": "Snow white"
     },
     "about": {
       "tagline": "Appen för paustidspåminnelse",

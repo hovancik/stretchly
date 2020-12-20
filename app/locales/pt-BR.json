@@ -85,6 +85,7 @@
       "colour": "Cor",
       "monochrome": "Monocromático",
       "invertedMonochrome": "Monocromático invertido",
+      "snowWhite": "Snow white"
     },
     "about": {
       "tagline": "Aplicativo para lembrá-lo de fazer pausas",

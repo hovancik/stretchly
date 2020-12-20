@@ -87,6 +87,7 @@
             "colour": "Farbig",
             "monochrome": "Einfarbig",
             "invertedMonochrome": "Einfarbig Invertiert",
+      "snowWhite": "Snow white"
         },
         "about": {
             "tagline": "Die Anwendung, die erinnert, Pausen zu machen",
