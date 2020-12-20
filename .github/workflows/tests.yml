@@ -23,6 +23,8 @@ jobs:
       with:
         node-version: '12.18.3'
     - run: npm install
-    - run: npm test
+    - run: npx nyc --reporter=lcov npm test
       env:
         CI: true
+    - name: Codecov
+      uses: codecov/codecov-action@v1.1.0
