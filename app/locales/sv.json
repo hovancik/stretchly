@@ -86,8 +86,7 @@
       "menubarIcon": "Menyradsikon:",
       "colour": "Färg",
       "monochrome": "Svartvit",
-      "invertedMonochrome": "Inverterad svartvit",
-      "snowWhite": "Snow white"
+      "invertedMonochrome": "Inverterad svartvit"
     },
     "about": {
       "tagline": "Appen för paustidspåminnelse",

@@ -87,8 +87,7 @@
       "menubarIcon": "Ikonka:",
       "colour": "Barevná",
       "monochrome": "Černobílá",
-      "invertedMonochrome": "Převrácená černobílá",
-      "snowWhite": "Snow white"
+      "invertedMonochrome": "Převrácená černobílá"
     },
     "about": {
       "tagline": "Pamatuje na přestávky za vás",

@@ -86,8 +86,7 @@
             "menubarIcon": "Symbol in Menüleiste:",
             "colour": "Farbig",
             "monochrome": "Einfarbig",
-            "invertedMonochrome": "Einfarbig Invertiert",
-      "snowWhite": "Snow white"
+            "invertedMonochrome": "Einfarbig Invertiert"
         },
         "about": {
             "tagline": "Die Anwendung, die erinnert, Pausen zu machen",

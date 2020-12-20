@@ -82,8 +82,7 @@
       "menubarIcon": "Menubalk icoon:",
       "colour": "Kleur",
       "monochrome": "Monochroom",
-      "invertedMonochrome": "Omgekeerd Monochroom",
-      "snowWhite": "Snow white"
+      "invertedMonochrome": "Omgekeerd Monochroom"
     },
     "about": {
       "tagline": "Pauze herinnering app",

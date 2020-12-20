@@ -86,8 +86,7 @@
       "menubarIcon": "Icono de Barra de Menu:",
       "colour": "Color",
       "monochrome": "Monocromatico",
-      "invertedMonochrome": "Monocromatico Invertido",
-      "snowWhite": "Snow white"
+      "invertedMonochrome": "Monocromatico Invertido"
     },
     "about": {
       "tagline": "Aplicación para notificar cuándo hacer descansos",

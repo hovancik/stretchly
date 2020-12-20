@@ -86,8 +86,7 @@
       "menubarIcon": "通知栏图标：",
       "colour": "彩色",
       "monochrome": "单色",
-      "invertedMonochrome": "灰度",
-      "snowWhite": "Snow white"
+      "invertedMonochrome": "灰度"
     },
     "about": {
       "tagline": "休息提醒应用",

@@ -86,8 +86,7 @@
       "menubarIcon": "Icona del menù:",
       "colour": "Colore",
       "monochrome": "Monocromatica",
-      "invertedMonochrome": "Inverti colori",
-      "snowWhite": "Snow white"
+      "invertedMonochrome": "Inverti colori"
     },
     "about": {
       "tagline": "L'app che ti ricorda quando prenderti una pausa",
