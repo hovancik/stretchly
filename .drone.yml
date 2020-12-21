@@ -11,3 +11,9 @@ steps:
   image: node:12.18.3
   commands:
   - npm install
+
+trigger:
+  branch:
+  - build
+  event:
+  - push
