@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Better handling of app errors: error will ask user to report issue 
 - Esperanto translations
 - Norwegian translations
+- Snow white theme
 
 ### Changed
 - Updated Bulgarian translations

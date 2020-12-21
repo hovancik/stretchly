@@ -86,13 +86,14 @@
       "menubarIcon": "Menubar icon:",
       "colour": "Colour",
       "monochrome": "Monochrome",
-      "invertedMonochrome": "Inverted Monochrome"
+      "invertedMonochrome": "Inverted Monochrome",
+      "snowWhite": "Snow white"
     },
     "about": {
       "tagline": "The break time reminder app",
       "version": "Version ",
       "latestVersion": "Latest version ",
-      "notifyNewVersion":"Automatically notify on app updates",
+      "notifyNewVersion": "Automatically notify on app updates",
       "learnMore": "To learn more about Stretchly features, view a tutorial, download the latest version or contact us for support, ",
       "ourWebsite": "visit our website",
       "dot": ".",

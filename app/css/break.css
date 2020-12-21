@@ -70,3 +70,30 @@
   font-size: 15px;
   padding-top: 20px;
 }
+
+.ffffff .breaks {
+  color: #000000;
+}
+.ffffff .breaks > :nth-child(2) > a:hover {
+  color: #ffffff;
+}
+
+.ffffff .breaks > :nth-child(2) > a:hover img,
+.ffffff .breaks > :nth-child(2) > a:hover {
+  color: #000000;
+}
+
+.ffffff .breaks > :nth-child(2) .tiptext,
+.ffffff .breaks > :nth-child(2) .tiptext  {
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+}
+
+.ffffff .breaks > :nth-child(2) > a img {
+  filter: hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.ffffff .breaks > :nth-child(2) > a:hover img {
+  filter: hue-rotate(359deg) brightness(101%) contrast(103%);
+}
