@@ -6,23 +6,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.4.0] - 2020-12-25
 ### Added
-- Better handling of app errors: error will ask user to report issue 
+- Better handling of app errors: error will ask user to report issue
 - Esperanto translations
 - Norwegian translations
 - Snow white theme
+- experimental Linux builds for arm
 
 ### Changed
-- Updated Bulgarian translations
-- Updated Swedish translations
-- Updated Chinese translations
-- Updated Slovak translations
-- Updated Czech translations
+- Updated many translations
 
 ### Fixed
 - notification of new version being showed even disabled
 - browser tab non-responsive after resuming
 - don't show notification title for macOS Big Sur
+- DND mode in macOS Big Sur
 
 ## [1.3.0] - 2020-11-08
 ### Added
@@ -529,7 +528,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/hovancik/stretchly/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/hovancik/stretchly/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/hovancik/stretchly/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/hovancik/stretchly/compare/v1.0.0...v1.1.0

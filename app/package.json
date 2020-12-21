@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "The break time reminder app",
   "main": "main.js",
   "repository": {
@@ -21,11 +21,11 @@
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
     "@meetfranz/electron-notification-state": "^1.0.0",
-    "electron-log": "^4.3.0",
+    "electron-log": "^4.3.1",
     "i18next": "^19.8.4",
     "i18next-node-fs-backend": "^2.1.3",
     "luxon": "^1.25.0",
-    "meeussunmoon": "^3.0.2",
+    "meeussunmoon": "^3.0.3",
     "semver": "^7.3.4",
     "windows-focus-assist": "^1.2.1"
   },

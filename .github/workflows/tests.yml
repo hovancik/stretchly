@@ -23,6 +23,7 @@ jobs:
       with:
         node-version: '12.18.3'
     - run: npm install
+    - run: npm install npm -g
     - run: npx nyc --reporter=lcov npm test
       env:
         CI: true

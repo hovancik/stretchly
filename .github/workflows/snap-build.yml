@@ -1,0 +1,21 @@
+name: Linux Snap build
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.18.3'
+    - run: npm install -g npm
+    - run: npm install
+    - run: node_modules/.bin/electron-builder --linux snap -c.snap.publish=github
+      env:
+        GH_TOKEN: ${{ secrets.github_token }}
