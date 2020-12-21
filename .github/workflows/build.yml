@@ -1,0 +1,28 @@
+name: Build istallers
+
+on:
+  push:
+    branches:
+      - build
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.18.3'
+    - name: Ubuntu deps
+      if: ${{ matrix.os == 'ubuntu-latest' }}
+      run: sudo apt-get update && sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
+    - run: npm install
+    - run: npm run dist
+      timeout-minutes: 30
+      env:
+        GH_TOKEN: ${{ secrets.github_token }}

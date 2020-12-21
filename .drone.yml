@@ -19,27 +19,6 @@ steps:
 
 trigger:
   branch:
-  - build
-  event:
-  - push
-
----
-
-kind: pipeline
-type: ssh
-name: Windows build
-
-platform:
-  os: windows
-
-steps:
-- name: Build
-  commands:
-  - node -v
-  - npm install
-
-trigger:
-  branch:
-  - build
+  - build1
   event:
   - push
