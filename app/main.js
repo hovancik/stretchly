@@ -1,9 +1,24 @@
-// process.on('uncaughtException', (...args) => console.error(...args))
 const { app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
+
+process.on('uncaughtException', (err, _) => {
+  log.error(err)
+  const dialogOpts = {
+    type: 'error',
+    title: 'Stretchly',
+    message: 'An error occured while running Stretchly and it will now quit. To report the issue, click Report.',
+    buttons: ['Report', 'OK']
+  }
+  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) {
+      shell.openExternal('https://github.com/hovancik/stretchly/issues')
+    }
+    app.quit()
+  })
+})
 
 nativeTheme.on('updated', function theThemeHasChanged () {
   appIcon.setImage(trayIconPath())
