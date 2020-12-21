@@ -1,0 +1,19 @@
+kind: pipeline
+type: docker
+name: Amd64 Linux Build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: Install
+  image: node:12.18.3
+  commands:
+  - npm install
+
+trigger:
+  branch:
+  - build
+  event:
+  - pull_request
