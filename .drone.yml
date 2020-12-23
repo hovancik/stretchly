@@ -35,11 +35,13 @@ platform:
 
 steps:
 - name: Build
-  image: arm64v8/node:12.18.3
+  image: arm64v8/node:12.18.3-buster
   commands:
-  - apt update && apt-get install --no-install-recommends -y bsdtar rpm libopenjp2-tools
+  - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
+  - gem install fpm -v 1.10.1
+  - export USE_SYSTEM_FPM="true"
   - npm install
-  - node_modules/.bin/electron-builder build --dir --arm64
+  - node_modules/.bin/electron-builder build --arm64
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
@@ -61,11 +63,13 @@ platform:
 
 steps:
 - name: Build
-  image: arm32v7/node:12.18.3
+  image: arm32v7/node:12.18.3-buster
   commands:
-  - apt update && apt-get install --no-install-recommends -y bsdtar rpm libopenjp2-tools
+  - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
+  - gem install fpm -v 1.10.1
+  - export USE_SYSTEM_FPM="true"
   - npm install
-  - node_modules/.bin/electron-builder build --dir --armv7l
+  - node_modules/.bin/electron-builder build --armv7l
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
