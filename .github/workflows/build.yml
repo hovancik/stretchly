@@ -3,7 +3,7 @@ name: Build istallers
 on:
   push:
     branches:
-      - build
+      - build1
 
 jobs:
   build:
