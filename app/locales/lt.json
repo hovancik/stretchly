@@ -13,10 +13,20 @@
     "indefinitely": "neribotam laikui",
     "resetBreaks": "Atstatyti pertraukas",
     "quitStretchly": "Išjungti Stretchly",
-    "preferences": "Nustatymai"
+    "preferences": "Nustatymai",
+    "syncPreferences": "Synchronizavimo nustatymai",
+    "contributorPreferences": "Kontributorių nustatymai",
+    "cancel": "Atšaukti",
+    "continue": "Tęsti",
+    "toMicrobreak": "Trumpa pertrauka",
+    "toBreak": "Ilga pertrauka",
+    "breakIn": "Ilga pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Trumpa pertrauka po $t(utils.seconds, {'count': {{seconds}} })"
   },
   "break": {
-    "title": "Laikas pertraukai!"
+    "title": "Laikas pertraukai!",
+    "skip": "Praleisti šią pertraukėlę",
+    "postpone": "Atidėti šią pertraukėlę"
   },
   "preferences": {
     "theme": {
@@ -36,5 +46,11 @@
   "welcome": {
     "title": "Sveiki atvykę į Stretchly",
     "breakTimeReminderApp": "Prisimink pertraukėles"
+  },
+  "contributorPreferences": {
+    "volume": "Garsumas:",
+    "breakWindowWidth": "Plotis:",
+    "newVersionNotification": "Pranešti kai atsiras nauja versija",
+    "beforeLongBreak": "Ilga pertraukėlė:"
   }
 }
