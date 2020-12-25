@@ -1,0 +1,84 @@
+---
+kind: pipeline
+type: docker
+name: amd64 Linux Build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: Build
+  image: amd64/node:12.18.3-buster
+  commands:
+  - apt update && apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
+  - npm install
+  - npm install npm -g
+  - node_modules/.bin/electron-builder build --x64 --ia32
+  environment:
+    GH_TOKEN:
+      from_secret: GH_TOKEN
+
+trigger:
+  branch:
+  - release
+  event:
+  - push
+
+---
+kind: pipeline
+type: docker
+name: arm64v8 Linux Build
+
+platform:
+  os: linux
+  arch: arm64
+
+steps:
+- name: Build
+  image: arm64v8/node:12.18.3-buster
+  commands:
+  - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
+  - gem install fpm -v 1.10.1
+  - export USE_SYSTEM_FPM="true"
+  - npm install
+  - npm install npm -g
+  - node_modules/.bin/electron-builder build --arm64
+  environment:
+    GH_TOKEN:
+      from_secret: GH_TOKEN
+
+trigger:
+  branch:
+  - release
+  event:
+  - push
+
+---
+kind: pipeline
+type: docker
+name: arm32v7 Linux Build
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: Build
+  image: arm32v7/node:12.18.3-buster
+  commands:
+  - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
+  - gem install fpm -v 1.10.1
+  - export USE_SYSTEM_FPM="true"
+  - npm install
+  - npm install npm -g
+  - node_modules/.bin/electron-builder build --armv7l
+  environment:
+    GH_TOKEN:
+      from_secret: GH_TOKEN
+
+trigger:
+  branch:
+  - release
+  event:
+  - push
