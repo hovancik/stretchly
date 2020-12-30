@@ -285,19 +285,12 @@ versionChecker.latest()
 function setWindowHeight () {
   const classes = document.querySelector('body').classList
   const height = document.querySelector('body').scrollHeight
-  let offset = 0
   if (classes.contains('darwin')) {
-    offset = 22
+    remote.getCurrentWindow().setSize(bounds.width, height + 22)
   } else if (classes.contains('win32')) {
-    offset = 40
+    remote.getCurrentWindow().setSize(bounds.width, height + 40)
   }
-
-  for (let i = 0; i < 10; ++i) {
-    setTimeout(() => {
-      // https://github.com/electron/electron/issues/10862
-      remote.getCurrentWindow().setSize(bounds.width, height + offset)
-    }, i * 10)
-  }
+  // linux is broken ;/
 }
 
 function realBreakInterval () {

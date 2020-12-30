@@ -6,9 +6,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-### Fixed
-- workaround for better handling of Preferences window size for Linux 
-
 ## [1.4.0] - 2020-12-25
 ### Added
 - Better handling of app errors: error will ask user to report issue
