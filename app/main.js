@@ -752,9 +752,9 @@ function createPreferencesWindow () {
     return
   }
   const modalPath = path.join('file://', __dirname, '/preferences.html')
-  const maxHeight = electron.screen
+  const maxHeight = (electron.screen
     .getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-    .workAreaSize.height * 0.85
+    .workAreaSize.height - 530) / 2.0 + 490
   preferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
     icon: windowIconPath(),
