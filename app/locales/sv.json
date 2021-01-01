@@ -23,7 +23,7 @@
     "cancel": "Avbryt",
     "preferences": "Inställningar",
     "contributorPreferences": "Inställningar för bidgradsgivare",
-    "syncPreferences": "Synkroniseringsinställningar"
+    "syncPreferences": "Inställningar för synkronisering"
   },
   "break": {
     "postpone": "Skjut upp den här pausen",
@@ -52,8 +52,8 @@
       "restoreDefaults": "Återställ till standardvärden"
     },
     "schedule": {
-      "miniBreaks": "Kort paus:",
-      "miniBreaksInfo": "Kort paus är korta pauser som tas regelbundet för att ge dig en chans att sträcka på dig och koppla av.",
+      "miniBreaks": "Korta pauser:",
+      "miniBreaksInfo": "Korta pausa är korta pauser som tas regelbundet för att ge dig en chans att sträcka på dig och koppla av.",
       "enableMiniBreaks": "Aktivera korta pauser",
       "breakFor": "Paus i:",
       "every": "Varje:",
