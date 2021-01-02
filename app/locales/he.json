@@ -1,0 +1,63 @@
+{
+  "preferences": {
+    "schedule": {
+      "every": "תדירות ההפסקה:",
+      "enableMiniBreaks": "הפעלה של הפסקות קצרות",
+      "miniBreaksInfo": "את ההפסקות הקצרות יש לבצע באופן קבוע כדי לתת לגוף הזדמנות להימתח ולהירגע.",
+      "miniBreaks": "הפסקות קצרות:",
+      "enablePostponeMini": "הצגת אפשרות לדחיית ההפסקה הקצרה",
+      "longBreaks": "הפסקות ארוכות:",
+      "showNotificationBeforeMiniBreak": "הצגת התראה לפני תחילת הפסקה קצרה",
+      "breakFor": "משך ההפסקה:"
+    },
+    "settings": {
+      "showBreaksIn": "הצגת ההפסקות:",
+      "allScreens": "פריסת ההפסקות על כל המסכים",
+      "restoreDefaults": "איפוס הגדרות",
+      "language": "שפה מועדפת:",
+      "monitorDnd": "הצגה של ההפסקות גם במצב ״נא לא להפריע״",
+      "monitorIdleTime": "מעקב אחר זמינות המערכת (ההפסקות יעצרו כאשר המערכת לא נמצאת בפעילות).",
+      "showIdeas": "הצגה של הצעות לתרגילים בזמן ההפסקות",
+      "fullscreen": "על כל המסך",
+      "window": "בתוך חלון",
+      "openAtLogin": "הפעלה אוטומטית של סטרצ׳לי בעת כניסה למחשב"
+    },
+    "nav": {
+      "heart": "תמיכה בסטרצ׳לי",
+      "about": "אודות",
+      "theme": "מראה",
+      "schedule": "תזמונים",
+      "settings": "הגדרות"
+    },
+    "title": "הגדרות סטרצ׳לי"
+  },
+  "break": {
+    "title": "הגיע הזמן להפסקה!",
+    "skip": "דילוג על ההפסקה הנוכחית",
+    "postpone": "השהיית ההפסקה הנוכחית"
+  },
+  "main": {
+    "syncPreferences": "הגדרות סנכרון",
+    "contributorPreferences": "הגדרות מיוחדות לתורמים",
+    "preferences": "הגדרות",
+    "cancel": "ביטול",
+    "continue": "אישור",
+    "warning": "הפעולה תחזיר את הגדרות ברירת המחדל וכל מה שהוגדר ימחק.",
+    "restoreDefaults": "איפוס הגדרות",
+    "quitStretchly": "יציאה מסטרצ׳לי",
+    "resetBreaks": "איפוס ההפסקות",
+    "indefinitely": "לתמיד",
+    "untilMorning": "עד הבוקר",
+    "for5Hours": "למשך 5 שעות",
+    "for2Hours": "למשך שעתיים",
+    "forHour": "למשך שעה",
+    "pause": "עצירת ההפסקות",
+    "resume": "חידוש ההפסקות",
+    "skipToTheNext": "דילוג להפסקה הבאה",
+    "toMicrobreak": "הפסקה קצרה",
+    "toBreak": "הפסקה ארוכה",
+    "downloadLatestVersion": "הורדת גרסא אחרונה",
+    "breakIn": "הפסקה ארוכה בעוד $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })"
+  }
+}

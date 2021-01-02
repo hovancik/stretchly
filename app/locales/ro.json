@@ -3,7 +3,7 @@
     "toolTipHeader": "Stretchly - Aplicația care-ți aduce aminte să iei o pauză",
     "resumingBreaks": "Reluarea pauzelor",
     "downloadLatestVersion": "Descarcă cea mai nouă versiune",
-    "skipToTheNext": "Sări la următoarea",
+    "skipToTheNext": "Sari la următoarea",
     "resume": "Reia",
     "pause": "Pauză",
     "forHour": "O oră",
@@ -13,7 +13,12 @@
     "indefinitely": "Nelimitat",
     "resetBreaks": "Resetează pauzele",
     "quitStretchly": "Ieși din Stretchly",
-    "preferences": "Setări"
+    "preferences": "Preferinte",
+    "syncPreferences": "Sincronizeaza preferintele",
+    "cancel": "Anulează",
+    "continue": "Continuă",
+    "toMicrobreak": "Pauză Mică",
+    "toBreak": "Pauză Mare"
   },
   "break": {
     "title": "Este timpul să iei o pauză!"
