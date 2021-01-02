@@ -315,6 +315,7 @@ Also see Github's list of [contributors](https://github.com/hovancik/stretchly/g
 1.0 Icon and UI design by Colin Shanley ([www.colinshanley.com](http://www.colinshanley.com/)).
 
 ## Humans and Tools
+ - https://github.com/HatScripts/circle-flags 
  - https://www.icoconverter.com/ to generate .ico
  - http://www.img2icnsapp.com/ to create .icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
