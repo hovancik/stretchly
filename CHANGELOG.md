@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Gujarati translations for the interface
+- Gujarati translations
+- Persian translations
+- Hebrew translations 
 
 ## [1.4.0] - 2020-12-25
 ### Added
