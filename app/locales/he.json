@@ -29,7 +29,11 @@
       "schedule": "תזמונים",
       "settings": "הגדרות"
     },
-    "title": "הגדרות סטרצ׳לי"
+    "title": "הגדרות סטרצ׳לי",
+    "about": {
+      "dot": ".",
+      "developedBy": "פותח על ידי"
+    }
   },
   "break": {
     "title": "הגיע הזמן להפסקה!",
@@ -56,8 +60,10 @@
     "skipToTheNext": "דילוג להפסקה הבאה",
     "toMicrobreak": "הפסקה קצרה",
     "toBreak": "הפסקה ארוכה",
-    "downloadLatestVersion": "הורדת גרסא אחרונה",
+    "downloadLatestVersion": "הורדת גרסה אחרונה",
     "breakIn": "הפסקה ארוכה בעוד $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })"
+    "microbreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "חידוש ההפסקות",
+    "toolTipHeader": "סטרצ'לי - האפליקציה שמזכירה לך לקחת פסק זמן"
   }
 }
