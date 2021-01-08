@@ -86,7 +86,8 @@
       "menubarIcon": "Иконка:",
       "colour": "Цветна",
       "monochrome": "Черно-бяла",
-      "invertedMonochrome": "Обърнати цветове"
+      "invertedMonochrome": "Обърнати цветове",
+      "snowWhite": "Снежно бяло"
     },
     "about": {
       "tagline": "Приложение, което напомня да си почивате",
@@ -158,7 +159,7 @@
     "none_plural": "{{count}}",
     "percent": "{{count}} процент",
     "percent_plural": "{{count}} процента",
-    "oclock": "{{count}} часа",
+    "oclock": "{{count}} час",
     "oclock_plural": "{{count}} часа",
     "seconds": "{{count}} секунда",
     "seconds_plural": "{{count}} секунди",
