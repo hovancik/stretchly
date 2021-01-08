@@ -59,7 +59,12 @@
       "schedule": "Zamanla",
       "settings": "Ayarlar"
     },
-    "title": "Stretchly Ayarları"
+    "title": "Stretchly Ayarları",
+    "schedule": {
+      "miniBreaksInfo": "Mini Molalar, esneme ve rahatlama şansı vermek için düzenli olarak yapılan kısa molalardır.",
+      "enableMiniBreaks": "Mini Molaları Etkinleştir",
+      "miniBreaks": "Küçük Molalar:"
+    }
   },
   "process": {
     "newVersionAvailable": "Yeni sürüm çıktı!"
