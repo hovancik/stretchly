@@ -32,7 +32,21 @@
     "title": "הגדרות סטרצ׳לי",
     "about": {
       "dot": ".",
-      "developedBy": "פותח על ידי"
+      "developedBy": "פותח על ידי",
+      "designedBy": "עיצוב ממשק משתמש ואיקון על ידי קולין שנלי",
+      "tagline": "האפליקציה שמזכירה לך לקחת הפסקה",
+      "version": "גרסה ",
+      "ourWebsite": "בקרו באתר שלנו",
+      "learnMore": "כדי ללמוד עוד על סטרצ'לי, לצפות בהדרכות, להוריד את הגרסה האחרונה או כדי ליצור אתנו קשר, ",
+      "notifyNewVersion": "הודע אוטומטית על עדכונים",
+      "latestVersion": "גרסה אחרונה "
+    },
+    "heart": {
+      "loveStretchly": "אוהבים את סטרצ'לי?",
+      "desc1": "לקיחת הפסקות קצובות משימוש במחשב הוכחה מדעית כחשובה לבריאות הגופנית והנפשית שלך.",
+      "authenticateUsing": "הזדהה/י באמצעות:",
+      "syncPreferences": "העדפות סנכרון",
+      "alreadyContributor": "אני כבר תורם/ת"
     }
   },
   "break": {
@@ -65,5 +79,8 @@
     "microbreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "חידוש ההפסקות",
     "toolTipHeader": "סטרצ'לי - האפליקציה שמזכירה לך לקחת פסק זמן"
+  },
+  "contributorPreferences": {
+    "volume": "עוצמת שמע:"
   }
 }
