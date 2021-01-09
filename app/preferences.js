@@ -286,7 +286,7 @@ function setWindowHeight () {
   const classes = document.querySelector('body').classList
   const height = document.querySelector('body').scrollHeight
   if (classes.contains('darwin')) {
-    remote.getCurrentWindow().setSize(bounds.width, height + 22)
+    remote.getCurrentWindow().setSize(bounds.width, height + 32)
   } else if (classes.contains('win32')) {
     remote.getCurrentWindow().setSize(bounds.width, height + 40)
   }
