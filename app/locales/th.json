@@ -1,1 +1,127 @@
-{}
+{
+  "contributorPreferences": {
+    "breakPostpone": "การเลื่อนการพัก:",
+    "useIdeasFromSettings": "ใช้ไอเดียระหว่างพักจากไฟล์ตั้งค่า",
+    "customIdeasInfo": "คุณสามารถเพิ่มหรือแก้ไขไอเดียที่แสดงระหว่างพักด้วยการแก้ไขไฟล์ตั้งค่า (สำหรับผู้ใช้ที่เชี่ยวชาญ)",
+    "customIdeas": "ปรับแต่งไอเดียด้วยตัวเอง:",
+    "newVersionNotification": "เตือนเมื่อมีแอปรุ่นใหม่ออกมา",
+    "newVersion": "รุ่นใหม่:",
+    "beforeMiniBreak": "การพักย่อย:",
+    "beforeLongBreak": "การพักใหญ่:",
+    "notificationsInfo": "การแจ้งเตือนก่อนพักเพื่อช่วยให้คุณได้เตรียมตัว",
+    "notifications": "การแจ้งเตือนการพัก:",
+    "title": "ตั้งค่าสำหรับผู้ร่วมสนับสนุน"
+  },
+  "preferences": {
+    "heart": {
+      "syncPreferences": "การตั้งค่าการซิงก์",
+      "contributorPreferences": "การตั้งค่าสำหรับผู้สนับสนุน",
+      "authenticateUsing": "ยืนยันตัวตนด้วย:",
+      "alreadyContributor": "ฉันร่วมสนับสนุนก่อนหน้านี้แล้ว",
+      "becomePatron": "ร่วมสนับสนุน",
+      "desc2": "Stretchly เป็นแอปฟรี แต่คุณสามารถช่วยเหลือเราได้ด้วยการบริจาค เพื่อให้เราสามารถปรับปรุง Stretchly และสร้างแอปฟรีอื่นๆ ได้เพิ่มเติม",
+      "desc1": "มีหลักฐานทางวิทยาศาสตร์ยืนยันว่าการพักเป็นประจำระหว่างการใช้งานคอมพิวเตอร์เป็นสิ่งสำคัญต่อสุขภาพร่างกายและสุขภาพจิตใจที่ดี",
+      "loveStretchly": "ชอบ Stretchly ใช่ไหม?"
+    },
+    "about": {
+      "designedBy": "ออกแบบไอคอนและส่วนติดต่อผู้ใช้โดย Colin Shanley",
+      "janH": "Jan Hovancik",
+      "developedBy": "พัฒนาโดย",
+      "ourWebsite": "เยี่ยมชมเว็บไซต์ของเรา",
+      "learnMore": "หากต้องการเรียนรู้เกี่ยวกับความสามารถของ Stretchly, ดูตัวอย่าการใช้งาน, ดาวน์โหลดแอปรุ่นล่าสุด หรือต้องการความช่วยเหลือ สามารถ ",
+      "notifyNewVersion": "เตือนอัตโนมัติหากแอปมีอัปเดต",
+      "latestVersion": "รุ่นล่าสุด ",
+      "version": "รุ่นที่ ",
+      "tagline": "แอปสำหรับเตือนเวลาพัก"
+    },
+    "theme": {
+      "snowWhite": "หิมะขาว",
+      "invertedMonochrome": "ขาวดำแบบสลับสี",
+      "monochrome": "ขาวดำ",
+      "colour": "สี",
+      "menubarIcon": "ไอคอนบริเวณเมนูบาร์:",
+      "ticToc": "ติ๊กตอก",
+      "windChime": "กระดิ่งลม",
+      "crystalGlass": "เคาะแก้ว",
+      "enableSounds": "เปิดเสียง",
+      "sounds": "เสียง:",
+      "transparentMode": "แสดงผลแบบโปร่งแสง",
+      "morningSwim": "สายธารยามเช้า",
+      "coffeeKisses": "จูบรสกาแฟ",
+      "graphiteCrystal": "ผลึกแกรไฟต์",
+      "greenClouds": "นภาเขียว",
+      "autumnBeBlessed": "สุขุมยามผลัดใบ",
+      "appearance": "หน้าตา:"
+    },
+    "schedule": {
+      "cantDisableBoth": "คุณไม่สามารถปิดทั้งการพักใหญ่และการพักย่อยพร้อมกันได้",
+      "enableStrictLong": "เปิดโหมดเข้มงวดสำหรับการพักใหญ่",
+      "enableStrictMini": "เปิดโหมดเข้มงวดสำหรับการพักย่อย",
+      "strictModeInfo": "โหมดเข้มงวดช่วยไม่ให้คุณข้ามทั้งการพักใหญ่และพักย่อย โดยออกแบบมาเพื่อเสริมสร้างระเบียบวินัยในตัวคุณเอง",
+      "strictMode": "โหมดเข้มงวด:",
+      "enablePostponeLong": "ยอมให้เลื่อนการพักใหญ่",
+      "showNotificationBeforeLongBreak": "แสดงการแจ้งเตือนก่อนเริ่มการพักใหญ่",
+      "enableLongBreaks": "เปิดใข้การพักใหญ่",
+      "longBreaksInfo": "การพักใหญ่เป็นการพักแบบไม่ถี่มาก แต่พักนนานกว่า เพื่อให้คุณได้มีเวลาพักที่นานขึ้น",
+      "longBreaks": "การพักใหญ่:",
+      "enablePostponeMini": "ยอมให้เลื่อนการพักย่อย",
+      "showNotificationBeforeMiniBreak": "แสดงการแจ้งเตือนก่อนเริ่มการพักย่อย",
+      "every": "ทุกๆ:",
+      "breakFor": "พักเป็นเวลา:",
+      "enableMiniBreaks": "เปิดใช้การพักย่อย",
+      "miniBreaksInfo": "การพักย่อยเป็นการพักระยะสั้นๆ แต่บ่อยๆ เพื่อให้คุณได้มีโอกาสยืดเส้นยืดสาย",
+      "miniBreaks": "การพักย่อย:"
+    },
+    "settings": {
+      "restoreDefaults": "คืนค่าตั้งต้น",
+      "language": "เลือกภาษา:",
+      "monitorDnd": "แสดงการพักแม้ว่าจะอยู่ในโหมดห้ามรบกวน",
+      "monitorIdleTime": "ดูเวลาเครื่องหลับ (การพักจะหยุดชั่วคราวถ้าอุปกรณ์ของคุณหลับอยู่)",
+      "allScreens": "แสดงการพักบนจอภาพทุกตัว",
+      "showIdeas": "แสดงเคล็ดลับการออกกำลังระหว่างพัก",
+      "fullscreen": "เต็มจอ",
+      "window": "หน้าต่าง",
+      "showBreaksIn": "แสดงการพักในรูปแบบ:",
+      "openAtLogin": "เริ่ม Stretchly อัตโนมัติเมื่อล็อกอิน"
+    },
+    "nav": {
+      "heart": "รัก Stretchly จัง",
+      "about": "เกี่ยวกับ",
+      "theme": "ธีม",
+      "schedule": "ตารางเวลา",
+      "settings": "ตั้งค่า"
+    },
+    "title": "การตั้งค่า Stretchly"
+  },
+  "break": {
+    "title": "ได้เวลาพักแล้วจ้า!",
+    "skip": "ข้ามการพักนี้",
+    "postpone": "เลื่อนการพักนี้ออกไปก่อน"
+  },
+  "main": {
+    "syncPreferences": "ตั้งค่าการซิงก์",
+    "contributorPreferences": "ตั้งค่าสำหรับผู้ร่วมสนับสนุน",
+    "preferences": "ตั้งค่า",
+    "cancel": "ยกเลิก",
+    "continue": "ต่อ",
+    "warning": "ตัวเลือกนี้จะคืนค่าตั้งต้นและการตั้งค่าทั้งหมดของคุณจะถูกลบทิ้ง",
+    "restoreDefaults": "คืนค่าตั้งต้น",
+    "quitStretchly": "ออกจาก Stretchly",
+    "resetBreaks": "รีเซ็ตการพัก",
+    "indefinitely": "ไม่มีกำหนด",
+    "untilMorning": "จนถึงเช้า",
+    "for5Hours": "5 ชั่วโมง",
+    "for2Hours": "2 ชั่วโมง",
+    "forHour": "1 ชั่วโมง",
+    "pause": "หยุดการพักชั่วคราว",
+    "resume": "พักต่อ",
+    "resumingBreaks": "กำลังจะพักต่อ",
+    "skipToTheNext": "ข้ามไปต่อ",
+    "toMicrobreak": "พักสั้น",
+    "toBreak": "พักยาว",
+    "downloadLatestVersion": "ดาวน์โหลดเวอร์ชั่นล่าสุด",
+    "breakIn": "พักใหญ่ใน $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "พักย่อยใน $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly - แอปสำหรับเตือนเวลาพัก"
+  }
+}
