@@ -1,1 +1,24 @@
-{}
+{
+  "main": {
+    "syncPreferences": "Sinhroniziraj nastavitve",
+    "preferences": "Nastavitve",
+    "cancel": "Prekliči",
+    "continue": "Nadaljuj",
+    "warning": "To bo ponastavilo na privzete nastavitve in vse vaše nastavitve bodo izgubljene.",
+    "restoreDefaults": "Ponastavi nastavitve",
+    "quitStretchly": "Izhod iz Stretchly",
+    "resetBreaks": "Ponastavi premore",
+    "indefinitely": "Trajno",
+    "untilMorning": "Do jutra",
+    "for5Hours": "5 ur",
+    "for2Hours": "2 uri",
+    "forHour": "1 ura",
+    "skipToTheNext": "Preskoči na naslednjo",
+    "toMicrobreak": "Mini premor",
+    "toBreak": "Dolg premor",
+    "downloadLatestVersion": "Prenesi najnovejšo verzijo",
+    "breakIn": "Dolg premor čez $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Mini premor čez $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly - Opomnik za odmor"
+  }
+}
