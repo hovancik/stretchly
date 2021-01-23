@@ -22,7 +22,8 @@
     "continue": "Continue",
     "cancel": "Cancelar",
     "preferences": "Configurações",
-    "contributorPreferences": "Preferências do Contribuinte"
+    "contributorPreferences": "Preferências do Contribuinte",
+    "syncPreferences": "Preferências de sincronização"
   },
   "break": {
     "postpone": "Adiar esta pausa",
@@ -84,13 +85,15 @@
       "menubarIcon": "Ícone da barra de menus:",
       "colour": "Cor",
       "monochrome": "Monocromático",
-      "invertedMonochrome": "Monocromático invertido"
+      "invertedMonochrome": "Monocromático invertido",
+      "snowWhite": "Branco de neve",
+      "transparentMode": "Ativar transparência"
     },
     "about": {
       "tagline": "Aplicativo para lembrá-lo de fazer pausas",
       "version": "Versão ",
       "latestVersion": "Versão mais recente ",
-      "notifyNewVersion":"Informar automaticamente sobre atualizações do aplicativo",
+      "notifyNewVersion": "Informar automaticamente sobre atualizações do aplicativo",
       "learnMore": "Para aprender mais sobre características do Stretchly, assista um tutorial, baixe a última versão, ou entre em contato conosco, ",
       "ourWebsite": "visite o nosso site",
       "dot": ".",
@@ -104,7 +107,8 @@
       "becomePatron": "Torne-se um Patrono",
       "alreadyContributor": "Eu já contribuo",
       "authenticateUsing": "Autenticar usando:",
-      "contributorPreferences": "Preferências do Contribuinte"
+      "contributorPreferences": "Preferências do Contribuinte",
+      "syncPreferences": "Preferências de sincronização"
     }
   },
   "contributorPreferences": {
