@@ -309,6 +309,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Haechan Song, [@hcsong213](https://github.com/hcsong213)
 - Will, [@qubist](https://github.com/qubist)
 - Abhilash Mandaliya, [@abhilashmandaliya](https://github.com/abhilashmandaliya)
+- Masi, [@The-Coding-Classroom](https://github.com/The-Coding-Classroom)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
