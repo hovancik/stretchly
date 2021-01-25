@@ -87,7 +87,8 @@
       "menubarIcon": "Ikonka:",
       "colour": "Barevná",
       "monochrome": "Černobílá",
-      "invertedMonochrome": "Převrácená černobílá"
+      "invertedMonochrome": "Převrácená černobílá",
+      "snowWhite": "Sněhobílá"
     },
     "about": {
       "tagline": "Pamatuje na přestávky za vás",
@@ -135,13 +136,13 @@
     "pauseUntilMorningInfo": "Specifikujte hodinu pro 'Přerušit do rána'.",
     "welcomeWindow": "Úvodní obrazovka:",
     "showWelcomeWindow": "Při příštím spuštění zobrazit Úvodní obrazovku",
-    "opacityTheme": "Průhledný téma",
+    "opacityTheme": "Průhledné téma:",
     "opacityInfo": "Jak moc by měla být téma neprůhledná?",
     "opacity": "Opacity (neprůhlednost):",
     "breakWindowSize": "Velikost okna přestávek",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
+    "breakWindowSizeInfo": "Jaké procento obrazovky by mělo okno přestávky skrýt?",
+    "breakWindowWidth": "Šířka:",
+    "breakWindowHeight": "Výška:",
     "sounds": "Zvuky:",
     "volume": "Hlasitost:",
     "miniBreakStartSound": "Přehrát koncový zvuk i na začátku Mini Přestávky",

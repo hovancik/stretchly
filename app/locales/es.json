@@ -68,7 +68,7 @@
       "strictModeInfo": "El Modo Estricto evita que te saltes los Mini Breaks o Long Breaks y está diseñado para ayudar a la disciplina.",
       "enableStrictMini": "Habilitar Modo Estricto para Descansos Cortos",
       "enableStrictLong": "Habilitar Modo Estricto para Descansos Largos",
-      "cantDisableBoth": "No puedes deshabilitar los dos tipos de descansos."
+      "cantDisableBoth": "No puedes deshabilitar los dos tipos de descansos"
     },
     "theme": {
       "appearance": "Apariencia:",
@@ -92,7 +92,7 @@
       "tagline": "Aplicación para notificar cuándo hacer descansos",
       "version": "Version ",
       "latestVersion": "Ultima versión ",
-      "notifyNewVersion":"Notificar automáticamente las actualizaciones en la aplicación",
+      "notifyNewVersion": "Notificar automáticamente las actualizaciones en la aplicación",
       "learnMore": "Para obtener más información sobre las funciones de Stretchly, vea un tutorial, descargue la última versión o contáctenos para obtener ayuda, ",
       "ourWebsite": "visite nuestro sitio web",
       "dot": ".",
@@ -160,7 +160,7 @@
     "percent_plural": "{{count}} porciento",
     "oclock": "{{count}} en punto",
     "oclock_plural": "{{count}} en punto",
-    "seconds": "{{count}} segundos",
+    "seconds": "{{count}} segunda",
     "seconds_plural": "{{count}} segundos",
     "minutes": "{{count}} minuto",
     "minutes_plural": "{{count}} minutos",
