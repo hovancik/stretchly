@@ -241,13 +241,19 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 
 ## Known issues
-- users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
-- tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
-- tray tooltip does not work correctly on Linux ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
-- fullscreen is not shown on all displays on Windows ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
-- tray icon is not always rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
-- users on macOS experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
+
+### MacOS
+- tray tooltip does not work correctly ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
+- users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
+
+### Linx
+- tray tooltip does not work correctly ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
+- tray icon is not always rendered correctly ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
+
+### Windows
+- users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
+- fullscreen is not shown on all displays ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
 
 ## Contributors
 
