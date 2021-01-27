@@ -1,0 +1,21 @@
+name: macOS build
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.18.3'
+    - run: npm install npm -g
+    - run: npm install
+    - run: node_modules/.bin/electron-builder build
+      env:
+        GH_TOKEN: ${{ secrets.github_token }}

@@ -1,11 +1,24 @@
-// process.on('uncaughtException', (...args) => console.error(...args))
 const { app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 
-startI18next()
+process.on('uncaughtException', (err, _) => {
+  log.error(err)
+  const dialogOpts = {
+    type: 'error',
+    title: 'Stretchly',
+    message: 'An error occured while running Stretchly and it will now quit. To report the issue, click Report.',
+    buttons: ['Report', 'OK']
+  }
+  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+    if (returnValue.response === 0) {
+      shell.openExternal('https://github.com/hovancik/stretchly/issues')
+    }
+    app.quit()
+  })
+})
 
 nativeTheme.on('updated', function theThemeHasChanged () {
   appIcon.setImage(trayIconPath())
@@ -66,7 +79,7 @@ function startI18next () {
   i18next
     .use(Backend)
     .init({
-      lng: 'en',
+      lng: settings.get('language'),
       fallbackLng: 'en',
       debug: false,
       backend: {
@@ -245,7 +258,8 @@ function startProcessWin () {
   processWin = new BrowserWindow({
     show: false,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   processWin.loadURL(modalPath)
@@ -266,7 +280,8 @@ function createWelcomeWindow () {
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     })
     welcomeWin.loadURL(modalPath)
@@ -292,7 +307,8 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   contributorPreferencesWindow.loadURL(modalPath)
@@ -415,7 +431,8 @@ function startMicrobreak () {
       title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     }
 
@@ -445,7 +462,7 @@ function startMicrobreak () {
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
+        breakDuration, strictMode, postponable, postponableDurationPercent, settings)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           microbreakWinLocal.center()
@@ -466,6 +483,9 @@ function startMicrobreak () {
     if (!settings.get('allScreens')) {
       break
     }
+  }
+  if (process.platform === 'darwin') {
+    app.dock.hide()
   }
   updateTray()
 }
@@ -525,7 +545,8 @@ function startBreak () {
       title: 'Stretchly',
       alwaysOnTop: true,
       webPreferences: {
-        nodeIntegration: true
+        nodeIntegration: true,
+        enableRemoteModule: true
       }
     }
 
@@ -555,7 +576,7 @@ function startBreak () {
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, settings.get('endBreakShortcut'))
+        breakDuration, strictMode, postponable, postponableDurationPercent, settings)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           breakWinLocal.center()
@@ -576,7 +597,9 @@ function startBreak () {
       break
     }
   }
-
+  if (process.platform === 'darwin') {
+    app.dock.hide()
+  }
   updateTray()
 }
 
@@ -666,6 +689,7 @@ function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
   settings = new AppSettings(settingsFile)
+  startI18next()
   breakPlanner = new BreaksPlanner(settings)
   breakPlanner.nextBreak() // plan first break
   breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
@@ -678,7 +702,6 @@ function loadSettings () {
   breakPlanner.on('updateToolTip', function () {
     updateTray()
   })
-  i18next.changeLanguage(settings.get('language'))
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 }
@@ -742,7 +765,8 @@ function createPreferencesWindow () {
     y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      enableRemoteModule: true
     }
   })
   preferencesWin.loadURL(modalPath)

@@ -22,8 +22,7 @@
         "continue": "जारी राख्नुहोस् ।",
         "cancel": "रद्द गर्नुहोस् ।",
         "preferences": "सेटिंग्स",
-        "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू",
-        "syncPreferences": "Sync Preferences"
+        "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू"
     },
     "break": {
         "postpone": "यस ब्रेकलाई स्थगित गर्नुहोस् ।",
@@ -95,10 +94,7 @@
             "notifyNewVersion": "एप्लिकेशन अपडेटहरू स्वचालित रूपमा सूचित गर्नुहोस् ।",
             "learnMore": "Stretchly को सुविधाहरूको बारेमा अधिक जान्नको लागि, ट्यूटोरियल हेर्नुहोस्, भर्खरको संस्करण डाउनलोड गर्नुहोस् वा समर्थनका लागि हामीलाई सम्पर्क गर्नुहोस् । ",
             "ourWebsite": "हाम्रो वेबसाइटको भ्रमण गर्नुहोस्",
-            "dot": ".",
-            "developedBy": "Developed by",
-            "janH": "Jan Hovancik",
-            "designedBy": "Icon and UI design by Colin Shanley"
+            "dot": "."
         },
         "heart": {
             "loveStretchly": "Stretchly राम्रो लाग्यो ?",
@@ -107,8 +103,7 @@
             "becomePatron": "संरक्षक बन्नुहोस्",
             "alreadyContributor": "म पहिले नै एक योगदानकर्ता हुँ",
             "authenticateUsing": "प्रमाणित गर्नुहोस्, मार्फत:",
-            "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू",
-            "syncPreferences": "Sync Preferences"
+            "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू"
         }
     },
     "contributorPreferences": {
@@ -137,10 +132,6 @@
         "opacityTheme": "थेम पारदर्शिता:",
         "opacityInfo": "ब्रेक विन्डो कति सोलिड् बनाउने ?",
         "opacity": "अस्पष्टता:",
-        "breakWindowSize": "Break window size",
-        "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-        "breakWindowWidth": "Width:",
-        "breakWindowHeight": "Height:",
         "sounds": "आवाज:",
         "volume": "भोल्यूम:",
         "miniBreakStartSound": "छोटो ब्रेकको सुरूमा एन्ड-अफ-ब्रेक ध्वनि पनि प्ले गर्नुहोस् ।",
@@ -150,8 +141,7 @@
         "pauseAfter": "पज पछि:",
         "appearance": "उपस्थिति:",
         "light": "हल्का",
-        "dark": "गाढा",
-        "system": "System"
+        "dark": "गाढा"
     },
     "utils": {
         "none": "{{count}}",

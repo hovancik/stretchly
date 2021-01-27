@@ -23,7 +23,7 @@
     "cancel": "Avbryt",
     "preferences": "Inställningar",
     "contributorPreferences": "Inställningar för bidgradsgivare",
-    "syncPreferences": "Synkroniseringsinställningar"
+    "syncPreferences": "Inställningar för synkronisering"
   },
   "break": {
     "postpone": "Skjut upp den här pausen",
@@ -46,14 +46,14 @@
       "fullscreen": "Helskärm",
       "showIdeas": "Visa träningstips under pauser",
       "allScreens": "Visar pauser på alla bildskärmar",
-      "monitorIdleTime": "Övervaka systemets vilotid (nedräkning pausas om systemet är inaktivt)",
+      "monitorIdleTime": "Övervaka systemets vilotid (nedräkning pausas om systemet är inaktivt).",
       "monitorDnd": "Visa pauser även i läget Stör inte",
       "language": "Välj språk:",
       "restoreDefaults": "Återställ till standardvärden"
     },
     "schedule": {
-      "miniBreaks": "Kort paus:",
-      "miniBreaksInfo": "Kort paus är korta pauser som tas regelbundet för att ge dig en chans att sträcka på dig och koppla av.",
+      "miniBreaks": "Korta pauser:",
+      "miniBreaksInfo": "Korta pausa är korta pauser som tas regelbundet för att ge dig en chans att sträcka på dig och koppla av.",
       "enableMiniBreaks": "Aktivera korta pauser",
       "breakFor": "Paus i:",
       "every": "Varje:",
@@ -86,13 +86,14 @@
       "menubarIcon": "Menyradsikon:",
       "colour": "Färg",
       "monochrome": "Svartvit",
-      "invertedMonochrome": "Inverterad svartvit"
+      "invertedMonochrome": "Inverterad svartvit",
+      "snowWhite": "Snövit"
     },
     "about": {
       "tagline": "Appen för paustidspåminnelse",
       "version": "Version ",
       "latestVersion": "Senaste version ",
-      "notifyNewVersion":"Meddela automatiskt om appuppdateringar",
+      "notifyNewVersion": "Meddela automatiskt om appuppdateringar",
       "learnMore": "För att lära dig mer om funktioner i Stretchly, se en handledning, hämta den senaste versionen eller kontakta oss för support, ",
       "ourWebsite": "besök vår hemsida",
       "dot": ".",

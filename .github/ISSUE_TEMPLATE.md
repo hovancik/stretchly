@@ -31,3 +31,9 @@ Operating system: <!-- type your OS and version -->
 ### Additional Information
 
 Any additional information, configuration or data that might be necessary to reproduce the issue.
+
+### Debug information
+
+You can find extra debugging information and location of Logs file on `Preferences` -> `About` page, after you hit `Cmd/Ctrl+D` shortcut.
+
+Please, review information provided there and paste relevant parts here.

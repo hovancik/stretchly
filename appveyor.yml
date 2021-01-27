@@ -1,16 +1,16 @@
-os: unstable
+os: Visual Studio 2019
 
 platform:
-  - x86
   - x64
 
 skip_tags: true
 
 environment:
-  nodejs_version: "12.14.1"
+  nodejs_version: "12.18.3"
 
-init:
-- tzutil /s "W. Europe Standard Time"
+branches:
+  only:
+    - release
 
 cache:
   - node_modules -> package.json
@@ -20,10 +20,5 @@ install:
   - npm install npm -g
   - npm install
 
-test_script:
-  - node --version
-  - npm --version
-  - npx nyc --reporter=lcov npm test && npx codecov
-
 build_script:
-  - IF %APPVEYOR_REPO_BRANCH%==release (npm run dist)
+  - node_modules/.bin/electron-builder build --x64 --ia32

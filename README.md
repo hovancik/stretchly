@@ -26,7 +26,7 @@ The latest official **installers** and **portable versions** for macOS, Windows,
 
 ### macOS
 
-You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew cask install stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
+You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
 
  *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 
@@ -241,13 +241,19 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 
 ## Known issues
-- users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
-- tray tooltip does not work correctly on macOS ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
-- tray tooltip does not work correctly on Linux ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
-- fullscreen is not shown on all displays on Windows ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
-- tray icon is not always rendered correctly on Linux ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
-- users on macOS experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
+
+### MacOS
+- tray tooltip does not work correctly ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
+- users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
+
+### Linx
+- tray tooltip does not work correctly ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
+- tray icon is not always rendered correctly ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
+
+### Windows
+- users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
+- fullscreen is not shown on all displays ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
 
 ## Contributors
 
@@ -308,12 +314,15 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Benedikt Allendorf, [@BenediktAllendorf](https://github.com/BenediktAllendorf)
 - Haechan Song, [@hcsong213](https://github.com/hcsong213)
 - Will, [@qubist](https://github.com/qubist)
+- Abhilash Mandaliya, [@abhilashmandaliya](https://github.com/abhilashmandaliya)
+- Masi, [@The-Coding-Classroom](https://github.com/The-Coding-Classroom)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
 1.0 Icon and UI design by Colin Shanley ([www.colinshanley.com](http://www.colinshanley.com/)).
 
 ## Humans and Tools
+ - https://github.com/HatScripts/circle-flags 
  - https://www.icoconverter.com/ to generate .ico
  - http://www.img2icnsapp.com/ to create .icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/

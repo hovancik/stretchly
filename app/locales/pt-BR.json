@@ -23,7 +23,7 @@
     "cancel": "Cancelar",
     "preferences": "Configurações",
     "contributorPreferences": "Preferências do Contribuinte",
-    "syncPreferences": "Sync Preferences"
+    "syncPreferences": "Preferências de sincronização"
   },
   "break": {
     "postpone": "Adiar esta pausa",
@@ -77,7 +77,6 @@
       "graphiteCrystal": "Cristal de grafite",
       "coffeeKisses": "Beijos de café",
       "morningSwim": "Banho matinal",
-      "transparentMode": "Enable transparency",
       "sounds": "Sons:",
       "enableSounds": "Habilitar sons",
       "crystalGlass": "Copo de cristal",
@@ -86,19 +85,20 @@
       "menubarIcon": "Ícone da barra de menus:",
       "colour": "Cor",
       "monochrome": "Monocromático",
-      "invertedMonochrome": "Monocromático invertido"
+      "invertedMonochrome": "Monocromático invertido",
+      "snowWhite": "Branco de neve",
+      "transparentMode": "Ativar transparência"
     },
     "about": {
       "tagline": "Aplicativo para lembrá-lo de fazer pausas",
       "version": "Versão ",
       "latestVersion": "Versão mais recente ",
-      "notifyNewVersion":"Informar automaticamente sobre atualizações do aplicativo",
+      "notifyNewVersion": "Informar automaticamente sobre atualizações do aplicativo",
       "learnMore": "Para aprender mais sobre características do Stretchly, assista um tutorial, baixe a última versão, ou entre em contato conosco, ",
       "ourWebsite": "visite o nosso site",
       "dot": ".",
       "developedBy": "Desenvolvido por",
-      "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "janH": "Jan Hovancik"
     },
     "heart": {
       "loveStretchly": "Ama o seu Stretchly?",
@@ -108,7 +108,7 @@
       "alreadyContributor": "Eu já contribuo",
       "authenticateUsing": "Autenticar usando:",
       "contributorPreferences": "Preferências do Contribuinte",
-      "syncPreferences": "Sync Preferences"
+      "syncPreferences": "Preferências de sincronização"
     }
   },
   "contributorPreferences": {
@@ -134,13 +134,6 @@
     "pauseUntilMorningInfo": "Especificar a hora em que 'Fazer pausa até de manhã' deve terminar.",
     "welcomeWindow": "Janela de boas vindas:",
     "showWelcomeWindow": "Mostrar a Janela de Boas Vindas na próxima inicialização",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Sons:",
     "volume": "Volume:",
     "miniBreakStartSound": "Tocar também o som de fim-de-pausa no início de uma Mini Pausa",

@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - Die Pausenzeit Erinnerungs App",
+    "toolTipHeader": "Stretchly – Die Anwendung, die erinnert, Pause zu machen",
     "microbreakIn": "Mini Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Große Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Pausen fortsetzen",
@@ -18,12 +18,12 @@
     "resetBreaks": "Pausen zurücksetzen",
     "quitStretchly": "Stretchly beenden",
     "restoreDefaults": "Standardeinstellungen wiederherstellen",
-    "warning": "Dadurch werden die App-Standardeinstellungen wiederhergestellt und alle Einstellungen gehen verloren.",
+    "warning": "Dadurch werden die Anwendungsstandardeinstellungen wiederhergestellt und alle Einstellungen gehen verloren.",
     "continue": "Fortsetzen",
     "cancel": "Abbrechen",
     "preferences": "Einstellungen",
     "contributorPreferences": "Einstellungen für Mitwirkende",
-    "syncPreferences": "Sync Preferences"
+    "syncPreferences": "Einstellungen synchronisieren"
   },
   "break": {
     "postpone": "Verschiebe diese Pause",
@@ -37,17 +37,17 @@
       "schedule": "Zeitplanung",
       "theme": "Aussehen",
       "about": "Über",
-      "heart": "Liebe Stretchly"
+      "heart": "Stretchly gefällt mir"
     },
     "settings": {
-      "openAtLogin": "Stretchly automatisch beim Login starten",
+      "openAtLogin": "Stretchly automatisch bei der Anmeldung starten",
       "showBreaksIn": "Pausen anzeigen in:",
       "window": "Fenster",
       "fullscreen": "Vollbild",
       "showIdeas": "Pausenideen in den Pausen zeigen",
       "allScreens": "Pausen auf allen Monitoren anzeigen",
-      "monitorIdleTime": "Abwesenheit vom System überwachen (Zeit wird angehalten, wenn das System inaktiv ist)",
-      "monitorDnd": "Pausen auch bei 'Nicht stören' anzeigen",
+      "monitorIdleTime": "Abwesenheit vom System überwachen (Zeit wird angehalten, wenn das System inaktiv ist).",
+      "monitorDnd": "Pausen auch bei „Nicht stören“ anzeigen",
       "language": "Sprache auswählen:",
       "restoreDefaults": "Standardeinstellungen wiederherstellen"
     },
@@ -64,11 +64,11 @@
       "enableLongBreaks": "Große Pausen aktivieren",
       "showNotificationBeforeLongBreak": "Benachrichtigungen anzeigen, bevor große Pause startet",
       "enablePostponeLong": "Aufschub bei großer Pause aktivieren",
-      "strictMode": "Strikter Modus",
+      "strictMode": "Strikter Modus:",
       "strictModeInfo": "Der strikte Modus verhindert, dass Sie Mini Pausen oder große Pausen überspringen, und soll Disziplin unterstützen.",
       "enableStrictMini": "Strikten Modus für Mini Pausen aktivieren",
       "enableStrictLong": "Strikten Modus für große Pausen aktivieren",
-      "cantDisableBoth": "Es ist nicht möglich, beide Pausen Arten zu deaktivieren."
+      "cantDisableBoth": "Es ist nicht möglich, beide Pausen Arten zu deaktivieren"
     },
     "theme": {
       "appearance": "Aussehen:",
@@ -77,7 +77,7 @@
       "graphiteCrystal": "Graphit Kristall",
       "coffeeKisses": "Kaffee Küsse",
       "morningSwim": "Morgen Schwimmer",
-      "transparentMode": "Enable transparency",
+      "transparentMode": "Transparenz aktivieren",
       "sounds": "Ton:",
       "enableSounds": "Töne anschalten",
       "crystalGlass": "Kristallglas",
@@ -86,29 +86,30 @@
       "menubarIcon": "Symbol in Menüleiste:",
       "colour": "Farbig",
       "monochrome": "Einfarbig",
-      "invertedMonochrome": "Einfarbig Invertiert"
+      "invertedMonochrome": "Einfarbig Invertiert",
+      "snowWhite": "Schneeweiß"
     },
     "about": {
-      "tagline": "Die Pausenzeit Erinnerungs App",
+      "tagline": "Die Anwendung, die erinnert, Pausen zu machen",
       "version": "Version ",
       "latestVersion": "Neuste Version ",
-      "notifyNewVersion":"Automatisch über App-Updates Benachrichtigen",
-      "learnMore": "Um mehr über Stretchly zu erfahren, sehen Sie sich user Tutorial an, laden Sie die neueste Version herunter oder kontaktieren Sie uns für Support.",
-      "ourWebsite": "besuche unsere Webseite",
+      "notifyNewVersion": "Automatisch über Anwendungsaktualisierungen benachrichtigen",
+      "learnMore": "Um mehr über Stretchly zu erfahren, sehen Sie sich user Tutorial an, laden Sie die neueste Version herunter oder kontaktieren Sie uns für Support, ",
+      "ourWebsite": "besuche unsere Website",
       "dot": ".",
       "developedBy": "Entwickelt von",
       "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "designedBy": "Symbol und Design der Schnittstelle von Colin Shanley"
     },
     "heart": {
-      "loveStretchly": "Du liebst Stretchly?",
+      "loveStretchly": "Gefällt dir Stretchly?",
       "desc1": "Regelmäßige Pausen bei der Verwendung eines Computers sind wissenschaftlich erwiesenermaßen wichtig für Ihr körperliches und geistiges Wohlbefinden.",
       "desc2": "Stretchly ist kostenlos. Sie können Ihre Unterstützung jedoch durch eine Spende zeigen und uns dabei helfen, Stretchly weiter zu verbessern und andere freie Software zu veröffentlichen.",
       "becomePatron": "Werde ein Patron",
       "alreadyContributor": "Ich bin bereits ein Mitwirkender",
       "authenticateUsing": "Authentifizierung durch:",
       "contributorPreferences": "Einstellungen für Mitwirkende",
-      "syncPreferences": "Sync Preferences"
+      "syncPreferences": "Einstellungen synchronisieren"
     }
   },
   "contributorPreferences": {
@@ -117,7 +118,7 @@
     "notificationsInfo": "Die Systembenachrichtigung wird vor den Pausen angezeigt, damit Sie sich darauf vorbereiten können.",
     "beforeLongBreak": "Große Pause:",
     "beforeMiniBreak": "Mini Pause:",
-    "newVersion": "Neu Version:",
+    "newVersion": "Neue Version:",
     "newVersionNotification": "Benachrichtigen, wenn eine neue Version verfügbar ist",
     "customIdeas": "Eigene Ideen:",
     "customIdeasInfo": "Ermöglicht die Verwendung benutzerdefinierter Pausenideen durch Bearbeiten der Konfigurationsdatei. (Für fortgeschrittene Benutzer.)",
@@ -131,16 +132,16 @@
     "longBreaks": "Große Pausen:",
     "pauseUntilMoring": "Pause bis Morgen:",
     "pauseUntil": "Pause bis:",
-    "pauseUntilMorningInfo": "Geben Sie an, bis zu welcher Stunde 'Pause bis Morgen' pausieren soll.",
+    "pauseUntilMorningInfo": "Geben Sie an, bis zu welcher Stunde „Pause bis Morgen“ pausieren soll.",
     "welcomeWindow": "Willkommensfenster:",
     "showWelcomeWindow": "Willkommensfenster beim nächsten Start anzeigen",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
+    "opacityTheme": "Thementransparenz:",
+    "opacityInfo": "Wie undurchsichtig sollte das Pausenfenster sein?",
+    "opacity": "Deckkraft:",
+    "breakWindowSize": "Pausenfenstergröße",
+    "breakWindowSizeInfo": "Wie viel Prozent des Bildschirms sollte das Pausenfenster ausblenden?",
+    "breakWindowWidth": "Breite:",
+    "breakWindowHeight": "Höhe:",
     "sounds": "Töne:",
     "volume": "Lautstärke:",
     "miniBreakStartSound": "Töne am Beginn und Ende einer Mini Pause spielen",

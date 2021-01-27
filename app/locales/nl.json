@@ -17,13 +17,13 @@
     "indefinitely": "voor onbepaalde tijd",
     "resetBreaks": "Reset pauzes",
     "quitStretchly": "Stop Stretchly",
-    "restoreDefaults": "Restore defaults",
-    "warning": "Dit zal the standaardinstellingen herstellen en all je instellingen zullen verloren gaan",
+    "warning": "Dit zal de standaardinstellingen herstellen en al je wijzigingen gaan verloren.",
     "continue": "Doorgaan",
     "cancel": "Annuleer",
     "preferences": "Instellingen",
     "contributorPreferences": "Bijdrager Instellingen",
-    "syncPreferences": "Sync Preferences"
+    "syncPreferences": "Sync. voorkeuren",
+    "restoreDefaults": "Standaard instellingen herstellen"
   },
   "break": {
     "postpone": "Deze pauze uitstellen",
@@ -37,7 +37,7 @@
       "schedule": "Schema",
       "theme": "Theme",
       "about": "Over",
-      "heart": "Love Stretchly"
+      "heart": "Waardeer Stretchly"
     },
     "settings": {
       "openAtLogin": "Start Stretchly automatisch tijdens het inloggen",
@@ -46,7 +46,7 @@
       "fullscreen": "Volledig Scherm",
       "showIdeas": "Toon oefening tips tijdens de pauzes",
       "allScreens": "Toon pauzes op alle monitoren",
-      "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen word gepauzeerd als het systeem inactief is)",
+      "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen word gepauzeerd als het systeem inactief is).",
       "monitorDnd": "Toon pauzes in Niet Storen modus",
       "language": "Selecteer taal:",
       "restoreDefaults": "Standaardinstellingen herstellen"
@@ -54,10 +54,9 @@
     "schedule": {
       "miniBreaks": "Mini Pauzes:",
       "miniBreaksInfo": "Mini pauzes zijn korte pauzes die regelmatig genomen worden om je de kans te geven om uit te rekken en te ontspannen.",
-      "enableMiniBreaks": "Enable Mini Breaks",
       "breakFor": "Pauze voor:",
       "every": "Elke:",
-      "showNotificationBeforeMiniBreak": "Toon notificaties voordat een Mini Pauze begint",
+      "showNotificationBeforeMiniBreak": "Toon notificatie voordat een Mini Pauze begint",
       "enablePostponeMini": "Uitstellen van Mini Pauzes inschakelen",
       "longBreaks": "Lange Pauzes:",
       "longBreaksInfo": "Lange Pauzes worden minder regelmatig genomen, maar zijn van een langere duratie, waardoor je de mogelijkheid hebt om een verlende pauze van je werk te nemen.",
@@ -68,7 +67,8 @@
       "strictModeInfo": "Strenge Modus voorkomt dat je de Mini Pauzes en Lange Pauzes kunt overslaan en is ontworpen om te helpen met discipline.",
       "enableStrictMini": "Strenge Modus inschakelen voor Mini Pauzes",
       "enableStrictLong": "Strenge Modus inschakelen voor Lange Pauzes",
-      "cantDisableBoth": "Het is niet mogelijk om allebei de pauze soorten uit te schakelen"
+      "cantDisableBoth": "Het is niet mogelijk om allebei de pauze soorten uit te schakelen",
+      "enableMiniBreaks": "Mini Pauzes inschakelen"
     },
     "theme": {
       "appearance": "Uiterlijk:",
@@ -77,7 +77,6 @@
       "graphiteCrystal": "Grafiet kristal",
       "coffeeKisses": "Koffie zoenen",
       "morningSwim": "Ochtend zwemmen",
-      "transparentMode": "Enable transparency",
       "sounds": "Geluiden:",
       "enableSounds": "Geluiden inschakelen",
       "crystalGlass": "Kristalglas",
@@ -86,7 +85,9 @@
       "menubarIcon": "Menubalk icoon:",
       "colour": "Kleur",
       "monochrome": "Monochroom",
-      "invertedMonochrome": "Omgekeerd Monochroom"
+      "invertedMonochrome": "Omgekeerd Monochroom",
+      "snowWhite": "Sneeuw wit",
+      "transparentMode": "Transparantie inschakelen"
     },
     "about": {
       "tagline": "Pauze herinnering app",
@@ -98,17 +99,17 @@
       "dot": ".",
       "developedBy": "Ontwikkeld door",
       "janH": "Jan Hovancik",
-      "designedBy": "Icon and UI design by Colin Shanley"
+      "designedBy": "Pictogram en UI ontwerp door Colin Shanley"
     },
     "heart": {
       "loveStretchly": "Hou je van Stretchly?",
-      "desc1": "Het is wetenschappelijk bewezen dat regelmatig pauzes nemen tijdens het gebruik van een computer belangrijk is voor je fysieke en mentale welzijn. ",
+      "desc1": "Het is wetenschappelijk bewezen dat regelmatig pauzes nemen tijdens het gebruik van een computer belangrijk is voor je fysieke en mentale welzijn.",
       "desc2": "Stretchly is gratis. Maar je kan ons ondersteunen door te doneren en ons daarmee te helpen om Stretchly te verbeteren en andere gratis software uit te brengen.",
       "becomePatron": "Word een Patron",
       "alreadyContributor": "Ik ben al een bijdrager",
       "authenticateUsing": "Authenticeren met:",
       "contributorPreferences": "Bijdrager Instellingen",
-      "syncPreferences": "Sync Preferences"
+      "syncPreferences": "Sync. voorkeuren"
     }
   },
   "contributorPreferences": {
@@ -134,24 +135,24 @@
     "pauseUntilMorningInfo": "Specifeer tot welk uur 'Pauze tot ochtend' zou moeten pauzeren.",
     "welcomeWindow": "Welkom venster:",
     "showWelcomeWindow": "Toon Welkom venster op volgende start",
-    "opacityTheme": "Theme transparency:",
-    "opacityInfo": "How solid should the break window be?",
-    "opacity": "Opacity:",
-    "breakWindowSize": "Break window size",
-    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
-    "breakWindowWidth": "Width:",
-    "breakWindowHeight": "Height:",
     "sounds": "Geluiden:",
     "volume": "Volume:",
     "miniBreakStartSound": "Speel einde-van-pauze geluid ook bij het begin van een Mini Pauze",
     "longBreakStartSound": "Speel einde-van-pauze geluid ook bij het begin van een Lange Pauze",
     "naturalBreaks": "Natuurlijke pauzes:",
     "naturalBreaksInfo": "Als het monitoren van inactieve tijd is ingeschakeld in de hoofd instellingen, kan je specificeren na hoeveel tijd het aftellen gepauzeerd zou moet worden.",
-    "pauseAfter": "Pause na:",
+    "pauseAfter": "Pauze na:",
     "appearance": "Uiterlijk:",
     "light": "Licht",
     "dark": "Donker",
-    "system": "Systeem"
+    "system": "Systeem",
+    "breakWindowSizeInfo": "Hoeveel procent van het scherm moet het pauze scherm verbergen?",
+    "breakWindowSize": "Pauze scherm grootte",
+    "breakWindowWidth": "Breedte:",
+    "opacityTheme": "Transparantie van het thema:",
+    "opacityInfo": "Ondoorzichtigheid van het pauze scherm?",
+    "breakWindowHeight": "Hoogte:",
+    "opacity": "Ondoorzichtigheid:"
   },
   "utils": {
     "none": "{{count}}",
