@@ -50,7 +50,8 @@
       "fullscreen": "Tam Ekran",
       "window": "Pencere",
       "showBreaksIn": "Molaları Gör:",
-      "openAtLogin": "Giriş yapıldığında Stretchly'i otomatik başlat"
+      "openAtLogin": "Giriş yapıldığında Stretchly'i otomatik başlat",
+      "language": "Dili seç:"
     },
     "nav": {
       "heart": "Stretchly'i Seviyor Musun",
@@ -63,7 +64,11 @@
     "schedule": {
       "miniBreaksInfo": "Mini Molalar, esneme ve rahatlama şansı vermek için düzenli olarak yapılan kısa molalardır.",
       "enableMiniBreaks": "Mini Molaları Etkinleştir",
-      "miniBreaks": "Küçük Molalar:"
+      "miniBreaks": "Küçük Molalar:",
+      "enableLongBreaks": "Uzun molaları etkinleştir",
+      "longBreaks": "Uzun Molalar:",
+      "every": "Her:",
+      "breakFor": "Mola süresi:"
     }
   },
   "process": {

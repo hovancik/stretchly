@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - appen för paustidspåminnelse",
+    "toolTipHeader": "Stretchly - appen för pauspåminnelser",
     "microbreakIn": "Kort paus om $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Lång paus om $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Återuppta pauser",
@@ -26,8 +26,8 @@
     "syncPreferences": "Inställningar för synkronisering"
   },
   "break": {
-    "postpone": "Skjut upp den här pausen",
-    "skip": "Hoppa över den här pausen",
+    "postpone": "Skjut upp denna paus",
+    "skip": "Hoppa över denna paus",
     "title": "Dags att ta en paus!"
   },
   "preferences": {

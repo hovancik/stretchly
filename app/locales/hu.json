@@ -84,18 +84,21 @@
       "menubarIcon": "Menüsáv ikon:",
       "colour": "Színes",
       "monochrome": "Egyszínű",
-      "invertedMonochrome": "Fordított egyszínű"
+      "invertedMonochrome": "Fordított egyszínű",
+      "snowWhite": "Hófehér",
+      "transparentMode": "Áttetszőség bekapcsolása"
     },
     "about": {
       "tagline": "A szünet emlékeztető alkalmazás",
       "version": "Verzió: ",
       "latestVersion": "Legfrissebb verzió: ",
-      "notifyNewVersion":"Automatikus értesítés új verziók esetén",
+      "notifyNewVersion": "Automatikus értesítés új verziók esetén",
       "learnMore": "Ahhoz, hogy többet tudj meg a Stretchly funkciókról, útmutatókat nézz meg, letöltsd a legfrissebb verziót vagy, hogy írj az ügyfélszolgálatunknak, ",
       "ourWebsite": "látogasd meg a weboldalunkat",
       "dot": ".",
       "developedBy": "Fejlesztette",
-      "janH": "Jan Hovancik"
+      "janH": "Jan Hovancik",
+      "designedBy": "Ikont és kinézetet tervezte Colin Shanley"
     },
     "heart": {
       "loveStretchly": "Szereted a Stretchlyt?",
@@ -104,7 +107,8 @@
       "becomePatron": "Legyél támogató (Patreon)",
       "alreadyContributor": "Már támogató vagyok",
       "authenticateUsing": "Azonosítás a következővel:",
-      "contributorPreferences": "Támogatói beállítások"
+      "contributorPreferences": "Támogatói beállítások",
+      "syncPreferences": "Beállítások szinkronizálása"
     }
   },
   "contributorPreferences": {
@@ -140,7 +144,9 @@
     "appearance": "Kinézet:",
     "light": "Világos",
     "dark": "Sötét",
-    "system": "Rendszer"
+    "system": "Rendszer",
+    "breakWindowWidth": "Szélesség:",
+    "breakWindowHeight": "Magasság:"
   },
   "utils": {
     "none": "{{count}}",
