@@ -1,7 +1,7 @@
 {
   "preferences": {
     "schedule": {
-      "longBreaksInfo": "Istirahat Panjang secara rutin, dalam durasi lebih lama,",
+      "longBreaksInfo": "Istirahat Panjang dilakukan lebih sedikit, tetapi dalam durasi yang lebih lama, memberikan Anda kesempatan untuk istirahat lebih lama dari pekerjaan Anda.",
       "cantDisableBoth": "Tidak memungkinkan untuk menonaktifkan kedua tipe istirahat",
       "enableStrictLong": "Aktifkan Mode Ketat untuk Istirahat Panjang",
       "enableStrictMini": "Aktifkan Mode Ketat untuk Istirahat Ringan",
