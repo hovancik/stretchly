@@ -316,6 +316,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Will, [@qubist](https://github.com/qubist)
 - Abhilash Mandaliya, [@abhilashmandaliya](https://github.com/abhilashmandaliya)
 - Masi, [@The-Coding-Classroom](https://github.com/The-Coding-Classroom)
+- Saksham Sharma, [@ssaksham](https://github.com/ssaksham)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
