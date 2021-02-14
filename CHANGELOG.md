@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Persian translations
 - Hebrew translations
 - Finnish translations
+- Indonesian translations
+
+### Changed
+- Updated many translations
+
 
 ## [1.4.0] - 2020-12-25
 ### Added
