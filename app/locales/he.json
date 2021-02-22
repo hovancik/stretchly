@@ -8,7 +8,9 @@
       "enablePostponeMini": "הצגת אפשרות לדחיית ההפסקה הקצרה",
       "longBreaks": "הפסקות ארוכות:",
       "showNotificationBeforeMiniBreak": "הצגת התראה לפני תחילת הפסקה קצרה",
-      "breakFor": "משך ההפסקה:"
+      "breakFor": "משך ההפסקה:",
+      "showNotificationBeforeLongBreak": "הצג התראה לפני שההפסקה ארוכה מתחילה",
+      "enableLongBreaks": "אפשר הפסקות ארוכות"
     },
     "settings": {
       "showBreaksIn": "הצגת ההפסקות:",
@@ -47,6 +49,16 @@
       "authenticateUsing": "הזדהה/י באמצעות:",
       "syncPreferences": "העדפות סנכרון",
       "alreadyContributor": "אני כבר תורם/ת"
+    },
+    "theme": {
+      "transparentMode": "אפשר השתקפות",
+      "snowWhite": "שלג לבן",
+      "colour": "צבע",
+      "enableSounds": "הפעל צלילים",
+      "sounds": "צלילים:",
+      "coffeeKisses": "נשיקות קפה",
+      "greenClouds": "עננים ירוקים",
+      "appearance": "מראה:"
     }
   },
   "break": {

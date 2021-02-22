@@ -30,6 +30,8 @@ You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `b
 
  *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 
+If you're using [Alfred](https://www.alfredapp.com) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) to interact with Stretchly.
+
 ### Windows
 
 You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.
@@ -247,7 +249,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - tray tooltip does not work correctly ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
 
-### Linx
+### Linux
 - tray tooltip does not work correctly ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
 - tray icon is not always rendered correctly ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 

@@ -3,17 +3,18 @@
     "toolTipHeader": "Stretchly - विराम समय अनुस्मारक एप्लिकेशन",
     "resumingBreaks": "पुनः ब्रेक शुरू करें",
     "downloadLatestVersion": "नया वर्ज़न डाउनलोड करेंc",
-    "skipToTheNext": "ये छोड़ के अगले ब्रेक पे जाए।",
-    "resume": "फिर शुर करें।",
-    "pause": "रोको।",
-    "forHour": "एक घंटे के लिए।",
-    "for2Hours": "दो घंटो के लिए।",
-    "for5Hours": "पांच घंटो के लिए ।",
+    "skipToTheNext": "ये छोड़ के अगले ब्रेक पे जाए",
+    "resume": "फिर शुर करें",
+    "pause": "ब्रेक्स रोको",
+    "forHour": "एक घंटे के लिए",
+    "for2Hours": "दो घंटो के लिए",
+    "for5Hours": "पांच घंटो के लिए",
     "untilMorning": "सुबह तक।",
     "indefinitely": "अनिश्चित काल के लिए।",
     "resetBreaks": "ब्रेक्स पुनः कायम करें।",
     "quitStretchly": "stretchly बंद करें ।",
-    "preferences": "सेट्टिंग्स"
+    "preferences": "सेट्टिंग्स",
+    "toMicrobreak": "छोटा ब्रेक"
   },
   "break": {
     "title": "ब्रेक लेने का समय आ गया है!"
