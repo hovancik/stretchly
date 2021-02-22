@@ -247,7 +247,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - tray tooltip does not work correctly ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
 
-### Linx
+### Linux
 - tray tooltip does not work correctly ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
 - tray icon is not always rendered correctly ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
