@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Hebrew translations
 - Finnish translations
 - Indonesian translations
+- Latvian translations
 
 ### Changed
 - Updated many translations
