@@ -51,5 +51,6 @@ module.exports = {
   breakWindowHeight: 0.85,
   checkNewVersion: true,
   breakIdeas: defaultBreakIdeas,
-  microbreakIdeas: defaultMicrobreakIdeas
+  microbreakIdeas: defaultMicrobreakIdeas,
+  actAsRegularWindow: false
 }
