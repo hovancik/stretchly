@@ -12,13 +12,13 @@ const sinon = require('sinon')
 chai.should()
 
 describe('Times formatters', function () {
-  beforeEach(function (done) {
+  before(function (done) {
     i18next
       .use(Backend)
       .init({
         lng: 'en',
         fallbackLng: 'en',
-        debug: false,
+        debug: true,
         backend: {
           loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
           jsonIndent: 2

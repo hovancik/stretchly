@@ -63,7 +63,6 @@ if (!gotTheLock) {
   const cmd = new Command(args, app.getVersion())
   cmd.runOrForward()
   app.quit()
-  return
 }
 
 app.on('ready', startProcessWin)
