@@ -173,6 +173,10 @@ To specify the size of the break window, set the value of `breakWindowHeight` an
 #### Check for new version
 If you don't want to ever check for new version, set `checkNewVersion` to `false`.
 
+#### Make Stretchly act as a regular window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+
+If you want Stretchly to act as a regular window (have a titlebar, turn off always on top, be minimizable) set `actAsRegularWindow` to `false`.
+
 ## Contributor Preferences
 
 *Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!

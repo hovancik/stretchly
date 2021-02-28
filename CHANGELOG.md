@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Finnish translations
 - Indonesian translations
 - Latvian translations
+- Contributor preference option to make stretchly act as a regular window (to make use of other apps during breaks easier)
 
 ### Changed
 - Updated many translations
