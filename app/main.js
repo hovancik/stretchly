@@ -136,7 +136,7 @@ function numberOfDisplays () {
 }
 
 function closeWindows (windowArray) {
-  for (window of windowArray) {
+  for (const window of windowArray) {
     window.hide()
     window.close()
   }
