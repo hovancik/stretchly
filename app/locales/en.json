@@ -152,7 +152,10 @@
     "appearance": "Appearance:",
     "light": "Light",
     "dark": "Dark",
-    "system": "System"
+    "system": "System",
+    "showBreaksAsRegularWindowsTitle": "Act as regular window:",
+    "showBreaksAsRegularWindowsInfo": "When enabled, Break windows will become focusable, they won't be 'Always on top' anymore and they will also appear in the taskbar.",
+    "showBreaksAsRegularWindows": "Show breaks as regular windows"
   },
   "utils": {
     "none": "{{count}}",

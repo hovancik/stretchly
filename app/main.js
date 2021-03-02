@@ -392,7 +392,7 @@ function startMicrobreak () {
   const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
   const postponable = settings.get('microbreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
-  const actAsRegularWindow = settings.get('actAsRegularWindow')
+  const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
   if (!strictMode || postponable) {
     globalShortcut.register(settings.get('endBreakShortcut'), () => {
@@ -422,13 +422,13 @@ function startMicrobreak () {
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
-      frame: actAsRegularWindow,
+      frame: showBreaksAsRegularWindows,
       show: false,
       transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
-      skipTaskbar: !actAsRegularWindow,
-      focusable: actAsRegularWindow,
-      alwaysOnTop: !actAsRegularWindow,
+      skipTaskbar: !showBreaksAsRegularWindows,
+      focusable: showBreaksAsRegularWindows,
+      alwaysOnTop: !showBreaksAsRegularWindows,
       title: 'Stretchly',
       webPreferences: {
         nodeIntegration: true,
@@ -472,7 +472,7 @@ function startMicrobreak () {
 
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
-    microbreakWinLocal.setAlwaysOnTop(!actAsRegularWindow, 'screen-saver')
+    microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'screen-saver')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
         e.preventDefault()
@@ -509,7 +509,7 @@ function startBreak () {
   const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
   const postponable = settings.get('breakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
-  const actAsRegularWindow = settings.get('actAsRegularWindow')
+  const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
   if (!strictMode || postponable) {
     globalShortcut.register(settings.get('endBreakShortcut'), () => {
@@ -540,13 +540,13 @@ function startBreak () {
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
-      frame: actAsRegularWindow,
+      frame: showBreaksAsRegularWindows,
       show: false,
       transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
-      skipTaskbar: !actAsRegularWindow,
-      focusable: actAsRegularWindow,
-      alwaysOnTop: !actAsRegularWindow,
+      skipTaskbar: !showBreaksAsRegularWindows,
+      focusable: showBreaksAsRegularWindows,
+      alwaysOnTop: !showBreaksAsRegularWindows,
       title: 'Stretchly',
       webPreferences: {
         nodeIntegration: true,
@@ -589,7 +589,7 @@ function startBreak () {
     })
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
-    breakWinLocal.setAlwaysOnTop(!actAsRegularWindow, 'screen-saver')
+    breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'screen-saver')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
         e.preventDefault()
