@@ -472,7 +472,7 @@ function startMicrobreak () {
 
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
-    microbreakWinLocal.setAlwaysOnTop(actAsRegularWindow, 'screen-saver')
+    microbreakWinLocal.setAlwaysOnTop(!actAsRegularWindow, 'screen-saver')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
         e.preventDefault()
@@ -589,7 +589,7 @@ function startBreak () {
     })
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
-    breakWinLocal.setAlwaysOnTop(actAsRegularWindow, 'screen-saver')
+    breakWinLocal.setAlwaysOnTop(!actAsRegularWindow, 'screen-saver')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
         e.preventDefault()
