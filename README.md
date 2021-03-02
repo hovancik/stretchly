@@ -175,7 +175,7 @@ If you don't want to ever check for new version, set `checkNewVersion` to `false
 
 #### Make Stretchly act as a regular window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 
-If you want Stretchly to act as a regular window (have a titlebar, turn off always on top, be minimizable) set `actAsRegularWindow` to `false`.
+If you want Stretchly to act as a regular window (have a titlebar, turn off always on top, be minimizable) set `actAsRegularWindow` to `true`.
 
 ## Contributor Preferences
 
