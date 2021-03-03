@@ -451,10 +451,15 @@ function startMicrobreak () {
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
-      microbreakWinLocal.showInactive()
+      if (showBreaksAsRegularWindows) {
+        microbreakWinLocal.show()
+      } else {
+        microbreakWinLocal.showInactive()
+      }
+
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
-        microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+        microbreakWinLocal.setKiosk(settings.get('fullscreen') && !showBreaksAsRegularWindows)
       }
       if (localDisplayId === 0) {
         breakPlanner.emit('microbreakStarted', true)
@@ -569,10 +574,15 @@ function startBreak () {
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
-      breakWinLocal.showInactive()
+      if (showBreaksAsRegularWindows) {
+        breakWinLocal.show()
+      } else {
+        breakWinLocal.showInactive()
+      }
+
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
-        breakWinLocal.setKiosk(settings.get('fullscreen'))
+        breakWinLocal.setKiosk(settings.get('fullscreen') && !showBreaksAsRegularWindows)
       }
       if (localDisplayId === 0) {
         breakPlanner.emit('breakStarted', true)
