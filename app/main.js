@@ -47,6 +47,7 @@ let myStretchlyWindow = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
+let appIsQuitting = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -72,6 +73,9 @@ app.on('ready', startPowerMonitoring)
 app.on('second-instance', runCommand)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
+})
+app.on('before-quit', () => {
+  appIsQuitting = true
 })
 
 function startI18next () {
@@ -480,7 +484,9 @@ function startMicrobreak () {
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'screen-saver')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
-        e.preventDefault()
+        if (!appIsQuitting) {
+          e.preventDefault()
+        }
       })
       microbreakWinLocal.on('closed', () => {
         microbreakWinLocal = null
@@ -602,7 +608,9 @@ function startBreak () {
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'screen-saver')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
-        e.preventDefault()
+        if (!appIsQuitting) {
+          e.preventDefault()
+        }
       })
       breakWinLocal.on('closed', () => {
         breakWinLocal = null
