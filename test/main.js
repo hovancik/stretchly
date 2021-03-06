@@ -78,7 +78,6 @@ describe('stretchly', function () {
       let visible = await this.app.client.browserWindow.isVisible()
       visible.should.equal(false)
     })
-
   })
 
   describe('on subsequent runs', function () {
@@ -130,13 +129,13 @@ describe('stretchly', function () {
       title.should.contain('take a break')
     })
 
-    it('cannot be closed', async function() {
+    it('cannot be closed', async function () {
       await this.app.client.browserWindow.close()
       let isDestroyed = await this.app.client.browserWindow.isDestroyed()
       isDestroyed.should.equal(false)
     })
 
-    it('has postpone button', async function() {
+    it('has postpone button', async function () {
       await this.app.client.waitUntilTextExists('#postpone', 'Postpone', 500)
     })
   })
