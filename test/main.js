@@ -24,6 +24,17 @@ describe('stretchly', function () {
     await app.client.waitUntilWindowLoaded()
   }
 
+  async function forceMicrobreak(app) {
+    settings.set('microbreak', true)
+    settings.set('microbreakInterval', 200)
+    settings.set('microbreakNotificationInterval', 100)
+
+    await launchAndWaitForWindowToLoad(app)
+
+    // give the microbreak a moment to be created and displayed
+    await new Promise(resolve => setTimeout(resolve, 250))
+  }
+
   beforeEach(function () {
     this.app = new Application({
       path: electronPath,
@@ -110,17 +121,7 @@ describe('stretchly', function () {
   describe('microbreak window', function () {
     beforeEach('force microbreak', async function () {
       settings.set('isFirstRun', false)
-
-      settings.set('microbreak', true)
-      settings.set('microbreakInterval', 200)
-      settings.set('microbreakNotificationInterval', 100)
-
-      await launchAndWaitForWindowToLoad(this.app)
-
-      // give the microbreak a moment to be created and displayed
-      await new Promise(resolve => setTimeout(resolve, 250))
-
-      // select the microbreak window
+      await forceMicrobreak(this.app)
       await this.app.client.windowByIndex(1)
     })
 
@@ -137,6 +138,35 @@ describe('stretchly', function () {
 
     it('has postpone button', async function () {
       await this.app.client.waitUntilTextExists('#postpone', 'Postpone', 500)
+    })
+
+    it('is not focused', async function() {
+      let isDestroyed = await this.app.client.browserWindow.isFocused()
+      isDestroyed.should.equal(false)
+    })
+  })
+
+  describe('when acting as regular window, microbreak', function () {
+    beforeEach('force microbreak', async function () {
+      settings.set('isFirstRun', false)
+      settings.set('showBreaksAsRegularWindows', true)
+      await forceMicrobreak(this.app)
+      await this.app.client.windowByIndex(1)
+    })
+
+    it('cannot be closed', async function () {
+      await this.app.client.browserWindow.close()
+      let isDestroyed = await this.app.client.browserWindow.isDestroyed()
+      isDestroyed.should.equal(false)
+    })
+
+    it('is focused', async function () {
+      let isFocused = await this.app.client.browserWindow.isFocused()
+      isFocused.should.equal(true)
+    })
+
+    it('does not stop application from quitting', async function () {
+      await this.app.stop()
     })
   })
 })
