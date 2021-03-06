@@ -48,12 +48,14 @@ describe('stretchly', function () {
   })
 
   afterEach(function () {
-    this.app.client.getMainProcessLogs().then(function (logs) {
-      logs.forEach((log) => {
-        log.split('\n')
-          .forEach((l) => console.log('[APP]\t' + l))
+    if (this.app.client.getMainProcessLogs) {
+      this.app.client.getMainProcessLogs().then(function (logs) {
+        logs.forEach((log) => {
+          log.split('\n')
+            .forEach((l) => console.log('[APP]\t' + l))
+        })
       })
-    })
+    }
 
     // using sync rimraf because async causes flaky tests even if awaited
     rimraf.sync(tempDir)

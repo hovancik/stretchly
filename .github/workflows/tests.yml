@@ -29,3 +29,7 @@ jobs:
         CI: true
     - name: Codecov
       uses: codecov/codecov-action@v1.1.0
+
+    - name: end-to-end tests
+      if: matrix.os == 'macOS-latest'
+      run: npm run test-e2e
