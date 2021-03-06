@@ -5,10 +5,16 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.flaky }}
 
     strategy:
+      fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest]
+        flaky: [false]
+        include:
+          - os: windows-latest
+            flaky: true
 
     steps:
     - name: Set Timezone
