@@ -47,6 +47,7 @@ let myStretchlyWindow = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
+let appIsQuitting = false
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
@@ -72,6 +73,9 @@ app.on('ready', startPowerMonitoring)
 app.on('second-instance', runCommand)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
+})
+app.on('before-quit', () => {
+  appIsQuitting = true
 })
 
 function startI18next () {
@@ -136,9 +140,9 @@ function numberOfDisplays () {
 }
 
 function closeWindows (windowArray) {
-  for (let i = windowArray.length - 1; i >= 0; i--) {
-    windowArray[i].hide()
-    windowArray[i].close()
+  for (const window of windowArray) {
+    window.hide()
+    window.close()
   }
   return null
 }
@@ -392,6 +396,7 @@ function startMicrobreak () {
   const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
   const postponable = settings.get('microbreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+  const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
   if (!strictMode || postponable) {
     globalShortcut.register(settings.get('endBreakShortcut'), () => {
@@ -421,14 +426,14 @@ function startMicrobreak () {
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
-      frame: false,
+      frame: showBreaksAsRegularWindows,
       show: false,
       transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
-      skipTaskbar: true,
-      focusable: false,
+      skipTaskbar: !showBreaksAsRegularWindows,
+      focusable: showBreaksAsRegularWindows,
+      alwaysOnTop: !showBreaksAsRegularWindows,
       title: 'Stretchly',
-      alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true,
         enableRemoteModule: true
@@ -450,10 +455,19 @@ function startMicrobreak () {
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
-      microbreakWinLocal.showInactive()
+      if (showBreaksAsRegularWindows) {
+        microbreakWinLocal.show()
+      } else {
+        microbreakWinLocal.showInactive()
+      }
+
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
-        microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+        if (showBreaksAsRegularWindows) {
+          microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
+        } else {
+          microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+        }
       }
       if (localDisplayId === 0) {
         breakPlanner.emit('microbreakStarted', true)
@@ -471,8 +485,13 @@ function startMicrobreak () {
 
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
-    microbreakWinLocal.setAlwaysOnTop(true, 'screen-saver')
+    microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'screen-saver')
     if (microbreakWinLocal) {
+      microbreakWinLocal.on('close', (e) => {
+        if (!appIsQuitting) {
+          e.preventDefault()
+        }
+      })
       microbreakWinLocal.on('closed', () => {
         microbreakWinLocal = null
       })
@@ -505,6 +524,7 @@ function startBreak () {
   const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
   const postponable = settings.get('breakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+  const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
   if (!strictMode || postponable) {
     globalShortcut.register(settings.get('endBreakShortcut'), () => {
@@ -535,14 +555,14 @@ function startBreak () {
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
-      frame: false,
+      frame: showBreaksAsRegularWindows,
       show: false,
       transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
-      skipTaskbar: true,
-      focusable: false,
+      skipTaskbar: !showBreaksAsRegularWindows,
+      focusable: showBreaksAsRegularWindows,
+      alwaysOnTop: !showBreaksAsRegularWindows,
       title: 'Stretchly',
-      alwaysOnTop: true,
       webPreferences: {
         nodeIntegration: true,
         enableRemoteModule: true
@@ -564,10 +584,19 @@ function startBreak () {
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
-      breakWinLocal.showInactive()
+      if (showBreaksAsRegularWindows) {
+        breakWinLocal.show()
+      } else {
+        breakWinLocal.showInactive()
+      }
+
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
-        breakWinLocal.setKiosk(settings.get('fullscreen'))
+        if (showBreaksAsRegularWindows) {
+          breakWinLocal.setFullScreen(settings.get('fullscreen'))
+        } else {
+          breakWinLocal.setKiosk(settings.get('fullscreen'))
+        }
       }
       if (localDisplayId === 0) {
         breakPlanner.emit('breakStarted', true)
@@ -584,8 +613,13 @@ function startBreak () {
     })
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
-    breakWinLocal.setAlwaysOnTop(true, 'screen-saver')
+    breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'screen-saver')
     if (breakWinLocal) {
+      breakWinLocal.on('close', (e) => {
+        if (!appIsQuitting) {
+          e.preventDefault()
+        }
+      })
       breakWinLocal.on('closed', () => {
         breakWinLocal = null
       })
