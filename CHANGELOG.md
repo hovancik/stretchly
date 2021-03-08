@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Updated many translations
 
+### Fixed
+- tray menu not visible over break window on macOS
 
 ## [1.4.0] - 2020-12-25
 ### Added
