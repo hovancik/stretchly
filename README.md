@@ -198,6 +198,24 @@ Patreon [has fees](https://support.patreon.com/hc/en-us/articles/360027674431-Cr
 
 *You will be able to access Contributor Preferences, Sync Preferences and Discord chat.*
 
+### Donating with Crypto currencies
+
+#### Bitcoin
+<img src="bitcoin.png" height="80"/> `3EyJNtJPuQjfqP5czN88kPySwxVjv7h42y`
+
+#### Ethereum
+
+<img src="ethereum.png" height="80"/> `0x377f05E76e96EC4C19fF225e767FeD77b1750294`
+
+#### Zcash
+
+<img src="zcash.png" height="80"/> `t1XyjwJtViEqATUnPKG6mdUwN4TkoCfxzcM`
+
+Let me know if you would like to use some other currency.
+
+*Currently, there are no rewards for donating with Crypto currencies, as we can't programmatically match them.*
+
+
 ### [Donating with PayPal](https://paypal.me/JanHovancik) [![Donate with PayPal](https://img.shields.io/static/v1?label=Donate&message=%E2%9D%A4&logo=Paypal&color=success)](https://paypal.me/JanHovancik)
 PayPal has fees.
 
@@ -329,7 +347,7 @@ Also see Github's list of [contributors](https://github.com/hovancik/stretchly/g
 1.0 Icon and UI design by Colin Shanley ([www.colinshanley.com](http://www.colinshanley.com/)).
 
 ## Humans and Tools
- - https://github.com/HatScripts/circle-flags 
+ - https://github.com/HatScripts/circle-flags
  - https://www.icoconverter.com/ to generate .ico
  - http://www.img2icnsapp.com/ to create .icns
  - https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/
