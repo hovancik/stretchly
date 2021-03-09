@@ -1,33 +1,33 @@
-const { ipcRenderer, shell } = require('electron')
+const { ipcRenderer, shell, contextBridge } = require('electron')
 const remote = require('@electron/remote')
 
-window.ElectronBridge = {
-  // helloWorld () {
+contextBridge.exposeInMainWorld('ElectronBridge', {
+  // helloWorld: () {
   //   console.log("Hello World")
   // },
 
-  showContributorPreferences () {
+  showContributorPreferences: () => {
     ipcRenderer.send('open-contributor-preferences')
     remote.getCurrentWindow().close()
   },
 
-  setContributor () {
+  setContributor: () => {
     ipcRenderer.send('set-contributor')
   },
 
-  openExternal (link) {
+  openExternal: (link) => {
     shell.openExternal(link)
   },
 
-  stretchlyVersion () {
+  stretchlyVersion: () => {
     return remote.app.getVersion()
   },
 
-  async currentSettings () {
+  currentSettings: async () => {
     return await ipcRenderer.invoke('current-settings')
   },
 
-  restoreRemoteSettings (remoteSettings) {
+  restoreRemoteSettings: (remoteSettings) => {
     ipcRenderer.invoke('restore-remote-settings', remoteSettings)
   }
-}
+})
