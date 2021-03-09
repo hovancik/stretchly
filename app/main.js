@@ -49,6 +49,8 @@ let pausedForSuspendOrLock = false
 let nextIdea = null
 let appIsQuitting = false
 
+require('@electron/remote/main').initialize()
+
 app.setAppUserModelId('net.hovancik.stretchly')
 
 global.shared = {

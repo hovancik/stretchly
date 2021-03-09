@@ -1,4 +1,5 @@
-const { ipcRenderer, remote } = require('electron')
+const { ipcRenderer } = require('electron')
+const remote = require('@electron/remote')
 const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
 

@@ -1,4 +1,5 @@
-const { remote, ipcRenderer, shell } = require('electron')
+const { ipcRenderer, shell } = require('electron')
+const remote = require('@electron/remote')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const { setSameWidths } = require('./utils/sameWidths')
 

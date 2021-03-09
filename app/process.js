@@ -1,4 +1,5 @@
-const { ipcRenderer, shell, remote } = require('electron')
+const { ipcRenderer, shell } = require('electron')
+const remote = require('@electron/remote')
 const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 const semver = require('semver')

@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.18.3'
+        node-version: '14.16.0'
     - run: npm install npm -g
     - run: npm install
     - run: node_modules/.bin/electron-builder build
