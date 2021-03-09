@@ -13,18 +13,18 @@ chai.use(chaiAsPromised)
 const timeout = process.env.CI ? 60000 : 10000
 
 describe('stretchly', function () {
-  const tempDir = `${__dirname}/stretchly-test-tmp`
+  const tempDir = path.join(__dirname, './stretchly-test-tmp')
   const settingsFile = `${path.join(tempDir, 'config.json')}`
   const settings = new AppSettings(settingsFile)
 
   this.timeout(timeout)
 
-  async function launchAndWaitForWindowToLoad(app) {
+  async function launchAndWaitForWindowToLoad (app) {
     await app.start()
     await app.client.waitUntilWindowLoaded()
   }
 
-  async function forceMicrobreak(app) {
+  async function forceMicrobreak (app) {
     settings.set('microbreak', true)
     settings.set('microbreakInterval', 200)
     settings.set('microbreakNotificationInterval', 100)
@@ -39,7 +39,7 @@ describe('stretchly', function () {
     this.app = new Application({
       path: electronPath,
       args: [
-        `${__dirname}/../app`
+        path.join(__dirname, '../app')
       ],
       chromeDriverArgs: [
         `--user-data-dir=${tempDir}`
@@ -72,23 +72,23 @@ describe('stretchly', function () {
     })
 
     it('creates two windows', async function () {
-      let windowCount = await this.app.client.getWindowCount()
+      const windowCount = await this.app.client.getWindowCount()
       windowCount.should.equal(2)
     })
 
     it('first window is visible', async function () {
-      let visible = await this.app.client.browserWindow.isVisible()
+      const visible = await this.app.client.browserWindow.isVisible()
       visible.should.equal(true)
     })
 
     it('main window is the welcome window', async function () {
-      let title = await this.app.client.browserWindow.getTitle()
+      const title = await this.app.client.browserWindow.getTitle()
       title.should.contain('Welcome')
     })
 
     it('second window is not visible', async function () {
       await this.app.client.windowByIndex(1)
-      let visible = await this.app.client.browserWindow.isVisible()
+      const visible = await this.app.client.browserWindow.isVisible()
       visible.should.equal(false)
     })
   })
@@ -100,22 +100,22 @@ describe('stretchly', function () {
     })
 
     it('creates only one window', async function () {
-      let windowCount = await this.app.client.getWindowCount()
+      const windowCount = await this.app.client.getWindowCount()
       windowCount.should.equal(1)
     })
 
     it('created window is not visible', async function () {
-      let visible = await this.app.client.browserWindow.isVisible()
+      const visible = await this.app.client.browserWindow.isVisible()
       visible.should.equal(false)
     })
 
     it('main window is not the welcome window', async function () {
-      let title = await this.app.client.browserWindow.getTitle()
+      const title = await this.app.client.browserWindow.getTitle()
       title.should.not.contain('Welcome')
     })
 
     it('main window is the Stretchly window', async function () {
-      let title = await this.app.client.browserWindow.getTitle()
+      const title = await this.app.client.browserWindow.getTitle()
       title.should.equal('Stretchly')
     })
   })
@@ -128,13 +128,13 @@ describe('stretchly', function () {
     })
 
     it('is created', async function () {
-      let title = await this.app.client.browserWindow.getTitle()
+      const title = await this.app.client.browserWindow.getTitle()
       title.should.contain('take a break')
     })
 
     it('cannot be closed', async function () {
       await this.app.client.browserWindow.close()
-      let isDestroyed = await this.app.client.browserWindow.isDestroyed()
+      const isDestroyed = await this.app.client.browserWindow.isDestroyed()
       isDestroyed.should.equal(false)
     })
 
@@ -142,8 +142,8 @@ describe('stretchly', function () {
       await this.app.client.waitUntilTextExists('#postpone', 'Postpone', 500)
     })
 
-    it('is not focused', async function() {
-      let isDestroyed = await this.app.client.browserWindow.isFocused()
+    it('is not focused', async function () {
+      const isDestroyed = await this.app.client.browserWindow.isFocused()
       isDestroyed.should.equal(false)
     })
   })
@@ -158,12 +158,12 @@ describe('stretchly', function () {
 
     it('cannot be closed', async function () {
       await this.app.client.browserWindow.close()
-      let isDestroyed = await this.app.client.browserWindow.isDestroyed()
+      const isDestroyed = await this.app.client.browserWindow.isDestroyed()
       isDestroyed.should.equal(false)
     })
 
     it('is focused', async function () {
-      let isFocused = await this.app.client.browserWindow.isFocused()
+      const isFocused = await this.app.client.browserWindow.isFocused()
       isFocused.should.equal(true)
     })
 
