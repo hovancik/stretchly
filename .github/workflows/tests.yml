@@ -27,7 +27,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '12.18.3'
+        node-version: '14.16.0'
     - run: npm install npm -g
     - run: npm install
     - run: npx nyc --reporter=lcov npm test

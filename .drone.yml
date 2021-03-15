@@ -9,7 +9,7 @@ platform:
 
 steps:
 - name: Build
-  image: amd64/node:12.18.3-buster
+  image: amd64/node:14.16.0-buster
   commands:
   - apt update && apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
   - npm install
@@ -36,7 +36,7 @@ platform:
 
 steps:
 - name: Build
-  image: arm64v8/node:12.18.3-buster
+  image: arm64v8/node:14.16.0-buster
   commands:
   - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
   - gem install fpm -v 1.10.1
@@ -65,7 +65,7 @@ platform:
 
 steps:
 - name: Build
-  image: arm32v7/node:12.18.3-buster
+  image: arm32v7/node:14.16.0-buster
   commands:
   - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
   - gem install fpm -v 1.10.1
