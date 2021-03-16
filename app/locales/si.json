@@ -2,6 +2,8 @@
   "main": {
     "breakIn": "දිගු විවේක $t(utils.seconds, {'count': {{seconds}} }) හිදී",
     "microbreakIn": "කුඩා විවේක $t(utils.seconds, {'count': {{seconds}} }) හිදී",
-    "toolTipHeader": "Stretchly - විවේක වේලාව මතක් කිරීමේ යෙදුම"
+    "toolTipHeader": "Stretchly - විවේක වේලාව මතක් කිරීමේ යෙදුම",
+    "for2Hours": "පැය 2",
+    "forHour": "පැය 1 යි"
   }
 }
