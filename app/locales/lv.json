@@ -39,7 +39,10 @@
     "customIdeasInfo": "Ļauj Jums pielāgot pārtraukumu idejas, labojot konfigurācijas failu. (Pieredzējušiem lietotājiem.)",
     "customIdeas": "Maināmās idejas:",
     "newVersionNotification": "Ziņot, kad pieejama jauna aplikācijas versija",
-    "newVersion": "Atjauninājumi:"
+    "newVersion": "Atjauninājumi:",
+    "showBreaksAsRegularWindowsInfo": "Kad ieslēgts, Pārtraukumu logiem varēs pa virsu atvērt citas programmas, tie parādīsies rīkjoslā un būs iezīmējami, pārvietojami.",
+    "showBreaksAsRegularWindowsTitle": "Darboties kā parastam logam:",
+    "showBreaksAsRegularWindows": "Rādīt pārtraukumus kā parastus logus"
   },
   "main": {
     "syncPreferences": "Iestatījumu Sinhronizācija",
