@@ -152,7 +152,10 @@
     "appearance": "Mieno:",
     "light": "Hela",
     "dark": "Malhela",
-    "system": "Sistema"
+    "system": "Sistema",
+    "showBreaksAsRegularWindowsInfo": "Se ŝaltita, Paŭzaj fenestroj estos enfokusigeblaj; ili ne plu estos 'Ĉiam supraj', kaj ili ankaŭ aperos sur la taskopleto.",
+    "showBreaksAsRegularWindows": "Montri paŭzojn kiel regulajn fenestrojn",
+    "showBreaksAsRegularWindowsTitle": "Agi kiel regula fenestro:"
   },
   "utils": {
     "none": "{{count}}",

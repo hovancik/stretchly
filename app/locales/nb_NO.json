@@ -61,7 +61,10 @@
     "newVersion": "Ny versjon:",
     "beforeMiniBreak": "Minipause:",
     "notifications": "Pausemerknader:",
-    "title": "Bidragsyterinnstillinger"
+    "title": "Bidragsyterinnstillinger",
+    "showBreaksAsRegularWindowsInfo": "Vinduer blir fokuserbare, og de er ikke «Alltid på topp» lenger, og de vises også i oppgavefeltet.",
+    "showBreaksAsRegularWindows": "Vis pauser som vanlige vinduer",
+    "showBreaksAsRegularWindowsTitle": "Oppførsel som vanlig vindu:"
   },
   "preferences": {
     "heart": {
