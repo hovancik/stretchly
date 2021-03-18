@@ -278,9 +278,9 @@ function createWelcomeWindow () {
     const modalPath = path.join('file://', __dirname, '/welcome.html')
     welcomeWin = new BrowserWindow({
       x: displaysX(-1, 1000),
-      y: displaysY(),
+      y: displaysY(-1, 770),
       width: 1000,
-      height: 685,
+      height: 770,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',

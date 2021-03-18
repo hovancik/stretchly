@@ -4,6 +4,10 @@ body {
   font-family: Open Sans;
 }
 
+body > div > :last-child {
+  margin-bottom: 24px;
+}
+
 .welcome {
   display: grid;
   font-size: 13px;
@@ -48,7 +52,7 @@ body {
 .welcome > :nth-child(2) {
   display: grid;
   grid-gap: 10px 20px;
-  grid-template: repeat(4, minmax(86px, min-content))/ repeat(8, 1fr);
+  grid-template: repeat(5, minmax(86px, min-content))/ repeat(8, 1fr);
 }
 
 .welcome > :nth-child(2) > div {

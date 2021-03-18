@@ -16,8 +16,8 @@ body > div > :last-child {
   grid-gap: 16px;
   grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
   padding: 0 16px;
-  width: calc(100% - 16px);
   position: fixed;
+  width: calc(100% - 16px);
   z-index: 10;
 }
 
@@ -176,7 +176,7 @@ body > .hidden,
 }
 
 .appearance > #snowWhite + label:before {
-    color: #ffffff
+  color: #ffffff
 }
 
 .win32 .appearance > input[type="radio"] + label:before {
@@ -225,6 +225,7 @@ body > .hidden,
 .appearance > #morningSwim:checked + label:before {
   color: #FFFFFF;
 }
+
 .appearance > #snowWhite:checked + label:before {
   color: #000000;
 }
