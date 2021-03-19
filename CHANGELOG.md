@@ -14,12 +14,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Indonesian translations
 - Latvian translations
 - Contributor preference option to make Stretchly act as a regular window (to make use of other apps during breaks easier)
+- Advanced preferences for app exclusions (resume/pause when specific app is/not running)
 
 ### Changed
 - Updated many translations
 
 ### Fixed
+- Improved Welcome window
 - tray menu not visible over break window on macOS
+- tray status messages in specific situations
 
 ## [1.4.0] - 2020-12-25
 ### Added

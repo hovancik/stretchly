@@ -193,6 +193,7 @@
     "paused": "Paused",
     "indefinitely": "Indefinitely",
     "dndMode": "Do Not Disturb is on",
+    "appExclusion": "App exclusion rule",
     "nextLongBreak": "Next Long Break",
     "nextMiniBreak": "Next Mini Break",
     "afterMiniBreak": "after {{count}} Mini Break",

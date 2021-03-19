@@ -5,6 +5,7 @@ class StatusMessages {
   constructor ({ breakPlanner, settings }) {
     this.reference = breakPlanner.scheduler.reference
     this.doNotDisturb = breakPlanner.dndManager.isOnDnd
+    this.appExclusionPause = breakPlanner.appExclusionsManager.isSchedulerCleared
     this.timeLeft = breakPlanner.scheduler.timeLeft
     this.isPaused = breakPlanner.isPaused
     this.breakNumber = breakPlanner.breakNumber
@@ -14,11 +15,6 @@ class StatusMessages {
   get trayMessage () {
     let message = ''
     if (this.reference === 'finishMicrobreak' || this.reference === 'finishBreak') {
-      return message
-    }
-
-    if (this.doNotDisturb) {
-      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.dndMode')
       return message
     }
 
@@ -33,6 +29,16 @@ class StatusMessages {
           i18next.t('statusMessages.indefinitely')
         return message
       }
+    }
+
+    if (this.appExclusionPause) {
+      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.appExclusion')
+      return message
+    }
+
+    if (this.doNotDisturb) {
+      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.dndMode')
+      return message
     }
 
     const breakInterval = this.settings.get('breakInterval') + 1

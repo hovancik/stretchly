@@ -52,5 +52,6 @@ module.exports = {
   checkNewVersion: true,
   breakIdeas: defaultBreakIdeas,
   microbreakIdeas: defaultMicrobreakIdeas,
-  showBreaksAsRegularWindows: false
+  showBreaksAsRegularWindows: false,
+  appExclusions: []
 }
