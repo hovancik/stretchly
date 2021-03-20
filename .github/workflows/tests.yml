@@ -29,6 +29,12 @@ jobs:
       with:
         node-version: '14.16.0'
     - run: npm install npm -g
+    - name: patch node gyp on windows to support Visual Studio 2019
+      if: matrix.os == 'windows-latest'
+      shell: powershell
+      run: |
+        npm install --global node-gyp@latest
+        npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
     - run: npm install
     - run: npx nyc --reporter=lcov npm test
       env:
