@@ -1,7 +1,7 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - нагадування про перерви",
-    "microbreakIn": "Коротка перерва за $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Маленька перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Довга перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Роботу відновлено",
     "downloadLatestVersion": "Завантажити останню версію",
@@ -22,7 +22,7 @@
     "cancel": "Відмінити",
     "continue": "Продовжити",
     "warning": "Відновити налаштування за замовчуванням, ваші зміни будуть втрачені.",
-    "toMicrobreak": "Коротка перерва",
+    "toMicrobreak": "Коротка перева",
     "toBreak": "Довга перерва"
   },
   "break": {
