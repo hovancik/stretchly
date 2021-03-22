@@ -86,13 +86,14 @@
       "menubarIcon": "通知栏图标：",
       "colour": "彩色",
       "monochrome": "单色",
-      "invertedMonochrome": "灰度"
+      "invertedMonochrome": "灰度",
+      "snowWhite": "雪白"
     },
     "about": {
       "tagline": "休息提醒应用",
       "version": "版本 ",
       "latestVersion": "最新版本 ",
-      "notifyNewVersion":"新版本提醒",
+      "notifyNewVersion": "新版本提醒",
       "learnMore": "深入了解 Stretchly 的功能，请查看教程、下载新版或请求技术支持， ",
       "ourWebsite": "访问官网",
       "dot": ".",

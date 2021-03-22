@@ -14,7 +14,8 @@
     "resetBreaks": "ब्रेक्स पुनः कायम करें।",
     "quitStretchly": "stretchly बंद करें ।",
     "preferences": "सेट्टिंग्स",
-    "toMicrobreak": "छोटा ब्रेक"
+    "toMicrobreak": "छोटा ब्रेक",
+    "microbreakIn": "छोटा ब्रेक $t(utils.seconds, {'count': {{seconds}} }) में"
   },
   "break": {
     "title": "ब्रेक लेने का समय आ गया है!"
