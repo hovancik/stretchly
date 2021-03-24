@@ -156,7 +156,10 @@
     "beforeLongBreak": "Istirahat Panjang:",
     "notificationsInfo": "Pemberitahuan sistem ditampilkan sebelum istirahat agar Anda dapat mempersiapkannya.",
     "notifications": "Pemberitahuan istirahat:",
-    "title": "Preferensi Kontributor"
+    "title": "Preferensi Kontributor",
+    "showBreaksAsRegularWindowsInfo": "Saat diaktifkan, jendela istirahat akan menjadi difokuskan, tidak akan menjadi 'Selalu di atas' lagi dan juga akan muncul di menu taskbar.",
+    "showBreaksAsRegularWindowsTitle": "Bertindak sebagai jendela biasa:",
+    "showBreaksAsRegularWindows": "Tampilkan jeda sebagai jendela biasa"
   },
   "main": {
     "syncPreferences": "Sinkronisasi Preferensi",
