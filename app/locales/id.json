@@ -93,12 +93,12 @@
   "welcome": {
     "getStarted": "Memulai",
     "openPreferences": "Buka Preferensi",
-    "viewTutorial": "Lihat Tutorial",
+    "viewTutorial": "Tampilkan Tutorial",
     "breakTimeReminderApp": "Aplikasi pengingat waktu istirahat",
     "title": "Selamat Datang di Stretchly"
   },
   "process": {
-    "newVersionAvailable": "Versi baru tersedia!"
+    "newVersionAvailable": "Versi terbaru tersedia!"
   },
   "utils": {
     "inAboutHoursMinutes": "dalam sekitar $t(utils.hours, {'count': {{hours}} }).$t(utils.minutes, {'count': {{minutes}} })",
@@ -149,14 +149,17 @@
     "breakPostpone": "Penundaan istirahat:",
     "useIdeasFromSettings": "Gunakan ide istirahat dari file konfigurasi",
     "customIdeasInfo": "Memungkinkan Anda menggunakan ide istirahat kustom dengan mengedit file konfigurasi. (Untuk pengguna tingkat lanjut.)",
-    "customIdeas": "Ide khusus:",
-    "newVersionNotification": "Beritahu ketika versi baru tersedia",
-    "newVersion": "Versi baru:",
+    "customIdeas": "Ide kustom:",
+    "newVersionNotification": "Beritahu ketika versi terbaru tersedia",
+    "newVersion": "Versi terbaru:",
     "beforeMiniBreak": "Istirahat Ringan:",
     "beforeLongBreak": "Istirahat Panjang:",
     "notificationsInfo": "Pemberitahuan sistem ditampilkan sebelum istirahat agar Anda dapat mempersiapkannya.",
     "notifications": "Pemberitahuan istirahat:",
-    "title": "Preferensi Kontributor"
+    "title": "Preferensi Kontributor",
+    "showBreaksAsRegularWindowsInfo": "Saat aktif, jendela istirahat akan menjadi fokus, tidak akan menjadi 'Selalu di atas' lagi dan juga akan muncul di taskbar.",
+    "showBreaksAsRegularWindowsTitle": "Bertindak sebagai jendela biasa:",
+    "showBreaksAsRegularWindows": "Tampilkan jeda sebagai jendela reguler"
   },
   "main": {
     "syncPreferences": "Sinkronisasi Preferensi",
