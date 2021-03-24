@@ -144,7 +144,11 @@
     "appearance": "Aparência:",
     "light": "Claro",
     "dark": "Escuro",
-    "system": "Sistema"
+    "system": "Sistema",
+    "opacityTheme": "Transparência do tema:",
+    "breakWindowHeight": "Altura:",
+    "breakWindowWidth": "Largura:",
+    "opacity": "Opacidade:"
   },
   "utils": {
     "none": "{{count}}",
