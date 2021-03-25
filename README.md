@@ -125,7 +125,7 @@ Some of the extra settings are available in Contributor Preferences for [Contrib
 #### Editing Break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
 
-Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten.
+Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window. 
 
 #### Editing Break notification interval [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 
