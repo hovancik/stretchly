@@ -125,7 +125,7 @@ Some of the extra settings are available in Contributor Preferences for [Contrib
 #### Editing Break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
 
-Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window. 
+Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window.
 
 #### Editing Break notification interval [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 
@@ -268,7 +268,6 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
 
 ### MacOS
-- tray tooltip does not work correctly ([electron/electron#9447](https://github.com/electron/electron/issues/9447))
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
 
 ### Linux
@@ -277,7 +276,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ### Windows
 - users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
-- fullscreen is not shown on all displays ([electron/electron#16907](https://github.com/electron/electron/issues/16907))
+- users with Chromium-based browser (Chrome, Edge, etc...) [might need to set some flags](https://github.com/hovancik/stretchly/issues/783#issuecomment-762819646) when browser is non-responsive after break
 
 ## Contributors
 
