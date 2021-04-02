@@ -236,7 +236,9 @@ function createTrayIcon () {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.naturalBreaksManager.isSchedulerCleared,
+    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+      breakPlanner.naturalBreaksManager.isSchedulerCleared ||
+      breakPlanner.appExclusionsManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
@@ -248,7 +250,7 @@ function trayIconPath () {
 
 function windowIconPath () {
   const params = {
-    paused: breakPlanner.isPaused,
+    paused: false,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
@@ -818,7 +820,6 @@ function updateTray () {
 
 function getTrayMenu () {
   const trayMenu = []
-  const doNotDisturb = breakPlanner.dndManager.isOnDnd
 
   if (global.shared.isNewVersion) {
     trayMenu.push({
@@ -851,7 +852,7 @@ function getTrayMenu () {
     })
   }
 
-  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd)) {
+  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -881,7 +882,7 @@ function getTrayMenu () {
         updateTray()
       }
     })
-  } else if (!doNotDisturb) {
+  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     trayMenu.push({
       label: i18next.t('main.pause'),
       submenu: [
@@ -922,7 +923,7 @@ function getTrayMenu () {
     // nothing
   } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
     // nothing
-  } else {
+  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     trayMenu.push({
       label: i18next.t('main.resetBreaks'),
       click: resetBreaks

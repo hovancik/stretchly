@@ -177,6 +177,42 @@ If you don't want to ever check for new version, set `checkNewVersion` to `false
 
 If you want Stretchly breaks to act as regular windows (have a titlebar, turn off always on top, be minimizable and focusable) set `showBreaksAsRegularWindows` to `true`.
 
+#### Pause/resume breaks only when specific command is running [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+
+By editing `appExclusions` in preferences file, you can automatically control when Stretchly breaks are paused.
+
+If you want Stretchly to be paused when specific apps are running, you could have this value (breaks are paused when Skype or Atom are running):
+
+```
+"appExclusions": [
+    {
+        "rule": "pause",
+        "active": true,
+        "commands": [
+            "/usr/share/skypeforlinux/skypeforlinux",
+            "atom"
+        ]
+    }
+]    
+```  
+
+If you want Stretchly to be running when specific apps are as well, you could have this value (breaks are paused when Skype or Atom are not running):
+
+```
+"appExclusions": [
+    {
+        "rule": "resume",
+        "active": true,
+        "commands": [
+            "/usr/share/skypeforlinux/skypeforlinux",
+            "atom"
+        ]
+    }
+]    
+```
+
+You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. 
+
 ## Contributor Preferences
 
 *Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
