@@ -153,7 +153,10 @@
     "appearance": "Téma:",
     "light": "Svetlá",
     "dark": "Tmavá",
-    "system": "Nasleduj systém"
+    "system": "Nasleduj systém",
+    "showBreaksAsRegularWindowsTitle": "Správanie ako obyčajné okno:",
+    "showBreaksAsRegularWindows": "Ukáž prestávky ako obyčajné okná",
+    "showBreaksAsRegularWindowsInfo": "Ak povolené, okno prestávky sa začne správať ako obyčajné okno: nebude stále navrchu, bude môcť byť označené a objavý sa v panele úloh."
   },
   "utils": {
     "none_0": "{{count}}",
@@ -202,6 +205,7 @@
     "afterMiniBreak_0": "po {{count}} Mini Prestávke",
     "afterMiniBreak_1": "po {{count}} Mini Prestávkach",
     "afterMiniBreak_2": "po {{count}} Mini Prestávkach",
-    "resuming": "Obnovenie prestávok"
+    "resuming": "Obnovenie prestávok",
+    "appExclusion": "Výnimka aplikácie"
   }
 }

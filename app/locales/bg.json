@@ -152,14 +152,17 @@
     "appearance": "Цветова гама:",
     "light": "Светла",
     "dark": "Тъмна",
-    "system": "Системна"
+    "system": "Системна",
+    "showBreaksAsRegularWindowsTitle": "Поведение като на обикновен прозорец:",
+    "showBreaksAsRegularWindows": "Показване на почивките като обикновени прозорци",
+    "showBreaksAsRegularWindowsInfo": "Когато това е включено, прозорците за почивка ще зачитат нормалните правила за фокусиране, няма да бъдат „винаги най-отгоре“ и ще се показват в лентата на задачите."
   },
   "utils": {
     "none": "{{count}}",
     "none_plural": "{{count}}",
     "percent": "{{count}} процент",
     "percent_plural": "{{count}} процента",
-    "oclock": "{{count}} час",
+    "oclock": "{{count}} часа",
     "oclock_plural": "{{count}} часа",
     "seconds": "{{count}} секунда",
     "seconds_plural": "{{count}} секунди",
