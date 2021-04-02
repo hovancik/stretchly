@@ -197,6 +197,7 @@
     "nextMiniBreak": "Sekva Paŭzeto",
     "afterMiniBreak": "post {{count}} Paŭzeto",
     "afterMiniBreak_plural": "post {{count}} Paŭzetoj",
-    "resuming": "Daŭriĝos"
+    "resuming": "Daŭriĝos",
+    "appExclusion": "Regulo por ekskluzivi aplikaĵojn"
   }
 }
