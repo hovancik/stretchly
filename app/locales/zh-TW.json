@@ -23,7 +23,7 @@
     "cancel": "取消",
     "preferences": "偏好設定",
     "contributorPreferences": "貢獻者偏好設定",
-    "syncPreferences": "Sync Preferences"
+    "syncPreferences": "同步偏好設定"
   },
   "break": {
     "postpone": "延後此休息",
@@ -46,7 +46,7 @@
       "fullscreen": "全螢幕",
       "showIdeas": "休息時顯示運動提示",
       "allScreens": "在所有顯示器顯示休息畫面",
-      "monitorIdleTime": "監控系統的閒置時間（系統閒置時暫停計時）",
+      "monitorIdleTime": "監控系統的閒置時間（系統閒置時暫停計時）。",
       "monitorDnd": "就算處於「請勿打擾」模式，仍顯示休息畫面",
       "language": "選擇語言：",
       "restoreDefaults": "還原至預設值"
@@ -86,7 +86,8 @@
       "colour": "色彩",
       "monochrome": "單色",
       "invertedMonochrome": "負片單色",
-      "transparentMode": "使用透明視窗"
+      "transparentMode": "使用透明視窗",
+      "snowWhite": "雪白"
     },
     "about": {
       "tagline": "休息提醒軟體",
@@ -97,7 +98,8 @@
       "ourWebsite": "造訪我們的網站",
       "dot": ".",
       "developedBy": "開發者：",
-      "janH": "Jan Hovancik"
+      "janH": "Jan Hovancik",
+      "designedBy": "圖示與使用者介面由 Colin Shanley 設計"
     },
     "heart": {
       "loveStretchly": "喜歡您的 Stretchly 嗎？",
@@ -106,7 +108,8 @@
       "becomePatron": "成為捐助者",
       "alreadyContributor": "我已經是貢獻者了",
       "authenticateUsing": "身分核對方式：",
-      "contributorPreferences": "貢獻者偏好設定"
+      "contributorPreferences": "貢獻者偏好設定",
+      "syncPreferences": "同步偏好設定"
     }
   },
   "contributorPreferences": {
@@ -129,7 +132,7 @@
     "longBreaks": "長休息：",
     "pauseUntilMoring": "暫停到早上：",
     "pauseUntil": "暫停到：",
-    "pauseUntilMorningInfo": "指定「暫停至早上」的具體時間",
+    "pauseUntilMorningInfo": "指定「暫停至早上」的具體時間。",
     "welcomeWindow": "歡迎視窗：",
     "showWelcomeWindow": "下次啟動時顯示歡迎視窗",
     "sounds": "音效：",
@@ -142,7 +145,17 @@
     "appearance": "外觀：",
     "light": "亮色",
     "dark": "暗色",
-    "system": "系統"
+    "system": "系統",
+    "showBreaksAsRegularWindows": "將休息視窗當作一般視窗顯示",
+    "showBreaksAsRegularWindowsInfo": "啟用後就能選擇休息視窗。視窗不僅不會繼續置頂，還會在工作列出現。",
+    "showBreaksAsRegularWindowsTitle": "當作一般視窗：",
+    "breakWindowHeight": "高度：",
+    "breakWindowWidth": "寬度：",
+    "breakWindowSizeInfo": "休息視窗應該遮掉多少百分比的畫面？",
+    "breakWindowSize": "休息視窗大小",
+    "opacity": "不透明度：",
+    "opacityInfo": "休息視窗應該有多不透明？",
+    "opacityTheme": "主題不透明度："
   },
   "utils": {
     "none_0": "{{count}}",
