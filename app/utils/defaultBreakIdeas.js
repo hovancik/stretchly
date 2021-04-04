@@ -120,7 +120,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: ['Focus change', 'Hold one finger close to the eye an focus on it. Slowly move the finger away, focus far into the distance and then back to the finger. Bring the finger back and focus on something far away.'],
+    data: ['Focus change', 'Hold one finger close to the eye and focus on it. Slowly move the finger away, focus far into the distance and then back to the finger. Bring the finger back and focus on something far away.'],
     enabled: true
   },
   {
