@@ -79,7 +79,8 @@
     "nextLongBreak": "Nākamais Garais Pārtraukums",
     "dndMode": "Ieslēgts netraucēt režīms",
     "indefinitely": "Bezgalīgi",
-    "paused": "Apstādināts"
+    "paused": "Apstādināts",
+    "appExclusion": "Aplikācijas izņēmumu noteikumi"
   },
   "utils": {
     "none_0": "{{count}}",

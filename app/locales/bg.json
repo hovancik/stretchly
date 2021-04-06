@@ -197,6 +197,7 @@
     "nextMiniBreak": "Следващата кратка почивка е",
     "afterMiniBreak": "след {{count}} кратка почивка",
     "afterMiniBreak_plural": "след {{count}} кратки почивки",
-    "resuming": "Възобновяване"
+    "resuming": "Възобновяване",
+    "appExclusion": "Правило за изключване на приложения"
   }
 }
