@@ -46,6 +46,7 @@
     "electron-builder": "^22.10.5",
     "husky": "^6.0.0",
     "mocha": "^8.3.2",
+    "nan": "^2.14.0",
     "rimraf": "^3.0.2",
     "sinon": "^10.0.0",
     "spectron": "^14.0.0",
