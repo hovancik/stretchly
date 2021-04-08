@@ -27,7 +27,7 @@ describe('appExclusionsManager', function () {
 
   it('app should take the first active rule', (done) => {
     require('ps-list')().then((running) => {
-      const runningCmd = running[0].cmd
+      const runningCmd = running[0].name
       settings.set('appExclusions', [
         {
           rule: 'resume',
@@ -55,7 +55,7 @@ describe('appExclusionsManager', function () {
 
   it('app should be runnig when no rule is active', (done) => {
     require('ps-list')().then((running) => {
-      const runningCmd = running[0].cmd
+      const runningCmd = running[0].name
       settings.set('appExclusions', [
         {
           rule: 'resume',
@@ -83,7 +83,7 @@ describe('appExclusionsManager', function () {
 
   it('app should be paused with some pause exception active', (done) => {
     require('ps-list')().then((running) => {
-      const runningCmd = running[0].cmd
+      const runningCmd = running[0].name
       settings.set('appExclusions', [{
         rule: 'pause',
         active: true,
@@ -116,7 +116,7 @@ describe('appExclusionsManager', function () {
 
   it('app should not paused with some pause exception inactive', (done) => {
     require('ps-list')().then((running) => {
-      const runningCmd = running[0].cmd
+      const runningCmd = running[0].name
       settings.set('appExclusions', [{
         rule: 'pause',
         active: false,
@@ -134,7 +134,7 @@ describe('appExclusionsManager', function () {
 
   it('app should not be paused with some resume exception active', (done) => {
     require('ps-list')().then((running) => {
-      const runningCmd = running[0].cmd
+      const runningCmd = running[0].name
       settings.set('appExclusions', [{
         rule: 'resume',
         active: true,
@@ -167,7 +167,7 @@ describe('appExclusionsManager', function () {
 
   it('app should not be paused with some resume exception inactive', (done) => {
     require('ps-list')().then((running) => {
-      const runningCmd = running[0].cmd
+      const runningCmd = running[0].name
       settings.set('appExclusions', [{
         rule: 'resume',
         active: false,

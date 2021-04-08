@@ -211,7 +211,7 @@ If you want Stretchly to be running when specific apps are as well, you could ha
 ]    
 ```
 
-You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. 
+You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. They are case sensitive. 
 
 ## Contributor Preferences
 
