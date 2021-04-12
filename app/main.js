@@ -110,9 +110,11 @@ i18next.on('languageChanged', function (lng) {
 function onSuspendOrLock () {
   log.info('System: suspend or lock')
   if (!breakPlanner.isPaused) {
-    pausedForSuspendOrLock = true
-    pauseBreaks(1)
-    updateTray()
+    if (settings.get('pauseForSuspendOrLock')) {
+      pausedForSuspendOrLock = true
+      pauseBreaks(1)
+      updateTray()
+    }
   }
 }
 
@@ -121,7 +123,7 @@ function onResumeOrUnlock () {
   if (pausedForSuspendOrLock) {
     pausedForSuspendOrLock = false
     resumeBreaks(false)
-  } else if (breakPlanner.isPaused) {
+  } else {
     // corrrect the planner for the time spent in suspend
     breakPlanner.correctScheduler()
   }
