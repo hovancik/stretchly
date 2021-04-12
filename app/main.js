@@ -727,6 +727,7 @@ function calculateBackgroundColor () {
 function loadSettings () {
   const dir = app.getPath('userData')
   const settingsFile = `${dir}/config.json`
+  const contributorStampFile = `${dir}/stamp`
   settings = new AppSettings(settingsFile)
   startI18next()
   breakPlanner = new BreaksPlanner(settings)
@@ -743,6 +744,21 @@ function loadSettings () {
   })
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
+
+  require('fs').readFile(contributorStampFile, 'utf8', (err, data) => {
+    if (err) {
+      return
+    }
+    const { DateTime } = require('luxon')
+    if (DateTime.fromISO(data).month === DateTime.now().month) {
+      global.shared.isContributor = true
+      log.info('Stretchly: Thanks for your contributions!')
+      if (preferencesWin) {
+        preferencesWin.send('enableContributorPreferences')
+      }
+      updateTray()
+    }
+  })
 }
 
 function loadIdeas () {
@@ -1139,7 +1155,12 @@ ipcMain.on('open-preferences', function (event) {
 })
 
 ipcMain.on('set-contributor', function (event) {
+  const dir = app.getPath('userData')
+  const contributorStampFile = `${dir}/stamp`
+  const { DateTime } = require('luxon')
+  require('fs').writeFile(contributorStampFile, DateTime.now().toString(), () => {})
   global.shared.isContributor = true
+  log.info('Stretchly: Logged in. Thanks for your contributions!')
   if (preferencesWin) {
     preferencesWin.send('enableContributorPreferences')
   }
