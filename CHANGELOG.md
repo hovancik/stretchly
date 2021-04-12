@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - app exclusions on Windows OS
+- fullscreen breaks on MacOS 
 
 ## [1.5.0] - 2021-04-07
 ### Added

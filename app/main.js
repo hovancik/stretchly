@@ -492,7 +492,7 @@ function startMicrobreak () {
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
-        if (!appIsQuitting) {
+        if (!appIsQuitting && !microbreakWinLocal.fullScreen) {
           e.preventDefault()
         }
       })
@@ -620,7 +620,7 @@ function startBreak () {
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
-        if (!appIsQuitting) {
+        if (!appIsQuitting && !breakWinLocal.fullScreen) {
           e.preventDefault()
         }
       })
