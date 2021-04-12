@@ -53,5 +53,6 @@ module.exports = {
   breakIdeas: defaultBreakIdeas,
   microbreakIdeas: defaultMicrobreakIdeas,
   showBreaksAsRegularWindows: false,
-  appExclusions: []
+  appExclusions: [],
+  pauseForSuspendOrLock: true
 }
