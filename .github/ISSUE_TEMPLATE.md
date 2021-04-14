@@ -40,5 +40,5 @@ You can find extra debugging information and location of Logs file on `Preferenc
 
 Please, review information provided there and paste relevant parts here.
 
-If you have changed any settings, please, provide the preferences file.
-Logs will be a big help, as well. 
+If you have changed any preferences, please, provide the whole file (`config.json`).
+Logs will be a big help, as well.

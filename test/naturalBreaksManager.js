@@ -1,8 +1,7 @@
 const chai = require('chai')
 const path = require('path')
 const NaturalBreaksManager = require('../app/utils/naturalBreaksManager')
-const Settings = require('./../app/utils/settings')
-const testSettingsLocaction = path.join(__dirname, '/test-settings.json')
+const Store = require('electron-store')
 
 chai.should()
 
@@ -11,7 +10,11 @@ describe('naturalBreaksManager', function () {
   let naturalBreaksManager = null
 
   beforeEach(() => {
-    settings = new Settings(testSettingsLocaction)
+    settings = new Store({
+      cwd: path.join(__dirname),
+      name: 'test-settings',
+      defaults: require('../app/utils/defaultSettings')
+    })
     naturalBreaksManager = new NaturalBreaksManager(settings)
   })
 
@@ -62,7 +65,7 @@ describe('naturalBreaksManager', function () {
     naturalBreaksManager = null
 
     if (settings && settings.destroy) {
-      settings.destroy()
+      require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
       settings = null
     }
   })

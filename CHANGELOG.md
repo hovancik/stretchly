@@ -9,9 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - app exclusions on Windows OS
 - fullscreen breaks on MacOS
+- refreshing Preferences after Reset to defaults
 
 ### Added
 - advanced option not to reset breaks on Suspend/Lock
+- Stretchly doesn't need to restart after Restoring remote settings
+
+### Changed
+- new system for storing preferences
+- improved logging
 
 ## [1.5.0] - 2021-04-07
 ### Added

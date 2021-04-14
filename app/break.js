@@ -2,6 +2,9 @@ const { ipcRenderer } = require('electron')
 const remote = require('@electron/remote')
 const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
+const Store = require('electron-store')
+const settings = new Store()
+
 window.onload = (event) => {
   require('./platform')
   new HtmlTranslate(document).translate()
@@ -25,16 +28,16 @@ window.onload = (event) => {
     breakText.innerHTML = message[1]
   })
 
-  ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent, settings) => {
+  ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
     const closeElement = document.querySelector('#close')
-    const mainColor = settings.data.mainColor
+    const mainColor = settings.get('mainColor')
     document.body.classList.add(mainColor.substring(1))
 
     document.querySelectorAll('.tiptext').forEach(tt => {
-      const keyboardShortcut = settings.data.endBreakShortcut
+      const keyboardShortcut = settings.get('endBreakShortcut')
       tt.innerHTML = Utils.formatKeyboardShortcut(keyboardShortcut)
     })
 

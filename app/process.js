@@ -4,6 +4,7 @@ const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 const semver = require('semver')
 const { shouldShowNotificationTitle } = require('./utils/utils')
+const log = require('electron-log')
 
 window.onload = (e) => {
   ipcRenderer.on('playSound', (event, file, volume) => {
@@ -20,6 +21,7 @@ window.onload = (e) => {
         .latest()
         .then(version => {
           const cleanVersion = semver.clean(version)
+          log.info(`Stretchly: checking for new version (local: ${oldVersion}, remote: ${cleanVersion})`)
           if (semver.valid(cleanVersion) && semver.gt(cleanVersion, oldVersion)) {
             remote.getGlobal('shared').isNewVersion = true
             ipcRenderer.send('update-tray')
@@ -28,7 +30,7 @@ window.onload = (e) => {
             }
           }
         })
-        .catch(exception => console.error(exception))
+        .catch(exception => log.error(exception))
     }
   })
 

@@ -47,7 +47,7 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager.on('dndStarted', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
-        log.info('Stretchly: pausing breaks for DND')
+        log.info('Stretchly: pausing breaks for Do Not Distrub')
         this.emit('updateToolTip')
       } else {
         this.dndManager.isOnDnd = false
@@ -57,7 +57,7 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager.on('dndFinished', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
-        log.info('Stretchly: resuming breaks for DND')
+        log.info('Stretchly: resuming breaks for Do Not Distrub')
         this.emit('updateToolTip')
       }
     })
