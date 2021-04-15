@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - new system for storing preferences
 - improved logging
+- allow user to disable update check rather then only notification
 
 ## [1.5.0] - 2021-04-07
 ### Added
