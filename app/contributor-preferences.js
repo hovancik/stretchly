@@ -1,6 +1,7 @@
-const { remote, ipcRenderer } = require('electron')
+const { ipcRenderer } = require('electron')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const { setSameWidths } = require('./utils/sameWidths')
+const remote = require('@electron/remote')
 const i18next = remote.require('i18next')
 
 const htmlTranslate = new HtmlTranslate(document)

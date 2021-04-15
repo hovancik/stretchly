@@ -1,8 +1,12 @@
-const { app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain, shell, dialog, globalShortcut } = require('electron')
+const {
+  app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain,
+  shell, dialog, globalShortcut
+} = require('electron')
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
+const Store = require('electron-store')
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -24,7 +28,6 @@ nativeTheme.on('updated', function theThemeHasChanged () {
   appIcon.setImage(trayIconPath())
 })
 
-const AppSettings = require('./utils/settings')
 const Utils = require('./utils/utils')
 const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
@@ -48,6 +51,7 @@ let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
 let appIsQuitting = false
+let updateChecker
 
 require('@electron/remote/main').initialize()
 
@@ -68,10 +72,7 @@ if (!gotTheLock) {
   app.quit()
 }
 
-app.on('ready', startProcessWin)
-app.on('ready', loadSettings)
-app.on('ready', createTrayIcon)
-app.on('ready', startPowerMonitoring)
+app.on('ready', initialize)
 app.on('second-instance', runCommand)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
@@ -79,6 +80,78 @@ app.on('window-all-closed', () => {
 app.on('before-quit', () => {
   appIsQuitting = true
 })
+
+function initialize (isAppStart = true) {
+  // TODO maybe we should not reinitialize but handle everything when we save new values for preferences
+  log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
+  require('events').defaultMaxListeners = 200 // for watching Store changes
+  if (!settings) {
+    settings = new Store({ defaults: require('./utils/defaultSettings'), watch: true })
+    log.info('Stretchly: loading preferences')
+    Store.initRenderer()
+    Object.entries(settings.store).forEach(([key, _]) => {
+      settings.onDidChange(key, (newValue, oldValue) => {
+        log.info(`Stretchly: setting '${key}' to '${newValue}' (was '${oldValue}')`)
+      })
+    })
+  }
+  if (!breakPlanner) {
+    breakPlanner = new BreaksPlanner(settings)
+    breakPlanner.nextBreak()
+    breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
+    breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
+    breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
+    breakPlanner.on('finishMicrobreak', (shouldPlaySound) => { finishMicrobreak(shouldPlaySound) })
+    breakPlanner.on('startBreak', () => { startBreak() })
+    breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
+    breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
+    breakPlanner.on('updateToolTip', function () {
+      updateTray()
+    })
+  } else {
+    breakPlanner.clear()
+    breakPlanner.appExclusionsManager.reinitialize(settings)
+    breakPlanner.doNotDisturb(settings.get('monitorDnd'))
+    breakPlanner.naturalBreaks(settings.get('naturalBreaks'))
+    breakPlanner.nextBreak()
+  }
+  if (!appIcon) {
+    if (process.platform === 'darwin') {
+      app.dock.hide()
+    }
+    appIcon = new Tray(trayIconPath())
+  }
+  startI18next()
+  setInterval(updateTray, 10000)
+  startProcessWin()
+  createWelcomeWindow()
+  nativeTheme.themeSource = settings.get('themeSource')
+
+  require('fs').readFile(path.join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
+    if (err) {
+      return
+    }
+    const { DateTime } = require('luxon')
+    if (DateTime.fromISO(data).month === DateTime.now().month) {
+      global.shared.isContributor = true
+      log.info('Stretchly: Thanks for your contributions!')
+      if (preferencesWin) {
+        preferencesWin.send('enableContributorPreferences')
+      }
+      updateTray()
+    }
+  })
+  startPowerMonitoring()
+  if (preferencesWin) {
+    preferencesWin.send('renderSettings', settingsToSend())
+  }
+  if (welcomeWin) {
+    welcomeWin.send('renderSettings', settingsToSend())
+  }
+  if (contributorPreferencesWindow) {
+    contributorPreferencesWindow.send('renderSettings', settingsToSend())
+  }
+}
 
 function startI18next () {
   i18next
@@ -227,15 +300,6 @@ function displaysHeight (displayID = -1) {
   return Math.ceil(bounds.height)
 }
 
-function createTrayIcon () {
-  if (process.platform === 'darwin') {
-    app.dock.hide()
-  }
-  appIcon = new Tray(trayIconPath())
-  updateTray()
-  setInterval(updateTray, 10000)
-}
-
 function trayIconPath () {
   const params = {
     paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
@@ -263,6 +327,10 @@ function windowIconPath () {
 }
 
 function startProcessWin () {
+  if (processWin) {
+    planVersionCheck()
+    return
+  }
   const modalPath = path.join('file://', __dirname, '/process.html')
   processWin = new BrowserWindow({
     show: false,
@@ -277,8 +345,8 @@ function startProcessWin () {
   })
 }
 
-function createWelcomeWindow () {
-  if (settings.get('isFirstRun')) {
+function createWelcomeWindow (isAppStart = true) {
+  if (settings.get('isFirstRun') && isAppStart) {
     const modalPath = path.join('file://', __dirname, '/welcome.html')
     welcomeWin = new BrowserWindow({
       x: displaysX(-1, 1000),
@@ -357,7 +425,11 @@ function createSyncPreferencesWindow () {
 }
 
 function planVersionCheck (seconds = 1) {
-  setTimeout(checkVersion, seconds * 1000)
+  if (updateChecker) {
+    clearInterval(updateChecker)
+    updateChecker = null
+  }
+  updateChecker = setTimeout(checkVersion, seconds * 1000)
 }
 
 function checkVersion () {
@@ -481,7 +553,7 @@ function startMicrobreak () {
       }
       microbreakWinLocal.webContents.send('microbreakIdea', idea)
       microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, settings)
+        breakDuration, strictMode, postponable, postponableDurationPercent)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           microbreakWinLocal.center()
@@ -610,7 +682,7 @@ function startBreak () {
       }
       breakWinLocal.webContents.send('breakIdea', idea)
       breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, settings)
+        breakDuration, strictMode, postponable, postponableDurationPercent)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           breakWinLocal.center()
@@ -724,43 +796,6 @@ function calculateBackgroundColor () {
   return '#' + Math.round(opacity * 255).toString(16) + themeColor.substr(1)
 }
 
-function loadSettings () {
-  const dir = app.getPath('userData')
-  const settingsFile = `${dir}/config.json`
-  const contributorStampFile = `${dir}/stamp`
-  settings = new AppSettings(settingsFile)
-  startI18next()
-  breakPlanner = new BreaksPlanner(settings)
-  breakPlanner.nextBreak() // plan first break
-  breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
-  breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
-  breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
-  breakPlanner.on('finishMicrobreak', (shouldPlaySound) => { finishMicrobreak(shouldPlaySound) })
-  breakPlanner.on('startBreak', () => { startBreak() })
-  breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
-  breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
-  breakPlanner.on('updateToolTip', function () {
-    updateTray()
-  })
-  createWelcomeWindow()
-  nativeTheme.themeSource = settings.get('themeSource')
-
-  require('fs').readFile(contributorStampFile, 'utf8', (err, data) => {
-    if (err) {
-      return
-    }
-    const { DateTime } = require('luxon')
-    if (DateTime.fromISO(data).month === DateTime.now().month) {
-      global.shared.isContributor = true
-      log.info('Stretchly: Thanks for your contributions!')
-      if (preferencesWin) {
-        preferencesWin.send('enableContributorPreferences')
-      }
-      updateTray()
-    }
-  })
-}
-
 function loadIdeas () {
   let breakIdeasData
   let microbreakIdeasData
@@ -789,7 +824,7 @@ function pauseBreaks (milliseconds) {
 
 function resumeBreaks (notify = true) {
   if (breakPlanner.dndManager.isOnDnd) {
-    log.info('Stretchly: not resuming breaks because in DND')
+    log.info('Stretchly: not resuming breaks because in Do Not Disturb')
   } else {
     breakPlanner.resume()
     log.info('Stretchly: resuming breaks')
@@ -1115,10 +1150,10 @@ ipcMain.on('restore-defaults', (event) => {
   }
   dialog.showMessageBox(dialogOpts).then((returnValue) => {
     if (returnValue.response === 0) {
-      settings.restoreDefaults()
-      i18next.changeLanguage(settings.get('language'))
-      updateTray()
-      event.sender.webContents.send('renderSettings', settingsToSend())
+      log.info('Stretchly: restoring default settings')
+      settings.store = Object.assign(require('./utils/defaultSettings'), { isFirstRun: false })
+      initialize(false)
+      event.sender.send('renderSettings', settingsToSend())
     }
   })
 })
@@ -1130,7 +1165,7 @@ ipcMain.on('send-settings', function (event) {
 function settingsToSend () {
   const loginItemSettings = app.getLoginItemSettings()
   const openAtLogin = loginItemSettings.openAtLogin
-  return Object.assign({}, settings.data, { openAtLogin: openAtLogin })
+  return Object.assign({}, settings.store, { openAtLogin: openAtLogin })
 }
 
 ipcMain.on('play-sound', function (event, sound) {
@@ -1143,8 +1178,7 @@ ipcMain.on('show-debug', function (event) {
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = breakPlanner.dndManager.isOnDnd
-  const dir = app.getPath('userData')
-  const settingsFile = path.join(dir, 'config.json')
+  const settingsFile = settings.path
   const logsFile = log.transports.file.getFile().path
   event.sender.send('debugInfo', reference, timeleft,
     breaknumber, postponesnumber, settingsFile, logsFile, doNotDisturb)
@@ -1203,14 +1237,11 @@ ipcMain.on('open-sync-preferences', function (event) {
 })
 
 ipcMain.handle('current-settings', (event) => {
-  return settings.data
+  return settings.store
 })
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
-  settings.restoreRemote(remoteSettings)
-  setTimeout(() => {
-    app.relaunch()
-    log.info('Stretchly: relaunching app')
-    app.exit(0)
-  }, 1000)
+  log.info('Stretchly: restoring remote settings')
+  settings.store = remoteSettings
+  initialize(false)
 })

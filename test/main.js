@@ -1,6 +1,6 @@
 const Application = require('spectron').Application
 const electronPath = require('electron')
-const AppSettings = require('../app/utils/settings')
+const Store = require('electron-store')
 
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
@@ -14,8 +14,11 @@ const timeout = process.env.CI ? 60000 : 10000
 
 describe('stretchly', function () {
   const tempDir = path.join(__dirname, './stretchly-test-tmp')
-  const settingsFile = `${path.join(tempDir, 'config.json')}`
-  const settings = new AppSettings(settingsFile)
+  const settings = new Store({
+    cwd: path.join(__dirname),
+    name: 'test-settings',
+    defaults: require('../app/utils/defaultSettings')
+  })
 
   this.timeout(timeout)
 

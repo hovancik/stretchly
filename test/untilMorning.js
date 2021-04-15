@@ -1,9 +1,7 @@
 const { UntilMorning } = require('../app/utils/untilMorning')
-const Settings = require('./../app/utils/settings')
+const Store = require('electron-store')
 const chai = require('chai')
 const path = require('path')
-const mockSettingsFilePath = path.join(__dirname, '/assets/settings.untilMorning.json')
-const fs = require('fs')
 const { DateTime } = require('luxon')
 
 chai.should()
@@ -13,23 +11,22 @@ describe('UntilMorning', function () {
   let settings
   this.timeout(timeout)
 
+  beforeEach(() => {
+    settings = new Store({
+      cwd: path.join(__dirname),
+      name: 'test-settings',
+      defaults: require('../app/utils/defaultSettings')
+    })
+  })
+
   afterEach(() => {
     if (settings && settings.destroy) {
-      settings.destroy()
+      require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
       settings = null
     }
   })
 
-  function createSettingsFile (filePath, desiredSettings) {
-    fs.writeFileSync(filePath, JSON.stringify(desiredSettings), 'utf8')
-  }
-
   describe('Default Settings', function () {
-    beforeEach(() => {
-      createSettingsFile(mockSettingsFilePath, {})
-      settings = new Settings(mockSettingsFilePath)
-    })
-
     it('msToSunrise() returns morning time the same day', function () {
       const dt = DateTime.local().set({ hours: 5, minutes: 0, seconds: 0 })
       new UntilMorning(settings).msToSunrise(dt).should.be.within(60 * 60 * 1000 - 60000, 60 * 60 * 1000 + 60000)
@@ -43,10 +40,7 @@ describe('UntilMorning', function () {
 
   describe('Custom Morning Hour', function () {
     beforeEach(() => {
-      createSettingsFile(mockSettingsFilePath, {
-        morningHour: 15
-      })
-      settings = new Settings(mockSettingsFilePath)
+      settings.set('morningHour', 15)
     })
 
     it('msToSunrise() returns morning time the same day', function () {
@@ -66,12 +60,9 @@ describe('UntilMorning', function () {
     // expected time is August 4 2018, 06:10 local Amsterdam time
 
     beforeEach(() => {
-      createSettingsFile(mockSettingsFilePath, {
-        morningHour: 'sunrise',
-        posLatitude: 52,
-        posLongitude: 4
-      })
-      settings = new Settings(mockSettingsFilePath)
+      settings.set('morningHour', 'sunrise')
+      settings.set('posLatitude', 52)
+      settings.set('posLongitude', 4)
     })
 
     it('msToSunrise() returns morning time the same day', function () {
