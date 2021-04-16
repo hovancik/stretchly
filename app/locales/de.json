@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly – Die Anwendung, die erinnert, Pause zu machen",
+    "toolTipHeader": "Stretchly – Die Pausenerinnerungs-App",
     "microbreakIn": "Mini Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Große Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Pausen fortsetzen",
@@ -76,7 +76,7 @@
       "autumnBeBlessed": "Gesegneter Herbst",
       "graphiteCrystal": "Graphit Kristall",
       "coffeeKisses": "Kaffee Küsse",
-      "morningSwim": "Morgen Schwimmer",
+      "morningSwim": "Morgenschwimmen",
       "transparentMode": "Transparenz aktivieren",
       "sounds": "Ton:",
       "enableSounds": "Töne anschalten",
@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Entwickelt von",
       "janH": "Jan Hovancik",
-      "designedBy": "Symbol und Design der Schnittstelle von Colin Shanley"
+      "designedBy": "Symbol und Design der Schnittstelle von Colin Shanley",
+      "checkNewVersion": "Automatisch nach App-Updates suchen"
     },
     "heart": {
       "loveStretchly": "Gefällt dir Stretchly?",
@@ -152,7 +153,10 @@
     "appearance": "Aussehen:",
     "light": "Hell",
     "dark": "Dunkel",
-    "system": "System"
+    "system": "System",
+    "showBreaksAsRegularWindows": "Pausen als reguläre Fenster anzeigen",
+    "showBreaksAsRegularWindowsInfo": "Wenn aktiv, sind Pausenfenster fokussierbar anstatt 'Immer im Vordergrund' und erscheinen auch in der Taskleiste.",
+    "showBreaksAsRegularWindowsTitle": "Verhalten wie reguläres Fenster:"
   },
   "utils": {
     "none": "{{count}}",
@@ -194,6 +198,7 @@
     "nextMiniBreak": "Nächste Mini Pause",
     "afterMiniBreak": "nach {{count}} Mini Pause",
     "afterMiniBreak_plural": "nach {{count}} Mini Pausen",
-    "resuming": "Fortsetzen"
+    "resuming": "Fortsetzen",
+    "appExclusion": "App-Ausnahmeregel"
   }
 }

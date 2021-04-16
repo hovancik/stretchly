@@ -38,7 +38,33 @@
     },
     "about": {
       "tagline": "Prisimink pertraukėles"
-    }
+    },
+    "schedule": {
+      "enableStrictLong": "Įjungti griežtą režimą ilgoms pertraukoms",
+      "cantDisableBoth": "Negalima išjungti abiejų pertraukų tipų",
+      "breakFor": "Pertraukėlė:",
+      "enableMiniBreaks": "Įjungti Mini pertraukėles",
+      "miniBreaksInfo": "„Mini pertraukėlės“ yra trumpos pertraukėlės, daromos reguliariai, kad suteiktų galimybę pajudėti ir atsipalaiduoti.",
+      "miniBreaks": "Mini pertraukėlės:"
+    },
+    "settings": {
+      "restoreDefaults": "Atkurti pradines reikšmes",
+      "language": "Pasirink kalbą:",
+      "monitorDnd": "Rodyti pertraukas \"Do Not Distrub\" režime",
+      "allScreens": "Rodyti pauzes per visus ekranus",
+      "showIdeas": "Rodyti pratimus pertraukų metu",
+      "fullscreen": "Pilnu ekranu",
+      "window": "Langas",
+      "showBreaksIn": "Rodyti pertrauką po:",
+      "openAtLogin": "Automatiškai startuoti Strechly prisijungus prie kompiuterio"
+    },
+    "nav": {
+      "heart": "Prisidėk/Paremk",
+      "about": "Apie",
+      "theme": "Išvaizda",
+      "settings": "Nustatymai"
+    },
+    "title": "Strechly nustatymai"
   },
   "process": {
     "newVersionAvailable": "Pasiekiama nauja versija!"

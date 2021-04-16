@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Programis de",
       "janH": "Jan Hovancik",
-      "designedBy": "Bildsimbolo kaj interfaca aspektigo de Colin Shanley"
+      "designedBy": "Bildsimbolo kaj interfaca aspektigo de Colin Shanley",
+      "checkNewVersion": "Aŭtomate kontroli ĝisdatigojn de la programo"
     },
     "heart": {
       "loveStretchly": "Ĉu vi amas vian Stretchly?",
