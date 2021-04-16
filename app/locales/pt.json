@@ -1,0 +1,28 @@
+{
+  "main": {
+    "syncPreferences": "Configurações de Sincronização",
+    "contributorPreferences": "Configurações de Contribuintes",
+    "preferences": "Configurações",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "warning": "Isto vai restaurar as predefinições da aplicação e todas as configurações serão perdidas.",
+    "restoreDefaults": "Restaurar predefinições",
+    "quitStretchly": "Sair do Stretchly",
+    "resetBreaks": "Recomeçar Pausas",
+    "indefinitely": "Indefinidamente",
+    "untilMorning": "Até à próxima manhã",
+    "for5Hours": "5 horas",
+    "for2Hours": "2 horas",
+    "forHour": "1 hora",
+    "pause": "Parar pausas",
+    "resume": "Resumir pausas",
+    "skipToTheNext": "Passar à próxima",
+    "toMicrobreak": "Pausa Curta",
+    "toBreak": "Pausa Longa",
+    "downloadLatestVersion": "Faz download da ultima versão",
+    "resumingBreaks": "Resumindo pausas",
+    "microbreakIn": "Pausa curta em $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Pausa longa em $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly - A app de lembretes para pausas"
+  }
+}
