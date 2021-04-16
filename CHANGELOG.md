@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.6.0] - 2021-04-16
 ### Fixed
 - app exclusions on Windows OS
 - fullscreen breaks on MacOS
@@ -14,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - advanced option not to reset breaks on Suspend/Lock
 - Stretchly doesn't need to restart after Restoring remote settings
+- Updated many translations
 
 ### Changed
 - new system for storing preferences
@@ -562,7 +564,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.5.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.6.0...HEAD
+[1.6.0]: https://github.com/hovancik/stretchly/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/hovancik/stretchly/compare/v1.4.0...v1.5.0
 [1.4.0]: https://github.com/hovancik/stretchly/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/hovancik/stretchly/compare/v1.2.0...v1.3.0
