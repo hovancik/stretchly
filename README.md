@@ -174,7 +174,7 @@ To specify the size of the break window, set the value of `breakWindowHeight` an
 
 If you want Stretchly breaks to act as regular windows (have a titlebar, turn off always on top, be minimizable and focusable) set `showBreaksAsRegularWindows` to `true`.
 
-#### Pause/resume breaks only when specific command is running [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Pause/resume breaks only when specific command is running
 
 By editing `appExclusions` in preferences file, you can automatically control when Stretchly breaks are paused.
 
