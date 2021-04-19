@@ -1,22 +1,25 @@
-<!--
+---
+name: Bug report
+about: Please, help us help you by filling the details below. WITHOUT filling this
+  template, your issue will get ignored/deleted.
+title: "[BUG]"
+labels: ''
+assignees: ''
 
-Please, help us help you by filling the details below. WITHOUT filling this template, your issue will get ignored/deleted.
-
-Have you read Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/hovancik/stretchly/blob/master/CODE_OF_CONDUCT.md
-
--->
+---
 
 ### Prerequisites
 
-- [ ] I'm using latest version: v <!-- type your version from `Preferences` -  `About` -->
+- [ ] I'm using latest version: v (type your version from `Preferences` -  `About`)
 - [ ] I've checked [Known issues](https://github.com/hovancik/stretchly#known-issues)
 - [ ] I've checked [Open issues](https://github.com/hovancik/stretchly/issues)
+- [ ] I've read [Code of Conduct](https://github.com/hovancik/stretchly/blob/master/CODE_OF_CONDUCT.md). By filing an Issue, you are expected to comply with it, including treating everyone with respect.
 
 ### Description
 
 [Description of the issue]
 
-Operating system: <!-- type your OS and version -->
+Operating system: (type your OS and version)
 
 ### Steps to Reproduce
 
