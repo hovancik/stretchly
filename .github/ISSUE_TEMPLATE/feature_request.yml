@@ -1,0 +1,86 @@
+name:            Feature request
+description:     Suggest an idea for this project
+title: "[Feature request]: "
+body:
+- type:          markdown
+  attributes:
+    value:       |
+      Thanks for taking the time to fill out this feature request!
+      **Filling this report is required and failure to do so will result in closing the request.**
+- type:          checkboxes
+  id:            version
+  attributes:
+    label:       Version
+    description: We only support the latest version. Find your version number at `Preferences` -  `About`.
+    options:
+    - label:     I'm using version 1.6.0
+      required:  false
+- type:          checkboxes
+  id:            open-requests
+  attributes:
+    label:       Existing requests
+    description: Please check [Existing requests](https://github.com/hovancik/stretchly/issues?q=is%3Aissue) as it may containt your idea already.
+    options:
+    - label:     I've checked Existing requests
+      required:  true
+- type:          dropdown
+  attributes:
+    label:       What operating system are you using?
+    options:
+      - Windows
+      - macOS
+      - Linux
+      - Other (specify below)
+  validations:
+    required:    true
+- type:          input
+  attributes:
+    label:       Operating System Version
+    description: |
+      What operating system version are you using? On Windows, click Start button > Settings > System > About.
+      On macOS, click the Apple Menu > About This Mac.
+      On Linux, use lsb_release or uname -a.
+    placeholder: "e.g. Windows 10 version 1909, macOS Catalina 10.15.7, or Ubuntu 20.04"
+  validations:
+    required:    true
+- type:          textarea
+  id:            problem
+  attributes:
+    label:       Problem description
+    description: Is your feature request related to a problem? Please describe.
+    value:       |
+      A clear and concise description of what the problem is.
+      Ex. I'm always frustrated when [...]
+  validations:
+    required:    true
+- type:          textarea
+  id:            solution
+  attributes:
+    label:       Possible solution
+    description: Describe the solution you'd like
+    value:       A clear and concise description of any alternative solutions or features you've considered.
+  validations:
+    required:    true
+- type:          textarea
+  id:            alternatives
+  attributes:
+    label:       Alternative solutions
+    description: Describe alternatives you've considered
+    value:       A clear and concise description of what you want to happen.
+  validations:
+    required:    true
+- type:          textarea
+  id:            additional
+  attributes:
+    label:       Additional information
+    description: Add any other context or screenshots about the feature request here.
+  validations:
+    required:    false
+- type:          checkboxes
+  id:            terms
+  attributes:
+    label:       Code of Conduct
+    description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/hovancik/stretchly/blob/master/CODE_OF_CONDUCT.md)
+    options:
+    - label:     I agree to follow this project's Code of Conduct
+      required:  true
