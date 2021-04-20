@@ -279,17 +279,18 @@ Now you can clone the repo with `git clone https://github.com/hovancik/stretchly
 Read on.
 
 ### Debugging
-If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
-Also, you can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
-  - Location of the preferences and log file (Clicking on file location will open it.)
+You can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
+  - Location of the Preferences and Log file (Clicking on file location will open it),
   - Debug information for break planner
 
 You can copy debug information to the clipboard.
 
+If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
+
 ### Logging
 
-*Stretchly* uses `log` package for some extra logging.
+*Stretchly* uses `[log](https://github.com/megahertz/electron-log)` package for some extra logging.
 Format as following:
 - `System: my message` for messages regarding Operating System, ie: `System: resume or unlock`
 - `Stretchly: my message` for messages regarding *Stretchly*
