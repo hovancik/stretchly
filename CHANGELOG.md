@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- advanced preferences for Pause/Resume Breaks global shortcuts  
+- advanced preferences for Pause/Resume Breaks global shortcuts
+
+### Changed
+- endBreakShortcut can be set to empty string, thus disabled
 
 ## [1.6.0] - 2021-04-16
 ### Fixed
