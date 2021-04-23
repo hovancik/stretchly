@@ -54,5 +54,7 @@ module.exports = {
   microbreakIdeas: defaultMicrobreakIdeas,
   showBreaksAsRegularWindows: false,
   appExclusions: [],
-  pauseForSuspendOrLock: true
+  pauseForSuspendOrLock: true,
+  pauseBreaksShortcut: '',
+  resumeBreaksShortcut: ''
 }
