@@ -488,14 +488,16 @@ function startMicrobreak () {
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
   if (!strictMode || postponable) {
-    globalShortcut.register(settings.get('endBreakShortcut'), () => {
-      const passedPercent = (Date.now() - startTime) / breakDuration * 100
-      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-        postponeMicrobreak()
-      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
-        finishMicrobreak(false)
-      }
-    })
+    if (settings.get('endBreakShortcut') !== '') {
+      globalShortcut.register(settings.get('endBreakShortcut'), () => {
+        const passedPercent = (Date.now() - startTime) / breakDuration * 100
+        if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+          postponeMicrobreak()
+        } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+          finishMicrobreak(false)
+        }
+      })
+    }
   }
 
   const modalPath = path.join('file://', __dirname, '/microbreak.html')
@@ -616,14 +618,16 @@ function startBreak () {
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
   if (!strictMode || postponable) {
-    globalShortcut.register(settings.get('endBreakShortcut'), () => {
-      const passedPercent = (Date.now() - startTime) / breakDuration * 100
-      if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-        postponeBreak()
-      } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
-        finishBreak(false)
-      }
-    })
+    if (settings.get('endBreakShortcut') !== '') {
+      globalShortcut.register(settings.get('endBreakShortcut'), () => {
+        const passedPercent = (Date.now() - startTime) / breakDuration * 100
+        if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+          postponeBreak()
+        } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+          finishBreak(false)
+        }
+      })
+    }
   }
 
   const modalPath = path.join('file://', __dirname, '/break.html')
@@ -726,7 +730,9 @@ function startBreak () {
 }
 
 function breakComplete (shouldPlaySound, windows) {
-  globalShortcut.unregister(settings.get('endBreakShortcut'))
+  if (globalShortcut.isRegistered(settings.get('endBreakShortcut'))) {
+    globalShortcut.unregister(settings.get('endBreakShortcut'))
+  }
   if (shouldPlaySound && !settings.get('silentNotifications')) {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
