@@ -151,6 +151,17 @@ function initialize (isAppStart = true) {
   if (contributorPreferencesWindow) {
     contributorPreferencesWindow.send('renderSettings', settingsToSend())
   }
+  globalShortcut.unregisterAll()
+  if (settings.get('resumeBreaksShortcut') !== '') {
+    globalShortcut.register(settings.get('resumeBreaksShortcut'), () => {
+      resumeBreaks(false)
+    })
+  }
+  if (settings.get('pauseBreaksShortcut') !== '') {
+    globalShortcut.register(settings.get('pauseBreaksShortcut'), () => {
+      pauseBreaks(1)
+    })
+  }
 }
 
 function startI18next () {

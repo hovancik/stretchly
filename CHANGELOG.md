@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- advanced preferences for Pause/Resume Breaks global shortcuts  
 
 ## [1.6.0] - 2021-04-16
 ### Fixed
