@@ -238,11 +238,21 @@ function closeWindows (windowArray) {
 function displaysX (displayID = -1, width = 800, fullscreen = false) {
   const electron = require('electron')
   let theScreen
+
+  if (!settings.get('allScreens')) {
+    if (settings.get('screen') === 'primary') {
+      theScreen = electron.screen.getPrimaryDisplay()
+    } else if (settings.get('screen') === 'cursor') {
+      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    } else {
+      displayID = parseInt(settings.get('screen'))
+    }
+  }
+
   if (displayID === -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays() || displayID < 0) {
-    // Graceful handling of invalid displayID
-    log.warn('Stretchly: invalid displayID to displaysX')
+    log.warn(`Stretchly: invalid displayID ${displayID} to displaysX`)
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -259,11 +269,21 @@ function displaysX (displayID = -1, width = 800, fullscreen = false) {
 function displaysY (displayID = -1, height = 600, fullscreen = false) {
   const electron = require('electron')
   let theScreen
+
+  if (!settings.get('allScreens')) {
+    if (settings.get('screen') === 'primary') {
+      theScreen = electron.screen.getPrimaryDisplay()
+    } else if (settings.get('screen') === 'cursor') {
+      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    } else {
+      displayID = parseInt(settings.get('screen'))
+    }
+  }
+
   if (displayID === -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays()) {
-    // Graceful handling of invalid displayID
-    log.warn('Stretchly: invalid displayID to displaysY')
+  } else if (displayID >= numberOfDisplays() || displayID < 0) {
+    log.warn(`Stretchly: invalid displayID ${displayID} to displaysY`)
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -280,11 +300,21 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
 function displaysWidth (displayID = -1) {
   const electron = require('electron')
   let theScreen
+
+  if (!settings.get('allScreens')) {
+    if (settings.get('screen') === 'primary') {
+      theScreen = electron.screen.getPrimaryDisplay()
+    } else if (settings.get('screen') === 'cursor') {
+      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    } else {
+      displayID = parseInt(settings.get('screen'))
+    }
+  }
+
   if (displayID === -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays()) {
-    // Graceful handling of invalid displayID
-    log.warn('Stretchly: invalid displayID to displaysY')
+  } else if (displayID >= numberOfDisplays() || displayID < 0) {
+    log.warn(`Stretchly: invalid displayID ${displayID} to displaysWidth`)
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -297,11 +327,21 @@ function displaysWidth (displayID = -1) {
 function displaysHeight (displayID = -1) {
   const electron = require('electron')
   let theScreen
+
+  if (!settings.get('allScreens')) {
+    if (settings.get('screen') === 'primary') {
+      theScreen = electron.screen.getPrimaryDisplay()
+    } else if (settings.get('screen') === 'cursor') {
+      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    } else {
+      displayID = parseInt(settings.get('screen'))
+    }
+  }
+
   if (displayID === -1) {
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays()) {
-    // Graceful handling of invalid displayID
-    log.warn('Stretchly: invalid displayID to displaysY')
+  } else if (displayID >= numberOfDisplays() || displayID < 0) {
+    log.warn(`Stretchly: invalid displayID ${displayID} to displaysHeight`)
     theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
   } else {
     const screens = electron.screen.getAllDisplays()
@@ -590,6 +630,9 @@ function startMicrobreak () {
     microbreakWins.push(microbreakWinLocal)
 
     if (!settings.get('allScreens')) {
+      if (numberOfDisplays() > 1) {
+        log.info('Stretchly: not showing on more Monitors as it is disabled.')
+      }
       break
     }
   }
@@ -720,6 +763,9 @@ function startBreak () {
     breakWins.push(breakWinLocal)
 
     if (!settings.get('allScreens')) {
+      if (numberOfDisplays() > 1) {
+        log.info('Stretchly: not showing on more Monitors as it is disabled.')
+      }
       break
     }
   }

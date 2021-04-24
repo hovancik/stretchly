@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - advanced preferences for Pause/Resume Breaks global shortcuts
+- advanced preferences for picking monitor to show break on
 
 ### Changed
 - endBreakShortcut can be set to empty string, thus disabled

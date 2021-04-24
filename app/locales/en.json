@@ -155,7 +155,17 @@
     "system": "System",
     "showBreaksAsRegularWindowsTitle": "Act as regular window:",
     "showBreaksAsRegularWindowsInfo": "When enabled, Break windows will become focusable, they won't be 'Always on top' anymore and they will also appear in the taskbar.",
-    "showBreaksAsRegularWindows": "Show breaks as regular windows"
+    "showBreaksAsRegularWindows": "Show breaks as regular windows",
+    "screen": "Monitor for Breaks:",
+    "screenInfo": "When showing breaks on all monitors is disabled, you can choose which one you would like to show your Breaks on.",
+    "showOnMonitor": "Show Breaks on",
+    "primary": "Primary monitor",
+    "cursor": "Follow cursor",
+    "0": "First monitor",
+    "1": "Second monitor",
+    "2": "Third monitor",
+    "3": "Fourth monitor",
+    "4": "Fifth monitor"
   },
   "utils": {
     "none": "{{count}}",
