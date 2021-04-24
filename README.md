@@ -163,6 +163,7 @@ If you'd like to disable the shortcut, set value to empty string `""`.
 Default value is `CmdOrCtrl+X`.
 
 #### Pause Breaks Shortcut
+
 In the preferences file, set `pauseBreaksShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
@@ -224,8 +225,15 @@ If you want Stretchly to be running when specific apps are as well, you could ha
 
 You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. They are case sensitive.
 
-#### Pause breaks on Suspend/Lock
+#### Pause breaks on Suspend/Lock ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
 If you don't want to reset breaks once system is back from Suspend/Lock, set `pauseForSuspendOrLock` to `false`.
+
+#### Monitor to show breaks on ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
+In case you have disabled showing of breaks on all monitors, you can specify which one should contain the break window. Set `screen` value to one of the following:
+- `"primary"` - primary monitor as given by OS
+- `"cursor"` - monitor where there is cursor
+- `"0"` (or `0`), `"1"`, `"2"` etc, where `"0"` is the first monitor returned by OS and so forth  
+
 
 ## Contributor Preferences
 

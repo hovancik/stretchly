@@ -50,6 +50,15 @@ window.onload = (event) => {
       }
     })
 
+    document.querySelectorAll('select').forEach(select => {
+      select.value = settings[select.name]
+      if (!eventsAttached) {
+        select.onchange = (event) => {
+          ipcRenderer.send('save-setting', select.name, select.value)
+        }
+      }
+    })
+
     document.querySelectorAll('input[type="range"]').forEach(range => {
       const divisor = range.dataset.divisor
       const output = range.closest('div').querySelector('output')

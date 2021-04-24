@@ -56,5 +56,6 @@ module.exports = {
   appExclusions: [],
   pauseForSuspendOrLock: true,
   pauseBreaksShortcut: '',
-  resumeBreaksShortcut: ''
+  resumeBreaksShortcut: '',
+  screen: 'primary'
 }
