@@ -118,6 +118,8 @@ It's recommended to Quit *Stretchly* before editing the preferences file.
 
 To make sure that all works as expected, it's always good idea to check that format of the preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
 
+After you make changes to preferences files, some of the values being shown in Preferences or elsewhere might show incorect value, as the UI is expecting specific values and is not handling cases where user makes manual changes to preferences file.
+
 Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
 
 **Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.
