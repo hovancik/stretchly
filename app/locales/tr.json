@@ -68,7 +68,12 @@
       "enableLongBreaks": "Uzun molaları etkinleştir",
       "longBreaks": "Uzun Molalar:",
       "every": "Her:",
-      "breakFor": "Mola süresi:"
+      "breakFor": "Mola süresi:",
+      "strictMode": "Sınırlı Mod:",
+      "enablePostponeLong": "Uzun Mola için ertelemeyi etkinleştir",
+      "showNotificationBeforeLongBreak": "Uzun Mola başlamadan bildirim göster",
+      "enablePostponeMini": "Kısa Mola için ertelemeyi etkinleştir",
+      "showNotificationBeforeMiniBreak": "Kısa Moladan önce bildirim göster"
     }
   },
   "process": {

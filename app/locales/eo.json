@@ -156,7 +156,17 @@
     "system": "Sistema",
     "showBreaksAsRegularWindowsInfo": "Se ŝaltita, Paŭzaj fenestroj estos enfokusigeblaj; ili ne plu estos 'Ĉiam supraj', kaj ili ankaŭ aperos sur la taskopleto.",
     "showBreaksAsRegularWindows": "Montri paŭzojn kiel regulajn fenestrojn",
-    "showBreaksAsRegularWindowsTitle": "Agi kiel regula fenestro:"
+    "showBreaksAsRegularWindowsTitle": "Agi kiel regula fenestro:",
+    "screenInfo": "Se paŭzoj ne montriĝos sur ĉiuj ekranoj, vi povas elekti tiun ekranon, sur kiu montriĝos viaj Paŭzoj.",
+    "4": "Kvina ekrano",
+    "3": "Kvara ekrano",
+    "2": "Tria ekrano",
+    "1": "Dua ekrano",
+    "0": "Unua ekrano",
+    "primary": "Ĉefekrano",
+    "screen": "Ekrano por Paŭzoj:",
+    "cursor": "Sekvi kursoron",
+    "showOnMonitor": "Montri Paŭzojn sur"
   },
   "utils": {
     "none": "{{count}}",
