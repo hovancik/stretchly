@@ -98,7 +98,9 @@
       "ourWebsite": "odwiedź naszą stronę",
       "dot": ".",
       "developedBy": "Stworzona przez",
-      "janH": "Jana Hovancika"
+      "janH": "Jana Hovancika",
+      "designedBy": "Ikony oraz UI Colin Shanley",
+      "checkNewVersion": "Automatycznie sprawdzaj aktualizacje"
     },
     "heart": {
       "loveStretchly": "Kochasz Stretchly?",
@@ -107,7 +109,8 @@
       "becomePatron": "Zostań Patronem",
       "alreadyContributor": "Już jestem wspierającym",
       "authenticateUsing": "Uwierzytelnij się używając:",
-      "contributorPreferences": "Ustawienia wspierającego"
+      "contributorPreferences": "Ustawienia wspierającego",
+      "syncPreferences": "Synchronizuj Ustawienia"
     }
   },
   "contributorPreferences": {
@@ -143,7 +146,11 @@
     "appearance": "Wygląd:",
     "light": "Jasny",
     "dark": "Ciemny",
-    "system": "Systemowy"
+    "system": "Systemowy",
+    "breakWindowHeight": "Wysokość:",
+    "showBreaksAsRegularWindows": "Wyświetlaj przerwy w zwykłych oknach",
+    "breakWindowWidth": "Szerokość:",
+    "opacityTheme": "Przeźroczystość tła:"
   },
   "utils": {
     "none_0": "{{count}}",
