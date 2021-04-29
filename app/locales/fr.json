@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Développé par",
       "janH": "Jan Hovancik",
-      "designedBy": "Icône et IU conçues par Colin Shanley"
+      "designedBy": "Icône et IU conçues par Colin Shanley",
+      "checkNewVersion": "Vérifier automatiquement la présence de mise à jour"
     },
     "heart": {
       "loveStretchly": "Vous aimez Stretchly ?",
