@@ -22,7 +22,8 @@
     "continue": "Kontynuuj",
     "cancel": "Anuluj",
     "preferences": "Ustawienia",
-    "contributorPreferences": "Ustawienia wspierającego"
+    "contributorPreferences": "Ustawienia wspierającego",
+    "syncPreferences": "Synchronizuj Ustawienia"
   },
   "break": {
     "postpone": "Przełóż przerwę na później",

@@ -86,7 +86,8 @@
       "menubarIcon": "Icono de Barra de Menu:",
       "colour": "Color",
       "monochrome": "Monocromatico",
-      "invertedMonochrome": "Monocromatico Invertido"
+      "invertedMonochrome": "Monocromatico Invertido",
+      "snowWhite": "Blanco nevado"
     },
     "about": {
       "tagline": "Aplicación para notificar cuándo hacer descansos",
@@ -98,7 +99,8 @@
       "dot": ".",
       "developedBy": "Desarrollado por",
       "janH": "Jan Hovancik",
-      "designedBy": "Diseño de Icono e Interfaz de Usuario por Colin Shanley"
+      "designedBy": "Diseño de Icono e Interfaz de Usuario por Colin Shanley",
+      "checkNewVersion": "Comprobar actualizaciones de app automáticamente"
     },
     "heart": {
       "loveStretchly": "¿Amas tu Stretchly?",
@@ -151,7 +153,8 @@
     "appearance": "Apariencia:",
     "light": "Claro",
     "dark": "Oscuro",
-    "system": "Sistema"
+    "system": "Sistema",
+    "showBreaksAsRegularWindowsTitle": "Comportarse como ventana normal:"
   },
   "utils": {
     "none": "{{count}}",

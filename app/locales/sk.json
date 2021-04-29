@@ -157,7 +157,17 @@
     "system": "Nasleduj systém",
     "showBreaksAsRegularWindowsTitle": "Správanie ako obyčajné okno:",
     "showBreaksAsRegularWindows": "Ukáž prestávky ako obyčajné okná",
-    "showBreaksAsRegularWindowsInfo": "Ak povolené, okno prestávky sa začne správať ako obyčajné okno: nebude stále navrchu, bude môcť byť označené a objavý sa v panele úloh."
+    "showBreaksAsRegularWindowsInfo": "Ak povolené, okno prestávky sa začne správať ako obyčajné okno: nebude stále navrchu, bude môcť byť označené a objavý sa v panele úloh.",
+    "4": "Piaty monitor",
+    "3": "Štvrtý monitor",
+    "2": "Tretí monitor",
+    "1": "Druhý monitor",
+    "0": "Prvý monitor",
+    "cursor": "Nasleduj kurzor",
+    "primary": "Hlavný monitor",
+    "showOnMonitor": "Ukázať Prestávky na",
+    "screenInfo": "Ak je zobrazenie prestávok na všetkých monitoroch vypnuté, môžte si vybrať na ktorom monitore by sa prestávka mala objaviť.",
+    "screen": "Minitor pre Prestávky:"
   },
   "utils": {
     "none_0": "{{count}}",
