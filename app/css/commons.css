@@ -109,6 +109,10 @@ input[type="checkbox"] + label:before {
   width: 14px;
 }
 
+body[dir=rtl] input[type="checkbox"] + label:before {
+  margin: 0 0 0 4px;
+}
+
 .darwin input[type="checkbox"] + label:before {
   font: 12px sans-serif;
 }
@@ -142,6 +146,10 @@ input[type="radio"] + label:before {
   width: 16px;
 }
 
+body[dir=rtl] input[type="radio"] + label:before {
+  margin: 0 0 0 4px;
+}
+
 input[type="radio"]:checked + label:before {
   background: var(--checkbox-checked-bg);
   color: #FFFFFF;
@@ -153,10 +161,14 @@ input[type="radio"]:disabled + label {
   color: rgba(255,255,255,0.99);
 }
 
-input[type="range"]  {
+input[type="range"] {
   margin: 0 16px 0 13px;
   vertical-align: middle;
   width: 200px;
+}
+
+body[dir=rtl] input[type="range"] {
+  margin: 0 13px 0 16px;
 }
 
 /* https://developer.mozilla.org/en-US/docs/Learn/Forms/Advanced_form_styling#Selects_and_datalists */
@@ -165,6 +177,11 @@ input[type="range"]  {
   margin-left: 4px;
   min-width: 200px;
   position: relative;
+}
+
+body[dir=rtl] .has-select {
+  margin-left: 0;
+  margin-right: 4px;
 }
 
 .has-select::after {
@@ -191,12 +208,17 @@ select {
   color: var(--select-color);
   background: var(--select-bg);
   border: var(--select-border);
-  border-radius: 3px 0  0 3px;
+  border-radius: 3px 0 0 3px;
   box-shadow: var(--select-shadow);
   font-family: sans-serif;
   height: 19px;
   padding-left: 8px;
   width: 100%;
+}
+
+body[dir=rtl] select {
+  padding-left: 0;
+  padding-right: 20px;
 }
 
 select option {

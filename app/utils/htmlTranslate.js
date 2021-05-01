@@ -14,6 +14,7 @@ class HtmlTranslate {
         element.innerHTML = i18next.t(element.dataset.i18next)
       }
     })
+    this.document.body.dir = require('rtl-detect').getLangDir(i18next.language)
   }
 }
 
