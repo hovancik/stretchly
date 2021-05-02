@@ -33,11 +33,19 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(1) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(6) {
   grid-column: 1/2;
   grid-row: 5/6;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(6) {
+  text-align: left;
 }
 
 .contributor-preferences > :nth-child(17) {
@@ -47,11 +55,19 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(17) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(21) {
   grid-column: 1/2;
   grid-row: 18/19;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(21) {
+  text-align: left;
 }
 
 .contributor-preferences > :nth-child(25) {
@@ -61,11 +77,19 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(25) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(29) {
   grid-column: 1/2;
   grid-row: 24/25;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(29) {
+  text-align: left;
 }
 
 .contributor-preferences > :nth-child(34) {
@@ -75,11 +99,19 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(34) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(39) {
   grid-column: 1/2;
   grid-row: 32/33;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(39) {
+  text-align: left;
 }
 
 .contributor-preferences > :nth-child(43) {
@@ -89,11 +121,19 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(43) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(45) {
   grid-column: 1/2;
   grid-row: 36/37;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(45) {
+  text-align: left;
 }
 
 .contributor-preferences > :nth-child(48) {
@@ -103,6 +143,10 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(48) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(52) {
   grid-column: 1/2;
   grid-row: 41/42;
@@ -110,9 +154,17 @@ body > div > :last-child {
   text-align: right;
 }
 
+body[dir=rtl] .contributor-preferences > :nth-child(52) {
+  text-align: left;
+}
+
 .contributor-preferences > :nth-child(57) {
   grid-column: 1/2;
   grid-row: 45/46;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(57) {
+  text-align: left;
 }

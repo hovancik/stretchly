@@ -43,6 +43,11 @@ body > div > :last-child {
   padding-left: 12px;
 }
 
+body[dir=rtl] .welcome > :nth-child(1) > div > span {
+  padding-left: 0;
+  padding-right: 12px;
+}
+
 .welcome > :nth-child(1) > span {
   font-family: Open Sans Light;
   font-size: 20px;
@@ -78,7 +83,13 @@ body > div > :last-child {
   margin-left: auto;
 }
 
-.welcome input[type="radio"] + label:before {
+body[dir=rtl] .welcome > :last-child > :last-child {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.welcome input[type="radio"] + label:before,
+body[dir=rtl] .welcome input[type="radio"] + label:before {
   display: block;
   margin: 0 auto;
 }

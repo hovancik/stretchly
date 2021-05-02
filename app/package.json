@@ -29,6 +29,7 @@
     "luxon": "^1.26.0",
     "meeussunmoon": "^3.0.3",
     "ps-list": "^7.2.0",
+    "rtl-detect": "^1.0.2",
     "semver": "^7.3.5",
     "windows-focus-assist": "^1.2.1"
   },

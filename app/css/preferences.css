@@ -106,17 +106,29 @@ body > .hidden,
   text-align: right;
 }
 
+body[dir=rtl] .schedule > :nth-child(1) {
+  text-align: left
+}
+
 .schedule > :nth-child(9) {
   grid-column: 1/2;
   grid-row: 8/12;
   padding: 0 16px;
   text-align: right;
 }
+
+body[dir=rtl] .schedule > :nth-child(9) {
+  text-align: left
+}
 .schedule > :nth-child(17) {
   grid-column: 1/2;
   grid-row: 15/18;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .schedule > :nth-child(17) {
+  text-align: left
 }
 
 .theme {
@@ -140,6 +152,10 @@ body > .hidden,
   text-align: right;
 }
 
+body[dir=rtl] .theme > :nth-child(1) {
+  text-align: left
+}
+
 .theme > :nth-child(10) {
   grid-column: 1/2;
   grid-row: 9/10;
@@ -147,11 +163,19 @@ body > .hidden,
   text-align: right;
 }
 
+body[dir=rtl] .theme > :nth-child(10) {
+  text-align: left
+}
+
 .theme > :nth-child(16) {
   grid-column: 1/2;
   grid-row: 14/17;
   padding: 0 16px;
   text-align: right;
+}
+
+body[dir=rtl] .theme > :nth-child(16) {
+  text-align: left
 }
 
 .appearance {
@@ -273,6 +297,11 @@ body > .hidden,
   padding-left: 12px;
 }
 
+body[dir=rtl] .about > :nth-child(1) > div > span {
+  padding-left: 0;
+  padding-right: 12px;
+}
+
 .about > :nth-child(1) > span {
   font-family: Open Sans Light;
   font-size: 20px;
@@ -286,6 +315,12 @@ body > .hidden,
 .about > :nth-child(4) > div {
   padding-left: 8px;
   text-align: left;
+}
+
+body[dir=rtl] .about > :nth-child(4) > div {
+  padding-left: 0;
+  padding-right: 8px;
+  text-align: right;
 }
 
 .about > :nth-child(7) {
@@ -351,4 +386,9 @@ body > .hidden,
 .heart > .authenticate > a {
   padding-right: 20px;
   text-decoration: none;
+}
+
+body[dir=rtl] .heart > .authenticate > a {
+  padding-right: 0;
+  padding-left: 20px;
 }
