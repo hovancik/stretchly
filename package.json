@@ -94,9 +94,7 @@
     "win": {
       "target": [
         "nsis",
-        "nsis-web",
-        "7z",
-        "zip"
+        "7z"
       ]
     },
     "nsis": {
