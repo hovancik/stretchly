@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.6.99] - 2021-05-02 Patreon
 ### Added
 - advanced preferences for Pause/Resume Breaks global shortcuts
 - advanced preferences for picking monitor to show break on
