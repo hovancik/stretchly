@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Sviluppata da",
       "janH": "Jan Hovancik",
-      "designedBy": "Icona e UI-design di Colin Shanley"
+      "designedBy": "Icona e UI-design di Colin Shanley",
+      "checkNewVersion": "Controlla automaticamente gli aggiornamenti della app"
     },
     "heart": {
       "loveStretchly": "Ti piace Stretchly?",
@@ -152,7 +153,20 @@
     "appearance": "Aspetto:",
     "light": "Chiaro",
     "dark": "Scuro",
-    "system": "System"
+    "system": "System",
+    "4": "Quinto monitor",
+    "3": "Quarto monitor",
+    "2": "Terzo monitor",
+    "1": "Secondo monitor",
+    "0": "Primo monitor",
+    "cursor": "Segui cursore",
+    "primary": "Monitor principale",
+    "showOnMonitor": "Mostra Break su",
+    "screenInfo": "Quando la visualizzazione dei Break su tutti i monitor è disabilitata, puoi scegliere su quale desideri mostrare le interruzioni.",
+    "screen": "Monitorare i Break:",
+    "showBreaksAsRegularWindows": "Mostra break come finestre normali",
+    "showBreaksAsRegularWindowsInfo": "Quando è abilitato, le finestre Break diventeranno attivabili, non saranno più \"Sempre in primo piano\" e appariranno anche nella barra delle applicazioni.",
+    "showBreaksAsRegularWindowsTitle": "Agisce come una finestra normale:"
   },
   "utils": {
     "none": "{{count}}",
@@ -194,6 +208,7 @@
     "nextMiniBreak": "Prossima Mini-Pausa",
     "afterMiniBreak": "dopo {{count}} Mini-Pausa",
     "afterMiniBreak_plural": "dopo {{count}} Mini-Pause",
-    "resuming": "Riprendere"
+    "resuming": "Riprendere",
+    "appExclusion": "Regola di esclusione app"
   }
 }
