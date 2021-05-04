@@ -619,8 +619,10 @@ function startMicrobreak () {
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
-        if (!appIsQuitting && !microbreakWinLocal.fullScreen) {
-          e.preventDefault()
+        if (settings.get('showBreaksAsRegularWindows')) {
+          if (!appIsQuitting && !microbreakWinLocal.fullScreen) {
+            e.preventDefault()
+          }
         }
       })
       microbreakWinLocal.on('closed', () => {
@@ -752,8 +754,10 @@ function startBreak () {
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
-        if (!appIsQuitting && !breakWinLocal.fullScreen) {
-          e.preventDefault()
+        if (settings.get('showBreaksAsRegularWindows')) {
+          if (!appIsQuitting && !breakWinLocal.fullScreen) {
+            e.preventDefault()
+          }
         }
       })
       breakWinLocal.on('closed', () => {

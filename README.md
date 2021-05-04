@@ -50,7 +50,7 @@ Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux spec
 
 For Natural breaks, you might need some packages too (`libxss-dev`).
 
-If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the settings are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
+If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the preferences are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
 ### Running from source
 
@@ -62,7 +62,7 @@ You can create a custom installer by running `npm run pack` or `npm run dist` af
 
 ## Default behavior
 
-When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change the language, review the settings, view the online tutorial or simply continue with the default settings.
+When you run *Stretchly* for the first time, you are presented with a Welcome window that allows you to change the language, review the preferences, view the online tutorial or simply continue with the default preferences.
 
 <img src="welcome.png" height="340">
 
@@ -120,7 +120,9 @@ To make sure that all works as expected, it's always good idea to check that for
 
 After you make changes to preferences files, some of the values being shown in Preferences or elsewhere might show incorect value, as the UI is expecting specific values and is not handling cases where user makes manual changes to preferences file.
 
-Some of the extra settings are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
+Some of the extra preferences are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
+
+Preferences marked with ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow) might not work correctly and might break *Stretchly*. Use at own risk.
 
 **Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.
 
@@ -136,7 +138,7 @@ In the preferences file, change `breakNotificationInterval: 30000,` to whatever 
 #### Editing sunrise time to pause breaks until morning
 In the preferences file you can set the `morningHour` setting to pause until that hour today or the next day
 Otherwise, you can set `morningHour: "sunrise"` and set `posLatitude`, `posLongitude` in
-settings to pause until the actual sunrise in your area.
+preferences to pause until the actual sunrise in your area.
 E.g. if you live in Boston you would set:
 `morningHour: "sunrise",`
 `posLatitude: 42.3,`
@@ -187,7 +189,7 @@ To specify how solid the break window should be when Theme transparency is enabl
 #### Break window size [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify the size of the break window, set the value of `breakWindowHeight` and `breakWindowWidth` from `0` to `0.99` (which is in turn 0 to 99% of the size of the screen). Don't set 100% as that's fullscreen.
 
-#### Make Stretchly show breaks as regular windows [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Make Stretchly show breaks as regular windows [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
 
 If you want Stretchly breaks to act as regular windows (have a titlebar, turn off always on top, be minimizable and focusable) set `showBreaksAsRegularWindows` to `true`.
 

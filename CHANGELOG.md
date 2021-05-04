@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- advanced preferences for Pause/Resume Breaks global shortcuts
+- advanced preferences for picking monitor to show break on
+- added initial support for the RTL languages for the UI
+
+### Changed
+- endBreakShortcut can be set to empty string, thus disabled
+
+### Fixed
+- prevent memory leak after break has ended
 
 ## [1.6.99] - 2021-05-02 Patreon
 ### Added
