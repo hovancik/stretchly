@@ -9,7 +9,6 @@
   "scripts": {
     "start": "electron ./app",
     "dev": "cross-env NODE_ENV=development electron ./app --enable-logging --remote-debugging-port=9222",
-    "electromon": "electromon ./app",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
     "dist": "electron-builder build --x64 --ia32",
@@ -41,7 +40,6 @@
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electromon": "^1.0.10",
     "electron": "^12.0.6",
     "electron-builder": "^22.10.5",
     "husky": "^6.0.0",
