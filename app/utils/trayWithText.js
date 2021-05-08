@@ -11,35 +11,38 @@ class TrayWithText extends Tray {
     let minutesOnTray="00";
     if(minutesToLongBreak<10){
       minutesOnTray="0"+minutesToLongBreak;
-      mergeImg([
+      await mergeImg([
         {src: imagePath},
         {
           src: pathToImages +minutesOnTray + ".png",
           offsetX: -32,
         },
       ]).then((img) => {
-        // Save image as file
         img.write(pathToImages + "out.png", () => console.log("done"));
       });
     } else{
-      minutesOnTray=""+minutesToLongBreak+"";
-      if (minutesToLongBreak > 99) minutesOnTray = "99";
-          mergeImg([
-        {src: imagePath},
+        let lastDigit = minutesToLongBreak % 10;
+        minutesOnTray = Math.floor((minutesToLongBreak / 10) % 10);
+      await mergeImg([
+        {src: pathToImages + minutesOnTray + ".png"},
         {
-          src: pathToImages +"01" + ".png",
-          offsetX: -32,
+          src: pathToImages + lastDigit + ".png",
+          // offsetX: -32,
         },
       ]).then((img) => {
-        // Save image as file
-        img.write(pathToImages + "out.png", () => console.log("done"));
-      });
+        img.write(pathToImages + "twoDigitNumber.png", () => console.log("done numbCreation"));
+    });
+       await mergeImg([
+         {src: imagePath},
+         {
+           src: pathToImages + twoDigitNumber.png,
+           offsetX: -32,
+         },
+       ]).then((img) => {
+         img.write(pathToImages + "out.png", () => console.log("done"));
+       });
+       
     }
-    
-    // return mergeImages([
-    //   imagePath,
-    //   "/home/m/p/stretchly/app/images/app-icons/trayMac.png",
-    // ]).then((b64) => this.setImage(b64));
   };
 }
 

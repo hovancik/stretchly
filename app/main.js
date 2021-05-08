@@ -935,12 +935,10 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip()
-  // appIcon.setImage(trayIconPath())
-  // appIcon = new TrayWithText(trayIconPath());
-  console.log(Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
-  // console.log(breakPlanner.scheduler.timeLeft);
-  // appIcon.showWithNumber(trayIconPath(), );
-  // appIcon.setImage("/home/m/p/stretchly/app/images/app-icons/trayPaused.png");
+  appIcon.showWithNumber(
+    trayIconPath(),
+    Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
+  );
   appIcon.setContextMenu(getTrayMenu())
 }
 
