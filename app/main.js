@@ -8,6 +8,7 @@ const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
+const pathToImages = "app/images/app-icons/numbers/";
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -934,11 +935,9 @@ function createPreferencesWindow () {
 }
 
 function updateTray () {
-  updateToolTip()
-  appIcon.showWithNumber(
-    trayIconPath(),
-    Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
-  );
+  updateToolTip();
+  appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
+  appIcon.setImage(pathToImages + "out.png");
   appIcon.setContextMenu(getTrayMenu())
 }
 

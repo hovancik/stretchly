@@ -18,7 +18,7 @@ class TrayWithText extends Tray {
           offsetX: -32,
         },
       ]).then((img) => {
-        img.write(pathToImages + "out.png", () => console.log("done"));
+        img.write(pathToImages + "out.png", () => console.debug("done"));
       });
     } else{
         let lastDigit = minutesToLongBreak % 10;
@@ -30,18 +30,17 @@ class TrayWithText extends Tray {
           // offsetX: -32,
         },
       ]).then((img) => {
-        img.write(pathToImages + "twoDigitNumber.png", () => console.log("done numbCreation"));
+        img.write(pathToImages + "twoDigitNumber.png", () => console.debug("done numbCreation"));
     });
        await mergeImg([
          {src: imagePath},
          {
-           src: pathToImages + twoDigitNumber.png,
+           src: pathToImages + "twoDigitNumber.png",
            offsetX: -32,
          },
        ]).then((img) => {
-         img.write(pathToImages + "out.png", () => console.log("done"));
+         img.write(pathToImages + "out.png", () => console.debug("done"));
        });
-       
     }
   };
 }
