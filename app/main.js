@@ -2,6 +2,7 @@ const {
   app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain,
   shell, dialog, globalShortcut
 } = require('electron')
+const TrayWithText = require('./utils/trayWithText')
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
@@ -119,7 +120,7 @@ function initialize (isAppStart = true) {
     if (process.platform === 'darwin') {
       app.dock.hide()
     }
-    appIcon = new Tray(trayIconPath())
+    appIcon = new TrayWithText(trayIconPath())
   }
   startI18next()
   setInterval(updateTray, 10000)
@@ -934,7 +935,12 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip()
-  appIcon.setImage(trayIconPath())
+  // appIcon.setImage(trayIconPath())
+  // appIcon = new TrayWithText(trayIconPath());
+  console.log(Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
+  // console.log(breakPlanner.scheduler.timeLeft);
+  // appIcon.showWithNumber(trayIconPath(), );
+  // appIcon.setImage("/home/m/p/stretchly/app/images/app-icons/trayPaused.png");
   appIcon.setContextMenu(getTrayMenu())
 }
 
