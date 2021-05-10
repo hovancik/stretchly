@@ -1,5 +1,5 @@
 const {Tray} = require("electron");
-const mergeImg = require("merge-img");
+const mergeImg = require("merge-img-vwv");
 const pathToImages = "app/images/app-icons/numbers/";
 const log = require("electron-log");
 
