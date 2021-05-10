@@ -64,6 +64,7 @@
       "enableLongBreaks": "Włącz długie przerwy",
       "showNotificationBeforeLongBreak": "Pokaż powiadomienie przed rozpoczęciem długiej przerwy",
       "enablePostponeLong": "Włącz przekładanie długiej przerwy",
+      "showLongBreakTimeInIcon": "Pokaż minuty do długiej przerwy w ikonie zasobnika",
       "strictMode": "Tryb zdyscyplinowany:",
       "strictModeInfo": "Tryb zdyscyplinowany uniemożliwa ci pomijanie mikroprzerw i/lub długich przerw i jest stworzony aby utrzymać dyscyplinę.",
       "enableStrictMini": "Włącz tryb zdyscyplinowany dla mikroprzerw",

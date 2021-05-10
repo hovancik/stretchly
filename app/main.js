@@ -936,8 +936,9 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip();
-  appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
-  appIcon.setImage(pathToImages + "out.png");
+  console.log(settings.get("longBreakIcon"));
+  // appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
+  // appIcon.setImage(pathToImages + "out.png");
   appIcon.setContextMenu(getTrayMenu())
 }
 
