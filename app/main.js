@@ -936,10 +936,13 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip();
-  console.log(settings.get("longBreakIcon"));
-  // appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
-  // appIcon.setImage(pathToImages + "out.png");
-  appIcon.setContextMenu(getTrayMenu())
+  if (settings.get("longBreakIcon")){
+    appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
+    appIcon.setImage(pathToImages + "out.png");
+  } else {
+    appIcon.setImage(trayIconPath());
+  }
+    appIcon.setContextMenu(getTrayMenu());
 }
 
 function getTrayMenu () {
