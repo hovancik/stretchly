@@ -935,19 +935,12 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip();
-  // appIcon.generateNumbers();
-  // if (settings.get("longBreakIcon")){
-  //   appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
-  //   appIcon.setImage(pathToImages + iconTrayFilename);
-  // } else {
-  //   appIcon.setImage(trayIconPath());
-  // }
   appIcon.setTrayWhenNeeded(
     trayIconPath(),
     Utils.minutesRemaining(breakPlanner.scheduler.timeLeft),
     settings.get("longBreakIcon")
   );
-    appIcon.setContextMenu(getTrayMenu());
+  appIcon.setContextMenu(getTrayMenu());
 }
 
 function getTrayMenu () {

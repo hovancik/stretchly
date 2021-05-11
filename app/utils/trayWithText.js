@@ -6,14 +6,7 @@ const iconTrayFilename = "trayIcon.png";
 const baseImages = "app/images/app-icons/numbers/";
 
 class TrayWithText extends Tray {
-  // getPathToImages = () => {
-  //   return pathToImages;
-  // };
-  // getIconTrayFilename = () => {
-  //   return iconTrayFilename;
-  // };
   setTrayWhenNeeded = async function (trayPath, minutes, showNumbers) {
-    // appIcon.generateNumbers();
     if (showNumbers) {
       this.showWithNumber(trayPath, minutes);
       this.setImage(pathToImages + iconTrayFilename);
