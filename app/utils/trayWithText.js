@@ -6,49 +6,38 @@ const iconTrayFilename = "trayIcon.png";
 const baseImages = "app/images/app-icons/numbers/";
 
 class TrayWithText extends Tray {
+  // getPathToImages = () => {
+  //   return pathToImages;
+  // };
+  // getIconTrayFilename = () => {
+  //   return iconTrayFilename;
+  // };
+  setTrayWhenNeeded = async function (trayPath, minutes, showNumbers) {
+    // appIcon.generateNumbers();
+    if (showNumbers) {
+      this.showWithNumber(trayPath, minutes);
+      this.setImage(pathToImages + iconTrayFilename);
+    } else {
+      this.setImage(trayPath);
+    }
+  };
+
   showWithNumber = async function (imagePath, minutesToLongBreak) {
-    let minutesOnTray = "00";
+    let minutesOnTray = minutesToLongBreak;
     if (minutesToLongBreak < 10) {
       minutesOnTray = "0" + minutesToLongBreak;
-      try {
-        let img = await mergeImg([
-          {src: imagePath},
-          {
-            src: pathToImages + minutesOnTray + ".png",
-            offsetX: -32,
-          },
-        ]);
-        await img.write(pathToImages + iconTrayFilename, () =>
-          log.debug("done")
-        );
-      } catch (e) {
-        log.debug("safely ignored error");
-      }
-    } else {
-      let lastDigit = minutesToLongBreak % 10;
-      minutesOnTray = Math.floor((minutesToLongBreak / 10) % 10);
-      try {
-        let img = await mergeImg([
-          {src: pathToImages + minutesOnTray + ".png"},
-          {
-            src: pathToImages + lastDigit + ".png",
-          },
-        ]);
-        await img.write(pathToImages + "twoDigitNumber.png");
-
-        let img2 = await mergeImg([
-          {src: imagePath},
-          {
-            src: pathToImages + "twoDigitNumber.png",
-            offsetX: -32,
-          },
-        ]);
-        await img2.write(pathToImages + iconTrayFilename, () =>
-          log.debug("done")
-        );
-      } catch (e) {
-        log.debug("safely ignored error");
-      }
+    }
+    try {
+      let img = await mergeImg([
+        {src: imagePath},
+        {
+          src: pathToImages + minutesOnTray + ".png",
+          offsetX: -32,
+        },
+      ]);
+      await img.write(pathToImages + iconTrayFilename, () => log.debug("done"));
+    } catch (e) {
+      log.debug("safely ignored error");
     }
   };
 

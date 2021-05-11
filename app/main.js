@@ -8,8 +8,6 @@ const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
 const TrayWithText = require("./utils/trayWithText");
-const iconTrayFilename = "trayIcon.png";
-const pathToImages = "app/images/app-icons/numbers/";
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -937,13 +935,18 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip();
-  appIcon.generateNumbers();
+  // appIcon.generateNumbers();
   // if (settings.get("longBreakIcon")){
   //   appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
   //   appIcon.setImage(pathToImages + iconTrayFilename);
   // } else {
   //   appIcon.setImage(trayIconPath());
   // }
+  appIcon.setTrayWhenNeeded(
+    trayIconPath(),
+    Utils.minutesRemaining(breakPlanner.scheduler.timeLeft),
+    settings.get("longBreakIcon")
+  );
     appIcon.setContextMenu(getTrayMenu());
 }
 
