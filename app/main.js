@@ -2,12 +2,13 @@ const {
   app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain,
   shell, dialog, globalShortcut
 } = require('electron')
-const TrayWithText = require('./utils/trayWithText')
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
+const TrayWithText = require("./utils/trayWithText");
+const iconTrayFilename = "trayIcon.png";
 const pathToImages = "app/images/app-icons/numbers/";
 
 process.on('uncaughtException', (err, _) => {
@@ -936,12 +937,13 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip();
-  if (settings.get("longBreakIcon")){
-    appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
-    appIcon.setImage(pathToImages + "out.png");
-  } else {
-    appIcon.setImage(trayIconPath());
-  }
+  appIcon.generateNumbers();
+  // if (settings.get("longBreakIcon")){
+  //   appIcon.showWithNumber( trayIconPath(),Utils.minutesRemaining(breakPlanner.scheduler.timeLeft));
+  //   appIcon.setImage(pathToImages + iconTrayFilename);
+  // } else {
+  //   appIcon.setImage(trayIconPath());
+  // }
     appIcon.setContextMenu(getTrayMenu());
 }
 
