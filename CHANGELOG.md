@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+-  option for showing minutes remaining in app tray
+
 ## [1.7.0] - 2021-05-04
 ### Added
 - advanced preferences for Pause/Resume Breaks global shortcuts
