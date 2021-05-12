@@ -19,7 +19,7 @@
     "skipToTheNext": "Passar à próxima",
     "toMicrobreak": "Pausa Curta",
     "toBreak": "Pausa Longa",
-    "downloadLatestVersion": "Faz download da ultima versão",
+    "downloadLatestVersion": "Descarregar a última versão",
     "resumingBreaks": "Resumindo pausas",
     "microbreakIn": "Pausa curta em $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Pausa longa em $t(utils.seconds, {'count': {{seconds}} })",

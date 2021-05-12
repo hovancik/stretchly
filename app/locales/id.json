@@ -58,7 +58,8 @@
       "notifyNewVersion": "Beri tahu secara otomatis tentang pembaruan aplikasi",
       "latestVersion": "Versi terbaru ",
       "version": "Versi ",
-      "tagline": "Aplikasi pengingat waktu istirahat"
+      "tagline": "Aplikasi pengingat waktu istirahat",
+      "checkNewVersion": "Periksa pembaruan aplikasi secara otomatis"
     },
     "settings": {
       "restoreDefaults": "Kembali ke awal",
@@ -88,7 +89,8 @@
     "nextLongBreak": "Istirahat Panjang Berikutnya",
     "dndMode": "Jangan Ganggu aktif",
     "indefinitely": "Tanpa batas",
-    "paused": "Dijeda"
+    "paused": "Dijeda",
+    "appExclusion": "Aturan pengecualian"
   },
   "welcome": {
     "getStarted": "Memulai",
@@ -159,7 +161,17 @@
     "title": "Preferensi Kontributor",
     "showBreaksAsRegularWindowsInfo": "Saat aktif, jendela istirahat akan menjadi fokus, tidak akan menjadi 'Selalu di atas' lagi dan juga akan muncul di taskbar.",
     "showBreaksAsRegularWindowsTitle": "Bertindak sebagai jendela biasa:",
-    "showBreaksAsRegularWindows": "Tampilkan jeda sebagai jendela reguler"
+    "showBreaksAsRegularWindows": "Tampilkan jeda sebagai jendela reguler",
+    "screenInfo": "Saat Anda menonaktifkan menu tunjukkan istirahat di semua layar, Anda dapat memilih di layar mana Anda akan menunjukkan istirahat.",
+    "showOnMonitor": "Tunjukkan Instirahat di",
+    "screen": "Pantau untuk Istirahat:",
+    "4": "Layar kelima",
+    "3": "Layar keempat",
+    "2": "Layar ketiga",
+    "1": "Layar kedua",
+    "0": "Layar pertama",
+    "cursor": "Ikuti kursor",
+    "primary": "Layar utama"
   },
   "main": {
     "syncPreferences": "Sinkronisasi Preferensi",
