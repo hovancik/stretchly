@@ -385,6 +385,7 @@ function startProcessWin () {
   const modalPath = path.join('file://', __dirname, '/process.html')
   processWin = new BrowserWindow({
     show: false,
+    backgroundThrottling: false,
     webPreferences: {
       preload: path.join(__dirname, './process.js'),
       enableRemoteModule: true
@@ -559,6 +560,7 @@ function startMicrobreak () {
       resizable: false,
       frame: showBreaksAsRegularWindows,
       show: false,
+      backgroundThrottling: false,
       transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
       skipTaskbar: !showBreaksAsRegularWindows,
@@ -695,6 +697,7 @@ function startBreak () {
       resizable: false,
       frame: showBreaksAsRegularWindows,
       show: false,
+      backgroundThrottling: false,
       transparent: settings.get('transparentMode'),
       backgroundColor: calculateBackgroundColor(),
       skipTaskbar: !showBreaksAsRegularWindows,

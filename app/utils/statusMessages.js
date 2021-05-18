@@ -31,13 +31,13 @@ class StatusMessages {
       }
     }
 
-    if (this.appExclusionPause) {
-      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.appExclusion')
+    if (this.doNotDisturb) {
+      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.dndMode')
       return message
     }
 
-    if (this.doNotDisturb) {
-      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.dndMode')
+    if (this.appExclusionPause) {
+      message += i18next.t('statusMessages.paused') + ' - ' + i18next.t('statusMessages.appExclusion')
       return message
     }
 

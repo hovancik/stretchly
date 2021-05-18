@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - endBreakShortcut can be set to empty string, thus disabled
 - updated many translations
+- improve tray status messages
 
 ### Fixed
 - prevent memory leak after break has ended

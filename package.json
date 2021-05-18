@@ -36,19 +36,6 @@
     "url": "https://github.com/hovancik/stretchly/issues"
   },
   "homepage": "https://hovancik.net/stretchly",
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "chai-as-promised": "^7.1.1",
-    "cross-env": "^7.0.3",
-    "electron": "^12.0.6",
-    "electron-builder": "^22.10.5",
-    "husky": "^6.0.0",
-    "mocha": "^8.3.2",
-    "rimraf": "^3.0.2",
-    "sinon": "^10.0.0",
-    "spectron": "^14.0.0",
-    "standard": "^16.0.3"
-  },
   "build": {
     "appId": "net.hovancik.stretchly",
     "productName": "Stretchly",
@@ -123,17 +110,30 @@
       "sun.js"
     ]
   },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^7.0.3",
+    "electron": "^12.0.8",
+    "electron-builder": "^22.10.5",
+    "husky": "^6.0.0",
+    "mocha": "^8.4.0",
+    "rimraf": "^3.0.2",
+    "sinon": "^10.0.0",
+    "spectron": "^14.0.0",
+    "standard": "^16.0.3"
+  },
   "dependencies": {
     "@electron/remote": "^1.1.0",
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.3.5",
     "electron-store": "^8.0.0",
-    "i18next": "^20.2.2",
+    "i18next": "^20.2.4",
     "i18next-node-fs-backend": "^2.1.3",
-    "luxon": "^1.26.0",
+    "luxon": "^1.27.0",
     "meeussunmoon": "^3.0.3",
     "ps-list": "^7.2.0",
-    "rtl-detect": "^1.0.2",
+    "rtl-detect": "^1.0.3",
     "semver": "^6.3.0",
     "windows-focus-assist": "^1.2.1"
   }
