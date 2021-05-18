@@ -20,7 +20,7 @@ describe('UntilMorning', function () {
   })
 
   afterEach(() => {
-    if (settings && settings.destroy) {
+    if (settings) {
       require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
       settings = null
     }
