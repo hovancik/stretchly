@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- improve tray status messages
+- updated many translations
+
 ## [1.7.0] - 2021-05-04
 ### Added
 - advanced preferences for Pause/Resume Breaks global shortcuts
@@ -14,7 +18,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - endBreakShortcut can be set to empty string, thus disabled
 - updated many translations
-- improve tray status messages
 
 ### Fixed
 - prevent memory leak after break has ended
