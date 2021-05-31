@@ -938,7 +938,8 @@ function updateTray () {
   appIcon.setTrayWhenNeeded(
     trayIconPath(),
     Utils.minutesRemaining(breakPlanner.scheduler.timeLeft),
-    settings.get("longBreakIcon")
+    settings.get("longBreakIcon"),
+    settings.get("roundBreakIcon")
   );
   appIcon.setContextMenu(getTrayMenu());
 }
