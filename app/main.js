@@ -935,11 +935,15 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip();
+  //https://github.com/hovancik/stretchly/issues/967 could change this value, but it's just minutes
+  let breakIntervalSet = (settings.get("breakInterval") + 1) * 10;
+  let minutesToLongBreak=Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
   appIcon.setTrayWhenNeeded(
     trayIconPath(),
-    Utils.minutesRemaining(breakPlanner.scheduler.timeLeft),
+    minutesToLongBreak,
     settings.get("longBreakIcon"),
-    settings.get("roundBreakIcon")
+    settings.get("breakIconType"),
+    breakIntervalSet
   );
   appIcon.setContextMenu(getTrayMenu());
 }

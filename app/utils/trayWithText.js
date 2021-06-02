@@ -1,40 +1,91 @@
 const {Tray} = require('electron');
 const mergeImg = require('merge-img-vwv');
 const pathToImages = 'app/images/app-icons/numbers/generated-numbers/';
+const pathToCircleImages = "app/images/app-icons/round-clock/";
 const log = require('electron-log');
 const iconTrayFilename = 'trayIcon.png';
 const baseImages = 'app/images/app-icons/numbers/';
 
 class TrayWithText extends Tray {
-  setTrayWhenNeeded = async function (trayPath, minutes, showNumbers, showClockIcon) {
-    if (showNumbers) {
+  setTrayWhenNeeded = async function (
+    trayPath,
+    minutes,
+    showTrayIcon,
+    breakIconTyoe,
+    minutesLongBreakTake
+  ) {
+    if (showTrayIcon && breakIconTyoe == "number") {
       this.showWithNumber(trayPath, minutes);
       this.setImage(pathToImages + iconTrayFilename);
-    } 
-    else if(showClockIcon){
-      
-    }
-    else {
+    } else if (showTrayIcon && breakIconTyoe == "circleIcon") {
+      console.log("BreakType " + breakIconTyoe);
+      this.showWithCircle(trayPath, minutes, minutesLongBreakTake);
+      this.setImage(pathToCircleImages + iconTrayFilename);
+    } else {
       this.setImage(trayPath);
+    }
+  };
+
+  showWithCircle = async function (
+    imagePath,
+    minutesToLongBreak,
+    totalLongBreak
+  ) {
+    let minutesOnTray = minutesToLongBreak % 60;
+    let timeLeftRatio = minutesOnTray / totalLongBreak;
+    console.log("MinutesInCircle " + timeLeftRatio);
+    if (timeLeftRatio >= 0.875) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "0");
+    } else if (timeLeftRatio < 0.875 && timeLeftRatio > 0.75) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "7");
+    } else if (timeLeftRatio <= 0.75 && timeLeftRatio > 0.625) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "15");
+    } else if (timeLeftRatio <= 0.625 && timeLeftRatio > 0.5) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "22");
+    } else if (timeLeftRatio <= 0.5 && timeLeftRatio > 0.375) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "30");
+    } else if (timeLeftRatio <= 0.375 && timeLeftRatio > 0.25) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "37");
+    } else if (timeLeftRatio <= 0.25 && timeLeftRatio > 0.125) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "45");
+    } else if (timeLeftRatio <= 0.125 && timeLeftRatio > 0.065) {
+      await this.pictureCombines(imagePath, pathToCircleImages, "52");
+    } else {
+      await this.pictureCombines(imagePath, pathToCircleImages, "60");
+    }
+  };
+
+  pictureCombines = async function (defaultIconPath, pathToImages, nameOfImage) {
+    try {
+      let img = await mergeImg([
+        {src: defaultIconPath},
+        {
+          src: pathToImages + nameOfImage + ".png",
+          offsetX: -32,
+        },
+      ]);
+      await img.write(pathToImages + iconTrayFilename, () => log.debug("done"));
+    } catch (e) {
+      log.debug("safely ignored error");
     }
   };
 
   showWithNumber = async function (imagePath, minutesToLongBreak) {
     let minutesOnTray = minutesToLongBreak;
     if (minutesToLongBreak < 10) {
-      minutesOnTray = '0' + minutesToLongBreak;
+      minutesOnTray = "0" + minutesToLongBreak;
     }
     try {
       let img = await mergeImg([
         {src: imagePath},
         {
-          src: pathToImages + minutesOnTray + '.png',
+          src: pathToImages + minutesOnTray + ".png",
           offsetX: -32,
         },
       ]);
-      await img.write(pathToImages + iconTrayFilename, () => log.debug('done'));
+      await img.write(pathToImages + iconTrayFilename, () => log.debug("done"));
     } catch (e) {
-      log.debug('safely ignored error');
+      log.debug("safely ignored error");
     }
   };
 
@@ -60,39 +111,39 @@ class TrayWithText extends Tray {
       if (number < 10) {
         try {
           let img = await mergeImg([
-            {src: baseImages + 'iconFreeSpace.png'},
-            {src: baseImages + number + '.png'},
-            {src: baseImages + 'iconFreeSpace.png'},
+            {src: baseImages + "iconFreeSpace.png"},
+            {src: baseImages + number + ".png"},
+            {src: baseImages + "iconFreeSpace.png"},
           ]);
-          await img.write(pathToImages + '0' + number + '.png', () =>
-            log.debug('done' + pathToImages + '0' + number + '.png')
+          await img.write(pathToImages + "0" + number + ".png", () =>
+            log.debug("done" + pathToImages + "0" + number + ".png")
           );
           let img2 = await mergeImg([
             {src: imagePath},
             {
-              src: pathToImages + '0' + number + '.png',
+              src: pathToImages + "0" + number + ".png",
               offsetX: -32,
             },
           ]);
           await img2.write(pathToImages + iconTrayFilename, () =>
-            log.debug('done')
+            log.debug("done")
           );
         } catch (e) {
-          log.debug('safely ignored error');
+          log.debug("safely ignored error");
         }
       } else {
         try {
           let lastDigit = number % 10;
           let decimalDigit = Math.floor((number / 10) % 10);
           let img = await mergeImg([
-            {src: baseImages + decimalDigit + '.png'},
+            {src: baseImages + decimalDigit + ".png"},
             {
-              src: baseImages + lastDigit + '.png',
+              src: baseImages + lastDigit + ".png",
             },
           ]);
-          await img.write(pathToImages + number + '.png');
+          await img.write(pathToImages + number + ".png");
         } catch (e) {
-          log.debug('safely ignored error');
+          log.debug("safely ignored error");
         }
       }
     }
