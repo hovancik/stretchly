@@ -18,7 +18,6 @@ class TrayWithText extends Tray {
       this.showWithNumber(trayPath, minutes);
       this.setImage(pathToImages + iconTrayFilename);
     } else if (showTrayIcon && breakIconTyoe == "circleIcon") {
-      console.log("BreakType " + breakIconTyoe);
       this.showWithCircle(trayPath, minutes, minutesLongBreakTake);
       this.setImage(pathToCircleImages + iconTrayFilename);
     } else {
@@ -33,7 +32,6 @@ class TrayWithText extends Tray {
   ) {
     let minutesOnTray = minutesToLongBreak % 60;
     let timeLeftRatio = minutesOnTray / totalLongBreak;
-    console.log("MinutesInCircle " + timeLeftRatio);
     if (timeLeftRatio >= 0.875) {
       await this.pictureCombines(imagePath, pathToCircleImages, "0");
     } else if (timeLeftRatio < 0.875 && timeLeftRatio > 0.75) {
