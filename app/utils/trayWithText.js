@@ -30,7 +30,7 @@ class TrayWithText extends Tray {
     minutesToLongBreak,
     totalLongBreak
   ) {
-    let minutesOnTray = minutesToLongBreak % 60;
+    let minutesOnTray = minutesToLongBreak;
     let timeLeftRatio = minutesOnTray / totalLongBreak;
     if (timeLeftRatio >= 0.875) {
       await this.pictureCombines(imagePath, pathToCircleImages, "0");
