@@ -189,7 +189,7 @@ window.onload = (e) => {
       }
     }
 
-    document.querySelector("#breakIconType").value = settings.breakIconTyoe;
+    document.querySelector("#breakIconType").value = settings.breakIconType;
     if (!eventsAttached) {
       document.querySelector("#breakIconType").onchange = (event) => {
         ipcRenderer.send("save-setting", "breakIconType", event.target.value);

@@ -64,7 +64,7 @@
       "enableLongBreaks": "Enable Long Breaks",
       "showNotificationBeforeLongBreak": "Show notification before Long Break starts",
       "enablePostponeLong": "Enable Postponement for Long Break",
-      "breakIconType":"Type of icon to show to user",
+      "breakIconType":"Type of remaing time icon to show to user",
       "showLongBreakTimeInIcon": "Show Long Break remaing minutes in tray icon",
       "numeric": "numeric",
       "circular":"part of circle",
