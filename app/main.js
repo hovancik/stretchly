@@ -1,5 +1,5 @@
 const {
-  app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain,
+  app, nativeTheme, BrowserWindow, Menu, ipcMain,
   shell, dialog, globalShortcut
 } = require('electron')
 const path = require('path')
@@ -7,6 +7,7 @@ const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
+const TrayWithText = require('./utils/trayWithText');
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -119,7 +120,7 @@ function initialize (isAppStart = true) {
     if (process.platform === 'darwin') {
       app.dock.hide()
     }
-    appIcon = new Tray(trayIconPath())
+    appIcon = new TrayWithText(trayIconPath())
   }
   startI18next()
   setInterval(updateTray, 10000)
@@ -936,9 +937,18 @@ function createPreferencesWindow () {
 }
 
 function updateTray () {
-  updateToolTip()
-  appIcon.setImage(trayIconPath())
-  appIcon.setContextMenu(getTrayMenu())
+  updateToolTip();
+  //https://github.com/hovancik/stretchly/issues/967 could change this value, but it's just minutes
+  let breakIntervalSet = (settings.get("breakInterval") + 1) * 10;
+  let minutesToLongBreak=Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
+  appIcon.setTrayWhenNeeded(
+    trayIconPath(),
+    minutesToLongBreak,
+    settings.get("longBreakIcon"),
+    settings.get("breakIconType"),
+    breakIntervalSet
+  );
+  appIcon.setContextMenu(getTrayMenu());
 }
 
 function getTrayMenu () {

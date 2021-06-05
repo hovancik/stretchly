@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+-  option for showing minutes remaining in app tray
+
 ### Changed
 - improve tray status messages
 - updated many translations
