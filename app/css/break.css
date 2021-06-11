@@ -2,7 +2,11 @@
   align-items: center;
   color: #FFFFFF;
   display: grid;
-  font-family: "Open Sans Light";
+  font-family: 'Noto Sans Light', 'Noto Sans Arabic Light',
+    'Noto Sans CJK KR Light',
+    'Noto Sans Devanagari Light',
+    'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
+    'Noto Sans Hebrew Light';
   font-weight: 300;
   grid-template: 85vh 10vh / 100px auto 100px;
   justify-items: center;

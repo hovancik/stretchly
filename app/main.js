@@ -603,6 +603,12 @@ function startMicrobreak () {
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
+      microbreakWinLocal.webContents.on('did-finish-load', () => {
+        microbreakWinLocal.webContents.send('microbreakIdea', idea)
+        microbreakWinLocal.webContents.send('progress', startTime,
+          breakDuration, strictMode, postponable, postponableDurationPercent)
+      })
+
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
       } else {
@@ -621,9 +627,6 @@ function startMicrobreak () {
         breakPlanner.emit('microbreakStarted', true)
         log.info('Stretchly: starting Mini Break')
       }
-      microbreakWinLocal.webContents.send('microbreakIdea', idea)
-      microbreakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           microbreakWinLocal.center()
@@ -740,6 +743,12 @@ function startBreak () {
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
+      breakWinLocal.webContents.on('did-finish-load', () => {
+        breakWinLocal.webContents.send('breakIdea', idea)
+        breakWinLocal.webContents.send('progress', startTime,
+          breakDuration, strictMode, postponable, postponableDurationPercent)
+      })
+
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
@@ -758,9 +767,7 @@ function startBreak () {
         breakPlanner.emit('breakStarted', true)
         log.info('Stretchly: starting Mini Break')
       }
-      breakWinLocal.webContents.send('breakIdea', idea)
-      breakWinLocal.webContents.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
           breakWinLocal.center()

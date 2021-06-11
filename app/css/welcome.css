@@ -1,9 +1,3 @@
-body {
-  background: var(--main-bg-color);
-  color: var(--main-color);
-  font-family: Open Sans;
-}
-
 body > div > :last-child {
   margin-bottom: 24px;
 }
@@ -49,7 +43,11 @@ body[dir=rtl] .welcome > :nth-child(1) > div > span {
 }
 
 .welcome > :nth-child(1) > span {
-  font-family: Open Sans Light;
+  font-family: 'Noto Sans Light', 'Noto Sans Arabic Light',
+    'Noto Sans CJK KR Light',
+    'Noto Sans Devanagari Light',
+    'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
+    'Noto Sans Hebrew Light';
   font-size: 20px;
   line-height: 30px;
 }
