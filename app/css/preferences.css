@@ -1,9 +1,3 @@
-body {
-  background: var(--main-bg-color);
-  color: var(--main-color);
-  font-family: Open Sans;
-}
-
 body > div > :last-child {
   margin-bottom: 56px;
 }
@@ -292,7 +286,11 @@ body[dir=rtl] .theme > :nth-child(16) {
 }
 
 .about > :nth-child(1) > div > span {
-  font-family: Open Sans;
+  font-family: 'Noto Sans Regular', 'Noto Sans Arabic Regular',
+    'Noto Sans CJK KR Regular',
+    'Noto Sans Devanagari Regular',
+    'Noto Sans Gujarati Regular', 'Noto Sans Gurmukhi Regular',
+    'Noto Sans Hebrew Regular';
   font-size: 48px;
   padding-left: 12px;
 }
@@ -303,7 +301,11 @@ body[dir=rtl] .about > :nth-child(1) > div > span {
 }
 
 .about > :nth-child(1) > span {
-  font-family: Open Sans Light;
+  font-family: 'Noto Sans Light', 'Noto Sans Arabic Light',
+    'Noto Sans CJK KR Light',
+    'Noto Sans Devanagari Light',
+    'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
+    'Noto Sans Hebrew Light';
   font-size: 20px;
   line-height: 30px;
 }

@@ -1,9 +1,3 @@
-body {
-  background: var(--main-bg-color);
-  color: var(--main-color);
-  font-family: Open Sans;
-}
-
 body > div > :last-child {
   margin-bottom: 56px;
 }

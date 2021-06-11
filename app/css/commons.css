@@ -1,21 +1,137 @@
-/* open-sans-300 - latin */
 @font-face {
-  font-family: 'Open Sans Light';
+  font-family: 'Noto Sans Light';
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'),
-       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+  src: local('Noto Sans Light'), local('NotoSans-Light'),
+       url('./fonts/NotoSans-Light.ttf') format('truetype');
 }
 
-/* open-sans-regular - latin */
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Noto Sans Regular';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
-       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('./fonts/open-sans-v17-latin_greek_cyrillic-ext_latin-ext_cyrillic_greek-ext_vietnamese-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  font-display: swap;
+  src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+       url('./fonts/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans Arabic Light'), local('NotoSansArabic-Light'),
+       url('./fonts/NotoSansArabic-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Arabic Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans Arabic Regular'), local('NotoSansArabic-Regular'),
+       url('./fonts/NotoSansArabic-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans CJK KR Light'), local('NotoSansCJKkr-Light'),
+       url('./fonts/NotoSansCJKkr-Light.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans CJK KR Regular'), local('NotoSansCJKkr-Regular'),
+       url('./fonts/NotoSansCJKkr-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Devanagari Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans Devanagari Light'), local('NotoSansDevanagari-Light'),
+       url('./fonts/NotoSansDevanagari-Light.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Devanagari Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans Devanagari Regular'), local('NotoSansDevanagari-Regular'),
+       url('./fonts/NotoSansDevanagari-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Gujarati Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans Gujarati Light'), local('NotoSansGujarati-Light'),
+       url('./fonts/NotoSansGujarati-Regular.ttf') format('truetype');/* is missing */
+}
+
+@font-face {
+  font-family: 'Noto Sans Gujarati Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans Gujarati Regular'), local('NotoSansGujarati-Regular'),
+       url('./fonts/NotoSansGujarati-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Gurmukhi Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans Gurmukhi Light'), local('NotoSansGurmukhi-Light'),
+       url('./fonts/NotoSansGurmukhi-Regular.ttf') format('truetype'); /* is missing */
+}
+
+@font-face {
+  font-family: 'Noto Sans Gurmukhi Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans Gurmukhi Regular'), local('NotoSansGurmukhi-Regular'),
+       url('./fonts/NotoSansGurmukhi-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Hebrew Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans Hebrew Light'), local('NotoSansHebrew-Light'),
+       url('./fonts/NotoSansHebrew-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Hebrew Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans Hebrew Regular'), local('NotoSansHebrew-Regular'),
+       url('./fonts/NotoSansHebrew-Regular.ttf') format('truetype');
+}
+
+body {
+  background: var(--main-bg-color);
+  color: var(--main-color);
+  font-family: 'Noto Sans Regular', 'Noto Sans Arabic Regular',
+    'Noto Sans CJK KR Regular',
+    'Noto Sans Devanagari Regular',
+    'Noto Sans Gujarati Regular', 'Noto Sans Gurmukhi Regular',
+    'Noto Sans Hebrew Regular';
 }
 
 .darwin .darwin-hidden,

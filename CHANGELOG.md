@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - improve tray status messages
 - updated many translations
 - increase new version check to 48 hours
+- change font to Nato Sans for better support
 
 ## [1.7.0] - 2021-05-04
 ### Added
