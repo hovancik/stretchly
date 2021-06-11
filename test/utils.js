@@ -6,7 +6,7 @@ const {
 } = require('../app/utils/utils')
 const i18next = require('i18next')
 const path = require('path')
-const Backend = require('i18next-node-fs-backend')
+const Backend = require('i18next-fs-backend')
 const sinon = require('sinon')
 
 chai.should()

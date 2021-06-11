@@ -4,7 +4,7 @@ const {
 } = require('electron')
 const path = require('path')
 const i18next = require('i18next')
-const Backend = require('i18next-node-fs-backend')
+const Backend = require('i18next-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
 
@@ -506,7 +506,7 @@ function checkVersion () {
       notify: settings.get('notifyNewVersion'),
       silent: settings.get('silentNotifications')
     })
-    planVersionCheck(3600 * 5)
+    planVersionCheck(3600 * 48)
   }
 }
 
