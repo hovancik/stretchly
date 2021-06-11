@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - improve tray status messages
 - updated many translations
+- increase new version check to 48 hours
 
 ## [1.7.0] - 2021-05-04
 ### Added

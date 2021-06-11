@@ -25,7 +25,7 @@ describe('appExclusionsManager', function () {
       appExclusionsManager.isOnAppExclusion.should.be.equal(false)
       appExclusionsManager.isSchedulerCleared.should.be.equal(false)
       done()
-    }, 1200)
+    }, 1500)
   })
 
   it('app should be running with default settings also after reinitialize', (done) => {
@@ -36,7 +36,7 @@ describe('appExclusionsManager', function () {
       appExclusionsManager.isOnAppExclusion.should.be.equal(false)
       appExclusionsManager.isSchedulerCleared.should.be.equal(false)
       done()
-    }, 1200)
+    }, 1500)
   })
 
   it('app should take the first active rule', (done) => {
@@ -63,7 +63,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(true)
         appExclusionsManager.isSchedulerCleared.should.be.equal(true)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
@@ -91,7 +91,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(false)
         appExclusionsManager.isSchedulerCleared.should.be.equal(false)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
@@ -109,7 +109,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(true)
         appExclusionsManager.isSchedulerCleared.should.be.equal(true)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
@@ -128,7 +128,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(true)
         appExclusionsManager.isSchedulerCleared.should.be.equal(true)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
@@ -144,7 +144,7 @@ describe('appExclusionsManager', function () {
       appExclusionsManager.isOnAppExclusion.should.be.equal(false)
       appExclusionsManager.isSchedulerCleared.should.be.equal(false)
       done()
-    }, 1200)
+    }, 1500)
   })
 
   it('app should not paused with some pause exception inactive', (done) => {
@@ -161,7 +161,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(false)
         appExclusionsManager.isSchedulerCleared.should.be.equal(false)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
@@ -179,7 +179,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(true)
         appExclusionsManager.isSchedulerCleared.should.be.equal(false)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
@@ -195,7 +195,7 @@ describe('appExclusionsManager', function () {
       appExclusionsManager.isOnAppExclusion.should.be.equal(false)
       appExclusionsManager.isSchedulerCleared.should.be.equal(true)
       done()
-    }, 1200)
+    }, 1500)
   })
 
   it('app should not be paused with some resume exception inactive', (done) => {
@@ -212,7 +212,7 @@ describe('appExclusionsManager', function () {
         appExclusionsManager.isOnAppExclusion.should.be.equal(false)
         appExclusionsManager.isSchedulerCleared.should.be.equal(false)
         done()
-      }, 1200)
+      }, 1500)
     })
   })
 
