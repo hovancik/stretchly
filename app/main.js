@@ -153,14 +153,29 @@ function initialize (isAppStart = true) {
   }
   globalShortcut.unregisterAll()
   if (settings.get('resumeBreaksShortcut') !== '') {
-    globalShortcut.register(settings.get('resumeBreaksShortcut'), () => {
+    const resumeBreaksShortcut = globalShortcut.register(settings.get('resumeBreaksShortcut'), () => {
       resumeBreaks(false)
     })
+
+    if (!resumeBreaksShortcut) {
+      log.warn('Stretchly: resumeBreaksShortcut registration failed')
+    } else {
+      log.info(`Stretchly: resumeBreaksShortcut registration succesful (${settings.get('resumeBreaksShortcut')})`)
+    }
+
+    log.info(globalShortcut.isRegistered(settings.get('resumeBreaksShortcut')))
   }
   if (settings.get('pauseBreaksShortcut') !== '') {
-    globalShortcut.register(settings.get('pauseBreaksShortcut'), () => {
+    const pauseBreaksShortcut = globalShortcut.register(settings.get('pauseBreaksShortcut'), () => {
       pauseBreaks(1)
     })
+
+    if (!pauseBreaksShortcut) {
+      log.warn('Stretchly: pauseBreaksShortcut registration failed')
+    } else {
+      log.info(`Stretchly: pauseBreaksShortcut registration succesful (${settings.get('pauseBreaksShortcut')})`)
+    }
+    log.info(globalShortcut.isRegistered(settings.get('pauseBreaksShortcut')))
   }
 }
 
