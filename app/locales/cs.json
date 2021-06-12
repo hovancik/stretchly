@@ -100,7 +100,8 @@
       "dot": ".",
       "developedBy": "Vyvinul",
       "janH": "Ján Hovančík",
-      "designedBy": "Ikony a uživatelské rozhraní Colin Shanley"
+      "designedBy": "Ikony a uživatelské rozhraní Colin Shanley",
+      "checkNewVersion": "Automaticky kontrolovat aktualizace aplikace"
     },
     "heart": {
       "loveStretchly": "Chcete Stretchly pomoci?",
@@ -153,7 +154,19 @@
     "appearance": "Motiv:",
     "light": "Světlý",
     "dark": "Tmavý",
-    "system": "Podle systému"
+    "system": "Podle systému",
+    "4": "Pátý monitor",
+    "3": "Čtvrtý monitor",
+    "2": "Třetí monitor",
+    "1": "Druhý monitor",
+    "0": "První monitor",
+    "cursor": "Sledování kurzoru",
+    "primary": "Hlavní monitor",
+    "showOnMonitor": "Zobrazit přestávky na",
+    "screenInfo": "Pokud je zobrazení přestávek na všech monitorech zakázáno, můžete si vybrat, na kterém z nich chcete přestávky zobrazit.",
+    "screen": "Monitor pro přestávky:",
+    "showBreaksAsRegularWindows": "Zobrazit přestávky jako běžná okna",
+    "showBreaksAsRegularWindowsTitle": "Chovat se jako běžné okno:"
   },
   "utils": {
     "none_0": "{{count}}",
