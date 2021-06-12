@@ -29,51 +29,51 @@
       "showIdeas": "הצגה של הצעות לתרגילים בזמן ההפסקות",
       "fullscreen": "על כל המסך",
       "window": "בתוך חלון",
-      "openAtLogin": "הפעלה אוטומטית של סטרצ׳לי בעת כניסה למחשב"
+      "openAtLogin": "הפעלת Stretchly באופן אוטומטי בעת כניסה"
     },
     "nav": {
-      "heart": "תמיכה בסטרצ׳לי",
-      "about": "אודות",
-      "theme": "מראה",
+      "heart": "תמיכה ב־Stretchly",
+      "about": "על אודות",
+      "theme": "ערכת נושא",
       "schedule": "תזמונים",
       "settings": "הגדרות"
     },
-    "title": "הגדרות סטרצ׳לי",
+    "title": "הגדרות Stretchly",
     "about": {
       "dot": ".",
       "developedBy": "פותח על ידי",
       "designedBy": "עיצוב ממשק משתמש ואיקון על ידי קולין שנלי",
-      "tagline": "האפליקציה שמזכירה לך לקחת הפסקה",
+      "tagline": "היישום שמזכיר לך לקחת הפסקה",
       "version": "גרסה ",
       "ourWebsite": "בקרו באתר שלנו",
-      "learnMore": "כדי ללמוד עוד על סטרצ'לי, לצפות בהדרכות, להוריד את הגרסה האחרונה או כדי ליצור אתנו קשר, ",
+      "learnMore": "כדי ללמוד עוד על התכונות של Stretchly, לצפות בהדרכה, להוריד את הגרסה העדכנית או ליצור איתנו קשר לקבלת תמיכה, ",
       "notifyNewVersion": "הודע אוטומטית על עדכונים",
       "latestVersion": "גרסה אחרונה ",
       "janH": "Jan Hovancik",
       "checkNewVersion": "לבדוק אוטומטית אם יש עדכונים ליישומון"
     },
     "heart": {
-      "loveStretchly": "אוהבים את סטרצ'לי?",
+      "loveStretchly": "אהבת את Stretchly?",
       "desc1": "לקיחת הפסקות קצובות משימוש במחשב הוכחה מדעית כחשובה לבריאות הגופנית והנפשית שלך.",
       "authenticateUsing": "הזדהה/י באמצעות:",
       "syncPreferences": "העדפות סנכרון",
       "alreadyContributor": "אני כבר תורם/ת",
       "contributorPreferences": "העדפות תורמים",
       "becomePatron": "הפוך לפטרון",
-      "desc2": "סטרצ'לי היא בחינם. אך תוכל להעניק את תמיכתך על ידי תרומה ולעזור לנו להמשיך ולשפר את סטרצ'לי ולשחרר תוכנה חופשית אחרת."
+      "desc2": "‏Stretchly היא תכנה חופשית. אך אפשר לתרום כדי להביע את תמיכתך ולעזור לנו להמשיך ולשפר את Stretchly ולהשיק תכנה חופשית נוספת."
     },
     "theme": {
-      "transparentMode": "אפשר השתקפות",
+      "transparentMode": "לאפשר שקיפות",
       "snowWhite": "שלג לבן",
       "colour": "צבע",
-      "enableSounds": "הפעל צלילים",
+      "enableSounds": "לאפשר צלילים",
       "sounds": "צלילים:",
       "coffeeKisses": "נשיקות קפה",
       "greenClouds": "עננים ירוקים",
-      "appearance": "מראה:",
+      "appearance": "ערכת נושא:",
       "invertedMonochrome": "מונוכרומטי הפוך",
       "monochrome": "מונוכרומטי",
-      "menubarIcon": "צלמית תפריט:",
+      "menubarIcon": "סמל בתפריט:",
       "ticToc": "טיק טק",
       "windChime": "פעמוני רוח",
       "crystalGlass": "זכוכית קריסטל",
@@ -95,7 +95,7 @@
     "continue": "אישור",
     "warning": "הפעולה תחזיר את הגדרות ברירת המחדל וכל מה שהוגדר ימחק.",
     "restoreDefaults": "איפוס הגדרות",
-    "quitStretchly": "יציאה מסטרצ׳לי",
+    "quitStretchly": "יציאה מ־Stretchly",
     "resetBreaks": "איפוס ההפסקות",
     "indefinitely": "לתמיד",
     "untilMorning": "עד הבוקר",
@@ -111,7 +111,7 @@
     "breakIn": "הפסקה ארוכה בעוד $t(utils.seconds, {'count': {{seconds}} })",
     "microbreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "חידוש ההפסקות",
-    "toolTipHeader": "סטרצ'לי - האפליקציה שמזכירה לך לקחת פסק זמן"
+    "toolTipHeader": "‏Stretchly - היישום שמזכיר לך לקחת הפסקה"
   },
   "contributorPreferences": {
     "volume": "עוצמת שמע:",
@@ -134,7 +134,7 @@
     "breakWindowSize": "גודל חלון ההפסקה",
     "opacity": "אֲטִימוּת:",
     "opacityInfo": "באיזו מידה חלון השבירה אמור להיות אטום?",
-    "opacityTheme": "שקיפות תמה:",
+    "opacityTheme": "שקיפות ערכת הנושא:",
     "showWelcomeWindow": "הראה מסך ברוכים הבאים בהרצה הבאה",
     "welcomeWindow": "מסך ברוכים הבאים:",
     "pauseUntilMorningInfo": "ציין עד איזו שעה 'השהה עד הבוקר' יהיה בתוקף.",
@@ -176,7 +176,7 @@
     "afterMiniBreak_3": "לאחר {{count}} הפסקות קצרות",
     "nextMiniBreak": "זמן ההפסקה הקצרה הקרובה",
     "nextLongBreak": "זמן ההפסקה הארוכה הקרובה",
-    "appExclusion": "כלל להחרגת תוכנה",
+    "appExclusion": "כלל להחרגת יישום",
     "dndMode": "מצב ללא הפרעות מופעל",
     "indefinitely": "ללא הגבלת זמן",
     "paused": "הושהה"
@@ -185,8 +185,8 @@
     "getStarted": "התחלה",
     "openPreferences": "פתיחת ההעדפות",
     "viewTutorial": "הצגת מדריך",
-    "breakTimeReminderApp": "תוכנת תזכורת להפסקות",
-    "title": "ברוכים הבאים לסטרצ'לי"
+    "breakTimeReminderApp": "היישום שמזכיר לך לקחת הפסקה",
+    "title": "ברוך בואך אל Stretchly"
   },
   "process": {
     "newVersionAvailable": "גרסה חדשה זמינה!"
