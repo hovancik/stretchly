@@ -64,7 +64,16 @@
     "title": "Bidragsyterinnstillinger",
     "showBreaksAsRegularWindowsInfo": "Vinduer blir fokuserbare, og de er ikke «Alltid på topp» lenger, og de vises også i oppgavefeltet.",
     "showBreaksAsRegularWindows": "Vis pauser som vanlige vinduer",
-    "showBreaksAsRegularWindowsTitle": "Oppførsel som vanlig vindu:"
+    "showBreaksAsRegularWindowsTitle": "Oppførsel som vanlig vindu:",
+    "4": "Den femte skjermen",
+    "3": "Den fjerde skjermen",
+    "2": "Den tredje skjermen",
+    "1": "Den andre skjermen",
+    "0": "Den første skjermen",
+    "cursor": "Følg musepekeren",
+    "primary": "Hovedskjermen",
+    "showOnMonitor": "Vis pauser på",
+    "screenInfo": "Om du ikke velger å vise pauser på alle skjermer kan du velge hvilken skjerm det skal vises på."
   },
   "preferences": {
     "heart": {
@@ -87,7 +96,8 @@
       "developedBy": "Utviklet av",
       "dot": ".",
       "ourWebsite": "besøk vår nettside",
-      "latestVersion": "Siste versjon "
+      "latestVersion": "Siste versjon ",
+      "checkNewVersion": "Se automatisk etter oppdaterting"
     },
     "theme": {
       "invertedMonochrome": "Invertert ensfarget",
@@ -156,7 +166,8 @@
     "nextLongBreak": "Neste lange pause",
     "dndMode": "\"Ikke forstyrr\" påslått",
     "indefinitely": "På lang sikt",
-    "paused": "Pauset"
+    "paused": "Pauset",
+    "appExclusion": "Regler for unntatte programmer"
   },
   "welcome": {
     "getStarted": "Start",
