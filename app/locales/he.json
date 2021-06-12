@@ -9,7 +9,7 @@
       "longBreaks": "הפסקות ארוכות:",
       "showNotificationBeforeMiniBreak": "הצגת התראה לפני תחילת הפסקה קצרה",
       "breakFor": "משך ההפסקה:",
-      "showNotificationBeforeLongBreak": "הצג התראה לפני שההפסקה ארוכה מתחילה",
+      "showNotificationBeforeLongBreak": "הצגת התראה לפני שהפסקה ארוכה מתחילה",
       "enableLongBreaks": "אפשר הפסקות ארוכות",
       "cantDisableBoth": "לא ניתן להשבית את שתי סוגי ההפסקות",
       "enableStrictLong": "אפשר מצב קשיח עבור הפסקות ארוכות",
@@ -24,7 +24,7 @@
       "allScreens": "פריסת ההפסקות על כל המסכים",
       "restoreDefaults": "איפוס הגדרות",
       "language": "שפה מועדפת:",
-      "monitorDnd": "הצגה של ההפסקות גם במצב ״נא לא להפריע״",
+      "monitorDnd": "הצגה של ההפסקות גם במצב „לא להפריע”",
       "monitorIdleTime": "מעקב אחר זמינות המערכת (ההפסקות יעצרו כאשר המערכת לא נמצאת בפעילות).",
       "showIdeas": "הצגה של הצעות לתרגילים בזמן ההפסקות",
       "fullscreen": "על כל המסך",
@@ -48,7 +48,9 @@
       "ourWebsite": "בקרו באתר שלנו",
       "learnMore": "כדי ללמוד עוד על סטרצ'לי, לצפות בהדרכות, להוריד את הגרסה האחרונה או כדי ליצור אתנו קשר, ",
       "notifyNewVersion": "הודע אוטומטית על עדכונים",
-      "latestVersion": "גרסה אחרונה "
+      "latestVersion": "גרסה אחרונה ",
+      "janH": "Jan Hovancik",
+      "checkNewVersion": "לבדוק אוטומטית אם יש עדכונים ליישומון"
     },
     "heart": {
       "loveStretchly": "אוהבים את סטרצ'לי?",
@@ -76,7 +78,8 @@
       "windChime": "פעמוני רוח",
       "crystalGlass": "זכוכית קריסטל",
       "morningSwim": "שחיית בוקר",
-      "graphiteCrystal": "גביש גרפיט"
+      "graphiteCrystal": "גביש גרפיט",
+      "autumnBeBlessed": "ברכת הסתיו"
     }
   },
   "break": {
@@ -112,8 +115,8 @@
   },
   "contributorPreferences": {
     "volume": "עוצמת שמע:",
-    "showBreaksAsRegularWindows": "הצג הפסקות כחלונות רגילים",
-    "showBreaksAsRegularWindowsInfo": "כאשר מופעלת, המיקוד יעבור לחלונות ההפסקות, אולם הם לא יהיו 'מוצגים תמיד' יותר והם גם יופיעו בשורת המשימות.",
+    "showBreaksAsRegularWindows": "הצגת הפסקות כחלונות רגילים",
+    "showBreaksAsRegularWindowsInfo": "כאשר אפשרות זו מופעלת, חלונות ההפסקה יהיו זמינים להתמקדות, הם לא יהיו ‚עליונים תמיד’ והם יופיעו גם בשורת המשימות.",
     "showBreaksAsRegularWindowsTitle": "נהג כחלון רגיל:",
     "system": "מערכת",
     "dark": "כהה",
@@ -139,8 +142,8 @@
     "pauseUntilMoring": "השהה עד לבוקר:",
     "longBreaks": "דחיות ארוכות:",
     "maxPostpones": "מספר דחיות מקסימלי:",
-    "postponeFor": "דחה ב:",
-    "postponableFor": "ניתן לדחייה ל:",
+    "postponeFor": "לדחות ב־:",
+    "postponableFor": "ניתן לדחייה עד:",
     "miniBreaks": "הפסקות קצרות:",
     "breakPostponeInfo": "אם אפשרות זו מופעלת בהעדפות הראשיות, תוכל לדחות הפסקות. ההגדרות הבאות מאפשרות לך לציין מתי, לכמה זמן וכמה פעמים אתה יכול לדחות הפסקה.",
     "breakPostpone": "דחיית הפסקות:",
@@ -153,7 +156,17 @@
     "beforeLongBreak": "הפסקה ארוכה:",
     "notificationsInfo": "הודעת מערכת מוצגת לפני הפסקות כדי להתכונן אליה.",
     "notifications": "התראות הפסקה:",
-    "title": "העדפות תורמים"
+    "title": "העדפות תורמים",
+    "4": "הצג החמישי",
+    "3": "הצג הרביעי",
+    "2": "הצג השלישי",
+    "1": "הצג השני",
+    "0": "הצג הראשון",
+    "cursor": "לעקוב אחר הסמן",
+    "primary": "הצג הראשי",
+    "showOnMonitor": "להציג הפסקות אצל",
+    "screenInfo": "כאשר הצגת הפסקות על כל הצגים מושבתת, ניתן לבחור באיזה צג להציג את ההפסקות שלך.",
+    "screen": "צג להפסקות:"
   },
   "statusMessages": {
     "resuming": "מתחדש",
@@ -171,7 +184,7 @@
   "welcome": {
     "getStarted": "התחלה",
     "openPreferences": "פתיחת ההעדפות",
-    "viewTutorial": "הצג מדריך",
+    "viewTutorial": "הצגת מדריך",
     "breakTimeReminderApp": "תוכנת תזכורת להפסקות",
     "title": "ברוכים הבאים לסטרצ'לי"
   },
