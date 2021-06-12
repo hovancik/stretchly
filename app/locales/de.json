@@ -156,7 +156,17 @@
     "system": "System",
     "showBreaksAsRegularWindows": "Pausen als reguläre Fenster anzeigen",
     "showBreaksAsRegularWindowsInfo": "Wenn aktiv, sind Pausenfenster fokussierbar anstatt 'Immer im Vordergrund' und erscheinen auch in der Taskleiste.",
-    "showBreaksAsRegularWindowsTitle": "Verhalten wie reguläres Fenster:"
+    "showBreaksAsRegularWindowsTitle": "Verhalten wie reguläres Fenster:",
+    "4": "Fünfter Bildschirm",
+    "3": "Vierter Bildschirm",
+    "2": "Dritter Bildschirm",
+    "1": "Zweiter Bildschirm",
+    "0": "Erster Bildschirm",
+    "cursor": "Mauszeiger folgen",
+    "primary": "Hauptfarbe",
+    "showOnMonitor": "Pausen zeigen auf",
+    "screenInfo": "Wenn die Anzeige von Pausen auf allen Monitoren deaktiviert ist, können Sie auswählen, auf welchem Monitor Sie Ihre Pausen anzeigen möchten.",
+    "screen": "Bildschirm für Pausen:"
   },
   "utils": {
     "none": "{{count}}",

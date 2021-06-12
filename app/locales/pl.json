@@ -77,10 +77,10 @@
       "graphiteCrystal": "Grafitowy kryształ",
       "coffeeKisses": "Kawowe buziaki",
       "morningSwim": "Poranna kąpiel",
-      "transparentMode": "Enable transparency",
+      "transparentMode": "Włącz przezroczystość",
       "sounds": "Dźwięki:",
       "enableSounds": "Włącz dźwięki",
-      "crystalGlass": "Crystal glass",
+      "crystalGlass": "Kryształowe szkło",
       "windChime": "Wietrzny dzwonek",
       "ticToc": "Tik tak",
       "menubarIcon": "Ikona w pasku:",
@@ -116,7 +116,7 @@
   "contributorPreferences": {
     "title": "Ustawienia wspierającego",
     "notifications": "Powiadomienia przerw:",
-    "notificationsInfo": "System notification shown before breaks to let you prepare for it.",
+    "notificationsInfo": "Powiadomienie systemowe pokazane przed przerwą, żeby móc się do niego przygotować.",
     "beforeLongBreak": "Długa przerwa:",
     "beforeMiniBreak": "Mikroprzerwa:",
     "newVersion": "Nowa wersja:",
@@ -150,7 +150,23 @@
     "breakWindowHeight": "Wysokość:",
     "showBreaksAsRegularWindows": "Wyświetlaj przerwy w zwykłych oknach",
     "breakWindowWidth": "Szerokość:",
-    "opacityTheme": "Przeźroczystość tła:"
+    "opacityTheme": "Przeźroczystość tła:",
+    "showBreaksAsRegularWindowsInfo": "Kiedy włączone, okna przerwy będą możliwe do wybrania, nie będą 'zawsze na wierzchu' oraz będą widoczne na pasku zadań.",
+    "showBreaksAsRegularWindowsTitle": "Działaj jako zwykłe okno:",
+    "opacityInfo": "Jak bardzo okno przerwy powinno być widoczne?",
+    "4": "Piąty monitor",
+    "3": "Czwarty monitor",
+    "2": "Trzeci monitor",
+    "1": "Drugi monitor",
+    "0": "Pierwszy monitor",
+    "cursor": "Podążaj za myszą",
+    "primary": "Główny monitor",
+    "showOnMonitor": "Pokaż przerwy na",
+    "screenInfo": "Kiedy pokazywanie przerwy na wszystkich monitorach jest wyłączone, możesz wybrać na którym z monitorów mają się pokazywać.",
+    "screen": "Ekran dla przerw:",
+    "breakWindowSizeInfo": "Jaki procent ekranu powinno ukryć okno przerwy?",
+    "breakWindowSize": "Wielkość okna przerwy",
+    "opacity": "Przezroczystość:"
   },
   "utils": {
     "none_0": "{{count}}",
@@ -199,6 +215,7 @@
     "afterMiniBreak_0": "po {{count}} mikroprzerwie",
     "afterMiniBreak_1": "po {{count}} mikroprzerwach",
     "afterMiniBreak_2": "po {{count}} mikroprzerwach",
-    "resuming": "Wznawianie"
+    "resuming": "Wznawianie",
+    "appExclusion": "Zasada wyjątku aplikacji"
   }
 }

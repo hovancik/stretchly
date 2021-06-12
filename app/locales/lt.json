@@ -21,7 +21,8 @@
     "toMicrobreak": "Trumpa pertrauka",
     "toBreak": "Ilga pertrauka",
     "breakIn": "Ilga pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "Trumpa pertrauka po $t(utils.seconds, {'count': {{seconds}} })"
+    "microbreakIn": "Trumpa pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
+    "restoreDefaults": "Atstatyti nustatymus"
   },
   "break": {
     "title": "Laikas pertraukai!",

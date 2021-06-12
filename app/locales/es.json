@@ -154,7 +154,19 @@
     "light": "Claro",
     "dark": "Oscuro",
     "system": "Sistema",
-    "showBreaksAsRegularWindowsTitle": "Comportarse como ventana normal:"
+    "showBreaksAsRegularWindowsTitle": "Comportarse como ventana normal:",
+    "4": "Quinto monitor",
+    "3": "Cuarto monitor",
+    "2": "Tercer monitor",
+    "1": "Segundo Monitor",
+    "0": "Primer Monitor",
+    "cursor": "Seguir cursor",
+    "primary": "Monitor Primario",
+    "showOnMonitor": "Habilitado mostrar los descansos",
+    "screenInfo": "Cuando se deshabilita la visualización de pausas en todos los monitores, puede elegir en cuál le gustaría mostrar sus pausas.",
+    "screen": "Monitor para descansos:",
+    "showBreaksAsRegularWindows": "Muestra descansos como ventanas normales",
+    "showBreaksAsRegularWindowsInfo": "Cuando está habilitado, las ventanas de ruptura se volverán enfocables, ya no estarán 'Siempre arriba' y también aparecerán en la barra de tareas."
   },
   "utils": {
     "none": "{{count}}",
@@ -196,6 +208,7 @@
     "nextMiniBreak": "Próximo Descanso Corto",
     "afterMiniBreak": "depués de {{count}} Descanso Corto",
     "afterMiniBreak_plural": "depués de {{count}} Descansos Cortos",
-    "resuming": "Reanudando"
+    "resuming": "Reanudando",
+    "appExclusion": "Regla de exclución de aplicacion"
   }
 }

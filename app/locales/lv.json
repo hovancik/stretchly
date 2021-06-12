@@ -42,7 +42,17 @@
     "newVersion": "Atjauninājumi:",
     "showBreaksAsRegularWindowsInfo": "Kad ieslēgts, Pārtraukumu logiem varēs pa virsu atvērt citas programmas, tie parādīsies rīkjoslā un būs iezīmējami, pārvietojami.",
     "showBreaksAsRegularWindowsTitle": "Darboties kā parastam logam:",
-    "showBreaksAsRegularWindows": "Rādīt pārtraukumus kā parastus logus"
+    "showBreaksAsRegularWindows": "Rādīt pārtraukumus kā parastus logus",
+    "4": "Piektais monitors",
+    "3": "Ceturtais monitors",
+    "2": "Trešais monitors",
+    "1": "Otrais monitors",
+    "0": "Pirmais monitors",
+    "cursor": "Sekot kursoram",
+    "primary": "Galvenais monitors",
+    "showOnMonitor": "Rādīt pārtraukumus uz",
+    "screenInfo": "Kad pārtraukumus nerāda uz visiem ekrāniem, Jūs varat izvēlēties uz kura ekrāna pārtraukums tiks rādīts.",
+    "screen": "Pārtraukumu ekrāns"
   },
   "main": {
     "syncPreferences": "Iestatījumu Sinhronizācija",
@@ -167,7 +177,8 @@
       "notifyNewVersion": "Automātiski ziņot par aplikācijas atjauninājumiem",
       "latestVersion": "Jaunākā versija ",
       "version": "Versija ",
-      "tagline": "Pārtraukumu atgādinātājs"
+      "tagline": "Pārtraukumu atgādinātājs",
+      "checkNewVersion": "Automātiski pārbaudīt lietotnes atjauninājumus"
     },
     "schedule": {
       "cantDisableBoth": "Izslēgt abus pārtraukumu veidus nav iespējams",

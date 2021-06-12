@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "開發者：",
       "janH": "Jan Hovancik",
-      "designedBy": "圖示與使用者介面由 Colin Shanley 設計"
+      "designedBy": "圖示與使用者介面由 Colin Shanley 設計",
+      "checkNewVersion": "自動檢查 App 更新"
     },
     "heart": {
       "loveStretchly": "喜歡您的 Stretchly 嗎？",
@@ -155,7 +156,15 @@
     "breakWindowSize": "休息視窗大小",
     "opacity": "不透明度：",
     "opacityInfo": "休息視窗應該有多不透明？",
-    "opacityTheme": "主題不透明度："
+    "opacityTheme": "主題不透明度：",
+    "4": "第五顯示器",
+    "3": "第四顯示器",
+    "2": "第三顯示器",
+    "1": "第二顯示器",
+    "0": "第一顯示器",
+    "cursor": "隨游標移動",
+    "primary": "主要顯示器",
+    "screen": "監控休息時間："
   },
   "utils": {
     "none_0": "{{count}}",
@@ -190,6 +199,7 @@
     "nextLongBreak": "下次長休息",
     "nextMiniBreak": "下次小休息",
     "afterMiniBreak_0": "{{count}} 次小休息後",
-    "resuming": "繼續"
+    "resuming": "繼續",
+    "appExclusion": "App 排除規則"
   }
 }
