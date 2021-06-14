@@ -18,7 +18,7 @@
     "resetBreaks": "重置休息",
     "quitStretchly": "退出 Stretchly",
     "restoreDefaults": "还原至预设配置",
-    "warning": "移除自定义设置，还原至预设配置？",
+    "warning": "恢复默认值，你将丢失所有设置。",
     "continue": "确认",
     "cancel": "取消",
     "preferences": "自定义设置",
@@ -46,14 +46,14 @@
       "fullscreen": "全屏",
       "showIdeas": "休息时显示运动提示",
       "allScreens": "在所有显示器显示休息画面",
-      "monitorIdleTime": "监控系统的闲置时间(系统闲置时暂时计时)",
+      "monitorIdleTime": "监控系统的闲置时间(系统闲置时暂停计时)。",
       "monitorDnd": "若处于「勿扰」模式，仍显示休息画面",
       "language": "选择语言：",
       "restoreDefaults": "还原至预设配置"
     },
     "schedule": {
       "miniBreaks": "小憩:",
-      "miniBreaksInfo": "「小憩」是次数较多的小段休息模式",
+      "miniBreaksInfo": "「小憩」是次数较多的小段休息模式。",
       "enableMiniBreaks": "启用「小憩」",
       "breakFor": "小憩时间：",
       "every": "每：",
@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "开发者：",
       "janH": "Jan Hovancik",
-      "designedBy": "图标和用户界面由 Colin Shanley 设计"
+      "designedBy": "图标和用户界面由 Colin Shanley 设计",
+      "checkNewVersion": "自动检查应用程序更新"
     },
     "heart": {
       "loveStretchly": "喜欢 Stretchly?",
@@ -130,9 +131,9 @@
     "postponeFor": "延后多久：",
     "maxPostpones": "延后的最多次数：",
     "longBreaks": "休息：",
-    "pauseUntilMoring": "暂停至早晨",
+    "pauseUntilMoring": "暂停至早晨：",
     "pauseUntil": "暂停至：",
-    "pauseUntilMorningInfo": "指定「暂停至早晨」的具体时间",
+    "pauseUntilMorningInfo": "指定「暂停至早晨」的具体时间。",
     "welcomeWindow": "欢迎窗口：",
     "showWelcomeWindow": "下次启动时显示欢迎窗口",
     "opacityTheme": "主题不透明度:",
@@ -152,7 +153,20 @@
     "appearance": "外观：",
     "light": "浅色",
     "dark": "深色",
-    "system": "系统"
+    "system": "系统",
+    "screen": "监控休息时间：",
+    "showBreaksAsRegularWindows": "休息画面设为常规窗口",
+    "showBreaksAsRegularWindowsInfo": "启用后，休息画面可被聚焦，不再置顶并出现在任务栏中。",
+    "showBreaksAsRegularWindowsTitle": "作为常规窗口:",
+    "4": "第五台显示器",
+    "3": "第四台显示器",
+    "2": "第三台显示器",
+    "1": "第二台显示器",
+    "0": "第一台显示器",
+    "cursor": "跟随光标",
+    "primary": "主显示器",
+    "showOnMonitor": "显示休息时间",
+    "screenInfo": "禁用所有显示器显示休息画面，你可以选择在哪个显示器显示休息画面。"
   },
   "utils": {
     "none_0": "{{count}}",
@@ -187,6 +201,7 @@
     "nextLongBreak": "下次休息",
     "nextMiniBreak": "下次小憩",
     "afterMiniBreak_0": "{{count}} 次小憩后",
-    "resuming": "继续"
+    "resuming": "继续",
+    "appExclusion": "应用程序排除规则"
   }
 }
