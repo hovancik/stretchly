@@ -5,16 +5,10 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ${{ matrix.os }}
-    continue-on-error: ${{ matrix.flaky }}
 
     strategy:
-      fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
-        flaky: [false]
-        include:
-          - os: windows-latest
-            flaky: true
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
     - name: Set Timezone
@@ -35,7 +29,3 @@ jobs:
         CI: true
     - name: Codecov
       uses: codecov/codecov-action@v1.1.0
-
-    - name: end-to-end tests
-      if: matrix.os == 'macOS-latest'
-      run: npm run test-e2e
