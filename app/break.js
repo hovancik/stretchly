@@ -6,6 +6,7 @@ const Store = require('electron-store')
 const settings = new Store()
 
 window.onload = (event) => {
+  ipcRenderer.send('send-break-data')
   require('./platform')
   new HtmlTranslate(document).translate()
 
@@ -21,14 +22,14 @@ window.onload = (event) => {
   document.querySelector('#postpone').onclick = event =>
     ipcRenderer.send('postpone-break')
 
-  ipcRenderer.on('breakIdea', (event, message) => {
+  ipcRenderer.once('breakIdea', (event, message) => {
     const breakIdea = document.querySelector('.break-idea')
     breakIdea.innerHTML = message[0]
     const breakText = document.querySelector('.break-text')
     breakText.innerHTML = message[1]
   })
 
-  ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
+  ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')

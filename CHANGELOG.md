@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - increase new version check to 48 hours
 - change font to Nato Sans for better support
 
+### Fixed
+- prevent empty break windows
+
 ## [1.7.0] - 2021-05-04
 ### Added
 - advanced preferences for Pause/Resume Breaks global shortcuts
