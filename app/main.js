@@ -601,14 +601,13 @@ function startMicrobreak () {
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    ipcMain.on('send-microbreak-data', (event) => {
+      event.sender.send('microbreakIdea', idea)
+      event.sender.send('progress', startTime,
+        breakDuration, strictMode, postponable, postponableDurationPercent)
+    })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
-      microbreakWinLocal.webContents.on('did-finish-load', () => {
-        microbreakWinLocal.webContents.send('microbreakIdea', idea)
-        microbreakWinLocal.webContents.send('progress', startTime,
-          breakDuration, strictMode, postponable, postponableDurationPercent)
-      })
-
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
       } else {
@@ -662,6 +661,9 @@ function startMicrobreak () {
     app.dock.hide()
   }
   updateTray()
+  setTimeout(() => {
+    ipcMain.removeAllListeners('send-microbreak-data')
+  }, 2000)
 }
 
 function startBreak () {
@@ -741,14 +743,13 @@ function startBreak () {
     let breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    ipcMain.on('send-break-data', (event) => {
+      event.sender.send('breakIdea', idea)
+      event.sender.send('progress', startTime,
+        breakDuration, strictMode, postponable, postponableDurationPercent)
+    })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
-      breakWinLocal.webContents.on('did-finish-load', () => {
-        breakWinLocal.webContents.send('breakIdea', idea)
-        breakWinLocal.webContents.send('progress', startTime,
-          breakDuration, strictMode, postponable, postponableDurationPercent)
-      })
-
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
@@ -765,7 +766,7 @@ function startBreak () {
       }
       if (localDisplayId === 0) {
         breakPlanner.emit('breakStarted', true)
-        log.info('Stretchly: starting Mini Break')
+        log.info('Stretchly: starting Long Break')
       }
 
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
@@ -802,6 +803,9 @@ function startBreak () {
     app.dock.hide()
   }
   updateTray()
+  setTimeout(() => {
+    ipcMain.removeAllListeners('send-break-data')
+  }, 2000)
 }
 
 function breakComplete (shouldPlaySound, windows) {

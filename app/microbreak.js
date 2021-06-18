@@ -6,6 +6,7 @@ const Store = require('electron-store')
 const settings = new Store()
 
 window.onload = (e) => {
+  ipcRenderer.send('send-microbreak-data')
   require('./platform')
   new HtmlTranslate(document).translate()
 
@@ -21,12 +22,12 @@ window.onload = (e) => {
   document.querySelector('#postpone').onclick = event =>
     ipcRenderer.send('postpone-microbreak')
 
-  ipcRenderer.on('microbreakIdea', (event, message) => {
+  ipcRenderer.once('microbreakIdea', (event, message) => {
     const microbreakIdea = document.querySelector('.microbreak-idea')
     microbreakIdea.innerHTML = message
   })
 
-  ipcRenderer.on('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
+  ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
