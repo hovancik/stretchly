@@ -431,6 +431,9 @@ function createWelcomeWindow (isAppStart = true) {
         welcomeWin = null
       })
     }
+    setTimeout(() => {
+      welcomeWin.center()
+    }, 0)
   }
 }
 
@@ -458,6 +461,9 @@ function createContributorSettingsWindow () {
       contributorPreferencesWindow = null
     })
   }
+  setTimeout(() => {
+    contributorPreferencesWindow.center()
+  }, 0)
 }
 
 function createSyncPreferencesWindow () {
@@ -486,6 +492,10 @@ function createSyncPreferencesWindow () {
       syncPreferencesWindow = null
     })
   }
+
+  setTimeout(() => {
+    syncPreferencesWindow.center()
+  }, 0)
 }
 
 function planVersionCheck (seconds = 1) {
@@ -956,6 +966,9 @@ function createPreferencesWindow () {
   preferencesWin.on('closed', () => {
     preferencesWin = null
   })
+  setTimeout(() => {
+    preferencesWin.center()
+  }, 0)
 }
 
 function updateTray () {
@@ -1323,6 +1336,9 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       myStretchlyWindow = null
     })
   }
+  setTimeout(() => {
+    myStretchlyWindow.center()
+  }, 0)
 })
 
 ipcMain.on('open-sync-preferences', function (event) {
