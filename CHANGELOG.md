@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - prevent empty break windows
 - improve window positioning
+- error on Windows and Linux systems when temporary directory is not executable
 
 ## [1.7.0] - 2021-05-04
 ### Added
