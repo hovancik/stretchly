@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Desenvolvido por",
       "janH": "Jan Hovancik",
-      "designedBy": "Ícone e Interface de Usuário desenvolvidas por Colin Shanley"
+      "designedBy": "Ícone e Interface de Usuário desenvolvidas por Colin Shanley",
+      "checkNewVersion": "Verifique automaticamente atualizações para o aplicativo"
     },
     "heart": {
       "loveStretchly": "Ama o seu Stretchly?",
@@ -155,7 +156,17 @@
     "showBreaksAsRegularWindows": "Mostrar pausas como janelas comuns",
     "showBreaksAsRegularWindowsInfo": "Quando habilitada, a janela de pausa se tornará focalizável, elas não estarão mais \"Sempre no topo\" e também aparecerão na barra de tarefas.",
     "showBreaksAsRegularWindowsTitle": "Atuar como uma janela comum:",
-    "breakWindowSizeInfo": "Qual o percentual da tela a janela de pausa deve esconder?"
+    "breakWindowSizeInfo": "Qual o percentual da tela a janela de pausa deve esconder?",
+    "4": "Quinto monitor",
+    "3": "Quarto monitor",
+    "2": "Terceiro monitor",
+    "1": "Segundo monitor",
+    "0": "Primeiro monitor",
+    "cursor": "Siga o cursor",
+    "primary": "Monitor primário",
+    "showOnMonitor": "Mostrar pausas ligado",
+    "screenInfo": "Ao mostrar pausas em todos os monitores está desativado, você pode escolher em qual deles você gostaria de mostrar suas pausas.",
+    "screen": "Monitor para pausas:"
   },
   "utils": {
     "none": "{{count}}",
@@ -197,6 +208,7 @@
     "nextMiniBreak": "Próxima Mini Pausa",
     "afterMiniBreak": "depois {{count}} Mini Pausa",
     "afterMiniBreak_plural": "depois de {{count}} Mini Pausas",
-    "resuming": "Retomando"
+    "resuming": "Retomando",
+    "appExclusion": "Regra de exclusão do aplicativo"
   }
 }
