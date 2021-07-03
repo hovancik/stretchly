@@ -1,5 +1,5 @@
 [Unit]
-Description="Start stretchly"
+Description="Start Stretchly"
 After=default.target
 
 [Service]
