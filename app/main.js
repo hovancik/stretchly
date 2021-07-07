@@ -1,13 +1,16 @@
 const {
   app, nativeTheme, BrowserWindow, Menu, ipcMain,
-  shell, dialog, globalShortcut
+  shell, dialog, globalShortcut, Tray
 } = require('electron')
+const fs = require("fs");
+
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
 const TrayWithText = require('./utils/trayWithText');
+const TrayWithText2 = require("./utils/trayWithText2");
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -40,6 +43,7 @@ let microbreakIdeas
 let breakIdeas
 let breakPlanner
 let appIcon = null
+let appIcon2 = null;
 let processWin = null
 let microbreakWins = null
 let breakWins = null
@@ -120,7 +124,13 @@ function initialize (isAppStart = true) {
     if (process.platform === 'darwin') {
       app.dock.hide()
     }
-    appIcon = new TrayWithText(trayIconPath())
+    appIcon = new Tray(trayIconPath());
+  }
+  if (!appIcon2) {
+    if (process.platform === "darwin") {
+      app.dock.hide();
+    }
+    appIcon2 = new TrayWithText2(trayIconPath());
   }
   startI18next()
   setInterval(updateTray, 10000)
@@ -360,9 +370,12 @@ function trayIconPath () {
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
+    platform: process.platform,
+    remainingModeString: settings.get("breakIconType"),
+    remainingTimeString: Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
   }
-  const trayIconFileName = new AppIcon(params).trayIconFileName
+  // let appIco=new AppIcon(params);
+  const trayIconFileName = new AppIcon(params).trayIconFileName;
   return path.join(__dirname, '/images/app-icons/', trayIconFileName)
 }
 
@@ -372,7 +385,8 @@ function windowIconPath () {
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
+    platform: process.platform,
+    remainingModeString: settings.get("breakIconType"),
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
@@ -936,18 +950,40 @@ function createPreferencesWindow () {
   })
 }
 
-function updateTray () {
+async function updateTray () {
   updateToolTip();
   //https://github.com/hovancik/stretchly/issues/967 could change this value, but it's just minutes
   let breakIntervalSet = (settings.get("breakInterval") + 1) * 10;
-  let minutesToLongBreak=Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
-  appIcon.setTrayWhenNeeded(
-    trayIconPath(),
-    minutesToLongBreak,
-    settings.get("longBreakIcon"),
-    settings.get("breakIconType"),
-    breakIntervalSet
-  );
+  let minutesToLongBreak=Utils.minutesRemaining(breakPlanner.scheduler.timeLeft);
+  // appIcon.setTrayWhenNeeded(
+  //   trayIconPath(),
+  //   minutesToLongBreak,
+  //   settings.get("longBreakIcon"),
+  //   settings.get("breakIconType"),
+  //   breakIntervalSet
+  // );
+  // let appPrepere = new TrayWithText2(trayIconPath());
+  // await appIcon2.generateNumbers();
+  // await appIcon2.generateNumbersWithTray();
+  // appPrepere.storeNewNumber().then(appIcon.setImage(trayIconPath()));
+  let pathToTryIcon=trayIconPath();
+  try {
+    if (fs.existsSync(pathToTryIcon)) {
+      //file exists
+      appIcon.setImage(trayIconPath());
+    }
+  } catch (err) {
+    console.info('Icon not yet exist '+err+' Generation started.');
+    console.log(pathToTryIcon);
+    let picturesFolder="numbers/generated-numbers/"
+    if(settings.get("breakIconType")='circular'){
+      picturesFolder='round-clock/';
+    }
+    // appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/"),);
+    console.log(pathToTryIcon.substring(pathToTryIcon.lastIndexOf(picturesFolder)))
+  }
+  // appIcon.setImage(trayIconPath());
+  console.log("doneUpdateTray");
   appIcon.setContextMenu(getTrayMenu());
 }
 
