@@ -56,64 +56,33 @@ class AppIcon {
       );
 
       console.log(returnVal);
-      return returnVal;
-      // `tray${pausedString}${darkModeString}.png`;
+      // return returnVal;
+      return `tray${pausedString}${darkModeString}.png`;
     } else {
       //circle
       return `tray${pausedString}${darkModeString}.png`;
     }
   }
 
-  // async trayIconFileName() {
-  //   const pausedString = this.paused ? "Paused" : "";
-  //   const invertedMonochromeString = this.inverted ? "Inverted" : "";
-  //   const darkModeString = this.darkMode ? "Dark" : "";
+  pictureCombines = async function (
+    defaultIconPath,
+    pathToImages,
+    nameOfImage
+  ) {
+    try {
+      let img = await mergeImg([
+        {src: defaultIconPath},
+        {
+          src: pathToImages + nameOfImage + ".png",
+          offsetX: -32,
+        },
+      ]);
+      await img.write(pathToImages + iconTrayFilename, () => log.debug("done"));
+    } catch (e) {
+      log.debug("safely ignored error");
+    }
+  };
 
-  //   console.log(this.remainingModeString);
-  //   if (this.remainingModeString == "") {
-  //     if (this.monochrome) {
-  //       if (this.platform === "darwin") {
-  //         return `trayMacMonochrome${pausedString}Template.png`;
-  //       } else {
-  //         return `trayMonochrome${invertedMonochromeString}${pausedString}.png`;
-  //       }
-  //     } else {
-  //       if (this.platform === "darwin") {
-  //         return `trayMac${pausedString}${darkModeString}.png`;
-  //       } else {
-  //         return `tray${pausedString}${darkModeString}.png`;
-  //       }
-  //     }
-  //   } else if (this.remainingModeString == "number") {
-  //     console.log("tick");
-  //     let textGen = new TrayWithText2();
-  //     //TODO async
-  //     let minRemain = parseInt(this.remainingTimeString);
-  //     console.log(
-  //       path.join(
-  //         __dirname.replace("/utils", ""),
-  //         "/images/app-icons/",
-  //         `tray${darkModeString}.png`
-  //       )
-  //     );
-  //     await textGen.showWithNumber(
-  //       await path.join(
-  //         __dirname.replace("/utils", ""),
-  //         "/images/app-icons/",
-  //         `tray${darkModeString}.png`
-  //       ),
-  //       minRemain
-  //     );
-
-  //     // let retString = textGen.pathToImages + textGen.iconTrayFilename;
-
-  //     return `tray${pausedString}${darkModeString}.png`;
-  //     //  this.setImage(pathToImages + iconTrayFilename);
-  //   } else {
-  //     //circle
-  //     return `tray${pausedString}${darkModeString}.png`;
-  //   }
-  // }
   get windowIconFileName() {
     const invertedMonochromeString = this.inverted ? "Inverted" : "";
     const darkModeString = this.darkMode ? "Dark" : "";

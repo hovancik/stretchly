@@ -130,6 +130,7 @@ function initialize (isAppStart = true) {
     if (process.platform === "darwin") {
       app.dock.hide();
     }
+    
     appIcon2 = new TrayWithText2(trayIconPath());
   }
   startI18next()
@@ -376,7 +377,35 @@ function trayIconPath () {
   }
   // let appIco=new AppIcon(params);
   const trayIconFileName = new AppIcon(params).trayIconFileName;
-  return path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  let pathToTryIcon=path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  return pathToTryIcon;
+  //   if (fs.existsSync(pathToTryIcon)) {
+  //     //file exists
+  //     // appIcon.setImage(trayIconPath());
+  //     return pathToTryIcon;
+  //   } else {
+  //   console.info('Icon not yet exist. Generation started.');
+  //   console.log(pathToTryIcon);
+  //   let picturesFolder="numbers/generated-numbers/"
+  //   if(settings.get("breakIconType")=='circular'){
+  //     picturesFolder='round-clock/';
+  //   }
+  //   let nameOfImage= pathToTryIcon.replace(/^.*[\\\/]/, '');
+  //   let iconName=nameOfImage.replace(/[0-9]/g, '') //remove number
+  //   let iconNo = nameOfImage.match(/\d+/)[0]
+  //   console.log(iconName);
+  //   console.log(iconNo);
+  //   if(iconName.includes("Mac")) {
+
+  //   } else {
+  //     if(iconName.includes("Dark")&&iconName.includes("Inverted")){
+  //       appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/",iconName),path.join(__dirname, '/images/app-icons/',picturesFolder,iconNo+"w.png"));
+  //     } else {
+  //       appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/",iconName),path.join(__dirname, '/images/app-icons/',picturesFolder,iconNo+"b.png"));
+  //     }
+  //   }
+  //   return path.join(__dirname, '/images/app-icons/', "tray.png");
+  // }
 }
 
 function windowIconPath () {
@@ -966,23 +995,25 @@ async function updateTray () {
   // await appIcon2.generateNumbers();
   // await appIcon2.generateNumbersWithTray();
   // appPrepere.storeNewNumber().then(appIcon.setImage(trayIconPath()));
-  let pathToTryIcon=trayIconPath();
-  try {
-    if (fs.existsSync(pathToTryIcon)) {
-      //file exists
-      appIcon.setImage(trayIconPath());
-    }
-  } catch (err) {
-    console.info('Icon not yet exist '+err+' Generation started.');
-    console.log(pathToTryIcon);
-    let picturesFolder="numbers/generated-numbers/"
-    if(settings.get("breakIconType")='circular'){
-      picturesFolder='round-clock/';
-    }
-    // appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/"),);
-    console.log(pathToTryIcon.substring(pathToTryIcon.lastIndexOf(picturesFolder)))
-  }
-  // appIcon.setImage(trayIconPath());
+  // let pathToTryIcon=trayIconPath();
+  // try {
+  //   if (fs.existsSync(pathToTryIcon)) {
+  //     //file exists
+  //     appIcon.setImage(trayIconPath());
+  //   }
+  // } catch (err) {
+  //   console.info('Icon not yet exist '+err+' Generation started.');
+  //   console.log(pathToTryIcon);
+  //   let picturesFolder="numbers/generated-numbers/"
+  //   if(settings.get("breakIconType")='circular'){
+  //     picturesFolder='round-clock/';
+  //   }
+  //   // appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/"),);
+  //   console.log(pathToTryIcon.substring(pathToTryIcon.lastIndexOf(picturesFolder)+picturesFolder.length()))
+  // }
+    // await appIcon2.generateNumbers("w");
+  // await appIcon2.generateNumbersWithTray();
+  appIcon.setImage(trayIconPath());
   console.log("doneUpdateTray");
   appIcon.setContextMenu(getTrayMenu());
 }
