@@ -1,13 +1,14 @@
 const {
   app, nativeTheme, BrowserWindow, Menu, ipcMain,
-  shell, dialog, globalShortcut
+  shell, dialog, globalShortcut, Tray
 } = require('electron')
+const fs = require("fs");
+
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
-const TrayWithText = require('./utils/trayWithText');
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -40,6 +41,7 @@ let microbreakIdeas
 let breakIdeas
 let breakPlanner
 let appIcon = null
+let appIcon2 = null;
 let processWin = null
 let microbreakWins = null
 let breakWins = null
@@ -120,8 +122,9 @@ function initialize (isAppStart = true) {
     if (process.platform === 'darwin') {
       app.dock.hide()
     }
-    appIcon = new TrayWithText(trayIconPath())
+    appIcon = new Tray(trayIconPath());
   }
+
   startI18next()
   setInterval(updateTray, 10000)
   startProcessWin()
@@ -354,26 +357,66 @@ function displaysHeight (displayID = -1) {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+    paused:
+      breakPlanner.isPaused ||
+      breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
       breakPlanner.appExclusionsManager.isSchedulerCleared,
-    monochrome: settings.get('useMonochromeTrayIcon'),
-    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    monochrome: settings.get("useMonochromeTrayIcon"),
+    inverted: settings.get("useMonochromeInvertedTrayIcon"),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
-  }
-  const trayIconFileName = new AppIcon(params).trayIconFileName
-  return path.join(__dirname, '/images/app-icons/', trayIconFileName)
+    platform: process.platform,
+    remainingModeString: settings.get("breakIconType"),
+    remainingTimeString: Utils.minutesRemaining(
+      breakPlanner.scheduler.timeLeft
+    ),
+    totalLongBreak: (settings.get("breakInterval") + 1) * 10,
+  };
+  // let appIco=new AppIcon(params);
+  const trayIconFileName = new AppIcon(params).trayIconFileName;
+  let pathToTryIcon=path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  console.log(pathToTryIcon);
+  return pathToTryIcon;
+  //   if (fs.existsSync(pathToTryIcon)) {
+  //     //file exists
+  //     // appIcon.setImage(trayIconPath());
+  //     return pathToTryIcon;
+  //   } else {
+  //   console.info('Icon not yet exist. Generation started.');
+  //   console.log(pathToTryIcon);
+  //   let picturesFolder="numbers/generated-numbers/"
+  //   if(settings.get("breakIconType")=='circular'){
+  //     picturesFolder='round-clock/';
+  //   }
+  //   let nameOfImage= pathToTryIcon.replace(/^.*[\\\/]/, '');
+  //   let iconName=nameOfImage.replace(/[0-9]/g, '') //remove number
+  //   let iconNo = nameOfImage.match(/\d+/)[0]
+  //   console.log(iconName);
+  //   console.log(iconNo);
+  //   if(iconName.includes("Mac")) {
+
+  //   } else {
+  //     if(iconName.includes("Dark")&&iconName.includes("Inverted")){
+  //       appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/",iconName),path.join(__dirname, '/images/app-icons/',picturesFolder,iconNo+"w.png"));
+  //     } else {
+  //       appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/",iconName),path.join(__dirname, '/images/app-icons/',picturesFolder,iconNo+"b.png"));
+  //     }
+  //   }
+  //   return path.join(__dirname, '/images/app-icons/', "tray.png");
+  // }
 }
 
 function windowIconPath () {
   const params = {
     paused: false,
-    monochrome: settings.get('useMonochromeTrayIcon'),
-    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    monochrome: settings.get("useMonochromeTrayIcon"),
+    inverted: settings.get("useMonochromeInvertedTrayIcon"),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
-  }
+    platform: process.platform,
+    remainingModeString: settings.get("breakIconType"),
+    remainingTimeString: "60",
+    totalLongBreak: (settings.get("breakInterval") + 1) * 10,
+  };
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
 }
@@ -936,18 +979,10 @@ function createPreferencesWindow () {
   })
 }
 
-function updateTray () {
+async function updateTray () {
   updateToolTip();
-  //https://github.com/hovancik/stretchly/issues/967 could change this value, but it's just minutes
-  let breakIntervalSet = (settings.get("breakInterval") + 1) * 10;
-  let minutesToLongBreak=Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
-  appIcon.setTrayWhenNeeded(
-    trayIconPath(),
-    minutesToLongBreak,
-    settings.get("longBreakIcon"),
-    settings.get("breakIconType"),
-    breakIntervalSet
-  );
+  appIcon.setImage(trayIconPath());
+  console.log("doneUpdateTray");
   appIcon.setContextMenu(getTrayMenu());
 }
 

@@ -66,6 +66,7 @@
       "enablePostponeLong": "Włącz przekładanie długiej przerwy",
       "breakIconType":"Typ ikony czasu który pozostał do długiej przerwy",
       "showLongBreakTimeInIcon": "Pokaż minuty do długiej przerwy w ikonie zasobnika",
+      "noiconindicator": "Bez wskaźnika czasu do przerwy",
       "numeric": "liczby",
       "circular":"część okręgu",
       "strictMode": "Tryb zdyscyplinowany:",
