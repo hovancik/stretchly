@@ -122,10 +122,7 @@ class TrayWithText2 {
         return `${imagePath}trayt${darkModeString}${minutesOnTray}.png`;
       }
     }
-    // return imagePath + `trayt${darkModeString}` + minutesOnTray + ".png";
   };
-
-  //
 
   generateNumbers = async function (color = "b", mac="m") {
     let range = {

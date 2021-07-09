@@ -378,6 +378,7 @@ function trayIconPath () {
   // let appIco=new AppIcon(params);
   const trayIconFileName = new AppIcon(params).trayIconFileName;
   let pathToTryIcon=path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  console.log(pathToTryIcon);
   return pathToTryIcon;
   //   if (fs.existsSync(pathToTryIcon)) {
   //     //file exists
@@ -1014,9 +1015,9 @@ async function updateTray () {
     // await appIcon2.generateNumbersMac("w");
   // await appIcon2.generateNumbersWithTray(
   //   "w",
-  //   "traytMacDark",
-  //   "m",
-  //   "/home/m/p/stretchly/app/images/app-icons/traytMacDark.png"
+  //   "traytMonochromeInverted",
+  //   "",
+  //   "/home/m/p/stretchly/app/images/app-icons/traytMonochromeInverted.png"
   // );
 
   appIcon.setImage(trayIconPath());

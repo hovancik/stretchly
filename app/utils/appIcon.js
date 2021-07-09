@@ -56,8 +56,8 @@ class AppIcon {
       );
 
       console.log(returnVal);
-      // return returnVal;
-      return `tray${pausedString}${darkModeString}.png`;
+      return returnVal;
+      // return `tray${pausedString}${darkModeString}.png`;
     } else {
       //circle
       return `tray${pausedString}${darkModeString}.png`;
