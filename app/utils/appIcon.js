@@ -45,7 +45,6 @@ class AppIcon {
         }
       }
     } else if (this.remainingModeString == "Number") {
-      // console.log("tick");
       let textGen = new TrayWithText2();
       let minRemain = parseInt(this.remainingTimeString);
       let returnVal = textGen.iconWithNumber(
@@ -57,10 +56,7 @@ class AppIcon {
         invertedMonochromeString
       );
       return returnVal;
-      // return `tray${pausedString}${darkModeString}.png`;
-    } else {
-      //Circle
-      console.log("tick");
+    } else { //Circle
       let textGen = new TrayWithText2();
       let minRemain = parseInt(this.remainingTimeString);
       let returnVal = textGen.pathWithCircularIcon(
@@ -73,7 +69,6 @@ class AppIcon {
         invertedMonochromeString
       );
       return returnVal;
-      // return `tray${pausedString}${darkModeString}.png`;
     }
   }
 

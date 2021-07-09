@@ -9,8 +9,6 @@ const i18next = require('i18next')
 const Backend = require('i18next-node-fs-backend')
 const log = require('electron-log')
 const Store = require('electron-store')
-const TrayWithText = require('./utils/trayWithText');
-const TrayWithText2 = require("./utils/trayWithText2");
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -126,13 +124,7 @@ function initialize (isAppStart = true) {
     }
     appIcon = new Tray(trayIconPath());
   }
-  if (!appIcon2) {
-    if (process.platform === "darwin") {
-      app.dock.hide();
-    }
-    
-    appIcon2 = new TrayWithText2(trayIconPath());
-  }
+
   startI18next()
   setInterval(updateTray, 10000)
   startProcessWin()
@@ -989,44 +981,6 @@ function createPreferencesWindow () {
 
 async function updateTray () {
   updateToolTip();
-  //https://github.com/hovancik/stretchly/issues/967 could change this value, but it's just minutes
-  let breakIntervalSet = (settings.get("breakInterval") + 1) * 10;
-  let minutesToLongBreak=Utils.minutesRemaining(breakPlanner.scheduler.timeLeft);
-  // appIcon.setTrayWhenNeeded(
-  //   trayIconPath(),
-  //   minutesToLongBreak,
-  //   settings.get("longBreakIcon"),
-  //   settings.get("breakIconType"),
-  //   breakIntervalSet
-  // );
-  // let appPrepere = new TrayWithText2(trayIconPath());
-  // await appIcon2.generateNumbers();
-  // await appIcon2.generateNumbersWithTray();
-  // appPrepere.storeNewNumber().then(appIcon.setImage(trayIconPath()));
-  // let pathToTryIcon=trayIconPath();
-  // try {
-  //   if (fs.existsSync(pathToTryIcon)) {
-  //     //file exists
-  //     appIcon.setImage(trayIconPath());
-  //   }
-  // } catch (err) {
-  //   console.info('Icon not yet exist '+err+' Generation started.');
-  //   console.log(pathToTryIcon);
-  //   let picturesFolder="numbers/generated-numbers/"
-  //   if(settings.get("breakIconType")='circular'){
-  //     picturesFolder='round-clock/';
-  //   }
-  //   // appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/"),);
-  //   console.log(pathToTryIcon.substring(pathToTryIcon.lastIndexOf(picturesFolder)+picturesFolder.length()))
-  // }
-    // await appIcon2.generateNumbersMac("w");
-  // await appIcon2.generateCirclesWithTray(
-  //   "w",
-  //   "traytMonochromeInverted",
-  //   "",
-  //   "/home/m/p/stretchly/app/images/app-icons/traytMonochromeInverted.png"
-  // );
-
   appIcon.setImage(trayIconPath());
   console.log("doneUpdateTray");
   appIcon.setContextMenu(getTrayMenu());
