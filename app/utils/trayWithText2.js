@@ -97,7 +97,7 @@ class TrayWithText2 {
     }
   };
 
-  showWithNumber = function (
+  iconWithNumber = function (
     imagePath,
     minutesToLongBreak,
     darkModeString,
@@ -124,7 +124,54 @@ class TrayWithText2 {
     }
   };
 
-  generateNumbers = async function (color = "b", mac="m") {
+  pathWithCircularIcon = function (
+    imagePath,
+    minutesToLongBreak,
+    totalLongBreak,
+    darkModeString,
+    monochrome,
+    platform,
+    invertedMonochromeString
+  ) {
+    let minutesOnTray = minutesToLongBreak;
+    let timeLeftRatio = minutesOnTray / totalLongBreak;
+
+    let pictureNo = "0";
+    if (timeLeftRatio >= 0.875) {
+      pictureNo = "0";
+    } else if (timeLeftRatio < 0.875 && timeLeftRatio > 0.75) {
+      pictureNo = "7";
+    } else if (timeLeftRatio <= 0.75 && timeLeftRatio > 0.625) {
+      pictureNo = "15";
+    } else if (timeLeftRatio <= 0.625 && timeLeftRatio > 0.5) {
+      pictureNo = "22";
+    } else if (timeLeftRatio <= 0.5 && timeLeftRatio > 0.375) {
+      pictureNo = "20";
+    } else if (timeLeftRatio <= 0.375 && timeLeftRatio > 0.25) {
+      pictureNo = "37";
+    } else if (timeLeftRatio <= 0.25 && timeLeftRatio > 0.125) {
+      pictureNo = "45";
+    } else if (timeLeftRatio <= 0.125 && timeLeftRatio > 0.065) {
+      pictureNo = "52";
+    } else {
+      pictureNo = "60";
+    }
+    if (monochrome) {
+      if (platform === "darwin") {
+        return `${imagePath}traytMacMonochrome${pictureNo}.png`;
+      } else {
+        return `${imagePath}traytMonochrome${invertedMonochromeString}${pictureNo}.png`;
+      }
+    } else {
+      if (platform === "darwin") {
+        return `${imagePath}traytMac${darkModeString}${pictureNo}.png`;
+      } else {
+        return `${imagePath}trayt${darkModeString}${pictureNo}.png`;
+      }
+    }
+  };
+
+  generateNumbers = async function (color = "b", mac = "m") {
     let range = {
       from: 0,
       to: 99,
@@ -146,12 +193,16 @@ class TrayWithText2 {
       if (number < 10) {
         try {
           let img = await mergeImg([
-            {src: baseImages + mac +"iconFreeSpace.png"},
+            {src: baseImages + mac + "iconFreeSpace.png"},
             {src: baseImages + mac + number + color + ".png"},
             {src: baseImages + mac + "iconFreeSpace.png"},
           ]);
-          await img.write(pathToImages + mac +"0" + number + color + ".png", () =>
-            log.debug("done" + pathToImages + mac + "0" + number + color + ".png")
+          await img.write(
+            pathToImages + mac + "0" + number + color + ".png",
+            () =>
+              log.debug(
+                "done" + pathToImages + mac + "0" + number + color + ".png"
+              )
           );
         } catch (e) {
           log.debug("safely ignored error");
@@ -175,9 +226,9 @@ class TrayWithText2 {
   };
 
   generateNumbersWithTray = async function (
-    color = 'b',
-    createdName = "trayMonochrome",
-    mac= 'm',
+    color = "b",
+    createdName = "traytMonochrome",
+    mac = "m",
     iconPath = "/home/m/p/stretchly/app/images/app-icons/traytMonochrome.png"
   ) {
     let range = {
@@ -204,8 +255,8 @@ class TrayWithText2 {
       if (decimalDigit == 0) leadingZero = "0";
       try {
         let pictureOffset = -32;
-        if(mac==='m'){
-            pictureOffset = -16;
+        if (mac === "m") {
+          pictureOffset = -16;
         }
         let img = await mergeImg([
           {
@@ -218,7 +269,7 @@ class TrayWithText2 {
         ]);
         await img.write(pathToImages + createdName + number + ".png");
       } catch (e) {
-        log.debug(e+"safely ignored error");
+        log.debug(e + "safely ignored error");
       }
     }
   };
@@ -282,48 +333,101 @@ class TrayWithText2 {
   //     }
   //   }
   // };
-//   generateNumbersWithTrayMac = async function (
-//     color = "b",
-//     createdName = "trayMacMonochrome",
-//     iconPath = "/home/m/p/stretchly/app/images/app-icons/traytMacMonochrome.png"
-//   ) {
-//     let range = {
-//       from: 0,
-//       to: 99,
-//       [Symbol.iterator]() {
-//         this.current = this.from;
-//         return this;
-//       },
-//       next() {
-//         if (this.current <= this.to) {
-//           return {done: false, value: this.current++};
-//         } else {
-//           return {done: true};
-//         }
-//       },
-//     };
+  //   generateNumbersWithTrayMac = async function (
+  //     color = "b",
+  //     createdName = "trayMacMonochrome",
+  //     iconPath = "/home/m/p/stretchly/app/images/app-icons/traytMacMonochrome.png"
+  //   ) {
+  //     let range = {
+  //       from: 0,
+  //       to: 99,
+  //       [Symbol.iterator]() {
+  //         this.current = this.from;
+  //         return this;
+  //       },
+  //       next() {
+  //         if (this.current <= this.to) {
+  //           return {done: false, value: this.current++};
+  //         } else {
+  //           return {done: true};
+  //         }
+  //       },
+  //     };
 
-//     for await (let number of range) {
-//       let lastDigit = number % 10;
-//       let decimalDigit = Math.floor((number / 10) % 10);
-//       let leadingZero = "";
-//       if (decimalDigit == 0) leadingZero = "0";
-//       try {
-//         let img = await mergeImg([
-//           {
-//             src: iconPath,
-//           },
-//           {
-//             src: pathToImages +'m' + leadingZero + number + color + ".png",
-//             offsetX: -16,
-//           },
-//         ]);
-//         await img.write(pathToImages + createdName + number + ".png");
-//       } catch (e) {
-//         log.debug("safely ignored error");
-//       }
-//     }
-//   };
+  //     for await (let number of range) {
+  //       let lastDigit = number % 10;
+  //       let decimalDigit = Math.floor((number / 10) % 10);
+  //       let leadingZero = "";
+  //       if (decimalDigit == 0) leadingZero = "0";
+  //       try {
+  //         let img = await mergeImg([
+  //           {
+  //             src: iconPath,
+  //           },
+  //           {
+  //             src: pathToImages +'m' + leadingZero + number + color + ".png",
+  //             offsetX: -16,
+  //           },
+  //         ]);
+  //         await img.write(pathToImages + createdName + number + ".png");
+  //       } catch (e) {
+  //         log.debug("safely ignored error");
+  //       }
+  //     }
+  //   };
+
+  generateCirclesWithTray = async function (
+    color = "b",
+    createdName = "traytMonochrome",
+    mac = "m",
+    iconPath = "/home/m/p/stretchly/app/images/app-icons/traytMonochrome.png"
+  ) {
+    let range = {
+      from: 0,
+      to: 61,
+      [Symbol.iterator]() {
+        this.current = this.from;
+        return this;
+      },
+
+      next() {
+        if (this.current <= this.to) {
+          return {done: false, value: this.current++};
+        } else {
+          return {done: true};
+        }
+      },
+    };
+
+    for await (let number of range) {
+      if(number==0 || number == 7 || number == 15 || number == 22 || number == 30 
+        || number == 37 || number == 45 | number == 52 || number == 60){
+      let lastDigit = number % 10;
+      let decimalDigit = Math.floor((number / 10) % 10);
+      let leadingZero = "";
+      // if (decimalDigit == 0) leadingZero = "0";
+      try {
+        let pictureOffset = -32;
+        if (mac === "m") {
+          pictureOffset = -16;
+        }
+        let img = await mergeImg([
+          {
+            src: iconPath,
+          },
+          {
+            src:
+              pathToCircleImages + mac + leadingZero + number + color + ".png",
+            offsetX: pictureOffset,
+          },
+        ]);
+        await img.write(pathToCircleImages + createdName + number + ".png");
+      } catch (e) {
+        log.debug(e + "safely ignored error");
+      }
+    }
+    }
+  };
 }
 
 module.exports = TrayWithText2;

@@ -58,6 +58,5 @@ module.exports = {
   pauseBreaksShortcut: "",
   resumeBreaksShortcut: "",
   screen: "primary",
-  longBreakIcon: false,
-  breakIconType: "number"
+  breakIconType: ""
 };

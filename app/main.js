@@ -365,16 +365,21 @@ function displaysHeight (displayID = -1) {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+    paused:
+      breakPlanner.isPaused ||
+      breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
       breakPlanner.appExclusionsManager.isSchedulerCleared,
-    monochrome: settings.get('useMonochromeTrayIcon'),
-    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    monochrome: settings.get("useMonochromeTrayIcon"),
+    inverted: settings.get("useMonochromeInvertedTrayIcon"),
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: process.platform,
     remainingModeString: settings.get("breakIconType"),
-    remainingTimeString: Utils.minutesRemaining(breakPlanner.scheduler.timeLeft)
-  }
+    remainingTimeString: Utils.minutesRemaining(
+      breakPlanner.scheduler.timeLeft
+    ),
+    totalLongBreak: (settings.get("breakInterval") + 1) * 10,
+  };
   // let appIco=new AppIcon(params);
   const trayIconFileName = new AppIcon(params).trayIconFileName;
   let pathToTryIcon=path.join(__dirname, '/images/app-icons/', trayIconFileName)
@@ -412,12 +417,14 @@ function trayIconPath () {
 function windowIconPath () {
   const params = {
     paused: false,
-    monochrome: settings.get('useMonochromeTrayIcon'),
-    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    monochrome: settings.get("useMonochromeTrayIcon"),
+    inverted: settings.get("useMonochromeInvertedTrayIcon"),
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: process.platform,
     remainingModeString: settings.get("breakIconType"),
-  }
+    remainingTimeString: "60",
+    totalLongBreak: (settings.get("breakInterval") + 1) * 10,
+  };
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
 }
@@ -1013,7 +1020,7 @@ async function updateTray () {
   //   console.log(pathToTryIcon.substring(pathToTryIcon.lastIndexOf(picturesFolder)+picturesFolder.length()))
   // }
     // await appIcon2.generateNumbersMac("w");
-  // await appIcon2.generateNumbersWithTray(
+  // await appIcon2.generateCirclesWithTray(
   //   "w",
   //   "traytMonochromeInverted",
   //   "",

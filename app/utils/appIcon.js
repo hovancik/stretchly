@@ -11,6 +11,7 @@ class AppIcon {
     darkMode,
     remainingModeString,
     remainingTimeString,
+    totalLongBreak
   }) {
     this.platform = platform;
     this.paused = paused;
@@ -19,6 +20,7 @@ class AppIcon {
     this.darkMode = darkMode;
     this.remainingModeString = remainingModeString;
     this.remainingTimeString = remainingTimeString;
+    this.totalLongBreak = totalLongBreak; //required only for circular timer
   }
 
   get trayIconFileName() {
@@ -42,11 +44,11 @@ class AppIcon {
           return `tray${pausedString}${darkModeString}.png`;
         }
       }
-    } else if (this.remainingModeString == "number") {
-      console.log("tick");
+    } else if (this.remainingModeString == "Number") {
+      // console.log("tick");
       let textGen = new TrayWithText2();
       let minRemain = parseInt(this.remainingTimeString);
-      let returnVal = textGen.showWithNumber(
+      let returnVal = textGen.iconWithNumber(
         "/numbers/generated-numbers/",
         minRemain,
         darkModeString,
@@ -54,13 +56,24 @@ class AppIcon {
         this.platform,
         invertedMonochromeString
       );
-
-      console.log(returnVal);
       return returnVal;
       // return `tray${pausedString}${darkModeString}.png`;
     } else {
-      //circle
-      return `tray${pausedString}${darkModeString}.png`;
+      //Circle
+      console.log("tick");
+      let textGen = new TrayWithText2();
+      let minRemain = parseInt(this.remainingTimeString);
+      let returnVal = textGen.pathWithCircularIcon(
+        "/round-clock/",
+        minRemain,
+        this.totalLongBreak,
+        darkModeString,
+        monochrome,
+        this.platform,
+        invertedMonochromeString
+      );
+      return returnVal;
+      // return `tray${pausedString}${darkModeString}.png`;
     }
   }
 
