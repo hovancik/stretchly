@@ -1,4 +1,3 @@
-// const {Tray} = require('electron');
 const mergeImg = require('merge-img-vwv');
 const pathToImages = "app/images/app-icons/numbers/generated-numbers/";
 const pathToImages2 = "numbers/generated-numbers/";
@@ -7,7 +6,7 @@ const log = require('electron-log');
 const iconTrayFilename = 'trayIcon.png';
 const baseImages = 'app/images/app-icons/numbers/';
 
-class TrayWithText2 {
+class TrayWithText {
 
   iconWithNumber = function (
     imagePath,
@@ -239,4 +238,4 @@ class TrayWithText2 {
   };
 }
 
-module.exports = TrayWithText2;
+module.exports = TrayWithText;

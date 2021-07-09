@@ -1,4 +1,4 @@
-const TrayWithText2 = require("./trayWithText2");
+const TrayWithText = require("./trayWithText");
 // Get path of correct app icon based on different criteria
 const path = require("path");
 
@@ -45,7 +45,7 @@ class AppIcon {
         }
       }
     } else if (this.remainingModeString == "Number") {
-      let textGen = new TrayWithText2();
+      let textGen = new TrayWithText();
       let minRemain = parseInt(this.remainingTimeString);
       let returnVal = textGen.iconWithNumber(
         "/numbers/generated-numbers/",
@@ -57,7 +57,7 @@ class AppIcon {
       );
       return returnVal;
     } else { //Circle
-      let textGen = new TrayWithText2();
+      let textGen = new TrayWithText();
       let minRemain = parseInt(this.remainingTimeString);
       let returnVal = textGen.pathWithCircularIcon(
         "/round-clock/",
