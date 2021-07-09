@@ -127,7 +127,7 @@ class TrayWithText2 {
 
   //
 
-  generateNumbers = async function (color="b") {
+  generateNumbers = async function (color = "b", mac="m") {
     let range = {
       from: 0,
       to: 99,
@@ -149,22 +149,12 @@ class TrayWithText2 {
       if (number < 10) {
         try {
           let img = await mergeImg([
-            {src: baseImages + "iconFreeSpace.png"},
-            {src: baseImages + number + color+".png"},
-            {src: baseImages + "iconFreeSpace.png"},
+            {src: baseImages + mac +"iconFreeSpace.png"},
+            {src: baseImages + mac + number + color + ".png"},
+            {src: baseImages + mac + "iconFreeSpace.png"},
           ]);
-          await img.write(pathToImages + "0" + number + color+ ".png", () =>
-            log.debug("done" + pathToImages + "0" + number + color+".png")
-          );
-          let img2 = await mergeImg([
-            {src: imagePath},
-            {
-              src: pathToImages + "0" + number + color + ".png",
-              offsetX: -32,
-            },
-          ]);
-          await img2.write(pathToImages + iconTrayFilename, () =>
-            log.debug("done0To9Generation")
+          await img.write(pathToImages + mac +"0" + number + color + ".png", () =>
+            log.debug("done" + pathToImages + mac + "0" + number + color + ".png")
           );
         } catch (e) {
           log.debug("safely ignored error");
@@ -174,12 +164,12 @@ class TrayWithText2 {
           let lastDigit = number % 10;
           let decimalDigit = Math.floor((number / 10) % 10);
           let img = await mergeImg([
-            {src: baseImages + decimalDigit + color + ".png"},
+            {src: baseImages + mac + decimalDigit + color + ".png"},
             {
-              src: baseImages + lastDigit + color + ".png",
+              src: baseImages + mac + lastDigit + color + ".png",
             },
           ]);
-          await img.write(pathToImages + number + color + ".png");
+          await img.write(pathToImages + mac + number + color + ".png");
         } catch (e) {
           log.debug("safely ignored error");
         }
@@ -188,8 +178,9 @@ class TrayWithText2 {
   };
 
   generateNumbersWithTray = async function (
-    color = "b",
+    color = 'b',
     createdName = "trayMonochrome",
+    mac= 'm',
     iconPath = "/home/m/p/stretchly/app/images/app-icons/traytMonochrome.png"
   ) {
     let range = {
@@ -215,21 +206,127 @@ class TrayWithText2 {
       let leadingZero = "";
       if (decimalDigit == 0) leadingZero = "0";
       try {
+        let pictureOffset = -32;
+        if(mac==='m'){
+            pictureOffset = -16;
+        }
         let img = await mergeImg([
           {
             src: iconPath,
           },
           {
-            src: pathToImages + leadingZero + number + color + ".png",
-            offsetX: -32,
+            src: pathToImages + mac + leadingZero + number + color + ".png",
+            offsetX: pictureOffset,
           },
         ]);
         await img.write(pathToImages + createdName + number + ".png");
       } catch (e) {
-        log.debug("safely ignored error");
+        log.debug(e+"safely ignored error");
       }
     }
   };
+
+  // generateNumbersMac = async function (color = "b") {
+  //   let range = {
+  //     from: 0,
+  //     to: 99,
+  //     [Symbol.iterator]() {
+  //       this.current = this.from;
+  //       return this;
+  //     },
+
+  //     next() {
+  //       if (this.current <= this.to) {
+  //         return {done: false, value: this.current++};
+  //       } else {
+  //         return {done: true};
+  //       }
+  //     },
+  //   };
+
+  //   for await (let number of range) {
+  //     if (number < 10) {
+  //       try {
+  //         let img = await mergeImg([
+  //           {src: baseImages + "miconFreeSpace.png"},
+  //           {src: baseImages + "m" + number + color + ".png"},
+  //           {src: baseImages + "miconFreeSpace.png"},
+  //         ]);
+  //         await img.write(pathToImages + "m0" + number + color + ".png", () =>
+  //           log.debug("done" + pathToImages + "m0" + number + color + ".png")
+  //         );
+  //         let img2 = await mergeImg([
+  //           {src: imagePath},
+  //           {
+  //             src: pathToImages + "m0" + number + color + ".png",
+  //             offsetX: -16,
+  //           },
+  //         ]);
+  //         await img2.write(pathToImages + iconTrayFilename, () =>
+  //           log.debug("done0To9Generation")
+  //         );
+  //       } catch (e) {
+  //         log.debug("safely ignored error");
+  //       }
+  //     } else {
+  //       try {
+  //         let lastDigit = number % 10;
+  //         let decimalDigit = Math.floor((number / 10) % 10);
+  //         let img = await mergeImg([
+  //           {src: baseImages + "m" + decimalDigit + color + ".png"},
+  //           {
+  //             src: baseImages + "m" + lastDigit + color + ".png",
+  //           },
+  //         ]);
+  //         await img.write(pathToImages + "m" + number + color + ".png");
+  //       } catch (e) {
+  //         log.debug("safely ignored error");
+  //       }
+  //     }
+  //   }
+  // };
+//   generateNumbersWithTrayMac = async function (
+//     color = "b",
+//     createdName = "trayMacMonochrome",
+//     iconPath = "/home/m/p/stretchly/app/images/app-icons/traytMacMonochrome.png"
+//   ) {
+//     let range = {
+//       from: 0,
+//       to: 99,
+//       [Symbol.iterator]() {
+//         this.current = this.from;
+//         return this;
+//       },
+//       next() {
+//         if (this.current <= this.to) {
+//           return {done: false, value: this.current++};
+//         } else {
+//           return {done: true};
+//         }
+//       },
+//     };
+
+//     for await (let number of range) {
+//       let lastDigit = number % 10;
+//       let decimalDigit = Math.floor((number / 10) % 10);
+//       let leadingZero = "";
+//       if (decimalDigit == 0) leadingZero = "0";
+//       try {
+//         let img = await mergeImg([
+//           {
+//             src: iconPath,
+//           },
+//           {
+//             src: pathToImages +'m' + leadingZero + number + color + ".png",
+//             offsetX: -16,
+//           },
+//         ]);
+//         await img.write(pathToImages + createdName + number + ".png");
+//       } catch (e) {
+//         log.debug("safely ignored error");
+//       }
+//     }
+//   };
 }
 
 module.exports = TrayWithText2;

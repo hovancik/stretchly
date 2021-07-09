@@ -1011,8 +1011,14 @@ async function updateTray () {
   //   // appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/"),);
   //   console.log(pathToTryIcon.substring(pathToTryIcon.lastIndexOf(picturesFolder)+picturesFolder.length()))
   // }
-    // await appIcon2.generateNumbers("w");
-  // await appIcon2.generateNumbersWithTray();
+    // await appIcon2.generateNumbersMac("w");
+  // await appIcon2.generateNumbersWithTray(
+  //   "w",
+  //   "traytMacDark",
+  //   "m",
+  //   "/home/m/p/stretchly/app/images/app-icons/traytMacDark.png"
+  // );
+
   appIcon.setImage(trayIconPath());
   console.log("doneUpdateTray");
   appIcon.setContextMenu(getTrayMenu());
