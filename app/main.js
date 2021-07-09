@@ -372,38 +372,9 @@ function trayIconPath () {
     ),
     totalLongBreak: (settings.get("breakInterval") + 1) * 10,
   };
-  // let appIco=new AppIcon(params);
   const trayIconFileName = new AppIcon(params).trayIconFileName;
   let pathToTryIcon=path.join(__dirname, '/images/app-icons/', trayIconFileName)
-  console.log(pathToTryIcon);
   return pathToTryIcon;
-  //   if (fs.existsSync(pathToTryIcon)) {
-  //     //file exists
-  //     // appIcon.setImage(trayIconPath());
-  //     return pathToTryIcon;
-  //   } else {
-  //   console.info('Icon not yet exist. Generation started.');
-  //   console.log(pathToTryIcon);
-  //   let picturesFolder="numbers/generated-numbers/"
-  //   if(settings.get("breakIconType")=='circular'){
-  //     picturesFolder='round-clock/';
-  //   }
-  //   let nameOfImage= pathToTryIcon.replace(/^.*[\\\/]/, '');
-  //   let iconName=nameOfImage.replace(/[0-9]/g, '') //remove number
-  //   let iconNo = nameOfImage.match(/\d+/)[0]
-  //   console.log(iconName);
-  //   console.log(iconNo);
-  //   if(iconName.includes("Mac")) {
-
-  //   } else {
-  //     if(iconName.includes("Dark")&&iconName.includes("Inverted")){
-  //       appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/",iconName),path.join(__dirname, '/images/app-icons/',picturesFolder,iconNo+"w.png"));
-  //     } else {
-  //       appIcon2.pictureCombines(path.join(__dirname, "/images/app-icon/",iconName),path.join(__dirname, '/images/app-icons/',picturesFolder,iconNo+"b.png"));
-  //     }
-  //   }
-  //   return path.join(__dirname, '/images/app-icons/', "tray.png");
-  // }
 }
 
 function windowIconPath () {
@@ -982,7 +953,6 @@ function createPreferencesWindow () {
 async function updateTray () {
   updateToolTip();
   appIcon.setImage(trayIconPath());
-  console.log("doneUpdateTray");
   appIcon.setContextMenu(getTrayMenu());
 }
 
