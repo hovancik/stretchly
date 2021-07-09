@@ -1,6 +1,4 @@
 const TrayWithText = require("./trayWithText");
-// Get path of correct app icon based on different criteria
-const path = require("path");
 
 class AppIcon {
   constructor({
@@ -29,7 +27,6 @@ class AppIcon {
     const darkModeString = this.darkMode ? "Dark" : "";
     const monochrome = this.monochrome ? "Monochrome" : "";
 
-    console.log(this.remainingModeString);
     if (this.remainingModeString == "") {
       if (this.monochrome) {
         if (this.platform === "darwin") {
@@ -71,25 +68,6 @@ class AppIcon {
       return returnVal;
     }
   }
-
-  pictureCombines = async function (
-    defaultIconPath,
-    pathToImages,
-    nameOfImage
-  ) {
-    try {
-      let img = await mergeImg([
-        {src: defaultIconPath},
-        {
-          src: pathToImages + nameOfImage + ".png",
-          offsetX: -32,
-        },
-      ]);
-      await img.write(pathToImages + iconTrayFilename, () => log.debug("done"));
-    } catch (e) {
-      log.debug("safely ignored error");
-    }
-  };
 
   get windowIconFileName() {
     const invertedMonochromeString = this.inverted ? "Inverted" : "";
