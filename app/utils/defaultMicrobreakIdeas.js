@@ -134,5 +134,21 @@ module.exports = [
   {
     data: 'Make a fist and then fan your fingers out and stretch them as far as you can.',
     enabled: true
+  },
+  {
+    data: 'Sit tall, arms hanging at your sides, and slowly rotate neck in one direction in a large circle.',
+    enabled: true
+  },
+  {
+    data: 'Stand tall and slowly tilt your head toward the shoulder using the same hand until you feel a strech.',
+    enabled: true
+  },
+  {
+    data: 'Stand tall with your arms by your side. Squeeze your solder blades together and hold.',
+    enabled: true
+  },
+  {
+    data: 'Stand tall with your arms raised along your shoulders. Move hands slightly behind your back, hold for a second and return.',
+    enabled: true
   }
 ]

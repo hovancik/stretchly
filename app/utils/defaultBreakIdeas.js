@@ -130,5 +130,9 @@ module.exports = [
   {
     data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times.'],
     enabled: true
+  },
+  {
+    data: ['Slow Breathing', 'Emerging research suggests potential for use of controlled slow breathing techniques as a means of optimising physiological parameters that appear to be associated with health and longevity.'],
+    enabled: true
   }
 ]
