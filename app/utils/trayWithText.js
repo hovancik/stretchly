@@ -17,9 +17,6 @@ class TrayWithText {
     invertedMonochromeString
   ) {
     let minutesOnTray = minutesToLongBreak;
-    if (minutesToLongBreak < 10) {
-      minutesOnTray = "0" + minutesToLongBreak;
-    }
     if (monochrome) {
       if (platform === "darwin") {
         return `${imagePath}traytMacMonochrome${minutesOnTray}.png`;
