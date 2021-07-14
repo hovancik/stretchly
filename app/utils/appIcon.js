@@ -27,7 +27,7 @@ class AppIcon {
     const darkModeString = this.darkMode ? "Dark" : "";
     const monochrome = this.monochrome ? "Monochrome" : "";
 
-    if (this.remainingModeString == "") {
+    if (this.remainingModeString == "" || pausedString==='Paused') {
       if (this.monochrome) {
         if (this.platform === "darwin") {
           return `trayMacMonochrome${pausedString}Template.png`;
@@ -53,7 +53,8 @@ class AppIcon {
         invertedMonochromeString
       );
       return returnVal;
-    } else { //Circle
+    } else {
+      //Circle
       let textGen = new TrayWithText();
       let minRemain = parseInt(this.remainingTimeString);
       let returnVal = textGen.pathWithCircularIcon(
