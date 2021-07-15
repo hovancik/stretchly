@@ -75,7 +75,7 @@
       "greenClouds": "Nuvole verdi",
       "autumnBeBlessed": "Colori d'autunno",
       "graphiteCrystal": "Cristallo di grafite",
-      "coffeeKisses": "Baci di caffé",
+      "coffeeKisses": "Baci di caffè",
       "morningSwim": "Nuotata mattutina",
       "transparentMode": "Abilita trasparenza",
       "sounds": "Suoni:",
@@ -108,7 +108,7 @@
       "desc2": "Stretchly è gratuito. Ma puoi dare il tuo sostegno facendo una donazione per aiutarci a continuare a migliorare Stretchly e a sviluppare altro software libero.",
       "becomePatron": "Diventa Patron",
       "alreadyContributor": "Sono già un contribuente",
-      "authenticateUsing": "Login tramite:",
+      "authenticateUsing": "Autenticati utilizzando:",
       "contributorPreferences": "Impostazioni Contribuenti",
       "syncPreferences": "Sincronizza Impostazioni"
     }
@@ -153,7 +153,7 @@
     "appearance": "Aspetto:",
     "light": "Chiaro",
     "dark": "Scuro",
-    "system": "System",
+    "system": "Sistema",
     "4": "Quinto monitor",
     "3": "Quarto monitor",
     "2": "Terzo monitor",
@@ -161,11 +161,11 @@
     "0": "Primo monitor",
     "cursor": "Segui cursore",
     "primary": "Monitor principale",
-    "showOnMonitor": "Mostra Break su",
-    "screenInfo": "Quando la visualizzazione dei Break su tutti i monitor è disabilitata, puoi scegliere su quale desideri mostrare le interruzioni.",
-    "screen": "Monitorare i Break:",
-    "showBreaksAsRegularWindows": "Mostra break come finestre normali",
-    "showBreaksAsRegularWindowsInfo": "Quando è abilitato, le finestre Break diventeranno attivabili, non saranno più \"Sempre in primo piano\" e appariranno anche nella barra delle applicazioni.",
+    "showOnMonitor": "Mostra le pause su",
+    "screenInfo": "Quando la visualizzazione delle pause su tutti i monitor è disabilitata, puoi scegliere su quale desideri mostrare le interruzioni.",
+    "screen": "Monitorare le pause:",
+    "showBreaksAsRegularWindows": "Mostra pause come finestre normali",
+    "showBreaksAsRegularWindowsInfo": "Quando è abilitato, le finestre Pause diventeranno attivabili, non saranno più «Sempre in primo piano» e appariranno anche nella barra delle applicazioni.",
     "showBreaksAsRegularWindowsTitle": "Agisce come una finestra normale:"
   },
   "utils": {
@@ -194,21 +194,21 @@
     "newVersionAvailable": "È disponibile una nuova versione!"
   },
   "welcome": {
-    "title": "Benvenuto in Stretchly",
+    "title": "Benvenuto/a in Stretchly",
     "breakTimeReminderApp": "L'app che ti ricorda quando prenderti una pausa",
-    "viewTutorial": "Vedi Tutorial",
+    "viewTutorial": "Visualizza il tutorial",
     "openPreferences": "Impostazioni",
     "getStarted": "Avvia"
   },
   "statusMessages": {
     "paused": "In pausa",
     "indefinitely": "Indefinita",
-    "dndMode": "\"Non disturbare\" è abilitato",
+    "dndMode": "«Non disturbare» è abilitato",
     "nextLongBreak": "Prossima Pausa",
     "nextMiniBreak": "Prossima Mini-Pausa",
     "afterMiniBreak": "dopo {{count}} Mini-Pausa",
     "afterMiniBreak_plural": "dopo {{count}} Mini-Pause",
-    "resuming": "Riprendere",
+    "resuming": "Riprendi",
     "appExclusion": "Regola di esclusione app"
   }
 }

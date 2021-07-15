@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Ontwikkeld door",
       "janH": "Jan Hovancik",
-      "designedBy": "Pictogram en UI ontwerp door Colin Shanley"
+      "designedBy": "Pictogram en UI ontwerp door Colin Shanley",
+      "checkNewVersion": "Controleer automatisch voor updates"
     },
     "heart": {
       "loveStretchly": "Hou je van Stretchly?",
@@ -152,7 +153,19 @@
     "opacityTheme": "Transparantie van het thema:",
     "opacityInfo": "Ondoorzichtigheid van het pauze scherm?",
     "breakWindowHeight": "Hoogte:",
-    "opacity": "Ondoorzichtigheid:"
+    "opacity": "Ondoorzichtigheid:",
+    "showBreaksAsRegularWindowsInfo": "Wanneer ingeschakeld kunnen Pauze schermen een actief venster worden, ze zullen niet meer 'altijd bovenaan' zijn, en zullen in de taakbalk verschijnen.",
+    "4": "Vijfde monitor",
+    "3": "Vierde monitor",
+    "2": "Derde monitor",
+    "1": "Tweede monitor",
+    "0": "Eerste monitor",
+    "cursor": "Volg cursor",
+    "primary": "Primaire monitor",
+    "showOnMonitor": "Pauzes tonen aan",
+    "screenInfo": "Wanneer het tonen van pauzes op alle schermen uitgeschakeld is kan je kiezen op welk scherm je de Pauzes wil laten zien.",
+    "showBreaksAsRegularWindows": "Toon pauzes als een gewoon venster",
+    "showBreaksAsRegularWindowsTitle": "Werk als een gewoon venster:"
   },
   "utils": {
     "none": "{{count}}",

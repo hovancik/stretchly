@@ -155,8 +155,18 @@
     "dark": "Sombre",
     "system": "Système",
     "showBreaksAsRegularWindows": "Montrer les pauses comme des fenêtres standard",
-    "showBreaksAsRegularWindowsInfo": "Quand elles sont activées, les fenêtres de pause deviennent focalisables. Elles ne sont plus \"Toujours en haut\" et apparaissent également dans la barre de tâches.",
-    "showBreaksAsRegularWindowsTitle": "Agir comme une fenêtre standard :"
+    "showBreaksAsRegularWindowsInfo": "Quand elles sont activées, les fenêtres de pause deviennent focalisables. Elles ne sont plus « Toujours en haut » et apparaissent également dans la barre de tâches.",
+    "showBreaksAsRegularWindowsTitle": "Agir comme une fenêtre standard :",
+    "4": "Cinquième moniteur",
+    "3": "Quatrième moniteur",
+    "2": "Troisième moniteur",
+    "1": "Deuxième moniteur",
+    "0": "Premier moniteur",
+    "cursor": "Suivre le curseur",
+    "primary": "Moniteur principal",
+    "showOnMonitor": "Afficher les pauses sur",
+    "screenInfo": "Lorsque l'affichage des pauses sur tous les moniteurs est désactivé, vous pouvez choisir celui sur lequel vous souhaitez afficher vos pauses.",
+    "screen": "Moniteur pour les pauses :"
   },
   "utils": {
     "none": "{{count}}",
@@ -193,7 +203,7 @@
   "statusMessages": {
     "paused": "Suspendu",
     "indefinitely": "Indéfiniment",
-    "dndMode": "Ne Pas Déranger est activé",
+    "dndMode": "Ne pas déranger est activé",
     "nextLongBreak": "Prochaine grande pause",
     "nextMiniBreak": "Prochaine petite pause",
     "afterMiniBreak": "après {{count}} petite pause",

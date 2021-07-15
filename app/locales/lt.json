@@ -22,7 +22,8 @@
     "toBreak": "Ilga pertrauka",
     "breakIn": "Ilga pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
     "microbreakIn": "Trumpa pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
-    "restoreDefaults": "Atstatyti nustatymus"
+    "restoreDefaults": "Atstatyti nustatymus",
+    "warning": "Taip bus atkurti numatytieji programos nustatymai ir visi jūsų pakeisti nustatymai bus prarasti."
   },
   "break": {
     "title": "Laikas pertraukai!",
@@ -35,10 +36,27 @@
       "autumnBeBlessed": "Šventas ruduo",
       "graphiteCrystal": "Grafito kristalas",
       "coffeeKisses": "Kavos bučiniai",
-      "morningSwim": "Rytinis pasiplaukiojimas"
+      "morningSwim": "Rytinis pasiplaukiojimas",
+      "snowWhite": "Sniego baltumo",
+      "colour": "Spalva",
+      "menubarIcon": "Meniu juostos piktograma:",
+      "ticToc": "Tik Tak",
+      "windChime": "Vėjo skambesys",
+      "crystalGlass": "Krištolo stiklas",
+      "enableSounds": "Įjungti garsus",
+      "sounds": "Garsai:",
+      "transparentMode": "Įgalinti skaidrumą",
+      "appearance": "Išvaizda:"
     },
     "about": {
-      "tagline": "Prisimink pertraukėles"
+      "tagline": "Prisimink pertraukėles",
+      "designedBy": "Ikona ir vartotojo sąsajos dizainas - Colin Shanley",
+      "janH": "Janas Hovancikas",
+      "developedBy": "Sukūrė",
+      "dot": ".",
+      "ourWebsite": "apsilankykite mūsų svetainėje",
+      "latestVersion": "Naujausia versija ",
+      "version": "Versija "
     },
     "schedule": {
       "enableStrictLong": "Įjungti griežtą režimą ilgoms pertraukoms",
@@ -46,7 +64,16 @@
       "breakFor": "Pertraukėlė:",
       "enableMiniBreaks": "Įjungti Mini pertraukėles",
       "miniBreaksInfo": "„Mini pertraukėlės“ yra trumpos pertraukėlės, daromos reguliariai, kad suteiktų galimybę pajudėti ir atsipalaiduoti.",
-      "miniBreaks": "Mini pertraukėlės:"
+      "miniBreaks": "Mini pertraukėlės:",
+      "enableStrictMini": "Įjungti griežtą režimą mini pertraukėlėms",
+      "strictModeInfo": "Griežtasis režimas neleidžia praleisti nei mažųjų, nei ilgųjų pertraukų ir yra skirtas drausmei palaikyti.",
+      "strictMode": "Griežtasis režimas:",
+      "enablePostponeLong": "Įgalinti ilgos pertraukos atidėjimą",
+      "showNotificationBeforeLongBreak": "Rodyti pranešimą prieš prasidedant ilgajai pertraukai",
+      "enableLongBreaks": "Įgalinti ilgas pertraukas",
+      "longBreaksInfo": "Ilgosios pertraukos daromos rečiau, bet yra ilgesnės trukmės, todėl galite ilgesniam laikui atsitraukti nuo darbo.",
+      "longBreaks": "Ilgos pertraukos:",
+      "every": "Kas:"
     },
     "settings": {
       "restoreDefaults": "Atkurti pradines reikšmes",
@@ -65,7 +92,17 @@
       "theme": "Išvaizda",
       "settings": "Nustatymai"
     },
-    "title": "Strechly nustatymai"
+    "title": "Strechly nustatymai",
+    "heart": {
+      "syncPreferences": "Synchronizavimo nustatymai",
+      "contributorPreferences": "Kontributorių nustatymai",
+      "authenticateUsing": "Tapatybės nustatymas naudojant:",
+      "alreadyContributor": "Aš jau esu prisidėjęs",
+      "becomePatron": "Tapkite Patronu",
+      "desc2": "Stretchly yra nemokama. Tačiau galite paremti aukodami ir padėti mums toliau tobulinti Stretchly bei leisti kitą nemokamą programinę įrangą.",
+      "desc1": "Moksliškai įrodyta, kad reguliarios pertraukos naudojantis kompiuteriu yra svarbios jūsų fizinei ir psichinei savijautai.",
+      "loveStretchly": "Mėgstate savo Stretchly?"
+    }
   },
   "process": {
     "newVersionAvailable": "Pasiekiama nauja versija!"
@@ -78,6 +115,28 @@
     "volume": "Garsumas:",
     "breakWindowWidth": "Plotis:",
     "newVersionNotification": "Pranešti kai atsiras nauja versija",
-    "beforeLongBreak": "Ilga pertraukėlė:"
+    "beforeLongBreak": "Ilga pertraukėlė:",
+    "sounds": "Garsai:",
+    "breakWindowHeight": "Aukštis:",
+    "breakWindowSizeInfo": "Kokią ekrano dalį turėtų slėpti pertraukos langas?",
+    "breakWindowSize": "Pertraukos lango dydis",
+    "opacity": "Skaidrumas:",
+    "opacityInfo": "Kokio skaidrumo turėtų būti pertraukos langas?",
+    "opacityTheme": "Temos skaidrumas:",
+    "showWelcomeWindow": "Rodyti pasveikinimo langą kito paleidimo metu",
+    "welcomeWindow": "Pasveikinimo langas:",
+    "pauseUntilMorningInfo": "Nurodykite, iki kurios valandos \"Pristabdyti iki ryto\" turėtų pristabdyti.",
+    "pauseUntil": "Pristabdyti iki:",
+    "pauseUntilMoring": "Pristabdyti iki ryto:",
+    "longBreaks": "Ilgos pertraukos:",
+    "maxPostpones": "Didžiausias atidėjimų skaičius:",
+    "postponeFor": "Atidėti:",
+    "postponableFor": "Atidedama:",
+    "breakPostponeInfo": "Jei įgalinta pagrindinėse nuostatose, galite atidėti pertraukas. Šie parametrai leidžia nurodyti, kada, kiek laiko ir kiek kartų galite atidėti pertrauką.",
+    "breakPostpone": "Pertraukų atidėjimas:",
+    "newVersion": "Nauja versija:",
+    "notificationsInfo": "Sistemos pranešimas rodomas prieš pertraukas, kad galėtumėte jam pasiruošti.",
+    "notifications": "Pranešimai apie pertraukas:",
+    "title": "Kontributorių nustatymai"
   }
 }
