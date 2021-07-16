@@ -1,7 +1,7 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - Prisimink pertraukėles",
-    "resumingBreaks": "Pertrauka tęsiasi",
+    "resumingBreaks": "Pertraukėlė tęsiasi",
     "downloadLatestVersion": "Atsisiųsti naujausią versiją",
     "skipToTheNext": "Šitą preleisti",
     "resume": "Tęsti",
@@ -11,22 +11,22 @@
     "for5Hours": "5 valandom",
     "untilMorning": "iki rytojaus",
     "indefinitely": "neribotam laikui",
-    "resetBreaks": "Atstatyti pertraukas",
+    "resetBreaks": "Atstatyti pertraukėles",
     "quitStretchly": "Išjungti Stretchly",
     "preferences": "Nustatymai",
     "syncPreferences": "Synchronizavimo nustatymai",
     "contributorPreferences": "Kontributorių nustatymai",
     "cancel": "Atšaukti",
     "continue": "Tęsti",
-    "toMicrobreak": "Trumpa pertrauka",
-    "toBreak": "Ilga pertrauka",
-    "breakIn": "Ilga pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "Trumpa pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
+    "toMicrobreak": "Mini pertraukėlė",
+    "toBreak": "Ilga pertraukėlė",
+    "breakIn": "Ilga pertraukėlė po $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Mini pertraukėlė po $t(utils.seconds, {'count': {{seconds}} })",
     "restoreDefaults": "Atstatyti nustatymus",
     "warning": "Taip bus atkurti numatytieji programos nustatymai ir visi jūsų pakeisti nustatymai bus prarasti."
   },
   "break": {
-    "title": "Laikas pertraukai!",
+    "title": "Laikas pertraukėlei!",
     "skip": "Praleisti šią pertraukėlę",
     "postpone": "Atidėti šią pertraukėlę"
   },
@@ -46,7 +46,9 @@
       "enableSounds": "Įjungti garsus",
       "sounds": "Garsai:",
       "transparentMode": "Įgalinti skaidrumą",
-      "appearance": "Išvaizda:"
+      "appearance": "Išvaizda:",
+      "invertedMonochrome": "Apverstas vienspalvis",
+      "monochrome": "Vienspalvis"
     },
     "about": {
       "tagline": "Prisimink pertraukėles",
@@ -56,7 +58,9 @@
       "dot": ".",
       "ourWebsite": "apsilankykite mūsų svetainėje",
       "latestVersion": "Naujausia versija ",
-      "version": "Versija "
+      "version": "Versija ",
+      "checkNewVersion": "Automatiškai tikrinti, ar yra programos atnaujinimų",
+      "learnMore": "Jei norite sužinoti daugiau apie Stretchly funkcijas, peržiūrėkite pamoką, atsisiųskite naujausią versiją arba susisiekite su mumis dėl pagalbos, "
     },
     "schedule": {
       "enableStrictLong": "Įjungti griežtą režimą ilgoms pertraukoms",
@@ -69,28 +73,32 @@
       "strictModeInfo": "Griežtasis režimas neleidžia praleisti nei mažųjų, nei ilgųjų pertraukų ir yra skirtas drausmei palaikyti.",
       "strictMode": "Griežtasis režimas:",
       "enablePostponeLong": "Įgalinti ilgos pertraukos atidėjimą",
-      "showNotificationBeforeLongBreak": "Rodyti pranešimą prieš prasidedant ilgajai pertraukai",
-      "enableLongBreaks": "Įgalinti ilgas pertraukas",
+      "showNotificationBeforeLongBreak": "Rodyti pranešimą prieš prasidedant ilgajai pertraukėlei",
+      "enableLongBreaks": "Įgalinti ilgas pertraukėles",
       "longBreaksInfo": "Ilgosios pertraukos daromos rečiau, bet yra ilgesnės trukmės, todėl galite ilgesniam laikui atsitraukti nuo darbo.",
       "longBreaks": "Ilgos pertraukos:",
-      "every": "Kas:"
+      "every": "Kas:",
+      "enablePostponeMini": "Įgalinti Mini pertraukėlė atidėjimą",
+      "showNotificationBeforeMiniBreak": "Rodyti pranešimą prieš prasidedant Mini pertraukėlei"
     },
     "settings": {
       "restoreDefaults": "Atkurti pradines reikšmes",
       "language": "Pasirink kalbą:",
-      "monitorDnd": "Rodyti pertraukas \"Do Not Distrub\" režime",
+      "monitorDnd": "Rodyti pertraukėles „Netrukdyti“ režime",
       "allScreens": "Rodyti pauzes per visus ekranus",
       "showIdeas": "Rodyti pratimus pertraukų metu",
       "fullscreen": "Pilnu ekranu",
       "window": "Langas",
-      "showBreaksIn": "Rodyti pertrauką po:",
-      "openAtLogin": "Automatiškai startuoti Strechly prisijungus prie kompiuterio"
+      "showBreaksIn": "Rodo pertraukėles po:",
+      "openAtLogin": "Automatiškai startuoti Strechly prisijungus prie kompiuterio",
+      "monitorIdleTime": "Stebėti sistemos neveikimo laiką (pertraukos pristabdomos, jei sistema neveikia)."
     },
     "nav": {
       "heart": "Prisidėk/Paremk",
       "about": "Apie",
       "theme": "Išvaizda",
-      "settings": "Nustatymai"
+      "settings": "Nustatymai",
+      "schedule": "Tvarkaraštis"
     },
     "title": "Strechly nustatymai",
     "heart": {
@@ -109,7 +117,10 @@
   },
   "welcome": {
     "title": "Sveiki atvykę į Stretchly",
-    "breakTimeReminderApp": "Prisimink pertraukėles"
+    "breakTimeReminderApp": "Prisimink pertraukėles",
+    "viewTutorial": "Peržiūrėti pamoką",
+    "openPreferences": "Atidaryti nuostatas",
+    "getStarted": "Pradėti"
   },
   "contributorPreferences": {
     "volume": "Garsumas:",
@@ -132,11 +143,78 @@
     "maxPostpones": "Didžiausias atidėjimų skaičius:",
     "postponeFor": "Atidėti:",
     "postponableFor": "Atidedama:",
-    "breakPostponeInfo": "Jei įgalinta pagrindinėse nuostatose, galite atidėti pertraukas. Šie parametrai leidžia nurodyti, kada, kiek laiko ir kiek kartų galite atidėti pertrauką.",
+    "breakPostponeInfo": "Jei įgalinta pagrindinėse nuostatose, galite atidėti pertraukėles. Šie parametrai leidžia nurodyti, kada, kiek laiko ir kiek kartų galite atidėti pertraukėlę.",
     "breakPostpone": "Pertraukų atidėjimas:",
     "newVersion": "Nauja versija:",
-    "notificationsInfo": "Sistemos pranešimas rodomas prieš pertraukas, kad galėtumėte jam pasiruošti.",
-    "notifications": "Pranešimai apie pertraukas:",
-    "title": "Kontributorių nustatymai"
+    "notificationsInfo": "Sistemos pranešimas rodomas prieš pertraukėles, kad galėtumėte jam pasiruošti.",
+    "notifications": "Pranešimai apie pertraukėles:",
+    "title": "Kontributorių nustatymai",
+    "showOnMonitor": "Rodyti pertraukėles",
+    "screenInfo": "Kai pertraukų rodymas visuose monitoriuose yra išjungtas, galite pasirinkti, kuriame monitoriuje norite rodyti pertraukėles.",
+    "showBreaksAsRegularWindows": "Rodyti pertraukėles kaip įprastus langus",
+    "4": "Penktas ekranas",
+    "3": "Ketvirtas ekranas",
+    "2": "Trečias ekranas",
+    "1": "Antras ekranas",
+    "0": "Pirmas ekranas",
+    "primary": "Pagrindinis ekranas",
+    "screen": "Ekranas pertraukoms:",
+    "miniBreakStartSound": "Groti pertraukos pabaigos garsą ir Mini pertraukėlės pradžioje",
+    "miniBreaks": "Mini pertraukėlės:",
+    "customIdeas": "Individualios idėjos:",
+    "beforeMiniBreak": "Mini pertraukėlė:",
+    "customIdeasInfo": "Leidžia naudoti pasirinktines pertraukų idėjas redaguojant konfigūracijos failą. (Pažengusiems naudotojams.)",
+    "useIdeasFromSettings": "Naudoti pertraukų idėjas iš konfigūracijos failo",
+    "naturalBreaksInfo": "Jei pagrindinėje programoje „Nustatymai“ įjungtas neveikimo laiko stebėjimas, galite nurodyti, po kurio laiko pertraukos turėtų būti sustabdytos.",
+    "pauseAfter": "Padarykite pauzę po:",
+    "light": "Šviesi",
+    "dark": "Tamsi",
+    "cursor": "Sekti žymeklį",
+    "longBreakStartSound": "Groti pertraukos pabaigos garsą ir ilgos pertraukos pradžioje",
+    "naturalBreaks": "Natūralios pertraukos:",
+    "appearance": "Išvaizda:",
+    "system": "Sistema",
+    "showBreaksAsRegularWindowsTitle": "Veikti kaip įprastas langas:",
+    "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje."
+  },
+  "statusMessages": {
+    "nextLongBreak": "Sekanti ilgoji pertraukėlė",
+    "afterMiniBreak_0": "po {{count}} Mini pertraukėlė",
+    "afterMiniBreak_1": "po {{count}} Mini pertraukėlės",
+    "afterMiniBreak_2": "po {{count}} Mini pertraukėlių",
+    "nextMiniBreak": "Sekanti Mini pertraukėlė",
+    "appExclusion": "Programos išskyrimo taisyklė",
+    "indefinitely": "Neribotam laikui",
+    "dndMode": "Įjungta funkcija „Netrukdyti“",
+    "paused": "Pristabdyta",
+    "resuming": "Tęsiama"
+  },
+  "utils": {
+    "inAboutHours": "po maždaug $t(utils.hours, {'count': {{hours}} })",
+    "inAboutHoursMinutes": "po maždaug $t(utils.hours, {'count': {{hours}} })$t(utils.minutes, {'count': {{minutes}} })",
+    "inAboutMinutes": "po maždaug $t(utils.minutes, {'count': {{minutes}} })",
+    "secondsRemaining": "Liko $t(utils.seconds, {'count': {{seconds}} })",
+    "aboutMinutesRemaining": "Liko apie $t(utils.minutes, {'count': {{minutes}} })",
+    "aboutHoursRemaining": "Liko apie $t(utils.hours, {'count': {{hours}} })",
+    "aboutHoursMinutesRemaining": "Liko apie $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
+    "inSeconds": "po $t(utils.seconds, {'count': {{seconds}} })",
+    "minutes_0": "{{count}} minutė",
+    "minutes_1": "{{count}} minutės",
+    "minutes_2": "{{count}} minučių",
+    "hours_0": "{{count}} valanda",
+    "hours_1": "{{count}} valandos",
+    "hours_2": "{{count}} valandų",
+    "none_0": "{{count}}",
+    "none_1": "{{count}}",
+    "none_2": "{{count}}",
+    "percent_0": "{{count}} procentas",
+    "percent_1": "{{count}} procentai",
+    "percent_2": "{{count}} procentų",
+    "oclock_0": "{{count}} valanda",
+    "oclock_1": "{{count}} valandos",
+    "oclock_2": "{{count}} valandų",
+    "seconds_0": "{{count}} sekundė",
+    "seconds_1": "{{count}} sekundės",
+    "seconds_2": "{{count}} sekundžių"
   }
 }
