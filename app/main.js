@@ -2,7 +2,6 @@ const {
   app, nativeTheme, BrowserWindow, Menu, ipcMain,
   shell, dialog, globalShortcut, Tray
 } = require('electron')
-const fs = require('fs');
 
 const path = require('path')
 const i18next = require('i18next')
@@ -381,8 +380,8 @@ function trayIconPath () {
     remainingTimeString: Utils.minutesRemaining(
       breakPlanner.scheduler.timeLeft
     ),
-    totalLongBreak: (settings.get('breakInterval') + 1) * 10,
-  };
+    totalLongBreak: (settings.get('breakInterval') + 1) * 10
+  }
   const trayIconFileName = new AppIcon(params).trayIconFileName
   const pathToTryIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
   return pathToTryIcon
@@ -397,7 +396,7 @@ function windowIconPath () {
     platform: process.platform,
     remainingModeString: settings.get('breakIconType'),
     remainingTimeString: '60',
-    totalLongBreak: (settings.get('breakInterval') + 1) * 10,
+    totalLongBreak: (settings.get('breakInterval') + 1) * 10
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)

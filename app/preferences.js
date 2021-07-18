@@ -193,8 +193,8 @@ window.onload = (e) => {
     if (!eventsAttached) {
       document.querySelector('#breakIconType').onchange = (event) => {
         ipcRenderer.send('save-setting', 'breakIconType', event.target.value);
-        setWindowHeight();
-      };
+        setWindowHeight()
+      }
     }
 
     document.querySelectorAll('input[type="range"]').forEach(range => {

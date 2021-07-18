@@ -41,8 +41,8 @@ class AppIcon {
         }
       }
     } else if (this.remainingModeString === 'Number') {
-      const textGen = new TrayWithText();
-      const minRemain = parseInt(this.remainingTimeString);
+      const textGen = new TrayWithText()
+      const minRemain = parseInt(this.remainingTimeString)
       const returnVal = textGen.iconWithNumber(
         '/numbers/generated-numbers/',
         minRemain,
@@ -50,7 +50,7 @@ class AppIcon {
         monochrome,
         this.platform,
         invertedMonochromeString
-      );
+      )
       return returnVal
     } else {
       // Circle
@@ -64,14 +64,14 @@ class AppIcon {
         monochrome,
         this.platform,
         invertedMonochromeString
-      );
+      )
       return returnVal
     }
   }
 
   get windowIconFileName () {
-    const invertedMonochromeString = this.inverted ? 'Inverted' : '';
-    const darkModeString = this.darkMode ? 'Dark' : '';
+    const invertedMonochromeString = this.inverted ? 'Inverted' : ''
+    const darkModeString = this.darkMode ? 'Dark' : ''
 
     if (this.monochrome) {
       return `trayMonochrome${invertedMonochromeString}.png`
@@ -81,4 +81,4 @@ class AppIcon {
   }
 }
 
-module.exports = AppIcon;
+module.exports = AppIcon

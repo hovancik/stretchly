@@ -70,8 +70,8 @@ function formatKeyboardShortcut (keyboardShortcut) {
 }
 
 const minutesRemaining = function (milliseconds) {
-  const seconds = Math.ceil(milliseconds / 1000.0);
-  const minutes = Math.ceil(seconds / 60.0);
+  const seconds = Math.ceil(milliseconds / 1000.0)
+  const minutes = Math.ceil(seconds / 60.0)
   return minutes % 99;
 };
 
@@ -92,5 +92,5 @@ module.exports = {
   canSkip,
   formatKeyboardShortcut,
   minutesRemaining,
-  shouldShowNotificationTitle,
+  shouldShowNotificationTitle
 };
