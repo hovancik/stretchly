@@ -1,7 +1,8 @@
 const {
-  app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain,
-  shell, dialog, globalShortcut
+  app, nativeTheme, BrowserWindow, Menu, ipcMain,
+  shell, dialog, globalShortcut, Tray
 } = require('electron')
+
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-fs-backend')
@@ -121,6 +122,7 @@ function initialize (isAppStart = true) {
     }
     appIcon = new Tray(trayIconPath())
   }
+
   startI18next()
   setInterval(updateTray, 10000)
   startProcessWin()
@@ -365,16 +367,24 @@ function displaysHeight (displayID = -1) {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+    paused:
+      breakPlanner.isPaused ||
+      breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
       breakPlanner.appExclusionsManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
+    platform: process.platform,
+    remainingModeString: settings.get('breakIconType'),
+    remainingTimeString: Utils.minutesRemaining(
+      breakPlanner.scheduler.timeLeft
+    ),
+    totalLongBreak: (settings.get('breakInterval') + 1) * 10
   }
   const trayIconFileName = new AppIcon(params).trayIconFileName
-  return path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  const pathToTryIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  return pathToTryIcon
 }
 
 function windowIconPath () {
@@ -383,7 +393,10 @@ function windowIconPath () {
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
+    platform: process.platform,
+    remainingModeString: settings.get('breakIconType'),
+    remainingTimeString: '60',
+    totalLongBreak: (settings.get('breakInterval') + 1) * 10
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
@@ -971,7 +984,7 @@ function createPreferencesWindow () {
   }, 0)
 }
 
-function updateTray () {
+async function updateTray () {
   updateToolTip()
   appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
