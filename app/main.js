@@ -121,7 +121,7 @@ function initialize (isAppStart = true) {
     if (process.platform === 'darwin') {
       app.dock.hide()
     }
-    appIcon = new Tray(trayIconPath());
+    appIcon = new Tray(trayIconPath())
   }
 
   startI18next()
@@ -383,9 +383,9 @@ function trayIconPath () {
     ),
     totalLongBreak: (settings.get('breakInterval') + 1) * 10,
   };
-  const trayIconFileName = new AppIcon(params).trayIconFileName;
-  let pathToTryIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
-  return pathToTryIcon;
+  const trayIconFileName = new AppIcon(params).trayIconFileName
+  const pathToTryIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  return pathToTryIcon
 }
 
 function windowIconPath () {
@@ -398,7 +398,7 @@ function windowIconPath () {
     remainingModeString: settings.get('breakIconType'),
     remainingTimeString: '60',
     totalLongBreak: (settings.get('breakInterval') + 1) * 10,
-  };
+  }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
 }
