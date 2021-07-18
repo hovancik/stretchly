@@ -10,7 +10,8 @@ describe('appIcon', function () {
       monochrome: false,
       inverted: false,
       darkMode: true,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacDark.png')
@@ -22,7 +23,8 @@ describe('appIcon', function () {
       monochrome: false,
       inverted: false,
       darkMode: true,
-      platform: 'linux'
+      platform: 'linux',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDark.png')
@@ -34,7 +36,8 @@ describe('appIcon', function () {
       monochrome: false,
       inverted: false,
       darkMode: true,
-      platform: 'win32'
+      platform: 'win32',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDark.png')
@@ -82,7 +85,8 @@ describe('appIcon', function () {
       monochrome: false,
       inverted: false,
       darkMode: false,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMac.png')
@@ -94,7 +98,8 @@ describe('appIcon', function () {
       monochrome: false,
       inverted: false,
       darkMode: false,
-      platform: 'linux'
+      platform: 'linux',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')
@@ -106,7 +111,8 @@ describe('appIcon', function () {
       monochrome: false,
       inverted: false,
       darkMode: false,
-      platform: 'win32'
+      platform: 'win32',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')
@@ -154,7 +160,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: false,
       darkMode: false,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -166,7 +173,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: false,
       darkMode: false,
-      platform: 'linux'
+      platform: 'linux',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.png')
@@ -178,7 +186,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: false,
       darkMode: false,
-      platform: 'win32'
+      platform: 'win32',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.png')
@@ -226,7 +235,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: false,
       darkMode: true,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -238,7 +248,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: false,
       darkMode: true,
-      platform: 'linux'
+      platform: 'linux',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.png')
@@ -250,7 +261,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: false,
       darkMode: true,
-      platform: 'win32'
+      platform: 'win32',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.png')
@@ -298,7 +310,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: false,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -310,7 +323,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: false,
-      platform: 'linux'
+      platform: 'linux',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.png')
@@ -322,7 +336,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: false,
-      platform: 'win32'
+      platform: 'win32',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.png')
@@ -370,7 +385,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: true,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -382,7 +398,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: true,
-      platform: 'linux'
+      platform: 'linux',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.png')
@@ -394,7 +411,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: true,
-      platform: 'win32'
+      platform: 'win32',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.png')
@@ -406,7 +424,8 @@ describe('appIcon', function () {
       monochrome: true,
       inverted: true,
       darkMode: true,
-      platform: 'darwin'
+      platform: 'darwin',
+      remainingModeString: ''
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
