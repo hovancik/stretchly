@@ -72,8 +72,8 @@ function formatKeyboardShortcut (keyboardShortcut) {
 const minutesRemaining = function (milliseconds) {
   const seconds = Math.ceil(milliseconds / 1000.0)
   const minutes = Math.ceil(seconds / 60.0)
-  return minutes % 99;
-};
+  return minutes % 99
+}
 
 function shouldShowNotificationTitle (platform, systemVersion) {
   if (platform === 'win32' && semver.gte(semver.coerce(systemVersion), '10.0.19042')) {
@@ -93,4 +93,4 @@ module.exports = {
   formatKeyboardShortcut,
   minutesRemaining,
   shouldShowNotificationTitle
-};
+}

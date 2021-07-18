@@ -59,4 +59,4 @@ module.exports = {
   resumeBreaksShortcut: '',
   screen: 'primary',
   breakIconType: ''
-};
+}

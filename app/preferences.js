@@ -189,10 +189,10 @@ window.onload = (e) => {
       }
     }
 
-    document.querySelector('#breakIconType').value = settings.breakIconType;
+    document.querySelector('#breakIconType').value = settings.breakIconType
     if (!eventsAttached) {
       document.querySelector('#breakIconType').onchange = (event) => {
-        ipcRenderer.send('save-setting', 'breakIconType', event.target.value);
+        ipcRenderer.send('save-setting', 'breakIconType', event.target.value)
         setWindowHeight()
       }
     }
