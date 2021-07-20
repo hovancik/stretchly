@@ -984,7 +984,7 @@ function createPreferencesWindow () {
   }, 0)
 }
 
-async function updateTray () {
+function updateTray () {
   updateToolTip()
   appIcon.setImage(trayIconPath())
   appIcon.setContextMenu(getTrayMenu())
