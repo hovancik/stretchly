@@ -16,7 +16,7 @@ class TrayWithText {
     const minutesOnTray = minutesToLongBreak
     if (monochrome) {
       if (platform === 'darwin') {
-        return `${imagePath}traytMacMonochrome${minutesOnTray}.png`
+        return `${imagePath}traytMacMonochrome${minutesOnTray}Template.png`;
       } else {
         return `${imagePath}traytMonochrome${invertedMonochromeString}${minutesOnTray}.png`
       }
@@ -63,7 +63,7 @@ class TrayWithText {
     }
     if (monochrome) {
       if (platform === 'darwin') {
-        return `${imagePath}traytMacMonochrome${pictureNo}.png`
+        return `${imagePath}traytMacMonochrome${pictureNo}Template.png`;
       } else {
         return `${imagePath}traytMonochrome${invertedMonochromeString}${pictureNo}.png`
       }
@@ -159,8 +159,10 @@ class TrayWithText {
       if (decimalDigit === 0) leadingZero = '0'
       try {
         let pictureOffset = -32
+        let macTemplateEnd=''
         if (mac === 'm') {
           pictureOffset = -16
+          macTemplateEnd = 'Template'
         }
         const img = await mergeImg([
           {
@@ -171,7 +173,9 @@ class TrayWithText {
             offsetX: pictureOffset
           }
         ])
-        await img.write(pathToImages + createdName + number + '.png')
+        await img.write(
+          pathToImages + createdName + number + macTemplateEnd + '.png'
+        );
       } catch (e) {
         log.debug(e + 'safely ignored error')
       }
@@ -213,10 +217,12 @@ class TrayWithText {
         number === 60
       ) {
         const leadingZero = ''
+        let macTemplateEnd = ''
         try {
           let pictureOffset = -32
           if (mac === 'm') {
             pictureOffset = -16
+            macTemplateEnd = 'Template'
           }
           const img = await mergeImg([
             {
@@ -233,7 +239,9 @@ class TrayWithText {
               offsetX: pictureOffset
             }
           ])
-          await img.write(pathToCircleImages + createdName + number + '.png')
+          await img.write(
+            pathToCircleImages + createdName + number + macTemplateEnd + '.png'
+          );
         } catch (e) {
           log.debug(e + 'safely ignored error')
         }
