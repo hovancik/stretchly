@@ -13,10 +13,19 @@ class TrayWithText {
     platform,
     invertedMonochromeString
   ) {
-    const minutesOnTray = minutesToLongBreak
+    let minutesOnTray = minutesToLongBreak
+    let minutesAsNumber = 99
+    try {
+      minutesAsNumber = Number(minutesOnTray)
+    } catch (er) {
+      minutesAsNumber = 99
+    }
+    if (minutesAsNumber >= 99) {
+      minutesOnTray = '99'
+    }
     if (monochrome) {
       if (platform === 'darwin') {
-        return `${imagePath}traytMacMonochrome${minutesOnTray}Template.png`;
+        return `${imagePath}traytMacMonochrome${minutesOnTray}Template.png`
       } else {
         return `${imagePath}traytMonochrome${invertedMonochromeString}${minutesOnTray}.png`
       }
@@ -63,7 +72,7 @@ class TrayWithText {
     }
     if (monochrome) {
       if (platform === 'darwin') {
-        return `${imagePath}traytMacMonochrome${pictureNo}Template.png`;
+        return `${imagePath}traytMacMonochrome${pictureNo}Template.png`
       } else {
         return `${imagePath}traytMonochrome${invertedMonochromeString}${pictureNo}.png`
       }
@@ -159,7 +168,7 @@ class TrayWithText {
       if (decimalDigit === 0) leadingZero = '0'
       try {
         let pictureOffset = -32
-        let macTemplateEnd=''
+        let macTemplateEnd = ''
         if (mac === 'm') {
           pictureOffset = -16
           macTemplateEnd = 'Template'
@@ -175,7 +184,7 @@ class TrayWithText {
         ])
         await img.write(
           pathToImages + createdName + number + macTemplateEnd + '.png'
-        );
+        )
       } catch (e) {
         log.debug(e + 'safely ignored error')
       }
@@ -241,7 +250,7 @@ class TrayWithText {
           ])
           await img.write(
             pathToCircleImages + createdName + number + macTemplateEnd + '.png'
-          );
+          )
         } catch (e) {
           log.debug(e + 'safely ignored error')
         }
