@@ -388,16 +388,17 @@ function trayIconPath () {
 }
 
 function windowIconPath () {
+  let unusedParams=null;
   const params = {
     paused: false,
-    monochrome: settings.get('useMonochromeTrayIcon'),
-    inverted: settings.get('useMonochromeInvertedTrayIcon'),
+    monochrome: settings.get("useMonochromeTrayIcon"),
+    inverted: settings.get("useMonochromeInvertedTrayIcon"),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform,
-    remainingModeString: settings.get('breakIconType'),
-    remainingTimeString: '60',
-    totalLongBreak: (settings.get('breakInterval') + 1) * 10
-  }
+    platform: unusedParams,
+    remainingModeString: unusedParams,
+    remainingTimeString: unusedParams,
+    totalLongBreak: unusedParams,
+  };
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
 }
