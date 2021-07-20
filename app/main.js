@@ -388,7 +388,7 @@ function trayIconPath () {
 }
 
 function windowIconPath () {
-  let unusedParams=null;
+  let unusedParams=null
   const params = {
     paused: false,
     monochrome: settings.get("useMonochromeTrayIcon"),
