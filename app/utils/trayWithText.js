@@ -132,9 +132,9 @@ class TrayWithText {
 
   async generateNumbersWithTray (
     color = 'b',
-    createdName = 'traytMonochrome',
+    createdName = 'traytMacMonochrome',
     mac = 'm',
-    iconPath = '/home/m/p/stretchly/app/images/app-icons/traytMonochrome.png'
+    iconPath = '/home/m/p/stretchly/app/images/app-icons/traytMacMonochrome.png'
   ) {
     const range = {
       from: 0,
@@ -184,9 +184,9 @@ class TrayWithText {
 
   async generateCirclesWithTray (
     color = 'b',
-    createdName = 'traytMonochrome',
+    createdName = 'traytMacMonochrome',
     mac = 'm',
-    iconPath = '/home/m/p/stretchly/app/images/app-icons/traytMonochrome.png'
+    iconPath = '/home/m/p/stretchly/app/images/app-icons/traytMacMonochrome.png'
   ) {
     const range = {
       from: 0,

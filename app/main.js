@@ -388,11 +388,11 @@ function trayIconPath () {
 }
 
 function windowIconPath () {
-  let unusedParams = null
+  const unusedParams = null
   const params = {
     paused: false,
-    monochrome: settings.get("useMonochromeTrayIcon"),
-    inverted: settings.get("useMonochromeInvertedTrayIcon"),
+    monochrome: settings.get('useMonochromeTrayIcon'),
+    inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: unusedParams,
     remainingModeString: unusedParams,
