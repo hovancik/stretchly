@@ -398,7 +398,7 @@ function windowIconPath () {
     remainingModeString: unusedParams,
     remainingTimeString: unusedParams,
     totalLongBreak: unusedParams
-  };
+  }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
 }
