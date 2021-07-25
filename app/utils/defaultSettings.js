@@ -58,5 +58,5 @@ module.exports = {
   pauseBreaksShortcut: '',
   resumeBreaksShortcut: '',
   screen: 'primary',
-  breakIconType: 'Number'
-}
+  breakIconType: ' '
+};
