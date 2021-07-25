@@ -230,18 +230,6 @@
         <label data-i18next="preferences.schedule.enablePostponeLong" for="enablePostponeLong"></label>
       </div>
       <div>
-         <!-- <input type="checkbox" value="longBreakIcon" id="showLongBreakTimeInIcon"> -->
-         <!-- <label data-i18next="preferences.schedule.showLongBreakTimeInIcon" for="showLongBreakTimeInIcon"></label> -->
-         <p>       
-         <label data-i18next="preferences.schedule.breakIconType" for="breakIconType"></label>
-                <div class="has-select">
-                  <select name="breakIconType" id="breakIconType">
-                    <option selected="selected" data-i18next="preferences.schedule.noiconindicator" value=' '></option>
-                    <option data-i18next="preferences.schedule.numeric" value="Number">numeric</option>
-                    <option value="Circle" data-i18next="preferences.schedule.circular">circle</option>
-                  </select>
-                </div>
-                </p>
       </div>
       <div>
         <hr/>
@@ -342,6 +330,18 @@
           <input type="checkbox" value="useMonochromeInvertedTrayIcon" id="invertedMonochrome">
           <label data-i18next="preferences.theme.invertedMonochrome" for="invertedMonochrome"></label>
         </span>
+      </div>
+      <div>
+        <input type="checkbox" class="negative" value="noTrayIndicator" id="enableTrayIndicator">
+        <label data-i18next="preferences.theme.showLongBreakTimeInIcon" for="enableTrayIndicator"></label>
+      </div>
+      <div class="trayIcon">
+        <input type="radio" value="Number" name="breakIconType" id="numericTray">
+        <label data-i18next="preferences.theme.numeric" for="numericTray"></label>
+      </div>
+      <div class="trayIcon">
+        <input type="radio" value="Circle" name="breakIconType" id="circularTray">
+        <label data-i18next="preferences.theme.circular" for="circularTray"></label>
       </div>
     </div>
     <div class="about hidden">

@@ -376,7 +376,7 @@ function trayIconPath () {
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: process.platform,
-    remainingModeString: settings.get('breakIconType'),
+    remainingModeString: (!settings.get("noTrayIndicator")) ? settings.get('breakIconType') : '',
     remainingTimeString: Utils.minutesRemaining(
       breakPlanner.scheduler.timeLeft
     ),

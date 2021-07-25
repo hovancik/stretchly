@@ -26,7 +26,7 @@ class AppIcon {
     const invertedMonochromeString = this.inverted ? 'Inverted' : ''
     const darkModeString = this.darkMode ? 'Dark' : ''
     const monochrome = this.monochrome ? 'Monochrome' : ''
-    if (this.remainingModeString === ' ' || pausedString === 'Paused') {
+    if (this.remainingModeString === '' || pausedString === 'Paused') {
       if (this.monochrome) {
         if (this.platform === 'darwin') {
           return `trayMacMonochrome${pausedString}Template.png`
