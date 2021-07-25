@@ -2,7 +2,7 @@ const chai = require('chai')
 const {
   formatTimeRemaining, formatTimeIn,
   canSkip, canPostpone, formatKeyboardShortcut,
-  shouldShowNotificationTitle
+  minutesRemaining, shouldShowNotificationTitle
 } = require('../app/utils/utils')
 const i18next = require('i18next')
 const path = require('path')
@@ -136,6 +136,18 @@ describe('canSkip and canPostpone', () => {
     })
     it('formats + to have spaces', () => {
       formatKeyboardShortcut('Command+X').should.equal('Command + X')
+    })
+  })
+
+  describe('minutesRemaining', () => {
+    it('one minut remain', () => {
+      minutesRemaining(1000).should.equal(1)
+    })
+    it('less then one minute remains', () => {
+      minutesRemaining(1).should.equal(1)
+    })
+    it('ten minut remain', () => {
+      minutesRemaining(600000).should.equal(10)
     })
   })
 
