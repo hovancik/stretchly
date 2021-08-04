@@ -20,13 +20,12 @@ describe('appExclusionsManager', function () {
 
   it('app should be running with default settings', (done) => {
     appExclusionsManager = new AppExclusionsManager(settings)
-    setTimeout(() => {
-      clearInterval(appExclusionsManager.timer)
+     clearInterval(appExclusionsManager.timer)
       appExclusionsManager.isOnAppExclusion.should.be.equal(false)
       appExclusionsManager.isSchedulerCleared.should.be.equal(false)
       done()
-    }, 1500)
-  })
+  } 
+  ).timeout(10000)
 
   it('app should be running with default settings also after reinitialize', (done) => {
     appExclusionsManager = new AppExclusionsManager(settings)
@@ -130,7 +129,7 @@ describe('appExclusionsManager', function () {
         done()
       }, 1500)
     })
-  })
+  }).timeout(10000)
 
   it('app should not paused with some pause exception not found', (done) => {
     settings.set('appExclusions', [{
@@ -139,13 +138,11 @@ describe('appExclusionsManager', function () {
       commands: ['xxxxxxxxxxxxxxx']
     }])
     appExclusionsManager = new AppExclusionsManager(settings)
-    setTimeout(() => {
-      clearInterval(appExclusionsManager.timer)
-      appExclusionsManager.isOnAppExclusion.should.be.equal(false)
-      appExclusionsManager.isSchedulerCleared.should.be.equal(false)
-      done()
-    }, 1500)
-  })
+    clearInterval(appExclusionsManager.timer)
+    appExclusionsManager.isOnAppExclusion.should.be.equal(false)
+    appExclusionsManager.isSchedulerCleared.should.be.equal(false)
+    done()
+  }).timeout(10000)
 
   it('app should not paused with some pause exception inactive', (done) => {
     require('ps-list')().then((running) => {
@@ -156,14 +153,12 @@ describe('appExclusionsManager', function () {
         commands: [runningCmd]
       }])
       appExclusionsManager = new AppExclusionsManager(settings)
-      setTimeout(() => {
-        clearInterval(appExclusionsManager.timer)
-        appExclusionsManager.isOnAppExclusion.should.be.equal(false)
-        appExclusionsManager.isSchedulerCleared.should.be.equal(false)
-        done()
-      }, 1500)
+      clearInterval(appExclusionsManager.timer)
+      appExclusionsManager.isOnAppExclusion.should.be.equal(false)
+      appExclusionsManager.isSchedulerCleared.should.be.equal(false)
+      done()
     })
-  })
+  }).timeout(10000)
 
   it('app should not be paused with some resume exception active', (done) => {
     require('ps-list')().then((running) => {
