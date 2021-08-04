@@ -12,9 +12,9 @@
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
     "dist": "electron-builder build --x64 --ia32",
-    "test": "mocha test",
-    "test-single": "mocha $1",
-    "tdd": "mocha --watch test",
+    "test": "mocha test  --timeout 10000",
+    "test-single": "mocha $1  --timeout 10000",
+    "tdd": "mocha --watch test --timeout 10000",
     "lint": "./node_modules/.bin/standard",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
