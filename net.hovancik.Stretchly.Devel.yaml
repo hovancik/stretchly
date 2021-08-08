@@ -8,6 +8,11 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.node14
 command: run.sh
 separate-locales: false
+tags:
+  - devel
+  - development
+# todo Better distinguish between the release and development installations by using a dedicated icon to represent the development Flatpak instead of prefixing the name.
+desktop-file-name-prefix: "(Development) "
 finish-args:
   - --share=ipc
   - --socket=x11
