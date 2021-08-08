@@ -1,15 +1,6 @@
 const defaultBreakIdeas = require('./defaultBreakIdeas')
 const defaultMicrobreakIdeas = require('./defaultMicrobreakIdeas')
-
-// Don't check for new versions by default when running inside the Flatpak.
-const fs = require('fs')
-const flatpakInfoPath = '/.flatpak-info'
-defaultCheckNewVersion = true
-defaultNotifyNewVersion = true
-if (fs.existsSync(flatpakInfoPath)) {
-    defaultCheckNewVersion = false
-    defaultNotifyNewVersion = false
-}
+const Utils = require('./utils')
 
 module.exports = {
   microbreakDuration: 20000,
@@ -45,7 +36,7 @@ module.exports = {
   allScreens: true,
   useIdeasFromSettings: false,
   language: 'en',
-  notifyNewVersion: defaultNotifyNewVersion,
+  notifyNewVersion: !Utils.insideFlatpak(),
   isFirstRun: true,
   posLatitude: 0.0,
   posLongitude: 0.0,
@@ -59,7 +50,7 @@ module.exports = {
   endBreakShortcut: 'CmdOrCtrl+X',
   breakWindowWidth: 0.85,
   breakWindowHeight: 0.85,
-  checkNewVersion: defaultCheckNewVersion,
+  checkNewVersion: !Utils.insideFlatpak(),
   breakIdeas: defaultBreakIdeas,
   microbreakIdeas: defaultMicrobreakIdeas,
   showBreaksAsRegularWindows: false,

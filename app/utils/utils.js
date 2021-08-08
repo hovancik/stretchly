@@ -85,6 +85,12 @@ function shouldShowNotificationTitle (platform, systemVersion) {
   return true
 }
 
+function insideFlatpak () {
+  const fs = require('fs')
+  const flatpakInfoPath = '/.flatpak-info'
+  return fs.existsSync(flatpakInfoPath)
+}
+
 module.exports = {
   formatTimeRemaining,
   formatTimeIn,
@@ -92,5 +98,6 @@ module.exports = {
   canSkip,
   formatKeyboardShortcut,
   minutesRemaining,
-  shouldShowNotificationTitle
+  shouldShowNotificationTitle,
+  insideFlatpak
 }
