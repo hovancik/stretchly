@@ -1,0 +1,53 @@
+app-id: net.hovancik.Stretchly.Devel
+runtime: org.freedesktop.Platform
+runtime-version: '20.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '20.08'
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node14
+command: run.sh
+separate-locales: false
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --share=network
+modules:
+  - name: stretchly
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/node14/bin
+      env:
+        XDG_CACHE_HOME: /run/build/stretchly/flatpak-node/cache
+        npm_config_cache: /run/build/stretchly/flatpak-node/npm-cache
+        npm_config_nodedir: /usr/lib/sdk/node14
+        npm_config_offline: 'true'
+    subdir: main
+    sources:
+      - type: git
+        path: '.'
+        branch: trunk
+        dest: main
+        x-checker-data:
+          type: anitya
+          project-id: 229677
+          stable-only: true
+          tag-template: v$version
+      - generated-sources.json
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - zypak-wrapper.sh /app/main/stretchly "$@"
+    build-commands:
+      - npm install --offline
+      - |
+        . ../flatpak-node/electron-builder-arch-args.sh
+        npm run pack -- --linux $ELECTRON_BUILDER_ARCH_ARGS
+      - cp -a dist/linux*unpacked /app/main
+      - install -Dm 755 -t /app/bin/ ../run.sh
+      - install -Dm 644 net.hovancik.Stretchly.desktop /app/share/applications/$FLATPAK_ID.desktop
+      - sed -i 's/Icon=net.hovancik.Stretchly/Icon=net.hovancik.Stretchly.Devel/' /app/share/applications/$FLATPAK_ID.desktop
+      - install -Dm 644 net.hovancik.Stretchly.metainfo.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - sed -i 's/net.hovancik.Stretchly.desktop/net.hovancik.Stretchly.Devel.desktop/' /app/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - install -Dm644 app/images/stretchly.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg

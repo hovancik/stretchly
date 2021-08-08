@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2021  Keyboardio, Inc. -->
+<component type="desktop-application">
+  <id>net.hovancik.Stretchly</id>
+  <launchable type="desktop-id">net.hovancik.Stretchly.desktop</launchable>
+  <provides>
+    <id>stretchly.desktop</id>
+  </provides>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BSD-2-Clause</project_license>
+  <content_rating type="oars-1.1" />
+  <name>Stretchly</name>
+  <developer_name>Jan Hovancik</developer_name>
+  <summary>The break time reminder app</summary>
+  <description>
+    <p>
+      Stretchly is a cross-platform Electron app that reminds you to take breaks when working on your computer.
+    </p>
+  </description>
+  <url type="bugtracker">https://github.com/hovancik/stretchly/issues</url>
+  <url type="donation">https://hovancik.net/stretchly/sponsor/</url>
+  <url type="help">https://hovancik.net/stretchly/features/</url>
+  <url type="homepage">https://hovancik.net/stretchly/</url>
+  <url type="translate">https://hosted.weblate.org/engage/stretchly/</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://hovancik.net/stretchly/img/minibreak.png</image>
+      <caption>Stretchly minibreak screen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://hovancik.net/stretchly/img/welcome.png</image>
+      <caption>Stretchly welcome screen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://hovancik.net/stretchly/img/dark.png</image>
+      <caption>Stretchly dark mode preferences</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.7.0" date="2021-05-04">
+      <description>
+        <p>
+          Added advanced preferences for Pause/Resume Breaks global shortcuts and for picking the monitor to show the break on.
+          Added initial support for the RTL languages for the UI.
+          The endBreakShortcut can now be disabled by settin it to an empty string.
+          Updated many translations.
+          Prevent memory leak after break has ended.
+        </p>
+      </description>
+    </release>
+    <release version="1.6.0" date="2021-04-16"/>
+    <release version="1.5.0" date="2021-04-07"/>
+  </releases>
+</component>
