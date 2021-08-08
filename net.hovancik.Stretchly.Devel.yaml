@@ -49,5 +49,5 @@ modules:
       - install -Dm 644 net.hovancik.Stretchly.desktop /app/share/applications/$FLATPAK_ID.desktop
       - sed -i 's/Icon=net.hovancik.Stretchly/Icon=net.hovancik.Stretchly.Devel/' /app/share/applications/$FLATPAK_ID.desktop
       - install -Dm 644 net.hovancik.Stretchly.metainfo.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml
-      - sed -i 's/net.hovancik.Stretchly.desktop/net.hovancik.Stretchly.Devel.desktop/' /app/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - sed -i 's/net.hovancik.Stretchly/net.hovancik.Stretchly.Devel/' /app/share/metainfo/$FLATPAK_ID.metainfo.xml
       - install -Dm644 app/images/stretchly.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
