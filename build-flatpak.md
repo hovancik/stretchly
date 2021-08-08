@@ -6,7 +6,7 @@ The instructions here describe how to build and update the Stretchly development
 
 Install Flatpak Builder.
 
-    sudo apt install flatpak-builder
+    sudo apt install flatpak-builder git
 
 Clone the Stretchly repository if needed.
 
@@ -37,7 +37,7 @@ To generate an updated version of this file, `generated-sources.json`, follow th
 
 Make sure to install npm.
 
-    sudo apt install npm
+    sudo apt install python3-aiohttp npm
 
 Fetch the Flatpak Node Generator Python script.
 
