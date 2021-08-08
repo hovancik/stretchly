@@ -10,7 +10,7 @@ Install Flatpak Builder.
 
 Clone the Stretchly repository if needed.
 
-    git clone https://github.com/hovancik/stretchly.git
+    git clone --recursive https://github.com/hovancik/stretchly.git
 
 Change into `stretchly` directory.
 

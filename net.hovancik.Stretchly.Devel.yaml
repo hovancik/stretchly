@@ -18,7 +18,9 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --share=network
+  - --talk-name=org.kde.StatusNotifierWatcher
 modules:
+  - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
   - name: stretchly
     buildsystem: simple
     build-options:
