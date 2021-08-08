@@ -14,10 +14,13 @@ tags:
 # todo Better distinguish between the release and development installations by using a dedicated icon to represent the development Flatpak instead of prefixing the name.
 desktop-file-name-prefix: "(Development) "
 finish-args:
+  - --device=dri
+  - --env=GIO_EXTRA_MODULES=/app/lib/gio/modules/
   - --share=ipc
   - --socket=x11
   - --socket=pulseaudio
   - --share=network
+  - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
 modules:
   - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
