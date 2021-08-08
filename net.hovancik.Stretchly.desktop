@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Stretchly
-Exec=stretchly --no-sandbox %U
+Exec=run.sh %U
 Terminal=false
 Type=Application
 Icon=net.hovancik.Stretchly
