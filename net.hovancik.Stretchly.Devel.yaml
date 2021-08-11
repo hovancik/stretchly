@@ -40,10 +40,9 @@ modules:
         branch: trunk
         dest: main
         x-checker-data:
-          type: anitya
-          project-id: 229677
-          stable-only: true
-          tag-template: v$version
+          type: git
+          tag-pattern: ^v([\\d.]+)$
+          version-scheme: semantic
       - generated-sources.json
       - type: script
         dest-filename: run.sh
