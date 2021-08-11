@@ -1,3 +1,4 @@
+const fs = require('fs')
 const semver = require('semver')
 
 // TODO if I am not wrong, formatting function are mathematically the same
@@ -86,7 +87,6 @@ function shouldShowNotificationTitle (platform, systemVersion) {
 }
 
 function insideFlatpak () {
-  const fs = require('fs')
   const flatpakInfoPath = '/.flatpak-info'
   return fs.existsSync(flatpakInfoPath)
 }
