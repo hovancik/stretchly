@@ -4,7 +4,7 @@ const AppIcon = require('../app/utils/appIcon')
 chai.should()
 
 describe('appIconTimer', function () {
-  const pathToGeneratedNumbers='/numbers/generated-numbers/'
+  const pathToGeneratedNumbers = '/numbers/generated-numbers/'
 
   it('trayIconFileName works for dark mode with numbers on macOS', function () {
     let params = {
@@ -17,8 +17,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMacDark${index}.png`)
     }
   })
@@ -34,13 +34,13 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytDark${index}.png`)
     }
   })
 
-    it('trayIconFileName works for dark mode with numbers on Windows', function () {
+  it('trayIconFileName works for dark mode with numbers on Windows', function () {
     let params = {
       paused: false,
       monochrome: false,
@@ -51,8 +51,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytDark${index}.png`)
     }
   })
@@ -68,8 +68,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMac${index}.png`)
     }
   })
@@ -85,13 +85,13 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}trayt${index}.png`)
     }
   })
 
-    it('trayIconFileName works for light mode with numbers on Windows', function () {
+  it('trayIconFileName works for light mode with numbers on Windows', function () {
     let params = {
       paused: false,
       monochrome: false,
@@ -102,8 +102,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}trayt${index}.png`)
     }
   })
@@ -119,8 +119,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMacMonochrome${index}Template.png`)
     }
   })
@@ -136,13 +136,13 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochrome${index}.png`)
     }
   })
 
-    it('trayIconFileName works for monochrome with numbers on Windows', function () {
+  it('trayIconFileName works for monochrome with numbers on Windows', function () {
     let params = {
       paused: false,
       monochrome: true,
@@ -153,8 +153,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochrome${index}.png`)
     }
   })
@@ -170,8 +170,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMacMonochrome${index}Template.png`)
     }
   })
@@ -187,13 +187,13 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochrome${index}.png`)
     }
   })
 
-    it('trayIconFileName works for monochrome with numbers on Windows (with dark on)', function () {
+  it('trayIconFileName works for monochrome with numbers on Windows (with dark on)', function () {
     let params = {
       paused: false,
       monochrome: true,
@@ -204,8 +204,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochrome${index}.png`)
     }
   })
@@ -221,8 +221,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMacMonochrome${index}Template.png`)
     }
   })
@@ -238,13 +238,13 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochromeInverted${index}.png`)
     }
   })
 
-    it('trayIconFileName works for inverted monochrome with numbers on Windows', function () {
+  it('trayIconFileName works for inverted monochrome with numbers on Windows', function () {
     let params = {
       paused: false,
       monochrome: true,
@@ -255,8 +255,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochromeInverted${index}.png`)
     }
   })
@@ -272,8 +272,8 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMacMonochrome${index}Template.png`)
     }
   })
@@ -289,13 +289,13 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochromeInverted${index}.png`)
     }
   })
 
-    it('trayIconFileName works for inverted monochrome with numbers on Windows (with dark on)', function () {
+  it('trayIconFileName works for inverted monochrome with numbers on Windows (with dark on)', function () {
     let params = {
       paused: false,
       monochrome: true,
@@ -306,9 +306,9 @@ describe('appIconTimer', function () {
     }
     let appIcon = new AppIcon(params)
     for (let index = 0; index <= 99; index++) {
-      params={...params,remainingTimeString: index.toString()}
-      appIcon = new AppIcon(params,{remainingTimeString: index.toString()})
+      params = { ...params, remainingTimeString: index.toString() }
+      appIcon = new AppIcon(params, { remainingTimeString: index.toString() })
       appIcon.trayIconFileName.should.equal(`${pathToGeneratedNumbers}traytMonochromeInverted${index}.png`)
     }
   })
-  })
+})

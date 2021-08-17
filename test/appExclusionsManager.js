@@ -20,11 +20,11 @@ describe('appExclusionsManager', function () {
 
   it('app should be running with default settings', (done) => {
     appExclusionsManager = new AppExclusionsManager(settings)
-     clearInterval(appExclusionsManager.timer)
-      appExclusionsManager.isOnAppExclusion.should.be.equal(false)
-      appExclusionsManager.isSchedulerCleared.should.be.equal(false)
-      done()
-  } 
+    clearInterval(appExclusionsManager.timer)
+    appExclusionsManager.isOnAppExclusion.should.be.equal(false)
+    appExclusionsManager.isSchedulerCleared.should.be.equal(false)
+    done()
+  }
   ).timeout(10000)
 
   it('app should be running with default settings also after reinitialize', (done) => {

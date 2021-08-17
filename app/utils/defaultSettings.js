@@ -58,4 +58,4 @@ module.exports = {
   pauseBreaksShortcut: '',
   resumeBreaksShortcut: '',
   screen: 'primary'
-};
+}
