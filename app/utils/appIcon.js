@@ -145,7 +145,6 @@ class AppIcon {
     }
   }
 
-
   get windowIconFileName () {
     const invertedMonochromeString = this.inverted ? 'Inverted' : ''
     const darkModeString = this.darkMode ? 'Dark' : ''
