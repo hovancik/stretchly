@@ -41,7 +41,7 @@ class AppIcon {
     } else if (this.remainingModeString === 'Number') {
       const minRemain = parseInt(this.remainingTimeString)
       const returnVal = this.iconWithNumber(
-        '/numbers/generated-numbers/',
+        '/',
         minRemain,
         darkModeString,
         monochrome,
@@ -53,7 +53,7 @@ class AppIcon {
       // Circle
       const minRemain = parseInt(this.remainingTimeString)
       const returnVal = this.pathWithCircularIcon(
-        '/round-clock/',
+        '/',
         minRemain,
         this.totalLongBreak,
         darkModeString,
@@ -132,15 +132,15 @@ class AppIcon {
     }
     if (monochrome) {
       if (platform === 'darwin') {
-        return `${imagePath}traytMacMonochrome${pictureNo}Template.png`
+        return `${imagePath}traytcMacMonochrome${pictureNo}Template.png`
       } else {
-        return `${imagePath}traytMonochrome${invertedMonochromeString}${pictureNo}.png`
+        return `${imagePath}traytcMonochrome${invertedMonochromeString}${pictureNo}.png`
       }
     } else {
       if (platform === 'darwin') {
-        return `${imagePath}traytMac${darkModeString}${pictureNo}.png`
+        return `${imagePath}traytcMac${darkModeString}${pictureNo}.png`
       } else {
-        return `${imagePath}trayt${darkModeString}${pictureNo}.png`
+        return `${imagePath}traytc${darkModeString}${pictureNo}.png`
       }
     }
   }

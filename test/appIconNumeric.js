@@ -4,7 +4,7 @@ const AppIcon = require('../app/utils/appIcon')
 chai.should()
 
 describe('appIconTimer', function () {
-  const pathToGeneratedNumbers = '/numbers/generated-numbers/'
+  const pathToGeneratedNumbers = '/'
 
   it('trayIconFileName works for dark mode with numbers on macOS', function () {
     let params = {

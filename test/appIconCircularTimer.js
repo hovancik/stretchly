@@ -4,7 +4,7 @@ const AppIcon = require('../app/utils/appIcon')
 chai.should()
 
 describe('appIconTimerCircularTimer', function () {
-  const pathToGeneratedNumbers = '/round-clock/'
+  const pathToGeneratedNumbers = '/'
   const iconTimerMode = 'Circle'
   it('trayIconFileName works for dark mode with numbers on macOS', function () {
     let params = {
