@@ -1,9 +1,9 @@
 app-id: net.hovancik.Stretchly.Devel
 runtime: org.freedesktop.Platform
-runtime-version: '20.08'
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
-base-version: '20.08'
+base-version: '21.08'
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.node14
 command: run.sh
