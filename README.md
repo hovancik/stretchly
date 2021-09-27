@@ -2,9 +2,7 @@
 
 <img src="stretchly_128x128.png" align="right" alt="Stretchly logo">
 
-> **The break time reminder app**
-
-*Stretchly* is a cross-platform [Electron](https://www.electronjs.org/) app that reminds you to take breaks when working on your computer.
+*Stretchly* is a cross-platform [Electron](https://www.electronjs.org/) app that reminds you to take breaks while working at the computer.
 
 [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik) [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik)
 
@@ -12,12 +10,10 @@
 - [Install](#install--)
 - [Default behavior](#default-behavior)
 - [Preferences](#preferences)
-- [Advanced Preferences](#advanced-preferences)
-- [Contributor Preferences](#contributor-preferences)
 - [Development](#development)
 - [Known issues](#known-issues)
 - [Contributors](#contributors)
-- [Humans and Tools](#humans-and-tools)
+- [Resources](#resources)
 - [License](#license)
 
 ## Install [![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total)](https://github.com/hovancik/stretchly/releases) [![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
@@ -26,7 +22,7 @@ The latest official **installers** and **portable versions** for macOS, Windows,
 
 ### macOS
 
-You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
+You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to quit Stretchly first.
 
  *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 
@@ -34,7 +30,7 @@ If you're using [Alfred](https://www.alfredapp.com) on macOS you can use this [A
 
 ### Windows
 
-You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.
+You can also install *Stretchly* via [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.
 
 Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
 
@@ -110,11 +106,11 @@ Preferences are divided into multiple categories and you are encouraged to take 
 
 You can also Restore the defaults to return to the default preferences state.
 
-## Advanced Preferences
+### Advanced Preferences
 
 All preferences are saved in a JSON file. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the file.
 
-It's recommended to Quit *Stretchly* before editing the preferences file.
+It's recommended to quit *Stretchly* before editing the preferences file.
 
 To make sure that all works as expected, it's always good idea to check that format of the preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
 
@@ -239,7 +235,7 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 - `"0"` (or `0`), `"1"`, `"2"` etc, where `"0"` is the first monitor returned by OS and so forth  
 
 
-## Contributor Preferences
+### Contributor Preferences
 
 *Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
 
@@ -289,9 +285,9 @@ PayPal has fees.
 You won't be able to chat on Discord.*
 
 ## Development
-Feel free to join in the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
+Feel free to join the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
 
-**Before implementing a feature, please open an Issue first, so we can be sure that no one else is working on it and that the changes will be accepted. It is important do discuss changes before implementing them (Why should we add it? How should it work? How should it look? Where will it be? ...).**
+**Before implementing a feature, please open an Issue to make sure no one else is working on it and the changes will be accepted. It is important do discuss changes before implementing them (Why should we add it? How should it work? How should it look? Where will it be? ...).**
 
 ### Pre-requisites
 - [Node.js](https://nodejs.org/) (please use version specified in `package.json`)
@@ -300,9 +296,9 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 - [git](https://git-scm.com/)
 - [Github account](https://github.com/), if you'd like to upstream your changes
 
-Now you can clone the repo with `git clone https://github.com/hovancik/stretchly.git`. Change to the new created directory and run `npm i` to install node packages needed.
-
-Read on.
+Now you can clone the repo with `git clone https://github.com/hovancik/stretchly.git`.
+Move into the newly created directory and run `npm install` to install the needed packages.
+Now you can start Stretchly from source using `npm start`.
 
 ### Debugging
 
@@ -316,8 +312,8 @@ If you start *Stretchly* in development mode with the `npm run dev` command, it 
 
 ### Logging
 
-*Stretchly* uses `[log](https://github.com/megahertz/electron-log)` package for some extra logging.
-Format as following:
+*Stretchly* uses the [log](https://github.com/megahertz/electron-log) package for debug logging,
+with the following format:
 - `System: my message` for messages regarding Operating System, ie: `System: resume or unlock`
 - `Stretchly: my message` for messages regarding *Stretchly*
 
@@ -325,7 +321,6 @@ Format as following:
 
 You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/engage/stretchly). Consider joining with your Github account to be correctly credited.
 [![Translation status](https://hosted.weblate.org/widgets/stretchly/-/stretchly/horizontal-auto.svg)](https://hosted.weblate.org/engage/stretchly/)
-
 
 ## Known issues
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
@@ -408,7 +403,7 @@ Also see Github's list of [contributors](https://github.com/hovancik/stretchly/g
 
 1.0 Icon and UI design by Colin Shanley ([www.colinshanley.com](http://www.colinshanley.com/)).
 
-## Humans and Tools
+## Resources
  - https://github.com/HatScripts/circle-flags
  - https://www.icoconverter.com/ to generate .ico
  - http://www.img2icnsapp.com/ to create .icns
@@ -430,14 +425,14 @@ Also see Github's list of [contributors](https://github.com/hovancik/stretchly/g
  - https://www.onhealth.com/content/1/eye_exercises_and_stretches
  - https://www.webmd.com/pain-management/exercises-carpal-tunnel-syndrome
 
-#### Sounds credits
+### Sounds
 Sounds used in this application are listed [here](http://freesound.org/people/hovancik/bookmarks/category/58865/).
 - `crystal glass` by [mlteenie](http://freesound.org/people/mlteenie/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
 - `wind chime` by [GnoteSoundz](http://freesound.org/people/GnoteSoundz/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
 - `tic toc` by [magundah14](http://freesound.org/people/magundah14/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
 - `silence` by [parcodeisuoni](http://freesound.org/people/parcodeisuoni/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
 
-#### Fonts credits
+### Fonts
 This app uses [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) fonts licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 ## License
