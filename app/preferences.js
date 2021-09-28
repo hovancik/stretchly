@@ -317,4 +317,6 @@ window.onload = (e) => {
       return i18next.t(`utils.${unit}`, { count: parseInt(value) })
     }
   }
+
+  showContributorPreferencesButton()
 }
