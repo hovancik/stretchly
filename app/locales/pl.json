@@ -87,10 +87,7 @@
       "colour": "Kolorowa",
       "monochrome": "Monochromatyczna",
       "invertedMonochrome": "Odwrócona monochromatyczna",
-      "snowWhite": "Śnieżna biel",
-      "showLongBreakTimeInIcon": "Pokaż minuty do długiej przerwy w ikonie zasobnika",
-      "numeric": "liczby",
-      "circular":"część okręgu"
+      "snowWhite": "Śnieżna biel"
     },
     "about": {
       "tagline": "Przerwo-przypominajka",

@@ -376,15 +376,13 @@ function trayIconPath () {
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: process.platform,
-    remainingModeString: (!settings.get('noTrayIndicator')) ? settings.get('breakIconType') : '',
-    remainingTimeString: Utils.minutesRemaining(
-      breakPlanner.scheduler.timeLeft
-    ),
-    totalLongBreak: (settings.get('breakInterval') + 1) * 10
+    timeToBreakInTray: settings.get('timeToBreakInTray'),
+    timeToBreak: Utils.minutesRemaining(breakPlanner.scheduler.timeLeft),
+    reference: breakPlanner.scheduler.reference
   }
   const trayIconFileName = new AppIcon(params).trayIconFileName
-  const pathToTryIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
-  return pathToTryIcon
+  const pathToTrayIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  return pathToTrayIcon
 }
 
 function windowIconPath () {
@@ -395,9 +393,8 @@ function windowIconPath () {
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: unusedParams,
-    remainingModeString: unusedParams,
-    remainingTimeString: unusedParams,
-    totalLongBreak: unusedParams
+    timeToBreakInTrayString: unusedParams,
+    reference: unusedParams
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
@@ -681,7 +678,9 @@ function startMicrobreak () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  updateTray()
+  setTimeout(() => {
+    updateTray()
+  }, 500)
   setTimeout(() => {
     ipcMain.removeAllListeners('send-microbreak-data')
   }, 2000)
@@ -823,7 +822,9 @@ function startBreak () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  updateTray()
+  setTimeout(() => {
+    updateTray()
+  }, 500)
   setTimeout(() => {
     ipcMain.removeAllListeners('send-break-data')
   }, 2000)

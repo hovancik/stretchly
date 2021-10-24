@@ -57,5 +57,6 @@ module.exports = {
   pauseForSuspendOrLock: true,
   pauseBreaksShortcut: '',
   resumeBreaksShortcut: '',
-  screen: 'primary'
+  screen: 'primary',
+  timeToBreakInTray: false
 }

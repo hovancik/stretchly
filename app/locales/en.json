@@ -87,10 +87,7 @@
       "colour": "Colour",
       "monochrome": "Monochrome",
       "invertedMonochrome": "Inverted Monochrome",
-      "snowWhite": "Snow white",
-      "showLongBreakTimeInIcon": "Show Long Break remaing minutes in tray icon",
-      "numeric": "numeric",
-      "circular": "part of circle"
+      "snowWhite": "Snow white"
     },
     "about": {
       "tagline": "The break time reminder app",
@@ -168,7 +165,9 @@
     "1": "Second monitor",
     "2": "Third monitor",
     "3": "Fourth monitor",
-    "4": "Fifth monitor"
+    "4": "Fifth monitor",
+    "timeToBreakInTray": "Time to break",
+    "showTimeToBreakInTray": "Show time to the next break in menubar icon"
   },
   "utils": {
     "none": "{{count}}",

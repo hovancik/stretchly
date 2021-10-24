@@ -69,7 +69,7 @@ function formatKeyboardShortcut (keyboardShortcut) {
   return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
 }
 
-const minutesRemaining = function (milliseconds) {
+function minutesRemaining (milliseconds) {
   const seconds = Math.ceil(milliseconds / 1000.0)
   const minutes = Math.ceil(seconds / 60.0)
   return minutes
