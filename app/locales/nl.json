@@ -81,7 +81,7 @@
       "enableSounds": "Geluiden inschakelen",
       "crystalGlass": "Kristalglas",
       "windChime": "Windgong",
-      "ticToc": "Tic toc",
+      "ticToc": "Tik tok",
       "menubarIcon": "Menubalk icoon:",
       "colour": "Kleur",
       "monochrome": "Monochroom",
@@ -165,7 +165,8 @@
     "showOnMonitor": "Pauzes tonen aan",
     "screenInfo": "Wanneer het tonen van pauzes op alle schermen uitgeschakeld is kan je kiezen op welk scherm je de Pauzes wil laten zien.",
     "showBreaksAsRegularWindows": "Toon pauzes als een gewoon venster",
-    "showBreaksAsRegularWindowsTitle": "Werk als een gewoon venster:"
+    "showBreaksAsRegularWindowsTitle": "Gedraag als een gewoon venster:",
+    "screen": "Monitor voor pauzes:"
   },
   "utils": {
     "none": "{{count}}",
@@ -207,6 +208,7 @@
     "nextMiniBreak": "Volgende Mini Pauze",
     "afterMiniBreak": "na {{count}} Mini Pauze",
     "afterMiniBreak_plural": "na {{count}} Mini Pauzes",
-    "resuming": "Hervatten"
+    "resuming": "Hervatten",
+    "appExclusion": "Regel voor uitgesloten programma's"
   }
 }
