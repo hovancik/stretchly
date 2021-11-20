@@ -119,6 +119,11 @@
     "none": "{{count}}"
   },
   "contributorPreferences": {
+    "0": "Layar pertama",
+    "1": "Layar kedua",
+    "2": "Layar ketiga",
+    "3": "Layar keempat",
+    "4": "Layar kelima",
     "system": "Sistem",
     "dark": "Gelap",
     "light": "Cerah",
@@ -165,11 +170,6 @@
     "screenInfo": "Saat Anda menonaktifkan menu tunjukkan istirahat di semua layar, Anda dapat memilih di layar mana Anda akan menunjukkan istirahat.",
     "showOnMonitor": "Tunjukkan Instirahat di",
     "screen": "Pantau untuk Istirahat:",
-    "4": "Layar kelima",
-    "3": "Layar keempat",
-    "2": "Layar ketiga",
-    "1": "Layar kedua",
-    "0": "Layar pertama",
     "cursor": "Ikuti kursor",
     "primary": "Layar utama"
   },

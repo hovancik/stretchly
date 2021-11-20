@@ -1,4 +1,4 @@
-﻿{
+{
   "main": {
     "toolTipHeader": "ਸਟ੍ਰੈਚਲੀ - ਬਰੇਕ ਟਾਈਮ ਰੀਮਾਈਂਡਰ ਐਪਲੀਕੇਸ਼ਨ",
     "microbreakIn": "ਛੋਟਾ ਵਿਰਾਮ $t(utils.seconds, {'count': {{seconds}} }) ਵਿਚ",
@@ -155,18 +155,18 @@
     "system": "ਸਿਸਟਮ"
   },
   "utils": {
-    "none": "{{count}}",
-    "none_plural": "{{count}}",
-    "percent": "{{count}} ਪ੍ਰਤੀਸ਼ਤ",
-    "percent_plural": "{{count}} ਪ੍ਰਤੀਸ਼ਤ",
-    "oclock": "{{count}} ਵਜੇ",
-    "oclock_plural": "{{count}} ਵਜੇ",
-    "seconds": "{{count}} ਸੈਕਿੰਡ",
-    "seconds_plural": "{{count}} ਸੈਕਿੰਡ",
-    "minutes": "{{count}} ਮਿੰਟ",
-    "minutes_plural": "{{count}} ਮਿੰਟ",
-    "hours": "{{count}} ਘੰਟਾ",
-    "hours_plural": "{{count}} ਘੰਟੇ",
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} ਪ੍ਰਤੀਸ਼ਤ",
+    "percent_other": "{{count}} ਪ੍ਰਤੀਸ਼ਤ",
+    "oclock_one": "{{count}} ਵਜੇ",
+    "oclock_other": "{{count}} ਵਜੇ",
+    "seconds_one": "{{count}} ਸੈਕਿੰਡ",
+    "seconds_other": "{{count}} ਸੈਕਿੰਡ",
+    "minutes_one": "{{count}} ਮਿੰਟ",
+    "minutes_other": "{{count}} ਮਿੰਟ",
+    "hours_one": "{{count}} ਘੰਟਾ",
+    "hours_other": "{{count}} ਘੰਟੇ",
     "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) ਬਾਕੀ",
     "aboutMinutesRemaining": "ਲਗਭਗ $t(utils.minutes, {'count': {{minutes}} }) ਬਾਕੀ",
     "aboutHoursRemaining": "ਲਗਭਗ $t(utils.hours, {'count': {{hours}} }) ਬਾਕੀ",
@@ -192,8 +192,8 @@
     "dndMode": "ਪਰੇਸ਼ਾਨ ਨਾ ਕਰੋ ਕਿਸਮ ਜਾਰੀ ਹੈ",
     "nextLongBreak": "ਅਗਲਾ ਲੰਬਾ ਬਰੇਕ",
     "nextMiniBreak": "ਅਗਲਾ ਛੋਟਾ ਬਰੇਕ",
-    "afterMiniBreak": "{{count}} ਛੋਟੇ ਵਿਰਾਮ ਤੋਂ ਬਾਅਦ",
-    "afterMiniBreak_plural": "{{count}} ਛੋਟੇ ਵਿਰਾਮ ਤੋਂ ਬਾਅਦ",
+    "afterMiniBreak_one": "{{count}} ਛੋਟੇ ਵਿਰਾਮ ਤੋਂ ਬਾਅਦ",
+    "afterMiniBreak_other": "{{count}} ਛੋਟੇ ਵਿਰਾਮ ਤੋਂ ਬਾਅਦ",
     "resuming": "ਦੁਬਾਰਾ ਸ਼ੁਰੂ ਹੋ ਰਿਹਾ ਹੈ"
   }
 }
