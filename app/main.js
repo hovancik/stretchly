@@ -1061,6 +1061,11 @@ function getTrayMenu () {
       label: i18next.t('main.pause'),
       submenu: [
         {
+          label: i18next.t('utils.minutes', { count: 30 }),
+          click: function () {
+            pauseBreaks(1800 * 1000)
+          }
+        }, {
           label: i18next.t('main.forHour'),
           click: function () {
             pauseBreaks(3600 * 1000)

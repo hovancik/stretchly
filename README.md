@@ -407,6 +407,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Abhilash Mandaliya, [@abhilashmandaliya](https://github.com/abhilashmandaliya)
 - Masi, [@The-Coding-Classroom](https://github.com/The-Coding-Classroom)
 - Saksham Sharma, [@ssaksham](https://github.com/ssaksham)
+- Jared Wood, [@jwood13](https://github.com/jwood13)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

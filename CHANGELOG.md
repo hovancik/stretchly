@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - new break ideas
 - advanced option for showing minutes remaining in app tray
+- 30 minute pause option
 
 ### Changed
 - improve tray status messages
