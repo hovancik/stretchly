@@ -414,6 +414,7 @@ function startProcessWin () {
       enableRemoteModule: true
     }
   })
+  require('@electron/remote/main').enable(processWin.webContents)
   processWin.loadURL(modalPath)
   processWin.once('ready-to-show', () => {
     planVersionCheck()
@@ -436,6 +437,7 @@ function createWelcomeWindow (isAppStart = true) {
         enableRemoteModule: true
       }
     })
+    require('@electron/remote/main').enable(welcomeWin.webContents)
     welcomeWin.loadURL(modalPath)
     if (welcomeWin) {
       welcomeWin.on('closed', () => {
@@ -466,6 +468,7 @@ function createContributorSettingsWindow () {
       enableRemoteModule: true
     }
   })
+  require('@electron/remote/main').enable(contributorPreferencesWindow.webContents)
   contributorPreferencesWindow.loadURL(modalPath)
   if (contributorPreferencesWindow) {
     contributorPreferencesWindow.on('closed', () => {
@@ -497,6 +500,7 @@ function createSyncPreferencesWindow () {
       enableRemoteModule: true
     }
   })
+  require('@electron/remote/main').enable(syncPreferencesWindow.webContents)
   syncPreferencesWindow.loadURL(syncPreferencesUrl)
   if (syncPreferencesWindow) {
     syncPreferencesWindow.on('closed', () => {
@@ -651,6 +655,7 @@ function startMicrobreak () {
       }
     })
 
+    require('@electron/remote/main').enable(microbreakWinLocal.webContents)
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
@@ -795,6 +800,8 @@ function startBreak () {
         }, 0)
       }
     })
+
+    require('@electron/remote/main').enable(breakWinLocal.webContents)
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
@@ -977,6 +984,7 @@ function createPreferencesWindow () {
       enableRemoteModule: true
     }
   })
+  require('@electron/remote/main').enable(preferencesWin.webContents)
   preferencesWin.loadURL(modalPath)
   preferencesWin.on('closed', () => {
     preferencesWin = null
@@ -1350,6 +1358,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       enableRemoteModule: true
     }
   })
+  require('@electron/remote/main').enable(myStretchlyWindow.webContents)
   myStretchlyWindow.loadURL(myStretchlyUrl)
   if (myStretchlyWindow) {
     myStretchlyWindow.on('closed', () => {

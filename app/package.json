@@ -20,17 +20,17 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
-    "@electron/remote": "^1.1.0",
+    "@electron/remote": "^2.0.1",
     "@meetfranz/electron-notification-state": "^1.0.0",
-    "electron-log": "^4.3.5",
-    "electron-store": "^8.0.0",
-    "i18next": "^20.3.1",
-    "i18next-fs-backend": "^1.1.1",
-    "luxon": "^1.27.0",
+    "electron-log": "^4.4.1",
+    "electron-store": "^8.0.1",
+    "i18next": "^21.5.2",
+    "i18next-fs-backend": "^1.1.4",
+    "luxon": "^2.1.1",
     "meeussunmoon": "^3.0.3",
     "ps-list": "^7.2.0",
-    "rtl-detect": "^1.0.3",
-    "semver": "^6.3.0",
+    "rtl-detect": "^1.0.4",
+    "semver": "^7.3.5",
     "windows-focus-assist": "^1.2.1"
   }
 }

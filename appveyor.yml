@@ -6,7 +6,7 @@ platform:
 skip_tags: true
 
 environment:
-  nodejs_version: "14.16.0"
+  nodejs_version: "16.9.1"
 
 branches:
   only:
