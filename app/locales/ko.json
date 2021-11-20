@@ -36,12 +36,12 @@
     }
   },
   "utils": {
-    "none_0": "{{count}}",
-    "percent_0": "{{count}} percent",
-    "oclock_0": "{{count}}시",
-    "seconds_0": "{{count}}초",
-    "minutes_0": "{{count}}분",
-    "hours_0": "{{count}}시간",
+    "none_other": "{{count}}",
+    "percent_other": "{{count}} percent",
+    "oclock_other": "{{count}}시",
+    "seconds_other": "{{count}}초",
+    "minutes_other": "{{count}}분",
+    "hours_other": "{{count}}시간",
     "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) 남았어요",
     "aboutMinutesRemaining": "약 $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
     "aboutHoursRemaining": "약 $t(utils.hours, {'count': {{hours}} }) 남았어요",
@@ -62,7 +62,7 @@
     "paused": "일시정지",
     "nextLongBreak": "다음 Long Break:",
     "nextMiniBreak": "다음 Mini Break:",
-    "afterMiniBreak_0": "{{count}} Mini Breaks 후",
+    "afterMiniBreak_other": "{{count}} Mini Breaks 후",
     "resuming": "다시 시작:"
   }
 }

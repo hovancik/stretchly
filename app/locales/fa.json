@@ -114,8 +114,8 @@
     "toolTipHeader": "استرچلی - برنامه یادآور زمان استراحت"
   },
   "utils": {
-    "none": "{{تعداد}}",
-    "none_plural": "{{تعداد}}",
+    "none_one": "{{تعداد}}",
+    "none_other": "{{تعداد}}",
     "inAboutHoursMinutes": "در حدود $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "در حدود $t(utils.hours, {'count': {{hours}} })",
     "inAboutMinutes": "در حدود $t(utils.minutes, {'count': {{minutes}} })",
@@ -124,21 +124,21 @@
     "aboutHoursRemaining": "حدوداً $t(utils.hours, {'count': {{hours}} }) باقی مانده است",
     "aboutMinutesRemaining": "حدوداً $t(utils.minutes, {'count': {{minutes}} }) باقی مانده است",
     "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) زمان باقیمانده",
-    "hours": "{{count}} ساعت",
-    "hours_plural": "{{count}} ساعت",
-    "minutes": "{{count}} دقیقه",
-    "minutes_plural": "{{count}} دقیقه",
-    "seconds": "{{count}} ثانیه",
-    "seconds_plural": "{{count}} ثانیه",
-    "oclock": "ساعت {{count}}",
-    "oclock_plural": "ساعت {{count}}",
-    "percent": "{{count}} درصد",
-    "percent_plural": "{{count}} درصد"
+    "hours_one": "{{count}} ساعت",
+    "hours_other": "{{count}} ساعت",
+    "minutes_one": "{{count}} دقیقه",
+    "minutes_other": "{{count}} دقیقه",
+    "seconds_one": "{{count}} ثانیه",
+    "seconds_other": "{{count}} ثانیه",
+    "oclock_one": "ساعت {{count}}",
+    "oclock_other": "ساعت {{count}}",
+    "percent_one": "{{count}} درصد",
+    "percent_other": "{{count}} درصد"
   },
   "statusMessages": {
     "resuming": "از سر گرفتن",
-    "afterMiniBreak": "بعد از {{count}} استراحت کوتاه",
-    "afterMiniBreak_plural": "بعد از {{count}} استراحت کوتاه",
+    "afterMiniBreak_one": "بعد از {{count}} استراحت کوتاه",
+    "afterMiniBreak_other": "بعد از {{count}} استراحت کوتاه",
     "nextMiniBreak": "استراحت کوتاه بعدی",
     "nextLongBreak": "استراحت طولانی بعدی",
     "dndMode": "حالت عدم مزاحمت روشن است",
@@ -156,6 +156,11 @@
     "newVersionAvailable": "نسخه جدیدی موجود است!"
   },
   "contributorPreferences": {
+    "0": "اولین مانیتور",
+    "1": "دومین مانیتور",
+    "2": "سومین مانیتور",
+    "3": "چهارمین مانیتور",
+    "4": "پنجمین مانیتور",
     "system": "سیستم",
     "dark": "تیره",
     "light": "روشن",
@@ -198,11 +203,6 @@
     "title": "تنظیمات کمک‌کنندگان",
     "showBreaksAsRegularWindowsTitle": "عمل کردن به عنوان پنجره معمولی:",
     "cursor": "مکان نما را دنبال کن",
-    "0": "اولین مانیتور",
-    "1": "دومین مانیتور",
-    "primary": "مانیتور اصلی",
-    "2": "سومین مانیتور",
-    "3": "چهارمین مانیتور",
-    "4": "پنجمین مانیتور"
+    "primary": "مانیتور اصلی"
   }
 }
