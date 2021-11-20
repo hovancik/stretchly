@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.8.0] - 2021-11-21
 ### Added
 - new break ideas
 - advanced option for showing minutes remaining in app tray
@@ -601,7 +603,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.8.0...HEAD
+[1.7.0]: https://github.com/hovancik/stretchly/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/hovancik/stretchly/compare/v1.6.0...v1.7.0
 [1.6.0]: https://github.com/hovancik/stretchly/compare/v1.5.0...v1.6.0
 [1.5.0]: https://github.com/hovancik/stretchly/compare/v1.4.0...v1.5.0
