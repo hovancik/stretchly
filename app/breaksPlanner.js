@@ -165,6 +165,7 @@ class BreaksPlanner extends EventEmitter {
     }
     this.scheduler = new Scheduler(() => this.emit(eventName), postponeTime, eventName)
     this.scheduler.plan()
+    this.emit('updateToolTip')
   }
 
   skipToMicrobreak () {
@@ -179,6 +180,7 @@ class BreaksPlanner extends EventEmitter {
     }
     this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), 100, 'startMicrobreak')
     this.scheduler.plan()
+    this.emit('updateToolTip')
   }
 
   skipToBreak () {
@@ -191,6 +193,7 @@ class BreaksPlanner extends EventEmitter {
     }
     this.scheduler = new Scheduler(() => this.emit('startBreak'), 100, 'startBreak')
     this.scheduler.plan()
+    this.emit('updateToolTip')
   }
 
   clear () {

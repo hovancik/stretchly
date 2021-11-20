@@ -69,6 +69,12 @@ function formatKeyboardShortcut (keyboardShortcut) {
   return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
 }
 
+function minutesRemaining (milliseconds) {
+  const seconds = Math.ceil(milliseconds / 1000.0)
+  const minutes = Math.ceil(seconds / 60.0)
+  return minutes
+}
+
 function shouldShowNotificationTitle (platform, systemVersion) {
   if (platform === 'win32' && semver.gte(semver.coerce(systemVersion), '10.0.19042')) {
     return false
@@ -85,5 +91,6 @@ module.exports = {
   canPostpone,
   canSkip,
   formatKeyboardShortcut,
+  minutesRemaining,
   shouldShowNotificationTitle
 }

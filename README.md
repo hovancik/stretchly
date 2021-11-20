@@ -238,6 +238,10 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 - `"cursor"` - monitor where there is cursor
 - `"0"` (or `0`), `"1"`, `"2"` etc, where `"0"` is the first monitor returned by OS and so forth  
 
+#### Show time to the next break in menubar icon [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
+
+If you want Stretchly to show time to the next break in menubar icon set `timeToBreakInTray` to `true`.
+
 
 ## Contributor Preferences
 

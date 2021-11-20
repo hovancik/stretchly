@@ -2,7 +2,7 @@ const { UntilMorning } = require('../app/utils/untilMorning')
 const Store = require('electron-store')
 const chai = require('chai')
 const path = require('path')
-const { DateTime } = require('luxon')
+const { Settings, DateTime } = require('luxon')
 
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
@@ -28,11 +28,13 @@ describe('UntilMorning', function () {
 
   describe('Default Settings', function () {
     it('msToSunrise() returns morning time the same day', function () {
+      Settings.now = () => new Date(2021, 4, 25).valueOf()
       const dt = DateTime.local().set({ hours: 5, minutes: 0, seconds: 0 })
       new UntilMorning(settings).msToSunrise(dt).should.be.within(60 * 60 * 1000 - 60000, 60 * 60 * 1000 + 60000)
     })
 
     it('msToSunrise() returns morning time the next day', function () {
+      Settings.now = () => new Date(2021, 4, 25).valueOf()
       const dt = DateTime.local().set({ hours: 7, minutes: 0, seconds: 0 })
       new UntilMorning(settings).msToSunrise(dt).should.be.within(23 * 60 * 60 * 1000 - 60000, 23 * 60 * 60 * 1000 + 60000)
     })

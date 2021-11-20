@@ -1,7 +1,8 @@
 const {
-  app, nativeTheme, BrowserWindow, Tray, Menu, ipcMain,
-  shell, dialog, globalShortcut
+  app, nativeTheme, BrowserWindow, Menu, ipcMain,
+  shell, dialog, globalShortcut, Tray
 } = require('electron')
+
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-fs-backend')
@@ -121,6 +122,7 @@ function initialize (isAppStart = true) {
     }
     appIcon = new Tray(trayIconPath())
   }
+
   startI18next()
   setInterval(updateTray, 10000)
   startProcessWin()
@@ -365,25 +367,34 @@ function displaysHeight (displayID = -1) {
 
 function trayIconPath () {
   const params = {
-    paused: breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+    paused:
+      breakPlanner.isPaused ||
+      breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
       breakPlanner.appExclusionsManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
+    platform: process.platform,
+    timeToBreakInTray: settings.get('timeToBreakInTray'),
+    timeToBreak: Utils.minutesRemaining(breakPlanner.scheduler.timeLeft),
+    reference: breakPlanner.scheduler.reference
   }
   const trayIconFileName = new AppIcon(params).trayIconFileName
-  return path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  const pathToTrayIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  return pathToTrayIcon
 }
 
 function windowIconPath () {
+  const unusedParams = null
   const params = {
     paused: false,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
-    platform: process.platform
+    platform: unusedParams,
+    timeToBreakInTrayString: unusedParams,
+    reference: unusedParams
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
   return path.join(__dirname, '/images/app-icons', windowIconFileName)
@@ -667,7 +678,9 @@ function startMicrobreak () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  updateTray()
+  setTimeout(() => {
+    updateTray()
+  }, 500)
   setTimeout(() => {
     ipcMain.removeAllListeners('send-microbreak-data')
   }, 2000)
@@ -809,7 +822,9 @@ function startBreak () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  updateTray()
+  setTimeout(() => {
+    updateTray()
+  }, 500)
   setTimeout(() => {
     ipcMain.removeAllListeners('send-break-data')
   }, 2000)

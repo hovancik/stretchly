@@ -1,30 +1,46 @@
 // Get path of correct app icon based on different criteria
 
 class AppIcon {
-  constructor ({ platform, paused, monochrome, inverted, darkMode }) {
+  constructor ({
+    platform,
+    paused,
+    monochrome,
+    inverted,
+    darkMode,
+    timeToBreakInTray,
+    timeToBreak,
+    reference
+  }) {
     this.platform = platform
     this.paused = paused
     this.monochrome = monochrome
     this.inverted = inverted
     this.darkMode = darkMode
+    this.timeToBreakInTray = timeToBreakInTray
+    this.timeToBreak = timeToBreak
+    this.reference = reference
   }
 
   get trayIconFileName () {
     const pausedString = this.paused ? 'Paused' : ''
     const invertedMonochromeString = this.inverted ? 'Inverted' : ''
     const darkModeString = this.darkMode ? 'Dark' : ''
+    const timeToBreakInTrayString = (this.paused || this.reference === 'finishMicrobreak' ||
+      this.reference === 'finishBreak' || !this.timeToBreakInTray)
+      ? ''
+      : `Number${this.timeToBreak}`
 
     if (this.monochrome) {
       if (this.platform === 'darwin') {
-        return `trayMacMonochrome${pausedString}Template.png`
+        return `trayMacMonochrome${pausedString}${timeToBreakInTrayString}Template.png`
       } else {
-        return `trayMonochrome${invertedMonochromeString}${pausedString}.png`
+        return `trayMonochrome${invertedMonochromeString}${pausedString}${timeToBreakInTrayString}.png`
       }
     } else {
       if (this.platform === 'darwin') {
-        return `trayMac${pausedString}${darkModeString}.png`
+        return `trayMac${pausedString}${darkModeString}${timeToBreakInTrayString}.png`
       } else {
-        return `tray${pausedString}${darkModeString}.png`
+        return `tray${pausedString}${darkModeString}${timeToBreakInTrayString}.png`
       }
     }
   }

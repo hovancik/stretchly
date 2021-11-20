@@ -165,7 +165,9 @@
     "1": "Second monitor",
     "2": "Third monitor",
     "3": "Fourth monitor",
-    "4": "Fifth monitor"
+    "4": "Fifth monitor",
+    "timeToBreakInTray": "Time to break",
+    "showTimeToBreakInTray": "Show time to the next break in menubar icon"
   },
   "utils": {
     "none": "{{count}}",

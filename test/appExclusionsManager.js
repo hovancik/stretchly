@@ -4,8 +4,10 @@ const AppExclusionsManager = require('../app/utils/appExclusionsManager')
 const Store = require('electron-store')
 
 chai.should()
+const timeout = process.env.CI ? 30000 : 10000
 
 describe('appExclusionsManager', function () {
+  this.timeout(timeout)
   let settings
   let appExclusionsManager
 
