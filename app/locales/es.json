@@ -87,7 +87,7 @@
       "colour": "Color",
       "monochrome": "Monocromático",
       "invertedMonochrome": "Monocromático Invertido",
-      "snowWhite": "Blanco nevado"
+      "snowWhite": "Blanco nieve"
     },
     "about": {
       "tagline": "Aplicación para notificar cuándo hacer descansos",
@@ -122,7 +122,7 @@
     "newVersion": "Nueva Versión:",
     "newVersionNotification": "Notificar cuando haya una nueva versión disponible",
     "customIdeas": "Ideas personalizadas:",
-    "customIdeasInfo": "Le permite usar ideas de descansos personalizados editando el archivo de configuración. (Para usuarios avanzados).",
+    "customIdeasInfo": "Le permite usar descansos personalizados editando el archivo de configuración. (Para usuarios avanzados).",
     "useIdeasFromSettings": "Utilice ideas de descansos del archivo de configuración",
     "breakPostpone": "Aplazamiento de descansos:",
     "breakPostponeInfo": "Si está habilitado en las Preferencias principales, puede posponer los descansos. Las siguientes configuraciones le permiten especificar cuándo, por cuánto tiempo y cuántas veces puede posponer un descanso.",

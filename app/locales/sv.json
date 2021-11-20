@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Utvecklad av",
       "janH": "Jan Hovancik",
-      "designedBy": "Ikon- och användargränssnittsdesign av Colin Shanley"
+      "designedBy": "Ikon- och användargränssnittsdesign av Colin Shanley",
+      "checkNewVersion": "Sök automatiskt efter appuppdateringar"
     },
     "heart": {
       "loveStretchly": "Älska din Stretchly?",
@@ -152,7 +153,18 @@
     "appearance": "Utseende:",
     "light": "Ljust",
     "dark": "Mörkt",
-    "system": "System"
+    "system": "System",
+    "cursor": "Följ markören",
+    "0": "Första bildskärmen",
+    "showBreaksAsRegularWindowsTitle": "Fungera som vanligt fönster:",
+    "showBreaksAsRegularWindows": "Visa pauser som vanliga fönster",
+    "screen": "Övervaka för pauser:",
+    "showOnMonitor": "Visa pauser på",
+    "primary": "Primär bildskärm",
+    "1": "Andra bildskärmen",
+    "2": "Tredje bildskärmen",
+    "3": "Fjärde bildskärmen",
+    "4": "Femte bildskärmen"
   },
   "utils": {
     "none": "{{count}}",

@@ -78,7 +78,8 @@
       "notifyNewVersion": "بروزرسانی‌ها را به صورت خودکار خبر بده",
       "latestVersion": "آخرین نسخه ",
       "version": "نسخه ",
-      "tagline": "برنامه یادآور استراحت"
+      "tagline": "برنامه یادآور استراحت",
+      "checkNewVersion": "بررسی خودکار بروزرسانی برنامه"
     }
   },
   "break": {
@@ -113,8 +114,8 @@
     "toolTipHeader": "استرچلی - برنامه یادآور زمان استراحت"
   },
   "utils": {
-    "none": "{{count}}",
-    "none_plural": "{{count}}",
+    "none": "{{تعداد}}",
+    "none_plural": "{{تعداد}}",
     "inAboutHoursMinutes": "در حدود $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "در حدود $t(utils.hours, {'count': {{hours}} })",
     "inAboutMinutes": "در حدود $t(utils.minutes, {'count': {{minutes}} })",
@@ -194,6 +195,14 @@
     "beforeLongBreak": "استراحت‌های طولانی:",
     "notificationsInfo": "نمایش اخطار سیستمی پیش از شروع استراحت برای آماده‌کردن شما.",
     "notifications": "اخطارهای مربوط به استراحت‌ها:",
-    "title": "تنظیمات کمک‌کنندگان"
+    "title": "تنظیمات کمک‌کنندگان",
+    "showBreaksAsRegularWindowsTitle": "عمل کردن به عنوان پنجره معمولی:",
+    "cursor": "مکان نما را دنبال کن",
+    "0": "اولین مانیتور",
+    "1": "دومین مانیتور",
+    "primary": "مانیتور اصلی",
+    "2": "سومین مانیتور",
+    "3": "چهارمین مانیتور",
+    "4": "پنجمین مانیتور"
   }
 }
