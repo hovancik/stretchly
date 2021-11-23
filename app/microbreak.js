@@ -34,6 +34,7 @@ window.onload = (e) => {
     const closeElement = document.querySelector('#close')
     const mainColor = settings.get('mainColor')
     document.body.classList.add(mainColor.substring(1))
+    document.body.style.backgroundColor = mainColor
 
     document.querySelectorAll('.tiptext').forEach(tt => {
       const keyboardShortcut = settings.get('endBreakShortcut')
