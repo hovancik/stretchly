@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- added workaround for break window background color issue
+
 ## [1.8.0] - 2021-11-21
 ### Added
 - new break ideas
