@@ -1,16 +1,9 @@
-os: Visual Studio 2022
-
-skip_tags: true
-
 environment:
   nodejs_version: "16.9.1"
 
 branches:
   only:
     - release
-
-cache:
-  - node_modules -> package.json
 
 install:
   - ps: Install-Product node $env:nodejs_version

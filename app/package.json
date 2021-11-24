@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "The break time reminder app",
   "main": "main.js",
   "repository": {
@@ -24,7 +24,7 @@
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.4.1",
     "electron-store": "^8.0.1",
-    "i18next": "^21.5.2",
+    "i18next": "^21.5.3",
     "i18next-fs-backend": "^1.1.4",
     "luxon": "^2.1.1",
     "meeussunmoon": "^3.0.3",
