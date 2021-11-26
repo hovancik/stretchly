@@ -207,8 +207,12 @@ i18next.on('languageChanged', function (lng) {
 
 function onSuspendOrLock () {
   log.info('System: suspend or lock')
-  if (!breakPlanner.isPaused) {
-    if (settings.get('pauseForSuspendOrLock')) {
+  if (settings.get('pauseForSuspendOrLock')) {
+    if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+      breakPlanner.naturalBreaksManager.isSchedulerCleared ||
+      breakPlanner.appExclusionsManager.isSchedulerCleared) {
+      log.info('Stretchly: not pausing for suspendOrLock because paused already')
+    } else {
       pausedForSuspendOrLock = true
       pauseBreaks(1)
       updateTray()
