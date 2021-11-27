@@ -73,7 +73,7 @@ window.onload = (e) => {
         ipcRenderer.send('save-setting', 'isFirstRun', false)
         switch (button.getAttribute('data-location')) {
           case 'tutorial':
-            shell.openExternal('https://hovancik.net/stretchly/features')
+            shell.openExternal('https://hovancik.net/stretchly/about')
             break
           case 'preferences':
             ipcRenderer.send('open-preferences')
