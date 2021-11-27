@@ -630,7 +630,7 @@ function startMicrobreak () {
     ipcMain.on('send-microbreak-data', (event) => {
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
     })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
@@ -775,7 +775,7 @@ function startBreak () {
     ipcMain.on('send-break-data', (event) => {
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent)
+        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
     })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
@@ -920,9 +920,7 @@ function resetBreaks () {
 }
 
 function calculateBackgroundColor () {
-  const themeColor = settings.get('mainColor')
-  const opacity = settings.get('opacity')
-  return '#' + Math.round(opacity * 255).toString(16) + themeColor.substr(1)
+  return settings.get('mainColor') + Math.round(settings.get('opacity') * 255).toString(16)
 }
 
 function loadIdeas () {

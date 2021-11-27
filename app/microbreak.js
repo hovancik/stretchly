@@ -27,14 +27,14 @@ window.onload = (e) => {
     microbreakIdea.innerHTML = message
   })
 
-  ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent) => {
+  ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
     const closeElement = document.querySelector('#close')
     const mainColor = settings.get('mainColor')
     document.body.classList.add(mainColor.substring(1))
-    document.body.style.backgroundColor = mainColor
+    document.body.style.backgroundColor = backgroundColor
 
     document.querySelectorAll('.tiptext').forEach(tt => {
       const keyboardShortcut = settings.get('endBreakShortcut')
