@@ -6,7 +6,7 @@ The instructions here describe how to build and update the Stretchly development
 
 Install Flatpak Builder.
 
-    sudo apt install flatpak-builder git
+    sudo apt install flatpak-builder g++ git make
 
 Clone the Stretchly repository if needed.
 
