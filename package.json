@@ -76,6 +76,7 @@
       "target": [
         "AppImage",
         "deb",
+        "flatpak",
         "rpm",
         "freebsd",
         "pacman",
@@ -83,6 +84,77 @@
         "apk"
       ],
       "asarUnpack": "node_modules/macos-notification-state/**"
+    },
+    "flatpak": {
+      "base": "org.electronjs.Electron2.BaseApp",
+      "baseVersion": "21.08",
+      "branch": "trunk",
+      "description": "Stretchly is a cross-platform Electron app that reminds you to take breaks when working on your computer.",
+      "desktop": {
+        "Name": "Stretchly",
+        "Exec": "run.sh %U",
+        "Terminal": "false",
+        "Type": "Application",
+        "Icon": "net.hovancik.Stretchly",
+        "StartupWMClass": "Stretchly",
+        "Comment": "The break time reminder app"
+      },
+      "license": "LICENSE",
+      "modules": [
+        "shared-modules/libappindicator/libappindicator-gtk3-12.10.json",
+        {
+          "name": "stretchly",
+          "buildsystem": "simple",
+          "build-options": {
+            "append-path": "/usr/lib/sdk/node14/bin",
+            "env": {
+              "XDG_CACHE_HOME": "/run/build/stretchly/flatpak-node/cache",
+              "npm_config_cache": "/run/build/stretchly/flatpak-node/npm-cache",
+              "npm_config_nodedir": "/usr/lib/sdk/node14",
+              "npm_config_offline": "true"
+            }
+          },
+          "subdir": "main",
+          "sources": [
+            {
+              "type": "git",
+              "path": ".",
+              "branch": "flatpak",
+              "dest": "main",
+              "x-checker-data": {
+                "type": "git",
+                "tag-pattern": "^v([\\\\d.]+)$",
+                "version-scheme": "semantic"
+              }
+            },
+            "generated-sources.json",
+            {
+              "type": "script",
+              "dest-filename": "run.sh",
+              "commands": [
+                "if test -n \"$WAYLAND_DISPLAY\" && test -e \"$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY\"; then set -- --enable-features=UseOzonePlatform --ozone-platform=wayland \"$@\"; fi",
+                "zypak-wrapper.sh /app/main/stretchly \"$@\""
+              ]
+            }
+          ],
+          "build-commands": [
+            "npm install --offline",
+            ". ../flatpak-node/electron-builder-arch-args.sh\nnpm run pack -- --linux $ELECTRON_BUILDER_ARCH_ARGS\n",
+            "cp -a dist/linux*unpacked /app/main",
+            "install -Dm 755 -t /app/bin/ ../run.sh",
+            "install -Dm 644 net.hovancik.Stretchly.desktop /app/share/applications/$FLATPAK_ID.desktop",
+            "sed -i 's/Icon=net.hovancik.Stretchly/Icon=net.hovancik.Stretchly.Devel/' /app/share/applications/$FLATPAK_ID.desktop",
+            "install -Dm 644 net.hovancik.Stretchly.metainfo.xml /app/share/metainfo/$FLATPAK_ID.metainfo.xml",
+            "sed -i 's/net.hovancik.Stretchly/net.hovancik.Stretchly.Devel/' /app/share/metainfo/$FLATPAK_ID.metainfo.xml",
+            "install -Dm644 app/images/stretchly.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg"
+          ]
+        }
+      ],
+      "runtime": "org.freedesktop.Platform",
+      "runtimeVersion": "21.08",
+      "sdk": "org.freedesktop.Sdk",
+      "synopsis": "The break time reminder app",
+      "useWaylandFlags": true
     },
     "win": {
       "target": [
