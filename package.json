@@ -92,7 +92,6 @@
       "description": "Stretchly is a cross-platform Electron app that reminds you to take breaks when working on your computer.",
       "desktop": {
         "Name": "Stretchly",
-        "Exec": "run.sh %U",
         "Terminal": "false",
         "Type": "Application",
         "Icon": "net.hovancik.Stretchly",
