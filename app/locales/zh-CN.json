@@ -166,7 +166,9 @@
     "cursor": "跟随光标",
     "primary": "主显示器",
     "showOnMonitor": "显示休息时间",
-    "screenInfo": "禁用所有显示器显示休息画面，你可以选择在哪个显示器显示休息画面。"
+    "screenInfo": "禁用所有显示器显示休息画面，你可以选择在哪个显示器显示休息画面。",
+    "timeToBreakInTray": "休息时间",
+    "showTimeToBreakInTray": "在托盘图标显示下次休息时间"
   },
   "utils": {
     "none_other": "{{count}}",
@@ -182,7 +184,13 @@
     "inSeconds": "$t(utils.seconds, {'count': {{seconds}} })后",
     "inAboutMinutes": "大约 $t(utils.minutes, {'count': {{minutes}} })后",
     "inAboutHours": "大约 $t(utils.hours, {'count': {{hours}} })后",
-    "inAboutHoursMinutes": "大约 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })后"
+    "inAboutHoursMinutes": "大约 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })后",
+    "oclock_one": "{{count}} 点钟",
+    "seconds_one": "{{count}} 秒",
+    "hours_one": "{{count}} 时",
+    "none_one": "{{count}}",
+    "percent_one": "{{count}} %",
+    "minutes_one": "{{count}} 分"
   },
   "process": {
     "newVersionAvailable": "有新的版本！"
@@ -202,6 +210,7 @@
     "nextMiniBreak": "下次小憩",
     "afterMiniBreak_other": "{{count}} 次小憩后",
     "resuming": "继续",
-    "appExclusion": "应用程序排除规则"
+    "appExclusion": "应用程序排除规则",
+    "afterMiniBreak_one": "{{count}} 次小憩后"
   }
 }
