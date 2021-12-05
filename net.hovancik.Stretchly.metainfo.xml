@@ -37,6 +37,30 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.8.1" date="2021-11-24"/>
+    <release version="1.8.0" date="2021-11-21">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new break ideas</li>
+          <li>advanced option for showing minutes remaining in app tray</li>
+          <li>30 minute pause option</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>improve tray status messages</li>
+          <li>updated and added many translations</li>
+          <li>increase new version check to 48 hours</li>
+          <li>change font to Nato Sans for better support</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>prevent empty break windows</li>
+          <li>improve window positioning</li>
+          <li>error on Windows and Linux systems when temporary directory is not executable</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.7.0" date="2021-05-04">
       <description>
         <p>
