@@ -166,7 +166,9 @@
     "primary": "הצג הראשי",
     "showOnMonitor": "להציג הפסקות אצל",
     "screenInfo": "כאשר הצגת הפסקות על כל הצגים מושבתת, ניתן לבחור באיזה צג להציג את ההפסקות שלך.",
-    "screen": "צג להפסקות:"
+    "screen": "צג להפסקות:",
+    "timeToBreakInTray": "זמן עד ההפסקה",
+    "showTimeToBreakInTray": "הצגת הזמן עד להפסקה הבאה בסמל שבסרגל התפריטים"
   },
   "statusMessages": {
     "resuming": "מתחדש",
