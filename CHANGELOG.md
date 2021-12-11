@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - break not being resumed after DND if device was locked meanwhile on macOS
 - transparency not working in breaks
 - command line arguments
+- Turkish option in Welcome window
 
 ## [1.8.1] - 2021-11-24
 ### Fixed
