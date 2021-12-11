@@ -41,14 +41,14 @@ describe('commands', () => {
     cmd.options.should.deep.equal({ title: 'test' })
   })
 
-  it.skip('errors out when an invalid command is given', () => {
+  it('hasSupportedCommand is false with an invalid command', () => {
     const cmd = new Command(['foo'], '1.2.3')
-    console.log(cmd.command)
+    cmd.hasSupportedCommand.should.be.equal(false)
   })
 
-  it.skip('errors out when an invalid argument is given for a command', () => {
-    const cmd = new Command(['help', '--bar', 'baz'], '1.2.3')
-    console.log(cmd.command)
+  it('hasSupportedCommand is true with an invalid command', () => {
+    const cmd = new Command(['mini'], '1.2.3')
+    cmd.hasSupportedCommand.should.be.equal(true)
   })
 
   it('parses a number duration as the number of minutes to pause', () => {
