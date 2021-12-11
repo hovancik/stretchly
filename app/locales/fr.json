@@ -166,7 +166,9 @@
     "primary": "Moniteur principal",
     "showOnMonitor": "Afficher les pauses sur",
     "screenInfo": "Lorsque l'affichage des pauses sur tous les moniteurs est désactivé, vous pouvez choisir celui sur lequel vous souhaitez afficher vos pauses.",
-    "screen": "Moniteur pour les pauses :"
+    "screen": "Moniteur pour les pauses :",
+    "timeToBreakInTray": "Il est temps pour une pause",
+    "showTimeToBreakInTray": "Afficher l'heure jusqu'à la prochaine pause dans l'icône de la barre de menus"
   },
   "utils": {
     "none_one": "{{count}}",
