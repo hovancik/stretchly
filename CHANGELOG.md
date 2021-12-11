@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - command line arguments
 - Turkish option in Welcome window
 
+### Changed
+- updated many translations
+
 ## [1.8.1] - 2021-11-24
 ### Fixed
 - added workaround for break window background color issue
