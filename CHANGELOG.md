@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Fixed
+- Typo in quotes
 - break not being resumed after DND if device was locked meanwhile on macOS
 - transparency not working in breaks
 - command line arguments

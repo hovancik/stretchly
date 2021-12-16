@@ -144,7 +144,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: 'Stand tall with your arms by your side. Squeeze your solder blades together and hold.',
+    data: 'Stand tall with your arms by your side. Squeeze your shoulder blades together and hold.',
     enabled: true
   },
   {
