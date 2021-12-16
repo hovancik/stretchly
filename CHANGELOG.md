@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Typo in quotes
 - break not being resumed after DND if device was locked meanwhile on macOS
 - transparency not working in breaks
+- command line arguments
+- Turkish option in Welcome window
+
+### Changed
+- updated many translations
 
 ## [1.8.1] - 2021-11-24
 ### Fixed

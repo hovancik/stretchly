@@ -127,7 +127,7 @@
     "newVersion": "Nueva Versión:",
     "newVersionNotification": "Notificar cuando haya una nueva versión disponible",
     "customIdeas": "Ideas personalizadas:",
-    "customIdeasInfo": "Le permite usar descansos personalizados editando el archivo de configuración. (Para usuarios avanzados).",
+    "customIdeasInfo": "Le permite usar ideas personalizadas para los descansos editando el archivo de configuración. (Para usuarios avanzados.)",
     "useIdeasFromSettings": "Utilice ideas de descansos del archivo de configuración",
     "breakPostpone": "Aplazamiento de descansos:",
     "breakPostponeInfo": "Si está habilitado en las Preferencias principales, puede posponer los descansos. Las siguientes configuraciones le permiten especificar cuándo, por cuánto tiempo y cuántas veces puede posponer un descanso.",
@@ -166,7 +166,9 @@
     "screenInfo": "Cuando se deshabilita la visualización de pausas en todos los monitores, puede elegir en cuál le gustaría mostrar sus pausas.",
     "screen": "Monitor para descansos:",
     "showBreaksAsRegularWindows": "Muestra descansos como ventanas normales",
-    "showBreaksAsRegularWindowsInfo": "Cuando está habilitado, las ventanas de ruptura se volverán enfocables, ya no estarán 'Siempre arriba' y también aparecerán en la barra de tareas."
+    "showBreaksAsRegularWindowsInfo": "Cuando está habilitado, las ventanas de ruptura se volverán enfocables, ya no estarán 'Siempre arriba' y también aparecerán en la barra de tareas.",
+    "timeToBreakInTray": "Hora de descansar",
+    "showTimeToBreakInTray": "Muestra la hora del siguiente descanso en el icono de la barra de menú"
   },
   "utils": {
     "none_one": "{{count}}",

@@ -175,7 +175,9 @@
     "beforeLongBreak": "Uzun Mola:",
     "notificationsInfo": "Molalara hazırlanmanız için, molalardan önce bildirim gösterilir.",
     "notifications": "Mola bildirimleri:",
-    "title": "Katılımcı Tercihleri"
+    "title": "Katılımcı Tercihleri",
+    "timeToBreakInTray": "Mola zamanı",
+    "showTimeToBreakInTray": "Menü çubuğu simgesinde bir sonraki molaya kadar olan zamanı göster"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -197,7 +199,7 @@
     "inAboutHours": "$t(utils.hours, {'count': {{hours}} }) içerisinde",
     "inAboutHoursMinutes": "$t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) içerisinde",
     "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) içerisinde",
-    "aboutHoursMinutesRemaining": "Yaklaşık $t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) kaldı."
+    "aboutHoursMinutesRemaining": "Yaklaşık $t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) kaldı"
   },
   "statusMessages": {
     "paused": "Durduruldu",

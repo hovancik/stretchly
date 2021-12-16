@@ -26,6 +26,9 @@ process.on('uncaughtException', (err, _) => {
 })
 
 nativeTheme.on('updated', function theThemeHasChanged () {
+  if (!gotTheLock) {
+    return
+  }
   appIcon.setImage(trayIconPath())
 })
 
@@ -63,18 +66,73 @@ global.shared = {
   isContributor: false
 }
 
-const gotTheLock = app.requestSingleInstanceLock()
+const commandLineArguments = process.argv
+  .slice(app.isPackaged ? 1 : 2)
+
+const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
 
 if (!gotTheLock) {
-  console.log('Stretchly command instance: started\n')
-  const args = process.argv.slice(app.isPackaged ? 1 : 2)
-  const cmd = new Command(args, app.getVersion())
+  const cmd = new Command(commandLineArguments, app.getVersion(), false)
   cmd.runOrForward()
   app.quit()
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory, commandLineArguments) => {
+    log.info(`Stretchly: arguments received from second instance: ${commandLineArguments}`)
+    const cmd = new Command(commandLineArguments, app.getVersion())
+
+    if (!cmd.hasSupportedCommand) {
+      return
+    }
+
+    if (!cmd.checkInMain()) {
+      log.info(`Stretchly: command '${cmd.command}' executed in second-instance, dropped in main instance`)
+      return
+    }
+    switch (cmd.command) {
+      case 'reset':
+        log.info('Stretchly: reseting breaks (requested by second instance)')
+        resetBreaks()
+        break
+
+      case 'mini':
+        log.info('Stretchly: skip to Mini Break (requested by second instance)')
+        if (cmd.options.title) nextIdea = [cmd.options.title]
+        if (!cmd.options.noskip) skipToMicrobreak()
+        break
+
+      case 'long':
+        log.info('Stretchly: skip to Long Break (requested by second instance)')
+        nextIdea = [cmd.options.title ? cmd.options.title : null, cmd.options.text ? cmd.options.text : null]
+        if (!cmd.options.noskip) skipToBreak()
+        break
+
+      case 'resume':
+        log.info('Stretchly: resume Breaks (requested by second instance)')
+        if (breakPlanner.isPaused) resumeBreaks(false)
+        break
+
+      case 'toggle':
+        log.info('Stretchly: toggle Breaks (requested by second instance)')
+        if (breakPlanner.isPaused) resumeBreaks(false)
+        else pauseBreaks(1)
+        break
+
+      case 'pause': {
+        log.info('Stretchly: pause Breaks (requested by second instance)')
+        const ms = cmd.durationToMs(settings)
+        // -1 indicates an invalid value
+        if (ms === -1) {
+          log.error('Stretchly: error when parsing duration to ms because of unvalid value')
+          return
+        }
+        pauseBreaks(ms)
+        break
+      }
+    }
+  })
 }
 
 app.on('ready', initialize)
-app.on('second-instance', runCommand)
 app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
@@ -83,6 +141,9 @@ app.on('before-quit', () => {
 })
 
 function initialize (isAppStart = true) {
+  if (!gotTheLock) {
+    return
+  }
   // TODO maybe we should not reinitialize but handle everything when we save new values for preferences
   log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
   require('events').defaultMaxListeners = 200 // for watching Store changes
@@ -1173,62 +1234,6 @@ function showNotification (text) {
     text: text,
     silent: settings.get('silentNotifications')
   })
-}
-
-function runCommand (event, argv, workingDirectory) {
-  const args = argv.slice(app.isPackaged ? 1 : 2)
-  const cmd = new Command(args, app.getVersion())
-
-  // if this command is already executed by the second-instance, return early
-  if (!cmd.checkInMain()) {
-    log.info('Stretchly: command executed in second-instance, dropped in main instance')
-    return
-  }
-
-  switch (cmd.command) {
-    case 'reset':
-      log.info('Stretchly: reseting breaks (requested by second instance)')
-      resetBreaks()
-      break
-
-    case 'mini':
-      log.info('Stretchly: skip to Mini Break (requested by second instance)')
-      if (cmd.options.title) nextIdea = [cmd.options.title]
-      if (!cmd.options.noskip) skipToMicrobreak()
-      break
-
-    case 'long':
-      log.info('Stretchly: skip to Long Break (requested by second instance)')
-      nextIdea = [cmd.options.title ? cmd.options.title : null, cmd.options.text ? cmd.options.text : null]
-      if (!cmd.options.noskip) skipToBreak()
-      break
-
-    case 'resume':
-      log.info('Stretchly: resume Breaks (requested by second instance)')
-      if (breakPlanner.isPaused) resumeBreaks(false)
-      break
-
-    case 'toggle':
-      log.info('Stretchly: toggle Breaks (requested by second instance)')
-      if (breakPlanner.isPaused) resumeBreaks(false)
-      else pauseBreaks(1)
-      break
-
-    case 'pause': {
-      log.info('Stretchly: pause Breaks (requested by second instance)')
-      const ms = cmd.durationToMs(settings)
-      // -1 indicates an invalid value
-      if (ms === -1) {
-        log.error('Stretchly: error when parsing duration to ms because of unvalid value')
-        return
-      }
-      pauseBreaks(ms)
-      break
-    }
-
-    default:
-      log.error(`Stretchly: Command ${cmd.command} is not supported`)
-  }
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {

@@ -175,7 +175,9 @@
     "appearance": "Išvaizda:",
     "system": "Sistema",
     "showBreaksAsRegularWindowsTitle": "Veikti kaip įprastas langas:",
-    "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje."
+    "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje.",
+    "timeToBreakInTray": "Laikas pertraukai",
+    "showTimeToBreakInTray": "Rodyti laiką iki kitos pertraukos meniu juostos piktogramoje"
   },
   "statusMessages": {
     "nextLongBreak": "Sekanti ilgoji pertraukėlė",

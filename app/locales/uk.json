@@ -176,7 +176,9 @@
     "primary": "Основний монітор",
     "showOnMonitor": "Показувати вікно перерви на",
     "screenInfo": "Якщо відображення вікна перерви на всіх моніторах вимкнене, ви можете вибрати, на якому з них ви хочете показувати це вікно.",
-    "screen": "Монітор для вікна перерви:"
+    "screen": "Монітор для вікна перерви:",
+    "showTimeToBreakInTray": "Показати час до наступної перерви в значку на панелі меню",
+    "timeToBreakInTray": "Час для перерви"
   },
   "statusMessages": {
     "resuming": "Продовжуємо",
@@ -188,7 +190,8 @@
     "dndMode": "Режим \"Не турбувати\" ввімкнено",
     "indefinitely": "На невизначений термін",
     "paused": "Призупинено",
-    "appExclusion": "Правило виключення застосунків"
+    "appExclusion": "Правило виключення застосунків",
+    "afterMiniBreak_other": "після {{count}} малих перерв"
   },
   "utils": {
     "inAboutHoursMinutes": "приблизно за $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
@@ -216,6 +219,12 @@
     "percent_many": "{{count}} відсотків",
     "none_one": "{{count}}",
     "none_few": "{{count}}",
-    "none_many": "{{count}}"
+    "none_many": "{{count}}",
+    "none_other": "{{count}}",
+    "minutes_other": "{{count}} хвилин",
+    "percent_other": "{{count}} відсотків",
+    "oclock_other": "{{count}} год",
+    "seconds_other": "{{count}} секунд",
+    "hours_other": "{{count}} годин"
   }
 }

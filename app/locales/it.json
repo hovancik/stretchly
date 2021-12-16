@@ -166,7 +166,9 @@
     "screen": "Monitorare le pause:",
     "showBreaksAsRegularWindows": "Mostra pause come finestre normali",
     "showBreaksAsRegularWindowsInfo": "Quando è abilitato, le finestre Pause diventeranno attivabili, non saranno più «Sempre in primo piano» e appariranno anche nella barra delle applicazioni.",
-    "showBreaksAsRegularWindowsTitle": "Agisce come una finestra normale:"
+    "showBreaksAsRegularWindowsTitle": "Agisce come una finestra normale:",
+    "timeToBreakInTray": "È ora di una pausa",
+    "showTimeToBreakInTray": "Mostra il tempo alla prossima pausa nell'icona della barra del menu"
   },
   "utils": {
     "none_one": "{{count}}",
