@@ -347,7 +347,6 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ## Contributors
 
-- Febin Jose, [@JoeNibe](https://github.com/JoeNibe)
 - Jan Hovancik, @hovancik, [hovancik.net](https://hovancik.net)
 - Martina Mocinecova, (pre-1.0 *Stretchly* logo), color schemes
 - Jason Barry, @JCBarry, [jcbarry.com](http://jcbarry.com)
@@ -409,6 +408,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Masi, [@The-Coding-Classroom](https://github.com/The-Coding-Classroom)
 - Saksham Sharma, [@ssaksham](https://github.com/ssaksham)
 - Jared Wood, [@jwood13](https://github.com/jwood13)
+- Febin Jose, [@JoeNibe](https://github.com/JoeNibe)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
