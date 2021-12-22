@@ -173,3 +173,14 @@ body[dir=rtl] .contributor-preferences > :nth-child(57) {
 body[dir=rtl] .contributor-preferences > :nth-child(61) {
   text-align: left;
 }
+
+.contributor-preferences > :nth-child(63) {
+  grid-column: 1/2;
+  grid-row: 49/50;
+  padding: 0 16px;
+  text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(63) {
+  text-align: left;
+}
