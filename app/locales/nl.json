@@ -166,7 +166,9 @@
     "screenInfo": "Wanneer het tonen van pauzes op alle schermen uitgeschakeld is kan je kiezen op welk scherm je de Pauzes wil laten zien.",
     "showBreaksAsRegularWindows": "Toon pauzes als een gewoon venster",
     "showBreaksAsRegularWindowsTitle": "Gedraag als een gewoon venster:",
-    "screen": "Monitor voor pauzes:"
+    "screen": "Monitor voor pauzes:",
+    "timeToBreakInTray": "Tijd tot pauze",
+    "showTimeToBreakInTray": "Toon tijd tot de volgende pauze in menubalkicoon"
   },
   "utils": {
     "none_one": "{{count}}",
