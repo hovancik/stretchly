@@ -5,6 +5,9 @@ const i18next = remote.require('i18next')
 const semver = require('semver')
 const { shouldShowNotificationTitle } = require('./utils/utils')
 const log = require('electron-log')
+const path = require('path')
+log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData'), 'logs/main.log')
+
 
 window.onload = (e) => {
   ipcRenderer.on('playSound', (event, file, volume) => {
