@@ -42,6 +42,10 @@ window.onload = (e) => {
     })
 
     window.setInterval(() => {
+      if (settings.get('currentTimeInBreaks')) {
+        document.querySelector('.breaks > :last-child').innerHTML =
+          (new Date()).toLocaleTimeString()
+      }
       if (Date.now() - started < duration) {
         const passedPercent = (Date.now() - started) / duration * 100
         postponeElement.style.display =
