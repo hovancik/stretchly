@@ -309,6 +309,11 @@ function numberOfDisplays () {
 function closeWindows (windowArray) {
   for (const window of windowArray) {
     window.hide()
+    if (windowArray[0] === window) {
+      log.debug('Main: Removing listener for sending Break data')
+      ipcMain.removeAllListeners('send-break-data')
+      ipcMain.removeAllListeners('send-microbreak-data')
+    }
     window.close()
   }
   return null
@@ -913,8 +918,6 @@ function breakComplete (shouldPlaySound, windows) {
 }
 
 function finishMicrobreak (shouldPlaySound = true) {
-  log.debug('Main: Removing listener for sending Mini Break data')
-  ipcMain.removeAllListeners('send-microbreak-data')
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
   log.info('Stretchly: finishing Mini Break')
   breakPlanner.nextBreak()
@@ -922,8 +925,6 @@ function finishMicrobreak (shouldPlaySound = true) {
 }
 
 function finishBreak (shouldPlaySound = true) {
-  log.debug('Main: Removing listener for sending Long Break data')
-  ipcMain.removeAllListeners('send-break-data')
   breakWins = breakComplete(shouldPlaySound, breakWins)
   log.info('Stretchly: finishing Long Break')
   breakPlanner.nextBreak()
@@ -931,8 +932,6 @@ function finishBreak (shouldPlaySound = true) {
 }
 
 function postponeMicrobreak (shouldPlaySound = false) {
-  log.debug('Main: Removing listener for sending Mini Break data')
-  ipcMain.removeAllListeners('send-microbreak-data')
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Mini Break')
@@ -940,8 +939,6 @@ function postponeMicrobreak (shouldPlaySound = false) {
 }
 
 function postponeBreak (shouldPlaySound = false) {
-  log.debug('Main: Removing listener for sending Long Break data')
-  ipcMain.removeAllListeners('send-break-data')
   breakWins = breakComplete(shouldPlaySound, breakWins)
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Long Break')
