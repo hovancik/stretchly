@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - transparency not working in breaks
 - command line arguments
 - Turkish option in Welcome window
+- no break texts and time in break window
 
 ### Changed
 - updated many translations
