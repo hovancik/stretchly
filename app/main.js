@@ -689,6 +689,7 @@ function startMicrobreak () {
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     ipcMain.on('send-microbreak-data', (event) => {
+      log.debug('Main: Sending Mini Break data')
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
@@ -752,6 +753,7 @@ function startMicrobreak () {
     updateTray()
   }, 500)
   setTimeout(() => {
+    log.debug('Main: Removing listener for sending Mini Break data')
     ipcMain.removeAllListeners('send-microbreak-data')
   }, 2000)
 }
@@ -834,6 +836,7 @@ function startBreak () {
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     ipcMain.on('send-break-data', (event) => {
+      log.debug('Main: Sending Long Break data')
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
@@ -898,6 +901,7 @@ function startBreak () {
     updateTray()
   }, 500)
   setTimeout(() => {
+    log.debug('Main: Removing listener for sending Long Break data')
     ipcMain.removeAllListeners('send-break-data')
   }, 2000)
 }
