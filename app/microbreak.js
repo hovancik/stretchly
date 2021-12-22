@@ -33,6 +33,7 @@ window.onload = (e) => {
 
   ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
     log.debug('Mini Break windows: break data received')
+    ipcRenderer.send('mini-break-loaded')
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')

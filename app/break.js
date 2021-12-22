@@ -34,7 +34,8 @@ window.onload = (event) => {
   })
 
   ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
-    log.debug('Long Break windows: break data received')
+    log.debug('Long Break window: break data received')
+    ipcRenderer.send('long-break-loaded')
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
