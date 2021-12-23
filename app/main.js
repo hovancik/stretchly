@@ -310,7 +310,6 @@ function closeWindows (windowArray) {
   for (const window of windowArray) {
     window.hide()
     if (windowArray[0] === window) {
-      log.debug('Main: Removing listener for sending Break data')
       ipcMain.removeAllListeners('send-break-data')
       ipcMain.removeAllListeners('send-microbreak-data')
     }
@@ -694,7 +693,6 @@ function startMicrobreak () {
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
     ipcMain.on('send-microbreak-data', (event) => {
-      log.debug('Main: Sending Mini Break data')
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
@@ -837,7 +835,6 @@ function startBreak () {
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
     ipcMain.on('send-break-data', (event) => {
-      log.debug('Main: Sending Long Break data')
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())

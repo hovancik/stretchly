@@ -9,7 +9,6 @@ const path = require('path')
 log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData'), 'logs/main.log')
 
 window.onload = (event) => {
-  log.debug('Long Break window: asking for break data')
   ipcRenderer.send('send-break-data')
   require('./platform')
   new HtmlTranslate(document).translate()
@@ -34,7 +33,6 @@ window.onload = (event) => {
   })
 
   ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
-    log.debug('Long Break window: break data received')
     ipcRenderer.send('long-break-loaded')
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
