@@ -58,5 +58,6 @@ module.exports = {
   pauseBreaksShortcut: '',
   resumeBreaksShortcut: '',
   screen: 'primary',
-  timeToBreakInTray: false
+  timeToBreakInTray: false,
+  currentTimeInBreaks: false
 }

@@ -167,7 +167,9 @@
     "primary": "Primary monitor",
     "cursor": "Follow cursor",
     "timeToBreakInTray": "Time to break",
-    "showTimeToBreakInTray": "Show time to the next break in menubar icon"
+    "showTimeToBreakInTray": "Show time to the next break in menubar icon",
+    "currentTimeInBreaks": "Current time",
+    "showCurrentTimeInBreaks": "Show current local time in break window"
   },
   "utils": {
     "none_one": "{{count}}",

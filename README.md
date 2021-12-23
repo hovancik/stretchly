@@ -242,6 +242,8 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 
 If you want Stretchly to show time to the next break in menubar icon set `timeToBreakInTray` to `true`.
 
+#### Show current time in breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+To show current time in breaks, set the value of `currentTimeInBreaks` from `false` to `true`.
 
 ## Contributor Preferences
 

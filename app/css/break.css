@@ -106,3 +106,9 @@ body[dir=rtl] .breaks > :nth-child(2) > a img {
 .ffffff .breaks > :nth-child(2) > a:hover img {
   filter: hue-rotate(359deg) brightness(101%) contrast(103%);
 }
+
+.breaks > :last-child {
+  bottom: 12px;
+  position: absolute;
+  right: 12px;
+}
