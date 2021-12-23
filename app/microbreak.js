@@ -4,6 +4,9 @@ const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const Store = require('electron-store')
 const settings = new Store()
+const log = require('electron-log')
+const path = require('path')
+log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData'), 'logs/main.log')
 
 window.onload = (e) => {
   ipcRenderer.send('send-microbreak-data')
@@ -28,6 +31,7 @@ window.onload = (e) => {
   })
 
   ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
+    ipcRenderer.send('mini-break-loaded')
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')

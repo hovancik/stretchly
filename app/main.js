@@ -309,6 +309,10 @@ function numberOfDisplays () {
 function closeWindows (windowArray) {
   for (const window of windowArray) {
     window.hide()
+    if (windowArray[0] === window) {
+      ipcMain.removeAllListeners('send-break-data')
+      ipcMain.removeAllListeners('send-microbreak-data')
+    }
     window.close()
   }
   return null
@@ -748,12 +752,9 @@ function startMicrobreak () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  setTimeout(() => {
+  ipcMain.on('mini-break-loaded', (event) => {
     updateTray()
-  }, 500)
-  setTimeout(() => {
-    ipcMain.removeAllListeners('send-microbreak-data')
-  }, 2000)
+  })
 }
 
 function startBreak () {
@@ -894,12 +895,9 @@ function startBreak () {
   if (process.platform === 'darwin') {
     app.dock.hide()
   }
-  setTimeout(() => {
+  ipcMain.on('long-break-loaded', (event) => {
     updateTray()
-  }, 500)
-  setTimeout(() => {
-    ipcMain.removeAllListeners('send-break-data')
-  }, 2000)
+  })
 }
 
 function breakComplete (shouldPlaySound, windows) {
