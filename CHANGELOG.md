@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.9.0] - 2021-12-24
 ### Fixed
-- Typo in quotes
+- typo in quotes
 - break not being resumed after DND if device was locked meanwhile on macOS
 - transparency not working in breaks
 - command line arguments
@@ -624,7 +625,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.8.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.9.0...HEAD
+[1.9.0]: https://github.com/hovancik/stretchly/compare/v1.8.1...v1.9.0
 [1.8.1]: https://github.com/hovancik/stretchly/compare/v1.8.0...v1.8.1
 [1.8.0]: https://github.com/hovancik/stretchly/compare/v1.7.0...v1.8.0
 [1.7.0]: https://github.com/hovancik/stretchly/compare/v1.6.0...v1.7.0
