@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2021  Keyboardio, Inc. -->
 <component type="desktop-application">
   <id>net.hovancik.Stretchly</id>
   <launchable type="desktop-id">net.hovancik.Stretchly.desktop</launchable>
@@ -37,6 +36,27 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.9.0" date="2021-12-24">
+      <description>
+        <p>Fixed</p>
+        <ul>
+          <li>typo in quotes</li>
+          <li>break not being resumed after DND if device was locked meanwhile on macOS</li>
+          <li>transparency not working in breaks</li>
+          <li>command line arguments</li>
+          <li>Turkish option in Welcome window</li>
+          <li>no break texts and time in break window</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>
+        <p>Added</p>
+        <ul>
+          <li>advanced option to show current time in break window</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.8.1" date="2021-11-24"/>
     <release version="1.8.0" date="2021-11-21">
       <description>
