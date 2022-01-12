@@ -168,7 +168,9 @@
     "showBreaksAsRegularWindows": "Muestra descansos como ventanas normales",
     "showBreaksAsRegularWindowsInfo": "Cuando está habilitado, las ventanas de ruptura se volverán enfocables, ya no estarán 'Siempre arriba' y también aparecerán en la barra de tareas.",
     "timeToBreakInTray": "Hora de descansar",
-    "showTimeToBreakInTray": "Muestra la hora del siguiente descanso en el icono de la barra de menú"
+    "showTimeToBreakInTray": "Muestra la hora del siguiente descanso en el icono de la barra de menú",
+    "currentTimeInBreaks": "Hora actual",
+    "showCurrentTimeInBreaks": "Mostrar la hora local actual en la ventana de descanso"
   },
   "utils": {
     "none_one": "{{count}}",
