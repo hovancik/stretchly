@@ -168,7 +168,9 @@
     "showOnMonitor": "显示休息时间",
     "screenInfo": "禁用所有显示器显示休息画面，你可以选择在哪个显示器显示休息画面。",
     "timeToBreakInTray": "休息时间",
-    "showTimeToBreakInTray": "在托盘图标显示下次休息时间"
+    "showTimeToBreakInTray": "在托盘图标显示下次休息时间",
+    "showCurrentTimeInBreaks": "在休息画面显示当前时间",
+    "currentTimeInBreaks": "当前时间"
   },
   "utils": {
     "none_other": "{{count}}",
