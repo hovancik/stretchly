@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ## [1.9.0] - 2021-12-24
+### Changed
+- breaks can't be paused while in break and strict mode is active
+
 ### Fixed
 - typo in quotes
 - break not being resumed after DND if device was locked meanwhile on macOS
