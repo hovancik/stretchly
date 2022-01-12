@@ -168,7 +168,9 @@
     "showBreaksAsRegularWindowsTitle": "Gedraag als een gewoon venster:",
     "screen": "Monitor voor pauzes:",
     "timeToBreakInTray": "Tijd tot pauze",
-    "showTimeToBreakInTray": "Toon tijd tot de volgende pauze in menubalkicoon"
+    "showTimeToBreakInTray": "Toon tijd tot de volgende pauze in menubalkicoon",
+    "currentTimeInBreaks": "Huidige tijd",
+    "showCurrentTimeInBreaks": "Toon huidige tijd in pauze scherm"
   },
   "utils": {
     "none_one": "{{count}}",
