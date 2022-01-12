@@ -1125,6 +1125,10 @@ function getTrayMenu () {
         updateTray()
       }
     })
+  } else if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode')) {
+    // nothing
+  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
+    // nothing
   } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     trayMenu.push({
       label: i18next.t('main.pause'),
@@ -1164,15 +1168,7 @@ function getTrayMenu () {
           }
         }
       ]
-    })
-  }
-
-  if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode')) {
-    // nothing
-  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
-    // nothing
-  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
-    trayMenu.push({
+    }, {
       label: i18next.t('main.resetBreaks'),
       click: resetBreaks
     })
