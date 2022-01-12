@@ -46,7 +46,7 @@
       "fullscreen": "на весь экран",
       "showIdeas": "Показывать идеи для упражнений во время перерывов",
       "allScreens": "Показывать перерывы на всех экранах",
-      "monitorIdleTime": "Следить за тем, когда система не используется (отсчёт времени до перерывов останавливается)",
+      "monitorIdleTime": "Следить за тем, когда система не используется (отсчёт времени до перерывов останавливается).",
       "monitorDnd": "Показывать перерывы даже в режиме \"Не беспокоить\"",
       "language": "Выбрать язык:",
       "restoreDefaults": "Восстановить настройки по умолчанию"
@@ -127,7 +127,7 @@
     "newVersion": "Новая версия:",
     "newVersionNotification": "Уведомлять о наличии обновлений",
     "customIdeas": "Свои идеи для упражнений:",
-    "customIdeasInfo": "Позволяет настроить свои собственные идеи для перерывов в конфигурационном файле (для продвинутых пользователей).",
+    "customIdeasInfo": "Позволяет настроить свои собственные идеи для перерывов в конфигурационном файле (для продвинутых пользователей)",
     "useIdeasFromSettings": "Использовать идеи упражнений из конфигурационного файла",
     "breakPostpone": "Возможность откладывать перерывы:",
     "breakPostponeInfo": "Если этот пункт включен в основных настройках, вы можете откладывать перерывы. Последующие настройки позволяют указать, когда, на какой промежуток времени и сколько раз можно откладывать перерывы.",
@@ -166,7 +166,11 @@
     "breakWindowSize": "Размер окна перерыва",
     "opacity": "Непрозрачность:",
     "opacityInfo": "Насколько непрозрачным должно быть окно перерыва?",
-    "opacityTheme": "Прозрачность темы:"
+    "opacityTheme": "Прозрачность темы:",
+    "timeToBreakInTray": "Время сделать паузу",
+    "showTimeToBreakInTray": "Показывать время до следующего перерыва в иконке трея",
+    "currentTimeInBreaks": "Текущее время",
+    "showCurrentTimeInBreaks": "Показать текущее местное время в окне перерыва"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -194,7 +198,13 @@
     "inSeconds": "через $t(utils.seconds, {'count': {{seconds}} })",
     "inAboutMinutes": "примерно через $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "примерно через $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "примерно через $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "inAboutHoursMinutes": "примерно через $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
+    "none_other": "{{count}}",
+    "hours_other": "{{count}} часов",
+    "seconds_other": "{{count}} секунд",
+    "minutes_other": "{{count}} минут",
+    "percent_other": "{{count}} процент",
+    "oclock_other": "{{count}} время"
   },
   "process": {
     "newVersionAvailable": "Доступна новая версия!"
@@ -216,6 +226,7 @@
     "afterMiniBreak_few": "через {{count}} мини-перерыва",
     "afterMiniBreak_many": "через {{count}} мини-перерывов",
     "resuming": "Продолжаем",
-    "appExclusion": "Правило исключения приложений"
+    "appExclusion": "Правило исключения приложений",
+    "afterMiniBreak_other": "через {{count}} мини-перерывов"
   }
 }

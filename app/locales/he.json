@@ -168,7 +168,9 @@
     "screenInfo": "כאשר הצגת הפסקות על כל הצגים מושבתת, ניתן לבחור באיזה צג להציג את ההפסקות שלך.",
     "screen": "צג להפסקות:",
     "timeToBreakInTray": "זמן עד ההפסקה",
-    "showTimeToBreakInTray": "הצגת הזמן עד להפסקה הבאה בסמל שבסרגל התפריטים"
+    "showTimeToBreakInTray": "הצגת הזמן עד להפסקה הבאה בסמל שבסרגל התפריטים",
+    "currentTimeInBreaks": "השעה הנוכחית",
+    "showCurrentTimeInBreaks": "הצגת השעה המקומית הנוכחית בחלון ההפסקה"
   },
   "statusMessages": {
     "resuming": "מתחדש",
@@ -179,7 +181,7 @@
     "nextMiniBreak": "ההפסקה הקצרה הבאה",
     "nextLongBreak": "ההפסקה הארוכה הבאה",
     "appExclusion": "כלל להחרגת יישום",
-    "dndMode": "מצב ללא הפרעות מופעל",
+    "dndMode": "מצב \"נא לא להפריע\" מופעל",
     "indefinitely": "ללא הגבלת זמן",
     "paused": "הושהה"
   },

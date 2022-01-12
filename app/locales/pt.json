@@ -33,7 +33,8 @@
     "nextLongBreak": "Próxima Pausa Longa",
     "dndMode": "Não Perturbar está ativo",
     "indefinitely": "Indefinidamente",
-    "paused": "Pausado"
+    "paused": "Pausado",
+    "appExclusion": "Regra de exclusão da app"
   },
   "welcome": {
     "getStarted": "Iniciar",
@@ -85,7 +86,7 @@
     "breakWindowHeight": "Altura:",
     "breakWindowWidth": "Largura:",
     "breakWindowSizeInfo": "Qual o percentual do ecrã a janela de pausa deve esconder?",
-    "breakWindowSize": "Tamanho da janela de Pausa.",
+    "breakWindowSize": "Tamanho da janela de pausa.",
     "opacity": "Opacidade:",
     "opacityInfo": "Quão denso deve ser a janela de pausa?",
     "opacityTheme": "Transparência do tema:",
@@ -110,7 +111,21 @@
     "beforeLongBreak": "Pausa Longa:",
     "notificationsInfo": "Sistema de Notificações, mostrar antes das pausas para deixar que se prepare para elas.",
     "notifications": "Notificações de pausas:",
-    "title": "Preferências do Contribuidor"
+    "title": "Preferências do Contribuidor",
+    "screen": "Monitor para pausas:",
+    "screenInfo": "Se mostrar pausas em todos os monitores está desativado, pode escolher em qual deles gostaria de mostrar as suas pausas.",
+    "showOnMonitor": "Mostrar pausas ligado",
+    "primary": "Monitor primário",
+    "cursor": "Seguir cursor",
+    "0": "Primeiro monitor",
+    "2": "Terceiro monitor",
+    "4": "Quinto monitor",
+    "currentTimeInBreaks": "Hora atual",
+    "3": "Quarto monitor",
+    "1": "Segundo monitor",
+    "showCurrentTimeInBreaks": "Mostrar a hora local atual na janela de pausa",
+    "timeToBreakInTray": "Tempo para pausar",
+    "showTimeToBreakInTray": "Mostrar tempo para a próxima pausa no ícone da barra de menu"
   },
   "preferences": {
     "heart": {
@@ -132,7 +147,8 @@
       "learnMore": "Para aprender mais sobre características do Stretchly, veja um tutorial, baixe a última versão ou contate-nos para suporte, ",
       "latestVersion": "Última versão ",
       "version": "Versão ",
-      "tagline": "App para lembrá-lo de fazer pausas"
+      "tagline": "App para lembrá-lo de fazer pausas",
+      "checkNewVersion": "Verifique automaticamente atualizações para a aplicação"
     },
     "theme": {
       "snowWhite": "Branco Neve",
@@ -176,7 +192,7 @@
       "restoreDefaults": "Restaurar padrões",
       "language": "Selecionar idioma:",
       "monitorDnd": "Mostrar pausas mesmo quando no modo Não Perturbe",
-      "monitorIdleTime": "Monitor do sistema em tempo inativo (pausas são desativadas se o sistema estiver inativo)",
+      "monitorIdleTime": "Monitor do sistema em tempo inativo (pausas são desativadas se o sistema estiver inativo).",
       "allScreens": "Mostrar pausas em todos os monitores",
       "showIdeas": "Mostrar dicas de exercícios durante as pausas",
       "fullscreen": "Ecrã Cheio",

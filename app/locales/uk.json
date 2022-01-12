@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - нагадування про перерви",
+    "toolTipHeader": "Stretchly - додаток для нагадування про перерви",
     "microbreakIn": "Маленька перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Довга перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Роботу відновлено",
@@ -53,8 +53,8 @@
     "about": {
       "tagline": "Нагадування про перервах",
       "designedBy": "Іконографія та дизайн від Colin Shanley",
-      "janH": "Jan Hovancik",
-      "developedBy": "Розробник:",
+      "janH": "Ян Гованчик",
+      "developedBy": "Розробник",
       "dot": ".",
       "ourWebsite": "відвідайте наш веб-сайт",
       "learnMore": "Щоб дізнатися більше про функції Stretchly, переглянути документацію, завантажити свіжу версію або звернутися за підтримкою, ",
@@ -178,7 +178,9 @@
     "screenInfo": "Якщо відображення вікна перерви на всіх моніторах вимкнене, ви можете вибрати, на якому з них ви хочете показувати це вікно.",
     "screen": "Монітор для вікна перерви:",
     "showTimeToBreakInTray": "Показати час до наступної перерви в значку на панелі меню",
-    "timeToBreakInTray": "Час для перерви"
+    "timeToBreakInTray": "Час для перерви",
+    "currentTimeInBreaks": "Поточний час",
+    "showCurrentTimeInBreaks": "Показати поточний місцевий час у вікні перерви"
   },
   "statusMessages": {
     "resuming": "Продовжуємо",
@@ -198,9 +200,9 @@
     "inAboutHours": "приблизно за $t(utils.hours, {'count': {{hours}} })",
     "inAboutMinutes": "приблизно за $t(utils.minutes, {'count': {{minutes}} })",
     "inSeconds": "за $t(utils.seconds, {'count': {{seconds}} })",
-    "aboutHoursMinutesRemaining": "Залишилось біля $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
-    "aboutHoursRemaining": "Залишилось біля $t(utils.hours, {'count': {{hours}} })",
-    "aboutMinutesRemaining": "Залишилось біля $t(utils.minutes, {'count': {{minutes}} })",
+    "aboutHoursMinutesRemaining": "Залишилось близько $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
+    "aboutHoursRemaining": "Залишилось близько $t(utils.hours, {'count': {{hours}} })",
+    "aboutMinutesRemaining": "Залишилось близько $t(utils.minutes, {'count': {{minutes}} })",
     "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) залишилось",
     "hours_one": "{{count}} година",
     "hours_few": "{{count}} години",
