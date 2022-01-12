@@ -216,6 +216,7 @@
     "afterMiniBreak_few": "через {{count}} мини-перерыва",
     "afterMiniBreak_many": "через {{count}} мини-перерывов",
     "resuming": "Продолжаем",
-    "appExclusion": "Правило исключения приложений"
+    "appExclusion": "Правило исключения приложений",
+    "afterMiniBreak_other": "через {{count}} мини-перерывов"
   }
 }
