@@ -85,26 +85,39 @@ if (!gotTheLock) {
     }
 
     if (!cmd.checkInMain()) {
-      log.info(`Stretchly: command '${cmd.command}' executed in second-instance, dropped in main instance`)
+      log.info(`Stretchly: command '${cmd.command}' executed in second instance, dropped in main instance`)
       return
     }
+
     switch (cmd.command) {
       case 'reset':
-        log.info('Stretchly: reseting breaks (requested by second instance)')
+        log.info('Stretchly: resetting breaks (requested by second instance)')
         resetBreaks()
         break
 
-      case 'mini':
+      case 'mini': {
         log.info('Stretchly: skip to Mini Break (requested by second instance)')
+        const ms = cmd.waitToMs()
+        if (ms === -1) {
+          log.error('Stretchly: error parsing wait interval to ms because of invalid value')
+          return
+        }
         if (cmd.options.title) nextIdea = [cmd.options.title]
-        if (!cmd.options.noskip) skipToMicrobreak()
+        if (!cmd.options.noskip || ms) skipToMicrobreak(ms)
         break
+      }
 
-      case 'long':
+      case 'long': {
         log.info('Stretchly: skip to Long Break (requested by second instance)')
+        const ms = cmd.waitToMs()
+        if (ms === -1) {
+          log.error('Stretchly: error parsing wait interval to ms because of invalid value')
+          return
+        }
         nextIdea = [cmd.options.title ? cmd.options.title : null, cmd.options.text ? cmd.options.text : null]
-        if (!cmd.options.noskip) skipToBreak()
+        if (!cmd.options.noskip || ms) skipToBreak(ms)
         break
+      }
 
       case 'resume':
         log.info('Stretchly: resume Breaks (requested by second instance)')
@@ -122,7 +135,7 @@ if (!gotTheLock) {
         const ms = cmd.durationToMs(settings)
         // -1 indicates an invalid value
         if (ms === -1) {
-          log.error('Stretchly: error when parsing duration to ms because of unvalid value')
+          log.error('Stretchly: error when parsing duration to ms because of invalid value')
           return
         }
         pauseBreaks(ms)
@@ -223,7 +236,7 @@ function initialize (isAppStart = true) {
     if (!resumeBreaksShortcut) {
       log.warn('Stretchly: resumeBreaksShortcut registration failed')
     } else {
-      log.info(`Stretchly: resumeBreaksShortcut registration succesful (${settings.get('resumeBreaksShortcut')})`)
+      log.info(`Stretchly: resumeBreaksShortcut registration successful (${settings.get('resumeBreaksShortcut')})`)
     }
   }
   if (settings.get('pauseBreaksShortcut') !== '') {
@@ -234,7 +247,7 @@ function initialize (isAppStart = true) {
     if (!pauseBreaksShortcut) {
       log.warn('Stretchly: pauseBreaksShortcut registration failed')
     } else {
-      log.info(`Stretchly: pauseBreaksShortcut registration succesful (${settings.get('pauseBreaksShortcut')})`)
+      log.info(`Stretchly: pauseBreaksShortcut registration successful (${settings.get('pauseBreaksShortcut')})`)
     }
   }
 }
@@ -942,27 +955,37 @@ function postponeBreak (shouldPlaySound = false) {
   updateTray()
 }
 
-function skipToMicrobreak () {
+function skipToMicrobreak (delay = 0) {
   if (microbreakWins) {
     microbreakWins = breakComplete(false, microbreakWins)
   }
   if (breakWins) {
     breakWins = breakComplete(false, breakWins)
   }
-  breakPlanner.skipToMicrobreak()
-  log.info('Stretchly: skipping to Mini Break')
+  if (delay) {
+    breakPlanner.scheduleMicrobreak(delay)
+    log.info(`Stretchly: skipping to Mini Break in ${delay}ms`)
+  } else {
+    breakPlanner.skipToMicrobreak()
+    log.info('Stretchly: skipping to Mini Break')
+  }
   updateTray()
 }
 
-function skipToBreak () {
+function skipToBreak (delay = 0) {
   if (microbreakWins) {
     microbreakWins = breakComplete(false, microbreakWins)
   }
   if (breakWins) {
     breakWins = breakComplete(false, breakWins)
   }
-  breakPlanner.skipToBreak()
-  log.info('Stretchly: skipping to Long Break')
+  if (delay) {
+    breakPlanner.scheduleBreak(delay)
+    log.info(`Stretchly: skipping to Long Break in ${delay}ms`)
+  } else {
+    breakPlanner.skipToBreak()
+    log.info('Stretchly: skipping to Long Break')
+  }
   updateTray()
 }
 
@@ -974,7 +997,7 @@ function resetBreaks () {
     breakWins = breakComplete(false, breakWins)
   }
   breakPlanner.reset()
-  log.info('Stretchly: reseting breaks')
+  log.info('Stretchly: resetting breaks')
   updateTray()
 }
 
@@ -1004,7 +1027,7 @@ function pauseBreaks (milliseconds) {
     finishBreak(false)
   }
   breakPlanner.pause(milliseconds)
-  log.info(`Stretchly: pausing breaks for ${milliseconds}`)
+  log.info(`Stretchly: pausing breaks for ${milliseconds}ms`)
   updateTray()
 }
 
