@@ -13,7 +13,7 @@
     "time",
     "reminder"
   ],
-  "author": "Jan Hovancik <conta.srdr@gmail.com>",
+  "author": "Jan Hovancik <jan@hovancik.net>",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/hovancik/stretchly/issues"
