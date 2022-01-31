@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- advanced option for app exclusion check interval
+
 ## [1.9.0] - 2021-12-24
 ### Changed
 - breaks can't be paused while in break and strict mode is active
