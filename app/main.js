@@ -97,25 +97,25 @@ if (!gotTheLock) {
 
       case 'mini': {
         log.info('Stretchly: skip to Mini Break (requested by second instance)')
-        const ms = cmd.waitToMs()
-        if (ms === -1) {
+        const delay = cmd.waitToMs()
+        if (delay === -1) {
           log.error('Stretchly: error parsing wait interval to ms because of invalid value')
           return
         }
         if (cmd.options.title) nextIdea = [cmd.options.title]
-        if (!cmd.options.noskip || ms) skipToMicrobreak(ms)
+        if (!cmd.options.noskip || delay) skipToMicrobreak(delay)
         break
       }
 
       case 'long': {
         log.info('Stretchly: skip to Long Break (requested by second instance)')
-        const ms = cmd.waitToMs()
-        if (ms === -1) {
+        const delay = cmd.waitToMs()
+        if (delay === -1) {
           log.error('Stretchly: error parsing wait interval to ms because of invalid value')
           return
         }
         nextIdea = [cmd.options.title ? cmd.options.title : null, cmd.options.text ? cmd.options.text : null]
-        if (!cmd.options.noskip || ms) skipToBreak(ms)
+        if (!cmd.options.noskip || delay) skipToBreak(delay)
         break
       }
 
@@ -132,13 +132,13 @@ if (!gotTheLock) {
 
       case 'pause': {
         log.info('Stretchly: pause Breaks (requested by second instance)')
-        const ms = cmd.durationToMs(settings)
+        const duration = cmd.durationToMs(settings)
         // -1 indicates an invalid value
-        if (ms === -1) {
+        if (duration === -1) {
           log.error('Stretchly: error when parsing duration to ms because of invalid value')
           return
         }
-        pauseBreaks(ms)
+        pauseBreaks(duration)
         break
       }
     }
@@ -955,7 +955,7 @@ function postponeBreak (shouldPlaySound = false) {
   updateTray()
 }
 
-function skipToMicrobreak (delay = 0) {
+function skipToMicrobreak (delay) {
   if (microbreakWins) {
     microbreakWins = breakComplete(false, microbreakWins)
   }
@@ -963,7 +963,7 @@ function skipToMicrobreak (delay = 0) {
     breakWins = breakComplete(false, breakWins)
   }
   if (delay) {
-    breakPlanner.scheduleMicrobreak(delay)
+    breakPlanner.skipToMicrobreak(delay)
     log.info(`Stretchly: skipping to Mini Break in ${delay}ms`)
   } else {
     breakPlanner.skipToMicrobreak()
@@ -972,7 +972,7 @@ function skipToMicrobreak (delay = 0) {
   updateTray()
 }
 
-function skipToBreak (delay = 0) {
+function skipToBreak (delay) {
   if (microbreakWins) {
     microbreakWins = breakComplete(false, microbreakWins)
   }
@@ -980,7 +980,7 @@ function skipToBreak (delay = 0) {
     breakWins = breakComplete(false, breakWins)
   }
   if (delay) {
-    breakPlanner.scheduleBreak(delay)
+    breakPlanner.skipToBreak(delay)
     log.info(`Stretchly: skipping to Long Break in ${delay}ms`)
   } else {
     breakPlanner.skipToBreak()

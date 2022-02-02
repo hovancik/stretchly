@@ -168,7 +168,7 @@ class BreaksPlanner extends EventEmitter {
     this.emit('updateToolTip')
   }
 
-  scheduleMicrobreak (delay) {
+  skipToMicrobreak (delay = 100) {
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
@@ -183,11 +183,7 @@ class BreaksPlanner extends EventEmitter {
     this.emit('updateToolTip')
   }
 
-  skipToMicrobreak () {
-    this.scheduleMicrobreak(100)
-  }
-
-  scheduleBreak (delay) {
+  skipToBreak (delay = 100) {
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
@@ -198,10 +194,6 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler = new Scheduler(() => this.emit('startBreak'), delay, 'startBreak')
     this.scheduler.plan()
     this.emit('updateToolTip')
-  }
-
-  skipToBreak () {
-    this.scheduleBreak(100)
   }
 
   clear () {

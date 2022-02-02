@@ -91,6 +91,10 @@ const allExamples = [{
 {
   cmd: 'stretchly long -T "Stretch up!" -t "Go stretch!"',
   description: 'Start a long break, with the title "Stretch up!" and text "Go stretch!"'
+},
+{
+  cmd: 'stretchly long -w 20m -T "Stretch up!"',
+  description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
 }]
 
 // Parse cmd line, check if valid and put variables in a dedicated object
