@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - advanced option for app exclusion check interval
+- support Apple silicon
 
 ## [1.9.0] - 2021-12-24
 ### Changed
@@ -128,7 +129,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.3.0] - 2020-11-08
 ### Added
-- control a running instance from command line  
+- control a running instance from command line
 - advanced option to disable check for new version
 - new break ideas
 

@@ -32,6 +32,19 @@ You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `b
 
 If you're using [Alfred](https://www.alfredapp.com) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) to interact with Stretchly.
 
+#### macOS Apple Silicon / M1
+
+*Stretchly* is also available as a native M1 application. Currently, it's not published to Homebrew, so you need to download
+it from the [Github Releases page](https://github.com/hovancik/stretchly/releases). The M1 versions look like
+`Stretchly-<version>-arm64.dmg`.
+
+*Stretchly* is not signed (due to its costs), so you'll encounter an error, "'Stretchly.app' is damaged and can't be opened.".
+To work around this error, run the following command to allow running *Stretchly*:
+
+```bash
+sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
+```
+
 ### Windows
 
 You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.

@@ -58,7 +58,10 @@
     "mac": {
       "category": "public.app-category.healthcare-fitness",
       "target": [
-        "dmg"
+        {
+          "target": "dmg",
+          "arch": ["x64", "arm64"]
+        }
       ],
       "extendInfo": {
         "LSBackgroundOnly": 1,
