@@ -8,7 +8,6 @@ const log = require('electron-log')
 const path = require('path')
 log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData'), 'logs/main.log')
 
-
 window.onload = (e) => {
   ipcRenderer.on('playSound', (event, file, volume) => {
     const audio = new Audio(`audio/${file}.wav`)
