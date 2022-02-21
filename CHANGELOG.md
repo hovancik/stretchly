@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.10.0] - 2022-2-22
 ### Added
 - advanced option for app exclusion check interval
 - build for Apple silicon
@@ -633,7 +634,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.9.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.10.0...HEAD
+[1.10.0]: https://github.com/hovancik/stretchly/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/hovancik/stretchly/compare/v1.8.1...v1.9.0
 [1.8.1]: https://github.com/hovancik/stretchly/compare/v1.8.0...v1.8.1
 [1.8.0]: https://github.com/hovancik/stretchly/compare/v1.7.0...v1.8.0
