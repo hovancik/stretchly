@@ -20,6 +20,12 @@ const allOptions = {
     description: 'Do not skip directly to this break (Long or Mini)',
     withValue: false
   },
+  wait: {
+    long: '--wait',
+    short: '-w',
+    description: 'Specify an interval to wait before skipping to this break (Long or Mini) [HHhMMm|HHh|MMm|MM]',
+    withValue: true
+  },
   duration: {
     long: '--duration',
     short: '-d',
@@ -50,11 +56,11 @@ const allCommands = {
   },
   mini: {
     description: 'Skip to the Mini Break, customize it',
-    options: [allOptions.title, allOptions.noskip]
+    options: [allOptions.title, allOptions.noskip, allOptions.wait]
   },
   long: {
     description: 'Skip to the Long Break, customize it',
-    options: [allOptions.text, allOptions.title, allOptions.noskip]
+    options: [allOptions.text, allOptions.title, allOptions.noskip, allOptions.wait]
   }
 }
 
@@ -85,6 +91,10 @@ const allExamples = [{
 {
   cmd: 'stretchly long -T "Stretch up!" -t "Go stretch!"',
   description: 'Start a long break, with the title "Stretch up!" and text "Go stretch!"'
+},
+{
+  cmd: 'stretchly long -w 20m -T "Stretch up!"',
+  description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
 }]
 
 // Parse cmd line, check if valid and put variables in a dedicated object
@@ -145,7 +155,7 @@ class Command {
       })
 
       if (!valid) {
-        log.error(`Stretchly ${this.isFirstInstance ? '' : '2'}: options '${name}' is not valid for command '${this.command}'`)
+        log.error(`Stretchly${this.isFirstInstance ? '' : ' 2'}: option '${name}' is not valid for command '${this.command}'`)
       }
     }
 
@@ -164,7 +174,7 @@ class Command {
 
       default:
         if (this.hasSupportedCommand) {
-          log.info(`Stretchly ${this.isFirstInstance ? '' : '2'}: forwarding command '${this.command}' to the main instance`)
+          log.info(`Stretchly${this.isFirstInstance ? '' : ' 2'}: forwarding command '${this.command}' to the main instance`)
         }
     }
   }
@@ -184,6 +194,14 @@ class Command {
       default:
         return parseDuration(this.options.duration)
     }
+  }
+
+  waitToMs () {
+    if (!this.options.wait) {
+      return 0
+    }
+
+    return parseDuration(this.options.wait)
   }
 
   checkInMain () {

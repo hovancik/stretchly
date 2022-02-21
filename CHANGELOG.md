@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - advanced option for app exclusion check interval
-- support Apple silicon
+- build for Apple silicon
+- ability to schedule break from command line
 
 ## [1.9.0] - 2021-12-24
 ### Changed
