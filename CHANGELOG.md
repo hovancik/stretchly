@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Japanese translations
+
+### Changed
+- updated many translations
+
 ## [1.10.0] - 2022-2-22
 ### Added
 - advanced option for app exclusion check interval

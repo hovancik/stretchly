@@ -290,7 +290,7 @@ body[dir=rtl] .theme > :nth-child(16) {
     'Noto Sans CJK KR Regular',
     'Noto Sans Devanagari Regular',
     'Noto Sans Gujarati Regular', 'Noto Sans Gurmukhi Regular',
-    'Noto Sans Hebrew Regular';
+    'Noto Sans JP Regular', 'Noto Sans Hebrew Regular';
   font-size: 48px;
   padding-left: 12px;
 }
@@ -305,7 +305,7 @@ body[dir=rtl] .about > :nth-child(1) > div > span {
     'Noto Sans CJK KR Light',
     'Noto Sans Devanagari Light',
     'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
-    'Noto Sans Hebrew Light';
+    'Noto Sans JP Light', 'Noto Sans Hebrew Light'; 
   font-size: 20px;
   line-height: 30px;
 }
