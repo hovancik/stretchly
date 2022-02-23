@@ -28,22 +28,28 @@ The latest official **installers** and **portable versions** for macOS, Windows,
 
 You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
 
- *Stretchly* is not signed (due to its costs) so you will need to use this workaround for the first run: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
-
 If you're using [Alfred](https://www.alfredapp.com) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) to interact with Stretchly.
 
-#### macOS Apple Silicon / M1
+#### Application Signing
 
-*Stretchly* is also available as a native M1 application. Currently, it's not published to Homebrew, so you need to download
-it from the [Github Releases page](https://github.com/hovancik/stretchly/releases). The M1 versions look like
-`Stretchly-<version>-arm64.dmg`.
+*Stretchly* is not signed (due to its costs) so you will need to use a workaround for the first run. The workaround
+depends on if you're running an Intel or Apple Silicon chip.
 
-*Stretchly* is not signed (due to its costs), so you'll encounter an error, "'Stretchly.app' is damaged and can't be opened.".
-To work around this error, run the following command to allow running *Stretchly*:
+- **Intel Chips**: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
+- **Apple Chips**: Open a terminal and run this command:
+
+    ```bash
+    sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
+    ```
+
+If you install via [Homebrew](https://brew.sh), you can use the `--no-quarantine` flag to automatically apply the correct
+workaround.
 
 ```bash
-sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
+brew install --cask --no-quarantine stretchly
 ```
+
+Not sure which chip your computer has? [Here's how to tell](https://support.apple.com/en-us/HT211814).
 
 ### Windows
 
@@ -222,8 +228,8 @@ If you want Stretchly to be paused when specific apps are running, you could hav
             "atom"
         ]
     }
-]    
-```  
+]
+```
 
 If you want Stretchly to be running when specific apps are as well, you could have this value (breaks are paused when Skype or Atom are not running):
 
@@ -237,7 +243,7 @@ If you want Stretchly to be running when specific apps are as well, you could ha
             "atom"
         ]
     }
-]    
+]
 ```
 
 You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. They are case sensitive.
@@ -251,7 +257,7 @@ If you don't want to reset breaks once system is back from Suspend/Lock, set `pa
 In case you have disabled showing of breaks on all monitors, you can specify which one should contain the break window. Set `screen` value to one of the following:
 - `"primary"` - primary monitor as given by OS
 - `"cursor"` - monitor where there is cursor
-- `"0"` (or `0`), `"1"`, `"2"` etc, where `"0"` is the first monitor returned by OS and so forth  
+- `"0"` (or `0`), `"1"`, `"2"` etc, where `"0"` is the first monitor returned by OS and so forth
 
 #### Show time to the next break in menubar icon [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
 
