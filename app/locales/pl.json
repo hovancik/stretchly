@@ -166,7 +166,10 @@
     "screen": "Ekran dla przerw:",
     "breakWindowSizeInfo": "Jaki procent ekranu powinno ukryć okno przerwy?",
     "breakWindowSize": "Wielkość okna przerwy",
-    "opacity": "Przezroczystość:"
+    "opacity": "Przezroczystość:",
+    "timeToBreakInTray": "Czas na przerwę",
+    "currentTimeInBreaks": "Aktualny czas",
+    "showCurrentTimeInBreaks": "Pokaż aktualną godzinę w okienku przerwy"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -194,7 +197,13 @@
     "inSeconds": "za $t(utils.seconds, {'count': {{seconds}} })",
     "inAboutMinutes": "za około $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "za około $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "za około $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "inAboutHoursMinutes": "za około $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
+    "none_other": "{{count}}",
+    "percent_other": "{{count}} procent",
+    "oclock_other": "{{count}}",
+    "seconds_other": "{{count}} sekund",
+    "minutes_other": "{{count}} minut",
+    "hours_other": "{{count}} godzin"
   },
   "process": {
     "newVersionAvailable": "Dostępna nowa wersja!"
@@ -216,6 +225,7 @@
     "afterMiniBreak_few": "po {{count}} mikroprzerwach",
     "afterMiniBreak_many": "po {{count}} mikroprzerwach",
     "resuming": "Wznawianie",
-    "appExclusion": "Zasada wyjątku aplikacji"
+    "appExclusion": "Zasada wyjątku aplikacji",
+    "afterMiniBreak_other": "po {{count}} Mini Przerwa"
   }
 }
