@@ -40,7 +40,7 @@
   font-weight: 300;
   font-display: swap;
   src: local('Noto Sans CJK KR Light'), local('NotoSansCJKkr-Light'),
-       url('./fonts/NotoSansCJKkr-Light.otf') format('truetype');
+       url('./fonts/NotoSansCJKkr-Light.otf') format('opentype');
 }
 
 @font-face {
@@ -124,6 +124,24 @@
        url('./fonts/NotoSansHebrew-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Noto Sans JP Light';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Noto Sans JP Light'), local('NotoSansJP-Light'),
+       url('./fonts/NotoSansCJKjp-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans JP Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Noto Sans JP Regular'), local('NotoSansJP-Regular'),
+       url('./fonts/NotoSansCJKjp-Regular.otf') format('opentype');
+}
+
 body {
   background: var(--main-bg-color);
   color: var(--main-color);
@@ -131,7 +149,8 @@ body {
     'Noto Sans CJK KR Regular',
     'Noto Sans Devanagari Regular',
     'Noto Sans Gujarati Regular', 'Noto Sans Gurmukhi Regular',
-    'Noto Sans Hebrew Regular';
+    'Noto Sans Hebrew Regular',
+    'Noto Sans JP Regular';
 }
 
 .darwin .darwin-hidden,
