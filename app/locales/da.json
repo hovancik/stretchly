@@ -22,7 +22,8 @@
     "continue": "Fortsæt",
     "cancel": "Afbryd",
     "preferences": "Indstillinger",
-    "contributorPreferences": "Sponser præferencer"
+    "contributorPreferences": "Sponser præferencer",
+    "syncPreferences": "Synkroniser indstillinger"
   },
   "break": {
     "postpone": "…vent en lille smule",
@@ -76,7 +77,17 @@
       "menubarIcon": "Menubar ikon:",
       "colour": "Farve",
       "monochrome": "Monokrom",
-      "invertedMonochrome": "invertere Monokrom"
+      "invertedMonochrome": "invertere Monokrom",
+      "snowWhite": "Snehvidt",
+      "greenClouds": "Grønne skyer",
+      "autumnBeBlessed": "Vidunderlige efterår",
+      "graphiteCrystal": "Grafit krystal",
+      "coffeeKisses": "Kaffekys",
+      "morningSwim": "Morgen svømmetur",
+      "transparentMode": "Aktiver gennemsigtighed",
+      "crystalGlass": "Krystalglas",
+      "windChime": "vindspil",
+      "ticToc": "Tik-Tak"
     },
     "about": {
       "tagline": "Pause påmindelses app",
@@ -87,7 +98,9 @@
       "ourWebsite": "besøg vores hjemmeside",
       "dot": ".",
       "developedBy": "Udviklet af",
-      "janH": "Jan Hovancik"
+      "janH": "Jan Hovancik",
+      "designedBy": "Ikon og UI design af Colin Shanley",
+      "checkNewVersion": "Tjek automatisk for app opdateringer"
     },
     "heart": {
       "loveStretchly": "Elsker du Stretchly?",
@@ -96,7 +109,8 @@
       "becomePatron": "Bliv sponsor (Patron)",
       "alreadyContributor": "Jeg er allerede sponsor",
       "authenticateUsing": "Autentificeringen via:",
-      "contributorPreferences": "Sponser præferencer"
+      "contributorPreferences": "Sponser præferencer",
+      "syncPreferences": "Synkroniser indstillinger"
     }
   },
   "contributorPreferences": {
@@ -132,7 +146,13 @@
     "appearance": "Udseende:",
     "light": "Lys",
     "dark": "Mørk",
-    "system": "System"
+    "system": "System",
+    "0": "Første skærm",
+    "3": "Fjerde skærm",
+    "2": "Tredje Skærm",
+    "1": "Anden Skærm",
+    "4": "Femte skærm",
+    "opacityTheme": "Tema gennemsigtighed:"
   },
   "utils": {
     "none_one": "{{count}}",

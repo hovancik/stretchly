@@ -5,7 +5,7 @@
     "breakIn": "Long Break in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "쉬는시간 마저 시작",
     "downloadLatestVersion": "최신 버전 다운로드",
-    "skipToTheNext": "다음 쉬는시간 으로",
+    "skipToTheNext": "다음 쉬는 시간 으로",
     "resume": "다시 시작",
     "pause": "일시정지",
     "forHour": "한시간동안",
@@ -13,12 +13,19 @@
     "for5Hours": "다섯시간동안",
     "untilMorning": "아침까지",
     "indefinitely": "영원히",
-    "resetBreaks": "쉬는시간 재설정",
+    "resetBreaks": "쉬는 시간 재설정",
     "quitStretchly": "stretchly 나가기",
-    "preferences": "설정"
+    "preferences": "설정",
+    "toBreak": "긴 휴식 시간",
+    "toMicrobreak": "짧은 휴식",
+    "restoreDefaults": "설정 초기화",
+    "warning": "모든 설정을 기본값으로 초기화 합니다.",
+    "continue": "계속",
+    "cancel": "취소"
   },
   "break": {
-    "title": "쉬는 시간이에요!"
+    "title": "쉬는 시간이에요!",
+    "skip": "쉬는 시간 건너뛰기"
   },
   "preferences": {
     "theme": {
@@ -33,6 +40,26 @@
     },
     "about": {
       "tagline": "쉬는시간 알리미"
+    },
+    "nav": {
+      "settings": "설정",
+      "schedule": "쉬는 시간",
+      "theme": "테마"
+    },
+    "title": "Stretchly 설정",
+    "settings": {
+      "showBreaksIn": "쉬는 시간 표시 방법:",
+      "window": "창모드",
+      "fullscreen": "전체화면",
+      "language": "언어 선택:",
+      "restoreDefaults": "설정 초기화",
+      "showIdeas": "쉬는 시간 중에 팁을 보여줍니다",
+      "allScreens": "모든 화면에 쉬는 시간 알림을 보여줍니다",
+      "monitorDnd": "방해 금지 모드에서도 알림을 보여줍니다",
+      "openAtLogin": "로그인할 때 Stretchly를 자동으로 시작합니다"
+    },
+    "schedule": {
+      "miniBreaks": "짧은 휴식:"
     }
   },
   "utils": {

@@ -168,7 +168,9 @@
     "screenInfo": "Lorsque l'affichage des pauses sur tous les moniteurs est désactivé, vous pouvez choisir celui sur lequel vous souhaitez afficher vos pauses.",
     "screen": "Moniteur pour les pauses :",
     "timeToBreakInTray": "Il est temps pour une pause",
-    "showTimeToBreakInTray": "Afficher l'heure jusqu'à la prochaine pause dans l'icône de la barre de menus"
+    "showTimeToBreakInTray": "Afficher l'heure jusqu'à la prochaine pause dans l'icône de la barre de menus",
+    "showCurrentTimeInBreaks": "Afficher l'heure locale actuelle dans la fenêtre de pause",
+    "currentTimeInBreaks": "Heure actuelle"
   },
   "utils": {
     "none_one": "{{count}}",
