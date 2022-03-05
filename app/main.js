@@ -1123,13 +1123,13 @@ function getTrayMenu () {
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
         label: i18next.t('main.toMicrobreak'),
-        click: skipToMicrobreak
+        click: () => skipToMicrobreak()
       }])
     }
     if (settings.get('break')) {
       submenu = submenu.concat([{
         label: i18next.t('main.toBreak'),
-        click: skipToBreak
+        click: () => skipToBreak()
       }])
     }
     if (settings.get('break') || settings.get('microbreak')) {

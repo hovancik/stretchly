@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - updated many translations
 
+### Fixed
+- crashing when skipping to break and time to break in tray
+
 ## [1.10.0] - 2022-2-22
 ### Added
 - advanced option for app exclusion check interval
