@@ -213,5 +213,259 @@
     "afterMiniBreak_one": "after {{count}} Mini Break",
     "afterMiniBreak_other": "after {{count}} Mini Breaks",
     "resuming": "Resuming"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Go grab a glass of water."
+    },
+    "aab": {
+      "text": "Slowly look all the way left, then right."
+    },
+    "aac": {
+      "text": "Slowly look all the way up, then down."
+    },
+    "aad": {
+      "text": "Close your eyes and take few deep breaths."
+    },
+    "aae": {
+      "text": "Close your eyes and relax."
+    },
+    "aaf": {
+      "text": "Stretch your legs."
+    },
+    "aag": {
+      "text": "Stretch your arms."
+    },
+    "aah": {
+      "text": "Is your sitting posture correct?"
+    },
+    "aai": {
+      "text": "Slowly turn head to side and hold for 10 seconds."
+    },
+    "aaj": {
+      "text": "Slowly tilt head to side and hold for 5-10 seconds."
+    },
+    "aak": {
+      "text": "Stand from your chair and stretch."
+    },
+    "aal": {
+      "text": "Refocus your eyes on an object at least 20 meters away."
+    },
+    "aam": {
+      "text": "Take a moment to think about something you appreciate."
+    },
+    "aan": {
+      "text": "Take a moment to smile at being alive."
+    },
+    "aao": {
+      "text": "A truly ergonomic workstation is one that you regularly push away from."
+    },
+    "aap": {
+      "text": "Close your eyes and count your breaths."
+    },
+    "aaq": {
+      "text": "Close your eyes and name the things you hear."
+    },
+    "aar": {
+      "text": "Place your fingertips on your shoulders. Roll your shoulders forward for 10 seconds, then backward."
+    },
+    "aas": {
+      "text": "Raise your right arm, stretch it over your head to the left, and hold for 10 seconds. Repeat on the other side."
+    },
+    "aat": {
+      "text": "With your right hand, grab each finger of your left hand in turn and squeeze. Repeat on the other side."
+    },
+    "aau": {
+      "text": "Stand up and do a lunge. Hold for 10 seconds, then do the other leg."
+    },
+    "aav": {
+      "text": "Close your eyes and simply notice whatever arises in current moment, without judgement."
+    },
+    "aaw": {
+      "text": "Focus every 20 minutes for 20 seconds on an object at 20 feet distance."
+    },
+    "aax": {
+      "text": "If you need help, ask for it."
+    },
+    "aay": {
+      "text": "Do one thing at a time."
+    },
+    "aaz": {
+      "text": "Is your attention spent wisely?"
+    },
+    "aba": {
+      "text": "Change your sitting posture."
+    },
+    "abb": {
+      "text": "Expose your eyes to natural light."
+    },
+    "abc": {
+      "text": "With your eyes closed, slowly and gently raise your eyes to the ceiling and back down to the floor."
+    },
+    "abd": {
+      "text": "With your eyes closed, slowly and gently move your eyes to the left, then slowly to the right."
+    },
+    "abe": {
+      "text": "Shake your hands out to get some relief."
+    },
+    "abf": {
+      "text": "One at a time, touch the tip of each finger to the tip of your thumb so they make an O-shape."
+    },
+    "abg": {
+      "text": "Make a fist and then slide your fingers up until they point toward the ceiling, like you're telling someone to stop."
+    },
+    "abh": {
+      "text": "Make a fist and then fan your fingers out and stretch them as far as you can."
+    },
+    "abi": {
+      "text": "Sit tall, arms hanging at your sides, and slowly rotate neck in one direction in a large circle."
+    },
+    "abj": {
+      "text": "Stand tall and slowly tilt your head toward the shoulder using the same hand until you feel a strech."
+    },
+    "abk": {
+      "text": "Stand tall with your arms by your side. Squeeze your shoulder blades together and hold."
+    },
+    "abl": {
+      "text": "Stand tall with your arms raised along your shoulders. Move hands slightly behind your back, hold for a second and return."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Not alone",
+      "text": "Do you find it hard to take a break alone? Try to do it with a co-worker. Aside from making it easier to stick to breaks, you will have a chance to get to know them better. Taking breaks together increases productivity."
+    },
+    "aab": {
+      "title": "Step away",
+      "text": "Do you ever notice how your brain can figure things out by itself? All it takes is to step away from the computer and take a break to think about something totally unrelated."
+    },
+    "aac": {
+      "title": "Microbreaks",
+      "text": "Rest is a key component in ensuring the performance of the musculoskeletal system. Frequent breaks can decrease the duration of a task and help lower the exposure to ergonomic injury risk."
+    },
+    "aad": {
+      "title": "Meditation",
+      "text": "Research studies suggest that mindfulness-based exercises help decrease anxiety, depression, stress, and pain, and help improve general health, mental health, and quality of life. Not sure how to start? There are numerous apps to help you out."
+    },
+    "aae": {
+      "title": "Blink",
+      "text": "Looking at screens for a long time causes you to blink less, thus exposing your eyes to the air. Blink rapidly for a few seconds to refresh the tear film and clear dust from the eye surface."
+    },
+    "aaf": {
+      "title": "Ergonomics",
+      "text": "Improper height and angle of the keyboard, mouse, monitor or working surface can cause health problems. Take some time to read about desk ergonomics."
+    },
+    "aag": {
+      "title": "Move",
+      "text": "There are a lot of ways you can exercise within your office. Try marching in place or doing desk push-ups."
+    },
+    "aah": {
+      "title": "Change",
+      "text": "Do you have a stability ball or standing work desk? Consider replacing your desk chair with them for a while."
+    },
+    "aai": {
+      "title": "Notice",
+      "text": "Are you daydreaming or having trouble focusing? It is a sign that you need to take a break."
+    },
+    "aaj": {
+      "title": "Tech",
+      "text": "How about taking a no-tech walk?"
+    },
+    "aak": {
+      "title": "Metabolism",
+      "text": "Emerging research shows that sitting for long periods of time contributes to risk of metabolic syndrome, heart attack and stroke risk and overall death risk, among others. Taking regular walking breaks can help your circulation, working to counteract some of those problems."
+    },
+    "aal": {
+      "title": "Active Meetings",
+      "text": "How about moving meetings from the conference room to the concourse? Walking not only burns calories but it may even foster a sense of collaboration."
+    },
+    "aam": {
+      "title": "Fruit",
+      "text": "Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness."
+    },
+    "aan": {
+      "title": "Bathrooms",
+      "text": "Walk to the farthest bathroom in the worksite facility when going to the restroom."
+    },
+    "aao": {
+      "title": "Coffee break",
+      "text": "Going on coffee break? Consider doing a 5-minute walk every time you go for one."
+    },
+    "aap": {
+      "title": "Colleagues",
+      "text": "Do not email or message office colleagues, walk to their desks to communicate with them."
+    },
+    "aaq": {
+      "title": "Learning",
+      "text": "In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills."
+    },
+    "aar": {
+      "title": "Exercise",
+      "text": "Evidence suggests small amounts of regular exercise can bring dramatic health benefits, including measurably reducing stress."
+    },
+    "aas": {
+      "title": "Repeat",
+      "text": "Have you found your stretch-ly-routine? Do not forget to repeat it for more than once to better fight effects of prolonged sitting."
+    },
+    "aat": {
+      "title": "Wrist and forearm",
+      "text": "Extend your arms with the palms facing towards you, then slowly rotate the hands four times clockwise, then four times counter-clockwise."
+    },
+    "aau": {
+      "title": "Back stretching",
+      "text": "Join your hands behind your head, then lift them together up above your head ending with your palms facing upward."
+    },
+    "aav": {
+      "title": "Mobilize",
+      "text": "For every thirty minutes of stagnation, you should have at least one minute of stimulation."
+    },
+    "aaw": {
+      "title": "7 Minute Workout",
+      "text": "This workout packs in a full-body exercise routine in a fraction of the time. But as with any exercise, be careful. There are numerous apps to get you started."
+    },
+    "aax": {
+      "title": "Pulse",
+      "text": " Raise your pulse rate to 120 beats per minute for 20 straight minutes four or five times a week doing anything you enjoy. Regularly raising your heart rate results in improved cardiovascular health."
+    },
+    "aay": {
+      "title": "Take the stairs ",
+      "text": "Studies have shown that stair climbing, which is considered vigorous-intensity physical activity, burns more calories per minute than jogging."
+    },
+    "aaz": {
+      "title": "Make art",
+      "text": "Art therapy is known to have great mental health benefits, especially when it comes to stress management. How about writing a quick poem, taking a picture or painting something small?"
+    },
+    "aba": {
+      "title": "Declutter",
+      "text": "A clean space helps your focus at work and is often linked to positive emotions like happiness."
+    },
+    "abb": {
+      "title": "Lunch outside",
+      "text": "Nature is linked to positive emotions and decreased stress and anxiety. Whenever possible, try to take your daily lunch break outside, surrounded by some greenery."
+    },
+    "abc": {
+      "title": "Public transport",
+      "text": "If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling."
+    },
+    "abd": {
+      "title": "Yawning",
+      "text": "Yawning can be really helpful, as it produces tears to help moisten and lubricate the eyes."
+    },
+    "abe": {
+      "title": "Focus change",
+      "text": "Hold one finger close to the eye and focus on it. Slowly move the finger away, focus far into the distance and then back to the finger. Bring the finger back and focus on something far away."
+    },
+    "abf": {
+      "title": "Palming",
+      "text": "While seated, brace elbows on the desk and close to the desk edge. Let your weight fall forward and cup hands over eyes. Close your eyes and inhale slowly through nose and hold for few seconds. Continue deep breathing."
+    },
+    "abg": {
+      "title": "Hand squeezes",
+      "text": "Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times."
+    },
+    "abh": {
+      "title": "Slow Breathing",
+      "text": "Emerging research suggests potential for use of controlled slow breathing techniques as a means of optimising physiological parameters that appear to be associated with health and longevity."
+    }
   }
 }

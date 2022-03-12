@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Japanese translations
+- break ideas are translatable
 
 ### Changed
 - updated many translations
