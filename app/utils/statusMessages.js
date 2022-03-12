@@ -49,7 +49,6 @@ class StatusMessages {
     const microbreakNotificationInterval = this.settings.get('microbreakNotification')
       ? this.settings.get('microbreakNotificationInterval')
       : 0
-    i18next.t('main.nextBreakFollowing', { count: breakInterval - breakNumber })
 
     if (this.reference === 'startBreak') {
       message += i18next.t('statusMessages.nextLongBreak') + ' ' +

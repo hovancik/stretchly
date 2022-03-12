@@ -198,7 +198,6 @@ function initialize (isAppStart = true) {
   }
 
   startI18next()
-  setInterval(updateTray, 10000)
   startProcessWin()
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
@@ -250,6 +249,7 @@ function initialize (isAppStart = true) {
       log.info(`Stretchly: pauseBreaksShortcut registration successful (${settings.get('pauseBreaksShortcut')})`)
     }
   }
+  loadIdeas()
 }
 
 function startI18next () {
@@ -258,7 +258,7 @@ function startI18next () {
     .init({
       lng: settings.get('language'),
       fallbackLng: 'en',
-      debug: false,
+      debug: !app.isPackaged,
       backend: {
         loadPath: path.join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
@@ -269,6 +269,7 @@ function startI18next () {
       }
       if (appIcon) {
         updateTray()
+        setInterval(updateTray, 10000)
       }
     })
 }
@@ -277,6 +278,7 @@ i18next.on('languageChanged', function (lng) {
   if (appIcon) {
     updateTray()
   }
+  loadIdeas()
 })
 
 function onSuspendOrLock () {
@@ -629,9 +631,6 @@ function startBreakNotification () {
 }
 
 function startMicrobreak () {
-  if (!microbreakIdeas) {
-    loadIdeas()
-  }
   // don't start another break if break running
   if (microbreakWins) {
     log.warn('Stretchly: Mini Break already running, not starting Mini Break')
@@ -771,9 +770,6 @@ function startMicrobreak () {
 }
 
 function startBreak () {
-  if (!breakIdeas) {
-    loadIdeas()
-  }
   if (breakWins) {
     log.warn('Stretchly: Long Break already running, not starting Long Break')
     return
@@ -1006,17 +1002,30 @@ function calculateBackgroundColor () {
 }
 
 function loadIdeas () {
-  let breakIdeasData
-  let microbreakIdeasData
+  let longBreakIdeasData
+  let miniBreakIdeasData
   if (settings.get('useIdeasFromSettings')) {
-    breakIdeasData = settings.get('breakIdeas')
-    microbreakIdeasData = settings.get('microbreakIdeas')
+    longBreakIdeasData = settings.get('breakIdeas')
+    miniBreakIdeasData = settings.get('microbreakIdeas')
+    log.info('Stretchly: loading custom break ideas from preferences file')
   } else {
-    breakIdeasData = require('./utils/defaultBreakIdeas')
-    microbreakIdeasData = require('./utils/defaultMicrobreakIdeas')
+    const t = i18next.getFixedT('en')
+    miniBreakIdeasData = Object.keys(t('miniBreakIdeas',
+      { returnObjects: true }))
+      .map((item) => {
+        return { data: i18next.t(`miniBreakIdeas.${item}.text`), enabled: true }
+      })
+
+    longBreakIdeasData = Object.keys(t('longBreakIdeas',
+      { returnObjects: true }))
+      .map((item) => {
+        return { data: [i18next.t(`longBreakIdeas.${item}.title`), i18next.t(`longBreakIdeas.${item}.text`)], enabled: true }
+      })
+    log.info('Stretchly: loading default break ideas')
   }
-  breakIdeas = new IdeasLoader(breakIdeasData).ideas()
-  microbreakIdeas = new IdeasLoader(microbreakIdeasData).ideas()
+
+  breakIdeas = new IdeasLoader(longBreakIdeasData).ideas()
+  microbreakIdeas = new IdeasLoader(miniBreakIdeasData).ideas()
 }
 
 function pauseBreaks (milliseconds) {
