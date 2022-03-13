@@ -167,7 +167,11 @@
     "primary": "Hlavný monitor",
     "showOnMonitor": "Ukázať Prestávky na",
     "screenInfo": "Ak je zobrazenie prestávok na všetkých monitoroch vypnuté, môžte si vybrať na ktorom monitore by sa prestávka mala objaviť.",
-    "screen": "Minitor pre Prestávky:"
+    "screen": "Minitor pre Prestávky:",
+    "showTimeToBreakInTray": "Ukázať čas do ďalšej prestávky v ikone",
+    "timeToBreakInTray": "Čas do prestávky",
+    "showCurrentTimeInBreaks": "Ukázať aktuálny lokálny čas v okne Prestávky",
+    "currentTimeInBreaks": "Aktuálny čas"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -218,5 +222,259 @@
     "afterMiniBreak_other": "po {{count}} Mini Prestávkach",
     "resuming": "Obnovenie prestávok",
     "appExclusion": "Výnimka aplikácie"
+  },
+  "miniBreakIdeas": {
+    "aaf": {
+      "text": "Natiahnite si nohy."
+    },
+    "aaj": {
+      "text": "Pomaly nakloňte hlavu na stranu a podržte ju 5 až 10 sekúnd."
+    },
+    "aan": {
+      "text": "Usmejte sa na chvíľu na to, že žijete."
+    },
+    "aap": {
+      "text": "Zavrite oči a počítajte dychy."
+    },
+    "abd": {
+      "text": "So zatvorenými očami pomaly a jemne pohybujte očami doľava a potom pomaly doprava."
+    },
+    "abh": {
+      "text": "Vytvorte päsť a potom roztiahnite prsty a natiahnite ich tak ďaleko, ako len môžete."
+    },
+    "abi": {
+      "text": "Sadnite si rovno, ruky zveste po bokoch a pomaly otáčajte krkom jedným smerom vo veľkom kruhu."
+    },
+    "aaa": {
+      "text": "Choďte si dať pohár vody."
+    },
+    "aab": {
+      "text": "Pomaly sa pozrite doľava a potom doprava."
+    },
+    "aac": {
+      "text": "Pomaly sa pozrite úplne hore, potom dole."
+    },
+    "aae": {
+      "text": "Zatvorte oči a uvoľnite sa."
+    },
+    "aau": {
+      "text": "Postavte sa a urobte výpad. Vydržte 10 sekúnd a potom urobte výpad druhou nohou."
+    },
+    "aad": {
+      "text": "Zatvorte oči a zhlboka sa nadýchnite."
+    },
+    "aao": {
+      "text": "Skutočne ergonomické pracovné miesto je také, od ktorého sa pravidelne vzďaľujete."
+    },
+    "aar": {
+      "text": "Položte si končeky prstov na ramená. 10 sekúnd krúžte ramenami dopredu a potom dozadu."
+    },
+    "aas": {
+      "text": "Zdvihnite pravú ruku, natiahnite ju cez hlavu doľava a držte 10 sekúnd. Opakujte na druhej strane."
+    },
+    "aam": {
+      "text": "Zamyslite sa na chvíľu nad niečím, čo oceňujete."
+    },
+    "aaq": {
+      "text": "Zavrite oči a pomenujte veci, ktoré počujete."
+    },
+    "aaw": {
+      "text": "Každých 20 minút zaostrite po dobu 20 sekúnd na objekt vzdialený aspoň 20 metrov."
+    },
+    "aax": {
+      "text": "Ak potrebujete pomoc, požiadajte o ňu."
+    },
+    "aay": {
+      "text": "Robte jednu vec naraz."
+    },
+    "aaz": {
+      "text": "Je vaša pozornosť vynaložená rozumne?"
+    },
+    "abb": {
+      "text": "Vystavte oči prirodzenému svetlu."
+    },
+    "aba": {
+      "text": "Zmeňte polohu sedenia."
+    },
+    "abc": {
+      "text": "So zatvorenými očami pomaly a jemne zdvihnite oči k stropu a potom späť na zem."
+    },
+    "abf": {
+      "text": "Postupne sa dotknite špičkou každého prsta špičky palca tak, aby vytvorili tvar písmena O."
+    },
+    "abj": {
+      "text": "Postavte sa rovno a pomaly nakloňte hlavu k ramenu pomocou rovnakej ruky, kým nepocítite natiahnutie."
+    },
+    "abg": {
+      "text": "Zovrite ju v päsť a potom posúvajte prsty nahor, až kým nebudú smerovať k stropu, akoby ste niekomu hovorili, aby prestal."
+    },
+    "abk": {
+      "text": "Postavte sa a vyrovnajte, s rukami vedľa seba. Stlačte lopatky k sebe a držte."
+    },
+    "aag": {
+      "text": "Natiahnite si ruky."
+    },
+    "aah": {
+      "text": "Je vaša poloha pri sedení správna?"
+    },
+    "abl": {
+      "text": "Postavte sa a vyrovnajte s rukami zdvihnutými pozdĺž ramien. Posuňte ruky mierne za chrbát, podržte ich na sekundu a vráťte späť."
+    },
+    "aat": {
+      "text": "Pravou rukou postupne uchopte každý prst ľavej ruky a stlačte ho. Zopakujte to aj na druhej strane."
+    },
+    "aai": {
+      "text": "Pomaly otočte hlavu na stranu a podržte ju 10 sekúnd."
+    },
+    "aak": {
+      "text": "Vstaňte zo stoličky a pretiahnite sa."
+    },
+    "aal": {
+      "text": "Zamerajte zrak na objekt vzdialený aspoň 20 metrov."
+    },
+    "aav": {
+      "text": "Zatvorte oči a jednoducho si všimnite čokoľvek, čo sa objaví v aktuálnom okamihu, bez posudzovania."
+    },
+    "abe": {
+      "text": "Potraste rukami, aby sa vám trochu uľavilo."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Nie sám",
+      "text": "Je pre vás ťažké urobiť si prestávku osamote? Skúste to urobiť s kolegom. Okrem toho, že sa vám bude ľahšie dodržiavať prestávky, budete mať možnosť lepšie ich spoznať. Spoločné prestávky zvyšujú produktivitu."
+    },
+    "aab": {
+      "title": "Odstúpte",
+      "text": "Všimli ste si niekedy, ako váš mozog dokáže prísť na veci sám? Všetko, čo potrebujete, je vystúpiť z počítača a dať si pauzu, aby ste premýšľali o niečom úplne nesúvisiacom."
+    },
+    "aad": {
+      "title": "Meditácia",
+      "text": "Výskumné štúdie naznačujú, že cvičenia založené na meditácii pomáhajú znižovať úzkosť, depresiu, stres a bolesť a pomáhajú zlepšovať celkový zdravotný stav, duševné zdravie a kvalitu života. Nie ste si istí, ako začať? Existuje množstvo aplikácií, ktoré vám pomôžu."
+    },
+    "aag": {
+      "title": "Pohybujte sa",
+      "text": "V kancelárii môžete cvičiť mnohými spôsobmi. Skúste pochodovať na mieste alebo robiť stolové kliky."
+    },
+    "aah": {
+      "title": "Zmena",
+      "text": "Máte stabilizačnú loptu alebo pracovný stôl na státie? Zvážte, či nimi na chvíľu nenahradíte svoju pracovnú stoličku."
+    },
+    "aai": {
+      "title": "Všimnite si",
+      "text": "Snívate alebo máte problémy so sústredením? Je to znamenie, že si potrebujete dať prestávku."
+    },
+    "aaj": {
+      "title": "Technológie",
+      "text": "Čo tak ísť na prechádzku bez akejkoľvek technológie?"
+    },
+    "aak": {
+      "title": "Metabolizmus",
+      "text": "Nové výskumy ukazujú, že dlhé sedenie prispieva okrem iného k riziku metabolického syndrómu, srdcového infarktu a mozgovej príhody a k celkovému riziku úmrtia. Pravidelné prestávky na prechádzku môžu pomôcť vášmu obehu a pôsobiť proti niektorým z týchto problémov."
+    },
+    "aam": {
+      "title": "Ovocie",
+      "text": "Urobte si čas a zjedzte ovocie. Ṕomaly. Všimnite si chuť, textúru, čerstvosť."
+    },
+    "aat": {
+      "title": "Zápästie a predlaktie",
+      "text": "Natiahnite ruky tak, aby dlane smerovali k vám, a potom pomaly otočte ruky štyrikrát v smere hodinových ručičiek a potom štyrikrát proti smeru hodinových ručičiek."
+    },
+    "aau": {
+      "title": "Naťahovanie chrbta",
+      "text": "Spojte ruky za hlavou a potom ich spoločne zdvihnite nad hlavu, pričom dlane smerujú nahor."
+    },
+    "aav": {
+      "title": "Hýbanie sa",
+      "text": "Za každých 30 minút stagnácie by ste mali mať aspoň jednu minútu pohybu."
+    },
+    "aba": {
+      "title": "Upratovanie",
+      "text": "Čistý priestor pomáha sústrediť sa na prácu a je často spojený s pozitívnymi emóciami, ako je šťastie."
+    },
+    "abd": {
+      "text": "Zívanie môže byť naozaj užitočné, pretože sa pri ňom vytvárajú slzy, ktoré pomáhajú zvlhčovať a mazať oči.",
+      "title": "Zívanie"
+    },
+    "abe": {
+      "title": "Zmena zamerania",
+      "text": "Priložte jeden prst k oku a sústreďte sa naň. Pomaly prst odďaľujte, zaostrite do diaľky a potom sa vráťte späť na prst. Vráťte prst späť a zaostrite na niečo vzdialené."
+    },
+    "abf": {
+      "title": "Dlane",
+      "text": "V sede sa lakťami oprite o stôl a priblížte sa k jeho okraju. Nechajte svoju váhu klesnúť dopredu a zakryte si oči rukami. Zavrite oči, pomaly sa nadýchnite nosom a niekoľko sekúnd vydržte. Pokračujte v hlbokom dýchaní."
+    },
+    "abg": {
+      "title": "Stláčanie rúk",
+      "text": "Stlačte pár zbalených ponožiek alebo mäkkú gumovú loptičku a podržte 5 sekúnd. Celý proces niekoľkokrát zopakujte."
+    },
+    "abh": {
+      "title": "Pomalé dýchanie",
+      "text": "Vznikajúci výskum naznačuje potenciál pre použitie kontrolovaných techník pomalého dýchania ako prostriedku na optimalizáciu fyziologických parametrov, ktoré sa zdajú byť spojené so zdravím a dlhovekosťou."
+    },
+    "aae": {
+      "title": "Žmrkanie",
+      "text": "Dlhodobé sledovanie obrazovky spôsobuje, že menej žmurkáte, a tým vystavujete oči pôsobeniu vzduchu. Niekoľko sekúnd rýchlo žmurkajte, aby ste osviežili slzný film a odstránili prach z povrchu očí."
+    },
+    "aap": {
+      "text": "Neposielajte e-maily ani správy kolegom z kancelárie, choďte k ich stolom a komunikujte s nimi.",
+      "title": "Kolegovia"
+    },
+    "aac": {
+      "title": "Mini Prestávky",
+      "text": "Odpočinok je kľúčovým prvkom pri zabezpečovaní výkonnosti pohybového aparátu. Časté prestávky môžu skrátiť trvanie úlohy a pomôcť znížiť riziko zranenia."
+    },
+    "aaf": {
+      "title": "Ergonómia",
+      "text": "Nesprávna výška a uhol klávesnice, myši, monitora alebo pracovného povrchu môžu spôsobiť zdravotné problémy. Nájdite si čas a prečítajte si o ergonómii pracovného stola."
+    },
+    "aan": {
+      "title": "Toalety",
+      "text": "Keď idete na toaletu, prejdite do najvzdialenejšej na pracovisku."
+    },
+    "aaz": {
+      "title": "Vytvorte umenie",
+      "text": "Je známe, že arteterapia má veľký prínos pre duševné zdravie, najmä pokiaľ ide o zvládanie stresu. Čo tak napísať krátku báseň, urobiť obrázok alebo namaľovať niečo malé?"
+    },
+    "aal": {
+      "title": "Aktívne stretnutia",
+      "text": "Čo tak presunúť stretnutia z konferenčnej miestnosti do haly? Chôdza nielen spaľuje kalórie, ale môže dokonca podporiť pocit spolupráce."
+    },
+    "aao": {
+      "title": "Prestávka na kávu",
+      "text": "Idete na prestávku na kávu? Zvážte 5-minútovú prechádzku zakaždým, keď na ňu pôjdete."
+    },
+    "aas": {
+      "title": "Opakujte",
+      "text": "Našli ste svoj strečingový program? Nezabudnite ho zopakovať viackrát, aby ste lepšie bojovali proti účinkom dlhodobého sedenia."
+    },
+    "abb": {
+      "title": "Obed vonku",
+      "text": "Príroda je spojená s pozitívnymi emóciami a zníženým stresom a úzkosťou. Vždy, keď je to možné, skúste si vziať svoju každodennú obedňajšiu prestávku vonku, obklopenú nejakou zeleňou."
+    },
+    "aaq": {
+      "text": "V štúdii na zdravých dobrovoľníkoch vedci z NIH zistili, že krátke prestávky, ktoré sa robia včas a často, môžu pomôcť nášmu mozgu naučiť sa nové zručnosti.",
+      "title": "Učenie"
+    },
+    "aar": {
+      "title": "Cvičenie",
+      "text": "Dôkazy naznačujú, že malé množstvo pravidelného cvičenia môže priniesť výrazné zdravotné výhody vrátane merateľného zníženia stresu."
+    },
+    "aaw": {
+      "title": "7-minútové cvičenie",
+      "text": "Toto cvičenie predstavuje cvičenie celého tela za zlomok času. Ale ako pri každom cvičení, buďte opatrní. Existuje množstvo aplikácií, ktoré vám pomôžu začať."
+    },
+    "aay": {
+      "title": "Choďte po schodoch ",
+      "text": "Štúdie ukázali, že pri výstupe po schodoch, ktorý sa považuje za intenzívnu fyzickú aktivitu, sa za minútu spáli viac kalórií ako pri behu."
+    },
+    "aax": {
+      "title": "Pulz",
+      "text": " Zvýšte si pulz na 120 úderov za minútu počas 20 minút štyrikrát alebo päťkrát týždenne pri akejkoľvek činnosti, ktorá vás baví. Pravidelné zvyšovanie tepovej frekvencie vedie k zlepšeniu kardiovaskulárneho zdravia."
+    },
+    "abc": {
+      "text": "Ak pravidelne využívate verejnú dopravu, môžete namiesto sedenia stáť. Ak je to možné, snažte sa čo najviac svojich každodenných ciest nahradiť chôdzou alebo bicyklom.",
+      "title": "Verejná doprava"
+    }
   }
 }
