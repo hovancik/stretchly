@@ -90,7 +90,9 @@
     "dndMode": "Jangan Ganggu aktif",
     "indefinitely": "Tanpa batas",
     "paused": "Dijeda",
-    "appExclusion": "Aturan pengecualian"
+    "appExclusion": "Aturan pengecualian",
+    "afterMiniBreak_one": "setelah {{count}} Istirahat Mini",
+    "afterMiniBreak_other": "setelah {{count}} Istirahat Mini"
   },
   "welcome": {
     "getStarted": "Memulai",
@@ -116,7 +118,19 @@
     "minutes": "{{count}} menit",
     "seconds": "{{count}} detik",
     "percent": "{{count}} persen",
-    "none": "{{count}}"
+    "none": "{{count}}",
+    "percent_other": "{{count}} persen",
+    "none_other": "{{count}}",
+    "none_one": "{{count}}",
+    "percent_one": "{{count}} persen",
+    "oclock_one": "jam {{count}}",
+    "oclock_other": "jam {{count}}",
+    "seconds_one": "{{count}} detik",
+    "seconds_other": "{{count}} detik",
+    "minutes_one": "{{count}} menit",
+    "minutes_other": "{{count}} menit",
+    "hours_one": "{{count}} jam",
+    "hours_other": "{{count}} jam"
   },
   "contributorPreferences": {
     "0": "Layar pertama",
@@ -171,7 +185,11 @@
     "showOnMonitor": "Tunjukkan Instirahat di",
     "screen": "Pantau untuk Istirahat:",
     "cursor": "Ikuti kursor",
-    "primary": "Layar utama"
+    "primary": "Layar utama",
+    "timeToBreakInTray": "Waktunya istirahat",
+    "showTimeToBreakInTray": "Tunjukkan waktu untuk istirahat berikutnya di ikon menubar",
+    "currentTimeInBreaks": "Waktu saat ini",
+    "showCurrentTimeInBreaks": "Tampilkan waktu lokal saat ini di jendela istirahat"
   },
   "main": {
     "syncPreferences": "Sinkronisasi Preferensi",
@@ -203,5 +221,200 @@
     "title": "Saatnya istirahat!",
     "skip": "Lewati istirahat ini",
     "postpone": "Tunda istirahat ini"
+  },
+  "miniBreakIdeas": {
+    "aab": {
+      "text": "Perlahan lihat ke kiri, lalu ke kanan."
+    },
+    "aae": {
+      "text": "Tutup mata Anda dan rileks."
+    },
+    "aaq": {
+      "text": "Tutup mata Anda dan sebutkan hal-hal yang Anda dengar."
+    },
+    "aat": {
+      "text": "Dengan tangan kanan Anda, ambil setiap jari tangan kiri Anda secara bergantian dan remas. Ulangi di sisi lain."
+    },
+    "aax": {
+      "text": "Jika Anda butuh bantuan, mintalah."
+    },
+    "aaz": {
+      "text": "Apakah perhatian Anda dihabiskan dengan bijak?"
+    },
+    "abe": {
+      "text": "Goyangkan tangan Anda untuk mendapatkan sedikit relaksasi."
+    },
+    "abh": {
+      "text": "Kepalkan tangan, lalu kibaskan jari-jari Anda dan regangkan sejauh mungkin."
+    },
+    "aam": {
+      "text": "Luangkan waktu sejenak untuk memikirkan sesuatu yang Anda hargai."
+    },
+    "aan": {
+      "text": "Luangkan waktu sejenak untuk tersenyum bahwa kita masih hidup."
+    },
+    "aaa": {
+      "text": "Pergi ambil segelas air."
+    },
+    "aac": {
+      "text": "Perlahan lihat ke atas, lalu ke bawah."
+    },
+    "aad": {
+      "text": "Tutup mata Anda dan tarik napas dalam-dalam beberapa kali."
+    },
+    "abc": {
+      "text": "Dengan mata tertutup, perlahan dan lembut angkat mata Anda ke langit-langit dan kembali ke lantai."
+    },
+    "aaf": {
+      "text": "Regangkan kaki Anda."
+    },
+    "aao": {
+      "text": "Tempat kerja yang benar-benar ergonomis adalah tempat kerja yang sering Anda hindari."
+    },
+    "aap": {
+      "text": "Tutup mata Anda dan hitung nafas Anda."
+    },
+    "aar": {
+      "text": "Letakkan ujung jari Anda di bahu Anda. Putar bahu Anda ke depan selama 10 detik, lalu ke belakang."
+    },
+    "aag": {
+      "text": "Regangkan lengan Anda."
+    },
+    "aah": {
+      "text": "Apakah postur duduk Anda sudah benar?"
+    },
+    "aai": {
+      "text": "Perlahan putar kepala ke samping dan tahan selama 10 detik."
+    },
+    "aak": {
+      "text": "Berdiri dari kursi Anda dan regangkan."
+    },
+    "aba": {
+      "text": "Ubah postur duduk Anda."
+    },
+    "abg": {
+      "text": "Kepalkan tangan, lalu geser jari Anda ke atas hingga mengarah ke langit-langit, seperti Anda menyuruh seseorang untuk berhenti."
+    },
+    "aas": {
+      "text": "Angkat lengan kanan Anda, regangkan di atas kepala Anda ke kiri, dan tahan selama 10 detik. Ulangi di sisi lain."
+    },
+    "aay": {
+      "text": "Lakukan satu hal pada satu waktu."
+    },
+    "abb": {
+      "text": "Paparkan mata Anda pada cahaya alami."
+    },
+    "abk": {
+      "text": "Berdiri tegak dengan tangan di samping Anda. Remas tulang belikat Anda bersama-sama dan tahan."
+    },
+    "aaw": {
+      "text": "Fokus setiap 20 menit selama 20 detik pada objek dengan jarak 6 meter."
+    },
+    "abd": {
+      "text": "Dengan mata tertutup, perlahan dan lembut gerakkan mata Anda ke kiri, lalu perlahan ke kanan."
+    },
+    "abf": {
+      "text": "Satu per satu, sentuhkan ujung setiap jari ke ujung ibu jari Anda sehingga membentuk huruf O."
+    },
+    "abi": {
+      "text": "Duduk tegak, lengan tergantung di sisi tubuh, dan perlahan putar leher ke satu arah dalam lingkaran besar."
+    },
+    "abj": {
+      "text": "Berdiri tegak dan perlahan miringkan kepala ke arah bahu menggunakan tangan yang sama sampai Anda merasakan peregangan."
+    },
+    "abl": {
+      "text": "Berdiri tegak dengan tangan terangkat di sepanjang bahu. Gerakkan tangan sedikit ke belakang, tahan sebentar dan kembali."
+    },
+    "aaj": {
+      "text": "Perlahan miringkan kepala ke samping dan tahan selama 5-10 detik."
+    },
+    "aal": {
+      "text": "Fokuskan kembali mata Anda pada objek yang berjarak setidaknya 20 meter."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Tidak sendiri",
+      "text": "Apakah Anda merasa sulit untuk istirahat sendirian? Cobalah untuk melakukannya dengan rekan kerja. Selain membuatnya lebih mudah untuk tetap istirahat, Anda akan memiliki kesempatan untuk mengenal mereka lebih baik. Beristirahat bersama meningkatkan produktivitas."
+    },
+    "aab": {
+      "title": "Menyingkir",
+      "text": "Pernahkah Anda memperhatikan bagaimana otak Anda bisa memikirkan sesuatu dengan sendirinya? Yang diperlukan hanyalah menjauh dari komputer dan beristirahat sejenak untuk memikirkan sesuatu yang sama sekali tidak berhubungan."
+    },
+    "aac": {
+      "title": "Istirahat Mikro",
+      "text": "Istirahat adalah komponen kunci dalam memastikan kinerja sistem muskuloskeletal. Istirahat yang sering dapat mengurangi durasi tugas dan membantu menurunkan risiko cedera ergonomis."
+    },
+    "aae": {
+      "title": "Berkedip",
+      "text": "Melihat layar untuk waktu yang lama menyebabkan Anda lebih sedikit berkedip, sehingga membuat mata Anda perih. Berkedip cepat selama beberapa detik untuk menyegarkan lapisan air mata dan membersihkan debu dari permukaan mata."
+    },
+    "aaf": {
+      "title": "Ergonomi",
+      "text": "Ketinggian dan sudut keyboard, mouse, monitor, atau permukaan kerja yang tidak tepat dapat menyebabkan masalah kesehatan. Luangkan waktu untuk membaca tentang meja ergonomis."
+    },
+    "aag": {
+      "title": "Bergerak",
+      "text": "Ada banyak cara untuk berolahraga di kantor Anda. Cobalah jalan di tempat atau lakukan push-up meja."
+    },
+    "aah": {
+      "title": "Mengubah",
+      "text": "Apakah Anda memiliki bola stabilitas atau meja kerja berdiri? Pertimbangkan untuk mengganti kursi meja Anda dengan benda tersebut untuk sementara waktu."
+    },
+    "aaj": {
+      "title": "Teknologi",
+      "text": "Bagaimana kalau jalan-jalan tanpa alat teknologi?"
+    },
+    "aak": {
+      "title": "Metabolisme",
+      "text": "Penelitian yang muncul menunjukkan bahwa duduk untuk waktu yang lama berkontribusi terhadap risiko sindrom metabolik, risiko serangan jantung dan stroke dan risiko kematian secara keseluruhan, dan masih banyak lagi. Mengambil istirahat dengan berjalan-jalan secara teratur dapat membantu sirkulasi tubuh Anda, yang mana mampu mengatasi beberapa masalah tersebut."
+    },
+    "aal": {
+      "title": "Rapat Aktif",
+      "text": "Bagaimana dengan memindahkan rapat dari ruang konferensi ke tempat terbuka? Berjalan tidak hanya membakar kalori tetapi bahkan dapat menumbuhkan rasa kolaborasi."
+    },
+    "aam": {
+      "title": "Buah",
+      "text": "Luangkan waktu Anda dan makan buah. Perlahan-lahan. Perhatikan rasanya, teksturnya, kesegarannya."
+    },
+    "aan": {
+      "title": "Kamar mandi",
+      "text": "Berjalan ke kamar mandi terjauh di fasilitas tempat kerja ketika pergi ke kamar kecil."
+    },
+    "aao": {
+      "title": "Rehat Kopi",
+      "text": "Pergi rehat kopi? Pertimbangkan untuk berjalan 5 menit setiap kali Anda melakukannya."
+    },
+    "aaq": {
+      "title": "Belajar",
+      "text": "Dalam sebuah penelitian terhadap sukarelawan yang sehat, peneliti NIH menemukan bahwa istirahat sejenak, lebih awal dan sering, dapat membantu otak kita mempelajari keterampilan baru."
+    },
+    "aar": {
+      "title": "Latihan",
+      "text": "Bukti menunjukkan sejumlah kecil olahraga teratur dapat membawa manfaat kesehatan yang dramatis, termasuk mengurangi stres secara terukur."
+    },
+    "aas": {
+      "title": "Mengulang",
+      "text": "Sudahkah Anda menemukan rutinitas peregangan Anda? Jangan lupa untuk mengulanginya lebih dari sekali untuk melawan efek duduk yang lama dengan lebih baik."
+    },
+    "aat": {
+      "title": "Pergelangan Tangan dan Lengan Bawah",
+      "text": "Rentangkan tangan Anda dengan telapak tangan menghadap ke arah Anda, lalu perlahan-lahan putar tangan empat kali searah jarum jam, lalu empat kali berlawanan arah jarum jam."
+    },
+    "aad": {
+      "title": "Meditasi",
+      "text": "Studi penelitian menunjukkan bahwa latihan berbasis kesadaran membantu mengurangi kecemasan, depresi, stres, dan rasa sakit, dan membantu meningkatkan kesehatan umum, kesehatan mental, dan kualitas hidup. Tidak yakin bagaimana memulainya? Ada banyak aplikasi untuk membantu Anda."
+    },
+    "aai": {
+      "text": "Apakah Anda melamun atau kesulitan fokus? Itu tandanya kamu butuh istirahat.",
+      "title": "Melihat"
+    },
+    "aau": {
+      "title": "Peregangan punggung"
+    },
+    "aap": {
+      "title": "Rekan Kerja",
+      "text": "Jangan mengirim email atau mengirim pesan ke rekan kantor, berjalan ke meja mereka untuk berkomunikasi dengan mereka."
+    }
   }
 }
