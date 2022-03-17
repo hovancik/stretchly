@@ -17,7 +17,8 @@ jobs:
     - run: npm install -g npm
     - run: npm install
     - run: node_modules/.bin/electron-builder --linux snap -c.snap.publish=github
-    - run: snapcraft login --with-file=path-to-exported-login-data
+    - run: echo $SNAP_TOKEN | snapcraft login --with -
+    - run: snapcraft whoami
     - run: snapcraft upload --release=stable Stretchly_*.snap
       env:
         GH_TOKEN: ${{ secrets.github_token }}
