@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - crashing when skipping to break and time to break in tray
 - Portuguese and Brazilian labels in welcome screen
+- partial minutes in break preferences
 
 ## [1.10.0] - 2022-2-22
 ### Added
