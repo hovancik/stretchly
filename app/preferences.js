@@ -310,7 +310,7 @@ window.onload = (e) => {
         if (val % 1 === 0) {
           return i18next.t('utils.minutes', { count: parseInt(val) })
         } else {
-          return i18next.t('utils.minutes', { count: val })
+          return i18next.t('utils.minutes', { count: parseFloat(val) })
         }
       }
     } else {
