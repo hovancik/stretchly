@@ -214,5 +214,115 @@
     "afterMiniBreak_other": "dopo {{count}} Mini-Pause",
     "resuming": "Riprendi",
     "appExclusion": "Regola di esclusione app"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Vai a prendere un bicchiere d'acqua."
+    },
+    "aad": {
+      "text": "Chiudi gli occhi e fai qualche respiro profondo."
+    },
+    "aae": {
+      "text": "Chiudi gli occhi e rilassati."
+    },
+    "aah": {
+      "text": "La tua posizione seduta è corretta?"
+    },
+    "aai": {
+      "text": "Gira lentamente la testa di lato e tieni premuto per 10 secondi."
+    },
+    "aaj": {
+      "text": "Inclina lentamente la testa di lato e mantieni la posizione per 5-10 secondi."
+    },
+    "aak": {
+      "text": "Alzati dalla sedia e allungati."
+    },
+    "aal": {
+      "text": "Rifocalizza gli occhi su un oggetto ad almeno 20 metri di distanza."
+    },
+    "aan": {
+      "text": "Prenditi un momento per sorridere di essere vivo."
+    },
+    "aap": {
+      "text": "Chiudi gli occhi e conta i tuoi respiri."
+    },
+    "aaq": {
+      "text": "Chiudi gli occhi e dai un nome alle cose che senti."
+    },
+    "aat": {
+      "text": "Con la mano destra, afferra a turno ogni dito della mano sinistra e stringi. Ripeti dall'altro lato."
+    },
+    "aav": {
+      "text": "Chiudi gli occhi e nota semplicemente qualunque cosa si presenti nel momento attuale, senza giudizio."
+    },
+    "aaw": {
+      "text": "Concentrati ogni 20 minuti per 20 secondi su un oggetto a 20 piedi di distanza."
+    },
+    "aax": {
+      "text": "Se hai bisogno di aiuto, chiedilo."
+    },
+    "aay": {
+      "text": "Fai una cosa alla volta."
+    },
+    "aba": {
+      "text": "Cambia la postura da seduto."
+    },
+    "abd": {
+      "text": "Con gli occhi chiusi, sposta lentamente e delicatamente gli occhi a sinistra, poi lentamente a destra."
+    },
+    "abe": {
+      "text": "Stringi le mani per ottenere un po' di sollievo."
+    },
+    "abf": {
+      "text": "Uno alla volta, tocca la punta di ogni dito sulla punta del pollice in modo che formino una forma a O."
+    },
+    "abh": {
+      "text": "Fai un pugno e poi apri le dita e allungale il più possibile."
+    },
+    "abi": {
+      "text": "Siediti in alto, le braccia penzoloni lungo i fianchi e ruota lentamente il collo in una direzione in un ampio cerchio."
+    },
+    "aac": {
+      "text": "Lentamente guarda tutto in alto, poi in basso."
+    },
+    "aab": {
+      "text": "Lentamente guarda tutto a sinistra, poi a destra."
+    },
+    "aaf": {
+      "text": "Allunga le gambe."
+    },
+    "aag": {
+      "text": "Allunga le braccia."
+    },
+    "abc": {
+      "text": "Con gli occhi chiusi, solleva lentamente e delicatamente gli occhi verso il soffitto e poi di nuovo verso il pavimento."
+    },
+    "abj": {
+      "text": "Stai in piedi e inclina lentamente la testa verso la spalla usando la stessa mano finché non senti un allungamento."
+    },
+    "aam": {
+      "text": "Prenditi un momento per pensare a qualcosa che apprezzi."
+    },
+    "aao": {
+      "text": "Una postazione di lavoro veramente ergonomica è quella da cui ti allontani regolarmente."
+    },
+    "aau": {
+      "text": "Alzati e fai un affondo. Tieni premuto per 10 secondi, quindi fai l'altra gamba."
+    },
+    "aaz": {
+      "text": "La tua attenzione è spesa saggiamente?"
+    },
+    "abb": {
+      "text": "Esponi i tuoi occhi alla luce naturale."
+    },
+    "aar": {
+      "text": "Metti la punta delle dita sulle spalle. Ruota le spalle in avanti per 10 secondi, poi indietro."
+    },
+    "aas": {
+      "text": "Alza il braccio destro, allungalo sopra la testa a sinistra e tieni premuto per 10 secondi. Ripeti dall'altro lato."
+    },
+    "abg": {
+      "text": "Chiudi il pugno e poi fai scorrere le dita verso l'alto finché non puntano verso il soffitto, come se stessi dicendo a qualcuno di fermarsi."
+    }
   }
 }
