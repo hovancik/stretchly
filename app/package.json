@@ -20,7 +20,7 @@
   },
   "homepage": "https://hovancik.net/stretchly",
   "dependencies": {
-    "@electron/remote": "^2.0.7",
+    "@electron/remote": "^2.0.8",
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
