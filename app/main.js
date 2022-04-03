@@ -637,7 +637,6 @@ function startMicrobreak () {
     return
   }
 
-  const startTime = Date.now()
   const breakDuration = settings.get('microbreakDuration')
   const strictMode = settings.get('microbreakStrictMode')
   const postponesLimit = settings.get('microbreakPostponesLimit')
@@ -645,19 +644,6 @@ function startMicrobreak () {
   const postponable = settings.get('microbreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
-
-  if (!strictMode || postponable) {
-    if (settings.get('endBreakShortcut') !== '') {
-      globalShortcut.register(settings.get('endBreakShortcut'), () => {
-        const passedPercent = (Date.now() - startTime) / breakDuration * 100
-        if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-          postponeMicrobreak()
-        } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
-          finishMicrobreak(false)
-        }
-      })
-    }
-  }
 
   const modalPath = path.join('file://', __dirname, '/microbreak.html')
   microbreakWins = []
@@ -704,20 +690,32 @@ function startMicrobreak () {
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+
     ipcMain.on('send-microbreak-data', (event) => {
+      const startTime = Date.now()
+      if (!strictMode || postponable) {
+        if (settings.get('endBreakShortcut') !== '') {
+          globalShortcut.register(settings.get('endBreakShortcut'), () => {
+            const passedPercent = (Date.now() - startTime) / breakDuration * 100
+            if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+              postponeMicrobreak()
+            } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+              finishMicrobreak(false)
+            }
+          })
+        }
+      }
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
-    })
-    // microbreakWinLocal.webContents.openDevTools()
-    microbreakWinLocal.once('ready-to-show', () => {
+
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
       } else {
         microbreakWinLocal.showInactive()
       }
-
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
+
       if (process.platform === 'darwin') {
         if (showBreaksAsRegularWindows) {
           microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
@@ -775,7 +773,6 @@ function startBreak () {
     return
   }
 
-  const startTime = Date.now()
   const breakDuration = settings.get('breakDuration')
   const strictMode = settings.get('breakStrictMode')
   const postponesLimit = settings.get('breakPostponesLimit')
@@ -783,19 +780,6 @@ function startBreak () {
   const postponable = settings.get('breakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
-
-  if (!strictMode || postponable) {
-    if (settings.get('endBreakShortcut') !== '') {
-      globalShortcut.register(settings.get('endBreakShortcut'), () => {
-        const passedPercent = (Date.now() - startTime) / breakDuration * 100
-        if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-          postponeBreak()
-        } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
-          finishBreak(false)
-        }
-      })
-    }
-  }
 
   const modalPath = path.join('file://', __dirname, '/break.html')
   breakWins = []
@@ -843,20 +827,31 @@ function startBreak () {
     let breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
+
     ipcMain.on('send-break-data', (event) => {
+      const startTime = Date.now()
+      if (!strictMode || postponable) {
+        if (settings.get('endBreakShortcut') !== '') {
+          globalShortcut.register(settings.get('endBreakShortcut'), () => {
+            const passedPercent = (Date.now() - startTime) / breakDuration * 100
+            if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+              postponeBreak()
+            } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+              finishBreak(false)
+            }
+          })
+        }
+      }
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
-    })
-    // breakWinLocal.webContents.openDevTools()
-    breakWinLocal.once('ready-to-show', () => {
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
         breakWinLocal.showInactive()
       }
-
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
+
       if (process.platform === 'darwin') {
         if (showBreaksAsRegularWindows) {
           breakWinLocal.setFullScreen(settings.get('fullscreen'))
