@@ -433,6 +433,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Jared Wood, [@jwood13](https://github.com/jwood13)
 - Febin Jose, [@JoeNibe](https://github.com/JoeNibe)
 - João Barreiros, [@unstablectrl](https://github.com/unstablectrl)
+- Vova Babii, [@JARVIS-VOVA](https://github.com/JARVIS-VOVA)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
