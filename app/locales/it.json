@@ -323,6 +323,150 @@
     },
     "abg": {
       "text": "Chiudi il pugno e poi fai scorrere le dita verso l'alto finché non puntano verso il soffitto, come se stessi dicendo a qualcuno di fermarsi."
+    },
+    "abk": {
+      "text": "Stai in piedi con le braccia sul fianco. Stringi le scapole insieme e tieni premuto."
+    },
+    "abl": {
+      "text": "Stai in piedi con le braccia alzate lungo le spalle. Muovi le mani leggermente dietro la schiena, tieni premuto per un secondo e torna indietro."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Non da solo",
+      "text": "Trovi difficile fare una pausa da solo? Prova a farlo con un collega. Oltre a rendere più facile attenersi alle pause, avrai la possibilità di conoscerle meglio. Fare delle pause insieme aumenta la produttività."
+    },
+    "aab": {
+      "title": "Allontanati",
+      "text": "Ti sei mai accorto di come il tuo cervello può capire le cose da sé? Tutto ciò che serve è allontanarsi dal computer e prendersi una pausa per pensare a qualcosa di totalmente estraneo."
+    },
+    "aac": {
+      "title": "Micro pausa",
+      "text": "Il riposo è una componente chiave per garantire le prestazioni del sistema muscolo-scheletrico. Le pause frequenti possono ridurre la durata di un'attività e contribuire a ridurre l'esposizione al rischio di lesioni ergonomiche."
+    },
+    "aad": {
+      "title": "Meditazione",
+      "text": "Studi di ricerca suggeriscono che gli esercizi basati sulla consapevolezza aiutano a ridurre l'ansia, la depressione, lo stress e il dolore e aiutano a migliorare la salute generale, la salute mentale e la qualità della vita. Non sai come iniziare? Ci sono numerose app per aiutarti."
+    },
+    "aae": {
+      "title": "Battito di ciglia",
+      "text": "Guardare gli schermi a lungo ti fa battere meno le palpebre, esponendo così gli occhi all'aria. Sbattere le palpebre rapidamente per alcuni secondi per rinfrescare il film lacrimale e rimuovere la polvere dalla superficie dell'occhio."
+    },
+    "aaf": {
+      "title": "Ergonomia",
+      "text": "L'altezza e l'angolazione errate della tastiera, del mouse, del monitor o della superficie di lavoro possono causare problemi di salute. Prenditi del tempo per leggere l'ergonomia della scrivania."
+    },
+    "aag": {
+      "text": "Ci sono molti modi in cui puoi allenarti nel tuo ufficio. Prova a marciare sul posto o a fare flessioni sulla scrivania.",
+      "title": "Movimento"
+    },
+    "aah": {
+      "text": "Hai una palla di stabilità o una scrivania in piedi? Considera la possibilità di sostituire la tua sedia da scrivania con loro per un po'.",
+      "title": "Cambiare"
+    },
+    "aai": {
+      "title": "Avviso",
+      "text": "Stai sognando ad occhi aperti o hai difficoltà a concentrarti? È un segno che devi fare una pausa."
+    },
+    "aaj": {
+      "text": "Che ne dici di fare una passeggiata senza tecnologia?",
+      "title": "Tecnologia"
+    },
+    "aak": {
+      "title": "Metabolismo",
+      "text": "La ricerca emergente mostra che stare seduti per lunghi periodi di tempo contribuisce al rischio di sindrome metabolica, infarto e ictus e rischio di morte generale, tra gli altri. Fare pause regolari per camminare può aiutare la circolazione, lavorando per contrastare alcuni di questi problemi."
+    },
+    "aal": {
+      "title": "Riunioni Attive",
+      "text": "Che ne dici di spostare le riunioni dalla sala conferenze all'atrio? Camminare non solo brucia calorie, ma può anche favorire un senso di collaborazione."
+    },
+    "aam": {
+      "title": "Frutta",
+      "text": "Prenditi il tuo tempo e mangia un po' di frutta. Lentamente. Notare il sapore, la consistenza, la freschezza."
+    },
+    "aan": {
+      "title": "Bagni",
+      "text": "Raggiungi il bagno più lontano nella struttura del cantiere quando vai in bagno."
+    },
+    "aao": {
+      "title": "Pausa caffè",
+      "text": "Stai andando in pausa caffè? Considera di fare una passeggiata di 5 minuti ogni volta che ne fai una."
+    },
+    "aap": {
+      "text": "Non inviare e-mail o inviare messaggi ai colleghi dell'ufficio, recati alle loro scrivanie per comunicare con loro.",
+      "title": "Colleghi"
+    },
+    "aaq": {
+      "title": "Apprendimento",
+      "text": "In uno studio su volontari sani, i ricercatori del NIH hanno scoperto che fare brevi pause, presto e spesso, può aiutare il nostro cervello ad apprendere nuove abilità."
+    },
+    "aar": {
+      "title": "Esercizio",
+      "text": "L'evidenza suggerisce che piccole quantità di esercizio fisico regolare possono portare enormi benefici per la salute, inclusa una riduzione misurabile dello stress."
+    },
+    "aas": {
+      "title": "Ripetere",
+      "text": "Hai trovato la tua routine stretch? Non dimenticare di ripeterlo più di una volta per combattere meglio gli effetti della seduta prolungata."
+    },
+    "aat": {
+      "title": "Polso e avambraccio",
+      "text": "Allunga le braccia con i palmi rivolti verso di te, quindi ruota lentamente le mani quattro volte in senso orario, poi quattro volte in senso antiorario."
+    },
+    "aau": {
+      "title": "Allungamento della schiena",
+      "text": "Unisci le mani dietro la testa, quindi sollevale insieme sopra la testa terminando con i palmi rivolti verso l'alto."
+    },
+    "aav": {
+      "title": "Mobilità",
+      "text": "Per ogni trenta minuti di stagnazione, dovresti avere almeno un minuto di stimolazione."
+    },
+    "aaw": {
+      "title": "Allenamento di 7 minuti",
+      "text": "Questo allenamento racchiude una routine di esercizi per tutto il corpo in una frazione del tempo. Ma come con qualsiasi esercizio, fai attenzione. Ci sono numerose app per iniziare."
+    },
+    "aax": {
+      "title": "Pulsazioni",
+      "text": " Aumenta la frequenza cardiaca a 120 battiti al minuto per 20 minuti consecutivi quattro o cinque volte a settimana facendo tutto ciò che ti piace. Aumentare regolarmente la frequenza cardiaca migliora la salute cardiovascolare."
+    },
+    "aaz": {
+      "title": "Fare arte",
+      "text": "È noto che l'arteterapia ha grandi benefici per la salute mentale, specialmente quando si tratta di gestione dello stress. Che ne dici di scrivere una breve poesia, scattare una foto o dipingere qualcosa di piccolo?"
+    },
+    "aba": {
+      "title": "Riordinare",
+      "text": "Uno spazio pulito aiuta a concentrarsi sul lavoro ed è spesso legato a emozioni positive come la felicità."
+    },
+    "abb": {
+      "title": "Pranzare fuori",
+      "text": "La natura è legata alle emozioni positive e alla diminuzione dello stress e dell'ansia. Quando possibile, prova a fare la pausa pranzo quotidiana all'aperto, immerso nel verde."
+    },
+    "abc": {
+      "title": "Trasporto pubblico",
+      "text": "Se usi regolarmente i mezzi pubblici, puoi stare in piedi invece di sederti. Se è possibile, prova a sostituire il maggior numero possibile di viaggi giornalieri con passeggiate a piedi o in bicicletta."
+    },
+    "abd": {
+      "text": "Sbadigliare può essere davvero utile, poiché produce lacrime per aiutare a inumidire e lubrificare gli occhi.",
+      "title": "Sbadigliare"
+    },
+    "abe": {
+      "title": "Cambio di messa a fuoco",
+      "text": "Tieni un dito vicino all'occhio e concentrati su di esso. Allontana lentamente il dito, metti a fuoco lontano e poi torna al dito. Riporta il dito indietro e concentrati su qualcosa di lontano."
+    },
+    "abf": {
+      "title": "Palming",
+      "text": "Mentre sei seduto, appoggia i gomiti sulla scrivania e avvicinati al bordo della scrivania. Lascia che il tuo peso cada in avanti e copri le mani a coppa sugli occhi. Chiudi gli occhi e inspira lentamente attraverso il naso e tieni premuto per alcuni secondi. Continua a respirare profondamente."
+    },
+    "abg": {
+      "title": "Strizzare con la mano",
+      "text": "Strizza un paio di calzini appallottolati o una palla di gomma morbida, tieni premuto per 5 secondi. Ripetere l'intero processo alcune volte."
+    },
+    "abh": {
+      "title": "Respiro lento",
+      "text": "La ricerca emergente suggerisce il potenziale per l'uso di tecniche di respirazione lenta controllata come mezzo per ottimizzare i parametri fisiologici che sembrano essere associati alla salute e alla longevità."
+    },
+    "aay": {
+      "title": "Prendi le scale ",
+      "text": "Gli studi hanno dimostrato che salire le scale, che è considerata un'attività fisica di intensità vigorosa, brucia più calorie al minuto rispetto al jogging."
     }
   }
 }
