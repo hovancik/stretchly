@@ -214,5 +214,88 @@
     "afterMiniBreak_other": "after {{count}} petites pauses",
     "resuming": "Reprendre",
     "appExclusion": "Appliquer la règle d’exclusion"
+  },
+  "miniBreakIdeas": {
+    "aah": {
+      "text": "Est-ce que votre position assise est correcte ?"
+    },
+    "aam": {
+      "text": "Prenez un moment pour penser à quelque chose que vous appréciez."
+    },
+    "aaj": {
+      "text": "Penchez doucement la tête sur le côté et maintenez pendant 10 secondes."
+    },
+    "aad": {
+      "text": "Fermez vos yeux et prenez de longues inspirations."
+    },
+    "aav": {
+      "text": "Fermez vos yeux et prenez conscience de ce qu'il se passe à l'instant, sans jugement."
+    },
+    "abb": {
+      "text": "Exposez vos yeux à la lumière naturelle."
+    },
+    "aaa": {
+      "text": "Allez chercher un verre d'eau."
+    },
+    "aab": {
+      "text": "Tournez gentiment la tête sur la gauche, puis sur la droite."
+    },
+    "aac": {
+      "text": "Levez gentiment la tête en haut, puis baissez-là tout en bas."
+    },
+    "aae": {
+      "text": "Fermez vos yeux et détendez-vous."
+    },
+    "aaf": {
+      "text": "Étirez vos jambes."
+    },
+    "aag": {
+      "text": "Étirez vos bras."
+    },
+    "aai": {
+      "text": "Tournez doucement la tête sur le côté et maintenez pendant 10 secondes."
+    },
+    "aak": {
+      "text": "Levez-vous de votre chaise et étirez-vous."
+    },
+    "aal": {
+      "text": "Ré-habituez vos yeux en regardant un objet situé au moins à 20 mètres."
+    },
+    "aan": {
+      "text": "Prenez un moment pour sourire d'être en vie."
+    },
+    "aao": {
+      "text": "Une vraie station de travail ergonomique est celle dont on s'éloigne régulièrement."
+    },
+    "aap": {
+      "text": "Fermez vos yeux et comptez vos respirations."
+    },
+    "aaq": {
+      "text": "Fermez vos yeux et nommez les choses que vous entendez."
+    },
+    "aar": {
+      "text": "Placez le bout de vos doigts sur vos épaules. Roulez vos épaules en avant pendant 10 secondes, puis en arrière."
+    },
+    "aas": {
+      "text": "Levez votre bras droit, étirez-le au dessus de votre tête sur la gauche et maintenez pendant 10 secondes. Répétez de l'autre côté."
+    },
+    "aat": {
+      "text": "Avec votre main droite, attrapez chaque doigt de votre main gauche en les tournant et les serrant. Répétez de l'autre côté."
+    },
+    "aau": {
+      "text": "Levez-vous et faites une fente. Maintenez pendant 10 secondes puis faites pour l'autre jambe."
+    },
+    "aax": {
+      "text": "Si vous avez besoin d'aide, demandez-en."
+    },
+    "aay": {
+      "text": "Faites une chose à la fois."
+    },
+    "aaz": {
+      "text": "Est-ce que votre attention est bien utilisée ?"
+    },
+    "aba": {
+      "text": "Changez votre posture."
+    }
   }
 }
