@@ -137,7 +137,7 @@ It's recommended to Quit *Stretchly* before editing the preferences file.
 
 To make sure that all works as expected, it's always good idea to check that format of the preferences file is correct, ie. by using [jsonformatter](https://jsonformatter.curiousconcept.com/).
 
-After you make changes to preferences files, some of the values being shown in Preferences or elsewhere might show incorect value, as the UI is expecting specific values and is not handling cases where user makes manual changes to preferences file.
+After you make changes to preferences files, some of the values being shown in Preferences or elsewhere might show incorrect value, as the UI is expecting specific values and is not handling cases where user makes manual changes to preferences file.
 
 Some of the extra preferences are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
 
@@ -434,6 +434,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Febin Jose, [@JoeNibe](https://github.com/JoeNibe)
 - João Barreiros, [@unstablectrl](https://github.com/unstablectrl)
 - Vova Babii, [@JARVIS-VOVA](https://github.com/JARVIS-VOVA)
+- Ben Hammond, [@benhamondmusic](https://github.com/benhammondmusic)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
