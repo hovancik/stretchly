@@ -125,12 +125,12 @@
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^18.0.1",
-    "electron-builder": "^22.14.13",
+    "electron": "^18.0.3",
+    "electron-builder": "^23.0.3",
     "husky": "^7.0.4",
     "mocha": "^9.2.2",
     "rimraf": "^3.0.2",
-    "sinon": "^13.0.1",
+    "sinon": "^13.0.2",
     "spectron": "^19.0.0",
     "standard": "^16.0.4"
   },
@@ -139,13 +139,13 @@
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.4.6",
     "electron-store": "^8.0.1",
-    "i18next": "^21.6.14",
+    "i18next": "^21.6.16",
     "i18next-fs-backend": "^1.1.4",
     "luxon": "^2.3.1",
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2.0",
     "rtl-detect": "^1.0.4",
-    "semver": "^7.3.5",
+    "semver": "^7.3.7",
     "windows-focus-assist": "^1.2.1"
   }
 }
