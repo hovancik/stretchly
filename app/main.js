@@ -151,6 +151,7 @@ app.on('window-all-closed', () => {
 })
 app.on('before-quit', () => {
   appIsQuitting = true
+  globalShortcut.unregisterAll()
 })
 
 function initialize (isAppStart = true) {

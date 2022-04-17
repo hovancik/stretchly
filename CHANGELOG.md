@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Japanese translations
 - break ideas are translatable
+- unregister shortcuts on app's quit
 
 ### Changed
 - updated many translations
@@ -17,7 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - crashing when skipping to break and time to break in tray
 - Portuguese and Brazilian labels in welcome screen
 - partial minutes in break preferences
-- counting break time when break starts 
+- counting break time when break starts
 
 ## [1.10.0] - 2022-2-22
 ### Added
