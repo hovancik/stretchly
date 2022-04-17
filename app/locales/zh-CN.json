@@ -214,5 +214,10 @@
     "resuming": "继续",
     "appExclusion": "应用程序排除规则",
     "afterMiniBreak_one": "{{count}} 次小憩后"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "去接杯水吧"
+    }
   }
 }

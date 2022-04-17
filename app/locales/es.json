@@ -214,5 +214,16 @@
     "afterMiniBreak_other": "depués de {{count}} Descansos Cortos",
     "resuming": "Reanudando",
     "appExclusion": "Regla de exclusión de aplicacion"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Ve por un vaso de agua."
+    },
+    "aab": {
+      "text": "Mira lenta y completamente hacia la izquierda, luego hacia la derecha."
+    },
+    "aac": {
+      "text": "Mira lenta y completamente hacia arriba, luego hacia abajo."
+    }
   }
 }
