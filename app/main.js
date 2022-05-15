@@ -656,6 +656,9 @@ function startMicrobreak () {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
+  const rawBgColor = settings.has('microbreakColor') ? settings.get('microbreakColor') : settings.get('mainColor');
+  const calculatedBgColor = calculateBackgroundColor(rawBgColor);
+
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
       width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
@@ -667,7 +670,7 @@ function startMicrobreak () {
       show: false,
       backgroundThrottling: false,
       transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
+      backgroundColor: calculatedBgColor,
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
@@ -708,7 +711,7 @@ function startMicrobreak () {
       }
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
+        breakDuration, strictMode, postponable, postponableDurationPercent, calculatedBgColor)
 
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
@@ -793,6 +796,9 @@ function startBreak () {
     processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
   }
 
+  const rawBgColor = settings.has('breakColor') ? settings.get('breakColor') : settings.get('mainColor');
+  const calculatedBgColor = calculateBackgroundColor(rawBgColor);
+
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
       width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
@@ -804,7 +810,7 @@ function startBreak () {
       show: false,
       backgroundThrottling: false,
       transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
+      backgroundColor: calculatedBgColor,
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
@@ -845,7 +851,7 @@ function startBreak () {
       }
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
+        breakDuration, strictMode, postponable, postponableDurationPercent, calculatedBgColor)
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
@@ -993,8 +999,8 @@ function resetBreaks () {
   updateTray()
 }
 
-function calculateBackgroundColor () {
-  return settings.get('mainColor') + Math.round(settings.get('opacity') * 255).toString(16)
+function calculateBackgroundColor (rawColor) {
+  return rawColor + Math.round(settings.get('opacity') * 255).toString(16)
 }
 
 function loadIdeas () {

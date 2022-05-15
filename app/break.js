@@ -38,8 +38,7 @@ window.onload = (event) => {
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
     const closeElement = document.querySelector('#close')
-    const mainColor = settings.get('mainColor')
-    document.body.classList.add(mainColor.substring(1))
+    document.body.classList.add(backgroundColor)
     document.body.style.backgroundColor = backgroundColor
 
     document.querySelectorAll('.tiptext').forEach(tt => {
