@@ -180,15 +180,15 @@
     "oclock_one": "{{count}} uur",
     "oclock_other": "{{count}} uur",
     "seconds_one": "{{count}} seconde",
-    "seconds_other": "{{count}} secondes",
+    "seconds_other": "{{count}} seconden",
     "minutes_one": "{{count}} minuut",
     "minutes_other": "{{count}} minuten",
     "hours_one": "{{count}} uur",
     "hours_other": "{{count}} uren",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) resterend",
-    "aboutMinutesRemaining": "Ongeveer $t(utils.minutes, {'count': {{minutes}} }) resterend",
-    "aboutHoursRemaining": "Ongeveer $t(utils.hours, {'count': {{hours}} }) resterend",
-    "aboutHoursMinutesRemaining": "Ongeveer $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) resterend",
+    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) te gaan",
+    "aboutMinutesRemaining": "Ongeveer $t(utils.minutes, {'count': {{minutes}} }) te gaan",
+    "aboutHoursRemaining": "Ongeveer $t(utils.hours, {'count': {{hours}} }) te gaan",
+    "aboutHoursMinutesRemaining": "Ongeveer $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) te gaan",
     "inSeconds": "in $t(utils.seconds, {'count': {{seconds}} })",
     "inAboutMinutes": "in ongeveer $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "in ongeveer $t(utils.hours, {'count': {{hours}} })",
@@ -214,5 +214,34 @@
     "afterMiniBreak_other": "na {{count}} Mini Pauzes",
     "resuming": "Hervatten",
     "appExclusion": "Regel voor uitgesloten programma's"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Haal een glas water."
+    },
+    "aab": {
+      "text": "Kijk langzaam helemaal naar links, vervolgens naar rechts."
+    },
+    "aac": {
+      "text": "Kijk langzaam helemaal omhoog, daarna omlaag."
+    },
+    "aad": {
+      "text": "Sluit je ogen en adem enkele keren diep in en uit."
+    },
+    "aae": {
+      "text": "Sluit je ogen en relax."
+    },
+    "aaf": {
+      "text": "Strek je benen."
+    },
+    "aag": {
+      "text": "Strek je armen."
+    },
+    "aah": {
+      "text": "Neem je de juiste zithouding aan?"
+    },
+    "aai": {
+      "text": "Draai langzaam je hoofd naar de zijkant voor 10 seconden."
+    }
   }
 }
