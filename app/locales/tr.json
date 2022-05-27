@@ -213,5 +213,259 @@
     "afterMiniBreak_one": "{{count}}'dan sonra kısa mola ver",
     "afterMiniBreak_other": "{{count}}'dan sonra kısa molalar ver",
     "resuming": "Devam ediyor"
+  },
+  "miniBreakIdeas": {
+    "aaw": {
+      "text": "20 fit mesafedeki bir nesneye 20 saniye boyunca her 20 dakikada bir odaklanın."
+    },
+    "abg": {
+      "text": "Yumruk yapın ve parmaklarınızı, sanki birine durmasını söylüyormuşsunuz gibi tavana bakana kadar yukarı kaydırın."
+    },
+    "abf": {
+      "text": "Birer birer, her parmağınızın ucunu başparmağınızın ucuna dokundurun, böylece bir O şekli oluşturun."
+    },
+    "aaa": {
+      "text": "Git bir bardak su al."
+    },
+    "aab": {
+      "text": "Yavaşça tamamen sola, sonra sağa bakın."
+    },
+    "aac": {
+      "text": "Yavaşça yukarıya, sonra aşağıya bakın."
+    },
+    "aad": {
+      "text": "Gözlerinizi kapatın ve birkaç derin nefes alın."
+    },
+    "aae": {
+      "text": "Gözlerini kapat ve rahatla."
+    },
+    "aaf": {
+      "text": "Bacaklarını esnet."
+    },
+    "aag": {
+      "text": "Kollarınızı uzatın."
+    },
+    "aah": {
+      "text": "Oturuş pozisyonunuz doğru mu?"
+    },
+    "aai": {
+      "text": "Başınızı yavaşça yana çevirin ve 10 saniye bu şekilde tutun."
+    },
+    "aaj": {
+      "text": "Başınızı yavaşça yana yatırın ve 5-10 saniye bu şekilde tutun."
+    },
+    "aak": {
+      "text": "Sandalyenizden kalkın ve gerinin."
+    },
+    "aal": {
+      "text": "Gözlerinizi en az 20 metre uzaktaki bir nesneye odaklayın."
+    },
+    "aam": {
+      "text": "Hoşunuza giden bir şey hakkında düşünmek için bir dakikanızı ayırın."
+    },
+    "aan": {
+      "text": "Hayatta olduğunuza sevinmek için bir dakikanızı ayırın."
+    },
+    "aao": {
+      "text": "Gerçekten ergonomik bir iş istasyonu, düzenli olarak uzak durmanız gereken bir iş istasyonudur."
+    },
+    "aap": {
+      "text": "Gözlerini kapat ve nefes alıp vermeni say."
+    },
+    "aaq": {
+      "text": "Gözlerini kapat ve duyduğun şeyleri adlandır."
+    },
+    "aar": {
+      "text": "Parmak uçlarınızı omuzlarınıza yerleştirin. Omuzlarınızı 10 saniye öne, ardından geriye doğru yuvarlayın."
+    },
+    "aas": {
+      "text": "Sağ kolunuzu kaldırın, başınızın üzerinden sola doğru uzatın ve 10 saniye tutun. Diğer tarafta tekrarlayın."
+    },
+    "aat": {
+      "text": "Sağ elinizle sol elinizin her parmağını sırayla kavrayın ve sıkın. Diğer tarafta tekrarlayın."
+    },
+    "aau": {
+      "text": "Ayağa kalkıp öne bir hamle yapın. 10 saniye bekleyin, ardından diğer bacağınızla yapın."
+    },
+    "aav": {
+      "text": "Gözlerinizi kapatın ve o anda ortaya çıkan her şeyi yargılamadan fark edin."
+    },
+    "aax": {
+      "text": "Yardıma ihtiyacınız varsa, isteyin."
+    },
+    "aay": {
+      "text": "Her defasında tek bir şey yapın."
+    },
+    "aaz": {
+      "text": "Dikkatinizi önemli şeylere mi veriyorsunuz?"
+    },
+    "aba": {
+      "text": "Oturma duruşunuzu değiştirin."
+    },
+    "abb": {
+      "text": "Gözlerinizi doğal ışığa maruz bırakın."
+    },
+    "abc": {
+      "text": "Gözleriniz kapalıyken, gözlerinizi yavaşça ve nazikçe tavana kaldırın ve tekrar yere indirin."
+    },
+    "abd": {
+      "text": "Gözleriniz kapalıyken, gözlerinizi yavaşça ve nazikçe sola, sonra yavaşça sağa hareket ettirin."
+    },
+    "abe": {
+      "text": "Biraz rahatlamak için ellerinizi sallayın."
+    },
+    "abh": {
+      "text": "Bir yumruk yapın ve ardından parmaklarınızı sallayın ve mümkün olduğunca uzatın."
+    },
+    "abl": {
+      "text": "Kollarınız omuzlarınız boyunca kaldırılmış halde dik durun. Ellerinizi hafifçe arkanızda hareket ettirin, bir saniye bekleyin ve bırakın."
+    },
+    "abi": {
+      "text": "Kollarınız yanlarınızda olacak şekilde dik oturun ve boynunuzu geniş bir daire şeklinde bir yönde yavaşça döndürün."
+    },
+    "abk": {
+      "text": "Kollarınız yanınızda dik bir şekilde durun. Omuzlarınızı yukarı ve birbirine sıkın ve öyle tutun."
+    },
+    "abj": {
+      "text": "Dik durun ve bir gerginlik hissedene kadar aynı elinizi kullanarak başınızı yavaşça omzunuza doğru eğin."
+    }
+  },
+  "longBreakIdeas": {
+    "aad": {
+      "text": "Araştırmalar, farkındalık temelli egzersizlerin kaygı, depresyon, stres ve ağrıyı azaltmaya yardımcı olduğunu ve genel sağlığı, zihinsel sağlığı ve yaşam kalitesini iyileştirmeye yardımcı olduğunu göstermektedir. Nasıl başlayacağınızdan emin değil misiniz? Size yardımcı olacak çok sayıda uygulama var.",
+      "title": "Meditasyon"
+    },
+    "aaj": {
+      "text": "Teknolojisiz bir yürüyüşe ne dersiniz?",
+      "title": "Teknoloji"
+    },
+    "aai": {
+      "text": "Hayal mi kuruyorsunuz veya odaklanmakta zorlanıyor musunuz? Mola vermeniz gerektiğinin bir işaretidir.",
+      "title": "Fark et"
+    },
+    "aak": {
+      "title": "Metabolizma",
+      "text": "Gelişmekte olan araştırmalar, uzun süre oturmanın diğerlerinin yanı sıra metabolik sendrom riskine, kalp krizi ve felç riskine ve genel ölüm riskine katkıda bulunduğunu göstermektedir. Düzenli yürüyüş molaları vermek, bu sorunlardan bazılarını gidermeye çalışarak dolaşımınıza yardımcı olabilir."
+    },
+    "aat": {
+      "text": "Avuç içleriniz size bakacak şekilde kollarınızı uzatın, ardından ellerinizi yavaşça dört kez saat yönünde, ardından dört kez saat yönünün tersine çevirin.",
+      "title": "Bilek ve önkol"
+    },
+    "aaz": {
+      "text": "Sanat terapisinin, özellikle stres yönetimi söz konusu olduğunda, zihinsel sağlığa büyük faydaları olduğu bilinmektedir. Hızlı bir şiir yazmaya, resim çekmeye veya küçük bir şeyler boyamaya ne dersiniz?",
+      "title": "Sanat yapın"
+    },
+    "abf": {
+      "text": "Otururken dirseklerinizi masaya ve masa kenarına yakın tutun. Ağırlığınızın öne düşmesine izin verin ve ellerinizi gözlerinizin üzerine koyun. Gözlerinizi kapatın ve burnunuzdan yavaşça nefes alın ve birkaç saniye tutun. Derin nefes almaya devam edin.",
+      "title": "Avuç içi"
+    },
+    "aaa": {
+      "title": "Yalnız değilsin",
+      "text": "Tek başınıza mola vermek zor mu geliyor? Bir iş arkadaşınızla yapmaya çalışın. Molalara bağlı kalmayı kolaylaştırmanın yanı sıra, onları daha iyi tanıma şansınız olacak. Birlikte mola vermek verimliliği artırır."
+    },
+    "aab": {
+      "title": "Uzaklaş",
+      "text": "Beyninizin olayları kendi kendine nasıl çözebildiğini hiç fark ettiniz mi? Tek gereken bilgisayardan uzaklaşmak ve tamamen alakasız bir şey hakkında düşünmek için ara vermek."
+    },
+    "aac": {
+      "title": "Kısa aralar",
+      "text": "Dinlenme, kas-iskelet sisteminin sağlıklı çalışmasında önemli bir bileşendir. Sık verilen molalar bir işin süresini kısaltabilir ve ergonomik sakatlık riskinin azaltılmasına yardımcı olabilir."
+    },
+    "aae": {
+      "title": "Göz kırp",
+      "text": "Uzun süre ekranlara bakmak daha az göz kırpmanıza neden olarak gözlerinizi kuru havaya maruz bırakır. Gözyaşı filmini yenilemek ve göz yüzeyindeki tozu temizlemek için birkaç saniye hızlıca göz kırpın."
+    },
+    "aaf": {
+      "title": "Ergonomik",
+      "text": "Klavye, fare, monitör veya çalışma yüzeyinin uygun olmayan yüksekliği ve açısı sağlık sorunlarına neden olabilir. Masa ergonomisi hakkında okumak için biraz zaman ayırın."
+    },
+    "aag": {
+      "title": "Hareket et",
+      "text": "Ofisinizde egzersiz yapmanın birçok yolu vardır. Yerinde yürümeyi veya masada şınav çekmeyi deneyin."
+    },
+    "aah": {
+      "title": "Değişin",
+      "text": "Denge topunuz veya ayakta çalışma masanız var mı? Masa sandalyenizi bir süre onlarla değiştirmeyi düşünün."
+    },
+    "aal": {
+      "title": "Aktif Toplantılar",
+      "text": "Toplantıları konferans salonundan salona taşımaya ne dersiniz? Yürümek sadece kalori yakmakla kalmaz, aynı zamanda bir işbirliği duygusunu bile besleyebilir."
+    },
+    "aam": {
+      "title": "Meyve",
+      "text": "Acele etmeyin ve biraz meyve yiyin. Yavaşça. Tadını, dokusunu, tazeliğini fark edin."
+    },
+    "aao": {
+      "title": "Kahve molası",
+      "text": "Kahve molasına mı çıkıyorsunuz? Her gittiğinizde 5 dakikalık bir yürüyüş yapmayı düşünün."
+    },
+    "aap": {
+      "title": "Arkadaşlar",
+      "text": "Ofis arkadaşlarınıza e-posta veya mesaj göndermeyin, onlarla iletişim kurmak için masalarına gidin."
+    },
+    "aan": {
+      "title": "Tuvaletler",
+      "text": "Tuvalete giderken en uzak olana yürüyün."
+    },
+    "aaq": {
+      "title": "Öğrenmek",
+      "text": "Sağlıklı gönüllüler üzerinde yapılan bir araştırmada, araştırmacılar, erken ve sıklıkla kısa molalar vermenin beynimizin yeni beceriler öğrenmesine yardımcı olabileceğini buldu."
+    },
+    "aar": {
+      "title": "Egzersiz",
+      "text": "Kanıtlar, küçük miktarlarda düzenli egzersizin, stresi ölçülebilir bir şekilde azaltmak da dahil olmak üzere önemli sağlık yararları sağlayabileceğini göstermektedir."
+    },
+    "aas": {
+      "title": "Tekrar et",
+      "text": "Esneme rutininizi buldunuz mu? Uzun süreli oturmanın etkileriyle daha iyi mücadele etmek için bir kereden fazla tekrarlamayı unutmayın."
+    },
+    "aau": {
+      "title": "Sırt esnetme",
+      "text": "Ellerinizi başınızın arkasında birleştirin, ardından avuçlarınız yukarı bakacak şekilde başınızın üzerinde yukarı kaldırın."
+    },
+    "aav": {
+      "title": "Hareket edin",
+      "text": "Her otuz dakikalık durgunluk için, en az bir dakikalık hareketiniz olmalıdır."
+    },
+    "aaw": {
+      "title": "7 Dakikalık Hareket",
+      "text": "Bu egzersiz, zamanın bir bölümünde tam vücut egzersiz rutini içerir. Ancak herhangi bir egzersizde olduğu gibi, dikkatli olun. Başlamanıza yardımcı olacak çok sayıda uygulama var."
+    },
+    "aax": {
+      "title": "Kalp Atışı",
+      "text": " Zevk aldığınız her şeyi yaparak haftada dört veya beş kez 20 düz dakika boyunca nabzınızı dakikada 120 vuruşa yükseltin. Kalp atış hızınızı düzenli olarak yükseltmek, kardiyovasküler sağlığın iyileşmesine neden olur."
+    },
+    "aay": {
+      "title": "Merdivenleri kullanın ",
+      "text": "Araştırmalar, şiddetli fiziksel aktivite olarak kabul edilen merdiven çıkmanın, koşuya göre dakikada daha fazla kalori yaktığını göstermiştir."
+    },
+    "aba": {
+      "title": "Toparlanın",
+      "text": "Temiz bir alan, işinize odaklanmanıza yardımcı olur ve genellikle mutluluk gibi olumlu duygularla bağlantılıdır."
+    },
+    "abb": {
+      "title": "Dışarıda öğle yemeği",
+      "text": "Doğa, olumlu duygular ve azalan stres ve kaygı ile bağlantılıdır. Mümkün olduğunda, günlük öğle yemeği molanızı biraz yeşilliklerle çevrili olarak dışarıda geçirmeye çalışın."
+    },
+    "abc": {
+      "title": "Toplu taşıma",
+      "text": "Düzenli olarak toplu taşıma kullanıyorsanız, oturmak yerine ayakta durabilirsiniz. Mümkünse, günlük gezilerinizin çoğunu yürüyüş veya bisiklete binme ile değiştirmeye çalışın."
+    },
+    "abd": {
+      "title": "Esnemek",
+      "text": "Esnemek, gözleri nemlendirmek ve yağlamak için gözyaşı ürettiği için gerçekten yardımcı olabilir."
+    },
+    "abe": {
+      "title": "Değişime odaklanın",
+      "text": "Bir parmağınızı göze yakın tutun ve ona odaklanın. Parmağınızı yavaşça uzaklaştırın, mesafeye odaklanın ve ardından tekrar parmağa dönün. Parmağınızı geri getirin ve uzaktaki bir şeye odaklanın."
+    },
+    "abg": {
+      "title": "El sıkmak",
+      "text": "Bir çift toplanmış çorabı veya yumuşak bir lastik topu sıkın ve 5 saniye tutun. Tüm işlemi birkaç kez tekrarlayın."
+    },
+    "abh": {
+      "title": "Yavaş nefes alma",
+      "text": "Gelişmekte olan araştırmalar, sağlık ve uzun ömür ile ilişkili gibi görünen fizyolojik parametreleri optimize etmenin bir yolu olarak kontrollü yavaş nefes alma tekniklerinin kullanım potansiyelini ortaya koymaktadır."
+    }
   }
 }
