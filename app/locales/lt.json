@@ -177,7 +177,9 @@
     "showBreaksAsRegularWindowsTitle": "Veikti kaip įprastas langas:",
     "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje.",
     "timeToBreakInTray": "Laikas pertraukai",
-    "showTimeToBreakInTray": "Rodyti laiką iki kitos pertraukos meniu juostos piktogramoje"
+    "showTimeToBreakInTray": "Rodyti laiką iki kitos pertraukos meniu juostos piktogramoje",
+    "currentTimeInBreaks": "Dabartinis laikas",
+    "showCurrentTimeInBreaks": "Rodyti vietinį laiką pertraukos lange"
   },
   "statusMessages": {
     "nextLongBreak": "Sekanti ilgoji pertraukėlė",
@@ -218,5 +220,31 @@
     "seconds_one": "{{count}} sekundė",
     "seconds_few": "{{count}} sekundės",
     "seconds_other": "{{count}} sekundžių"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Išgerki stiklinaitę vandens"
+    },
+    "aab": {
+      "text": "Lėtai pažiūrėk į kairę, po to į dešinę"
+    },
+    "aac": {
+      "text": "Lėtai pažiūrėk į viršų, po to į dešinę"
+    },
+    "aad": {
+      "text": "Užsimerk ir giliai įkvėpk keletą kartų"
+    },
+    "aae": {
+      "text": "Užsimerk ir atsipalaiduok."
+    },
+    "aaf": {
+      "text": "Pratampyk kojas."
+    },
+    "aag": {
+      "text": "Pratampyk rankas."
+    },
+    "aah": {
+      "text": "Ar tavo sėdėjimo laikysena taisyklinga?"
+    }
   }
 }
