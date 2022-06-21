@@ -73,7 +73,12 @@
     "cursor": "Følg musepekeren",
     "primary": "Hovedskjermen",
     "showOnMonitor": "Vis pauser på",
-    "screenInfo": "Om du ikke velger å vise pauser på alle skjermer kan du velge hvilken skjerm det skal vises på."
+    "screenInfo": "Om du ikke velger å vise pauser på alle skjermer kan du velge hvilken skjerm det skal vises på.",
+    "screen": "Oversikt over pauser:",
+    "timeToBreakInTray": "Tid for pause",
+    "showTimeToBreakInTray": "Vis tid til neste pause i menybaren",
+    "currentTimeInBreaks": "Nåværende tid",
+    "showCurrentTimeInBreaks": "Vis nåværende lokal tid i pausevindu"
   },
   "preferences": {
     "heart": {
@@ -209,5 +214,259 @@
     "breakIn": "Lang pause om $t(utils.seconds, {'count': {{seconds}} })",
     "microbreakIn": "Minipause om $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Pausepåminnelsesprogrammet"
+  },
+  "miniBreakIdeas": {
+    "aao": {
+      "text": "En virkelig ergonomisk arbeidsplass er en du kan dytte deg vekk fra."
+    },
+    "aab": {
+      "text": "Se sakte hele veien til venstre, og så til høyre."
+    },
+    "abk": {
+      "text": "Stå rett opp med armene ned langs siden. Press skulderbladene sammen og hold i 10 sekunder."
+    },
+    "abi": {
+      "text": "Sitt rett med armene hengene ned langs sidene, og sakte roter nakken i en stor sirkel i en retning."
+    },
+    "aac": {
+      "text": "Se sakte helt opp, og så ned."
+    },
+    "abe": {
+      "text": "Rist hendene for å slippe ut spenningen."
+    },
+    "abl": {
+      "text": "Stå opp med armene strukket rett langs skuldrene. Ta hengene bak ryggen, hold dem der en stund og strekk armene ut igjen."
+    },
+    "aaa": {
+      "text": "Gå og ta ett glass vann."
+    },
+    "aad": {
+      "text": "Lukk øynene og ta noen dype åndedrag."
+    },
+    "aae": {
+      "text": "Lukk øynene og slapp av."
+    },
+    "aaf": {
+      "text": "Strekk på bena."
+    },
+    "aag": {
+      "text": "Strekk på deg med armene i været."
+    },
+    "aah": {
+      "text": "Sitter du riktig nå?"
+    },
+    "aai": {
+      "text": "Snu sakte hodet til siden og hold det der i 10 sekunder."
+    },
+    "aaj": {
+      "text": "Vipp hodet til siden og hold det der i 5 til 10 sekunder."
+    },
+    "aak": {
+      "text": "Stå opp fra stolen og strekk på deg."
+    },
+    "aal": {
+      "text": "Fokuser på en gjenstand minst 20 meter unna."
+    },
+    "aam": {
+      "text": "Bruk et øyeblikk til å tenke på noe du setter pris på."
+    },
+    "aan": {
+      "text": "Smil et øyeblikk og tenk på at du lever."
+    },
+    "aap": {
+      "text": "Lukk øynene og tell at du puster."
+    },
+    "aaq": {
+      "text": "Lukk øynene og gi navn på det du hører."
+    },
+    "aar": {
+      "text": "Plasser fingertuppene på skuldrene. Rull skuldrene forover i 10 sekunder, og så bakover."
+    },
+    "aas": {
+      "text": "Reis høyre arm, strekk den over hodet ditt mot venstre og hold i 10 sekunder. Gjenta med venstre arm."
+    },
+    "aat": {
+      "text": "Grip hver finger på din venstre hånd med din høyre hånd og press. Gjenta med motsatte hender."
+    },
+    "aau": {
+      "text": "Stå opp og gjør et utfall. Hold i 10 sekunder, og så gjør utfall med det andre benet."
+    },
+    "aav": {
+      "text": "Lukk øynene og bare legg merke til hva som skjer i øyeblikket, uten å dømme."
+    },
+    "aaw": {
+      "text": "Fokuser hvert 20 minutt i 20 sekunder på en gjenstand 20 meter unna."
+    },
+    "aax": {
+      "text": "Trenger du hjelp, spør om det."
+    },
+    "aay": {
+      "text": "Gjør én ting av gangen."
+    },
+    "aaz": {
+      "text": "Bruker du fokuset ditt fornuftig?"
+    },
+    "aba": {
+      "text": "Bytt sittestilling."
+    },
+    "abb": {
+      "text": "Utsett øynene dine for naturlig lys."
+    },
+    "abc": {
+      "text": "Lukk øynene og sakte, forsiktig se opp mot taket og tilbake til gulvet."
+    },
+    "abd": {
+      "text": "Med øynene lukket, beveg øynene sakte og forsiktig til venstre, og så sakte til høyre."
+    },
+    "abf": {
+      "text": "Rør ved hver fingertupp med tuppen av tommelen slik at det formes en O."
+    },
+    "abg": {
+      "text": "Lag en knyttneve og slipp så sakte opp mot taket, som om du ber noen om å stoppe."
+    },
+    "abh": {
+      "text": "Lag en knyttneve og strekk så fingrene ut så langt du kan."
+    },
+    "abj": {
+      "text": "Sitt rett og sakte vend hodet på skakke mot skuldrene med hjelp av hånden så du strekker på nakken."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "text": "Synes du det er vanskelig å ta en pause alene? Forsøk å ta en pause med en kollega. I tillegg til at det blir enklere å ta pauser, så vil dere ha en mulighet til å bli bedre kjent. Å ta pauser sammen øker produktiviteten.",
+      "title": "Ikke alene"
+    },
+    "aab": {
+      "title": "Gå vekk",
+      "text": "Legger du noen ganger merke til at hjernen kan finne ut av ting på egen hånd? Alt som trengs er å gå vekk fra datamaskinen og ta en pause for å tenke på noe helt annet enn det du jobber med."
+    },
+    "aac": {
+      "text": "Hvile er en nøkkelkomponent for å sikre ytelsen til muskel- og skjelettsystemet. Hyppige pauser kan redusere varigheten av en oppgave og bidra til å redusere eksponeringen for ergonomisk skade.",
+      "title": "Minipauser"
+    },
+    "aaf": {
+      "text": "Feil høyde og vinkel på tastaturet, musen, skjermen eller arbeidsflaten kan forårsake helseproblemer. Ta deg tid til å lese om skrivebordsergonomi.",
+      "title": "Ergonomi"
+    },
+    "aak": {
+      "text": "Ny forskning viser at å sitte over lengre perioder bidrar til blant annet risiko for metabolsk syndrom, hjerteinfarkt og hjerneslag og generell dødsrisiko. Å ta regelmessige gåpauser kan hjelpe blodsirkulasjonen din, og jobbe for å motvirke noen av disse problemene.",
+      "title": "Metabolisme"
+    },
+    "aam": {
+      "title": "Frukt",
+      "text": "Ta deg god tid og spis litt frukt. Sakte. Legg merke til smaken, teksturen, friskheten."
+    },
+    "aaq": {
+      "title": "Læring",
+      "text": "I en studie ble det vist at å ta korte pauser, tidlig og ofte, kan hjelpe hjernen vår til å lære nye ferdigheter."
+    },
+    "aap": {
+      "title": "Kollegaer",
+      "text": "Ikke send e-post eller melding til kollegaer, gå til pultene deres for å kommunisere med dem."
+    },
+    "aau": {
+      "title": "Strekking av ryggen",
+      "text": "Slå sammen hendene bak hodet, og løft dem deretter sammen opp over hodet og avslutter med håndflatene vendt oppover."
+    },
+    "aar": {
+      "title": "Trening",
+      "text": "Forskning viser at små mengder regelmessig trening kan gi dramatiske helsegevinster, inkludert målbar reduksjon av stress."
+    },
+    "aat": {
+      "text": "Strekk ut armene med håndflatene vendt mot deg, og roter deretter hendene sakte fire ganger med klokken, deretter fire ganger mot klokken.",
+      "title": "Håndledd og underarm"
+    },
+    "aaw": {
+      "title": "Syv minutter trening",
+      "text": "Denne treningen pakker inn en treningsrutine for hele kroppen på en brøkdel av tiden. Men som med all trening, vær forsiktig. Det er mange apper for å komme i gang."
+    },
+    "abb": {
+      "text": "Naturen er knyttet til positive følelser og redusert stress og angst. Når det er mulig, prøv å ta din daglige lunsjpause ute, omgitt av litt grønt.",
+      "title": "Lunsj utendørs"
+    },
+    "aax": {
+      "text": " Øk pulsen til 120 slag per minutt i 20 minutter i strekk fire eller fem ganger i uken, og gjør alt du liker. Regelmessig heving av hjertefrekvensen resulterer i forbedret kardiovaskulær helse.",
+      "title": "Puls"
+    },
+    "abg": {
+      "text": "Klem et par oppballede sokker eller en myk gummiball, hold i 5 sekunder. Gjenta hele prosessen noen ganger.",
+      "title": "Håndklemme"
+    },
+    "aaz": {
+      "text": "Kunstterapi er kjent for å ha store psykiske fordeler, spesielt når det kommer til stressmestring. Hva med å skrive et raskt dikt, ta et bilde eller male noe lite?",
+      "title": "Lag kunst"
+    },
+    "abd": {
+      "text": "Å gjespe kan være veldig nyttig, siden det produserer tårer for å bidra til å fukte og smøre øynene.",
+      "title": "Gjespe"
+    },
+    "abe": {
+      "text": "Hold en finger tett inntil øyet og fokuser på den. Flytt fingeren sakte vekk, fokuser langt i det fjerne og deretter tilbake til fingeren. Ta fingeren tilbake og fokuser på noe langt unna.",
+      "title": "Endring av fokus"
+    },
+    "abh": {
+      "text": "Ny forskning viser at bruk av kontrollerte sakte pusteteknikker har et potensiale som et middel for å optimalisere fysiologiske parametere som ser ut til å være assosiert med helse og lang levetid.",
+      "title": "Sakte pusting"
+    },
+    "abf": {
+      "text": "Mens du sitter, fest albuene på skrivebordet og nær skrivebordskanten. La vekten falle fremover og legg hendene over øynene. Lukk øynene og inhaler sakte gjennom nesen og hold i noen sekunder. Fortsett å puste dypt.",
+      "title": "Håndflater"
+    },
+    "aad": {
+      "title": "Meditering",
+      "text": "Forsknings viser at oppmerksomhetsbaserte øvelser bidrar til å redusere angst, depresjon, stress og smerte, og bidrar til å forbedre generell helse, mental helse og livskvalitet. Ikke sikker på hvordan du skal starte? Det er mange apper som hjelper deg."
+    },
+    "aae": {
+      "title": "Blunk",
+      "text": "Å se lenge på skjermen får deg til å blunke mindre, og dermed utsette øynene for luft. Blunk raskt i noen sekunder for å friske opp tårefilmen og fjerne støv fra øyeoverflaten."
+    },
+    "aag": {
+      "title": "Beveg deg",
+      "text": "Det er mange måter du kan trene på kontoret ditt. Prøv å marsjere på samme sted eller ta push-ups."
+    },
+    "aah": {
+      "title": "Endring",
+      "text": "Har du en stabilitetsball eller stående skrivebord? Vurder å bytte ut skrivebordsstolen med dem en stund."
+    },
+    "aai": {
+      "title": "Observer",
+      "text": "Dagdrømmer du eller har problemer med å fokusere? Det er et tegn på at du må ta en pause."
+    },
+    "aaj": {
+      "title": "Teknologi",
+      "text": "Hva med å ta en ikke-teknologisk tur?"
+    },
+    "aal": {
+      "title": "Aktive møter",
+      "text": "Hva med å flytte møter fra konferanserommet til gangen? Å gå forbrenner ikke bare kalorier, men det kan til og med fremme en følelse av samarbeid."
+    },
+    "aan": {
+      "title": "Toalettbesøk",
+      "text": "Gå til det fjerneste toalettet når du må på do."
+    },
+    "aao": {
+      "title": "Kaffepause",
+      "text": "Skal du ta kaffepause? Vurder å gå en 5-minutters spasertur hver gang du går for å ta en kaffe."
+    },
+    "aas": {
+      "title": "Gjenta",
+      "text": "Har du funnet din strekke-rutine? Ikke glem å gjenta det mer enn én gang for bedre å bekjempe effekten av langvarig sittestilling."
+    },
+    "aav": {
+      "title": "Mobilisering",
+      "text": "For hvert tretti minutt med stagnasjon bør du ha minst ett minutt med stimulering."
+    },
+    "aay": {
+      "title": "Ta trappene ",
+      "text": "Studier har vist at trappegang, som regnes som fysisk aktivitet med sterk intensitet, forbrenner flere kalorier per minutt enn jogging."
+    },
+    "aba": {
+      "title": "Opprydning",
+      "text": "En ren plass hjelper deg med å fokusere på jobben og er ofte knyttet til positive følelser som lykke."
+    },
+    "abc": {
+      "title": "Offentlig transport",
+      "text": "Hvis du bruker offentlig transport regelmessig, kan du stå i stedet for å sitte. Hvis det er mulig, prøv å erstatte så mange av dine daglige turer som mulig med gåing eller sykling."
+    }
   }
 }
