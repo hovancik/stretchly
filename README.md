@@ -418,7 +418,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Luke Arms, [lkrms](https://github.com/lkrms)
 - Chris Heyer, [@cheyer](https://github.com/cheyer)
 - Sheri Richardson, [@sheriallis](https://github.com/sheriallis/)
-- Felix W. Dekker, [@FWDekker](https://github.com/FWDekker)
+- Florine W. Dekker, [@FWDekker](https://github.com/FWDekker)
 - Balazs Nasz, [@balazsnasz](https://github.com/balazsnasz)
 - Daniel Bankmann, [@dbankmann](https://github.com/dbankmann)
 - Aziks, [@Aziks0](https://github.com/Aziks0)
