@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Portuguese and Brazilian labels in welcome screen
 - partial minutes in break preferences
 - counting break time when break starts
+- breaks not being finished when exclusion starts
 
 ## [1.10.0] - 2022-2-22
 ### Added
