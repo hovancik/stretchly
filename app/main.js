@@ -691,7 +691,6 @@ function startMicrobreak () {
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
-
     ipcMain.on('send-microbreak-data', (event) => {
       const startTime = Date.now()
       if (!strictMode || postponable) {
@@ -709,14 +708,16 @@ function startMicrobreak () {
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
-
+    })
+    // microbreakWinLocal.webContents.openDevTools()
+    microbreakWinLocal.once('ready-to-show', () => {
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
       } else {
         microbreakWinLocal.showInactive()
       }
-      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
 
+      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         if (showBreaksAsRegularWindows) {
           microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
@@ -828,7 +829,6 @@ function startBreak () {
     let breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
-
     ipcMain.on('send-break-data', (event) => {
       const startTime = Date.now()
       if (!strictMode || postponable) {
@@ -846,13 +846,16 @@ function startBreak () {
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
         breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
+    })
+    // breakWinLocal.webContents.openDevTools()
+    breakWinLocal.once('ready-to-show', () => {
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
         breakWinLocal.showInactive()
       }
-      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
 
+      log.info(`Stretchly: showing window ${localDisplayId + 1} of ${numberOfDisplays()}`)
       if (process.platform === 'darwin') {
         if (showBreaksAsRegularWindows) {
           breakWinLocal.setFullScreen(settings.get('fullscreen'))
