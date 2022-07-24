@@ -19,13 +19,13 @@ class BreaksPlanner extends EventEmitter {
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('microbreakDuration')
-      this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound), interval, 'finishMicrobreak')
+      this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound, true), interval, 'finishMicrobreak')
       this.scheduler.plan()
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('breakDuration')
-      this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound), interval, 'finishBreak')
+      this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound, true), interval, 'finishBreak')
       this.scheduler.plan()
     })
 
@@ -67,6 +67,16 @@ class BreaksPlanner extends EventEmitter {
         if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
           this.clear()
           log.info(`Stretchly: pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
+          this.emit('updateToolTip')
+        } else if (!this.isPaused && this.scheduler.reference === 'finishBreak') {
+          this.emit('finishBreak', false, false)
+          this.clear()
+          log.info(`Stretchly: closing current and pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
+          this.emit('updateToolTip')
+        } else if (!this.isPaused && this.scheduler.reference === 'finishMicrobreak') {
+          this.emit('finishMicrobreak', false, false)
+          this.clear()
+          log.info(`Stretchly: closing current and pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
         } else {
           this.appExclusionsManager.inOnException = false

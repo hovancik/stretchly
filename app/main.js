@@ -177,9 +177,9 @@ function initialize (isAppStart = true) {
     breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
     breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
     breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
-    breakPlanner.on('finishMicrobreak', (shouldPlaySound) => { finishMicrobreak(shouldPlaySound) })
+    breakPlanner.on('finishMicrobreak', (shouldPlaySound, shouldPlanNext) => { finishMicrobreak(shouldPlaySound, shouldPlanNext) })
     breakPlanner.on('startBreak', () => { startBreak() })
-    breakPlanner.on('finishBreak', (shouldPlaySound) => { finishBreak(shouldPlaySound) })
+    breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext) => { finishBreak(shouldPlaySound, shouldPlanNext) })
     breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
     breakPlanner.on('updateToolTip', function () {
       updateTray()
@@ -922,17 +922,23 @@ function breakComplete (shouldPlaySound, windows) {
   return closeWindows(windows)
 }
 
-function finishMicrobreak (shouldPlaySound = true) {
+function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
-  log.info('Stretchly: finishing Mini Break')
-  breakPlanner.nextBreak()
+  log.info(`Stretchly: finishing Mini Break (shouldPlanNext: ${shouldPlanNext})`)
+  if (shouldPlanNext) {
+    breakPlanner.nextBreak()
+  } else {
+    breakPlanner.clear()
+  }
   updateTray()
 }
 
-function finishBreak (shouldPlaySound = true) {
+function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
   breakWins = breakComplete(shouldPlaySound, breakWins)
-  log.info('Stretchly: finishing Long Break')
-  breakPlanner.nextBreak()
+  log.info(`Stretchly: finishing Long Break (shouldPlanNext: ${shouldPlanNext})`)
+  if (shouldPlanNext) {
+    breakPlanner.nextBreak()
+  }
   updateTray()
 }
 
@@ -1269,12 +1275,12 @@ ipcMain.on('postpone-break', function (event, shouldPlaySound) {
   postponeBreak()
 })
 
-ipcMain.on('finish-microbreak', function (event, shouldPlaySound) {
-  finishMicrobreak(shouldPlaySound)
+ipcMain.on('finish-microbreak', function (event, shouldPlaySound, shouldPlanNext) {
+  finishMicrobreak(shouldPlaySound, shouldPlanNext)
 })
 
-ipcMain.on('finish-break', function (event, shouldPlaySound) {
-  finishBreak(shouldPlaySound)
+ipcMain.on('finish-break', function (event, shouldPlaySound, shouldPlanNext) {
+  finishBreak(shouldPlaySound, shouldPlanNext)
 })
 
 ipcMain.on('save-setting', function (event, key, value) {
