@@ -167,7 +167,7 @@ function initialize (isAppStart = true) {
     Store.initRenderer()
     Object.entries(settings.store).forEach(([key, _]) => {
       settings.onDidChange(key, (newValue, oldValue) => {
-        log.info(`Stretchly: setting '${key}' to '${newValue}' (was '${oldValue}')`)
+        log.info(`Stretchly: setting '${key}' to '${JSON.stringify(newValue)}' (was '${JSON.stringify(oldValue)}')`)
       })
     })
   }
