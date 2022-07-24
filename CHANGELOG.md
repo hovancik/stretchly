@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - partial minutes in break preferences
 - counting break time when break starts
 - breaks not being finished when exclusion starts
+- incorrect format in logs
 
 ## [1.10.0] - 2022-2-22
 ### Added
