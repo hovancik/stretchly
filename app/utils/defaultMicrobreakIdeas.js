@@ -140,7 +140,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: 'Stand tall and slowly tilt your head toward the shoulder using the same hand until you feel a strech.',
+    data: 'Stand tall and slowly tilt your head toward the shoulder using the same hand until you feel a stretch.',
     enabled: true
   },
   {
