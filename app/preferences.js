@@ -285,13 +285,26 @@ window.onload = (e) => {
 
   function setWindowHeight () {
     const classes = document.querySelector('body').classList
-    const height = document.querySelector('body').scrollHeight
+    const scrollHeight = document.querySelector('body').scrollHeight
+    const availHeight = window.screen.availHeight
+    let height = null
     if (classes.contains('darwin')) {
-      remote.getCurrentWindow().setSize(bounds.width, height + 32)
+      if (scrollHeight + 32 > availHeight) {
+        height = availHeight
+      } else {
+        height = scrollHeight + 32
+      }
     } else if (classes.contains('win32')) {
-      remote.getCurrentWindow().setSize(bounds.width, height + 40)
+      if (scrollHeight + 40 > availHeight) {
+        height = availHeight
+      } else {
+        height = scrollHeight + 40
+      }
     }
     // linux is broken ;/
+    if (!!height) {
+      remote.getCurrentWindow().setSize(bounds.width, height)
+    }
   }
 
   function realBreakInterval () {

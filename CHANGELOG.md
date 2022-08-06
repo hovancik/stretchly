@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - counting break time when break starts
 - breaks not being finished when exclusion starts
 - incorrect format in logs
+- Preferences bigger then available height
 
 ## [1.10.0] - 2022-2-22
 ### Added
