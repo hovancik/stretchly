@@ -214,5 +214,97 @@
     "afterMiniBreak_other": "nach {{count}} Mini-Pausen",
     "resuming": "Fortsetzen",
     "appExclusion": "App-Ausnahmeregel"
+  },
+  "miniBreakIdeas": {
+    "aak": {
+      "text": "Steh auf und strecke dich."
+    },
+    "aal": {
+      "text": "Richte deinen Blick auf ein fernes Objekt, das in mindestens 20 Metern Entfernung steht."
+    },
+    "aam": {
+      "text": "Nimm dir einen Moment und denke über etwas nach, für das du dankbar bist."
+    },
+    "aaa": {
+      "text": "Steh auf und hol dir ein Glas Wasser."
+    },
+    "aab": {
+      "text": "Dreh deinen Kopf langsam so weit es geht nach links, dann in die andere Richtung."
+    },
+    "aac": {
+      "text": "Kippe deinen Kopf langsam so weit es geht nach hinten, dann nach vorne."
+    },
+    "aad": {
+      "text": "Schließ deine Augen und atme mehrmals tief ein und wieder aus."
+    },
+    "aae": {
+      "text": "Schließ deine Augen und entspann dich für einen Moment."
+    },
+    "aaf": {
+      "text": "Dehne deine Beine."
+    },
+    "aag": {
+      "text": "Dehne deine Arme."
+    },
+    "aah": {
+      "text": "Ist deine Sitzhaltung gesund?"
+    },
+    "aai": {
+      "text": "Dreh deinen Kopf langsam zur Seite und halte die Position für 10 Sekunden."
+    },
+    "aaj": {
+      "text": "Kippe deinen Kopf langsam Richtung Schulter und halte die Position für 5-10 Sekunden."
+    },
+    "aan": {
+      "text": "Halte kurz inne und lächel, weil du lebendig bist."
+    },
+    "aao": {
+      "text": "Ein wirklich ergonomischer Arbeitsplatz ist einer, von dem du regelmäßig aufstehst."
+    },
+    "aap": {
+      "text": "Schließ deine Augen und zähle deine Atemzüge."
+    },
+    "aaq": {
+      "text": "Schließ deine Augen und benenne die Dinge, die du hörst."
+    },
+    "aar": {
+      "text": "Berühre mit deinen Fingerspitzen deine Schultern. Kreise deine Schultern im Uhrzeigersinn für 10 Sekunden, dann in die andere Richtung."
+    },
+    "aas": {
+      "text": "Hebe deinen rechten Arm und strecke ihn nach links über deinen Kopf. Halte die Position für 10 Sekunden. Wiederhole das Gleiche mit deinem anderen Arm."
+    },
+    "aat": {
+      "text": "Dehne mit deiner rechten Hand jeden Finger deiner linken Hand. Wiederhole das Gleiche für deine andere Hand."
+    },
+    "aav": {
+      "text": "Schließ deine Augen und nimm deine aufkommenden Gedanken oder Gefühle zur Kenntnis, ohne darüber zu urteilen."
+    },
+    "aaw": {
+      "text": "Fokussiere alle 20 Minuten für 20 Sekunden ein Objekt in 20 Meter Entfernung."
+    },
+    "aax": {
+      "text": "Wenn du Hilfe brauchst, frag danach."
+    },
+    "aay": {
+      "text": "Erledige deine Tätigkeiten, eine nach der anderen."
+    },
+    "aaz": {
+      "text": "Liegt deine Aufmerksamkeit auf den richtigen Dingen?"
+    },
+    "aba": {
+      "text": "Ändere deine Sitzhaltung."
+    },
+    "abb": {
+      "text": "Gönne deinen Augen etwas natürliches Tageslicht."
+    },
+    "abc": {
+      "text": "Blicke mit deinen geschlossenen Augen langsam Richtung Decke und dann Richtung Boden."
+    },
+    "abd": {
+      "text": "Bewege deine geschlossenen Augen langsam nach links, dann wieder langsam nach rechts."
+    },
+    "abe": {
+      "text": "Schüttel deine Hände aus, um dich etwas zu erleichtern."
+    }
   }
 }

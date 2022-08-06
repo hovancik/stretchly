@@ -127,7 +127,7 @@
     "breakPostponeInfo": "Če imate omogočene zamike premorov v glavnih Nastavitvah, vam sledeče nastavitve omogočijo določanje kdaj, kako dolgo in koliko krat lahko zamaknete premor.",
     "breakPostpone": "Zamik premorov:",
     "useIdeasFromSettings": "Uporabi ideje o premorih iz konfiguracijske datoteke",
-    "customIdeasInfo": "Omogoča vam uporabo lastnih idej za premore tako, da uredite konfiguracijsko datoteko (za napredne uporabnike).",
+    "customIdeasInfo": "Omogoča vam uporabo lastnih idej za premore tako, da uredite datoteko z nastavitvami. (Za napredne uporabnike.)",
     "customIdeas": "Lastne ideje:",
     "newVersionNotification": "Obvesti me, ko je nova različica na voljo",
     "newVersion": "Nova različica:",
@@ -135,7 +135,11 @@
     "beforeLongBreak": "Dolgi premor:",
     "notificationsInfo": "Prikaz sistemskega obvestila pred premori, da se lahko pripravite nanje.",
     "notifications": "Obvestila premorov:",
-    "title": "Nastavitve podpornikov"
+    "title": "Nastavitve podpornikov",
+    "timeToBreakInTray": "Čas za premor",
+    "showTimeToBreakInTray": "Prikaži čas do naslednjega premora v ikoni opravilne vrstice",
+    "currentTimeInBreaks": "Trenutni čas",
+    "showCurrentTimeInBreaks": "Prikaži trenutni lokalni čas v oknu premora"
   },
   "preferences": {
     "heart": {
@@ -150,7 +154,7 @@
     },
     "about": {
       "designedBy": "Ikono in izgled aplikacije ustvaril Colin Shanley",
-      "janH": "Jan Hovancik",
+      "janH": "Jan Hovančik",
       "developedBy": "Razvil",
       "dot": ".",
       "ourWebsite": "obiščite našo spletno stran",
@@ -174,7 +178,7 @@
       "transparentMode": "Omogoči prosojnost",
       "morningSwim": "Jutranje kopanje",
       "coffeeKisses": "Kavni poljubi",
-      "graphiteCrystal": "Kristal grafita",
+      "graphiteCrystal": "Kristal grafitna",
       "autumnBeBlessed": "Blagoslovljena jesen",
       "greenClouds": "Zeleni oblaki",
       "appearance": "Videz:"
@@ -223,5 +227,259 @@
     "title": "Čas za premor!",
     "skip": "Prekoči ta premor",
     "postpone": "Zamakni ta premor"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Pojdi po kozarec vode."
+    },
+    "aab": {
+      "text": "Počasi poglej skrajno levo, nato desno."
+    },
+    "aad": {
+      "text": "Zapri oči in nekajkrat globoko vdihni in izdihni."
+    },
+    "aae": {
+      "text": "Zapri oči in se sprosti."
+    },
+    "aag": {
+      "text": "Pretegni roke."
+    },
+    "aas": {
+      "text": "Dvigni desno roko, upogni jo preko glave v desno in jo zadrži 10 sekund. Ponovi z drugo roko."
+    },
+    "aah": {
+      "text": "Ali sediš zravnano?"
+    },
+    "aaj": {
+      "text": "Počasi nagni glavo na stran in zadrži 5-10 sekund."
+    },
+    "aak": {
+      "text": "Vstani in se pretegni."
+    },
+    "aal": {
+      "text": "Preusmeri pogled na objekt oddaljen vsaj 20 metrov."
+    },
+    "aam": {
+      "text": "Vzemi si čas in pomisli na nekaj, kar ceniš."
+    },
+    "aao": {
+      "text": "Resnično ergonomska delovna postaja je takšna, od katere se redno odrivaš."
+    },
+    "aap": {
+      "text": "Zapri oči in štej vdihe."
+    },
+    "aaq": {
+      "text": "Zapri oči in poimenuj stvari, katere slišiš."
+    },
+    "aat": {
+      "text": "Z desno roko primi vsak prst leve roke posebej in stisni. Ponovi z drugo roko."
+    },
+    "aau": {
+      "text": "Stopi in naredi izpadni korak. Zadrži 10 sekund in nato zamenjaj nogo."
+    },
+    "aav": {
+      "text": "Zapri oči in preprosto opazuj vse, kar se pojavi v danem trenutku, brez obsojanja."
+    },
+    "aax": {
+      "text": "Če potrebuješ pomoč, prosi zanjo."
+    },
+    "aay": {
+      "text": "Naredi po eno stvar naenkrat."
+    },
+    "aaz": {
+      "text": "Je tvoja pozornost porabljena pametno?"
+    },
+    "abb": {
+      "text": "Oči izpostavi naravni svetlobi."
+    },
+    "abc": {
+      "text": "Z zaprtimi očmi, počasi in nežno poglej proti stropu in nato nazaj proti tlom."
+    },
+    "abd": {
+      "text": "Z zaprtimi očmi, počasi in nežno poglej levo, nato počasi desno."
+    },
+    "abe": {
+      "text": "Otresi roke, da jih malo olajšaš."
+    },
+    "abg": {
+      "text": "Stisni pest in nato stegni prste, dokler ne kažejo proti stropu, kot da bi nekomu rekel, naj preneha."
+    },
+    "abh": {
+      "text": "Stisni pest, nato pa iztegni prste v pahljačo, kolikor lahko."
+    },
+    "abi": {
+      "text": "Sedi pokonci, roke povesi ob telo, nato počasi zasukaj vrat v eno smer v velikem krogu."
+    },
+    "abl": {
+      "text": "Stoj pokonci z rokami dvignjenimi vzdolž ramen. Roke rahlo premakni za hrbet, zadrži za sekundo in vrni v prvotni položaj."
+    },
+    "aac": {
+      "text": "Počasi poglej visoko navzgor, nato navzdol."
+    },
+    "aaf": {
+      "text": "Pretegni noge."
+    },
+    "aai": {
+      "text": "Počasi obrni glavo na stran in zadrži 10 sekund."
+    },
+    "aan": {
+      "text": "Vzemi si čas za nasmeh življenju."
+    },
+    "aar": {
+      "text": "Postavi konice prstov na rame. Vrti rame 10 sekund naprej, nato še nazaj."
+    },
+    "aaw": {
+      "text": "Vsakih 20 minut, se za 20 sekund, osredotoči na predmet oddaljen vsaj 5 m."
+    },
+    "aba": {
+      "text": "Popravi držo."
+    },
+    "abf": {
+      "text": "Eno po eno, se s konico vsakega prsta dotakni konice palca, tako da tvoriš črko O."
+    },
+    "abj": {
+      "text": "Stoj pokonci in počasi nagni glavo proti rami roke, s pomočjo iste roke, dokler ne začutiš raztezanja."
+    },
+    "abk": {
+      "text": "Stoj pokonci z rokami ob strani. Stisni lopatici skupaj in zadrži."
+    }
+  },
+  "longBreakIdeas": {
+    "aab": {
+      "title": "Stopi stran",
+      "text": "Si kdaj opazili, kako tvoji možgani sami od sebe ugotovijo stvari? Vse, kar je potrebno je, da se odmakneš od računalnika in si vzameš odmor ter razmišljaš o nečem popolnoma nepovezanem."
+    },
+    "aac": {
+      "title": "Mikro premori",
+      "text": "Počitek je ključna sestavina pri zagotavljanju delovanja mišično-skeletnega sistema. Pogosti odmori lahko skrajšajo trajanje naloge in pomagajo zmanjšati izpostavljenost tveganju ergonomskih poškodb."
+    },
+    "aad": {
+      "title": "Meditacija",
+      "text": "Raziskave kažejo, da vaje, ki temeljijo na pozornosti, pomagajo zmanjšati anksioznost, depresijo, stres in bolečino, ter pomagajo izboljšati splošno zdravje, duševno zdravje in kakovost življenja. Nisi prepričan, kako začeti? Obstajajo številne mobilne aplikacije, ki ti bodo pri tem pomagale."
+    },
+    "aae": {
+      "title": "Mežik",
+      "text": "Dolgotrajno gledanje v zaslone povzroči, da manj mežikaš in tako izpostaviš oči zraku. Hitro mežikaj nekaj sekund, da osvežiš solzni sloj in očistiš prah s površine očesa."
+    },
+    "aaf": {
+      "title": "Ergonomija",
+      "text": "Nepravilna višina in kot tipkovnice, miške, monitorja ali delovne površine lahko povzroči zdravstvene težave. Vzemi si časa in preberi o ergonomiji mize."
+    },
+    "aag": {
+      "title": "Premik",
+      "text": "Obstaja mnogo načinov, kako lahko vadiš v svoji pisarni. Poskusi korakati na mestu ali delati sklece ob mizi."
+    },
+    "aah": {
+      "title": "Sprememba",
+      "text": "Ali imaš žogo za sedenje ali dvižno delovno mizo? Razmisli o tem, da bi svoj stol za nekaj časa zamenjal z enim ali drugim."
+    },
+    "aai": {
+      "title": "Opaziti",
+      "text": "Ali sanjariš in ali imaš težave s koncentracijo? To je znak, da si moraš vzeti odmor."
+    },
+    "aaj": {
+      "title": "Tehnologija",
+      "text": "Kaj, ko bi šel na sprehod brez tehnologije?"
+    },
+    "aak": {
+      "title": "Presnova",
+      "text": "Nove raziskave kažejo, da dolgotrajno sedenje med drugim prispeva k tveganju za presnovni sindrom, tveganje za srčni napad in možgansko kap ter splošno tveganje za smrt. Redni odmori za hojo lahko pomagajo tvojemu krvnemu obtoku in delujejo proti nekaterim od teh težav."
+    },
+    "aal": {
+      "title": "Aktivni sestanki",
+      "text": "Kaj, ko bi sestanke prestavil iz sejne sobe v kak drugi prostor? Hoja ne le kuri kalorije, ampak lahko celo spodbudi občutek za sodelovanje."
+    },
+    "aam": {
+      "title": "Sadje",
+      "text": "Vzemi si čas in pojej sadje. Počasi. Opazuj okus, teksturo, svežino."
+    },
+    "aao": {
+      "title": "Odmor za kavo",
+      "text": "Greš na kavo? Vsakič, ko se greš na kavo, naredi vsaj 5 minut hoje."
+    },
+    "aap": {
+      "text": "Kolegom v pisarni ne pošiljaj elektronske pošte ali sporočil, stopi do njih za komunikacijo z njimi.",
+      "title": "Kolegi"
+    },
+    "aaq": {
+      "title": "Učenje",
+      "text": "Raziskovalci NIH so v študiji zdravih prostovoljcev ugotovili, da zgodnji in pogosti kratki odmori, lahko pomagajo našim možganom pri učenju novih veščin."
+    },
+    "aar": {
+      "title": "Telovadba",
+      "text": "Dokazi kažejo, da lahko majhne količine redne vadbe prinesejo dramatične koristi za zdravje, vključno z merljivim zmanjšanjem stresa."
+    },
+    "aas": {
+      "title": "Ponovi",
+      "text": "Si našel svojo rutino raztezanja? Ne pozabi jo ponoviti več kot enkrat, da se boš bolje boril proti posledicam dolgotrajnega sedenja."
+    },
+    "aat": {
+      "text": "Iztegni roke z dlanmi obrnjenimi proti sebi. Nato počasi zavrti dlani, štirikrat v smeri urinega kazalca, nato štirikrat v nasprotni smeri urinega kazalca.",
+      "title": "Zapestje in podlaket"
+    },
+    "aau": {
+      "text": "Roki združi za glavo. Nato ju skupaj dvigni nad glavo in končaj tako, da so dlani obrnjene navzgor.",
+      "title": "Raztezanje hrbta"
+    },
+    "aav": {
+      "title": "Mobilnost",
+      "text": "Za vsakih trideset minut mirovanja, bi moral imeti vsaj eno minuto poživitve."
+    },
+    "aaw": {
+      "text": "Ta vadba vključuje rutine vadb za celotno telo v kratkem časa. Toda, kot pri vsaki vadbi, bodite previdni. Obstajajo mnoge mobilne aplikacije za lažji začetek.",
+      "title": "7-minutna vadba"
+    },
+    "aay": {
+      "title": "Pojdi po stopnicah ",
+      "text": "Študije so pokazale, da pri hoji po stopnicah, ki velja za visoko intenzivno telesno aktivnost, porabiš več kalorij na minuto, kot pri teku."
+    },
+    "aaz": {
+      "title": "Ustvarjaj umetnost",
+      "text": "Znano je, da ima umetniška terapija velike koristi za duševno zdravje, zlasti ko gre za obvladovanje stresa. Kaj, če na hitro napišeš pesem, nekaj fotografiraš ali naslikaš nekaj malega?"
+    },
+    "aba": {
+      "text": "Čist delovni prostor pomaga pri tvoji osredotočenosti pri delu in je pogosto povezan s pozitivnimi čustvi, kot je sreča.",
+      "title": "Razbremenitev"
+    },
+    "abb": {
+      "text": "Narava je povezana s pozitivnimi čustvi ter zmanjšuje stres in tesnobo. Če je možno, poskusi odmor za kosilo izkoristiti zunaj, obkrožen z nekaj zelenja.",
+      "title": "Kosi zunaj"
+    },
+    "abc": {
+      "text": "Če redno uporabljaš javni prevoz, lahko stojiš, namesto da sediš. Če je le možno, poskusi čim več vsakodnevnih potovanj nadomestiti s hojo ali kolesarjenjem.",
+      "title": "Javni prevoz"
+    },
+    "abd": {
+      "title": "Zehanje",
+      "text": "Zehanje je lahko zelo koristno, saj proizvaja solze, ki pomagajo vlažiti in mazati oči."
+    },
+    "abe": {
+      "title": "Sprememba pogleda",
+      "text": "Drži prst blizu očesa in se osredotoči nanj. Počasi ga odmikaj stran, osredotoči se daleč v daljavo in nato nazaj na prst. Pomakni prst nazaj in se zopet osredotoči v daljavo."
+    },
+    "abf": {
+      "title": "Skrivanje v dlaneh",
+      "text": "Sede, se s komolci nasloni na mizo, čim bližje robu. Prepusti se teži, da gornji del trupa pade naprej in položi dlani na oči. Zapri oči in počasi vdihni skozi nos, ter zadrži nekaj sekund. Nadaljuj z globokim dihanjem."
+    },
+    "abg": {
+      "title": "Stisk dlani",
+      "text": "V dlani stisni par zvitih nogavic ali mehko gumijasto žogo in drži 5 sekund. Celoten postopek nekajkrat ponovi."
+    },
+    "abh": {
+      "text": "Nove raziskave kažejo, na možnost uporabe tehnik nadzorovanega počasnega dihanja, kot sredstvo za optimizacijo fizioloških parametrov, za katere se zdi, da so povezani z zdravjem in dolgim življenjem.",
+      "title": "Počasno dihanje"
+    },
+    "aaa": {
+      "title": "Ne sam",
+      "text": "Se težko sam oddahneš? Poskusi to narediti s sodelavcem ali sodelavko. Poleg tega, da se boš lažje držal odmorov, jih boš imeli priložnost bolje spoznati. Skupni odmori povečajo produktivnost."
+    },
+    "aan": {
+      "title": "Stranišče",
+      "text": "Ko greš na stranišče, se sprehodi do najbolj oddaljenega na delovnem mestu."
+    },
+    "aax": {
+      "text": " Zvišaj svoj utrip na 120 utripov na minuto, za 20 zaporednih minut, od štiri do petkrat na teden, s početjem, kateri te veseli. Redno zviševanje srčnega utripa, izboljša zdravje srca in ožilja.",
+      "title": "Utrip"
+    }
   }
 }

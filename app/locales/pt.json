@@ -86,7 +86,7 @@
     "breakWindowHeight": "Altura:",
     "breakWindowWidth": "Largura:",
     "breakWindowSizeInfo": "Qual o percentual do ecrã a janela de pausa deve esconder?",
-    "breakWindowSize": "Tamanho da janela de pausa.",
+    "breakWindowSize": "Tamanho da janela de pausa",
     "opacity": "Opacidade:",
     "opacityInfo": "Quão denso deve ser a janela de pausa?",
     "opacityTheme": "Transparência do tema:",
@@ -213,5 +213,259 @@
     "title": "É hora de fazer uma pausa!",
     "skip": "Pular esta pausa",
     "postpone": "Adiar esta pausa"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Vá pegar um copo de água."
+    },
+    "aab": {
+      "text": "Lentamente, olhe para a esquerda e depois para a direita."
+    },
+    "aac": {
+      "text": "Lentamente, olhe para cima e depois para baixo."
+    },
+    "aad": {
+      "text": "Feche os olhos e respire fundo algumas vezes."
+    },
+    "aae": {
+      "text": "Feche os olhos e relaxe."
+    },
+    "aaf": {
+      "text": "Estique as pernas."
+    },
+    "aag": {
+      "text": "Estique os braços."
+    },
+    "aah": {
+      "text": "Sua postura sentada está correta?"
+    },
+    "aai": {
+      "text": "Vire lentamente a cabeça para o lado e segure por 10 segundos."
+    },
+    "aak": {
+      "text": "Levante-se da cadeira e estique-se."
+    },
+    "aal": {
+      "text": "Focalize seus olhos em um objeto a pelo menos 20 metros de distância."
+    },
+    "aam": {
+      "text": "Reserve um momento para pensar em algo que você aprecia."
+    },
+    "aan": {
+      "text": "Tire um momento para sorrir por estar vivo."
+    },
+    "aap": {
+      "text": "Feche os olhos e conte suas respirações."
+    },
+    "aaq": {
+      "text": "Feche os olhos e nomeie as coisas que você ouve."
+    },
+    "aas": {
+      "text": "Levante o braço direito, estique-o sobre a cabeça para a esquerda e segure por 10 segundos. Repita para o outro lado."
+    },
+    "aau": {
+      "text": "Levante-se e se ajoelhe com uma perna. Segure por 10 segundos e depois faça a outra perna."
+    },
+    "aaw": {
+      "text": "Foque a cada 20 minutos por 20 segundos em um objeto a 6 metros de distância."
+    },
+    "aax": {
+      "text": "Se precisar de ajuda, peça."
+    },
+    "aay": {
+      "text": "Faça uma coisa de cada vez."
+    },
+    "aaz": {
+      "text": "Sua atenção é gasta com sabedoria?"
+    },
+    "aba": {
+      "text": "Mude sua postura sentada."
+    },
+    "abb": {
+      "text": "Exponha os olhos à luz natural."
+    },
+    "abc": {
+      "text": "Com os olhos fechados, lentamente e suavemente levante os olhos para o teto e volte para o chão."
+    },
+    "abd": {
+      "text": "Com os olhos fechados, mova os olhos lentamente e suavemente para a esquerda e depois lentamente para a direita."
+    },
+    "abf": {
+      "text": "Um de cada vez, toque a ponta de cada dedo na ponta do polegar para que eles formem uma forma de O."
+    },
+    "abh": {
+      "text": "Feche o punho e, em seguida, abra os dedos e estique-os o máximo que puder."
+    },
+    "abk": {
+      "text": "Fique de pé com os braços ao seu lado. Aperte as omoplatas juntas e segure."
+    },
+    "abl": {
+      "text": "Fique em pé com os braços levantados ao longo dos ombros. Mova as mãos ligeiramente para trás, segure por um segundo e retorne."
+    },
+    "aaj": {
+      "text": "Incline lentamente a cabeça para o lado e segure por 5-10 segundos."
+    },
+    "aao": {
+      "text": "Uma estação de trabalho verdadeiramente ergonômica é aquela da qual você se afasta regularmente."
+    },
+    "abg": {
+      "text": "Um de cada vez, toque a ponta de cada dedo na ponta do polegar para que eles formem uma forma de O."
+    },
+    "aar": {
+      "text": "Coloque as pontas dos dedos nos ombros. Role os ombros para frente por 10 segundos e depois para trás."
+    },
+    "aat": {
+      "text": "Com a mão direita, pegue cada dedo da mão esquerda e aperte. Repita para o outro lado."
+    },
+    "abe": {
+      "text": "Sacuda as mãos para obter algum alívio."
+    },
+    "abi": {
+      "text": "Sente-se ereto, braços pendurados ao lado do corpo e gire lentamente o pescoço em uma direção em um grande círculo."
+    },
+    "aav": {
+      "text": "Feche os olhos e simplesmente observe o que está ao seu redor no momento atual, sem julgamentos."
+    },
+    "abj": {
+      "text": "Fique em pé e incline lentamente a cabeça em direção ao ombro usando a mesma mão até sentir um alongamento."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Não sozinho",
+      "text": "Você acha difícil fazer uma pausa sozinho? Tente fazer isso com um colega de trabalho. Além de facilitar os intervalos, você terá a chance de conhecê-los melhor. Fazer pausas juntos aumenta a produtividade."
+    },
+    "aac": {
+      "title": "Micropausas",
+      "text": "O descanso é um componente chave para garantir o desempenho do sistema musculoesquelético. Pausas frequentes podem diminuir a duração de uma tarefa e ajudar a diminuir a exposição ao risco de lesões ergonômicas."
+    },
+    "aad": {
+      "title": "Meditação",
+      "text": "Estudos de pesquisa sugerem que os exercícios baseados em atenção plena ajudam a diminuir a ansiedade, a depressão, o estresse e a dor, e ajudam a melhorar a saúde geral, a saúde mental e a qualidade de vida. Não tem certeza de como começar? Existem vários aplicativos para ajudá-lo."
+    },
+    "aae": {
+      "title": "Pisque",
+      "text": "Olhar para as telas por muito tempo faz com que você pisque menos, expondo assim seus olhos ao ar. Pisque rapidamente por alguns segundos para refrescar o filme lacrimal e limpar a poeira da superfície do olho."
+    },
+    "aaf": {
+      "title": "Ergonomia",
+      "text": "Altura e ângulo inadequados do teclado, mouse, monitor ou superfície de trabalho podem causar problemas de saúde. Reserve algum tempo para ler sobre ergonomia de mesa."
+    },
+    "aag": {
+      "title": "Mova",
+      "text": "Há muitas maneiras de se exercitar dentro de seu escritório. Tente marchar no lugar ou fazer flexões na mesa."
+    },
+    "aah": {
+      "title": "Altere",
+      "text": "Você tem uma bola de estabilidade ou mesa de trabalho em pé? Considere substituir sua cadeira por eles por um tempo."
+    },
+    "aai": {
+      "title": "Perceber",
+      "text": "Você está sonhando acordado ou tendo problemas para se concentrar? É um sinal de que você precisa fazer uma pausa."
+    },
+    "aaj": {
+      "title": "Tecnologia",
+      "text": "Que tal fazer uma caminhada sem tecnologia?"
+    },
+    "aak": {
+      "title": "Metabolismo",
+      "text": "Pesquisas emergentes mostram que ficar sentado por longos períodos de tempo contribui para o risco de síndrome metabólica, ataque cardíaco e risco de acidente vascular cerebral e risco geral de morte, entre outros. Fazer pausas regulares para caminhar pode ajudar sua circulação, trabalhando para neutralizar alguns desses problemas."
+    },
+    "aal": {
+      "title": "Reuniões ativas",
+      "text": "Que tal passar as reuniões da sala de conferências para o saguão? Caminhar não apenas queima calorias, mas pode até promover um senso de colaboração."
+    },
+    "aam": {
+      "title": "Fruta",
+      "text": "Tome seu tempo e coma algumas frutas. Devagar. Observe o sabor, a textura, o frescor."
+    },
+    "aan": {
+      "title": "Banheiros",
+      "text": "Caminhe até o banheiro mais distante no local de trabalho ao ir ao banheiro."
+    },
+    "aao": {
+      "text": "Vai fazer uma pausa para o café? Considere fazer uma caminhada de 5 minutos toda vez que for fazer uma.",
+      "title": "Pausa para café"
+    },
+    "aap": {
+      "title": "Colegas",
+      "text": "Não envie e-mails ou mensagens para colegas de escritório, caminhe até suas mesas para se comunicar com eles."
+    },
+    "aaq": {
+      "title": "Aprendendo",
+      "text": "Em um estudo com voluntários saudáveis, pesquisadores do Instituto Nacional de Saúde descobriram que fazer pausas curtas, cedo e com frequência, pode ajudar nossos cérebros a aprender novas habilidades."
+    },
+    "aar": {
+      "title": "Exercício",
+      "text": "Evidências sugerem que pequenas quantidades de exercícios regulares podem trazer benefícios dramáticos à saúde, incluindo a redução mensurável do estresse."
+    },
+    "aas": {
+      "title": "Repetir",
+      "text": "Você encontrou sua rotina de alongamento? Não se esqueça de repetir mais de uma vez para combater melhor os efeitos da sessão prolongada."
+    },
+    "aau": {
+      "title": "Alongamento das costas",
+      "text": "Junte as mãos atrás da cabeça e levante-as juntas acima da cabeça, terminando com as palmas das mãos voltadas para cima."
+    },
+    "aat": {
+      "title": "Pulso e antebraço",
+      "text": "Estenda os braços com as palmas voltadas para você, depois gire lentamente as mãos quatro vezes no sentido horário e quatro vezes no sentido anti-horário."
+    },
+    "aaw": {
+      "title": "Treino de 7 minutos",
+      "text": "Este treino inclui uma rotina de exercícios de corpo inteiro em uma fração do tempo. Mas, como em qualquer exercício, tenha cuidado. Existem vários aplicativos para você começar."
+    },
+    "aav": {
+      "text": "Para cada trinta minutos de estagnação, você deve ter pelo menos um minuto de estimulação.",
+      "title": "Mobilizar"
+    },
+    "aax": {
+      "text": " Aumente sua taxa de pulso para 120 batimentos por minuto por 20 minutos seguidos, quatro ou cinco vezes por semana, fazendo qualquer coisa que você goste. Aumentar regularmente sua frequência cardíaca resulta em melhora da saúde cardiovascular.",
+      "title": "Pulso"
+    },
+    "aaz": {
+      "title": "Fazer arte",
+      "text": "A arteterapia é conhecida por ter grandes benefícios para a saúde mental, especialmente quando se trata de controle do estresse. Que tal escrever um poema rápido, tirar uma foto ou pintar algo pequeno?"
+    },
+    "aay": {
+      "text": "Estudos mostraram que subir escadas, que é considerada atividade física de intensidade vigorosa, queima mais calorias por minuto do que correr.",
+      "title": "Pegue as escadas "
+    },
+    "abb": {
+      "text": "A natureza está ligada a emoções positivas e diminuição do estresse e da ansiedade. Sempre que possível, tente fazer a sua pausa diária para o almoço ao ar livre, rodeado por alguma vegetação.",
+      "title": "Almoço fora"
+    },
+    "aba": {
+      "text": "Um espaço limpo ajuda seu foco no trabalho e muitas vezes está ligado a emoções positivas como felicidade.",
+      "title": "Organizar"
+    },
+    "abc": {
+      "title": "Transporte público",
+      "text": "Se você usa o transporte público regularmente, pode ficar em pé em vez de sentado. Se for possível, tente substituir o máximo possível de suas viagens diárias por caminhadas ou ciclismo."
+    },
+    "abd": {
+      "title": "Bocejo",
+      "text": "Bocejar pode ser muito útil, pois produz lágrimas para ajudar a umedecer e lubrificar os olhos."
+    },
+    "abe": {
+      "title": "Mudança de foco",
+      "text": "Segure um dedo perto do olho e concentre-se nele. Afaste lentamente o dedo, concentre-se ao longe e depois volte ao dedo. Traga o dedo para trás e concentre-se em algo distante."
+    },
+    "abf": {
+      "title": "Apalpar",
+      "text": "Enquanto estiver sentado, apoie os cotovelos na mesa e perto da borda da mesa. Deixe seu peso cair para frente e coloque as mãos sobre os olhos. Feche os olhos e inspire lentamente pelo nariz e segure por alguns segundos. Continue respirando profundamente."
+    },
+    "abh": {
+      "title": "Respiração lenta",
+      "text": "Pesquisas emergentes sugerem potencial para o uso de técnicas de respiração lenta controlada como meio de otimizar parâmetros fisiológicos que parecem estar associados à saúde e à longevidade."
+    },
+    "abg": {
+      "text": "Aperte um par de meias enroladas ou uma bola de borracha macia, segure por 5 segundos. Repita todo o processo algumas vezes.",
+      "title": "Apertos de mão"
+    },
+    "aab": {
+      "title": "Afaste-se",
+      "text": "Você já notou como seu cérebro pode descobrir as coisas por si só? Basta se afastar do computador e fazer uma pausa para pensar em algo totalmente não relacionado."
+    }
   }
 }
