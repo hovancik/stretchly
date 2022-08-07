@@ -13,10 +13,10 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: '16.15.0'
+        node-version: '16.14.2'
     - run: npm install -g npm
     - run: npm install
-    - run: node_modules/.bin/electron-builder --linux snap -c.snap.publish=github
+    - run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
     - name: Setup Snapcraft

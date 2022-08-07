@@ -4,7 +4,7 @@
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
-    "node": "16.15.0"
+    "node": "16.14.2"
   },
   "scripts": {
     "start": "electron ./app",
@@ -125,7 +125,7 @@
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^20.0.1",
+    "electron": "^19.0.9",
     "electron-builder": "^23.3.3",
     "husky": "^8.0.1",
     "mocha": "^10.0.0",

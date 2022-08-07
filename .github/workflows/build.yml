@@ -11,13 +11,13 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-2019]
+        os: [macos-latest, windows-latest]
       fail-fast: false
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
-        node-version: '16.15.0'
+        node-version: '16.14.2'
     - run: npm install npm -g
     - run: npm install
     - run: node_modules/.bin/electron-builder build
