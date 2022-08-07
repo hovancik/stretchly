@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.11.0] - 2022-8-7
 ### Added
 - Japanese translations
 - break ideas are translatable
@@ -13,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - updated many translations
+- no Linux 32 builds, as Electron does not support them anymore
 
 ### Fixed
 - crashing when skipping to break and time to break in tray
@@ -653,7 +655,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.10.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.11.0...HEAD
+[1.11.0]: https://github.com/hovancik/stretchly/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/hovancik/stretchly/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/hovancik/stretchly/compare/v1.8.1...v1.9.0
 [1.8.1]: https://github.com/hovancik/stretchly/compare/v1.8.0...v1.8.1

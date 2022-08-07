@@ -17,9 +17,9 @@ jobs:
         timezoneLinux: Europe/Amsterdam
         timezoneMacos: Europe/Amsterdam
         timezoneWindows: W. Europe Standard Time
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Use Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '16.14.2'
     - run: npm install npm -g
@@ -28,4 +28,4 @@ jobs:
       env:
         CI: true
     - name: Codecov
-      uses: codecov/codecov-action@v1.1.0
+      uses: codecov/codecov-action@v3

@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '16.14.2'
     - run: npm install -g npm
     - run: npm install
-    - run: node_modules/.bin/electron-builder --linux snap -c.snap.publish=github
+    - run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
     - name: Setup Snapcraft
       run: |
           sudo snap install snapcraft --classic
           echo "$SNAP_TOKEN" | snapcraft login --with -
-          snapcraft upload --release=stable ./dist/Stretchly_*.snap
+          snapcraft upload --release=candidate ./dist/Stretchly_*.snap
       env:
         SNAP_TOKEN: ${{secrets.snap_token}}
