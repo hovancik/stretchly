@@ -9,12 +9,12 @@ platform:
 
 steps:
 - name: Build
-  image: amd64/node:16.14.2-buster
+  image: amd64/node:16.15.0-buster
   commands:
   - apt update && apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
   - npm install
   - npm install npm -g
-  - node_modules/.bin/electron-builder build --x64 --ia32
+  - node_modules/.bin/electron-builder build --x64
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
@@ -36,7 +36,7 @@ platform:
 
 steps:
 - name: Build
-  image: arm64v8/node:16.14.2-buster
+  image: arm64v8/node:16.15.0-buster
   commands:
   - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
   - gem install fpm -v 1.10.1
@@ -65,7 +65,7 @@ platform:
 
 steps:
 - name: Build
-  image: arm32v7/node:16.14.2-buster
+  image: arm32v7/node:16.15.0-buster
   commands:
   - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
   - gem install fpm -v 1.10.1

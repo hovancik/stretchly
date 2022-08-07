@@ -496,7 +496,8 @@ function startProcessWin () {
     backgroundThrottling: false,
     webPreferences: {
       preload: path.join(__dirname, './process.js'),
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      sandbox: false
     }
   })
   require('@electron/remote/main').enable(processWin.webContents)
@@ -519,7 +520,8 @@ function createWelcomeWindow (isAppStart = true) {
       backgroundColor: 'EDEDED',
       webPreferences: {
         preload: path.join(__dirname, './welcome.js'),
-        enableRemoteModule: true
+        enableRemoteModule: true,
+        sandbox: false
       }
     })
     require('@electron/remote/main').enable(welcomeWin.webContents)
@@ -550,7 +552,8 @@ function createContributorSettingsWindow () {
     backgroundColor: 'EDEDED',
     webPreferences: {
       preload: path.join(__dirname, './contributor-preferences.js'),
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      sandbox: false
     }
   })
   require('@electron/remote/main').enable(contributorPreferencesWindow.webContents)
@@ -582,7 +585,8 @@ function createSyncPreferencesWindow () {
     backgroundColor: 'whitesmoke',
     webPreferences: {
       preload: path.resolve(__dirname, './electron-bridge.js'),
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      sandbox: false
     }
   })
   require('@electron/remote/main').enable(syncPreferencesWindow.webContents)
@@ -674,7 +678,8 @@ function startMicrobreak () {
       title: 'Stretchly',
       webPreferences: {
         preload: path.join(__dirname, './microbreak.js'),
-        enableRemoteModule: true
+        enableRemoteModule: true,
+        sandbox: false
       }
     }
 
@@ -812,7 +817,8 @@ function startBreak () {
       title: 'Stretchly',
       webPreferences: {
         preload: path.join(__dirname, './break.js'),
-        enableRemoteModule: true
+        enableRemoteModule: true,
+        sandbox: false
       }
     }
 
@@ -1079,7 +1085,8 @@ function createPreferencesWindow () {
     backgroundColor: '#EDEDED',
     webPreferences: {
       preload: path.join(__dirname, './preferences.js'),
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      sandbox: false
     }
   })
   require('@electron/remote/main').enable(preferencesWin.webContents)
@@ -1393,7 +1400,8 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     backgroundColor: 'whitesmoke',
     webPreferences: {
       preload: path.resolve(__dirname, './electron-bridge.js'),
-      enableRemoteModule: true
+      enableRemoteModule: true,
+      sandbox: false
     }
   })
   require('@electron/remote/main').enable(myStretchlyWindow.webContents)
