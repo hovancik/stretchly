@@ -49,12 +49,20 @@ To generate an updated version of this file, `generated-sources.json`, follow th
 
 Make sure to install npm.
 
-    sudo apt install python3-aiohttp npm
+    sudo apt install python3-aiohttp npm pipx
 
 Fetch the Flatpak Node Generator Python script.
 
-    wget -L https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/node/flatpak-node-generator.py
+    git clone https://github.com/flatpak/flatpak-builder-tools.git
+
+Install the Flatpak Node Generator Python utility with `pipx`.
+
+    pipx install flatpak-builder-tools/node
+
+Ensure the Flatpak Node Generator Python is in your `PATH`.
+
+    pipx ensurepath
 
 Run the script against the `package-lock.json` file as shown here.
 
-    python3 flatpak-node-generator.py npm --xdg-layout package-lock.json
+    flatpak-node-generator npm package-lock.json
