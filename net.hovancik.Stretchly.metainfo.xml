@@ -36,6 +36,41 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.11.0" date="2022-08-07">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Japanese translations</li>
+          <li>break ideas are translatable</li>
+          <li>unregister shortcuts on app's quit</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>no Linux 32 builds, as Electron does not support them anymore</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>crashing when skipping to break and time to break in tray</li>
+          <li>Portuguese and Brazilian labels in welcome screen</li>
+          <li>partial minutes in break preferences</li>
+          <li>counting break time when break starts</li>
+          <li>breaks not being finished when exclusion starts</li>
+          <li>incorrect format in logs</li>
+          <li>Preferences bigger then available height</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10.0" date="2022-02-22">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>advanced option for app exclusion check interval</li>
+          <li>build for Apple silicon</li>
+          <li>ability to schedule break from command line</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.9.0" date="2021-12-24">
       <description>
         <p>Fixed</p>
