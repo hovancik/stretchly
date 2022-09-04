@@ -76,7 +76,6 @@
       "target": [
         "AppImage",
         "deb",
-        "flatpak",
         "rpm",
         "freebsd",
         "pacman",
@@ -84,29 +83,6 @@
         "apk"
       ],
       "asarUnpack": "node_modules/macos-notification-state/**"
-    },
-    "flatpak": {
-      "base": "org.electronjs.Electron2.BaseApp",
-      "baseVersion": "21.08",
-      "branch": "trunk",
-      "description": "Stretchly is a cross-platform Electron app that reminds you to take breaks when working on your computer.",
-      "desktop": {
-        "Name": "Stretchly",
-        "Terminal": "false",
-        "Type": "Application",
-        "Icon": "net.hovancik.Stretchly",
-        "StartupWMClass": "Stretchly",
-        "Comment": "The break time reminder app"
-      },
-      "license": "LICENSE",
-      "modules": [
-        "shared-modules/libappindicator/libappindicator-gtk3-12.10.json"
-      ],
-      "runtime": "org.freedesktop.Platform",
-      "runtimeVersion": "21.08",
-      "sdk": "org.freedesktop.Sdk",
-      "synopsis": "The break time reminder app",
-      "useWaylandFlags": true
     },
     "win": {
       "target": [
