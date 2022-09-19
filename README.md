@@ -65,7 +65,7 @@ For portable versions and for Linux/BSD installers, head to [Github Releases pag
 
 #### Linux note
 
-Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` installed should be enough for *Stretchly*.
+Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` (`libappindicator` on Fedora) installed should be enough for *Stretchly*. If the tray icon is not visible when using the Gnome DE, an extension, such as [this](https://extensions.gnome.org/extension/615/appindicator-support/), is required to enable it.
 
 For Natural breaks, you might need some packages too (`libxss-dev`).
 
