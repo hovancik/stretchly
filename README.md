@@ -28,7 +28,7 @@ The latest official **installers** and **portable versions** for macOS, Windows,
 
 You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
 
-If you're using [Alfred](https://www.alfredapp.com) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) to interact with Stretchly.
+If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.raycast.com/) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) or [Raycast Extension](https://www.raycast.com/u-ran/stretchly) to interact with Stretchly.
 
 #### Application Signing
 
@@ -435,6 +435,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - João Barreiros, [@unstablectrl](https://github.com/unstablectrl)
 - Vova Babii, [@JARVIS-VOVA](https://github.com/JARVIS-VOVA)
 - Ben Hammond, [@benhamondmusic](https://github.com/benhammondmusic)
+- Nai You-Ran, [@skyran1278](https://github.com/skyran1278)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
