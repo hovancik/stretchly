@@ -223,7 +223,7 @@
       "text": "Prenez un moment pour penser à quelque chose que vous appréciez."
     },
     "aaj": {
-      "text": "Penchez doucement la tête sur le côté et maintenez pendant 10 secondes."
+      "text": "Penchez doucement la tête sur le côté et maintenez pendant 5 à 10 secondes."
     },
     "aad": {
       "text": "Fermez vos yeux et prenez de longues inspirations."
@@ -238,10 +238,10 @@
       "text": "Allez chercher un verre d'eau."
     },
     "aab": {
-      "text": "Tournez gentiment la tête sur la gauche, puis sur la droite."
+      "text": "Tournez lentement la tête sur la gauche, puis sur la droite."
     },
     "aac": {
-      "text": "Levez gentiment la tête en haut, puis baissez-là tout en bas."
+      "text": "Levez lentement la tête et les yeux vers le haut, puis vers le bas."
     },
     "aae": {
       "text": "Fermez vos yeux et détendez-vous."
@@ -259,13 +259,13 @@
       "text": "Levez-vous de votre chaise et étirez-vous."
     },
     "aal": {
-      "text": "Ré-habituez vos yeux en regardant un objet situé au moins à 20 mètres."
+      "text": "Focalisez vos yeux sur un objet situé au moins à 20 mètres."
     },
     "aan": {
       "text": "Prenez un moment pour sourire d'être en vie."
     },
     "aao": {
-      "text": "Une vraie station de travail ergonomique est celle dont on s'éloigne régulièrement."
+      "text": "Une vraie station de travail ergonomique est une dont on s'éloigne régulièrement."
     },
     "aap": {
       "text": "Fermez vos yeux et comptez vos respirations."
@@ -280,7 +280,7 @@
       "text": "Levez votre bras droit, étirez-le au dessus de votre tête sur la gauche et maintenez pendant 10 secondes. Répétez de l'autre côté."
     },
     "aat": {
-      "text": "Avec votre main droite, attrapez chaque doigt de votre main gauche en les tournant et les serrant. Répétez de l'autre côté."
+      "text": "Avec votre main droite, prenez, un après l'autre, chaque doigt de votre main gauche et enserrez-le. Répétez de l'autre côté."
     },
     "aau": {
       "text": "Levez-vous et faites une fente. Maintenez pendant 10 secondes puis faites pour l'autre jambe."
@@ -296,6 +296,27 @@
     },
     "aba": {
       "text": "Changez votre posture."
+    },
+    "aaw": {
+      "text": "Focalisez vos yeux sur un objet à 20 pieds (6 mètres) de vous, toutes les 20 minutes, pendant 20 secondes."
+    },
+    "abc": {
+      "text": "Les paupières fermées, levez lentement et doucement vos yeux au plafond, puis baissez-les au sol."
+    },
+    "abd": {
+      "text": "Les paupières fermées, déplacez lentement et doucement vos yeux vers la gauche, puis la droite."
+    },
+    "abe": {
+      "text": "Secouez vos mains pour vous détendre un peu."
+    },
+    "abf": {
+      "text": "Un après l'autre, touchez le bout de vos doigts avec la bout de votre pouce. Ils formeront ainsi un cercle."
+    },
+    "abh": {
+      "text": "Formez un poing avec la main, puis déployez et étirez vos doigts le plus possible."
+    },
+    "abj": {
+      "text": "Debout et bien droit, penchez lentement la tête vers une épaule en utilisant la main du même côté; jusqu'à sentir la tension."
     }
   }
 }
