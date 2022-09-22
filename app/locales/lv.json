@@ -52,7 +52,11 @@
     "primary": "Galvenais monitors",
     "showOnMonitor": "Rādīt pārtraukumus uz",
     "screenInfo": "Kad pārtraukumus nerāda uz visiem ekrāniem, Jūs varat izvēlēties uz kura ekrāna pārtraukums tiks rādīts.",
-    "screen": "Pārtraukumu ekrāns"
+    "screen": "Monitors pārtraukumiem:",
+    "timeToBreakInTray": "Laiks pārtraukumam",
+    "showTimeToBreakInTray": "Rādīt laiku līdz nākamajam pārtraukumam izvēlnes joslas ikonā",
+    "currentTimeInBreaks": "Pašreizējais laiks",
+    "showCurrentTimeInBreaks": "Rādīt pašreizējo vietējo laiku pātraukuma logā"
   },
   "main": {
     "syncPreferences": "Iestatījumu Sinhronizācija",
@@ -78,7 +82,7 @@
     "resumingBreaks": "Pārtraukumi tiek atsākti",
     "breakIn": "Garais pārtraukums pēc $t(utils.seconds, {'count': {{seconds}} })",
     "microbreakIn": "Mazais pārtraukums pēc $t(utils.seconds, {'count': {{seconds}} })",
-    "toolTipHeader": "Stretchly - Pārtraukumu atgādinātjs"
+    "toolTipHeader": "Stretchly - Pārtraukumu atgādinātājs"
   },
   "statusMessages": {
     "resuming": "Atsāk Pārtraukumus",
@@ -89,7 +93,8 @@
     "dndMode": "Ieslēgts netraucēt režīms",
     "indefinitely": "Bezgalīgi",
     "paused": "Apstādināts",
-    "appExclusion": "Aplikācijas izņēmumu noteikumi"
+    "appExclusion": "Aplikācijas izņēmumu noteikumi",
+    "afterMiniBreak_other": "pēc {{count}} Īsajiem Pārtraukumiem"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -111,7 +116,13 @@
     "inSeconds": "pēc $t(utils.seconds, {'count': {{seconds}} })",
     "inAboutHoursMinutes": "pēc aptuveni $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
     "inAboutHours": "pēc aptuveni $t(utils.hours, {'count': {{hours}} })",
-    "inAboutMinutes": "pēc aptuveni $t(utils.minutes, {'count': {{minutes}} })"
+    "inAboutMinutes": "pēc aptuveni $t(utils.minutes, {'count': {{minutes}} })",
+    "oclock_other": "plkst. {{count}}",
+    "hours_other": "{{count}} stundas",
+    "none_other": "{{count}}",
+    "percent_other": "{{count}} procenti",
+    "seconds_other": "{{count}} sekundes",
+    "minutes_other": "{{count}} minūtes"
   },
   "welcome": {
     "getStarted": "Sākt",
@@ -210,5 +221,109 @@
     "title": "Laiks pārtraukumam!",
     "skip": "Izlaist šo pārtraukumu",
     "postpone": "Atlikt šo pārtraukumu"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Dodies pēc glāzes ūdens."
+    },
+    "aab": {
+      "text": "Lēnam paskaties uz kreiso pusi, tad uz labo."
+    },
+    "aad": {
+      "text": "Aizver acis un dažas reizes dziļi ieelpo."
+    },
+    "aaf": {
+      "text": "Izstaipi savas kājas."
+    },
+    "aag": {
+      "text": "Izstaipi savas rokas."
+    },
+    "aah": {
+      "text": "Vai tava sēdēšanas poza ir pareiza?"
+    },
+    "aai": {
+      "text": "Lēnām pagriez sāniski galvu uz 10 sekundēm."
+    },
+    "aak": {
+      "text": "Piecelies no sava krēsla un izstaipies."
+    },
+    "aaj": {
+      "text": "Lēnām noliec galvu sāniski un turi to tā 5-10 sekundes."
+    },
+    "aam": {
+      "text": "Veltiet brīdi, lai padomātu par kaut ko, ko novērtējat."
+    },
+    "aaq": {
+      "text": "Aizver acis un nosauc lietas, kuras dzirdi."
+    },
+    "aax": {
+      "text": "Ja tev ir nepieciešama palīdzība, jautā to."
+    },
+    "aay": {
+      "text": "Vienlaicīgi dari tikai vienu lietu."
+    },
+    "aaz": {
+      "text": "Vai tu gudri izmanto savu uzmanību?"
+    },
+    "abb": {
+      "text": "Pakļauj savas acis dabīgajam apgaismojumam."
+    },
+    "aae": {
+      "text": "Aizver acis un atpūties."
+    },
+    "aac": {
+      "text": "Lēnām paskaties uz pašu augšu, tad leju."
+    },
+    "aba": {
+      "text": "Maini savu sēdēšanas pozu."
+    }
+  },
+  "longBreakIdeas": {
+    "aab": {
+      "title": "Atkāpies"
+    },
+    "aad": {
+      "title": "Meditācija"
+    },
+    "aaf": {
+      "title": "Ergonomika"
+    },
+    "aag": {
+      "title": "Kusties"
+    },
+    "aak": {
+      "title": "Vielmaiņa"
+    },
+    "aam": {
+      "title": "Augļi"
+    },
+    "aao": {
+      "title": "Kafijas pauze",
+      "text": "Dodies kafijas pātraukumā? Katru reizi dodoties pēc vienas, apsver doties 5 minūšu pastaigā."
+    },
+    "aap": {
+      "title": "Kolēģi"
+    },
+    "aaq": {
+      "title": "Mācīšanās"
+    },
+    "aaw": {
+      "title": "7 Minūšu Treniņš"
+    },
+    "aax": {
+      "title": "Pulss"
+    },
+    "aay": {
+      "title": "Izmanto kāpnes "
+    },
+    "abb": {
+      "title": "Pusdienas ārā"
+    },
+    "abc": {
+      "title": "Publiskais transports"
+    },
+    "abh": {
+      "title": "Lēna Elpošana"
+    }
   }
 }
