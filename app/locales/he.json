@@ -216,7 +216,7 @@
     "seconds_two": "{{count}} שניות",
     "seconds_many": "{{count}} שניות",
     "seconds_other": "{{count}} שניות",
-    "oclock_one": "שעה בדיוק",
+    "oclock_one": "השעה {{count}} בדיוק",
     "oclock_two": "שעתיים בדיוק",
     "oclock_many": "{{count}} שעות בדיוק",
     "oclock_other": "{{count}} שעות בדיוק",
