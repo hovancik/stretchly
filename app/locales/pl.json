@@ -169,7 +169,8 @@
     "opacity": "Przezroczystość:",
     "timeToBreakInTray": "Czas na przerwę",
     "currentTimeInBreaks": "Aktualny czas",
-    "showCurrentTimeInBreaks": "Pokaż aktualną godzinę w okienku przerwy"
+    "showCurrentTimeInBreaks": "Pokaż aktualną godzinę w okienku przerwy",
+    "showTimeToBreakInTray": "Pokaż czas pozostały do następnej przerwy w ikonie paska zadań"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -227,5 +228,34 @@
     "resuming": "Wznawianie",
     "appExclusion": "Zasada wyjątku aplikacji",
     "afterMiniBreak_other": "po {{count}} Mini Przerwa"
+  },
+  "miniBreakIdeas": {
+    "aac": {
+      "text": "Powoli spójrz w górę, następnie w dół."
+    },
+    "aaa": {
+      "text": "Idź po szklankę wody."
+    },
+    "aab": {
+      "text": "Powoli spójrz w lewo, następnie w prawo."
+    },
+    "aad": {
+      "text": "Zamknij oczy i weź kilka głębokich oddechów."
+    },
+    "aae": {
+      "text": "Zamknij oczy i zrelaksuj się."
+    },
+    "aaf": {
+      "text": "Rozciągnij mięśnie nóg."
+    },
+    "aag": {
+      "text": "Rozciągnij ramiona."
+    },
+    "aah": {
+      "text": "Czy twoja pozycja siedząca jest prawidłowa?"
+    },
+    "aai": {
+      "text": "Powoli skręć głowę w bok i zatrzymaj na 10 sekund."
+    }
   }
 }
