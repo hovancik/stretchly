@@ -185,14 +185,8 @@
     "minutes_other": "{{count}} Minuten",
     "hours_one": "{{count}} Stunde",
     "hours_other": "{{count}} Stunden",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) verbleibend",
-    "aboutMinutesRemaining": "Etwa $t(utils.minutes, {'count': {{minutes}} }) verbleiben",
-    "aboutHoursRemaining": "Etwa $t(utils.hours, {'count': {{hours}} }) verbleiben",
-    "aboutHoursMinutesRemaining": "Etwa $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) verbleiben",
-    "inSeconds": "in $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "in etwa $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "in etwa $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "in etwa $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} verbleibend",
+    "inAbout": "in etwa {{count}}"
   },
   "process": {
     "newVersionAvailable": "Neue Version verfügbar!"

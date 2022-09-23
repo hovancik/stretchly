@@ -174,6 +174,8 @@
     "currentTimeInBreaks": "Aktuálny čas"
   },
   "utils": {
+    "remaining": "{{count}} do konca",
+    "inAbout": "za približne {{count}}",
     "none_one": "{{count}}",
     "none_few": "{{count}}",
     "none_other": "{{count}}",
@@ -191,15 +193,7 @@
     "minutes_other": "{{count}} minút",
     "hours_one": "{{count}} hodinu",
     "hours_few": "{{count}} hodiny",
-    "hours_other": "{{count}} hodín",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) do konca",
-    "aboutMinutesRemaining": "Približne $t(utils.minutes, {'count': {{minutes}} }) do konca",
-    "aboutHoursRemaining": "Približne $t(utils.hours, {'count': {{hours}} }) do konca",
-    "aboutHoursMinutesRemaining": "Približne $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) do konca",
-    "inSeconds": "za $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "za približne $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "za približne $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "za približne $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "hours_other": "{{count}} hodín"
   },
   "process": {
     "newVersionAvailable": "Je dostupná nová verzia!"

@@ -167,14 +167,8 @@
     "minutes_other": "{{count}} minuuttia",
     "hours_one": "{{count}} tuntia",
     "hours_other": "{{count}} tuntia",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) jäljellä",
-    "aboutMinutesRemaining": "Noin $t(utils.minutes, {'count': {{minutes}} }) jäljellä",
-    "aboutHoursRemaining": "Noin $t(utils.hours, {'count': {{hours}} }) jäljellä",
-    "aboutHoursMinutesRemaining": "Noin $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) jäljellä",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) kuluttua",
-    "inAboutMinutes": "noin$t(utils.minutes, {'count': {{minutes}} }) kuluttua",
-    "inAboutHours": "noin $t(utils.hours, {'count': {{hours}} }) kuluttua",
-    "inAboutHoursMinutes": "noin $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) kuluttua"
+    "remaining": "{{count}} jäljellä",
+    "inAbout": "noin {{count}} kuluttua"
   },
   "process": {
     "newVersionAvailable": "Uusi verio on saatavilla!"

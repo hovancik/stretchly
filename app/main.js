@@ -1353,7 +1353,7 @@ ipcMain.on('play-sound', function (event, sound) {
 
 ipcMain.on('show-debug', function (event) {
   const reference = breakPlanner.scheduler.reference
-  const timeleft = Utils.formatTimeRemaining(breakPlanner.scheduler.timeLeft)
+  const timeleft = Utils.formatTimeRemaining(breakPlanner.scheduler.timeLeft, settings.get('language'))
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = breakPlanner.dndManager.isOnDnd

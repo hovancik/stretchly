@@ -156,14 +156,8 @@
     "minutes_other": "{{count}} minutes",
     "hours_one": "{{count}} घण्टा",
     "hours_other": "{{count}} hours",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) बाँकी",
-    "aboutMinutesRemaining": "About $t(utils.minutes, {'count': {{minutes}} }) बाँकी",
-    "aboutHoursRemaining": "About $t(utils.hours, {'count': {{hours}} }) बाँकी",
-    "aboutHoursMinutesRemaining": "About $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) बाँकी",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) मा ।",
-    "inAboutMinutes": "$t(utils.minutes, {'count': {{minutes}} }) पछि सुचारु गरिदै ।",
-    "inAboutHours": "$t(utils.hours, {'count': {{hours}} }) पछि सुचारु गरिदै ।",
-    "inAboutHoursMinutes": "$t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) पछि सुचारु गरिदै ।"
+    "remaining": "{{count}} बाँकी",
+    "inAbout": "{{count}} पछि सुचारु गरिदै ।"
   },
   "process": {
     "newVersionAvailable": "नयाँ संस्करण उपलब्ध छ!"

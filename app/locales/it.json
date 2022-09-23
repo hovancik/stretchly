@@ -185,14 +185,8 @@
     "minutes_other": "{{count}} minuti",
     "hours_one": "{{count}} ora",
     "hours_other": "{{count}} ore",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) rimanenti",
-    "aboutMinutesRemaining": "Circa $t(utils.minutes, {'count': {{minutes}} }) rimanenti",
-    "aboutHoursRemaining": "Circa $t(utils.hours, {'count': {{hours}} }) rimanenti",
-    "aboutHoursMinutesRemaining": "Circa $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) rimanenti",
-    "inSeconds": "fra $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "fra circa $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "fra circa $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "fra circa $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} rimanenti",
+    "inAbout": "fra circa {{count}}"
   },
   "process": {
     "newVersionAvailable": "È disponibile una nuova versione!"

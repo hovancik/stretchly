@@ -139,6 +139,7 @@
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.4.8",
     "electron-store": "^8.1.0",
+    "humanize-duration": "^3.27.3",
     "i18next": "^21.8.16",
     "i18next-fs-backend": "^1.1.4",
     "luxon": "^3.0.1",
