@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - remaining times are more exact
 - only update tray when needed
 
+### Removed
+- no Linux ARM32 builds, as CI does not support them anymore
+
 ## [1.11.0] - 2022-8-7
 ### Added
 - Japanese translations
@@ -23,6 +26,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - updated many translations
+
+### Removed
 - no Linux 32 builds, as Electron does not support them anymore
 
 ### Fixed
