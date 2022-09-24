@@ -201,14 +201,8 @@
     "hours_few": "{{count}} ساعات",
     "hours_many": "{{count}} ساعة",
     "hours_other": "{{count}} ساعة",
-    "inAboutHours": "في حوالي $t(utils.minutes, {'count': {{minutes}} })",
-    "aboutHoursMinutesRemaining": "حوالي $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) المتبقية",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) المتبقية",
-    "inAboutMinutes": "في حوالي $t(utils.minutes, {'count': {{minutes}} })",
-    "aboutMinutesRemaining": "حوالي $t(utils.minutes, {'count': {{minutes}} }) متبقية",
-    "aboutHoursRemaining": "حوالي $t(utils.minutes, {'count': {{minutes}} }) متبقية",
-    "inSeconds": "في $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutHoursMinutes": "في حوالي $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} متبقية",
+    "inAbout": "في حوالي {{count}}"
   },
   "welcome": {
     "title": "مرحبا بك في Stretchly",

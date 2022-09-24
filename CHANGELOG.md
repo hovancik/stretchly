@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - support for Flatpak
 
+### Changed
+- updated many translations
+- remaining times are more exact
+- only update tray when needed
+
 ## [1.11.0] - 2022-8-7
 ### Added
 - Japanese translations

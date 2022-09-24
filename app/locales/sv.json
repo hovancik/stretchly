@@ -179,14 +179,8 @@
     "minutes_other": "{{count}} minuter",
     "hours_one": "{{count}} timme",
     "hours_other": "{{count}} timmar",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) återstår",
-    "aboutMinutesRemaining": "Ungefär $t(utils.minutes, {'count': {{minutes}} }) återstår",
-    "aboutHoursRemaining": "Ungefär $t(utils.hours, {'count': {{hours}} }) återstår",
-    "aboutHoursMinutesRemaining": "Ungefär $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) återstår",
-    "inSeconds": "om $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "om ungefär $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "om ungefär $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "om ungefär $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} återstår",
+    "inAbout": "om ungefär {{count}}"
   },
   "process": {
     "newVersionAvailable": "Ny version är tillgänglig!"

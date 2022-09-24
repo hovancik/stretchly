@@ -1,0 +1,8 @@
+{
+  "main": {
+    "breakIn": "Saib Hir mewn $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly - Yr app atgoffa am saib",
+    "microbreakIn": "Saib Bach mewn $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "Ailgychwyn seibiau"
+  }
+}

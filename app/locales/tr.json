@@ -194,14 +194,8 @@
     "minutes_other": "{{count}} dakika",
     "hours_one": "{{count}} saat",
     "hours_other": "{{count}} saat",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) kaldı",
-    "aboutMinutesRemaining": "Yaklaşık $t(utils.minutes, {'count': {{minutes}} }) kaldı",
-    "aboutHoursRemaining": "Yaklaşık $t(utils.hours, {'count': {{hours}} }) kaldı",
-    "inAboutMinutes": "$t(utils.minutes, {'count': {{minutes}} }) içerisinde",
-    "inAboutHours": "$t(utils.hours, {'count': {{hours}} }) içerisinde",
-    "inAboutHoursMinutes": "$t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) içerisinde",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) içerisinde",
-    "aboutHoursMinutesRemaining": "Yaklaşık $t(utils.hours, {'count': {{hours}} }), $t(utils.minutes, {'count': {{minutes}} }) kaldı"
+    "remaining": "{{remaining}} kaldı",
+    "inAbout": "{{count}} içerisinde"
   },
   "statusMessages": {
     "paused": "Durduruldu",

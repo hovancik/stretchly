@@ -97,7 +97,7 @@
       "learnMore": "深入了解 Stretchly 的功能，请查看教程、下载新版或请求技术支持， ",
       "ourWebsite": "访问官网",
       "dot": ".",
-      "developedBy": "开发者：",
+      "developedBy": "开发者",
       "janH": "Jan Hovancik",
       "designedBy": "图标和用户界面由 Colin Shanley 设计",
       "checkNewVersion": "自动检查应用程序更新"
@@ -179,14 +179,8 @@
     "seconds_other": "{{count}} 秒",
     "minutes_other": "{{count}} 分",
     "hours_other": "{{count}} 时",
-    "secondsRemaining": "还有 $t(utils.seconds, {'count': {{seconds}} })",
-    "aboutMinutesRemaining": "大约还有 $t(utils.minutes, {'count': {{minutes}} })",
-    "aboutHoursRemaining": "大约还有 $t(utils.hours, {'count': {{hours}} })",
-    "aboutHoursMinutesRemaining": "大约还有 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} })后",
-    "inAboutMinutes": "大约 $t(utils.minutes, {'count': {{minutes}} })后",
-    "inAboutHours": "大约 $t(utils.hours, {'count': {{hours}} })后",
-    "inAboutHoursMinutes": "大约 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })后",
+    "remaining": "还有 {{count}}",
+    "inAbout": "大约 {{count}}后",
     "oclock_one": "{{count}} 点钟",
     "seconds_one": "{{count}} 秒",
     "hours_one": "{{count}} 时",
@@ -341,15 +335,15 @@
       "title": "锻炼"
     },
     "aaa": {
-      "title": "不是一个人",
-      "text": "你觉得一个人休息很难吗？ 试着和同事一起做。 除了更容易坚持休息之外，您将有机会更好地了解他们。 一起休息可以提高生产力。"
+      "title": "你不孤单",
+      "text": "你觉得一个人休息很难吗？ 试着和同事一起做。 除了更容易坚持休息之外，你将有机会更好地了解他们。 一起休息可以提高生产力。"
     },
     "aab": {
-      "title": "远离",
+      "title": "远离屏幕",
       "text": "你有没有注意到你的大脑是如何自己解决问题的？ 所需要的只是离开电脑，休息一下，思考一些完全不相关的事情。"
     },
     "aac": {
-      "title": "微断",
+      "title": "小憩",
       "text": "休息是确保肌肉骨骼系统性能的关键组成部分。 频繁的休息可以缩短任务的持续时间，并有助于降低人体工学伤害风险。"
     },
     "aad": {
@@ -377,8 +371,8 @@
       "text": "您是否在做白日梦或难以集中注意力？ 这是你需要休息的信号。"
     },
     "aaj": {
-      "text": "不走技术路线怎么样？",
-      "title": "技术"
+      "text": "来一场不带手机的散步怎么样？",
+      "title": "科技"
     },
     "aak": {
       "title": "代谢",
@@ -393,8 +387,8 @@
       "text": "慢慢来，吃点水果。 慢慢地。 注意味道、质地和新鲜度。"
     },
     "aan": {
-      "title": "浴室",
-      "text": "去洗手间时，步行到工地设施中最远的浴室。"
+      "title": "洗手间",
+      "text": "去洗手间时，步行到工作场所中最远的洗手间。"
     },
     "aao": {
       "title": "咖啡时间",
@@ -429,7 +423,7 @@
       "text": "这项锻炼在很短的时间内就包含在全身锻炼程序中。 但与任何运动一样，要小心。 有许多应用程序可以帮助您入门。"
     },
     "aax": {
-      "title": "脉冲",
+      "title": "脉搏",
       "text": " 每周 4 到 5 次，连续 20 分钟将您的脉搏频率提高到每分钟 120 次，做任何您喜欢的事情。 定期提高心率可以改善心血管健康。"
     },
     "aay": {
@@ -457,15 +451,15 @@
       "text": "打哈欠真的很有帮助，因为它会产生眼泪来帮助滋润和润滑眼睛。"
     },
     "abe": {
-      "title": "重心改变",
+      "title": "改变焦点",
       "text": "将一根手指靠近眼睛并专注于它。 慢慢地将手指移开，将注意力集中在远处，然后再回到手指上。 将手指收回并专注于远处的事物。"
     },
     "abg": {
-      "title": "手挤",
+      "title": "挤手",
       "text": "挤压一双球袜或一个柔软的橡胶球，保持 5 秒钟。 重复整个过程几次。"
     },
     "abh": {
-      "title": "呼吸缓慢",
+      "title": "缓慢呼吸",
       "text": "新兴研究表明，使用受控缓慢呼吸技术作为优化似乎与健康和长寿相关的生理参数的一种手段的潜力。"
     }
   }

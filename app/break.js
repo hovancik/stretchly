@@ -60,7 +60,8 @@ window.onload = (event) => {
         closeElement.style.display =
           Utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'flex' : 'none'
         progress.value = (100 - passedPercent) * progress.max / 100
-        progressTime.innerHTML = Utils.formatTimeRemaining(Math.trunc(duration - Date.now() + started))
+        progressTime.innerHTML = Utils.formatTimeRemaining(Math.trunc(duration - Date.now() + started),
+          settings.get('language'))
       }
     }, 100)
   })

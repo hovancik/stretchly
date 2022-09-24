@@ -69,14 +69,8 @@
     "seconds_other": "{{count}}초",
     "minutes_other": "{{count}}분",
     "hours_other": "{{count}}시간",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) 남았어요",
-    "aboutMinutesRemaining": "약 $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
-    "aboutHoursRemaining": "약 $t(utils.hours, {'count': {{hours}} }) 남았어요",
-    "aboutHoursMinutesRemaining": "약 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) 남았어요",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) 후",
-    "inAboutMinutes": "약 $t(utils.minutes, {'count': {{minutes}} }) 후",
-    "inAboutHours": "약 $t(utils.hours, {'count': {{hours}} }) 후",
-    "inAboutHoursMinutes": "약 $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) 후"
+    "remaining": "{{count}} 남았어요",
+    "inAbout": "약 {{count}} 후"
   },
   "process": {
     "newVersionAvailable": "새로운 버전이 나왔어요!"

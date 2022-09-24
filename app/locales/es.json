@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - Aplicación para notificar cuándo hacer descansos",
-    "microbreakIn": "Descanso Corto en $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Descanso Largo en $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Descanso corto en $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Descanso largo en $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Reanudando descansos",
     "downloadLatestVersion": "Descarga la última versión",
-    "toBreak": "Descanso Largo",
-    "toMicrobreak": "Descanso Corto",
+    "toBreak": "Descanso largo",
+    "toMicrobreak": "Descanso corto",
     "skipToTheNext": "Saltar hasta el siguiente",
     "resume": "Reanudar",
     "pause": "Pausar",
@@ -17,13 +17,13 @@
     "indefinitely": "Indefinidamente",
     "resetBreaks": "Restablecer descansos",
     "quitStretchly": "Salir de Stretchly",
-    "restoreDefaults": "Restaurar por defecto",
+    "restoreDefaults": "Restaurar valores predeterminados",
     "warning": "Esto restaurará los valores predeterminados de la aplicación y se perderán todas sus configuraciones.",
     "continue": "Continuar",
     "cancel": "Cancelar",
     "preferences": "Configuración",
-    "contributorPreferences": "Configuración de Colaborador",
-    "syncPreferences": "Configuración de Sincronización"
+    "contributorPreferences": "Configuración de colaborador",
+    "syncPreferences": "Configuración de sincronización"
   },
   "break": {
     "postpone": "Posponer este descanso",
@@ -37,7 +37,7 @@
       "schedule": "Horario",
       "theme": "Tema",
       "about": "Acerca de",
-      "heart": "Amo Stretchly"
+      "heart": "Me encanta Stretchly"
     },
     "settings": {
       "openAtLogin": "Iniciar Stretchly automáticamente al iniciar sesión",
@@ -52,22 +52,22 @@
       "restoreDefaults": "Restaurar valores predeterminados"
     },
     "schedule": {
-      "miniBreaks": "Descansos Cortos:",
-      "miniBreaksInfo": "Los Descansos Cortos son breves pausas que se toman con regularidad para darle la oportunidad de estirarse y relajarse.",
-      "enableMiniBreaks": "Habilitar Descansos Cortos",
-      "breakFor": "Descansar por:",
+      "miniBreaks": "Descansos cortos:",
+      "miniBreaksInfo": "Los Descansos cortos son breves pausas que se toman con regularidad para darle la oportunidad de estirarse y relajarse.",
+      "enableMiniBreaks": "Habilitar Descansos cortos",
+      "breakFor": "Descansar durante:",
       "every": "Cada:",
-      "showNotificationBeforeMiniBreak": "Mostrar notificación antes de que comience un Descanso Corto",
-      "enablePostponeMini": "Habilitar Postergación para Descansos Cortos",
-      "longBreaks": "Descansos Largos:",
-      "longBreaksInfo": "Los Descansos Largos se toman con menos regularidad, pero son de mayor duración, lo que le permite tomar un descanso prolongado de su trabajo.",
-      "enableLongBreaks": "Habilitar Descansos Largos",
-      "showNotificationBeforeLongBreak": "Mostrar notificación antes de que comience un Descanso Largo",
-      "enablePostponeLong": "Habilitar Postergación para Descansos Largos",
-      "strictMode": "Modo Estricto:",
-      "strictModeInfo": "El Modo Estricto evita que te saltes los Mini Breaks o Long Breaks y está diseñado para ayudar a la disciplina.",
-      "enableStrictMini": "Habilitar Modo Estricto para Descansos Cortos",
-      "enableStrictLong": "Habilitar Modo Estricto para Descansos Largos",
+      "showNotificationBeforeMiniBreak": "Mostrar notificación antes de que comience un Descanso corto",
+      "enablePostponeMini": "Habilitar postergación para Descansos cortos",
+      "longBreaks": "Descansos largos:",
+      "longBreaksInfo": "Los Descansos largos se toman con menos regularidad, pero son de mayor duración, lo que le permite tomar un descanso prolongado de su trabajo.",
+      "enableLongBreaks": "Habilitar Descansos largos",
+      "showNotificationBeforeLongBreak": "Mostrar notificación antes de que comience un Descanso largo",
+      "enablePostponeLong": "Habilitar Postergación para Descansos largos",
+      "strictMode": "Modo estricto:",
+      "strictModeInfo": "El Modo estricto evita que te saltes los Descansos cortos o largos y está diseñado para ayudar a la disciplina.",
+      "enableStrictMini": "Habilitar Modo estricto para Descansos cortos",
+      "enableStrictLong": "Habilitar Modo estricto para Descansos largos",
       "cantDisableBoth": "No puedes deshabilitar los dos tipos de descansos"
     },
     "theme": {
@@ -77,33 +77,33 @@
       "graphiteCrystal": "Cristal de grafito",
       "coffeeKisses": "Besos de café",
       "morningSwim": "Baño matutino",
-      "transparentMode": "Habilitar Transparencia",
+      "transparentMode": "Habilitar transparencia",
       "sounds": "Sonidos:",
       "enableSounds": "Habilitar sonidos",
       "crystalGlass": "Copa de cristal",
       "windChime": "Campanilla de viento",
       "ticToc": "Tic, tac",
-      "menubarIcon": "Icono de Barra de Menú:",
+      "menubarIcon": "Icono de barra de menú:",
       "colour": "Color",
       "monochrome": "Monocromático",
-      "invertedMonochrome": "Monocromático Invertido",
+      "invertedMonochrome": "Monocromático invertido",
       "snowWhite": "Blanco nieve"
     },
     "about": {
       "tagline": "Aplicación para notificar cuándo hacer descansos",
       "version": "Versión ",
-      "latestVersion": "Ultima versión ",
+      "latestVersion": "Última versión ",
       "notifyNewVersion": "Notificar automáticamente las actualizaciones en la aplicación",
       "learnMore": "Para obtener más información sobre las funciones de Stretchly, vea un tutorial, descargue la última versión o contáctenos para obtener ayuda, ",
       "ourWebsite": "visite nuestro sitio web",
       "dot": ".",
       "developedBy": "Desarrollado por",
       "janH": "Jan Hovancik",
-      "designedBy": "Diseño de Icono e Interfaz de Usuario por Colin Shanley",
+      "designedBy": "Diseño de icono e interfaz de usuario por Colin Shanley",
       "checkNewVersion": "Comprobar actualizaciones de la app automáticamente"
     },
     "heart": {
-      "loveStretchly": "¿Amas tu Stretchly?",
+      "loveStretchly": "¿Te encanta tu Stretchly?",
       "desc1": "Está científicamente comprobado que tomar descansos regulares al usar una computadora es importante para su bienestar físico y mental.",
       "desc2": "Stretchly es gratis. Pero puedes brindar tu apoyo donando y ayudándonos a continuar mejorando Stretchly y lanzando otro software gratuito.",
       "becomePatron": "Conviértete en un patrocinador",
@@ -114,35 +114,35 @@
     }
   },
   "contributorPreferences": {
-    "0": "Primer Monitor",
-    "1": "Segundo Monitor",
+    "0": "Primer monitor",
+    "1": "Segundo monitor",
     "2": "Tercer monitor",
     "3": "Cuarto monitor",
     "4": "Quinto monitor",
-    "title": "Configuración de Colaborador",
+    "title": "Configuración de colaborador",
     "notifications": "Notificaciones de descansos:",
     "notificationsInfo": "Las notificaciones del sistema se muestran antes de los descansos para que te prepares para ellos.",
-    "beforeLongBreak": "Descanso Largo:",
-    "beforeMiniBreak": "Descanso Corto:",
-    "newVersion": "Nueva Versión:",
+    "beforeLongBreak": "Descanso largo:",
+    "beforeMiniBreak": "Descanso corto:",
+    "newVersion": "Nueva versión:",
     "newVersionNotification": "Notificar cuando haya una nueva versión disponible",
     "customIdeas": "Ideas personalizadas:",
     "customIdeasInfo": "Le permite usar ideas personalizadas para los descansos editando el archivo de configuración. (Para usuarios avanzados.)",
     "useIdeasFromSettings": "Utilice ideas de descansos del archivo de configuración",
     "breakPostpone": "Aplazamiento de descansos:",
-    "breakPostponeInfo": "Si está habilitado en las Preferencias principales, puede posponer los descansos. Las siguientes configuraciones le permiten especificar cuándo, por cuánto tiempo y cuántas veces puede posponer un descanso.",
-    "miniBreaks": "Descansos Cortos:",
-    "postponableFor": "Posponer para:",
-    "postponeFor": "Posponer por:",
-    "maxPostpones": "Máximo de aplazamientos:",
-    "longBreaks": "Descansos Largos:",
+    "breakPostponeInfo": "Si está habilitado en las preferencias principales, puede posponer los descansos. Las siguientes configuraciones le permiten especificar cuándo, por cuánto tiempo y cuántas veces puede posponer un descanso.",
+    "miniBreaks": "Descansos cortos:",
+    "postponableFor": "Aplazable durante:",
+    "postponeFor": "Aplazar durante:",
+    "maxPostpones": "Número máximo de aplazamientos:",
+    "longBreaks": "Descansos largos:",
     "pauseUntilMoring": "Pausa hasta la mañana:",
     "pauseUntil": "Pausa hasta:",
     "pauseUntilMorningInfo": "Especifique hasta qué hora debe detenerse 'Pausa hasta mañana'.",
     "welcomeWindow": "Ventana de bienvenida:",
     "showWelcomeWindow": "Mostrar ventana de bienvenida en el próximo inicio",
     "opacityTheme": "Transparencia del tema:",
-    "opacityInfo": "¿Qué tan sólida debe ser la ventana de descansos?",
+    "opacityInfo": "¿Cuán sólida debe ser la ventana de descansos?",
     "opacity": "Opacidad:",
     "breakWindowSize": "Tamaño de ventana de descansos",
     "breakWindowSizeInfo": "¿Qué porcentaje de la pantalla debería ocultar la ventana de descansos?",
@@ -150,10 +150,10 @@
     "breakWindowHeight": "Alto:",
     "sounds": "Sonidos:",
     "volume": "Volumen:",
-    "miniBreakStartSound": "Reproducir sonido de final de pausa también al comienzo de Descanso Corto",
-    "longBreakStartSound": "Reproducir sonido de final de pausa también al comienzo de Descanso Largo",
+    "miniBreakStartSound": "Reproducir sonido de final de pausa también al comienzo de Descanso corto",
+    "longBreakStartSound": "Reproducir sonido de final de pausa también al comienzo de Descanso largo",
     "naturalBreaks": "Descansos naturales:",
-    "naturalBreaksInfo": "Si el monitor del tiempo de inactividad está habilitado en las Preferencias Principales, puede especificar después de qué tiempo se deben pausar los descansos.",
+    "naturalBreaksInfo": "Si el monitor del tiempo de inactividad está habilitado en las Preferencias principales, puede especificar después de qué tiempo se deben pausar los descansos.",
     "pauseAfter": "Pausa después:",
     "appearance": "Apariencia:",
     "light": "Claro",
@@ -161,7 +161,7 @@
     "system": "Sistema",
     "showBreaksAsRegularWindowsTitle": "Comportarse como ventana normal:",
     "cursor": "Seguir cursor",
-    "primary": "Monitor Primario",
+    "primary": "Monitor primario",
     "showOnMonitor": "Habilitado mostrar los descansos",
     "screenInfo": "Cuando se deshabilita la visualización de pausas en todos los monitores, puede elegir en cuál le gustaría mostrar sus pausas.",
     "screen": "Monitor para descansos:",
@@ -185,33 +185,27 @@
     "minutes_other": "{{count}} minutos",
     "hours_one": "{{count}} hora",
     "hours_other": "{{count}} horas",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) restantes",
-    "aboutMinutesRemaining": "Cerca de $t(utils.minutes, {'count': {{minutes}} }) restantes",
-    "aboutHoursRemaining": "Cerca de $t(utils.hours, {'count': {{hours}} }) restantes",
-    "aboutHoursMinutesRemaining": "Cerca de $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) restantes",
-    "inSeconds": "en $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "aproximadamente en $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "aproximadamente en $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "aproximadamente en $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} restantes",
+    "inAbout": "aproximadamente en {{count}}"
   },
   "process": {
-    "newVersionAvailable": "Nueva versión disponible!"
+    "newVersionAvailable": "¡Nueva versión disponible!"
   },
   "welcome": {
     "title": "Bienvenido a Stretchly",
     "breakTimeReminderApp": "Aplicación para notificar cuándo hacer descansos",
-    "viewTutorial": "Ver Tutorial",
-    "openPreferences": "Abrir Configuración",
+    "viewTutorial": "Ver tutorial",
+    "openPreferences": "Abrir configuración",
     "getStarted": "Empezar"
   },
   "statusMessages": {
     "paused": "Pausado",
     "indefinitely": "Indefinidamente",
     "dndMode": "No molestar está activado",
-    "nextLongBreak": "Próximo Descanso Largo",
-    "nextMiniBreak": "Próximo Descanso Corto",
-    "afterMiniBreak_one": "depués de {{count}} Descanso Corto",
-    "afterMiniBreak_other": "depués de {{count}} Descansos Cortos",
+    "nextLongBreak": "Próximo Descanso largo",
+    "nextMiniBreak": "Próximo Descanso corto",
+    "afterMiniBreak_one": "depués de {{count}} Descanso corto",
+    "afterMiniBreak_other": "depués de {{count}} Descansos cortos",
     "resuming": "Reanudando",
     "appExclusion": "Regla de exclusión de aplicacion"
   },
@@ -224,6 +218,249 @@
     },
     "aac": {
       "text": "Mira lenta y completamente hacia arriba, luego hacia abajo."
+    },
+    "aaf": {
+      "text": "Estira las piernas."
+    },
+    "aad": {
+      "text": "Cierra los ojos y respira profundamente varias veces."
+    },
+    "aae": {
+      "text": "Cierra los ojos y relájate."
+    },
+    "aaj": {
+      "text": "Dobla el cuello a cada lado lentamente y mantén la postura entre 5 y 10 segundos."
+    },
+    "aah": {
+      "text": "¿Estás sentado correctamente?"
+    },
+    "aap": {
+      "text": "Cierra los ojos y cuenta las respiraciones."
+    },
+    "aaq": {
+      "text": "Cierra los ojos y nombra las cosas que oyes."
+    },
+    "aar": {
+      "text": "Cololca la punta de los dedos en tus hombros. Gira los hombros hacia delante durante 10 segundos, y después hacia atrás."
+    },
+    "aay": {
+      "text": "Haz una cosa cada vez."
+    },
+    "aau": {
+      "text": "Ponte en pie y da una zancada. Mantén la postura 10 segundos y después cambia de pierna."
+    },
+    "abf": {
+      "text": "Uno a uno, toca con la punta de cada dedo la punta del pulgar para formar una O."
+    },
+    "abh": {
+      "text": "Cierra la mano en un puño y después ábrela estirando y girando los dedos todo lo que puedas."
+    },
+    "abk": {
+      "text": "Ponte en pie con los brazos a los lados. Mueve los hombros hacia atrás juntando las paletillas y mantén la postura."
+    },
+    "aag": {
+      "text": "Estira los brazos."
+    },
+    "aai": {
+      "text": "Gira la cabeza a cada lado lentamente y manten la postura 10 segundos."
+    },
+    "aak": {
+      "text": "Levántate de la silla y estírate."
+    },
+    "aal": {
+      "text": "Enfoca un objeto que esté a 20 metros o más."
+    },
+    "aam": {
+      "text": "Piensa un momento en algo que aprecies."
+    },
+    "aan": {
+      "text": "Tómate un momento para sonreir por estar vivo."
+    },
+    "aao": {
+      "text": "Un puesto de trabajo ergonóico es aquél del que te apartas de vez en cuando."
+    },
+    "aas": {
+      "text": "Sube el brazo derecho, estíralo sobre tu cabeza hacia la derecha y mantén la postura 10 segundos. Repite por el otro lado."
+    },
+    "aat": {
+      "text": "Con la mano derecha, agarra uno a uno cada dedo de la mano izquierda y aprietalo. Repite con la otra mano."
+    },
+    "aav": {
+      "text": "Cierra los ojos y tan solo siente cualquier coasa que suceda en ese momento, sin juzgar."
+    },
+    "aaw": {
+      "text": "Enfoca cada 20 minutos y durante 20 segundos un objeto a 6 metros de distancia."
+    },
+    "aax": {
+      "text": "Si necesitas ayuda, pídela."
+    },
+    "aaz": {
+      "text": "¿Estás dedicando tu atención sabiamente?"
+    },
+    "aba": {
+      "text": "Cambia tu postura sentado."
+    },
+    "abb": {
+      "text": "Expón tus ojos a la luz natural."
+    },
+    "abc": {
+      "text": "Con los ojos cerrados, con cuidado y lentamente eleva la mirada al cielo y al suelo alternatiamente."
+    },
+    "abd": {
+      "text": "Con los ojos cerrado, con cuidado y lentamente mueve los ojos a la izquierda y luego a la derecha."
+    },
+    "abe": {
+      "text": "Sacude las manos para aliviarlas."
+    },
+    "abg": {
+      "text": "Cierra la mano en un puño y luego ve abríendola llevando los dedos hacia arriba, como si le dijeras a alguien que parara."
+    },
+    "abi": {
+      "text": "Siéntate derecho, con los brazo colgando a los lados, y rota la cabeza lentamente haciendo círculos amplios."
+    },
+    "abl": {
+      "text": "Ponte en pie con los brazos alzados a la altura de los hombros. Mueve las manos hacia la espalda, mantén un segundo y vuelve."
+    },
+    "abj": {
+      "text": "Ponte en pie, cruza el brazo derecho sobre la cabeza ycoloca la mano sobre la oreja izquierda, dobla la cabeza hacia el hombro derecho hasta notar el estiramiento. Repite con el otro brazo."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Solo no",
+      "text": "¿Se te hace difícil tomarte un descanso solo? Inenta hacerlo con algún compañero de trabajo. Además de hacer más fácil el tomar un descanso, tendrás la oportunidad de conocerlos mejor. Tomar descansos juntos incrementa la productividad."
+    },
+    "aac": {
+      "title": "Microdescansos",
+      "text": "El descanso es una pieza clave para asegurar el buen funcionameinto del sistema muscoloesquelético. Los descansos frecuentes pueden reducir la duración de una tarea y disminuir el riesgo de lesión ergonómica."
+    },
+    "aab": {
+      "text": "¿Has notado cómo tu mente puede resolver cosas por sí misma? Todo lo que se necesita es alejarse del ordenador y tomar un descanso para pensar sobre algo completamente distinto.",
+      "title": "Aléjate"
+    },
+    "aad": {
+      "text": "Diversas investigaciones sugieren que los ejercicios basados en la contemplación ayudan a reducir la ansiedad, la depresión, el estrés, el dolor, y ayudan a mejorar la salud general, la salud mental, y la calidad de vida. ¿No sabes cómo empezar? Hay muchas apps para ayudarte.",
+      "title": "Meditación"
+    },
+    "aae": {
+      "text": "Mirar a las pantallas durante un tiempo prolongado hace que parpadees menos, y por tanto expones los ojos al aire. Parpadea rápido durante unos segundos para reponer la humedar sobre la córnea y limpiar el polvo de la superficie del ojo.",
+      "title": "Parpadear"
+    },
+    "aaf": {
+      "text": "Un ángulo o altura incorrectos del teclado, el ratón, el monitor o de la superficie de trabajo puede causar problemas de salud. Toma un tiempo para leer sobre la ergonoía del puesto de trabajo.",
+      "title": "Ergonomía"
+    },
+    "aai": {
+      "text": "¿Te duermes durante el día o tienes probemas para enfocar? Es un signo de que necesitas un descanso.",
+      "title": "Notar"
+    },
+    "aak": {
+      "text": "Nuevas investigaciones muestran que estar sentado durante largos peridos de tiempo contribuye al riesgo de síndrome metabólico, al riesgo de ataques al corazón y en conjunto al riesgo de muerte, entre otros. Tomar descansos regulares caminando puede ayudar a la circulación, contribuyendo a contrarestar esos problemas.",
+      "title": "Metabolismo"
+    },
+    "aam": {
+      "text": "Come algo de frunta. Lentamente. Nota el sabor, la textura, la frescura.",
+      "title": "Fruta"
+    },
+    "aao": {
+      "text": "¿Vás a tomar un café? Considera caminar durante 5 minutos cada vez que vas a por uno.",
+      "title": "Descanso para un café"
+    },
+    "aan": {
+      "text": "Camina al baño más alejado en tu lugar de trabajo cuando te dirijes al lugar de descanso.",
+      "title": "Baños"
+    },
+    "aap": {
+      "title": "Compañeros",
+      "text": "No envíes un correos electrónico o mensajes a los compañeros de la oficina, camina hasta sus mesas para hablar con ellos."
+    },
+    "aaq": {
+      "title": "Aprender",
+      "text": "En un estudio de voluntarios sanos, el investigadores del NIH encontraron que tomar descansos cortos regularmente, puede ayudar a nuestra mente a aprender nuevas habilidades."
+    },
+    "aar": {
+      "text": "Las evidencias sugieren que el ejercicio regular en pequeñas cantidades puede aportar grandes beneficios a la salud, incluyendo reducciones apreciables del estrés.",
+      "title": "Ejercicio"
+    },
+    "aaw": {
+      "text": "Esta rutina contempla un conjunto de ejercicios completos para todo el cuerpo en una fracción de tiempo. Pero como con cualquier ejerción, ten cuidado. Hay muchas apps para que comiences.",
+      "title": "Rutina de 7 minutos"
+    },
+    "aax": {
+      "text": " Aumenta el pulso hasta los 120 latidos por minutos durante 20 minutos seguidos cuatro o cinco veces por semana haciendo cualquier cosa que te guste. Aumentar el ritmo cardiaco tiene como resultado mejorar la salud cardiovascular.",
+      "title": "Pulso"
+    },
+    "aay": {
+      "text": "Estudios han desmostrado que subir escales, que se considera una actividad física intensa, quema más calorías por minuto que la carrera ligera.",
+      "title": "Coge las escaleras "
+    },
+    "aaz": {
+      "text": "La terapia con arte se sabe que tiene beneficios para la salud mental, especialmente cuando se emplea para gestionar el estrés. ¿Qué te parece escribir un poema rápido, tomar una fotografía o pintar algo pequeño?",
+      "title": "Practicar el arte"
+    },
+    "abb": {
+      "title": "Almuerzo fuera",
+      "text": "La naturaleza está ligada a las emociones positivas y disminuye el estrés y la ansiedad. Siempre que se aposible, intenta almorzar fuera, rodeado de algo de naturaleza."
+    },
+    "abc": {
+      "text": "Si usas el transporte público regularmente, puedes permanecere de pie en vez de sentado. Si es posible, intenta hacer todos los desplazamientos que puedas camiando o en bici.",
+      "title": "Transporte público"
+    },
+    "abe": {
+      "text": "Mantén undedo cerca de un ojo y enfócalo. Lentamente aleja el dedo todo lo que puedas , enfoca a lo lejos y de nuevo en el dedo. Acerca de nuevo el dedo al ojo y enfoca algo a lo lejos.",
+      "title": "Cambio de foco"
+    },
+    "abh": {
+      "title": "Respiración lenta",
+      "text": "Nuevas investigaciones sugieran el uso potencial de técnicas de respiración lenta controlada como medio de optimizar parámetros sicológicos que aparecen asociados a la salud y la longevidad."
+    },
+    "abg": {
+      "text": "Aprieta un par de calcetines rellenos o de bolas de goma/esponja, mantén durante 5 segundos. Repetir todo el proceso varias veces.",
+      "title": "Estrujar las manos"
+    },
+    "aag": {
+      "title": "Moverse",
+      "text": "Hay muchas formas de hacer ejercio en la oficina. Intenta marchar en el sitio o levantarte varias veces de la silla."
+    },
+    "aah": {
+      "title": "Cambiar",
+      "text": "¿Tienes un balón de ejercicios o un escritorio de trabajo para estar de pie? Considera cambiar tu silla de escritorio por alguno de ellos durante un tiempo."
+    },
+    "aaj": {
+      "title": "Tecnología",
+      "text": "¿Qué te parece dar un paseo desengancahdo de la tecnología?"
+    },
+    "aal": {
+      "title": "Reuniones activas",
+      "text": "¿Qué te parece trasladar las reuniones de la sala de conferencias al vestíbulo? Caminar no solo quema calorías sino que mejora la sensación de colaboración."
+    },
+    "aas": {
+      "title": "Repetir",
+      "text": "¿Has hayado tu rutina de estiramientos? No olvides repetirlos más de una vez para combatir mejor los efectos del sedentarismo."
+    },
+    "aat": {
+      "title": "Muñeca y antebrazo",
+      "text": "Extiende los brazos con las palmas hacia ti, rota entonces lentamente las manos cuatro veces en el sentido de las agujas del reloj, y después cuatro veces en sentido contrario."
+    },
+    "aau": {
+      "title": "Estirar la espalda",
+      "text": "Une las manos detrás de la cabeza, elevalas a continuación sobre tu cabeza acabando con las palmas hacia arriba."
+    },
+    "aav": {
+      "title": "Movilización",
+      "text": "Por cada treinta minutos de que estás parado, deberías moverte al menos un minuto."
+    },
+    "aba": {
+      "title": "Despejar",
+      "text": "Un espacio limpio ayuda a enfocar el trabajo y a menudo está ligado a las emociones positivas como la felicidad."
+    },
+    "abd": {
+      "title": "Bostezar",
+      "text": "Bostezar puede ayudar, ya que prodduce lágrimas que humedecen y lubrican los ojos."
+    },
+    "abf": {
+      "title": "Palmas",
+      "text": "Sentado, colola los codos en la mesa cerca del borde. Échate hacia delante colocando las manos sobre los ojos. Cierra los ojos, inhala lentamente por la nariz y aguanta unos segundos. Continua respirando profundamente."
     }
   }
 }
