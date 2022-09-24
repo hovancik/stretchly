@@ -6,6 +6,8 @@ After=default.target
 Type=simple
 ExecStartPre=/bin/sleep 1
 ExecStart=/usr/bin/stretchly
+# Flatpak
+# ExecStart=flatpak run net.hovancik.Stretchly
 Restart=on-failure
 RestartSec=10
 KillMode=process

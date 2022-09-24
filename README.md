@@ -435,6 +435,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - João Barreiros, [@unstablectrl](https://github.com/unstablectrl)
 - Vova Babii, [@JARVIS-VOVA](https://github.com/JARVIS-VOVA)
 - Ben Hammond, [@benhamondmusic](https://github.com/benhammondmusic)
+- Jordan Williams, [@jwillikers](https://github.com/jwillikers)
 - Nai You-Ran, [@skyran1278](https://github.com/skyran1278)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).

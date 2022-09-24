@@ -6,3 +6,7 @@ coverage
 .history
 .vscode
 .idea
+.flatpak-builder/
+*build-dir/
+repo/
+flatpak-node-generator.py

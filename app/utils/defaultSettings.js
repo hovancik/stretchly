@@ -1,5 +1,6 @@
 const defaultBreakIdeas = require('./defaultBreakIdeas')
 const defaultMicrobreakIdeas = require('./defaultMicrobreakIdeas')
+const Utils = require('./utils')
 
 module.exports = {
   microbreakDuration: 20000,
@@ -35,7 +36,7 @@ module.exports = {
   allScreens: true,
   useIdeasFromSettings: false,
   language: 'en',
-  notifyNewVersion: true,
+  notifyNewVersion: !Utils.insideFlatpak(),
   isFirstRun: true,
   posLatitude: 0.0,
   posLongitude: 0.0,
@@ -49,7 +50,7 @@ module.exports = {
   endBreakShortcut: 'CmdOrCtrl+X',
   breakWindowWidth: 0.85,
   breakWindowHeight: 0.85,
-  checkNewVersion: true,
+  checkNewVersion: !Utils.insideFlatpak(),
   breakIdeas: defaultBreakIdeas,
   microbreakIdeas: defaultMicrobreakIdeas,
   showBreaksAsRegularWindows: false,

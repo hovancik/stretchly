@@ -1,0 +1,19 @@
+name: Flatpak Lint
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install the required packages
+        run: sudo apt -y install appstream-util desktop-file-utils
+      - name: Verify the AppStream metadata file
+        run: appstream-util validate net.hovancik.Stretchly.metainfo.xml
+      - name: Verify the desktop file
+        run: desktop-file-validate net.hovancik.Stretchly.desktop

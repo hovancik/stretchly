@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Stretchly
+Exec=run.sh %U
+Terminal=false
+Type=Application
+Icon=net.hovancik.Stretchly
+StartupWMClass=Stretchly
+Comment=The break time reminder app
+Categories=Utility;
