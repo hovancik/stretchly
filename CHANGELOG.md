@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.12.0] - 2022-9-24
 ### Added
 - support for Flatpak
 
@@ -662,7 +664,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.11.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.12.0...HEAD
+[1.11.0]: https://github.com/hovancik/stretchly/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/hovancik/stretchly/compare/v1.10.0...v1.11.0
 [1.10.0]: https://github.com/hovancik/stretchly/compare/v1.9.0...v1.10.0
 [1.9.0]: https://github.com/hovancik/stretchly/compare/v1.8.1...v1.9.0
