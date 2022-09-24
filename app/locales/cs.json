@@ -187,14 +187,8 @@
     "hours_one": "{{count}} hodinu",
     "hours_few": "{{count}} hodiny",
     "hours_other": "{{count}} hodin",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) do konce",
-    "aboutMinutesRemaining": "Přibližně $t(utils.minutes, {'count': {{minutes}} }) do konce",
-    "aboutHoursRemaining": "Přibližně $t(utils.hours, {'count': {{hours}} }) do konce",
-    "aboutHoursMinutesRemaining": "Přibližně $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) do konce",
-    "inSeconds": "za $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "za přibližně $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "za přibližně $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "za přibližně $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "remaining": "{{count}} do konce",
+    "inAbout": "za přibližně {{count}}"
   },
   "process": {
     "newVersionAvailable": "Je dostupná nová verze!"

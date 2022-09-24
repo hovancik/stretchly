@@ -161,14 +161,8 @@
     "minutes_other": "{{count}} perc",
     "hours_one": "{{count}} óra",
     "hours_other": "{{count}} óra",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) van hátra",
-    "aboutMinutesRemaining": "Kb $t(utils.minutes, {'count': {{minutes}} }) van hátra",
-    "aboutHoursRemaining": "Kb $t(utils.hours, {'count': {{hours}} }) van hátra",
-    "aboutHoursMinutesRemaining": "Kb $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) van hátra",
-    "inSeconds": "$t(utils.seconds, {'count': {{seconds}} }) múlva",
-    "inAboutMinutes": "kb $t(utils.minutes, {'count': {{minutes}} }) múlva",
-    "inAboutHours": "kb $t(utils.hours, {'count': {{hours}} }) múlva",
-    "inAboutHoursMinutes": "kb $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) múlva"
+    "remaining": "{{count}} van hátra",
+    "inAbout": "kb {{count}} múlva"
   },
   "process": {
     "newVersionAvailable": "Új verzió érhető el!"

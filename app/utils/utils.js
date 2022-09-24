@@ -1,58 +1,24 @@
 const semver = require('semver')
+const humanizeDuration = require('humanize-duration')
 
-// TODO if I am not wrong, formatting function are mathematically the same
-// Would be nice to not have the same code
-const formatTimeRemaining = function (milliseconds, i18next = require('i18next')) {
-  const seconds = Math.ceil(milliseconds / 1000.0)
-  const minutes = Math.ceil(seconds / 60.0)
-  const hours = Math.ceil(minutes / 60.0)
-
-  if (seconds < 60) {
-    return i18next.t('utils.secondsRemaining', { seconds: seconds })
+const formatTimeRemaining = function (milliseconds, locale, i18next = require('i18next')) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
   }
-
-  if (seconds >= 60 && minutes < 60) {
-    if (seconds === 60) {
-      return i18next.t('utils.aboutMinutesRemaining', { minutes: 2 })
-    }
-    return i18next.t('utils.aboutMinutesRemaining', { minutes: minutes })
-  }
-
-  if (minutes >= 60) {
-    if (minutes % 60 === 0) {
-      return i18next.t('utils.aboutHoursRemaining', { hours: hours })
-    }
-    return i18next.t('utils.aboutHoursMinutesRemaining',
-      { minutes: minutes - (hours - 1) * 60, hours: hours - 1 })
-  }
-  return 'Unknown time remaining'
+  return i18next.t('utils.remaining', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale, fallbacks: ['en'] })
+  })
 }
 
-const formatTimeIn = function (milliseconds, i18next = require('i18next')) {
-  const seconds = Math.ceil(milliseconds / 1000.0)
-  const minutes = Math.ceil(seconds / 60.0)
-  const hours = Math.ceil(minutes / 60.0)
-
-  if (seconds < 60) {
-    return i18next.t('utils.inSeconds', { seconds: seconds })
+const formatTimeIn = function (milliseconds, locale, i18next = require('i18next')) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
   }
-
-  if (seconds >= 60 && minutes < 60) {
-    if (seconds === 60) {
-      return i18next.t('utils.inAboutMinutes', { minutes: 2 })
-    }
-    return i18next.t('utils.inAboutMinutes', { minutes: minutes })
-  }
-
-  if (minutes >= 60) {
-    if (minutes % 60 === 0) {
-      return i18next.t('utils.inAboutHours', { hours: hours })
-    } else {
-      return i18next.t('utils.inAboutHoursMinutes',
-        { minutes: minutes - (hours - 1) * 60, hours: hours - 1 })
-    }
-  }
-  return 'in unknown time'
+  return i18next.t('utils.inAbout', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale, fallbacks: ['en'], units: ['d', 'h', 'm'] })
+  })
 }
 
 // does not consider `postponesLimit`

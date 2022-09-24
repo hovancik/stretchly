@@ -105,14 +105,8 @@
     "newVersionAvailable": "Versi terbaru tersedia!"
   },
   "utils": {
-    "inAboutHoursMinutes": "dalam sekitar $t(utils.hours, {'count': {{hours}} }).$t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "dalam sekitar $t(utils.hours, {'count': {{hours}} })",
-    "inAboutMinutes": "dalam sekitar $t(utils.minutes, {'count': {{minutes}} })",
-    "inSeconds": "dalam $t(utils.seconds, {'count': {{seconds}} })",
-    "aboutHoursMinutesRemaining": "Sekitar $t(utils.hours, {'count': {{hours}} }).$t(utils.minutes, {'count': {{minutes}} }) tersisa",
-    "aboutHoursRemaining": "Sekitar $t(utils.hours, {'count': {{hours}} }) tersisa",
-    "aboutMinutesRemaining": "Sekitar $t(utils.minutes, {'count': {{minutes}} }) tersisa",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) tersisa",
+    "inAbout": "dalam sekitar {{count}}",
+    "remaining": "{{count}} tersisa",
     "oclock": "pukul {{count}}",
     "hours": "{{count}} jam",
     "minutes": "{{count}} menit",

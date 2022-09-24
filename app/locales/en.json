@@ -172,6 +172,8 @@
     "showCurrentTimeInBreaks": "Show current local time in break window"
   },
   "utils": {
+    "remaining": "{{count}} remaining",
+    "inAbout": "in about {{count}}",
     "none_one": "{{count}}",
     "none_other": "{{count}}",
     "percent_one": "{{count}} percent",
@@ -183,15 +185,7 @@
     "minutes_one": "{{count}} minute",
     "minutes_other": "{{count}} minutes",
     "hours_one": "{{count}} hour",
-    "hours_other": "{{count}} hours",
-    "secondsRemaining": "$t(utils.seconds, {'count': {{seconds}} }) remaining",
-    "aboutMinutesRemaining": "About $t(utils.minutes, {'count': {{minutes}} }) remaining",
-    "aboutHoursRemaining": "About $t(utils.hours, {'count': {{hours}} }) remaining",
-    "aboutHoursMinutesRemaining": "About $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} }) remaining",
-    "inSeconds": "in $t(utils.seconds, {'count': {{seconds}} })",
-    "inAboutMinutes": "in about $t(utils.minutes, {'count': {{minutes}} })",
-    "inAboutHours": "in about $t(utils.hours, {'count': {{hours}} })",
-    "inAboutHoursMinutes": "in about $t(utils.hours, {'count': {{hours}} }) $t(utils.minutes, {'count': {{minutes}} })"
+    "hours_other": "{{count}} hours"
   },
   "process": {
     "newVersionAvailable": "New version is available!"
