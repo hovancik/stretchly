@@ -56,6 +56,8 @@ let pausedForSuspendOrLock = false
 let nextIdea = null
 let appIsQuitting = false
 let updateChecker
+let currentTrayIconPath = null
+let currentTrayMenuTemplate = null
 
 require('@electron/remote/main').initialize()
 
@@ -1101,11 +1103,21 @@ function createPreferencesWindow () {
 
 function updateTray () {
   updateToolTip()
-  appIcon.setImage(trayIconPath())
-  appIcon.setContextMenu(getTrayMenu())
+  const newTrayIconPath = trayIconPath()
+  if (newTrayIconPath !== currentTrayIconPath) {
+    appIcon.setImage(newTrayIconPath)
+    currentTrayIconPath = newTrayIconPath
+  }
+
+  const newTrayMenuTemplate = getTrayMenuTemplate()
+  if (JSON.stringify(newTrayMenuTemplate) !== JSON.stringify(currentTrayMenuTemplate)) {
+    const trayMenu = Menu.buildFromTemplate(newTrayMenuTemplate)
+    appIcon.setContextMenu(trayMenu)
+    currentTrayMenuTemplate = newTrayMenuTemplate
+  }
 }
 
-function getTrayMenu () {
+function getTrayMenuTemplate () {
   const trayMenu = []
 
   if (global.shared.isNewVersion) {
@@ -1251,7 +1263,7 @@ function getTrayMenu () {
     }
   })
 
-  return Menu.buildFromTemplate(trayMenu)
+  return trayMenu
 }
 
 function updateToolTip () {
