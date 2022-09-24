@@ -23,19 +23,29 @@
   <url type="translate">https://hosted.weblate.org/engage/stretchly/</url>
   <screenshots>
     <screenshot type="default">
-      <image>https://hovancik.net/stretchly/img/minibreak.png</image>
-      <caption>Stretchly minibreak screen</caption>
+      <image>https://hovancik.net/stretchly/img/flathub/minibreak.png</image>
+      <caption>Stretchly Mini Break screen</caption>
     </screenshot>
     <screenshot>
-      <image>https://hovancik.net/stretchly/img/welcome.png</image>
-      <caption>Stretchly welcome screen</caption>
+      <image>https://hovancik.net/stretchly/img/flathub/welcome.png</image>
+      <caption>Stretchly Welcome screen</caption>
     </screenshot>
     <screenshot>
-      <image>https://hovancik.net/stretchly/img/dark.png</image>
-      <caption>Stretchly dark mode preferences</caption>
+      <image>https://hovancik.net/stretchly/img/flathub/dark.png</image>
+      <caption>Stretchly dark mode Preferences</caption>
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.12.0" date="2022-09-24">
+      <description>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>remaining times are more exact</li>
+          <li>only update tray when needed</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.11.0" date="2022-08-07">
       <description>
         <p>Added</p>
