@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- updated many translations
+- remaining times are more exact
+
 ## [1.11.0] - 2022-8-7
 ### Added
 - Japanese translations
