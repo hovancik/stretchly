@@ -199,6 +199,9 @@ If you'd like to disable the shortcut, set value to empty string `""`. That's th
 #### Appearance [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.
 
+#### Break window color
+In the preferences file, change `mainColor` to whatever color you like.
+
 #### Welcome window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
 
