@@ -1,0 +1,465 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - A aplicación para lembrar acougar",
+    "microbreakIn": "Descanso breve en $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Descanso longo en $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "A retomar os descansos",
+    "downloadLatestVersion": "Baixar a última versión",
+    "toBreak": "Descanso longo",
+    "toMicrobreak": "Descanso breve",
+    "skipToTheNext": "Saltar ao seguinte",
+    "resume": "Retomar Descansos",
+    "pause": "Pausar Descansos",
+    "forHour": "1 hora",
+    "for2Hours": "2 horas",
+    "for5Hours": "5 horas",
+    "untilMorning": "Ata mañá",
+    "indefinitely": "Indefinidamente",
+    "resetBreaks": "Restituír descansos",
+    "quitStretchly": "Saír de Stretchly",
+    "restoreDefaults": "Restituír opcións por defecto",
+    "warning": "Isto vai restituír as opcións por defecto da aplicación e perderás as que teñas configuradas.",
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "preferences": "Configuración",
+    "contributorPreferences": "Configuración de colaborador",
+    "syncPreferences": "Configuración de sincronización"
+  },
+  "break": {
+    "postpone": "Adiar este descanso",
+    "skip": "Saltar este descanso",
+    "title": "Tempo de acougar!"
+  },
+  "preferences": {
+    "title": "Configuración de Stretchly",
+    "nav": {
+      "settings": "Configuración",
+      "schedule": "Horario",
+      "theme": "Tema",
+      "about": "Sobre",
+      "heart": "Encántame Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Abrir Stretchly automáticamente ao iniciar sesión",
+      "showBreaksIn": "Amosar descansos:",
+      "window": "Nunha ventá",
+      "fullscreen": "A pantalla completa",
+      "showIdeas": "Amosar ideas de prácticas durante os descansos",
+      "allScreens": "Amosar descansos en todos os monitores",
+      "monitorIdleTime": "Supervisar a inactividade do sistema (deter os descansos si o sistema está inactivo).",
+      "monitorDnd": "Amosar descansos incluso no modo Sen molestias",
+      "language": "Escoller idioma:",
+      "restoreDefaults": "Restituír opcións por defecto"
+    },
+    "schedule": {
+      "miniBreaks": "Descansos breves:",
+      "miniBreaksInfo": "Os descansos breves son acougos curtos que se toman a miúdo para aproveitar e espreguizarse ou relaxarse.",
+      "enableMiniBreaks": "Activar Descansos breves",
+      "breakFor": "Descansar durante:",
+      "every": "Cada:",
+      "showNotificationBeforeMiniBreak": "Notificar antes de comezar un Descanso breve",
+      "enablePostponeMini": "Activar a posibilidade de saltar os Descansos breves",
+      "longBreaks": "Descansos longos:",
+      "longBreaksInfo": "Os Descansos longos teñen menor frecuencia pero miaior duración, e permiten acougar do traballo.",
+      "enableLongBreaks": "Activar Descansos longos",
+      "showNotificationBeforeLongBreak": "Notificar antes de comezar un Descanso longo",
+      "enablePostponeLong": "Activar a posibilidade de saltar os Descansos longos",
+      "strictMode": "Modo rigoroso:",
+      "strictModeInfo": "O modo rigoroso impide que saltes os Descansos breves ou longos, e está deseñado para que mellores na disciplina.",
+      "enableStrictMini": "Activar Modo rigoroso para os Descansos breves",
+      "enableStrictLong": "Actividar Modo rigoroso para os Descansos longos",
+      "cantDisableBoth": "Non se poden desactivar os dous tipos de descansos"
+    },
+    "theme": {
+      "appearance": "Aspecto:",
+      "greenClouds": "Nubes verdes",
+      "autumnBeBlessed": "Outono bendecido",
+      "graphiteCrystal": "Cristal de grafito",
+      "coffeeKisses": "Bicos de café",
+      "morningSwim": "Batuxada matutina",
+      "transparentMode": "Activar transparencia",
+      "sounds": "Sonidos:",
+      "enableSounds": "Reproducir sons",
+      "crystalGlass": "Vidro cristalino",
+      "windChime": "Asubío do vento",
+      "ticToc": "Tic, tac",
+      "menubarIcon": "Icono do menú:",
+      "colour": "Cor",
+      "monochrome": "Monocromo",
+      "invertedMonochrome": "Monocromo invertido",
+      "snowWhite": "Neve branca"
+    },
+    "about": {
+      "tagline": "A aplicación para lembrar acougar",
+      "version": "Versión ",
+      "latestVersion": "Última versión ",
+      "checkNewVersion": "Comprobar actualizacións de maneira automática",
+      "learnMore": "Para aprender acerca das funcións de Stretchly, ver un titorial, descargar a última versión ou contactar connosco para obter axuda, ",
+      "ourWebsite": "visita a nosa web",
+      "dot": ".",
+      "developedBy": "Desenvolto por",
+      "janH": "Jan Hovancik",
+      "designedBy": "Deseño da icona e da interfaz de usuario por Colin Shanley"
+    },
+    "heart": {
+      "loveStretchly": "¿Engaioloute Stretchly?",
+      "desc1": "Comprobouse con método científico que acougar con regularidade cando usas un computador é importante para o benestar físico e mental.",
+      "desc2": "Stretchly é gratuito. Podes apoiar o proxecto donando e axudándonos a continuar mellorando Stretchly e lanzando outro software gratuíto.",
+      "becomePatron": "Convírtete en patrocinador",
+      "alreadyContributor": "Xa son colaborador",
+      "authenticateUsing": "Autenticar usando:",
+      "contributorPreferences": "Configuración de colaborador",
+      "syncPreferences": "Configuración de sincronización"
+    }
+  },
+  "contributorPreferences": {
+    "0": "Primero monitor",
+    "1": "Segundo monitor",
+    "2": "Terceiro monitor",
+    "3": "Cuarto monitor",
+    "4": "Quinto monitor",
+    "title": "Configuración de colaborador",
+    "notifications": "Notificacións de descansos:",
+    "notificationsInfo": "As notificacións do sistema amósanse antes dos descansos para que te prepares para eles.",
+    "beforeLongBreak": "Descanso longo:",
+    "beforeMiniBreak": "Descanso breve:",
+    "newVersion": "Versión nova:",
+    "newVersionNotification": "Notificar cando exista una nova versión",
+    "customIdeas": "Ideas personalizadas:",
+    "customIdeasInfo": "Permíteche usar ideas personalizadas para os descansos si editas o ficheiro de configuración. (Para usuarios avanzados).",
+    "useIdeasFromSettings": "Usar ideas para os descansos do ficheiro de configuración",
+    "breakPostpone": "Aprazamento de descansos:",
+    "breakPostponeInfo": "Cando está activado na configuración principal, podes adiar os descansos. As seguintes opcións permítenche especificar cando, canto tempo, e cantas veces podes adiar un descanso.",
+    "miniBreaks": "Descansos breves:",
+    "postponableFor": "Pódese adiar durante:",
+    "postponeFor": "Adiar durante:",
+    "maxPostpones": "Número máximo de aprazamentos:",
+    "longBreaks": "Descansos longos:",
+    "pauseUntilMoring": "Pausa ata mañá:",
+    "pauseUntil": "Pausar ata:",
+    "pauseUntilMorningInfo": "Especificar ata qué hora se aplica a 'Pausa ata mañá'.",
+    "welcomeWindow": "Ventá de benvida:",
+    "showWelcomeWindow": "Amosar a ventá de benvida no próximo inicio",
+    "opacityTheme": "Transparencia do tema:",
+    "opacityInfo": "¿Cömo de sólida debe ser a ventá dos acougos?",
+    "opacity": "Opacidade:",
+    "breakWindowSize": "Dimensións da ventá dos acougos",
+    "breakWindowSizeInfo": "¿Qué poracentaxe do monitor debería ocultar a ventá dos acougos?",
+    "breakWindowWidth": "Anchura:",
+    "breakWindowHeight": "Altura:",
+    "sounds": "Sons:",
+    "volume": "Volumen:",
+    "miniBreakStartSound": "Reproducir o son de remate do acougo tamén ao comezo do descanso breve",
+    "longBreakStartSound": "Reproducir o son de remate do acougo tamén ao comezo do descanso longo",
+    "naturalBreaks": "Descansos naturais:",
+    "naturalBreaksInfo": "Cando a supervisión de inactividade está activada na configuración principal, podes especificar despois de cánto tempo se deben pausar os descansos.",
+    "pauseAfter": "Pausar despois de:",
+    "appearance": "Aspecto:",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema",
+    "showBreaksAsRegularWindowsTitle": "Comportarse como unha ventá estándar:",
+    "showBreaksAsRegularWindowsInfo": "Cando se activa, as ventás dos descansos poden recibir o foco, non estarán \"Sempre enriba\" e tamén aparecerán na barra ou panel de tarefas.",
+    "showBreaksAsRegularWindows": "Mostrar descansos en ventás estándar",
+    "screen": "Monitor para descansos:",
+    "screenInfo": "Cando se desactiva a visualización de descansos en todos os monitores, podes elexir en cal queres que se vexan os Descansos.",
+    "showOnMonitor": "Amosar os denscansos",
+    "primary": "No monitor principal",
+    "cursor": "No monitor no que esté o cursor",
+    "timeToBreakInTray": "Tempo de acougar",
+    "showTimeToBreakInTray": "Amosar o tempo ata o seguinte descanso na icona do panel do menú",
+    "currentTimeInBreaks": "Tempo actual",
+    "showCurrentTimeInBreaks": "Amosar a hora local na ventá dos acougos"
+  },
+  "utils": {
+    "remaining": "quedan {{count}}",
+    "inAbout": "máis ou menos en {{count}}",
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} por cento",
+    "percent_other": "{{count}} por cento",
+    "oclock_one": "{{count}} en punto",
+    "oclock_other": "{{count}} en punto",
+    "seconds_one": "{{count}} segundo",
+    "seconds_other": "{{count}} segundos",
+    "minutes_one": "{{count}} minuto",
+    "minutes_other": "{{count}} minutos",
+    "hours_one": "{{count}} hora",
+    "hours_other": "{{count}} horas"
+  },
+  "process": {
+    "newVersionAvailable": "Nova versión dispoñíbel!"
+  },
+  "welcome": {
+    "title": "Benvido a Stretchly",
+    "breakTimeReminderApp": "A aplicación para lembrar acougar",
+    "viewTutorial": "Ver titorial",
+    "openPreferences": "Configurar",
+    "getStarted": "Empezar"
+  },
+  "statusMessages": {
+    "paused": "Pausado",
+    "indefinitely": "Indefinidamente",
+    "dndMode": "Non molestar está activado",
+    "appExclusion": "Norma de exclusión dunha aplicación",
+    "nextLongBreak": "Próximo descanso longo",
+    "nextMiniBreak": "Próximo descanso breve",
+    "afterMiniBreak_one": "despois de {{count}} descanso breve",
+    "afterMiniBreak_other": "despois de {{count}} descansos breves",
+    "resuming": "A retomar"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Vai por un vaso de agua."
+    },
+    "aab": {
+      "text": "Mira de vagar e de todo á esquerda, e despois á dereita."
+    },
+    "aac": {
+      "text": "Mira de vagar e de todo cara arriba, e despois cara abaixo."
+    },
+    "aad": {
+      "text": "Pecha os ollos e colle aire de maneira profunda varias veces."
+    },
+    "aae": {
+      "text": "Pecha os ollos e reláxate."
+    },
+    "aaf": {
+      "text": "Estira as pernas."
+    },
+    "aag": {
+      "text": "Estira os brazos."
+    },
+    "aah": {
+      "text": "Estás a sentar nunha postura correcta?"
+    },
+    "aai": {
+      "text": "De vagar, Xira a cabeza a cada lado e mantén a postura 10 segundos."
+    },
+    "aaj": {
+      "text": "De vagar, xira o pescozo a cada lado e mantén a postura entre 5 e 10 segundos."
+    },
+    "aak": {
+      "text": "Levántate da cadeira e estírate."
+    },
+    "aal": {
+      "text": "Enfoca a mirada nun obxecto que estea a 20 metros ou máis."
+    },
+    "aam": {
+      "text": "Pensa un momento nalgo que aprecies."
+    },
+    "aan": {
+      "text": "Tómate un momento para sonrir por estar vivo."
+    },
+    "aao": {
+      "text": "Un lugar de traballo ergonómico é aquel do que te apartas de cando en vez."
+    },
+    "aap": {
+      "text": "Pecha os ollos e conta respiracións."
+    },
+    "aaq": {
+      "text": "Pecha os ollos e di o nome das cousas que escoitas."
+    },
+    "aar": {
+      "text": "Pon a punta dos dedos nos teus ombreiros. Xira os ombreiros en círculos cara diante durante 10 segundos, e despois cara atrais."
+    },
+    "aas": {
+      "text": "Sube o brazo dereito, estírao sobre a túa cabeza cara a esquerda, e mantén a postura 10 segundos. Repíteo co outro brazo."
+    },
+    "aat": {
+      "text": "Coa man dereita, arra cada dedo ta túa man esquerda e aprétao. Repite coa outra man."
+    },
+    "aau": {
+      "text": "Ponte de pé e da unha zancada. Mantén a postura 10 segundos e despois cambia de perna."
+    },
+    "aav": {
+      "text": "Pecha os ollos e sinte calquer cousa que ocorra neste preciso instante, sen xulgar."
+    },
+    "aaw": {
+      "text": "Concéntrate cada 20 minutos, durante 20 segundos, nun obxecto que estéa 6 metros de distancia."
+    },
+    "aax": {
+      "text": "Se precisas axuda, pídea."
+    },
+    "aay": {
+      "text": "Fai unha cousa de cada vez."
+    },
+    "aaz": {
+      "text": "¿Estás a invertir a túa atención con sabedoría?"
+    },
+    "aba": {
+      "text": "Cambia a maneira en que estás a sentar."
+    },
+    "abb": {
+      "text": "Expón os teus ollos á luz natural."
+    },
+    "abc": {
+      "text": "Cos ollos pechados, de vagar e con coidado,levanta os ollos cara o teito e báixaos cara o chan despois."
+    },
+    "abd": {
+      "text": "Cos ollos pechados, de vagar e con coidado, move os ollos á esquerda e despois á dereita."
+    },
+    "abe": {
+      "text": "Sacude as mans para que se alivien."
+    },
+    "abf": {
+      "text": "De un en un, toca coa punta de cada dedo de cada man a punta do pulgar para formar unha O."
+    },
+    "abg": {
+      "text": "Pecha a man nun puño e despois abre os dedos levándoos cara arriba, como se lle mandases a alguén parar."
+    },
+    "abh": {
+      "text": "Pecha a man nun puño e despois ábrea estirando os dedos todo o que podas."
+    },
+    "abi": {
+      "text": "Senta coa espalda recta, os brazos colgando aos lados, e rota a cabeza de vagar facendo círculos amplos."
+    },
+    "abj": {
+      "text": "Levántate e cruza o brazo por riba da cabeza ata tocar a orella contraria coa man, e dobra a cabeza cara o ombreiro ata notar cómo estira. Repite co outro brazo."
+    },
+    "abk": {
+      "text": "Levántate e pon os brazos aos lados. Move os ombreiros cara atrais xuntando as omoplatas e mantén a postura uns segundos."
+    },
+    "abl": {
+      "text": "Levántate cos brazos levantados á altura dos ombreiros. Move as mans cara a espalda, mantén un segundo, e volve."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "A soas non",
+      "text": "Cóstache tomar un descanso a soas? Tenta facelo cun compañeiro ou compañeira. Ademáis de facelo máis doado, terás a oportunidade de coñecer ás persoas. Tomar descansos conxuntos incrementa a productividade."
+    },
+    "aab": {
+      "title": "Apártate",
+      "text": "Notaches que a túa mente pode resolver cousas por sí mesma? Só precisa afastarse do ordenador e descansar para pensar sobre algo totalmente distinto."
+    },
+    "aac": {
+      "title": "Descansos breves",
+      "text": "Acougar é unha peza esencial para facilitar o rendemento adecuado do sistema musculoesquelético. Descansar con frecuencia axuda a reducir a duración dunha tarefa e disminúe o risco de lesións ergonómicas."
+    },
+    "aad": {
+      "title": "Meditación",
+      "text": "Diversas investigacións suxiren que os exercicios baseados na contemplación axudan a reducir a ansiedade, a depresión, o estrés, a dor, e axudan a mellorar a saúde xeral, a saúde mental, e a calidade de vida. Non sabes por onde comezar? Hay un montón de aplicacións que che poden axudar."
+    },
+    "aae": {
+      "title": "Parpadear",
+      "text": "Mirar pantallas durante lapsos longos de tempo fai que parpadees menos veces, e polo tanto expós os ollos ao aire. Pecha rápido as pálpebras varias veces durante uns segundos para repoñer a humidade sobre a córnea e limpar o pó da superficie dos ollos."
+    },
+    "aaf": {
+      "title": "Ergonomía",
+      "text": "Un ángulo ou altura incorrecta do teclado, o rato, o monitor, ou da superficie de traballo pode causar problemas de saúde. Tómate un tempo para ler sobre a ergonomía no lugar de traballo."
+    },
+    "aag": {
+      "title": "Moverse",
+      "text": "Hai moitas maneiras de facer exercicio na oficina. Intenta andar quedando no sitio ou levantarte varias veces da cadeira."
+    },
+    "aah": {
+      "title": "Cambiar",
+      "text": "Tes un balón de exercicios ou un escritorio para estar de pé? Considera cambiar a cadeira por algún deles durante un tempo."
+    },
+    "aai": {
+      "title": "Observarse",
+      "text": "Dúrmeste durante o día ou tes problemas para concentráreste? É un síntoma de que precisas un descanso."
+    },
+    "aaj": {
+      "title": "Tecnoloxía",
+      "text": "Qué che parece dar un paseo sen aparatos tecnolóxicos?"
+    },
+    "aak": {
+      "title": "Metabolismo",
+      "text": "Investigacións emerxentes demostran que sentar durante lapsos longos de tempo contribúe ao risco de síndrome metabólico, ao risco de problemas cardíacos, e a outros. Tomar descansos con frecuencia e camiñando pode favorecer a circulación, mitigando esos riscos."
+    },
+    "aal": {
+      "title": "Reunións activas",
+      "text": "Qué che parece facer as reunións da sala de conferencias no vestíbulo? Camiñar non só queima calorías, tamén mellora a sensación de colaboración."
+    },
+    "aam": {
+      "title": "Froita",
+      "text": "Tómate tempo e come algo de froita. De vagar. Fíxate no sabor, na textura, e na frescura."
+    },
+    "aan": {
+      "title": "Baños",
+      "text": "Camiña ata o baño que estea máis lonxe do teu lugar de traballo cando te dirixas a descansar."
+    },
+    "aao": {
+      "title": "Descanso para o café",
+      "text": "Vas tomar un café? Considera camiñar durante 5 minutos cada vez que vas buscar un."
+    },
+    "aap": {
+      "title": "Compañeirismo",
+      "text": "No mandes emails ou mensaxes aos compañeiros e compañeiras da oficina, cambiña ata as súas mesas para comunicarte."
+    },
+    "aaq": {
+      "title": "Aprender",
+      "text": "Nun estudio de voluntarios sanos, os investigadores do NIH observaron que tomar descansos breves con regularidade pode axudar á nosa mente a aprender habilidades novas."
+    },
+    "aar": {
+      "title": "Exercicio",
+      "text": "As probas suxiren que o exercicio regular en pequenas doses pode aportar grandes beneficios á saúde, incluíndo reducións apreciábeis do estrés."
+    },
+    "aas": {
+      "title": "Repetir",
+      "text": "Atopaches a túa rutina para estirar? Lembra repetir máis dunha vez para mitigar mellor os efectos do sedentarismo."
+    },
+    "aat": {
+      "title": "Bonecas e antebrazos",
+      "text": "Extende os brazos coas palmas cara ti, e despois xira de vagar as mans catro veces no sentido do reloxo, e despois catro veces no outro sentido."
+    },
+    "aau": {
+      "title": "Estirar a espalda",
+      "text": "Xunta as mans detráis da cabeza, e despois levántaas á vez sobre a cabeza para acabar coas palmas cara arriba."
+    },
+    "aav": {
+      "title": "Móvete",
+      "text": "Por cada trinta minutos de estancamento motor, deberías estimularte polo menos durante un minuto."
+    },
+    "aaw": {
+      "title": "Rutina de 7 minutos",
+      "text": "Esta rutina contempla un conxunto de exercicios completos para todo o corpo nunha fracción de tempo. Coma en calquer exercicio, ten precaución. Hay moitas aplicacións para comezar."
+    },
+    "aax": {
+      "title": "Pulso",
+      "text": "Aumenta o pulso ata os 120 latidos por minuto, durante 20 minutos seguidos, catra ou cinco veces á semana, facendo calquer cousa que che guste. Aumentar o ritmo cardíaco ten como resultado mellorar a saúde cardiovascular."
+    },
+    "aay": {
+      "title": "Emprega as escaleiras ",
+      "text": "Estudos demostraron que subir escaleiras - que se considera unha actividade física intensa - queima máis calorías más calorías por minuto que unha carreira lixeira."
+    },
+    "aaz": {
+      "title": "Practica o arte",
+      "text": "A terapia con arte sábese beneficiosa para a saúde mental, con especialidade para xestionar o estrés. Qué che parece escribir un poema rápido, sacar unha foto, ou pintar algunha argallada?"
+    },
+    "aba": {
+      "title": "Despexa",
+      "text": "Un espazo limpo axuda a concentrarse no traballo e a miúdo está ligado a emocións positivas como a ledicia."
+    },
+    "abb": {
+      "title": "Come fóra",
+      "text": "A natureza está ligada ás emocicións positivas e disminúe o estrés e a ansiedade. Cando podas, tenta comer fóra rodeado de algo de natureza."
+    },
+    "abc": {
+      "title": "Transporte público",
+      "text": "Si usas transporte público con regularidade, podes quedar de pé en lugar de sentar. Si podes, tenta facer todos os desprazamentos que podas camiñando ou en bici."
+    },
+    "abd": {
+      "title": "Bostezar",
+      "text": "Bostezar pode ser certamente beneficioso dado que produce lágrimas que humidifican e lubrican os ollos."
+    },
+    "abe": {
+      "title": "Cambio de enfoque",
+      "text": "Mantén un dedo cerca dun ollo e enfócao. De vagar, afasta o dedo e enfócate na distancia ao lonxe, e despois volve a enfocar o dedo. Acerca o dedo de volta e volve enfocar algo que estea lonxe."
+    },
+    "abf": {
+      "title": "Palmas",
+      "text": "Mentras estás a sentar, coloca os cóbados na mesa, preto do borde. Bótate cara adiante colocando as mans sobre os ollos. Pecha os ollos e colle aire de vagar pola nariz e aguanta uns segundos. Despois respira profundamente."
+    },
+    "abg": {
+      "title": "Estrujar las manos",
+      "text": "Apreta un par de calcetíns recheos, ou unhas bolas de goma ou esponxa; e mantén apretado durante 5 segundos. Repite o proceso varias veces."
+    },
+    "abh": {
+      "title": "Respiración lenta",
+      "text": "Investigacións emerxentes suxiren o uso potencial de técnicas de respiración lenta controlada como medio de optimizár parámetros psicolóxicos que aparecen asociados á saúde e á lonxevidade."
+    }
+  }
+}
