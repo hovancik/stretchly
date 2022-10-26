@@ -178,7 +178,9 @@
     "minutes_one": "{{count}} 分",
     "minutes_other": "{{count}} 分",
     "hours_one": "{{count}} 時間",
-    "hours_other": "{{count}} 時間"
+    "hours_other": "{{count}} 時間",
+    "remaining": "残り {{count}}",
+    "inAbout": "残り約 {{count}} 分"
   },
   "break": {
     "postpone": "休憩を延期する",
@@ -302,6 +304,9 @@
     },
     "abf": {
       "text": "親指の先で、他の指の先を輪っかになるように一本ずつ触れてください。"
+    },
+    "abj": {
+      "text": "立ち上がって、気持ちよく伸びを感じるように頭を手で左右に傾けましょう。"
     }
   }
 }
