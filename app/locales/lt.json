@@ -217,16 +217,16 @@
   },
   "miniBreakIdeas": {
     "aaa": {
-      "text": "Išgerki stiklinaitę vandens"
+      "text": "Išgerkite stiklinę vandens."
     },
     "aab": {
-      "text": "Lėtai pažiūrėk į kairę, po to į dešinę"
+      "text": "Lėtai pažiūrėk į kairę, po to į dešinę."
     },
     "aac": {
-      "text": "Lėtai pažiūrėk į viršų, po to į dešinę"
+      "text": "Lėtai pažiūrėk į viršų, po to į dešinę."
     },
     "aad": {
-      "text": "Užsimerk ir giliai įkvėpk keletą kartų"
+      "text": "Užsimerk ir giliai įkvėpk keletą kartų."
     },
     "aae": {
       "text": "Užsimerk ir atsipalaiduok."
@@ -239,6 +239,234 @@
     },
     "aah": {
       "text": "Ar tavo sėdėjimo laikysena taisyklinga?"
+    },
+    "abi": {
+      "text": "Sėdėkite išsitiesę, rankos kabo šonuose, ir lėtai pasukite kaklą viena kryptimi dideliu ratu."
+    },
+    "abj": {
+      "text": "Atsistokite išsitiesę ir ta pačia ranka lėtai pakreipkite galvą link peties, kol pajusite tempimą."
+    },
+    "aai": {
+      "text": "Lėtai pasukite galvą į šoną ir palaikykite 10 sekundžių."
+    },
+    "aal": {
+      "text": "Nukreipkite akis į objektą, esantį bent už 20 metrų."
+    },
+    "aaj": {
+      "text": "Lėtai pakreipkite galvą į šoną ir palaikykite 5-10 sekundžių."
+    },
+    "aak": {
+      "text": "Atsistokite nuo kėdės ir išsitieskite."
+    },
+    "aap": {
+      "text": "Užmerkite akis ir skaičiuokite įkvėpimus."
+    },
+    "aaq": {
+      "text": "Užmerkite akis ir įvardykite dalykus, kuriuos girdite."
+    },
+    "aam": {
+      "text": "Skirkite šiek tiek laiko pagalvoti apie tai, ką vertinate."
+    },
+    "aan": {
+      "text": "Skirkite šiek tiek laiko nusišypsoti būdami gyvi."
+    },
+    "aao": {
+      "text": "Tikrai ergonomiška darbo vieta yra tokia, nuo kurios reguliariai atsitraukite."
+    },
+    "aar": {
+      "text": "Padėkite pirštų galiukus ant pečių. 10 sekundžių sukite pečius į priekį, paskui atgal."
+    },
+    "aas": {
+      "text": "Pakelkite dešinę ranką, ištieskite ją virš galvos į kairę ir palaikykite 10 sekundžių. Pakartokite kitoje pusėje."
+    },
+    "aat": {
+      "text": "Dešine ranka paeiliui suimkite kiekvieną kairės rankos pirštą ir suspauskite. Pakartokite kitoje pusėje."
+    },
+    "aau": {
+      "text": "Atsistokite ir atlikite įtūpstą. Laikykite 10 sekundžių, tada atlikite kitą koją."
+    },
+    "aav": {
+      "text": "Užmerkite akis ir tiesiog pastebėkite tai, kas vyksta dabartiniu momentu, to nevertinant."
+    },
+    "aaw": {
+      "text": "Kas 20 minučių 20 sekundžių sutelkite dėmesį į objektą, esantį 20 pėdų atstumu."
+    },
+    "aax": {
+      "text": "Jei reikia pagalbos, paprašykite jos."
+    },
+    "aay": {
+      "text": "Darykite po vieną dalyką vienu metu."
+    },
+    "aaz": {
+      "text": "Ar jūsų dėmesys naudojamas protingai?"
+    },
+    "aba": {
+      "text": "Pakeiskite savo sėdėjimo pozą."
+    },
+    "abb": {
+      "text": "Atskleiskite akis natūraliai šviesai."
+    },
+    "abc": {
+      "text": "Užmerkę akis lėtai ir švelniai pakelkite akis į lubas ir grįžkite žemyn iki grindų."
+    },
+    "abd": {
+      "text": "Užmerkę akis lėtai ir švelniai perkelkite akis į kairę, tada lėtai į dešinę."
+    },
+    "abf": {
+      "text": "Po vieną kiekvieno piršto galiuku palieskite nykščio galiuką, kad jie sudarytų O formą."
+    },
+    "abh": {
+      "text": "Sugniaužkite kumštį, o tada ištieskite pirštus ir ištieskite juos kuo toliau."
+    },
+    "abg": {
+      "text": "Sugniaužkite kumštį, o tada pirštus stumkite aukštyn, kol jie bus nukreipti į lubas, tarsi liepdami kam nors sustoti."
+    },
+    "abk": {
+      "text": "Atsistokite išsitiesę, rankas laikydami prie šonų. Suspauskite pečių mentes ir palaikykite."
+    },
+    "abl": {
+      "text": "Atsistokite tiesiai, rankas iškėlę išilgai pečių. Rankas šiek tiek perkelkite už nugaros, palaikykite sekundę ir grįžkite atgal."
+    },
+    "abe": {
+      "text": "Pakratykite rankas, kad gautumėte palengvėjimą."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Ne vienas",
+      "text": "Ar jums sunku pailsėti vienam? Pabandykite tai padaryti su bendradarbiu. Be to, kad bus lengviau laikytis pertraukų, turėsite galimybę geriau jį pažinti. Pertraukas darant kartu padidėja produktyvumas."
+    },
+    "aab": {
+      "text": "Ar kada nors pastebėjote, kad jūsų smegenys gali viską išsiaiškinti pačios? Tereikia atsitraukti nuo kompiuterio ir padaryti pertraukėlę, kad pagalvotumėte apie ką nors visiškai nesusijusio.",
+      "title": "Atsitraukite"
+    },
+    "aac": {
+      "text": "Poilsis yra pagrindinis komponentas, užtikrinantis raumenų ir kaulų sistemos veiklą. Dažnos pertraukėlės gali sutrumpinti užduoties trukmę ir sumažinti ergonominių sužalojimų riziką.",
+      "title": "Mikro pertraukėlės"
+    },
+    "aad": {
+      "title": "Meditacija",
+      "text": "Tyrimai rodo, kad sąmoningumu pagrįsti pratimai padeda sumažinti nerimą, depresiją, stresą ir skausmą bei pagerinti bendrą sveikatą, psichinę sveikatą ir gyvenimo kokybę. Nežinote, kaip pradėti? Yra daug programų, kurios jums padės."
+    },
+    "aae": {
+      "title": "Pamirksėkite",
+      "text": "Ilgai žiūrėdami į ekraną mažiau mirksite, todėl jūsų akys yra veikiamos oro. Kelias sekundes greitai mirksėkite, kad atsinaujintų ašarų plėvelė ir nuo akių paviršiaus pasišalintų dulkės."
+    },
+    "aaf": {
+      "title": "Ergonomika",
+      "text": "Netinkamas klaviatūros, pelės, monitoriaus ar darbinio paviršiaus aukštis ir kampas gali sukelti sveikatos problemų. Skirkite šiek tiek laiko ir paskaitykite apie stalo ergonomiką."
+    },
+    "aag": {
+      "title": "Judesys",
+      "text": "Yra daugybė būdų, kaip galite mankštintis savo biure. Pabandykite žygiuoti vietoje arba daryti stalo atsispaudimus."
+    },
+    "aai": {
+      "title": "Pastebėkite",
+      "text": "Ar svajojate ar jums sunku susikaupti? Tai ženklas, kad reikia padaryti pertrauką."
+    },
+    "aah": {
+      "text": "Ar turite stabilumo kamuolį ar stovintį darbo stalą? Apsvarstykite galimybę kuriam laikui pakeisti savo stalo kėdę jais.",
+      "title": "Pokyčiai"
+    },
+    "aaj": {
+      "title": "Technologijos",
+      "text": "O kaip apie pasivaikščiojimą be technologijų?"
+    },
+    "aak": {
+      "title": "Metabolizmas",
+      "text": "Nauji tyrimai rodo, kad ilgas sėdėjimas padidina metabolinio sindromo, širdies priepuolio ir insulto riziką bei bendrą mirties riziką. Reguliarios vaikščiojimo pertraukėlės gali pagerinti jūsų kraujotaką ir padėti įveikti kai kurias iš šių problemų."
+    },
+    "aal": {
+      "title": "Aktyvūs susitikimai",
+      "text": "O kaip apie susitikimų perkėlimą iš konferencijų salės į salę? Vaikščiojimas ne tik degina kalorijas, bet ir gali skatinti bendradarbiavimo jausmą."
+    },
+    "aam": {
+      "title": "Vaisiai",
+      "text": "Neskubėkite ir suvalgykite vaisių. Lėtai. Atkreipkite dėmesį į skonį, tekstūrą, šviežumą."
+    },
+    "aan": {
+      "text": "Eidami į tualetą eikite į tolimiausią tualetą darbo vietoje.",
+      "title": "Tualetas"
+    },
+    "aao": {
+      "title": "Kavos pertraukėlė",
+      "text": "Einate kavos pertraukėlės? Apsvarstykite galimybę 5 minutes pasivaikščioti kiekvieną kartą, kai einate į ją."
+    },
+    "aap": {
+      "title": "Kolegos",
+      "text": "Nesiųskite el. laiškų ir nesiųskite žinučių biuro kolegoms, eikite prie jų darbo stalo ir bendraukite su jais."
+    },
+    "aaq": {
+      "title": "Mokymasis",
+      "text": "Tirdami sveikus savanorius, NIH mokslininkai nustatė, kad trumpos pertraukėlės, anksti ir dažnai, gali padėti mūsų smegenims išmokti naujų įgūdžių."
+    },
+    "aar": {
+      "title": "Pratimai",
+      "text": "Įrodymai rodo, kad nedidelis reguliarios mankštos kiekis gali turėti didelę naudą sveikatai, įskaitant pastebimą streso sumažinimą."
+    },
+    "aas": {
+      "text": "Ar radote savo tempimo rutiną? Nepamirškite to pakartoti daugiau nei vieną kartą, kad geriau kovotumėte su ilgo sėdėjimo padariniais.",
+      "title": "Pakartokite"
+    },
+    "aat": {
+      "title": "Riešas ir dilbis",
+      "text": "Ištieskite rankas delnais į save, tada lėtai pasukite rankas keturis kartus pagal laikrodžio rodyklę, tada keturis kartus prieš laikrodžio rodyklę."
+    },
+    "aau": {
+      "title": "Nugaros tempimas",
+      "text": "Sujunkite rankas už galvos, tada pakelkite jas virš galvos, delnais į viršų."
+    },
+    "aav": {
+      "title": "Mobilumas",
+      "text": "Kiekvieną trisdešimties stagnacijos minučių turėtumėte turėti bent vieną minutę stimuliacijos."
+    },
+    "aay": {
+      "text": "Tyrimai parodė, kad lipimas laiptais, kuris laikomas intensyvaus intensyvumo fizine veikla, sudegina daugiau kalorijų per minutę nei bėgiojimas.",
+      "title": "Lipkite laiptais"
+    },
+    "aaz": {
+      "title": "Kurkite meną",
+      "text": "Yra žinoma, kad meno terapija turi didelę naudą psichinei sveikatai, ypač kai kalbama apie streso valdymą. Kodėl neparašyti greito eilėraščio, nenufotografuoti ar nenupiešti ką nors nedidelio?"
+    },
+    "aba": {
+      "text": "Švari erdvė padeda sutelkti dėmesį į darbą ir dažnai yra susijusi su teigiamomis emocijomis, tokiomis kaip laimė.",
+      "title": "Atsisakykite netvarkos"
+    },
+    "abb": {
+      "text": "Gamta yra susijusi su teigiamomis emocijomis ir sumažėjusiu stresu bei nerimu. Kai tik įmanoma, pabandykite padaryti dienos pietų pertrauką lauke, apsupti žalumos.",
+      "title": "Pietūs lauke"
+    },
+    "abc": {
+      "title": "Viešasis transportas",
+      "text": "Jei reguliariai naudojatės viešuoju transportu, galite stovėti, o ne sėdėti. Jei įmanoma, stenkitės kuo daugiau savo kasdienių kelionių pakeisti pėsčiomis ar važiavimu dviračiu."
+    },
+    "abe": {
+      "title": "Dėmesio nukreipimas",
+      "text": "Laikykite vieną pirštą prie akies ir sutelkite dėmesį į jį. Lėtai atitraukite pirštą, sufokusuokite dėmesį į tolį, o tada atgal į pirštą. Patraukite pirštą atgal ir sutelkite dėmesį į kažką toli dar kartą."
+    },
+    "abd": {
+      "title": "Žiovulys",
+      "text": "Žiovulys gali būti tikrai naudingas, nes jis gamina ašaras, kurios padeda drėkinti ir sutepti akis."
+    },
+    "abf": {
+      "title": "Delnai",
+      "text": "Sėdėdami priglauskite alkūnes prie stalo ir prisiglauskite prie stalo krašto. Tegul jūsų svoris nukrenta į priekį, o tuomet uždėkite rankas ant akių. Užmerkite akis ir lėtai įkvėpkite per nosį ir palaikykite kelias sekundes. Tęskite gilų kvėpavimą."
+    },
+    "abg": {
+      "title": "Rankų suspaudimai",
+      "text": "Suspauskite porą susuktų kojinių arba minkštą guminį rutulį, palaikykite 5 sekundes. Pakartokite visą procesą keletą kartų."
+    },
+    "abh": {
+      "title": "Lėtas kvėpavimas",
+      "text": "Nauji tyrimai rodo, kad galima naudoti kontroliuojamo lėto kvėpavimo metodus kaip priemonę optimizuoti fiziologinius parametrus, kurie, atrodo, yra susiję su sveikata ir ilgaamžiškumu."
+    },
+    "aaw": {
+      "title": "7 minučių treniruotė",
+      "text": "Ši treniruotė per trumpą laiką apima viso kūno mankštą. Tačiau, kaip ir atliekant bet kokį pratimą, būkite atsargūs. Yra daug programėlių, kurios padės jums pradėti."
+    },
+    "aax": {
+      "title": "Pulsas",
+      "text": "Padidinkite pulso dažnį iki 120 dūžių per minutę 20 minučių keturis ar penkis kartus per savaitę darydami viską, kas jums patinka. Reguliarus širdies susitraukimų dažnio didinimas pagerina širdies ir kraujagyslių sistemos būklę."
     }
   }
 }
