@@ -8,7 +8,7 @@ const formatTimeRemaining = function (milliseconds, locale, i18next = require('i
   }
   return i18next.t('utils.remaining', {
     count: humanizeDuration(milliseconds,
-      { round: true, delimiter: ' ', language: locale, fallbacks: ['en'] })
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'] })
   })
 }
 
@@ -18,7 +18,7 @@ const formatTimeIn = function (milliseconds, locale, i18next = require('i18next'
   }
   return i18next.t('utils.inAbout', {
     count: humanizeDuration(milliseconds,
-      { round: true, delimiter: ' ', language: locale, fallbacks: ['en'], units: ['d', 'h', 'm'] })
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'], units: ['d', 'h', 'm'] })
   })
 }
 

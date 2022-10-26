@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Galician translations
 
+## Fixed
+- time translations for Chinese
+
 ## [1.12.0] - 2022-9-24
 ### Added
 - support for Flatpak
