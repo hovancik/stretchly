@@ -194,7 +194,7 @@
     "minutes_other": "{{count}} dakika",
     "hours_one": "{{count}} saat",
     "hours_other": "{{count}} saat",
-    "remaining": "{{remaining}} kaldı",
+    "remaining": "{{count}} kaldı",
     "inAbout": "{{count}} içerisinde"
   },
   "statusMessages": {
@@ -427,10 +427,10 @@
     },
     "aax": {
       "title": "Kalp Atışı",
-      "text": " Zevk aldığınız her şeyi yaparak haftada dört veya beş kez 20 düz dakika boyunca nabzınızı dakikada 120 vuruşa yükseltin. Kalp atış hızınızı düzenli olarak yükseltmek, kardiyovasküler sağlığın iyileşmesine neden olur."
+      "text": "Zevk aldığınız şeyleri yaparak haftada dört veya beş kez 20 dakika boyunca nabzınızı dakikada 120 vuruşa yükseltin. Kalp atış hızınızı düzenli olarak yükseltmek, kardiyovasküler sağlığın iyileşmesine neden olur."
     },
     "aay": {
-      "title": "Merdivenleri kullanın ",
+      "title": "Merdivenleri kullanın",
       "text": "Araştırmalar, şiddetli fiziksel aktivite olarak kabul edilen merdiven çıkmanın, koşuya göre dakikada daha fazla kalori yaktığını göstermiştir."
     },
     "aba": {

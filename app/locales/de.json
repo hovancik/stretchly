@@ -1,15 +1,15 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly – Die Pausenerinnerungs-App",
+    "toolTipHeader": "Stretchly – Die Pausen-Erinnerungs-App",
     "microbreakIn": "Mini-Pause in $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Große Pause in $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Lange Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Pausen fortsetzen",
-    "downloadLatestVersion": "Neuste Version herunterladen",
-    "toBreak": "Große Pause",
+    "downloadLatestVersion": "Neueste Version herunterladen",
+    "toBreak": "Lange Pause",
     "toMicrobreak": "Mini-Pause",
     "skipToTheNext": "Springe zur nächsten",
-    "resume": "Pause fortsetzen",
-    "pause": "Pause anhalten",
+    "resume": "Pausen fortsetzen",
+    "pause": "Pausen anhalten",
     "forHour": "1 Stunde",
     "for2Hours": "2 Stunden",
     "for5Hours": "5 Stunden",
@@ -18,7 +18,7 @@
     "resetBreaks": "Pausen zurücksetzen",
     "quitStretchly": "Stretchly beenden",
     "restoreDefaults": "Standardeinstellungen wiederherstellen",
-    "warning": "Dadurch werden die Anwendungsstandardeinstellungen wiederhergestellt und alle Einstellungen gehen verloren.",
+    "warning": "Dadurch werden die Anwendungsstandardeinstellungen wiederhergestellt und alle deine Einstellungen gehen verloren.",
     "continue": "Fortsetzen",
     "cancel": "Abbrechen",
     "preferences": "Einstellungen",
@@ -44,30 +44,30 @@
       "showBreaksIn": "Pausen anzeigen in:",
       "window": "Fenster",
       "fullscreen": "Vollbild",
-      "showIdeas": "Pausenideen in den Pausen zeigen",
+      "showIdeas": "Bewegungstipps in den Pausen anzeigen",
       "allScreens": "Pausen auf allen Monitoren anzeigen",
       "monitorIdleTime": "Abwesenheit vom Gerät berücksichtigen (Zeit, wenn das System inaktiv ist, wird nicht mitgezählt).",
-      "monitorDnd": "Pausen auch bei „Nicht stören“ anzeigen",
+      "monitorDnd": "Pausen auch im Modus \"Nicht stören\" anzeigen",
       "language": "Sprache auswählen:",
       "restoreDefaults": "Standardeinstellungen wiederherstellen"
     },
     "schedule": {
       "miniBreaks": "Mini-Pausen:",
-      "miniBreaksInfo": "Mini-Pausen sind kurze Pausen, die regelmäßig eingelegt werden, damit Sie sich bewegen und entspannen können.",
+      "miniBreaksInfo": "Mini-Pausen sind kurze Pausen, die regelmäßig eingelegt werden, damit du dich strecken und entspannen kannst.",
       "enableMiniBreaks": "Mini-Pausen aktivieren",
       "breakFor": "Pause für:",
       "every": "Alle:",
       "showNotificationBeforeMiniBreak": "Benachrichtigung anzeigen, bevor Mini-Pause startet",
       "enablePostponeMini": "Aufschub bei Mini-Pause aktivieren",
-      "longBreaks": "Große Pause:",
-      "longBreaksInfo": "Große Pausen werden weniger regelmäßig eingelegt, dauern jedoch länger, sodass Sie eine längere Pause von Ihrer Arbeit einlegen können.",
-      "enableLongBreaks": "Große Pausen aktivieren",
-      "showNotificationBeforeLongBreak": "Benachrichtigungen anzeigen, bevor große Pause startet",
-      "enablePostponeLong": "Aufschub bei großer Pause aktivieren",
+      "longBreaks": "Lange Pausen:",
+      "longBreaksInfo": "Lange Pausen werden seltener eingelegt, dauern jedoch länger, sodass du eine längere Pause von deiner Arbeit einlegen kannst.",
+      "enableLongBreaks": "Lange Pausen aktivieren",
+      "showNotificationBeforeLongBreak": "Benachrichtigung anzeigen, bevor lange Pause startet",
+      "enablePostponeLong": "Aufschub bei langer Pause aktivieren",
       "strictMode": "Strikter Modus:",
-      "strictModeInfo": "Der strikte Modus verhindert, dass Sie Mini-Pausen oder große Pausen überspringen, und soll Ihre Disziplin unterstützen.",
+      "strictModeInfo": "Der strikte Modus verhindert, dass du Mini-Pausen oder lange Pausen überspringst, und soll deine Disziplin unterstützen.",
       "enableStrictMini": "Strikten Modus für Mini-Pausen aktivieren",
-      "enableStrictLong": "Strikten Modus für große Pausen aktivieren",
+      "enableStrictLong": "Strikten Modus für lange Pausen aktivieren",
       "cantDisableBoth": "Es ist nicht möglich, beide Pausenarten zu deaktivieren"
     },
     "theme": {
@@ -79,23 +79,23 @@
       "morningSwim": "Morgenschwimmen",
       "transparentMode": "Transparenz aktivieren",
       "sounds": "Ton:",
-      "enableSounds": "Töne anschalten",
+      "enableSounds": "Töne einschalten",
       "crystalGlass": "Kristallglas",
       "windChime": "Windspiel",
-      "ticToc": "Tic Toc",
-      "menubarIcon": "Symbol in Menüleiste:",
+      "ticToc": "Tick-Tack",
+      "menubarIcon": "Taskleisten-Symbol:",
       "colour": "Farbig",
       "monochrome": "Einfarbig",
-      "invertedMonochrome": "Einfarbig Invertiert",
+      "invertedMonochrome": "Einfarbig invertiert",
       "snowWhite": "Schneeweiß"
     },
     "about": {
-      "tagline": "Die Anwendung, die erinnert, Pausen zu machen",
+      "tagline": "Die Pausen-Erinnerungs-App",
       "version": "Version ",
-      "latestVersion": "Neuste Version ",
+      "latestVersion": "Neueste Version ",
       "notifyNewVersion": "Automatisch über Anwendungsaktualisierungen benachrichtigen",
-      "learnMore": "Um mehr über Stretchly zu erfahren, sich unser Tutorial anzuschauen, die neueste Version herunterzuladen oder uns für Support zu kontaktieren, ",
-      "ourWebsite": "besuchen Sie unsere Website",
+      "learnMore": "Um mehr über die Funktionen von Stretchly zu erfahren, unser Tutorial anzuschauen, die neueste Version herunterzuladen oder uns für Support zu kontaktieren, ",
+      "ourWebsite": "besuche unsere Website",
       "dot": ".",
       "developedBy": "Entwickelt von",
       "janH": "Jan Hovancik",
@@ -104,8 +104,8 @@
     },
     "heart": {
       "loveStretchly": "Gefällt dir Stretchly?",
-      "desc1": "Regelmäßige Pausen bei der Verwendung eines Computers sind wissenschaftlich erwiesenermaßen wichtig für Ihr körperliches und geistiges Wohlbefinden.",
-      "desc2": "Stretchly ist kostenlos. Sie können Ihre Unterstützung jedoch durch eine Spende zeigen und uns dabei helfen, Stretchly weiter zu verbessern und andere freie Software zu veröffentlichen.",
+      "desc1": "Es ist wissenschaftlich erwiesen, dass regelmäßige Pausen bei der Arbeit am Computer wichtig für dein körperliches und geistiges Wohlbefinden sind.",
+      "desc2": "Stretchly ist kostenlos. Aber du kannst uns unterstützen, indem du spendest und uns hilfst, Stretchly weiter zu verbessern und andere freie Software zu veröffentlichen.",
       "becomePatron": "Werde ein Patron",
       "alreadyContributor": "Ich bin bereits ein Mitwirkender",
       "authenticateUsing": "Authentifizierung durch:",
@@ -114,15 +114,15 @@
     }
   },
   "contributorPreferences": {
-    "0": "Erster Bildschirm",
-    "1": "Zweiter Bildschirm",
-    "2": "Dritter Bildschirm",
-    "3": "Vierter Bildschirm",
-    "4": "Fünfter Bildschirm",
+    "0": "Erster Monitor",
+    "1": "Zweiter Monitor",
+    "2": "Dritter Monitor",
+    "3": "Vierter Monitor",
+    "4": "Fünfter Monitor",
     "title": "Einstellungen für Mitwirkende",
     "notifications": "Pausenbenachrichtigungen:",
-    "notificationsInfo": "Die Systembenachrichtigung wird vor den Pausen angezeigt, damit Sie sich darauf vorbereiten können.",
-    "beforeLongBreak": "Große Pause:",
+    "notificationsInfo": "Die Systembenachrichtigung wird vor den Pausen angezeigt, damit du dich darauf vorbereiten kannst.",
+    "beforeLongBreak": "Lange Pause:",
     "beforeMiniBreak": "Mini-Pause:",
     "newVersion": "Neue Version:",
     "newVersionNotification": "Benachrichtigen, wenn eine neue Version verfügbar ist",
@@ -130,30 +130,30 @@
     "customIdeasInfo": "Ermöglicht die Verwendung benutzerdefinierter Pausenideen durch Bearbeiten der Konfigurationsdatei. (Für fortgeschrittene Benutzer.)",
     "useIdeasFromSettings": "Eigene Pausenideen aus der Konfigurationsdatei verwenden",
     "breakPostpone": "Aufschieben von Pausen:",
-    "breakPostponeInfo": "Wenn in den Haupteinstellungen aktiviert, können Sie Pausen verschieben. In den folgenden Einstellungen können Sie festlegen, wann, wie lange und wie oft Sie eine Pause verschieben können.",
+    "breakPostponeInfo": "Wenn dies in den Haupteinstellungen aktiviert ist, kannst du Pausen verschieben. Mit den folgenden Einstellungen kannst du festlegen, wann, für wie lange und wie oft du eine Pause verschieben kannst.",
     "miniBreaks": "Mini-Pausen:",
     "postponableFor": "Aufschiebbar für:",
     "postponeFor": "Aufschieben für:",
     "maxPostpones": "Max. Aufschiebungen:",
-    "longBreaks": "Große Pausen:",
+    "longBreaks": "Lange Pausen:",
     "pauseUntilMoring": "Pause bis Morgen:",
     "pauseUntil": "Pause bis:",
-    "pauseUntilMorningInfo": "Geben Sie an, bis zu welcher Stunde „Pause bis Morgen“ pausieren soll.",
+    "pauseUntilMorningInfo": "Gebe an, bis zu welcher Stunde „Pause bis Morgen“ pausieren soll.",
     "welcomeWindow": "Willkommensfenster:",
     "showWelcomeWindow": "Willkommensfenster beim nächsten Start anzeigen",
     "opacityTheme": "Thementransparenz:",
     "opacityInfo": "Wie undurchsichtig soll das Pausenfenster sein?",
     "opacity": "Deckkraft:",
     "breakWindowSize": "Pausenfenstergröße",
-    "breakWindowSizeInfo": "Wie viel Prozent des Bildschirms sollte das Pausenfenster ausblenden?",
+    "breakWindowSizeInfo": "Wie viel Prozent des Bildschirms soll das Pausenfenster ausblenden?",
     "breakWindowWidth": "Breite:",
     "breakWindowHeight": "Höhe:",
     "sounds": "Töne:",
     "volume": "Lautstärke:",
     "miniBreakStartSound": "Töne am Beginn und Ende einer Mini-Pause spielen",
-    "longBreakStartSound": "Töne am Beginn und Ende einer Großen Pause spielen",
+    "longBreakStartSound": "Töne am Beginn und Ende einer langen Pause spielen",
     "naturalBreaks": "Natürliche Pausen:",
-    "naturalBreaksInfo": "Wenn 'Abwesenheit vom Gerät berücksichtigen' in den Haupteinstellungen aktiviert ist, können Sie angeben, nach welcher Zeit der Countdown angehalten werden soll.",
+    "naturalBreaksInfo": "Wenn 'Abwesenheit vom Gerät berücksichtigen' in den Haupteinstellungen aktiviert ist, kannst du angeben, nach welcher Zeit der Countdown angehalten werden soll.",
     "pauseAfter": "Pause nach:",
     "appearance": "Aussehen:",
     "light": "Hell",
@@ -165,11 +165,11 @@
     "cursor": "Mauszeiger folgen",
     "primary": "Hauptmonitor",
     "showOnMonitor": "Pausen zeigen auf",
-    "screenInfo": "Wenn die Anzeige von Pausen auf allen Monitoren deaktiviert ist, können Sie auswählen, auf welchem Monitor Sie Ihre Pausen anzeigen möchten.",
+    "screenInfo": "Wenn die Anzeige von Pausen auf allen Monitoren deaktiviert ist, kannst du auswählen, auf welchem Monitor du deine Pausen anzeigen möchtest.",
     "screen": "Bildschirm für Pausen:",
     "showCurrentTimeInBreaks": "Zeige die aktuelle Uhrzeit im Pausenfenster",
     "timeToBreakInTray": "Zeit bis zur Pause",
-    "showTimeToBreakInTray": "Zeige Zeit bis zur nächsten Pause im Anwendungssymbol",
+    "showTimeToBreakInTray": "Zeige Zeit bis zur nächsten Pause im Taskleistensymbol",
     "currentTimeInBreaks": "Aktuelle Uhrzeit"
   },
   "utils": {
@@ -189,11 +189,11 @@
     "inAbout": "in etwa {{count}}"
   },
   "process": {
-    "newVersionAvailable": "Neue Version verfügbar!"
+    "newVersionAvailable": "Neue Version ist verfügbar!"
   },
   "welcome": {
     "title": "Willkommen bei Stretchly",
-    "breakTimeReminderApp": "Pausenzeit Erinnerungs-App",
+    "breakTimeReminderApp": "Die App zur Pausenerinnerung",
     "viewTutorial": "Tutorial anzeigen",
     "openPreferences": "Einstellungen öffnen",
     "getStarted": "Einstiegshilfe"
@@ -202,7 +202,7 @@
     "paused": "Pausiert",
     "indefinitely": "Unbegrenzt",
     "dndMode": "\"Bitte nicht stören\" ist eingeschaltet",
-    "nextLongBreak": "Nächste große Pause",
+    "nextLongBreak": "Nächste lange Pause",
     "nextMiniBreak": "Nächste Mini-Pause",
     "afterMiniBreak_one": "nach {{count}} Mini-Pause",
     "afterMiniBreak_other": "nach {{count}} Mini-Pausen",
@@ -211,34 +211,34 @@
   },
   "miniBreakIdeas": {
     "aak": {
-      "text": "Steh auf und strecke dich."
+      "text": "Stehe auf und strecke dich."
     },
     "aal": {
-      "text": "Richte deinen Blick auf ein fernes Objekt, das in mindestens 20 Metern Entfernung steht."
+      "text": "Richte deinen Blick auf ein Objekt, das mindestens 20 Meter entfernt ist."
     },
     "aam": {
-      "text": "Nimm dir einen Moment und denke über etwas nach, für das du dankbar bist."
+      "text": "Nimm dir einen Moment, um an etwas zu denken, für das du dankbar bist."
     },
     "aaa": {
-      "text": "Steh auf und hol dir ein Glas Wasser."
+      "text": "Hol dir ein Glas Wasser."
     },
     "aab": {
-      "text": "Dreh deinen Kopf langsam so weit es geht nach links, dann in die andere Richtung."
+      "text": "Schaue langsam ganz nach links und dann nach rechts."
     },
     "aac": {
-      "text": "Kippe deinen Kopf langsam so weit es geht nach hinten, dann nach vorne."
+      "text": "Schaue langsam erst ganz nach oben und dann nach unten."
     },
     "aad": {
-      "text": "Schließ deine Augen und atme mehrmals tief ein und wieder aus."
+      "text": "Schließe deine Augen und atme mehrmals tief ein und wieder aus."
     },
     "aae": {
-      "text": "Schließ deine Augen und entspann dich für einen Moment."
+      "text": "Schließe deine Augen und entspann dich für einen Moment."
     },
     "aaf": {
-      "text": "Dehne deine Beine."
+      "text": "Strecke deine Beine."
     },
     "aag": {
-      "text": "Dehne deine Arme."
+      "text": "Strecke deine Arme."
     },
     "aah": {
       "text": "Ist deine Sitzhaltung gesund?"
@@ -250,37 +250,37 @@
       "text": "Kippe deinen Kopf langsam Richtung Schulter und halte die Position für 5-10 Sekunden."
     },
     "aan": {
-      "text": "Halte kurz inne und lächel, weil du lebendig bist."
+      "text": "Halte kurz inne und lächle, weil du lebendig bist."
     },
     "aao": {
       "text": "Ein wirklich ergonomischer Arbeitsplatz ist einer, von dem du regelmäßig aufstehst."
     },
     "aap": {
-      "text": "Schließ deine Augen und zähle deine Atemzüge."
+      "text": "Schließe deine Augen und zähle deine Atemzüge."
     },
     "aaq": {
-      "text": "Schließ deine Augen und benenne die Dinge, die du hörst."
+      "text": "Schließe deine Augen und benenne die Dinge, die du hörst."
     },
     "aar": {
-      "text": "Berühre mit deinen Fingerspitzen deine Schultern. Kreise deine Schultern im Uhrzeigersinn für 10 Sekunden, dann in die andere Richtung."
+      "text": "Berühre deine Schultern mit deinen Fingerspitzen . Kreise so deine Schultern vorwärts für 10 Sekunden, dann rückwärts."
     },
     "aas": {
-      "text": "Hebe deinen rechten Arm und strecke ihn nach links über deinen Kopf. Halte die Position für 10 Sekunden. Wiederhole das Gleiche mit deinem anderen Arm."
+      "text": "Hebe deinen rechten Arm und strecke ihn nach links über deinen Kopf. Halte dies für 10 Sekunden. Wiederhole es mit dem linken Arm."
     },
     "aat": {
-      "text": "Dehne mit deiner rechten Hand jeden Finger deiner linken Hand. Wiederhole das Gleiche für deine andere Hand."
+      "text": "Dehne mit deiner rechten Hand jeden Finger deiner linken Hand. Wiederhole dies mit der anderen Hand."
     },
     "aav": {
-      "text": "Schließ deine Augen und nimm deine aufkommenden Gedanken oder Gefühle zur Kenntnis, ohne darüber zu urteilen."
+      "text": "Schließe deine Augen und nimm deine aufkommenden Gedanken oder Gefühle wahr, ohne darüber zu urteilen."
     },
     "aaw": {
-      "text": "Fokussiere alle 20 Minuten für 20 Sekunden ein Objekt in 20 Meter Entfernung."
+      "text": "Fokussiere alle 20 Minuten für 20 Sekunden ein Objekt in 20 Fuß (6m) Entfernung."
     },
     "aax": {
-      "text": "Wenn du Hilfe brauchst, frag danach."
+      "text": "Wenn du Hilfe brauchst, frage danach."
     },
     "aay": {
-      "text": "Erledige deine Tätigkeiten, eine nach der anderen."
+      "text": "Erledige eine Sache nach der anderen."
     },
     "aaz": {
       "text": "Liegt deine Aufmerksamkeit auf den richtigen Dingen?"
@@ -289,16 +289,178 @@
       "text": "Ändere deine Sitzhaltung."
     },
     "abb": {
-      "text": "Gönne deinen Augen etwas natürliches Tageslicht."
+      "text": "Setze deine Augen dem natürlichen Licht aus."
     },
     "abc": {
-      "text": "Blicke mit deinen geschlossenen Augen langsam Richtung Decke und dann Richtung Boden."
+      "text": "Blicke mit geschlossenen Augen langsam und sanft zur Decke und dann zum Boden."
     },
     "abd": {
-      "text": "Bewege deine geschlossenen Augen langsam nach links, dann wieder langsam nach rechts."
+      "text": "Bewege deine geschlossenen Augen langsam nach links, dann langsam nach rechts."
     },
     "abe": {
-      "text": "Schüttel deine Hände aus, um dich etwas zu erleichtern."
+      "text": "Schüttle deine Hände aus, um dich etwas zu erleichtern."
+    },
+    "aau": {
+      "text": "Steh auf und mache einen Ausfallschritt. Halte diesen für 10 Sekunden, dann wiederhole ihn mit dem anderen Bein."
+    },
+    "abf": {
+      "text": "Berühre nacheinander mit jeder Fingerspitze die Spitze deines Daumens sodass ein \"O\" geformt wird."
+    },
+    "abg": {
+      "text": "Mache eine Faust, dann strecke deine Finger nach oben bis sie zur Decke zeigen, als würdest du jemanden stoppen wollen."
+    },
+    "abh": {
+      "text": "Mache eine Faust, dann spreize und strecke deine Finger aus, so weit du kannst."
+    },
+    "abk": {
+      "text": "Stell dich aufrecht hin mit seitlich herabhängenden Armen. Ziehe die Schulterblätter zusammen und halte diese Position."
+    },
+    "abj": {
+      "text": "Stell dich aufrecht hin und neige den Kopf mit Hilfe der Hand langsam zur Schulter, bis du eine Dehnung spürst."
+    },
+    "abl": {
+      "text": "Stell dich aufrecht hin und hebe die Arme entlang der Schultern. Bewege die Hände leicht hinter den Rücken, halte dies für eine Sekunde und kehre zurück."
+    },
+    "abi": {
+      "text": "Sitze aufrecht, die Arme hängen seitlich herab. Drehe nun langsam den Kopf in einem großen Bogen in eine Richtung."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Nicht alleine",
+      "text": "Fällt es dir schwer, allein eine Pause zu machen? Versuche, sie mit einem Kollegen oder einer Kollegin zu machen. So fällt es dir nicht nur leichter, die Pausen einzuhalten, sondern du hast auch die Möglichkeit, deine Kollegen besser kennen zu lernen. Zusammen Pausen zu machen, erhöht die Produktivität."
+    },
+    "aab": {
+      "title": "Geh weg",
+      "text": "Hast du jemals bemerkt, dass dein Gehirn Dinge von selbst herausfinden kann ? Du brauchst nur vom Computer wegzugehen, eine Pause machen und über etwas ganz anderes nachdenken."
+    },
+    "aaf": {
+      "title": "Ergonomie",
+      "text": "Die falsche Höhe und der falsche Winkel von Tastatur, Maus, Monitor oder Arbeitsfläche können gesundheitliche Probleme verursachen. Nimm dir etwas Zeit und lese etwas über die Ergonomie am Schreibtisch."
+    },
+    "aah": {
+      "title": "Veränderung",
+      "text": "Hast du einen Stabilitätsball oder einen Steharbeitsplatz? Erwäge, deinen Schreibtischstuhl für eine Weile durch diese Dinge zu ersetzen."
+    },
+    "aaq": {
+      "title": "Lernen",
+      "text": "In einer Studie mit gesunden Freiwilligen fanden NIH-Forscher heraus, dass kurze, frühzeitige und häufige Pausen unserem Gehirn beim Erlernen neuer Fähigkeiten helfen können."
+    },
+    "aac": {
+      "title": "Mikropausen",
+      "text": "Ruhe ist eine Schlüsselkomponente, welche die Leistung des Muskel-Skelett-Systems sicherstellt. Häufige Pausen können die Dauer einer Aufgabe verkürzen und dazu beitragen, das Risiko ergonomischer Verletzungen zu verringern."
+    },
+    "aad": {
+      "title": "Meditation",
+      "text": "Forschungsstudien deuten darauf hin, dass Achtsamkeitsübungen dazu beitragen, Ängste, Depressionen, Stress und Schmerzen zu verringern und die allgemeine Gesundheit, die psychische Gesundheit und die Lebensqualität zu verbessern. Weißt du nicht, wie du anfangen sollst? Es gibt zahlreiche Apps, die dir dabei helfen."
+    },
+    "aae": {
+      "title": "Blinzle",
+      "text": "Wenn du lange auf einen Bildschirm schaust, blinzelst du weniger und setzt deine Augen so der Luft aus. Blinzle einige Sekunden lang schnell, um den Tränenfilm aufzufrischen und Staub von der Augenoberfläche zu entfernen."
+    },
+    "aag": {
+      "title": "Bewegung",
+      "text": "Es gibt viele Möglichkeiten, wie du dich im Büro bewegen kannst. Versuche auf der Stelle zu marschieren oder Liegestütze am Schreibtisch zu machen."
+    },
+    "aaj": {
+      "text": "Wie wäre es mit einem Spaziergang ohne Technik?",
+      "title": "Technik"
+    },
+    "aak": {
+      "title": "Stoffwechsel",
+      "text": "Neue Forschungsergebnisse zeigen, dass langes Sitzen unter anderem das Risiko für das metabolische Syndrom, das Herzinfarkt- und Schlaganfallrisiko und das allgemeine Sterberisiko erhöht. Regelmäßige Gehpausen können den Kreislauf anregen und so einigen dieser Probleme entgegenwirken."
+    },
+    "aai": {
+      "title": "Wahrnehmung",
+      "text": "Träumst du vor dich hin oder hast du Schwierigkeiten, dich zu konzentrieren? Es ist ein Zeichen, dass du eine Pause brauchst."
+    },
+    "aam": {
+      "title": "Obst",
+      "text": "Nimm dir Zeit und esse etwas Obst. Langsam. Achte auf den Geschmack, die Textur, die Frische."
+    },
+    "aal": {
+      "title": "Aktive Meetings",
+      "text": "Wie wäre es, wenn du deine Meetings vom Konferenzraum in die Halle verlegst? Zu Fuß zu gehen verbrennt nicht nur Kalorien, sondern kann auch den Sinn für Zusammenarbeit fördern."
+    },
+    "aap": {
+      "text": "Sende keine E-Mails oder Nachrichten an Bürokollegen, sondern gehe zu ihren Schreibtischen, um mit ihnen zu kommunizieren.",
+      "title": "Kollegen"
+    },
+    "aan": {
+      "title": "Toiletten",
+      "text": "Gehe zur am weitesten entfernten Toilette der Arbeitsstätte, wenn du eine Toilette aufsuchst."
+    },
+    "aar": {
+      "text": "Es ist erwiesen, dass schon kleine Mengen an regelmäßiger Bewegung dramatische gesundheitliche Vorteile mit sich bringen können, einschließlich einer messbaren Reduzierung von Stress.",
+      "title": "Bewegung"
+    },
+    "aas": {
+      "title": "Wiederhole",
+      "text": "Hast du deine Dehnungsroutine gefunden? Vergiss nicht, sie mehr als einmal zu wiederholen, um die Auswirkungen des langen Sitzens besser zu bekämpfen."
+    },
+    "aau": {
+      "title": "Dehnen des Rückens",
+      "text": "Verschränke die Hände hinter dem Kopf und strecke die Arme zur Decke, wobei die Handflächen am Ende nach oben zeigen."
+    },
+    "aav": {
+      "title": "Mobilisiere",
+      "text": "Für jede dreißigminütige Stagnation solltest du mindestens eine Minute der Stimulation betreiben."
+    },
+    "aax": {
+      "title": "Puls",
+      "text": "Erhöhe deinen Puls vier- bis fünfmal pro Woche für 20 Minuten auf 120 Schläge pro Minute, indem du etwas tust, das dir Spaß macht. Wenn du deine Herzfrequenz regelmäßig erhöhst, verbessert sich deine kardiovaskuläre Gesundheit."
+    },
+    "aay": {
+      "text": "Studien haben gezeigt, dass beim Treppensteigen, das als körperliche Aktivität mit hoher Intensität gilt, mehr Kalorien pro Minute verbrannt werden als beim Joggen.",
+      "title": "Nimm die Treppe"
+    },
+    "aaz": {
+      "text": "Die Kunsttherapie ist dafür bekannt, dass sie sich positiv auf die psychische Gesundheit auswirkt, vor allem wenn es um Stressbewältigung geht. Wie wäre es mit einem kurzen Gedicht, der Aufnahme eine Bildes, oder ein wenig zu malen?",
+      "title": "Schaffe Kunst"
+    },
+    "aba": {
+      "title": "Aufräumen",
+      "text": "Ein aufgeräumter Raum hilft dir, dich bei der Arbeit zu konzentrieren, und wird oft mit positiven Gefühlen wie Glück in Verbindung gebracht."
+    },
+    "abd": {
+      "text": "Gähnen kann sehr hilfreich sein, da dabei Tränenflüssigkeit produziert wird, welche die Augen befeuchtet und schmiert.",
+      "title": "Gähnen"
+    },
+    "abc": {
+      "title": "Öffentliche Verkehrsmittel",
+      "text": "Wenn du regelmäßig öffentliche Verkehrsmittel benutzt, kannst du stehen, statt zu sitzen. Versuche, möglichst viele deiner täglichen Wege zu Fuß oder mit dem Fahrrad zurückzulegen."
+    },
+    "abe": {
+      "title": "Fokuswechsel",
+      "text": "Halte einen Finger nahe an das Auge und fokussiere ihn. Bewege den Finger langsam weg, fokussiere weit in die Ferne und dann wieder auf den Finger. Bringe den Finger zurück und konzentriere dich auf etwas weit Entferntes."
+    },
+    "abf": {
+      "title": "Palmieren",
+      "text": "Stütze dich im Sitzen mit den Ellbogen auf dem Schreibtisch nahe der Tischkante ab. Verlagere dein Gewicht nach vorne und lege die Hände über die Augen. Schließe die Augen, atme langsam durch die Nase ein und halte die Luft für einige Sekunden an. Setze die tiefe Atmung fort."
+    },
+    "abg": {
+      "text": "Drücke ein Paar zusammengeknüllte Socken oder einen weichen Gummiball zusammen, halte dies für 5 Sekunden. Wiederhole den gesamten Vorgang einige Male.",
+      "title": "Hand drücken"
+    },
+    "abh": {
+      "title": "Langsames Atmen",
+      "text": "Neue Forschungsergebnisse deuten darauf hin, dass kontrollierte, langsame Atemtechniken ein Mittel zur Optimierung physiologischer Parameter sein können, die offenbar mit Gesundheit und Langlebigkeit in Zusammenhang stehen."
+    },
+    "aao": {
+      "title": "Kaffeepause",
+      "text": "Machst du eine Kaffeepause? Erwäge dann, jedes Mal einen 5-minütigen Spaziergang zu machen."
+    },
+    "aat": {
+      "title": "Handgelenk und Unterarm",
+      "text": "Strecke die Arme aus, die Handflächen zeigen zu dir, nun drehe die Hände langsam viermal im Uhrzeigersinn, dann viermal gegen den Uhrzeigersinn."
+    },
+    "aaw": {
+      "title": "7-Minuten-Workout",
+      "text": "Bei solch einem Workout wird in einem Bruchteil der Zeit ein Ganzkörpertraining absolviert. Aber wie bei jeder Übung solltest du vorsichtig sein. Es gibt zahlreiche Apps, mit denen du beginnen kannst."
+    },
+    "abb": {
+      "text": "Die Natur steht in Verbindung mit positiven Emotionen und dem Abbau von Stress und Ängsten. Wann immer es möglich ist, solltest du deine Mittagspause im Freien verbringen, umgeben von Grün.",
+      "title": "Mittagessen im Freien"
     }
   }
 }
