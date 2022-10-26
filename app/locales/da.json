@@ -152,7 +152,17 @@
     "2": "Tredje Skærm",
     "1": "Anden Skærm",
     "4": "Femte skærm",
-    "opacityTheme": "Tema gennemsigtighed:"
+    "opacityTheme": "Tema gennemsigtighed:",
+    "showBreaksAsRegularWindowsInfo": "Hvis slået til vil Pause vinduer blive fokusserbare, de vil ikke være \"Altid øverst\" længere og de vil også vises i taskbaren.",
+    "showBreaksAsRegularWindowsTitle": "Funger som almindeligt vindue:",
+    "screen": "Monitorer for Pauser:",
+    "opacity": "Transperens:",
+    "opacityInfo": "Hvor solidt skal pausevinduet være?",
+    "breakWindowSizeInfo": "Hvor stor en procentdel af skærmbilledet skal pausevinduet dække?",
+    "breakWindowWidth": "Bredde:",
+    "breakWindowSize": "Pause vinduets størrelse",
+    "showBreaksAsRegularWindows": "Vis pauser som almindelige vinduer",
+    "breakWindowHeight": "Højde:"
   },
   "utils": {
     "none_one": "{{count}}",
