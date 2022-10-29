@@ -25,14 +25,14 @@
     "electron-log": "^4.4.8",
     "electron-store": "^8.1.0",
     "humanize-duration": "^3.27.3",
-    "i18next": "^21.9.2",
-    "i18next-fs-backend": "^1.1.5",
-    "luxon": "^3.0.3",
+    "i18next": "^22.0.4",
+    "i18next-fs-backend": "^2.0.0",
+    "luxon": "^3.0.4",
     "macos-notification-state": "^2.0.1",
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2.0",
     "rtl-detect": "^1.0.4",
-    "semver": "^7.3.7",
+    "semver": "^7.3.8",
     "windows-focus-assist": "^1.3.0",
     "windows-notification-state": "^2.0.0"
   }
