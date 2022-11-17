@@ -164,7 +164,13 @@
     "showBreaksAsRegularWindows": "Visa pauser som vanliga fönster",
     "screen": "Övervaka för pauser:",
     "showOnMonitor": "Visa pauser på",
-    "primary": "Primär bildskärm"
+    "primary": "Primär bildskärm",
+    "screenInfo": "När visning av pauser på alla skärmar är inaktiverat kan du välja vilken du vill visa dina pauser på.",
+    "timeToBreakInTray": "Dags för paus",
+    "showTimeToBreakInTray": "Visa tiden till nästa paus i menyradsikonen",
+    "currentTimeInBreaks": "Aktuell tid",
+    "showCurrentTimeInBreaks": "Visa aktuell lokal tid i pausfönster",
+    "showBreaksAsRegularWindowsInfo": "När det är aktiverat kommer pausfönster att bli fokuserbara, de kommer inte att vara \"Alltid överst\" längre och de kommer också att visas i aktivitetsfältet."
   },
   "utils": {
     "none_one": "{{count}}",
@@ -200,6 +206,254 @@
     "nextMiniBreak": "Nästa korta paus",
     "afterMiniBreak_one": "om {{count}} kort paus",
     "afterMiniBreak_other": "om {{count}} korta pauser",
-    "resuming": "Återupptar"
+    "resuming": "Återupptar",
+    "appExclusion": "Regel för apputeslutning"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Gå och ta ett glas vatten."
+    },
+    "aab": {
+      "text": "Titta långsamt hela vägen åt vänster, sedan höger."
+    },
+    "aac": {
+      "text": "Titta sakta hela vägen upp, sedan ner."
+    },
+    "aad": {
+      "text": "Blunda och ta några djupa andetag."
+    },
+    "aae": {
+      "text": "Blunda och slappna av."
+    },
+    "aaj": {
+      "text": "Luta sakta huvud till sida och håll i 5-10 sekunder."
+    },
+    "aak": {
+      "text": "Stå upp från din stol och sträck på dig."
+    },
+    "aal": {
+      "text": "Fokusera om dina ögon på ett föremål minst 20 meter bort."
+    },
+    "aan": {
+      "text": "Ta en stund att le över att vara vid liv."
+    },
+    "aao": {
+      "text": "En verkligt ergonomisk arbetsstation är en som du regelbundet trycker ifrån."
+    },
+    "aap": {
+      "text": "Blunda och räkna dina andetag."
+    },
+    "aaq": {
+      "text": "Blunda och namnge det du hör."
+    },
+    "aam": {
+      "text": "Ta en stund att tänka på något du uppskattar."
+    },
+    "aax": {
+      "text": "Om du behöver hjälp, be om det."
+    },
+    "aay": {
+      "text": "Gör en sak i taget."
+    },
+    "aaw": {
+      "text": "Fokusera var 20:e minut i 20 sekunder på ett föremål på 20 fots avstånd."
+    },
+    "aaz": {
+      "text": "Används din uppmärksamhet klokt?"
+    },
+    "abj": {
+      "text": "Stå upp och luta långsamt huvudet mot axeln med samma hand tills du känner en sträckning."
+    },
+    "abk": {
+      "text": "Stå upp med armarna vid din sida. Pressa ihop skulderbladen och håll."
+    },
+    "aaf": {
+      "text": "Sträck på benen."
+    },
+    "aag": {
+      "text": "Sträck på dina armar."
+    },
+    "aah": {
+      "text": "Är din sittställning korrekt?"
+    },
+    "aai": {
+      "text": "Vrid sakta huvud till sida och håll i 10 sekunder."
+    },
+    "aar": {
+      "text": "Placera fingertopparna på dina axlar. Rulla axlarna framåt i 10 sekunder, sedan bakåt."
+    },
+    "aas": {
+      "text": "Lyft din högra arm, sträck den över huvudet till vänster och håll i 10 sekunder. Upprepa på andra sidan."
+    },
+    "aat": {
+      "text": "Med din högra hand, ta tag i varje finger på din vänstra hand i tur och ordning och kläm. Upprepa på andra sidan."
+    },
+    "aau": {
+      "text": "Stå upp och gör ett utfall. Håll i 10 sekunder och gör sedan det andra benet."
+    },
+    "aav": {
+      "text": "Blunda och märk helt enkelt vad som än uppstår i det aktuella ögonblicket, utan att döma."
+    },
+    "aba": {
+      "text": "Ändra din sittställning."
+    },
+    "abc": {
+      "text": "Med slutna ögon lyfter du långsamt och försiktigt ögonen mot taket och tillbaka ner till golvet."
+    },
+    "abd": {
+      "text": "Med slutna ögon, flytta långsamt och försiktigt dina ögon till vänster, sedan långsamt till höger."
+    },
+    "abe": {
+      "text": "Skaka ut händerna för att få lite lättnad."
+    },
+    "abf": {
+      "text": "En i taget, rör vid spetsen av varje finger mot toppen av tummen så att de får en O-form."
+    },
+    "abg": {
+      "text": "Gör en knytnäve och skjut sedan upp fingrarna tills de pekar mot taket, som om du säger åt någon att sluta."
+    },
+    "abh": {
+      "text": "Gör en knytnäve och lufta sedan ut fingrarna och sträck ut dem så långt du kan."
+    },
+    "abi": {
+      "text": "Sitt högt med armarna hängande längs dina sidor och vrid långsamt nacken i en riktning i en stor cirkel."
+    },
+    "abl": {
+      "text": "Stå upp med armarna höjda längs axlarna. Flytta händerna något bakom ryggen, håll i en sekund och gå tillbaka."
+    },
+    "abb": {
+      "text": "Utsätt dina ögon för naturligt ljus."
+    }
+  },
+  "longBreakIdeas": {
+    "aae": {
+      "text": "Att titta på skärmar under lång tid gör att du blinkar mindre, vilket gör att dina ögon exponeras för luften. Blinka snabbt i några sekunder för att fräscha upp tårfilmen och ta bort damm från ögonytan.",
+      "title": "Blinka"
+    },
+    "aad": {
+      "text": "Forskningsstudier tyder på att mindfulness-baserade övningar hjälper till att minska ångest, depression, stress och smärta och hjälper till att förbättra allmän hälsa, mental hälsa och livskvalitet. Är du osäker på hur du ska börja? Det finns många appar som hjälper dig.",
+      "title": "Meditation"
+    },
+    "aal": {
+      "title": "Aktiva möten",
+      "text": "Vad sägs om att flytta möten från konferensrummet till hallen? Att gå förbränner inte bara kalorier utan det kan till och med främja en känsla av samarbete."
+    },
+    "aak": {
+      "text": "Ny forskning visar att sittande under långa perioder bidrar till risken för bland annat metabolt syndrom, hjärtinfarkt och stroke och total dödsrisk. Att ta regelbundna promenadpauser kan hjälpa din cirkulation och motverka några av dessa problem.",
+      "title": "Ämnesomsättning"
+    },
+    "aaq": {
+      "text": "I en studie av friska frivilliga fann NIH-forskare att ta korta pauser, tidigt och ofta, kan hjälpa våra hjärnor att lära sig nya färdigheter.",
+      "title": "Inlärning"
+    },
+    "aas": {
+      "title": "Upprepa",
+      "text": "Har du hittat din stretchly-rutin? Glöm inte att upprepa det mer än en gång för att bättre bekämpa effekterna av långvarigt sittande."
+    },
+    "aat": {
+      "title": "Handled och underarm",
+      "text": "Sträck ut armarna med handflatorna vända mot dig och rotera sedan långsamt händerna fyra gånger medurs, sedan fyra gånger moturs."
+    },
+    "aar": {
+      "title": "Träning",
+      "text": "Bevis tyder på att små mängder regelbunden träning kan ge dramatiska hälsofördelar, inklusive mätbart minskad stress."
+    },
+    "aau": {
+      "title": "Sträckning av ryggen",
+      "text": "Sätt ihop händerna bakom huvudet och lyft dem sedan upp ovanför huvudet och avsluta med handflatorna uppåt."
+    },
+    "aav": {
+      "title": "Mobilisera",
+      "text": "För varje trettio minuters stagnation bör du ha minst en minuts stimulering."
+    },
+    "aaz": {
+      "title": "Skapa konst",
+      "text": "Konstterapi är känt för att ha stora mentala hälsofördelar, särskilt när det kommer till stresshantering. Vad sägs om att skriva en snabb dikt, ta en bild eller måla något litet?"
+    },
+    "aaw": {
+      "title": "7 minuters träningspass",
+      "text": "Det här träningspasset innehåller en träningsrutin för hela kroppen på en bråkdel av tiden. Men som med all träning, var försiktig. Det finns många appar för att komma igång."
+    },
+    "aax": {
+      "title": "Puls",
+      "text": "Höj din puls till 120 slag per minut under 20 minuter i rad fyra eller fem gånger i veckan och gör allt du tycker om. Att regelbundet höja din puls resulterar i förbättrad kardiovaskulär hälsa."
+    },
+    "aay": {
+      "title": "Ta trappan",
+      "text": "Studier har visat att trappor, som anses vara intensiv fysisk aktivitet, bränner fler kalorier per minut än att jogga."
+    },
+    "abd": {
+      "title": "Gapande",
+      "text": "Gäspning kan vara väldigt användbart, eftersom det producerar tårar för att fukta och smörja ögonen."
+    },
+    "abe": {
+      "title": "Fokusbyte",
+      "text": "Håll ett finger nära ögat och fokusera på det. Flytta långsamt bort fingret, fokusera långt på avstånd och sedan tillbaka till fingret. För tillbaka fingret och fokusera på något långt borta."
+    },
+    "abc": {
+      "text": "Om du åker kollektivt regelbundet kan du stå istället för att sitta. Om det är möjligt, försök att ersätta så många av dina dagliga resor som möjligt med promenader eller cykling.",
+      "title": "Kollektivtrafik"
+    },
+    "aaa": {
+      "title": "Inte ensam",
+      "text": "Tycker du att det är svårt att ta en paus ensam? Försök att göra det med en kollega. Förutom att göra det enklare att hålla sig till pauser kommer du att ha en chans att lära känna dem bättre. Att ta pauser tillsammans ökar produktiviteten."
+    },
+    "aab": {
+      "title": "Gå bort",
+      "text": "Har du någonsin lagt märke till hur din hjärna kan ta reda på saker själv? Allt som krävs är att gå bort från datorn och ta en paus för att tänka på något som inte har med det att göra."
+    },
+    "aac": {
+      "text": "Vila är en nyckelkomponent för att säkerställa prestationsförmågan hos muskuloskeletala systemet. Frekventa pauser kan minska varaktigheten av en uppgift och hjälpa till att minska exponeringen för ergonomisk skaderisk."
+    },
+    "aaf": {
+      "title": "Ergonomi",
+      "text": "Felaktig höjd och vinkel på tangentbordet, musen, skärmen eller arbetsytan kan orsaka hälsoproblem. Ta dig tid att läsa om skrivbordsergonomi."
+    },
+    "aag": {
+      "title": "Flytta",
+      "text": "Det finns många sätt du kan träna på ditt kontor. Prova att marschera på plats eller göra armhävningar på skrivbordet."
+    },
+    "aah": {
+      "title": "Ändra",
+      "text": "Har du en stabilitetsboll eller stående skrivbord? Överväg att byta ut din skrivbordsstol med dem ett tag."
+    },
+    "aai": {
+      "title": "Observera",
+      "text": "Dagdrömmer du eller har du svårt att fokusera? Det är ett tecken på att du behöver ta en paus."
+    },
+    "aam": {
+      "title": "Frukt",
+      "text": "Ta dig tid och ät lite frukt. Långsamt. Lägg märke till smaken, konsistensen, friskheten."
+    },
+    "aan": {
+      "title": "Badrum",
+      "text": "Gå till badrummet längst bort i arbetsplatsen när du går till toaletten."
+    },
+    "aao": {
+      "text": "Ska du på fikapaus? Överväg att ta en 5 minuters promenad varje gång du går för en.",
+      "title": "Fika"
+    },
+    "aap": {
+      "title": "Kollegor",
+      "text": "Skicka inte e-post eller meddelanden till kontorskollegor, gå till deras skrivbord för att kommunicera med dem."
+    },
+    "aba": {
+      "text": "Ett rent utrymme hjälper ditt fokus på jobbet och är ofta kopplat till positiva känslor som lycka."
+    },
+    "abb": {
+      "title": "Lunch ute",
+      "text": "Naturen är kopplad till positiva känslor och minskad stress och ångest. När det är möjligt, försök att ta din dagliga lunchrast utomhus, omgiven av lite grönska."
+    },
+    "abg": {
+      "title": "Klämningar i händerna",
+      "text": "Kläm ihop ett par strumpor eller en mjuk gummiboll, håll i 5 sekunder. Upprepa hela processen några gånger."
+    },
+    "abh": {
+      "title": "Långsam andning",
+      "text": "Ny forskning tyder på potential för användning av kontrollerade långsamma andningstekniker som ett sätt att optimera fysiologiska parametrar som verkar vara förknippade med hälsa och livslängd."
+    },
+    "abf": {
+      "text": "När du sitter, spänn armbågarna på skrivbordet och nära skrivbordskanten. Låt din vikt falla framåt och lägg händerna över ögonen. Blunda och andas långsamt genom näsan och håll i några sekunder. Fortsätt djupa andetag."
+    }
   }
 }
