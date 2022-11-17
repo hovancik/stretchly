@@ -1,0 +1,465 @@
+{
+  "main": {
+    "warning": "Ibabalik nito ang defaults at lahat ng iyong mga setting ay mawawala.",
+    "toMicrobreak": "Mabilisang Pahinga",
+    "for5Hours": "5 oras",
+    "breakIn": "Matagalang Pahinga ng $t(utils.seconds, {'count': {{seconds}} })",
+    "toBreak": "Matagalang Pahinga",
+    "microbreakIn": "Mabilisang Pahinga ng $t(utils.seconds, {'count': {{seconds}} })",
+    "pause": "Ihinto Sandali Ang Pahinga",
+    "for2Hours": "2 oras",
+    "resetBreaks": "I-reset ang pahinga",
+    "restoreDefaults": "Ibalik ang defaults",
+    "resumingBreaks": "Bumabalik sa pagpapahinga",
+    "resume": "Magpahinga Ulit",
+    "forHour": "1 oras",
+    "untilMorning": "Hangang umaga",
+    "indefinitely": "Walang Katapusan",
+    "continue": "Ipagpatuloy",
+    "skipToTheNext": "Lumaktaw sa susunod",
+    "toolTipHeader": "Stretchly - Ang app para sa pagpapaalala ng pagpahinga",
+    "cancel": "Bawiin",
+    "quitStretchly": "Itigil ang Stretchly",
+    "downloadLatestVersion": "I-download ang kasalukuyang version",
+    "preferences": "Mga Kagustuhan",
+    "contributorPreferences": "Mga Kagustuhan para sa Contributor",
+    "syncPreferences": "Mga Kagustuhan para sa Sync"
+  },
+  "preferences": {
+    "about": {
+      "latestVersion": "Pinakabagong version ",
+      "version": "Version ",
+      "checkNewVersion": "Awtomatikong mag tsek ng mga update ng app",
+      "learnMore": "Para matuto pa tungkol sa mga feature ng Stretchly, manuod ng tutorial, i-download ang pinakabagong version o makipag-ugnayan sa amin para sa suporta. ",
+      "ourWebsite": "bisitahin ang aming website",
+      "dot": ".",
+      "developedBy": "Binuo ni",
+      "designedBy": "Icon at design ng UI ni Colin Shanley",
+      "tagline": "Ang app para sa pagpapaalala ng pagpahinga",
+      "janH": "Jan Hovancik"
+    },
+    "theme": {
+      "morningSwim": "Morning swim",
+      "crystalGlass": "Crystal glass",
+      "windChime": "Wind chime",
+      "greenClouds": "Green clouds",
+      "autumnBeBlessed": "Autumn be blessed",
+      "graphiteCrystal": "Graphite crystal",
+      "coffeeKisses": "Coffee kisses",
+      "ticToc": "Tic toc",
+      "menubarIcon": "Icon ng Menubar:",
+      "colour": "Colour",
+      "monochrome": "Monochrome",
+      "invertedMonochrome": "Inverted Monochrome",
+      "snowWhite": "Snow white",
+      "appearance": "Hitsura:",
+      "transparentMode": "Paganahin ang transparency",
+      "sounds": "Mga Tunog:",
+      "enableSounds": "Paganahin ang mga tunog"
+    },
+    "settings": {
+      "monitorIdleTime": "Subaybayan ang nakatigil na oras ng system (naka-pause ang mga pahinga kung nakatigil ang system).",
+      "openAtLogin": "Awtomatikong simulan ang stretchly kapag naglogin",
+      "fullscreen": "Buong screen",
+      "showIdeas": "Ipakita ang mga tip sa pag ehersisyo kapag nasa pahinga",
+      "allScreens": "Ipakita ang pahinga sa lahat na mga monitor",
+      "monitorDnd": "Ipakita ang pahinga kahit nasa Do Not Disturb na pamamaraan",
+      "language": "Pumili ng wika:",
+      "restoreDefaults": "Ibalik ang defaults",
+      "showBreaksIn": "Ipakita ang pahinga sa:",
+      "window": "Window"
+    },
+    "heart": {
+      "loveStretchly": "Mahal mo ang iyong Stretchly?",
+      "becomePatron": "Maging isang Patron",
+      "alreadyContributor": "Contributor na ako",
+      "authenticateUsing": "Patotohanan gamit ang:",
+      "contributorPreferences": "Mga Kagustuhan sa Contributor",
+      "syncPreferences": "Mga Kagustuhan sa Pag-sync",
+      "desc1": "Ang regular na pahinga kapag gumagamit ng computer ay napatunaya sa siyentipikong paraan na mahalaga para sa iyong pisikal at mental na kagalingan.",
+      "desc2": "Libre ang stretchly. Ngunit maaari mong ipahiram ang iyong suporta sa pamamagitan ng pagbibigay ng donasyon at tulungan kaming patuloy na mapabuti ang Stretchly at maglabas ng iba pang libreng software."
+    },
+    "schedule": {
+      "enableMiniBreaks": "Paganahin ang Mabilisang Pahinga",
+      "breakFor": "Magpahinga ng:",
+      "miniBreaks": "Mabilisang Pahinga:",
+      "miniBreaksInfo": "Ang Mabilisang Pahinga ay mga pahinga na palaging ginagawa para magbigay sa iyo ng pagkakataon para makapag mag-inat at magpalubay.",
+      "every": "Bawat:",
+      "showNotificationBeforeMiniBreak": "Ipakita ang abiso bago mag simula ang Mabilisang Pahinga",
+      "strictModeInfo": "Ang Istriktong Pamamaraan ay nagbabawal sa iyo na laktawan ang Mabilisang Pahinga o Matagalang Pahinga at nakadesinyo ito para makatulong para sa pagdisiplina.",
+      "enablePostponeMini": "Paganahin ang Pagpapaliban para sa Mabilisang Pahinga",
+      "enableLongBreaks": "Paganahin ang Matagalang Pahinga",
+      "cantDisableBoth": "Hindi maari na hindi paganahin ang dalawang klase ng pahinga",
+      "longBreaks": "Matagalang Pahinga:",
+      "showNotificationBeforeLongBreak": "Ipakita ang abiso bago magsimula ang Matagalang Pahinga",
+      "strictMode": "Istriktong Pamamaraan:",
+      "enableStrictMini": "Paganahin ang Istriktong Pamamaraan para sa Mabilisang Pahinga",
+      "enableStrictLong": "Paganahin ang Istriktong Pamamaraan para sa Matagalang Pahinga",
+      "longBreaksInfo": "Ang Matagalang Pahinga ay minsan lang ginagawa, pero ng matagalan, na nagpapahintulot sa iyo ng matagalang pahinga sa trabaho.",
+      "enablePostponeLong": "Paganahin ang Pagpapaliban para sa Matagalang Pahinga"
+    },
+    "title": "Mga Kagustuhan para sa Stretchly",
+    "nav": {
+      "theme": "Tema",
+      "heart": "Mahalin ang Stretchly",
+      "settings": "Mga Setting",
+      "schedule": "Talakdaan",
+      "about": "Tungkol"
+    }
+  },
+  "contributorPreferences": {
+    "0": "Unang monitor",
+    "1": "Pangalawang monitor",
+    "2": "Pangatlong monitor",
+    "3": "Pang-apat na monitor",
+    "4": "Ikalimang monitor",
+    "title": "Mga Kagustuhan sa Contributor",
+    "notifications": "Mga abiso sa pagpahinga:",
+    "notificationsInfo": "Ipinapakita ang notification ng system bago ang mga pahinga upang hayaan kang maghanda para dito.",
+    "beforeLongBreak": "Matagalang Pahinga:",
+    "newVersion": "Bagong version:",
+    "newVersionNotification": "Magabiso kapag mayroong bagong bersyon",
+    "customIdeas": "Mga custom na ideya:",
+    "useIdeasFromSettings": "Gumamit ng mga ideya ng pahinga mula sa configuration file",
+    "breakPostpone": "Pagpapaliban ng mga pahinga:",
+    "miniBreaks": "Mga Mabilisang Pahinga:",
+    "postponableFor": "Maaaring ipagpaliban para sa:",
+    "postponeFor": "Ipagpaliban para sa:",
+    "maxPostpones": "Pinakamataas na Pagpaliban:",
+    "longBreaks": "Mga Matagalang Pahinga:",
+    "pauseUntilMoring": "Ihinto muna hangang umaga:",
+    "pauseUntil": "Ihinto muna hangang:",
+    "pauseUntilMorningInfo": "Tukuyin hanggang anong oras dapat sandaling ihinto ang 'Ihinto muna hanggang umaga'.",
+    "welcomeWindow": "Welcome window:",
+    "showWelcomeWindow": "Ipakita ang Welcome window sa susunod na simula",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "Gaano dapat katibay ang window ng pahinga?",
+    "opacity": "Opacity:",
+    "breakWindowSize": "Laki ng window ng pahinga",
+    "breakWindowSizeInfo": "Ilang porsyento ng screen ang dapat itago ng window ng pahinga?",
+    "breakWindowWidth": "Lapad:",
+    "breakWindowHeight": "Taas:",
+    "sounds": "Mga Tunog:",
+    "volume": "Volume:",
+    "naturalBreaks": "Mga natural na pahinga:",
+    "naturalBreaksInfo": "Kung ang pagsubaybay sa nakatigil na oras ay pinagana sa pangunahing Mga Kagustuhan, maaari mong tukuyin pagkatapos kung anong oras dapat sandaling ihinto ang mga pahinga.",
+    "pauseAfter": "Sandaling ihinto pagkatapos:",
+    "appearance": "Hitsura:",
+    "light": "Maliwanag",
+    "system": "System",
+    "showBreaksAsRegularWindowsTitle": "Magasta bilang regular na window:",
+    "screen": "Monitor para sa mga Pahinga:",
+    "currentTimeInBreaks": "Oras ngayon",
+    "showCurrentTimeInBreaks": "Ipakita ang kasalukuyang lokal na oras sa window ng pahinga",
+    "customIdeasInfo": "Binibigyang-daan kang gumamit ng mga custom na ideya sa pahinga sa pamamagitan ng pag-edit ng configuration file. (Para sa mga advanced na user.)",
+    "beforeMiniBreak": "Mabilisang Pahinga:",
+    "breakPostponeInfo": "Kung pinagana sa pangunahing Mga Kagustuhan, maaari mong ipagpaliban ang mga pahinga. Ang pagsunod sa mga setting ay nagbibigay-daan sa pagtukoy kung kailan, gaano katagal at kung gaano karaming beses maaari mong ipagpaliban ang pahinga.",
+    "dark": "Madilim",
+    "miniBreakStartSound": "Patunugin din ang end-of-break na tunog sa simula ng mabilisang pahinga",
+    "longBreakStartSound": "Patunugin din ang end-of-break na tunog sa simula ng matagalang pahinga",
+    "showBreaksAsRegularWindowsInfo": "Kapag pinagana, ang mga window ng pahinga ay magiging nakatutok, hindi na sila magiging 'Palaging nasa itaas' at lalabas din sila sa taskbar.",
+    "showBreaksAsRegularWindows": "Ipakita ang mga pahinga bilang regular na mga window",
+    "screenInfo": "Kapag ang pagpapakita ng mga pahinga sa lahat ng monitor ay hindi pinagana, maaari mong piliin kung saan mo gusto ipakita ang iyong mga Pahinga.",
+    "showOnMonitor": "Ipakita ang mga Pahinga sa",
+    "primary": "Pangunahing monitor",
+    "showTimeToBreakInTray": "Ipakita ang oras sa susunod na pahinga sa icon ng menubar",
+    "cursor": "Sundin ang cursor",
+    "timeToBreakInTray": "Oras na magpahinga"
+  },
+  "utils": {
+    "remaining": "{{count}} na natira",
+    "inAbout": "halos {{count}}",
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} porsyento",
+    "percent_other": "{{count}} porsyento",
+    "oclock_one": "{{count}} o'clock",
+    "oclock_other": "{{count}} o'clock",
+    "seconds_one": "{{count}} segundo",
+    "seconds_other": "{{count}} segundo",
+    "minutes_one": "{{count}} minuto",
+    "minutes_other": "{{count}} minuto",
+    "hours_one": "{{count}} oras",
+    "hours_other": "{{count}} oras"
+  },
+  "process": {
+    "newVersionAvailable": "Bagong bersyon ay magagamit!"
+  },
+  "welcome": {
+    "title": "Welcome sa Stretchly",
+    "breakTimeReminderApp": "Ang app ng paalala sa oras ng pahinga",
+    "viewTutorial": "Tingnan ang Tutorial",
+    "openPreferences": "Buksan ang Mga Kagustuhan",
+    "getStarted": "Magsimula"
+  },
+  "statusMessages": {
+    "paused": "Sandaling Nakahinto",
+    "indefinitely": "Walang katiyakan",
+    "dndMode": "Naka-on ang Do Not Disturb",
+    "nextLongBreak": "Susunod na Matagalang Pahinga",
+    "nextMiniBreak": "Susunod na Mabilisang Pahinga",
+    "appExclusion": "Panuntunan sa pagbubukod ng app",
+    "resuming": "Ipinagpapatuloy",
+    "afterMiniBreak_other": "pagkatapos ng {{count}} na Mabilisang Pahinga",
+    "afterMiniBreak_one": "pagkatapos ng {{count}} na Mabilisang Pahinga"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Kumuha ka ng isang basong tubig."
+    },
+    "aab": {
+      "text": "Dahan-dahang tumingin sa kaliwa, pagkatapos ay sa kanan."
+    },
+    "aad": {
+      "text": "Ipikit ang iyong mga mata at huminga ng malalim."
+    },
+    "aae": {
+      "text": "Ipikit ang iyong mga mata at magpahinga."
+    },
+    "aaf": {
+      "text": "Iunat ang iyong mga binti."
+    },
+    "aai": {
+      "text": "Dahan-dahang lumiko sa gilid at humawak ng 10 segundo."
+    },
+    "aaj": {
+      "text": "Dahan-dahang ikiling ang ulo sa gilid at hawakan ng 5-10 segundo."
+    },
+    "aak": {
+      "text": "Tumayo mula sa iyong upuan at mag-inat."
+    },
+    "aal": {
+      "text": "Itutok muli ang iyong mga mata sa isang bagay na hindi bababa sa 20 metro ang layo."
+    },
+    "aam": {
+      "text": "Maglaan ng ilang sandali upang mag-isip tungkol sa isang bagay na iyong pinahahalagahan."
+    },
+    "aan": {
+      "text": "Maglaan ng ilang sandali upang ngumiti sa pagiging buhay."
+    },
+    "aap": {
+      "text": "Ipikit ang iyong mga mata at bilangin ang iyong mga hininga."
+    },
+    "aar": {
+      "text": "Ilagay ang iyong mga daliri sa iyong mga balikat. Igulong ang iyong mga balikat pasulong sa loob ng 10 segundo, pagkatapos ay pabalik."
+    },
+    "aat": {
+      "text": "Gamit ang iyong kanang kamay, hawakan ang bawat daliri ng iyong kaliwang kamay paisaisa at pisilin. Ulitin sa kabilang panig."
+    },
+    "aau": {
+      "text": "Tumayo at gumawa ng lunge. Humawak ng 10 segundo, pagkatapos ay gawin ang kabilang binti."
+    },
+    "aav": {
+      "text": "Ipikit ang iyong mga mata at pansinin lamang kung ano ang nangyayari sa kasalukuyang sandali, nang walang paghatol."
+    },
+    "aax": {
+      "text": "Kung kailangan mo ng tulong, humingi."
+    },
+    "aag": {
+      "text": "Iunat ang iyong mga braso."
+    },
+    "aah": {
+      "text": "Tama ba ang postura ng iyong pag-upo?"
+    },
+    "aao": {
+      "text": "Ang isang tunay na ergonomic na workstation ay isa na palagi mong itinutulak palayo."
+    },
+    "aaw": {
+      "text": "Tumutok tuwing 20 minuto sa loob ng 20 segundo sa isang bagay na may layong 20 talampakan."
+    },
+    "aac": {
+      "text": "Dahan-dahang tumingin sa itaas, pagkatapos ay pababa."
+    },
+    "aaq": {
+      "text": "Ipikit ang iyong mga mata at pangalanan ang mga bagay na iyong naririnig."
+    },
+    "aas": {
+      "text": "Itaas ang iyong kanang braso, iunat ito sa iyong ulo pakaliwa, at hawakan ng 10 segundo. Ulitin sa kabilang panig."
+    },
+    "aaz": {
+      "text": "Ginagamit mo ba ang iyong atensyon nang maayos?"
+    },
+    "abh": {
+      "text": "Gumawa ng isang kamao at pagkatapos ay i-fan ang iyong mga daliri at iunat ang mga ito sa abot ng iyong makakaya."
+    },
+    "aba": {
+      "text": "Baguhin ang iyong postura sa pag-upo."
+    },
+    "abc": {
+      "text": "Habang nakapikit, dahan-dahang iangat ang iyong mga mata sa kisame at bumalik sa sahig."
+    },
+    "abd": {
+      "text": "Habang nakapikit, dahan-dahang igalaw ang iyong mga mata sa kaliwa, pagkatapos ay dahan-dahan sa kanan."
+    },
+    "abf": {
+      "text": "Isa-isang pindutin ang dulo ng bawat daliri sa dulo ng iyong hinlalaki upang makagawa sila ng O-shape."
+    },
+    "aay": {
+      "text": "Gawin ang bagay ng paisa-isa lamang."
+    },
+    "abj": {
+      "text": "Tumayo nang matangkad at dahan-dahang ikiling ang iyong ulo patungo sa balikat gamit ang parehong kamay hanggang sa makaramdam ka ng kahabaan."
+    },
+    "abb": {
+      "text": "Ilantad ang iyong mga mata sa natural na liwanag."
+    },
+    "abe": {
+      "text": "Kalogin ang iyong mga kamay upang makakuha ng kaunting ginhawa."
+    },
+    "abg": {
+      "text": "Gumawa ng isang kamao at pagkatapos ay padulasin ang iyong mga daliri hanggang sa nakaturo sila sa kisame, na parang sinasabi mo sa isang tao na huminto."
+    },
+    "abi": {
+      "text": "Umupo nang matangkad, nakabitin ang mga braso sa iyong tagiliran, at dahan-dahang iikot ang leeg sa isang direksyon sa isang malaking bilog."
+    },
+    "abk": {
+      "text": "Tumayo nang mataas gamit ang iyong mga braso sa iyong tagiliran. Pagdikitin ang iyong mga talim sa balikat at hawakan."
+    },
+    "abl": {
+      "text": "Tumayo nang mataas habang nakataas ang iyong mga braso sa iyong mga balikat. Ilipat nang bahagya ang mga kamay sa likod ng iyong likod, hawakan ng isang segundo at bumalik."
+    }
+  },
+  "longBreakIdeas": {
+    "aab": {
+      "title": "Lumayo",
+      "text": "Napapansin mo ba kung paano naiisip ng iyong utak ang mga bagay nang mag-isa? Ang kailangan lang ay lumayo sa computer at magpahinga para mag-isip tungkol sa isang bagay na ganap na walang kaugnayan."
+    },
+    "aae": {
+      "title": "Kumurap",
+      "text": "Ang pagtingin sa mga screen sa loob ng mahabang panahon ay nagdudulot sa iyo ng mas kaunting pagpikit, kaya nalalantad ang iyong mga mata sa hangin. Mabilis na kumurap sa loob ng ilang segundo upang pasariwain ang tear film at alisin ang alikabok sa ibabaw ng mata."
+    },
+    "aaf": {
+      "title": "Ergonomics",
+      "text": "Ang hindi tamang taas at anggulo ng keyboard, mouse, monitor o working surface ay maaaring magdulot ng mga problema sa kalusugan. Maglaan ng ilang oras upang magbasa tungkol sa desk ergonomics."
+    },
+    "aag": {
+      "title": "Gumalaw",
+      "text": "Mayroong maraming mga paraan na maaari kang mag-ehersisyo sa loob ng iyong opisina. Subukang magmartsa sa lugar o magpush-up sa mesa."
+    },
+    "aah": {
+      "title": "Baguhin",
+      "text": "Mayroon ka bang stability ball o standing work desk? Pag-isipang palitan ang iyong upuan sa mesa sa kanila nang ilang sandali."
+    },
+    "aai": {
+      "title": "Pansinin",
+      "text": "Ikaw ba ay nanaginip ng gising o nahihirapang mag-focus? Ito ay isang senyales na kailangan mong magpahinga."
+    },
+    "aaj": {
+      "title": "Tech",
+      "text": "Paano kung maglakad ng walang teknolohiya?"
+    },
+    "aak": {
+      "title": "Metabolismo",
+      "text": "Ipinapakita ng umuusbong na pananaliksik na ang pag-upo ng matagal na panahon ay nag-aambag sa panganib ng metabolic syndrome, atake sa puso at panganib sa stroke at pangkalahatang panganib sa kamatayan, bukod sa iba pa. Ang regular na mga pahinga sa paglalakad ay makakatulong sa iyong sirkulasyon, na nagsisikap na malabanan ang ilan sa mga problemang iyon."
+    },
+    "aal": {
+      "text": "Paano ilipat ang mga pulong mula sa conference room patungo sa concourse? Ang paglalakad ay hindi lamang nagsusunog ng mga calorie ngunit maaari pa itong magsulong ng pakiramdam ng pakikipagtulungan.",
+      "title": "Aktibong Pagpupulong"
+    },
+    "aam": {
+      "title": "Prutas",
+      "text": "Maglaan ng oras at kumain ng ilang prutas. Dahan-dahan. Pansinin ang lasa, ang texture, ang pagiging bago."
+    },
+    "aan": {
+      "title": "Mga banyo",
+      "text": "Maglakad sa pinakamalayong banyo sa pasilidad ng lugar ng trabaho kapag pupunta sa banyo."
+    },
+    "aao": {
+      "text": "Pupunta sa coffee break? Isaalang-alang ang paggawa ng 5 minutong lakad sa tuwing pupunta ka para sa isa.",
+      "title": "Magkape"
+    },
+    "aap": {
+      "title": "Mga kasamahan",
+      "text": "Huwag mag-email o magmensahe sa mga kasamahan sa opisina, pumunta sa kanilang mga mesa upang makipag-usap sa kanila."
+    },
+    "aaq": {
+      "title": "Pag-aaral",
+      "text": "Sa isang pag-aaral ng mga malulusog na boluntaryo, natuklasan ng mga mananaliksik ng NIH na ang pagkuha ng mga maikling pahinga, maaga at madalas, ay maaaring makatulong sa ating utak na matuto ng mga bagong kasanayan."
+    },
+    "aar": {
+      "title": "Mag-ehersisyo",
+      "text": "Ang katibayan ay nagmumungkahi na ang maliit na halaga ng regular na ehersisyo ay maaaring magdala ng mga makabuluhang benepisyo sa kalusugan, kabilang ang masusukat na pagbawas ng stress."
+    },
+    "aas": {
+      "title": "Ulitin",
+      "text": "Nahanap mo na ba ang iyong stretch-ly-routine? Huwag kalimutang ulitin ito nang higit sa isang beses upang mas mahusay na labanan ang mga epekto ng matagal na pag-upo."
+    },
+    "aba": {
+      "title": "Ayusin ang kalat",
+      "text": "Ang malinis na paligid ay nakakatulong para sa iyong pokus sa trabaho at kalimitang dinudugtong sa positibong emosyon katulad ng kasiyahan."
+    },
+    "abb": {
+      "title": "Magtanghalian sa labas",
+      "text": "Ang kalikasan ay dinudugtong sa positibong emosyon at nakakapagpababa ng stress at pagkabalisa. Habang maaari, subukang dalhin sa labas ang pahinga sa tanghali sa labas, na napapalibutan ng mga halamanan."
+    },
+    "abc": {
+      "title": "Pampublikong transportasyon",
+      "text": "Kung regular kang gagamit ng pampublikong transportasyon, pwede kang tumayo sa halip na nakaupo. Kung posible, subukan mong palitan ang iyong araw araw na byahe sa pamamagitan ng paglalakad o pagbibisikleta."
+    },
+    "abd": {
+      "title": "Hikab",
+      "text": "Ang paghikab ay maaaring higit na nakakatulong, dahil sa pamamagitan nito ay lumalabas ang luha para tulungang mabasa ang mga mata."
+    },
+    "abe": {
+      "title": "Pagbabago ng pokus",
+      "text": "Ilagay ang isang daliri malapit sa mata at magpokus dito. Dahan dahang igalaw ang daliri palayo, mag pokus palayo at bumalik sa daliri. Ibalik ang daliri at mag pokus sa isang bagay sa malayo."
+    },
+    "abg": {
+      "title": "Pinipisil ang kamay",
+      "text": "Pisilin ang pares ng binolang medyas o ang malambot na bolang goma, hawakan ng 5 segundo. Ulit ulitin ang buong proseso ng maraming beses."
+    },
+    "abh": {
+      "title": "Paghinga ng Mabagal",
+      "text": "Ang umuusbong na pananaliksik ay nagmumungkahi ng potensyal para sa paggamit ng mga kinokontrol na pamamaraan ng mabagal na paghinga bilang isang paraan ng pag-optimize ng mga parameter ng physiological na lumilitaw na nauugnay sa kalusugan at kahabaan ng buhay."
+    },
+    "aaw": {
+      "title": "7 Minutong Pag-eehersisyo",
+      "text": "Ang pag-eehersisyo na ito ay nakaimpake sa isang nakagawiang ehersisyo sa buong katawan sa isang bahagi ng oras. Ngunit tulad ng anumang ehersisyo, mag-ingat. Maraming app para makapagsimula ka."
+    },
+    "aau": {
+      "title": "Pag-inat ng likod",
+      "text": "Pagsamahin ang iyong mga kamay sa likod ng iyong ulo, pagkatapos ay itaas ang mga ito nang magkasama sa itaas ng iyong ulo na nagtatapos sa iyong mga palad na nakaharap paitaas."
+    },
+    "aav": {
+      "title": "Pakilusin",
+      "text": "Para sa bawat tatlumpung minuto ng pagwawalang-kilos, dapat kang magkaroon ng hindi bababa sa isang minuto ng pagpapasigla."
+    },
+    "aax": {
+      "title": "Pulso",
+      "text": "Itaas ang iyong pulso sa 120 pulso bawat minuto sa loob ng 20 diretsong minuto apat o limang beses sa isang linggo na ginagawa ang anumang bagay na iyong ikinatutuwa. Ang regular na pagtaas ng iyong rate ng puso ay nagreresulta sa pinabuting kalusugan ng cardiovascular."
+    },
+    "aay": {
+      "title": "Gamitin ang hagdan",
+      "text": "Ipinakita ng mga pag-aaral na ang pag-akyat ng hagdan, na itinuturing na masiglang pisikal na aktibidad, ay nagsusunog ng mas maraming calorie kada minuto kaysa sa pag-jogging."
+    },
+    "aaz": {
+      "title": "Gumawa ng sining",
+      "text": "Ang art therapy ay kilala na may magagandang benepisyo sa kalusugan ng isip, lalo na pagdating sa pamamahala ng stress. Paano kung magsulat ng isang mabilis na tula, pagkuha ng larawan o pagpipinta ng isang maliit na bagay?"
+    },
+    "abf": {
+      "text": "Habang nakaupo, i-brace ang mga siko sa mesa at malapit sa gilid ng mesa. Hayaang bumagsak ang iyong timbang at i-cup ang mga kamay sa mga mata. Ipikit ang iyong mga mata at huminga nang dahan-dahan sa pamamagitan ng ilong at humawak ng ilang segundo. Ipagpatuloy ang malalim na paghinga.",
+      "title": "Palming"
+    },
+    "aad": {
+      "title": "Pagninilay",
+      "text": "Iminumungkahi ng mga pag-aaral sa pananaliksik na ang mga pagsasanay na nakabatay sa pag-iisip ay nakakatulong na mabawasan ang pagkabalisa, depresyon, stress, at sakit. At ito ay nakakatulong na mapabuti ang pangkalahatang kalusugan, kalusugan ng isip, at kalidad ng buhay. Hindi sigurado kung paano magsisimula? Maraming apps na tutulong sa iyo."
+    },
+    "aaa": {
+      "title": "Hindi nag-iisa",
+      "text": "Nahihirapan ka bang magpahinga nang mag-isa? Subukang gawin ito sa isang katrabaho. Bukod sa mas madaling manatili sa mga pahinga, magkakaroon ka ng pagkakataong mas makilala sila. Ang sama-samang pahinga ay nagpapataas ng produktibidad."
+    },
+    "aac": {
+      "title": "Microbreaks",
+      "text": "Ang pahinga ay isang mahalagang bahagi sa pagtiyak ng pagganap ng musculoskeletal system. Maaaring bawasan ng madalas na mga pahinga ang tagal ng isang gawain at makakatulong na mapababa ang pagkakalantad sa panganib ng ergonomic na pinsala."
+    },
+    "aat": {
+      "title": "Pulso at Bisig",
+      "text": "Iunat ang iyong mga braso nang nakaharap ang mga palad sa iyo, pagkatapos ay dahan-dahang iikot ang mga kamay nang apat na beses pakanan, pagkatapos ay apat na beses na counter-clockwise."
+    }
+  },
+  "break": {
+    "skip": "Ipagpaliban ang pahingang ito",
+    "postpone": "Itigil ang pahingang ito",
+    "title": "Oras na para magpahinga!"
+  }
+}
