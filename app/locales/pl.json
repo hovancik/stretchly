@@ -250,6 +250,15 @@
     },
     "aai": {
       "text": "Powoli skręć głowę w bok i zatrzymaj na 10 sekund."
+    },
+    "aaj": {
+      "text": "Powoli przechyl głowę na bok i przytrzymaj 5-10 sekund."
+    },
+    "aak": {
+      "text": "Wstań i przeciągnij się."
+    },
+    "aal": {
+      "text": "Wyostrz swoje oczy na czymś oddalonym co najmniej 20 metrów."
     }
   }
 }
