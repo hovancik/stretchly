@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Galician translations
+- Filipino translations
 
 ## Fixed
 - time translations for Chinese
