@@ -38,9 +38,9 @@ depends on if you're running an Intel or Apple Silicon chip.
 - **Intel Chips**: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 - **Apple Chips**: Open a terminal and run this command:
 
-- ```bash
+```bash
     sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
-- ```
+```
 
 If you install via [Homebrew](https://brew.sh), you can use the `--no-quarantine` flag to automatically apply the correct
 workaround.
