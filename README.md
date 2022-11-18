@@ -38,9 +38,9 @@ depends on if you're running an Intel or Apple Silicon chip.
 - **Intel Chips**: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
 - **Apple Chips**: Open a terminal and run this command:
 
-    ```bash
+- ```bash
     sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
-    ```
+- ```
 
 If you install via [Homebrew](https://brew.sh), you can use the `--no-quarantine` flag to automatically apply the correct
 workaround.
@@ -131,7 +131,9 @@ You can also Restore the defaults to return to the default preferences state.
 
 ## Advanced Preferences
 
-All preferences are saved in a JSON file. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the file.
+While the most of the preferences can be edited via the app, some options and values are not available to make the app easy to understand and setup.
+
+All preferences are saved in a JSON file, so you can set Stretchly in the way you need. Use the `Ctrl/Cmd + D` shortcut while viewing the About section of Preferences, to show debug info and display a clickable link to the preferences file.
 
 It's recommended to Quit *Stretchly* before editing the preferences file.
 
@@ -144,6 +146,34 @@ Some of the extra preferences are available in Contributor Preferences for [Cont
 Preferences marked with ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow) might not work correctly and might break *Stretchly*. Use at own risk.
 
 **Note:** Before 1.0, Mini Breaks and Long Breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.
+
+#### Preferences editable in the app
+
+Here are the preferences editable via the app. If values in the app does not suite your style, you could edit them maually: 
+
+- `microbreakDuration` - duration of Mini Break (ms)
+- `microbreakInterval` - interval of Mini Break (ms)
+- `breakDuration` - duration of Long Break (ms)
+- `breakInterval` - interval of Mini Break (Mini Breaks)
+- `breakNotification` - show notification before Mini Break
+- `microbreakNotification` - show notification before Long Break
+- `microbreak` - enable Mini Breaks
+- `break` - enable Long Breaks
+- `microbreakStrictMode` - enable strict mode for Mini Breaks
+- `breakStrictMode` - enable strict mode for Long Breaks
+- `mainColor` - theme color code,
+- `transparentMode` - show break windows as transparent
+- `audio` - sound theme name
+- `fullscreen` - show breaks in fullscreen mode
+- `ideas` - show break ideas
+- `naturalBreaks` - monitor idle time
+- `allScreens` - show breaks on all screens
+- `language` - language
+- `useMonochromeTrayIcon` - use monochrome icon
+- `useMonochromeInvertedTrayIcon` - use inverted monochrome icon
+- `silentNotifications` - enable sounds
+- `monitorDnd` - monitor DND mode
+- `checkNewVersion` - check for new versions
 
 #### Editing Break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
