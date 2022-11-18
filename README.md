@@ -154,7 +154,7 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `microbreakDuration` - duration of Mini Break (ms)
 - `microbreakInterval` - interval of Mini Break (ms)
 - `breakDuration` - duration of Long Break (ms)
-- `breakInterval` - interval of Mini Break (Mini Breaks)
+- `breakInterval` - interval of Long Break (Mini Breaks)
 - `breakNotification` - show notification before Mini Break
 - `microbreakNotification` - show notification before Long Break
 - `microbreak` - enable Mini Breaks
