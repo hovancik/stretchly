@@ -126,7 +126,7 @@
     "newVersion": "Versión nova:",
     "newVersionNotification": "Notificar cando exista una nova versión",
     "customIdeas": "Ideas personalizadas:",
-    "customIdeasInfo": "Permíteche usar ideas personalizadas para os descansos si editas o ficheiro de configuración. (Para usuarios avanzados).",
+    "customIdeasInfo": "Permítelle utilizalas ideas da pausa personalizadas editando o ficheiro da configuración. (Para usuarios avanzados.)",
     "useIdeasFromSettings": "Usar ideas para os descansos do ficheiro de configuración",
     "breakPostpone": "Aprazamento de descansos:",
     "breakPostponeInfo": "Cando está activado na configuración principal, podes adiar os descansos. As seguintes opcións permítenche especificar cando, canto tempo, e cantas veces podes adiar un descanso.",
@@ -422,7 +422,7 @@
       "text": "Aumenta o pulso ata os 120 latidos por minuto, durante 20 minutos seguidos, catra ou cinco veces á semana, facendo calquer cousa que che guste. Aumentar o ritmo cardíaco ten como resultado mellorar a saúde cardiovascular."
     },
     "aay": {
-      "title": "Emprega as escaleiras ",
+      "title": "Empregalas escaleiras",
       "text": "Estudos demostraron que subir escaleiras - que se considera unha actividade física intensa - queima máis calorías más calorías por minuto que unha carreira lixeira."
     },
     "aaz": {
