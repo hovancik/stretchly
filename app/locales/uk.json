@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - додаток для нагадування про перерви",
+    "toolTipHeader": "Stretchly - застосунок для нагадування про перерви",
     "microbreakIn": "Маленька перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Довга перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Роботу відновлено",
