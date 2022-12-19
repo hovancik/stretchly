@@ -1,6 +1,6 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - Taukomuistutusaplikaatio",
+    "toolTipHeader": "Stretchly - Taukomuistutussovellus",
     "microbreakIn": "Minitauko $t(utils.seconds, {'count': {{seconds}} }) kuluttua",
     "breakIn": "Pitkä tauko $t(utils.seconds, {'count': {{seconds}} }) kuluttua",
     "resumingBreaks": "Jatketaan taukoja",
@@ -99,7 +99,8 @@
       "dot": ".",
       "developedBy": "Kehittänyt",
       "janH": "Jan Hovancik",
-      "designedBy": "Kuvakkeen ja käyttöliittymän suunnittelija Colin Shanley"
+      "designedBy": "Kuvakkeen ja käyttöliittymän suunnittelija Colin Shanley",
+      "checkNewVersion": "Tarkista päivitykset automaattisesti"
     },
     "heart": {
       "loveStretchly": "Rakasta Stretchlyä?",
@@ -152,7 +153,12 @@
     "appearance": "Ulkoasu:",
     "light": "Vaalea",
     "dark": "Tumma",
-    "system": "Järjestelmä"
+    "system": "Järjestelmä",
+    "0": "Ensimmäinen näyttö",
+    "1": "Toinen näyttö",
+    "2": "Kolmas näyttö",
+    "3": "Neljäs näyttö",
+    "4": "Viides näyttö"
   },
   "utils": {
     "none_one": "{{count}}",
