@@ -4,7 +4,7 @@
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
-    "node": "16.16.0"
+    "node": "16.17.1"
   },
   "scripts": {
     "start": "electron ./app",
@@ -125,24 +125,24 @@
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^21.3.0",
+    "electron": "^22.0.0",
     "electron-builder": "^23.6.0",
     "husky": "^8.0.2",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "rimraf": "^3.0.2",
-    "sinon": "^14.0.2",
+    "sinon": "^15.0.1",
     "spectron": "^19.0.0",
     "standard": "^17.0.0"
   },
   "dependencies": {
-    "@electron/remote": "^2.0.8",
+    "@electron/remote": "^2.0.9",
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.4.8",
     "electron-store": "^8.1.0",
     "humanize-duration": "^3.27.3",
-    "i18next": "^22.0.6",
-    "i18next-fs-backend": "^2.0.0",
-    "luxon": "^3.1.0",
+    "i18next": "^22.4.5",
+    "i18next-fs-backend": "^2.1.0",
+    "luxon": "^3.1.1",
     "macos-notification-state": "^2.0.2",
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2.0",

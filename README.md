@@ -65,7 +65,7 @@ For portable versions and for Linux/BSD installers, head to [Github Releases pag
 
 #### Linux note
 
-Please see http://electron.atom.io/docs/api/tray/ for Electron's Tray Linux specifics. Having `libappindicator1` (`libappindicator` on Fedora) installed should be enough for *Stretchly*. If the tray icon is not visible when using the Gnome DE, an extension, such as [this](https://extensions.gnome.org/extension/615/appindicator-support/), is required to enable it.
+Please see [http://electron.atom.io/docs/api/tray/](http://electron.atom.io/docs/api/tray/) for Electron's Tray Linux specifics.
 
 For Natural breaks, you might need some packages too (`libxss-dev`).
 
@@ -392,10 +392,6 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ### MacOS
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
-
-### Linux
-- tray tooltip does not work correctly ([electron/electron#15161](https://github.com/electron/electron/issues/15161))
-- tray icon is not always rendered correctly ([electron/electron#12791](https://github.com/electron/electron/issues/12791))
 
 ### Windows
 - users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"
