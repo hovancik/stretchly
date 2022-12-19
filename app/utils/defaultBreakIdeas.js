@@ -128,7 +128,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process few times.'],
+    data: ['Hand squeezes', 'Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process a few times.'],
     enabled: true
   },
   {
