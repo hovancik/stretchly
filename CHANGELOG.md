@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Fixed
 - time translations for Chinese
+- tray icon popup on Linux
 
 ## Changed
 - updated many translations
