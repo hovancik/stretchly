@@ -164,7 +164,23 @@ function initialize (isAppStart = true) {
   log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
   require('events').defaultMaxListeners = 200 // for watching Store changes
   if (!settings) {
-    settings = new Store({ defaults: require('./utils/defaultSettings'), watch: true })
+    settings = new Store({
+      defaults: require('./utils/defaultSettings'),
+      beforeEachMigration: (store, context) => {
+        log.info(`Stretchly: migrating preferences from Stretchly v${context.fromVersion} to v${context.toVersion}`)
+      },
+      migrations: {
+        '1.13.0': store => {
+          store.set('pauseBreaksToggleShortcut', store.get('pauseBreaksShortcut'))
+          log.info(`Stretchly: settings pauseBreaksToggleShortcut to "${store.get('pauseBreaksShortcut')}"`)
+          store.delete('pauseBreaksShortcut')
+          log.info('Stretchly: removing pauseBreaksShortcut')
+          store.delete('resumeBreaksShortcut')
+          log.info('Stretchly: removing resumeBreaksShortcut')
+        }
+      },
+      watch: true
+    })
     log.info('Stretchly: loading preferences')
     Store.initRenderer()
     Object.entries(settings.store).forEach(([key, _]) => {
@@ -230,26 +246,19 @@ function initialize (isAppStart = true) {
     contributorPreferencesWindow.send('renderSettings', settingsToSend())
   }
   globalShortcut.unregisterAll()
-  if (settings.get('resumeBreaksShortcut') !== '') {
-    const resumeBreaksShortcut = globalShortcut.register(settings.get('resumeBreaksShortcut'), () => {
-      resumeBreaks(false)
+  if (settings.get('pauseBreaksToggleShortcut') !== '') {
+    const pauseBreaksToggleShortcut = globalShortcut.register(settings.get('pauseBreaksToggleShortcut'), () => {
+      if (breakPlanner.isPaused) {
+        resumeBreaks(false)
+      } else {
+        pauseBreaks(1)
+      }
     })
 
-    if (!resumeBreaksShortcut) {
-      log.warn('Stretchly: resumeBreaksShortcut registration failed')
+    if (!pauseBreaksToggleShortcut) {
+      log.warn('Stretchly: pauseBreaksToggleShortcut registration failed')
     } else {
-      log.info(`Stretchly: resumeBreaksShortcut registration successful (${settings.get('resumeBreaksShortcut')})`)
-    }
-  }
-  if (settings.get('pauseBreaksShortcut') !== '') {
-    const pauseBreaksShortcut = globalShortcut.register(settings.get('pauseBreaksShortcut'), () => {
-      pauseBreaks(1)
-    })
-
-    if (!pauseBreaksShortcut) {
-      log.warn('Stretchly: pauseBreaksShortcut registration failed')
-    } else {
-      log.info(`Stretchly: pauseBreaksShortcut registration successful (${settings.get('pauseBreaksShortcut')})`)
+      log.info(`Stretchly: pauseBreaksToggleShortcut registration successful (${settings.get('pauseBreaksToggleShortcut')})`)
     }
   }
   loadIdeas()

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Changed
 - updated many translations
+- merged `pauseBreaksShortcut` and `resumeBreaksShortcut` to `pauseBreaksToggleShortcut`
 
 ## [1.12.0] - 2022-9-24
 ### Added

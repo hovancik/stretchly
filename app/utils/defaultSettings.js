@@ -57,8 +57,7 @@ module.exports = {
   appExclusions: [],
   appExclusionsCheckInterval: 1000,
   pauseForSuspendOrLock: true,
-  pauseBreaksShortcut: '',
-  resumeBreaksShortcut: '',
+  pauseBreaksToggleShortcut: '',
   screen: 'primary',
   timeToBreakInTray: false,
   currentTimeInBreaks: false
