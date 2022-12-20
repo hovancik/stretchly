@@ -17,7 +17,8 @@
     "tdd": "mocha --watch test",
     "lint": "./node_modules/.bin/standard",
     "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "postpublish": "pinst --enable",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

@@ -302,7 +302,7 @@ window.onload = (e) => {
       }
     }
     // linux is broken ;/
-    if (!!height) {
+    if (height) {
       remote.getCurrentWindow().setSize(bounds.width, height)
     }
   }

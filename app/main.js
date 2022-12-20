@@ -1142,8 +1142,8 @@ function getTrayMenuTemplate () {
 
   const StatusMessages = require('./utils/statusMessages')
   const statusMessage = new StatusMessages({
-    breakPlanner: breakPlanner,
-    settings: settings
+    breakPlanner,
+    settings
   }).trayMessage
 
   if (statusMessage !== '') {
@@ -1177,7 +1177,7 @@ function getTrayMenuTemplate () {
     if (settings.get('break') || settings.get('microbreak')) {
       trayMenu.push({
         label: i18next.t('main.skipToTheNext'),
-        submenu: submenu
+        submenu
       })
     }
   }
@@ -1279,8 +1279,8 @@ function updateToolTip () {
   const StatusMessages = require('./utils/statusMessages')
   let trayMessage = i18next.t('main.toolTipHeader')
   const message = new StatusMessages({
-    breakPlanner: breakPlanner,
-    settings: settings
+    breakPlanner,
+    settings
   }).trayMessage
   if (message !== '') {
     trayMessage += '\n\n' + message
@@ -1290,7 +1290,7 @@ function updateToolTip () {
 
 function showNotification (text) {
   processWin.webContents.send('showNotification', {
-    text: text,
+    text,
     silent: settings.get('silentNotifications')
   })
 }
@@ -1365,7 +1365,7 @@ ipcMain.on('send-settings', function (event) {
 function settingsToSend () {
   const loginItemSettings = app.getLoginItemSettings()
   const openAtLogin = loginItemSettings.openAtLogin
-  return Object.assign({}, settings.store, { openAtLogin: openAtLogin })
+  return Object.assign({}, settings.store, { openAtLogin })
 }
 
 ipcMain.on('play-sound', function (event, sound) {

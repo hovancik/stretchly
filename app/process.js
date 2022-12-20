@@ -40,7 +40,7 @@ window.onload = (e) => {
     const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
     new Notification(title, { // eslint-disable-line no-new
       body: text,
-      silent: silent
+      silent
     })
   })
 
@@ -48,7 +48,7 @@ window.onload = (e) => {
     const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
     const notification = new Notification(title, {
       body: i18next.t('process.newVersionAvailable'),
-      silent: silent
+      silent
     })
     notification.onclick = () => shell.openExternal('https://hovancik.net/stretchly/downloads')
   }
