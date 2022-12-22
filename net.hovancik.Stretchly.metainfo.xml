@@ -36,6 +36,25 @@
     </screenshot>
   </screenshots>
   <releases>
+     <release version="1.13.0" date="2022-12-23">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Galician translations</li>
+          <li>Filipino translations</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>time translations for Chinese</li>
+          <li>tray icon popup on Linux</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>merged pauseBreaksShortcut and resumeBreaksShortcut to pauseBreaksToggleShortcut</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.12.0" date="2022-09-24">
       <description>
         <p>Changed</p>
