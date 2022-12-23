@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## Fixed
+- migration script for new installs 
+
+
 ## [1.13.0] - 2022-12-23
 ### Added
 - Galician translations
