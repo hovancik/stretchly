@@ -36,6 +36,14 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.13.1" date="2022-12-23">
+      <description>
+        <p>Fixed</p>
+        <ul>
+          <li>migration script for new installs </li>
+        </ul>
+      </description>
+    </release>
      <release version="1.13.0" date="2022-12-23">
       <description>
         <p>Added</p>
