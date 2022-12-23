@@ -5,9 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+## [1.13.1] - 2022-12-23
 ## Fixed
 - migration script for new installs 
-
 
 ## [1.13.0] - 2022-12-23
 ### Added
@@ -685,7 +685,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.13.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.13.1...HEAD
+[1.13.1]: https://github.com/hovancik/stretchly/compare/v1.13.0...v1.13.1
 [1.13.0]: https://github.com/hovancik/stretchly/compare/v1.12.0...v1.13.0
 [1.12.0]: https://github.com/hovancik/stretchly/compare/v1.11.0...v1.12.0
 [1.11.0]: https://github.com/hovancik/stretchly/compare/v1.10.0...v1.11.0
