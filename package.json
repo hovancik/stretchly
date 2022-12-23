@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "1.12.0",
+  "version": "1.13.0",
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {

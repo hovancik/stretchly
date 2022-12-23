@@ -1,28 +1,25 @@
-name: Packages build
+name: Arm Packages build
 
 on:
   push:
     branches:
       - release
 
+env:
+  USE_SYSTEM_FPM: true      
+
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
-      fail-fast: false
+    runs-on: buildjet-2vcpu-ubuntu-2204-arm
     steps:
-    - name: run on linux
-      if: matrix.os == 'ubuntu-latest'
-      run: sudo apt-get install libarchive-tools
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: '16.17.1'
-    - run: npm install npm -g
+    - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
+    - run: sudo gem install fpm -v 1.15
     - run: npm install
+    - run: npm install npm -g
     - run: node_modules/.bin/electron-builder build
       env:
         GH_TOKEN: ${{ secrets.github_token }}
