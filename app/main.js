@@ -171,12 +171,18 @@ function initialize (isAppStart = true) {
       },
       migrations: {
         '1.13.0': store => {
-          store.set('pauseBreaksToggleShortcut', store.get('pauseBreaksShortcut'))
-          log.info(`Stretchly: settings pauseBreaksToggleShortcut to "${store.get('pauseBreaksShortcut')}"`)
-          store.delete('pauseBreaksShortcut')
-          log.info('Stretchly: removing pauseBreaksShortcut')
-          store.delete('resumeBreaksShortcut')
-          log.info('Stretchly: removing resumeBreaksShortcut')
+          if (store.get('pauseBreaksShortcut')) {
+            store.set('pauseBreaksToggleShortcut', store.get('pauseBreaksShortcut'))
+            log.info(`Stretchly: settings pauseBreaksToggleShortcut to "${store.get('pauseBreaksShortcut')}"`)
+            store.delete('pauseBreaksShortcut')
+            log.info('Stretchly: removing pauseBreaksShortcut')
+          } else {
+            log.info('Stretchly: not migrating pauseBreaksShortcut')
+          }
+          if (store.get('pauseBreaksShortcut')) {
+            store.delete('resumeBreaksShortcut')
+            log.info('Stretchly: removing resumeBreaksShortcut')
+          }
         }
       },
       watch: true
