@@ -22,14 +22,18 @@ window.onload = (e) => {
       new VersionChecker()
         .latest()
         .then(version => {
-          const cleanVersion = semver.clean(version)
-          log.info(`Stretchly: checking for new version (local: ${oldVersion}, remote: ${cleanVersion})`)
-          if (semver.valid(cleanVersion) && semver.gt(cleanVersion, oldVersion)) {
-            remote.getGlobal('shared').isNewVersion = true
-            ipcRenderer.send('update-tray')
-            if (notify) {
-              notifyNewVersion(silent)
+          if (version) {
+            const cleanVersion = semver.clean(version)
+            log.info(`Stretchly: checking for new version (local: ${oldVersion}, remote: ${cleanVersion})`)
+            if (semver.valid(cleanVersion) && semver.gt(cleanVersion, oldVersion)) {
+              remote.getGlobal('shared').isNewVersion = true
+              ipcRenderer.send('update-tray')
+              if (notify) {
+                notifyNewVersion(silent)
+              }
             }
+          } else {
+            log.info('Stretchly: could not check for new version')
           }
         })
         .catch(exception => log.error(exception))
