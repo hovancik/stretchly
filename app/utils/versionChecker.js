@@ -10,6 +10,7 @@ class VersionChecker {
       })
       .then(response => response.text())
       .then(body => JSON.parse(body).tag_name)
+      .catch(() => {})
   }
 }
 
