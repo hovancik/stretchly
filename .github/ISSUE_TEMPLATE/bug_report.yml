@@ -101,7 +101,6 @@ body:
   attributes:
     label:       Additional information
     description: Any additional information, configuration or data that might be necessary to reproduce the issue.
-    render:      shell
   validations:
     required:    false
 - type:          checkboxes
