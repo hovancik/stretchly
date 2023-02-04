@@ -331,6 +331,45 @@
     },
     "abe": {
       "text": "Potraste rukami, aby sa vám trochu uľavilo."
+    },
+    "abn": {
+      "text": "Postavte sa a jednu nohu položte na blízky predmet, napríklad stoličku alebo stupienok. Koleno nechajte pokrčené a vydržte 10-15 sekúnd. Opakujte s druhou nohou."
+    },
+    "abp": {
+      "text": "Postavte sa chrbtom a rukami k stene a potom pomaly pohybujte rukami hore a dole, akoby ste robili snehových anjelov."
+    },
+    "abq": {
+      "text": "Postavte sa tvárou k stene, položte na ňu ruky a urobte niekoľko klikov."
+    },
+    "abr": {
+      "text": "Posaďte sa na okraj stoličky a natiahnite jednu nohu priamo pred seba, držte ju 10-15 sekúnd. Opakujte s druhou nohou."
+    },
+    "abs": {
+      "text": "Postavte sa čelom k stene, jednu nohu dajte dozadu a druhú dopredu, potom sa oprite o stenu. Opakujte s druhou nohou."
+    },
+    "abt": {
+      "text": "Jednu ruku držte vzpriamenú a druhou rukou jemne tlačte lakeť prvej ruky smerom k hlave. Vydržte 10-15 sekúnd. Opakujte s druhou rukou."
+    },
+    "abu": {
+      "text": "Nakloňte hlavu na jednu stranu, potom na druhú stranu a potom ju jemne nakloňte dopredu a dozadu."
+    },
+    "abv": {
+      "text": "Natiahnite jednu ruku cez hrudník, druhou rukou držte lakeť a jemne ju pritiahnite k hrudi. Opakujte s druhou rukou."
+    },
+    "abw": {
+      "text": "Postavte sa, položte jednu nohu na blízky predmet, napríklad stoličku alebo stupienok, a dotknite sa prstov na nohách. Zopakujte to s druhou nohou."
+    },
+    "abx": {
+      "text": "Postavte sa do dverí a položte jednu ruku na každú stranu dverí, potom sa jemne nakloňte dopredu, kým nepocítite natiahnutie hrudníka."
+    },
+    "aby": {
+      "text": "Posaďte sa na okraj stoličky alebo na zem, chodidlá položte k sebe a jemne zatlačte lakťami, aby ste si natiahli vnútornú stranu stehien."
+    },
+    "abm": {
+      "text": "Posaďte sa na okraj stoličky, otočte trup na jednu stranu a držte 10-15 sekúnd. Opakujte na druhej strane."
+    },
+    "abo": {
+      "text": "Postavte sa s nohami na šírku ramien, spustite telo dole, akoby ste sedeli na stoličke, a potom sa postavte späť. Niekoľkokrát zopakujte."
     }
   },
   "longBreakIdeas": {
@@ -469,6 +508,10 @@
     "abc": {
       "text": "Ak pravidelne využívate verejnú dopravu, môžete namiesto sedenia stáť. Ak je to možné, snažte sa čo najviac svojich každodenných ciest nahradiť chôdzou alebo bicyklom.",
       "title": "Verejná doprava"
+    },
+    "abi": {
+      "title": "Vizualizácia",
+      "text": "Zavrite oči a predstavte si, že ste na pokojnom a upokojujúcom mieste, napríklad na pláži alebo v lese, a sústreďte sa na výhľad, zvuky a pocity tohto prostredia."
     }
   }
 }
