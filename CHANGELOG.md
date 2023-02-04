@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- new break ideas
+
 ## Fixed
 - error when checking for new version fails
 

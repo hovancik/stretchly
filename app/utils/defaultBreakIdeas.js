@@ -134,5 +134,9 @@ module.exports = [
   {
     data: ['Slow Breathing', 'Emerging research suggests potential for use of controlled slow breathing techniques as a means of optimising physiological parameters that appear to be associated with health and longevity.'],
     enabled: true
+  },
+  {
+    data: ['Imaginative visualization', 'Close your eyes and imagine yourself in a peaceful and calming place, such as a beach or a forest, focusing on the sights, sounds, and sensations of that environment.'],
+    enabled: true
   }
 ]
