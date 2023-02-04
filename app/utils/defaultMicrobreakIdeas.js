@@ -150,5 +150,57 @@ module.exports = [
   {
     data: 'Stand tall with your arms raised along your shoulders. Move hands slightly behind your back, hold for a second and return.',
     enabled: true
+  },
+  {
+    data: 'Sit on the edge of your chair, twist your torso to one side and hold for 10-15 seconds. Repeat on the other side.',
+    enabled: true
+  },
+  {
+    data: 'Stand up and put one foot on a nearby object, like a chair or step stool. Keep your knee bent and hold for 10-15 seconds. Repeat with the other foot.',
+    enabled: true
+  },
+  {
+    data: 'Stand with your feet shoulder-width apart, lower your body down as if you were sitting back into a chair, then stand back up. Repeat several times.',
+    enabled: true
+  },
+  {
+    data: 'Stand with you back and hands on a wall, then slowly move your arms up and down as if you were making snow angels.',
+    enabled: true
+  },
+  {
+    data: 'Stand facing a wall and place your hands on it, then do several push-ups.',
+    enabled: true
+  },
+  {
+    data: 'Sit on the edge of your chair and extend one leg straight out in front of you, holding for 10-15 seconds. Repeat with the other leg.',
+    enabled: true
+  },
+  {
+    data: 'Stand facing a wall, put one foot back and the other foot forward, then lean into the wall. Repeat with the other leg.',
+    enabled: true
+  },
+  {
+    data: 'Hold one arm straight up, then use the other arm to gently push the elbow of the first arm towards your head. Hold for 10-15 seconds. Repeat with the other arm.',
+    enabled: true
+  },
+  {
+    data: 'Tilt your head to one side, then to the other side, and then gently tilt it forward and backward.',
+    enabled: true
+  },
+  {
+    data: 'Reach one arm across your chest, hold onto the elbow with the other hand, and gently pull it in towards your chest. Repeat with the other arm.',
+    enabled: true
+  },
+  {
+    data: 'Stand up, put one foot on a nearby object, like a chair or step stool, and reach down to touch your toes. Repeat with the other leg.',
+    enabled: true
+  },
+  {
+    data: 'Stand in a doorway and place one arm on each side of the doorway, then gently lean forward until you feel a stretch in your chest.',
+    enabled: true
+  },
+  {
+    data: 'Sit on the edge of a chair or on the floor, and place the soles of your feet together, gently pressing down with your elbows to stretch your inner thighs.',
+    enabled: true
   }
 ]
