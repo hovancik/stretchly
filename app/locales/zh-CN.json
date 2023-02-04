@@ -47,7 +47,7 @@
       "showIdeas": "休息时显示锻炼提示",
       "allScreens": "在所有显示器显示休息画面",
       "monitorIdleTime": "监控系统的闲置时间(系统闲置时暂停计时)。",
-      "monitorDnd": "若处于「勿扰」模式，仍显示休息画面",
+      "monitorDnd": "即使处于「勿扰」模式，仍显示休息画面",
       "language": "选择语言：",
       "restoreDefaults": "还原至默认值"
     },
