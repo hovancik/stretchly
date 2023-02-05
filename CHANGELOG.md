@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Fixed
 - error when checking for new version fails
 
+## Changed
+- improved linux Preferences postioning
+
 ## [1.13.1] - 2022-12-23
 ## Fixed
 - migration script for new installs 

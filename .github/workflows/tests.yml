@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Set Timezone
-      uses: szenius/set-timezone@v1.0
+      uses: szenius/set-timezone@v1.1
       with:
         timezoneLinux: Europe/Amsterdam
         timezoneMacos: Europe/Amsterdam

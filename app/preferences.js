@@ -288,20 +288,19 @@ window.onload = (e) => {
     const scrollHeight = document.querySelector('body').scrollHeight
     const availHeight = window.screen.availHeight
     let height = null
-    if (classes.contains('darwin')) {
-      if (scrollHeight + 32 > availHeight) {
-        height = availHeight
-      } else {
-        height = scrollHeight + 32
-      }
-    } else if (classes.contains('win32')) {
+    if (classes.contains('win32')) {
       if (scrollHeight + 40 > availHeight) {
         height = availHeight
       } else {
         height = scrollHeight + 40
       }
+    } else {
+      if (scrollHeight + 32 > availHeight) {
+        height = availHeight
+      } else {
+        height = scrollHeight + 32
+      }
     }
-    // linux is broken ;/
     if (height) {
       remote.getCurrentWindow().setSize(bounds.width, height)
     }
