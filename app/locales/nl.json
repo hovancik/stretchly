@@ -35,7 +35,7 @@
     "nav": {
       "settings": "Instellingen",
       "schedule": "Schema",
-      "theme": "Theme",
+      "theme": "Thema",
       "about": "Over",
       "heart": "Waardeer Stretchly"
     },
@@ -44,9 +44,9 @@
       "showBreaksIn": "Toon pauzes in:",
       "window": "Venster",
       "fullscreen": "Volledig Scherm",
-      "showIdeas": "Toon oefening tips tijdens de pauzes",
+      "showIdeas": "Toon tips voor oefeningen tijdens de pauzes",
       "allScreens": "Toon pauzes op alle monitoren",
-      "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen word gepauzeerd als het systeem inactief is).",
+      "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen wordt gepauzeerd als het systeem inactief is)",
       "monitorDnd": "Toon pauzes in Niet Storen modus",
       "language": "Selecteer taal:",
       "restoreDefaults": "Standaardinstellingen herstellen"
@@ -72,11 +72,11 @@
     },
     "theme": {
       "appearance": "Uiterlijk:",
-      "greenClouds": "Groen wolken",
-      "autumnBeBlessed": "Herfst gezegend",
-      "graphiteCrystal": "Grafiet kristal",
-      "coffeeKisses": "Koffie zoenen",
-      "morningSwim": "Ochtend zwemmen",
+      "greenClouds": "Groene wolken",
+      "autumnBeBlessed": "Gezegende herfst",
+      "graphiteCrystal": "Grafietkristal",
+      "coffeeKisses": "Koffiezoenen",
+      "morningSwim": "Zwemmen in de ochtend",
       "sounds": "Geluiden:",
       "enableSounds": "Geluiden inschakelen",
       "crystalGlass": "Kristalglas",
@@ -86,7 +86,7 @@
       "colour": "Kleur",
       "monochrome": "Monochroom",
       "invertedMonochrome": "Omgekeerd Monochroom",
-      "snowWhite": "Sneeuw wit",
+      "snowWhite": "Sneeuwwit",
       "transparentMode": "Transparantie inschakelen"
     },
     "about": {
