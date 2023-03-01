@@ -364,6 +364,12 @@
     },
     "abt": {
       "text": "Jednu ruku držte vzpřímeně a druhou rukou jemně tlačte loket první ruky směrem k hlavě. Vydržte 10-15 sekund. Opakujte s druhou paží."
+    },
+    "abw": {
+      "text": "Postavte se, jednou nohou se opřete o blízký předmět, například židli nebo stoličku a dotkněte se prstů na nohou. Opakujte s druhou nohou."
+    },
+    "abx": {
+      "text": "Postavte se do dveří a položte jednu ruku na každou stranu dveří, pak se jemně předkloňte, dokud neucítíte protažení v hrudníku."
     }
   },
   "longBreakIdeas": {
@@ -380,7 +386,8 @@
       "text": "Odpočinek je klíčovým prvkem pro zajištění výkonnosti pohybového aparátu. Časté přestávky mohou zkrátit dobu nutnou pro splnění úkolu a pomáhají snížit riziko ergonomického zranění."
     },
     "aaf": {
-      "text": "Nevhodná výška a úhel klávesnice, myši, monitoru nebo pracovní plochy mohou způsobit zdravotní problémy. Najděte si chvíli čas a přečtěte něco málo o této problematice."
+      "text": "Nevhodná výška a úhel klávesnice, myši, monitoru nebo pracovní plochy mohou způsobit zdravotní problémy. Najděte si chvíli čas a přečtěte něco málo o této problematice.",
+      "title": "Ergonomie"
     },
     "aah": {
       "title": "Změna je život",
