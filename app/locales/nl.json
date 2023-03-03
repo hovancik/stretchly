@@ -35,7 +35,7 @@
     "nav": {
       "settings": "Instellingen",
       "schedule": "Schema",
-      "theme": "Theme",
+      "theme": "Thema",
       "about": "Over",
       "heart": "Waardeer Stretchly"
     },
@@ -44,9 +44,9 @@
       "showBreaksIn": "Toon pauzes in:",
       "window": "Venster",
       "fullscreen": "Volledig Scherm",
-      "showIdeas": "Toon oefening tips tijdens de pauzes",
+      "showIdeas": "Toon tips voor oefeningen tijdens de pauzes",
       "allScreens": "Toon pauzes op alle monitoren",
-      "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen word gepauzeerd als het systeem inactief is).",
+      "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen wordt gepauzeerd als het systeem inactief is).",
       "monitorDnd": "Toon pauzes in Niet Storen modus",
       "language": "Selecteer taal:",
       "restoreDefaults": "Standaardinstellingen herstellen"
@@ -72,11 +72,11 @@
     },
     "theme": {
       "appearance": "Uiterlijk:",
-      "greenClouds": "Groen wolken",
-      "autumnBeBlessed": "Herfst gezegend",
-      "graphiteCrystal": "Grafiet kristal",
-      "coffeeKisses": "Koffie zoenen",
-      "morningSwim": "Ochtend zwemmen",
+      "greenClouds": "Groene wolken",
+      "autumnBeBlessed": "Gezegende herfst",
+      "graphiteCrystal": "Grafietkristal",
+      "coffeeKisses": "Koffiezoenen",
+      "morningSwim": "Zwemmen in de ochtend",
       "sounds": "Geluiden:",
       "enableSounds": "Geluiden inschakelen",
       "crystalGlass": "Kristalglas",
@@ -86,7 +86,7 @@
       "colour": "Kleur",
       "monochrome": "Monochroom",
       "invertedMonochrome": "Omgekeerd Monochroom",
-      "snowWhite": "Sneeuw wit",
+      "snowWhite": "Sneeuwwit",
       "transparentMode": "Transparantie inschakelen"
     },
     "about": {
@@ -269,6 +269,68 @@
     },
     "aas": {
       "text": "Hef je rechterarm op, strek hem over je hoofd naar links en hou dit 10 seconden vast. Herhaal aan de andere kant."
+    },
+    "aav": {
+      "text": "Sluit je ogen en neem simpelweg waar wat er op dit moment in je omgaat, zonder oordeel."
+    },
+    "aay": {
+      "text": "Doe één ding tegelijk."
+    },
+    "aax": {
+      "text": "Als je hulp nodig hebt, vraag er om."
+    },
+    "aaz": {
+      "text": "Besteed je je aandacht aan de juiste dingen?"
+    },
+    "aba": {
+      "text": "Verander je zithouding."
+    },
+    "abb": {
+      "text": "Stel je ogen bloot aan natuurlijk licht."
+    },
+    "abg": {
+      "text": "Maak een vuist en strek daarna je vingers omhoog tot ze naar het plafond wijzen, zoals je iemand zou gebaren te stoppen."
+    },
+    "abc": {
+      "text": "Draai je ogen, terwijl je ze gesloten houdt, langzaam en zachtjes richting het plafond en vervolgens omlaag naar de vloer."
+    },
+    "aaw": {
+      "text": "Focus iedere 20 minuten gedurende 20 seconden op een object op 20 voet (6m) afstand."
+    },
+    "abe": {
+      "text": "Schud je handen uit voor wat ontspanning."
+    },
+    "abd": {
+      "text": "Draai je ogen, terwijl je ze gesloten houdt, langzaam en voorzichtig naar links en vervolgens langzaam naar rechts."
+    },
+    "abf": {
+      "text": "Raak met de top van iedere vinger één voor één de top van je duim aan, zodat ze een O-vorm maken."
+    },
+    "abh": {
+      "text": "Maak een vuist en spreid en strek je vingers daarna zo ver als je kunt."
+    },
+    "abi": {
+      "text": "Ga rechtop zitten, met je armen hangend langs je zij. Draai nu langzaam je nek in een grote boog in één richting."
+    }
+  },
+  "longBreakIdeas": {
+    "aak": {
+      "text": "Recent onderzoek toont aan dat langdurig zitten bijdraagt aan risico's op metabolisch syndroom, hartaanvallen en herseninfarcten en dat het algemene sterfrisico erdoor verhoogd wordt. Regelmatige wandelpauzes ondersteunen je bloedcirculatie en gaan zo dit soort problemen tegen."
+    },
+    "aay": {
+      "title": "Neem de trap"
+    },
+    "abh": {
+      "title": "Langzaam ademen"
+    },
+    "aaa": {
+      "text": "Vind je het moeilijk om pauze te nemen in je eentje? Probeer om het samen met een collega te doen. Het is niet alleen makkelijker om je aan de pauzes te houden, je kan ook elkaar beter leren kennen. Samen pauzes nemen verhoogt de productiviteit."
+    },
+    "aae": {
+      "text": "Als je langdurig naar een beeldscherm kijkt, ga je minder vaak knipperen met je ogen en stel je ze meer bloot aan de lucht. Knipper een paar secondenlang snel achtereen om het traanvocht te verversen en stof van je oogoppervlakte te verwijderen."
+    },
+    "abi": {
+      "text": "Sluit je ogen en stel je voor dat je op een vredige en rustgevende plek bent, zoals een strand of een bos en concentreer je op het uitzicht, de geluiden en de sensaties van die omgeving."
     }
   }
 }
