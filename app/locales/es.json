@@ -204,10 +204,10 @@
     "dndMode": "No molestar está activado",
     "nextLongBreak": "Próximo Descanso largo",
     "nextMiniBreak": "Próximo Descanso corto",
-    "afterMiniBreak_one": "depués de {{count}} Descanso corto",
-    "afterMiniBreak_other": "depués de {{count}} Descansos cortos",
+    "afterMiniBreak_one": "después de {{count}} Descanso corto",
+    "afterMiniBreak_other": "después de {{count}} Descansos cortos",
     "resuming": "Reanudando",
-    "appExclusion": "Regla de exclusión de aplicacion"
+    "appExclusion": "Regla de exclusión de aplicación"
   },
   "miniBreakIdeas": {
     "aaa": {
@@ -241,7 +241,7 @@
       "text": "Cierra los ojos y nombra las cosas que oyes."
     },
     "aar": {
-      "text": "Cololca la punta de los dedos en tus hombros. Gira los hombros hacia delante durante 10 segundos, y después hacia atrás."
+      "text": "Coloca la punta de los dedos en tus hombros. Gira los hombros hacia delante durante 10 segundos, y después hacia atrás."
     },
     "aay": {
       "text": "Haz una cosa cada vez."
@@ -262,7 +262,7 @@
       "text": "Estira los brazos."
     },
     "aai": {
-      "text": "Gira la cabeza a cada lado lentamente y manten la postura 10 segundos."
+      "text": "Gira la cabeza a cada lado lentamente y mantén la postura 10 segundos."
     },
     "aak": {
       "text": "Levántate de la silla y estírate."
@@ -274,19 +274,19 @@
       "text": "Piensa un momento en algo que aprecies."
     },
     "aan": {
-      "text": "Tómate un momento para sonreir por estar vivo."
+      "text": "Tómate un momento para sonreír por estar vivo."
     },
     "aao": {
-      "text": "Un puesto de trabajo ergonóico es aquél del que te apartas de vez en cuando."
+      "text": "Un puesto de trabajo ergonómico es aquél del que te apartas de vez en cuando."
     },
     "aas": {
       "text": "Sube el brazo derecho, estíralo sobre tu cabeza hacia la derecha y mantén la postura 10 segundos. Repite por el otro lado."
     },
     "aat": {
-      "text": "Con la mano derecha, agarra uno a uno cada dedo de la mano izquierda y aprietalo. Repite con la otra mano."
+      "text": "Con la mano derecha, agarra uno a uno cada dedo de la mano izquierda y apriétalo. Repite con la otra mano."
     },
     "aav": {
-      "text": "Cierra los ojos y tan solo siente cualquier coasa que suceda en ese momento, sin juzgar."
+      "text": "Cierra los ojos y tan solo siente cualquier cosa que suceda en ese momento, sin juzgar."
     },
     "aaw": {
       "text": "Enfoca cada 20 minutos y durante 20 segundos un objeto a 6 metros de distancia."
@@ -304,7 +304,7 @@
       "text": "Expón tus ojos a la luz natural."
     },
     "abc": {
-      "text": "Con los ojos cerrados, con cuidado y lentamente eleva la mirada al cielo y al suelo alternatiamente."
+      "text": "Con los ojos cerrados, con cuidado y lentamente eleva la mirada al cielo y al suelo alternativamente."
     },
     "abd": {
       "text": "Con los ojos cerrado, con cuidado y lentamente mueve los ojos a la izquierda y luego a la derecha."
@@ -313,7 +313,7 @@
       "text": "Sacude las manos para aliviarlas."
     },
     "abg": {
-      "text": "Cierra la mano en un puño y luego ve abríendola llevando los dedos hacia arriba, como si le dijeras a alguien que parara."
+      "text": "Cierra la mano en un puño y luego ve abriéndola llevando los dedos hacia arriba, como si le dijeras a alguien que parara."
     },
     "abi": {
       "text": "Siéntate derecho, con los brazo colgando a los lados, y rota la cabeza lentamente haciendo círculos amplios."
@@ -322,7 +322,7 @@
       "text": "Ponte en pie con los brazos alzados a la altura de los hombros. Mueve las manos hacia la espalda, mantén un segundo y vuelve."
     },
     "abj": {
-      "text": "Ponte en pie, cruza el brazo derecho sobre la cabeza ycoloca la mano sobre la oreja izquierda, dobla la cabeza hacia el hombro derecho hasta notar el estiramiento. Repite con el otro brazo."
+      "text": "Ponte en pie, cruza el brazo derecho sobre la cabeza y coloca la mano sobre la oreja izquierda, dobla la cabeza hacia el hombro derecho hasta notar el estiramiento. Repite con el otro brazo."
     },
     "abo": {
       "text": "Colóquese de pie con los pies separados a la altura de los hombros, baje el cuerpo como si estuviera sentado en una silla y, a continuación, vuelva a ponerse de pie. Repítelo varias veces."
@@ -367,11 +367,11 @@
   "longBreakIdeas": {
     "aaa": {
       "title": "Solo no",
-      "text": "¿Se te hace difícil tomarte un descanso solo? Inenta hacerlo con algún compañero de trabajo. Además de hacer más fácil el tomar un descanso, tendrás la oportunidad de conocerlos mejor. Tomar descansos juntos incrementa la productividad."
+      "text": "¿Se te hace difícil tomarte un descanso solo? Intenta hacerlo con algún compañero de trabajo. Además de hacer más fácil el tomar un descanso, tendrás la oportunidad de conocerlos mejor. Tomar descansos juntos incrementa la productividad."
     },
     "aac": {
       "title": "Microdescansos",
-      "text": "El descanso es una pieza clave para asegurar el buen funcionameinto del sistema muscoloesquelético. Los descansos frecuentes pueden reducir la duración de una tarea y disminuir el riesgo de lesión ergonómica."
+      "text": "El descanso es una pieza clave para asegurar el buen funcionamiento del sistema musculoesquelético. Los descansos frecuentes pueden reducir la duración de una tarea y disminuir el riesgo de lesión ergonómica."
     },
     "aab": {
       "text": "¿Has notado cómo tu mente puede resolver cosas por sí misma? Todo lo que se necesita es alejarse del ordenador y tomar un descanso para pensar sobre algo completamente distinto.",
@@ -382,23 +382,23 @@
       "title": "Meditación"
     },
     "aae": {
-      "text": "Mirar a las pantallas durante un tiempo prolongado hace que parpadees menos, y por tanto expones los ojos al aire. Parpadea rápido durante unos segundos para reponer la humedar sobre la córnea y limpiar el polvo de la superficie del ojo.",
+      "text": "Mirar a las pantallas durante un tiempo prolongado hace que parpadees menos, y por tanto expones los ojos al aire. Parpadea rápido durante unos segundos para reponer la humedad sobre la córnea y limpiar el polvo de la superficie del ojo.",
       "title": "Parpadear"
     },
     "aaf": {
-      "text": "Un ángulo o altura incorrectos del teclado, el ratón, el monitor o de la superficie de trabajo puede causar problemas de salud. Toma un tiempo para leer sobre la ergonoía del puesto de trabajo.",
+      "text": "Un ángulo o altura incorrectos del teclado, el ratón, el monitor o de la superficie de trabajo puede causar problemas de salud. Toma un tiempo para leer sobre la ergonomía del puesto de trabajo.",
       "title": "Ergonomía"
     },
     "aai": {
-      "text": "¿Te duermes durante el día o tienes probemas para enfocar? Es un signo de que necesitas un descanso.",
+      "text": "¿Te duermes durante el día o tienes problemas para enfocar? Es un signo de que necesitas un descanso.",
       "title": "Notar"
     },
     "aak": {
-      "text": "Nuevas investigaciones muestran que estar sentado durante largos peridos de tiempo contribuye al riesgo de síndrome metabólico, al riesgo de ataques al corazón y en conjunto al riesgo de muerte, entre otros. Tomar descansos regulares caminando puede ayudar a la circulación, contribuyendo a contrarestar esos problemas.",
+      "text": "Nuevas investigaciones muestran que estar sentado durante largos períodos de tiempo contribuye al riesgo de síndrome metabólico, al riesgo de ataques al corazón y en conjunto al riesgo de muerte, entre otros. Tomar descansos regulares caminando puede ayudar a la circulación, contribuyendo a contrarrestar esos problemas.",
       "title": "Metabolismo"
     },
     "aam": {
-      "text": "Come algo de frunta. Lentamente. Nota el sabor, la textura, la frescura.",
+      "text": "Come algo de fruta. Lentamente. Nota el sabor, la textura, la frescura.",
       "title": "Fruta"
     },
     "aao": {
@@ -406,7 +406,7 @@
       "title": "Descanso para un café"
     },
     "aan": {
-      "text": "Camina al baño más alejado en tu lugar de trabajo cuando te dirijes al lugar de descanso.",
+      "text": "Camina al baño más alejado en tu lugar de trabajo cuando te diriges al lugar de descanso.",
       "title": "Baños"
     },
     "aap": {
@@ -422,15 +422,15 @@
       "title": "Ejercicio"
     },
     "aaw": {
-      "text": "Esta rutina contempla un conjunto de ejercicios completos para todo el cuerpo en una fracción de tiempo. Pero como con cualquier ejerción, ten cuidado. Hay muchas apps para que comiences.",
+      "text": "Esta rutina contempla un conjunto de ejercicios completos para todo el cuerpo en una fracción de tiempo. Pero como con cualquier ejercicio, ten cuidado. Hay muchas apps para que comiences.",
       "title": "Rutina de 7 minutos"
     },
     "aax": {
-      "text": "Aumenta el pulso hasta los 120 latidos por minutos durante 20 minutos seguidos cuatro o cinco veces por semana haciendo cualquier cosa que te guste. Aumentar el ritmo cardiaco tiene como resultado mejorar la salud cardiovascular.",
+      "text": "Aumenta el pulso hasta los 120 latidos por minutos durante 20 minutos seguidos cuatro o cinco veces por semana haciendo cualquier cosa que te guste. Aumentar el ritmo cardíaco tiene como resultado mejorar la salud cardiovascular.",
       "title": "Pulso"
     },
     "aay": {
-      "text": "Estudios han desmostrado que subir escales, que se considera una actividad física intensa, quema más calorías por minuto que la carrera ligera.",
+      "text": "Estudios han demostrado que subir escaleras, que se considera una actividad física intensa, quema más calorías por minuto que la carrera ligera.",
       "title": "Sube las escaleras"
     },
     "aaz": {
@@ -439,14 +439,14 @@
     },
     "abb": {
       "title": "Almuerzo fuera",
-      "text": "La naturaleza está ligada a las emociones positivas y disminuye el estrés y la ansiedad. Siempre que se aposible, intenta almorzar fuera, rodeado de algo de naturaleza."
+      "text": "La naturaleza está ligada a las emociones positivas y disminuye el estrés y la ansiedad. Siempre que sea posible, intenta almorzar fuera, rodeado de algo de naturaleza."
     },
     "abc": {
-      "text": "Si usas el transporte público regularmente, puedes permanecere de pie en vez de sentado. Si es posible, intenta hacer todos los desplazamientos que puedas camiando o en bici.",
+      "text": "Si usas el transporte público regularmente, puedes permanecer de pie en vez de sentado. Si es posible, intenta hacer todos los desplazamientos que puedas caminando o en bici.",
       "title": "Transporte público"
     },
     "abe": {
-      "text": "Mantén undedo cerca de un ojo y enfócalo. Lentamente aleja el dedo todo lo que puedas , enfoca a lo lejos y de nuevo en el dedo. Acerca de nuevo el dedo al ojo y enfoca algo a lo lejos.",
+      "text": "Mantén un dedo cerca de un ojo y enfócalo. Lentamente aleja el dedo todo lo que puedas , enfoca a lo lejos y de nuevo en el dedo. Acerca de nuevo el dedo al ojo y enfoca algo a lo lejos.",
       "title": "Cambio de foco"
     },
     "abh": {
@@ -459,7 +459,7 @@
     },
     "aag": {
       "title": "Moverse",
-      "text": "Hay muchas formas de hacer ejercio en la oficina. Intenta marchar en el sitio o levantarte varias veces de la silla."
+      "text": "Hay muchas formas de hacer ejercicio en la oficina. Intenta marchar en el sitio o levantarte varias veces de la silla."
     },
     "aah": {
       "title": "Cambiar",
@@ -467,7 +467,7 @@
     },
     "aaj": {
       "title": "Tecnología",
-      "text": "¿Qué te parece dar un paseo desengancahdo de la tecnología?"
+      "text": "¿Qué te parece dar un paseo desenganchado de la tecnología?"
     },
     "aal": {
       "title": "Reuniones activas",
@@ -475,7 +475,7 @@
     },
     "aas": {
       "title": "Repetir",
-      "text": "¿Has hayado tu rutina de estiramientos? No olvides repetirlos más de una vez para combatir mejor los efectos del sedentarismo."
+      "text": "¿Has hallado tu rutina de estiramientos? No olvides repetirlos más de una vez para combatir mejor los efectos del sedentarismo."
     },
     "aat": {
       "title": "Muñeca y antebrazo",
@@ -483,7 +483,7 @@
     },
     "aau": {
       "title": "Estirar la espalda",
-      "text": "Une las manos detrás de la cabeza, elevalas a continuación sobre tu cabeza acabando con las palmas hacia arriba."
+      "text": "Une las manos detrás de la cabeza, elévalas a continuación sobre tu cabeza acabando con las palmas hacia arriba."
     },
     "aav": {
       "title": "Movilización",
@@ -495,11 +495,11 @@
     },
     "abd": {
       "title": "Bostezar",
-      "text": "Bostezar puede ayudar, ya que prodduce lágrimas que humedecen y lubrican los ojos."
+      "text": "Bostezar puede ayudar, ya que produce lágrimas que humedecen y lubrican los ojos."
     },
     "abf": {
       "title": "Palmas",
-      "text": "Sentado, colola los codos en la mesa cerca del borde. Échate hacia delante colocando las manos sobre los ojos. Cierra los ojos, inhala lentamente por la nariz y aguanta unos segundos. Continua respirando profundamente."
+      "text": "Sentado, coloca los codos en la mesa cerca del borde. Échate hacia delante colocando las manos sobre los ojos. Cierra los ojos, inhala lentamente por la nariz y aguanta unos segundos. Continua respirando profundamente."
     },
     "abi": {
       "title": "Visualización creativa",
