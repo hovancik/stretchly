@@ -143,6 +143,11 @@ if (!gotTheLock) {
         pauseBreaks(duration)
         break
       }
+
+      case 'preferences':
+        log.info('Stretchly: open Preferences window (requested by second instance)')
+        createPreferencesWindow()
+        break
     }
   })
 }

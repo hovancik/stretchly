@@ -8,12 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - new break ideas
+- ability to open Preferences window from command line
 
 ## Fixed
 - error when checking for new version fails
 
 ## Changed
-- improved linux Preferences postioning
+- improved linux Preferences positioning
+- updated many translations
 
 ## [1.13.1] - 2022-12-23
 ## Fixed
