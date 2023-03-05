@@ -61,6 +61,9 @@ const allCommands = {
   long: {
     description: 'Skip to the Long Break, customize it',
     options: [allOptions.text, allOptions.title, allOptions.noskip, allOptions.wait]
+  },
+  preferences: {
+    description: 'Open Preferences window'
   }
 }
 
@@ -95,6 +98,10 @@ const allExamples = [{
 {
   cmd: 'stretchly long -w 20m -T "Stretch up!"',
   description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
+},
+{
+  cmd: 'stretchly preferences',
+  description: 'Open Preferences window'
 }]
 
 // Parse cmd line, check if valid and put variables in a dedicated object
