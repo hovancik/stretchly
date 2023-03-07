@@ -61,7 +61,9 @@ You can install *Stretchly* for all users silently by running this as administra
 
 ### Linux/BSD/Portable
 
-For portable versions and for Linux/BSD installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered.
+For portable versions and for Linux/BSD installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered. 
+Probably the best and easiest way is that you chose the instructions in  [this website](https://snapcraft.io/stretchly) (after choosing your distribution).
+Once you have selected your language (on the very first screen), you will only see a small icon in the upper right corner (next to the other running apps). You can adjust your preferences by clicking on that icon.
 
 #### Linux note
 
