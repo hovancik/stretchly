@@ -322,6 +322,45 @@
     },
     "abj": {
       "text": "Fique em pé e incline lentamente a cabeça em direção ao ombro usando a mesma mão até sentir um alongamento."
+    },
+    "abv": {
+      "text": "Estenda um braço sobre o peito, segure o cotovelo com a outra mão e puxe-o suavemente em direção ao peito. Repita com o outro braço."
+    },
+    "abm": {
+      "text": "Sente-se na beirada da cadeira, vire o tronco para um lado e segure por 10 a 15 segundos. Repita do outro lado."
+    },
+    "abn": {
+      "text": "Levante-se e ponha um pé num objeto próximo, como uma cadeira ou escadinha. Mantenha o joelho dobrado e segure por 10 a 15 segundos. Repita com o outro pé."
+    },
+    "abo": {
+      "text": "Fique em pé com os pés afastados na largura dos ombros, abaixe o corpo como se estivesse sentado numa cadeira e, em seguida, levante-se. Repita várias vezes."
+    },
+    "abp": {
+      "text": "Fique em pé com as costas e as mãos apoiadas na parede e mova lentamente os braços para cima e para baixo, como se estivesse fazendo anjos de neve."
+    },
+    "abq": {
+      "text": "Fique de frente para uma parede e ponha as mãos sobre ela, depois faça várias flexões."
+    },
+    "abr": {
+      "text": "Sente-se na beirada da cadeira e estenda uma perna à sua frente, a segurar por 10 a 15 segundos. Repita com a outra perna."
+    },
+    "abs": {
+      "text": "Fique de frente para uma parede, ponha um pé para trás e o outro para a frente e, em seguida, incline-se contra a parede. Repita com a outra perna."
+    },
+    "abt": {
+      "text": "Segure um braço para cima e, em seguida, use o outro braço para empurrar suavemente o cotovelo do primeiro braço em direção à sua cabeça. Segure por 10-15 segundos. Repita com o outro braço."
+    },
+    "abu": {
+      "text": "Incline a cabeça para um lado, depois para o outro lado e depois incline-a suavemente para a frente e para trás."
+    },
+    "abw": {
+      "text": "Levante-se, ponha um pé num objeto próximo, como uma cadeira ou escadinha, e abaixe-se para tocar os dedos dos pés. Repita com a outra perna."
+    },
+    "abx": {
+      "text": "Posicione-se num caminho de porta e ponha um braço de cada lado das bordas e, em seguida, incline-se suavemente para a frente até sentir um alongamento no peito."
+    },
+    "aby": {
+      "text": "Sente-se na beira de uma cadeira ou no chão e ponha as solas dos pés juntas, a pressionar suavemente com os cotovelos para alongar a parte interna das coxas."
     }
   },
   "longBreakIdeas": {
@@ -414,7 +453,7 @@
       "title": "Mobilizar"
     },
     "aax": {
-      "text": " Aumente sua taxa de pulso para 120 batimentos por minuto por 20 minutos seguidos, quatro ou cinco vezes por semana, fazendo qualquer coisa que você goste. Aumentar regularmente sua frequência cardíaca resulta em melhora da saúde cardiovascular.",
+      "text": "Aumente a sua pulsação para 120 batimentos por minuto por 20 minutos seguidos, quatro ou cinco vezes por semana, fazendo qualquer coisa que goste. Aumentar regularmente a frequência cardíaca resulta em melhor saúde cardiovascular.",
       "title": "Pulso"
     },
     "aaz": {
@@ -423,7 +462,7 @@
     },
     "aay": {
       "text": "Estudos mostraram que subir escadas, que é considerada atividade física de intensidade vigorosa, queima mais calorias por minuto do que correr.",
-      "title": "Pegue as escadas "
+      "title": "Suba as escadas"
     },
     "abb": {
       "text": "A natureza está ligada a emoções positivas e diminuição do estresse e da ansiedade. Sempre que possível, tente fazer a sua pausa diária para o almoço ao ar livre, rodeado por alguma vegetação.",
@@ -454,12 +493,16 @@
       "text": "Pesquisas emergentes sugerem potencial para o uso de técnicas de respiração lenta controlada como meio de otimizar parâmetros fisiológicos que parecem estar associados à saúde e à longevidade."
     },
     "abg": {
-      "text": "Aperte um par de meias enroladas ou uma bola de borracha macia, segure por 5 segundos. Repita todo o processo algumas vezes.",
+      "text": "Aperte um par de peúgas enroladas ou uma bola de borracha macia e segure por 5 segundos. Repita todo o processo algumas vezes.",
       "title": "Apertos de mão"
     },
     "aab": {
       "title": "Afaste-se",
       "text": "Você já notou como seu cérebro pode descobrir as coisas por si só? Basta se afastar do computador e fazer uma pausa para pensar em algo totalmente não relacionado."
+    },
+    "abi": {
+      "title": "Visualização imaginativa",
+      "text": "Feche os olhos e imagine-se num lugar tranquilo e calmo, como uma praia ou uma floresta, a concentrar-se nas imagens, sons e sensações desse ambiente."
     }
   }
 }
