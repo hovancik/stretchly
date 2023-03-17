@@ -323,6 +323,45 @@
     },
     "abl": {
       "text": "Stai in piedi con le braccia alzate lungo le spalle. Muovi le mani leggermente dietro la schiena, tieni premuto per un secondo e torna indietro."
+    },
+    "abo": {
+      "text": "Stai in piedi con i piedi alla larghezza delle spalle, abbassa il corpo come se fossi seduto su una sedia, quindi rialzati. Ripeti più volte."
+    },
+    "abp": {
+      "text": "Mettiti in piedi con la schiena e le mani su un muro, quindi muovi lentamente le braccia su e giù come se stessi facendo angeli di neve."
+    },
+    "abq": {
+      "text": "Mettiti di fronte a un muro e metti le mani su di esso, quindi fai diverse flessioni."
+    },
+    "abs": {
+      "text": "Mettiti di fronte a un muro, metti un piede indietro e l'altro in avanti, poi appoggiati al muro. Ripeti con l'altra gamba."
+    },
+    "abt": {
+      "text": "Tieni un braccio dritto verso l'alto, quindi usa l'altro braccio per spingere delicatamente il gomito del primo braccio verso la testa. Mantieni la posizione per 10-15 secondi. Ripeti con l'altro braccio."
+    },
+    "abv": {
+      "text": "Allunga un braccio sul petto, tieni il gomito con l'altra mano e tiralo delicatamente verso il petto. Ripeti con l'altro braccio."
+    },
+    "abx": {
+      "text": "Mettiti in piedi su una porta e metti un braccio su ciascun lato della porta, quindi piegati delicatamente in avanti finché non senti un allungamento nel petto."
+    },
+    "abm": {
+      "text": "Siediti sul bordo della sedia, ruota il busto di lato e mantieni la posizione per 10-15 secondi. Ripeti dall'altra parte."
+    },
+    "abn": {
+      "text": "Alzati e metti un piede su un oggetto vicino, come una sedia o uno sgabello. Tieni il ginocchio piegato e mantieni la posizione per 10-15 secondi. Ripeti con l'altro piede."
+    },
+    "abw": {
+      "text": "Alzati, metti un piede su un oggetto vicino, come una sedia o uno sgabello, e abbassati per toccare le dita dei piedi. Ripeti con l'altra gamba."
+    },
+    "abu": {
+      "text": "Inclina la testa da un lato, poi dall'altro, quindi inclinala delicatamente in avanti e indietro."
+    },
+    "abr": {
+      "text": "Siediti sul bordo della sedia ed estendi una gamba dritta davanti a te, mantenendo la posizione per 10-15 secondi. Ripeti con l'altra gamba."
+    },
+    "aby": {
+      "text": "Siediti sul bordo di una sedia o sul pavimento e unisci le piante dei piedi, premendo delicatamente con i gomiti per allungare l'interno coscia."
     }
   },
   "longBreakIdeas": {
@@ -461,6 +500,10 @@
     "aay": {
       "title": "Prendi le scale",
       "text": "Gli studi hanno dimostrato che salire le scale, che è considerata un'attività fisica di intensità vigorosa, brucia più calorie al minuto rispetto al jogging."
+    },
+    "abi": {
+      "title": "Visualizzazione immaginativa",
+      "text": "Chiudi gli occhi e immagina di trovarti in un luogo tranquillo e rilassante, come una spiaggia o una foresta, concentrandoti sulle immagini, i suoni e le sensazioni di quell'ambiente."
     }
   }
 }
