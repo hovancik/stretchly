@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Fixed
 - error when checking for new version fails
+- VoiceOver glitch on mac
 
 ## Changed
 - improved linux Preferences positioning
