@@ -323,6 +323,45 @@
     },
     "abb": {
       "text": "Utsätt dina ögon för naturligt ljus."
+    },
+    "abo": {
+      "text": "Stå med fötterna axelbrett isär, sänk ner kroppen som om du satt tillbaka i en stol och ställ dig sedan upp igen. Upprepa flera gånger."
+    },
+    "abr": {
+      "text": "Sitt på kanten av din stol och sträck ut ett ben rakt ut framför dig, håll i 10-15 sekunder. Upprepa med det andra benet."
+    },
+    "abs": {
+      "text": "Stå vänd mot en vägg, lägg en fot bakåt och den andra foten framåt och luta dig sedan mot väggen. Upprepa med det andra benet."
+    },
+    "abv": {
+      "text": "Sträck ena armen över bröstet, håll i armbågen med den andra handen och dra den försiktigt in mot bröstet. Upprepa med den andra armen."
+    },
+    "abw": {
+      "text": "Stå upp, sätt en fot på ett närliggande föremål, som en stol eller trappall, och sträck dig ner för att röra vid tårna. Upprepa med det andra benet."
+    },
+    "abm": {
+      "text": "Sitt på kanten av din stol, vrid bålen åt sidan och håll i 10-15 sekunder. Upprepa på andra sidan."
+    },
+    "abn": {
+      "text": "Stå upp och sätt en fot på ett närliggande föremål, som en stol eller pall. Håll ditt knä böjt och håll i 10-15 sekunder. Upprepa med den andra foten."
+    },
+    "abp": {
+      "text": "Stå med ryggen och händerna på en vägg, flytta sedan långsamt armarna upp och ner som om du gjorde snöänglar."
+    },
+    "abq": {
+      "text": "Stå vänd mot en vägg och placera händerna på den, gör sedan flera armhävningar."
+    },
+    "abt": {
+      "text": "Håll en arm rakt upp och använd sedan den andra armen för att försiktigt trycka armbågen på den första armen mot ditt huvud. Håll i 10-15 sekunder. Upprepa med den andra armen."
+    },
+    "abu": {
+      "text": "Luta huvudet åt ena sidan, sedan åt andra sidan och luta det sedan försiktigt framåt och bakåt."
+    },
+    "abx": {
+      "text": "Stå i en dörröppning och placera en arm på var sida om dörröppningen, luta dig sedan försiktigt framåt tills du känner en sträckning i bröstet."
+    },
+    "aby": {
+      "text": "Sitt på kanten av en stol eller på golvet och placera fotsulorna mot varandra, tryck försiktigt ner med armbågarna för att sträcka ut dina inre lår."
     }
   },
   "longBreakIdeas": {
@@ -403,7 +442,8 @@
       "text": "Har du någonsin lagt märke till hur din hjärna kan ta reda på saker själv? Allt som krävs är att gå bort från datorn och ta en paus för att tänka på något som inte har med det att göra."
     },
     "aac": {
-      "text": "Vila är en nyckelkomponent för att säkerställa prestationsförmågan hos muskuloskeletala systemet. Frekventa pauser kan minska varaktigheten av en uppgift och hjälpa till att minska exponeringen för ergonomisk skaderisk."
+      "text": "Vila är en nyckelkomponent för att säkerställa prestationsförmågan hos muskuloskeletala systemet. Frekventa pauser kan minska varaktigheten av en uppgift och hjälpa till att minska exponeringen för ergonomisk skaderisk.",
+      "title": "Mikropauser"
     },
     "aaf": {
       "title": "Ergonomi",
@@ -438,7 +478,8 @@
       "text": "Skicka inte e-post eller meddelanden till kontorskollegor, gå till deras skrivbord för att kommunicera med dem."
     },
     "aba": {
-      "text": "Ett rent utrymme hjälper ditt fokus på jobbet och är ofta kopplat till positiva känslor som lycka."
+      "text": "Ett rent utrymme hjälper ditt fokus på jobbet och är ofta kopplat till positiva känslor som lycka.",
+      "title": "Rensa"
     },
     "abb": {
       "title": "Lunch ute",
@@ -453,7 +494,16 @@
       "text": "Ny forskning tyder på potential för användning av kontrollerade långsamma andningstekniker som ett sätt att optimera fysiologiska parametrar som verkar vara förknippade med hälsa och livslängd."
     },
     "abf": {
-      "text": "När du sitter, spänn armbågarna på skrivbordet och nära skrivbordskanten. Låt din vikt falla framåt och lägg händerna över ögonen. Blunda och andas långsamt genom näsan och håll i några sekunder. Fortsätt djupa andetag."
+      "text": "När du sitter, spänn armbågarna på skrivbordet och nära skrivbordskanten. Låt din vikt falla framåt och lägg händerna över ögonen. Blunda och andas långsamt genom näsan och håll i några sekunder. Fortsätt djupa andetag.",
+      "title": "Gömma i handflatan"
+    },
+    "abi": {
+      "title": "Fantasifull visualisering",
+      "text": "Blunda och föreställ dig att du befinner dig på en fridfull och lugnande plats, som en strand eller en skog, med fokus på sevärdheterna, ljuden och förnimmelserna i den miljön."
+    },
+    "aaj": {
+      "title": "Teknologi",
+      "text": "Vad sägs om att ta en promenad utan teknologi?"
     }
   }
 }
