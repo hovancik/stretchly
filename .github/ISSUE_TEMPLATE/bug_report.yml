@@ -19,7 +19,7 @@ body:
   id:            known-issues
   attributes:
     label:       Known issues
-    description: Please check [Known issues](https://github.com/hovancik/stretchly#known-issues) as it may containt a solution for your problem.
+    description: Please check [Known issues](https://github.com/hovancik/stretchly#known-issues) as it may contain a solution for your problem.
     options:
     - label:     I've checked Known issues
       required:  true
@@ -27,10 +27,18 @@ body:
   id:            open-issues
   attributes:
     label:       Existing issues
-    description: Please check [Existing issues](https://github.com/hovancik/stretchly/issues?q=is%3Aissue) as it may containt your issue already.
+    description: Please check [Existing issues](https://github.com/hovancik/stretchly/issues?q=is%3Aissue) as it may contain your issue already.
     options:
     - label:     I've checked Existing issues
       required:  true
+- type:          checkboxes
+  id:            advanced-preferences
+  attributes:
+    label:       Advanced Preferences
+    description: Please check [Advanced Preferences](https://github.com/hovancik/stretchly#advanced-preferences) as it may contain a solution for your problem.
+    options:
+    - label:     I've checked Advanced Preferences
+      required:  true      
 - type:          dropdown
   attributes:
     label:       What operating system are you using?
