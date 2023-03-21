@@ -311,32 +311,199 @@
     },
     "abi": {
       "text": "Ga rechtop zitten, met je armen hangend langs je zij. Draai nu langzaam je nek in een grote boog in één richting."
+    },
+    "abo": {
+      "text": "Ga staan met je voeten op schouderbreedte uit elkaar, laat je lichaam zakken alsof je achterover in een stoel zit, en sta dan weer op. Herhaal dit verschillende keren."
+    },
+    "abq": {
+      "text": "Ga met je gezicht naar een muur staan en plaats je handen erop, doe dan een aantal push-ups."
+    },
+    "abt": {
+      "text": "Houd één arm recht omhoog en gebruik de andere arm om de elleboog van de eerste arm zachtjes naar je hoofd te duwen. Houd 10-15 seconden vast. Herhaal dit met de andere arm."
+    },
+    "abu": {
+      "text": "Kantel uw hoofd naar één kant, dan naar de andere kant, en kantel het voorzichtig naar voren en naar achteren."
+    },
+    "abv": {
+      "text": "Strek één arm over uw borst, houd de elleboog vast met de andere hand, en trek hem zachtjes naar uw borst. Herhaal dit met de andere arm."
+    },
+    "abw": {
+      "text": "Sta op, zet één voet op een nabijgelegen voorwerp, zoals een stoel of een krukje, en reik naar beneden om uw tenen aan te raken. Herhaal dit met het andere been."
+    },
+    "abx": {
+      "text": "Ga in een deuropening staan en plaats een arm aan elke kant van de deuropening, leun dan voorzichtig naar voren totdat u een rek in uw borst voelt."
+    },
+    "aby": {
+      "text": "Ga op de rand van een stoel of op de vloer zitten, en plaats de zolen van uw voeten tegen elkaar en druk zachtjes met uw ellebogen naar beneden om uw binnenkant van de dijen te strekken."
+    },
+    "abn": {
+      "text": "Sta op en zet één voet op een nabijgelegen voorwerp, zoals een stoel of een opstapje. Houd uw knie gebogen en houd 10-15 seconden vast. Herhaal dit met de andere voet."
+    },
+    "abk": {
+      "text": "Sta rechtop met je armen langs je zij. Knijp je schouderbladen samen en houd vast."
+    },
+    "abl": {
+      "text": "Sta rechtop met je armen langs je schouders geheven. Beweeg de handen iets achter je rug, houd even vast en keer terug."
+    },
+    "aan": {
+      "text": "Neem een moment om te glimlachen omdat je leeft."
+    },
+    "abj": {
+      "text": "Sta rechtop en kantel uw hoofd langzaam naar de schouder met dezelfde hand tot u een rek voelt."
+    },
+    "abm": {
+      "text": "Ga op de rand van uw stoel zitten, draai uw bovenlichaam naar één kant en houd 10-15 seconden vast. Herhaal dit aan de andere kant."
+    },
+    "abp": {
+      "text": "Ga met je rug en handen op een muur staan en beweeg je armen langzaam op en neer alsof je sneeuwengelen maakt."
+    },
+    "abs": {
+      "text": "Ga tegenover een muur staan, zet één voet naar achteren en de andere naar voren en leun tegen de muur. Herhaal dit met het andere been."
+    },
+    "abr": {
+      "text": "Ga op de rand van je stoel zitten en strek één been recht voor je uit. Houd dit 10-15 seconden vast. Herhaal dit met het andere been."
     }
   },
   "longBreakIdeas": {
     "aak": {
-      "text": "Recent onderzoek toont aan dat langdurig zitten bijdraagt aan risico's op metabolisch syndroom, hartaanvallen en herseninfarcten en dat het algemene sterfrisico erdoor verhoogd wordt. Regelmatige wandelpauzes ondersteunen je bloedcirculatie en gaan zo dit soort problemen tegen."
+      "text": "Recent onderzoek toont aan dat langdurig zitten bijdraagt aan risico's op metabolisch syndroom, hartaanvallen en herseninfarcten en dat het algemene sterfrisico erdoor verhoogd wordt. Regelmatige wandelpauzes ondersteunen je bloedcirculatie en gaan zo dit soort problemen tegen.",
+      "title": "Metabolisme"
     },
     "aay": {
-      "title": "Neem de trap"
+      "title": "Neem de trap",
+      "text": "Studies hebben aangetoond dat traplopen, wat wordt beschouwd als een zware fysieke activiteit, meer calorieën per minuut verbrandt dan joggen."
     },
     "abh": {
-      "title": "Langzaam ademen"
+      "title": "Langzaam ademen",
+      "text": "Opkomend onderzoek suggereert mogelijkheden voor het gebruik van gecontroleerde langzame ademhalingstechnieken als middel om fysiologische parameters te optimaliseren die in verband lijken te staan met gezondheid en een lang leven."
     },
     "aaa": {
-      "text": "Vind je het moeilijk om pauze te nemen in je eentje? Probeer om het samen met een collega te doen. Het is niet alleen makkelijker om je aan de pauzes te houden, je kan ook elkaar beter leren kennen. Samen pauzes nemen verhoogt de productiviteit."
+      "text": "Vind je het moeilijk om pauze te nemen in je eentje? Probeer om het samen met een collega te doen. Het is niet alleen makkelijker om je aan de pauzes te houden, je kan ook elkaar beter leren kennen. Samen pauzes nemen verhoogt de productiviteit.",
+      "title": "Niet alleen"
     },
     "aae": {
-      "text": "Als je langdurig naar een beeldscherm kijkt, ga je minder vaak knipperen met je ogen en stel je ze meer bloot aan de lucht. Knipper een paar secondenlang snel achtereen om het traanvocht te verversen en stof van je oogoppervlakte te verwijderen."
+      "text": "Als je langdurig naar een beeldscherm kijkt, ga je minder vaak knipperen met je ogen en stel je ze meer bloot aan de lucht. Knipper een paar secondenlang snel achtereen om het traanvocht te verversen en stof van je oogoppervlakte te verwijderen.",
+      "title": "Blink"
     },
     "abi": {
-      "text": "Sluit je ogen en stel je voor dat je op een vredige en rustgevende plek bent, zoals een strand of een bos en concentreer je op het uitzicht, de geluiden en de sensaties van die omgeving."
+      "text": "Sluit je ogen en stel je voor dat je op een vredige en rustgevende plek bent, zoals een strand of een bos en concentreer je op het uitzicht, de geluiden en de sensaties van die omgeving.",
+      "title": "Fantasierijke visualisatie"
     },
     "aad": {
-      "text": "Onderzoek suggereert dat mindfulness gebaseerde oefeningen helpen om angst, depressie, stress en pijn te verminderen en helpen om de algemene gezondheid, mentale gezondheid en levenskwaliteit te verbeteren. Weet je niet goed hoe je moet beginnen? Er zijn heel wat apps beschikbaar om je te ondersteunen."
+      "text": "Onderzoek suggereert dat mindfulness gebaseerde oefeningen helpen om angst, depressie, stress en pijn te verminderen en helpen om de algemene gezondheid, mentale gezondheid en levenskwaliteit te verbeteren. Weet je niet goed hoe je moet beginnen? Er zijn heel wat apps beschikbaar om je te ondersteunen.",
+      "title": "Meditatie"
     },
     "abe": {
-      "text": "Hou een vinger dicht bij je oog en focus er op. Beweeg de vinger langzaam weg, breng je focus in de verte en dan weer terug naar de vinger. Breng de vinger weer terug en focus nogmaals op de verte."
+      "text": "Hou een vinger dicht bij je oog en focus er op. Beweeg de vinger langzaam weg, breng je focus in de verte en dan weer terug naar de vinger. Breng de vinger weer terug en focus nogmaals op de verte.",
+      "title": "Focus verandering"
+    },
+    "aag": {
+      "text": "Er zijn veel manieren waarop u op kantoor kunt bewegen. Probeer te marcheren of push-ups te doen.",
+      "title": "Beweeg"
+    },
+    "aac": {
+      "text": "Rust is een belangrijk onderdeel van de prestaties van het bewegingsapparaat. Frequente pauzes kunnen de duur van een taak verkorten en het risico op ergonomisch letsel verminderen.",
+      "title": "Micro-pauzes"
+    },
+    "aaf": {
+      "text": "Een verkeerde hoogte en hoek van het toetsenbord, de muis, het beeldscherm of het werkoppervlak kunnen gezondheidsproblemen veroorzaken. Neem de tijd om te lezen over bureau-ergonomie.",
+      "title": "Ergonomie"
+    },
+    "aai": {
+      "title": "Let op",
+      "text": "Ben je aan het dagdromen of heb je moeite om je te concentreren? Het is een teken dat je een pauze moet nemen."
+    },
+    "aaj": {
+      "text": "Wat dacht je van een no-tech wandeling?",
+      "title": "Tech"
+    },
+    "aam": {
+      "text": "Neem de tijd en eet wat fruit. Langzaam. Let op de smaak, de textuur, de versheid.",
+      "title": "Fruit"
+    },
+    "aal": {
+      "title": "Actieve vergaderingen",
+      "text": "Hoe zit het met het verplaatsen van vergaderingen van de vergaderzaal naar de hal? Wandelen verbrandt niet alleen calorieën, maar kan ook de samenwerking bevorderen."
+    },
+    "aan": {
+      "title": "Badkamers",
+      "text": "Loop naar het verste toilet in de vestiging wanneer u naar het toilet gaat."
+    },
+    "aap": {
+      "title": "Collega's",
+      "text": "Stuur collega's geen e-mail of berichten, maar loop naar hun bureau om met hen te communiceren."
+    },
+    "aaq": {
+      "title": "Leren",
+      "text": "In een studie bij gezonde vrijwilligers ontdekten NIH-onderzoekers dat het nemen van korte pauzes, vroeg en vaak, onze hersenen kan helpen nieuwe vaardigheden te leren."
+    },
+    "aar": {
+      "title": "Uitwerken",
+      "text": "Er zijn aanwijzingen dat kleine hoeveelheden regelmatige lichaamsbeweging enorme gezondheidsvoordelen kunnen opleveren, waaronder een meetbare vermindering van stress."
+    },
+    "aas": {
+      "title": "Herhaal",
+      "text": "Heb je je rekroutine gevonden? Vergeet niet deze meer dan eens te herhalen om de effecten van langdurig zitten beter te bestrijden."
+    },
+    "aau": {
+      "text": "Doe je handen achter je hoofd, til ze dan samen boven je hoofd en eindig met je handpalmen naar boven gericht.",
+      "title": "Strekken van de rug"
+    },
+    "aao": {
+      "text": "Ga je op koffiepauze? Overweeg een wandeling van 5 minuten elke keer dat je gaat.",
+      "title": "Koffiepauze"
+    },
+    "aab": {
+      "text": "Is het je ooit opgevallen hoe je hersenen zelf dingen kunnen uitzoeken? Je hoeft alleen maar even weg te gaan van de computer en een pauze te nemen om aan iets totaal anders te denken.",
+      "title": "Stap weg"
+    },
+    "abb": {
+      "text": "Natuur is gekoppeld aan positieve emoties en verminderde stress en angst. Probeer waar mogelijk je dagelijkse lunchpauze buiten te houden, omgeven door wat groen.",
+      "title": "Lunch buiten"
+    },
+    "abd": {
+      "title": "Gapen",
+      "text": "Gapen kan echt helpen, omdat het tranen produceert om de ogen te bevochtigen en te smeren."
+    },
+    "aav": {
+      "text": "Voor elke dertig minuten stagnatie moet je minstens één minuut stimulatie hebben.",
+      "title": "Mobiliseer"
+    },
+    "aaw": {
+      "text": "Deze training biedt een volledige lichaamsoefening in een fractie van de tijd. Maar zoals met elke oefening, wees voorzichtig. Er zijn talloze apps om je op weg te helpen.",
+      "title": "7 minuten training"
+    },
+    "aba": {
+      "title": "Opruimen",
+      "text": "Een schone ruimte helpt je focus op het werk en is vaak gekoppeld aan positieve emoties zoals geluk."
+    },
+    "aax": {
+      "text": "Verhoog je hartslag tot 120 slagen per minuut gedurende 20 minuten achter elkaar, vier of vijf keer per week, met alles wat je leuk vindt. Regelmatig je hartslag verhogen leidt tot een betere cardiovasculaire gezondheid.",
+      "title": "Hartslag"
+    },
+    "aaz": {
+      "title": "Maak kunst",
+      "text": "Het is bekend dat kunsttherapie grote voordelen heeft voor de geestelijke gezondheid, vooral als het gaat om stressbeheersing. Wat dacht je van het schrijven van een snel gedicht, het maken van een foto of het schilderen van iets kleins?"
+    },
+    "abc": {
+      "text": "Als u regelmatig gebruik maakt van het openbaar vervoer, kunt u staan in plaats van zitten. Als het mogelijk is, probeer dan zoveel mogelijk van uw dagelijkse ritten te vervangen door lopen of fietsen.",
+      "title": "Openbaar vervoer"
+    },
+    "abg": {
+      "title": "Handknijpers",
+      "text": "Knijp in een paar opgebolde sokken of een zachte rubberen bal, houd 5 seconden vast. Herhaal het hele proces een paar keer."
+    },
+    "aah": {
+      "title": "Verander",
+      "text": "Heb je een stabiliteitsbal of een staand bureau? Overweeg dan uw bureaustoel een tijdje te vervangen door deze."
+    },
+    "aat": {
+      "title": "Pols en onderarm",
+      "text": "Strek uw armen met de handpalmen naar u toe en draai de handen langzaam vier keer met de klok mee en dan vier keer tegen de klok in."
+    },
+    "abf": {
+      "title": "Palming",
+      "text": "Terwijl je zit, zet je je ellebogen op het bureau en dicht bij de rand van het bureau. Laat uw gewicht naar voren vallen en leg uw handen boven uw ogen. Sluit uw ogen en adem langzaam in door uw neus en houd enkele seconden vast. Blijf diep ademhalen."
     }
   }
 }
