@@ -59,9 +59,15 @@ Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/e
 
 You can install *Stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
 
-### Linux/BSD/Portable
+### Linux / Portable
 
-For portable versions and for Linux/BSD installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered.
+For portable versions and for Linux installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered. 
+
+Stretchly is also available in some of the Linux stores: 
+- [Flathub](https://flathub.org/apps/details/net.hovancik.Stretchly)
+- [Snap Store](https://snapcraft.io/stretchly)
+
+For Debian/Ubuntu and derivates you could also try this `apt` repositury: `deb [trusted=yes] https://apt.fury.io/hovancik/ /`.
 
 #### Linux note
 
