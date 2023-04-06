@@ -18,8 +18,8 @@ jobs:
         node-version: '18.12.1'
     - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
     - run: sudo gem install fpm -v 1.15
-    - run: npm install
     - run: npm install npm -g
+    - run: npm install
     - run: node_modules/.bin/electron-builder build
       env:
         GH_TOKEN: ${{ secrets.github_token }}
