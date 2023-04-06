@@ -43,10 +43,12 @@ window.onload = (e) => {
 
   ipcRenderer.on('showNotification', (event, { text, silent }) => {
     const title = shouldShowNotificationTitle(process.platform, process.getSystemVersion()) ? 'Stretchly' : ''
-    new Notification(title, { // eslint-disable-line no-new
+    const notification = new Notification(title, {
       body: text,
+      requireInteraction: true,
       silent
     })
+    setTimeout(() => notification.close(), 7000)
   })
 
   function notifyNewVersion (silent) {
