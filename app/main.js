@@ -693,7 +693,7 @@ function startMicrobreak () {
       show: false,
       backgroundThrottling: false,
       transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
+      backgroundColor: calculateBackgroundColor(settings.get('miniBreakColor')),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
@@ -734,7 +734,7 @@ function startMicrobreak () {
       }
       event.sender.send('microbreakIdea', idea)
       event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
+        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor(settings.get('miniBreakColor')))
     })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
@@ -832,7 +832,7 @@ function startBreak () {
       show: false,
       backgroundThrottling: false,
       transparent: settings.get('transparentMode'),
-      backgroundColor: calculateBackgroundColor(),
+      backgroundColor: calculateBackgroundColor(settings.get('mainColor')),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
@@ -873,7 +873,7 @@ function startBreak () {
       }
       event.sender.send('breakIdea', idea)
       event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor())
+        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor(settings.get('mainColor')))
     })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
@@ -1031,8 +1031,8 @@ function resetBreaks () {
   updateTray()
 }
 
-function calculateBackgroundColor () {
-  return settings.get('mainColor') + Math.round(settings.get('opacity') * 255).toString(16)
+function calculateBackgroundColor (color) {
+  return color + Math.round(settings.get('opacity') * 255).toString(16)
 }
 
 function loadIdeas () {
@@ -1342,6 +1342,10 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'audio') {
     settings.set('miniBreakAudio', value)
+  }
+
+  if (key === 'mainColor') {
+    settings.set('miniBreakColor', value)
   }
 
   if (key === 'openAtLogin') {

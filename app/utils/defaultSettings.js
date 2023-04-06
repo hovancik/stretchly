@@ -25,6 +25,7 @@ module.exports = {
   breakPostponesLimit: 1,
   breakPostponableDurationPercent: 30,
   mainColor: '#478484',
+  miniBreakColor: '#478484',
   transparentMode: false,
   opacity: 0.9,
   audio: 'crystal-glass',

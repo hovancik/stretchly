@@ -167,9 +167,11 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `break` - enable Long Breaks
 - `microbreakStrictMode` - enable strict mode for Mini Breaks
 - `breakStrictMode` - enable strict mode for Long Breaks
-- `mainColor` - theme color code,
+- `mainColor` - theme color code (for Long Breaks),
+- `miniBreakColor` - theme color code (for Mini Breaks),
 - `transparentMode` - show break windows as transparent
-- `audio` - sound theme name
+- `audio` - sound theme name (for Long Breaks)
+- `miniBreakAudio` - sound theme name (for Mini Breaks)
 - `fullscreen` - show breaks in fullscreen mode
 - `ideas` - show break ideas
 - `naturalBreaks` - monitor idle time
@@ -209,7 +211,10 @@ In the preferences file, set `notifyNewVersion: false,` to disable new version n
 In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sound will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
 #### Different sound for Mini and Long breaks
-To play different sound for Mini Break, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`). 
+To play different sound for Mini Breaks, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`). 
+
+#### Different color theme for Mini and Long breaks
+To have different theme for Mini Breaks, set `miniBreakColor` to desired value, ie `#123456`.
 
 #### Natural breaks inactivity time [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* breaks will be paused until the user resumes activity.
