@@ -10,6 +10,7 @@ log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData')
 
 window.onload = (e) => {
   ipcRenderer.on('playSound', (event, file, volume) => {
+    log.info(`Stretchly: playing audio/${file}.wav (volume: ${volume})`)
     const audio = new Audio(`audio/${file}.wav`)
     audio.volume = volume
     audio.play()
