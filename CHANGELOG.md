@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - new break ideas
 - ability to open Preferences window from command line
+- advanced option to set different sounds for Mini and Long breaks
 
 ## Fixed
 - error when checking for new version fails

@@ -28,6 +28,7 @@ module.exports = {
   transparentMode: false,
   opacity: 0.9,
   audio: 'crystal-glass',
+  miniBreakAudio: 'crystal-glass',
   volume: 1,
   fullscreen: false,
   ideas: true,
