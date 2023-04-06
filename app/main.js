@@ -679,7 +679,7 @@ function startMicrobreak () {
   nextIdea = null
 
   if (settings.get('microbreakStartSoundPlaying') && !settings.get('silentNotifications')) {
-    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
+    processWin.webContents.send('playSound', settings.get('mimiBreakAudio'), settings.get('volume'))
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
@@ -936,12 +936,13 @@ function startBreak () {
   })
 }
 
-function breakComplete (shouldPlaySound, windows) {
+function breakComplete (shouldPlaySound, windows, breakType) {
   if (globalShortcut.isRegistered(settings.get('endBreakShortcut'))) {
     globalShortcut.unregister(settings.get('endBreakShortcut'))
   }
   if (shouldPlaySound && !settings.get('silentNotifications')) {
-    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
+    const audio = breakType === 'mini' ? 'miniBreakAudio' : 'audio'
+    processWin.webContents.send('playSound', settings.get(audio), settings.get('volume'))
   }
   if (process.platform === 'darwin') {
     // get focus on the last app
@@ -951,7 +952,7 @@ function breakComplete (shouldPlaySound, windows) {
 }
 
 function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
-  microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
+  microbreakWins = breakComplete(shouldPlaySound, microbreakWins, 'mini')
   log.info(`Stretchly: finishing Mini Break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
@@ -962,7 +963,7 @@ function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
 }
 
 function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
-  breakWins = breakComplete(shouldPlaySound, breakWins)
+  breakWins = breakComplete(shouldPlaySound, breakWins, 'long')
   log.info(`Stretchly: finishing Long Break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
@@ -1337,6 +1338,10 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'themeSource') {
     nativeTheme.themeSource = value
+  }
+
+  if (key === 'audio') {
+    settings.set('miniBreakAudio', value)
   }
 
   if (key === 'openAtLogin') {
