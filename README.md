@@ -61,9 +61,9 @@ You can install *Stretchly* for all users silently by running this as administra
 
 ### Linux / Portable
 
-For portable versions and for Linux installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered. 
+For portable versions and for Linux installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered.
 
-Stretchly is also available in some of the Linux stores: 
+Stretchly is also available in some of the Linux stores:
 - [Flathub](https://flathub.org/apps/details/net.hovancik.Stretchly)
 - [Snap Store](https://snapcraft.io/stretchly)
 
@@ -155,7 +155,7 @@ Preferences marked with ![Not Reliable](https://img.shields.io/badge/Not_Reliabl
 
 #### Preferences editable in the app
 
-Here are the preferences editable via the app. If values in the app does not suite your style, you could edit them maually: 
+Here are the preferences editable via the app. If values in the app does not suite your style, you could edit them maually:
 
 - `microbreakDuration` - duration of Mini Break (ms)
 - `microbreakInterval` - interval of Mini Break (ms)
@@ -211,7 +211,7 @@ In the preferences file, set `notifyNewVersion: false,` to disable new version n
 In the preferences file, set `microbreakStartSoundPlaying: true,` to start a Mini Break with a sound (The same sound will be played as at the end of the break). Same for `breakStartSoundPlaying`.
 
 #### Different sound for Mini and Long breaks
-To play different sound for Mini Breaks, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`). 
+To play different sound for Mini Breaks, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`).
 
 #### Different color theme for Mini and Long breaks
 To have different theme for Mini Breaks, set `miniBreakColor` to desired value, ie `#123456`.
@@ -290,7 +290,7 @@ If you want Stretchly to be running when specific apps are as well, you could ha
 ]
 ```
 
-You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows). 
+You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows).
 
 You can also specify `appExclusionsCheckInterval` in milliseconds: lower number means more often checks, but also higher CPU usage. Default value is `1000` which is 1 second.
 
@@ -400,6 +400,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ## Known issues
 - power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
+- notifications on Windows stay in Notification center ([electron/electron#9283](https://github.com/electron/electron/issues/9283))
 
 ### MacOS
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
