@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Fixed
 - error when checking for new version fails
 - VoiceOver glitch on mac
+- notifications getting stacked in Notification center (macOS, Linux)
+- notifications preventing Gnome DE from sleeping
 
 ## Changed
 - improved linux Preferences positioning
@@ -22,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.13.1] - 2022-12-23
 ## Fixed
-- migration script for new installs 
+- migration script for new installs
 
 ## [1.13.0] - 2022-12-23
 ### Added
