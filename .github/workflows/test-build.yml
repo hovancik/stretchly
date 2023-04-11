@@ -1,0 +1,28 @@
+name: Packages build
+
+on:
+  push:
+    branches:
+      - test-build
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+      fail-fast: false
+    steps:
+    - name: run on linux
+      if: matrix.os == 'ubuntu-latest'
+      run: sudo apt-get install libarchive-tools
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '18.12.1'
+    - run: npm install npm -g
+    - run: npm install
+    - run: node_modules/.bin/electron-builder build
+      env:
+        GH_TOKEN: ${{ secrets.github_token }}
