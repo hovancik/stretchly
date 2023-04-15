@@ -36,6 +36,29 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.14.0" date="2023-04-15">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new break ideas</li>
+          <li>ability to open Preferences window from command line</li>
+          <li>advanced option to set different sounds for Mini and Long Breaks</li>
+          <li>advanced option to set different color theme for Mini and Long Breaks</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>error when checking for new version fails</li>
+          <li>VoiceOver glitch on mac</li>
+          <li>notifications getting stacked in Notification center (macOS, Linux)</li>
+          <li>notifications preventing Gnome DE from sleeping</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>improved linux Preferences positioning</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.13.1" date="2022-12-23">
       <description>
         <p>Fixed</p>
@@ -44,7 +67,7 @@
         </ul>
       </description>
     </release>
-     <release version="1.13.0" date="2022-12-23">
+    <release version="1.13.0" date="2022-12-23">
       <description>
         <p>Added</p>
         <ul>

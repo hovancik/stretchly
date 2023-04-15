@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.14.0] - 2023-04-15
 ### Added
 - new break ideas
 - ability to open Preferences window from command line
@@ -702,7 +703,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.13.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.14.0...HEAD
+[1.14.0]: https://github.com/hovancik/stretchly/compare/v1.13.1...v1.14.0
 [1.13.1]: https://github.com/hovancik/stretchly/compare/v1.13.0...v1.13.1
 [1.13.0]: https://github.com/hovancik/stretchly/compare/v1.12.0...v1.13.0
 [1.12.0]: https://github.com/hovancik/stretchly/compare/v1.11.0...v1.12.0
