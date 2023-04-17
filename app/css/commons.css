@@ -168,7 +168,7 @@ a {
 progress {
   -webkit-appearance: none;
   height: 6px;
-  width: 50vh;
+  width: min(50vw, 50vh);
 }
 
 progress[value]::-webkit-progress-bar {

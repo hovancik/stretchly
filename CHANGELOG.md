@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed 
+- break progress bar overflowing on tall screens
+
 ## [1.14.0] - 2023-04-15
 ### Added
 - new break ideas
