@@ -1,55 +1,55 @@
----
-kind: pipeline
-type: docker
-name: amd64 Linux Build
+# ---
+# kind: pipeline
+# type: docker
+# name: amd64 Linux Build
 
-platform:
-  os: linux
-  arch: amd64
+# platform:
+#   os: linux
+#   arch: amd64
 
-steps:
-- name: Build
-  image: amd64/node:18.14.0-buster
-  commands:
-  - apt update && apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
-  - npm install
-  - npm install npm -g
-  - node_modules/.bin/electron-builder build --x64
-  environment:
-    GH_TOKEN:
-      from_secret: GH_TOKEN
+# steps:
+# - name: Build
+#   image: amd64/node:18.14.0-buster
+#   commands:
+#   - apt update && apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
+#   - npm install
+#   - npm install npm -g
+#   - node_modules/.bin/electron-builder build --x64
+#   environment:
+#     GH_TOKEN:
+#       from_secret: GH_TOKEN
 
-trigger:
-  branch:
-  - release
-  event:
-  - push
+# trigger:
+#   branch:
+#   - release
+#   event:
+#   - push
 
----
-kind: pipeline
-type: docker
-name: arm64v8 Linux Build
+# ---
+# kind: pipeline
+# type: docker
+# name: arm64v8 Linux Build
 
-platform:
-  os: linux
-  arch: arm64
+# platform:
+#   os: linux
+#   arch: arm64
 
-steps:
-- name: Build
-  image: arm64v8/node:18.14.0-buster
-  commands:
-  - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
-  - gem install fpm -v 1.10.1
-  - export USE_SYSTEM_FPM="true"
-  - npm install
-  - npm install npm -g
-  - node_modules/.bin/electron-builder build --arm64
-  environment:
-    GH_TOKEN:
-      from_secret: GH_TOKEN
+# steps:
+# - name: Build
+#   image: arm64v8/node:18.14.0-buster
+#   commands:
+#   - apt update && apt-get install --no-install-recommends -y ruby-full bsdtar rpm libopenjp2-tools
+#   - gem install fpm -v 1.10.1
+#   - export USE_SYSTEM_FPM="true"
+#   - npm install
+#   - npm install npm -g
+#   - node_modules/.bin/electron-builder build --arm64
+#   environment:
+#     GH_TOKEN:
+#       from_secret: GH_TOKEN
 
-trigger:
-  branch:
-  - release
-  event:
-  - push
+# trigger:
+#   branch:
+#   - release
+#   event:
+#   - push
