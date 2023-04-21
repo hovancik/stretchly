@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-### Fixed 
+### Fixed
 - break progress bar overflowing on tall screens
+- dock icon staying after break on macOS
 
 ## [1.14.0] - 2023-04-15
 ### Added

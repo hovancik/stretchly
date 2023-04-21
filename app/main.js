@@ -1123,6 +1123,11 @@ function createPreferencesWindow () {
 }
 
 function updateTray () {
+  if (process.platform === 'darwin') {
+    if (app.dock.isVisible) {
+      app.dock.hide()
+    }
+  }
   updateToolTip()
   const newTrayIconPath = trayIconPath()
   if (newTrayIconPath !== currentTrayIconPath) {
