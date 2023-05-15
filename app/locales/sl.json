@@ -336,6 +336,45 @@
     },
     "abk": {
       "text": "Stoj pokonci z rokami ob strani. Stisni lopatici skupaj in zadrži."
+    },
+    "abn": {
+      "text": "Vstani in nogo postavi na bližnji predmet, kot na primer stol ali stolček. Koleno imej pokrčeno in drži 10 – 15 sekund. Ponovi še z drugo nogo."
+    },
+    "abo": {
+      "text": "Stoj z nogami v širini ramen, spusti telo navzdol, kot da bi sedel nazaj na stol, nato vstani. Večkrat ponovi."
+    },
+    "abq": {
+      "text": "Stoj obrnjen proti steni in položi nanjo roke, nato naredi več sklec."
+    },
+    "abr": {
+      "text": "Sedi na rob stola in iztegni nogo naravnost pred seboj, ter jo tako drži 10 – 15 sekund. Ponovi z drugo nogo."
+    },
+    "abt": {
+      "text": "Eno roko drži naravnost navzgor, nato z drugo roko nežno potisni komolec prve roke proti glavi. Zadrži 10 – 15 sekund. Ponovi z drugo roko."
+    },
+    "abu": {
+      "text": "Nagni glavo na stran, nato na drugo stran, nato jo nežno nagni naprej in nazaj."
+    },
+    "abw": {
+      "text": "Vstani, postavi eno nogo na bližnji predmet, kot je stol ali stolček, in se skloni, da se z dlanjo dotakneš prstov na nogi. Ponovi z drugo nogo."
+    },
+    "abx": {
+      "text": "Stoj med vrati in položi roko na vsako stran podboja. Nato se nežno nagni naprej, dokler ne začutiš raztezanja v prsih."
+    },
+    "abm": {
+      "text": "Usedi se na rob stola, zasukaj trup na stran in drži 10 – 15 sekund. Ponovi še na drugo stran."
+    },
+    "abp": {
+      "text": "Stoj s hrbtom in rokami ob steni, nato počasi premikaj roke gor in dol, kot da bi dela snežne angelčke."
+    },
+    "abs": {
+      "text": "Stoj obrnjen proti steni, postavi eno nogo nazaj, drugo naprej in nato se nasloni na steno. Ponovi z menjavo nog."
+    },
+    "abv": {
+      "text": "Eno roko iztegni čez prsi, nato z drugo roko primi komolec in ga nežno potegni proti prsim. Ponovi z drugo roko."
+    },
+    "aby": {
+      "text": "Sedi na rob stola ali na tla in postavi podplate skupaj. S komolci nežno pritisni navzdol, da raztegneš notranjo stran stegen."
     }
   },
   "longBreakIdeas": {
@@ -424,7 +463,7 @@
       "title": "7-minutna vadba"
     },
     "aay": {
-      "title": "Pojdi po stopnicah ",
+      "title": "Pojdi po stopnicah",
       "text": "Študije so pokazale, da pri hoji po stopnicah, ki velja za visoko intenzivno telesno aktivnost, porabiš več kalorij na minuto, kot pri teku."
     },
     "aaz": {
@@ -472,8 +511,12 @@
       "text": "Ko greš na stranišče, se sprehodi do najbolj oddaljenega na delovnem mestu."
     },
     "aax": {
-      "text": " Zvišaj svoj utrip na 120 utripov na minuto, za 20 zaporednih minut, od štiri do petkrat na teden, s početjem, kateri te veseli. Redno zviševanje srčnega utripa, izboljša zdravje srca in ožilja.",
+      "text": "Zvišaj svoj utrip na 120 utripov na minuto, za 20 zaporednih minut, od štiri do petkrat na teden, s početjem, kateri te veseli. Redno zviševanje srčnega utripa, izboljša zdravje srca in ožilja.",
       "title": "Utrip"
+    },
+    "abi": {
+      "title": "Domišljijska vizualizacija",
+      "text": "Zapri oči in si predstavljaj sebe na mirnem in pomirjujočem mestu, kot je plaža ali gozd, ter se osredotoči na prizore, zvoke in občutke tega okolja."
     }
   }
 }
