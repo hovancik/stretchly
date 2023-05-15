@@ -184,3 +184,14 @@ body[dir=rtl] .contributor-preferences > :nth-child(61) {
 body[dir=rtl] .contributor-preferences > :nth-child(63) {
   text-align: left;
 }
+
+.contributor-preferences > :nth-child(65) {
+  grid-column: 1/2;
+  grid-row: 50/51;
+  padding: 0 16px;
+  text-align: right;
+}
+
+body[dir=rtl] .contributor-preferences > :nth-child(65) {
+  text-align: left;
+}

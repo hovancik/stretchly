@@ -62,5 +62,6 @@ module.exports = {
   pauseBreaksToggleShortcut: '',
   screen: 'primary',
   timeToBreakInTray: false,
-  currentTimeInBreaks: false
+  currentTimeInBreaks: false,
+  showTrayIcon: true
 }
