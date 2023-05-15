@@ -29,7 +29,7 @@ nativeTheme.on('updated', function theThemeHasChanged () {
   if (!gotTheLock) {
     return
   }
-  appIcon.setImage(trayIconPath())
+  updateTray()
 })
 
 const Utils = require('./utils/utils')
@@ -58,6 +58,7 @@ let appIsQuitting = false
 let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
+let trayUpdateIntervalObj = null
 
 require('@electron/remote/main').initialize()
 
@@ -220,12 +221,6 @@ function initialize (isAppStart = true) {
     breakPlanner.naturalBreaks(settings.get('naturalBreaks'))
     breakPlanner.nextBreak()
   }
-  if (!appIcon) {
-    if (process.platform === 'darwin') {
-      app.dock.hide()
-    }
-    appIcon = new Tray(trayIconPath())
-  }
 
   startI18next()
   startProcessWin()
@@ -273,6 +268,7 @@ function initialize (isAppStart = true) {
     }
   }
   loadIdeas()
+  updateTray()
 }
 
 function startI18next () {
@@ -290,17 +286,12 @@ function startI18next () {
       if (err) {
         console.log(err.stack)
       }
-      if (appIcon) {
-        updateTray()
-        setInterval(updateTray, 10000)
-      }
+      updateTray()
     })
 }
 
 i18next.on('languageChanged', function (lng) {
-  if (appIcon) {
-    updateTray()
-  }
+  updateTray()
   loadIdeas()
 })
 
@@ -789,7 +780,9 @@ function startMicrobreak () {
     }
   }
   if (process.platform === 'darwin') {
-    app.dock.hide()
+    if (app.dock.isVisible) {
+      app.dock.hide()
+    }
   }
   ipcMain.on('mini-break-loaded', (event) => {
     updateTray()
@@ -929,7 +922,9 @@ function startBreak () {
     }
   }
   if (process.platform === 'darwin') {
-    app.dock.hide()
+    if (app.dock.isVisible) {
+      app.dock.hide()
+    }
   }
   ipcMain.on('long-break-loaded', (event) => {
     updateTray()
@@ -1128,18 +1123,33 @@ function updateTray () {
       app.dock.hide()
     }
   }
-  updateToolTip()
-  const newTrayIconPath = trayIconPath()
-  if (newTrayIconPath !== currentTrayIconPath) {
-    appIcon.setImage(newTrayIconPath)
-    currentTrayIconPath = newTrayIconPath
+
+  if (!appIcon && !settings.get('showTrayIcon')) {
+    return
   }
 
-  const newTrayMenuTemplate = getTrayMenuTemplate()
-  if (JSON.stringify(newTrayMenuTemplate) !== JSON.stringify(currentTrayMenuTemplate)) {
-    const trayMenu = Menu.buildFromTemplate(newTrayMenuTemplate)
-    appIcon.setContextMenu(trayMenu)
-    currentTrayMenuTemplate = newTrayMenuTemplate
+  if (settings.get('showTrayIcon')) {
+    if (!appIcon) {
+      appIcon = new Tray(trayIconPath())
+    }
+    if (!trayUpdateIntervalObj) {
+      trayUpdateIntervalObj = setInterval(updateTray, 10000)
+    }
+
+    updateToolTip()
+
+    const newTrayIconPath = trayIconPath()
+    if (newTrayIconPath !== currentTrayIconPath) {
+      appIcon.setImage(newTrayIconPath)
+      currentTrayIconPath = newTrayIconPath
+    }
+
+    const newTrayMenuTemplate = getTrayMenuTemplate()
+    if (JSON.stringify(newTrayMenuTemplate) !== JSON.stringify(currentTrayMenuTemplate)) {
+      const trayMenu = Menu.buildFromTemplate(newTrayMenuTemplate)
+      appIcon.setContextMenu(trayMenu)
+      currentTrayMenuTemplate = newTrayMenuTemplate
+    }
   }
 }
 
@@ -1302,7 +1312,9 @@ function updateToolTip () {
   if (message !== '') {
     trayMessage += '\n\n' + message
   }
-  appIcon.setToolTip(trayMessage)
+  if (appIcon) {
+    appIcon.setToolTip(trayMessage)
+  }
 }
 
 function showNotification (text) {
@@ -1351,6 +1363,18 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'mainColor') {
     settings.set('miniBreakColor', value)
+  }
+
+  if (key === 'showTrayIcon') {
+    settings.set('showTrayIcon', value)
+    if (value) {
+      updateTray()
+    } else {
+      clearInterval(trayUpdateIntervalObj)
+      trayUpdateIntervalObj = null
+      appIcon.destroy()
+      appIcon = null
+    }
   }
 
   if (key === 'openAtLogin') {

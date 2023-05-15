@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## Added 
+- advanced option to not show menubar (tray) icon
+
 ### Fixed
 - break progress bar overflowing on tall screens
 - dock icon staying after break on macOS

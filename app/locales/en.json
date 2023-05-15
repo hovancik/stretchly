@@ -168,6 +168,8 @@
     "cursor": "Follow cursor",
     "timeToBreakInTray": "Time to break",
     "showTimeToBreakInTray": "Show time to the next break in menubar icon",
+    "showTrayIcon": "Show menubar icon",
+    "toShowTrayIcon": "Show Stretchly icon in menubar",
     "currentTimeInBreaks": "Current time",
     "showCurrentTimeInBreaks": "Show current local time in break window"
   },

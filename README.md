@@ -310,6 +310,11 @@ If you want Stretchly to show time to the next break in menubar icon set `timeTo
 #### Show current time in breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show current time in breaks, set the value of `currentTimeInBreaks` from `false` to `true`.
 
+#### Hide menubar/tray icon [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+To hide Stretchly icon in menubar/tray, set the value of `showTrayIcon` from `true` to `false`.
+
+Note that this will disable graphical way of opening Stretchly Preferences. To access Preferences, you will have to use command line options (ie: `stretchly preferences` on Linux).
+
 ## Contributor Preferences
 
 *Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
