@@ -12,6 +12,53 @@
     "for5Hours": "පැය 5කට",
     "toBreak": "දිගු විවේක",
     "toMicrobreak": "කෙටි විවේක",
-    "resumingBreaks": "විවේක නැවත ආරම්භ කිරීම"
+    "resumingBreaks": "විවේක නැවත ආරම්භ කිරීම",
+    "downloadLatestVersion": "නවතම අනුවාදය බාගත කරන්න",
+    "resume": "විවේක නැවත ආරම්භ කරන්න",
+    "restoreDefaults": "පෙරනිමි යථා තත්වයට පත් කරන්න",
+    "cancel": "අවලංගු කරන්න",
+    "contributorPreferences": "දායක මනාපයන්",
+    "syncPreferences": "මනාපයන් සමමුහුර්ත කරන්න",
+    "pause": "විවේක නවත්වන්න",
+    "continue": "දිගටම කරගෙන යන්න",
+    "skipToTheNext": "ඊළඟට යන්න",
+    "warning": "මෙය යෙදුම් පෙරනිමි යථා තත්වයට පත් කරනු ඇති අතර ඔබගේ සියලු සැකසුම් නැති වනු ඇත.",
+    "preferences": "මනාපයන්"
+  },
+  "break": {
+    "postpone": "මෙම විවේකය කල් දමන්න",
+    "skip": "මෙම විවේකය මඟ හරින්න",
+    "title": "විවේකයක් ගන්න වෙලාව!"
+  },
+  "preferences": {
+    "title": "Stretchly මනාපයන්",
+    "nav": {
+      "settings": "සැකසුම්",
+      "schedule": "කාලසටහන",
+      "heart": "Stretchlyට ආදරය පෙන්වන්න",
+      "theme": "තේමාව",
+      "about": "ගැන"
+    },
+    "settings": {
+      "openAtLogin": "පිවිසීමේදී ස්වයංක්රීයව Stretchly ආරම්භ කරන්න",
+      "showBreaksIn": "විවේක පෙන්වන්න:",
+      "fullscreen": "සම්පූර්ණ තිරය",
+      "showIdeas": "විවේක කාලය තුළ ව්යායාම ඉඟි පෙන්වන්න",
+      "monitorDnd": "බාධා නොකරන්න මාදිලියේ පවා විවේක පෙන්වන්න",
+      "language": "භාෂාව තෝරන්න:",
+      "restoreDefaults": "පෙරනිමි යථා තත්වයට පත් කරන්න",
+      "allScreens": "සියලු මොනිටර මත විරාම පෙන්වයි",
+      "monitorIdleTime": "පද්ධතිය අක්රීය කාලය අධීක්ෂණය කරන්න (පද්ධතිය අක්රීය නම් විවේක නතර කරනු ලැබේ).",
+      "window": "කවුළුව"
+    },
+    "schedule": {
+      "miniBreaks": "කුඩා විවේක:",
+      "breakFor": "විවේක කාල සීමාව:",
+      "every": "සෑම:",
+      "enablePostponeMini": "කුඩා විවේකය සඳහා කල් දැමීම සක්‍රිය කරන්න",
+      "miniBreaksInfo": "කුඩා විවේක යනු ඔබට දිගු කිරීමට සහ සන්සුන් වීමට අවස්ථාවක් ලබා දීම සඳහා නිතිපතා ගන්නා කෙටි විවේකයකි.",
+      "enableMiniBreaks": "කුඩා විවේක සක්‍රිය කරන්න",
+      "showNotificationBeforeMiniBreak": "කුඩා විවේකය ආරම්භ වීමට පෙර දැනුම්දීම පෙන්වන්න"
+    }
   }
 }
