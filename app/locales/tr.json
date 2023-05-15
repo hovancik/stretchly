@@ -325,6 +325,42 @@
     },
     "abm": {
       "text": "Sandalyenizin kenarına oturun, gövdenizi bir tarafa doğru bükün ve 10-15 saniye öylece durun. Diğer tarafta tekrarlayın."
+    },
+    "abt": {
+      "text": "Bir kolunuzu dik tutun, ardından diğer kolunuzu kullanarak ilk kolunuzun dirseğini başınıza doğru hafifçe itin. 10-15 saniye boyunca tutun. Diğer kolunuzla tekrarlayın."
+    },
+    "abs": {
+      "text": "Duvara dönük durun, bir ayağınızı geriye ve diğer ayağınızı öne atın, ardından duvara doğru eğilin. Diğer bacağınızla tekrarlayın."
+    },
+    "abq": {
+      "text": "Bir duvarın karşısında durun ve ellerinizi duvara koyun, ardından birkaç şınav çekin."
+    },
+    "abr": {
+      "text": "Sandalyenizin kenarına oturun ve bir bacağınızı düz bir şekilde önünüze doğru uzatın, 10-15 saniye tutun. Diğer bacağınızla tekrarlayın."
+    },
+    "abu": {
+      "text": "Başınızı bir tarafa, sonra diğer tarafa eğin ve ardından hafifçe öne ve arkaya doğru eğin."
+    },
+    "abn": {
+      "text": "Ayağa kalkın ve bir ayağınızı sandalye veya basamaklı tabure gibi yakındaki bir nesnenin üzerine koyun. Dizinizi 10-15 saniye bükülü tutun. Diğer ayağınızla tekrarlayın."
+    },
+    "abo": {
+      "text": "Ayaklarınızı omuz genişliğinde açarak ayakta durun, vücudunuzu bir sandalyeye oturur gibi aşağı indirin, sonra tekrar ayağa kalkın. Birkaç kez tekrarlayın."
+    },
+    "abp": {
+      "text": "Sırtınızı ve ellerinizi duvara dayayın, ardından kollarınızı yavaşça yukarı ve aşağı hareket ettirin."
+    },
+    "abv": {
+      "text": "Bir kolunuzu göğsünüze doğru uzatın, diğer elinizle dirseğinizi tutun ve yavaşça göğsünüze doğru çekin. Diğer kolunuzla da tekrarlayın."
+    },
+    "abw": {
+      "text": "Ayağa kalkın, bir ayağınızı sandalye veya basamaklı tabure gibi yakındaki bir nesnenin üzerine koyun ve ayak parmaklarınıza dokunmak için eğilin. Diğer bacağınızla tekrarlayın."
+    },
+    "abx": {
+      "text": "Kapı aralığında durun ve bir kolunuzu kapı aralığının her iki tarafına yerleştirin, ardından göğsünüzde bir gerilme hissedene kadar hafifçe öne doğru eğilin."
+    },
+    "aby": {
+      "text": "Bir sandalyenin kenarına veya yere oturun ve ayak tabanlarınızı birleştirin, iç uyluklarınızı esnetmek için dirseklerinizle hafifçe aşağı doğru bastırın."
     }
   },
   "longBreakIdeas": {
@@ -463,6 +499,10 @@
     "abh": {
       "title": "Yavaş nefes alma",
       "text": "Gelişmekte olan araştırmalar, sağlık ve uzun ömür ile ilişkili gibi görünen fizyolojik parametreleri optimize etmenin bir yolu olarak kontrollü yavaş nefes alma tekniklerinin kullanım potansiyelini ortaya koymaktadır."
+    },
+    "abi": {
+      "title": "Hayali görselleştirme",
+      "text": "Gözlerinizi kapatın ve kendinizi plaj veya orman gibi huzurlu ve sakinleştirici bir yerde hayal edin, o ortamın görüntülerine, seslerine ve hislerine odaklanın."
     }
   }
 }
