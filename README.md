@@ -56,6 +56,7 @@ Not sure which chip your computer has? [Here's how to tell](https://support.appl
 You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.
 
 Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
+You can install it by running `winget install -e --id Stretchly.Stretchly`.
 
 You can install *Stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
 
