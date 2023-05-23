@@ -170,7 +170,9 @@
     "timeToBreakInTray": "Време до сл. почивка",
     "showTimeToBreakInTray": "Показване на оставащото време до следващата почивка в иконката",
     "currentTimeInBreaks": "Текущо време",
-    "showCurrentTimeInBreaks": "Показване на текущото време в прозореца за почивка"
+    "showCurrentTimeInBreaks": "Показване на текущото време в прозореца за почивка",
+    "showTrayIcon": "Показване на иконка в панела",
+    "toShowTrayIcon": "Показване на иконката на Stretchly в панела"
   },
   "utils": {
     "none_one": "{{count}}",
