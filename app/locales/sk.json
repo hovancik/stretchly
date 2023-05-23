@@ -171,7 +171,9 @@
     "showTimeToBreakInTray": "Ukázať čas do ďalšej prestávky v ikone",
     "timeToBreakInTray": "Čas do prestávky",
     "showCurrentTimeInBreaks": "Ukázať aktuálny lokálny čas v okne Prestávky",
-    "currentTimeInBreaks": "Aktuálny čas"
+    "currentTimeInBreaks": "Aktuálny čas",
+    "showTrayIcon": "Zobraziť ikonu",
+    "toShowTrayIcon": "Zobraziť ikonu Stretchly"
   },
   "utils": {
     "remaining": "{{count}} do konca",
