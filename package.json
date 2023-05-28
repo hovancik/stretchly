@@ -39,56 +39,9 @@
   "build": {
     "appId": "net.hovancik.stretchly",
     "productName": "Stretchly",
-    "dmg": {
-      "icon": "build/icon.icns",
-      "iconSize": 128,
-      "contents": [
-        {
-          "x": 355,
-          "y": 125,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 155,
-          "y": 125,
-          "type": "file"
-        }
-      ]
-    },
-    "mac": {
-      "category": "public.app-category.healthcare-fitness",
-      "target": [
-        {
-          "target": "dmg",
-          "arch": [
-            "x64",
-            "arm64"
-          ]
-        }
-      ],
-      "extendInfo": {
-        "LSBackgroundOnly": 1,
-        "LSUIElement": 1
-      }
-    },
-    "linux": {
-      "category": "Utility",
-      "target": [
-        "AppImage",
-        "deb",
-        "rpm",
-        "freebsd",
-        "pacman",
-        "tar.xz",
-        "apk"
-      ],
-      "asarUnpack": "node_modules/macos-notification-state/**"
-    },
     "win": {
       "target": [
-        "nsis",
-        "7z"
+        "appx"
       ],
       "asarUnpack": [
         "node_modules/windows-quiet-hours/**",

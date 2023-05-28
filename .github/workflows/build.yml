@@ -3,7 +3,7 @@ name: Packages build
 on:
   push:
     branches:
-      - release
+      - appx
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [windows-latest]
       fail-fast: false
     steps:
     - name: run on linux
