@@ -179,7 +179,9 @@
     "timeToBreakInTray": "Mola zamanı",
     "showTimeToBreakInTray": "Menü çubuğu simgesinde bir sonraki molaya kadar olan zamanı göster",
     "currentTimeInBreaks": "Geçerli saat",
-    "showCurrentTimeInBreaks": "Mola penceresinde geçerli yerel saati göster"
+    "showCurrentTimeInBreaks": "Mola penceresinde geçerli yerel saati göster",
+    "showTrayIcon": "Menü çubuğu simgesini göster",
+    "toShowTrayIcon": "Menü çubuğunda Stretchly simgesini göster"
   },
   "utils": {
     "none_one": "{{count}}",

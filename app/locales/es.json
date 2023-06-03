@@ -170,7 +170,9 @@
     "timeToBreakInTray": "Hora de descansar",
     "showTimeToBreakInTray": "Muestra la hora del siguiente descanso en el icono de la barra de menú",
     "currentTimeInBreaks": "Hora actual",
-    "showCurrentTimeInBreaks": "Mostrar la hora local actual en la ventana de descanso"
+    "showCurrentTimeInBreaks": "Mostrar la hora local actual en la ventana de descanso",
+    "showTrayIcon": "Mostrar el icono de la barra de menú",
+    "toShowTrayIcon": "Mostrar el icono de Stretchly en la barra de menú"
   },
   "utils": {
     "none_one": "{{count}}",

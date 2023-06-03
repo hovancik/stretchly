@@ -170,7 +170,9 @@
     "timeToBreakInTray": "È ora di una pausa",
     "showTimeToBreakInTray": "Mostra il tempo alla prossima pausa nell'icona della barra del menu",
     "currentTimeInBreaks": "Ora attuale",
-    "showCurrentTimeInBreaks": "Mostra l'ora locale corrente nella finestra di pausa"
+    "showCurrentTimeInBreaks": "Mostra l'ora locale corrente nella finestra di pausa",
+    "showTrayIcon": "Mostra l'icona della barra dei menu",
+    "toShowTrayIcon": "Mostra l'icona Stretchly nella barra dei menu"
   },
   "utils": {
     "none_one": "{{count}}",

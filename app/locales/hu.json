@@ -98,7 +98,8 @@
       "dot": ".",
       "developedBy": "Fejlesztette",
       "janH": "Jan Hovancik",
-      "designedBy": "Ikont és kinézetet tervezte Colin Shanley"
+      "designedBy": "Ikont és kinézetet tervezte Colin Shanley",
+      "checkNewVersion": "Frissítés automatikus engedélyezése"
     },
     "heart": {
       "loveStretchly": "Szereted a Stretchlyt?",
@@ -146,7 +147,12 @@
     "dark": "Sötét",
     "system": "Rendszer",
     "breakWindowWidth": "Szélesség:",
-    "breakWindowHeight": "Magasság:"
+    "breakWindowHeight": "Magasság:",
+    "4": "Ötödik monitor",
+    "0": "Elsődleges monitor",
+    "1": "Második monitor",
+    "2": "Harmadik monitor",
+    "3": "Negyedik monitor"
   },
   "utils": {
     "none_one": "{{count}}",
