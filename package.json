@@ -88,7 +88,8 @@
     "win": {
       "target": [
         "nsis",
-        "7z"
+        "7z",
+        "appx"
       ],
       "asarUnpack": [
         "node_modules/windows-quiet-hours/**",
@@ -117,9 +118,6 @@
       "fetch",
       "Notification",
       "alert"
-    ],
-    "ignore": [
-      "sun.js"
     ]
   },
   "devDependencies": {
