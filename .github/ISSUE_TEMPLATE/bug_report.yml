@@ -13,7 +13,7 @@ body:
     label:       Version
     description: We only support the latest version. Find your version number at `Preferences` -  `About`.
     options:
-    - label:     I'm using version 1.14.0
+    - label:     I'm using version 1.14.1
       required:  false
 - type:          checkboxes
   id:            known-issues
@@ -38,7 +38,7 @@ body:
     description: Please check [Advanced Preferences](https://github.com/hovancik/stretchly#advanced-preferences) as it may contain a solution for your problem.
     options:
     - label:     I've checked Advanced Preferences
-      required:  true      
+      required:  true
 - type:          dropdown
   attributes:
     label:       What operating system are you using?

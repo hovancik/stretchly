@@ -6,12 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## Added 
+## [1.14.1] - 2023-06-04
+## Added
 - advanced option to not show menubar (tray) icon
 
 ### Fixed
 - break progress bar overflowing on tall screens
 - dock icon staying after break on macOS
+
+## Changed
+- updated many translations
 
 ## [1.14.0] - 2023-04-15
 ### Added
@@ -710,7 +714,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.14.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.14.1...HEAD
+[1.14.1]: https://github.com/hovancik/stretchly/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/hovancik/stretchly/compare/v1.13.1...v1.14.0
 [1.13.1]: https://github.com/hovancik/stretchly/compare/v1.13.0...v1.13.1
 [1.13.0]: https://github.com/hovancik/stretchly/compare/v1.12.0...v1.13.0

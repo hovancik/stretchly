@@ -36,6 +36,23 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.14.1" date="2023-06-04">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>advanced option to not show menubar (tray) icon</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>break progress bar overflowing on tall screens</li>
+          <li>dock icon staying after break on macOS</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.14.0" date="2023-04-15">
       <description>
         <p>Added</p>
