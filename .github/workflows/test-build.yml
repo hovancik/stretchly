@@ -1,4 +1,4 @@
-name: Packages build
+name: Packages test build
 
 on:
   push:
@@ -23,6 +23,6 @@ jobs:
         node-version: '18.15.0'
     - run: npm install npm -g
     - run: npm install
-    - run: node_modules/.bin/electron-builder build
+    - run: node_modules/.bin/electron-builder build --publish always
       env:
         GH_TOKEN: ${{ secrets.github_token }}
