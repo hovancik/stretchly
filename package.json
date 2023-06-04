@@ -85,6 +85,13 @@
       ],
       "asarUnpack": "node_modules/macos-notification-state/**"
     },
+    "appx": {
+      "identityName": "33881JanHovancik.stretchly",
+      "publisher": "CN=35004EDA-CCDD-4304-A014-784D754E043F",
+      "publisherDisplayName": "Jan Hovancik",
+      "applicationId": "Stretchly",
+      "displayName": "Stretchly"
+    },
     "win": {
       "target": [
         "nsis",
