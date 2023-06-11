@@ -170,7 +170,9 @@
     "timeToBreakInTray": "Время сделать паузу",
     "showTimeToBreakInTray": "Показывать время до следующего перерыва в иконке трея",
     "currentTimeInBreaks": "Текущее время",
-    "showCurrentTimeInBreaks": "Показать текущее местное время в окне перерыва"
+    "showCurrentTimeInBreaks": "Показать текущее местное время в окне перерыва",
+    "showTrayIcon": "Показывать значок в строке меню",
+    "toShowTrayIcon": "Показывать значок Stretchly в строке меню"
   },
   "utils": {
     "none_one": "{{count}}",
