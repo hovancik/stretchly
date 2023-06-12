@@ -22,7 +22,7 @@
 
 ## Install [![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total)](https://github.com/hovancik/stretchly/releases) [![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
 
-The latest official **installers** and **portable versions** for macOS, Windows, Linux and FreeBSD can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page.
+The latest official **installers** and **portable versions** for macOS, Windows and Linux can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page.
 
 ### macOS
 
@@ -57,6 +57,8 @@ You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by ru
 
 Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
 You can install it by running `winget install -e --id Stretchly.Stretchly`.
+
+Stretchly can be also found at official [Microsoft Store](https://apps.microsoft.com/store/detail/stretchly/9PP2B76LQQBN?hl=en-us&gl=us).
 
 You can install *Stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
 
