@@ -180,7 +180,9 @@
     "showTimeToBreakInTray": "Показати час до наступної перерви в значку на панелі меню",
     "timeToBreakInTray": "Час для перерви",
     "currentTimeInBreaks": "Поточний час",
-    "showCurrentTimeInBreaks": "Показати поточний місцевий час у вікні перерви"
+    "showCurrentTimeInBreaks": "Показати поточний місцевий час у вікні перерви",
+    "showTrayIcon": "Показати піктограму в меню",
+    "toShowTrayIcon": "Показати піктограму Stretchly на панелі меню"
   },
   "statusMessages": {
     "resuming": "Продовжуємо",

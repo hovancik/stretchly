@@ -170,7 +170,9 @@
     "timeToBreakInTray": "休息时间",
     "showTimeToBreakInTray": "在托盘图标显示下次休息时间",
     "showCurrentTimeInBreaks": "在休息画面显示当前时间",
-    "currentTimeInBreaks": "当前时间"
+    "currentTimeInBreaks": "当前时间",
+    "showTrayIcon": "显示菜单栏图标",
+    "toShowTrayIcon": "展示 Stretchly 图标在菜单栏"
   },
   "utils": {
     "none_other": "{{count}}",
