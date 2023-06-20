@@ -164,7 +164,7 @@ module.exports = [
     enabled: true
   },
   {
-    data: 'Stand with you back and hands on a wall, then slowly move your arms up and down as if you were making snow angels.',
+    data: 'Stand with your back and hands on a wall, then slowly move your arms up and down as if you were making snow angels.',
     enabled: true
   },
   {
