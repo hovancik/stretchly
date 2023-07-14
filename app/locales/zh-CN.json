@@ -28,7 +28,7 @@
   "break": {
     "postpone": "延后此次休息",
     "skip": "跳过此次休息",
-    "title": "该休息一下了!"
+    "title": "该休息一下了！"
   },
   "preferences": {
     "title": "Stretchly 偏好设置",
@@ -41,31 +41,31 @@
     },
     "settings": {
       "openAtLogin": "登录后自动启动 Stretchly",
-      "showBreaksIn": "休息提示画面:",
+      "showBreaksIn": "休息提示画面：",
       "window": "窗口",
       "fullscreen": "全屏",
-      "showIdeas": "休息时显示锻炼提示",
-      "allScreens": "在所有显示器显示休息画面",
-      "monitorIdleTime": "监控系统的闲置时间(系统闲置时暂停计时)。",
+      "showIdeas": "在休息时显示锻炼提示",
+      "allScreens": "在所有显示器显示休息提示画面",
+      "monitorIdleTime": "监控系统的闲置时间（系统闲置时暂停计时）。",
       "monitorDnd": "即使处于「勿扰」模式，仍显示休息画面",
       "language": "选择语言：",
       "restoreDefaults": "还原至默认值"
     },
     "schedule": {
       "miniBreaks": "小憩：",
-      "miniBreaksInfo": "「小憩」是次数较多的小段休息模式，您可以用来伸展和放松。",
+      "miniBreaksInfo": "「小憩」是频率较高的短暂休息，您可以用来伸展和放松。",
       "enableMiniBreaks": "启用「小憩」",
-      "breakFor": "小憩时间：",
+      "breakFor": "持续时间：",
       "every": "每：",
       "showNotificationBeforeMiniBreak": "小憩前弹出通知",
       "enablePostponeMini": "允许延后小憩",
       "longBreaks": "休息：",
-      "longBreaksInfo": "「休息」不频繁，但是持续时间更长，让您能够有足够长的时间从工作中休息。",
+      "longBreaksInfo": "「休息」频率较低，但持续时间更长，让您能够从工作中得到长时间的休息。",
       "enableLongBreaks": "启用「休息」",
       "showNotificationBeforeLongBreak": "休息前弹出通知",
       "enablePostponeLong": "允许延后休息",
       "strictMode": "严格模式：",
-      "strictModeInfo": "「严格模式」不能跳过任何休息类型，协助您遵循休息规则。",
+      "strictModeInfo": "「严格模式」下不能跳过任何休息类型，其目的是协助您遵循休息规则。",
       "enableStrictMini": "启用「小憩」的严格模式",
       "enableStrictLong": "启用「休息」的严格模式",
       "cantDisableBoth": "不能同时停用两种休息类型"
@@ -78,7 +78,7 @@
       "coffeeKisses": "咖啡之吻",
       "morningSwim": "沐浴晨光",
       "transparentMode": "启用半透明",
-      "sounds": "音效:",
+      "sounds": "音效：",
       "enableSounds": "启用音效",
       "crystalGlass": "水晶玻璃",
       "windChime": "风铃",
@@ -100,7 +100,7 @@
       "developedBy": "开发者",
       "janH": "Jan Hovancik",
       "designedBy": "图标和用户界面由 Colin Shanley 设计",
-      "checkNewVersion": "自动检查应用程序更新"
+      "checkNewVersion": "自动检查更新"
     },
     "heart": {
       "loveStretchly": "喜欢 Stretchly?",
@@ -134,20 +134,20 @@
     "miniBreaks": "小憩：",
     "postponableFor": "延后情况：",
     "postponeFor": "延后多久：",
-    "maxPostpones": "延后的最多次数：",
+    "maxPostpones": "最大延后次数：",
     "longBreaks": "休息：",
     "pauseUntilMoring": "暂停至早晨：",
     "pauseUntil": "暂停至：",
     "pauseUntilMorningInfo": "指定「暂停至早晨」的具体时间。",
     "welcomeWindow": "欢迎窗口：",
     "showWelcomeWindow": "下次启动时显示欢迎窗口",
-    "opacityTheme": "透明主题:",
+    "opacityTheme": "透明主题：",
     "opacityInfo": "休息窗口应该有多不透明?",
-    "opacity": "不透明度:",
+    "opacity": "不透明度：",
     "breakWindowSize": "休息窗口尺寸",
     "breakWindowSizeInfo": "休息窗口的屏幕占比是多少?",
-    "breakWindowWidth": "宽:",
-    "breakWindowHeight": "高:",
+    "breakWindowWidth": "宽：",
+    "breakWindowHeight": "高：",
     "sounds": "音效：",
     "volume": "音量：",
     "miniBreakStartSound": "在小憩开始时播放休息结束的音效",
@@ -162,7 +162,7 @@
     "screen": "监控休息时间：",
     "showBreaksAsRegularWindows": "休息画面设为常规窗口",
     "showBreaksAsRegularWindowsInfo": "启用后，休息画面可被聚焦，不再置顶并出现在任务栏中。",
-    "showBreaksAsRegularWindowsTitle": "作为常规窗口:",
+    "showBreaksAsRegularWindowsTitle": "作为常规窗口：",
     "cursor": "跟随光标",
     "primary": "主显示器",
     "showOnMonitor": "显示休息时间",
@@ -172,7 +172,7 @@
     "showCurrentTimeInBreaks": "在休息画面显示当前时间",
     "currentTimeInBreaks": "当前时间",
     "showTrayIcon": "显示菜单栏图标",
-    "toShowTrayIcon": "展示 Stretchly 图标在菜单栏"
+    "toShowTrayIcon": "在菜单栏中显示 Stretchly 图标"
   },
   "utils": {
     "none_other": "{{count}}",
@@ -369,7 +369,7 @@
   "longBreakIdeas": {
     "abf": {
       "text": "坐着时，手肘撑在桌子上，靠近桌子边缘。身体重心向前倾，用手捂住眼睛。闭上眼睛，用鼻子慢慢吸气，保持几秒钟。继续深呼吸。",
-      "title": "掌心"
+      "title": "捂住双眼"
     },
     "aar": {
       "text": "证据表明，少量的定期锻炼可以带来巨大的健康效益，包括显著减轻压力。",
@@ -377,11 +377,11 @@
     },
     "aaa": {
       "title": "你不孤单",
-      "text": "你觉得一个人休息很难吗？ 试着和同事一起做。 除了更容易坚持休息之外，你将有机会更好地了解他们。 一起休息可以提高生产力。"
+      "text": "你是否觉得很难独自休息？ 试着和同事一起休息吧。除了让休息更容易坚持外，你还有机会更好地了解他们。一起休息可以提高生产力。"
     },
     "aab": {
       "title": "远离屏幕",
-      "text": "你有没有注意到你的大脑是如何自己想出事情的？你只需要离开电脑，休息一下，去思考一些完全不相关的事情。"
+      "text": "你是否曾注意到自己的大脑可以独立解决问题？只需要远离电脑，休息一下，思考一些完全无关的事情。"
     },
     "aac": {
       "title": "小憩",
@@ -425,7 +425,7 @@
     },
     "aam": {
       "title": "水果",
-      "text": "休息下再吃点水果。 慢慢地感受它的味道、口感和新鲜的感觉。"
+      "text": "慢慢来，吃点水果吧。 慢慢地感受它的味道、口感和新鲜的感觉。"
     },
     "aan": {
       "title": "洗手间",
@@ -433,7 +433,7 @@
     },
     "aao": {
       "title": "咖啡时间",
-      "text": "咖啡时间？ 找个伙伴一起来个5 分钟的散步。"
+      "text": "咖啡时间？ 每次去时你可以步行 5 分钟。"
     },
     "aap": {
       "title": "同事",
@@ -444,7 +444,7 @@
       "text": "在一项针对健康志愿者的研究中，美国国立卫生研究院的研究人员发现，尽早并经常进行短暂的休息可能有助于我们的大脑学习新技能。"
     },
     "aas": {
-      "text": "找到你的伸展运动了吗？ 不要忘记重复多次，以更好地对抗久坐的影响。",
+      "text": "找到适合自己的伸展运动了吗？ 不要忘记重复多次，以更好地对抗久坐的影响。",
       "title": "重复"
     },
     "aat": {
@@ -465,7 +465,7 @@
     },
     "aax": {
       "title": "脉搏",
-      "text": "每周进行四到五次、持续20分钟的活动，让你的脉搏率提升至每分钟120次，可以选择你喜欢的任何活动。定期提高心率可以改善心血管健康。"
+      "text": "每周四到五次，连续20分钟将你的心率提升至每分钟120次，可以选择任何你喜欢的活动。定期提高心率有助于改善心血管健康。"
     },
     "aay": {
       "title": "走楼梯",
@@ -497,7 +497,7 @@
     },
     "abg": {
       "title": "握力训练",
-      "text": "挤压一双成团的袜子或一个软橡胶球，保持 5 秒钟。重复整个过程几次。"
+      "text": "挤压一双揉成一团的袜子或一个软橡胶球，保持 5 秒钟。重复整个过程几次。"
     },
     "abh": {
       "title": "缓慢呼吸",
@@ -505,7 +505,7 @@
     },
     "abi": {
       "text": "闭上眼睛，想象自己身处一个平静、令人放松的地方，比如海滩或森林，专注于那个环境中的景象、声音和感觉。",
-      "title": "冥想"
+      "title": "创造性想象"
     }
   }
 }
