@@ -1150,6 +1150,14 @@ function updateTray () {
       appIcon.setContextMenu(trayMenu)
       currentTrayMenuTemplate = newTrayMenuTemplate
     }
+
+    appIcon.on('double-click', () => {
+      createPreferencesWindow()
+    })
+
+    appIcon.on('click', () => {
+      appIcon.popUpContextMenu(Menu.buildFromTemplate(currentTrayMenuTemplate))
+    })
   }
 }
 

@@ -5,9 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- both left and right click on tray opens menu (Windows)
+- double click on tray opens Preferences (Windows)
 
 ## [1.14.1] - 2023-06-04
-## Added
+### Added
 - advanced option to not show menubar (tray) icon
 
 ### Fixed
