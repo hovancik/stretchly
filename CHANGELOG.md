@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - both left and right click on tray opens menu (Windows)
 - double click on tray opens Preferences (Windows)
+- adds Vietnamese translations
+
+## Changed
+- updated many translations
 
 ## [1.14.1] - 2023-06-04
 ### Added
