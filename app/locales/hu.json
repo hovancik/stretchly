@@ -22,7 +22,8 @@
     "continue": "Folytatás",
     "cancel": "Mégsem",
     "preferences": "Beállítások",
-    "contributorPreferences": "Támogatói beállítások"
+    "contributorPreferences": "Támogatói beállítások",
+    "syncPreferences": "Beállítások szinkronizálása"
   },
   "break": {
     "postpone": "Szünet elhalasztása",
@@ -149,10 +150,29 @@
     "breakWindowWidth": "Szélesség:",
     "breakWindowHeight": "Magasság:",
     "4": "Ötödik monitor",
-    "0": "Elsődleges monitor",
+    "0": "Első monitor",
     "1": "Második monitor",
     "2": "Harmadik monitor",
-    "3": "Negyedik monitor"
+    "3": "Negyedik monitor",
+    "showBreaksAsRegularWindowsTitle": "Ablak üzemmód:",
+    "showTrayIcon": "Tálca ikon mutatása",
+    "toShowTrayIcon": "Mutassa a Stretcly ikont a tálcán",
+    "showCurrentTimeInBreaks": "Mutassa a jelenlegi időt a szünet ablakban",
+    "screen": "Monitor:",
+    "screenInfo": "Ha a szünetek mutatása az összes monitoron le van tiltva, kiválaszthatod, hogy melyik monitoron szeretnéd a szüneteket megjeleníteni.",
+    "cursor": "Egérmutató követése",
+    "showOnMonitor": "Szünetek megjelenítése",
+    "primary": "Elsődleges monitor",
+    "timeToBreakInTray": "Hátralévő idő szünetig",
+    "showTimeToBreakInTray": "Mutassa a következő szünetig hátralévő időt a tálca ikonon",
+    "breakWindowSize": "Szünet ablak mérete",
+    "breakWindowSizeInfo": "A képernyő hány százalékát töltse ki a szünet ablak?",
+    "opacity": "Áttetszőség:",
+    "opacityTheme": "Téma áttetszősége:",
+    "showBreaksAsRegularWindows": "Mutassa a szüneteket ablak üzemmódban",
+    "opacityInfo": "Mennyire legyen áttetsző a szünet ablak?",
+    "showBreaksAsRegularWindowsInfo": "Ha engedélyezed, a szünet ablak nem lesz \"Mindig felül\" módban, fókuszálható lesz és a tálcán is megjelenik.",
+    "currentTimeInBreaks": "Jelenlegi idő"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -188,6 +208,97 @@
     "nextMiniBreak": "Következő Rövid szünet",
     "afterMiniBreak_one": "{{count}} rövid szünet után",
     "afterMiniBreak_other": "{{count}} rövid szünet után",
-    "resuming": "Folytatás"
+    "resuming": "Folytatás",
+    "appExclusion": "Alkalmazás kivétel szabály"
+  },
+  "miniBreakIdeas": {
+    "aac": {
+      "text": "Lassan nézz felfelé, majd pedig lefelé."
+    },
+    "aam": {
+      "text": "Gondolj pár másodpercig valamire, amit nagyra értékelsz."
+    },
+    "aax": {
+      "text": "Ha segítségre van szükséged, kérj."
+    },
+    "aaa": {
+      "text": "Menj és igyál egy pohár vizet."
+    },
+    "aab": {
+      "text": "Lassan nézz el teljesen balra, majd pedig jobbra."
+    },
+    "aad": {
+      "text": "Csukd be a szemeidet és vegyél néhány mély levegőt."
+    },
+    "aae": {
+      "text": "Csukd be a szemeidet és relaxálj."
+    },
+    "aaf": {
+      "text": "Nyújtsd ki a lábaidat."
+    },
+    "aag": {
+      "text": "Nyújtsd ki a karjaidat."
+    },
+    "aah": {
+      "text": "Megfelelő testtartásban ülsz?"
+    },
+    "aai": {
+      "text": "Lassan fordítsd el a fejed oldalra és tartsd így 10 másodpercig."
+    },
+    "aaj": {
+      "text": "Lassan döntsd el a fejed oldalra és tartsd így 5-10 másodpercig."
+    },
+    "aak": {
+      "text": "Állj fel a székedből és nyújtózkodj egyet."
+    },
+    "aal": {
+      "text": "Fókuszálj a szemeiddel egy tárgyra legalább 20 méter távolságban."
+    },
+    "aao": {
+      "text": "Az igazán ergonomikus munkaállomás az, amitől rendszeresen felállsz."
+    },
+    "aap": {
+      "text": "Csukd be a szemeidet és számold a lélegzetvételeidet."
+    },
+    "aar": {
+      "text": "Tedd az ujjaidat a vállaidra. Húzd előre a vállaidat 10 másodpercre, majd pedig hátra."
+    },
+    "aaq": {
+      "text": "Csukd be a szemeidet és figyeld meg, hogy miket hallasz."
+    },
+    "aaz": {
+      "text": "A megfelelő dolgokra koncentrálsz?"
+    },
+    "aba": {
+      "text": "Változtasd meg az ülő helyzeted."
+    },
+    "aan": {
+      "text": "Mosolyogj pár másodpercig amiatt, hogy élsz."
+    },
+    "aay": {
+      "text": "Egyszerre csak egy dolgot csinálj."
+    }
+  },
+  "longBreakIdeas": {
+    "aap": {
+      "text": "Ne emailezz vagy chatelj az irodában a kollégákkal, menj oda beszélni hozzájuk személyesen.",
+      "title": "Kollégák"
+    },
+    "abd": {
+      "title": "Ásítás",
+      "text": "Az ásítás nagyon hasznos lehet, mivel könnyeket termel, ami segít nedvesen tartani a szemeket."
+    },
+    "abi": {
+      "title": "Fantáziadús vizualizáció",
+      "text": "Csukd be a szemeidet és képzeld el magad egy békés és megnyugtatható helyen, például egy tengerparton vagy erdőben, és fókuszálj a környezet látványára, hangjaira, érzéseire."
+    },
+    "aao": {
+      "text": "Kávészünetre mész? Fontold meg, hogy minden kávészünetben egy 5 perces sétát is beiktatsz.",
+      "title": "Kávészünet"
+    },
+    "aaq": {
+      "title": "Tanulás",
+      "text": "Egy egészséges önkéntesekkel készült kutatásban megállapították, hogy gyakori rövid szünetek tartásával segítjük az agyunkat új készségek megtanulásában."
+    }
   }
 }
