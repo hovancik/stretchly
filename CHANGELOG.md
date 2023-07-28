@@ -6,13 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- start at login for Windows Store version
+- start at login for Windows Store version (not sure whether successfuly)
+
+### Added
+- both left and right click on tray opens menu (Windows)
+- double click on tray opens Preferences (Windows)
+- adds Vietnamese translations
 
 ## Changed
 - updated many translations
 
 ## [1.14.1] - 2023-06-04
-## Added
+### Added
 - advanced option to not show menubar (tray) icon
 
 ### Fixed

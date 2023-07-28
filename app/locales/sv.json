@@ -170,7 +170,9 @@
     "showTimeToBreakInTray": "Visa tiden till nästa paus i menyradsikonen",
     "currentTimeInBreaks": "Aktuell tid",
     "showCurrentTimeInBreaks": "Visa aktuell lokal tid i pausfönster",
-    "showBreaksAsRegularWindowsInfo": "När det är aktiverat kommer pausfönster att bli fokuserbara, de kommer inte att vara \"Alltid överst\" längre och de kommer också att visas i aktivitetsfältet."
+    "showBreaksAsRegularWindowsInfo": "När det är aktiverat kommer pausfönster att bli fokuserbara, de kommer inte att vara \"Alltid överst\" längre och de kommer också att visas i aktivitetsfältet.",
+    "showTrayIcon": "Visa menyfält ikon",
+    "toShowTrayIcon": "Visa Stretchly ikon i menyfält"
   },
   "utils": {
     "none_one": "{{count}}",

@@ -1,0 +1,510 @@
+{
+  "main": {
+    "resumingBreaks": "Tiếp tục giải lao",
+    "toBreak": "Khoảng giải lao DÀI",
+    "toMicrobreak": "Khoảng giải lao NGẮN",
+    "resume": "Tiếp tục giải lao",
+    "forHour": "1 tiếng",
+    "untilMorning": "Tới sáng mai",
+    "indefinitely": "Không thời hạn",
+    "resetBreaks": "Đặt lại",
+    "restoreDefaults": "Khôi phục mặc dịnh",
+    "continue": "Tiếp tục",
+    "contributorPreferences": "Tuỳ chọn Cộng tác viên",
+    "syncPreferences": "Đồng bộ tuỳ chọn",
+    "toolTipHeader": "Stretchly - Ứng dụng nhắc giờ giải lao",
+    "microbreakIn": "Khoảng giải lao NGẮN sẽ bắt đầu sau $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Khoảng giải lao DÀI sẽ bắt đầu sau $t(utils.seconds, {'count': {{seconds}} })",
+    "downloadLatestVersion": "Tải phiên bản mới nhất",
+    "skipToTheNext": "Chuyển khoảng giải lao tiếp theo",
+    "pause": "Tạm dừng giải lao",
+    "for2Hours": "2 tiếng",
+    "for5Hours": "5 tiếng",
+    "quitStretchly": "Thoát Stretchly",
+    "cancel": "Huỷ",
+    "warning": "Thao tác này sẽ khôi phục cài đặt mặc định của ứng dụng và tất cả cài đặt của bạn sẽ bị mất.",
+    "preferences": "Tuỳ chọn"
+  },
+  "break": {
+    "postpone": "Hoãn giải lao",
+    "title": "Đến lúc phải giải lao rồi!",
+    "skip": "Bỏ qua giải lao"
+  },
+  "preferences": {
+    "nav": {
+      "schedule": "Kế hoạch",
+      "heart": "Thích Stretchly",
+      "settings": "Cài đặt",
+      "theme": "Chủ đề",
+      "about": "Về Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Tự động chạy Stretchly khi khởi động máy tính",
+      "showBreaksIn": "Màn hình Giải lao sẽ xuất hiện dưới dạng:",
+      "fullscreen": "Toàn màn hình",
+      "showIdeas": "Hiển thị những gợi ý vận động trong lúc giải lao",
+      "allScreens": "Hiển thị nội dung giải lao ở tất cả các màn hình",
+      "monitorIdleTime": "Khi hệ thống nhàn dỗi (Tạm dừng giải lao nếu hệ thống không hoạt động).",
+      "monitorDnd": "Hiển thị Giải lao ngay cả trong chế độ Không làm phiền",
+      "language": "Lựa chọn ngôn ngữ:",
+      "restoreDefaults": "Khôi phục mặc định",
+      "window": "Cửa sổ"
+    },
+    "schedule": {
+      "enableMiniBreaks": "Kích hoạt Giải lao ngắn",
+      "longBreaks": "Giải lao dài:",
+      "enableLongBreaks": "Kích hoạt Giải lao dài",
+      "miniBreaks": "Giải lao ngắn:",
+      "miniBreaksInfo": "Khoảng Giải lao ngắn là những khoảng nghỉ ngắn được thực hiện thường xuyên để bạn có cơ hội thư giãn gân cốt.",
+      "breakFor": "Giải lao trong vòng:",
+      "every": "Tần suất:",
+      "enablePostponeMini": "Cho phép tạm hoãn khoảng Giải lao ngắn",
+      "showNotificationBeforeMiniBreak": "Hiển thị thông báo trước khi khoảng Giải lao ngắn bắt đầu",
+      "longBreaksInfo": "Khoảng Giải lao dài diễn ra ít thường xuyên hơn, nhưng có thời lượng dài hơn, cho phép bạn nghỉ ngơi dài hơn trong khi làm việc.",
+      "showNotificationBeforeLongBreak": "Hiện thị thông báo trước khi khoảng Giải lao dài bắt đầu",
+      "enablePostponeLong": "Cho phép tạm hoãn khoảng Giải lao dài",
+      "strictMode": "Chế độ Nghiêm ngặt:",
+      "strictModeInfo": "Chế độ này không cho phép bạn bỏ qua các khoảng Giải lao ngắn, dài và được thiết kế để giúp giữ kỷ luật.",
+      "enableStrictLong": "Kích hoạt Chế độ nghiêm ngặt cho các khoảng giải lao dài",
+      "enableStrictMini": "Kích hoạt Chế độ nghiêm ngặt cho các khoảng giải lao ngắn",
+      "cantDisableBoth": "Không thể tắt cả hai loại Giải lao"
+    },
+    "theme": {
+      "monochrome": "Đơn sắc",
+      "invertedMonochrome": "Đơn sắc đảo ngược",
+      "appearance": "Giao diện:",
+      "greenClouds": "Mây xanh",
+      "graphiteCrystal": "Trắng tuyết",
+      "sounds": "Âm thanh:",
+      "enableSounds": "Kích hoạt âm thanh",
+      "autumnBeBlessed": "Bordeaux",
+      "morningSwim": "Xanh nước biển",
+      "coffeeKisses": "#Nude",
+      "transparentMode": "Kích hoạt hiệu ứng xuyên thấu",
+      "menubarIcon": "Biểu tượng thanh công cụ:",
+      "crystalGlass": "Ly thuỷ tinh",
+      "windChime": "Chuông gió",
+      "ticToc": "Tik tok",
+      "colour": "Màu sắc",
+      "snowWhite": "Trắng tuyết"
+    },
+    "about": {
+      "developedBy": "Phát triển bởi",
+      "version": "Phiên bản ",
+      "ourWebsite": "Ghé thăm website",
+      "tagline": "Ứng dụng nhắc giờ giải lao",
+      "latestVersion": "Phiên bản mới nhất ",
+      "dot": ".",
+      "checkNewVersion": "Tự động kiểm tra phiên bản cập nhật của ứng dụng",
+      "learnMore": "Để tìm hiểu thêm về các tính năng của Stretchly, hãy xem hướng dẫn, tải xuống phiên bản mới nhất hoặc liên hệ với chúng tôi để được hỗ trợ, ",
+      "janH": "Jan Hovancik cute",
+      "designedBy": "Biểu tượng và Giao diện người dùng thiết kế bởi Colin Shanley"
+    },
+    "title": "Tuỳ chọn Stretchly",
+    "heart": {
+      "loveStretchly": "Bạn có thích Stretchly?",
+      "desc1": "Nghỉ giải lao thường xuyên khi sử dụng máy tính đã được khoa học chứng minh là rất quan trọng đối với sức khỏe thể chất và tinh thần của bạn.",
+      "desc2": "Stretchly hoàn toàn miễn phí. Nhưng bạn có thể hỗ trợ bằng cách quyên góp và giúp chúng tôi tiếp tục cải thiện Stretchly và phát hành phần mềm miễn phí khác.",
+      "becomePatron": "Trở thành Người Bảo hộ",
+      "alreadyContributor": "Tôi đã sẵn sàng là một công tác viên",
+      "authenticateUsing": "Xác thực bằng cách sử dụng:",
+      "contributorPreferences": "Tuỳ chọn công tác viên",
+      "syncPreferences": "Đồng bộ tuỳ chọn"
+    }
+  },
+  "contributorPreferences": {
+    "breakWindowWidth": "Chiều rộng:",
+    "system": "Hệ thống",
+    "beforeLongBreak": "Khoảng giải lao dài:",
+    "0": "Màn hình ưu tiên",
+    "1": "Màn hình thứ hai",
+    "2": "Màn hình thứ ba",
+    "4": "Màn hình thứ năm",
+    "title": "Tuỳ chọn công tác viên",
+    "3": "Màn hình thứ tư",
+    "notificationsInfo": "Thông báo hệ thống hiển thị trước khoảng giải lao để bạn chuẩn bị cho nó.",
+    "notifications": "Thông báo khoảng giải lao:",
+    "beforeMiniBreak": "Khoảng giải lao ngắn:",
+    "postponeFor": "Tạm hoãn tới khi:",
+    "newVersion": "Phiên bản mới:",
+    "newVersionNotification": "Thông báo khi có phiên bản mới",
+    "customIdeasInfo": "Cho phép bạn sử dụng các ý tưởng tùy chỉnh các Khoảng Giải lao bằng cách chỉnh sửa tệp cấu hình. (Dành cho người dùng nâng cao.)",
+    "useIdeasFromSettings": "Sử dụng ý tưởng Khoảng Giải lao từ tệp cấu hình",
+    "customIdeas": "Ý tưởng tuỳ chỉnh:",
+    "breakPostpone": "Tạm hoãn Khoảng giải lao:",
+    "breakPostponeInfo": "Nếu được bật trong Tùy chọn chính, bạn có thể hoãn thời gian giải lao. Các cài đặt sau đây cho phép bạn chỉ định thời gian, thời gian và số lần bạn có thể trì hoãn việc nghỉ giải lao.",
+    "miniBreaks": "Khoảng giải lao ngắn:",
+    "postponableFor": "Có thể hoãn tới khi:",
+    "maxPostpones": "Số lần tạm hoãn tối đa:",
+    "showWelcomeWindow": "Hiển thị màn hình Welcome ở lần khởi động kế tiếp",
+    "longBreaks": "Khoảng giải lao dài:",
+    "pauseUntilMorningInfo": "Chỉ định giờ 'Tạm dừng cho đến sáng' sẽ tạm dừng.",
+    "opacityTheme": "Chủ đề trong suốt:",
+    "pauseUntilMoring": "Tạm dừng cho tới sáng:",
+    "pauseUntil": "Tạm dừng tới khi:",
+    "welcomeWindow": "Màn hình Welcome:",
+    "opacityInfo": "Hình khối của khung hình Giải lao sẽ như thế nào?",
+    "opacity": "Độ mờ:",
+    "breakWindowSize": "Kích thước khung hình Giải lao",
+    "breakWindowSizeInfo": "Khung hình giải lao nên ẩn bao nhiêu phần trăm màn hình?",
+    "breakWindowHeight": "Chiều cao:",
+    "sounds": "Âm thanh:",
+    "volume": "Âm lượng:",
+    "longBreakStartSound": "Sẽ có âm thanh lúc bắt đầu khoảng giải lao dài",
+    "naturalBreaksInfo": "Nếu theo dõi thời gian nhàn rỗi được bật trong Tùy chọn chính, bạn có thể chỉ định sau đó thời điểm Khoảng giải lao sẽ tạm dừng.",
+    "light": "Sáng/Nhẹ nhàng",
+    "miniBreakStartSound": "Sẽ có âm thanh lúc bắt đầu khoảng giải lao ngắn",
+    "naturalBreaks": "Khoảng giải lao tự nhiên:",
+    "showBreaksAsRegularWindowsTitle": "Hoạt động như cửa sổ thông thường:",
+    "pauseAfter": "Tạm dừng sau:",
+    "appearance": "Giao diện:",
+    "dark": "Tối",
+    "showBreaksAsRegularWindowsInfo": "Khi được bật, các cửa sổ Giải lao sẽ có thể được đặt tiêu điểm, chúng sẽ không còn ở trạng thái 'Always on top' nữa và chúng cũng sẽ xuất hiện trên thanh tác vụ.",
+    "screenInfo": "Khi hiển thị Giải lao trên tất cả các màn hình bị tắt, bạn có thể chọn màn hình nào bạn muốn hiển thị Giải lao.",
+    "timeToBreakInTray": "Thơi gian giải lao",
+    "showBreaksAsRegularWindows": "Hiển thị Giải lao ở dạng cửa sổ thông thường",
+    "screen": "Màn hình hiển thị Giải lao:",
+    "showOnMonitor": "Hiển thị Giải lao trên",
+    "primary": "Màn hình chính",
+    "cursor": "Theo dõi con trỏ",
+    "showTimeToBreakInTray": "Hiển thị thời gian đến lần Giải lao tiếp theo trong biểu tượng thanh thực đơn",
+    "showTrayIcon": "Hiển thị biểu tượng thanh thực đơn",
+    "toShowTrayIcon": "Hiển thị biểu tượng Stretchly trên thanh thực đơn",
+    "currentTimeInBreaks": "Thời điểm hiện tại",
+    "showCurrentTimeInBreaks": "Hiển thị giờ địa phương hiện tại trong cửa sổ Giải lao"
+  },
+  "welcome": {
+    "title": "Chào mừng đến với Stretchly",
+    "getStarted": "Bắt đầu",
+    "breakTimeReminderApp": "Ứng dụng nhắc giờ giải lao",
+    "viewTutorial": "Xem Hướng dẫn sử dụng",
+    "openPreferences": "Mở tuỳ chọn"
+  },
+  "statusMessages": {
+    "indefinitely": "Vô thời hạn",
+    "dndMode": "\"Không làm phiền\" đang bật",
+    "nextLongBreak": "Khoảng Giải lao dài tiếp theo",
+    "afterMiniBreak_one": "sau {{count}} Khoảng Giải lao ngắn",
+    "paused": "Đã tạm dừng",
+    "afterMiniBreak_other": "sau {{count}} Khoảng Giải lao ngắn",
+    "appExclusion": "Quy tắc loại trừ ứng dụng",
+    "nextMiniBreak": "Khoảng Giải lao ngắn tiếp theo",
+    "resuming": "Đang tiếp tục"
+  },
+  "miniBreakIdeas": {
+    "aae": {
+      "text": "Nhắm mắt lại và thư giãn."
+    },
+    "aaf": {
+      "text": "Duỗi chân của bạn ra nào."
+    },
+    "aai": {
+      "text": "Từ từ quay đầu sang một bên và giữ trong 10 giây."
+    },
+    "aaj": {
+      "text": "Từ từ nghiêng đầu sang một bên và giữ trong 5-10 giây."
+    },
+    "aap": {
+      "text": "Nhắm mắt lại và đếm hơi thở của bạn."
+    },
+    "aas": {
+      "text": "Nâng cánh tay phải của bạn, duỗi nó qua đầu sang trái và giữ trong 10 giây. Lặp lại với tay trái."
+    },
+    "aav": {
+      "text": "Nhắm mắt lại và chỉ cần chú ý bất cứ điều gì phát sinh trong thời điểm hiện tại, và không nên phán xét chúng."
+    },
+    "aaz": {
+      "text": "Sự chú ý của bạn có được sử dụng một cách khôn ngoan không?"
+    },
+    "aba": {
+      "text": "Thay đổi tư thế ngồi của bạn."
+    },
+    "abb": {
+      "text": "Để mắt bạn tiếp xúc với ánh sáng tự nhiên."
+    },
+    "abe": {
+      "text": "Hãy lắc tay để cảm nhận được sự nhẹ nhõm."
+    },
+    "abs": {
+      "text": "Đứng quay mặt vào tường, đặt một chân ra sau và chân kia về phía trước, sau đó dựa vào tường. Lặp lại với chân còn lại."
+    },
+    "abu": {
+      "text": "Nghiêng đầu sang một bên, rồi sang bên kia, sau đó nhẹ nhàng nghiêng về phía trước và phía sau."
+    },
+    "aab": {
+      "text": "Từ từ nhìn hết sang trái, rồi sang phải."
+    },
+    "aah": {
+      "text": "Tư thế ngồi của bạn đã đúng chưa?"
+    },
+    "aad": {
+      "text": "Nhắm mắt lại và hít thở sâu vài lần."
+    },
+    "aak": {
+      "text": "Đứng khỏi ghế của bạn và relax toàn thân."
+    },
+    "aaa": {
+      "text": "Đi lấy một cốc nước."
+    },
+    "aac": {
+      "text": "Từ từ nhìn hết lên trên, rồi xuống dưới."
+    },
+    "aag": {
+      "text": "Duỗi cánh tay của bạn ra nào."
+    },
+    "aal": {
+      "text": "Tập trung mắt bạn vào một vật cách xa ít nhất 20 mét (nếu không thì xa nhất có thể)."
+    },
+    "aam": {
+      "text": "Dành một chút thời gian để suy nghĩ về một cái gì đó bạn đang quan tâm và đánh giá cao."
+    },
+    "aan": {
+      "text": "Hãy dành một chút thời gian để mỉm cười khi được sống."
+    },
+    "aao": {
+      "text": "Một nơi làm việc thực sự tiện dụng là một nơi làm việc mà bạn thường xuyên tránh xa."
+    },
+    "aaq": {
+      "text": "Nhắm mắt lại và gọi tên những thứ bạn nghe thấy."
+    },
+    "aar": {
+      "text": "Đặt đầu ngón tay lên vai. Xoay vai về phía trước trong 10 giây rồi xoay ngược lại."
+    },
+    "aat": {
+      "text": "Dùng bàn tay phải của bạn, lần lượt nắm lấy từng ngón tay của bàn tay trái và siết chặt. Lặp lại với bàn tay trái và ngón tay bên phải."
+    },
+    "aau": {
+      "text": "Đứng lên và thực hiện động tác Lunge (bước chân tới trước và gập gối). Giữ trong 10 giây, sau đó thực hiện chân còn lại."
+    },
+    "aaw": {
+      "text": "Tập trung 20 phút một lần trong 20 giây vào một vật ở khoảng cách 6 mét (20 feet)."
+    },
+    "aax": {
+      "text": "Nếu bạn cần giúp đỡ, hãy lên tiếng."
+    },
+    "aay": {
+      "text": "Làm một việc tại một thời điểm."
+    },
+    "abc": {
+      "text": "Nhắm mắt lại, chậm rãi và nhẹ nhàng ngước mắt lên trần nhà rồi hạ xuống sàn."
+    },
+    "abd": {
+      "text": "Nhắm mắt lại, chậm rãi và nhẹ nhàng di chuyển mắt sang trái, rồi sang phải."
+    },
+    "abg": {
+      "text": "Nắm tay lại rồi đưa các ngón tay lên cho đến khi chúng hướng lên trần nhà, giống như bạn đang bảo ai đó dừng lại."
+    },
+    "abf": {
+      "text": "Lần lượt chạm đầu mỗi ngón tay vào đầu ngón tay cái để chúng tạo thành hình chữ O."
+    },
+    "abh": {
+      "text": "Nắm tay lại rồi xòe các ngón tay ra và duỗi chúng ra xa nhất có thể."
+    },
+    "abj": {
+      "text": "Đứng thẳng và chậm rãi nghiêng đầu về phía vai bằng cùng một tay cho đến khi bạn cảm thấy căng ra."
+    },
+    "abi": {
+      "text": "Ngồi thẳng lưng, hai tay buông thõng hai bên và chậm rãi xoay cổ theo một hướng theo một vòng tròn lớn nhất có thể."
+    },
+    "abk": {
+      "text": "Đứng cao với cánh tay của bạn bên cạnh bạn. Siết chặt xương bả vai của bạn với nhau và giữ."
+    },
+    "abl": {
+      "text": "Đứng thẳng với hai cánh tay giơ cao ngang vai. Di chuyển tay ra sau lưng một chút, giữ một giây và quay trở lại."
+    },
+    "abm": {
+      "text": "Ngồi trên mép ghế, vặn thân sang một bên và giữ trong 10-15 giây. Lặp lại ở phía bên kia."
+    },
+    "abo": {
+      "text": "Đứng hai chân rộng bằng vai, hạ người xuống như thể bạn đang ngồi tựa lưng vào ghế, sau đó đứng lên. Lặp lại nhiều lần."
+    },
+    "abn": {
+      "text": "Đứng lên và đặt một chân lên đồ vật gần đó, chẳng hạn như ghế hoặc ghế đẩu. Gập đầu gối của bạn và giữ trong 10-15 giây. Lặp lại với chân kia."
+    },
+    "abp": {
+      "text": "Đứng dựa lưng và đặt tay lên tường, sau đó chậm rãi di chuyển cánh tay lên xuống như thể bạn đang làm thiên thần tuyết."
+    },
+    "abq": {
+      "text": "Đứng quay mặt vào tường và đặt tay lên đó, sau đó thực hiện vài động tác chống đẩy."
+    },
+    "abr": {
+      "text": "Ngồi trên mép ghế và duỗi thẳng một chân ra trước mặt, giữ trong 10-15 giây. Lặp lại với chân còn lại."
+    },
+    "abt": {
+      "text": "Giữ một cánh tay thẳng lên, sau đó sử dụng cánh tay kia để đẩy nhẹ khuỷu tay của cánh tay thứ nhất về phía đầu của bạn. Giữ trong 10-15 giây. Lặp lại với cánh tay kia."
+    },
+    "abv": {
+      "text": "Đưa cánh tay trái qua ngực, tay phải giữ lấy khuỷu tay trái và nhẹ nhàng kéo nó về phía ngực. Lặp lại với cánh tay kia."
+    },
+    "abw": {
+      "text": "Đứng dậy, đặt một chân lên một đồ vật gần đó, chẳng hạn như ghế hoặc ghế đẩu và đưa tay xuống để chạm vào ngón chân của bạn. Lặp lại với chân còn lại."
+    },
+    "abx": {
+      "text": "Đứng ở cửa phòng và đặt một cánh tay ở mỗi bên của cửa, sau đó nhẹ nhàng cúi người về phía trước cho đến khi bạn cảm thấy căng ở ngực."
+    },
+    "aby": {
+      "text": "Ngồi trên mép ghế hoặc trên sàn, đặt hai lòng bàn chân vào nhau, nhẹ nhàng ấn khuỷu tay xuống gối để kéo căng đùi trong."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Bạn không cô đơn",
+      "text": "Bạn có cảm thấy khó khăn khi Giải lao một mình? Cố gắng làm điều đó với một đồng nghiệp. Ngoài việc giúp bạn dễ dàng gắn vào với việc Giải lao hơn, bạn sẽ có cơ hội hiểu rõ hơn về họ. Nghỉ và giải lao cùng nhau làm tăng năng suất lao động."
+    },
+    "aab": {
+      "title": "Hãy bước đi",
+      "text": "Bạn có bao giờ để ý làm thế nào bộ não của bạn có thể tự tìm ra mọi thứ không? Tất cả những gì cần làm là hãy bước ra khỏi bàn máy tính và nghỉ ngơi để suy nghĩ về điều gì đó hoàn toàn không liên quan."
+    },
+    "aac": {
+      "title": "Khoảng giải lao siêu nhỏ",
+      "text": "Nghỉ ngơi là một thành phần quan trọng trong việc đảm bảo hiệu suất của hệ thống cơ xương. Nghỉ giải lao thường xuyên có thể làm giảm thời lượng tập trung thực hiện một việc gì đó và giúp giảm nguy cơ tác dụng tiêu cực khi làm việc."
+    },
+    "aad": {
+      "title": "Thiền",
+      "text": "Các nghiên cứu cho thấy rằng các bài tập dựa trên chánh niệm giúp giảm lo lắng, trầm cảm, căng thẳng và đau đớn, đồng thời giúp cải thiện sức khỏe nói chung, sức khỏe tâm thần và chất lượng cuộc sống. Không chắc chắn làm thế nào để bắt đầu ư? Có rất nhiều ứng dụng để giúp bạn giải quyết."
+    },
+    "aae": {
+      "title": "Nháy mắt",
+      "text": "Nhìn vào màn hình trong thời gian dài khiến bạn ít chớp mắt hơn, do đó, mắt bạn sẽ tiếp xúc với không khí. Chớp mắt nhanh trong vài giây để làm mới màng nước mắt và làm sạch bụi khỏi bề mặt mắt."
+    },
+    "aaf": {
+      "title": "Công thái học",
+      "text": "Chiều cao và góc không phù hợp của bàn phím, chuột, màn hình hoặc bề mặt làm việc có thể gây ra các vấn đề về sức khỏe. Hãy dành chút thời gian để đọc về khái niệm Công thái học của bàn làm việc."
+    },
+    "aag": {
+      "title": "Di chuyển",
+      "text": "Có rất nhiều cách bạn có thể tập thể dục trong văn phòng của mình. Hãy thử diễu hành tại chỗ hoặc chống đẩy trên bàn."
+    },
+    "aai": {
+      "title": "Lưu ý",
+      "text": "Bạn đang lơ mơ hay gặp khó khăn trong việc tập trung? Đó là một dấu hiệu cho thấy bạn cần nghỉ ngơi."
+    },
+    "aal": {
+      "title": "Các cuộc họp tích cực",
+      "text": "Làm thế nào về việc chuyển các cuộc họp từ phòng họp sang phòng mở hơn (nơi có thể thoải mái vận động hơn chút)? Đi bộ không chỉ đốt cháy calo mà còn có thể thúc đẩy tinh thần hợp tác."
+    },
+    "aaq": {
+      "title": "Học hỏi",
+      "text": "Trong một nghiên cứu về các tình nguyện viên khỏe mạnh, các nhà nghiên cứu của NIH (Viện sức khoẻ Quốc gia Hoa Kỳ) đã phát hiện ra rằng việc nghỉ giải lao ngắn, sớm và thường xuyên có thể giúp bộ não của chúng ta dễ học các kỹ năng mới."
+    },
+    "aar": {
+      "title": "Tập thể dục",
+      "text": "Bằng chứng cho thấy một lượng nhỏ tập thể dục thường xuyên có thể mang lại những lợi ích sức khỏe đáng kể, bao gồm giảm nhanh căng thẳng."
+    },
+    "aas": {
+      "text": "Bạn đã tìm thấy thói quen vận động theo Stretchly của mình chưa? Đừng quên lặp lại nó nhiều lần để chống lại tác động không tốt của việc ngồi lâu.",
+      "title": "Lặp lại"
+    },
+    "aat": {
+      "title": "Cổ tay và cẳng tay",
+      "text": "Mở rộng cánh tay của bạn với lòng bàn tay hướng về phía bạn, sau đó chầm chậm xoay tay bốn lần theo chiều kim đồng hồ, sau đó bốn lần ngược chiều kim đồng hồ."
+    },
+    "aau": {
+      "title": "Duỗi lưng",
+      "text": "Đặt hai bàn tay của bạn sau đầu, đan vào nhau sau đó nâng chúng lên trên đầu và kết thúc với lòng bàn tay hướng lên trên."
+    },
+    "aav": {
+      "title": "Vận động",
+      "text": "Cứ ba mươi phút trì trệ, bạn nên có ít nhất một phút năng động."
+    },
+    "aaw": {
+      "title": "7 phút tập luyện",
+      "text": "Bài tập này bao gồm một thói quen tập thể dục toàn thân trong một khoảng thời gian ngắn. Nhưng như với bất kỳ bài tập nào, hãy cẩn thận. Có rất nhiều ứng dụng để giúp bạn bắt đầu."
+    },
+    "aax": {
+      "title": "Nhịp tim",
+      "text": "Tăng nhịp tim của bạn lên 120 nhịp mỗi phút trong 20 phút liên tục, thực hiện bốn hoặc năm lần một tuần để làm bất cứ điều gì bạn thích. Tăng nhịp tim thường xuyên sẽ giúp cải thiện sức khỏe tim mạch."
+    },
+    "aay": {
+      "title": "Đi cầu thang bộ",
+      "text": "Các nghiên cứu đã chỉ ra rằng leo cầu thang, được coi là hoạt động thể chất cường độ cao, đốt cháy nhiều calo mỗi phút hơn so với chạy bộ."
+    },
+    "aaz": {
+      "title": "Sáng tạo nghệ thuật",
+      "text": "Liệu pháp nghệ thuật được biết là có lợi ích sức khỏe tinh thần tuyệt vời, đặc biệt là khi kiểm soát căng thẳng. Làm thế nào về việc viết nhanh một bài thơ, chụp ảnh hoặc vẽ một cái gì đó nho nhỏ?"
+    },
+    "aba": {
+      "text": "Một không gian sạch sẽ giúp bạn tập trung vào công việc và việc này sẽ khiến bạn hạnh phúc hơn bởi thường liên quan đến những cảm xúc tích cực.",
+      "title": "Dọn dẹp"
+    },
+    "abc": {
+      "text": "Nếu thường xuyên sử dụng các phương tiện công cộng, bạn có thể đứng thay vì ngồi. Nếu có thể, hãy cố gắng thay thế càng nhiều chuyến đi hàng ngày càng tốt bằng đi bộ hoặc đạp xe.",
+      "title": "Phương tiện công cộng"
+    },
+    "abd": {
+      "title": "Ngáp",
+      "text": "Ngáp có thể thực sự hữu ích, vì nó tạo ra nước mắt giúp làm ẩm và bôi trơn mắt."
+    },
+    "abe": {
+      "title": "Thay đổi tiêu điểm",
+      "text": "Giữ một ngón tay gần mắt và tập trung vào nó. Di chuyển ngón tay ra xa một cách chậm rãi, tập trung nhìn ra phía xa rồi quay lại ngón tay. Đưa ngón tay trở lại và tập trung vào một cái gì đó ở xa."
+    },
+    "abg": {
+      "title": "Bóp tay",
+      "text": "Bóp một quả bóng cao su mềm, giữ trong 5 giây. Lặp lại toàn bộ quá trình một vài lần."
+    },
+    "abh": {
+      "title": "Thở chậm",
+      "text": "Một số nghiên cứu mới cho thấy tiềm năng sử dụng các kỹ thuật thở chậm có kiểm soát như một phương tiện để tối ưu hóa các thông số sinh lý. Việc này dường như có liên quan tích cực đến sức khỏe và tuổi thọ."
+    },
+    "abi": {
+      "title": "Hình dung giàu trí tưởng tượng",
+      "text": "Nhắm mắt lại và tưởng tượng mình đang ở một nơi yên bình và tĩnh lặng, chẳng hạn như bãi biển hoặc khu rừng. Hãy tập trung vào cảnh vật, âm thanh và cảm giác của môi trường mà bạn đang tưởng tượng ra."
+    },
+    "aak": {
+      "title": "Sự trao đổi chất",
+      "text": "Một số nghiên cứu mới nổi cho thấy rằng ngồi trong thời gian dài góp phần làm tăng nguy cơ mắc hội chứng chuyển hóa, đau tim và nguy cơ đột quỵ cũng như nguy cơ tử vong chung, bên cạnh một loạt những vấn đề khác. Đi dạo thường xuyên có thể giúp ích cho quá trình tuần hoàn của bạn, giúp chống lại một số vấn đề tiêu cực kể trên."
+    },
+    "aah": {
+      "title": "Thay đổi",
+      "text": "Bạn có một quả bóng tập Yoga (a stability ball) hoặc bàn làm việc đứng không? Cân nhắc thay thế bàn ghế của bạn bằng chúng để sử dụng trong một thời gian."
+    },
+    "aaj": {
+      "title": "Công nghệ",
+      "text": "Làm thế nào về việc đi bộ không có công nghệ (đi bộ không sử dụng điện thoại, đeo tai nghe)?"
+    },
+    "aam": {
+      "title": "Trái cây",
+      "text": "Hãy dành thời gian của bạn và ăn một số trái cây. Chậm rãi. Chú ý hương vị, độ mềm, giòn, độ tươi."
+    },
+    "aao": {
+      "title": "Nghỉ giải lao",
+      "text": "Đi bộ khi nghỉ giải lao? Cân nhắc đi bộ 5 phút mỗi lần bạn đi nghỉ giải lao."
+    },
+    "aan": {
+      "title": "Phòng tắm",
+      "text": "Đi bộ đến toilet xa nhất trong nơi làm việc khi đi vệ sinh."
+    },
+    "aap": {
+      "title": "Đồng nghiệp",
+      "text": "Đừng gửi email hoặc nhắn tin cho đồng nghiệp văn phòng, hãy đi bộ đến bàn của họ để liên lạc với họ."
+    },
+    "abb": {
+      "text": "Thiên nhiên được liên kết với những cảm xúc tích cực và giảm căng thẳng và lo lắng. Bất cứ khi nào có thể, hãy cố gắng nghỉ trưa hàng ngày bên ngoài, bao quanh bởi một số cây xanh.",
+      "title": "Ăn trưa bên ngoài"
+    },
+    "abf": {
+      "title": "Lòng bàn tay",
+      "text": "Khi ngồi, chống khuỷu tay lên bàn và sát mép bàn. Hãy để trọng lượng của bạn rơi về phía trước và khum tay lên mắt. Nhắm mắt lại và hít chậm vào bằng mũi và giữ trong vài giây, rồi thở ra chầm chậm. Sau đó tiếp tục hít thở sâu."
+    }
+  },
+  "utils": {
+    "hours_other": "{{count}} giờ",
+    "hours_one": "{{count}} giờ",
+    "inAbout": "trong khoảng {{count}}",
+    "remaining": "{{count}} còn lại",
+    "percent_other": "{{count}} phần trăm",
+    "none_one": "{{count}}",
+    "oclock_one": "{{count}} giờ",
+    "oclock_other": "{{count}} giờ",
+    "seconds_one": "{{count}} giây",
+    "seconds_other": "{{count}} giây",
+    "minutes_one": "{{count}} phút",
+    "minutes_other": "{{count}} phút",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} phần trăm"
+  },
+  "process": {
+    "newVersionAvailable": "Có phiên bản mới!"
+  }
+}
