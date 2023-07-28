@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- start at login for Windows Store version (not sure whether successfuly)
+
 ### Added
 - both left and right click on tray opens menu (Windows)
 - double click on tray opens Preferences (Windows)

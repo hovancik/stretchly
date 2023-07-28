@@ -1386,7 +1386,14 @@ ipcMain.on('save-setting', function (event, key, value) {
   }
 
   if (key === 'openAtLogin') {
-    app.setLoginItemSettings({ openAtLogin: value })
+    if (process.platform === 'win32' && process.windowsStore) {
+      app.setLoginItemSettings({
+        openAtLogin: value,
+        path: 'start shell:appsFolder\\33881JanHovancik.stretchly_24fg4m0zq65je!Stretchly'
+      })
+    } else {
+      app.setLoginItemSettings({ openAtLogin: value })
+    }
   } else {
     settings.set(key, value)
   }
