@@ -407,8 +407,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 
 ## Known issues
-- power monitoring not working properly ([electron/electron#8560](https://github.com/electron/electron/issues/8560))
-- notifications on Windows stay in Notification center ([electron/electron#9283](https://github.com/electron/electron/issues/9283))
+- idle time detection doesn't work on Wayland ([electron/electron#27912](https://github.com/electron/electron/issues/27912))
 
 ### MacOS
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
