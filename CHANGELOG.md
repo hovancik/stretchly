@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - start at login for Windows Store version (not sure whether successfuly)
+- tmp node issues on Windows
 
 ### Added
 - both left and right click on tray opens menu (Windows)

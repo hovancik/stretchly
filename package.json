@@ -101,7 +101,8 @@
       "asarUnpack": [
         "node_modules/windows-quiet-hours/**",
         "node_modules/windows-notification-state/**",
-        "node_modules/macos-notification-state/**"
+        "node_modules/macos-notification-state/**",
+        "**/*.node"
       ]
     },
     "nsis": {
