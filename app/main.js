@@ -1131,6 +1131,12 @@ function updateTray () {
   if (settings.get('showTrayIcon')) {
     if (!appIcon) {
       appIcon = new Tray(trayIconPath())
+      appIcon.on('double-click', () => {
+        createPreferencesWindow()
+      })
+      appIcon.on('click', () => {
+        appIcon.popUpContextMenu(Menu.buildFromTemplate(currentTrayMenuTemplate))
+      })
     }
     if (!trayUpdateIntervalObj) {
       trayUpdateIntervalObj = setInterval(updateTray, 10000)
@@ -1150,14 +1156,6 @@ function updateTray () {
       appIcon.setContextMenu(trayMenu)
       currentTrayMenuTemplate = newTrayMenuTemplate
     }
-
-    appIcon.on('double-click', () => {
-      createPreferencesWindow()
-    })
-
-    appIcon.on('click', () => {
-      appIcon.popUpContextMenu(Menu.buildFromTemplate(currentTrayMenuTemplate))
-    })
   }
 }
 
