@@ -130,7 +130,7 @@ Type `stretchly help` to get a list of all commands and options available as wel
 
 ## Preferences
 
-Most of the preferences can be customized by clicking on the "Preferences" item in the tray menu.
+Most of the preferences can be customized by clicking on the "Preferences" item in the tray menu. (On Windows, to open Preferences, you can also double-click on the tray icon.)
 
 <img src="preferences.png" height="340">
 
