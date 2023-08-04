@@ -63,5 +63,9 @@ module.exports = {
   screen: 'primary',
   timeToBreakInTray: false,
   currentTimeInBreaks: false,
-  showTrayIcon: true
+  showTrayIcon: true,
+  skipToNextScheduledBreakShortcut: '',
+  skipToNextMiniBreakShortcut: '',
+  skipToNextLongBreakShortcut: '',
+  resetBreaksShortcut: ''
 }
