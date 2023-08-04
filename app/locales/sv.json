@@ -3,7 +3,7 @@
     "toolTipHeader": "Stretchly - appen för pauspåminnelser",
     "microbreakIn": "Kort paus om $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Lång paus om $t(utils.seconds, {'count': {{seconds}} })",
-    "resumingBreaks": "Återuppta pauser",
+    "resumingBreaks": "Återupptar pauser",
     "downloadLatestVersion": "Hämta senaste version",
     "toBreak": "Lång paus",
     "toMicrobreak": "Kort paus",

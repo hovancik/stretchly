@@ -46,7 +46,7 @@
       "fullscreen": "Teljes képernyőn",
       "showIdeas": "Mozgás tippek megjelenítése szünetek közben",
       "allScreens": "Szünetek mutatása az összes monitoron",
-      "monitorIdleTime": "Távollét naplózása (a visszaszámlálás szüneteltetve lesz, amíg távol vagy a számítógéptől)",
+      "monitorIdleTime": "Távollét naplózása (a visszaszámlálás szüneteltetve lesz, amíg távol vagy a számítógéptől).",
       "monitorDnd": "Szünetek megjelenítése Ne Zavarjanak Módban is",
       "language": "Nyelv kiválasztása:",
       "restoreDefaults": "Alapértelmezések visszaállítása"
@@ -277,6 +277,12 @@
     },
     "aay": {
       "text": "Egyszerre csak egy dolgot csinálj."
+    },
+    "abe": {
+      "text": "Rázd meg a kezeidet, hogy megkönnyebbülj."
+    },
+    "abf": {
+      "text": "Egyenként érintsd az egyes ujjaid hegyét a hüvelykujjad hegyéhez úgy, hogy O-alakú legyen."
     }
   },
   "longBreakIdeas": {
@@ -299,6 +305,64 @@
     "aaq": {
       "title": "Tanulás",
       "text": "Egy egészséges önkéntesekkel készült kutatásban megállapították, hogy gyakori rövid szünetek tartásával segítjük az agyunkat új készségek megtanulásában."
+    },
+    "aae": {
+      "text": "Ha hosszú ideig bámulod a képernyőt, akkor kevesebbet pislogsz, így a szemed ki van téve a levegőnek. Pislogj gyorsan néhány másodpercig, hogy felfrissítsd a könnyfilmet és eltávolítsd a port a szem felszínéről.",
+      "title": "Pislogás"
+    },
+    "aaf": {
+      "title": "Ergonómia",
+      "text": "A billentyűzet, az egér, a monitor vagy a munkafelület nem megfelelő magassága és dőlésszöge egészségügyi problémákat okozhat. Szánj egy kis időt az munkakörnyezet ergonómiájáról szóló olvasásra."
+    },
+    "aam": {
+      "text": "Szánj rá időt, és egyél gyümölcsöt. Lassan. Figyeld meg az ízét, állagát és a frissességét.",
+      "title": "Gyümölcs"
+    },
+    "aan": {
+      "text": "Mindig a munkahely legtávolabbi mosdójába menj.",
+      "title": "Mosdók"
+    },
+    "aar": {
+      "title": "Edzés",
+      "text": "A bizonyítékok azt mutatják, hogy a kis mennyiségű rendszeres testmozgás hatalmas egészségügyi előnyökkel járhat, beleértve a stressz mérhető csökkenését."
+    },
+    "abc": {
+      "title": "Tömegközlekedés",
+      "text": "Ha rendszeresen használsz tömegközlekedést, ülés helyett állhatsz. Ha lehetséges, próbáld meg a lehető legtöbb napi utazást gyaloglással vagy kerékpározással helyettesíteni."
+    },
+    "abe": {
+      "title": "Fókuszváltás"
+    },
+    "aad": {
+      "title": "Meditáció"
+    },
+    "aag": {
+      "title": "Mozgás",
+      "text": "Számos módja van az edzésnek az irodában. Próbálj meg egy helyben sétálni, vagy fekvőtámaszozni."
+    },
+    "aaj": {
+      "title": "Technológia",
+      "text": "Mit szólnál egy technológiáktól mentes sétához?"
+    },
+    "aal": {
+      "title": "Aktív megbeszélések",
+      "text": "Mit szólnál a megbeszélések áthelyezéséhez a konferenciateremből a szabadba? A gyaloglás nemcsak kalóriákat éget, de még az együttműködés érzését is elősegítheti."
+    },
+    "aax": {
+      "title": "Pulzus"
+    },
+    "aaw": {
+      "title": "7 perces edzés"
+    },
+    "aay": {
+      "title": "Lépcsőzz"
+    },
+    "abb": {
+      "title": "Ebédelj a szabadban",
+      "text": "A természet hozzájárul a pozitív érzelmekhez, valamint a stressz és a szorongás csökkentéséhez. Amikor csak lehetséges, próbáld meg a napi ebédszünetet a szabadban tartani, zöldövezetben."
+    },
+    "abh": {
+      "title": "Lassú légzés"
     }
   }
 }
