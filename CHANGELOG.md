@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - both left and right click on tray opens menu (Windows)
 - double click on tray opens Preferences (Windows)
 - adds Vietnamese translations
+- reset breaks shortcut (advanced option)
+- skip to the next break shortcut (advanced option)
 
 ## Changed
 - updated many translations

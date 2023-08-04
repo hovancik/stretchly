@@ -267,6 +267,58 @@ function initialize (isAppStart = true) {
       log.info(`Stretchly: pauseBreaksToggleShortcut registration successful (${settings.get('pauseBreaksToggleShortcut')})`)
     }
   }
+  if (settings.get('skipToNextScheduledBreakShortcut') !== '') {
+    const skipToNextScheduledBreakShortcut = globalShortcut.register(settings.get('skipToNextScheduledBreakShortcut'), () => {
+      log.info('Stretchly: skipping to next scheduled Break by shortcut')
+      if (breakPlanner._scheduledBreakType === 'break') {
+        skipToBreak()
+      } else if (breakPlanner._scheduledBreakType === 'microbreak') {
+        skipToMicrobreak()
+      }
+    })
+
+    if (!skipToNextScheduledBreakShortcut) {
+      log.warn('Stretchly: skipToNextScheduledBreakShortcut registration failed')
+    } else {
+      log.info(`Stretchly: skipToNextScheduledBreakShortcut registration successful (${settings.get('skipToNextScheduledBreakShortcut')})`)
+    }
+  }
+  if (settings.get('skipToNextMiniBreakShortcut') !== '') {
+    const skipToNextMiniBreakShortcut = globalShortcut.register(settings.get('skipToNextMiniBreakShortcut'), () => {
+      log.info('Stretchly: skipping to next Mini Break by shortcut')
+      skipToMicrobreak()
+    })
+
+    if (!skipToNextMiniBreakShortcut) {
+      log.warn('Stretchly: skipToNextMiniBreakShortcut registration failed')
+    } else {
+      log.info(`Stretchly: skipToNextMiniBreakShortcut registration successful (${settings.get('skipToNextMiniBreakShortcut')})`)
+    }
+  }
+  if (settings.get('skipToNextLongBreakShortcut') !== '') {
+    const skipToNextLongBreakShortcut = globalShortcut.register(settings.get('skipToNextLongBreakShortcut'), () => {
+      log.info('Stretchly: skipping to next Long Break by shortcut')
+      skipToBreak()
+    })
+
+    if (!skipToNextLongBreakShortcut) {
+      log.warn('Stretchly: skipToNextLongBreakShortcut registration failed')
+    } else {
+      log.info(`Stretchly: skipToNextLongBreakShortcut registration successful (${settings.get('skipToNextLongBreakShortcut')})`)
+    }
+  }
+  if (settings.get('resetBreaksShortcut') !== '') {
+    const resetBreaksShortcut = globalShortcut.register(settings.get('resetBreaksShortcut'), () => {
+      log.info('Stretchly: resetting breaks by shortcut')
+      resetBreaks()
+    })
+
+    if (!resetBreaksShortcut) {
+      log.warn('Stretchly: resetBreaksShortcut registration failed')
+    } else {
+      log.info(`Stretchly: resetBreaksShortcut registration successful (${settings.get('resetBreaksShortcut')})`)
+    }
+  }
   loadIdeas()
   updateTray()
 }
