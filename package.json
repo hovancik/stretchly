@@ -131,7 +131,7 @@
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^25.3.2",
+    "electron": "^25.8.1",
     "electron-builder": "^24.6.3",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
