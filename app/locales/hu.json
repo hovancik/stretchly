@@ -283,6 +283,69 @@
     },
     "abf": {
       "text": "Egyenként érintsd az egyes ujjaid hegyét a hüvelykujjad hegyéhez úgy, hogy O-alakú legyen."
+    },
+    "aas": {
+      "text": "Emeld fel a jobb karod, nyújtsd a fejed fölött balra, és tartsd így 10 másodpercig. Ismételd meg a másik oldalra is."
+    },
+    "abi": {
+      "text": "Ülj egyenesen, karjaidat lógasd magad mellett, és lassan körözz a nyakaddal egy irányba egy nagy kört leírva."
+    },
+    "abm": {
+      "text": "Ülj le a szék szélére, csavard el a törzsed az egyik oldalra, és tartsd úgy 10-15 másodpercig. Ismételd meg a másik irányba is."
+    },
+    "abn": {
+      "text": "Állj fel, és tedd az egyik lábad egy közeli tárgyra, például egy székre vagy egy zsámolyra. Behajlított térddel tartsd így a lábad 10-15 másodpercig. Ismételd meg a másik lábbal is."
+    },
+    "abo": {
+      "text": "Állj vállszélességű terpeszben, engedd le a tested, mintha visszaülnél a székre, majd egyenesedj ki újra. Ismételd meg többször."
+    },
+    "abq": {
+      "text": "Állj a fal felé fordulva, tedd a falra a kezeidet, majd csinálj néhány fekvőtámaszt."
+    },
+    "abr": {
+      "text": "Ülj le a szék szélére, és nyújtsd ki az egyik lábad egyenesen magad elé, tartsd 10-15 másodpercig. Ismételd meg a másik lábaddal."
+    },
+    "abd": {
+      "text": "Csukott szemmel lassan és óvatosan mozgasd a szemed balra, majd lassan jobbra."
+    },
+    "aat": {
+      "text": "A jobb kezeddel fogd meg a bal kezed minden ujját egyesével, és nyújtsd meg őket. Ismételd meg a másik oldalon."
+    },
+    "abp": {
+      "text": "Állj háttal és kezeddel a falnak, majd lassan mozgasd fel és le a karjaidat, mintha hóangyalokat csinálnál."
+    },
+    "abs": {
+      "text": "Állj a fal felé fordulva, tegd az egyik lábad hátra, a másikat pedig előre, majd dőlj a falnak. Ismételd meg a másik lábaddal is."
+    },
+    "aau": {
+      "text": "Állj fel, lépj előre és csinálj egy kitörést. Tartsd 10 másodpercig, majd ismételd meg a másik lábaddal is."
+    },
+    "aav": {
+      "text": "Csukd be a szemed, és egyszerűen figyeld meg, ami az aktuális pillanatban történik, ítélkezés nélkül."
+    },
+    "aaw": {
+      "text": "Fókuszálj 20 percenként 20 másodpercig egy 5 méter távolságban lévő tárgyra."
+    },
+    "abb": {
+      "text": "Szoktasd a szemed a természetes fényhez."
+    },
+    "abc": {
+      "text": "Csukott szemmel lassan és óvatosan mozgasd felfelé a szemed, majd pedig lassan lefelé."
+    },
+    "abg": {
+      "text": "Szorítsd ökölbe a kezed, majd pedig nyújtóztasd ki ujjaidat, mintha azt mutatnád valakinek a tenyereddel, hogy álljon meg."
+    },
+    "abh": {
+      "text": "Szorítsd ökölbe a kezeidet, majd egyesével nyújtsd ki az ujjaidat teljesen, amennyire csak tudod."
+    },
+    "abk": {
+      "text": "Állj egyenesen, karjaiddal az oldalad mellett. Szorítsd össze a lapockáid és tartsd úgy."
+    },
+    "abj": {
+      "text": "Állj egyenesen, és lassan döntsd oldalra a fejed a kezed segítségével a vállad felé, amíg nyúlást nem érzel a nyakadban."
+    },
+    "abl": {
+      "text": "Állj egyenesen, karjaidat a vállak mellett emeld fel. Mozgasd a kezeid kissé a hátad mögé, tartsd egy másodpercig, ezután pedig lazítsd el őket."
     }
   },
   "longBreakIdeas": {
@@ -363,6 +426,30 @@
     },
     "abh": {
       "title": "Lassú légzés"
+    },
+    "aac": {
+      "title": "Rövid szünetek"
+    },
+    "aah": {
+      "title": "Változás"
+    },
+    "aas": {
+      "title": "Ismétlés",
+      "text": "Megtaláltad már a Stretchly rutinod? Ne felejtsd el ismételni több alkalommal is, hogy a hosszantartó ülés káros hatásait megelőzd."
+    },
+    "aaa": {
+      "title": "Nem vagy egyedül"
+    },
+    "aav": {
+      "title": "Mozogj",
+      "text": "Minden harminc perc ülés után legalább egy percnyi mozgást kell végezni."
+    },
+    "aak": {
+      "title": "Anyagcsere"
+    },
+    "aau": {
+      "title": "Hát nyújtás",
+      "text": "Fogd össze a kezeidet a fejed mögött, majd emeld fel őket a fejed fölé úgy, hogy a tenyereid felfelé nézzenek."
     }
   }
 }
