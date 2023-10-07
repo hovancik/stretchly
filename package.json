@@ -4,7 +4,7 @@
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
-    "node": "18.15.0"
+    "node": "18.17.1"
   },
   "scripts": {
     "start": "electron ./app",
@@ -128,27 +128,27 @@
     ]
   },
   "devDependencies": {
-    "chai": "^4.3.7",
+    "chai": "^4.3.10",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^25.3.2",
-    "electron-builder": "^24.6.3",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
-    "rimraf": "^5.0.1",
-    "sinon": "^15.2.0",
+    "rimraf": "^5.0.5",
+    "sinon": "^16.1.0",
     "spectron": "^19.0.0",
     "standard": "^17.1.0"
   },
   "dependencies": {
-    "@electron/remote": "^2.0.10",
+    "@electron/remote": "^2.0.12",
     "@meetfranz/electron-notification-state": "^1.0.0",
     "electron-log": "^4.4.8",
     "electron-store": "^8.1.0",
-    "humanize-duration": "^3.29.0",
-    "i18next": "^23.4.1",
-    "i18next-fs-backend": "^2.1.5",
-    "luxon": "^3.3.0",
+    "humanize-duration": "^3.30.0",
+    "i18next": "^23.5.1",
+    "i18next-fs-backend": "^2.2.0",
+    "luxon": "^3.4.3",
     "macos-notification-state": "^3.0.0",
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2.0",
