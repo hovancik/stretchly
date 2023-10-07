@@ -13,7 +13,7 @@
 #   commands:
 #   - apt update && apt-get install --no-install-recommends -y gcc-multilib g++-multilib bsdtar rpm libopenjp2-tools
 #   - npm install
-#   - npm install npm -g
+#   - npm install npm@9 -g
 #   - node_modules/.bin/electron-builder build --x64
 #   environment:
 #     GH_TOKEN:
@@ -42,7 +42,7 @@
 #   - gem install fpm -v 1.10.1
 #   - export USE_SYSTEM_FPM="true"
 #   - npm install
-#   - npm install npm -g
+#   - npm install npm@9 -g
 #   - node_modules/.bin/electron-builder build --arm64
 #   environment:
 #     GH_TOKEN:

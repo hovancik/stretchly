@@ -23,7 +23,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18.15.0'
-    - run: npm install npm -g
+    - run: npm install npm@9 -g
     - run: npm install
     - run: npx nyc --reporter=lcov npm test
       env:

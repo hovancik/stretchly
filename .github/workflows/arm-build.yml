@@ -18,7 +18,7 @@ jobs:
         node-version: '18.15.0'
     - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
     - run: sudo gem install fpm -v 1.15
-    - run: npm install npm -g
+    - run: npm install npm@9 -g
     - run: npm install
     - run: node_modules/.bin/electron-builder build
       env:
