@@ -34,7 +34,7 @@ class DndManager extends EventEmitter {
         focusAssist = require('windows-focus-assist').getFocusAssist().value
       } catch (e) { focusAssist = -1 } // getFocusAssist() throw an error if OS isn't windows
 
-      return require('@meetfranz/electron-notification-state').getDoNotDisturb() || (focusAssist !== -1 && focusAssist !== 0)
+      return require('electron-notification-state').getDoNotDisturb() || (focusAssist !== -1 && focusAssist !== 0)
     } else {
       return false
     }
