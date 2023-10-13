@@ -27,22 +27,57 @@ class DndManager extends EventEmitter {
     log.info('Stretchly: stopping Do Not Disturb monitoring')
   }
 
-  get _doNotDisturb () {
-    if (this.monitorDnd) {
-      let focusAssist
-      try {
-        focusAssist = require('windows-focus-assist').getFocusAssist().value
-      } catch (e) { focusAssist = -1 } // getFocusAssist() throw an error if OS isn't windows
+  async _isDndEnabledLinux () {
+    const dbus = require('dbus-next')
+    const bus = dbus.sessionBus()
+    try {
+      const obj = await bus.getProxyObject('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
+      const properties = obj.getInterface('org.freedesktop.DBus.Properties')
+      const dndEnabled = await properties.Get('org.freedesktop.Notifications', 'Inhibited')
+      if (await dndEnabled.value) {
+        return true
+      }
+    } catch (e) {
+      // KDE is not running
+    }
 
-      return require('@meetfranz/electron-notification-state').getDoNotDisturb() || (focusAssist !== -1 && focusAssist !== 0)
+    try {
+      const obj = await bus.getProxyObject('org.xfce.Xfconf', '/org/xfce/Xfconf')
+      const properties = obj.getInterface('org.xfce.Xfconf')
+      const dndEnabled = await properties.GetProperty('xfce4-notifyd', '/do-not-disturb')
+      if (await dndEnabled.value) {
+        return true
+      }
+    } catch (e) {
+      // XFCE is not running
+    }
+
+    return false
+  }
+
+  async _doNotDisturb () {
+    // TODO also check for session state? https://github.com/felixrieseberg/electron-notification-state/tree/master#session-state
+    if (this.monitorDnd) {
+      if (process.platform === 'win32') {
+        let wfa = 0
+        try {
+          wfa = require('windows-focus-assist').getFocusAssist().value
+        } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
+        const wqh = require('windows-quiet-hours').getIsQuietHours()
+        return wqh || (wfa !== -1 && wfa !== 0)
+      } else if (process.platform === 'darwin') {
+        return require('macos-notification-state').getDoNotDisturb()
+      } else if (process.platform === 'linux') {
+        return await this._isDndEnabledLinux()
+      }
     } else {
       return false
     }
   }
 
   _checkDnd () {
-    this.timer = setInterval(() => {
-      const doNotDisturb = this._doNotDisturb
+    this.timer = setInterval(async () => {
+      const doNotDisturb = await this._doNotDisturb()
       if (!this.isOnDnd && doNotDisturb) {
         this.isOnDnd = true
         this.emit('dndStarted')

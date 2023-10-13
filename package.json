@@ -142,7 +142,7 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.12",
-    "@meetfranz/electron-notification-state": "^1.0.0",
+    "dbus-next": "^0.10.2",
     "electron-log": "^4.4.8",
     "electron-store": "^8.1.0",
     "humanize-duration": "^3.30.0",
@@ -155,6 +155,6 @@
     "rtl-detect": "^1.0.4",
     "semver": "^7.5.4",
     "windows-focus-assist": "^1.3.0",
-    "windows-notification-state": "^2.0.0"
+    "windows-quiet-hours": "^2.0.0"
   }
 }
