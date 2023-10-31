@@ -23,6 +23,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18.17.1'
+    - run: python3 -m pip install packaging
     - run: npm install npm@9 -g
     - run: npm install
     - run: npx nyc --reporter=lcov npm test
