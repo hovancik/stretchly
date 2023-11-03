@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - start at login for Windows Store version (not sure whether successfuly)
 
 ### Added
+- new end-of-the-break sound
 - both left and right click on tray opens menu (Windows)
 - double click on tray opens Preferences (Windows)
 - adds Vietnamese translations
