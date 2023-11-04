@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - adds Vietnamese translations
 - reset breaks shortcut (advanced option)
 - skip to the next break shortcut (advanced option)
+- respect Do Not Disturb on Linux distros (KDE, XFCE, GNOME)
 
 ## Changed
 - updated many translations
