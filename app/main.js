@@ -6,7 +6,7 @@ const {
 const path = require('path')
 const i18next = require('i18next')
 const Backend = require('i18next-fs-backend')
-const log = require('electron-log')
+const log = require('electron-log/main')
 const Store = require('electron-store')
 
 process.on('uncaughtException', (err, _) => {
@@ -61,6 +61,7 @@ let currentTrayMenuTemplate = null
 let trayUpdateIntervalObj = null
 
 require('@electron/remote/main').initialize()
+log.initialize({ preload: true })
 
 app.setAppUserModelId('net.hovancik.stretchly')
 

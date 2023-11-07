@@ -4,13 +4,10 @@ const VersionChecker = require('./utils/versionChecker')
 const i18next = remote.require('i18next')
 const semver = require('semver')
 const { shouldShowNotificationTitle } = require('./utils/utils')
-const log = require('electron-log')
-const path = require('path')
-log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData'), 'logs/main.log')
 
 window.onload = (e) => {
   ipcRenderer.on('playSound', (event, file, volume) => {
-    log.info(`Stretchly: playing audio/${file}.wav (volume: ${volume})`)
+    __electronLog.info(`Stretchly: playing audio/${file}.wav (volume: ${volume})`)
     const audio = new Audio(`audio/${file}.wav`)
     audio.volume = volume
     audio.play()
@@ -25,7 +22,7 @@ window.onload = (e) => {
         .then(version => {
           if (version) {
             const cleanVersion = semver.clean(version)
-            log.info(`Stretchly: checking for new version (local: ${oldVersion}, remote: ${cleanVersion})`)
+            __electronLog.info(`Stretchly: checking for new version (local: ${oldVersion}, remote: ${cleanVersion})`)
             if (semver.valid(cleanVersion) && semver.gt(cleanVersion, oldVersion)) {
               remote.getGlobal('shared').isNewVersion = true
               ipcRenderer.send('update-tray')
@@ -34,10 +31,10 @@ window.onload = (e) => {
               }
             }
           } else {
-            log.info('Stretchly: could not check for new version')
+            __electronLog.info('Stretchly: could not check for new version')
           }
         })
-        .catch(exception => log.error(exception))
+        .catch(exception => __electronLog.error(exception))
     }
   })
 

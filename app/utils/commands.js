@@ -1,5 +1,5 @@
 const { UntilMorning } = require('./untilMorning')
-const log = require('electron-log')
+const log = require('electron-log/main')
 
 const allOptions = {
   title: {
