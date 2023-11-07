@@ -1,6 +1,6 @@
 const { DateTime } = require('luxon')
 const MeeusSunMoon = require('meeussunmoon')
-const log = require('electron-log')
+const log = require('electron-log/main')
 
 class UntilMorning {
   constructor (settings) {

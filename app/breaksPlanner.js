@@ -3,7 +3,7 @@ const EventEmitter = require('events')
 const NaturalBreaksManager = require('./utils/naturalBreaksManager')
 const DndManager = require('./utils/dndManager')
 const AppExclusionsManager = require('./utils/appExclusionsManager')
-const log = require('electron-log')
+const log = require('electron-log/main')
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {

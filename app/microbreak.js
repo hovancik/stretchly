@@ -4,9 +4,6 @@ const Utils = remote.require('./utils/utils')
 const HtmlTranslate = require('./utils/htmlTranslate')
 const Store = require('electron-store')
 const settings = new Store()
-const log = require('electron-log')
-const path = require('path')
-log.transports.file.resolvePath = () => path.join(remote.app.getPath('userData'), 'logs/main.log')
 
 window.onload = (e) => {
   ipcRenderer.send('send-microbreak-data')

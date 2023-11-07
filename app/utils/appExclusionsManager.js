@@ -1,5 +1,5 @@
 const EventEmitter = require('events')
-const log = require('electron-log')
+const log = require('electron-log/main')
 const psList = require('ps-list')
 
 class AppExclusionsManager extends EventEmitter {
