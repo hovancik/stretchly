@@ -170,7 +170,9 @@
     "showCurrentTimeInBreaks": "Zeige die aktuelle Uhrzeit im Pausenfenster",
     "timeToBreakInTray": "Zeit bis zur Pause",
     "showTimeToBreakInTray": "Zeige Zeit bis zur nächsten Pause im Taskleistensymbol",
-    "currentTimeInBreaks": "Aktuelle Uhrzeit"
+    "currentTimeInBreaks": "Aktuelle Uhrzeit",
+    "showTrayIcon": "Menüleistensymbol anzeigen",
+    "toShowTrayIcon": "Stretchly-Symbol in Menüleiste anzeigen"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -323,6 +325,15 @@
     },
     "abi": {
       "text": "Sitze aufrecht, die Arme hängen seitlich herab. Drehe nun langsam den Kopf in einem großen Bogen in eine Richtung."
+    },
+    "abn": {
+      "text": "Stehe auf und setze einen Fuß auf einen Gegenstand, etwa einen Stuhl oder einen Hocker. Halte dein Knie angewinkelt und halte die Position für 10-15 Sekunden. Wiederhole mit dem anderen Fuß."
+    },
+    "abo": {
+      "text": "Stell dich hin mit einer Schulterbreite Abstand zwischen deinen Füßen, senke deinen Körper langsam herab, als würdest du dich in einen Stuhl setzen, und stell dich wieder aufrecht hin. Wiederhole mehrmals."
+    },
+    "abm": {
+      "text": "Setze dich auf die Kante deines Stuhls, drehe deinen Oberkörper in eine Richtung und halte für 10-15 Sekunden ein. Wiederhole mit der anderen Richtung."
     }
   },
   "longBreakIdeas": {
