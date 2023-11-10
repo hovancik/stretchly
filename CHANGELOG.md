@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - start at login for Windows Store version (not sure whether successfuly)
+- tmp node issues on Windows
 
 ### Added
 - new end-of-the-break sound
