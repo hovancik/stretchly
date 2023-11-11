@@ -5,9 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Fixed
-- start at login for Windows Store version (not sure whether successfuly)
 
+## [1.15.0] - 2023-11-11
 ### Added
 - new end-of-the-break sound
 - both left and right click on tray opens menu (Windows)
@@ -19,6 +18,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Changed
 - updated many translations
+
+### Fixed
+- improve Do Not Disturb detection
+- start at login for Windows Store version (not sure whether successfully)
 
 ## [1.14.1] - 2023-06-04
 ### Added
@@ -728,7 +731,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.14.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.15.0...HEAD
+[1.15.0]: https://github.com/hovancik/stretchly/compare/v1.14.1...v1.15.0
 [1.14.1]: https://github.com/hovancik/stretchly/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/hovancik/stretchly/compare/v1.13.1...v1.14.0
 [1.13.1]: https://github.com/hovancik/stretchly/compare/v1.13.0...v1.13.1

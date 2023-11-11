@@ -11,13 +11,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
     - uses: actions/setup-node@v3
       with:
         node-version: '18.17.1'
-    - run: npm install -g npm
+    - run: npm install -g npm@9
     - run: npm install
     - run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:

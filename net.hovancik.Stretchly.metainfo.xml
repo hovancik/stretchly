@@ -36,6 +36,29 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.15.0" date="2023-11-11">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new end-of-the-break sound</li>
+          <li>both left and right click on tray opens menu (Windows)</li>
+          <li>double click on tray opens Preferences (Windows)</li>
+          <li>Vietnamese translations</li>
+          <li>reset breaks shortcut (advanced option)</li>
+          <li>skip to the next break shortcut (advanced option)</li>
+          <li>respect Do Not Disturb on Linux distros (KDE, XFCE, GNOME)</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>improve Do Not Disturb detection</li>
+          <li>start at login for Windows Store version (not sure whether successfuly)</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.14.1" date="2023-06-04">
       <description>
         <p>Added</p>
