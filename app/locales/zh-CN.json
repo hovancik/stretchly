@@ -87,7 +87,8 @@
       "colour": "彩色",
       "monochrome": "单色",
       "invertedMonochrome": "反转单色",
-      "snowWhite": "纯白雪花"
+      "snowWhite": "纯白雪花",
+      "reverie": "白日梦"
     },
     "about": {
       "tagline": "休息提醒应用",
