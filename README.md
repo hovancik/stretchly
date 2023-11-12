@@ -531,7 +531,7 @@ Sounds used in this application are listed [here](http://freesound.org/people/ho
 - `wind chime` by [GnoteSoundz](http://freesound.org/people/GnoteSoundz/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
 - `tic toc` by [magundah14](http://freesound.org/people/magundah14/), available under the [Creative Commons 0 License](http://creativecommons.org/publicdomain/zero/1.0/).
 - `silence` by [parcodeisuoni](http://freesound.org/people/parcodeisuoni/), available under the [Attribution License](http://creativecommons.org/licenses/by/3.0/).
-- `reverie` by Seemant Chandra
+- `reverie` by Seemant Chandra (instagram: piyush.x_x)
 
 #### Fonts credits
 This app uses [Noto Sans](https://fonts.google.com/specimen/Noto+Sans) fonts licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
