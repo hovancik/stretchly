@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- improve DND monitoring memory usage
+
 ## [1.15.0] - 2023-11-11
 ### Added
 - new end-of-the-break sound

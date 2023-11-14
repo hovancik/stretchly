@@ -12,6 +12,24 @@ jobs:
       fail-fast: false
 
     steps:
+    - name: Setup DBUS environment
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        export DISPLAY=:0
+        sudo apt install dbus-x11
+        machineId=$(cat /var/lib/dbus/machine-id)
+        mkdir -p /home/runner/.dbus
+        mkdir -p /home/runner/.dbus/session-bus/
+        touch /home/runner/.dbus/session-bus/${machineId}-0
+        sudo dbus-launch --exit-with-session
+        sleep 5 # Wait for the DBUS session to start
+        echo $DBUS_SESSION_BUS_ADDRESS
+        eval `dbus-launch --sh-syntax`
+        address=$(echo $DBUS_SESSION_BUS_ADDRESS)
+        echo "DBUS_SESSION_BUS_ADDRESS=${address}" > /home/runner/.dbus/session-bus/${machineId}-0
+    - name: Check for file
+      if: matrix.os == 'ubuntu-latest'
+      run: cat /home/runner/.dbus/session-bus/$(cat /var/lib/dbus/machine-id)-0
     - name: Set Timezone
       uses: szenius/set-timezone@v1.1
       with:
@@ -28,8 +46,12 @@ jobs:
         node-version: '18.17.1'
     - run: npm install npm@9 -g
     - run: npm install
+    - name: Install missing usocket
+      if: matrix.os == 'ubuntu-latest'
+      run: npm install usocket
     - run: npx nyc --reporter=lcov npm test
       env:
         CI: true
+        DISPLAY: ':0'
     - name: Codecov
       uses: codecov/codecov-action@v3
