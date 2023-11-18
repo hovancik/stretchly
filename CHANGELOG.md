@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - improve DND monitoring memory usage
 
+### Changed
+- hide autostart option for Windows Store build as it doesn't work
+
 ## [1.15.0] - 2023-11-11
 ### Added
 - new end-of-the-break sound
