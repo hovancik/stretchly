@@ -8,6 +8,17 @@ class DndManager extends EventEmitter {
     this.monitorDnd = settings.get('monitorDnd')
     this.timer = null
     this.isOnDnd = false
+
+    if (process.platform === 'win32') {
+      this.windowsFocusAssist = require('windows-focus-assist')
+      this.windowsQuietHours = require('windows-quiet-hours')
+    } else if (process.platform === 'darwin') {
+      this.macosNotificationState = require('macos-notification-state')
+    } else if (process.platform === 'linux') {
+      this.bus = require('dbus-final').sessionBus()
+      this.util = require('node:util')
+    }
+
     if (this.monitorDnd) {
       this.start()
     }
@@ -31,10 +42,8 @@ class DndManager extends EventEmitter {
   }
 
   async _isDndEnabledLinux () {
-    const dbus = require('dbus-final')
-    const bus = dbus.sessionBus()
     try {
-      const obj = await bus.getProxyObject('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
+      const obj = await this.bus.getProxyObject('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
       const properties = obj.getInterface('org.freedesktop.DBus.Properties')
       const dndEnabled = await properties.Get('org.freedesktop.Notifications', 'Inhibited')
       if (await dndEnabled.value) {
@@ -45,7 +54,7 @@ class DndManager extends EventEmitter {
     }
 
     try {
-      const obj = await bus.getProxyObject('org.xfce.Xfconf', '/org/xfce/Xfconf')
+      const obj = await this.bus.getProxyObject('org.xfce.Xfconf', '/org/xfce/Xfconf')
       const properties = obj.getInterface('org.xfce.Xfconf')
       const dndEnabled = await properties.GetProperty('xfce4-notifyd', '/do-not-disturb')
       if (await dndEnabled.value) {
@@ -56,8 +65,7 @@ class DndManager extends EventEmitter {
     }
 
     try {
-      const util = require('node:util')
-      const exec = util.promisify(require('node:child_process').exec)
+      const exec = this.util.promisify(require('node:child_process').exec)
       const { stdout } = await exec('gsettings get org.gnome.desktop.notifications show-banners')
       if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
         return true
@@ -75,12 +83,12 @@ class DndManager extends EventEmitter {
       if (process.platform === 'win32') {
         let wfa = 0
         try {
-          wfa = require('windows-focus-assist').getFocusAssist().value
+          wfa = this.windowsFocusAssist.getFocusAssist().value
         } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
-        const wqh = require('windows-quiet-hours').getIsQuietHours()
+        const wqh = this.windowsQuietHours.getIsQuietHours()
         return wqh || (wfa !== -1 && wfa !== 0)
       } else if (process.platform === 'darwin') {
-        return require('macos-notification-state').getDoNotDisturb()
+        return this.macosNotificationState.getDoNotDisturb()
       } else if (process.platform === 'linux') {
         return await this._isDndEnabledLinux()
       }
