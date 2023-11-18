@@ -156,7 +156,8 @@ body {
 .darwin .darwin-hidden,
 .linux .linux-hidden,
 .freebsd .linux-hidden,
-.openbsd .linux-hidden {
+.openbsd .linux-hidden,
+.store .store-hidden {
   display: none;
 }
 
