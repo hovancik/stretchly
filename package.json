@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "1.15.0",
+  "version": "1.15.1",
   "description": "The break time reminder app",
   "main": "app/main.js",
   "engines": {
@@ -132,7 +132,7 @@
     "chai": "^4.3.10",
     "chai-as-promised": "^7.1.1",
     "cross-env": "^7.0.3",
-    "electron": "^27.0.3",
+    "electron": "^27.1.0",
     "electron-builder": "^24.6.4",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
@@ -142,14 +142,14 @@
     "standard": "^17.1.0"
   },
   "dependencies": {
-    "@electron/remote": "^2.0.12",
+    "@electron/remote": "^2.1.0",
     "dbus-final": "github:Jelmerro/dbus-final",
     "electron-log": "^5.0.0",
     "electron-store": "^8.1.0",
-    "humanize-duration": "^3.30.0",
-    "i18next": "^23.6.0",
-    "i18next-fs-backend": "^2.2.0",
-    "luxon": "^3.4.3",
+    "humanize-duration": "^3.31.0",
+    "i18next": "^23.7.6",
+    "i18next-fs-backend": "^2.3.0",
+    "luxon": "^3.4.4",
     "macos-notification-state": "^3.0.0",
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2.0",

@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.15.1] - 2023-11-19
 ### Fixed
 - improve DND monitoring memory usage
 
@@ -737,7 +738,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.15.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.15.1...HEAD
+[1.15.1]: https://github.com/hovancik/stretchly/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/hovancik/stretchly/compare/v1.14.1...v1.15.0
 [1.14.1]: https://github.com/hovancik/stretchly/compare/v1.14.0...v1.14.1
 [1.14.0]: https://github.com/hovancik/stretchly/compare/v1.13.1...v1.14.0

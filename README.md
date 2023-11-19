@@ -420,6 +420,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ## Known issues
 - idle time detection doesn't work on Wayland ([electron/electron#27912](https://github.com/electron/electron/issues/27912))
+- Windows Store build's autorstart is not working, so was disabled. You need to do it [manually](https://www.lifewire.com/change-startup-programs-windows-11-6823499).
 
 ### MacOS
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
