@@ -7,8 +7,8 @@
     "node": "18.17.1"
   },
   "scripts": {
-    "start": "electron ./app",
-    "dev": "cross-env NODE_ENV=development electron ./app --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
     "dist": "electron-builder build --x64 --ia32",
