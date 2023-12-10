@@ -21,11 +21,14 @@
     "restoreDefaults": "설정 초기화",
     "warning": "모든 설정을 기본값으로 초기화 합니다.",
     "continue": "계속",
-    "cancel": "취소"
+    "cancel": "취소",
+    "syncPreferences": "동기화 환경설정",
+    "contributorPreferences": "기여자 환경설정"
   },
   "break": {
     "title": "쉬는 시간이에요!",
-    "skip": "쉬는 시간 건너뛰기"
+    "skip": "쉬는 시간 건너뛰기",
+    "postpone": "이 휴식 시간 미루기"
   },
   "preferences": {
     "theme": {
