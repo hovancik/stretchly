@@ -1,0 +1,100 @@
+{
+  "main": {
+    "skipToTheNext": "Прапусціць да наступнага",
+    "downloadLatestVersion": "Спампаваць найноўшую версію",
+    "for5Hours": "5 гадзін",
+    "toBreak": "Доўгі перапынак",
+    "restoreDefaults": "Аднавіць прадвызначаныя налады",
+    "for2Hours": "2 гадзіны",
+    "preferences": "Параметры",
+    "pause": "Прыпыніць перапынкі",
+    "continue": "Працягнуць",
+    "forHour": "1 гадзіна",
+    "indefinitely": "Бясконца",
+    "warning": "Гэта адновіць прадвызначаныя налады і усе вашыя бягучыя налады будуць страчаныя.",
+    "untilMorning": "Да раніцы",
+    "resume": "Узнавіць перапынкі",
+    "cancel": "Скасаваць",
+    "toMicrobreak": "Кароткі перапынак",
+    "quitStretchly": "Выйсьці з Stretchly",
+    "toolTipHeader": "Stretchly - Праграма напамінаў пра перапынак",
+    "breakIn": "Доўгі перапынак праз $t(utils.seconds, {'count': {{seconds}} })",
+    "resetBreaks": "Перазагрузіць перапынкі",
+    "resumingBreaks": "Аднаўленне перапынкаў",
+    "microbreakIn": "Кароткі Перапынак праз $t(utils.seconds, {'count': {{seconds}} })",
+    "syncPreferences": "Сінхранізацыя параметраў",
+    "contributorPreferences": "Параметры суаўтара"
+  },
+  "break": {
+    "skip": "Прапусціць гэты перапынак",
+    "postpone": "Адкласці гэты перапынак",
+    "title": "Час зрабіць перапынак!"
+  },
+  "preferences": {
+    "theme": {
+      "transparentMode": "Уключыць празрыстасць",
+      "windChime": "Перазвон ветру",
+      "enableSounds": "Уключыць гукі",
+      "sounds": "Гукі:",
+      "menubarIcon": "Значок панелі меню:",
+      "invertedMonochrome": "Інвертаваны аднатонны",
+      "crystalGlass": "Крыштальнае шкло",
+      "coffeeKisses": "Кававыя пацалункі",
+      "ticToc": "Цік-ток",
+      "autumnBeBlessed": "Бласлаўлёная восень",
+      "morningSwim": "Ранішні заплыў",
+      "monochrome": "Аднатонны",
+      "appearance": "Выгляд праграмы",
+      "reverie": "Летуценнасць",
+      "colour": "Каляровы",
+      "greenClouds": "Зялёныя аблокі",
+      "snowWhite": "Беласнежны",
+      "graphiteCrystal": "Крышталь з графіту"
+    },
+    "schedule": {
+      "longBreaks": "Доўгія перапынкі:",
+      "enableLongBreaks": "Уключыць доўгія перапынкі",
+      "strictMode": "Строгі рэжым:",
+      "enablePostponeMini": "Дазволіць адтэрміноўку кароткіх перапынкаў",
+      "enableStrictMini": "Уключыць строгі рэжым для кароткіх перапынкаў",
+      "enableStrictLong": "Уключыць строгі рэжым для доўгіх перапынкаў",
+      "cantDisableBoth": "Немагчыма выключыць абодва тыпы перапынкаў",
+      "miniBreaksInfo": "Кароткія перапынкі гэта рэгулярныя перапынкі каб пацягнуцца і расслабіцца",
+      "breakFor": "Працягласць:",
+      "miniBreaks": "Кароткія перапынкі:",
+      "longBreaksInfo": "Доўгія перапынкі менш рэгулярныя, але падоўжаныя ў часе, што дазваляе больш адпачыць ад працы.",
+      "every": "Кожныя:",
+      "showNotificationBeforeMiniBreak": "Паказваць апавяшчэнне перад пачаткам кароткага перапынку",
+      "strictModeInfo": "Строгі рэжым не дазваляе прапускаць кароткія або доўгія перапынкі і гартуе дысцыпліну.",
+      "showNotificationBeforeLongBreak": "Паказваць апавяшчэнне перад пачаткам доўгага перапынку",
+      "enablePostponeLong": "Дазволіць адтэрміноўку доўгіх перапынкаў",
+      "enableMiniBreaks": "Уключыць кароткія перапынкі"
+    },
+    "title": "Параметры Stretchly",
+    "settings": {
+      "language": "Выбраць мову:",
+      "window": "Акне",
+      "monitorDnd": "Паказваць перапынкі нават у рэжыме \"Не турбаваць\"",
+      "allScreens": "Паказваць перапынкі на ўсіх маніторах",
+      "restoreDefaults": "Аднавіць прадвызначаныя налады праграмы",
+      "monitorIdleTime": "Сачыць за прастоем сістэмы (перапынкі прыпыняюцца калі сістэма прастойвае)",
+      "openAtLogin": "Аўтаматычна запусціць Stretchly пры ўваходзе ў сістэму",
+      "showIdeas": "Паказваць парады пра практыкаванні падчас перапынкаў",
+      "fullscreen": "На ўвесь экран",
+      "showBreaksIn": "Паказваць перапынкі ў:"
+    },
+    "nav": {
+      "theme": "Тэма",
+      "schedule": "Расклад",
+      "heart": "Падтрымаць Stretchly",
+      "settings": "Налады",
+      "about": "Аб праграме"
+    },
+    "about": {
+      "tagline": "Праграма напамінаў пра перапынак",
+      "checkNewVersion": "Аўтаматычна правяраць абнаўленні праграмы",
+      "version": "Версія ",
+      "latestVersion": "Найноўшая версія "
+    }
+  }
+}
