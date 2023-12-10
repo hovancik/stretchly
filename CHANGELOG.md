@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added 
+- Estonia and Belarus translations
+
+### Changed
+- updated many translations 
 
 ## [1.15.1] - 2023-11-19
 ### Fixed
