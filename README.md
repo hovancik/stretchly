@@ -22,17 +22,17 @@
 
 ## Install [![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total)](https://github.com/hovancik/stretchly/releases) [![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
 
-The latest official **installers** and **portable versions** for macOS, Windows and Linux can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page.
+The latest official **installers** and **portable versions** for macOS, Windows and Linux can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page. For supported versions of your OS check [Electron's supported versions](https://github.com/electron/electron/blob/main/README.md#platform-support). Read on for details of specific OSes.
 
 ### macOS
 
-You can also install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`. When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
+It is recommended to install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`, see [Application Signing](#application-signing). When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
 
 If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.raycast.com/) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) or [Raycast Extension](https://www.raycast.com/u-ran/stretchly) to interact with Stretchly.
 
 #### Application Signing
 
-*Stretchly* is not signed (due to its costs) so you will need to use a workaround for the first run. The workaround
+*Stretchly* is not signed (due to its costs and me not owning supported Apple device) so you will need to use a workaround for the first run. The workaround
 depends on if you're running an Intel or Apple Silicon chip.
 
 - **Intel Chips**: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
@@ -70,7 +70,7 @@ Stretchly is also available in some of the Linux stores:
 - [Flathub](https://flathub.org/apps/details/net.hovancik.Stretchly)
 - [Snap Store](https://snapcraft.io/stretchly)
 
-For Debian/Ubuntu and derivates you could also try this `apt` repositury: `deb [trusted=yes] https://apt.fury.io/hovancik/ /`.
+For Debian/Ubuntu and derivates you could also try this `apt` repository: `deb [trusted=yes] https://apt.fury.io/hovancik/ /`.
 
 #### Linux note
 
