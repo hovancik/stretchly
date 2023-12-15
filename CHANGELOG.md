@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - updated many translations 
 
+### Fixed
+- transparency issues on Windows 10
+
 ## [1.15.1] - 2023-11-19
 ### Fixed
 - improve DND monitoring memory usage

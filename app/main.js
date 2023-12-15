@@ -736,11 +736,12 @@ function startMicrobreak () {
       frame: showBreaksAsRegularWindows,
       show: false,
       backgroundThrottling: false,
-      transparent: settings.get('transparentMode'),
+      transparent: true,
       backgroundColor: calculateBackgroundColor(settings.get('miniBreakColor')),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
+      hasShadow: false,
       title: 'Stretchly',
       webPreferences: {
         preload: path.join(__dirname, './microbreak.js'),
@@ -762,6 +763,7 @@ function startMicrobreak () {
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    
     ipcMain.on('send-microbreak-data', (event) => {
       const startTime = Date.now()
       if (!strictMode || postponable) {
@@ -877,11 +879,12 @@ function startBreak () {
       frame: showBreaksAsRegularWindows,
       show: false,
       backgroundThrottling: false,
-      transparent: settings.get('transparentMode'),
+      transparent: true,
       backgroundColor: calculateBackgroundColor(settings.get('mainColor')),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
+      hasShadow: false,
       title: 'Stretchly',
       webPreferences: {
         preload: path.join(__dirname, './break.js'),
@@ -1080,7 +1083,11 @@ function resetBreaks () {
 }
 
 function calculateBackgroundColor (color) {
-  return color + Math.round(settings.get('opacity') * 255).toString(16)
+  let opacityMultiplier = 1;
+  if (settings.get('transparentMode')) {
+    opacityMultiplier = settings.get('opacity');
+  }
+  return color + Math.round(opacityMultiplier * 255).toString(16)
 }
 
 function loadIdeas () {
