@@ -763,7 +763,7 @@ function startMicrobreak () {
     let microbreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
-    
+
     ipcMain.on('send-microbreak-data', (event) => {
       const startTime = Date.now()
       if (!strictMode || postponable) {
@@ -1083,9 +1083,9 @@ function resetBreaks () {
 }
 
 function calculateBackgroundColor (color) {
-  let opacityMultiplier = 1;
+  let opacityMultiplier = 1
   if (settings.get('transparentMode')) {
-    opacityMultiplier = settings.get('opacity');
+    opacityMultiplier = settings.get('opacity')
   }
   return color + Math.round(opacityMultiplier * 255).toString(16)
 }

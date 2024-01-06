@@ -23,7 +23,7 @@ jobs:
         python-version: '3.11'
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.17.1'
+        node-version: '18.18.2'
     - run: npm install npm@9 -g
     - run: npm install
     - run: node_modules/.bin/electron-builder build
