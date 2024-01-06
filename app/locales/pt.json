@@ -119,7 +119,9 @@
     "1": "Segundo monitor",
     "showCurrentTimeInBreaks": "Mostrar a hora local atual na janela de pausa",
     "timeToBreakInTray": "Tempo para pausar",
-    "showTimeToBreakInTray": "Mostrar tempo para a próxima pausa no ícone da barra de menu"
+    "showTimeToBreakInTray": "Mostrar tempo para a próxima pausa no ícone da barra de menu",
+    "showTrayIcon": "Mostrar ícone da barra de menu",
+    "toShowTrayIcon": "Mostrar ícone do Stretchly na barra de menu"
   },
   "preferences": {
     "heart": {
@@ -161,7 +163,8 @@
       "graphiteCrystal": "Cristal de Grafite",
       "autumnBeBlessed": "Cores do Outono",
       "greenClouds": "Nuvens verdes",
-      "appearance": "Aparência:"
+      "appearance": "Aparência:",
+      "reverie": "Devaneio"
     },
     "schedule": {
       "cantDisableBoth": "Não é possível desativar ambos os tipos de pausas",
@@ -336,7 +339,7 @@
       "text": "Fique em pé com os pés afastados na largura dos ombros, abaixe o corpo como se estivesse sentado numa cadeira e, em seguida, levante-se. Repita várias vezes."
     },
     "abp": {
-      "text": "Fique em pé com as costas e as mãos apoiadas na parede e mova lentamente os braços para cima e para baixo, como se estivesse fazendo anjos de neve."
+      "text": "Fique em pé com as costas e as mãos apoiadas na parede e mova lentamente os braços para cima e para baixo, como se estivesse a fazer anjos de neve."
     },
     "abq": {
       "text": "Fique de frente para uma parede e ponha as mãos sobre ela, depois faça várias flexões."

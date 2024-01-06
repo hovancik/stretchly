@@ -87,7 +87,8 @@
       "colour": "Farbig",
       "monochrome": "Einfarbig",
       "invertedMonochrome": "Einfarbig invertiert",
-      "snowWhite": "Schneeweiß"
+      "snowWhite": "Schneeweiß",
+      "reverie": "Tagträumerei"
     },
     "about": {
       "tagline": "Die Pausen-Erinnerungs-App",
@@ -334,6 +335,36 @@
     },
     "abm": {
       "text": "Setze dich auf die Kante deines Stuhls, drehe deinen Oberkörper in eine Richtung und halte für 10-15 Sekunden ein. Wiederhole mit der anderen Richtung."
+    },
+    "abs": {
+      "text": "Stehen Sie einer Wand zugewandt, stellen Sie einen Fuß zurück und den anderen Fuß nach vorne, dann lehnen Sie sich an die Wand. Wiederholen Sie mit dem anderen Bein."
+    },
+    "abt": {
+      "text": "Halten Sie einen Arm gerade nach oben, dann drücken Sie mit dem anderen Arm sanft den Ellbogen des ersten Arms Richtung Ihres Kopfes. 10-15 Sekunden halten. Wiederholen mit dem anderen Arm."
+    },
+    "abu": {
+      "text": "Kippen Sie Ihren Kopf auf eine Seite, dann auf die andere Seite und dann sanft nach vorne und nach hinten."
+    },
+    "abp": {
+      "text": "Stehen Sie mit dem Rücken und den Händen an der Wand, dann bewegen Sie langsam Ihre Arme nach oben und unten, als ob Sie Schneeengel machen."
+    },
+    "abw": {
+      "text": "Stehen Sie auf, stellen Sie einen Fuß auf ein nahe gelegenes Objekt, wie einen Stuhl oder Hocker, und bewegen Sie den Oberkörper nach unten, um Ihre Zehen zu berühren. Wiederholen Sie mit dem anderen Bein."
+    },
+    "abq": {
+      "text": "Stehen Sie einer Wand gegenüber und legen Sie Ihre Hände auf sie, dann machen Sie mehrere Liegestütze."
+    },
+    "abv": {
+      "text": "Halten Sie einen Arm über die Brust, halten Sie den Ellbogen mit der anderen Hand und ziehen Sie ihn sanft in Richtung Ihrer Brust. Wiederholen mit dem anderen Arm."
+    },
+    "aby": {
+      "text": "Setzen Sie sich auf die Kante eines Stuhls oder auf den Boden und stellen Sie die Sohlen Ihrer Füße zusammen, drücken Sie sanft mit Ihren Ellbogen herunter, um Ihre inneren Schenkel zu strecken."
+    },
+    "abx": {
+      "text": "Stehen Sie in einer Türöffnung und halten Sie je einen Arm auf jeder Seite der Öffnung, dann lehnen Sie sich sanft nach vorne, bis Sie eine Dehnung in der Brust fühlen."
+    },
+    "abr": {
+      "text": "Setzen Sie sich auf die Kante Ihres Stuhls und strecken Sie ein Bein von sich, für 10-15 Sekunden halten. Wiederholen Sie mit dem anderen Bein."
     }
   },
   "longBreakIdeas": {
@@ -472,6 +503,10 @@
     "abb": {
       "text": "Die Natur steht in Verbindung mit positiven Emotionen und dem Abbau von Stress und Ängsten. Wann immer es möglich ist, solltest du deine Mittagspause im Freien verbringen, umgeben von Grün.",
       "title": "Mittagessen im Freien"
+    },
+    "abi": {
+      "title": "Imaginäre Visualisierung",
+      "text": "Schließen Sie die Augen und stellen Sie sich einen ruhigen Ort vor, wie einen Strand oder einen Wald. Konzentrieren Sie sich auf die Aussicht, Geräusche und Empfindungen dieser Umgebung."
     }
   }
 }
