@@ -26,16 +26,17 @@ The latest official **installers** and **portable versions** for macOS, Windows 
 
 ### macOS
 
-It is recommended to install *Stretchly* with [Homebrew](https://brew.sh/) by running:
+It is recommended to install *Stretchly* with [Homebrew](https://brew.sh/) by running the folowing command.
+See [Application Signing](#application-signing).
 ```zsh
 brew update && brew install --cask stretchly
 ```
-See [Application Signing](#application-signing). 
-When upgrading, run:
+
+When upgrading, run the following command.
+Don't forget to Quit Stretchly, first.
 ```zsh
 brew update && brew upgrade --cask
 ```
-Don't forget to Quit Stretchly, first.
 
 If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.raycast.com/) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) or [Raycast Extension](https://www.raycast.com/u-ran/stretchly) to interact with Stretchly.
 
@@ -62,13 +63,14 @@ Not sure which chip your computer has? [Here's how to tell](https://support.appl
 
 ### Windows
 
-You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: 
+You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell:
 ```powershell
 choco install stretchly
 ```
+
 To update:
 ```powershell
-choco upgrade stretchly 
+choco upgrade stretchly
 ```
 
 Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
@@ -79,7 +81,7 @@ winget install -e --id Stretchly.Stretchly
 
 Stretchly can be also found at official [Microsoft Store](https://apps.microsoft.com/store/detail/stretchly/9PP2B76LQQBN?hl=en-us&gl=us).
 
-You can install *Stretchly* for all users silently by running this as administrator: 
+You can install *Stretchly* for all users silently by running this as administrator:
 ```cmd
 installer.exe /S /allusers
 ```
