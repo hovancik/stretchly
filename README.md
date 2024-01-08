@@ -26,7 +26,17 @@ The latest official **installers** and **portable versions** for macOS, Windows 
 
 ### macOS
 
-It is recommended to install *Stretchly* with [Homebrew](https://brew.sh/) by running `brew update && brew install --cask stretchly`, see [Application Signing](#application-signing). When upgrading, run `brew update && brew upgrade --cask`. Don't forget to Quit Stretchly, first.
+It is recommended to install *Stretchly* with [Homebrew](https://brew.sh/) by running the folowing command.
+See [Application Signing](#application-signing).
+```zsh
+brew update && brew install --cask stretchly
+```
+
+When upgrading, run the following command.
+Don't forget to Quit Stretchly, first.
+```zsh
+brew update && brew upgrade --cask
+```
 
 If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.raycast.com/) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) or [Raycast Extension](https://www.raycast.com/u-ran/stretchly) to interact with Stretchly.
 
@@ -39,7 +49,7 @@ depends on if you're running an Intel or Apple Silicon chip.
 - **Apple Chips**: Open a terminal and run this command:
 
 ```bash
-    sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
+sudo xattr -r -d com.apple.quarantine /Applications/Stretchly.app
 ```
 
 If you install via [Homebrew](https://brew.sh), you can use the `--no-quarantine` flag to automatically apply the correct
@@ -53,14 +63,28 @@ Not sure which chip your computer has? [Here's how to tell](https://support.appl
 
 ### Windows
 
-You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell: `choco install stretchly`. Upgrade with `choco upgrade stretchly`.
+You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell:
+```powershell
+choco install stretchly
+```
+
+To update:
+```powershell
+choco upgrade stretchly
+```
 
 Stretchly is also available in Microsoft's [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/).
-You can install it by running `winget install -e --id Stretchly.Stretchly`.
+You can install it by running:
+```powershell
+winget install -e --id Stretchly.Stretchly
+```
 
 Stretchly can be also found at official [Microsoft Store](https://apps.microsoft.com/store/detail/stretchly/9PP2B76LQQBN?hl=en-us&gl=us).
 
-You can install *Stretchly* for all users silently by running this as administrator: `installer.exe /S /allusers`.
+You can install *Stretchly* for all users silently by running this as administrator:
+```cmd
+installer.exe /S /allusers
+```
 
 ### Linux / Portable
 
@@ -78,7 +102,11 @@ Please see [http://electron.atom.io/docs/api/tray/](http://electron.atom.io/docs
 
 For Natural breaks, you might need some packages too (`libxss-dev`).
 
-If *Stretchly* is not starting, you might need to run `sudo sysctl kernel.unprivileged_userns_clone=1`. Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the preferences are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
+If *Stretchly* is not starting, you might need to run:
+```sh
+sudo sysctl kernel.unprivileged_userns_clone=1
+```
+Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the preferences are kept after reboot: Add `kernel.unprivileged_userns_clone=1` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
 ### Running from source
 
