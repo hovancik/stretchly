@@ -185,6 +185,15 @@ window.onload = (e) => {
       document.querySelector('#language').onchange = (event) => {
         ipcRenderer.send('save-setting', 'language', event.target.value)
         htmlTranslate.translate()
+        document.querySelectorAll('input[type="range"]').forEach(range => {
+          const divisor = range.dataset.divisor
+          const output = range.closest('div').querySelector('output')
+          range.value = settings[range.name] / divisor
+          const unit = output.dataset.unit
+          output.innerHTML = formatUnitAndValue(unit, range.value)
+          document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+            .innerHTML = i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+        })
         setWindowHeight()
       }
     }
