@@ -7,66 +7,66 @@ chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
 describe('dndManager', function () {
-  this.timeout(timeout)
+  globalThis.vi.setConfig({ testTimeout: timeout })
   let settings = null
   let dndManager = null
 
   beforeEach(() => {
     settings = new Store({
       cwd: path.join(__dirname),
-      name: 'test-settings',
+      name: 'test-settings-dndManager',
       defaults: require('../app/utils/defaultSettings')
     })
     dndManager = new DndManager(settings)
   })
 
-  it('should be running with default settings', (done) => {
+  it('should be running with default settings', () => new Promise((resolve) => {
     dndManager.isOnDnd.should.be.equal(false)
     dndManager.monitorDnd.should.be.equal(true)
-    done()
-  })
+    resolve()
+  }))
 
-  it('should not be running with monitorDnd: false', (done) => {
+  it('should not be running with monitorDnd: false', () => new Promise((resolve) => {
     settings.set('monitorDnd', false)
     dndManager.stop()
     dndManager = null
     dndManager = new DndManager(settings)
     dndManager.isOnDnd.should.be.equal(false)
     dndManager.monitorDnd.should.be.equal(false)
-    done()
-  })
+    resolve()
+  }))
 
-  it('should be running with monitorDnd: true', (done) => {
+  it('should be running with monitorDnd: true', () => new Promise((resolve) => {
     settings.set('monitorDnd', true)
     dndManager.stop()
     dndManager = null
     dndManager = new DndManager(settings)
     dndManager.isOnDnd.should.be.equal(false)
     dndManager.monitorDnd.should.be.equal(true)
-    done()
-  })
+    resolve()
+  }))
 
-  it('should start when start()', (done) => {
+  it('should start when start()', () => new Promise((resolve) => {
     dndManager.stop()
     dndManager.start()
     dndManager.isOnDnd.should.be.equal(false)
     dndManager.monitorDnd.should.be.equal(true)
-    done()
-  })
+    resolve()
+  }))
 
-  it('should stop when stop()', (done) => {
+  it('should stop when stop()', () => new Promise((resolve) => {
     dndManager.stop()
     dndManager.monitorDnd.should.be.equal(false)
     dndManager.isOnDnd.should.be.equal(false)
-    done()
-  })
+    resolve()
+  }))
 
   afterEach(() => {
     dndManager.stop()
     dndManager = null
 
     if (settings) {
-      require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
+      require('fs').unlink(path.join(__dirname, '/test-settings-dndManager.json'), (_) => {})
       settings = null
     }
   })

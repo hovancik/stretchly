@@ -9,19 +9,19 @@ const timeout = process.env.CI ? 30000 : 10000
 
 describe('UntilMorning', function () {
   let settings
-  this.timeout(timeout)
+  globalThis.vi.setConfig({ testTimeout: timeout })
 
   beforeEach(() => {
     settings = new Store({
       cwd: path.join(__dirname),
-      name: 'test-settings',
+      name: 'test-settings-untilMorning',
       defaults: require('../app/utils/defaultSettings')
     })
   })
 
   afterEach(() => {
     if (settings) {
-      require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
+      require('fs').unlinkSync(path.join(__dirname, '/test-settings-untilMorning.json'))
       settings = null
     }
   })

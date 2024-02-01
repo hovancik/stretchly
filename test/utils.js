@@ -7,29 +7,19 @@ const {
 const i18next = require('i18next')
 const path = require('path')
 const Backend = require('i18next-fs-backend')
-const sinon = require('sinon')
 
 chai.should()
 
 describe('Times formatters', function () {
-  before(function (done) {
-    i18next
-      .use(Backend)
-      .init({
-        lng: 'en',
-        fallbackLng: 'en',
-        debug: true,
-        backend: {
-          loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
-          jsonIndent: 2
-        }
-      }, function (err, t) {
-        if (err) {
-          console.log(err)
-          return done(err)
-        }
-        done()
-      })
+  globalThis.beforeAll(async () => {
+    await i18next.use(Backend).init({
+      lng: 'en',
+      fallbackLng: 'en',
+      backend: {
+        loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
+        jsonIndent: 2
+      }
+    })
   })
 
   it('formats "remaining" milliseconds into correct format', function () {
@@ -70,13 +60,12 @@ describe('Times formatters', function () {
 
 describe('canSkip and canPostpone', () => {
   // stubbing date
-  before(() => {
-    this.sandbox = sinon.createSandbox()
-    this.sandbox.stub(Date, 'now').returns(1537347700000)
+  globalThis.beforeAll(() => {
+    globalThis.vi.setSystemTime(1537347700000)
   })
 
-  after(() => {
-    this.sandbox.restore()
+  globalThis.afterAll(() => {
+    globalThis.vi.useRealTimers()
   })
 
   describe('canSkip', () => {

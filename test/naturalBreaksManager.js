@@ -12,7 +12,7 @@ describe('naturalBreaksManager', function () {
   beforeEach(() => {
     settings = new Store({
       cwd: path.join(__dirname),
-      name: 'test-settings',
+      name: 'test-settings-naturalBreaksManager',
       defaults: require('../app/utils/defaultSettings')
     })
     naturalBreaksManager = new NaturalBreaksManager(settings)
@@ -65,7 +65,7 @@ describe('naturalBreaksManager', function () {
     naturalBreaksManager = null
 
     if (settings) {
-      require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
+      require('fs').unlink(path.join(__dirname, '/test-settings-naturalBreaksManager.json'), (_) => {})
       settings = null
     }
   })
