@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - transparency issues on Windows 10
-- Schedule options not being updated after change of language
+- Schedule and Menu options not being updated after change of language
 - multiple RTL UI issues
 
 ## [1.15.1] - 2023-11-19
