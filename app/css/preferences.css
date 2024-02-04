@@ -256,6 +256,11 @@ body[dir=rtl] .theme > :nth-child(17) {
   padding-left: 15px;
 }
 
+body[dir=rtl] .sounds > img {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
 .about {
   display: grid;
   font-size: 13px;

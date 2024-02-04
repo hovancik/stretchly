@@ -194,6 +194,7 @@ window.onload = (e) => {
           document.querySelector('#longBreakEvery').closest('div').querySelector('output')
             .innerHTML = i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
         })
+        htmlTranslate.translate() // sometimes few texts are not translated, so calling twice
         setWindowHeight()
       }
     }
