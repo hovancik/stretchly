@@ -6,6 +6,9 @@ export default defineConfig({
     pool: "forks",
     include: ['test\/*.?(c|m)[jt]s'],
     coverage: {
+      enabled: true,
+      clean: true,
+      cleanOnRerun: true,
       provider: "istanbul",
       reporter: "lcov"
     }

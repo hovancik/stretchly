@@ -1,22 +1,19 @@
-const chai = require('chai')
-const {
-  formatTimeRemaining, formatTimeIn,
-  canSkip, canPostpone, formatKeyboardShortcut,
-  minutesRemaining, shouldShowNotificationTitle
-} = require('../app/utils/utils')
-const i18next = require('i18next')
-const path = require('path')
-const Backend = require('i18next-fs-backend')
+import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle } from '../app/utils/utils'
+import { beforeAll, afterAll, vi } from 'vitest'
+import chai from 'chai'
+import i18next from 'i18next'
+import { join } from 'path'
+import Backend from 'i18next-fs-backend'
 
 chai.should()
 
 describe('Times formatters', function () {
-  globalThis.beforeAll(async () => {
+  beforeAll(async () => {
     await i18next.use(Backend).init({
       lng: 'en',
       fallbackLng: 'en',
       backend: {
-        loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
+        loadPath: join(__dirname, '/../app/locales/{{lng}}.json'),
         jsonIndent: 2
       }
     })
@@ -60,12 +57,12 @@ describe('Times formatters', function () {
 
 describe('canSkip and canPostpone', () => {
   // stubbing date
-  globalThis.beforeAll(() => {
-    globalThis.vi.setSystemTime(1537347700000)
+  beforeAll(() => {
+    vi.setSystemTime(1537347700000)
   })
 
-  globalThis.afterAll(() => {
-    globalThis.vi.useRealTimers()
+  afterAll(() => {
+    vi.useRealTimers()
   })
 
   describe('canSkip', () => {

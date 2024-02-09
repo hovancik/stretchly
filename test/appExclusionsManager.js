@@ -1,21 +1,25 @@
-const chai = require('chai')
-const path = require('path')
-const AppExclusionsManager = require('../app/utils/appExclusionsManager')
-const Store = require('electron-store')
+import { vi } from 'vitest'
+import chai from 'chai'
+import { join } from 'path'
+import AppExclusionsManager from '../app/utils/appExclusionsManager'
+import Store from 'electron-store'
+import defaultSettings from '../app/utils/defaultSettings'
+import psList from 'ps-list'
+import { unlinkSync } from 'fs'
 
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
 describe('appExclusionsManager', function () {
-  globalThis.vi.setConfig({ testTimeout: timeout })
+  vi.setConfig({ testTimeout: timeout })
   let settings
   let appExclusionsManager
 
   beforeEach(() => {
     settings = new Store({
-      cwd: path.join(__dirname),
+      cwd: join(__dirname),
       name: 'test-settings-appExclusionsManager',
-      defaults: require('../app/utils/defaultSettings')
+      defaults: defaultSettings
     })
     appExclusionsManager = null
   })
@@ -45,7 +49,7 @@ describe('appExclusionsManager', function () {
 
   it('app should take the first active rule', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [
           {
@@ -74,7 +78,7 @@ describe('appExclusionsManager', function () {
 
   it('app should be runnig when no rule is active', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [
           {
@@ -103,7 +107,7 @@ describe('appExclusionsManager', function () {
 
   it('app should be paused with some pause exception active', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [{
           rule: 'pause',
@@ -122,7 +126,7 @@ describe('appExclusionsManager', function () {
 
   it('app should be paused with some pause exception active after reinitialize', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [{
           rule: 'pause',
@@ -158,7 +162,7 @@ describe('appExclusionsManager', function () {
 
   it('app should not paused with some pause exception inactive', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [{
           rule: 'pause',
@@ -177,7 +181,7 @@ describe('appExclusionsManager', function () {
 
   it('app should not be paused with some resume exception active', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [{
           rule: 'resume',
@@ -212,7 +216,7 @@ describe('appExclusionsManager', function () {
 
   it('app should not be paused with some resume exception inactive', () =>
     new Promise((resolve) => {
-      require('ps-list')().then((running) => {
+      psList().then((running) => {
         const runningCmd = running[0].name
         settings.set('appExclusions', [{
           rule: 'resume',
@@ -231,7 +235,7 @@ describe('appExclusionsManager', function () {
 
   afterEach(() => {
     if (settings) {
-      require('fs').unlinkSync(path.join(__dirname, '/test-settings-appExclusionsManager.json'))
+      unlinkSync(join(__dirname, '/test-settings-appExclusionsManager.json'))
       settings = null
     }
   })

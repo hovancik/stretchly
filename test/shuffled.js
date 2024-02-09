@@ -1,5 +1,5 @@
-const chai = require('chai')
-const Shuffled = require('../app/utils/shuffled')
+import chai from 'chai'
+import Shuffled from '../app/utils/shuffled'
 
 chai.should()
 

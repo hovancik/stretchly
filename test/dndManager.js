@@ -1,21 +1,24 @@
-const chai = require('chai')
-const path = require('path')
-const DndManager = require('../app/utils/dndManager')
-const Store = require('electron-store')
+import { vi } from 'vitest'
+import chai from 'chai'
+import { join } from 'path'
+import DndManager from '../app/utils/dndManager'
+import Store from 'electron-store'
+import defaultSettings from '../app/utils/defaultSettings'
+import { unlink } from 'fs'
 
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
 describe('dndManager', function () {
-  globalThis.vi.setConfig({ testTimeout: timeout })
+  vi.setConfig({ testTimeout: timeout })
   let settings = null
   let dndManager = null
 
   beforeEach(() => {
     settings = new Store({
-      cwd: path.join(__dirname),
+      cwd: join(__dirname),
       name: 'test-settings-dndManager',
-      defaults: require('../app/utils/defaultSettings')
+      defaults: defaultSettings
     })
     dndManager = new DndManager(settings)
   })
@@ -66,7 +69,7 @@ describe('dndManager', function () {
     dndManager = null
 
     if (settings) {
-      require('fs').unlink(path.join(__dirname, '/test-settings-dndManager.json'), (_) => {})
+      unlink(join(__dirname, '/test-settings-dndManager.json'), (_) => {})
       settings = null
     }
   })

@@ -1,16 +1,17 @@
-const expect = require('chai').expect
-const VersionChecker = require('../app/utils/versionChecker')
+import { vi } from 'vitest'
+import { expect } from 'chai'
+import VersionChecker from '../app/utils/versionChecker'
 
 describe('VersionChecker', () => {
   describe('latest', () => {
     it('fetches tag name', async () => {
       const tagName = 'tag name'
       const body = 'body'
-      JSON.parse = globalThis.vi.fn().mockReturnValue({ tag_name: tagName })
+      JSON.parse = vi.fn().mockReturnValue({ tag_name: tagName })
       const response = {
-        text: globalThis.vi.fn().mockReturnValue(Promise.resolve(body))
+        text: vi.fn().mockReturnValue(Promise.resolve(body))
       }
-      global.fetch = globalThis.vi.fn().mockReturnValue(Promise.resolve(response))
+      globalThis.fetch = vi.fn().mockReturnValue(Promise.resolve(response))
 
       const checker = new VersionChecker()
       const result = await checker.latest()
