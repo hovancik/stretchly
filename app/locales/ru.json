@@ -87,7 +87,8 @@
       "monochrome": "Монохромная",
       "invertedMonochrome": "Инвертированная монохромная",
       "snowWhite": "Белоснежная",
-      "transparentMode": "Включить прозрачность"
+      "transparentMode": "Включить прозрачность",
+      "reverie": "Греженье"
     },
     "about": {
       "tagline": "напоминания о перерывах",

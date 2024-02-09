@@ -167,6 +167,7 @@ a {
 
 /* https://css-tricks.com/html5-progress-element/ */
 progress {
+  appearance: none;
   -webkit-appearance: none;
   height: 6px;
   width: min(50vw, 50vh);
@@ -328,6 +329,11 @@ body[dir=rtl] .has-select {
   right: 3px;
 }
 
+body[dir=rtl] .has-select::after {
+  left: 3px;
+  right: auto;
+}
+
 .has-select::before {
   background: var(--has-select-before-bg);
   border-radius: 0 3px 3px 0;
@@ -339,7 +345,13 @@ body[dir=rtl] .has-select {
   width: 16.5px;
 }
 
+body[dir=rtl] .has-select::before {
+  left: 0;
+  right: auto;
+}
+
 select {
+  appearance: none;
   -webkit-appearance: none;
   color: var(--select-color);
   background: var(--select-bg);
@@ -354,7 +366,7 @@ select {
 
 body[dir=rtl] select {
   padding-left: 0;
-  padding-right: 20px;
+  padding-right: 8px;
 }
 
 select option {
