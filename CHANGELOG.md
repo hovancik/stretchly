@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - updated many translations 
+- disable skipping to next break from tray when in strict mode
 
 ### Fixed
 - transparency issues on Windows 10
