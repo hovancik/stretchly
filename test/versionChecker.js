@@ -1,49 +1,34 @@
-const expect = require('chai').expect
-const sinon = require('sinon')
-const VersionChecker = require('../app/utils/versionChecker')
+import { vi } from 'vitest'
+import { expect } from 'chai'
+import VersionChecker from '../app/utils/versionChecker'
 
 describe('VersionChecker', () => {
   describe('latest', () => {
-    let sandbox
-
-    beforeEach(() => {
-      sandbox = sinon.createSandbox()
-    })
-
-    afterEach(() => {
-      sandbox.restore()
-    })
-
-    it('fetches tag name', (done) => {
+    it('fetches tag name', async () => {
       const tagName = 'tag name'
       const body = 'body'
-      sandbox.stub(JSON, 'parse').returns({ tag_name: tagName })
+      JSON.parse = vi.fn().mockReturnValue({ tag_name: tagName })
       const response = {
-        text: sinon.stub().returns(Promise.resolve(body))
+        text: vi.fn().mockReturnValue(Promise.resolve(body))
       }
-      global.fetch = sinon.stub().returns(Promise.resolve(response))
+      globalThis.fetch = vi.fn().mockReturnValue(Promise.resolve(response))
 
       const checker = new VersionChecker()
+      const result = await checker.latest()
 
-      checker.latest()
-        .then((result) => {
-          expect(result).to.equal(tagName)
+      expect(result).to.equal(tagName)
+      expect(fetch.mock.calls[0]).toEqual([
+        'https://api.github.com/repos/hovancik/stretchly/releases/latest',
+        {
+          method: 'GET',
+          headers: { 'User-Agent': 'hovancik/stretchly' },
+          mode: 'cors',
+          cache: 'default'
+        }
+      ])
 
-          sinon.assert.calledWithExactly(
-            fetch,
-            'https://api.github.com/repos/hovancik/stretchly/releases/latest',
-            {
-              method: 'GET',
-              headers: { 'User-Agent': 'hovancik/stretchly' },
-              mode: 'cors',
-              cache: 'default'
-            })
-
-          sinon.assert.called(response.text)
-          sinon.assert.calledWithExactly(JSON.parse, body)
-
-          done()
-        })
+      expect(response.text).toHaveBeenCalled()
+      expect(JSON.parse.mock.calls[0]).toEqual([body])
     })
   })
 })

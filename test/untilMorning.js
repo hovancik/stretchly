@@ -1,27 +1,30 @@
-const { UntilMorning } = require('../app/utils/untilMorning')
-const Store = require('electron-store')
-const chai = require('chai')
-const path = require('path')
-const { Settings, DateTime } = require('luxon')
+import { UntilMorning } from '../app/utils/untilMorning'
+import { vi } from 'vitest'
+import chai from 'chai'
+import Store from 'electron-store'
+import { join } from 'path'
+import { Settings, DateTime } from 'luxon'
+import defaultSettings from '../app/utils/defaultSettings'
+import { unlinkSync } from 'fs'
 
 chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
 describe('UntilMorning', function () {
   let settings
-  this.timeout(timeout)
+  vi.setConfig({ testTimeout: timeout })
 
   beforeEach(() => {
     settings = new Store({
-      cwd: path.join(__dirname),
-      name: 'test-settings',
-      defaults: require('../app/utils/defaultSettings')
+      cwd: join(__dirname),
+      name: 'test-settings-untilMorning',
+      defaults: defaultSettings
     })
   })
 
   afterEach(() => {
     if (settings) {
-      require('fs').unlink(path.join(__dirname, '/test-settings.json'), (_) => {})
+      unlinkSync(join(__dirname, '/test-settings-untilMorning.json'))
       settings = null
     }
   })

@@ -1,5 +1,5 @@
-const chai = require('chai')
-const AppIcon = require('../app/utils/appIcon')
+import chai from 'chai'
+import AppIcon from '../app/utils/appIcon'
 
 chai.should()
 

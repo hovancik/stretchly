@@ -1,5 +1,5 @@
-const chai = require('chai')
-const Command = require('../app/utils/commands')
+import chai from 'chai'
+import Command from '../app/utils/commands'
 
 chai.should()
 

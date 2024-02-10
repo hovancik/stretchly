@@ -1,35 +1,22 @@
-const chai = require('chai')
-const {
-  formatTimeRemaining, formatTimeIn,
-  canSkip, canPostpone, formatKeyboardShortcut,
-  minutesRemaining, shouldShowNotificationTitle
-} = require('../app/utils/utils')
-const i18next = require('i18next')
-const path = require('path')
-const Backend = require('i18next-fs-backend')
-const sinon = require('sinon')
+import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle } from '../app/utils/utils'
+import { beforeAll, afterAll, vi } from 'vitest'
+import chai from 'chai'
+import i18next from 'i18next'
+import { join } from 'path'
+import Backend from 'i18next-fs-backend'
 
 chai.should()
 
 describe('Times formatters', function () {
-  before(function (done) {
-    i18next
-      .use(Backend)
-      .init({
-        lng: 'en',
-        fallbackLng: 'en',
-        debug: true,
-        backend: {
-          loadPath: path.join(__dirname, '/../app/locales/{{lng}}.json'),
-          jsonIndent: 2
-        }
-      }, function (err, t) {
-        if (err) {
-          console.log(err)
-          return done(err)
-        }
-        done()
-      })
+  beforeAll(async () => {
+    await i18next.use(Backend).init({
+      lng: 'en',
+      fallbackLng: 'en',
+      backend: {
+        loadPath: join(__dirname, '/../app/locales/{{lng}}.json'),
+        jsonIndent: 2
+      }
+    })
   })
 
   it('formats "remaining" milliseconds into correct format', function () {
@@ -70,13 +57,12 @@ describe('Times formatters', function () {
 
 describe('canSkip and canPostpone', () => {
   // stubbing date
-  before(() => {
-    this.sandbox = sinon.createSandbox()
-    this.sandbox.stub(Date, 'now').returns(1537347700000)
+  beforeAll(() => {
+    vi.setSystemTime(1537347700000)
   })
 
-  after(() => {
-    this.sandbox.restore()
+  afterAll(() => {
+    vi.useRealTimers()
   })
 
   describe('canSkip', () => {

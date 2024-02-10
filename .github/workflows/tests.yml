@@ -49,7 +49,7 @@ jobs:
     - name: Install missing usocket
       if: matrix.os == 'ubuntu-latest'
       run: npm install usocket
-    - run: npx nyc --reporter=lcov npm test
+    - run: npm run coverage
       env:
         CI: true
         DISPLAY: ':0'
