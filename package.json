@@ -86,6 +86,12 @@
       ],
       "asarUnpack": "node_modules/macos-notification-state/**"
     },
+    "rpm": {
+			"fpm": [
+				"--rpm-rpmbuild-define",
+				"_build_id_links none"
+			]
+    },
     "appx": {
       "identityName": "33881JanHovancik.stretchly",
       "publisher": "CN=35004EDA-CCDD-4304-A014-784D754E043F",
