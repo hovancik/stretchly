@@ -67,5 +67,6 @@ module.exports = {
   skipToNextScheduledBreakShortcut: '',
   skipToNextMiniBreakShortcut: '',
   skipToNextLongBreakShortcut: '',
-  resetBreaksShortcut: ''
+  resetBreaksShortcut: '',
+  showBreakActionsInStrictMode: false
 }
