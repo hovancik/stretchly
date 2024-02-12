@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added 
 - Estonia and Belarus translations
 - Updated flag of Belarus to White-Red-White
+- advanced option to show break options (Skip, Pause, Reset) in Strict mode
 
 ### Changed
 - updated many translations 

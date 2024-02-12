@@ -1253,9 +1253,11 @@ function getTrayMenuTemplate () {
     })
   }
 
-  if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode')) {
+  if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode') &&
+     !settings.get('showBreakActionsInStrictMode')) {
     // nothing
-  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
+  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
+    !settings.get('showBreakActionsInStrictMode')) {
     // nothing
   } else if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     let submenu = []
@@ -1287,9 +1289,11 @@ function getTrayMenuTemplate () {
         updateTray()
       }
     })
-  } else if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode')) {
+  } else if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode') &&
+    !settings.get('showBreakActionsInStrictMode')) {
     // nothing
-  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode')) {
+  } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
+   !settings.get('showBreakActionsInStrictMode')) {
     // nothing
   } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     trayMenu.push({
