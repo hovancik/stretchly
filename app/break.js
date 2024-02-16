@@ -30,7 +30,6 @@ window.onload = (event) => {
   })
 
   ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
-    ipcRenderer.send('long-break-loaded')
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
@@ -61,5 +60,6 @@ window.onload = (event) => {
           settings.get('language'))
       }
     }, 100)
+    ipcRenderer.send('long-break-loaded')
   })
 }

@@ -784,6 +784,11 @@ function startMicrobreak () {
     })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
+      log.info('Stretchly: ready-to-show fired')
+    })
+
+    ipcMain.once('mini-break-loaded', () => {
+      log.info('Stretchly: Mini Break window loaded')
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
       } else {
@@ -807,6 +812,7 @@ function startMicrobreak () {
           microbreakWinLocal.center()
         }, 0)
       }
+      updateTray()
     })
 
     require('@electron/remote/main').enable(microbreakWinLocal.webContents)
@@ -839,9 +845,6 @@ function startMicrobreak () {
       app.dock.hide()
     }
   }
-  ipcMain.on('mini-break-loaded', (event) => {
-    updateTray()
-  })
 }
 
 function startBreak () {
@@ -926,6 +929,11 @@ function startBreak () {
     })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
+      log.info('Stretchly: ready-to-show fired')
+    })
+
+    ipcMain.once('long-break-loaded', () => {
+      log.info('Stretchly: Long Break window loaded')
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
@@ -950,6 +958,7 @@ function startBreak () {
           breakWinLocal.center()
         }, 0)
       }
+      updateTray()
     })
 
     require('@electron/remote/main').enable(breakWinLocal.webContents)
@@ -982,9 +991,6 @@ function startBreak () {
       app.dock.hide()
     }
   }
-  ipcMain.on('long-break-loaded', (event) => {
-    updateTray()
-  })
 }
 
 function breakComplete (shouldPlaySound, windows, breakType) {
