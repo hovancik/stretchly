@@ -28,7 +28,6 @@ window.onload = (e) => {
   })
 
   ipcRenderer.once('progress', (event, started, duration, strictMode, postpone, postponePercent, backgroundColor) => {
-    ipcRenderer.send('mini-break-loaded')
     const progress = document.querySelector('#progress')
     const progressTime = document.querySelector('#progress-time')
     const postponeElement = document.querySelector('#postpone')
@@ -58,5 +57,6 @@ window.onload = (e) => {
           settings.get('language'))
       }
     }, 100)
+    ipcRenderer.send('mini-break-loaded')
   })
 }
