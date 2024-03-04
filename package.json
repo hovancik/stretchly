@@ -139,7 +139,7 @@
     "@vitest/coverage-istanbul": "^1.2.1",
     "cross-env": "^7.0.3",
     "electron": "^28.1.1",
-    "electron-builder": "^24.9.1",
+    "electron-builder": "^24.13.3",
     "husky": "^8.0.3",
     "rimraf": "^5.0.5",
     "spectron": "^19.0.0",
