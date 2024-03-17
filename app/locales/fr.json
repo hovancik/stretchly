@@ -83,11 +83,12 @@
       "crystalGlass": "Verre de crystal",
       "windChime": "Tintement aérien",
       "ticToc": "Tic toc",
-      "menubarIcon": "Icône de la bar de menu :",
+      "menubarIcon": "Icône de la barre de menu :",
       "colour": "Couleur",
       "monochrome": "Monochrome",
       "invertedMonochrome": "Monochrome inversé",
-      "snowWhite": "Blanche Neige"
+      "snowWhite": "Blanche Neige",
+      "reverie": "Rêverie"
     },
     "about": {
       "tagline": "Application de rappel de pauses",
@@ -170,7 +171,9 @@
     "timeToBreakInTray": "Il est temps pour une pause",
     "showTimeToBreakInTray": "Afficher l'heure jusqu'à la prochaine pause dans l'icône de la barre de menus",
     "showCurrentTimeInBreaks": "Afficher l'heure locale actuelle dans la fenêtre de pause",
-    "currentTimeInBreaks": "Heure actuelle"
+    "currentTimeInBreaks": "Heure actuelle",
+    "toShowTrayIcon": "Afficher l'icône de Stretchly dans la barre de menus",
+    "showTrayIcon": "Afficher l'icône de la barre de menus"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -304,7 +307,7 @@
       "text": "Secouez vos mains pour vous détendre un peu."
     },
     "abf": {
-      "text": "Un après l'autre, touchez le bout de vos doigts avec la bout de votre pouce. Ils formeront ainsi un cercle."
+      "text": "Un après l'autre, touchez le bout de vos doigts avec le bout de votre pouce afin qu'ils forment un cercle."
     },
     "abh": {
       "text": "Formez un poing avec la main, puis déployez et étirez vos doigts le plus possible."
@@ -323,11 +326,51 @@
     },
     "abk": {
       "text": "Tenez-vous droit, les bras le long du corps. Serrez vos omoplates l'une contre l'autre et gardez cette position."
+    },
+    "abo": {
+      "text": "Debout, les pieds écartés de la largeur des épaules, abaissez votre corps comme si vous vous asseyiez sur une chaise, puis remettez-vous debout. Répétez l'exercice plusieurs fois."
+    },
+    "abq": {
+      "text": "Placez-vous face à un mur et placez vos mains dessus, puis faites plusieurs pompes."
+    },
+    "abr": {
+      "text": "Asseyez-vous sur le bord de votre chaise et tendez une jambe devant vous, pendant 10 à 15 secondes. Répétez l'opération avec l'autre jambe."
+    },
+    "abs": {
+      "text": "Placez-vous face à un mur, mettez un pied en arrière et l'autre en avant, puis appuyez-vous sur le mur. Répétez l'opération avec l'autre jambe."
+    },
+    "abu": {
+      "text": "Penchez la tête d'un côté, puis de l'autre, puis inclinez-la doucement vers l'avant et vers l'arrière."
+    },
+    "abm": {
+      "text": "Asseyez-vous sur le bord de votre chaise, tournez votre torse d'un côté et maintenez la position pendant 10 à 15 secondes. Répétez l'opération de l'autre côté."
+    },
+    "abn": {
+      "text": "Levez-vous et posez un pied sur un objet à proximité, comme une chaise ou un escabeau. Gardez le genou plié et maintenez la position pendant 10 à 15 secondes. Répétez l'opération avec l'autre pied."
+    },
+    "abp": {
+      "text": "Mettez-vous debout, le dos et les mains contre un mur, puis déplacez lentement vos bras de haut en bas comme si vous faisiez des anges de neige."
+    },
+    "abt": {
+      "text": "Tenez un bras droit, puis utilisez l'autre bras pour pousser doucement le coude du premier bras vers votre tête. Maintenez la position pendant 10 à 15 secondes. Répétez avec l'autre bras."
+    },
+    "abv": {
+      "text": "Tendez un bras en travers votre poitrine, tenez le coude avec l'autre main et ramenez-le doucement vers votre poitrine. Répétez l'opération avec l'autre bras."
+    },
+    "abw": {
+      "text": "Mettez-vous debout, posez un pied sur un objet à proximité, comme une chaise ou un escabeau, et descendez pour toucher vos orteils. Répétez l'opération avec l'autre jambe."
+    },
+    "abx": {
+      "text": "Placez-vous dans l'encadrement d'une porte et placez un bras de chaque côté du cadre, puis penchez-vous doucement vers l'avant jusqu'à ce que vous sentiez un étirement dans votre poitrine."
+    },
+    "aby": {
+      "text": "Asseyez-vous sur le bord d'une chaise ou sur le sol et placez la plante de vos pieds l'une contre l'autre, en appuyant doucement avec vos coudes pour étirer l'intérieur de vos cuisses."
     }
   },
   "longBreakIdeas": {
     "aaa": {
-      "text": "Vous avez du mal à faire une pause seul ? Essayez de le faire avec un.e collègue. Outre le fait qu'il vous sera plus facile de respecter vos pauses, vous aurez l'occasion de mieux connaître cette personne. Prendre des pauses ensemble augmente la productivité."
+      "text": "Vous avez du mal à faire une pause seul ? Essayez de le faire avec un.e collègue. Outre le fait qu'il vous sera plus facile de respecter vos pauses, vous aurez l'occasion de mieux connaître cette personne. Prendre des pauses ensemble augmente la productivité.",
+      "title": "A plusieurs"
     },
     "aac": {
       "title": "Micro-pauses",
@@ -390,7 +433,8 @@
       "text": "Avez-vous trouvé votre routine strech-ly ? N'oubliez pas de la répéter plusieurs fois pour mieux combattre les effets de la position assise prolongée."
     },
     "aat": {
-      "title": "Poignet et avant-bras"
+      "title": "Poignet et avant-bras",
+      "text": "Tendez les bras, les paumes tournées vers vous, puis faites tourner lentement les mains quatre fois dans le sens des aiguilles d'une montre, puis quatre fois dans le sens inverse."
     },
     "aad": {
       "title": "Méditation",
@@ -401,7 +445,67 @@
       "title": "Cligner des yeux"
     },
     "aab": {
-      "text": "Avez-vous déjà remarqué que votre cerveau peut comprendre des choses seul ? Il suffit de s'éloigner de l'ordinateur et de faire une pause pour penser à quelque chose qui n'a rien à voir."
+      "text": "Avez-vous déjà remarqué que votre cerveau peut comprendre des choses seul ? Il suffit de s'éloigner de l'ordinateur et de faire une pause pour penser à quelque chose qui n'a rien à voir.",
+      "title": "Éloignez-vous"
+    },
+    "aau": {
+      "title": "Étirement du dos",
+      "text": "Joignez les mains derrière la tête, puis soulevez-les ensemble au-dessus de la tête, les paumes tournées vers le haut."
+    },
+    "aax": {
+      "title": "Cardio",
+      "text": "Faites monter votre pouls à 120 battements par minute pendant 20 minutes d'affilée, quatre ou cinq fois par semaine, en pratiquant une activité qui vous plaît. L'augmentation régulière de la fréquence cardiaque améliore la santé cardiovasculaire."
+    },
+    "abg": {
+      "title": "Pression des mains",
+      "text": "Pressez une paire de chaussettes ou une balle en caoutchouc souple, maintenez la pression pendant 5 secondes. Répétez l'opération plusieurs fois."
+    },
+    "aaz": {
+      "title": "Pratiquez une activité artistique",
+      "text": "La thérapie par l'art est réputée pour ses effets bénéfiques sur la santé mentale, en particulier en ce qui concerne la gestion du stress. Que diriez-vous d'écrire un petit poème, de prendre une photo ou de peindre quelque chose de petit ?"
+    },
+    "abc": {
+      "title": "Transports en commun",
+      "text": "Si vous utilisez régulièrement les transports en commun, vous pouvez rester debout au lieu de vous asseoir. Si possible, essayez de remplacer le plus grand nombre de vos déplacements quotidiens par la marche ou le vélo."
+    },
+    "abd": {
+      "title": "Bâillement",
+      "text": "Le bâillement peut être très utile, car il produit des larmes qui aident à humidifier et à lubrifier les yeux."
+    },
+    "abh": {
+      "title": "Respiration lente",
+      "text": "Des recherches émergentes suggèrent que les techniques de respiration lente contrôlée peuvent être utilisées pour optimiser les paramètres physiologiques qui semblent être associés à la santé et à la longévité."
+    },
+    "aaw": {
+      "title": "Entraînement de 7 minutes",
+      "text": "Cette séance d'entraînement permet de faire des exercices pour tout le corps en moins de temps que d'ordinaire. Mais comme pour tout exercice, soyez prudent. Il existe de nombreuses applications pour vous aider à démarrer."
+    },
+    "aay": {
+      "title": "Prenez les escaliers",
+      "text": "Des études ont montré que la montée d'escaliers, qui est considérée comme une activité physique d'intensité vigoureuse, brûle plus de calories par minute que le jogging."
+    },
+    "aba": {
+      "title": "Désencombrer",
+      "text": "Un espace propre favorise la concentration au travail et est souvent lié à des émotions positives comme le bonheur."
+    },
+    "abb": {
+      "title": "Déjeuner à l'extérieur",
+      "text": "La nature est associée à des émotions positives et à une diminution du stress et de l'anxiété. Dans la mesure du possible, essayez de prendre votre pause déjeuner à l'extérieur, entouré de verdure."
+    },
+    "abe": {
+      "title": "Mise au point",
+      "text": "Tenez un doigt près de l'œil et faites la netteté sur lui. Éloignez lentement le doigt, fixez un point éloigné, puis revenez au doigt. Retirez votre doigt et concentrez-vous ensuite sur quelque chose de très éloigné."
+    },
+    "abi": {
+      "title": "Visualisation imaginative",
+      "text": "Fermez les yeux et imaginez-vous dans un endroit paisible et apaisant, comme une plage ou une forêt, en vous concentrant sur les images, les sons et les sensations de cet environnement."
+    },
+    "abf": {
+      "text": "En position assise, appuyez vos coudes sur le bureau et près du bord de celui-ci. Laissez votre poids tomber vers l'avant et placez vos mains sur vos yeux. Fermez les yeux et inspirez lentement par le nez pendant quelques secondes. Continuez à respirer profondément."
+    },
+    "aav": {
+      "title": "Mobilité",
+      "text": "Toutes les trente minutes de position statique doivent être suivies d'au moins une minute de mouvement."
     }
   }
 }
