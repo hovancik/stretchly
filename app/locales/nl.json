@@ -87,7 +87,8 @@
       "monochrome": "Monochroom",
       "invertedMonochrome": "Omgekeerd Monochroom",
       "snowWhite": "Sneeuwwit",
-      "transparentMode": "Transparantie inschakelen"
+      "transparentMode": "Transparantie inschakelen",
+      "reverie": "Reverie"
     },
     "about": {
       "tagline": "Pauze herinnering app",
@@ -170,7 +171,9 @@
     "timeToBreakInTray": "Tijd tot pauze",
     "showTimeToBreakInTray": "Toon tijd tot de volgende pauze in menubalkicoon",
     "currentTimeInBreaks": "Huidige tijd",
-    "showCurrentTimeInBreaks": "Toon huidige tijd in pauze scherm"
+    "showCurrentTimeInBreaks": "Toon huidige tijd in pauze scherm",
+    "showTrayIcon": "Laat een icoon in het menu zien",
+    "toShowTrayIcon": "Laat het Stretchly icoon in de menubar zien"
   },
   "utils": {
     "none_one": "{{count}}",
