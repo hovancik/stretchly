@@ -133,7 +133,9 @@
     "timeToBreakInTray": "Čas za premor",
     "showTimeToBreakInTray": "Prikaži čas do naslednjega premora v ikoni opravilne vrstice",
     "currentTimeInBreaks": "Trenutni čas",
-    "showCurrentTimeInBreaks": "Prikaži trenutni lokalni čas v oknu premora"
+    "showCurrentTimeInBreaks": "Prikaži trenutni lokalni čas v oknu premora",
+    "showTrayIcon": "Prikaži ikono menijske vrstice",
+    "toShowTrayIcon": "Pokaži ikono Stretchly v menijski vrstici"
   },
   "preferences": {
     "heart": {
@@ -175,7 +177,8 @@
       "graphiteCrystal": "Kristal grafitna",
       "autumnBeBlessed": "Blagoslovljena jesen",
       "greenClouds": "Zeleni oblaki",
-      "appearance": "Videz:"
+      "appearance": "Videz:",
+      "reverie": "Sanjarjenje"
     },
     "schedule": {
       "cantDisableBoth": "Ne morete onemogočiti obeh načinov premorov",
