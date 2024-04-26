@@ -23,7 +23,7 @@ jobs:
         python-version: '3.12'
     - uses: actions/setup-node@v3
       with:
-        node-version: '18.18.2'
+        node-version: '20.11.1'
     - run: pip install setuptools
     - run: npm install npm -g
     - run: npm install
