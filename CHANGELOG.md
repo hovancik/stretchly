@@ -5,13 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Added 
+### Added
 - Estonia and Belarus translations
 - Updated flag of Belarus to White-Red-White
 - advanced option to show break options (Skip, Pause, Reset) in Strict mode
+- add autostart option for Linux
 
 ### Changed
-- updated many translations 
+- updated many translations
 - disable skipping to next break from tray when in strict mode
 
 ### Fixed

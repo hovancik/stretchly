@@ -37,12 +37,14 @@ const IdeasLoader = require('./utils/ideasLoader')
 const BreaksPlanner = require('./breaksPlanner')
 const AppIcon = require('./utils/appIcon')
 const { UntilMorning } = require('./utils/untilMorning')
+const AutostartManager = require('./utils/autostartManager')
 const Command = require('./utils/commands')
 
 let microbreakIdeas
 let breakIdeas
 let breakPlanner
 let appIcon = null
+let autostartManager = null
 let processWin = null
 let microbreakWins = null
 let breakWins = null
@@ -163,7 +165,7 @@ app.on('before-quit', () => {
   globalShortcut.unregisterAll()
 })
 
-function initialize (isAppStart = true) {
+async function initialize (isAppStart = true) {
   if (!gotTheLock) {
     return
   }
@@ -223,6 +225,12 @@ function initialize (isAppStart = true) {
     breakPlanner.nextBreak()
   }
 
+  autostartManager = new AutostartManager({
+    platform: process.platform,
+    windowsStore: process.windowsStore,
+    app
+  })
+
   startI18next()
   startProcessWin()
   createWelcomeWindow()
@@ -244,13 +252,13 @@ function initialize (isAppStart = true) {
   })
   startPowerMonitoring()
   if (preferencesWin) {
-    preferencesWin.send('renderSettings', settingsToSend())
+    preferencesWin.send('renderSettings', await settingsToSend())
   }
   if (welcomeWin) {
-    welcomeWin.send('renderSettings', settingsToSend())
+    welcomeWin.send('renderSettings', await settingsToSend())
   }
   if (contributorPreferencesWindow) {
-    contributorPreferencesWindow.send('renderSettings', settingsToSend())
+    contributorPreferencesWindow.send('renderSettings', await settingsToSend())
   }
   globalShortcut.unregisterAll()
   if (settings.get('pauseBreaksToggleShortcut') !== '') {
@@ -1458,14 +1466,7 @@ ipcMain.on('save-setting', function (event, key, value) {
   }
 
   if (key === 'openAtLogin') {
-    if (process.platform === 'win32' && process.windowsStore) {
-      app.setLoginItemSettings({
-        openAtLogin: value,
-        path: 'start shell:appsFolder\\33881JanHovancik.stretchly_24fg4m0zq65je!Stretchly'
-      })
-    } else {
-      app.setLoginItemSettings({ openAtLogin: value })
-    }
+    autostartManager.setAutostartEnabled(value)
   } else {
     settings.set(key, value)
   }
@@ -1484,24 +1485,22 @@ ipcMain.on('restore-defaults', (event) => {
     message: i18next.t('main.warning'),
     buttons: [i18next.t('main.continue'), i18next.t('main.cancel')]
   }
-  dialog.showMessageBox(dialogOpts).then((returnValue) => {
+  dialog.showMessageBox(dialogOpts).then(async (returnValue) => {
     if (returnValue.response === 0) {
       log.info('Stretchly: restoring default settings')
       settings.store = Object.assign(require('./utils/defaultSettings'), { isFirstRun: false })
       initialize(false)
-      event.sender.send('renderSettings', settingsToSend())
+      event.sender.send('renderSettings', await settingsToSend())
     }
   })
 })
 
-ipcMain.on('send-settings', function (event) {
-  event.sender.send('renderSettings', settingsToSend())
+ipcMain.on('send-settings', async function (event) {
+  event.sender.send('renderSettings', await settingsToSend())
 })
 
-function settingsToSend () {
-  const loginItemSettings = app.getLoginItemSettings()
-  const openAtLogin = loginItemSettings.openAtLogin
-  return Object.assign({}, settings.store, { openAtLogin })
+async function settingsToSend () {
+  return Object.assign({}, settings.store, { openAtLogin: await autostartManager.autoLaunchStatus() })
 }
 
 ipcMain.on('play-sound', function (event, sound) {
