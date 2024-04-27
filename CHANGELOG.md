@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - multiple RTL UI issues
 - RPM installer conflicts with other Electron apps
 - improve break window loading to fix blank window
+- autostart option for Windows Store
 
 ## [1.15.1] - 2023-11-19
 ### Fixed
