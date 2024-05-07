@@ -48,7 +48,8 @@
       "appearance": "Aspect:",
       "sounds": "Sunete:",
       "enableSounds": "Activați sunete",
-      "transparentMode": "Activați transparență"
+      "transparentMode": "Activați transparență",
+      "reverie": "Reverie"
     },
     "about": {
       "tagline": "Aplicația care-ți aduce aminte să iei o pauză",
@@ -177,7 +178,11 @@
     "appearance": "Aspect:",
     "light": "Lumină",
     "dark": "Întunecat",
-    "system": "Rețea"
+    "system": "Rețea",
+    "showTrayIcon": "Afișează pictograma meniului",
+    "toShowTrayIcon": "Afișează pictograma Stretchly in bara de meniu",
+    "currentTimeInBreaks": "Timpul actual",
+    "showCurrentTimeInBreaks": "Arată timpul actual in fereastra de pauză"
   },
   "utils": {
     "remaining": "{{count}} rămase",
@@ -205,5 +210,88 @@
     "appExclusion": "Regula de excludere a aplicației",
     "afterMiniBreak_one": "după {{count}} pauza scurtă",
     "afterMiniBreak_other": "după {{count}} pauze scurte"
+  },
+  "miniBreakIdeas": {
+    "aak": {
+      "text": "Ridică-te de pe scaun și întinde-te."
+    },
+    "aam": {
+      "text": "Ia-ți oportunitatea de a te gândi la ceva ce apreciezi."
+    },
+    "aaq": {
+      "text": "Închide ochii , identifică și numește lucrurile pe care le auzi."
+    },
+    "aad": {
+      "text": "Închide ochii, inspiră și expiră adânc de câteva ori."
+    },
+    "aae": {
+      "text": "Închide ochii și relaxează-te."
+    },
+    "aaf": {
+      "text": "Dezmorțeșteți picioarele."
+    },
+    "aag": {
+      "text": "Dezmorțeșteți mâinile."
+    },
+    "aah": {
+      "text": "Ești într-o postură corectă?"
+    },
+    "aai": {
+      "text": "Întoarce încet capul într-o parte și menține poziția pentru 10 secunde."
+    },
+    "aaj": {
+      "text": "Înclină încet capul într-o parte și menține poziția pentru 5-10 secunde."
+    },
+    "aal": {
+      "text": "Focalizează-ți privirea pe un obiect aflat la 20 de metri distanță de tine."
+    },
+    "aap": {
+      "text": "Închide ochii și numără frecvența respirațiilor."
+    },
+    "aaa": {
+      "text": "Du-te bea un pahar cu apă."
+    },
+    "aab": {
+      "text": "Uită-te lent cât de mult poți la stânga, apoi la dreapta."
+    },
+    "aac": {
+      "text": "Uită-te încet în sus cât de mult poți, apoi în jos."
+    },
+    "aan": {
+      "text": "Oferă-ți un moment de a zâmbi pentru că ești în viață."
+    },
+    "aao": {
+      "text": "O stație de lucru cu adevărat ergonomică este una de care te îndepărtezi periodic."
+    },
+    "aar": {
+      "text": "Pune-ți vârful degetelor pe umeri. Rotește-ți umerii înainte timp de 10 secunde, apoi înapoi."
+    },
+    "aax": {
+      "text": "Dacă ai nevoie de ajutor, cere-l."
+    },
+    "aay": {
+      "text": "Fă un singur lucru la un moment dat."
+    },
+    "aba": {
+      "text": "Schimbă-ți postura de ședere."
+    },
+    "aas": {
+      "text": "Ridică mâna dreaptă, întinde-o spre stânga folosindu-ți capul drept sprijin și menține poziția de întindere timp de 10 secunde. Apoi întinde la fel și mâna stângă."
+    },
+    "aat": {
+      "text": "Cu mâna dreaptă, prindeți pe rând fiecare deget de la mâna stângă și aplicație presiune. Faceți același lucru și pentru degetele de la mâna dreaptă."
+    },
+    "aav": {
+      "text": "Închideți ochii și fii atent la orice îți vine în minte, fără critică."
+    },
+    "aau": {
+      "text": "Ridică-te și fă o fandare. Menține poziția timp de 10 secunde, apoi mai fă una cu celălalt picior."
+    },
+    "aaw": {
+      "text": "Din 20 în 20 de minute, concentrează-ți privirea pe un obiect aflat la o distanță de 20 ft. (6 m)."
+    },
+    "abb": {
+      "text": "Expuneți ochii luminii naturale."
+    }
   }
 }
