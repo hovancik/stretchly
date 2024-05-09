@@ -14,6 +14,9 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-latest]
       fail-fast: false
     steps:
+    - name: run on mac
+      if: matrix.os == 'macos-latest'
+      run: sudo xcode-select -s /Library/Developer/CommandLineTools      
     - name: run on linux
       if: matrix.os == 'ubuntu-latest'
       run: sudo apt-get install libarchive-tools
