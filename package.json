@@ -11,12 +11,12 @@
     "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
-    "dist": "electron-builder build --x64 --ia32",
+    "dist": "electron-builder build",
     "test": "vitest run",
     "test-single": "vitest run $1",
     "coverage": "vitest run --coverage",
     "tdd": "vitest --watch test",
-    "lint": "./node_modules/.bin/standard",
+    "lint": "cross-env ./node_modules/.bin/standard",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable",
     "prepare": "husky"
@@ -148,6 +148,7 @@
   },
   "dependencies": {
     "@electron/remote": "^2.1.2",
+    "auto-launch": "^6.0.0-rc1",
     "dbus-final": "github:Jelmerro/dbus-final",
     "electron-log": "^5.1.2",
     "electron-store": "^8.2.0",
