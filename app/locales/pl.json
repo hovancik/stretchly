@@ -87,7 +87,8 @@
       "colour": "Kolorowa",
       "monochrome": "Monochromatyczna",
       "invertedMonochrome": "Odwrócona monochromatyczna",
-      "snowWhite": "Śnieżna biel"
+      "snowWhite": "Śnieżna biel",
+      "reverie": "Zaduma"
     },
     "about": {
       "tagline": "Przerwo-przypominajka",
@@ -170,7 +171,9 @@
     "timeToBreakInTray": "Czas na przerwę",
     "currentTimeInBreaks": "Aktualny czas",
     "showCurrentTimeInBreaks": "Pokaż aktualną godzinę w okienku przerwy",
-    "showTimeToBreakInTray": "Pokaż czas pozostały do następnej przerwy w ikonie paska zadań"
+    "showTimeToBreakInTray": "Pokaż czas pozostały do następnej przerwy w ikonie paska zadań",
+    "toShowTrayIcon": "Pokaż ikonę Stretchly w pasku menu",
+    "showTrayIcon": "Pokaż ikonę na pasku menu"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -313,6 +316,42 @@
     },
     "aav": {
       "text": "Zamknij oczy i skup się na tym co Ciebie otacza, nie oceniając tego."
+    },
+    "abi": {
+      "text": "Usiądź prosto, z rękami opuszczonymi wzdłuż ciała, i powoli obracaj szyją w jednym kierunku, wykonując duży krąg."
+    },
+    "abe": {
+      "text": "Wstrząśnij rękami, aby poczuć ulgę."
+    },
+    "abf": {
+      "text": "Po kolei dotykaj czubkiem każdego palca do czubka kciuka, tak aby utworzyły kształt litery O."
+    },
+    "abg": {
+      "text": "Zaciśnij pięść, a następnie wyprostuj palce do góry, tak aby wskazywały na sufit, jakbyś kazał komuś się zatrzymać."
+    },
+    "abh": {
+      "text": "Zaciśnij pięść, a następnie rozłóż palce i rozciągnij je tak daleko, jak tylko możesz."
+    },
+    "abj": {
+      "text": "Stań prosto i powoli przechyl głowę w kierunku ramienia, używając tej samej ręki, aż poczujesz rozciąganie."
+    },
+    "abk": {
+      "text": "Stań prosto z rękami wzdłuż ciała. Ściśnij łopatki razem i przytrzymaj."
+    },
+    "abl": {
+      "text": "Stań prosto z ramionami uniesionymi wzdłuż barków. Przesuń ręce lekko za plecy, przytrzymaj przez sekundę i wróć."
+    },
+    "abm": {
+      "text": "Usiądź na krawędzi krzesła, skręć tułów w jedną stronę i przytrzymaj przez 10-15 sekund. Powtórz na drugą stronę."
+    },
+    "abn": {
+      "text": "Wstań i postaw jedną stopę na pobliskim obiekcie, takim jak krzesło lub stopień. Utrzymuj kolano zgięte i przytrzymaj przez 10-15 sekund. Powtórz z drugą stopą."
+    },
+    "abo": {
+      "text": "Stań z stopami rozstawionymi na szerokość barków, opuść ciało w dół, jakbyś siadał na krześle, a następnie wstań. Powtórz kilka razy."
+    },
+    "abp": {
+      "text": "Stań plecami i rękami przy ścianie, a następnie powoli poruszaj ramionami w górę i w dół, jakbyś robił aniołki na śniegu."
     }
   }
 }
