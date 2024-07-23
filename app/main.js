@@ -8,6 +8,7 @@ const i18next = require('i18next')
 const Backend = require('i18next-fs-backend')
 const log = require('electron-log/main')
 const Store = require('electron-store')
+const { registerPauseBreaksShortcuts } = require('./utils/pauseBreaksShortcut')
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -261,6 +262,7 @@ async function initialize (isAppStart = true) {
     contributorPreferencesWindow.send('renderSettings', await settingsToSend())
   }
   globalShortcut.unregisterAll()
+  registerPauseBreaksShortcuts(settings, pauseBreaks, log, globalShortcut)
   if (settings.get('pauseBreaksToggleShortcut') !== '') {
     const pauseBreaksToggleShortcut = globalShortcut.register(settings.get('pauseBreaksToggleShortcut'), () => {
       if (breakPlanner.isPaused) {
@@ -1315,26 +1317,31 @@ function getTrayMenuTemplate () {
       submenu: [
         {
           label: i18next.t('utils.minutes', { count: 30 }),
+          accelerator: settings.get('pauseBreaksFor30MinutesShortcut'),
           click: function () {
             pauseBreaks(1800 * 1000)
           }
         }, {
           label: i18next.t('main.forHour'),
+          accelerator: settings.get('pauseBreaksFor1HourShortcut'),
           click: function () {
             pauseBreaks(3600 * 1000)
           }
         }, {
           label: i18next.t('main.for2Hours'),
+          accelerator: settings.get('pauseBreaksFor2HoursShortcut'),
           click: function () {
             pauseBreaks(3600 * 2 * 1000)
           }
         }, {
           label: i18next.t('main.for5Hours'),
+          accelerator: settings.get('pauseBreaksFor5HoursShortcut'),
           click: function () {
             pauseBreaks(3600 * 5 * 1000)
           }
         }, {
           label: i18next.t('main.untilMorning'),
+          accelerator: settings.get('pauseBreaksUntilMorningShortcut'),
           click: function () {
             const untilMorning = new UntilMorning(settings).msToSunrise()
             pauseBreaks(untilMorning)
