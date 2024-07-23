@@ -71,12 +71,12 @@ describe('UntilMorning', function () {
     })
 
     it('msToSunrise() returns morning time the same day', function () {
-      const dt = DateTime.local(2018, 8, 4, 5, 10, 0, 0)
+      const dt = DateTime.local(2018, 8, 4, 5, 10, 0, 0, { zone: 'Europe/Amsterdam' })
       new UntilMorning(settings).msToSunrise(dt).should.be.within(60 * 60 * 1000 - 60000, 60 * 60 * 1000 + 60000)
     })
 
     it('msToSunrise() returns morning time the next day', function () {
-      const dt = DateTime.local(2018, 8, 4, 7, 10, 0, 0)
+      const dt = DateTime.local(2018, 8, 4, 7, 10, 0, 0, { zone: 'Europe/Amsterdam' })
       new UntilMorning(settings).msToSunrise(dt).should.be.within(23 * 60 * 60 * 1000 - 60000, 23 * 60 * 60 * 1000 + 60000)
     })
   })
