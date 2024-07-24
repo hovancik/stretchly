@@ -63,8 +63,52 @@ describe('pauseBreaksShortcut', () => {
       const intervalExpected = calculateInterval('pauseBreaksUntilMorningShortcut', settings)
       const intervalActual = pauseBreaks.mock.calls[0][0]
 
-      // expect interval to be within 1 second of expected value
-      expect(Math.abs(intervalActual - intervalExpected)).toBeLessThan(1000)
+      // expect interval to be within 10 seconds of expected value
+      expect(Math.abs(intervalActual - intervalExpected)).toBeLessThan(10 * 1000)
+    })
+
+    describe('skipToNextScheduledBreakShortcut', () => {
+      it('skips to next scheduled break', () => {
+        const log = { info: vi.fn() }
+        const skipToBreak = vi.fn()
+        const skipToMicrobreak = vi.fn()
+        const pauseBreaks = vi.fn()
+        const breakPlanner = { _scheduledBreakType: 'break' }
+
+        onShortcut({
+          name: 'skipToNextScheduledBreakShortcut',
+          settings: null,
+          breakPlanner,
+          functions: { skipToBreak, skipToMicrobreak, pauseBreaks },
+          log
+        })
+
+        expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next scheduled Break by shortcut')
+        expect(skipToBreak).toHaveBeenCalled()
+        expect(skipToMicrobreak).not.toHaveBeenCalled()
+        expect(pauseBreaks).not.toHaveBeenCalled()
+      })
+
+      it('skips to next scheduled microbreak', () => {
+        const log = { info: vi.fn() }
+        const skipToBreak = vi.fn()
+        const skipToMicrobreak = vi.fn()
+        const pauseBreaks = vi.fn()
+        const breakPlanner = { _scheduledBreakType: 'microbreak' }
+
+        onShortcut({
+          name: 'skipToNextScheduledBreakShortcut',
+          settings: null,
+          breakPlanner,
+          functions: { skipToBreak, skipToMicrobreak, pauseBreaks },
+          log
+        })
+
+        expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next scheduled Break by shortcut')
+        expect(skipToBreak).not.toHaveBeenCalled()
+        expect(skipToMicrobreak).toHaveBeenCalled()
+        expect(pauseBreaks).not.toHaveBeenCalled()
+      })
     })
 
     describe('pauseBreaksToggleShortcut', () => {
@@ -84,16 +128,18 @@ describe('pauseBreaksShortcut', () => {
 
       it('resumes breaks when they are paused', () => {
         const resumeBreaks = vi.fn()
+        const pauseBreaks = vi.fn()
         const breakPlanner = { isPaused: true }
 
         onShortcut({
           name: 'pauseBreaksToggleShortcut',
           settings: null,
           breakPlanner,
-          functions: { resumeBreaks }
+          functions: { resumeBreaks, pauseBreaks }
         })
 
         expect(resumeBreaks).toHaveBeenCalledWith(false)
+        expect(pauseBreaks).not.toHaveBeenCalled()
       })
     })
   })

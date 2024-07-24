@@ -268,25 +268,9 @@ async function initialize (isAppStart = true) {
     log,
     globalShortcut,
     breakPlanner,
-    functions: { pauseBreaks, resumeBreaks }
+    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak }
   })
 
-  if (settings.get('skipToNextScheduledBreakShortcut') !== '') {
-    const skipToNextScheduledBreakShortcut = globalShortcut.register(settings.get('skipToNextScheduledBreakShortcut'), () => {
-      log.info('Stretchly: skipping to next scheduled Break by shortcut')
-      if (breakPlanner._scheduledBreakType === 'break') {
-        skipToBreak()
-      } else if (breakPlanner._scheduledBreakType === 'microbreak') {
-        skipToMicrobreak()
-      }
-    })
-
-    if (!skipToNextScheduledBreakShortcut) {
-      log.warn('Stretchly: skipToNextScheduledBreakShortcut registration failed')
-    } else {
-      log.info(`Stretchly: skipToNextScheduledBreakShortcut registration successful (${settings.get('skipToNextScheduledBreakShortcut')})`)
-    }
-  }
   if (settings.get('skipToNextMiniBreakShortcut') !== '') {
     const skipToNextMiniBreakShortcut = globalShortcut.register(settings.get('skipToNextMiniBreakShortcut'), () => {
       log.info('Stretchly: skipping to next Mini Break by shortcut')

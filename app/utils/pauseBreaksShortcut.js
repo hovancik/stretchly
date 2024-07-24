@@ -6,7 +6,8 @@ const intervals = {
   pauseBreaksFor2HoursShortcut: 2 * 3600 * 1000,
   pauseBreaksFor5HoursShortcut: 5 * 3600 * 1000,
   pauseBreaksUntilMorningShortcut: null,
-  pauseBreaksToggleShortcut: 1 // 1 means pause indefinitely
+  pauseBreaksToggleShortcut: 1, // 1 means pause indefinitely
+  skipToNextScheduledBreakShortcut: null
 }
 
 function calculateInterval (name, settings) {
@@ -17,9 +18,21 @@ function calculateInterval (name, settings) {
   return intervals[name]
 }
 
-function onShortcut ({ name, settings, breakPlanner, functions }) {
+function onShortcut ({ name, settings, log, breakPlanner, functions }) {
   if (name === 'pauseBreaksToggleShortcut' && breakPlanner.isPaused) {
     functions.resumeBreaks(false)
+    return
+  }
+
+  if (name === 'skipToNextScheduledBreakShortcut') {
+    log.info('Stretchly: skipping to next scheduled Break by shortcut')
+
+    if (breakPlanner._scheduledBreakType === 'break') {
+      functions.skipToBreak()
+    } else if (breakPlanner._scheduledBreakType === 'microbreak') {
+      functions.skipToMicrobreak()
+    }
+
     return
   }
 
@@ -28,7 +41,7 @@ function onShortcut ({ name, settings, breakPlanner, functions }) {
 }
 
 function setupBreak ({ name, shortcutText, settings, log, globalShortcut, breakPlanner, functions }) {
-  const shortcut = globalShortcut.register(shortcutText, () => onShortcut({ name, settings, breakPlanner, functions }))
+  const shortcut = globalShortcut.register(shortcutText, () => onShortcut({ name, settings, log, breakPlanner, functions }))
 
   if (shortcut) {
     log.info(`Stretchly: ${name} registration successful (${shortcutText})`)
