@@ -190,7 +190,18 @@ describe('pauseBreaksShortcut', () => {
       const globalShortcut = { register: vi.fn().mockReturnValue(true) }
       const log = { info: vi.fn(), warn: vi.fn() }
       const pauseBreaks = vi.fn()
-      const settings = { get: vi.fn((name) => name === 'pauseBreaksFor30MinutesShortcut' ? 'Ctrl+Shift+P' : '') }
+
+      const intervals = {
+        pauseBreaksFor30MinutesShortcut: 0,
+        pauseBreaksFor1HourShortcut: 1,
+        pauseBreaksFor2HoursShortcut: 2,
+        pauseBreaksFor5HoursShortcut: 3,
+        pauseBreaksUntilMorningShortcut: 4,
+        pauseBreaksToggleShortcut: 5,
+        skipToNextScheduledBreakShortcut: 6
+      }
+
+      const settings = { get: vi.fn((name) => intervals[name]) }
 
       registerPauseBreaksShortcuts({
         settings,
@@ -200,8 +211,44 @@ describe('pauseBreaksShortcut', () => {
         functions: { pauseBreaks }
       })
 
-      expect(globalShortcut.register).toHaveBeenCalledWith('Ctrl+Shift+P', expect.any(Function))
-      expect(log.info).toHaveBeenCalledWith('Stretchly: pauseBreaksFor30MinutesShortcut registration successful (Ctrl+Shift+P)')
+      // Check shortcut registration
+      // ------------
+
+      expect(globalShortcut.register).toHaveBeenCalledTimes(7)
+
+      for (let i = 0; i < 7; i++) {
+        expect(globalShortcut.register.mock.calls[i][0]).toBe(i)
+      }
+
+      // Check log
+      // ------------
+
+      expect(log.info).toHaveBeenCalledTimes(7)
+
+      for (let i = 0; i < 7; i++) {
+        expect(log.info.mock.calls[i][0]).toMatch(`registration successful (${i})`)
+      }
+    })
+
+    it('should skip empty shortcuts', () => {
+      const globalShortcut = { register: vi.fn().mockReturnValue(true) }
+      const log = { info: vi.fn(), warn: vi.fn() }
+      const pauseBreaks = vi.fn()
+
+      const settings = { get: vi.fn((name) => name === 'pauseBreaksFor30MinutesShortcut' ? 'key' : '') }
+
+      registerPauseBreaksShortcuts({
+        settings,
+        log,
+        globalShortcut,
+        breakPlanner: null,
+        functions: { pauseBreaks }
+      })
+
+      expect(globalShortcut.register).toHaveBeenCalledTimes(1)
+      expect(globalShortcut.register).toHaveBeenCalledWith('key', expect.any(Function))
+      expect(log.info).toHaveBeenCalledTimes(1)
+      expect(log.info).toHaveBeenCalledWith('Stretchly: pauseBreaksFor30MinutesShortcut registration successful (key)')
     })
   })
 })
