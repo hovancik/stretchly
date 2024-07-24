@@ -1,6 +1,6 @@
 import { vi } from 'vitest'
 import { expect } from 'chai'
-import { calculateInterval, registerPauseBreaksShortcuts, setupBreak } from '../app/utils/pauseBreaksShortcut'
+import { calculateInterval, registerPauseBreaksShortcuts, setupBreak, onShortcut } from '../app/utils/pauseBreaksShortcut'
 
 describe('pauseBreaksShortcut', () => {
   describe('calculateInterval', () => {
@@ -32,6 +32,72 @@ describe('pauseBreaksShortcut', () => {
     })
   })
 
+  describe('onShortcut', () => {
+    it('calls pauseBreaks for pauseBreaksFor30MinutesShortcut', () => {
+      const pauseBreaks = vi.fn()
+
+      onShortcut({
+        name: 'pauseBreaksFor30MinutesShortcut',
+        settings: null,
+        breakPlanner: null,
+        functions: { pauseBreaks }
+      })
+
+      expect(pauseBreaks).toHaveBeenCalledWith(30 * 60 * 1000)
+    })
+
+    it('for pauseBreaksUntilMorningShortcut calls pauseBreaks with correct interval', () => {
+      const pauseBreaks = vi.fn()
+      const settings = { get: () => 6 }
+
+      onShortcut({
+        name: 'pauseBreaksUntilMorningShortcut',
+        settings,
+        breakPlanner: null,
+        functions: { pauseBreaks }
+      })
+
+      expect(pauseBreaks).toHaveBeenCalled()
+
+      // Check the interval parameter passed to pauseBreaks
+      const intervalExpected = calculateInterval('pauseBreaksUntilMorningShortcut', settings)
+      const intervalActual = pauseBreaks.mock.calls[0][0]
+
+      // expect interval to be within 1 second of expected value
+      expect(Math.abs(intervalActual - intervalExpected)).toBeLessThan(1000)
+    })
+
+    describe('pauseBreaksToggleShortcut', () => {
+      it('pauses breaks indefinitely', () => {
+        const pauseBreaks = vi.fn()
+        const breakPlanner = { isPaused: false }
+
+        onShortcut({
+          name: 'pauseBreaksToggleShortcut',
+          settings: null,
+          breakPlanner,
+          functions: { pauseBreaks }
+        })
+
+        expect(pauseBreaks).toHaveBeenCalledWith(1)
+      })
+
+      it('resumes breaks when they are paused', () => {
+        const resumeBreaks = vi.fn()
+        const breakPlanner = { isPaused: true }
+
+        onShortcut({
+          name: 'pauseBreaksToggleShortcut',
+          settings: null,
+          breakPlanner,
+          functions: { resumeBreaks }
+        })
+
+        expect(resumeBreaks).toHaveBeenCalledWith(false)
+      })
+    })
+  })
+
   describe('setupBreak', () => {
     it('should register a shortcut and call pauseBreaks with the correct interval', () => {
       const globalShortcut = { register: vi.fn().mockReturnValue(true) }
@@ -42,9 +108,10 @@ describe('pauseBreaksShortcut', () => {
         name: 'pauseBreaksFor30MinutesShortcut',
         shortcutText: 'Ctrl+Shift+P',
         settings: null,
-        pauseBreaks,
         log,
-        globalShortcut
+        globalShortcut,
+        breakPlanner: null,
+        functions: { pauseBreaks }
       })
 
       expect(globalShortcut.register).toHaveBeenCalledWith('Ctrl+Shift+P', expect.any(Function))
@@ -62,9 +129,10 @@ describe('pauseBreaksShortcut', () => {
         name: 'pauseBreaksFor30MinutesShortcut',
         shortcutText: 'Ctrl+Shift+P',
         settings: null,
-        pauseBreaks,
         log,
-        globalShortcut
+        globalShortcut,
+        breakPlanner: null,
+        functions: { pauseBreaks }
       })
 
       expect(log.warn).toHaveBeenCalledWith('Stretchly: pauseBreaksFor30MinutesShortcut registration failed')
@@ -82,6 +150,7 @@ describe('pauseBreaksShortcut', () => {
         settings,
         log,
         globalShortcut,
+        breakPlanner: null,
         functions: { pauseBreaks }
       })
 

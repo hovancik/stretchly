@@ -267,24 +267,10 @@ async function initialize (isAppStart = true) {
     settings,
     log,
     globalShortcut,
-    functions: { pauseBreaks }
+    breakPlanner,
+    functions: { pauseBreaks, resumeBreaks }
   })
 
-  if (settings.get('pauseBreaksToggleShortcut') !== '') {
-    const pauseBreaksToggleShortcut = globalShortcut.register(settings.get('pauseBreaksToggleShortcut'), () => {
-      if (breakPlanner.isPaused) {
-        resumeBreaks(false)
-      } else {
-        pauseBreaks(1)
-      }
-    })
-
-    if (!pauseBreaksToggleShortcut) {
-      log.warn('Stretchly: pauseBreaksToggleShortcut registration failed')
-    } else {
-      log.info(`Stretchly: pauseBreaksToggleShortcut registration successful (${settings.get('pauseBreaksToggleShortcut')})`)
-    }
-  }
   if (settings.get('skipToNextScheduledBreakShortcut') !== '') {
     const skipToNextScheduledBreakShortcut = globalShortcut.register(settings.get('skipToNextScheduledBreakShortcut'), () => {
       log.info('Stretchly: skipping to next scheduled Break by shortcut')
