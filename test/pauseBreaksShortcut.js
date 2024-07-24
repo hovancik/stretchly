@@ -38,7 +38,14 @@ describe('pauseBreaksShortcut', () => {
       const log = { info: vi.fn(), warn: vi.fn() }
       const pauseBreaks = vi.fn()
 
-      setupBreak('pauseBreaksFor30MinutesShortcut', 'Ctrl+Shift+P', null, pauseBreaks, log, globalShortcut)
+      setupBreak({
+        name: 'pauseBreaksFor30MinutesShortcut',
+        shortcutText: 'Ctrl+Shift+P',
+        settings: null,
+        pauseBreaks,
+        log,
+        globalShortcut
+      })
 
       expect(globalShortcut.register).toHaveBeenCalledWith('Ctrl+Shift+P', expect.any(Function))
       globalShortcut.register.mock.calls[0][1]()
@@ -51,7 +58,14 @@ describe('pauseBreaksShortcut', () => {
       const log = { info: vi.fn(), warn: vi.fn() }
       const pauseBreaks = vi.fn()
 
-      setupBreak('pauseBreaksFor30MinutesShortcut', 'Ctrl+Shift+P', null, pauseBreaks, log, globalShortcut)
+      setupBreak({
+        name: 'pauseBreaksFor30MinutesShortcut',
+        shortcutText: 'Ctrl+Shift+P',
+        settings: null,
+        pauseBreaks,
+        log,
+        globalShortcut
+      })
 
       expect(log.warn).toHaveBeenCalledWith('Stretchly: pauseBreaksFor30MinutesShortcut registration failed')
     })
@@ -64,7 +78,12 @@ describe('pauseBreaksShortcut', () => {
       const pauseBreaks = vi.fn()
       const settings = { get: vi.fn((name) => name === 'pauseBreaksFor30MinutesShortcut' ? 'Ctrl+Shift+P' : '') }
 
-      registerPauseBreaksShortcuts(settings, pauseBreaks, log, globalShortcut)
+      registerPauseBreaksShortcuts({
+        settings,
+        log,
+        globalShortcut,
+        functions: { pauseBreaks }
+      })
 
       expect(globalShortcut.register).toHaveBeenCalledWith('Ctrl+Shift+P', expect.any(Function))
       expect(log.info).toHaveBeenCalledWith('Stretchly: pauseBreaksFor30MinutesShortcut registration successful (Ctrl+Shift+P)')

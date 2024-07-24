@@ -262,7 +262,14 @@ async function initialize (isAppStart = true) {
     contributorPreferencesWindow.send('renderSettings', await settingsToSend())
   }
   globalShortcut.unregisterAll()
-  registerPauseBreaksShortcuts(settings, pauseBreaks, log, globalShortcut)
+
+  registerPauseBreaksShortcuts({
+    settings,
+    log,
+    globalShortcut,
+    functions: { pauseBreaks }
+  })
+
   if (settings.get('pauseBreaksToggleShortcut') !== '') {
     const pauseBreaksToggleShortcut = globalShortcut.register(settings.get('pauseBreaksToggleShortcut'), () => {
       if (breakPlanner.isPaused) {

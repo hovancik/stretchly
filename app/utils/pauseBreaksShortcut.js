@@ -16,7 +16,7 @@ function calculateInterval (name, settings) {
   return intervals[name]
 }
 
-function setupBreak (name, shortcutText, settings, pauseBreaks, log, globalShortcut) {
+function setupBreak ({ name, shortcutText, settings, pauseBreaks, log, globalShortcut }) {
   const shortcut = globalShortcut.register(shortcutText, () => {
     const interval = calculateInterval(name, settings)
     pauseBreaks(interval)
@@ -29,11 +29,19 @@ function setupBreak (name, shortcutText, settings, pauseBreaks, log, globalShort
   }
 }
 
-function registerPauseBreaksShortcuts (settings, pauseBreaks, log, globalShortcut) {
+function registerPauseBreaksShortcuts ({ settings, log, globalShortcut, functions }) {
   for (const name of Object.keys(intervals)) {
     const shortcutText = settings.get(name)
     if (shortcutText === '') continue
-    setupBreak(name, shortcutText, settings, pauseBreaks, log, globalShortcut)
+
+    setupBreak({
+      name,
+      shortcutText,
+      settings,
+      pauseBreaks: functions.pauseBreaks,
+      log,
+      globalShortcut
+    })
   }
 }
 
