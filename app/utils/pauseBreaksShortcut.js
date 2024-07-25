@@ -41,7 +41,7 @@ function onShortcut ({ name, settings, log, breakPlanner, functions }) {
     case 'skipToNextMiniBreakShortcut':
       log.info('Stretchly: skipping to next Mini Break by shortcut')
       functions.skipToMicrobreak()
-      break;
+      break
     case 'skipToNextLongBreakShortcut':
       log.info('Stretchly: skipping to next Long Break by shortcut')
       functions.skipToBreak()
