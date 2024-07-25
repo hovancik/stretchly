@@ -1258,31 +1258,31 @@ function getTrayMenuTemplate () {
       submenu: [
         {
           label: i18next.t('utils.minutes', { count: 30 }),
-          accelerator: settings.get('pauseBreaksFor30MinutesShortcut'),
+          accelerator: settings.get('pauseBreaksFor30MinutesShortcut') || null,
           click: function () {
             pauseBreaks(1800 * 1000)
           }
         }, {
           label: i18next.t('main.forHour'),
-          accelerator: settings.get('pauseBreaksFor1HourShortcut'),
+          accelerator: settings.get('pauseBreaksFor1HourShortcut') || null,
           click: function () {
             pauseBreaks(3600 * 1000)
           }
         }, {
           label: i18next.t('main.for2Hours'),
-          accelerator: settings.get('pauseBreaksFor2HoursShortcut'),
+          accelerator: settings.get('pauseBreaksFor2HoursShortcut') || null,
           click: function () {
             pauseBreaks(3600 * 2 * 1000)
           }
         }, {
           label: i18next.t('main.for5Hours'),
-          accelerator: settings.get('pauseBreaksFor5HoursShortcut'),
+          accelerator: settings.get('pauseBreaksFor5HoursShortcut') || null,
           click: function () {
             pauseBreaks(3600 * 5 * 1000)
           }
         }, {
           label: i18next.t('main.untilMorning'),
-          accelerator: settings.get('pauseBreaksUntilMorningShortcut'),
+          accelerator: settings.get('pauseBreaksUntilMorningShortcut') || null,
           click: function () {
             const untilMorning = new UntilMorning(settings).msToSunrise()
             pauseBreaks(untilMorning)
