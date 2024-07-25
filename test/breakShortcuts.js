@@ -1,6 +1,6 @@
 import { vi } from 'vitest'
 import { expect } from 'chai'
-import { calculateInterval, registerPauseBreaksShortcuts, setupBreak, onShortcut } from '../app/utils/pauseBreaksShortcut'
+import { calculateInterval, registerBreakShortcuts, setupBreak, onShortcut } from '../app/utils/breakShortcuts'
 
 describe('pauseBreaksShortcut', () => {
   describe('calculateInterval', () => {
@@ -245,7 +245,7 @@ describe('pauseBreaksShortcut', () => {
     })
   })
 
-  describe('registerPauseBreaksShortcuts', () => {
+  describe('registerBreakShortcuts', () => {
     it('should register all shortcuts from settings', () => {
       const globalShortcut = { register: vi.fn().mockReturnValue(true) }
       const log = { info: vi.fn(), warn: vi.fn() }
@@ -266,7 +266,7 @@ describe('pauseBreaksShortcut', () => {
 
       const settings = { get: vi.fn((name) => intervals[name]) }
 
-      registerPauseBreaksShortcuts({
+      registerBreakShortcuts({
         settings,
         log,
         globalShortcut,
@@ -300,7 +300,7 @@ describe('pauseBreaksShortcut', () => {
 
       const settings = { get: vi.fn((name) => name === 'pauseBreaksFor30MinutesShortcut' ? 'key' : '') }
 
-      registerPauseBreaksShortcuts({
+      registerBreakShortcuts({
         settings,
         log,
         globalShortcut,

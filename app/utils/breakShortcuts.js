@@ -1,6 +1,8 @@
 const { UntilMorning } = require('./untilMorning')
 
-const intervals = {
+// Keys are the names of shortcuts in the settings,
+// values are break pause intervals in milliseconds (or null if not applicable)
+const shortcuts = {
   pauseBreaksFor30MinutesShortcut: 30 * 60 * 1000,
   pauseBreaksFor1HourShortcut: 3600 * 1000,
   pauseBreaksFor2HoursShortcut: 2 * 3600 * 1000,
@@ -18,7 +20,7 @@ function calculateInterval (name, settings) {
     return new UntilMorning(settings).msToSunrise()
   }
 
-  return intervals[name]
+  return shortcuts[name]
 }
 
 function onShortcut ({ name, settings, log, breakPlanner, functions }) {
@@ -68,8 +70,8 @@ function setupBreak ({ name, shortcutText, settings, log, globalShortcut, breakP
   }
 }
 
-function registerPauseBreaksShortcuts ({ settings, log, globalShortcut, breakPlanner, functions }) {
-  for (const name of Object.keys(intervals)) {
+function registerBreakShortcuts ({ settings, log, globalShortcut, breakPlanner, functions }) {
+  for (const name of Object.keys(shortcuts)) {
     const shortcutText = settings.get(name)
     if (shortcutText === '') continue
 
@@ -88,6 +90,6 @@ function registerPauseBreaksShortcuts ({ settings, log, globalShortcut, breakPla
 module.exports = {
   calculateInterval,
   onShortcut,
-  registerPauseBreaksShortcuts,
+  registerBreakShortcuts,
   setupBreak
 }

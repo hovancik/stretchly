@@ -8,7 +8,7 @@ const i18next = require('i18next')
 const Backend = require('i18next-fs-backend')
 const log = require('electron-log/main')
 const Store = require('electron-store')
-const { registerPauseBreaksShortcuts } = require('./utils/pauseBreaksShortcut')
+const { registerBreakShortcuts } = require('./utils/breakShortcuts')
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -263,7 +263,7 @@ async function initialize (isAppStart = true) {
   }
   globalShortcut.unregisterAll()
 
-  registerPauseBreaksShortcuts({
+  registerBreakShortcuts({
     settings,
     log,
     globalShortcut,
