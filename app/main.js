@@ -268,21 +268,9 @@ async function initialize (isAppStart = true) {
     log,
     globalShortcut,
     breakPlanner,
-    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak }
+    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak, resetBreaks }
   })
 
-  if (settings.get('resetBreaksShortcut') !== '') {
-    const resetBreaksShortcut = globalShortcut.register(settings.get('resetBreaksShortcut'), () => {
-      log.info('Stretchly: resetting breaks by shortcut')
-      resetBreaks()
-    })
-
-    if (!resetBreaksShortcut) {
-      log.warn('Stretchly: resetBreaksShortcut registration failed')
-    } else {
-      log.info(`Stretchly: resetBreaksShortcut registration successful (${settings.get('resetBreaksShortcut')})`)
-    }
-  }
   loadIdeas()
   updateTray()
 }
