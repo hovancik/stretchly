@@ -22,43 +22,40 @@ function calculateInterval (name, settings) {
 }
 
 function onShortcut ({ name, settings, log, breakPlanner, functions }) {
-  if (name === 'pauseBreaksToggleShortcut' && breakPlanner.isPaused) {
-    functions.resumeBreaks(false)
-    return
-  }
-
-  if (name === 'skipToNextScheduledBreakShortcut') {
-    log.info('Stretchly: skipping to next scheduled Break by shortcut')
-
-    if (breakPlanner._scheduledBreakType === 'break') {
-      functions.skipToBreak()
-    } else if (breakPlanner._scheduledBreakType === 'microbreak') {
+  switch (name) {
+    case 'pauseBreaksToggleShortcut':
+      if (breakPlanner.isPaused) {
+        functions.resumeBreaks(false)
+      } else {
+        functions.pauseBreaks(1)
+      }
+      break
+    case 'skipToNextScheduledBreakShortcut':
+      log.info('Stretchly: skipping to next scheduled Break by shortcut')
+      if (breakPlanner._scheduledBreakType === 'break') {
+        functions.skipToBreak()
+      } else if (breakPlanner._scheduledBreakType === 'microbreak') {
+        functions.skipToMicrobreak()
+      }
+      break
+    case 'skipToNextMiniBreakShortcut':
+      log.info('Stretchly: skipping to next Mini Break by shortcut')
       functions.skipToMicrobreak()
+      break;
+    case 'skipToNextLongBreakShortcut':
+      log.info('Stretchly: skipping to next Long Break by shortcut')
+      functions.skipToBreak()
+      break
+    case 'resetBreaksShortcut':
+      log.info('Stretchly: resetting breaks by shortcut')
+      functions.resetBreaks()
+      break
+    default: {
+      const interval = calculateInterval(name, settings)
+      functions.pauseBreaks(interval)
+      break
     }
-
-    return
   }
-
-  if (name === 'skipToNextMiniBreakShortcut') {
-    log.info('Stretchly: skipping to next Mini Break by shortcut')
-    functions.skipToMicrobreak()
-    return
-  }
-
-  if (name === 'skipToNextLongBreakShortcut') {
-    log.info('Stretchly: skipping to next Long Break by shortcut')
-    functions.skipToBreak()
-    return
-  }
-
-  if (name === 'resetBreaksShortcut') {
-    log.info('Stretchly: resetting breaks by shortcut')
-    functions.resetBreaks()
-    return
-  }
-
-  const interval = calculateInterval(name, settings)
-  functions.pauseBreaks(interval)
 }
 
 function setupBreak ({ name, shortcutText, settings, log, globalShortcut, breakPlanner, functions }) {
