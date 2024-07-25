@@ -7,7 +7,8 @@ const intervals = {
   pauseBreaksFor5HoursShortcut: 5 * 3600 * 1000,
   pauseBreaksUntilMorningShortcut: null,
   pauseBreaksToggleShortcut: 1, // 1 means pause indefinitely
-  skipToNextScheduledBreakShortcut: null
+  skipToNextScheduledBreakShortcut: null,
+  skipToNextMiniBreakShortcut: null
 }
 
 function calculateInterval (name, settings) {
@@ -33,6 +34,12 @@ function onShortcut ({ name, settings, log, breakPlanner, functions }) {
       functions.skipToMicrobreak()
     }
 
+    return
+  }
+
+  if (name === 'skipToNextMiniBreakShortcut') {
+    log.info('Stretchly: skipping to next Mini Break by shortcut')
+    functions.skipToMicrobreak()
     return
   }
 

@@ -111,6 +111,26 @@ describe('pauseBreaksShortcut', () => {
       })
     })
 
+    describe('skipToNextMiniBreakShortcut', () => {
+      it('skips to next scheduled microbreak', () => {
+        const log = { info: vi.fn() }
+        const skipToMicrobreak = vi.fn()
+        const pauseBreaks = vi.fn()
+
+        onShortcut({
+          name: 'skipToNextMiniBreakShortcut',
+          settings: null,
+          breakPlanner: null,
+          functions: { skipToMicrobreak, pauseBreaks },
+          log
+        })
+
+        expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next Mini Break by shortcut')
+        expect(skipToMicrobreak).toHaveBeenCalled()
+        expect(pauseBreaks).not.toHaveBeenCalled()
+      })
+    })
+
     describe('pauseBreaksToggleShortcut', () => {
       it('pauses breaks indefinitely', () => {
         const pauseBreaks = vi.fn()
@@ -198,7 +218,8 @@ describe('pauseBreaksShortcut', () => {
         pauseBreaksFor5HoursShortcut: 3,
         pauseBreaksUntilMorningShortcut: 4,
         pauseBreaksToggleShortcut: 5,
-        skipToNextScheduledBreakShortcut: 6
+        skipToNextScheduledBreakShortcut: 6,
+        skipToNextMiniBreakShortcut: 7
       }
 
       const settings = { get: vi.fn((name) => intervals[name]) }
@@ -214,18 +235,18 @@ describe('pauseBreaksShortcut', () => {
       // Check shortcut registration
       // ------------
 
-      expect(globalShortcut.register).toHaveBeenCalledTimes(7)
+      expect(globalShortcut.register).toHaveBeenCalledTimes(8)
 
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 8; i++) {
         expect(globalShortcut.register.mock.calls[i][0]).toBe(i)
       }
 
       // Check log
       // ------------
 
-      expect(log.info).toHaveBeenCalledTimes(7)
+      expect(log.info).toHaveBeenCalledTimes(8)
 
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 8; i++) {
         expect(log.info.mock.calls[i][0]).toMatch(`registration successful (${i})`)
       }
     })

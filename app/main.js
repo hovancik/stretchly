@@ -271,18 +271,6 @@ async function initialize (isAppStart = true) {
     functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak }
   })
 
-  if (settings.get('skipToNextMiniBreakShortcut') !== '') {
-    const skipToNextMiniBreakShortcut = globalShortcut.register(settings.get('skipToNextMiniBreakShortcut'), () => {
-      log.info('Stretchly: skipping to next Mini Break by shortcut')
-      skipToMicrobreak()
-    })
-
-    if (!skipToNextMiniBreakShortcut) {
-      log.warn('Stretchly: skipToNextMiniBreakShortcut registration failed')
-    } else {
-      log.info(`Stretchly: skipToNextMiniBreakShortcut registration successful (${settings.get('skipToNextMiniBreakShortcut')})`)
-    }
-  }
   if (settings.get('skipToNextLongBreakShortcut') !== '') {
     const skipToNextLongBreakShortcut = globalShortcut.register(settings.get('skipToNextLongBreakShortcut'), () => {
       log.info('Stretchly: skipping to next Long Break by shortcut')
