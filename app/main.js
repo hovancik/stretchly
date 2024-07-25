@@ -271,18 +271,6 @@ async function initialize (isAppStart = true) {
     functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak }
   })
 
-  if (settings.get('skipToNextLongBreakShortcut') !== '') {
-    const skipToNextLongBreakShortcut = globalShortcut.register(settings.get('skipToNextLongBreakShortcut'), () => {
-      log.info('Stretchly: skipping to next Long Break by shortcut')
-      skipToBreak()
-    })
-
-    if (!skipToNextLongBreakShortcut) {
-      log.warn('Stretchly: skipToNextLongBreakShortcut registration failed')
-    } else {
-      log.info(`Stretchly: skipToNextLongBreakShortcut registration successful (${settings.get('skipToNextLongBreakShortcut')})`)
-    }
-  }
   if (settings.get('resetBreaksShortcut') !== '') {
     const resetBreaksShortcut = globalShortcut.register(settings.get('resetBreaksShortcut'), () => {
       log.info('Stretchly: resetting breaks by shortcut')
