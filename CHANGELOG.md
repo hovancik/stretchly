@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Updated flag of Belarus to White-Red-White
 - advanced option to show break options (Skip, Pause, Reset) in Strict mode
 - add autostart option for Linux
+- Add keyboard shortcuts for pause breaks for duration.
 
 ### Changed
 - updated many translations

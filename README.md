@@ -268,6 +268,18 @@ In the preferences file, set `pauseBreaksToggleShortcut` to your preferred value
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
+#### Pause Breaks for Duration Shortcuts
+
+You can also set shortcuts to pause breaks for a specific duration by modifying the following values in the preferences file:
+
+- `pauseBreaksFor30MinutesShortcut`
+- `pauseBreaksFor1HourShortcut`
+- `pauseBreaksFor2HoursShortcut`
+- `pauseBreaksFor5HoursShortcut`
+- `pauseBreaksUntilMorningShortcut`
+
+If you'd like to disable the shortcuts, set value to empty string `""`. That's the default value as well.
+
 #### Skip to the next Break Shortcut
 
 In the preferences file, set `skipToNextScheduledBreakShortcut`, `skipToNextMiniBreakShortcut`, `skipToNextLongBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.

@@ -8,6 +8,7 @@ const i18next = require('i18next')
 const Backend = require('i18next-fs-backend')
 const log = require('electron-log/main')
 const Store = require('electron-store')
+const { registerBreakShortcuts } = require('./utils/breakShortcuts')
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -261,73 +262,15 @@ async function initialize (isAppStart = true) {
     contributorPreferencesWindow.send('renderSettings', await settingsToSend())
   }
   globalShortcut.unregisterAll()
-  if (settings.get('pauseBreaksToggleShortcut') !== '') {
-    const pauseBreaksToggleShortcut = globalShortcut.register(settings.get('pauseBreaksToggleShortcut'), () => {
-      if (breakPlanner.isPaused) {
-        resumeBreaks(false)
-      } else {
-        pauseBreaks(1)
-      }
-    })
 
-    if (!pauseBreaksToggleShortcut) {
-      log.warn('Stretchly: pauseBreaksToggleShortcut registration failed')
-    } else {
-      log.info(`Stretchly: pauseBreaksToggleShortcut registration successful (${settings.get('pauseBreaksToggleShortcut')})`)
-    }
-  }
-  if (settings.get('skipToNextScheduledBreakShortcut') !== '') {
-    const skipToNextScheduledBreakShortcut = globalShortcut.register(settings.get('skipToNextScheduledBreakShortcut'), () => {
-      log.info('Stretchly: skipping to next scheduled Break by shortcut')
-      if (breakPlanner._scheduledBreakType === 'break') {
-        skipToBreak()
-      } else if (breakPlanner._scheduledBreakType === 'microbreak') {
-        skipToMicrobreak()
-      }
-    })
+  registerBreakShortcuts({
+    settings,
+    log,
+    globalShortcut,
+    breakPlanner,
+    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak, resetBreaks }
+  })
 
-    if (!skipToNextScheduledBreakShortcut) {
-      log.warn('Stretchly: skipToNextScheduledBreakShortcut registration failed')
-    } else {
-      log.info(`Stretchly: skipToNextScheduledBreakShortcut registration successful (${settings.get('skipToNextScheduledBreakShortcut')})`)
-    }
-  }
-  if (settings.get('skipToNextMiniBreakShortcut') !== '') {
-    const skipToNextMiniBreakShortcut = globalShortcut.register(settings.get('skipToNextMiniBreakShortcut'), () => {
-      log.info('Stretchly: skipping to next Mini Break by shortcut')
-      skipToMicrobreak()
-    })
-
-    if (!skipToNextMiniBreakShortcut) {
-      log.warn('Stretchly: skipToNextMiniBreakShortcut registration failed')
-    } else {
-      log.info(`Stretchly: skipToNextMiniBreakShortcut registration successful (${settings.get('skipToNextMiniBreakShortcut')})`)
-    }
-  }
-  if (settings.get('skipToNextLongBreakShortcut') !== '') {
-    const skipToNextLongBreakShortcut = globalShortcut.register(settings.get('skipToNextLongBreakShortcut'), () => {
-      log.info('Stretchly: skipping to next Long Break by shortcut')
-      skipToBreak()
-    })
-
-    if (!skipToNextLongBreakShortcut) {
-      log.warn('Stretchly: skipToNextLongBreakShortcut registration failed')
-    } else {
-      log.info(`Stretchly: skipToNextLongBreakShortcut registration successful (${settings.get('skipToNextLongBreakShortcut')})`)
-    }
-  }
-  if (settings.get('resetBreaksShortcut') !== '') {
-    const resetBreaksShortcut = globalShortcut.register(settings.get('resetBreaksShortcut'), () => {
-      log.info('Stretchly: resetting breaks by shortcut')
-      resetBreaks()
-    })
-
-    if (!resetBreaksShortcut) {
-      log.warn('Stretchly: resetBreaksShortcut registration failed')
-    } else {
-      log.info(`Stretchly: resetBreaksShortcut registration successful (${settings.get('resetBreaksShortcut')})`)
-    }
-  }
   loadIdeas()
   updateTray()
 }
@@ -1315,26 +1258,31 @@ function getTrayMenuTemplate () {
       submenu: [
         {
           label: i18next.t('utils.minutes', { count: 30 }),
+          accelerator: settings.get('pauseBreaksFor30MinutesShortcut') || null,
           click: function () {
             pauseBreaks(1800 * 1000)
           }
         }, {
           label: i18next.t('main.forHour'),
+          accelerator: settings.get('pauseBreaksFor1HourShortcut') || null,
           click: function () {
             pauseBreaks(3600 * 1000)
           }
         }, {
           label: i18next.t('main.for2Hours'),
+          accelerator: settings.get('pauseBreaksFor2HoursShortcut') || null,
           click: function () {
             pauseBreaks(3600 * 2 * 1000)
           }
         }, {
           label: i18next.t('main.for5Hours'),
+          accelerator: settings.get('pauseBreaksFor5HoursShortcut') || null,
           click: function () {
             pauseBreaks(3600 * 5 * 1000)
           }
         }, {
           label: i18next.t('main.untilMorning'),
+          accelerator: settings.get('pauseBreaksUntilMorningShortcut') || null,
           click: function () {
             const untilMorning = new UntilMorning(settings).msToSunrise()
             pauseBreaks(untilMorning)
