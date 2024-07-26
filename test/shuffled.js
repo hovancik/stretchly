@@ -1,7 +1,5 @@
-import chai from 'chai'
+import 'chai/register-should'
 import Shuffled from '../app/utils/shuffled'
-
-chai.should()
 
 describe('shuffled', function () {
   const microbreakIdeas = new Shuffled([1, 2, 3, 4])

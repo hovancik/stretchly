@@ -1,13 +1,12 @@
 import { UntilMorning } from '../app/utils/untilMorning'
 import { vi } from 'vitest'
-import chai from 'chai'
+import 'chai/register-should'
 import Store from 'electron-store'
 import { join } from 'path'
 import { Settings, DateTime } from 'luxon'
 import defaultSettings from '../app/utils/defaultSettings'
 import { unlinkSync } from 'fs'
 
-chai.should()
 const timeout = process.env.CI ? 30000 : 10000
 
 describe('UntilMorning', function () {
