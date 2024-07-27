@@ -1,8 +1,6 @@
-import chai from 'chai'
+import 'chai/register-should'
 import IdeasLoader from '../app/utils/ideasLoader'
 import Shuffled from '../app/utils/shuffled'
-
-chai.should()
 
 describe('ideasLoader', function () {
   const ideas = new IdeasLoader([

@@ -9,7 +9,7 @@
 // const path = require('path')
 // const rimraf = require('rimraf')
 //
-// chai.should()
+//
 // chai.use(chaiAsPromised)
 // const timeout = process.env.CI ? 60000 : 10000
 //

@@ -1,11 +1,9 @@
 import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle } from '../app/utils/utils'
 import { beforeAll, afterAll, vi } from 'vitest'
-import chai from 'chai'
+import 'chai/register-should'
 import i18next from 'i18next'
 import { join } from 'path'
 import Backend from 'i18next-fs-backend'
-
-chai.should()
 
 describe('Times formatters', function () {
   beforeAll(async () => {
