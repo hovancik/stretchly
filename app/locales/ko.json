@@ -59,7 +59,8 @@
       "showIdeas": "쉬는 시간 중에 팁을 보여줍니다",
       "allScreens": "모든 화면에 쉬는 시간 알림을 보여줍니다",
       "monitorDnd": "방해 금지 모드에서도 알림을 보여줍니다",
-      "openAtLogin": "로그인할 때 Stretchly를 자동으로 시작합니다"
+      "openAtLogin": "로그인할 때 Stretchly를 자동으로 시작합니다",
+      "monitorIdleTime": "시스템 유휴 상태 모니터링(시스템이 유휴 상태일 때, 휴식 일시정지)."
     },
     "schedule": {
       "miniBreaks": "짧은 휴식:"
@@ -88,5 +89,16 @@
     "nextMiniBreak": "다음 Mini Break:",
     "afterMiniBreak_other": "{{count}} Mini Breaks 후",
     "resuming": "다시 시작:"
+  },
+  "miniBreakIdeas": {
+    "abg": {
+      "text": "주먹을 쥐고 손가락이 천장을 향하도록펼치세요(누군가에게 \"Stop\"이라고 말하듯이)."
+    },
+    "abj": {
+      "text": "바르게 서서 늘어나는 느낌이 들 때까지 손으로 머리를 어깨 쪽으로 천천히 기울입니다."
+    },
+    "abk": {
+      "text": "양팔을 옆구리에 붙이고 바로 서세요. 견갑골(날개뼈)을 꽉 쥐듯 모으고 자세를 유지하세요."
+    }
   }
 }
