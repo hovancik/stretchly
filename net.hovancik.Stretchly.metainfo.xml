@@ -36,6 +36,30 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.16.0" date="2024-08-11">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Estonia and Belarus translations</li>
+          <li>advanced option to show break options (Skip, Pause, Reset) in Strict mode</li>
+          <li>autostart option for Linux</li>
+          <li>keyboard shortcuts for pause breaks for specific durations</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>transparency issues on Windows 10</li>
+          <li>Schedule and Menu options not being updated after change of language</li>
+          <li>multiple RTL UI issues</li>
+          <li>RPM installer conflicts with other Electron apps</li>
+          <li>improve break window loading to improve blank window issues</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>disable skipping to next break from tray when in strict mode</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.15.0" date="2023-11-11">
       <description>
         <p>Added</p>
