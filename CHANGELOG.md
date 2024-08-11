@@ -757,7 +757,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - scripts for creating installers for OS X, Windows, Linux
 
 [Unreleased]: https://github.com/hovancik/stretchly/compare/v1.16.0...HEAD
-[1.15.1]: https://github.com/hovancik/stretchly/compare/v1.15.1...v1.16.0
+[1.16.0]: https://github.com/hovancik/stretchly/compare/v1.15.1...v1.16.0
 [1.15.1]: https://github.com/hovancik/stretchly/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/hovancik/stretchly/compare/v1.14.1...v1.15.0
 [1.14.1]: https://github.com/hovancik/stretchly/compare/v1.14.0...v1.14.1
