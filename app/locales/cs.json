@@ -88,7 +88,8 @@
       "colour": "Barevná",
       "monochrome": "Černobílá",
       "invertedMonochrome": "Převrácená černobílá",
-      "snowWhite": "Sněhobílá"
+      "snowWhite": "Sněhobílá",
+      "reverie": "Zátiší"
     },
     "about": {
       "tagline": "Pamatuje na přestávky za vás",
@@ -171,7 +172,9 @@
     "showCurrentTimeInBreaks": "Zobrazit aktuální místní čas v okně přestávky",
     "showBreaksAsRegularWindowsInfo": "Pokud je tato funkce povolena, okna Přestávek se budou moci zaostřovat, nebudou již \"vždy nahoře\" a budou se také zobrazovat na hlavním panelu.",
     "timeToBreakInTray": "Čas si dát přestávku",
-    "showTimeToBreakInTray": "Zobrazit čas do další přestávky v ikoně na panelu nabídek"
+    "showTimeToBreakInTray": "Zobrazit čas do další přestávky v ikoně na panelu nabídek",
+    "showTrayIcon": "Zobrazit ikonu nabídky",
+    "toShowTrayIcon": "Zobrazit ikonu aplikace Stretchly v menu"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -297,7 +300,7 @@
       "text": "Postavte se s nohama na šířku ramen, udělejte pohyb, jako byste si chtěli sednout zpět na židli. Pak se postavte a několikrát opakujte."
     },
     "abp": {
-      "text": "Postavte se zády a rukama ke zdi a pak s nimi pohybujte nahoru a dolů, jako byste dělali sněhové anděly."
+      "text": "Postavte se zády a rukama ke zdi a pak pomalu pohybujte rukama nahoru a dolů, jako byste dělali \"sněhové anděly\"."
     },
     "abq": {
       "text": "Postavte se čelem ke zdi, opřete se o ni rukama a udělejte několik kliků."
