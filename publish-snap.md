@@ -1,6 +1,15 @@
 # How I publish to snap store
 ## New way
 Github action
+
+### To get token for snapstore:
+0. `docker compose build`
+1. `docker compose up`
+2. `docker compose exec web snapcraft export-login creds`
+3. update ENV variable in Github with `creds`
+4.  github action now can publish
+
+
 ## Old way
 0. `docker-compose build`
 1. Download snap from Github
@@ -10,6 +19,5 @@ Github action
 5. Or without `--release` and manage on website
 
 ### TODO
-- build here not on GH?
 - script to do all steps?
 - get rich?
