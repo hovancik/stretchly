@@ -5,12 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.16.0] - 2024-08-11
 ### Added
 - Estonia and Belarus translations
-- Updated flag of Belarus to White-Red-White
 - advanced option to show break options (Skip, Pause, Reset) in Strict mode
-- add autostart option for Linux
-- Add keyboard shortcuts for pause breaks for duration.
+- autostart option for Linux
+- keyboard shortcuts for pause breaks for specific durations
 
 ### Changed
 - updated many translations
@@ -21,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Schedule and Menu options not being updated after change of language
 - multiple RTL UI issues
 - RPM installer conflicts with other Electron apps
-- improve break window loading to fix blank window
+- improve break window loading to improve blank window issues
 
 ## [1.15.1] - 2023-11-19
 ### Fixed
@@ -755,7 +756,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.15.1...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.16.0...HEAD
+[1.15.1]: https://github.com/hovancik/stretchly/compare/v1.15.1...v1.16.0
 [1.15.1]: https://github.com/hovancik/stretchly/compare/v1.15.0...v1.15.1
 [1.15.0]: https://github.com/hovancik/stretchly/compare/v1.14.1...v1.15.0
 [1.14.1]: https://github.com/hovancik/stretchly/compare/v1.14.0...v1.14.1
