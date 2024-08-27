@@ -13,7 +13,7 @@ body:
     label:       Version
     description: We only support the latest version. Find your version number at `Preferences` -  `About`.
     options:
-    - label:     I'm using version 1.15.1
+    - label:     I'm using version 1.16
       required:  false
 - type:          checkboxes
   id:            open-requests
