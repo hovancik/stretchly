@@ -87,7 +87,8 @@
       "colour": "Kolora",
       "monochrome": "Unukolora",
       "invertedMonochrome": "Inversigita unukolora",
-      "snowWhite": "Neĝblanka"
+      "snowWhite": "Neĝblanka",
+      "reverie": "Revo"
     },
     "about": {
       "tagline": "La aplikaĵo por memorigi pri paŭzoj",
@@ -166,7 +167,13 @@
     "primary": "Ĉefekrano",
     "screen": "Ekrano por Paŭzoj:",
     "cursor": "Sekvi kursoron",
-    "showOnMonitor": "Montri Paŭzojn sur"
+    "showOnMonitor": "Montri Paŭzojn sur",
+    "timeToBreakInTray": "Tempo por paŭzi",
+    "showTimeToBreakInTray": "Montri tempon al la sekva paŭzo en menuzono-ikono",
+    "showTrayIcon": "Montri menuzono-ikonon",
+    "toShowTrayIcon": "Montri Stretchly-ikonon en la menuzono",
+    "currentTimeInBreaks": "Nuna horo",
+    "showCurrentTimeInBreaks": "Montri nunan lokan horon en la paŭzfenestro"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -204,5 +211,40 @@
     "afterMiniBreak_other": "post {{count}} Paŭzetoj",
     "resuming": "Daŭriĝos",
     "appExclusion": "Regulo por ekskluzivi aplikaĵojn"
+  },
+  "miniBreakIdeas": {
+    "aai": {
+      "text": "Malrapide turnu la kapon flanken kaj tenu dum 10 sekundoj."
+    },
+    "aaa": {
+      "text": "Iru preni glason de akvo."
+    },
+    "aab": {
+      "text": "Rigardu malrapide tutmaldekstren poste tutdekstren."
+    },
+    "aac": {
+      "text": "Rigardu malrapide tutsupren, poste malsupren."
+    },
+    "aad": {
+      "text": "Fermu viajn okulojn kaj prenu kelkajn profondajn spirojn."
+    },
+    "aae": {
+      "text": "Fermu viajn okulojn kaj malstreĉu vin."
+    },
+    "aaf": {
+      "text": "Etendu viajn krurojn."
+    },
+    "aag": {
+      "text": "Etendu viajn brakojn."
+    },
+    "aah": {
+      "text": "Ĉu via sidpozo estas ĝusta?"
+    },
+    "aaj": {
+      "text": "Malrapide klinu la kapon flanken kaj tenu dum 5-10 sekundoj."
+    },
+    "aak": {
+      "text": "Stariĝu de via seĝo kaj streĉu."
+    }
   }
 }
