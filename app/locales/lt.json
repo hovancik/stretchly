@@ -1,29 +1,29 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly - Prisimink pertraukėles",
+    "toolTipHeader": "Stretchly - prisimink pertraukėles",
     "resumingBreaks": "Pertraukėlė tęsiasi",
     "downloadLatestVersion": "Atsisiųsti naujausią versiją",
-    "skipToTheNext": "Šitą preleisti",
+    "skipToTheNext": "Praleisti iki kitos",
     "resume": "Tęsti",
     "pause": "Sustabdyti",
     "forHour": "valandai",
-    "for2Hours": "2 valandom",
-    "for5Hours": "5 valandom",
+    "for2Hours": "2 valandoms",
+    "for5Hours": "5 valandoms",
     "untilMorning": "iki rytojaus",
     "indefinitely": "neribotam laikui",
     "resetBreaks": "Atstatyti pertraukėles",
     "quitStretchly": "Išjungti Stretchly",
-    "preferences": "Nustatymai",
-    "syncPreferences": "Synchronizavimo nustatymai",
-    "contributorPreferences": "Kontributorių nustatymai",
+    "preferences": "Nuostatos",
+    "syncPreferences": "Sinchronizavimo nuostatos",
+    "contributorPreferences": "Nuostatos rėmėjams",
     "cancel": "Atšaukti",
     "continue": "Tęsti",
-    "toMicrobreak": "Mini pertraukėlė",
-    "toBreak": "Ilga pertraukėlė",
-    "breakIn": "Ilga pertraukėlė po $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "Mini pertraukėlė po $t(utils.seconds, {'count': {{seconds}} })",
-    "restoreDefaults": "Atstatyti nustatymus",
-    "warning": "Taip bus atkurti numatytieji programos nustatymai ir visi jūsų pakeisti nustatymai bus prarasti."
+    "toMicrobreak": "trumpos pertraukėlės",
+    "toBreak": "ilgos pertraukos",
+    "breakIn": "Ilga pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Trumpa pertraukėlė po $t(utils.seconds, {'count': {{seconds}} })",
+    "restoreDefaults": "Atstatyti nuostatas",
+    "warning": "Taip bus atkurtos numatytosios programos nuostatos, tuo pačiu prarasite visas savo pakeistas nuostatas."
   },
   "break": {
     "title": "Laikas pertraukėlei!",
@@ -40,7 +40,7 @@
       "snowWhite": "Sniego baltumo",
       "colour": "Spalva",
       "menubarIcon": "Meniu juostos piktograma:",
-      "ticToc": "Tik Tak",
+      "ticToc": "Tik tak",
       "windChime": "Vėjo skambesys",
       "crystalGlass": "Krištolo stiklas",
       "enableSounds": "Įjungti garsus",
@@ -48,11 +48,12 @@
       "transparentMode": "Įgalinti skaidrumą",
       "appearance": "Išvaizda:",
       "invertedMonochrome": "Apverstas vienspalvis",
-      "monochrome": "Vienspalvis"
+      "monochrome": "Vienspalvis",
+      "reverie": "Svajos"
     },
     "about": {
       "tagline": "Prisimink pertraukėles",
-      "designedBy": "Ikona ir vartotojo sąsajos dizainas - Colin Shanley",
+      "designedBy": "Ženkliukas ir vartotojo sąsajos išvaizda - Colin Shanley",
       "janH": "Janas Hovancikas",
       "developedBy": "Sukūrė",
       "dot": ".",
@@ -63,63 +64,63 @@
       "learnMore": "Jei norite sužinoti daugiau apie Stretchly funkcijas, peržiūrėkite pamoką, atsisiųskite naujausią versiją arba susisiekite su mumis dėl pagalbos, "
     },
     "schedule": {
-      "enableStrictLong": "Įjungti griežtą režimą ilgoms pertraukoms",
+      "enableStrictLong": "Įjungti griežtą veikseną ilgoms pertraukoms",
       "cantDisableBoth": "Negalima išjungti abiejų pertraukų tipų",
       "breakFor": "Pertraukėlė:",
-      "enableMiniBreaks": "Įjungti Mini pertraukėles",
-      "miniBreaksInfo": "„Mini pertraukėlės“ yra trumpos pertraukėlės, daromos reguliariai, kad suteiktų galimybę pajudėti ir atsipalaiduoti.",
-      "miniBreaks": "Mini pertraukėlės:",
-      "enableStrictMini": "Įjungti griežtą režimą mini pertraukėlėms",
-      "strictModeInfo": "Griežtasis režimas neleidžia praleisti nei mažųjų, nei ilgųjų pertraukų ir yra skirtas drausmei palaikyti.",
-      "strictMode": "Griežtasis režimas:",
+      "enableMiniBreaks": "Įjungti trumpas pertraukėles",
+      "miniBreaksInfo": "„Trumpos pertraukėlės“ yra mažos pertraukėlės, daromos reguliariai, kad suteiktų galimybę pajudėti ir atsipalaiduoti.",
+      "miniBreaks": "Trumpos pertraukėlės:",
+      "enableStrictMini": "Įjungti griežtą veikseną trumpos pertraukėlėms",
+      "strictModeInfo": "Griežtoji veiksena neleidžia praleisti nei trumpų, nei ilgų pertraukų ir skirta drausmei palaikyti.",
+      "strictMode": "Griežtoji veiksena:",
       "enablePostponeLong": "Įgalinti ilgos pertraukos atidėjimą",
-      "showNotificationBeforeLongBreak": "Rodyti pranešimą prieš prasidedant ilgajai pertraukėlei",
-      "enableLongBreaks": "Įgalinti ilgas pertraukėles",
+      "showNotificationBeforeLongBreak": "Rodyti pranešimą prieš prasidedant ilgai pertraukai",
+      "enableLongBreaks": "Įgalinti ilgas pertraukas",
       "longBreaksInfo": "Ilgosios pertraukos daromos rečiau, bet yra ilgesnės trukmės, todėl galite ilgesniam laikui atsitraukti nuo darbo.",
       "longBreaks": "Ilgos pertraukos:",
       "every": "Kas:",
-      "enablePostponeMini": "Įgalinti Mini pertraukėlė atidėjimą",
-      "showNotificationBeforeMiniBreak": "Rodyti pranešimą prieš prasidedant Mini pertraukėlei"
+      "enablePostponeMini": "Įgalinti trumpos pertraukėlė atidėjimą",
+      "showNotificationBeforeMiniBreak": "Rodyti pranešimą prieš prasidedant trumpai pertraukėlei"
     },
     "settings": {
-      "restoreDefaults": "Atkurti pradines reikšmes",
-      "language": "Pasirink kalbą:",
-      "monitorDnd": "Rodyti pertraukėles „Netrukdyti“ režime",
-      "allScreens": "Rodyti pauzes per visus ekranus",
+      "restoreDefaults": "Atkurti numatytąsias reikšmes",
+      "language": "Pasirinkite kalbą:",
+      "monitorDnd": "Rodyti pertraukėles „netrukdymo“ veiksenoje",
+      "allScreens": "Rodyti pertraukėles per visus ekranus",
       "showIdeas": "Rodyti pratimus pertraukų metu",
       "fullscreen": "Pilnu ekranu",
-      "window": "Langas",
+      "window": "Langu",
       "showBreaksIn": "Rodo pertraukėles po:",
-      "openAtLogin": "Automatiškai startuoti Strechly prisijungus prie kompiuterio",
+      "openAtLogin": "Automatiškai paleisti Strechly prisijungus prie kompiuterio",
       "monitorIdleTime": "Stebėti sistemos neveikimo laiką (pertraukos pristabdomos, jei sistema neveikia)."
     },
     "nav": {
-      "heart": "Prisidėk/Paremk",
+      "heart": "Prisidėk / paremk",
       "about": "Apie",
       "theme": "Išvaizda",
-      "settings": "Nustatymai",
+      "settings": "Nuostatos",
       "schedule": "Tvarkaraštis"
     },
-    "title": "Strechly nustatymai",
+    "title": "Strechly nuostatos",
     "heart": {
-      "syncPreferences": "Synchronizavimo nustatymai",
-      "contributorPreferences": "Kontributorių nustatymai",
-      "authenticateUsing": "Tapatybės nustatymas naudojant:",
-      "alreadyContributor": "Aš jau esu prisidėjęs",
-      "becomePatron": "Tapkite Patronu",
+      "syncPreferences": "Sinchronizavimo nuostatos",
+      "contributorPreferences": "Nuostatos rėmėjams",
+      "authenticateUsing": "Tapatybės patvirtinimas naudojant:",
+      "alreadyContributor": "Aš jau prisidėjau",
+      "becomePatron": "Paremti",
       "desc2": "Stretchly yra nemokama. Tačiau galite paremti aukodami ir padėti mums toliau tobulinti Stretchly bei leisti kitą nemokamą programinę įrangą.",
       "desc1": "Moksliškai įrodyta, kad reguliarios pertraukos naudojantis kompiuteriu yra svarbios jūsų fizinei ir psichinei savijautai.",
-      "loveStretchly": "Mėgstate savo Stretchly?"
+      "loveStretchly": "Ar patinka Stretchly?"
     }
   },
   "process": {
     "newVersionAvailable": "Pasiekiama nauja versija!"
   },
   "welcome": {
-    "title": "Sveiki atvykę į Stretchly",
+    "title": "Jus sveikina Stretchly",
     "breakTimeReminderApp": "Prisimink pertraukėles",
     "viewTutorial": "Peržiūrėti pamoką",
-    "openPreferences": "Atidaryti nuostatas",
+    "openPreferences": "Atverti nuostatas",
     "getStarted": "Pradėti"
   },
   "contributorPreferences": {
@@ -130,18 +131,18 @@
     "4": "Penktas ekranas",
     "volume": "Garsumas:",
     "breakWindowWidth": "Plotis:",
-    "newVersionNotification": "Pranešti kai atsiras nauja versija",
-    "beforeLongBreak": "Ilga pertraukėlė:",
+    "newVersionNotification": "Pranešti atsiradus naujai versijai",
+    "beforeLongBreak": "Ilga pertrauka:",
     "sounds": "Garsai:",
     "breakWindowHeight": "Aukštis:",
     "breakWindowSizeInfo": "Kokią ekrano dalį turėtų slėpti pertraukos langas?",
     "breakWindowSize": "Pertraukos lango dydis",
     "opacity": "Skaidrumas:",
     "opacityInfo": "Kokio skaidrumo turėtų būti pertraukos langas?",
-    "opacityTheme": "Temos skaidrumas:",
+    "opacityTheme": "Apipavidalinimo skaidrumas:",
     "showWelcomeWindow": "Rodyti pasveikinimo langą kito paleidimo metu",
     "welcomeWindow": "Pasveikinimo langas:",
-    "pauseUntilMorningInfo": "Nurodykite, iki kurios valandos \"Pristabdyti iki ryto\" turėtų pristabdyti.",
+    "pauseUntilMorningInfo": "Nurodykite, iki kurios valandos „Pristabdyti iki ryto“ turėtų pristabdyti.",
     "pauseUntil": "Pristabdyti iki:",
     "pauseUntilMoring": "Pristabdyti iki ryto:",
     "longBreaks": "Ilgos pertraukos:",
@@ -153,40 +154,42 @@
     "newVersion": "Nauja versija:",
     "notificationsInfo": "Sistemos pranešimas rodomas prieš pertraukėles, kad galėtumėte jam pasiruošti.",
     "notifications": "Pranešimai apie pertraukėles:",
-    "title": "Kontributorių nustatymai",
+    "title": "Nuostatos rėmėjams",
     "showOnMonitor": "Rodyti pertraukėles",
     "screenInfo": "Kai pertraukų rodymas visuose monitoriuose yra išjungtas, galite pasirinkti, kuriame monitoriuje norite rodyti pertraukėles.",
     "showBreaksAsRegularWindows": "Rodyti pertraukėles kaip įprastus langus",
     "primary": "Pagrindinis ekranas",
     "screen": "Ekranas pertraukoms:",
-    "miniBreakStartSound": "Groti pertraukos pabaigos garsą ir Mini pertraukėlės pradžioje",
-    "miniBreaks": "Mini pertraukėlės:",
-    "customIdeas": "Individualios idėjos:",
-    "beforeMiniBreak": "Mini pertraukėlė:",
-    "customIdeasInfo": "Leidžia naudoti pasirinktines pertraukų idėjas redaguojant konfigūracijos failą. (Pažengusiems naudotojams.)",
-    "useIdeasFromSettings": "Naudoti pertraukų idėjas iš konfigūracijos failo",
-    "naturalBreaksInfo": "Jei pagrindinėje programoje „Nustatymai“ įjungtas neveikimo laiko stebėjimas, galite nurodyti, po kurio laiko pertraukos turėtų būti sustabdytos.",
-    "pauseAfter": "Padarykite pauzę po:",
+    "miniBreakStartSound": "Groti pertraukos pabaigos garsą ir trumpos pertraukėlės pradžioje",
+    "miniBreaks": "Trumpos pertraukėlės:",
+    "customIdeas": "Saviti patarimai:",
+    "beforeMiniBreak": "Trumpa pertraukėlė:",
+    "customIdeasInfo": "Galima rodyti jūsų pačių įrašytus patarimus pertraukų metu redaguojant konfigūracijos rinkmeną. (Pažengusiems naudotojams.)",
+    "useIdeasFromSettings": "Naudoti pertraukų patarimus iš konfigūracijos rinkmenos",
+    "naturalBreaksInfo": "Jei pagrindinės programos nuostatose įjungtas neveikimo laiko stebėjimas, galite nurodyti, po kurio laiko pertraukos turėtų būti sustabdytos.",
+    "pauseAfter": "Padarykite pertrauką po:",
     "light": "Šviesi",
     "dark": "Tamsi",
     "cursor": "Sekti žymeklį",
     "longBreakStartSound": "Groti pertraukos pabaigos garsą ir ilgos pertraukos pradžioje",
     "naturalBreaks": "Natūralios pertraukos:",
     "appearance": "Išvaizda:",
-    "system": "Sistema",
+    "system": "Sistemos",
     "showBreaksAsRegularWindowsTitle": "Veikti kaip įprastas langas:",
     "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje.",
     "timeToBreakInTray": "Laikas pertraukai",
     "showTimeToBreakInTray": "Rodyti laiką iki kitos pertraukos meniu juostos piktogramoje",
     "currentTimeInBreaks": "Dabartinis laikas",
-    "showCurrentTimeInBreaks": "Rodyti vietinį laiką pertraukos lange"
+    "showCurrentTimeInBreaks": "Rodyti vietinį laiką pertraukos lange",
+    "showTrayIcon": "Rodyti meniu juostos ženkliuką",
+    "toShowTrayIcon": "Rodyti Stretchly ženkliuką meniu juostoje"
   },
   "statusMessages": {
-    "nextLongBreak": "Sekanti ilgoji pertraukėlė",
-    "afterMiniBreak_one": "po {{count}} Mini pertraukėlė",
+    "nextLongBreak": "Kita ilgoji pertrauka",
+    "afterMiniBreak_one": "po {{count}} trumpa pertraukėlė",
     "afterMiniBreak_few": "po {{count}} Mini pertraukėlės",
-    "afterMiniBreak_other": "po {{count}} Mini pertraukėlių",
-    "nextMiniBreak": "Sekanti Mini pertraukėlė",
+    "afterMiniBreak_other": "po {{count}} trumpų pertraukėlių",
+    "nextMiniBreak": "Kita trumpa pertraukėlė",
     "appExclusion": "Programos išskyrimo taisyklė",
     "indefinitely": "Neribotam laikui",
     "dndMode": "Įjungta funkcija „Netrukdyti“",
@@ -195,7 +198,7 @@
   },
   "utils": {
     "inAbout": "po maždaug {{count}}",
-    "remaining": "Liko apie {{count}}",
+    "remaining": "Liko maždaug {{count}}",
     "minutes_one": "{{count}} minutė",
     "minutes_few": "{{count}} minutės",
     "minutes_other": "{{count}} minučių",
@@ -268,10 +271,10 @@
       "text": "Skirkite šiek tiek laiko pagalvoti apie tai, ką vertinate."
     },
     "aan": {
-      "text": "Skirkite šiek tiek laiko nusišypsoti būdami gyvi."
+      "text": "Nusišypsokite būdami gyvi."
     },
     "aao": {
-      "text": "Tikrai ergonomiška darbo vieta yra tokia, nuo kurios reguliariai atsitraukite."
+      "text": "Tikrai ergonomiška darbo vieta yra tokia, nuo kurios reguliariai atsitraukiate."
     },
     "aar": {
       "text": "Padėkite pirštų galiukus ant pečių. 10 sekundžių sukite pečius į priekį, paskui atgal."
@@ -307,7 +310,7 @@
       "text": "Atskleiskite akis natūraliai šviesai."
     },
     "abc": {
-      "text": "Užmerkę akis lėtai ir švelniai pakelkite akis į lubas ir grįžkite žemyn iki grindų."
+      "text": "Užsimerkę lėtai ir švelniai pakelkite akis į lubas ir grįžkite žemyn iki grindų."
     },
     "abd": {
       "text": "Užmerkę akis lėtai ir švelniai perkelkite akis į kairę, tada lėtai į dešinę."
@@ -329,6 +332,45 @@
     },
     "abe": {
       "text": "Pakratykite rankas, kad gautumėte palengvėjimą."
+    },
+    "abr": {
+      "text": "Atsisėskite ant kėdės krašto ir ištieskite vieną koją tiesiai prieš save, palaikykite 10-15 sekundžių. Pakartokite su kita koja."
+    },
+    "abt": {
+      "text": "Vieną ranką laikykite tiesiai į viršų, o kita ranka švelniai stumkite pirmosios rankos alkūnę link galvos. Laikykite 10-15 sekundžių. Pakartokite su kita ranka."
+    },
+    "abv": {
+      "text": "Ištieskite vieną ranką per krūtinę, kita ranka suimkite alkūnę ir švelniai pritraukite ją prie krūtinės. Pakartokite su kita ranka."
+    },
+    "abw": {
+      "text": "Atsistokite, vieną koją pastatykite ant šalia esančio daikto, pavyzdžiui, kėdės ar taburetės, ir palieskite kojų pirštus. Pakartokite su kita koja."
+    },
+    "abm": {
+      "text": "Atsisėskite ant kėdės krašto, pasukite liemenį į vieną pusę ir pabūkite 10-15 sekundžių. Pakartokite į kitą pusę."
+    },
+    "abn": {
+      "text": "Atsistokite ir vieną koją pastatykite ant šalia esančio daikto, pavyzdžiui, kėdės ar taburetės. Laikykite sulenktą kelį ir palaikykite 10-15 sekundžių. Pakartokite su kita koja."
+    },
+    "abo": {
+      "text": "Atsistokite taip, kad kojos būtų pečių plotyje, lenkitės žemyn tarsi sėstumėtės ant kėdės, po to vėl atsistokite. Pakartokite kelis kartus."
+    },
+    "abq": {
+      "text": "Atsistokite žiūrėdami į sieną ir atsiremkite į ją rankomis, paskui padarykite kelis atsispaudimus."
+    },
+    "abs": {
+      "text": "Atsistokite veidu į sieną, vieną koją pastatykite atgal, kitą - į priekį, tuomet atsiremkite į sieną. Pakartokite su kita koja."
+    },
+    "abu": {
+      "text": "Pakreipkite galvą į vieną, paskui į kitą pusę, po to švelniai palenkite ją į priekį ir atgal."
+    },
+    "abx": {
+      "text": "Atsistokite tarpduryje ir rankomis atsiremkite į abu statramsčius, tuomet švelniai lenkitės į priekį tol, kol pajusite tempimą krūtinėje."
+    },
+    "aby": {
+      "text": "Atsisėskite ant kėdės krašto arba ant grindų, suglauskite kojų padus ir švelniai prispauskite alkūnėmis taip, kad ištemptumėte vidinę šlaunų pusę."
+    },
+    "abp": {
+      "text": "Atsistokite, nugara ir rankomis atsiremkite į sieną, tuomet lėtai judinkite rankas aukštyn ir žemyn."
     }
   },
   "longBreakIdeas": {
@@ -454,7 +496,7 @@
     },
     "abg": {
       "title": "Rankų suspaudimai",
-      "text": "Suspauskite porą susuktų kojinių arba minkštą guminį rutulį, palaikykite 5 sekundes. Pakartokite visą procesą keletą kartų."
+      "text": "Suspauskite porą susuktų kojinių arba minkštą guminį kamuoliuką, palaikykite 5 sekundes. Viską pakartokite keletą kartų."
     },
     "abh": {
       "title": "Lėtas kvėpavimas",
@@ -467,6 +509,10 @@
     "aax": {
       "title": "Pulsas",
       "text": "Padidinkite pulso dažnį iki 120 dūžių per minutę 20 minučių keturis ar penkis kartus per savaitę darydami viską, kas jums patinka. Reguliarus širdies susitraukimų dažnio didinimas pagerina širdies ir kraujagyslių sistemos būklę."
+    },
+    "abi": {
+      "title": "Įsivaizdavimas",
+      "text": "Užsimerkite ir įsivaizduokite save ramioje, raminančioje vietoje, pavyzdžiui, paplūdimyje ar miške, ir susitelkite į šios aplinkos vaizdus, garsus ir pojūčius."
     }
   }
 }
