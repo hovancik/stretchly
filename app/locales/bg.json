@@ -87,7 +87,8 @@
       "colour": "Цветна",
       "monochrome": "Черно-бяла",
       "invertedMonochrome": "Обърнати цветове",
-      "snowWhite": "Снежно бяло"
+      "snowWhite": "Снежно бяло",
+      "reverie": "Замечтаност"
     },
     "about": {
       "tagline": "Приложение, което напомня да си почивате",

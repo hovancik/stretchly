@@ -170,7 +170,9 @@
     "timeToBreakInTray": "Hora da pausa",
     "showTimeToBreakInTray": "Mostrar tempo para a próxima pausa no ícone da barra de menu",
     "currentTimeInBreaks": "Tempo atual",
-    "showCurrentTimeInBreaks": "Mostrar a hora local atual na janela de pausa"
+    "showCurrentTimeInBreaks": "Mostrar a hora local atual na janela de pausa",
+    "showTrayIcon": "Mostrar ícone da barra de menus",
+    "toShowTrayIcon": "Mostrar o ícone do Stretchly na barra de menus"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -346,7 +348,7 @@
       "text": "Fique em pé com os pés afastados na largura dos ombros, abaixe o corpo como se estivesse sentado em uma cadeira e, em seguida, levante-se. Repita várias vezes."
     },
     "abp": {
-      "text": "Fique em pé com as costas e as mãos apoiadas na parede e mova lentamente os braços para cima e para baixo, como se estivesse fazendo anjos de neve."
+      "text": "Fique em pé com as costas e as mãos apoiadas na parede e mova lentamente os braços para cima e para baixo, como se estivesse fazendo anjos na neve."
     },
     "abq": {
       "text": "Fique de frente para uma parede e coloque as mãos sobre ela, depois faça várias flexões."

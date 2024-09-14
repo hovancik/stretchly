@@ -1,0 +1,82 @@
+{
+  "utils": {
+    "hours_one": "{{count}} сат",
+    "hours_few": "{{count}} сата",
+    "hours_other": "{{count}} сати",
+    "inAbout": "за приближно {{count}}",
+    "remaining": "Преостало: {{count}}",
+    "seconds_one": "{{count}} секунд",
+    "seconds_few": "{{count}} секунде",
+    "seconds_other": "{{count}} секунди",
+    "minutes_one": "{{count}} минут",
+    "minutes_few": "{{count}} минута",
+    "minutes_other": "{{count}} минута"
+  },
+  "statusMessages": {
+    "afterMiniBreak_one": "након {{count}} кратке",
+    "afterMiniBreak_few": "",
+    "afterMiniBreak_other": "након {{count}} кратких",
+    "nextLongBreak": "Следећа дуга пауза је"
+  },
+  "longBreakIdeas": {
+    "aaw": {
+      "title": "7-минутни тренинг"
+    }
+  },
+  "preferences": {
+    "nav": {
+      "heart": "Подржите",
+      "about": "О програму",
+      "theme": "Тема",
+      "schedule": "Распоред",
+      "settings": "Подешавања"
+    },
+    "heart": {
+      "becomePatron": "Постаните спонзор",
+      "authenticateUsing": "Пријавите се помоћу:",
+      "alreadyContributor": "Већ подржавам пројекат",
+      "loveStretchly": "Свиђа вам се Stretchly?"
+    },
+    "theme": {
+      "transparentMode": "Прозирност",
+      "enableSounds": "Омогући",
+      "greenClouds": "Пикник на трави",
+      "graphiteCrystal": "Кристали графита",
+      "reverie": "Сањарење",
+      "snowWhite": "Снежнобела",
+      "autumnBeBlessed": "Златна јесен",
+      "coffeeKisses": "Пољупци уз кафу",
+      "morningSwim": "Јутарње пливање",
+      "crystalGlass": "Кристал",
+      "ticToc": "Тик-так",
+      "windChime": "Звончићи",
+      "appearance": "Изглед:",
+      "sounds": "Звукови:"
+    },
+    "title": "Подешавања Stretchly-ја"
+  },
+  "main": {
+    "preferences": "Подешавања",
+    "quitStretchly": "Изађи",
+    "resetBreaks": "Ресетуј паузе",
+    "breakIn": "Дуга пауза за $t(utils.seconds, {'count': {{seconds}} })",
+    "forHour": "1 сат",
+    "for2Hours": "2 сата",
+    "for5Hours": "5 сати",
+    "pause": "Пауза",
+    "skipToTheNext": "Прескочи на следећу",
+    "toMicrobreak": "кратку паузу",
+    "toBreak": "дугу паузу",
+    "toolTipHeader": "Stretchly – подсетник за паузу",
+    "microbreakIn": "Кратка пауза за $t(utils.seconds, {'count': {{seconds}} })",
+    "untilMorning": "до јутра",
+    "indefinitely": "до даљњег",
+    "continue": "Настави",
+    "cancel": "Откажи"
+  },
+  "break": {
+    "postpone": "Одложи ову паузу",
+    "skip": "Прескочи ову паузу",
+    "title": "Време је за паузу!"
+  }
+}
