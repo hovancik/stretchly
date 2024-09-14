@@ -47,7 +47,9 @@
     "nav": {
       "settings": "설정",
       "schedule": "쉬는 시간",
-      "theme": "테마"
+      "theme": "테마",
+      "about": "소개",
+      "heart": "Stretchly 좋아요"
     },
     "title": "Stretchly 설정",
     "settings": {
@@ -63,7 +65,11 @@
       "monitorIdleTime": "시스템 유휴 상태 모니터링(시스템이 유휴 상태일 때, 휴식 일시정지)."
     },
     "schedule": {
-      "miniBreaks": "짧은 휴식:"
+      "miniBreaks": "짧은 휴식:",
+      "miniBreaksInfo": "짧은 휴식은 정기적으로 잠깐씩 쉬며 스트레칭하고 휴식을 취할 수 있는 시간을 제공합니다.",
+      "enableMiniBreaks": "짧은 휴식 활성",
+      "breakFor": "휴식 시간:",
+      "every": "매:"
     }
   },
   "utils": {
