@@ -1,0 +1,19 @@
+{
+  "main": {
+    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে দীর্ঘ বিরতি",
+    "resumingBreaks": "বিরতি শুরু হচ্ছে",
+    "downloadLatestVersion": "নতুন ভার্সন ডাউনলোড করুন",
+    "toBreak": "দীর্ঘ বিরতি",
+    "skipToTheNext": "পরেরটাতে যান",
+    "resume": "বিরতি শুরু করুন",
+    "pause": "বিরতি থামান",
+    "for2Hours": "দুই ঘন্টা",
+    "for5Hours": "পাঁচ ঘন্টা",
+    "untilMorning": "সকাল অবধি",
+    "toolTipHeader": "স্ট্রেচলি - বিরতির সময় মনে করানোর অ্যাপ",
+    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে ছোটো বিরতি",
+    "toMicrobreak": "ছোটো বিরতি",
+    "forHour": "এক ঘন্টা",
+    "indefinitely": "অনির্দিষ্ট কালের জন্যে"
+  }
+}
