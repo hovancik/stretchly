@@ -945,7 +945,7 @@ function startBreak () {
 }
 
 function breakComplete (shouldPlaySound, windows, breakType) {
-  if (globalShortcut.isRegistered(settings.get('endBreakShortcut'))) {
+  if (settings.get('endBreakShortcut') && globalShortcut.isRegistered(settings.get('endBreakShortcut'))) {
     globalShortcut.unregister(settings.get('endBreakShortcut'))
   }
   if (shouldPlaySound && !settings.get('silentNotifications')) {
@@ -1211,7 +1211,7 @@ function getTrayMenuTemplate () {
   }
 
   if (breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode') &&
-     !settings.get('showBreakActionsInStrictMode')) {
+    !settings.get('showBreakActionsInStrictMode')) {
     // nothing
   } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
     !settings.get('showBreakActionsInStrictMode')) {
@@ -1250,7 +1250,7 @@ function getTrayMenuTemplate () {
     !settings.get('showBreakActionsInStrictMode')) {
     // nothing
   } else if (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
-   !settings.get('showBreakActionsInStrictMode')) {
+    !settings.get('showBreakActionsInStrictMode')) {
     // nothing
   } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     trayMenu.push({
@@ -1475,7 +1475,7 @@ ipcMain.on('set-contributor', function (event) {
   const dir = app.getPath('userData')
   const contributorStampFile = `${dir}/stamp`
   const { DateTime } = require('luxon')
-  require('fs').writeFile(contributorStampFile, DateTime.now().toString(), () => {})
+  require('fs').writeFile(contributorStampFile, DateTime.now().toString(), () => { })
   global.shared.isContributor = true
   log.info('Stretchly: Logged in. Thanks for your contributions!')
   if (preferencesWin) {
