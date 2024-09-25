@@ -694,6 +694,8 @@ function startMicrobreak () {
       alwaysOnTop: !showBreaksAsRegularWindows,
       hasShadow: false,
       title: 'Stretchly',
+      titleBarStyle: 'hidden',
+      titleBarOverlay: false,
       webPreferences: {
         preload: path.join(__dirname, './microbreak.js'),
         enableRemoteModule: true,
@@ -840,6 +842,8 @@ function startBreak () {
       alwaysOnTop: !showBreaksAsRegularWindows,
       hasShadow: false,
       title: 'Stretchly',
+      titleBarStyle: 'hidden',
+      titleBarOverlay: false,
       webPreferences: {
         preload: path.join(__dirname, './break.js'),
         enableRemoteModule: true,

@@ -7,8 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Bengali, Serbian and Greek translations
+
 ### Fixed
 - error when end break shortcut is not set
+
+### Changed
+- improved break window loading
 
 ## [1.16.0] - 2024-08-11
 ### Added
