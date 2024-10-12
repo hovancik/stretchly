@@ -162,6 +162,6 @@
     "rtl-detect": "^1.1.2",
     "semver": "^7.6.3",
     "windows-focus-assist": "^1.4.0",
-    "windows-quiet-hours": "github:hovancik/windows-quiet-hours#fix"
+    "windows-quiet-hours": "github:hovancik/windows-quiet-hours#fix-2"
   }
 }
