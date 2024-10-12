@@ -45,7 +45,7 @@
       "window": "Ablakban",
       "fullscreen": "Teljes képernyőn",
       "showIdeas": "Gyakorlati tippek megjelenítése szünetek alatt",
-      "allScreens": "Szünetek mutatása az összes monitoron",
+      "allScreens": "Szünetek megjelenítése az összes monitoron",
       "monitorIdleTime": "Távollét figyelése (szünetek felfüggesztve, amíg a rendszer tétlen).",
       "monitorDnd": "Szünetek megjelenítése Ne Zavarjanak Módban is",
       "language": "Nyelv kiválasztása:",
@@ -122,8 +122,8 @@
     "beforeMiniBreak": "Rövid szünet előtt:",
     "newVersion": "Új verzió:",
     "newVersionNotification": "Értesítsen, ha új verzió érhető el",
-    "customIdeas": "Egyedi mozgás tippek:",
-    "customIdeasInfo": "Egyedi mozgás tippeket adhatsz meg a konfigurációs fájl szerkesztésével. (Haladó felhasználóknak.)",
+    "customIdeas": "Egyéni szünet alatti ötletek:",
+    "customIdeasInfo": "Egyéni szünet alatti ötleteket adhatsz meg a konfigurációs fájl szerkesztésével. (Haladó felhasználóknak.)",
     "useIdeasFromSettings": "Mozgás tippek használata a konfigurációs fájlból",
     "breakPostpone": "Szünetek elhalasztása:",
     "breakPostponeInfo": "Lehetőség van a szünetek elhalasztására, ha a Beállítások ablakban engedélyezed azt. A következő beállítások segítségével megadhatod, hogy mikor, milyen hosszú időre, illetve hány alkalommal halaszthass el egy szünetet.",
@@ -144,7 +144,7 @@
     "naturalBreaks": "Természetes szünetek:",
     "naturalBreaksInfo": "Ha a Távollét naplózása engedélyezve van a Beállítások ablakban, itt megadhatod, hogy mennyi idő eltelte után legyen a visszaszámlálás szüneteltetve.",
     "pauseAfter": "Szüneteltetés ezután:",
-    "appearance": "Kinézet:",
+    "appearance": "Megjelenés:",
     "light": "Világos",
     "dark": "Sötét",
     "system": "Rendszer",
@@ -156,11 +156,11 @@
     "2": "Harmadik monitor",
     "3": "Negyedik monitor",
     "showBreaksAsRegularWindowsTitle": "Ablak üzemmód:",
-    "showTrayIcon": "Tálca ikon mutatása",
+    "showTrayIcon": "Tálca ikon megjelenítése",
     "toShowTrayIcon": "Mutassa a Stretcly ikont a tálcán",
     "showCurrentTimeInBreaks": "Mutassa a jelenlegi időt a szünet ablakban",
-    "screen": "Monitor:",
-    "screenInfo": "Ha a szünetek mutatása az összes monitoron le van tiltva, kiválaszthatod, hogy melyik monitoron szeretnéd a szüneteket megjeleníteni.",
+    "screen": "Monitor a szünetekhez:",
+    "screenInfo": "Ha a szünetek megjelenítése az összes monitoron nincs engedélyezve, kiválaszthatod, hogy melyik monitoron szeretnéd a szüneteket megjeleníteni.",
     "cursor": "Egérmutató követése",
     "showOnMonitor": "Szünetek megjelenítése",
     "primary": "Elsődleges monitor",
@@ -441,11 +441,11 @@
       "text": "Ez az edzés egy teljes testet megmozgató gyakorlatok sora töredékidő alatt. Azonban mint minden gyakorlatnál, itt is légy óvatos. Számos app létezik, mely segít hogy hozzákezdj."
     },
     "aay": {
-      "title": "Lépcsőzz",
+      "title": "Lépcsőzés",
       "text": "Tanulmányok megmutatták, hogy a lépcsőzés, amely erőteljes intenzitású fizikai aktivitásnak számít, több kalóriát éget el percenként, mint a kocogás."
     },
     "abb": {
-      "title": "Ebédelj a szabadban",
+      "title": "Ebéd a szabadban",
       "text": "A természet hozzájárul a pozitív érzelmekhez, valamint a stressz és a szorongás csökkentéséhez. Amikor csak lehetséges, próbáld meg a napi ebédszünetet a szabadban tartani, zöldövezetben."
     },
     "abh": {
@@ -469,7 +469,7 @@
       "text": "Nehéznek találod egyedül szünetet tartani? Próbáld meg egy munkatárssal. Azon kívül, hogy így könnyebb betartani a szüneteket, nagyobb az esélye, hogy jobban megismerjétek egymást. A közös szünetek növelik a produktivitást."
     },
     "aav": {
-      "title": "Mozogj",
+      "title": "Mobilizálás",
       "text": "Minden harminc perc stagnálás után legalább egy percnyi stimulációt kell végezni."
     },
     "aak": {
@@ -482,10 +482,10 @@
     },
     "aba": {
       "text": "Egy tiszta környezet segít a munkára fókuszálni és gyakran pozitív érzelmeket, például boldogságot vált ki.",
-      "title": "Rakj rendet"
+      "title": "Rendrakás"
     },
     "aab": {
-      "title": "Lépj arrébb",
+      "title": "Arrébb lépés",
       "text": "Észrevetted már, hogy az agyad magától ki tud találni dolgokat? Csak annyit kell tenned, hogy arrébb lépsz a számítógéptől és tartasz egy szünetet, hogy valami egészen másra gondolj."
     },
     "abg": {
@@ -501,7 +501,7 @@
       "text": "Nyújtsd ki a karjaidat tenyerekkel magad felé, majd lassan forgasd a kezeidet négyszer órajárásával megegyezően, majd négyszer a másik irányban."
     },
     "aaz": {
-      "title": "Alkoss",
+      "title": "Alkotás",
       "text": "A művészetterápia köztudottan nagy mentális egészségügyi előnyökkel jár, különösen, ha a stresszkezelésről van szó. Mit szólnál, ha írnál egy gyors verset, fényképeznél vagy festenél valami apróságot?"
     },
     "abf": {

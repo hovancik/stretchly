@@ -195,13 +195,7 @@
     "hours_few": "{{count}} godziny",
     "hours_many": "{{count}} godzin",
     "remaining": "Pozostało {{count}}",
-    "inAbout": "za około {{count}}",
-    "none_other": "{{count}}",
-    "percent_other": "{{count}} procent",
-    "oclock_other": "{{count}}",
-    "seconds_other": "{{count}} sekund",
-    "minutes_other": "{{count}} minut",
-    "hours_other": "{{count}} godzin"
+    "inAbout": "za około {{count}}"
   },
   "process": {
     "newVersionAvailable": "Dostępna nowa wersja!"
@@ -223,8 +217,7 @@
     "afterMiniBreak_few": "po {{count}} mikroprzerwach",
     "afterMiniBreak_many": "po {{count}} mikroprzerwach",
     "resuming": "Wznawianie",
-    "appExclusion": "Zasada wyjątku aplikacji",
-    "afterMiniBreak_other": "po {{count}} Mini Przerwa"
+    "appExclusion": "Zasada wyjątku aplikacji"
   },
   "miniBreakIdeas": {
     "aac": {
@@ -352,6 +345,71 @@
     },
     "abp": {
       "text": "Stań plecami i rękami przy ścianie, a następnie powoli poruszaj ramionami w górę i w dół, jakbyś robił aniołki na śniegu."
+    },
+    "abq": {
+      "text": "Stań przodem do ściany i połóż na niej ręce, a następnie wykonaj kilka pompek."
+    },
+    "abt": {
+      "text": "Unieś jedną rękę pionowo w górę, potem drugą ręką delikatnie popchnij łokieć pierwszej ręki w stronę głowy. Przytrzymaj przez 10-15 sekund. Zrób to samo z drugą ręką."
+    },
+    "abr": {
+      "text": "Usiądź na krawędzi krzesła i wyciągnij jedną nogę prosto przed siebie, przytrzymując ją przez 10-15 sekund. Powtórz to samo z drugą nogą."
+    },
+    "abv": {
+      "text": "Wyciągnij jedną rękę przez klatkę piersiową, chwyć łokieć drugą ręką i delikatnie przyciągnij go do klatki piersiowej. Powtórz z drugą ręką."
+    },
+    "abw": {
+      "text": "Wstań, postaw jedną nogę na jakimś przedmiocie w pobliżu, np. na krześle lub stopniu, i sięgnij w dół, aby dotknąć palców u stóp. Powtórz z drugą nogą."
+    },
+    "abs": {
+      "text": "Stań twarzą do ściany, jedną nogę ustaw z tyłu, a drugą z przodu, następnie pochyl się w stronę ściany. Powtórz z drugą nogą."
+    },
+    "abu": {
+      "text": "Pochyl głowę w bok, następnie w drugi bok, a potem delikatnie przechylaj ją do przodu i do tyłu."
+    },
+    "abx": {
+      "text": "Stań w drzwiach, umieść jedną rękę po każdej stronie drzwi, a następnie delikatnie pochyl się do przodu, aż poczujesz rozciągnięcie w klatce piersiowej."
+    },
+    "aby": {
+      "text": "Usiądź na skraju krzesła lub na podłodze, złącz stopy podeszwami do siebie i delikatnie naciskaj łokciami, aby rozciągnąć wewnętrzną stronę ud."
+    }
+  },
+  "longBreakIdeas": {
+    "aab": {
+      "title": "Odsuń się",
+      "text": "Czy kiedykolwiek zauważyłeś, jak twój mózg potrafi sam rozwiązać problemy? Wystarczy tylko oderwać się od komputera i zrobić sobie przerwę, aby pomyśleć o czymś zupełnie innym."
+    },
+    "aaa": {
+      "text": "Czy ciężko Ci jest robić sobie przerwy sam? Spróbuj robić je z współpracownikiem. Oprócz tego, że łatwiej będzie Ci się trzymać tych przerw, będziesz miał szansę lepiej poznać swojego współpracownika. Robienie przerw razem zwiększa produktywność.",
+      "title": "Nie sam"
+    },
+    "aac": {
+      "title": "Mikroprzerwa",
+      "text": "Odpoczynek stanowi podstawowy element w utrzymaniu wydajności układu mięśniowo-szkieletowego. Regularne przerwy mogą zmniejszyć czas wykonywania zadania i przyczynić się do obniżenia narażenia na ryzyko urazów ergonomicznych."
+    },
+    "aad": {
+      "text": "Badania naukowe sugerują, że ćwiczenia oparte na uważności pomagają zmniejszyć lęk, depresję, stres i ból, a także poprawić ogólne zdrowie, zdrowie psychiczne i jakość życia. Nie wiesz, jak zacząć? Istnieje wiele aplikacji, które mogą Ci pomóc.",
+      "title": "Medytacja"
+    },
+    "aaf": {
+      "title": "Ergonomia",
+      "text": "Nieprawidłowa wysokość i kąt ustawienia klawiatury, myszy, monitora lub powierzchni roboczej mogą powodować problemy zdrowotne. Znajdź chwilę, aby dowiedzieć się więcej o ergonomii stanowiska pracy."
+    },
+    "aag": {
+      "title": "Ruch",
+      "text": "Istnieje wiele możliwości ćwiczeń w biurze. Spróbuj maszerować w miejscu lub robić pompki przy biurku."
+    },
+    "aah": {
+      "title": "Zmiana",
+      "text": "Masz piłkę do ćwiczeń lub stojące biurko? Zastanów się nad tym, aby na jakiś czas zastąpić swoje krzesło biurowe jednym z nich."
+    },
+    "aai": {
+      "title": "Powiadomienie",
+      "text": "Czy masz problemy z koncentracją lub myślisz o czymś innym? To może być sygnał, że potrzebujesz przerwy."
+    },
+    "aae": {
+      "text": "Długotrwałe patrzenie na ekrany powoduje, że rzadziej mrugamy, co naraża nasze oczy na działanie powietrza. Szybko mrugaj przez kilka sekund, aby odnowić film łzowy i oczyścić powierzchnię oka z kurzu.",
+      "title": "Mrugnięcie"
     }
   }
 }
