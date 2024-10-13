@@ -70,6 +70,8 @@ window.onload = (e) => {
       document.querySelector('#node').innerHTML = process.versions.node
       document.querySelector('#chrome').innerHTML = process.versions.chrome
       document.querySelector('#electron').innerHTML = process.versions.electron
+      document.querySelector('#platform').innerHTML = process.platform
+      document.querySelector('#windowsStore').innerHTML = process.windowsStore || false
     }
     setWindowHeight()
   })
