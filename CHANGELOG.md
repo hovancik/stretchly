@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - improved break window loading
 - updated many translations
+- better icons for "Show time in tray"
 
 ## [1.16.0] - 2024-08-11
 ### Added
