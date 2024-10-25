@@ -18,20 +18,45 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSi
     const ctx = canvas.getContext('2d')
 
     // Draw the input image onto the canvas
-    ctx.drawImage(image, 0, 0, image.width, image.height)
+    ctx.drawImage(image, 0, 0)
 
     // Set the font properties
-    ctx.font = `${fontSize}px '${fontFamily}'` // Ensure font family is in quotes
+    const maxTextWidthRatio = 0.8
+    ctx.quality = 'best'
+    ctx.font = `${fontSize}px '${fontFamily}'`
     ctx.fillStyle = fontColor
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
 
     // Calculate the position to center the text
+    const textMetrics = ctx.measureText(text)
+    // Offset the text, so the drawn text is vertically centered, not its baseline
+    const verticalOffsetFix = (textMetrics.actualBoundingBoxAscent - textMetrics.actualBoundingBoxDescent) / 2
     const textX = image.width / 2
-    const textY = image.height / 2
+    const textY = image.height / 2 + verticalOffsetFix
+    const textWidth = textMetrics.width
+    const textHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent
+
+    // Create cutout for text
+    ctx.globalCompositeOperation = 'destination-out'
+    const paddingX = 3
+    const paddingY = 4
+    const radiusX = textWidth / 2 + paddingX
+    const radiusY = textHeight / 2 + paddingY
+    ctx.beginPath()
+    ctx.ellipse(
+      textX,
+      image.height / 2,
+      radiusX,
+      radiusY,
+      0, 0, 2 * Math.PI
+    )
+    ctx.fill()
 
     // Draw the text onto the canvas
-    ctx.fillText(text, textX, textY)
+    ctx.globalCompositeOperation = 'source-over'
+    ctx.fillStyle = fontColor
+    ctx.fillText(text, textX, textY, maxTextWidthRatio * image.width)
 
     // Convert the canvas to a buffer
     const buffer = canvas.toBuffer('image/png')
