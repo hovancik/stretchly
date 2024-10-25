@@ -70,112 +70,67 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSi
   }
 }
 
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/tray.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayNumber${i}.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#a6a6a6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayDark.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayDarkNumber${i}.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#f6f6f6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMac.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMacNumber${i}.png`)
-  const text = i.toString()
-  const fontSize = 13.5
-  const fontColor = '#a6a6a6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMac@2x.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMacNumber${i}@2x.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#a6a6a6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMacDark.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMacDarkNumber${i}.png`)
-  const text = i.toString()
-  const fontSize = 13.5
-  const fontColor = '#f6f6f6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMacDark@2x.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMacDarkNumber${i}@2x.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#f6f6f6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMonochrome.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMonochromeNumber${i}.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#f6f6f6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMonochromeInverted.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMonochromeInvertedNumber${i}.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#f6f6f6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMacMonochromeTemplate.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMacMonochromeNumber${i}Template.png`)
-  const text = i.toString()
-  const fontSize = 13.5
-  const fontColor = '#a6a6a6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
-
-for (let i = 0; i <= 99; i++) {
-  const inputImagePath = path.join(__dirname, '../app/images/app-icons/trayMacMonochromeTemplate@2x.png')
-  const outputImagePath = path.join(__dirname, `../app/images/app-icons/trayMacMonochromeNumber${i}Template@2x.png`)
-  const text = i.toString()
-  const fontSize = 27
-  const fontColor = '#a6a6a6'
-  const fontFamily = 'NotoSans Black'
-
-  overlayTextOnImage(inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily)
-}
+const fontFamily = 'NotoSans Black';
+[
+  {
+    name: 'tray',
+    fontColor: '#a6a6a6',
+    fontSize: 27
+  },
+  {
+    name: 'trayDark',
+    fontColor: '#f6f6f6',
+    fontSize: 27
+  },
+  {
+    name: 'trayMonochrome',
+    fontColor: '#f6f6f6',
+    fontSize: 27
+  },
+  {
+    name: 'trayMonochromeInverted',
+    fontColor: '#f6f6f6',
+    fontSize: 27
+  },
+  {
+    name: 'trayMac',
+    fontColor: '#a6a6a6',
+    fontSize: 13.5
+  },
+  {
+    name: ['trayMac', '@2x'],
+    fontColor: '#a6a6a6',
+    fontSize: 27
+  },
+  {
+    name: 'trayMacDark',
+    fontColor: '#f6f6f6',
+    fontSize: 13.5
+  },
+  {
+    name: ['trayMacDark', '@2x'],
+    fontColor: '#f6f6f6',
+    fontSize: 27
+  },
+  {
+    name: ['trayMacMonochrome', 'Template'],
+    fontColor: '#a6a6a6',
+    fontSize: 13.5
+  },
+  {
+    name: ['trayMacMonochrome', 'Template@2x'],
+    fontColor: '#a6a6a6',
+    fontSize: 27
+  }
+].forEach(iconStyle => {
+  const nameArray = typeof iconStyle.name === 'string' ? [iconStyle.name, ''] : iconStyle.name
+  const fullName = nameArray.join('')
+  const prefix = nameArray[0]
+  const suffix = nameArray[1]
+  const inputImagePath = path.join(__dirname, `../app/images/app-icons/${fullName}.png`)
+  for (let i = 0; i <= 99; i++) {
+    const outputImagePath = path.join(__dirname, `../app/images/app-icons/${prefix}Number${i}${suffix}.png`)
+    const text = i.toString()
+    overlayTextOnImage(inputImagePath, outputImagePath, text, iconStyle.fontSize, iconStyle.fontColor, fontFamily)
+  }
+})
