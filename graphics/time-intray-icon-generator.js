@@ -6,7 +6,7 @@ const fs = require('fs')
 const path = require('path')
 
 // Load the font (make sure the font file is available in your project directory)
-registerFont(path.join(__dirname, '../app/css/fonts/NotoSans-Black.ttf'), { family: 'NotoSans Black' })
+registerFont(path.join(__dirname, '../app/css/fonts/NotoSans-Regular.ttf'), { family: 'Noto Sans Regular' })
 
 async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily) {
   try {
@@ -68,7 +68,7 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSi
   }
 }
 
-const fontFamily = 'NotoSans Black';
+const fontFamily = 'Noto Sans Regular';
 [
   {
     name: 'tray',
