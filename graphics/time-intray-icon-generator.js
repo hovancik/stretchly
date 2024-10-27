@@ -8,22 +8,25 @@ const path = require('path')
 // Load the font (make sure the font file is available in your project directory)
 registerFont(path.join(__dirname, '../app/css/fonts/NotoSans-Regular.ttf'), { family: 'Noto Sans Regular' })
 
-async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSize, fontColor, fontFamily) {
+async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontColor, fontFamily) {
   try {
     // Load the input image
-    const image = await loadImage(inputImagePath)
+    const baseImage = await loadImage(inputImagePath)
+    // For now the baseImage sets the icon dimensions (might change if SVGs get used as the baseImage)
+    const imageWidth = baseImage.width
+    const imageHeight = baseImage.height
 
-    // Create a canvas with the same dimensions as the input image
-    const canvas = createCanvas(image.width, image.height)
+    const canvas = createCanvas(imageWidth, imageHeight)
     const ctx = canvas.getContext('2d')
 
     // Draw the input image onto the canvas
-    ctx.drawImage(image, 0, 0)
+    ctx.drawImage(baseImage, 0, 0, imageWidth, imageHeight)
 
     // Set the font properties
+    const textHeightRatio = 0.8
     const maxTextWidthRatio = 0.8
     ctx.quality = 'best'
-    ctx.font = `${fontSize}px '${fontFamily}'`
+    ctx.font = `${textHeightRatio * imageHeight}px '${fontFamily}'`
     ctx.fillStyle = fontColor
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
@@ -32,21 +35,21 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSi
     const textMetrics = ctx.measureText(text)
     // Offset the text, so the drawn text is vertically centered, not its baseline
     const verticalOffsetFix = (textMetrics.actualBoundingBoxAscent - textMetrics.actualBoundingBoxDescent) / 2
-    const textX = image.width / 2
-    const textY = image.height / 2 + verticalOffsetFix
+    const textX = imageWidth / 2
+    const textY = imageHeight / 2 + verticalOffsetFix
     const textWidth = textMetrics.width
     const textHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent
 
     // Create cutout for text
     ctx.globalCompositeOperation = 'destination-out'
-    const paddingX = 3
+    const paddingX = 4
     const paddingY = 4
     const radiusX = textWidth / 2 + paddingX
     const radiusY = textHeight / 2 + paddingY
     ctx.beginPath()
     ctx.ellipse(
       textX,
-      image.height / 2,
+      imageHeight / 2,
       radiusX,
       radiusY,
       0, 0, 2 * Math.PI
@@ -56,7 +59,7 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSi
     // Draw the text onto the canvas
     ctx.globalCompositeOperation = 'source-over'
     ctx.fillStyle = fontColor
-    ctx.fillText(text, textX, textY, maxTextWidthRatio * image.width)
+    ctx.fillText(text, textX, textY, maxTextWidthRatio * imageWidth)
 
     // Convert the canvas to a buffer
     const buffer = canvas.toBuffer('image/png')
@@ -72,53 +75,44 @@ const fontFamily = 'Noto Sans Regular';
 [
   {
     name: 'tray',
-    fontColor: '#000000',
-    fontSize: 27
+    fontColor: '#000000'
   },
   {
     name: 'trayDark',
-    fontColor: '#8c8c8c',
-    fontSize: 27
+    fontColor: '#8c8c8c'
   },
   {
     name: 'trayMonochrome',
     fontColor: '#000000',
-    fontSize: 27
+    fontSize: 25.5
   },
   {
     name: 'trayMonochromeInverted',
-    fontColor: '#8c8c8c',
-    fontSize: 27
+    fontColor: '#8c8c8c'
   },
   {
     name: 'trayMac',
-    fontColor: '#000000',
-    fontSize: 13.5
+    fontColor: '#000000'
   },
   {
     name: ['trayMac', '@2x'],
-    fontColor: '#000000',
-    fontSize: 27
+    fontColor: '#000000'
   },
   {
     name: 'trayMacDark',
-    fontColor: '#8c8c8c',
-    fontSize: 13.5
+    fontColor: '#8c8c8c'
   },
   {
     name: ['trayMacDark', '@2x'],
-    fontColor: '#8c8c8c',
-    fontSize: 27
+    fontColor: '#8c8c8c'
   },
   {
     name: ['trayMacMonochrome', 'Template'],
-    fontColor: '#000000',
-    fontSize: 13.5
+    fontColor: '#000000'
   },
   {
     name: ['trayMacMonochrome', 'Template@2x'],
-    fontColor: '#000000',
-    fontSize: 27
+    fontColor: '#000000'
   }
 ].forEach(iconStyle => {
   const nameArray = typeof iconStyle.name === 'string' ? [iconStyle.name, ''] : iconStyle.name
@@ -129,7 +123,7 @@ const fontFamily = 'Noto Sans Regular';
   const promises = Array.from({ length: 100 }, (_, k) => k).map(i => {
     const outputImagePath = path.join(__dirname, `../app/images/app-icons/${prefix}Number${i}${suffix}.png`)
     const text = i.toString()
-    return overlayTextOnImage(inputImagePath, outputImagePath, text, iconStyle.fontSize, iconStyle.fontColor, fontFamily)
+    return overlayTextOnImage(inputImagePath, outputImagePath, text, iconStyle.fontColor, fontFamily)
   })
 
   Promise.all(promises).then(() =>
