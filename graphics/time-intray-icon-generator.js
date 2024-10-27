@@ -63,8 +63,6 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontSi
 
     // Save the output image
     fs.writeFileSync(outputImagePath, buffer)
-
-    console.log('Image with overlay text has been created successfully.')
   } catch (error) {
     console.error('Error creating image with overlay text:', error)
   }
@@ -128,9 +126,13 @@ const fontFamily = 'NotoSans Black';
   const prefix = nameArray[0]
   const suffix = nameArray[1]
   const inputImagePath = path.join(__dirname, `../app/images/app-icons/${fullName}.png`)
-  for (let i = 0; i <= 99; i++) {
+  const promises = Array.from({ length: 100 }, (_, k) => k).map(i => {
     const outputImagePath = path.join(__dirname, `../app/images/app-icons/${prefix}Number${i}${suffix}.png`)
     const text = i.toString()
-    overlayTextOnImage(inputImagePath, outputImagePath, text, iconStyle.fontSize, iconStyle.fontColor, fontFamily)
-  }
+    return overlayTextOnImage(inputImagePath, outputImagePath, text, iconStyle.fontSize, iconStyle.fontColor, fontFamily)
+  })
+
+  Promise.all(promises).then(() =>
+    console.log(`Images for theme ${fullName} with overlay text have been processed.`)
+  )
 })
