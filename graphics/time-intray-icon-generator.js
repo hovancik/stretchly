@@ -72,52 +72,52 @@ const fontFamily = 'NotoSans Black';
 [
   {
     name: 'tray',
-    fontColor: '#a6a6a6',
+    fontColor: '#000000',
     fontSize: 27
   },
   {
     name: 'trayDark',
-    fontColor: '#f6f6f6',
+    fontColor: '#8c8c8c',
     fontSize: 27
   },
   {
     name: 'trayMonochrome',
-    fontColor: '#f6f6f6',
+    fontColor: '#000000',
     fontSize: 27
   },
   {
     name: 'trayMonochromeInverted',
-    fontColor: '#f6f6f6',
+    fontColor: '#8c8c8c',
     fontSize: 27
   },
   {
     name: 'trayMac',
-    fontColor: '#a6a6a6',
+    fontColor: '#000000',
     fontSize: 13.5
   },
   {
     name: ['trayMac', '@2x'],
-    fontColor: '#a6a6a6',
+    fontColor: '#000000',
     fontSize: 27
   },
   {
     name: 'trayMacDark',
-    fontColor: '#f6f6f6',
+    fontColor: '#8c8c8c',
     fontSize: 13.5
   },
   {
     name: ['trayMacDark', '@2x'],
-    fontColor: '#f6f6f6',
+    fontColor: '#8c8c8c',
     fontSize: 27
   },
   {
     name: ['trayMacMonochrome', 'Template'],
-    fontColor: '#a6a6a6',
+    fontColor: '#000000',
     fontSize: 13.5
   },
   {
     name: ['trayMacMonochrome', 'Template@2x'],
-    fontColor: '#a6a6a6',
+    fontColor: '#000000',
     fontSize: 27
   }
 ].forEach(iconStyle => {
