@@ -44,12 +44,12 @@ class DndManager extends EventEmitter {
   }
 
   async _isDndEnabledLinux () {
-    const de = process.env.XDG_CURRENT_DESKTOP
+    const de = process.env.XDG_CURRENT_DESKTOP.toLowerCase()
     // https://specifications.freedesktop.org/mime-apps-spec/latest/file.html
     // https://specifications.freedesktop.org/menu-spec/latest/onlyshowin-registry.html
 
     switch (true) {
-      case de.includes('KDE'):
+      case de.includes('kde'):
         try {
           const obj = await this.bus.getProxyObject('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
           const properties = obj.getInterface('org.freedesktop.DBus.Properties')
@@ -57,9 +57,9 @@ class DndManager extends EventEmitter {
           if (await dndEnabled.value) {
             return true
           }
-        } catch (e) {}
+        } catch (e) { }
         break
-      case de.includes('XFCE'):
+      case de.includes('xfce'):
         try {
           const obj = await this.bus.getProxyObject('org.xfce.Xfconf', '/org/xfce/Xfconf')
           const properties = obj.getInterface('org.xfce.Xfconf')
@@ -67,17 +67,28 @@ class DndManager extends EventEmitter {
           if (await dndEnabled.value) {
             return true
           }
-        } catch (e) {}
+        } catch (e) { }
         break
-      case de.includes('GNOME'):
+      case de.includes('gnome'):
         try {
           const exec = this.util.promisify(require('node:child_process').exec)
           const { stdout } = await exec('gsettings get org.gnome.desktop.notifications show-banners')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
           }
-        } catch (e) {}
+        } catch (e) { }
         break
+      case de.includes('cinnamon'):
+        try {
+          const exec = this.util.promisify(require('node:child_process').exec)
+          const { stdout } = await exec('gsettings get org.cinnamon.desktop.notifications display-notifications')
+          if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
+            return true
+          }
+        } catch (e) { }
+        break
+      case de.includes('lxqt'):
+        return await this._getConfigValue('~/.config/lxqt/notifications.conf', 'doNotDisturb')
       default:
         if (!this._unsupDEErrorShown) {
           log.info(`Stretchly: ${process.env.XDG_CURRENT_DESKTOP} not supported for DND detection, yet.`)
@@ -103,6 +114,22 @@ class DndManager extends EventEmitter {
         return await this._isDndEnabledLinux()
       }
     } else {
+      return false
+    }
+  }
+
+  async _getConfigValue (filePath, key) {
+    try {
+      const data = await require('fs').promises.readFile(filePath, 'utf8')
+      const lines = data.split('\n')
+      for (const line of lines) {
+        const [configKey, value] = line.split('=')
+        if (configKey.trim() === key) {
+          return value.trim().toLowerCase() === 'true'
+        }
+      }
+      return false
+    } catch (e) {
       return false
     }
   }

@@ -63,6 +63,14 @@ describe('dndManager', function () {
     resolve()
   }))
 
+  it('should find correct value of LXQt config file', () => new Promise((resolve) => {
+    dndManager._getConfigValue(join(__dirname, '/test-lxqt.conf'), 'doNotDisturb')
+      .then(x => {
+        x.should.be.equal(true)
+      })
+    resolve()
+  }))
+
   afterEach(() => {
     dndManager.stop()
     dndManager = null
