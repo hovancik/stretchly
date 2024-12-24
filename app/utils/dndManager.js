@@ -87,6 +87,15 @@ class DndManager extends EventEmitter {
           }
         } catch (e) { }
         break
+      case de.includes('mate'):
+        try {
+          const exec = this.util.promisify(require('node:child_process').exec)
+          const { stdout } = await exec('gsettings get org.mate.NotificationDaemon do-not-disturb')
+          if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'true') {
+            return true
+          }
+        } catch (e) { }
+        break
       case de.includes('lxqt'):
         return await this._getConfigValue('~/.config/lxqt/notifications.conf', 'doNotDisturb')
       default:
