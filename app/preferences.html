@@ -339,17 +339,39 @@
         </span>
       </div>
       <div>
-        <input type="radio" value="false" name="useMonochromeTrayIcon" id="colour">
+        <input type="radio" value="colour" name="menubarIcon" id="colour">
         <label data-i18next="preferences.theme.colour" for="colour"></label>
       </div>
       <div>
-        <input type="radio" value="true" name="useMonochromeTrayIcon" id="monochrome">
+        <input type="radio" value="monochrome" name="menubarIcon" id="monochrome">
         <label data-i18next="preferences.theme.monochrome" for="monochrome"></label>
-        <span class="darwin-hidden">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="checkbox" value="useMonochromeInvertedTrayIcon" id="invertedMonochrome">
-          <label data-i18next="preferences.theme.invertedMonochrome" for="invertedMonochrome"></label>
+      </div>
+      <div>
+        <hr>
+      </div>
+      <div>
+        <span data-i18next="preferences.theme.settingsTheme">
         </span>
+      </div>
+      <div class="settings-theme">
+        <input type="radio" value="ocean" name="settingsTheme" id="ocean">
+        <label for="ocean">Ocean Blue</label>
+      </div>
+      <div class="settings-theme">
+        <input type="radio" value="sunset" name="settingsTheme" id="sunset">
+        <label for="sunset">Sunset Red</label>
+      </div>
+      <div class="settings-theme">
+        <input type="radio" value="forest" name="settingsTheme" id="forest">
+        <label for="forest">Forest Green</label>
+      </div>
+      <div class="settings-theme">
+        <input type="radio" value="midnight" name="settingsTheme" id="midnight">
+        <label for="midnight">Midnight Dark</label>
+      </div>
+      <div class="settings-theme">
+        <input type="radio" value="desert" name="settingsTheme" id="desert">
+        <label for="desert">Desert Orange</label>
       </div>
     </div>
     <div class="about hidden">

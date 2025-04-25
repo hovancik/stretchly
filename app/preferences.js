@@ -192,9 +192,23 @@ window.onload = (e) => {
       if (!eventsAttached) {
         radio.onchange = (event) => {
           ipcRenderer.send('save-setting', radio.name, value)
+          if (radio.name === 'settingsTheme') {
+            document.documentElement.setAttribute('data-theme', value)
+          }
+        }
+        // Add click handler for better interaction
+        radio.onclick = (event) => {
+          if (radio.name === 'settingsTheme') {
+            document.documentElement.setAttribute('data-theme', value)
+            ipcRenderer.send('save-setting', radio.name, value)
+          }
         }
       }
     })
+
+    // Set initial theme
+    const initialTheme = settings.settingsTheme || 'ocean' // Default to ocean if not set
+    document.documentElement.setAttribute('data-theme', initialTheme)
 
     document.querySelector('#language').value = settings.language
     if (!eventsAttached) {

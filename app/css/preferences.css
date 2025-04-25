@@ -399,3 +399,225 @@ body[dir=rtl] .heart > .authenticate > a {
   padding-right: 0;
   padding-left: 20px;
 }
+
+.settings-theme {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.settings-theme > input[type="radio"] {
+  display: none;
+}
+
+.settings-theme > label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  font-weight: 500;
+  min-width: 120px;
+  justify-content: center;
+}
+
+/* Theme Colors */
+#ocean + label {
+  background-color: #0066cc;
+  color: white;
+}
+
+#sunset + label {
+  background-color: #e53e3e;
+  color: white;
+}
+
+#forest + label {
+  background-color: #2f855a;
+  color: white;
+}
+
+#midnight + label {
+  background-color: #1a202c;
+  color: white;
+}
+
+#desert + label {
+  background-color: #dd6b20;
+  color: white;
+}
+
+.settings-theme > input[type="radio"]:checked + label {
+  border: 2px solid currentColor;
+  box-shadow: 0 0 0 1px var(--accent-color);
+}
+
+/* Theme Variables */
+:root[data-theme="ocean"] {
+  --bg-color: #f0f7ff;
+  --text-color: #1a365d;
+  --accent-color: #0066cc;
+  --border-color: rgba(0, 102, 204, 0.15);
+  --hover-color: #0052a3;
+  --nav-bg: rgba(0, 102, 204, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --section-bg: rgba(0, 102, 204, 0.03);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="sunset"] {
+  --bg-color: #fff5f5;
+  --text-color: #942727;
+  --accent-color: #e53e3e;
+  --border-color: rgba(229, 62, 62, 0.15);
+  --hover-color: #c53030;
+  --nav-bg: rgba(229, 62, 62, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --section-bg: rgba(229, 62, 62, 0.03);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="forest"] {
+  --bg-color: #f0fff4;
+  --text-color: #1c4532;
+  --accent-color: #2f855a;
+  --border-color: rgba(47, 133, 90, 0.15);
+  --hover-color: #246c48;
+  --nav-bg: rgba(47, 133, 90, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --section-bg: rgba(47, 133, 90, 0.03);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="midnight"] {
+  --bg-color: #171923;
+  --text-color: #e2e8f0;
+  --accent-color: #4299e1;
+  --border-color: rgba(66, 153, 225, 0.15);
+  --hover-color: #2b6cb0;
+  --nav-bg: rgba(26, 32, 44, 0.8);
+  --input-bg: rgba(45, 55, 72, 0.8);
+  --section-bg: rgba(26, 32, 44, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+:root[data-theme="desert"] {
+  --bg-color: #fffaf0;
+  --text-color: #904b14;
+  --accent-color: #dd6b20;
+  --border-color: rgba(221, 107, 32, 0.15);
+  --hover-color: #c05621;
+  --nav-bg: rgba(221, 107, 32, 0.05);
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --section-bg: rgba(221, 107, 32, 0.03);
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Apply theme colors to the UI elements */
+:root[data-theme] {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root[data-theme] body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.2s ease;
+}
+
+:root[data-theme] .navigation {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 2px var(--shadow-color);
+  backdrop-filter: blur(8px);
+}
+
+:root[data-theme] .navigation a {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+:root[data-theme] .navigation a:hover {
+  opacity: 1;
+}
+
+:root[data-theme] .navigation .active {
+  background-color: var(--accent-color);
+  color: white;
+  opacity: 1;
+}
+
+:root[data-theme] .navigation .active div {
+  color: white;
+}
+
+:root[data-theme] button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+:root[data-theme] button:hover {
+  background-color: var(--hover-color);
+}
+
+:root[data-theme] input[type="checkbox"] {
+  accent-color: var(--accent-color);
+}
+
+:root[data-theme] input[type="radio"] {
+  accent-color: var(--accent-color);
+}
+
+:root[data-theme] select {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+:root[data-theme] select:hover {
+  border-color: var(--accent-color);
+}
+
+:root[data-theme] hr {
+  border: none;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 16px 0;
+}
+
+:root[data-theme] .settings > div,
+:root[data-theme] .schedule > div,
+:root[data-theme] .theme > div,
+:root[data-theme] .about > div {
+  background-color: var(--section-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 16px;
+  margin: 4px 0;
+}
+
+:root[data-theme] a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+:root[data-theme] a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Special handling for dark themes */
+:root[data-theme="midnight"] select,
+:root[data-theme="midnight"] input[type="text"] {
+  background-color: var(--input-bg);
+  color: white;
+  border-color: var(--border-color);
+}

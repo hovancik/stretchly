@@ -83,12 +83,15 @@
       "crystalGlass": "Crystal glass",
       "windChime": "Wind chime",
       "ticToc": "Tic toc",
-      "reverie": "Reverie",
       "menubarIcon": "Menubar icon:",
       "colour": "Colour",
       "monochrome": "Monochrome",
-      "invertedMonochrome": "Inverted Monochrome",
-      "snowWhite": "Snow white"
+      "settingsTheme": "Settings Theme:",
+      "ocean": "Ocean Blue",
+      "sunset": "Sunset Red",
+      "forest": "Forest Green",
+      "midnight": "Midnight Dark",
+      "desert": "Desert Orange"
     },
     "about": {
       "tagline": "The break time reminder app",
