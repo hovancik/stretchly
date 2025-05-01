@@ -1,5 +1,10 @@
-const EventEmitter = require('events')
-const log = require('electron-log/main')
+import EventEmitter from 'events'
+import log from 'electron-log/main.js'
+import getFocusAssist from 'windows-focus-assist'
+import getIsQuietHours from 'windows-quiet-hours'
+import sessionBus from 'dbus-final'
+import { exec } from 'node:child_process'
+import { promisify } from 'node:util'
 
 class DndManager extends EventEmitter {
   constructor (settings) {
@@ -10,16 +15,6 @@ class DndManager extends EventEmitter {
     this.isOnDnd = false
 
     this._unsupDEErrorShown = false
-
-    if (process.platform === 'win32') {
-      this.windowsFocusAssist = require('windows-focus-assist')
-      this.windowsQuietHours = require('windows-quiet-hours')
-    } else if (process.platform === 'darwin') {
-      this.util = require('node:util')
-    } else if (process.platform === 'linux') {
-      this.bus = require('dbus-final').sessionBus()
-      this.util = require('node:util')
-    }
 
     if (this.monitorDnd) {
       this.start()
@@ -57,7 +52,7 @@ class DndManager extends EventEmitter {
     switch (true) {
       case de.includes('kde'):
         try {
-          const obj = await this.bus.getProxyObject('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
+          const obj = await sessionBus.getProxyObject('org.freedesktop.Notifications', '/org/freedesktop/Notifications')
           const properties = obj.getInterface('org.freedesktop.DBus.Properties')
           const dndEnabled = await properties.Get('org.freedesktop.Notifications', 'Inhibited')
           if (await dndEnabled.value) {
@@ -67,7 +62,7 @@ class DndManager extends EventEmitter {
         break
       case de.includes('xfce'):
         try {
-          const obj = await this.bus.getProxyObject('org.xfce.Xfconf', '/org/xfce/Xfconf')
+          const obj = await sessionBus.getProxyObject('org.xfce.Xfconf', '/org/xfce/Xfconf')
           const properties = obj.getInterface('org.xfce.Xfconf')
           const dndEnabled = await properties.GetProperty('xfce4-notifyd', '/do-not-disturb')
           if (await dndEnabled.value) {
@@ -77,8 +72,8 @@ class DndManager extends EventEmitter {
         break
       case de.includes('gnome') || de.includes('unity'):
         try {
-          const exec = this.util.promisify(require('node:child_process').exec)
-          const { stdout } = await exec('gsettings get org.gnome.desktop.notifications show-banners')
+          const asyncExec = promisify(exec)
+          const { stdout } = await asyncExec('gsettings get org.gnome.desktop.notifications show-banners')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
           }
@@ -86,8 +81,8 @@ class DndManager extends EventEmitter {
         break
       case de.includes('cinnamon'):
         try {
-          const exec = this.util.promisify(require('node:child_process').exec)
-          const { stdout } = await exec('gsettings get org.cinnamon.desktop.notifications display-notifications')
+          const asyncExec = promisify(exec)
+          const { stdout } = await asyncExec('gsettings get org.cinnamon.desktop.notifications display-notifications')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
           }
@@ -95,8 +90,8 @@ class DndManager extends EventEmitter {
         break
       case de.includes('mate'):
         try {
-          const exec = this.util.promisify(require('node:child_process').exec)
-          const { stdout } = await exec('gsettings get org.mate.NotificationDaemon do-not-disturb')
+          const asyncExec = promisify(exec)
+          const { stdout } = await asyncExec('gsettings get org.mate.NotificationDaemon do-not-disturb')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'true') {
             return true
           }
@@ -119,14 +114,14 @@ class DndManager extends EventEmitter {
       if (process.platform === 'win32') {
         let wfa = 0
         try {
-          wfa = this.windowsFocusAssist.getFocusAssist().value
+          wfa = getFocusAssist().value
         } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
-        const wqh = this.windowsQuietHours.getIsQuietHours()
+        const wqh = getIsQuietHours()
         return wqh || (wfa !== -1 && wfa !== 0)
       } else if (process.platform === 'darwin') {
         try {
-          const exec = this.util.promisify(require('node:child_process').exec)
-          const { stdout } = await exec('defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"')
+          const asyncExec = promisify(exec)
+          const { stdout } = await asyncExec('defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === '1') {
             return true
           }
@@ -141,7 +136,7 @@ class DndManager extends EventEmitter {
 
   async _getConfigValue (filePath, key) {
     try {
-      const data = await require('fs').promises.readFile(filePath, 'utf8')
+      const data = await require('node:fs').promises.readFile(filePath, 'utf8')
       const lines = data.split('\n')
       for (const line of lines) {
         const [configKey, value] = line.split('=')
@@ -170,4 +165,4 @@ class DndManager extends EventEmitter {
   }
 }
 
-module.exports = DndManager
+export default DndManager

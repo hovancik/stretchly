@@ -1,5 +1,6 @@
-const EventEmitter = require('events')
-const log = require('electron-log/main')
+import EventEmitter from 'events'
+import log from 'electron-log/main.js'
+import { powerMonitor } from 'electron'
 
 class NaturalBreaksManager extends EventEmitter {
   constructor (settings) {
@@ -31,7 +32,7 @@ class NaturalBreaksManager extends EventEmitter {
 
   get idleTime () {
     if (this.usingNaturalBreaks) {
-      return require('electron').powerMonitor.getSystemIdleTime() * 1000
+      return powerMonitor.getSystemIdleTime() * 1000
     } else {
       return 0
     }
@@ -60,4 +61,4 @@ class NaturalBreaksManager extends EventEmitter {
   }
 }
 
-module.exports = NaturalBreaksManager
+export default NaturalBreaksManager

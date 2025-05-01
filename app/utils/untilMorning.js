@@ -1,6 +1,6 @@
-const { DateTime } = require('luxon')
-const MeeusSunMoon = require('meeussunmoon')
-const log = require('electron-log/main')
+import { DateTime } from 'luxon'
+import MeeusSunMoon from 'meeussunmoon'
+import log from 'electron-log/main.js'
 
 class UntilMorning {
   constructor (settings) {
@@ -29,6 +29,4 @@ class UntilMorning {
   }
 }
 
-module.exports = {
-  UntilMorning
-}
+export { UntilMorning }

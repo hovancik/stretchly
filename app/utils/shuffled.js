@@ -1,4 +1,3 @@
-// Returns random elements from array without repetition
 class Shuffled {
   constructor (array) {
     this.array = array.slice(0)
@@ -16,4 +15,4 @@ class Shuffled {
   }
 }
 
-module.exports = Shuffled
+export default Shuffled

@@ -1,8 +1,6 @@
-const fs = require('fs')
-const semver = require('semver')
-const humanizeDuration = require('humanize-duration')
+import fs from 'node:fs'
 
-const formatTimeRemaining = function (milliseconds, locale, i18next = require('i18next')) {
+function formatTimeRemaining (milliseconds, locale, i18next, humanizeDuration) {
   if (locale === 'pt-BR') {
     locale = 'pt'
   }
@@ -12,7 +10,7 @@ const formatTimeRemaining = function (milliseconds, locale, i18next = require('i
   })
 }
 
-const formatTimeIn = function (milliseconds, locale, i18next = require('i18next')) {
+function formatTimeIn (milliseconds, locale, i18next, humanizeDuration) {
   if (locale === 'pt-BR') {
     locale = 'pt'
   }
@@ -40,7 +38,7 @@ function minutesRemaining (milliseconds) {
   return Math.round(milliseconds / 60000.0)
 }
 
-function shouldShowNotificationTitle (platform, systemVersion) {
+function shouldShowNotificationTitle (platform, systemVersion, semver) {
   if (platform === 'win32' && semver.gte(semver.coerce(systemVersion), '10.0.19042')) {
     return false
   }
@@ -55,7 +53,7 @@ function insideFlatpak () {
   return fs.existsSync(flatpakInfoPath)
 }
 
-module.exports = {
+export {
   formatTimeRemaining,
   formatTimeIn,
   canPostpone,

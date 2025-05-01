@@ -1,14 +1,14 @@
-const { ipcRenderer } = require('electron')
-const HtmlTranslate = require('./utils/htmlTranslate')
-const { setSameWidths } = require('./utils/sameWidths')
-const remote = require('@electron/remote')
-const i18next = remote.require('i18next')
+import { ipcRenderer } from 'electron'
+import HtmlTranslate from './utils/htmlTranslate.js'
+import { setSameWidths } from './utils/sameWidths.js'
+import { require as remoteRequire } from '@electron/remote'
+const i18next = remoteRequire('i18next')
 
 const htmlTranslate = new HtmlTranslate(document)
 let eventsAttached = false
 
 window.onload = (event) => {
-  require('./platform')
+  import('./platform')
   ipcRenderer.send('send-settings')
   htmlTranslate.translate()
   setTimeout(() => { eventsAttached = true }, 500)

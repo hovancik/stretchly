@@ -1,4 +1,4 @@
-const { UntilMorning } = require('./untilMorning')
+import { UntilMorning } from './untilMorning.js'
 
 // Keys are the names of shortcuts in the settings,
 // values are break pause intervals in milliseconds (or null if not applicable)
@@ -87,7 +87,7 @@ function registerBreakShortcuts ({ settings, log, globalShortcut, breakPlanner, 
   }
 }
 
-module.exports = {
+export {
   calculateInterval,
   onShortcut,
   registerBreakShortcuts,

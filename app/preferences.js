@@ -1,8 +1,8 @@
-const { ipcRenderer, shell } = require('electron')
-const remote = require('@electron/remote')
-const HtmlTranslate = require('./utils/htmlTranslate')
-const VersionChecker = require('./utils/versionChecker')
-const { setSameWidths } = require('./utils/sameWidths')
+import { ipcRenderer, shell } from 'electron'
+import remote from '@electron/remote'
+import HtmlTranslate from './utils/htmlTranslate.js'
+import VersionChecker from './utils/versionChecker.js'
+import { setSameWidths } from './utils/sameWidths.js'
 const i18next = remote.require('i18next')
 
 const bounds = remote.getCurrentWindow().getBounds()
@@ -11,7 +11,7 @@ const versionChecker = new VersionChecker()
 let eventsAttached = false
 
 window.onload = (e) => {
-  require('./platform')
+  import('./platform.js')
   ipcRenderer.send('send-settings')
   htmlTranslate.translate()
   setWindowHeight()

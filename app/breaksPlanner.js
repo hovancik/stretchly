@@ -1,9 +1,9 @@
-const Scheduler = require('./utils/scheduler')
-const EventEmitter = require('events')
-const NaturalBreaksManager = require('./utils/naturalBreaksManager')
-const DndManager = require('./utils/dndManager')
-const AppExclusionsManager = require('./utils/appExclusionsManager')
-const log = require('electron-log/main')
+import Scheduler from './utils/scheduler.js'
+import EventEmitter from 'events'
+import NaturalBreaksManager from './utils/naturalBreaksManager.js'
+import DndManager from './utils/dndManager.js'
+import AppExclusionsManager from './utils/appExclusionsManager.js'
+import log from 'electron-log/main.js'
 
 class BreaksPlanner extends EventEmitter {
   constructor (settings) {
@@ -289,4 +289,4 @@ class BreaksPlanner extends EventEmitter {
   }
 }
 
-module.exports = BreaksPlanner
+export default BreaksPlanner

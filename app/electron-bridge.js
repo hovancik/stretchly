@@ -1,5 +1,5 @@
-const { ipcRenderer, shell, contextBridge } = require('electron')
-const remote = require('@electron/remote')
+import { ipcRenderer, shell, contextBridge } from 'electron'
+import remote from '@electron/remote'
 
 contextBridge.exposeInMainWorld('ElectronBridge', {
   // helloWorld: () {

@@ -2,7 +2,7 @@
 // `canvas` is not installed so install it before running this script
 // Run this script using `node graphics/time-intray-icon-generator.js`
 const { createCanvas, loadImage, registerFont } = require('canvas')
-const fs = require('fs')
+const fs = require('node:fs')
 const path = require('path')
 
 // Load the font (make sure the font file is available in your project directory)

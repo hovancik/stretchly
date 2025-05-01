@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     data: 'Go grab a glass of water.',
     enabled: true

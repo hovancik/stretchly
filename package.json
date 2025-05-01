@@ -3,6 +3,7 @@
   "version": "1.17.2",
   "description": "The break time reminder app",
   "main": "app/main.js",
+  "type": "module",
   "engines": {
     "node": "20.18.1"
   },
@@ -146,7 +147,6 @@
     "vitest": "^3.0.2"
   },
   "dependencies": {
-    "@electron/remote": "^2.1.2",
     "auto-launch": "^6.0.0-rc1",
     "dbus-final": "github:Jelmerro/dbus-final",
     "electron-log": "^5.2.4",
@@ -157,7 +157,6 @@
     "luxon": "^3.5.0",
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2",
-    "rtl-detect": "^1.1.2",
     "semver": "^7.6.3",
     "windows-focus-assist": "^1.4.0",
     "windows-quiet-hours": "github:hovancik/windows-quiet-hours#fix-LPTSTR"

@@ -3,7 +3,7 @@ import { join } from 'path'
 import NaturalBreaksManager from '../app/utils/naturalBreaksManager'
 import Store from 'electron-store'
 import defaultSettings from '../app/utils/defaultSettings'
-import { unlink } from 'fs'
+import { unlink } from 'node:fs'
 
 describe('naturalBreaksManager', function () {
   let settings = null

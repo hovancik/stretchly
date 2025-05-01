@@ -1,5 +1,3 @@
-// Get path of correct app icon based on different criteria
-
 class AppIcon {
   constructor ({
     platform,
@@ -57,4 +55,4 @@ class AppIcon {
   }
 }
 
-module.exports = AppIcon
+export default AppIcon

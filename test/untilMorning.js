@@ -5,7 +5,7 @@ import Store from 'electron-store'
 import { join } from 'path'
 import { Settings, DateTime } from 'luxon'
 import defaultSettings from '../app/utils/defaultSettings'
-import { unlinkSync } from 'fs'
+import { unlinkSync } from 'node:fs'
 
 const timeout = process.env.CI ? 30000 : 10000
 

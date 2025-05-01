@@ -1,11 +1,11 @@
-const { ipcRenderer, shell } = require('electron')
-const remote = require('@electron/remote')
-const HtmlTranslate = require('./utils/htmlTranslate')
-const { setSameWidths } = require('./utils/sameWidths')
+import { ipcRenderer, shell } from 'electron'
+import remote from '@electron/remote'
+import HtmlTranslate from './utils/htmlTranslate.js'
+import { setSameWidths } from './utils/sameWidths.js'
 const htmlTranslate = new HtmlTranslate(document)
 
 window.onload = (e) => {
-  require('./platform')
+  import('./platform')
   htmlTranslate.translate()
   ipcRenderer.send('send-settings')
   setSameWidths()

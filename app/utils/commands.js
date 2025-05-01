@@ -1,5 +1,5 @@
-const { UntilMorning } = require('./untilMorning')
-const log = require('electron-log/main')
+import { UntilMorning } from './untilMorning.js'
+import log from 'electron-log/main.js'
 
 const allOptions = {
   title: {
@@ -311,4 +311,4 @@ function parseDuration (input) {
 
 const minToMs = 60000
 
-module.exports = Command
+export default Command

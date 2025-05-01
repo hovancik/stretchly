@@ -2,8 +2,10 @@ import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboard
 import { beforeAll, afterAll, vi } from 'vitest'
 import 'chai/register-should'
 import i18next from 'i18next'
+import semver from 'semver'
 import { join } from 'path'
 import Backend from 'i18next-fs-backend'
+import humanizeDuration from 'humanize-duration'
 
 describe('Times formatters', function () {
   beforeAll(async () => {
@@ -18,42 +20,42 @@ describe('Times formatters', function () {
   })
 
   it('formats "remaining" milliseconds into correct format', function () {
-    formatTimeRemaining(800, 'en', i18next).should.equal('1 second remaining')
-    formatTimeRemaining(1000, 'en', i18next).should.equal('1 second remaining')
-    formatTimeRemaining(1001, 'en', i18next).should.equal('1 second remaining')
-    formatTimeRemaining(2000, 'en', i18next).should.equal('2 seconds remaining')
-    formatTimeRemaining(59001, 'en', i18next).should.equal('59 seconds remaining')
-    formatTimeRemaining(60001, 'en', i18next).should.equal('1 minute remaining')
-    formatTimeRemaining(118001, 'en', i18next).should.equal('1 minute 58 seconds remaining')
-    formatTimeRemaining(119001, 'en', i18next).should.equal('1 minute 59 seconds remaining')
-    formatTimeRemaining(120000, 'en', i18next).should.equal('2 minutes remaining')
-    formatTimeRemaining(120001, 'en', i18next).should.equal('2 minutes remaining')
-    formatTimeRemaining(3480001, 'en', i18next).should.equal('58 minutes remaining')
-    formatTimeRemaining(3540001, 'en', i18next).should.equal('59 minutes remaining')
-    formatTimeRemaining(3600000, 'en', i18next).should.equal('1 hour remaining')
-    formatTimeRemaining(3600001, 'en', i18next).should.equal('1 hour remaining')
-    formatTimeRemaining(7080001, 'en', i18next).should.equal('1 hour 58 minutes remaining')
-    formatTimeRemaining(7180001, 'en', i18next).should.equal('1 hour 59 minutes 40 seconds remaining')
+    formatTimeRemaining(800, 'en', i18next, humanizeDuration).should.equal('1 second remaining')
+    formatTimeRemaining(1000, 'en', i18next, humanizeDuration).should.equal('1 second remaining')
+    formatTimeRemaining(1001, 'en', i18next, humanizeDuration).should.equal('1 second remaining')
+    formatTimeRemaining(2000, 'en', i18next, humanizeDuration).should.equal('2 seconds remaining')
+    formatTimeRemaining(59001, 'en', i18next, humanizeDuration).should.equal('59 seconds remaining')
+    formatTimeRemaining(60001, 'en', i18next, humanizeDuration).should.equal('1 minute remaining')
+    formatTimeRemaining(118001, 'en', i18next, humanizeDuration).should.equal('1 minute 58 seconds remaining')
+    formatTimeRemaining(119001, 'en', i18next, humanizeDuration).should.equal('1 minute 59 seconds remaining')
+    formatTimeRemaining(120000, 'en', i18next, humanizeDuration).should.equal('2 minutes remaining')
+    formatTimeRemaining(120001, 'en', i18next, humanizeDuration).should.equal('2 minutes remaining')
+    formatTimeRemaining(3480001, 'en', i18next, humanizeDuration).should.equal('58 minutes remaining')
+    formatTimeRemaining(3540001, 'en', i18next, humanizeDuration).should.equal('59 minutes remaining')
+    formatTimeRemaining(3600000, 'en', i18next, humanizeDuration).should.equal('1 hour remaining')
+    formatTimeRemaining(3600001, 'en', i18next, humanizeDuration).should.equal('1 hour remaining')
+    formatTimeRemaining(7080001, 'en', i18next, humanizeDuration).should.equal('1 hour 58 minutes remaining')
+    formatTimeRemaining(7180001, 'en', i18next, humanizeDuration).should.equal('1 hour 59 minutes 40 seconds remaining')
   })
 
   it('formats "in" milliseconds into correct format', function () {
-    formatTimeIn(800, 'en', i18next).should.equal('in about 0 minutes')
-    formatTimeIn(58001, 'en', i18next).should.equal('in about 1 minute')
-    formatTimeIn(60001, 'en', i18next).should.equal('in about 1 minute')
-    formatTimeIn(118001, 'en', i18next).should.equal('in about 2 minutes')
-    formatTimeIn(119001, 'en', i18next).should.equal('in about 2 minutes')
-    formatTimeIn(120001, 'en', i18next).should.equal('in about 2 minutes')
-    formatTimeIn(3480000, 'en', i18next).should.equal('in about 58 minutes')
-    formatTimeIn(3540001, 'en', i18next).should.equal('in about 59 minutes')
-    formatTimeIn(3600001, 'en', i18next).should.equal('in about 1 hour')
-    formatTimeIn(3660000, 'en', i18next).should.equal('in about 1 hour 1 minute')
-    formatTimeIn(7140000, 'en', i18next).should.equal('in about 1 hour 59 minutes')
-    formatTimeIn(7200000, 'en', i18next).should.equal('in about 2 hours')
-    formatTimeIn(7260000, 'en', i18next).should.equal('in about 2 hours 1 minute')
+    formatTimeIn(800, 'en', i18next, humanizeDuration).should.equal('in about 0 minutes')
+    formatTimeIn(58001, 'en', i18next, humanizeDuration).should.equal('in about 1 minute')
+    formatTimeIn(60001, 'en', i18next, humanizeDuration).should.equal('in about 1 minute')
+    formatTimeIn(118001, 'en', i18next, humanizeDuration).should.equal('in about 2 minutes')
+    formatTimeIn(119001, 'en', i18next, humanizeDuration).should.equal('in about 2 minutes')
+    formatTimeIn(120001, 'en', i18next, humanizeDuration).should.equal('in about 2 minutes')
+    formatTimeIn(3480000, 'en', i18next, humanizeDuration).should.equal('in about 58 minutes')
+    formatTimeIn(3540001, 'en', i18next, humanizeDuration).should.equal('in about 59 minutes')
+    formatTimeIn(3600001, 'en', i18next, humanizeDuration).should.equal('in about 1 hour')
+    formatTimeIn(3660000, 'en', i18next, humanizeDuration).should.equal('in about 1 hour 1 minute')
+    formatTimeIn(7140000, 'en', i18next, humanizeDuration).should.equal('in about 1 hour 59 minutes')
+    formatTimeIn(7200000, 'en', i18next, humanizeDuration).should.equal('in about 2 hours')
+    formatTimeIn(7260000, 'en', i18next, humanizeDuration).should.equal('in about 2 hours 1 minute')
   })
 })
 
-describe('canSkip and canPostpone', () => {
+describe('Others', () => {
   // stubbing date
   beforeAll(() => {
     vi.setSystemTime(1537347700000)
@@ -133,21 +135,21 @@ describe('canSkip and canPostpone', () => {
 
   describe('shouldShowNotificationTitle', () => {
     it('works for older windows', () => {
-      shouldShowNotificationTitle('win32', '10.0.19041').should.equal(true)
-      shouldShowNotificationTitle('win32', '6.3.9600').should.equal(true)
+      shouldShowNotificationTitle('win32', '10.0.19041', semver).should.equal(true)
+      shouldShowNotificationTitle('win32', '6.3.9600', semver).should.equal(true)
     })
     it('works for new windows', () => {
-      shouldShowNotificationTitle('win32', '10.0.19042').should.equal(false)
+      shouldShowNotificationTitle('win32', '10.0.19042', semver).should.equal(false)
     })
     it('works for older mac', () => {
-      shouldShowNotificationTitle('darwin', '10.15.1').should.equal(true)
+      shouldShowNotificationTitle('darwin', '10.15.1', semver).should.equal(true)
     })
     it('works for new mac', () => {
-      shouldShowNotificationTitle('darwin', '10.16').should.equal(false)
-      shouldShowNotificationTitle('darwin', '11.0.1').should.equal(false)
+      shouldShowNotificationTitle('darwin', '10.16', semver).should.equal(false)
+      shouldShowNotificationTitle('darwin', '11.0.1', semver).should.equal(false)
     })
     it('works for others', () => {
-      shouldShowNotificationTitle('linux', '1.0.0').should.equal(true)
+      shouldShowNotificationTitle('linux', '1.0.0', semver).should.equal(true)
     })
   })
 })

@@ -14,4 +14,4 @@ class VersionChecker {
   }
 }
 
-module.exports = VersionChecker
+export default VersionChecker

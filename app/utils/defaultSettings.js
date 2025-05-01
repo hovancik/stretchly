@@ -1,8 +1,8 @@
-const defaultBreakIdeas = require('./defaultBreakIdeas')
-const defaultMicrobreakIdeas = require('./defaultMicrobreakIdeas')
-const Utils = require('./utils')
+import defaultBreakIdeas from './defaultBreakIdeas.js'
+import defaultMicrobreakIdeas from './defaultMicrobreakIdeas.js'
+import { insideFlatpak } from './utils.js'
 
-module.exports = {
+export default {
   microbreakDuration: 20000,
   microbreakInterval: 600000,
   breakDuration: 300000,
@@ -39,7 +39,7 @@ module.exports = {
   allScreens: true,
   useIdeasFromSettings: false,
   language: 'en',
-  notifyNewVersion: !Utils.insideFlatpak(),
+  notifyNewVersion: !insideFlatpak(),
   isFirstRun: true,
   posLatitude: 0.0,
   posLongitude: 0.0,
@@ -53,7 +53,7 @@ module.exports = {
   endBreakShortcut: 'CmdOrCtrl+X',
   breakWindowWidth: 0.85,
   breakWindowHeight: 0.85,
-  checkNewVersion: !Utils.insideFlatpak(),
+  checkNewVersion: !insideFlatpak(),
   breakIdeas: defaultBreakIdeas,
   microbreakIdeas: defaultMicrobreakIdeas,
   showBreaksAsRegularWindows: false,

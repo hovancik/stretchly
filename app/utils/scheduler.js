@@ -1,4 +1,3 @@
-// Schedule event to occur after delay
 class Scheduler {
   constructor (func, delay, reference = null) {
     this.timer = null
@@ -31,4 +30,4 @@ class Scheduler {
   }
 }
 
-module.exports = Scheduler
+export default Scheduler

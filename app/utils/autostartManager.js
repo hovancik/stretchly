@@ -1,4 +1,5 @@
-const log = require('electron-log/main')
+import log from 'electron-log/main.js'
+import AutoLaunch from 'auto-launch'
 
 class AutostartManager {
   constructor ({
@@ -33,7 +34,6 @@ class AutostartManager {
   }
 
   get _linuxAutoLaunch () {
-    const AutoLaunch = require('auto-launch')
     const stretchlyAutoLaunch = new AutoLaunch({
       name: 'stretchly'
     })
@@ -41,7 +41,6 @@ class AutostartManager {
   }
 
   get _windowsStoreAutoLaunch () {
-    const AutoLaunch = require('auto-launch')
     const stretchlyAutoLaunch = new AutoLaunch({
       name: 'Stretchly',
       path: '33881JanHovancik.stretchly_24fg4m0zq65je!Stretchly',
@@ -51,4 +50,4 @@ class AutostartManager {
   }
 }
 
-module.exports = AutostartManager
+export default AutostartManager

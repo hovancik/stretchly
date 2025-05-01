@@ -28,6 +28,6 @@ function maxWidth (elements) {
   }))
 }
 
-module.exports = {
+export {
   setSameWidths
 }

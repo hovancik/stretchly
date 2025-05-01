@@ -1,21 +1,19 @@
-const remote = require('@electron/remote')
-const i18next = remote.require('i18next')
 class HtmlTranslate {
   constructor (document) {
     this.document = document
   }
 
-  translate () {
-    this.document.querySelectorAll('[data-i18next]').forEach(function (element) {
+  async translate () {
+    this.document.querySelectorAll('[data-i18next]').forEach(async function (element) {
       if (element.dataset.i18nextOptions) {
         JSON.parse(element.dataset.i18nextOptions)
-        element.innerHTML = i18next.t(element.dataset.i18next, JSON.parse(element.dataset.i18nextOptions))
+        element.innerHTML = await window.i18next.t(element.dataset.i18next, JSON.parse(element.dataset.i18nextOptions))
       } else {
-        element.innerHTML = i18next.t(element.dataset.i18next)
+        element.innerHTML = await window.i18next.t(element.dataset.i18next)
       }
     })
-    this.document.body.dir = require('rtl-detect').getLangDir(i18next.language)
+    this.document.body.dir = await window.i18next.dir()
   }
 }
 
-module.exports = HtmlTranslate
+export default HtmlTranslate

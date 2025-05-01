@@ -1,14 +1,34 @@
-const {
+import {
   app, nativeTheme, BrowserWindow, Menu, ipcMain,
-  shell, dialog, globalShortcut, Tray
-} = require('electron')
+  screen, shell, dialog, globalShortcut, Tray,
+  powerMonitor
+} from 'electron'
+import { EventEmitter } from 'node:events'
+import { dirname, join, resolve } from 'path'
+import { fileURLToPath } from 'url'
+import i18next from 'i18next'
+import Backend from 'i18next-fs-backend'
+import log from 'electron-log/main.js'
+import Store from 'electron-store'
+import humanizeDuration from 'humanize-duration'
+import semver from 'semver'
 
-const path = require('path')
-const i18next = require('i18next')
-const Backend = require('i18next-fs-backend')
-const log = require('electron-log/main')
-const Store = require('electron-store')
-const { registerBreakShortcuts } = require('./utils/breakShortcuts')
+import {
+  canPostpone, canSkip, formatTimeRemaining,
+  minutesRemaining
+} from './utils/utils.js'
+import IdeasLoader from './utils/ideasLoader.js'
+import BreaksPlanner from './breaksPlanner.js'
+import AppIcon from './utils/appIcon.js'
+import { UntilMorning } from './utils/untilMorning.js'
+import AutostartManager from './utils/autostartManager.js'
+import Command from './utils/commands.js'
+import { registerBreakShortcuts } from './utils/breakShortcuts.js'
+import defaultSettings from './utils/defaultSettings.js'
+import StatusMessages from './utils/statusMessages.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 process.on('uncaughtException', (err, _) => {
   log.error(err)
@@ -33,14 +53,6 @@ nativeTheme.on('updated', function theThemeHasChanged () {
   updateTray()
 })
 
-const Utils = require('./utils/utils')
-const IdeasLoader = require('./utils/ideasLoader')
-const BreaksPlanner = require('./breaksPlanner')
-const AppIcon = require('./utils/appIcon')
-const { UntilMorning } = require('./utils/untilMorning')
-const AutostartManager = require('./utils/autostartManager')
-const Command = require('./utils/commands')
-
 let microbreakIdeas
 let breakIdeas
 let breakPlanner
@@ -62,15 +74,22 @@ let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
 let trayUpdateIntervalObj = null
 
-require('@electron/remote/main').initialize()
 log.initialize({ preload: true })
 
 app.setAppUserModelId('net.hovancik.stretchly')
 
-global.shared = {
+const global = {
   isNewVersion: false,
   isContributor: false
 }
+
+ipcMain.on('set-global-value', (event, name, value) => {
+  global[name] = value
+})
+
+ipcMain.handle('get-global-value', (event, name) => {
+  return global[name]
+})
 
 const commandLineArguments = process.argv
   .slice(app.isPackaged ? 1 : 2)
@@ -178,10 +197,11 @@ async function initialize (isAppStart = true) {
   }
   // TODO maybe we should not reinitialize but handle everything when we save new values for preferences
   log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
-  require('events').defaultMaxListeners = 200 // for watching Store changes
+
+  EventEmitter.setMaxListeners(200) // for watching Store changes
   if (!settings) {
     settings = new Store({
-      defaults: require('./utils/defaultSettings'),
+      defaults: defaultSettings,
       beforeEachMigration: (store, context) => {
         log.info(`Stretchly: migrating preferences from Stretchly v${context.fromVersion} to v${context.toVersion}`)
       },
@@ -253,13 +273,13 @@ async function initialize (isAppStart = true) {
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 
-  require('fs').readFile(path.join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
+  require('node:fs').readFile(join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
     if (err) {
       return
     }
     const { DateTime } = require('luxon')
     if (DateTime.fromISO(data).month === DateTime.now().month) {
-      global.shared.isContributor = true
+      global.isContributor = true
       log.info('Stretchly: Thanks for your contributions!')
       if (preferencesWin) {
         preferencesWin.send('enableContributorPreferences')
@@ -299,7 +319,7 @@ function startI18next () {
       fallbackLng: 'en',
       debug: !app.isPackaged,
       backend: {
-        loadPath: path.join(__dirname, '/locales/{{lng}}.json'),
+        loadPath: join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
       }
     }, function (err, t) {
@@ -349,16 +369,14 @@ function onResumeOrUnlock () {
 }
 
 function startPowerMonitoring () {
-  const electron = require('electron')
-  electron.powerMonitor.on('suspend', onSuspendOrLock)
-  electron.powerMonitor.on('lock-screen', onSuspendOrLock)
-  electron.powerMonitor.on('resume', onResumeOrUnlock)
-  electron.powerMonitor.on('unlock-screen', onResumeOrUnlock)
+  powerMonitor.on('suspend', onSuspendOrLock)
+  powerMonitor.on('lock-screen', onSuspendOrLock)
+  powerMonitor.on('resume', onResumeOrUnlock)
+  powerMonitor.on('unlock-screen', onResumeOrUnlock)
 }
 
 function numberOfDisplays () {
-  const electron = require('electron')
-  return electron.screen.getAllDisplays().length
+  return screen.getAllDisplays().length
 }
 
 function closeWindows (windowArray) {
@@ -374,26 +392,25 @@ function closeWindows (windowArray) {
 }
 
 function displaysX (displayID = -1, width = 800, fullscreen = false) {
-  const electron = require('electron')
   let theScreen
 
   if (!settings.get('allScreens')) {
     if (settings.get('screen') === 'primary') {
-      theScreen = electron.screen.getPrimaryDisplay()
+      theScreen = screen.getPrimaryDisplay()
     } else if (settings.get('screen') === 'cursor') {
-      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
     } else {
       displayID = parseInt(settings.get('screen'))
     }
   }
 
   if (displayID === -1) {
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays() || displayID < 0) {
     log.warn(`Stretchly: invalid displayID ${displayID} to displaysX`)
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else {
-    const screens = electron.screen.getAllDisplays()
+    const screens = screen.getAllDisplays()
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
@@ -405,26 +422,25 @@ function displaysX (displayID = -1, width = 800, fullscreen = false) {
 }
 
 function displaysY (displayID = -1, height = 600, fullscreen = false) {
-  const electron = require('electron')
   let theScreen
 
   if (!settings.get('allScreens')) {
     if (settings.get('screen') === 'primary') {
-      theScreen = electron.screen.getPrimaryDisplay()
+      theScreen = screen.getPrimaryDisplay()
     } else if (settings.get('screen') === 'cursor') {
-      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
     } else {
       displayID = parseInt(settings.get('screen'))
     }
   }
 
   if (displayID === -1) {
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays() || displayID < 0) {
     log.warn(`Stretchly: invalid displayID ${displayID} to displaysY`)
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else {
-    const screens = electron.screen.getAllDisplays()
+    const screens = screen.getAllDisplays()
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
@@ -436,26 +452,25 @@ function displaysY (displayID = -1, height = 600, fullscreen = false) {
 }
 
 function displaysWidth (displayID = -1) {
-  const electron = require('electron')
   let theScreen
 
   if (!settings.get('allScreens')) {
     if (settings.get('screen') === 'primary') {
-      theScreen = electron.screen.getPrimaryDisplay()
+      theScreen = screen.getPrimaryDisplay()
     } else if (settings.get('screen') === 'cursor') {
-      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
     } else {
       displayID = parseInt(settings.get('screen'))
     }
   }
 
   if (displayID === -1) {
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays() || displayID < 0) {
     log.warn(`Stretchly: invalid displayID ${displayID} to displaysWidth`)
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else {
-    const screens = electron.screen.getAllDisplays()
+    const screens = screen.getAllDisplays()
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
@@ -463,26 +478,25 @@ function displaysWidth (displayID = -1) {
 }
 
 function displaysHeight (displayID = -1) {
-  const electron = require('electron')
   let theScreen
 
   if (!settings.get('allScreens')) {
     if (settings.get('screen') === 'primary') {
-      theScreen = electron.screen.getPrimaryDisplay()
+      theScreen = screen.getPrimaryDisplay()
     } else if (settings.get('screen') === 'cursor') {
-      theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
     } else {
       displayID = parseInt(settings.get('screen'))
     }
   }
 
   if (displayID === -1) {
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else if (displayID >= numberOfDisplays() || displayID < 0) {
     log.warn(`Stretchly: invalid displayID ${displayID} to displaysHeight`)
-    theScreen = electron.screen.getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
   } else {
-    const screens = electron.screen.getAllDisplays()
+    const screens = screen.getAllDisplays()
     theScreen = screens[displayID]
   }
   const bounds = theScreen.bounds
@@ -501,11 +515,11 @@ function trayIconPath () {
     darkMode: nativeTheme.shouldUseDarkColors,
     platform: process.platform,
     timeToBreakInTray: settings.get('timeToBreakInTray'),
-    timeToBreak: Utils.minutesRemaining(breakPlanner.timeToNextBreak),
+    timeToBreak: minutesRemaining(breakPlanner.timeToNextBreak),
     reference: breakPlanner.scheduler.reference
   }
   const trayIconFileName = new AppIcon(params).trayIconFileName
-  const pathToTrayIcon = path.join(__dirname, '/images/app-icons/', trayIconFileName)
+  const pathToTrayIcon = join(__dirname, '/images/app-icons/', trayIconFileName)
   return pathToTrayIcon
 }
 
@@ -521,7 +535,7 @@ function windowIconPath () {
     reference: unusedParams
   }
   const windowIconFileName = new AppIcon(params).windowIconFileName
-  return path.join(__dirname, '/images/app-icons', windowIconFileName)
+  return join(__dirname, '/images/app-icons', windowIconFileName)
 }
 
 function startProcessWin () {
@@ -529,17 +543,15 @@ function startProcessWin () {
     planVersionCheck()
     return
   }
-  const modalPath = path.join('file://', __dirname, '/process.html')
+  const modalPath = join('file://', __dirname, '/process.html')
   processWin = new BrowserWindow({
     show: false,
     backgroundThrottling: false,
     webPreferences: {
-      preload: path.join(__dirname, './process.js'),
-      enableRemoteModule: true,
+      preload: join(__dirname, './process-preload.mjs'),
       sandbox: false
     }
   })
-  require('@electron/remote/main').enable(processWin.webContents)
   processWin.loadURL(modalPath)
   processWin.once('ready-to-show', () => {
     planVersionCheck()
@@ -548,7 +560,7 @@ function startProcessWin () {
 
 function createWelcomeWindow (isAppStart = true) {
   if (settings.get('isFirstRun') && isAppStart) {
-    const modalPath = path.join('file://', __dirname, '/welcome.html')
+    const modalPath = join('file://', __dirname, '/welcome.html')
     welcomeWin = new BrowserWindow({
       x: displaysX(-1, 1000),
       y: displaysY(-1, 750),
@@ -558,12 +570,11 @@ function createWelcomeWindow (isAppStart = true) {
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
       webPreferences: {
-        preload: path.join(__dirname, './welcome.js'),
+        preload: join(__dirname, './welcome.js'),
         enableRemoteModule: true,
         sandbox: false
       }
     })
-    require('@electron/remote/main').enable(welcomeWin.webContents)
     welcomeWin.loadURL(modalPath)
     if (welcomeWin) {
       welcomeWin.on('closed', () => {
@@ -581,7 +592,7 @@ function createContributorSettingsWindow () {
     contributorPreferencesWindow.show()
     return
   }
-  const modalPath = path.join('file://', __dirname, '/contributor-preferences.html')
+  const modalPath = join('file://', __dirname, '/contributor-preferences.html')
   contributorPreferencesWindow = new BrowserWindow({
     x: displaysX(-1, 735),
     y: displaysY(),
@@ -590,12 +601,11 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      preload: path.join(__dirname, './contributor-preferences.js'),
+      preload: join(__dirname, './contributor-preferences.js'),
       enableRemoteModule: true,
       sandbox: false
     }
   })
-  require('@electron/remote/main').enable(contributorPreferencesWindow.webContents)
   contributorPreferencesWindow.loadURL(modalPath)
   if (contributorPreferencesWindow) {
     contributorPreferencesWindow.on('closed', () => {
@@ -623,12 +633,11 @@ function createSyncPreferencesWindow () {
     y: displaysY(),
     backgroundColor: 'whitesmoke',
     webPreferences: {
-      preload: path.resolve(__dirname, './electron-bridge.js'),
+      preload: resolve(__dirname, './electron-bridge.js'),
       enableRemoteModule: true,
       sandbox: false
     }
   })
-  require('@electron/remote/main').enable(syncPreferencesWindow.webContents)
   syncPreferencesWindow.loadURL(syncPreferencesUrl)
   if (syncPreferencesWindow) {
     syncPreferencesWindow.on('closed', () => {
@@ -651,11 +660,11 @@ function planVersionCheck (seconds = 1) {
 
 function checkVersion () {
   if (settings.get('checkNewVersion')) {
-    processWin.webContents.send('checkVersion', {
-      oldVersion: `v${app.getVersion()}`,
-      notify: settings.get('notifyNewVersion'),
-      silent: settings.get('silentNotifications')
-    })
+    processWin.webContents.send('check-version',
+      `v${app.getVersion()}`,
+      settings.get('notifyNewVersion'),
+      settings.get('silentNotifications')
+    )
     planVersionCheck(3600 * 48)
   }
 }
@@ -705,14 +714,14 @@ function startMicrobreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
-  const modalPath = path.join('file://', __dirname, '/microbreak.html')
+  const modalPath = join('file://', __dirname, '/microbreak.html')
   microbreakWins = []
 
   const idea = nextIdea || (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
   nextIdea = null
 
   if (settings.get('microbreakStartSoundPlaying') && !settings.get('silentNotifications')) {
-    processWin.webContents.send('playSound', settings.get('miniBreakAudio'), settings.get('volume'))
+    processWin.webContents.send('play-sound', settings.get('miniBreakAudio'), settings.get('volume'))
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
@@ -736,8 +745,7 @@ function startMicrobreak () {
       titleBarStyle: 'hidden',
       titleBarOverlay: false,
       webPreferences: {
-        preload: path.join(__dirname, './microbreak.js'),
-        enableRemoteModule: true,
+        preload: join(__dirname, './microbreak-preload.mjs'),
         sandbox: false
       }
     }
@@ -756,23 +764,23 @@ function startMicrobreak () {
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
 
-    ipcMain.on('send-microbreak-data', (event) => {
+    ipcMain.handle('send-microbreak-data', (event) => {
       const startTime = Date.now()
       if (!strictMode || postponable) {
         if (settings.get('endBreakShortcut') !== '') {
           globalShortcut.register(settings.get('endBreakShortcut'), () => {
             const passedPercent = (Date.now() - startTime) / breakDuration * 100
-            if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+            if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
               postponeMicrobreak()
-            } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+            } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
               finishMicrobreak(false)
             }
           })
         }
       }
-      event.sender.send('microbreakIdea', idea)
-      event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor(settings.get('miniBreakColor')))
+      return [idea, startTime, breakDuration, strictMode,
+        postponable, postponableDurationPercent,
+        calculateBackgroundColor(settings.get('miniBreakColor'))]
     })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
@@ -809,7 +817,6 @@ function startMicrobreak () {
       updateTray()
     })
 
-    require('@electron/remote/main').enable(microbreakWinLocal.webContents)
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
@@ -855,7 +862,7 @@ function startBreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
-  const modalPath = path.join('file://', __dirname, '/break.html')
+  const modalPath = join('file://', __dirname, '/break.html')
   breakWins = []
 
   const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
@@ -863,7 +870,7 @@ function startBreak () {
   nextIdea = null
 
   if (settings.get('breakStartSoundPlaying') && !settings.get('silentNotifications')) {
-    processWin.webContents.send('playSound', settings.get('audio'), settings.get('volume'))
+    processWin.webContents.send('play-sound', settings.get('audio'), settings.get('volume'))
   }
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
@@ -887,8 +894,7 @@ function startBreak () {
       titleBarStyle: 'hidden',
       titleBarOverlay: false,
       webPreferences: {
-        preload: path.join(__dirname, './break.js'),
-        enableRemoteModule: true,
+        preload: join(__dirname, './break-preload.mjs'),
         sandbox: false
       }
     }
@@ -906,23 +912,23 @@ function startBreak () {
     let breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
-    ipcMain.on('send-break-data', (event) => {
+    ipcMain.handle('send-break-data', (event) => {
       const startTime = Date.now()
       if (!strictMode || postponable) {
         if (settings.get('endBreakShortcut') !== '') {
           globalShortcut.register(settings.get('endBreakShortcut'), () => {
             const passedPercent = (Date.now() - startTime) / breakDuration * 100
-            if (Utils.canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+            if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
               postponeBreak()
-            } else if (Utils.canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+            } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
               finishBreak(false)
             }
           })
         }
       }
-      event.sender.send('breakIdea', idea)
-      event.sender.send('progress', startTime,
-        breakDuration, strictMode, postponable, postponableDurationPercent, calculateBackgroundColor(settings.get('mainColor')))
+      return [idea, startTime, breakDuration, strictMode,
+        postponable, postponableDurationPercent,
+        calculateBackgroundColor(settings.get('mainColor'))]
     })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
@@ -960,7 +966,6 @@ function startBreak () {
       updateTray()
     })
 
-    require('@electron/remote/main').enable(breakWinLocal.webContents)
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
@@ -998,7 +1003,7 @@ function breakComplete (shouldPlaySound, windows, breakType) {
   }
   if (shouldPlaySound && !settings.get('silentNotifications')) {
     const audio = breakType === 'mini' ? 'miniBreakAudio' : 'audio'
-    processWin.webContents.send('playSound', settings.get(audio), settings.get('volume'))
+    processWin.webContents.send('play-sound', settings.get(audio), settings.get('volume'))
   }
   if (process.platform === 'darwin') {
     // get focus on the last app
@@ -1023,6 +1028,8 @@ function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
   log.info(`Stretchly: finishing Long Break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
+  } else {
+    breakPlanner.clear()
   }
   updateTray()
 }
@@ -1148,14 +1155,13 @@ function resumeBreaks (notify = true) {
 }
 
 function createPreferencesWindow () {
-  const electron = require('electron')
   if (preferencesWin) {
     preferencesWin.show()
     return
   }
-  const modalPath = path.join('file://', __dirname, '/preferences.html')
-  const maxHeight = electron.screen
-    .getDisplayNearestPoint(electron.screen.getCursorScreenPoint())
+  const modalPath = join('file://', __dirname, '/preferences.html')
+  const maxHeight = screen
+    .getDisplayNearestPoint(screen.getCursorScreenPoint())
     .workAreaSize.height * 0.9
   preferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
@@ -1167,12 +1173,11 @@ function createPreferencesWindow () {
     y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
     webPreferences: {
-      preload: path.join(__dirname, './preferences.js'),
+      preload: join(__dirname, './preferences.js'),
       enableRemoteModule: true,
       sandbox: false
     }
   })
-  require('@electron/remote/main').enable(preferencesWin.webContents)
   preferencesWin.loadURL(modalPath)
   preferencesWin.on('closed', () => {
     preferencesWin = null
@@ -1227,7 +1232,7 @@ function updateTray () {
 function getTrayMenuTemplate () {
   const trayMenu = []
 
-  if (global.shared.isNewVersion) {
+  if (global.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {
@@ -1238,10 +1243,11 @@ function getTrayMenuTemplate () {
     })
   }
 
-  const StatusMessages = require('./utils/statusMessages')
   const statusMessage = new StatusMessages({
     breakPlanner,
-    settings
+    settings,
+    i18next,
+    humanizeDuration
   }).trayMessage
 
   if (statusMessage !== '') {
@@ -1356,7 +1362,7 @@ function getTrayMenuTemplate () {
     }
   })
 
-  if (global.shared.isContributor) {
+  if (global.isContributor) {
     trayMenu.push({
       label: i18next.t('main.contributorPreferences'),
       click: function () {
@@ -1384,11 +1390,12 @@ function getTrayMenuTemplate () {
 }
 
 function updateToolTip () {
-  const StatusMessages = require('./utils/statusMessages')
   let trayMessage = i18next.t('main.toolTipHeader')
   const message = new StatusMessages({
     breakPlanner,
-    settings
+    settings,
+    i18next,
+    humanizeDuration
   }).trayMessage
   if (message !== '') {
     trayMessage += '\n\n' + message
@@ -1399,7 +1406,7 @@ function updateToolTip () {
 }
 
 function showNotification (text) {
-  processWin.webContents.send('showNotification', {
+  processWin.webContents.send('show-notification', {
     text,
     silent: settings.get('silentNotifications')
   })
@@ -1481,7 +1488,7 @@ ipcMain.on('restore-defaults', (event) => {
   dialog.showMessageBox(dialogOpts).then(async (returnValue) => {
     if (returnValue.response === 0) {
       log.info('Stretchly: restoring default settings')
-      settings.store = Object.assign(require('./utils/defaultSettings'), { isFirstRun: false })
+      settings.store = Object.assign(defaultSettings, { isFirstRun: false })
       initialize(false)
       event.sender.send('renderSettings', await settingsToSend())
     }
@@ -1497,12 +1504,15 @@ async function settingsToSend () {
 }
 
 ipcMain.on('play-sound', function (event, sound) {
-  processWin.webContents.send('playSound', sound, settings.get('volume'))
+  processWin.webContents.send('play-sound', sound, settings.get('volume'))
 })
 
 ipcMain.on('show-debug', function (event) {
   const reference = breakPlanner.scheduler.reference
-  const timeleft = Utils.formatTimeRemaining(breakPlanner.scheduler.timeLeft, settings.get('language'))
+  const timeleft = formatTimeRemaining(
+    breakPlanner.scheduler.timeLeft, settings.get('language'),
+    i18next, semver
+  )
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = breakPlanner.dndManager.isOnDnd
@@ -1524,8 +1534,8 @@ ipcMain.on('set-contributor', function (event) {
   const dir = app.getPath('userData')
   const contributorStampFile = `${dir}/stamp`
   const { DateTime } = require('luxon')
-  require('fs').writeFile(contributorStampFile, DateTime.now().toString(), () => { })
-  global.shared.isContributor = true
+  require('node:fs').writeFile(contributorStampFile, DateTime.now().toString(), () => { })
+  global.isContributor = true
   log.info('Stretchly: Logged in. Thanks for your contributions!')
   if (preferencesWin) {
     preferencesWin.send('enableContributorPreferences')
@@ -1552,12 +1562,11 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     y: displaysY(),
     backgroundColor: 'whitesmoke',
     webPreferences: {
-      preload: path.resolve(__dirname, './electron-bridge.js'),
+      preload: resolve(__dirname, './electron-bridge.js'),
       enableRemoteModule: true,
       sandbox: false
     }
   })
-  require('@electron/remote/main').enable(myStretchlyWindow.webContents)
   myStretchlyWindow.loadURL(myStretchlyUrl)
   if (myStretchlyWindow) {
     myStretchlyWindow.on('closed', () => {
@@ -1569,7 +1578,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   }, 0)
 })
 
-ipcMain.on('open-sync-preferences', function (event) {
+ipcMain.on('open-sync-preferences', (event) => {
   createSyncPreferencesWindow()
 })
 
@@ -1581,4 +1590,16 @@ ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
   log.info('Stretchly: restoring remote settings')
   settings.store = remoteSettings
   initialize(false)
+})
+
+ipcMain.handle('i18next-translate', (event, key, options) => {
+  return i18next.t(key, options)
+})
+
+ipcMain.handle('i18next-dir', (event) => {
+  return i18next.dir()
+})
+
+ipcMain.handle('settings-get', (event, key) => {
+  return settings.get(key)
 })

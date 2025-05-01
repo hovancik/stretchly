@@ -1,6 +1,6 @@
-const EventEmitter = require('events')
-const log = require('electron-log/main')
-const psList = require('ps-list')
+import EventEmitter from 'events'
+import log from 'electron-log/main.js'
+import psList from 'ps-list'
 
 class AppExclusionsManager extends EventEmitter {
   constructor (settings) {
@@ -77,4 +77,4 @@ class AppExclusionsManager extends EventEmitter {
   }
 }
 
-module.exports = AppExclusionsManager
+export default AppExclusionsManager
