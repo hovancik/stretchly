@@ -330,12 +330,12 @@ function startI18next () {
     })
 }
 
-i18next.on('languageChanged', async function (lng) {
+i18next.on('languageChanged', () => {
   if (welcomeWin) {
-    welcomeWin.send('translate', await settingsToSend())
+    welcomeWin.webContents.send('translate')
   }
   if (preferencesWin) {
-    preferencesWin.send('translate', await settingsToSend())
+    preferencesWin.webContents.send('translate')
   }
   updateTray()
   loadIdeas()
@@ -570,8 +570,7 @@ function createWelcomeWindow (isAppStart = true) {
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
       webPreferences: {
-        preload: join(__dirname, './welcome.js'),
-        enableRemoteModule: true,
+        preload: join(__dirname, './welcome-preload.mjs'),
         sandbox: false
       }
     })
@@ -1495,14 +1494,6 @@ ipcMain.on('restore-defaults', (event) => {
   })
 })
 
-ipcMain.on('send-settings', async function (event) {
-  event.sender.send('renderSettings', await settingsToSend())
-})
-
-async function settingsToSend () {
-  return Object.assign({}, settings.store, { openAtLogin: await autostartManager.autoLaunchStatus() })
-}
-
 ipcMain.on('play-sound', function (event, sound) {
   processWin.webContents.send('play-sound', sound, settings.get('volume'))
 })
@@ -1582,9 +1573,13 @@ ipcMain.on('open-sync-preferences', (event) => {
   createSyncPreferencesWindow()
 })
 
-ipcMain.handle('current-settings', (event) => {
-  return settings.store
+ipcMain.handle('current-settings', async (event) => {
+  return await settingsToSend()
 })
+
+async function settingsToSend () {
+  return Object.assign({}, settings.store, { openAtLogin: await autostartManager.autoLaunchStatus() })
+}
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
   log.info('Stretchly: restoring remote settings')
@@ -1602,4 +1597,10 @@ ipcMain.handle('i18next-dir', (event) => {
 
 ipcMain.handle('settings-get', (event, key) => {
   return settings.get(key)
+})
+
+ipcMain.on('close-welcome-window', () => {
+  if (welcomeWin) {
+    welcomeWin.close()
+  }
 })

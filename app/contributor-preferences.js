@@ -9,7 +9,7 @@ let eventsAttached = false
 
 window.onload = (event) => {
   import('./platform')
-  ipcRenderer.send('send-settings')
+  ipcRenderer.send('current-settings')
   htmlTranslate.translate()
   setTimeout(() => { eventsAttached = true }, 500)
 

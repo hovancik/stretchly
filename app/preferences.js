@@ -12,7 +12,7 @@ let eventsAttached = false
 
 window.onload = (e) => {
   import('./platform.js')
-  ipcRenderer.send('send-settings')
+  ipcRenderer.send('current-settings')
   htmlTranslate.translate()
   setWindowHeight()
   setTimeout(() => { eventsAttached = true }, 500)
