@@ -33,7 +33,7 @@ contextBridge.exposeInMainWorld('process', {
 
 contextBridge.exposeInMainWorld('global', {
   setValue: (name, value) => ipcRenderer.send('set-global-value', name, value),
-  getValue: (name) => ipcRenderer.send('get-global-value', name)
+  getValue: (name) => ipcRenderer.invoke('get-global-value', name)
 })
 
 contextBridge.exposeInMainWorld('i18next', {

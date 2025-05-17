@@ -4,6 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
+import { readFile, writeFile } from 'node:fs'
 import { dirname, join, resolve } from 'path'
 import { fileURLToPath } from 'url'
 import i18next from 'i18next'
@@ -11,7 +12,7 @@ import Backend from 'i18next-fs-backend'
 import log from 'electron-log/main.js'
 import Store from 'electron-store'
 import humanizeDuration from 'humanize-duration'
-import semver from 'semver'
+import { DateTime } from 'luxon'
 
 import {
   canPostpone, canSkip, formatTimeRemaining,
@@ -273,29 +274,28 @@ async function initialize (isAppStart = true) {
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 
-  require('node:fs').readFile(join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
+  readFile(join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
     if (err) {
       return
     }
-    const { DateTime } = require('luxon')
     if (DateTime.fromISO(data).month === DateTime.now().month) {
       global.isContributor = true
       log.info('Stretchly: Thanks for your contributions!')
       if (preferencesWin) {
-        preferencesWin.send('enableContributorPreferences')
+        preferencesWin.webContents.send('enable-contributor-preferences')
       }
       updateTray()
     }
   })
   startPowerMonitoring()
   if (preferencesWin) {
-    preferencesWin.send('renderSettings', await settingsToSend())
+    preferencesWin.webContents.send('renderSettings', await settingsToSend())
   }
   if (welcomeWin) {
-    welcomeWin.send('renderSettings', await settingsToSend())
+    welcomeWin.webContents.send('renderSettings', await settingsToSend())
   }
   if (contributorPreferencesWindow) {
-    contributorPreferencesWindow.send('renderSettings', await settingsToSend())
+    contributorPreferencesWindow.webContents.send('renderSettings', await settingsToSend())
   }
   globalShortcut.unregisterAll()
 
@@ -317,7 +317,7 @@ function startI18next () {
     .init({
       lng: settings.get('language'),
       fallbackLng: 'en',
-      debug: !app.isPackaged,
+      debug: false, //! app.isPackaged,
       backend: {
         loadPath: join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
@@ -600,8 +600,7 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      preload: join(__dirname, './contributor-preferences.js'),
-      enableRemoteModule: true,
+      preload: join(__dirname, './contributor-preferences-preload.mjs'),
       sandbox: false
     }
   })
@@ -723,6 +722,25 @@ function startMicrobreak () {
     processWin.webContents.send('play-sound', settings.get('miniBreakAudio'), settings.get('volume'))
   }
 
+  ipcMain.handle('send-microbreak-data', (event) => {
+    const startTime = Date.now()
+    if (!strictMode || postponable) {
+      if (settings.get('endBreakShortcut') !== '') {
+        globalShortcut.register(settings.get('endBreakShortcut'), () => {
+          const passedPercent = (Date.now() - startTime) / breakDuration * 100
+          if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+            postponeMicrobreak()
+          } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+            finishMicrobreak(false)
+          }
+        })
+      }
+    }
+    return [idea, startTime, breakDuration, strictMode,
+      postponable, postponableDurationPercent,
+      calculateBackgroundColor(settings.get('miniBreakColor'))]
+  })
+
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
       width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
@@ -763,24 +781,6 @@ function startMicrobreak () {
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
 
-    ipcMain.handle('send-microbreak-data', (event) => {
-      const startTime = Date.now()
-      if (!strictMode || postponable) {
-        if (settings.get('endBreakShortcut') !== '') {
-          globalShortcut.register(settings.get('endBreakShortcut'), () => {
-            const passedPercent = (Date.now() - startTime) / breakDuration * 100
-            if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-              postponeMicrobreak()
-            } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
-              finishMicrobreak(false)
-            }
-          })
-        }
-      }
-      return [idea, startTime, breakDuration, strictMode,
-        postponable, postponableDurationPercent,
-        calculateBackgroundColor(settings.get('miniBreakColor'))]
-    })
     // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
@@ -872,6 +872,25 @@ function startBreak () {
     processWin.webContents.send('play-sound', settings.get('audio'), settings.get('volume'))
   }
 
+  ipcMain.handle('send-break-data', (event) => {
+    const startTime = Date.now()
+    if (!strictMode || postponable) {
+      if (settings.get('endBreakShortcut') !== '') {
+        globalShortcut.register(settings.get('endBreakShortcut'), () => {
+          const passedPercent = (Date.now() - startTime) / breakDuration * 100
+          if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+            postponeBreak()
+          } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+            finishBreak(false)
+          }
+        })
+      }
+    }
+    return [idea, startTime, breakDuration, strictMode,
+      postponable, postponableDurationPercent,
+      calculateBackgroundColor(settings.get('mainColor'))]
+  })
+
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
       width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
@@ -911,24 +930,6 @@ function startBreak () {
     let breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
-    ipcMain.handle('send-break-data', (event) => {
-      const startTime = Date.now()
-      if (!strictMode || postponable) {
-        if (settings.get('endBreakShortcut') !== '') {
-          globalShortcut.register(settings.get('endBreakShortcut'), () => {
-            const passedPercent = (Date.now() - startTime) / breakDuration * 100
-            if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-              postponeBreak()
-            } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
-              finishBreak(false)
-            }
-          })
-        }
-      }
-      return [idea, startTime, breakDuration, strictMode,
-        postponable, postponableDurationPercent,
-        calculateBackgroundColor(settings.get('mainColor'))]
-    })
     // breakWinLocal.webContents.openDevTools()
     breakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
@@ -1003,6 +1004,11 @@ function breakComplete (shouldPlaySound, windows, breakType) {
   if (shouldPlaySound && !settings.get('silentNotifications')) {
     const audio = breakType === 'mini' ? 'miniBreakAudio' : 'audio'
     processWin.webContents.send('play-sound', settings.get(audio), settings.get('volume'))
+  }
+  if (breakType === 'long') {
+    ipcMain.removeHandler('send-break-data')
+  } else {
+    ipcMain.removeHandler('send-microbreak-data')
   }
   if (process.platform === 'darwin') {
     // get focus on the last app
@@ -1172,8 +1178,7 @@ function createPreferencesWindow () {
     y: displaysY(-1, 530),
     backgroundColor: '#EDEDED',
     webPreferences: {
-      preload: join(__dirname, './preferences.js'),
-      enableRemoteModule: true,
+      preload: join(__dirname, './preferences-preload.mjs'),
       sandbox: false
     }
   })
@@ -1489,20 +1494,20 @@ ipcMain.on('restore-defaults', (event) => {
       log.info('Stretchly: restoring default settings')
       settings.store = Object.assign(defaultSettings, { isFirstRun: false })
       initialize(false)
-      event.sender.send('renderSettings', await settingsToSend())
+      event.sender.webContents.send('renderSettings', await settingsToSend())
     }
   })
 })
 
-ipcMain.on('play-sound', function (event, sound) {
+ipcMain.on('play-sound', (event, sound) => {
   processWin.webContents.send('play-sound', sound, settings.get('volume'))
 })
 
-ipcMain.on('show-debug', function (event) {
+ipcMain.handle('show-debug', (event) => {
   const reference = breakPlanner.scheduler.reference
   const timeleft = formatTimeRemaining(
     breakPlanner.scheduler.timeLeft, settings.get('language'),
-    i18next, semver
+    i18next, humanizeDuration
   )
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
@@ -1513,8 +1518,15 @@ ipcMain.on('show-debug', function (event) {
     settingsFile = settingsFile.replace('Roaming', 'Local\\Packages\\33881JanHovancik.stretchly_24fg4m0zq65je\\LocalCache\\Roaming')
     logsFile = logsFile.replace('Roaming', 'Local\\Packages\\33881JanHovancik.stretchly_24fg4m0zq65je\\LocalCache\\Roaming')
   }
-  event.sender.send('debugInfo', reference, timeleft,
-    breaknumber, postponesnumber, settingsFile, logsFile, doNotDisturb)
+  return [
+    reference,
+    timeleft,
+    breaknumber,
+    postponesnumber,
+    settingsFile,
+    logsFile,
+    doNotDisturb
+  ]
 })
 
 ipcMain.on('open-preferences', function (event) {
@@ -1524,17 +1536,16 @@ ipcMain.on('open-preferences', function (event) {
 ipcMain.on('set-contributor', function (event) {
   const dir = app.getPath('userData')
   const contributorStampFile = `${dir}/stamp`
-  const { DateTime } = require('luxon')
-  require('node:fs').writeFile(contributorStampFile, DateTime.now().toString(), () => { })
+  writeFile(contributorStampFile, DateTime.now().toString(), () => { })
   global.isContributor = true
   log.info('Stretchly: Logged in. Thanks for your contributions!')
   if (preferencesWin) {
-    preferencesWin.send('enableContributorPreferences')
+    preferencesWin.webContents.send('enable-contributor-preferences')
   }
   updateTray()
 })
 
-ipcMain.on('open-contributor-preferences', function (event) {
+ipcMain.on('open-contributor-preferences', function () {
   createContributorSettingsWindow()
 })
 
@@ -1553,7 +1564,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     y: displaysY(),
     backgroundColor: 'whitesmoke',
     webPreferences: {
-      preload: resolve(__dirname, './electron-bridge.js'),
+      preload: resolve(__dirname, './electron-bridge.mjs'),
       enableRemoteModule: true,
       sandbox: false
     }
@@ -1569,7 +1580,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   }, 0)
 })
 
-ipcMain.on('open-sync-preferences', (event) => {
+ipcMain.on('open-sync-preferences', () => {
   createSyncPreferencesWindow()
 })
 
@@ -1599,8 +1610,23 @@ ipcMain.handle('settings-get', (event, key) => {
   return settings.get(key)
 })
 
-ipcMain.on('close-welcome-window', () => {
-  if (welcomeWin) {
-    welcomeWin.close()
+ipcMain.on('close-current-window', (event) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  if (win) {
+    win.close()
   }
+})
+
+ipcMain.handle('get-window-bounds', (event) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  return win.getBounds()
+})
+
+ipcMain.on('set-window-size', (event, width, height) => {
+  const win = BrowserWindow.fromWebContents(event.sender)
+  win.setSize(width, height)
+})
+
+ipcMain.handle('get-version', (event) => {
+  return app.getVersion()
 })

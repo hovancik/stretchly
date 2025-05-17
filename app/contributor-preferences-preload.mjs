@@ -1,5 +1,4 @@
-import { ipcRenderer, shell, contextBridge } from 'electron'
-import './expose-process.js'
+import { ipcRenderer, contextBridge } from 'electron'
 
 contextBridge.exposeInMainWorld('settings', {
   currentSettings: async () => {
@@ -13,12 +12,4 @@ contextBridge.exposeInMainWorld('settings', {
 contextBridge.exposeInMainWorld('i18next', {
   t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options),
   dir: () => ipcRenderer.invoke('i18next-dir')
-})
-
-contextBridge.exposeInMainWorld('electronAPI', {
-  onTranslate: (callback) => ipcRenderer.on('translate',
-    () => callback()),
-  openExternal: (path) => shell.openExternal(path),
-  openPreferences: () => ipcRenderer.send('open-preferences'),
-  closeWindow: () => ipcRenderer.send('close-current-window')
 })

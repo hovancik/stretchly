@@ -2,9 +2,11 @@ import HtmlTranslate from './utils/htmlTranslate.js'
 import { setSameWidths } from './utils/sameWidths.js'
 import './platform.js'
 
+let eventsAttached = false
+
 window.onload = async (event) => {
-  new HtmlTranslate(document).translate()
   const settings = await window.settings.currentSettings()
+  await new HtmlTranslate(document).translate()
 
   document.ondragover = event =>
     event.preventDefault()
@@ -13,7 +15,6 @@ window.onload = async (event) => {
     event.preventDefault()
 
   setTimeout(() => { eventsAttached = true }, 500)
-  let eventsAttached = false
 
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
@@ -24,9 +25,9 @@ window.onload = async (event) => {
     })
   }
 
-  window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
     const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
-    if (e.matches) {
+    if (event.matches) {
       imagesWithDarkVersion.forEach(image => {
         const newSource = image.src.replace(/.([^.]*)$/, '-dark.' + '$1')
         image.src = newSource
@@ -39,9 +40,9 @@ window.onload = async (event) => {
     }
   })
 
-  window.electronAPI.onTranslate(() => {
-    new HtmlTranslate(document).translate()
-    setSameWidths()
+  window.electronAPI.onTranslate(async () => {
+    await new HtmlTranslate(document).translate()
+    setTimeout(() => setSameWidths(), 100)
   })
 
   document.querySelectorAll('input[type="radio"]').forEach(radio => {
@@ -60,7 +61,6 @@ window.onload = async (event) => {
     if (!eventsAttached) {
       radio.onchange = (event) => {
         window.settings.saveSettings(radio.name, value)
-        setSameWidths()
       }
     }
   })
@@ -72,7 +72,8 @@ window.onload = async (event) => {
       window.settings.saveSettings('language', event.target.value)
     }
   }
-  setSameWidths()
+
+  setTimeout(() => setSameWidths(), 100)
 
   document.querySelectorAll('button').forEach(button => {
     if (!eventsAttached) {

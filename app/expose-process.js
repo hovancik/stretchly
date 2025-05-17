@@ -2,5 +2,9 @@ import { contextBridge } from 'electron'
 
 contextBridge.exposeInMainWorld('process', {
   platform: () => process.platform,
-  windowsStore: () => process.windowsStore
+  node: () => process.versions.node,
+  chrome: () => process.versions.chrome,
+  electron: () => process.versions.electron,
+  windowsStore: () => process.versions.windowsStore,
+  getSystemVersion: () => process.getSystemVersion()
 })

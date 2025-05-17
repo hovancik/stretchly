@@ -2,9 +2,10 @@ import EventEmitter from 'events'
 import log from 'electron-log/main.js'
 import getFocusAssist from 'windows-focus-assist'
 import getIsQuietHours from 'windows-quiet-hours'
-import sessionBus from 'dbus-final'
+import dbus from '@particle/dbus-next'
 import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
+import { readFile } from 'node:fs/promises'
 
 class DndManager extends EventEmitter {
   constructor (settings) {
@@ -15,6 +16,7 @@ class DndManager extends EventEmitter {
     this.isOnDnd = false
 
     this._unsupDEErrorShown = false
+    this._errorLogged = {}
 
     if (this.monitorDnd) {
       this.start()
@@ -48,7 +50,7 @@ class DndManager extends EventEmitter {
 
   async _isDndEnabledLinux () {
     const de = this._desktopEnviroment.toLowerCase()
-
+    const sessionBus = dbus.sessionBus()
     switch (true) {
       case de.includes('kde'):
         try {
@@ -58,7 +60,9 @@ class DndManager extends EventEmitter {
           if (await dndEnabled.value) {
             return true
           }
-        } catch (e) { }
+        } catch (e) {
+          this._logErrorOnce('kde', e)
+        }
         break
       case de.includes('xfce'):
         try {
@@ -68,7 +72,9 @@ class DndManager extends EventEmitter {
           if (await dndEnabled.value) {
             return true
           }
-        } catch (e) { }
+        } catch (e) {
+          this._logErrorOnce('xfce', e)
+        }
         break
       case de.includes('gnome') || de.includes('unity'):
         try {
@@ -77,7 +83,9 @@ class DndManager extends EventEmitter {
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
           }
-        } catch (e) { }
+        } catch (e) {
+          this._logErrorOnce('gnome/unity', e)
+        }
         break
       case de.includes('cinnamon'):
         try {
@@ -86,7 +94,9 @@ class DndManager extends EventEmitter {
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
           }
-        } catch (e) { }
+        } catch (e) {
+          this._logErrorOnce('cinnamon', e)
+        }
         break
       case de.includes('mate'):
         try {
@@ -95,7 +105,9 @@ class DndManager extends EventEmitter {
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'true') {
             return true
           }
-        } catch (e) { }
+        } catch (e) {
+          this._logErrorOnce('mate', e)
+        }
         break
       case de.includes('lxqt'):
         return await this._getConfigValue('~/.config/lxqt/notifications.conf', 'doNotDisturb')
@@ -125,7 +137,9 @@ class DndManager extends EventEmitter {
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === '1') {
             return true
           }
-        } catch (e) { }
+        } catch (e) {
+          this._logErrorOnce('macos', e)
+        }
       } else if (process.platform === 'linux') {
         return await this._isDndEnabledLinux()
       }
@@ -136,7 +150,7 @@ class DndManager extends EventEmitter {
 
   async _getConfigValue (filePath, key) {
     try {
-      const data = await require('node:fs').promises.readFile(filePath, 'utf8')
+      const data = await readFile(filePath, 'utf8')
       const lines = data.split('\n')
       for (const line of lines) {
         const [configKey, value] = line.split('=')
@@ -146,7 +160,16 @@ class DndManager extends EventEmitter {
       }
       return false
     } catch (e) {
+      this._logErrorOnce(`config-read-${filePath}`, e)
       return false
+    }
+  }
+
+  _logErrorOnce (environment, error) {
+    const errorKey = `${environment}-${error.code || error.message.substring(0, 20)}`
+    if (!this._errorLogged[errorKey]) {
+      log.error(`Stretchly: DND detection error in ${environment}:`, error)
+      this._errorLogged[errorKey] = true
     }
   }
 

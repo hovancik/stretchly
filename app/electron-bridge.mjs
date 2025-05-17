@@ -1,5 +1,4 @@
 import { ipcRenderer, shell, contextBridge } from 'electron'
-import remote from '@electron/remote'
 
 contextBridge.exposeInMainWorld('ElectronBridge', {
   // helloWorld: () {
@@ -8,7 +7,7 @@ contextBridge.exposeInMainWorld('ElectronBridge', {
 
   showContributorPreferences: () => {
     ipcRenderer.send('open-contributor-preferences')
-    remote.getCurrentWindow().close()
+    ipcRenderer.send('close-current-window')
   },
 
   setContributor: () => {
@@ -20,7 +19,7 @@ contextBridge.exposeInMainWorld('ElectronBridge', {
   },
 
   stretchlyVersion: () => {
-    return remote.app.getVersion()
+    return ipcRenderer.invoke('get-version')
   },
 
   currentSettings: async () => {
