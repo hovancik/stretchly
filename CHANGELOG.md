@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Yiddish translations
+- Option to select which screen displays the break window, available in Preferences
+  - This allows users to choose a specific monitor, the primary screen, or to display the break window near the cursor
+  - Particularly useful for multi-monitor setups and for gamers: for example, if you're playing a game and still want to take a break, the window won't block your game screen
 
 ### Changed
 - remove flags in Welcome window

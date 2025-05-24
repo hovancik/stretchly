@@ -545,6 +545,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Lorenzo García Rivera, @lorenzogrv, [lorenzogrv.tech](https://lorenzogrv.tech)
 - Aleh, [@alehpa](https://github.com/alehpa)
 - Philip Wintersteiner, [@Wikiwix](https://github.com/wikiwix)
+- Bastien Proudhom, [@N0rvel](https://github.com/N0rvel)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

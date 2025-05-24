@@ -22,6 +22,10 @@
     "settings": {
       "showBreaksIn": "הצגת ההפסקות:",
       "allScreens": "פריסת ההפסקות על כל הצגים",
+      "screenSelect": "בחירת מסך לחלון ההפסקה",
+      "screenCursor": "המסך עם הסמן",
+      "screenPrimary": "המסך הראשי",
+      "screenNumber": "מסך {{num}} — {{w}}×{{h}}",
       "restoreDefaults": "איפוס הגדרות",
       "language": "נא לבחור שפה:",
       "monitorDnd": "הצגת ההפסקות גם במצב „לא להפריע”",

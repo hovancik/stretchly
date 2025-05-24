@@ -4,6 +4,7 @@ const HtmlTranslate = require('./utils/htmlTranslate')
 const VersionChecker = require('./utils/versionChecker')
 const { setSameWidths } = require('./utils/sameWidths')
 const i18next = remote.require('i18next')
+const { screen } = remote
 
 const bounds = remote.getCurrentWindow().getBounds()
 const htmlTranslate = new HtmlTranslate(document)
@@ -55,6 +56,7 @@ window.onload = (e) => {
 
   ipcRenderer.on('translate', (event, settings) => {
     htmlTranslate.translate()
+    updateScreenOptions(settings)
     document.querySelectorAll('input[type="range"]').forEach(range => {
       const divisor = range.dataset.divisor
       const output = range.closest('div').querySelector('output')
@@ -165,7 +167,51 @@ window.onload = (e) => {
     }
   })
 
+  function updateScreenOptions (settings) {
+    const screenSelect = document.getElementById('screenSelect')
+    if (!screenSelect) return
+
+    screenSelect.innerHTML = ''
+
+    const optPrimary = document.createElement('option')
+    optPrimary.value = 'primary'
+    optPrimary.textContent = i18next.t('preferences.settings.screenPrimary')
+
+    const optCursor = document.createElement('option')
+    optCursor.value = 'cursor'
+    optCursor.textContent = i18next.t('preferences.settings.screenCursor')
+    screenSelect.add(optPrimary)
+    screenSelect.add(optCursor)
+
+    screen.getAllDisplays().forEach((d, idx) => {
+      const text = i18next.t('preferences.settings.screenNumber', { num: idx + 1, w: d.size.width, h: d.size.height })
+      const option = document.createElement('option')
+      option.value = String(idx)
+      option.textContent = text
+      screenSelect.add(option)
+    })
+
+    screenSelect.value = settings.screen
+  }
+
   ipcRenderer.on('renderSettings', (event, settings) => {
+    const allScreensCheckbox = document.getElementById('allScreens')
+    const screenSelect = document.getElementById('screenSelect')
+
+    screenSelect.disabled = settings.allScreens
+
+    updateScreenOptions(settings)
+
+    screenSelect.value = settings.screen
+
+    if (!eventsAttached) {
+      allScreensCheckbox.addEventListener('change', e => {
+        screenSelect.disabled = e.target.checked
+      })
+      screenSelect.addEventListener('change', e => {
+        ipcRenderer.send('save-setting', 'screen', e.target.value)
+      })
+    }
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       const isNegative = checkbox.classList.contains('negative')
       checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]

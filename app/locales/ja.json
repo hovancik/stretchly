@@ -60,6 +60,10 @@
       "fullscreen": "全画面",
       "showIdeas": "休憩中のエクササイズのヒントを表示する",
       "allScreens": "全てのモニターに休憩画面を表示する",
+      "screenSelect": "休憩用モニター",
+      "screenCursor": "アクティブな画面",
+      "screenPrimary": "プライマリモニター",
+      "screenNumber": "モニター {{num}} — {{w}}×{{h}}",
       "monitorDnd": "Do Not Disturbモードでも休憩画面を表示する",
       "language": "言語選択:",
       "restoreDefaults": "デフォルト設定に戻す"

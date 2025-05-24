@@ -65,6 +65,10 @@
     },
     "settings": {
       "allScreens": "Molaları tüm monitörlerde göster",
+      "screenSelect": "Mola için monitör",
+      "screenCursor": "Aktif ekran",
+      "screenPrimary": "Birincil monitör",
+      "screenNumber": "Monitör {{num}} — {{w}}×{{h}}",
       "showIdeas": "Molalarda egzersiz ipuçları göster",
       "fullscreen": "Tam Ekran",
       "window": "Pencere",
