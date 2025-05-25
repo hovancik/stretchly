@@ -1,4 +1,5 @@
 import { ipcRenderer, contextBridge } from 'electron'
+import './expose-process.js'
 
 contextBridge.exposeInMainWorld('settings', {
   currentSettings: async () => {

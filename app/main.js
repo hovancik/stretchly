@@ -631,8 +631,7 @@ function createSyncPreferencesWindow () {
     y: displaysY(),
     backgroundColor: 'whitesmoke',
     webPreferences: {
-      preload: resolve(__dirname, './electron-bridge.js'),
-      enableRemoteModule: true,
+      preload: resolve(__dirname, './electron-bridge.mjs'),
       sandbox: false
     }
   })
@@ -1556,7 +1555,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   }
   const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
   myStretchlyWindow = new BrowserWindow({
-    autoHideMenuBar: true,
+    autoHideMenuBar: false,
     width: 1000,
     height: 700,
     icon: windowIconPath(),
@@ -1565,7 +1564,6 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     backgroundColor: 'whitesmoke',
     webPreferences: {
       preload: resolve(__dirname, './electron-bridge.mjs'),
-      enableRemoteModule: true,
       sandbox: false
     }
   })
