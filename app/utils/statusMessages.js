@@ -24,7 +24,7 @@ class StatusMessages {
       if (this.timeLeft) {
         message += this.i18next.t('statusMessages.paused') + ' - ' +
           this.i18next.t('statusMessages.resuming') + ' ' +
-          formatTimeIn(this.timeLeft, this.settings.get('language'))
+          formatTimeIn(this.timeLeft, this.settings.get('language'), this.i18next, this.humanizeDuration)
         return message
       } else {
         message += this.i18next.t('statusMessages.paused') + ' ' +

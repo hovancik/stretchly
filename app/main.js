@@ -1491,9 +1491,9 @@ ipcMain.on('restore-defaults', (event) => {
   dialog.showMessageBox(dialogOpts).then(async (returnValue) => {
     if (returnValue.response === 0) {
       log.info('Stretchly: restoring default settings')
-      settings.store = Object.assign(defaultSettings, { isFirstRun: false })
+      settings.store = Object.assign(defaultSettings, { isFirstRun: false, __internal__: settings.get('__internal__') })
       initialize(false)
-      event.sender.webContents.send('renderSettings', await settingsToSend())
+      event.sender.reload()
     }
   })
 })
