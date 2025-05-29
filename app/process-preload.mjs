@@ -1,6 +1,5 @@
 import { contextBridge, ipcRenderer, shell } from 'electron'
 import semver from 'semver'
-import humanizeDuration from 'humanize-duration'
 import * as utils from './utils/utils.js'
 
 contextBridge.exposeInMainWorld('electronAPI', {
@@ -12,10 +11,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
     (_event, oldVersion, notify, silent) => callback(oldVersion, notify, silent)),
   updateTray: () => ipcRenderer.send('update-tray'),
   openExternal: (path) => shell.openExternal(path)
-})
-
-contextBridge.exposeInMainWorld('humanize', {
-  humanizeDuration: (ms, { opts }) => { humanizeDuration(ms, opts) }
 })
 
 contextBridge.exposeInMainWorld('semver', {

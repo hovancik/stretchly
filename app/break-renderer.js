@@ -42,7 +42,6 @@ window.onload = async (event) => {
     }
     if (Date.now() - started < duration) {
       const passedPercent = (Date.now() - started) / duration * 100
-      await window.breaks.canSkip(strictMode, postpone, passedPercent, postponePercent)
       postponeElement.style.display =
         await window.breaks.canPostpone(postpone, passedPercent, postponePercent) ? 'flex' : 'none'
       closeElement.style.display =

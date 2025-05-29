@@ -1,6 +1,6 @@
 import VersionChecker from './utils/versionChecker.js'
 
-window.onload = (e) => {
+window.onload = async (e) => {
   window.electronAPI.onPlaySound((file, volume) => {
     __electronLog.info(`Stretchly: playing audio/${file}.wav (volume: ${volume})`)
     const audio = new Audio(`audio/${file}.wav`)
@@ -8,7 +8,8 @@ window.onload = (e) => {
     audio.play()
   })
 
-  window.electronAPI.onShowNotification(async (file, text, silent) => {
+  window.electronAPI.onShowNotification(async (text, silent) => {
+    __electronLog.info(`Stretchly: showing notification "${text}" (silent: ${silent})`)
     const title = await window.utils.shouldShowNotificationTitle(
       await window.process.platform,
       await window.process.getSystemVersion()

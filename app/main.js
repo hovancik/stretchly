@@ -1405,10 +1405,10 @@ function updateToolTip () {
 }
 
 function showNotification (text) {
-  processWin.webContents.send('show-notification', {
+  processWin.webContents.send('show-notification',
     text,
-    silent: settings.get('silentNotifications')
-  })
+    settings.get('silentNotifications')
+  )
 }
 
 ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
