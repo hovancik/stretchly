@@ -1,4 +1,4 @@
-import { ipcRenderer, shell, contextBridge } from 'electron'
+import { contextBridge, ipcRenderer, shell } from 'electron'
 
 contextBridge.exposeInMainWorld('ElectronBridge', {
   // helloWorld: () {

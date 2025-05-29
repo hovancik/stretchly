@@ -383,8 +383,8 @@ function closeWindows (windowArray) {
   for (const window of windowArray) {
     window.hide()
     if (windowArray[0] === window) {
-      ipcMain.removeAllListeners('send-break-data')
-      ipcMain.removeAllListeners('send-microbreak-data')
+      ipcMain.removeHandler('send-break-data')
+      ipcMain.removeHandler('send-microbreak-data')
     }
     window.close()
   }
@@ -635,6 +635,7 @@ function createSyncPreferencesWindow () {
       sandbox: false
     }
   })
+  syncPreferencesWindow.webContents.openDevTools()
   syncPreferencesWindow.loadURL(syncPreferencesUrl)
   if (syncPreferencesWindow) {
     syncPreferencesWindow.on('closed', () => {
@@ -1003,11 +1004,6 @@ function breakComplete (shouldPlaySound, windows, breakType) {
   if (shouldPlaySound && !settings.get('silentNotifications')) {
     const audio = breakType === 'mini' ? 'miniBreakAudio' : 'audio'
     processWin.webContents.send('play-sound', settings.get(audio), settings.get('volume'))
-  }
-  if (breakType === 'long') {
-    ipcMain.removeHandler('send-break-data')
-  } else {
-    ipcMain.removeHandler('send-microbreak-data')
   }
   if (process.platform === 'darwin') {
     // get focus on the last app
@@ -1567,6 +1563,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       sandbox: false
     }
   })
+  myStretchlyWindow.webContents.openDevTools()
   myStretchlyWindow.loadURL(myStretchlyUrl)
   if (myStretchlyWindow) {
     myStretchlyWindow.on('closed', () => {
