@@ -1,14 +1,14 @@
 import VersionChecker from './utils/versionChecker.js'
 
 window.onload = async (e) => {
-  window.electronAPI.onPlaySound((file, volume) => {
+  window.stretchly.onPlaySound((file, volume) => {
     __electronLog.info(`Stretchly: playing audio/${file}.wav (volume: ${volume})`)
     const audio = new Audio(`audio/${file}.wav`)
     audio.volume = volume
     audio.play()
   })
 
-  window.electronAPI.onShowNotification(async (text, silent) => {
+  window.stretchly.onShowNotification(async (text, silent) => {
     __electronLog.info(`Stretchly: showing notification "${text}" (silent: ${silent})`)
     const title = await window.utils.shouldShowNotificationTitle(
       await window.process.platform,
@@ -24,7 +24,7 @@ window.onload = async (e) => {
     setTimeout(() => notification.close(), 7000)
   })
 
-  window.electronAPI.onCheckVersion(async (oldVersion, notify, silent) => {
+  window.stretchly.onCheckVersion(async (oldVersion, notify, silent) => {
     if (window.global.getValue('isNewVersion') && notify) {
       notifyNewVersion(silent)
     } else {
@@ -36,7 +36,7 @@ window.onload = async (e) => {
             __electronLog.info(`Stretchly: checking for new version (local: ${oldVersion}, remote: ${cleanVersion})`)
             if (await window.semver.valid(cleanVersion) && await window.semver.gt(cleanVersion, oldVersion)) {
               await window.global.setValue('isNewVersion', true)
-              window.electronAPI.updateTray()
+              window.stretchly.updateTray()
               if (notify) {
                 notifyNewVersion(silent)
               }
@@ -55,6 +55,6 @@ window.onload = async (e) => {
       body: await window.i18next.t('process.newVersionAvailable'),
       silent
     })
-    notification.onclick = () => window.electronAPI.openExternal('https://hovancik.net/stretchly/downloads')
+    notification.onclick = () => window.electronApi.openExternal('https://hovancik.net/stretchly/downloads')
   }
 }

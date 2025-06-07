@@ -8,7 +8,7 @@ const versionChecker = new VersionChecker()
 let eventsAttached = false
 
 window.onload = async (e) => {
-  const bounds = await window.electronAPI.getWindowBounds()
+  const bounds = await window.stretchly.getWindowBounds()
   const settings = await window.settings.currentSettings()
 
   new HtmlTranslate(document).translate()
@@ -50,7 +50,7 @@ window.onload = async (e) => {
       const [
         reference, timeleft, breaknumber,
         postponesnumber, settingsfile, logsfile, doNotDisturb
-      ] = await window.electronAPI.showDebug()
+      ] = await window.stretchly.showDebug()
       const debugInfo = document.querySelector('.debug > :first-child')
       if (debugInfo.style.display === 'block') {
         debugInfo.style.display = 'none'
@@ -73,7 +73,7 @@ window.onload = async (e) => {
     }
   }
 
-  window.electronAPI.onTranslate(async () => {
+  window.stretchly.onTranslate(async () => {
     new HtmlTranslate(document).translate()
     document.querySelectorAll('input[type="range"]').forEach(async range => {
       const settings = await window.settings.currentSettings()
@@ -88,7 +88,7 @@ window.onload = async (e) => {
     setWindowHeight()
   })
 
-  window.electronAPI.onEnableContributorPreferences(() => {
+  window.stretchly.onEnableContributorPreferences(() => {
     showContributorPreferencesButton()
   })
 
@@ -111,12 +111,12 @@ window.onload = async (e) => {
 
   document.querySelector('[name="contributorPreferences"]').onclick = (event) => {
     event.preventDefault()
-    window.electronAPI.openContributorPreferences()
+    window.stretchly.openContributorPreferences()
   }
 
   document.querySelector('[name="syncPreferences"]').onclick = (event) => {
     event.preventDefault()
-    window.electronAPI.openSyncPreferences()
+    window.stretchly.openSyncPreferences()
   }
 
   // TODO refactor out?
@@ -226,7 +226,7 @@ window.onload = async (e) => {
   document.querySelectorAll('.sounds img').forEach(preview => {
     if (!eventsAttached) {
       preview.onclick = (event) =>
-        window.electronAPI.playSound(preview.closest('div').querySelector('input').value)
+        window.stretchly.playSound(preview.closest('div').querySelector('input').value)
     }
   })
 
@@ -248,22 +248,22 @@ window.onload = async (e) => {
   })
 
   document.querySelector('.settings > div > button').onclick = (event) => {
-    window.electronAPI.restoreDefaults()
+    window.stretchly.restoreDefaults()
   }
 
   document.querySelectorAll('.about a').forEach((item) => {
     item.onclick = (event) => {
       event.preventDefault()
       if (event.target.classList.contains('file')) {
-        window.electronAPI.openPath(event.target.innerHTML)
+        window.electronApi.openPath(event.target.innerHTML)
       } else {
-        window.electronAPI.openExternal(event.target.href)
+        window.electronApi.openExternal(event.target.href)
       }
     }
   })
 
   document.querySelector('[name="becomePatron"]').onclick = () => {
-    window.electronAPI.openExternal('https://hovancik.net/stretchly/sponsor')
+    window.electronApi.openExternal('https://hovancik.net/stretchly/sponsor')
   }
 
   document.querySelector('[name="alreadyContributor"]').onclick = () => {
@@ -279,11 +279,11 @@ window.onload = async (e) => {
   document.querySelectorAll('.authenticate a').forEach((button) => {
     button.onclick = (event) => {
       event.preventDefault()
-      window.electronAPI.openContributorAuth(button.dataset.provider)
+      window.stretchly.openContributorAuth(button.dataset.provider)
     }
   })
 
-  document.querySelector('.version').innerHTML = await window.electronAPI.getVersion()
+  document.querySelector('.version').innerHTML = await window.stretchly.getVersion()
   versionChecker.latest()
     .then(version => {
       document.querySelector('.latestVersion').innerHTML = version.replace('v', '')
@@ -312,7 +312,7 @@ window.onload = async (e) => {
       }
     }
     if (height) {
-      window.electronAPI.setWindowSize(bounds.width, height)
+      window.stretchly.setWindowSize(bounds.width, height)
     }
   }
 

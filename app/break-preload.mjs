@@ -1,7 +1,7 @@
 import { contextBridge, ipcRenderer } from 'electron'
 import humanizeDuration from 'humanize-duration'
 import * as utils from './utils/utils.js'
-import './expose-process.js'
+import './exposes/expose-process.js'
 
 contextBridge.exposeInMainWorld('i18next', {
   t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options),

@@ -40,7 +40,7 @@ window.onload = async (event) => {
     }
   })
 
-  window.electronAPI.onTranslate(async () => {
+  window.stretchly.onTranslate(async () => {
     await new HtmlTranslate(document).translate()
     setTimeout(() => setSameWidths(), 100)
   })
@@ -81,15 +81,15 @@ window.onload = async (event) => {
         window.settings.saveSettings('isFirstRun', false)
         switch (button.getAttribute('data-location')) {
           case 'tutorial':
-            window.electronAPI.openExternal('https://hovancik.net/stretchly/about')
+            window.electronApi.openExternal('https://hovancik.net/stretchly/about')
             break
           case 'preferences':
-            window.electronAPI.openPreferences()
+            window.stretchly.openPreferences()
             break
           default:
             break
         }
-        window.electronAPI.closeWindow()
+        window.stretchly.closeWindow()
       }
     }
   })
