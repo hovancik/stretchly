@@ -32,7 +32,7 @@ window.onload = async (event) => {
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
     const keyboardShortcut = await window.settings.get('endBreakShortcut')
-    tt.innerHTML = await window.breaks.formatKeyboardShortcut(keyboardShortcut)
+    tt.innerHTML = await window.utils.formatKeyboardShortcut(keyboardShortcut)
   })
 
   window.setInterval(async () => {
@@ -43,11 +43,11 @@ window.onload = async (event) => {
     if (Date.now() - started < duration) {
       const passedPercent = (Date.now() - started) / duration * 100
       postponeElement.style.display =
-        await window.breaks.canPostpone(postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+        await window.utils.canPostpone(postpone, passedPercent, postponePercent) ? 'flex' : 'none'
       closeElement.style.display =
-        await window.breaks.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+        await window.utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'flex' : 'none'
       progress.value = (100 - passedPercent) * progress.max / 100
-      progressTime.innerHTML = await window.breaks.formatTimeRemaining(Math.trunc(duration - Date.now() + started),
+      progressTime.innerHTML = await window.utils.formatTimeRemaining(Math.trunc(duration - Date.now() + started),
         await window.settings.get('language'))
     }
   }, 100)

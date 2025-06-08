@@ -1,4 +1,5 @@
 import semver from 'semver'
+import humanizeDuration from 'humanize-duration'
 import { contextBridge, ipcRenderer, shell } from 'electron'
 import * as utils from './utils.js'
 
@@ -20,6 +21,24 @@ function exposeI18next () {
   contextBridge.exposeInMainWorld('i18next', {
     t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options),
     dir: () => ipcRenderer.invoke('i18next-dir')
+  })
+}
+
+function exposeLongBreak () {
+  contextBridge.exposeInMainWorld('breaks', {
+    sendBreakData: () => ipcRenderer.invoke('send-break-data'),
+    finishBreak: () => ipcRenderer.send('finish-break', false),
+    postponeBreak: () => ipcRenderer.send('postpone-break'),
+    signalLoaded: () => ipcRenderer.send('long-break-loaded')
+  })
+}
+
+function exposeMiniBreak () {
+  contextBridge.exposeInMainWorld('breaks', {
+    sendBreakData: () => ipcRenderer.invoke('send-microbreak-data'),
+    finishBreak: () => ipcRenderer.send('finish-microbreak', false),
+    postponeBreak: () => ipcRenderer.send('postpone-microbreak'),
+    signalLoaded: () => ipcRenderer.send('mini-break-loaded')
   })
 }
 
@@ -46,6 +65,7 @@ function exposeSemver () {
 
 function exposeSettings () {
   contextBridge.exposeInMainWorld('settings', {
+    get: (key) => ipcRenderer.invoke('settings-get', key),
     currentSettings: async () => {
       return await ipcRenderer.invoke('current-settings')
     },
@@ -84,9 +104,18 @@ function exposeStretchly () {
 
 function exposeUtils () {
   contextBridge.exposeInMainWorld('utils', {
+    formatKeyboardShortcut: utils.formatKeyboardShortcut,
+    formatTimeRemaining: async (milliseconds, locale) => {
+      const i18n = {
+        t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options)
+      }
+      return utils.formatTimeRemaining(milliseconds, locale, i18n, humanizeDuration)
+    },
     shouldShowNotificationTitle: (platform, systemVersion) => {
       return utils.shouldShowNotificationTitle(platform, systemVersion, semver)
-    }
+    },
+    canPostpone: utils.canPostpone,
+    canSkip: utils.canSkip
   })
 }
 
@@ -94,6 +123,8 @@ export {
   exposeElectronApi,
   exposeGlobal,
   exposeI18next,
+  exposeLongBreak,
+  exposeMiniBreak,
   exposeSemver,
   exposeSettings,
   exposeStretchly,
