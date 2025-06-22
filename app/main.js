@@ -5,7 +5,7 @@ import {
 } from 'electron'
 import { EventEmitter } from 'node:events'
 import { readFile, writeFile } from 'node:fs'
-import { dirname, join, resolve } from 'path'
+import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import i18next from 'i18next'
 import Backend from 'i18next-fs-backend'
@@ -631,7 +631,7 @@ function createSyncPreferencesWindow () {
     y: displaysY(),
     backgroundColor: 'whitesmoke',
     webPreferences: {
-      preload: resolve(__dirname, './electron-bridge.mjs'),
+      preload: join(__dirname, './electron-bridge.mjs'),
       sandbox: false
     }
   })
@@ -1559,7 +1559,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
     y: displaysY(),
     backgroundColor: 'whitesmoke',
     webPreferences: {
-      preload: resolve(__dirname, './electron-bridge.mjs'),
+      preload: join(__dirname, './electron-bridge.mjs'),
       sandbox: false
     }
   })
@@ -1570,6 +1570,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       myStretchlyWindow = null
     })
   }
+  // myStretchlyWindow.webContents.reloadIgnoringCache()
   setTimeout(() => {
     myStretchlyWindow.center()
   }, 0)
