@@ -1,7 +1,6 @@
 import EventEmitter from 'events'
 import log from 'electron-log/main.js'
 import getFocusAssist from 'windows-focus-assist'
-import getIsQuietHours from 'windows-quiet-hours'
 import dbus from '@particle/dbus-next'
 import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
@@ -128,8 +127,7 @@ class DndManager extends EventEmitter {
         try {
           wfa = getFocusAssist().value
         } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
-        const wqh = getIsQuietHours()
-        return wqh || (wfa !== -1 && wfa !== 0)
+        return wfa !== -1 && wfa !== 0
       } else if (process.platform === 'darwin') {
         try {
           const asyncExec = promisify(exec)

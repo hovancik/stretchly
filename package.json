@@ -107,7 +107,6 @@
         "appx"
       ],
       "asarUnpack": [
-        "node_modules/windows-quiet-hours/**",
         "node_modules/windows-notification-state/**",
         "node_modules/macos-notification-state/**"
       ]
@@ -158,7 +157,6 @@
     "meeussunmoon": "^3.0.3",
     "ps-list": "7.2",
     "semver": "^7.6.3",
-    "windows-focus-assist": "^1.4.0",
-    "windows-quiet-hours": "github:hovancik/windows-quiet-hours#fix-LPTSTR"
+    "windows-focus-assist": "^1.4.0"
   }
 }

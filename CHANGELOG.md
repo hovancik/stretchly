@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 - remove flags in Welcome window
 - updated many translations
+- do not check for Quiet Hours on Windows (deprecated)
 
 ### Fixed
 - hide close/minimize actions on Break window on macOS
