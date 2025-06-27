@@ -11,7 +11,7 @@ window.onload = async (e) => {
   window.stretchly.onShowNotification(async (text, silent) => {
     __electronLog.info(`Stretchly: showing notification "${text}" (silent: ${silent})`)
     const title = await window.utils.shouldShowNotificationTitle(
-      await window.process.platform,
+      await window.process.platform(),
       await window.process.getSystemVersion()
     )
       ? 'Stretchly'
@@ -25,7 +25,7 @@ window.onload = async (e) => {
   })
 
   window.stretchly.onCheckVersion(async (oldVersion, notify, silent) => {
-    if (window.global.getValue('isNewVersion') && notify) {
+    if (await window.global.getValue('isNewVersion') && notify) {
       notifyNewVersion(silent)
     } else {
       new VersionChecker()
@@ -50,7 +50,7 @@ window.onload = async (e) => {
   })
 
   async function notifyNewVersion (silent) {
-    const title = await window.utils.shouldShowNotificationTitle(await window.process.platform, await window.process.getSystemVersion()) ? 'Stretchly' : ''
+    const title = await window.utils.shouldShowNotificationTitle(await window.process.platform(), await window.process.getSystemVersion()) ? 'Stretchly' : ''
     const notification = new Notification(title, {
       body: await window.i18next.t('process.newVersionAvailable'),
       silent

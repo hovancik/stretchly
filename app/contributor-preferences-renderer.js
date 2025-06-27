@@ -6,8 +6,6 @@ let eventsAttached = false
 
 window.onload = async (event) => {
   const settings = await window.settings.currentSettings()
-  new HtmlTranslate(document).translate()
-
   setTimeout(() => { eventsAttached = true }, 500)
 
   document.ondragover = event =>

@@ -67,7 +67,7 @@ window.onload = async (e) => {
         document.querySelector('#chrome').innerHTML = await window.process.chrome()
         document.querySelector('#electron').innerHTML = await window.process.electron()
         document.querySelector('#platform').innerHTML = await window.process.platform()
-        document.querySelector('#windowsStore').innerHTML = await window.process.windowsStore || false
+        document.querySelector('#windowsStore').innerHTML = await window.process.windowsStore() || false
       }
       setWindowHeight()
     }
