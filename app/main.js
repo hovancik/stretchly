@@ -307,7 +307,6 @@ async function initialize (isAppStart = true) {
     functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak, resetBreaks }
   })
 
-  loadIdeas()
   updateTray()
 }
 
