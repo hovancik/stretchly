@@ -24,21 +24,12 @@ function exposeI18next () {
   })
 }
 
-function exposeLongBreak () {
+function exposeBreaks (type) {
   contextBridge.exposeInMainWorld('breaks', {
-    sendBreakData: () => ipcRenderer.invoke('send-break-data'),
-    finishBreak: () => ipcRenderer.send('finish-break', false),
-    postponeBreak: () => ipcRenderer.send('postpone-break'),
-    signalLoaded: () => ipcRenderer.send('long-break-loaded')
-  })
-}
-
-function exposeMiniBreak () {
-  contextBridge.exposeInMainWorld('breaks', {
-    sendBreakData: () => ipcRenderer.invoke('send-microbreak-data'),
-    finishBreak: () => ipcRenderer.send('finish-microbreak', false),
-    postponeBreak: () => ipcRenderer.send('postpone-microbreak'),
-    signalLoaded: () => ipcRenderer.send('mini-break-loaded')
+    sendBreakData: () => ipcRenderer.invoke(`send-${type}-break-data`),
+    finishBreak: () => ipcRenderer.send(`finish-${type}-break`, false),
+    postponeBreak: () => ipcRenderer.send(`postpone-${type}-break`),
+    signalLoaded: () => ipcRenderer.send(`${type}-break-loaded`)
   })
 }
 
@@ -123,8 +114,7 @@ export {
   exposeElectronApi,
   exposeGlobal,
   exposeI18next,
-  exposeLongBreak,
-  exposeMiniBreak,
+  exposeBreaks,
   exposeSemver,
   exposeSettings,
   exposeStretchly,

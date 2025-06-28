@@ -316,16 +316,15 @@ function startI18next () {
     .init({
       lng: settings.get('language'),
       fallbackLng: 'en',
-      debug: false, //! app.isPackaged,
+      debug: !app.isPackaged,
       backend: {
         loadPath: join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
       }
     }, function (err, t) {
       if (err) {
-        console.log(err.stack)
+        log.error(err.stack)
       }
-      updateTray()
     })
 }
 
@@ -382,8 +381,8 @@ function closeWindows (windowArray) {
   for (const window of windowArray) {
     window.hide()
     if (windowArray[0] === window) {
-      ipcMain.removeHandler('send-break-data')
-      ipcMain.removeHandler('send-microbreak-data')
+      ipcMain.removeHandler('send-long-break-data')
+      ipcMain.removeHandler('send-mini-break-data')
     }
     window.close()
   }
@@ -721,7 +720,7 @@ function startMicrobreak () {
     processWin.webContents.send('play-sound', settings.get('miniBreakAudio'), settings.get('volume'))
   }
 
-  ipcMain.handle('send-microbreak-data', (event) => {
+  ipcMain.handle('send-mini-break-data', (event) => {
     const startTime = Date.now()
     if (!strictMode || postponable) {
       if (settings.get('endBreakShortcut') !== '') {
@@ -871,7 +870,7 @@ function startBreak () {
     processWin.webContents.send('play-sound', settings.get('audio'), settings.get('volume'))
   }
 
-  ipcMain.handle('send-break-data', (event) => {
+  ipcMain.handle('send-long-break-data', (event) => {
     const startTime = Date.now()
     if (!strictMode || postponable) {
       if (settings.get('endBreakShortcut') !== '') {
@@ -1410,19 +1409,19 @@ function showNotification (text) {
   )
 }
 
-ipcMain.on('postpone-microbreak', function (event, shouldPlaySound) {
+ipcMain.on('postpone-mini-break', function (event, shouldPlaySound) {
   postponeMicrobreak()
 })
 
-ipcMain.on('postpone-break', function (event, shouldPlaySound) {
+ipcMain.on('postpone-long-break', function (event, shouldPlaySound) {
   postponeBreak()
 })
 
-ipcMain.on('finish-microbreak', function (event, shouldPlaySound, shouldPlanNext) {
+ipcMain.on('finish-mini-break', function (event, shouldPlaySound, shouldPlanNext) {
   finishMicrobreak(shouldPlaySound, shouldPlanNext)
 })
 
-ipcMain.on('finish-break', function (event, shouldPlaySound, shouldPlanNext) {
+ipcMain.on('finish-long-break', function (event, shouldPlaySound, shouldPlanNext) {
   finishBreak(shouldPlaySound, shouldPlanNext)
 })
 
@@ -1569,7 +1568,6 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       myStretchlyWindow = null
     })
   }
-  // myStretchlyWindow.webContents.reloadIgnoringCache()
   setTimeout(() => {
     myStretchlyWindow.center()
   }, 0)
