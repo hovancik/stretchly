@@ -19,7 +19,8 @@ window.onload = async (e) => {
     const notification = new Notification(title, {
       body: text,
       requireInteraction: true,
-      silent
+      silent,
+      icon: '../build/icon.ico'
     })
     setTimeout(() => notification.close(), 7000)
   })
@@ -53,7 +54,8 @@ window.onload = async (e) => {
     const title = await window.utils.shouldShowNotificationTitle(await window.process.platform(), await window.process.getSystemVersion()) ? 'Stretchly' : ''
     const notification = new Notification(title, {
       body: await window.i18next.t('process.newVersionAvailable'),
-      silent
+      silent,
+      icon: '../build/icon.ico'
     })
     notification.onclick = () => window.electronApi.openExternal('https://hovancik.net/stretchly/downloads')
   }
