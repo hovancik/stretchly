@@ -20,6 +20,23 @@ function formatTimeIn (milliseconds, locale, i18next, humanizeDuration) {
   })
 }
 
+function formatUnitAndValue (unit, value, i18next) {
+  if (unit === 'seconds') {
+    if (value < 60) {
+      return i18next.t('utils.seconds', { count: parseInt(value) })
+    } else {
+      const val = parseFloat(value / 60).toFixed(1)
+      if (val % 1 === 0) {
+        return i18next.t('utils.minutes', { count: parseInt(val) })
+      } else {
+        return i18next.t('utils.minutes', { count: parseFloat(val) })
+      }
+    }
+  } else {
+    return i18next.t(`utils.${unit}`, { count: parseInt(value) })
+  }
+}
+
 // does not consider `postponesLimit`
 function canPostpone (postpone, passedPercent, postponePercent) {
   return postpone && passedPercent <= postponePercent
@@ -56,6 +73,7 @@ function insideFlatpak () {
 export {
   formatTimeRemaining,
   formatTimeIn,
+  formatUnitAndValue,
   canPostpone,
   canSkip,
   formatKeyboardShortcut,

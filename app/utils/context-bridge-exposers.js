@@ -94,13 +94,16 @@ function exposeStretchly () {
 }
 
 function exposeUtils () {
+  const i18n = {
+    t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options)
+  }
   contextBridge.exposeInMainWorld('utils', {
     formatKeyboardShortcut: utils.formatKeyboardShortcut,
     formatTimeRemaining: async (milliseconds, locale) => {
-      const i18n = {
-        t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options)
-      }
       return utils.formatTimeRemaining(milliseconds, locale, i18n, humanizeDuration)
+    },
+    formatUnitAndValue: (unit, value) => {
+      return utils.formatUnitAndValue(unit, value, i18n)
     },
     shouldShowNotificationTitle: (platform, systemVersion) => {
       return utils.shouldShowNotificationTitle(platform, systemVersion, semver)

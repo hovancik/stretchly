@@ -1,4 +1,4 @@
-import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle } from '../app/utils/utils'
+import { formatTimeRemaining, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle, formatUnitAndValue } from '../app/utils/utils'
 import { beforeAll, afterAll, vi } from 'vitest'
 import 'chai/register-should'
 import i18next from 'i18next'
@@ -52,6 +52,19 @@ describe('Times formatters', function () {
     formatTimeIn(7140000, 'en', i18next, humanizeDuration).should.equal('in about 1 hour 59 minutes')
     formatTimeIn(7200000, 'en', i18next, humanizeDuration).should.equal('in about 2 hours')
     formatTimeIn(7260000, 'en', i18next, humanizeDuration).should.equal('in about 2 hours 1 minute')
+  })
+
+  it('formats unit and value correctly', function () {
+    formatUnitAndValue('seconds', 30, i18next).should.equal('30 seconds')
+    formatUnitAndValue('seconds', 1, i18next).should.equal('1 second')
+    formatUnitAndValue('seconds', 60, i18next).should.equal('1 minute')
+    formatUnitAndValue('seconds', 120, i18next).should.equal('2 minutes')
+    formatUnitAndValue('seconds', 90, i18next).should.equal('1.5 minutes')
+    formatUnitAndValue('seconds', 150, i18next).should.equal('2.5 minutes')
+    formatUnitAndValue('minutes', 5, i18next).should.equal('5 minutes')
+    formatUnitAndValue('minutes', 1, i18next).should.equal('1 minute')
+    formatUnitAndValue('hours', 2, i18next).should.equal('2 hours')
+    formatUnitAndValue('hours', 1, i18next).should.equal('1 hour')
   })
 })
 
