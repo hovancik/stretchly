@@ -119,20 +119,10 @@ window.onload = async (e) => {
     window.stretchly.openSyncPreferences()
   }
 
-  // TODO refactor out?
-  const copyToClipBoard = async (str) => {
-    const el = document.createElement('textarea')
-    el.value = str
-    document.body.appendChild(el)
-    el.select()
-    await navigator.clipboard.writeText(el.value)
-    document.body.removeChild(el)
-  }
-
-  document.querySelector('.debug button').onclick = (event) => {
+  document.querySelector('.debug button').onclick = async (event) => {
     event.preventDefault()
     const toCopy = document.querySelector('#to-copy')
-    copyToClipBoard(toCopy.textContent)
+    await navigator.clipboard.writeText(toCopy.textContent)
     const copiedEl = document.createElement('span')
     copiedEl.innerHTML = ' copied!'
     event.target.parentNode.appendChild(copiedEl)

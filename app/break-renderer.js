@@ -35,7 +35,7 @@ window.onload = async (event) => {
     tt.innerHTML = await window.utils.formatKeyboardShortcut(keyboardShortcut)
   })
 
-  window.setInterval(async () => {
+  setInterval(async () => {
     if (await window.settings.get('currentTimeInBreaks')) {
       document.querySelector('.breaks > :last-child').innerHTML =
       (new Date()).toLocaleTimeString()
