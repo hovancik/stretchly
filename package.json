@@ -136,27 +136,27 @@
     ]
   },
   "devDependencies": {
-    "@vitest/coverage-istanbul": "^3.0.2",
+    "@vitest/coverage-istanbul": "^3.2.4",
     "cross-env": "^7.0.3",
     "electron": "^34.0.0",
-    "electron-builder": "^25.1.8",
+    "electron-builder": "^26.0.12",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1",
     "standard": "^17.1.2",
-    "vitest": "^3.0.2"
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@particle/dbus-next": "^0.11.4",
     "auto-launch": "^6.0.0-rc1",
-    "electron-log": "^5.2.4",
-    "electron-store": "^8.2.0",
-    "humanize-duration": "^3.32.1",
-    "i18next": "^24.2.1",
+    "electron-log": "^5.4.1",
+    "electron-store": "^10.1.0",
+    "humanize-duration": "^3.33.0",
+    "i18next": "^25.3.1",
     "i18next-fs-backend": "^2.6.0",
-    "luxon": "^3.5.0",
+    "luxon": "^3.6.1",
     "meeussunmoon": "^3.0.3",
-    "ps-list": "7.2",
-    "semver": "^7.6.3",
+    "ps-list": "^8.1.1",
+    "semver": "^7.7.2",
     "windows-focus-assist": "^1.4.0"
   }
 }

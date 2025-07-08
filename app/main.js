@@ -319,7 +319,7 @@ function startI18next () {
     .init({
       lng: settings.get('language'),
       fallbackLng: 'en',
-      debug: !app.isPackaged,
+      debug: false, // !app.isPackaged,
       backend: {
         loadPath: join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
