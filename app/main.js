@@ -64,9 +64,9 @@ let microbreakWins = null
 let breakWins = null
 let preferencesWin = null
 let welcomeWin = null
-let contributorPreferencesWindow = null
-let syncPreferencesWindow = null
-let myStretchlyWindow = null
+let contributorPreferencesWin = null
+let syncPreferencesWin = null
+let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
@@ -297,8 +297,8 @@ async function initialize (isAppStart = true) {
   if (welcomeWin) {
     welcomeWin.webContents.send('renderSettings', await settingsToSend())
   }
-  if (contributorPreferencesWindow) {
-    contributorPreferencesWindow.webContents.send('renderSettings', await settingsToSend())
+  if (contributorPreferencesWin) {
+    contributorPreferencesWin.webContents.send('renderSettings', await settingsToSend())
   }
   globalShortcut.unregisterAll()
 
@@ -544,7 +544,8 @@ function startProcessWin () {
     planVersionCheck()
     return
   }
-  const modalPath = join('file://', __dirname, '/process.html')
+  const modalPath = 'file://' + join(__dirname, '/process.html')
+
   processWin = new BrowserWindow({
     show: false,
     backgroundThrottling: false,
@@ -553,15 +554,15 @@ function startProcessWin () {
       sandbox: false
     }
   })
-  processWin.loadURL(modalPath)
-  processWin.once('ready-to-show', () => {
+  processWin.webContents.loadURL(modalPath)
+  processWin.webContents.once('ready-to-show', () => {
     planVersionCheck()
   })
 }
 
 function createWelcomeWindow (isAppStart = true) {
   if (settings.get('isFirstRun') && isAppStart) {
-    const modalPath = join('file://', __dirname, '/welcome.html')
+    const modalPath = 'file://' + join(__dirname, '/welcome.html')
     welcomeWin = new BrowserWindow({
       x: displaysX(-1, 1000),
       y: displaysY(-1, 750),
@@ -575,9 +576,9 @@ function createWelcomeWindow (isAppStart = true) {
         sandbox: false
       }
     })
-    welcomeWin.loadURL(modalPath)
+    welcomeWin.webContents.loadURL(modalPath)
     if (welcomeWin) {
-      welcomeWin.on('closed', () => {
+      welcomeWin.webContents.on('closed', () => {
         welcomeWin = null
       })
     }
@@ -588,12 +589,12 @@ function createWelcomeWindow (isAppStart = true) {
 }
 
 function createContributorSettingsWindow () {
-  if (contributorPreferencesWindow) {
-    contributorPreferencesWindow.show()
+  if (contributorPreferencesWin) {
+    contributorPreferencesWin.show()
     return
   }
-  const modalPath = join('file://', __dirname, '/contributor-preferences.html')
-  contributorPreferencesWindow = new BrowserWindow({
+  const modalPath = 'file://' + join(__dirname, '/contributor-preferences.html')
+  contributorPreferencesWin = new BrowserWindow({
     x: displaysX(-1, 735),
     y: displaysY(),
     width: 735,
@@ -605,25 +606,25 @@ function createContributorSettingsWindow () {
       sandbox: false
     }
   })
-  contributorPreferencesWindow.loadURL(modalPath)
-  if (contributorPreferencesWindow) {
-    contributorPreferencesWindow.on('closed', () => {
-      contributorPreferencesWindow = null
+  contributorPreferencesWin.webContents.loadURL(modalPath)
+  if (contributorPreferencesWin) {
+    contributorPreferencesWin.webContents.on('closed', () => {
+      contributorPreferencesWin = null
     })
   }
   setTimeout(() => {
-    contributorPreferencesWindow.center()
+    contributorPreferencesWin.center()
   }, 0)
 }
 
 function createSyncPreferencesWindow () {
-  if (syncPreferencesWindow) {
-    syncPreferencesWindow.show()
+  if (syncPreferencesWin) {
+    syncPreferencesWin.show()
     return
   }
 
   const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
-  syncPreferencesWindow = new BrowserWindow({
+  syncPreferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
     width: 1000,
     height: 700,
@@ -636,16 +637,16 @@ function createSyncPreferencesWindow () {
       sandbox: false
     }
   })
-  syncPreferencesWindow.webContents.openDevTools()
-  syncPreferencesWindow.loadURL(syncPreferencesUrl)
-  if (syncPreferencesWindow) {
-    syncPreferencesWindow.on('closed', () => {
-      syncPreferencesWindow = null
+  syncPreferencesWin.webContents.openDevTools()
+  syncPreferencesWin.webContents.loadURL(syncPreferencesUrl)
+  if (syncPreferencesWin) {
+    syncPreferencesWin.webContents.on('closed', () => {
+      syncPreferencesWin = null
     })
   }
 
   setTimeout(() => {
-    syncPreferencesWindow.center()
+    syncPreferencesWin.center()
   }, 0)
 }
 
@@ -713,7 +714,7 @@ function startMicrobreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
-  const modalPath = join('file://', __dirname, '/microbreak.html')
+  const modalPath = 'file://' + join(__dirname, '/microbreak.html')
   microbreakWins = []
 
   const idea = nextIdea || (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
@@ -862,7 +863,7 @@ function startBreak () {
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
-  const modalPath = join('file://', __dirname, '/break.html')
+  const modalPath = 'file://' + join(__dirname, '/break.html')
   breakWins = []
 
   const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
@@ -1160,7 +1161,7 @@ function createPreferencesWindow () {
     preferencesWin.show()
     return
   }
-  const modalPath = join('file://', __dirname, '/preferences.html')
+  const modalPath = 'file://' + join(__dirname, '/preferences.html')
   const maxHeight = screen
     .getDisplayNearestPoint(screen.getCursorScreenPoint())
     .workAreaSize.height * 0.9
@@ -1178,8 +1179,8 @@ function createPreferencesWindow () {
       sandbox: false
     }
   })
-  preferencesWin.loadURL(modalPath)
-  preferencesWin.on('closed', () => {
+  preferencesWin.webContents.loadURL(modalPath)
+  preferencesWin.webContents.on('closed', () => {
     preferencesWin = null
   })
   setTimeout(() => {
@@ -1546,12 +1547,12 @@ ipcMain.on('open-contributor-preferences', function () {
 })
 
 ipcMain.on('open-contributor-auth', function (event, provider) {
-  if (myStretchlyWindow) {
-    myStretchlyWindow.show()
+  if (myStretchlyWin) {
+    myStretchlyWin.show()
     return
   }
   const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
-  myStretchlyWindow = new BrowserWindow({
+  myStretchlyWin = new BrowserWindow({
     autoHideMenuBar: false,
     width: 1000,
     height: 700,
@@ -1564,15 +1565,15 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       sandbox: false
     }
   })
-  myStretchlyWindow.webContents.openDevTools()
-  myStretchlyWindow.loadURL(myStretchlyUrl)
-  if (myStretchlyWindow) {
-    myStretchlyWindow.on('closed', () => {
-      myStretchlyWindow = null
+  myStretchlyWin.webContents.openDevTools()
+  myStretchlyWin.webContents.loadURL(myStretchlyUrl)
+  if (myStretchlyWin) {
+    myStretchlyWin.webContents.on('closed', () => {
+      myStretchlyWin = null
     })
   }
   setTimeout(() => {
-    myStretchlyWindow.center()
+    myStretchlyWin.center()
   }, 0)
 })
 
