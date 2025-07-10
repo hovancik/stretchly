@@ -568,6 +568,7 @@ function createWelcomeWindow (isAppStart = true) {
       y: displaysY(-1, 750),
       width: 1000,
       height: 750,
+      show: false,
       autoHideMenuBar: true,
       icon: windowIconPath(),
       backgroundColor: 'EDEDED',
@@ -577,14 +578,13 @@ function createWelcomeWindow (isAppStart = true) {
       }
     })
     welcomeWin.webContents.loadURL(modalPath)
-    if (welcomeWin) {
-      welcomeWin.webContents.on('closed', () => {
-        welcomeWin = null
-      })
-    }
-    setTimeout(() => {
+    welcomeWin.once('ready-to-show', () => {
       welcomeWin.center()
-    }, 0)
+      welcomeWin.show()
+    })
+    welcomeWin.once('closed', () => {
+      welcomeWin = null
+    })
   }
 }
 
@@ -598,6 +598,7 @@ function createContributorSettingsWindow () {
     x: displaysX(-1, 735),
     y: displaysY(),
     width: 735,
+    show: false,
     autoHideMenuBar: true,
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
@@ -607,14 +608,13 @@ function createContributorSettingsWindow () {
     }
   })
   contributorPreferencesWin.webContents.loadURL(modalPath)
-  if (contributorPreferencesWin) {
-    contributorPreferencesWin.webContents.on('closed', () => {
-      contributorPreferencesWin = null
-    })
-  }
-  setTimeout(() => {
+  contributorPreferencesWin.once('ready-to-show', () => {
     contributorPreferencesWin.center()
-  }, 0)
+    contributorPreferencesWin.show()
+  })
+  contributorPreferencesWin.once('closed', () => {
+    contributorPreferencesWin = null
+  })
 }
 
 function createSyncPreferencesWindow () {
@@ -625,6 +625,7 @@ function createSyncPreferencesWindow () {
 
   const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
   syncPreferencesWin = new BrowserWindow({
+    show: false,
     autoHideMenuBar: true,
     width: 1000,
     height: 700,
@@ -639,15 +640,15 @@ function createSyncPreferencesWindow () {
   })
   syncPreferencesWin.webContents.openDevTools()
   syncPreferencesWin.webContents.loadURL(syncPreferencesUrl)
-  if (syncPreferencesWin) {
-    syncPreferencesWin.webContents.on('closed', () => {
-      syncPreferencesWin = null
-    })
-  }
 
-  setTimeout(() => {
+  syncPreferencesWin.once('closed', () => {
+    syncPreferencesWin = null
+  })
+
+  syncPreferencesWin.once('ready-to-show', () => {
     syncPreferencesWin.center()
-  }, 0)
+    syncPreferencesWin.show()
+  })
 }
 
 function planVersionCheck (seconds = 1) {
@@ -829,7 +830,7 @@ function startMicrobreak () {
           e.preventDefault()
         }
       })
-      microbreakWinLocal.on('closed', () => {
+      microbreakWinLocal.once('closed', () => {
         microbreakWinLocal = null
       })
     }
@@ -979,7 +980,7 @@ function startBreak () {
           e.preventDefault()
         }
       })
-      breakWinLocal.on('closed', () => {
+      breakWinLocal.once('closed', () => {
         breakWinLocal = null
       })
     }
@@ -1167,6 +1168,8 @@ function createPreferencesWindow () {
     .workAreaSize.height * 0.9
   preferencesWin = new BrowserWindow({
     autoHideMenuBar: true,
+    show: false,
+    backgroundThrottling: false,
     icon: windowIconPath(),
     width: 600,
     height: 530,
@@ -1180,12 +1183,13 @@ function createPreferencesWindow () {
     }
   })
   preferencesWin.webContents.loadURL(modalPath)
-  preferencesWin.webContents.on('closed', () => {
+  preferencesWin.once('ready-to-show', () => {
+    preferencesWin.center()
+    preferencesWin.show()
+  })
+  preferencesWin.once('closed', () => {
     preferencesWin = null
   })
-  setTimeout(() => {
-    preferencesWin.center()
-  }, 0)
 }
 
 function updateTray () {
@@ -1554,6 +1558,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
   myStretchlyWin = new BrowserWindow({
     autoHideMenuBar: false,
+    show: false,
     width: 1000,
     height: 700,
     icon: windowIconPath(),
@@ -1567,14 +1572,15 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   })
   myStretchlyWin.webContents.openDevTools()
   myStretchlyWin.webContents.loadURL(myStretchlyUrl)
-  if (myStretchlyWin) {
-    myStretchlyWin.webContents.on('closed', () => {
-      myStretchlyWin = null
-    })
-  }
-  setTimeout(() => {
+
+  myStretchlyWin.once('closed', () => {
+    myStretchlyWin = null
+  })
+
+  myStretchlyWin.once('ready-to-show', () => {
     myStretchlyWin.center()
-  }, 0)
+    myStretchlyWin.show()
+  })
 })
 
 ipcMain.on('open-sync-preferences', () => {
