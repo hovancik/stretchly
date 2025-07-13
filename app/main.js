@@ -548,6 +548,7 @@ function startProcessWin () {
 
   processWin = new BrowserWindow({
     show: false,
+    autoHideMenuBar: true,
     backgroundThrottling: false,
     webPreferences: {
       preload: join(__dirname, './process-preload.mjs'),
@@ -1557,7 +1558,7 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
   }
   const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
   myStretchlyWin = new BrowserWindow({
-    autoHideMenuBar: false,
+    autoHideMenuBar: true,
     show: false,
     width: 1000,
     height: 700,
