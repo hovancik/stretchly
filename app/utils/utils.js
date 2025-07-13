@@ -25,7 +25,7 @@ function formatUnitAndValue (unit, value, i18next) {
     if (value < 60) {
       return i18next.t('utils.seconds', { count: parseInt(value) })
     } else {
-      const val = parseFloat(value / 60).toFixed(1)
+      const val = parseFloat((value / 60).toFixed(1))
       if (val % 1 === 0) {
         return i18next.t('utils.minutes', { count: parseInt(val) })
       } else {
