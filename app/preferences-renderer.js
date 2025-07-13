@@ -252,7 +252,7 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelector('[name="becomePatron"]').onclick = () => {
+  document.querySelector('[name="becomeContributor"]').onclick = () => {
     window.electronApi.openExternal('https://hovancik.net/stretchly/sponsor')
   }
 
