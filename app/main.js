@@ -354,6 +354,8 @@ function onSuspendOrLock () {
       pauseBreaks(1)
       updateTray()
     }
+  } else {
+    log.info('Stretchly: not pausing for suspendOrLock because setting is disabled')
   }
 }
 
