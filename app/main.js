@@ -641,7 +641,6 @@ function createSyncPreferencesWindow () {
       sandbox: false
     }
   })
-  syncPreferencesWin.webContents.openDevTools()
   syncPreferencesWin.webContents.loadURL(syncPreferencesUrl)
 
   syncPreferencesWin.once('closed', () => {
@@ -787,7 +786,6 @@ function startMicrobreak () {
     // seems to help with multiple-displays problems
     microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
 
-    // microbreakWinLocal.webContents.openDevTools()
     microbreakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
     })
@@ -936,7 +934,7 @@ function startBreak () {
     let breakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
     breakWinLocal.setSize(windowOptions.width, windowOptions.height)
-    // breakWinLocal.webContents.openDevTools()
+
     breakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
     })
@@ -1573,7 +1571,6 @@ ipcMain.on('open-contributor-auth', function (event, provider) {
       sandbox: false
     }
   })
-  myStretchlyWin.webContents.openDevTools()
   myStretchlyWin.webContents.loadURL(myStretchlyUrl)
 
   myStretchlyWin.once('closed', () => {
