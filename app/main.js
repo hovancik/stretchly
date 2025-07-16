@@ -1038,15 +1038,15 @@ function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
   updateTray()
 }
 
-function postponeMicrobreak (shouldPlaySound = false) {
-  microbreakWins = breakComplete(shouldPlaySound, microbreakWins)
+function postponeMicrobreak () {
+  microbreakWins = breakComplete(false, microbreakWins, 'mini')
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Mini Break')
   updateTray()
 }
 
-function postponeBreak (shouldPlaySound = false) {
-  breakWins = breakComplete(shouldPlaySound, breakWins)
+function postponeBreak () {
+  breakWins = breakComplete(false, breakWins, 'long')
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Long Break')
   updateTray()
@@ -1418,11 +1418,11 @@ function showNotification (text) {
   )
 }
 
-ipcMain.on('postpone-mini-break', function (event, shouldPlaySound) {
+ipcMain.on('postpone-mini-break', function (event) {
   postponeMicrobreak()
 })
 
-ipcMain.on('postpone-long-break', function (event, shouldPlaySound) {
+ipcMain.on('postpone-long-break', function (event) {
   postponeBreak()
 })
 
