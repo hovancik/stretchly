@@ -27,6 +27,7 @@ import Command from './utils/commands.js'
 import { registerBreakShortcuts } from './utils/breakShortcuts.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
+import DisplayManager from './utils/displayManager.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -59,6 +60,7 @@ let breakIdeas
 let breakPlanner
 let appIcon = null
 let autostartManager = null
+let displayManager = null
 let processWin = null
 let microbreakWins = null
 let breakWins = null
@@ -272,6 +274,8 @@ async function initialize (isAppStart = true) {
     app
   })
 
+  displayManager = new DisplayManager(settings, log)
+
   startI18next()
   startProcessWin()
   createWelcomeWindow()
@@ -379,7 +383,7 @@ function startPowerMonitoring () {
 }
 
 function numberOfDisplays () {
-  return screen.getAllDisplays().length
+  return displayManager.getDisplayCount()
 }
 
 function closeWindows (windowArray) {
@@ -395,115 +399,19 @@ function closeWindows (windowArray) {
 }
 
 function displaysX (displayID = -1, width = 800, fullscreen = false) {
-  let theScreen
-
-  if (!settings.get('allScreens')) {
-    if (settings.get('screen') === 'primary') {
-      theScreen = screen.getPrimaryDisplay()
-    } else if (settings.get('screen') === 'cursor') {
-      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-    } else {
-      displayID = parseInt(settings.get('screen'))
-    }
-  }
-
-  if (displayID === -1) {
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays() || displayID < 0) {
-    log.warn(`Stretchly: invalid displayID ${displayID} to displaysX`)
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else {
-    const screens = screen.getAllDisplays()
-    theScreen = screens[displayID]
-  }
-  const bounds = theScreen.bounds
-  if (fullscreen) {
-    return Math.ceil(bounds.x)
-  } else {
-    return Math.ceil(bounds.x + ((bounds.width - width) / 2))
-  }
+  return displayManager.getDisplayX(displayID, width, fullscreen)
 }
 
 function displaysY (displayID = -1, height = 600, fullscreen = false) {
-  let theScreen
-
-  if (!settings.get('allScreens')) {
-    if (settings.get('screen') === 'primary') {
-      theScreen = screen.getPrimaryDisplay()
-    } else if (settings.get('screen') === 'cursor') {
-      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-    } else {
-      displayID = parseInt(settings.get('screen'))
-    }
-  }
-
-  if (displayID === -1) {
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays() || displayID < 0) {
-    log.warn(`Stretchly: invalid displayID ${displayID} to displaysY`)
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else {
-    const screens = screen.getAllDisplays()
-    theScreen = screens[displayID]
-  }
-  const bounds = theScreen.bounds
-  if (fullscreen) {
-    return Math.ceil(bounds.y)
-  } else {
-    return Math.ceil(bounds.y + ((bounds.height - height) / 2))
-  }
+  return displayManager.getDisplayY(displayID, height, fullscreen)
 }
 
 function displaysWidth (displayID = -1) {
-  let theScreen
-
-  if (!settings.get('allScreens')) {
-    if (settings.get('screen') === 'primary') {
-      theScreen = screen.getPrimaryDisplay()
-    } else if (settings.get('screen') === 'cursor') {
-      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-    } else {
-      displayID = parseInt(settings.get('screen'))
-    }
-  }
-
-  if (displayID === -1) {
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays() || displayID < 0) {
-    log.warn(`Stretchly: invalid displayID ${displayID} to displaysWidth`)
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else {
-    const screens = screen.getAllDisplays()
-    theScreen = screens[displayID]
-  }
-  const bounds = theScreen.bounds
-  return Math.ceil(bounds.width)
+  return displayManager.getDisplayWidth(displayID)
 }
 
 function displaysHeight (displayID = -1) {
-  let theScreen
-
-  if (!settings.get('allScreens')) {
-    if (settings.get('screen') === 'primary') {
-      theScreen = screen.getPrimaryDisplay()
-    } else if (settings.get('screen') === 'cursor') {
-      theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-    } else {
-      displayID = parseInt(settings.get('screen'))
-    }
-  }
-
-  if (displayID === -1) {
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else if (displayID >= numberOfDisplays() || displayID < 0) {
-    log.warn(`Stretchly: invalid displayID ${displayID} to displaysHeight`)
-    theScreen = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
-  } else {
-    const screens = screen.getAllDisplays()
-    theScreen = screens[displayID]
-  }
-  const bounds = theScreen.bounds
-  return Math.ceil(bounds.height)
+  return displayManager.getDisplayHeight(displayID)
 }
 
 function trayIconPath () {
@@ -748,8 +656,8 @@ function startMicrobreak () {
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
-      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
-      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
+      width: Math.floor(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Math.floor(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
@@ -897,8 +805,8 @@ function startBreak () {
 
   for (let localDisplayId = 0; localDisplayId < numberOfDisplays(); localDisplayId++) {
     const windowOptions = {
-      width: Number.parseInt(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
-      height: Number.parseInt(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
+      width: Math.floor(displaysWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Math.floor(displaysHeight(localDisplayId) * settings.get('breakWindowHeight')),
       autoHideMenuBar: true,
       icon: windowIconPath(),
       resizable: false,
