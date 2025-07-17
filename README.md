@@ -109,6 +109,8 @@ sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 ```
 Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the preferences are kept after reboot: Add `kernel.unprivileged_userns_clone=1` and `kernel.apparmor_restrict_unprivileged_userns=0` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
+If you're on Wayland and you would like to be able to monitor idle time, you'll need to add your user to `input` group, with `sudo usermod -aG input $USER` (depending on your distro) and logout/login to take an effect.
+
 ### Running from source
 
 To run *Stretchly* from source you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.

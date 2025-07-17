@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - hide close/minimize actions on Break window on macOS
 - issue when not all strings correctly translate after language change
+- idle time monitoring on Wayland (remember to add your user to `input` group)
 
 ## [1.17.2] - 2025-1-19
 ### Fixed

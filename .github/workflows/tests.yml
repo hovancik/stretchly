@@ -20,6 +20,7 @@ jobs:
       run: |
         export DISPLAY=:0
         sudo apt update && sudo apt install dbus-x11
+        sudo apt install libudev-dev libinput-dev
         machineId=$(cat /var/lib/dbus/machine-id)
         mkdir -p /home/runner/.dbus
         mkdir -p /home/runner/.dbus/session-bus/
