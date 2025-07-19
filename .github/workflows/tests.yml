@@ -54,6 +54,8 @@ jobs:
     - name: Install missing usocket
       if: matrix.os == 'ubuntu-latest'
       run: npm install usocket
+    - name: Rebuild native modules
+      run: npm rebuild
     - run: npm run coverage
       env:
         CI: true

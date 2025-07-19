@@ -138,7 +138,7 @@
   "devDependencies": {
     "@vitest/coverage-istanbul": "^3.2.4",
     "cross-env": "^7.0.3",
-    "electron": "^37.2.0",
+    "electron": "^37.2.3",
     "electron-builder": "^26.0.12",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1",
