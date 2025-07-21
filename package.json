@@ -155,7 +155,7 @@
     "i18next-fs-backend": "^2.6.0",
     "luxon": "^3.6.1",
     "meeussunmoon": "^3.0.3",
-    "node-desktop-idle-v2": "^1.1.0",
+    "node-desktop-idle-v2": "^1.1.4",
     "ps-list": "^8.1.1",
     "semver": "^7.7.2",
     "windows-focus-assist": "^1.4.0"
