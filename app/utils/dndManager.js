@@ -1,6 +1,6 @@
 import EventEmitter from 'events'
 import log from 'electron-log/main.js'
-import getFocusAssist from 'windows-focus-assist'
+import { getFocusAssist } from 'windows-focus-assist'
 import dbus from '@particle/dbus-next'
 import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
