@@ -124,7 +124,7 @@ export default [
     enabled: true
   },
   {
-    data: 'One at a time, touch the tip of each finger to the tip of your thumb so they make an O-shape.',
+    data: 'One at a time, touch the tip of each finger with the tip of your thumb so they make an O-shape.',
     enabled: true
   },
   {
