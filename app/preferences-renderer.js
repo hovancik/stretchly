@@ -16,9 +16,10 @@ window.onload = async (e) => {
   setTimeout(() => { eventsAttached = true }, 500)
 
   if (settings.customPreferencesMessage) {
-    document.querySelector('.navigation').insertAdjacentHTML(
-      'afterend', `<div class="custom-message">${settings.customPreferencesMessage}</div>`
-    )
+    const customMessageDiv = document.createElement('div');
+    customMessageDiv.className = 'custom-message';
+    customMessageDiv.textContent = settings.customPreferencesMessage;
+    document.querySelector('.navigation').parentNode.insertBefore(customMessageDiv, document.querySelector('.navigation').nextSibling);
   }
 
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
