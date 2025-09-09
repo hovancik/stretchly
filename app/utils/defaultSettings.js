@@ -74,5 +74,6 @@ export default {
   skipToNextMiniBreakShortcut: '',
   skipToNextLongBreakShortcut: '',
   resetBreaksShortcut: '',
-  showTrayMenuInStrictMode: false
+  showTrayMenuInStrictMode: false,
+  customPreferencesMessage: ''
 }

@@ -374,6 +374,9 @@ Note that this will disable graphical way of opening Stretchly Preferences. To a
 #### Show tray menu in Strict Mode
 If you want to show tray menu even while in Strict mode, set `showTrayMenuInStrictMode` to `true`.
 
+#### Show custom message in Preferences
+If you want to show custom message in Preferences, set `customPreferencesMessage` to string of your liking. This might be useful for corporate installations. 
+
 ## Contributor Preferences
 
 *Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!

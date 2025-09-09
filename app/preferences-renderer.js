@@ -15,6 +15,12 @@ window.onload = async (e) => {
   setWindowHeight()
   setTimeout(() => { eventsAttached = true }, 500)
 
+  if (settings.customPreferencesMessage) {
+    document.querySelector('.navigation').insertAdjacentHTML(
+      'afterend', `<div class="custom-message">${settings.customPreferencesMessage}</div>`
+    )
+  }
+
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
     imagesWithDarkVersion.forEach(image => {
@@ -139,13 +145,13 @@ window.onload = async (e) => {
       })
       event.target.closest('a').classList.add('active')
 
-      document.querySelectorAll('body > div').forEach(section => {
-        const toBeDisplayed =
-          document.querySelector(`.${event.target.closest('[data-section]').getAttribute('data-section')}`)
+      const toBeDisplayed = document.querySelector(`.${event.target.closest('[data-section]').getAttribute('data-section')}`)
+      document.querySelectorAll('body > div:not(.custom-message)').forEach(section => {
         if (section !== toBeDisplayed) {
           section.classList.add('hidden')
+        } else {
+          section.classList.remove('hidden')
         }
-        toBeDisplayed.classList.remove('hidden')
       })
 
       setSameWidths()

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Yiddish and Tamil translations
+- advanced option to show custom message in Preferences
 
 ### Changed
 - remove flags in Welcome window
