@@ -542,6 +542,7 @@ function createSyncPreferencesWindow () {
 }
 
 function planVersionCheck (seconds = 1) {
+  if (settings.get('disableAppUpdateFeatures')) return
   if (updateChecker) {
     clearInterval(updateChecker)
     updateChecker = null
@@ -550,6 +551,7 @@ function planVersionCheck (seconds = 1) {
 }
 
 function checkVersion () {
+  if (settings.get('disableAppUpdateFeatures')) return
   if (settings.get('checkNewVersion')) {
     processWin.webContents.send('check-version',
       `v${app.getVersion()}`,
@@ -1126,7 +1128,7 @@ function updateTray () {
 function getTrayMenuTemplate () {
   const trayMenu = []
 
-  if (global.isNewVersion) {
+  if (global.isNewVersion && !settings.get('disableAppUpdateFeatures')) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {

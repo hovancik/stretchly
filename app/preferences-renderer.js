@@ -10,6 +10,12 @@ let eventsAttached = false
 window.onload = async (e) => {
   const bounds = await window.stretchly.getWindowBounds()
   const settings = await window.settings.currentSettings()
+  if (settings.disableAppUpdateFeatures) {
+    const checkRow = document.querySelector('#checkNewVersion') && document.querySelector('#checkNewVersion').closest('div')
+    if (checkRow) checkRow.style.display = 'none'
+    const notifyRow = document.querySelector('#notifyNewVersion') && document.querySelector('#notifyNewVersion').closest('div')
+    if (notifyRow) notifyRow.style.display = 'none'
+  }
 
   new HtmlTranslate(document).translate()
   setWindowHeight()
@@ -281,14 +287,16 @@ window.onload = async (e) => {
   })
 
   document.querySelector('.version').innerHTML = await window.stretchly.getVersion()
-  versionChecker.latest()
-    .then(version => {
-      document.querySelector('.latestVersion').innerHTML = version.replace('v', '')
-    })
-    .catch(exception => {
-      console.error(exception)
-      document.querySelector('.latestVersion').innerHTML = 'N/A'
-    })
+  if (!settings.disableAppUpdateFeatures) {
+    versionChecker.latest()
+      .then(version => {
+        document.querySelector('.latestVersion').innerHTML = version.replace('v', '')
+      })
+      .catch(exception => {
+        console.error(exception)
+        document.querySelector('.latestVersion').innerHTML = 'N/A'
+      })
+  }
 
   function setWindowHeight () {
     const classes = document.querySelector('body').classList

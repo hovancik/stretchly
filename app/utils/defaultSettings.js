@@ -75,5 +75,6 @@ export default {
   skipToNextLongBreakShortcut: '',
   resetBreaksShortcut: '',
   showTrayMenuInStrictMode: false,
-  customPreferencesMessage: ''
+  customPreferencesMessage: '',
+  disableAppUpdateFeatures: false
 }

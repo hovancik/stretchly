@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Yiddish and Tamil translations
 - advanced option to show custom message in Preferences
+- advanced option to disable app update features
 
 ### Changed
 - remove flags in Welcome window

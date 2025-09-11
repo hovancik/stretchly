@@ -375,7 +375,14 @@ Note that this will disable graphical way of opening Stretchly Preferences. To a
 If you want to show tray menu even while in Strict mode, set `showTrayMenuInStrictMode` to `true`.
 
 #### Show custom message in Preferences
-If you want to show custom message in Preferences, set `customPreferencesMessage` to string of your liking. This might be useful for corporate installations. 
+If you want to show custom message in Preferences, set `customPreferencesMessage` to string of your liking. 
+
+This might be useful for corporate installations. 
+
+#### Disable app update functionality
+If you want to disable functionality around app updates, set `disableAppUpdateFeatures` to `true`. This will make Stretchly not to check for new versions and hide related elements from the app. This value takes preference over `checkNewVersion` and `notifyNewVersion`. 
+
+This might be useful for corporate installations. 
 
 ## Contributor Preferences
 
