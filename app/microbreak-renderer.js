@@ -41,10 +41,17 @@ window.onload = async (event) => {
     }
     if (Date.now() - started < duration) {
       const passedPercent = (Date.now() - started) / duration * 100
-      postponeElement.style.display =
-        await window.utils.canPostpone(postpone, passedPercent, postponePercent) ? 'flex' : 'none'
-      closeElement.style.display =
-        await window.utils.canSkip(strictMode, postpone, passedPercent, postponePercent) ? 'flex' : 'none'
+      if (await window.utils.canPostpone(postpone, passedPercent, postponePercent)) {
+        postponeElement.classList.remove('hidden')
+      } else {
+        postponeElement.classList.add('hidden')
+      }
+
+      if (await window.utils.canSkip(strictMode, postpone, passedPercent, postponePercent)) {
+        closeElement.classList.remove('hidden')
+      } else {
+        closeElement.classList.add('hidden')
+      }
       progress.value = (100 - passedPercent) * progress.max / 100
       progressTime.innerHTML = await window.utils.formatTimeRemaining(Math.trunc(duration - Date.now() + started),
         await window.settings.get('language'))

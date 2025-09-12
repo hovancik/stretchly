@@ -1128,7 +1128,7 @@ function updateTray () {
 function getTrayMenuTemplate () {
   const trayMenu = []
 
-  if (global.isNewVersion && !settings.get('disableAppUpdateFeatures')) {
+  if (!settings.get('disableAppUpdateFeatures') && global.isNewVersion) {
     trayMenu.push({
       label: i18next.t('main.downloadLatestVersion'),
       click: function () {

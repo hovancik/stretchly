@@ -11,10 +11,7 @@ window.onload = async (e) => {
   const bounds = await window.stretchly.getWindowBounds()
   const settings = await window.settings.currentSettings()
   if (settings.disableAppUpdateFeatures) {
-    const checkRow = document.querySelector('#checkNewVersion') && document.querySelector('#checkNewVersion').closest('div')
-    if (checkRow) checkRow.style.display = 'none'
-    const notifyRow = document.querySelector('#notifyNewVersion') && document.querySelector('#notifyNewVersion').closest('div')
-    if (notifyRow) notifyRow.style.display = 'none'
+    document.querySelector('#checkNewVersion').closest('div').classList.add('hidden')
   }
 
   new HtmlTranslate(document).translate()
@@ -65,10 +62,10 @@ window.onload = async (e) => {
         postponesnumber, settingsfile, logsfile, doNotDisturb
       ] = await window.stretchly.showDebug()
       const debugInfo = document.querySelector('.debug > :first-child')
-      if (debugInfo.style.display === 'block') {
-        debugInfo.style.display = 'none'
+      if (!debugInfo.classList.contains('hidden')) {
+        debugInfo.classList.add('hidden')
       } else {
-        debugInfo.style.display = 'block'
+        debugInfo.classList.remove('hidden')
         document.querySelector('#reference').innerHTML = reference
         document.querySelector('#timeleft').innerHTML = timeleft
         document.querySelector('#breakNumber').innerHTML = breaknumber
@@ -232,10 +229,6 @@ window.onload = async (e) => {
         window.stretchly.playSound(preview.closest('div').querySelector('input').value)
     }
   })
-
-  if (!settings.checkNewVersion) {
-    document.querySelector('#notifyNewVersion').closest('div').style.display = 'none'
-  }
 
   setWindowHeight()
 

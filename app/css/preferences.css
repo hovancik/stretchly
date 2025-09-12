@@ -62,11 +62,6 @@ body > div > :last-child {
   z-index: 9;
 }
 
-body > .hidden,
-.heart > .hidden {
-  display: none;
-}
-
 .settings {
   display: grid;
   font-size: 13px;
@@ -365,10 +360,6 @@ body[dir=rtl] .about > :nth-child(4) > div {
   font-size: 11px;
   grid-column: 1/-1;
   margin: auto 20px;
-}
-
-.about > .debug > :first-child {
-  display: none;
 }
 
 .heart {
