@@ -53,7 +53,7 @@ class DndManager extends EventEmitter {
 
   async _isDndEnabledLinux () {
     const de = this._desktopEnviroment.toLowerCase()
-    const sessionBus = this.__sessionBus ||= dbus.sessionBus()
+    const sessionBus = this._getSessionBus()
     switch (true) {
       case de.includes('kde'):
         try {
@@ -81,7 +81,7 @@ class DndManager extends EventEmitter {
         break
       case de.includes('gnome') || de.includes('unity'):
         try {
-          const asyncExec = this.__asyncExec ||= promisify(exec)
+          const asyncExec = this._getAsyncExec()
           const { stdout } = await asyncExec('gsettings get org.gnome.desktop.notifications show-banners')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
@@ -92,7 +92,7 @@ class DndManager extends EventEmitter {
         break
       case de.includes('cinnamon'):
         try {
-          const asyncExec = this.__asyncExec ||= promisify(exec)
+          const asyncExec = this._getAsyncExec()
           const { stdout } = await asyncExec('gsettings get org.cinnamon.desktop.notifications display-notifications')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'false') {
             return true
@@ -103,7 +103,7 @@ class DndManager extends EventEmitter {
         break
       case de.includes('mate'):
         try {
-          const asyncExec = this.__asyncExec ||= promisify(exec)
+          const asyncExec = this._getAsyncExec()
           const { stdout } = await asyncExec('gsettings get org.mate.NotificationDaemon do-not-disturb')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === 'true') {
             return true
@@ -123,6 +123,16 @@ class DndManager extends EventEmitter {
     }
   }
 
+  _getSessionBus () {
+    if (!this.__sessionBus) {
+      const bus = dbus.sessionBus()
+      bus.on('error', () => { this.__sessionBus = null })
+      bus.on('close', () => { this.__sessionBus = null })
+      this.__sessionBus = bus
+    }
+    return this.__sessionBus
+  }
+
   async _doNotDisturb () {
     // TODO also check for session state? https://github.com/felixrieseberg/electron-notification-state/tree/master#session-state
     if (this.monitorDnd) {
@@ -134,7 +144,7 @@ class DndManager extends EventEmitter {
         return wfa !== -1 && wfa !== 0
       } else if (process.platform === 'darwin') {
         try {
-          const asyncExec = this.__asyncExec ||= promisify(exec)
+          const asyncExec = this._getAsyncExec()
           const { stdout } = await asyncExec('defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"')
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === '1') {
             return true
@@ -148,6 +158,13 @@ class DndManager extends EventEmitter {
     } else {
       return false
     }
+  }
+
+  _getAsyncExec () {
+    if (!this.__asyncExec) {
+      this.__asyncExec = promisify(exec)
+    }
+    return this.__asyncExec
   }
 
   async _getConfigValue (filePath, key) {
