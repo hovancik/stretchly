@@ -126,9 +126,9 @@ class DndManager extends EventEmitter {
   _getOrCreateSessionBus () {
     if (!this.__sessionBus) {
       const bus = dbus.sessionBus()
+      this.__sessionBus = bus
       bus.on('error', () => { this.__sessionBus = null })
       bus.on('close', () => { this.__sessionBus = null })
-      this.__sessionBus = bus
     }
     return this.__sessionBus
   }
