@@ -194,6 +194,10 @@ app.on('before-quit', (event) => {
     event.preventDefault()
   } else {
     globalShortcut.unregisterAll()
+    // Clean up D-Bus connections
+    if (autostartManager) {
+      autostartManager.disconnect()
+    }
     app.quit()
   }
 })
@@ -333,7 +337,8 @@ async function initialize (isAppStart = true) {
   autostartManager = new AutostartManager({
     platform: process.platform,
     windowsStore: insideWindowsStore(),
-    app
+    app,
+    settings
   })
 
   const imagesDir = join(app.getPath('userData'), 'images')
@@ -343,6 +348,11 @@ async function initialize (isAppStart = true) {
     } catch (error) {
       log.error('Stretchly: error creating images directory', error)
     }
+  // Initialize portal early for Flatpak so it's ready when user opens preferences
+  if (process.platform === 'linux' && insideFlatpak()) {
+    autostartManager.flatpakPortalManager.initialize().catch(err => {
+      log.error('Stretchly: Failed to initialize portal manager during startup:', err)
+    })
   }
 
   displayManager = new DisplayManager(settings)

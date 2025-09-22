@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - allow to show some HTML in breaks
 - advanced option for manual finish mode for breaks (breaks are only finished after user's interaction)
 - advanced option to set preferred sound to be played at the beginning of breaks
+- Autostart functionality in Flatpaks
 
 ### Fixed
 - hide autostart option for Windows store
