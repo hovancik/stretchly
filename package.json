@@ -149,7 +149,7 @@
     "@particle/dbus-next": "^0.11.4",
     "auto-launch": "^6.0.0-rc1",
     "electron-log": "^5.4.3",
-    "electron-store": "^10.1.0",
+  "electron-store": "8.2.0",
     "humanize-duration": "^3.33.0",
     "i18next": "^25.5.2",
     "i18next-fs-backend": "^2.6.0",

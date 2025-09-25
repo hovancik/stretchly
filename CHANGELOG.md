@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- fix Linux crashes on app start 
+- fix Linux issue with dbus overload
+
 ## [1.18.0] - 2025-9-15
 ### Added
 - Yiddish and Tamil translations
