@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - hide autostart option for Windows store
 - prevent memory issues where break windows were not closing correctly
-- workaround Wayland multi-display window placement issue by auto-falling back to X11
 
 ### Changed
 - hide update features in Windows Store, Snap, Flatpak versions by default
