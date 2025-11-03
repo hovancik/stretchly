@@ -44,11 +44,9 @@ class DndManager extends EventEmitter {
   }
 
   get _desktopEnviroment () {
-    // https://github.com/electron/electron/issues/40795
     // https://specifications.freedesktop.org/mime-apps-spec/latest/file.html
     // https://specifications.freedesktop.org/menu-spec/latest/onlyshowin-registry.html
-    return process.env.ORIGINAL_XDG_CURRENT_DESKTOP ||
-      process.env.XDG_CURRENT_DESKTOP || 'unknown'
+    return process.env.XDG_CURRENT_DESKTOP || 'unknown'
   }
 
   async _isDndEnabledLinux () {
