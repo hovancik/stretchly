@@ -13,12 +13,11 @@ class FlatpakPortalManager {
   async initialize () {
     if (this.initialized) return
 
-    // Clean up any stale connection first
     if (this.bus) {
       try {
         this.bus.disconnect()
       } catch (err) {
-        // Ignore errors disconnecting stale connection
+        // Ignore disconnect errors
       }
       this.bus = null
       this.portal = null
@@ -45,13 +44,10 @@ class FlatpakPortalManager {
    * @returns {Promise<boolean>} - True if the autostart status was successfully set.
    */
   async setAutostart (enabled) {
-    // Ensure initialized (safe to call multiple times)
     await this.initialize()
 
     try {
       const background = this.portal.getInterface('org.freedesktop.portal.Background')
-
-      // Create a unique handle token for this request
       const handleToken = `stretchly_autostart_${Date.now()}_${Math.random().toString(36).substring(7)}`
 
       const options = {
@@ -61,19 +57,19 @@ class FlatpakPortalManager {
         'dbus-activatable': new Variant('b', false)
       }
 
-      // When DISABLING, the portal doesn't create a persistent request object
-      // It's a fire-and-forget operation - no Response signal to wait for
+      // When disabling autostart, the portal doesn't create a persistent request object.
+      // No Response signal is emitted, so we can return immediately.
       if (!enabled) {
         await background.RequestBackground('', options)
-        log.info('Stretchly: Autostart disabled via XDG Portal (no response expected).')
+        log.info('Stretchly: Autostart disabled via XDG Portal')
         return true
       }
 
-      // When ENABLING, we must wait for the Response signal
+      // When enabling autostart, we must wait for the Response signal
       return new Promise((resolve) => {
-        const timeoutMs = 30000 // 30 second timeout
+        const timeoutMs = 30000
         let timeoutId = null
-        let messageListener = null // Store the listener function here
+        let messageListener = null
 
         const cleanup = () => {
           if (timeoutId) {
@@ -81,59 +77,54 @@ class FlatpakPortalManager {
             timeoutId = null
           }
           if (messageListener && this.bus) {
-            // The actual listener removal
             this.bus.off('message', messageListener)
             messageListener = null
           }
         }
 
-        // Define the listener function
         messageListener = (msg) => {
-          // Check if this message is the one we're waiting for
           if (msg.interface === 'org.freedesktop.portal.Request' &&
               msg.member === 'Response' &&
               msg.path.includes(handleToken)) {
             const [response, results] = msg.body
 
-            cleanup() // Clean up immediately (removes listener + timeout)
+            cleanup()
 
             log.info(`Stretchly: Portal Response signal received - response: ${response}, results:`, results)
 
-            if (response === 0) { // Success
+            // Response codes: 0 = success, 1 = user cancelled, 2 = other error
+            if (response === 0) {
               const autostartGranted = results && results.autostart && results.autostart.value === enabled
               if (autostartGranted) {
-                log.info('Stretchly: Autostart successfully enabled via XDG Portal.')
+                log.info('Stretchly: Autostart enabled via XDG Portal')
               } else {
-                log.warn('Stretchly: Autostart status did not match request. Results:', results)
+                log.warn('Stretchly: Autostart status did not match request', results)
               }
               resolve(autostartGranted)
-            } else if (response === 1) { // User cancelled
-              log.warn('Stretchly: User cancelled the portal request.')
+            } else if (response === 1) {
+              log.warn('Stretchly: User cancelled the portal request')
               resolve(false)
-            } else { // Other error
+            } else {
               log.error(`Stretchly: Portal request failed with response code: ${response}`)
               resolve(false)
             }
           }
         }
 
-        // Set the timeout
         timeoutId = setTimeout(() => {
-          cleanup() // This will now remove the listener
+          cleanup()
           log.error('Stretchly: Portal request timeout after 30 seconds')
           resolve(false)
         }, timeoutMs)
 
-        // Listen for Response signals
-        this.bus.on('message', messageListener) // Register the named listener
+        this.bus.on('message', messageListener)
 
-        // NOW make the request
         background.RequestBackground('', options)
           .then(requestPath => {
-            log.info(`Stretchly: RequestBackground called for autostart=true, request path: ${requestPath}`)
+            log.info(`Stretchly: RequestBackground called, request path: ${requestPath}`)
           })
           .catch(err => {
-            cleanup() // This will now remove the listener
+            cleanup()
             log.error('Stretchly: Failed to call RequestBackground:', err)
             resolve(false)
           })
