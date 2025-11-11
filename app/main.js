@@ -997,7 +997,7 @@ function enterManualAwaitPhase (type, shouldPlaySound) {
       }
     })
   }
-  log.info('Stretchly: entering manual finish phase (' + (isMini ? 'Mini' : 'Long') + ' Break)')
+  log.info('Stretchly: entering manual finish phase (' + (isMini ? 'Mini' : 'Long') + ' break)')
 }
 
 const enterMiniBreakManualContinuation = (shouldPlaySound) => enterManualAwaitPhase('mini', shouldPlaySound)

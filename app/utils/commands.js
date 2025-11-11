@@ -92,7 +92,7 @@ const allExamples = [{
 },
 {
   cmd: 'stretchly long -T "Stretch up!" --noskip',
-  description: 'Set the next Break\'s title to "Stretch up!"'
+  description: 'Set the next break\'s title to "Stretch up!"'
 },
 {
   cmd: 'stretchly long -T "Stretch up!" -t "Go stretch!"',

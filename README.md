@@ -215,12 +215,12 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `monitorDnd` - monitor DND mode
 - `checkNewVersion` - check for new versions
 
-#### Editing Break ideas
+#### Editing break ideas
 In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
 
 Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window.
 
-##### Using HTML in Break Ideas
+##### Using HTML in break ideas
 You can use simple HTML formatting in custom break ideas to enhance their appearance:
 
 **Allowed HTML elements:**
@@ -258,7 +258,7 @@ Supported image formats: PNG, JPEG, WebP, GIF. Only images from the local `image
 
 Stretchly sanitizes all HTML to keep break windows secure by removing any unsupported tags or unsafe content.
 
-#### Editing Break notification interval [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Editing break notification interval [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini breaks.
 
 #### Editing sunrise time to pause breaks until morning
@@ -276,7 +276,7 @@ In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` t
 #### New version notification [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
 
-#### Sounds at the start of Breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Sounds at the start of breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To configure the sound when a break starts, set for example `"miniBreakStartSound": "crystal-glass"`. Same for `longBreakStartSound`. Accepted values: `silence`, `crystal-glass`, `wind-chime`, `tic-toc`, `reverie`. Setting the value to `silence` means no sound will be played.
 
 #### Different sound for Mini and Long breaks
@@ -291,7 +291,7 @@ In the preferences file, set `naturalBreaksInactivityResetTime` to your preferre
 #### Volume for break sounds [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume. This applies to both start and end break sounds.
 
-#### Postpone/Finish Break Shortcut
+#### Postpone/Finish break Shortcut
 In the preferences file, set `endBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.
 
 If you'd like to disable the shortcut, set value to empty string `""`.
@@ -308,15 +308,15 @@ If you want breaks to wait for you to finish them manually instead of automatica
 
 Once enabled, the break behaves normally until it reaches 100%, then the window switches to showing elapsed time since the break started. You must press the Finish button or use the `endBreakShortcut` to close the break.
 
-#### Toggle Breaks Shortcut
+#### Toggle breaks Shortcut
 
-Toggling between Pause Breaks and running breaks.
+Toggling between Pause breaks and running breaks.
 
 In the preferences file, set `pauseBreaksToggleShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
-#### Pause Breaks for Duration Shortcuts
+#### Pause breaks for Duration Shortcuts
 
 You can also set shortcuts to pause breaks for a specific duration by modifying the following values in the preferences file:
 
@@ -328,13 +328,13 @@ You can also set shortcuts to pause breaks for a specific duration by modifying 
 
 If you'd like to disable the shortcuts, set value to empty string `""`. That's the default value as well.
 
-#### Skip to the next Break Shortcut
+#### Skip to the next break Shortcut
 
 In the preferences file, set `skipToNextScheduledBreakShortcut`, `skipToNextMiniBreakShortcut`, `skipToNextLongBreakShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
-#### Reset Breaks Shortcut
+#### Reset breaks Shortcut
 
 In the preferences file, set `resetBreaksShortcut` to your preferred value. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/api/accelerator) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.
 

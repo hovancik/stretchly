@@ -33,7 +33,7 @@ function onShortcut ({ name, settings, log, breakPlanner, functions }) {
       }
       break
     case 'skipToNextScheduledBreakShortcut':
-      log.info('Stretchly: skipping to next scheduled Break by shortcut')
+      log.info('Stretchly: skipping to next scheduled break by shortcut')
       if (breakPlanner._scheduledBreakType === 'break') {
         functions.skipToBreak()
       } else if (breakPlanner._scheduledBreakType === 'microbreak') {
