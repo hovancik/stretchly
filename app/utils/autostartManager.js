@@ -13,50 +13,23 @@ class AutostartManager {
     this.platform = platform
     this.windowsStore = windowsStore
     this.app = app
-    this.settings = settings
-    this.flatpakPortalManager = new FlatpakPortalManager()
 
-    // Decide the Linux autostart strategy once during construction
-    if (this.platform === 'linux') {
-      if (insideFlatpak()) {
-        this._linuxAutoLaunch = this._createFlatpakAutostarter()
-      } else {
-        this._linuxAutoLaunch = new AutoLaunch({ name: 'stretchly' })
-      }
-    }
-  }
+    this.isFlatpak = this.platform === 'linux' && insideFlatpak()
 
-  _createFlatpakAutostarter () {
-    return {
-      enable: async () => {
-        try {
-          await this.flatpakPortalManager.initialize()
-          await this.flatpakPortalManager.setAutostart(true)
-          this.settings.set('flatpakAutostart', true)
-        } catch (error) {
-          log.error('Stretchly: Failed to set autostart (enable) via XDG Portal', error)
-        }
-      },
-      disable: async () => {
-        try {
-          await this.flatpakPortalManager.initialize()
-          await this.flatpakPortalManager.setAutostart(false)
-          this.settings.set('flatpakAutostart', false)
-        } catch (error) {
-          log.error('Stretchly: Failed to set autostart (disable) via XDG Portal', error)
-        }
-      },
-      isEnabled: async () => {
-        // XDG portals don't provide a reliable query method, so we read from our cache
-        return Promise.resolve(this.settings.get('flatpakAutostart', false))
-      }
+    if (this.isFlatpak) {
+      this.flatpakPortalManager = new FlatpakPortalManager(settings)
+    } else if (this.platform === 'linux') {
+      this.nativeAutoLauncher = new AutoLaunch({ name: 'stretchly' })
     }
   }
 
   async setAutostartEnabled (value) {
-    log.info(`Stretchly: setting autostart to ${value} on ${this.platform}${this.platform === 'win32' && this.windowsStore ? ' (Windows Store)' : ''}${insideFlatpak() && this.platform === 'linux' ? ' (Flatpak)' : ''}`)
-    if (this.platform === 'linux') {
-      await (value ? this._linuxAutoLaunch.enable() : this._linuxAutoLaunch.disable())
+    log.info(`Stretchly: setting autostart to ${value} on ${this.platform}${this.platform === 'win32' && this.windowsStore ? ' (Windows Store)' : ''}${this.isFlatpak ? ' (Flatpak)' : ''}`)
+
+    if (this.isFlatpak) {
+      await (value ? this.flatpakPortalManager.enableAutostart() : this.flatpakPortalManager.disableAutostart())
+    } else if (this.platform === 'linux') {
+      await (value ? this.nativeAutoLauncher.enable() : this.nativeAutoLauncher.disable())
     } else if (this.platform === 'win32' && this.windowsStore) {
       await (value ? this._windowsStoreAutoLaunch.enable() : this._windowsStoreAutoLaunch.disable())
     } else {
@@ -65,8 +38,10 @@ class AutostartManager {
   }
 
   async autoLaunchStatus () {
-    if (this.platform === 'linux') {
-      return await this._linuxAutoLaunch.isEnabled()
+    if (this.isFlatpak) {
+      return await this.flatpakPortalManager.isAutostartEnabled()
+    } else if (this.platform === 'linux') {
+      return await this.nativeAutoLauncher.isEnabled()
     } else if (this.platform === 'win32' && this.windowsStore) {
       return await this._windowsStoreAutoLaunch.isEnabled()
     } else {

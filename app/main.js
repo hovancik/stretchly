@@ -348,6 +348,7 @@ async function initialize (isAppStart = true) {
     } catch (error) {
       log.error('Stretchly: error creating images directory', error)
     }
+  }
   // Initialize portal early for Flatpak so it's ready when user opens preferences
   if (process.platform === 'linux' && insideFlatpak()) {
     autostartManager.flatpakPortalManager.initialize().catch(err => {

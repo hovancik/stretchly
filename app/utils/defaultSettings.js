@@ -80,5 +80,6 @@ export default {
   hidePreferencesFileLocation: false,
   hideStrictModePreferences: false,
   miniBreakManualFinish: false,
-  longBreakManualFinish: false
+  longBreakManualFinish: false,
+  flatpakAutostart: false
 }

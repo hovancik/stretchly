@@ -4,7 +4,8 @@ import log from 'electron-log/main.js'
 const { Variant } = dbus
 
 class FlatpakPortalManager {
-  constructor () {
+  constructor (settings) {
+    this.settings = settings
     this.bus = null
     this.portal = null
     this.initialized = false
@@ -34,7 +35,6 @@ class FlatpakPortalManager {
     } catch (error) {
       log.error('Stretchly: Failed to initialize XDG Background Portal:', error)
       this.initialized = false
-      throw error
     }
   }
 
@@ -45,6 +45,11 @@ class FlatpakPortalManager {
    */
   async setAutostart (enabled) {
     await this.initialize()
+
+    if (!this.initialized) {
+      log.error('Stretchly: Cannot set autostart - portal not initialized')
+      return false
+    }
 
     try {
       const background = this.portal.getInterface('org.freedesktop.portal.Background')
@@ -131,8 +136,31 @@ class FlatpakPortalManager {
       })
     } catch (error) {
       log.error(`Stretchly: Failed to set autostart=${enabled} via XDG Portal:`, error)
-      throw error
+      return false
     }
+  }
+
+  async enableAutostart () {
+    try {
+      await this.setAutostart(true)
+      this.settings.set('flatpakAutostart', true)
+    } catch (error) {
+      log.error('Stretchly: Failed to set autostart (enable) via XDG Portal', error)
+    }
+  }
+
+  async disableAutostart () {
+    try {
+      await this.setAutostart(false)
+      this.settings.set('flatpakAutostart', false)
+    } catch (error) {
+      log.error('Stretchly: Failed to set autostart (disable) via XDG Portal', error)
+    }
+  }
+
+  async isAutostartEnabled () {
+    // XDG portals don't provide a reliable query method, so we read from our cache
+    return this.settings.get('flatpakAutostart')
   }
 
   disconnect () {
