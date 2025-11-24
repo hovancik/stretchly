@@ -76,6 +76,9 @@
     },
     "linux": {
       "category": "Utility",
+      "executableArgs": [
+        "--ozone-platform=x11"
+      ],
       "target": [
         "AppImage",
         "deb",
