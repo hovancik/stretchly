@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Fixed
+- snap package not starting on Wayland
+
 ## [1.19.0] - 2025-11-13
 ### Added
 - allow to show some HTML in breaks
