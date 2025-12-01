@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - new icon styles preference for tray (showing time to break or visual progress to break)
+- Autostart functionality in Flatpaks
 
 ### Fixed
 - snap package not starting on Wayland
@@ -18,7 +19,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - allow to show some HTML in breaks
 - advanced option for manual finish mode for breaks (breaks are only finished after user's interaction)
 - advanced option to set preferred sound to be played at the beginning of breaks
-- Autostart functionality in Flatpaks
 
 ### Fixed
 - hide autostart option for Windows store
