@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - new icon styles preference for tray (showing time to break or visual progress to break)
 - Autostart functionality in Flatpaks
+- explicit process naming conventions (for Windows) in appExclusions section on README
 
 ### Fixed
 - snap package not starting on Wayland
