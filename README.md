@@ -366,6 +366,7 @@ By editing `appExclusions` in preferences file, you can automatically control wh
 
 If you want Stretchly to be paused when specific apps are running, you could have this value (breaks are paused when Skype or Atom are running):
 
+Linux
 ```
 "appExclusions": [
     {
@@ -379,8 +380,23 @@ If you want Stretchly to be paused when specific apps are running, you could hav
 ]
 ```
 
+Windows
+```
+"appExclusions": [
+    {
+        "rule": "pause",
+        "active": true,
+        "commands": [
+            "librewolf.exe",
+            "masseffectlauncher.exe"
+        ]
+    }
+]
+```
+
 If you want Stretchly to be running when specific apps are as well, you could have this value (breaks are paused when Skype or Atom are not running):
 
+Linux
 ```
 "appExclusions": [
     {
@@ -394,7 +410,23 @@ If you want Stretchly to be running when specific apps are as well, you could ha
 ]
 ```
 
+Windows
+```
+"appExclusions": [
+    {
+        "rule": "resume",
+        "active": true,
+        "commands": [
+            "librewolf.exe",
+            "masseffectlauncher.exe"
+        ]
+    }
+]
+```
+
 You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows).
+
+Additionally for Windows, note that the path of the program was not specified. For `appExclusions` to work, you must only put the name of the exe file along with ".exe" at the end, all in quotations (like as shown above).
 
 You can also specify `appExclusionsCheckInterval` in milliseconds: lower number means more often checks, but also higher CPU usage. Default value is `1000` which is 1 second.
 
