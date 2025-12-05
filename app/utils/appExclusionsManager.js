@@ -43,8 +43,8 @@ class AppExclusionsManager extends EventEmitter {
     let foundAppExclusion = false
     for (const appExclusionCommand of appExclusionCommands) {
       const found = runningCommands.find(el =>
-        (el.cmd && el.cmd.includes(appExclusionCommand)) ||
-          (el.name && el.name.includes(appExclusionCommand)))
+        (el.cmd && el.cmd === appExclusionCommand) ||
+          (el.name && el.name === appExclusionCommand))
       if (found) {
         foundAppExclusion = appExclusionCommand
         break
