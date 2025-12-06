@@ -159,8 +159,10 @@ class FlatpakPortalManager {
 
   async disableAutostart () {
     try {
-      await this.setAutostart(false)
-      this.settings.set('flatpakAutostart', false)
+      const success = await this.setAutostart(false)
+      if (success) {
+        this.settings.set('flatpakAutostart', false)
+      }
     } catch (error) {
       log.error('Stretchly: Failed to set autostart (disable) via XDG Portal', error)
     }
