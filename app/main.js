@@ -335,8 +335,6 @@ async function initialize (isAppStart = true) {
   }
 
   autostartManager = new AutostartManager({
-    platform: process.platform,
-    windowsStore: insideWindowsStore(),
     app,
     settings
   })
