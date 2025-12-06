@@ -350,7 +350,7 @@ async function initialize (isAppStart = true) {
     }
   }
   // Initialize portal early for Flatpak so it's ready when user opens preferences
-  if (process.platform === 'linux' && insideFlatpak()) {
+  if (insideFlatpak()) {
     autostartManager.flatpakPortalManager.initialize().catch(err => {
       log.error('Stretchly: Failed to initialize portal manager during startup:', err)
     })

@@ -14,7 +14,7 @@ class AutostartManager {
     this.windowsStore = windowsStore
     this.app = app
 
-    this.isFlatpak = this.platform === 'linux' && insideFlatpak()
+    this.isFlatpak = insideFlatpak()
 
     if (this.isFlatpak) {
       this.flatpakPortalManager = new FlatpakPortalManager(settings)

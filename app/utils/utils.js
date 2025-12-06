@@ -76,8 +76,7 @@ function shouldShowNotificationTitle (platform, systemVersion, semver) {
 }
 
 function insideFlatpak () {
-  const flatpakInfoPath = '/.flatpak-info'
-  return fs.existsSync(flatpakInfoPath)
+  return process.platform === 'linux' && fs.existsSync('/.flatpak-info')
 }
 
 function insideWindowsStore () {
@@ -85,7 +84,7 @@ function insideWindowsStore () {
 }
 
 function insideSnap () {
-  return !!process.env.SNAP
+  return process.platform === 'linux' && !!process.env.SNAP
 }
 
 export {
