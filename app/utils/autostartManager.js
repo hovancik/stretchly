@@ -20,6 +20,12 @@ class AutostartManager {
       this.flatpakPortalManager = new FlatpakPortalManager(settings)
     } else if (this.platform === 'linux') {
       this.nativeAutoLauncher = new AutoLaunch({ name: 'stretchly' })
+    } else if (this.platform === 'win32' && this.windowsStore) {
+      this.windowsStoreAutoLauncher = new AutoLaunch({
+        name: 'Stretchly',
+        path: '33881JanHovancik.stretchly_24fg4m0zq65je!Stretchly',
+        isHidden: true
+      })
     }
   }
 
@@ -31,7 +37,7 @@ class AutostartManager {
     } else if (this.platform === 'linux') {
       await (value ? this.nativeAutoLauncher.enable() : this.nativeAutoLauncher.disable())
     } else if (this.platform === 'win32' && this.windowsStore) {
-      await (value ? this._windowsStoreAutoLaunch.enable() : this._windowsStoreAutoLaunch.disable())
+      await (value ? this.windowsStoreAutoLauncher.enable() : this.windowsStoreAutoLauncher.disable())
     } else {
       this.app.setLoginItemSettings({ openAtLogin: value })
     }
@@ -43,19 +49,10 @@ class AutostartManager {
     } else if (this.platform === 'linux') {
       return await this.nativeAutoLauncher.isEnabled()
     } else if (this.platform === 'win32' && this.windowsStore) {
-      return await this._windowsStoreAutoLaunch.isEnabled()
+      return await this.windowsStoreAutoLauncher.isEnabled()
     } else {
-      return await this.app.getLoginItemSettings().openAtLogin
+      return this.app.getLoginItemSettings().openAtLogin
     }
-  }
-
-  get _windowsStoreAutoLaunch () {
-    const stretchlyAutoLaunch = new AutoLaunch({
-      name: 'Stretchly',
-      path: '33881JanHovancik.stretchly_24fg4m0zq65je!Stretchly',
-      isHidden: true
-    })
-    return stretchlyAutoLaunch
   }
 
   disconnect () {
