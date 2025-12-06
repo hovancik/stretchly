@@ -18,7 +18,7 @@ class FlatpakPortalManager {
     if (this.bus) {
       try {
         this.bus.disconnect()
-      } catch (err) {
+      } catch {
         // Ignore disconnect errors
       }
       this.bus = null
@@ -66,19 +66,22 @@ class FlatpakPortalManager {
       // When disabling autostart, the portal doesn't create a persistent request object.
       // No Response signal is emitted, so we can return immediately.
       if (!enabled) {
-        await background.RequestBackground('', options)
-        log.info('Stretchly: Autostart disabled via XDG Portal')
-        return true
+        try {
+          await background.RequestBackground('', options)
+          log.info('Stretchly: Autostart disabled via XDG Portal')
+          return true
+        } catch (error) {
+          log.error('Stretchly: Failed to disable autostart via XDG Portal:', error)
+          return false
+        }
       }
 
       // When enabling autostart, we must wait for the Response signal.
       // We start listening BEFORE calling the method to avoid race conditions.
       const responsePromise = this._waitForBusResponse(handleToken, enabled)
 
-      await background.RequestBackground('', options)
-        .then(requestPath => {
-          log.info(`Stretchly: RequestBackground called, request path: ${requestPath}`)
-        })
+      const requestPath = await background.RequestBackground('', options)
+      log.info(`Stretchly: RequestBackground called, request path: ${requestPath}`)
 
       return await responsePromise
     } catch (error) {
@@ -152,8 +155,10 @@ class FlatpakPortalManager {
       if (success) {
         this.settings.set('flatpakAutostart', true)
       }
+      return success
     } catch (error) {
       log.error('Stretchly: Failed to set autostart (enable) via XDG Portal', error)
+      return false
     }
   }
 
@@ -163,8 +168,10 @@ class FlatpakPortalManager {
       if (success) {
         this.settings.set('flatpakAutostart', false)
       }
+      return success
     } catch (error) {
       log.error('Stretchly: Failed to set autostart (disable) via XDG Portal', error)
+      return false
     }
   }
 
