@@ -8,7 +8,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - new icon styles preference for tray (showing time to break or visual progress to break)
 - explicit process naming conventions (for Windows) in appExclusions section on README
-- fix substring of running processes trigger active appExclusion rules
 
 ### Fixed
 - snap package not starting on Wayland
