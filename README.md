@@ -424,9 +424,9 @@ Windows
 ]
 ```
 
-You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows).
+You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows). Commands can also be substrings, meaning a rule containing "exe" will trigger when there's any running processes that contains "exe" in its name or cmd properties.
 
-Additionally for Windows, note that the path of the program was not specified. For `appExclusions` to work, you must only put the name of the exe file along with ".exe" at the end, all in quotations (like as shown above).
+For Windows, note that paths not specified. This is because on Windows, the API we're using only checks the names of processes being run, which in the vast majority of cases is "process_name.exe". If you try to specify paths, it will not work.
 
 You can also specify `appExclusionsCheckInterval` in milliseconds: lower number means more often checks, but also higher CPU usage. Default value is `1000` which is 1 second.
 
