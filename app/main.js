@@ -1498,7 +1498,6 @@ ipcMain.on('save-setting', function (event, key, value) {
   }
 
   if (key === 'openAtLogin') {
-    autostartManager.setAutostartEnabled(value)
     settings.set('autostart', value)
   } else {
     settings.set(key, value)
