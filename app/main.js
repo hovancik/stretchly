@@ -1616,7 +1616,7 @@ ipcMain.on('open-sync-preferences', () => {
   createSyncPreferencesWindow()
 })
 
-ipcMain.handle('current-settings', async (event) => {
+ipcMain.handle('current-settings', (event) => {
   return settingsToSend()
 })
 
