@@ -348,7 +348,7 @@ async function initialize (isAppStart = true) {
   })
 
   // Apply autostart setting from config file
-  autostartManager.setAutostartEnabled(settings.get('autostart'))
+  autostartManager.setAutostartEnabled(settings.get('openAtLogin'))
 
   const imagesDir = join(app.getPath('userData'), 'images')
   if (!existsSync(imagesDir)) {
@@ -1493,10 +1493,9 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'openAtLogin') {
     autostartManager.setAutostartEnabled(value)
-    settings.set('autostart', value)
-  } else {
-    settings.set(key, value)
   }
+
+  settings.set(key, value)
 
   updateTray()
 })
@@ -1616,7 +1615,7 @@ ipcMain.handle('current-settings', (event) => {
 })
 
 function settingsToSend () {
-  return Object.assign({}, settings.store, { openAtLogin: settings.get('autostart') })
+  return settings.store
 }
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {

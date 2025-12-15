@@ -82,5 +82,5 @@ export default {
   miniBreakManualFinish: false,
   longBreakManualFinish: false,
   flatpakAutostart: false,
-  autostart: false
+  openAtLogin: false
 }
