@@ -350,6 +350,12 @@ async function initialize (isAppStart = true) {
   // Apply autostart setting from config file
   autostartManager.setAutostartEnabled(settings.get('autostart'))
 
+  // Watch for changes to autostart setting in config file
+  settings.onDidChange('autostart', (newValue) => {
+    log.info(`Stretchly: autostart setting changed to ${newValue}, applying...`)
+    autostartManager.setAutostartEnabled(newValue)
+  })
+
   const imagesDir = join(app.getPath('userData'), 'images')
   if (!existsSync(imagesDir)) {
     try {
