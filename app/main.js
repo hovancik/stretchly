@@ -347,6 +347,9 @@ async function initialize (isAppStart = true) {
     settings
   })
 
+  // Apply autostart setting from config file
+  autostartManager.setAutostartEnabled(settings.get('autostart'))
+
   const imagesDir = join(app.getPath('userData'), 'images')
   if (!existsSync(imagesDir)) {
     try {
@@ -1490,6 +1493,7 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'openAtLogin') {
     autostartManager.setAutostartEnabled(value)
+    settings.set('autostart', value)
   } else {
     settings.set(key, value)
   }

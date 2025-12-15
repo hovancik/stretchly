@@ -81,5 +81,6 @@ export default {
   hideStrictModePreferences: false,
   miniBreakManualFinish: false,
   longBreakManualFinish: false,
-  flatpakAutostart: false
+  flatpakAutostart: false,
+  autostart: false
 }
