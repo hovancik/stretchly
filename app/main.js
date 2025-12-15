@@ -353,7 +353,7 @@ async function initialize (isAppStart = true) {
   if (!settings.has('openAtLogin')) {
     const currentStatus = await autostartManager.autoLaunchStatus()
     settings.set('openAtLogin', currentStatus)
-    log.info(`Stretchly: migrating autostart status to openAtLogin: ${currentStatus}`)
+    log.info(`Stretchly: initializing openAtLogin from system status: ${currentStatus}`)
   } else {
     autostartManager.setAutostartEnabled(settings.get('openAtLogin'))
   }
