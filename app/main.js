@@ -387,13 +387,13 @@ async function initialize (isAppStart = true) {
   })
   startPowerMonitoring()
   if (preferencesWin) {
-    preferencesWin.webContents.send('renderSettings', await settingsToSend())
+    preferencesWin.webContents.send('renderSettings', settings.store)
   }
   if (welcomeWin) {
-    welcomeWin.webContents.send('renderSettings', await settingsToSend())
+    welcomeWin.webContents.send('renderSettings', settings.store)
   }
   if (contributorPreferencesWin) {
-    contributorPreferencesWin.webContents.send('renderSettings', await settingsToSend())
+    contributorPreferencesWin.webContents.send('renderSettings', settings.store)
   }
   globalShortcut.unregisterAll()
 
@@ -1611,12 +1611,8 @@ ipcMain.on('open-sync-preferences', () => {
 })
 
 ipcMain.handle('current-settings', (event) => {
-  return settingsToSend()
-})
-
-function settingsToSend () {
   return settings.store
-}
+})
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
   log.info('Stretchly: restoring remote settings')
