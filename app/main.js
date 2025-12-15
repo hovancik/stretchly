@@ -1617,11 +1617,11 @@ ipcMain.on('open-sync-preferences', () => {
 })
 
 ipcMain.handle('current-settings', async (event) => {
-  return await settingsToSend()
+  return settingsToSend()
 })
 
-async function settingsToSend () {
-  return Object.assign({}, settings.store, { openAtLogin: await autostartManager.autoLaunchStatus() })
+function settingsToSend () {
+  return Object.assign({}, settings.store, { openAtLogin: settings.get('autostart') })
 }
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
