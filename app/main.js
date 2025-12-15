@@ -297,6 +297,9 @@ async function initialize (isAppStart = true) {
             }
             store.delete('timeToBreakInTray')
           }
+          if (!store.has('openAtLogin')) {
+            log.info('Stretchly: openAtLogin not found, will migrate from system autostart status')
+          }
         }
       },
       watch: true
