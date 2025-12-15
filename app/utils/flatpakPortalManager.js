@@ -153,7 +153,7 @@ class FlatpakPortalManager {
     try {
       const success = await this.setAutostart(true)
       if (success) {
-        this.settings.set('flatpakAutostart', true)
+        this.settings.set('openAtLogin', true)
       }
       return success
     } catch (error) {
@@ -166,7 +166,7 @@ class FlatpakPortalManager {
     try {
       const success = await this.setAutostart(false)
       if (success) {
-        this.settings.set('flatpakAutostart', false)
+        this.settings.set('openAtLogin', false)
       }
       return success
     } catch (error) {
@@ -177,7 +177,7 @@ class FlatpakPortalManager {
 
   async isAutostartEnabled () {
     // XDG portals don't provide a reliable query method, so we read from our cache
-    return this.settings.get('flatpakAutostart')
+    return this.settings.get('openAtLogin')
   }
 
   disconnect () {
