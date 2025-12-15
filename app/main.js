@@ -347,7 +347,6 @@ async function initialize (isAppStart = true) {
     settings
   })
 
-  // Apply autostart setting from config file
   autostartManager.setAutostartEnabled(settings.get('openAtLogin'))
 
   const imagesDir = join(app.getPath('userData'), 'images')
