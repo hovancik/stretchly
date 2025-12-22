@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - new icon styles preference for tray (showing time to break or visual progress to break)
 - Autostart functionality in Flatpaks
 - portable version for Windows
+- set autostart value based on config file
 
 ### Fixed
 - snap package not starting on Wayland

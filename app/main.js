@@ -354,6 +354,13 @@ async function initialize (isAppStart = true) {
     log.info('Stretchly: Migrated to openAtLogin')
   }
 
+  const currentAutostartValue = await autostartManager.autoLaunchStatus()
+  const openAtLogin = settings.get('openAtLogin')
+  if (openAtLogin !== currentAutostartValue) {
+    autostartManager.setAutostartEnabled(openAtLogin)
+  }
+  log.info(`Strethly: attempting to set autostart to ${openAtLogin}`)
+
   const imagesDir = join(app.getPath('userData'), 'images')
   if (!existsSync(imagesDir)) {
     try {

@@ -470,6 +470,11 @@ If you want to hide Strict Mode preferences section from the Preferences window,
 
 This might be useful for corporate installations. 
 
+#### Set automatic start from congfig file
+If you want autostart to work based on value from config file, set `openAtLogin`. 
+
+This might be useful for corporate installations. 
+
 ## Contributor Preferences
 
 *Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
