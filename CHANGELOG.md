@@ -5,10 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.20.0] - 2025-12-24
 ### Added
 - new icon styles preference for tray (showing time to break or visual progress to break)
 - Autostart functionality in Flatpaks
-- updated appExclusions section on README to include description for Windows and substring matching
 - portable version for Windows
 
 ### Fixed
@@ -836,7 +837,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - resume/pause functionality for reminder
 - scripts for creating installers for OS X, Windows, Linux
 
-[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.19.0...HEAD
+[Unreleased]: https://github.com/hovancik/stretchly/compare/v1.20.0...HEAD
+[1.20.0]: https://github.com/hovancik/stretchly/compare/v1.19.0...v1.20.0
 [1.19.0]: https://github.com/hovancik/stretchly/compare/v1.18.1...v1.19.0
 [1.18.1]: https://github.com/hovancik/stretchly/compare/v1.18.0...v1.18.1
 [1.18.0]: https://github.com/hovancik/stretchly/compare/v1.17.2...v1.18.0

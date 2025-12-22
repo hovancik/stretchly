@@ -36,6 +36,22 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release version="1.20.0" date="2025-12-24">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new icon styles preference for tray (showing time to break or visual progress to break)</li>
+          <li>Autostart functionality in Flatpaks</li>
+          <li>portable version for Windows</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>snap package not starting on Wayland</li>
+          <li>break windows not closing correctly on all platforms</li>
+          <li>show breaks as regular windows on Windows</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.19.0" date="2025-11-13">
       <description>
         <p>Added</p>
