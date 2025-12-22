@@ -297,9 +297,6 @@ async function initialize (isAppStart = true) {
             }
             store.delete('timeToBreakInTray')
           }
-          if (!store.has('openAtLogin')) {
-            log.info('Stretchly: openAtLogin not found, will migrate from system autostart status')
-          }
         }
       },
       watch: true
@@ -349,14 +346,6 @@ async function initialize (isAppStart = true) {
     app,
     settings
   })
-
-  if (!settings.has('openAtLogin')) {
-    const currentStatus = await autostartManager.autoLaunchStatus()
-    settings.set('openAtLogin', currentStatus)
-    log.info(`Stretchly: initializing openAtLogin from system status: ${currentStatus}`)
-  } else {
-    autostartManager.setAutostartEnabled(settings.get('openAtLogin'))
-  }
 
   const imagesDir = join(app.getPath('userData'), 'images')
   if (!existsSync(imagesDir)) {
