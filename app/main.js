@@ -347,6 +347,13 @@ async function initialize (isAppStart = true) {
     settings
   })
 
+  if (!settings.get('_migratedOpenAtLogin')) {
+    // one time migration with 1.20 or after
+    settings.set('openAtLogin', await autostartManager.autoLaunchStatus())
+    settings.set('_migratedOpenAtLogin', true)
+    log.info('Stretchly: Migrated to openAtLogin')
+  }
+
   const imagesDir = join(app.getPath('userData'), 'images')
   if (!existsSync(imagesDir)) {
     try {
