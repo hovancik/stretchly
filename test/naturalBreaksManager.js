@@ -6,9 +6,11 @@ import defaultSettings from '../app/utils/defaultSettings'
 import { unlink } from 'node:fs'
 import { vi } from 'vitest'
 
-vi.mock('electron', () => ({
-  powerMonitor: {
-    getSystemIdleTime: () => 0
+vi.mock('node-desktop-idle-v2', () => ({
+  desktopIdle: {
+    getIdleTime: () => 0,
+    startMonitoring: () => {},
+    stopMonitoring: () => {}
   }
 }))
 
