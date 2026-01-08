@@ -4,15 +4,6 @@ import NaturalBreaksManager from '../app/utils/naturalBreaksManager'
 import Store from 'electron-store'
 import defaultSettings from '../app/utils/defaultSettings'
 import { unlink } from 'node:fs'
-import { vi } from 'vitest'
-
-vi.mock('node-desktop-idle-v2', () => ({
-  desktopIdle: {
-    getIdleTime: () => 0,
-    startMonitoring: () => {},
-    stopMonitoring: () => {}
-  }
-}))
 
 describe('naturalBreaksManager', function () {
   let settings = null

@@ -22,7 +22,7 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         export DISPLAY=:0
-        sudo apt update && sudo apt install dbus-x11
+        sudo apt update && sudo apt install -y dbus-x11 libinput-dev libudev-dev
         machineId=$(cat /var/lib/dbus/machine-id)
         mkdir -p /home/runner/.dbus
         mkdir -p /home/runner/.dbus/session-bus/
@@ -56,6 +56,8 @@ jobs:
     - name: Install missing usocket
       if: matrix.os == 'ubuntu-latest'
       run: npm install usocket
+    - name: Rebuild native modules for Node.js
+      run: npm rebuild node-desktop-idle-v2
     - run: npm run coverage
       env:
         CI: true

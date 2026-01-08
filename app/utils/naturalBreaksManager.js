@@ -11,7 +11,6 @@ class NaturalBreaksManager extends EventEmitter {
     this.timer = null
     this.isOnNaturalBreak = false
     this.isSchedulerCleared = false
-    this.isMonitoringStarted = false
     if (this.usingNaturalBreaks) {
       this.start()
     }
@@ -19,10 +18,7 @@ class NaturalBreaksManager extends EventEmitter {
 
   start () {
     this.usingNaturalBreaks = true
-    if (!this.isMonitoringStarted) {
-      desktopIdle.startMonitoring()
-      this.isMonitoringStarted = true
-    }
+    desktopIdle.startMonitoring()
     this._checkIdleTime()
     log.info('Stretchly: starting Idle time monitoring')
   }
@@ -33,21 +29,13 @@ class NaturalBreaksManager extends EventEmitter {
     this.isSchedulerCleared = false
     clearTimeout(this.timer)
     this.timer = null
-    if (this.isMonitoringStarted) {
-      desktopIdle.stopMonitoring()
-      this.isMonitoringStarted = false
-    }
+    desktopIdle.stopMonitoring()
     log.info('Stretchly: stopping Idle time monitoring')
   }
 
   get idleTime () {
     if (this.usingNaturalBreaks) {
-      const idleSeconds = powerMonitor.getSystemIdleTime() || desktopIdle.getIdleTime()
-      if (idleSeconds === -1) {
-        log.warn('Stretchly: Failed to get idle time, monitoring not started')
-        return 0
-      }
-      return idleSeconds * 1000
+      return (powerMonitor.getSystemIdleTime() || desktopIdle.getIdleTime()) * 1000
     } else {
       return 0
     }
