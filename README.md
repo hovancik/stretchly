@@ -109,6 +109,8 @@ sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 ```
 Read more [here](https://github.com/electron/electron/issues/17972). Depending on your distro, you probably want to do something similar to this, so the preferences are kept after reboot: Add `kernel.unprivileged_userns_clone=1` and `kernel.apparmor_restrict_unprivileged_userns=0` to `/etc/sysctl.d/00-local-userns.conf` and reboot.
 
+If you're on Wayland and you would like to be able to monitor idle time, you'll need to add your user to `input` group, with `sudo gpasswd --add $USER input` (depending on your distro) and logout/login to take an effect.
+
 ### Running from source
 
 To run *Stretchly* from source you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
@@ -211,7 +213,7 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `language` - language
 - `useMonochromeTrayIcon` - use monochrome icon
 - `useMonochromeInvertedTrayIcon` - use inverted monochrome icon
-- `trayIconStyle` - icon style for menubar: default, time to break, or progress to break 
+- `trayIconStyle` - icon style for menubar: default, time to break, or progress to break
 - `silentNotifications` - enable sounds
 - `monitorDnd` - monitor DND mode
 - `checkNewVersion` - check for new versions
@@ -451,29 +453,29 @@ Note that this will disable graphical way of opening Stretchly Preferences. To a
 If you want to show tray menu even while in Strict mode, set `showTrayMenuInStrictMode` to `true`.
 
 #### Show custom message in Preferences
-If you want to show custom message in Preferences, set `customPreferencesMessage` to string of your liking. 
+If you want to show custom message in Preferences, set `customPreferencesMessage` to string of your liking.
 
-This might be useful for corporate installations. 
+This might be useful for corporate installations.
 
 #### Disable app update functionality
-If you want to disable functionality around app updates, set `disableAppUpdateFeatures` to `true`. This will make Stretchly not to check for new versions and hide related elements from the app. This value takes preference over `checkNewVersion` and `notifyNewVersion`. 
+If you want to disable functionality around app updates, set `disableAppUpdateFeatures` to `true`. This will make Stretchly not to check for new versions and hide related elements from the app. This value takes preference over `checkNewVersion` and `notifyNewVersion`.
 
-This might be useful for corporate installations. 
+This might be useful for corporate installations.
 
 #### Hide location of preferences file in Debug info
-If you want to hide location of preferences file in Debug info, set `hidePreferencesFileLocation` to `true`. 
+If you want to hide location of preferences file in Debug info, set `hidePreferencesFileLocation` to `true`.
 
 This might be useful for corporate installations.
 
 #### Hide Strict Mode preferences
-If you want to hide Strict Mode preferences section from the Preferences window, set `hideStrictModePreferences` to `true`. 
+If you want to hide Strict Mode preferences section from the Preferences window, set `hideStrictModePreferences` to `true`.
 
-This might be useful for corporate installations. 
+This might be useful for corporate installations.
 
 #### Set automatic start from congfig file
-If you want autostart to work based on the value from config file, set `openAtLogin`. 
+If you want autostart to work based on the value from config file, set `openAtLogin`.
 
-This might be useful for corporate installations. 
+This might be useful for corporate installations.
 
 ## Contributor Preferences
 

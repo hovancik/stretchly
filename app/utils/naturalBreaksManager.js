@@ -1,6 +1,7 @@
 import EventEmitter from 'events'
 import log from 'electron-log/main.js'
 import { desktopIdle } from 'node-desktop-idle-v2'
+import { powerMonitor } from 'electron'
 
 class NaturalBreaksManager extends EventEmitter {
   constructor (settings) {
@@ -41,7 +42,7 @@ class NaturalBreaksManager extends EventEmitter {
 
   get idleTime () {
     if (this.usingNaturalBreaks) {
-      const idleSeconds = desktopIdle.getIdleTime()
+      const idleSeconds = powerMonitor.getSystemIdleTime() || desktopIdle.getIdleTime()
       if (idleSeconds === -1) {
         log.warn('Stretchly: Failed to get idle time, monitoring not started')
         return 0

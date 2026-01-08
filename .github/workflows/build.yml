@@ -22,7 +22,9 @@ jobs:
       run: sudo xcode-select -s /Library/Developer/CommandLineTools      
     - name: run on linux
       if: matrix.os == 'ubuntu-latest'
-      run: sudo apt-get install libarchive-tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libarchive-tools libinput-dev libudev-dev pkg-config
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
