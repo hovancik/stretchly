@@ -32,7 +32,7 @@ jobs:
       if: ${{ github.event.inputs.pr_number }}
       shell: bash
       run: |
-        if [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then
+        if [[ "$PR_NUM" =~ ^[1-9][0-9]*$ ]]; then
           gh pr checkout "$PR_NUM"
         else
           echo "Error: PR number must be a positive integer"
