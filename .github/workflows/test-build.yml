@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read
 
 jobs:
   build:
@@ -27,9 +28,9 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: sudo apt-get install libarchive-tools
     - uses: actions/checkout@v4
-      if: ${{ !github.event.inputs.pr_number }}
     - name: Checkout PR
       if: ${{ github.event.inputs.pr_number }}
+      shell: bash
       run: |
         if [[ "$PR_NUM" =~ ^[0-9]+$ ]]; then
           gh pr checkout "$PR_NUM"
