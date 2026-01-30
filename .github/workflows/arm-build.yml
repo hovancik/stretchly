@@ -5,24 +5,20 @@ on:
     branches:
       - release
 
-permissions:
-  contents: write
-
 env:
   USE_SYSTEM_FPM: true
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: buildjet-2vcpu-ubuntu-2204-arm
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '22.20.0'
     - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools libinput-dev libudev-dev
     - run: sudo gem install fpm -v 1.15
-    - run: npm install npm -g
-    - run: npm install
+    - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder build
       env:
         GH_TOKEN: ${{ secrets.github_token }}

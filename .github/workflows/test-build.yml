@@ -1,8 +1,6 @@
 name: Test build of packages on specific PR
 
 env:
-  NODE_VERSION: '22.20.0'
-  PYTHON_VERSION: '3.12'
   RETENTION_DAYS: 30
 
 on:
@@ -49,15 +47,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
-    - uses: actions/setup-python@v5
-      with:
-        python-version: ${{ env.PYTHON_VERSION }}
-    - uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    - run: pip install setuptools
-    - run: npm install -g npm
-    - run: npm install
+    - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder build --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
@@ -77,15 +67,7 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
-    - uses: actions/setup-python@v5
-      with:
-        python-version: ${{ env.PYTHON_VERSION }}
-    - uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    - run: pip install setuptools
-    - run: npm install -g npm
-    - run: npm install
+    - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
@@ -104,13 +86,6 @@ jobs:
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
-    - uses: actions/setup-python@v5
-      with:
-        python-version: ${{ env.PYTHON_VERSION }}
-    - uses: actions/setup-node@v4
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-    - run: pip install setuptools
     - run: | 
         sudo apt update
         sudo apt-get install --no-install-recommends -y \
@@ -120,8 +95,7 @@ jobs:
           libinput-dev \
           libudev-dev
     - run: sudo gem install fpm -v 1.15
-    - run: npm install -g npm
-    - run: npm install
+    - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder build --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}

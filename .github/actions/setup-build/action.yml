@@ -1,0 +1,18 @@
+name: Setup Build Environment
+description: Setup Node.js, Python and npm dependencies for Stretchly builds
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+    - run: pip install setuptools
+      shell: bash
+    - run: npm install -g npm
+      shell: bash
+    - run: npm install
+      shell: bash

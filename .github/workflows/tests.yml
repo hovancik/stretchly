@@ -43,16 +43,7 @@ jobs:
         timezoneMacos: Europe/Amsterdam
         timezoneWindows: W. Europe Standard Time
     - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '22.20.0'
-    - run: pip install setuptools
-    - run: npm install npm -g
-    - run: npm install
+    - uses: ./.github/actions/setup-build
     - name: Install missing usocket
       if: matrix.os == 'ubuntu-latest'
       run: npm install usocket

@@ -14,13 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '22.20.0'
-    - run: pip install setuptools
     - run: sudo apt update && sudo apt-get install --no-install-recommends -y libinput-dev libudev-dev
-    - run: npm install -g npm
-    - run: npm install
+    - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
