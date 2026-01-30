@@ -18,6 +18,7 @@ jobs:
       with:
         node-version: '22.20.0'
     - run: pip install setuptools
+    - run: sudo apt update && sudo apt-get install --no-install-recommends -y libinput-dev libudev-dev
     - run: npm install -g npm
     - run: npm install
     - run: node_modules/.bin/electron-builder --linux snap --publish=never

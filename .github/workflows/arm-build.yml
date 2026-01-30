@@ -19,7 +19,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '22.20.0'
-    - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
+    - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools libinput-dev libudev-dev
     - run: sudo gem install fpm -v 1.15
     - run: npm install npm -g
     - run: npm install
