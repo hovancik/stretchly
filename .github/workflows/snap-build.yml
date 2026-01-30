@@ -13,9 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-build
-    - run: node_modules/.bin/electron-builder --linux snap --publish=never
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build snap package
+      run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
     - name: Setup Snapcraft

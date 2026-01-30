@@ -39,14 +39,17 @@ jobs:
         timezoneLinux: Europe/Amsterdam
         timezoneMacos: Europe/Amsterdam
         timezoneWindows: W. Europe Standard Time
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-build
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
     - name: Install missing usocket
       if: matrix.os == 'ubuntu-latest'
       run: npm install usocket
     - name: Rebuild native modules for Node.js
       run: npm rebuild node-desktop-idle-v2
-    - run: npm run coverage
+    - name: Run tests with coverage
+      run: npm run coverage
       env:
         CI: true
         DISPLAY: ':0'

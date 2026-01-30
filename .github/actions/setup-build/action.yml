@@ -12,15 +12,20 @@ runs:
       if: runner.os == 'Linux'
       run: sudo apt update && sudo apt-get install -y libinput-dev libudev-dev
       shell: bash
-    - uses: actions/setup-python@v5
+    - name: Setup Python
+      uses: actions/setup-python@v5
       with:
         python-version: '3.12'
-    - uses: actions/setup-node@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
         node-version-file: '.nvmrc'
-    - run: pip install setuptools
+    - name: Install Python setuptools
+      run: pip install setuptools
       shell: bash
-    - run: npm install -g npm
+    - name: Update npm
+      run: npm install -g npm
       shell: bash
-    - run: npm install
+    - name: Install dependencies
+      run: npm install
       shell: bash

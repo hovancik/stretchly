@@ -22,8 +22,11 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libarchive-tools pkg-config
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-build
-    - run: node_modules/.bin/electron-builder build
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build packages
+      run: node_modules/.bin/electron-builder build
       env:
         GH_TOKEN: ${{ secrets.github_token }}

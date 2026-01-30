@@ -15,10 +15,15 @@ jobs:
   build:
     runs-on: buildjet-2vcpu-ubuntu-2204-arm
     steps:
-    - uses: actions/checkout@v4
-    - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
-    - run: sudo gem install fpm -v 1.15
-    - uses: ./.github/actions/setup-build
-    - run: node_modules/.bin/electron-builder build
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install ARM build dependencies
+      run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
+    - name: Install fpm
+      run: sudo gem install fpm -v 1.15
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build packages
+      run: node_modules/.bin/electron-builder build
       env:
         GH_TOKEN: ${{ secrets.github_token }}

@@ -41,14 +41,18 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y libarchive-tools pkg-config
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
-    - uses: ./.github/actions/setup-build
-    - run: node_modules/.bin/electron-builder build --publish=never
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build packages
+      run: node_modules/.bin/electron-builder build --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
-    - uses: actions/upload-artifact@v4
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
       with:
         name: stretchly-${{ matrix.os }}-${{ github.run_id }}
         path: dist/*.*
@@ -58,14 +62,18 @@ jobs:
     if: github.event.inputs.build_snap == 'true'
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
-    - uses: ./.github/actions/setup-build
-    - run: node_modules/.bin/electron-builder --linux snap --publish=never
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build snap package
+      run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
-    - uses: actions/upload-artifact@v4
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
       with:
         name: stretchly-snap-${{ github.run_id }}
         path: dist/*.snap
@@ -77,21 +85,27 @@ jobs:
     env:
       USE_SYSTEM_FPM: true
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
-    - run: | 
+    - name: Install ARM build dependencies
+      run: | 
         sudo apt update
         sudo apt-get install --no-install-recommends -y \
           ruby-full \
           libarchive-tools \
           pkg-config
-    - run: sudo gem install fpm -v 1.15
-    - uses: ./.github/actions/setup-build
-    - run: node_modules/.bin/electron-builder build --publish=never
+    - name: Install fpm
+      run: sudo gem install fpm -v 1.15
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build packages
+      run: node_modules/.bin/electron-builder build --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
-    - uses: actions/upload-artifact@v4
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
       with:
         name: stretchly-arm-${{ github.run_id }}
         path: dist/*.*
