@@ -14,7 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - run: sudo apt update && sudo apt-get install --no-install-recommends -y libinput-dev libudev-dev
     - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder --linux snap --publish=never
       env:

@@ -16,7 +16,7 @@ jobs:
     runs-on: buildjet-2vcpu-ubuntu-2204-arm
     steps:
     - uses: actions/checkout@v4
-    - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools libinput-dev libudev-dev
+    - run: sudo apt update && sudo apt-get install --no-install-recommends -y ruby-full libarchive-tools
     - run: sudo gem install fpm -v 1.15
     - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder build

@@ -36,14 +36,11 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-latest]
       fail-fast: false
     steps:
-    - name: run on mac
-      if: matrix.os == 'macos-latest'
-      run: sudo xcode-select -s /Library/Developer/CommandLineTools
     - name: run on linux
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt-get update
-        sudo apt-get install -y libarchive-tools libinput-dev libudev-dev pkg-config
+        sudo apt-get install -y libarchive-tools pkg-config
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
@@ -61,9 +58,6 @@ jobs:
     if: github.event.inputs.build_snap == 'true'
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        sudo apt-get update
-        sudo apt-get install -y libinput-dev libudev-dev  
     - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.inputs.pr_number && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.ref }}
@@ -91,9 +85,7 @@ jobs:
         sudo apt-get install --no-install-recommends -y \
           ruby-full \
           libarchive-tools \
-          pkg-config \
-          libinput-dev \
-          libudev-dev
+          pkg-config
     - run: sudo gem install fpm -v 1.15
     - uses: ./.github/actions/setup-build
     - run: node_modules/.bin/electron-builder build --publish=never

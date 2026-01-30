@@ -15,14 +15,11 @@ jobs:
       fail-fast: false
 
     steps:
-    - name: run on mac
-      if: matrix.os == 'macos-latest'
-      run: sudo xcode-select -s /Library/Developer/CommandLineTools
     - name: Setup DBUS environment
       if: matrix.os == 'ubuntu-latest'
       run: |
         export DISPLAY=:0
-        sudo apt update && sudo apt install -y dbus-x11 libinput-dev libudev-dev
+        sudo apt update && sudo apt install -y dbus-x11
         machineId=$(cat /var/lib/dbus/machine-id)
         mkdir -p /home/runner/.dbus
         mkdir -p /home/runner/.dbus/session-bus/
