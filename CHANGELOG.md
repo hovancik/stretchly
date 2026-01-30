@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - fix focus mode detection on macOS Tahoe
+- fix idle time detection on Wayland
 
 ## [1.20.0] - 2025-12-24
 ### Added
