@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install the required packages
         run: sudo apt -y install appstream-util desktop-file-utils
       - name: Verify the AppStream metadata file
