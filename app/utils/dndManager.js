@@ -141,14 +141,24 @@ class DndManager extends EventEmitter {
         } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
         return wfa !== -1 && wfa !== 0
       } else if (process.platform === 'darwin') {
+        const macOSMajorVersion = parseInt(process.getSystemVersion().split('.')[0])
+        let cmd = ''
+        if (macOSMajorVersion >= 26) {
+          cmd = 'defaults read com.apple.controlcenter "NSStatusItem VisibleCC FocusModes"'
+        } else {
+          cmd = 'defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"'
+        }
         try {
           const asyncExec = this._getOrCreateAsyncExec()
-          const { stdout } = await asyncExec('defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"')
+          const { stdout } = await asyncExec(cmd)
           if (stdout.replace(/[^0-9a-zA-Z]/g, '') === '1') {
             return true
           }
         } catch (e) {
-          this._logErrorOnce('macos', e)
+          if (!e.message.includes('The domain/default pair of (com.apple.controlcenter, NSStatusItem VisibleCC FocusModes) does not exist')) {
+            // On macOS Tahoe 26.0, this entry would not exist if no focus mode is enabled
+            this._logErrorOnce('macos', e)
+          }
         }
       } else if (process.platform === 'linux') {
         return await this._isDndEnabledLinux()
