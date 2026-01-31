@@ -19,10 +19,19 @@ window.onload = async (event) => {
   document.querySelector('#postpone').onclick = async event =>
     await window.breaks.postponeBreak()
 
+  const customMessage = await window.settings.get('customBreakMessage')
+  const customMessageElement = document.querySelector('.custom-break-message')
+  if (customMessage && customMessage.trim() !== '') {
+    customMessageElement.innerHTML = window.breaks.sanitizeIdea(customMessage)
+    customMessageElement.style.display = 'block'
+  } else {
+    customMessageElement.style.display = 'none'
+  }
+
   document.querySelector('.break-idea').innerHTML = window.breaks.sanitizeIdea(idea[0])
   document.querySelector('.break-text').innerHTML = window.breaks.sanitizeIdea(idea[1])
 
-  document.querySelectorAll('.break-idea a, .break-text a').forEach(a => {
+  document.querySelectorAll('.custom-break-message a, .break-idea a, .break-text a').forEach(a => {
     a.onclick = (event) => {
       event.preventDefault()
       window.electronApi.openExternal(a.href)

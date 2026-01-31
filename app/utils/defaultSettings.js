@@ -82,5 +82,6 @@ export default {
   miniBreakManualFinish: false,
   longBreakManualFinish: false,
   openAtLogin: false,
-  _migratedOpenAtLogin: false
+  _migratedOpenAtLogin: false,
+  customBreakMessage: ''
 }

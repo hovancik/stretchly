@@ -222,6 +222,13 @@ window.onload = async (e) => {
     }
   }
 
+  document.querySelector('#customMessage').value = settings.customBreakMessage || ''
+  if (!eventsAttached) {
+    document.querySelector('#customMessage').oninput = (event) => {
+      window.settings.saveSettings('customBreakMessage', event.target.value)
+    }
+  }
+
   document.querySelectorAll('input[type="range"]').forEach(async range => {
     const divisor = range.dataset.divisor
     const output = range.closest('div').querySelector('output')

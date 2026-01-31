@@ -43,6 +43,16 @@
   margin-top: 60px;
 }
 
+.breaks > :nth-child(1) > .custom-break-message {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 56px;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease-in;
+}
+
 .breaks > :nth-child(2) {
   font-size: 18px;
   letter-spacing: 0.26px;
@@ -107,4 +117,15 @@ body[dir=rtl] .breaks > :nth-child(2) > a img {
   bottom: 12px;
   position: absolute;
   right: 12px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
