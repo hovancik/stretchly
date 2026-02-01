@@ -1,6 +1,6 @@
 import EventEmitter from 'events'
 import log from 'electron-log/main.js'
-import { getFocusAssist } from 'windows-focus-assist'
+// import { getFocusAssist } from 'windows-focus-assist'
 import dbus from '@particle/dbus-next'
 import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
@@ -135,11 +135,14 @@ class DndManager extends EventEmitter {
     // TODO also check for session state? https://github.com/felixrieseberg/electron-notification-state/tree/master#session-state
     if (this.monitorDnd) {
       if (process.platform === 'win32') {
+        return false
+        /*
         let wfa = 0
         try {
           wfa = getFocusAssist().value
         } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
         return wfa !== -1 && wfa !== 0
+        */
       } else if (process.platform === 'darwin') {
         const macOSMajorVersion = parseInt(process.getSystemVersion().split('.')[0])
         let cmd = ''
