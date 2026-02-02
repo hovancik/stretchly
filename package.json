@@ -101,10 +101,9 @@
       "displayName": "Stretchly"
     },
     "win": {
+      "signAndEditExecutable": false,
       "target": [
         "nsis",
-        "7z",
-        "appx",
         "portable"
       ],
       "asarUnpack": [
