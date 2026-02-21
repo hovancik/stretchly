@@ -73,6 +73,7 @@ let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
+let danger = 0
 let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
@@ -748,7 +749,7 @@ function startMicrobreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('miniBreakColor'))]
+      calculateBackgroundColor(settings.get('miniBreakColor')), danger]
   })
 
   for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
@@ -902,7 +903,7 @@ function startBreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('mainColor'))]
+      calculateBackgroundColor(settings.get('mainColor')), danger]
   })
 
   for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
@@ -1048,6 +1049,11 @@ const enterMiniBreakManualContinuation = (shouldPlaySound) => enterManualAwaitPh
 const enterLongBreakManualContinuation = (shouldPlaySound) => enterManualAwaitPhase('long', shouldPlaySound)
 
 function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
+  if (shouldPlaySound) {
+    danger = Math.max(0, danger - 2)
+  } else if (shouldPlanNext) {
+    danger = Math.min(10, danger + 1)
+  }
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins, 'mini')
   log.info(`Stretchly: finishing Mini break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
@@ -1059,6 +1065,11 @@ function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
 }
 
 function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
+  if (shouldPlaySound) {
+    danger = Math.max(0, danger - 4)
+  } else if (shouldPlanNext) {
+    danger = Math.min(10, danger + 2)
+  }
   breakWins = breakComplete(shouldPlaySound, breakWins, 'long')
   log.info(`Stretchly: finishing Long break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
@@ -1124,6 +1135,7 @@ function resetBreaks () {
   if (breakWins) {
     breakWins = breakComplete(false, breakWins)
   }
+  danger = 0
   breakPlanner.reset()
   log.info('Stretchly: resetting breaks')
   updateTray()
@@ -1171,6 +1183,7 @@ function pauseBreaks (milliseconds) {
   if (breakWins) {
     finishBreak(false)
   }
+  danger = 0
   breakPlanner.pause(milliseconds)
   log.info(`Stretchly: pausing breaks for ${milliseconds}ms`)
   updateTray()

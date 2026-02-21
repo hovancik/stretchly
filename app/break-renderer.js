@@ -3,7 +3,7 @@ import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger] = await window.breaks.sendBreakData()
 
   new HtmlTranslate(document).translate()
 
@@ -47,6 +47,13 @@ window.onload = async (event) => {
   const mainColor = await window.settings.get('mainColor')
   document.body.classList.add(mainColor.substring(1))
   document.body.style.backgroundColor = backgroundColor
+
+  if (danger > 0) {
+    const opacity = 0.1 * danger
+    document.querySelectorAll('.danger').forEach(el => {
+      el.style.opacity = opacity
+    })
+  }
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
     const keyboardShortcut = await window.settings.get('endBreakShortcut')
