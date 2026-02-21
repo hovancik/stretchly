@@ -49,9 +49,7 @@ window.onload = async (event) => {
 
   if (danger > 0) {
     const opacity = 0.1 * danger
-    document.querySelectorAll('.danger').forEach(el => {
-      el.style.opacity = opacity
-    })
+    document.querySelector('.danger').style.opacity = opacity
   }
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
