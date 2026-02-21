@@ -303,6 +303,12 @@ input[type="radio"]:disabled + label {
   color: rgba(255,255,255,0.99);
 }
 
+input[type="checkbox"]:disabled + label,
+div:has(input[type="range"]:disabled) label,
+div:has(input[type="range"]:disabled) output {
+  opacity: 0.5;
+}
+
 input[type="range"] {
   margin: 0 16px 0 13px;
   vertical-align: middle;

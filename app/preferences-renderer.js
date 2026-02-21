@@ -254,7 +254,17 @@ window.onload = async (e) => {
 
   setWindowHeight()
 
+  const updateBreakSubOptions = (enableElement) => {
+    const subOptionIds = enableElement.value === 'microbreak'
+      ? ['miniBreakFor', 'miniBreakEvery', 'showNotificationBeforeMiniBreak', 'enablePostponeMini']
+      : ['longBreakFor', 'longBreakEvery', 'showNotificationBeforeLongBreak', 'enablePostponeLong']
+    subOptionIds.forEach(id => {
+      document.getElementById(id).disabled = !enableElement.checked
+    })
+  }
+
   document.querySelectorAll('.enabletype').forEach((element) => {
+    updateBreakSubOptions(element)
     element.onclick = async (event) => {
       const enabletypeChecked = document.querySelectorAll('.enabletype:checked')
       if (enabletypeChecked.length === 0) {
@@ -262,6 +272,7 @@ window.onload = async (e) => {
         window.settings.saveSettings(element.value, element.checked)
         window.alert(await window.i18next.t('preferences.schedule.cantDisableBoth'))
       }
+      updateBreakSubOptions(element)
     }
   })
 
