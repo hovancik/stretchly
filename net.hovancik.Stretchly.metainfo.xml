@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.hovancik.Stretchly</id>
+  <launchable type="desktop-id">net.hovancik.Stretchly.desktop</launchable>
+  <provides>
+    <id>stretchly.desktop</id>
+  </provides>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>BSD-2-Clause</project_license>
+  <content_rating type="oars-1.1" />
+  <name>Stretchly</name>
+  <developer_name>Jan Hovancik</developer_name>
+  <summary>The break time reminder app</summary>
+  <description>
+    <p>
+      Stretchly is a cross-platform Electron app that reminds you to take breaks when working on your computer.
+    </p>
+  </description>
+  <url type="bugtracker">https://github.com/hovancik/stretchly/issues</url>
+  <url type="donation">https://hovancik.net/stretchly/sponsor/</url>
+  <url type="help">https://hovancik.net/stretchly/features/</url>
+  <url type="homepage">https://hovancik.net/stretchly/</url>
+  <url type="translate">https://hosted.weblate.org/engage/stretchly/</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://hovancik.net/stretchly/img/flathub/minibreak.png</image>
+      <caption>Stretchly Mini break screen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://hovancik.net/stretchly/img/flathub/welcome.png</image>
+      <caption>Stretchly Welcome screen</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://hovancik.net/stretchly/img/flathub/dark.png</image>
+      <caption>Stretchly dark mode Preferences</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.20.0" date="2025-12-24">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new icon styles preference for tray (showing time to break or visual progress to break)</li>
+          <li>Autostart functionality in Flatpaks</li>
+          <li>portable version for Windows</li>
+          <li>set autostart based on the config file value</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>snap package not starting on Wayland</li>
+          <li>break windows not closing correctly on all platforms</li>
+          <li>show breaks as regular windows on Windows</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>        
+      </description>
+    </release>
+    <release version="1.19.0" date="2025-11-13">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>allow showing limited HTML in breaks</li>
+          <li>advanced option for manual finish mode (user must finish break)</li>
+          <li>advanced option to set preferred sound at beginning of breaks</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>hide autostart option for Windows Store build</li>
+          <li>memory issue where break windows were not closing correctly</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>update features hidden by default in Windows Store, Snap and Flatpak builds</li>
+          <li>migrated long break sound preference from <code>audio</code> to <code>longBreakAudio</code></li>
+          <li>updated many translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.18.0" date="2025-9-15">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Yiddish and Tamil translations</li>
+          <li>advanced option to show custom message in Preferences</li>
+          <li>advanced option to hide location of Preferences file in Debug info</li>
+          <li>advanced option to disable app update features</li>
+          <li>advanced option to hide Strict Mode preferences section</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>remove flags in Welcome window</li>
+          <li>updated many translations</li>
+          <li>do not check for Quiet Hours on Windows (deprecated)</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>prevent error with negative time to break in tray icon</li>
+          <li>hide close/minimize actions on Break window on macOS</li>
+          <li>issue when not all strings correctly translate after language change</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.2" date="2025-1-19">
+      <description>
+        <p>Fixed</p>
+        <ul>
+          <li>Linux DND detection</li>
+          <li>improve macOS DND detection</li>
+          <li>debug info when from Windows Store</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.1" date="2024-12-25">
+      <description>
+        <p>Fixed</p>
+        <ul>
+          <li>Ubuntu Unity DND detection</li>
+          <li>macOS app start</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.0" date="2024-12-24">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Bengali, Catalan, Greek and Serbian translations</li>
+          <li>it is not possible to close app during break that is in strict mode</li>
+          <li>logs command line option to show location of logs</li>
+          <li>advanced option to make break windows' background blurred (macOS)</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>error when end break shortcut is not set</li>
+          <li>time in tray shows the correct number (and matches the tooltip value)</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>improved break window loading</li>
+          <li>improve DND detection for Linux</li>
+          <li>updated many translations</li>
+          <li>better icons for "Show time in tray"</li>
+          <li>showBreakActionsInStrictMode migrated to showTrayMenuInStrictMode</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.0" date="2024-08-11">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Estonia and Belarus translations</li>
+          <li>advanced option to show break options (Skip, Pause, Reset) in Strict mode</li>
+          <li>autostart option for Linux</li>
+          <li>keyboard shortcuts for pause breaks for specific durations</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>transparency issues on Windows 10</li>
+          <li>Schedule and Menu options not being updated after change of language</li>
+          <li>multiple RTL UI issues</li>
+          <li>RPM installer conflicts with other Electron apps</li>
+          <li>improve break window loading to improve blank window issues</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>disable skipping to next break from tray when in strict mode</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.15.0" date="2023-11-11">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new end-of-the-break sound</li>
+          <li>both left and right click on tray opens menu (Windows)</li>
+          <li>double click on tray opens Preferences (Windows)</li>
+          <li>Vietnamese translations</li>
+          <li>reset breaks shortcut (advanced option)</li>
+          <li>skip to the next break shortcut (advanced option)</li>
+          <li>respect Do Not Disturb on Linux distros (KDE, XFCE, GNOME)</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>improve Do Not Disturb detection</li>
+          <li>start at login for Windows Store version (not sure whether successfuly)</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.1" date="2023-06-04">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>advanced option to not show menubar (tray) icon</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>break progress bar overflowing on tall screens</li>
+          <li>dock icon staying after break on macOS</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.0" date="2023-04-15">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new break ideas</li>
+          <li>ability to open Preferences window from command line</li>
+          <li>advanced option to set different sounds for Mini and Long breaks</li>
+          <li>advanced option to set different color theme for Mini and Long breaks</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>error when checking for new version fails</li>
+          <li>VoiceOver glitch on mac</li>
+          <li>notifications getting stacked in Notification center (macOS, Linux)</li>
+          <li>notifications preventing Gnome DE from sleeping</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>improved linux Preferences positioning</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.13.1" date="2022-12-23">
+      <description>
+        <p>Fixed</p>
+        <ul>
+          <li>migration script for new installs </li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.13.0" date="2022-12-23">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Galician translations</li>
+          <li>Filipino translations</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>time translations for Chinese</li>
+          <li>tray icon popup on Linux</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>merged pauseBreaksShortcut and resumeBreaksShortcut to pauseBreaksToggleShortcut</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.12.0" date="2022-09-24">
+      <description>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>remaining times are more exact</li>
+          <li>only update tray when needed</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.11.0" date="2022-08-07">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>Japanese translations</li>
+          <li>break ideas are translatable</li>
+          <li>unregister shortcuts on app's quit</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+          <li>no Linux 32 builds, as Electron does not support them anymore</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>crashing when skipping to break and time to break in tray</li>
+          <li>Portuguese and Brazilian labels in welcome screen</li>
+          <li>partial minutes in break preferences</li>
+          <li>counting break time when break starts</li>
+          <li>breaks not being finished when exclusion starts</li>
+          <li>incorrect format in logs</li>
+          <li>Preferences bigger then available height</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.10.0" date="2022-02-22">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>advanced option for app exclusion check interval</li>
+          <li>build for Apple silicon</li>
+          <li>ability to schedule break from command line</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.9.0" date="2021-12-24">
+      <description>
+        <p>Fixed</p>
+        <ul>
+          <li>typo in quotes</li>
+          <li>break not being resumed after DND if device was locked meanwhile on macOS</li>
+          <li>transparency not working in breaks</li>
+          <li>command line arguments</li>
+          <li>Turkish option in Welcome window</li>
+          <li>no break texts and time in break window</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>updated many translations</li>
+        </ul>
+        <p>Added</p>
+        <ul>
+          <li>advanced option to show current time in break window</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.8.1" date="2021-11-24"/>
+    <release version="1.8.0" date="2021-11-21">
+      <description>
+        <p>Added</p>
+        <ul>
+          <li>new break ideas</li>
+          <li>advanced option for showing minutes remaining in app tray</li>
+          <li>30 minute pause option</li>
+        </ul>
+        <p>Changed</p>
+        <ul>
+          <li>improve tray status messages</li>
+          <li>updated and added many translations</li>
+          <li>increase new version check to 48 hours</li>
+          <li>change font to Nato Sans for better support</li>
+        </ul>
+        <p>Fixed</p>
+        <ul>
+          <li>prevent empty break windows</li>
+          <li>improve window positioning</li>
+          <li>error on Windows and Linux systems when temporary directory is not executable</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.7.0" date="2021-05-04">
+      <description>
+        <p>
+          Added advanced preferences for Pause/Resume Breaks global shortcuts and for picking the monitor to show the break on.
+          Added initial support for the RTL languages for the UI.
+          The endBreakShortcut can now be disabled by settin it to an empty string.
+          Updated many translations.
+          Prevent memory leak after break has ended.
+        </p>
+      </description>
+    </release>
+    <release version="1.6.0" date="2021-04-16"/>
+    <release version="1.5.0" date="2021-04-07"/>
+  </releases>
+</component>

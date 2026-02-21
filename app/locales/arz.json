@@ -1,0 +1,12 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - تطبيق تذكير وقت الراحة",
+    "microbreakIn": "استراحة قصيرة خلال $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "استراحة طويلة خلال$t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "استئناف الاستراحات",
+    "downloadLatestVersion": "تحميل أحدث إصدار",
+    "toBreak": "استراحة طويلة",
+    "toMicrobreak": "استراحة قصيرة",
+    "skipToTheNext": "تخطي إلى التالي"
+  }
+}

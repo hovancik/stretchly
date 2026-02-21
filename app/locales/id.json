@@ -1,0 +1,466 @@
+{
+  "preferences": {
+    "schedule": {
+      "longBreaksInfo": "Istirahat Panjang dilakukan lebih sedikit, tetapi dalam durasi yang lebih lama, memberikan Anda kesempatan untuk istirahat lebih lama dari pekerjaan Anda.",
+      "cantDisableBoth": "Tidak memungkinkan untuk menonaktifkan kedua tipe istirahat bersamaan",
+      "enableStrictLong": "Aktifkan Mode Ketat untuk Istirahat Panjang",
+      "enableStrictMini": "Aktifkan Mode Ketat untuk Istirahat Ringan",
+      "strictModeInfo": "Mode Ketat mencegah Anda melewatkan Istirahat Ringan atau Istirahat Panjang dan didesain untuk membantu disiplin.",
+      "strictMode": "Mode Ketat:",
+      "enablePostponeLong": "Aktifkan Penundaan untuk Istirahat Panjang",
+      "showNotificationBeforeLongBreak": "Tampilkan notifikasi sebelum Istirahat Panjang dimulai",
+      "enableLongBreaks": "Aktifkan Istirahat Panjang",
+      "longBreaks": "Istirahat Panjang:",
+      "enablePostponeMini": "Aktifkan Penundaan untuk Istirahat Singkat",
+      "showNotificationBeforeMiniBreak": "Tampilkan notifikasi sebelum Istirahat Singkat dimulai",
+      "every": "Setiap:",
+      "breakFor": "Istirahat dalam:",
+      "enableMiniBreaks": "Aktifkan Istirahat Singkat",
+      "miniBreaksInfo": "Istirahat Singkat adalah istirahat yang memberi Anda kesempatan untuk peregangan dan bersantai.",
+      "miniBreaks": "Istirahat Singkat:"
+    },
+    "theme": {
+      "transparentMode": "Aktifkan transparansi",
+      "snowWhite": "Putih salju",
+      "invertedMonochrome": "Monokrom Terbalik",
+      "monochrome": "Monokrom",
+      "colour": "Warna",
+      "trayIcon": "Ikon bilahmenu:",
+      "ticToc": "Tik tok",
+      "windChime": "Lonceng angin",
+      "crystalGlass": "Kaca kristal",
+      "enableSounds": "Aktifkan suara",
+      "sounds": "Suara:",
+      "morningSwim": "Berenang pagi",
+      "coffeeKisses": "Ciuman kopi",
+      "graphiteCrystal": "Kristal grafit",
+      "autumnBeBlessed": "Musim gugur berkah",
+      "greenClouds": "Hijau awan",
+      "appearance": "Tampilan:"
+    },
+    "heart": {
+      "syncPreferences": "Sinkronisasi Preferensi",
+      "contributorPreferences": "Preferensi Kontributor",
+      "authenticateUsing": "Otentikasi menggunakan:",
+      "alreadyContributor": "Saya sudah menjadi kontributor",
+      "becomeContributor": "Menjadi Patron",
+      "desc2": "Stretchly gratis. Tetapi kamu dapat memberikan dukunganmu dengan donasi dan membantu kami terus meningkatkan Stretchly dan merilis perangkat lunak gratis lainnya.",
+      "desc1": "Beristirahat secara teratur saat menggunakan komputer terbukti secara ilmiah penting untuk kesehatan fisik dan mental kamu.",
+      "loveStretchly": "Suka dengan Stretchly kamu?"
+    },
+    "about": {
+      "designedBy": "Ikon dan desain UI oleh Colin Shanley",
+      "janH": "Jan Hovancik",
+      "developedBy": "Dikembangkan oleh",
+      "dot": ".",
+      "ourWebsite": "kunjungi situs web kami",
+      "learnMore": "Untuk mempelajari lebih lanjut tentang fitur Stretchly, lihat tutorial, unduh versi terbaru atau hubungi kami untuk dukungan, ",
+      "notifyNewVersion": "Beri tahu secara otomatis tentang pembaruan aplikasi",
+      "latestVersion": "Versi terbaru ",
+      "version": "Versi ",
+      "tagline": "Aplikasi pengingat waktu istirahat",
+      "checkNewVersion": "Periksa pembaruan aplikasi secara otomatis"
+    },
+    "settings": {
+      "restoreDefaults": "Kembali ke pengaturan bawaan",
+      "language": "Pilih bahasa:",
+      "monitorDnd": "Tampilkan istirahat walau di mode Jangan Ganggu",
+      "monitorIdleTime": "Pantau waktu menganggur sistem (istirahat ditunda jika sistem dalam keadaan menganggur).",
+      "allScreens": "Tampilkan istirahat di semua monitor",
+      "showIdeas": "Tampilkan tips latihan selagi istirahat",
+      "fullscreen": "Layar penuh",
+      "window": "Jendela",
+      "showBreaksIn": "Munculkan istirahat di:",
+      "openAtLogin": "Mulai Stretchly otomatis saat log in"
+    },
+    "nav": {
+      "heart": "Suka Stretchly",
+      "about": "Tentang",
+      "theme": "Tema",
+      "schedule": "Jadwal",
+      "settings": "Pengaturan"
+    },
+    "title": "Preferensi Stretchly"
+  },
+  "statusMessages": {
+    "resuming": "Melanjutkan",
+    "afterMiniBreak": "setelah {{count}} Istirahat Ringan",
+    "nextMiniBreak": "Istirahat Ringan Berikutnya",
+    "nextLongBreak": "Istirahat Panjang Berikutnya",
+    "dndMode": "Jangan Ganggu aktif",
+    "indefinitely": "Tanpa batas",
+    "paused": "Dijeda",
+    "appExclusion": "Aturan pengecualian",
+    "afterMiniBreak_other": "setelah {{count}} Istirahat Mini"
+  },
+  "welcome": {
+    "getStarted": "Memulai",
+    "openPreferences": "Buka Preferensi",
+    "viewTutorial": "Tampilkan Tutorial",
+    "breakTimeReminderApp": "Aplikasi pengingat waktu istirahat",
+    "title": "Selamat Datang di Stretchly"
+  },
+  "process": {
+    "newVersionAvailable": "Versi terbaru tersedia!"
+  },
+  "utils": {
+    "inAbout": "dalam sekitar {{count}}",
+    "remaining": "{{count}} tersisa",
+    "oclock": "pukul {{count}}",
+    "hours": "{{count}} jam",
+    "minutes": "{{count}} menit",
+    "seconds": "{{count}} detik",
+    "percent": "{{count}} persen",
+    "none": "{{count}}",
+    "percent_other": "{{count}} persen",
+    "none_other": "{{count}}",
+    "oclock_other": "jam {{count}}",
+    "seconds_other": "{{count}} detik",
+    "minutes_other": "{{count}} menit",
+    "hours_other": "{{count}} jam"
+  },
+  "contributorPreferences": {
+    "0": "Layar pertama",
+    "1": "Layar kedua",
+    "2": "Layar ketiga",
+    "3": "Layar keempat",
+    "4": "Layar kelima",
+    "system": "Sistem",
+    "dark": "Gelap",
+    "light": "Cerah",
+    "appearance": "Tampilan:",
+    "pauseAfter": "Jeda setelah:",
+    "naturalBreaksInfo": "Jika pemantauan waktu idle diaktifkan di Preferensi utama, Anda dapat menentukan setelah jam berapa jeda harus dijeda.",
+    "naturalBreaks": "Istirahat alami:",
+    "longBreakStartSound": "Mainkan juga suara akhir istirahat di awal istirahat panjang",
+    "miniBreakStartSound": "Putar suara akhir istirahat juga di awal istirahat pendek",
+    "volume": "Volume:",
+    "sounds": "Suara:",
+    "breakWindowHeight": "Tinggi:",
+    "breakWindowWidth": "Lebar:",
+    "breakWindowSizeInfo": "Berapa persentase layar yang harus disembunyikan jendela istirahat?",
+    "breakWindowSize": "Ukuran jendela istirahat",
+    "opacity": "Opasitas:",
+    "opacityInfo": "Seberapa padu seharusnya jendela istirahat?",
+    "opacityTheme": "Transparansi tema:",
+    "showWelcomeWindow": "Tampilkan jendela Selamat Datang pada awal berikutnya",
+    "welcomeWindow": "Jendela selamat datang:",
+    "pauseUntilMorningInfo": "Tentukan hingga jam berapa 'Jeda hingga pagi' harus dijeda.",
+    "pauseUntil": "Jeda hingga:",
+    "pauseUntilMorning": "Jeda hingga pagi hari:",
+    "longBreaks": "Istirahat Panjang:",
+    "maxPostpones": "Maksimal penundaan:",
+    "postponeFor": "Tunda untuk:",
+    "postponableFor": "Dapat ditunda untuk:",
+    "miniBreaks": "Istirahat Ringan:",
+    "breakPostponeInfo": "Jika diaktifkan di Preferensi utama, Anda dapat menunda jeda. Pengaturan berikut memungkinkan Anda menentukan kapan, berapa lama dan berapa kali Anda bisa menunda istirahat.",
+    "breakPostpone": "Penundaan istirahat:",
+    "useIdeasFromSettings": "Gunakan ide istirahat dari file konfigurasi",
+    "customIdeasInfo": "Memungkinkan kamu menggunakan ide istirahat tersesuaikan dengan cara mengedit file konfigurasi. (Untuk pengguna tingkat lanjut.)",
+    "customIdeas": "Ide penyesuaian:",
+    "newVersionNotification": "Beritahu ketika versi terbaru tersedia",
+    "newVersion": "Versi terbaru:",
+    "beforeMiniBreak": "Istirahat Singkat:",
+    "beforeLongBreak": "Istirahat Panjang:",
+    "notificationsInfo": "Pemberitahuan sistem ditampilkan sebelum istirahat agar kamu dapat mempersiapkannya.",
+    "notifications": "Pemberitahuan istirahat:",
+    "title": "Preferensi Kontributor",
+    "showBreaksAsRegularWindowsInfo": "Saat aktif, jendela istirahat akan menjadi fokus, tidak akan menjadi 'Selalu di atas' lagi dan juga akan muncul di taskbar.",
+    "showBreaksAsRegularWindowsTitle": "Bertindak sebagai jendela biasa:",
+    "showBreaksAsRegularWindows": "Tampilkan jeda sebagai jendela reguler",
+    "screenInfo": "Saat Anda menonaktifkan menu tunjukkan istirahat di semua layar, Anda dapat memilih di layar mana Anda akan menunjukkan istirahat.",
+    "showOnMonitor": "Tunjukkan Instirahat di",
+    "screen": "Pantau untuk Istirahat:",
+    "cursor": "Ikuti kursor",
+    "primary": "Layar utama",
+    "timeToBreakInTray": "Waktunya istirahat",
+    "showTimeToBreakInTray": "Tunjukkan waktu untuk istirahat berikutnya di ikon menubar",
+    "currentTimeInBreaks": "Waktu saat ini",
+    "showCurrentTimeInBreaks": "Tampilkan waktu lokal saat ini di jendela istirahat"
+  },
+  "main": {
+    "syncPreferences": "Preferensi Sinkronisasi",
+    "contributorPreferences": "Preferensi Kontributor",
+    "preferences": "Preferensi",
+    "cancel": "Batal",
+    "continue": "Lanjut",
+    "warning": "Ini akan mengembalikan aplikasi ke pengaturan bawaan dan semua pengaturan Anda akan hilang.",
+    "restoreDefaults": "Kembali ke pengaturan bawaan",
+    "quitStretchly": "Keluar Stretchly",
+    "resetBreaks": "Setel Ulang Istirahat",
+    "indefinitely": "Tanpa batas",
+    "untilMorning": "Hingga pagi",
+    "for5Hours": "5 jam",
+    "for2Hours": "2 jam",
+    "forHour": "1 jam",
+    "pause": "Menunda Istirahat",
+    "resume": "Melanjutkan Istirahat",
+    "skipToTheNext": "Lewati ke selanjutnya",
+    "toMicrobreak": "Istirahat Singkat",
+    "toBreak": "Istirahat Lama",
+    "downloadLatestVersion": "Unduh versi terbaru",
+    "resumingBreaks": "Melanjutkan istirahat",
+    "breakIn": "Istirahat Lama dalam $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Istirahat singkat dalam $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly - Aplikasi pengingat waktu istirahat"
+  },
+  "break": {
+    "title": "Saatnya istirahat!",
+    "skip": "Lewati istirahat ini",
+    "postpone": "Tunda istirahat ini"
+  },
+  "miniBreakIdeas": {
+    "aab": {
+      "text": "Perlahan lihat ke kiri, lalu ke kanan."
+    },
+    "aae": {
+      "text": "Tutup mata Anda dan rileks."
+    },
+    "aaq": {
+      "text": "Tutup mata Anda dan sebutkan hal-hal yang Anda dengar."
+    },
+    "aat": {
+      "text": "Dengan tangan kanan Anda, ambil setiap jari tangan kiri Anda secara bergantian dan remas. Ulangi di sisi lain."
+    },
+    "aax": {
+      "text": "Jika Anda butuh bantuan, mintalah."
+    },
+    "aaz": {
+      "text": "Apakah perhatian Anda dihabiskan dengan bijak?"
+    },
+    "abe": {
+      "text": "Goyangkan tangan Anda untuk mendapatkan sedikit relaksasi."
+    },
+    "abh": {
+      "text": "Kepalkan tangan, lalu kibaskan jari-jari Anda dan regangkan sejauh mungkin."
+    },
+    "aam": {
+      "text": "Luangkan waktu sejenak untuk memikirkan sesuatu yang Anda hargai."
+    },
+    "aan": {
+      "text": "Luangkan waktu sejenak untuk tersenyum bahwa kita masih hidup."
+    },
+    "aaa": {
+      "text": "Pergi ambil segelas air."
+    },
+    "aac": {
+      "text": "Perlahan lihat ke atas, lalu ke bawah."
+    },
+    "aad": {
+      "text": "Tutup mata Anda dan tarik napas dalam-dalam beberapa kali."
+    },
+    "abc": {
+      "text": "Dengan mata tertutup, perlahan dan lembut angkat mata Anda ke langit-langit dan kembali ke lantai."
+    },
+    "aaf": {
+      "text": "Regangkan kaki Anda."
+    },
+    "aao": {
+      "text": "Tempat kerja yang benar-benar ergonomis adalah tempat kerja yang sering Anda hindari."
+    },
+    "aap": {
+      "text": "Tutup mata Anda dan hitung nafas Anda."
+    },
+    "aar": {
+      "text": "Letakkan ujung jari Anda di bahu Anda. Putar bahu Anda ke depan selama 10 detik, lalu ke belakang."
+    },
+    "aag": {
+      "text": "Regangkan lengan Anda."
+    },
+    "aah": {
+      "text": "Apakah postur duduk Anda sudah benar?"
+    },
+    "aai": {
+      "text": "Perlahan putar kepala ke samping dan tahan selama 10 detik."
+    },
+    "aak": {
+      "text": "Berdiri dari kursi Anda dan regangkan."
+    },
+    "aba": {
+      "text": "Ubah postur duduk Anda."
+    },
+    "abg": {
+      "text": "Kepalkan tangan, lalu geser jari Anda ke atas hingga mengarah ke langit-langit, seperti Anda menyuruh seseorang untuk berhenti."
+    },
+    "aas": {
+      "text": "Angkat lengan kanan Anda, regangkan di atas kepala Anda ke kiri, dan tahan selama 10 detik. Ulangi di sisi lain."
+    },
+    "aay": {
+      "text": "Lakukan satu hal pada satu waktu."
+    },
+    "abb": {
+      "text": "Paparkan mata Anda pada cahaya alami."
+    },
+    "abk": {
+      "text": "Berdiri tegak dengan tangan di samping Anda. Remas tulang belikat Anda bersama-sama dan tahan."
+    },
+    "aaw": {
+      "text": "Fokus setiap 20 menit selama 20 detik pada objek dengan jarak 6 meter."
+    },
+    "abd": {
+      "text": "Dengan mata tertutup, perlahan dan lembut gerakkan mata Anda ke kiri, lalu perlahan ke kanan."
+    },
+    "abf": {
+      "text": "Satu per satu, sentuhkan ujung setiap jari ke ujung ibu jari Anda sehingga membentuk huruf O."
+    },
+    "abi": {
+      "text": "Duduk tegak, lengan tergantung di sisi tubuh, dan perlahan putar leher ke satu arah dalam lingkaran besar."
+    },
+    "abj": {
+      "text": "Berdiri tegak dan perlahan miringkan kepala dan perlahan tekan menggunakan tangan sampai Anda merasakan peregangan, kemudian ganti sisi sebelahnya."
+    },
+    "abl": {
+      "text": "Berdiri tegak dengan tangan terangkat di sepanjang bahu. Gerakkan tangan sedikit ke belakang, tahan sebentar dan kembali."
+    },
+    "aaj": {
+      "text": "Perlahan miringkan kepala ke samping dan tahan selama 5-10 detik."
+    },
+    "aal": {
+      "text": "Fokuskan kembali mata Anda pada objek yang berjarak setidaknya 20 meter."
+    },
+    "aau": {
+      "text": "Berdiri dan lakukan lunge. Tahan selama 10 detik, kemudian ganti kaki lainnya."
+    },
+    "aav": {
+      "text": "Tutup mata Anda and perhatikan apapun yang muncul pada saat ini, dengan tanpa menghakimi."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Tidak sendiri",
+      "text": "Apakah Anda merasa sulit untuk istirahat sendirian? Cobalah untuk melakukannya dengan rekan kerja. Selain membuatnya lebih mudah untuk tetap istirahat, Anda akan memiliki kesempatan untuk mengenal mereka lebih baik. Beristirahat bersama meningkatkan produktivitas."
+    },
+    "aab": {
+      "title": "Menyingkir",
+      "text": "Pernahkah Anda memperhatikan bagaimana otak Anda bisa memikirkan sesuatu dengan sendirinya? Yang diperlukan hanyalah menjauh dari komputer dan beristirahat sejenak untuk memikirkan sesuatu yang sama sekali tidak berhubungan."
+    },
+    "aac": {
+      "title": "Istirahat Mikro",
+      "text": "Istirahat adalah komponen kunci dalam memastikan kinerja sistem muskuloskeletal. Istirahat yang sering dapat mengurangi durasi tugas dan membantu menurunkan risiko cedera ergonomis."
+    },
+    "aae": {
+      "title": "Berkedip",
+      "text": "Melihat layar untuk waktu yang lama menyebabkan Anda lebih sedikit berkedip, sehingga membuat mata Anda perih. Berkedip cepat selama beberapa detik untuk menyegarkan lapisan air mata dan membersihkan debu dari permukaan mata."
+    },
+    "aaf": {
+      "title": "Ergonomi",
+      "text": "Ketinggian dan sudut keyboard, mouse, monitor, atau permukaan kerja yang tidak tepat dapat menyebabkan masalah kesehatan. Luangkan waktu untuk membaca tentang meja ergonomis."
+    },
+    "aag": {
+      "title": "Bergerak",
+      "text": "Ada banyak cara untuk berolahraga di kantor Anda. Cobalah jalan di tempat atau lakukan push-up meja."
+    },
+    "aah": {
+      "title": "Mengubah",
+      "text": "Apakah Anda memiliki bola stabilitas atau meja kerja berdiri? Pertimbangkan untuk mengganti kursi meja Anda dengan benda tersebut untuk sementara waktu."
+    },
+    "aaj": {
+      "title": "Teknologi",
+      "text": "Bagaimana kalau jalan-jalan tanpa alat teknologi?"
+    },
+    "aak": {
+      "title": "Metabolisme",
+      "text": "Penelitian yang muncul menunjukkan bahwa duduk untuk waktu yang lama berkontribusi terhadap risiko sindrom metabolik, risiko serangan jantung dan stroke dan risiko kematian secara keseluruhan, dan masih banyak lagi. Mengambil istirahat dengan berjalan-jalan secara teratur dapat membantu sirkulasi tubuh Anda, yang mana mampu mengatasi beberapa masalah tersebut."
+    },
+    "aal": {
+      "title": "Rapat Aktif",
+      "text": "Bagaimana dengan memindahkan rapat dari ruang konferensi ke tempat terbuka? Berjalan tidak hanya membakar kalori tetapi bahkan dapat menumbuhkan rasa kolaborasi."
+    },
+    "aam": {
+      "title": "Buah",
+      "text": "Luangkan waktu Anda dan makan buah. Perlahan-lahan. Perhatikan rasanya, teksturnya, kesegarannya."
+    },
+    "aan": {
+      "title": "Kamar mandi",
+      "text": "Berjalan ke kamar mandi terjauh di fasilitas tempat kerja ketika pergi ke kamar kecil."
+    },
+    "aao": {
+      "title": "Rehat Kopi",
+      "text": "Pergi rehat kopi? Pertimbangkan untuk berjalan 5 menit setiap kali Anda melakukannya."
+    },
+    "aaq": {
+      "title": "Belajar",
+      "text": "Dalam sebuah penelitian terhadap sukarelawan yang sehat, peneliti NIH menemukan bahwa istirahat sejenak, lebih awal dan sering, dapat membantu otak kita mempelajari keterampilan baru."
+    },
+    "aar": {
+      "title": "Latihan",
+      "text": "Bukti menunjukkan sejumlah kecil olahraga teratur dapat membawa manfaat kesehatan yang dramatis, termasuk mengurangi stres secara terukur."
+    },
+    "aas": {
+      "title": "Mengulang",
+      "text": "Sudahkah Anda menemukan rutinitas peregangan Anda? Jangan lupa untuk mengulanginya lebih dari sekali untuk melawan efek duduk yang lama dengan lebih baik."
+    },
+    "aat": {
+      "title": "Pergelangan Tangan dan Lengan Bawah",
+      "text": "Rentangkan tangan Anda dengan telapak tangan menghadap ke arah Anda, lalu perlahan-lahan putar tangan empat kali searah jarum jam, lalu empat kali berlawanan arah jarum jam."
+    },
+    "aad": {
+      "title": "Meditasi",
+      "text": "Studi penelitian menunjukkan bahwa latihan berbasis kesadaran membantu mengurangi kecemasan, depresi, stres, dan rasa sakit, dan membantu meningkatkan kesehatan umum, kesehatan mental, dan kualitas hidup. Tidak yakin bagaimana memulainya? Ada banyak aplikasi untuk membantu Anda."
+    },
+    "aai": {
+      "text": "Apakah Anda melamun atau kesulitan fokus? Itu tandanya kamu butuh istirahat.",
+      "title": "Melihat"
+    },
+    "aau": {
+      "title": "Peregangan punggung",
+      "text": "Kaitkan jari-jemari tangan di belakang kepala Anda, kemudian perlahan bergerak ke atas kepala hingga posisi telapak tangan menghadap atas."
+    },
+    "aap": {
+      "title": "Rekan Kerja",
+      "text": "Jangan mengirim email atau mengirim pesan ke rekan kantor, berjalan ke meja mereka untuk berkomunikasi dengan mereka."
+    },
+    "aay": {
+      "title": "Pilih anak tangga ",
+      "text": "Penelitian membuktikan bahwa mendaki anak tangga, yang tergolong aktivitas fisik berintensitas tinggi, membakar lebih banyak kalori tiap menitnya ketimbang jogging."
+    },
+    "aba": {
+      "text": "Tempat yang bersih membantumu fokus ketika bekerja dan keberihan sering berkaitan dengan emosi positif seperti kebahagiaan.",
+      "title": "Merapikan"
+    },
+    "abc": {
+      "title": "Transportasi Umum",
+      "text": "Jika kamu biasanya menggunakan transportasi umum , kamu bisa memilih berdiri ketimbang duduk. Jika dimungkinkan, coba untuk mengganti moda transportasimu sebanyak mungkin dengan bersepeda atau jalan kaki."
+    },
+    "aax": {
+      "text": " Lakukan olahraga yang meningkatkan denyut jantung hingga 120 beat per menit selama 20 menit setiap empat atau lima hari seminggu. Meningkatkan detak jantung secara teratur dapat meningkatkan kesehatan kardiovaskular.",
+      "title": "Denyut"
+    },
+    "aaz": {
+      "title": "Buat karya seni",
+      "text": "Terapi kesenian dikenal memiliki keuntungan meningkatkan kesehatan mental, khususnya dalam hal managemen stress. Bagaimana dengan menulis puisi singkat, mengambil foto atau menggambar sesuatu yang kecil?"
+    },
+    "abb": {
+      "text": "Alam dikaitkan dengan emosi positif and mengurangi stress dan kegelisahan. Jika memungkinkan, coba untuk membawa makan siang harianmu ke luar, dikelilingi oleh tumbuhan hijau.",
+      "title": "Makan siang di luar"
+    },
+    "abd": {
+      "title": "Menguap",
+      "text": "Menguap dapat membantu, sebab menguap memproduksi air mata untuk melembabkan dan melumasi mata."
+    },
+    "abe": {
+      "title": "Berganti fokus",
+      "text": "Letakkan satu jari di dekat mata dan fokus padanya. Perlahan gerakkan jari menjauh, kemudian fokus ke sesuatu dikejauhan lalu kembali ke jari. Bawa jari ke dekat mata dan fokus pada sesuatu yang jauh."
+    },
+    "aav": {
+      "title": "Bergerak",
+      "text": "Untuk setiap tiga puluh menit berdiam diri, Anda harus setidaknya melakukan satu menit peregangan."
+    },
+    "aaw": {
+      "title": "Olahraga 7 Menit",
+      "text": "Paket olahraga ini berisi rutinitas olahraga seluruh tubuh dalam waktu singkat. Tetapi seperti olahraga lainnya, berhati-hatilah. Terdapat banyak aplikasi untuk membuat Anda memulai olahraga."
+    },
+    "abg": {
+      "title": "Meremas",
+      "text": "Remas sepasang kaus kaki atau bola karet lembut, tahan selama 5 detik. Ulangi seluruh proses beberapa kali."
+    },
+    "abh": {
+      "title": "Bernapas Lambat",
+      "text": "Penelitian yang muncul menunjukkan potensi penggunaan teknik pernapasan lambat terkontrol sebagai sarana untuk mengoptimalkan parameter fisiologis yang tampaknya terkait dengan kesehatan dan umur panjang."
+    },
+    "abf": {
+      "title": "Menutup Mata",
+      "text": "Saat duduk, letakkan siku di atas meja dan dekatkan ke tepi meja. Biarkan berat badan Anda turun ke depan dan tutupi mata dengan telapak tangan. Tutup mata Anda dan tarik napas dalam secara perlahan melalui hidung, tahan selama beberapa detik dan hembuskan secara perlahan. Lanjutkan pernapasan dalam."
+    }
+  }
+}

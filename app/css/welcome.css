@@ -1,0 +1,80 @@
+body > div > :last-child {
+  margin-bottom: 24px;
+}
+
+.welcome {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto auto/ 4% auto 4%;
+  letter-spacing: 0px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.welcome > div {
+  grid-column: 2/-2;
+}
+
+.welcome > :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.welcome > :nth-child(1) > div {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome > :nth-child(1) > div > img {
+  height: 64px;
+  width: 64px;
+}
+
+.welcome > :nth-child(1) > div > span {
+  font-size: 48px;
+  padding-left: 12px;
+}
+
+body[dir=rtl] .welcome > :nth-child(1) > div > span {
+  padding-left: 0;
+  padding-right: 12px;
+}
+
+.welcome > :nth-child(1) > span {
+  font-family: 'Noto Sans Light', 'Noto Sans Arabic Light',
+    'Noto Sans CJK KR Light',
+    'Noto Sans Devanagari Light',
+    'Noto Sans Gujarati Light', 'Noto Sans Gurmukhi Light',
+    'Noto Sans JP Light', 'Noto Sans Hebrew Light';
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.welcome > :last-child {
+  display: flex;
+  margin-top: 26px;
+}
+
+.welcome > :last-child > :last-child {
+  margin-left: auto;
+}
+
+body[dir=rtl] .welcome > :last-child > :last-child {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.welcome input[type="radio"] + label:before,
+body[dir=rtl] .welcome input[type="radio"] + label:before {
+  display: block;
+  margin: 0 auto;
+}
+
+select {
+  min-height: 50vh;
+  padding-left: 8px;
+  text-align: center;
+  width: 70%;
+}

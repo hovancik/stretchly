@@ -1,0 +1,516 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - 休息提醒应用",
+    "microbreakIn": "距离下次小憩约 $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "距离下次休息约 $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "正在恢复休息",
+    "downloadLatestVersion": "下载最新版本",
+    "toBreak": "休息",
+    "toMicrobreak": "小憩",
+    "skipToTheNext": "跳到下一次",
+    "resume": "恢复休息",
+    "pause": "暂停休息",
+    "forHour": "1 小时",
+    "for2Hours": "2 小时",
+    "for5Hours": "5 小时",
+    "untilMorning": "直至早晨",
+    "indefinitely": "无限期",
+    "resetBreaks": "重置休息",
+    "quitStretchly": "退出 Stretchly",
+    "restoreDefaults": "还原至默认值",
+    "warning": "即将恢复默认值，所有已有设置会被清除。",
+    "continue": "继续",
+    "cancel": "取消",
+    "preferences": "偏好设置",
+    "contributorPreferences": "贡献者偏好设置",
+    "syncPreferences": "同步偏好设置"
+  },
+  "break": {
+    "postpone": "延后此次休息",
+    "skip": "跳过此次休息",
+    "title": "该休息一下了！",
+    "finish": "完成本次休息"
+  },
+  "preferences": {
+    "title": "Stretchly 偏好设置",
+    "nav": {
+      "settings": "设置",
+      "schedule": "计划",
+      "theme": "主题",
+      "about": "关于",
+      "heart": "喜欢 Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "登录后自动启动 Stretchly",
+      "showBreaksIn": "休息提示画面：",
+      "window": "窗口",
+      "fullscreen": "全屏",
+      "showIdeas": "在休息时显示锻炼提示",
+      "allScreens": "在所有显示器显示休息提示画面",
+      "monitorIdleTime": "监控系统的闲置时间（系统闲置时暂停计时）。",
+      "monitorDnd": "即使处于「勿扰」模式，仍显示休息画面",
+      "language": "选择语言：",
+      "restoreDefaults": "还原至默认值"
+    },
+    "schedule": {
+      "miniBreaks": "小憩：",
+      "miniBreaksInfo": "「小憩」是频率较高的短暂休息，您可以用来伸展和放松。",
+      "enableMiniBreaks": "启用「小憩」",
+      "breakFor": "持续时间：",
+      "every": "每：",
+      "showNotificationBeforeMiniBreak": "小憩前弹出通知",
+      "enablePostponeMini": "允许延后小憩",
+      "longBreaks": "休息：",
+      "longBreaksInfo": "「休息」频率较低，但持续时间更长，让您能够从工作中得到长时间的休息。",
+      "enableLongBreaks": "启用「休息」",
+      "showNotificationBeforeLongBreak": "休息前弹出通知",
+      "enablePostponeLong": "允许延后休息",
+      "strictMode": "严格模式：",
+      "strictModeInfo": "「严格模式」下不能跳过任何休息类型，目的是帮助自律。",
+      "enableStrictMini": "启用「小憩」的严格模式",
+      "enableStrictLong": "启用「休息」的严格模式",
+      "cantDisableBoth": "不能同时停用两种休息类型"
+    },
+    "theme": {
+      "appearance": "外观：",
+      "greenClouds": "绿色云朵",
+      "autumnBeBlessed": "秋天祝福",
+      "graphiteCrystal": "石墨水晶",
+      "coffeeKisses": "咖啡之吻",
+      "morningSwim": "沐浴晨光",
+      "transparentMode": "启用半透明",
+      "sounds": "音效：",
+      "enableSounds": "启用音效",
+      "crystalGlass": "水晶玻璃",
+      "windChime": "风铃",
+      "ticToc": "滴答",
+      "trayIcon": "通知栏图标：",
+      "colour": "彩色",
+      "monochrome": "单色",
+      "invertedMonochrome": "反转单色",
+      "snowWhite": "纯白雪花",
+      "reverie": "白日梦",
+      "silence": "沉默",
+      "trayIconStyleLabel": "样式：",
+      "trayIconStyleDefault": "默认",
+      "trayIconStyleTime": "休息时间",
+      "trayIconStyleProgress": "休息进度"
+    },
+    "about": {
+      "tagline": "休息提醒应用",
+      "version": "版本 ",
+      "latestVersion": "最新版本 ",
+      "notifyNewVersion": "新版本提醒",
+      "learnMore": "如需深入了解 Stretchly 的功能，查看教程，下载最新版本或联系我们寻求支持，请 ",
+      "ourWebsite": "访问我们的网站",
+      "dot": "。",
+      "developedBy": "开发者",
+      "janH": "Jan Hovancik",
+      "designedBy": "图标和用户界面由 Colin Shanley 设计",
+      "checkNewVersion": "自动检查更新"
+    },
+    "heart": {
+      "loveStretchly": "喜欢 Stretchly?",
+      "desc1": "科学研究表明，使用电脑时定时休息有利于身心健康。",
+      "desc2": "Stretchly 是免费的。但是您可以通过捐赠来帮助我们改进 Stretchly 并发布其他免费软件。",
+      "becomeContributor": "捐助",
+      "alreadyContributor": "我已经是贡献者了",
+      "authenticateUsing": "通过下列方法认证：",
+      "contributorPreferences": "贡献者偏好设置",
+      "syncPreferences": "同步偏好设置"
+    }
+  },
+  "contributorPreferences": {
+    "0": "第一台显示器",
+    "1": "第二台显示器",
+    "2": "第三台显示器",
+    "3": "第四台显示器",
+    "4": "第五台显示器",
+    "title": "贡献者偏好设置",
+    "notifications": "休息通知：",
+    "notificationsInfo": "在休息前弹出系统通知，让您做好准备。",
+    "beforeLongBreak": "休息：",
+    "beforeMiniBreak": "小憩：",
+    "newVersion": "新版本：",
+    "newVersionNotification": "新版本提醒",
+    "customIdeas": "自定义理念：",
+    "customIdeasInfo": "您可以编辑配置文件来使用自定义休息理念（专业用户）",
+    "useIdeasFromSettings": "使用配置文件中的休息理念",
+    "breakPostpone": "延后休息：",
+    "breakPostponeInfo": "若在偏好设置启用，就能延后休息。以下设置让您能够指定延后休息的具体配置。",
+    "miniBreaks": "小憩：",
+    "postponableFor": "延后情况：",
+    "postponeFor": "延后多久：",
+    "maxPostpones": "最大延后次数：",
+    "longBreaks": "休息：",
+    "pauseUntilMorning": "暂停至早晨：",
+    "pauseUntil": "暂停至：",
+    "pauseUntilMorningInfo": "指定「暂停至早晨」的具体时间。",
+    "welcomeWindow": "欢迎窗口：",
+    "showWelcomeWindow": "下次启动时显示欢迎窗口",
+    "opacityTheme": "透明主题：",
+    "opacityInfo": "休息窗口应该有多不透明?",
+    "opacity": "不透明度：",
+    "breakWindowSize": "休息窗口尺寸",
+    "breakWindowSizeInfo": "休息窗口的屏幕占比是多少?",
+    "breakWindowWidth": "宽：",
+    "breakWindowHeight": "高：",
+    "sounds": "音效：",
+    "volume": "音量：",
+    "miniBreakStartSound": "小憩开始时播放的音效",
+    "longBreakStartSound": "休息开始时播放的音效",
+    "naturalBreaks": "自然休息：",
+    "naturalBreaksInfo": "若在偏好设置中启用监视空闲时间，您可以指定什么时候暂停倒数。",
+    "pauseAfter": "多久后暂停：",
+    "appearance": "外观：",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统",
+    "screen": "监控休息时间：",
+    "showBreaksAsRegularWindows": "休息画面设为常规窗口",
+    "showBreaksAsRegularWindowsInfo": "启用后，休息窗口可被聚焦，不再始终置顶并将出现在任务栏中。",
+    "showBreaksAsRegularWindowsTitle": "作为常规窗口：",
+    "cursor": "跟随光标",
+    "primary": "主显示器",
+    "showOnMonitor": "显示休息画面于",
+    "screenInfo": "禁用所有显示器显示休息画面时，你可以选择在哪个显示器显示休息画面。",
+    "timeToBreakInTray": "休息时间",
+    "showTimeToBreakInTray": "在托盘图标显示下次休息时间",
+    "showCurrentTimeInBreaks": "在休息画面显示当前时间",
+    "currentTimeInBreaks": "当前时间",
+    "showTrayIcon": "显示托盘图标",
+    "toShowTrayIcon": "在托盘中显示 Stretchly 图标"
+  },
+  "utils": {
+    "none_other": "{{count}}",
+    "percent_other": "{{count}} %",
+    "oclock_other": "{{count}} 点钟",
+    "seconds_other": "{{count}} 秒",
+    "minutes_other": "{{count}} 分",
+    "hours_other": "{{count}} 时",
+    "remaining": "还有 {{count}}",
+    "inAbout": "大约 {{count}}后",
+    "elapsed": "已经过去了 {{count}}"
+  },
+  "process": {
+    "newVersionAvailable": "有新的版本！"
+  },
+  "welcome": {
+    "title": "欢迎使用 Stretchly",
+    "breakTimeReminderApp": "休息提醒应用",
+    "viewTutorial": "查看教程",
+    "openPreferences": "打开偏好设置",
+    "getStarted": "开始"
+  },
+  "statusMessages": {
+    "paused": "已暂停",
+    "indefinitely": "无限期",
+    "dndMode": "已启用「勿扰」",
+    "nextLongBreak": "下次休息",
+    "nextMiniBreak": "下次小憩",
+    "afterMiniBreak_other": "{{count}} 次小憩后",
+    "resuming": "继续",
+    "appExclusion": "应用程序排除规则"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "去接杯水吧。"
+    },
+    "abd": {
+      "text": "闭上双眼，缓慢而轻柔地向左移动眼睛，然后再缓慢地向右移动。"
+    },
+    "aai": {
+      "text": "慢慢将头转向一侧并保持 10 秒钟。"
+    },
+    "aab": {
+      "text": "慢慢地向左看，然后向右看。"
+    },
+    "aac": {
+      "text": "慢慢地向上看，然后向下看。"
+    },
+    "aad": {
+      "text": "闭上眼睛，做几次深呼吸。"
+    },
+    "aae": {
+      "text": "闭上眼睛放松。"
+    },
+    "aaf": {
+      "text": "伸展双腿。"
+    },
+    "aag": {
+      "text": "伸展你的手臂。"
+    },
+    "aah": {
+      "text": "你的坐姿正确吗？"
+    },
+    "aaj": {
+      "text": "慢慢将头向一侧倾斜并保持 5-10 秒。"
+    },
+    "aak": {
+      "text": "从椅子上站起来伸展身体。"
+    },
+    "aal": {
+      "text": "将视线重新聚焦在至少 20 米外的物体上。"
+    },
+    "aam": {
+      "text": "花点时间想想你欣赏的东西。"
+    },
+    "aan": {
+      "text": "花一点时间为了活着而微笑。"
+    },
+    "aao": {
+      "text": "真正符合人体工程学的工作站是您经常远离的工作站。"
+    },
+    "aap": {
+      "text": "闭上眼睛，去数你的呼吸。"
+    },
+    "aaq": {
+      "text": "闭上眼睛，说出你听到的东西。"
+    },
+    "aar": {
+      "text": "将指尖放在肩膀上。向前转动肩膀 10 秒钟，然后向后转动。"
+    },
+    "aas": {
+      "text": "举起右臂，向左伸过头顶，保持 10 秒，换另一侧重复。"
+    },
+    "aat": {
+      "text": "用你的右手，依次抓住你左手的每个手指并挤压。在另一边重复。"
+    },
+    "aau": {
+      "text": "站起来做一个弓步。 保持 10 秒，然后换另一条腿。"
+    },
+    "aav": {
+      "text": "闭上眼睛，不加判断地注意当下发生的一切。"
+    },
+    "aaw": {
+      "text": "每隔 20 分钟，在 20 英尺距离的物体上聚焦 20 秒。"
+    },
+    "aax": {
+      "text": "如果你需要帮助，就去寻求帮助。"
+    },
+    "aay": {
+      "text": "一次只做一件事。"
+    },
+    "aaz": {
+      "text": "你的注意力花得明智吗？"
+    },
+    "aba": {
+      "text": "改变你的坐姿。"
+    },
+    "abb": {
+      "text": "将眼睛暴露在自然光下。"
+    },
+    "abc": {
+      "text": "闭上双眼，缓慢而轻柔地抬起眼睛看向天花板，然后落下看向地板。"
+    },
+    "abe": {
+      "text": "甩甩手，让自己放松一下。"
+    },
+    "abf": {
+      "text": "一次一个，用每个手指的指尖触摸你的拇指指尖，使它们形成 O 形。"
+    },
+    "abg": {
+      "text": "握紧拳头，然后向上张开手指，直到它们指向天花板，就像你在告诉别人停下来一样。"
+    },
+    "abh": {
+      "text": "握紧拳头，然后将手指展开并尽可能地伸展。"
+    },
+    "abi": {
+      "text": "坐直，手臂垂在身体两侧，慢慢地向一个方向旋转脖子，绕一个大圈。"
+    },
+    "abj": {
+      "text": "站直，用同一只手慢慢地将头向肩膀倾斜，直到感觉到拉伸。"
+    },
+    "abk": {
+      "text": "站直，双臂放在身体两侧。将肩胛骨挤压在一起并保持不动。"
+    },
+    "abl": {
+      "text": "站直，双臂沿着肩膀抬起。 将手稍微向后移动，保持一秒钟然后返回。"
+    },
+    "abn": {
+      "text": "站起来，将一只脚放在附近的物体上，比如椅子或踏步凳上。保持膝盖弯曲，保持10-15秒钟。然后换另一只脚重复练习。"
+    },
+    "abt": {
+      "text": "将一只手臂伸直向上，然后用另一只手臂轻轻地推动第一只手臂的肘部朝向头部。保持10-15秒钟。然后用另一只手臂重复此动作。"
+    },
+    "abq": {
+      "text": "面对一面墙，将双手放在上面，然后做几个俯卧撑。"
+    },
+    "abr": {
+      "text": "坐在椅子边缘，将一条腿伸直放在身前，保持10-15秒。然后换另一条腿重复练习。"
+    },
+    "abs": {
+      "text": "面对一面墙，将一只脚向后放，另一只脚向前放，然后倾斜身体靠在墙上。然后换另一只腿重复练习。"
+    },
+    "abm": {
+      "text": "坐在椅子边缘，扭转身体向一侧，保持10-15秒。然后在另一侧重复。"
+    },
+    "abo": {
+      "text": "双脚与肩同宽，身体下蹲就像坐在椅子上，然后站起来。重复多次。"
+    },
+    "abp": {
+      "text": "站在墙边，背靠着墙，双手放在墙上，然后慢慢地将双臂上下摆动，就像在制作雪天使一样。"
+    },
+    "abu": {
+      "text": "将头向一侧倾斜，然后向另一侧倾斜，然后轻轻地向前后倾斜。"
+    },
+    "abv": {
+      "text": "伸出一只手臂横跨胸前，用另一只手握住肘部，轻轻地向胸部拉近。然后用另一只手臂重复这个动作。"
+    },
+    "abw": {
+      "text": "站起来，将一只脚放在附近的物体上，比如椅子或踏板上，弯腰触摸脚趾。然后换另一只脚重复动作。"
+    },
+    "abx": {
+      "text": "站在门口，将一只手臂放在门口的每一侧，然后轻轻向前倾斜，直到你感到胸部有一种拉伸的感觉。"
+    },
+    "aby": {
+      "text": "坐在椅子或地板边缘，双脚并拢，轻轻用肘部向下压，拉伸内侧大腿肌肉。"
+    }
+  },
+  "longBreakIdeas": {
+    "abf": {
+      "text": "坐着时，手肘撑在桌子上，靠近桌子边缘。身体重心向前倾，用手捂住眼睛。闭上眼睛，用鼻子慢慢吸气，保持几秒钟。继续深呼吸。",
+      "title": "捂住双眼"
+    },
+    "aar": {
+      "text": "证据表明，少量的定期锻炼可以带来巨大的健康效益，包括显著减轻压力。",
+      "title": "锻炼"
+    },
+    "aaa": {
+      "title": "你不孤单",
+      "text": "你是否觉得很难独自休息？ 试着和同事一起休息吧。除了让休息更容易坚持外，你还有机会更好地了解他们。一起休息可以提高生产力。"
+    },
+    "aab": {
+      "title": "远离屏幕",
+      "text": "你是否曾注意到自己的大脑可以独立解决问题？只需要远离电脑，休息一下，思考一些完全无关的事情。"
+    },
+    "aac": {
+      "title": "小憩",
+      "text": "休息是确保肌肉骨骼系统性能的关键组成部分。 经常休息可以缩短任务的持续时间，并有助于降低人体工程学伤害风险。"
+    },
+    "aad": {
+      "title": "冥想",
+      "text": "研究表明，基于正念的练习有助于减少焦虑、抑郁、压力和疼痛，并有助于改善整体健康、心理健康和生活质量。 不知道如何开始？ 有许多应用程序可以帮助您。"
+    },
+    "aae": {
+      "title": "眨眨眼",
+      "text": "长时间看屏幕会减少眨眼次数，从而使您的眼睛暴露在空气中。 快速眨眼几秒钟以刷新泪膜并清除眼表的灰尘。"
+    },
+    "aaf": {
+      "title": "人体工程学",
+      "text": "键盘、鼠标、显示器或工作台面的高度和角度不当会导致健康问题。 花一些时间阅读有关办公桌人体工程学的知识。"
+    },
+    "aag": {
+      "title": "移动",
+      "text": "办公室里有很多锻炼的方法，比如原地踏步或者做桌上俯卧撑。"
+    },
+    "aah": {
+      "title": "改变",
+      "text": "你有稳定球或站立式办公桌吗？ 考虑用它们暂时替换您的办公椅。"
+    },
+    "aai": {
+      "title": "注意",
+      "text": "您是否在做白日梦或难以集中注意力？ 这是你需要休息的信号。"
+    },
+    "aaj": {
+      "text": "不如来一场无科技的散步？",
+      "title": "科技"
+    },
+    "aak": {
+      "title": "新陈代谢",
+      "text": "新兴研究表明，久坐会增加代谢综合征风险、心脏病发作和中风风险以及总体死亡风险等。 定期步行休息可以帮助您的血液循环，努力解决其中一些问题。"
+    },
+    "aal": {
+      "title": "活动会议",
+      "text": "将会议从会议室转移到大厅怎么样？ 步行不仅可以燃烧卡路里，还可以培养合作意识。"
+    },
+    "aam": {
+      "title": "水果",
+      "text": "慢慢来，吃点水果吧。 慢慢地感受它的味道、口感和新鲜的感觉。"
+    },
+    "aan": {
+      "title": "洗手间",
+      "text": "去洗手间时，步行到工作场所中最远的洗手间。"
+    },
+    "aao": {
+      "title": "咖啡时间",
+      "text": "咖啡时间？ 每次去时你可以步行 5 分钟。"
+    },
+    "aap": {
+      "title": "同事",
+      "text": "不要给办公室同事发电子邮件或发信息，走到他们的办公桌前与他们交流。"
+    },
+    "aaq": {
+      "title": "学习",
+      "text": "在一项针对健康志愿者的研究中，美国国立卫生研究院的研究人员发现，尽早并经常进行短暂的休息可能有助于我们的大脑学习新技能。"
+    },
+    "aas": {
+      "text": "找到适合自己的伸展运动了吗？ 不要忘记重复多次，以更好地对抗久坐的影响。",
+      "title": "重复"
+    },
+    "aat": {
+      "title": "手腕和前臂",
+      "text": "伸展双臂，掌心朝向自己，然后慢慢将双手顺时针旋转四次，再逆时针旋转四次。"
+    },
+    "aau": {
+      "title": "背部伸展",
+      "text": "双手交叉放在脑后，然后一起举过头顶，手掌朝上。"
+    },
+    "aav": {
+      "title": "动起来",
+      "text": "对于每三十分钟的停滞，你应该有至少一分钟的刺激。"
+    },
+    "aaw": {
+      "title": "7 分钟锻炼",
+      "text": "这种锻炼在很短的时间内就能完成全身锻炼。但和任何锻炼一样，要小心。 有许多应用程序可以帮助您入门。"
+    },
+    "aax": {
+      "title": "脉搏",
+      "text": "每周四到五次，连续20分钟将你的心率提升至每分钟120次，可以选择任何你喜欢的活动。定期提高心率有助于改善心血管健康。"
+    },
+    "aay": {
+      "title": "走楼梯",
+      "text": "研究表明，爬楼梯是比慢跑每分钟燃烧更多卡路里的高强度身体活动。"
+    },
+    "aaz": {
+      "title": "艺术创作",
+      "text": "众所周知，艺术疗法对心理健康有很大的好处，尤其是在压力管理方面。写一首小诗，拍张照片，或者画一些小东西怎么样？"
+    },
+    "aba": {
+      "title": "整理",
+      "text": "干净的空间有助于您专注于工作，并且通常与幸福等积极情绪有关。"
+    },
+    "abb": {
+      "title": "在户外吃午饭",
+      "text": "大自然与积极的情绪、减少压力和焦虑有关。只要有可能，尽量每天在充满绿色植物的户外度过午休时间。"
+    },
+    "abc": {
+      "title": "公共交通",
+      "text": "如果你经常使用公共交通工具，你可以站着而不是坐着。 如果可能的话，试着在日常出行中尽量步行或骑自行车。"
+    },
+    "abd": {
+      "title": "打哈欠",
+      "text": "打哈欠真的很有帮助，因为它会产生眼泪来帮助滋润和润滑眼睛。"
+    },
+    "abe": {
+      "title": "改变焦点",
+      "text": "将一根手指靠近眼睛并专注于它。 慢慢地将手指移开，将注意力集中在远处，然后再回到手指上。 将手指收回并专注于远处的事物。"
+    },
+    "abg": {
+      "title": "握力训练",
+      "text": "挤压一双揉成一团的袜子或一个软橡胶球，保持 5 秒钟。重复整个过程几次。"
+    },
+    "abh": {
+      "title": "缓慢呼吸",
+      "text": "最新研究表明，控制自己缓慢呼吸有益于提升健康与延长寿命。"
+    },
+    "abi": {
+      "text": "闭上眼睛，想象自己身处一个平静、令人放松的地方，比如海滩或森林，专注于那个环境中的景象、声音和感觉。",
+      "title": "创造性想象"
+    },
+    "abj": {
+      "title": "压力太大了？",
+      "text": "试试 5-4-3-2-1 着陆法：找出你能看到的 5 样东西，你能摸到的 4 样东西，你能听到的 3 样东西，你能闻到的 2 样东西，和 1 样你可以尝到的东西。"
+    }
+  }
+}

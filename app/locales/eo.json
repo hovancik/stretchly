@@ -1,0 +1,256 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - La aplikaĵo por memorigi pri paŭzoj",
+    "microbreakIn": "Paŭzeto post $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Longa Paŭzo post $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "Daŭrigi paŭzojn",
+    "downloadLatestVersion": "Elŝuti la plej freŝan version",
+    "toBreak": "Longa Paŭzo",
+    "toMicrobreak": "Paŭzeto",
+    "skipToTheNext": "Iri al la sekva",
+    "resume": "Daŭrigi Paŭzojn",
+    "pause": "Paŭzigi Paŭzojn",
+    "forHour": "1 horo",
+    "for2Hours": "2 horoj",
+    "for5Hours": "5 horoj",
+    "untilMorning": "Ĝis mateno",
+    "indefinitely": "Senfine",
+    "resetBreaks": "Restarigi Paŭzojn",
+    "quitStretchly": "Forlasi Stretchly",
+    "restoreDefaults": "Restaŭri la defaŭltojn",
+    "warning": "Ĉi tiu restaŭros la defaŭltojn de la aplikaĵo kaj ĉiuj viaj agordoj perdiĝos.",
+    "continue": "Daŭrigi",
+    "cancel": "Nuligi",
+    "preferences": "Agordoj",
+    "contributorPreferences": "Kontribuantaj Agordoj",
+    "syncPreferences": "Sinkronigi Agordojn"
+  },
+  "break": {
+    "postpone": "Prokrasti ĉi tiun paŭzon",
+    "skip": "Preterpasi ĉi tiun paŭzon",
+    "title": "Tempo por paŭzi!"
+  },
+  "preferences": {
+    "title": "Agordoj de Stretchly",
+    "nav": {
+      "settings": "Agordoj",
+      "schedule": "Horaro",
+      "theme": "Etoso",
+      "about": "Pri",
+      "heart": "Ami Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Aŭtolanĉi Stretchly kiam vi ensalutas",
+      "showBreaksIn": "Montri paŭzojn:",
+      "window": "En fenestro",
+      "fullscreen": "Tutekrane",
+      "showIdeas": "Montri ekzercajn konsilojn dum paŭzoj",
+      "allScreens": "Montri paŭzojn en ĉiuj ekranoj",
+      "monitorIdleTime": "Observi senokupan tempon (Paŭzigi paŭzojn se sistemo estas senokupa).",
+      "monitorDnd": "Montri paŭzojn eĉ en senĝena reĝimo",
+      "language": "Elekti lingvon:",
+      "restoreDefaults": "Restaŭri la defaŭltojn"
+    },
+    "schedule": {
+      "miniBreaks": "Paŭzetoj:",
+      "miniBreaksInfo": "Paŭzetoj estas oftaj mallongaj paŭzoj, kiuj donas al vi ŝancon streĉi kaj malstreĉiĝi.",
+      "enableMiniBreaks": "Ŝalti Paŭzetoj",
+      "breakFor": "Paŭzi por:",
+      "every": "Ĉiujn:",
+      "showNotificationBeforeMiniBreak": "Montri sciigon antaŭ ol Paŭzeto komenciĝos",
+      "enablePostponeMini": "Ŝalti prokraston por Paŭzetoj",
+      "longBreaks": "Longaj Paŭzoj:",
+      "longBreaksInfo": "Longaj Paŭzoj estas malpli oftaj, sed estas pli longaj. Ili permesas al vi pli longan paŭzon de via laboro.",
+      "enableLongBreaks": "Ŝalti Longajn Paŭzojn",
+      "showNotificationBeforeLongBreak": "Montri sciigon antaŭ ol Longan Paŭzon komenciĝos",
+      "enablePostponeLong": "Ŝalti prokraston por Longaj Paŭzoj",
+      "strictMode": "Strikta Reĝimo:",
+      "strictModeInfo": "En Strikta Reĝimo, vi ne povas prokrasti aŭ Paŭzetojn aŭ Longajn Paŭzojn. Ĝi celas helpi disciplinon.",
+      "enableStrictMini": "Ŝalti Striktan Reĝimon por Paŭzetoj",
+      "enableStrictLong": "Ŝalti Striktan Reĝimon por Longaj Paŭzoj",
+      "cantDisableBoth": "Ne eblas malŝalti ambaŭ specojn de Paŭzoj"
+    },
+    "theme": {
+      "appearance": "Etoso:",
+      "greenClouds": "Verdaj nuboj",
+      "autumnBeBlessed": "Benita aŭtuno",
+      "graphiteCrystal": "Grafita kristalo",
+      "coffeeKisses": "Kafaj kisoj",
+      "morningSwim": "Matena naĝado",
+      "transparentMode": "Ŝalti travideblecon",
+      "sounds": "Sonoj:",
+      "enableSounds": "Ŝalti sonojn",
+      "crystalGlass": "Kristala vitro",
+      "windChime": "Ventotintilo",
+      "ticToc": "Tik tok",
+      "trayIcon": "Menubreta bildsimbolo:",
+      "colour": "Kolora",
+      "monochrome": "Unukolora",
+      "invertedMonochrome": "Inversigita unukolora",
+      "snowWhite": "Neĝblanka",
+      "reverie": "Revo"
+    },
+    "about": {
+      "tagline": "La aplikaĵo por memorigi pri paŭzoj",
+      "version": "Versio ",
+      "latestVersion": "Plej freŝa versio ",
+      "notifyNewVersion": "Aŭtomate sciigi kiam ĝisdatiginta",
+      "learnMore": "Por lerni pli pri ebloj de Stretchly, spekti instruilon, elŝuti la plej freŝan version, aŭ kontakti nin por subteno, ",
+      "ourWebsite": "visitu nian retejon",
+      "dot": ".",
+      "developedBy": "Programis de",
+      "janH": "Jan Hovancik",
+      "designedBy": "Bildsimbolo kaj interfaca aspektigo de Colin Shanley",
+      "checkNewVersion": "Aŭtomate kontroli ĝisdatigojn de la programo"
+    },
+    "heart": {
+      "loveStretchly": "Ĉu vi amas vian Stretchly?",
+      "desc1": "Fari oftajn paŭzojn dum vi uzas komputilon estas science montrata importi por via korpa kaj mensa sano.",
+      "desc2": "Stretchly estas senpaga. Sed, vi povas asisti per donaci kaj helpi nin daŭrigi plibonigi Stretchly kaj eldoni aliajn senpagajn aplikaĵojn.",
+      "becomeContributor": "Iĝi Patron",
+      "alreadyContributor": "Mi jam estas kontribuanto",
+      "authenticateUsing": "Aŭtentigi per:",
+      "contributorPreferences": "Kontribuantaj Agordoj",
+      "syncPreferences": "Sinkronigi Agordojn"
+    }
+  },
+  "contributorPreferences": {
+    "0": "Unua ekrano",
+    "1": "Dua ekrano",
+    "2": "Tria ekrano",
+    "3": "Kvara ekrano",
+    "4": "Kvina ekrano",
+    "title": "Kontribuantaj Agordoj",
+    "notifications": "Paŭzaj sciigoj:",
+    "notificationsInfo": "Sistema sciigo aperas antaŭ paŭzoj por permesi vin pretigi.",
+    "beforeLongBreak": "Longa Paŭzo:",
+    "beforeMiniBreak": "Paŭzeto:",
+    "newVersion": "Freŝa versio:",
+    "newVersionNotification": "Sciigi kiam freŝa versio haveblas",
+    "customIdeas": "Propraj ideoj:",
+    "customIdeasInfo": "Vi povas uzi vian propran paŭzajn ideojn se vi redaktas agordan dosieron. (Por altnivelaj uzantoj.)",
+    "useIdeasFromSettings": "Uzi paŭzajn ideojn el agorda dosiero",
+    "breakPostpone": "Paŭza prokrasteco:",
+    "breakPostponeInfo": "Se ŝaltinta en la ĉefaj agordoj, vi povas prokrasti paŭzojn. La sekvontaj agordoj permesas vin ŝanĝi kiam, kiel longe, kaj kiom da fojoj vi povas prokrasti paŭzon.",
+    "miniBreaks": "Paŭzetoj:",
+    "postponableFor": "Prokrastebla ĝis:",
+    "postponeFor": "Prokrasti ĝis:",
+    "maxPostpones": "Maksimumaj prokrastaj:",
+    "longBreaks": "Longaj Paŭzoj:",
+    "pauseUntilMorning": "Paŭzigi ĝis mateno:",
+    "pauseUntil": "Paŭzigi ĝis:",
+    "pauseUntilMorningInfo": "Ŝanĝi ĝis kioma horo 'Paŭzigi ĝis mateno' devas paŭzigi.",
+    "welcomeWindow": "Bonvena fenestro:",
+    "showWelcomeWindow": "Montri Bonvenan fenestron je la sekva lanĉo",
+    "opacityTheme": "Etosa travideblecon:",
+    "opacityInfo": "Kiel travidebla vi volas, ke la fenestro estu?",
+    "opacity": "Travidebleco:",
+    "breakWindowSize": "Dimensio de la paŭza fenestro",
+    "breakWindowSizeInfo": "Kiom da la ekrano vi volas, ke la fenestro kovru?",
+    "breakWindowWidth": "Larĝo:",
+    "breakWindowHeight": "Alto:",
+    "sounds": "Sonoj:",
+    "volume": "Laŭteco:",
+    "miniBreakStartSound": "Ludi paŭzfinan sonon ankaŭ ĉe la komenco de Paŭzeto",
+    "longBreakStartSound": "Ludi paŭzfinan sonon ankaŭ ĉe la komenco de Longa Paŭzo",
+    "naturalBreaks": "Naturaj paŭzoj:",
+    "naturalBreaksInfo": "Se observi de senokupa tempo estas ŝaltinta en la ĉefaj agordoj, vi povas ŝanĝi post kiom da tempo, ke la paŭzoj paŭziĝu.",
+    "pauseAfter": "Paŭziĝi post:",
+    "appearance": "Mieno:",
+    "light": "Hela",
+    "dark": "Malhela",
+    "system": "Sistema",
+    "showBreaksAsRegularWindowsInfo": "Se ŝaltita, Paŭzaj fenestroj estos enfokusigeblaj; ili ne plu estos 'Ĉiam supraj', kaj ili ankaŭ aperos sur la taskopleto.",
+    "showBreaksAsRegularWindows": "Montri paŭzojn kiel regulajn fenestrojn",
+    "showBreaksAsRegularWindowsTitle": "Agi kiel regula fenestro:",
+    "screenInfo": "Se paŭzoj ne montriĝos sur ĉiuj ekranoj, vi povas elekti tiun ekranon, sur kiu montriĝos viaj Paŭzoj.",
+    "primary": "Ĉefekrano",
+    "screen": "Ekrano por Paŭzoj:",
+    "cursor": "Sekvi kursoron",
+    "showOnMonitor": "Montri Paŭzojn sur",
+    "timeToBreakInTray": "Tempo por paŭzi",
+    "showTimeToBreakInTray": "Montri tempon al la sekva paŭzo en menuzono-ikono",
+    "showTrayIcon": "Montri menuzono-ikonon",
+    "toShowTrayIcon": "Montri Stretchly-ikonon en la menuzono",
+    "currentTimeInBreaks": "Nuna horo",
+    "showCurrentTimeInBreaks": "Montri nunan lokan horon en la paŭzfenestro"
+  },
+  "utils": {
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} procento",
+    "percent_other": "{{count}} procentoj",
+    "oclock_one": "la {{count}}a horo",
+    "oclock_other": "la {{count}}a horo",
+    "seconds_one": "{{count}} sekundo",
+    "seconds_other": "{{count}} sekundoj",
+    "minutes_one": "{{count}} minuto",
+    "minutes_other": "{{count}} minutoj",
+    "hours_one": "{{count}} horo",
+    "hours_other": "{{count}} horoj",
+    "remaining": "{{count}} restas",
+    "inAbout": "post ĉirkaŭ {{count}}"
+  },
+  "process": {
+    "newVersionAvailable": "Freŝa versio haveblas!"
+  },
+  "welcome": {
+    "title": "Bonvenon al Stretchly",
+    "breakTimeReminderApp": "La aplikaĵo por memorigi pri paŭzoj",
+    "viewTutorial": "Spekti instruilon",
+    "openPreferences": "Malfermi Agordojn",
+    "getStarted": "Komenci"
+  },
+  "statusMessages": {
+    "paused": "Paŭzita",
+    "indefinitely": "Senfine",
+    "dndMode": "Senĝena reĝimo estas aktiva",
+    "nextLongBreak": "Sekva Longa Paŭzo",
+    "nextMiniBreak": "Sekva Paŭzeto",
+    "afterMiniBreak_one": "post {{count}} Paŭzeto",
+    "afterMiniBreak_other": "post {{count}} Paŭzetoj",
+    "resuming": "Daŭriĝos",
+    "appExclusion": "Regulo por ekskluzivi aplikaĵojn"
+  },
+  "miniBreakIdeas": {
+    "aai": {
+      "text": "Malrapide turnu la kapon flanken kaj tenu dum 10 sekundoj."
+    },
+    "aaa": {
+      "text": "Iru preni glason de akvo."
+    },
+    "aab": {
+      "text": "Rigardu malrapide tutmaldekstren poste tutdekstren."
+    },
+    "aac": {
+      "text": "Rigardu malrapide tutsupren, poste malsupren."
+    },
+    "aad": {
+      "text": "Fermu viajn okulojn kaj prenu kelkajn profondajn spirojn."
+    },
+    "aae": {
+      "text": "Fermu viajn okulojn kaj malstreĉu vin."
+    },
+    "aaf": {
+      "text": "Etendu viajn krurojn."
+    },
+    "aag": {
+      "text": "Etendu viajn brakojn."
+    },
+    "aah": {
+      "text": "Ĉu via sidpozo estas ĝusta?"
+    },
+    "aaj": {
+      "text": "Malrapide klinu la kapon flanken kaj tenu dum 5-10 sekundoj."
+    },
+    "aak": {
+      "text": "Stariĝu de via seĝo kaj streĉu."
+    },
+    "abd": {
+      "text": "Kun fermitaj okuloj movu viajn okulojn malrapide kaj milde maldekstren kaj dekstren."
+    },
+    "abe": {
+      "text": "Skuu viajn manojn por malstreĉi."
+    }
+  }
+}

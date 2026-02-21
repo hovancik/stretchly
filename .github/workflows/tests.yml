@@ -1,0 +1,57 @@
+name: Run tests
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+      fail-fast: false
+
+    steps:
+    - name: Setup DBUS environment
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        export DISPLAY=:0
+        sudo apt update && sudo apt install -y dbus-x11
+        machineId=$(cat /var/lib/dbus/machine-id)
+        mkdir -p /home/runner/.dbus
+        mkdir -p /home/runner/.dbus/session-bus/
+        touch /home/runner/.dbus/session-bus/${machineId}-0
+        sudo dbus-launch --exit-with-session
+        sleep 5 # Wait for the DBUS session to start
+        echo $DBUS_SESSION_BUS_ADDRESS
+        eval `dbus-launch --sh-syntax`
+        address=$(echo $DBUS_SESSION_BUS_ADDRESS)
+        echo "DBUS_SESSION_BUS_ADDRESS=${address}" > /home/runner/.dbus/session-bus/${machineId}-0
+    - name: Check for file
+      if: matrix.os == 'ubuntu-latest'
+      run: cat /home/runner/.dbus/session-bus/$(cat /var/lib/dbus/machine-id)-0
+    - name: Set Timezone
+      uses: szenius/set-timezone@v2.0
+      with:
+        timezoneLinux: Europe/Amsterdam
+        timezoneMacos: Europe/Amsterdam
+        timezoneWindows: W. Europe Standard Time
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Install missing usocket
+      if: matrix.os == 'ubuntu-latest'
+      run: npm install usocket
+    - name: Rebuild native modules for Node.js
+      run: npm rebuild node-desktop-idle-v2
+    - name: Run tests with coverage
+      run: npm run coverage
+      env:
+        CI: true
+        DISPLAY: ':0'
+    - name: Codecov
+      uses: codecov/codecov-action@v4

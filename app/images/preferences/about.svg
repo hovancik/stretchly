@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>• Prefs / Toolbar Icon / About</title>
+    <desc>Created with Sketch.</desc>
+    <g id="•-Prefs-/-Toolbar-Icon-/-About" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="posn" x="0" y="0" width="32" height="32" rx="4"></rect>
+            <g id="toolbar-about-2">
+                <circle id="Oval" fill="#979797" fill-rule="nonzero" cx="16" cy="16" r="16"></circle>
+                <path d="M16,1.77778 C23.8547152,1.77778 30.22222,8.14528479 30.22222,16 C30.22222,23.8547152 23.8547152,30.22222 16,30.22222 C8.14528479,30.22222 1.77778,23.8547152 1.77778,16 C1.77778,12.2280319 3.27618466,8.61055307 5.94336887,5.94336887 C8.61055307,3.27618466 12.2280319,1.77778 16,1.77778" id="Path" fill="#F6F6F6" fill-rule="nonzero"></path>
+                <polygon id="Path" fill="#00AA00" points="17.393 12.848 13.903 12.848 13.903 14.92 14.606 14.92 14.606 22.353 13.903 22.353 13.903 24.426 18.098 24.426 18.098 22.353 17.393 22.353"></polygon>
+                <path d="M14.3833599,9.19232 C14.3837135,10.0846454 15.1072478,10.8077977 15.9995732,10.8076799 C16.8918987,10.807562 17.615242,10.0842187 17.6153599,9.19189325 C17.6154777,8.29956775 16.8923254,7.57603347 16,7.57567987 C15.5711884,7.57551014 15.159891,7.74577968 14.8566753,8.04899531 C14.5534597,8.35221095 14.3831901,8.76350836 14.3833599,9.19232 L14.3833599,9.19232 Z" id="Path" fill="#00AA00"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,518 @@
+{
+  "main": {
+    "syncPreferences": "Configurações de Sincronização",
+    "contributorPreferences": "Configurações de Contribuintes",
+    "preferences": "Configurações",
+    "cancel": "Cancelar",
+    "continue": "Continuar",
+    "warning": "Isto vai restaurar as predefinições da aplicação e todas as configurações serão perdidas.",
+    "restoreDefaults": "Restaurar predefinições",
+    "quitStretchly": "Sair do Stretchly",
+    "resetBreaks": "Recomeçar Pausas",
+    "indefinitely": "Indefinidamente",
+    "untilMorning": "Até à próxima manhã",
+    "for5Hours": "5 horas",
+    "for2Hours": "2 horas",
+    "forHour": "1 hora",
+    "pause": "Parar pausas",
+    "resume": "Resumir pausas",
+    "skipToTheNext": "Passar à próxima",
+    "toMicrobreak": "Pausa Curta",
+    "toBreak": "Pausa Longa",
+    "downloadLatestVersion": "Descarregar a última versão",
+    "resumingBreaks": "Resumindo pausas",
+    "microbreakIn": "Pausa curta em $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Pausa longa em $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly - A app de lembretes para pausas"
+  },
+  "statusMessages": {
+    "resuming": "Retomando",
+    "afterMiniBreak_one": "depois {{count}} Mini Pausa",
+    "afterMiniBreak_many": "",
+    "afterMiniBreak_other": "depois de {{count}} Mini Pausas",
+    "nextMiniBreak": "Próxima Mini Pausa",
+    "nextLongBreak": "Próxima Pausa Longa",
+    "dndMode": "Não Perturbar está ativo",
+    "indefinitely": "Indefinidamente",
+    "paused": "Pausado",
+    "appExclusion": "Regra de exclusão da app"
+  },
+  "welcome": {
+    "getStarted": "Iniciar",
+    "openPreferences": "Abrir Preferências",
+    "viewTutorial": "Veja o Tutorial",
+    "breakTimeReminderApp": "Apps para lembrá-lo de fazer pausas",
+    "title": "Bem-vindo ao Stretchly"
+  },
+  "process": {
+    "newVersionAvailable": "Nova versão disponível!"
+  },
+  "utils": {
+    "inAbout": "em aproximadamente {{count}}",
+    "remaining": "{{count}} restantes",
+    "hours_one": "{{count}} hora",
+    "hours_many": "",
+    "hours_other": "{{count}} horas",
+    "minutes_one": "{{count}} minuto",
+    "minutes_many": "",
+    "minutes_other": "{{count}} minutos",
+    "seconds_one": "{{count}} segundo",
+    "seconds_many": "",
+    "seconds_other": "{{count}} segundos",
+    "oclock_one": "{{count}} hora",
+    "oclock_many": "",
+    "oclock_other": "{{count}} horas",
+    "percent_one": "{{count}} percentagem",
+    "percent_many": "",
+    "percent_other": "{{count}} percentagens",
+    "none_one": "{{count}}",
+    "none_many": "",
+    "none_other": "{{count}}"
+  },
+  "contributorPreferences": {
+    "showBreaksAsRegularWindows": "Mostrar pausas como janelas comuns",
+    "showBreaksAsRegularWindowsInfo": "Quando ativada, a janela de pausa se tornará focalizável, elas não estarão mais \"Sempre no topo\" e também aparecerão na barra de tarefas.",
+    "showBreaksAsRegularWindowsTitle": "Atuar como uma janela comum:",
+    "system": "Sistema",
+    "dark": "Escuro",
+    "light": "Claro",
+    "appearance": "Aparência:",
+    "pauseAfter": "Pausar depois de:",
+    "naturalBreaksInfo": "Se o monitoramento de tempo inativo estiver ativado nas Preferências, pode especificar o tempo depois do qual a contagem deve ser parada.",
+    "naturalBreaks": "Pausas naturais:",
+    "longBreakStartSound": "Tocar o som de fim-de-pausa também no início de uma Pausa Longa",
+    "miniBreakStartSound": "Tocar também o som de fim-de-pausa no início de uma Mini Pausa",
+    "volume": "Volume:",
+    "sounds": "Sons:",
+    "breakWindowHeight": "Altura:",
+    "breakWindowWidth": "Largura:",
+    "breakWindowSizeInfo": "Qual o percentual do ecrã a janela de pausa deve esconder?",
+    "breakWindowSize": "Tamanho da janela de pausa",
+    "opacity": "Opacidade:",
+    "opacityInfo": "Quão denso deve ser a janela de pausa?",
+    "opacityTheme": "Transparência do tema:",
+    "showWelcomeWindow": "Mostrar a janela de Boas-vindas na próxima inicialização",
+    "welcomeWindow": "Janela de boas-vindas:",
+    "pauseUntilMorningInfo": "Especificar a hora em que \"Pausar até de manhã\" deve terminar.",
+    "pauseUntil": "Pausar até:",
+    "pauseUntilMorning": "Pausar até de manhã:",
+    "longBreaks": "Pausas Longas:",
+    "maxPostpones": "Máximo de adiamentos:",
+    "postponeFor": "Adiar por:",
+    "postponableFor": "Adiável por:",
+    "miniBreaks": "Mini Pausas:",
+    "breakPostponeInfo": "Se ativado nas Preferências, pode adiar pausas. As seguintes configurações permitem a especificar quando, por quanto tempo e quantas vezes pode adiar uma pausa.",
+    "breakPostpone": "Adiamento de pausas:",
+    "useIdeasFromSettings": "Use as pausas do ficheiro de configuração",
+    "customIdeasInfo": "Permite que customize as pausas a editar o ficheiro de configuração. (Para utilizadores avançados.)",
+    "customIdeas": "Ideias customizadas:",
+    "newVersionNotification": "Notificar quando uma nova versão estiver disponível",
+    "newVersion": "Nova versão:",
+    "beforeMiniBreak": "Mini Pausa:",
+    "beforeLongBreak": "Pausa Longa:",
+    "notificationsInfo": "Sistema de Notificações, mostrar antes das pausas para deixar que se prepare para elas.",
+    "notifications": "Notificações de pausas:",
+    "title": "Preferências do Contribuidor",
+    "screen": "Monitor para pausas:",
+    "screenInfo": "Se mostrar pausas em todos os monitores está desativado, pode escolher em qual deles gostaria de mostrar as suas pausas.",
+    "showOnMonitor": "Mostrar pausas ligado",
+    "primary": "Monitor primário",
+    "cursor": "Seguir cursor",
+    "0": "Primeiro monitor",
+    "2": "Terceiro monitor",
+    "4": "Quinto monitor",
+    "currentTimeInBreaks": "Hora atual",
+    "3": "Quarto monitor",
+    "1": "Segundo monitor",
+    "showCurrentTimeInBreaks": "Mostrar a hora local atual na janela de pausa",
+    "timeToBreakInTray": "Tempo para pausar",
+    "showTimeToBreakInTray": "Mostrar tempo para a próxima pausa no ícone da barra de menu",
+    "showTrayIcon": "Mostrar ícone da barra de menu",
+    "toShowTrayIcon": "Mostrar ícone do Stretchly na barra de menu"
+  },
+  "preferences": {
+    "heart": {
+      "syncPreferences": "Preferências de Sincronização",
+      "contributorPreferences": "Preferências do Contribuidor",
+      "authenticateUsing": "Autenticar a usar:",
+      "alreadyContributor": "Já sou um contribuidor",
+      "becomeContributor": "Torne-se um Benfeitor",
+      "desc2": "Stretchly é gratuito. Mas pode dar-nos suporte a doar e nos a ajudar a continuar a aperfeiçoar o Stretchly e a lançar outro software gratuito.",
+      "desc1": "Fazer pausas regulares quando se está a usar um computador é cientificamente provado ser importante para o seu bem-estar físico e mental.",
+      "loveStretchly": "Ama o seu Stretchly?"
+    },
+    "about": {
+      "designedBy": "Ícone e Interface de Utilizador desenvolvidas por Colin Shanley",
+      "janH": "Jan Hovancik",
+      "developedBy": "Desenvolvido por",
+      "dot": ".",
+      "ourWebsite": "visite nosso website",
+      "learnMore": "Para aprender mais sobre características do Stretchly, veja um tutorial, descarregue a última versão ou contate-nos para suporte, ",
+      "latestVersion": "Última versão ",
+      "version": "Versão ",
+      "tagline": "App para lembrá-lo de fazer pausas",
+      "checkNewVersion": "Verifique automaticamente atualizações para a aplicação"
+    },
+    "theme": {
+      "snowWhite": "Branco Neve",
+      "invertedMonochrome": "Monocromático Invertido",
+      "monochrome": "Monocromático",
+      "colour": "Cor",
+      "trayIcon": "Ícone da barra de menu:",
+      "ticToc": "Tic toc",
+      "windChime": "Sino dos ventos",
+      "crystalGlass": "Copo de Cristal",
+      "enableSounds": "Ativar sons",
+      "sounds": "Sons:",
+      "transparentMode": "Ativar transparência",
+      "morningSwim": "Nado Matinal",
+      "coffeeKisses": "Beijos de Café",
+      "graphiteCrystal": "Cristal de Grafite",
+      "autumnBeBlessed": "Cores do Outono",
+      "greenClouds": "Nuvens verdes",
+      "appearance": "Aparência:",
+      "reverie": "Devaneio"
+    },
+    "schedule": {
+      "cantDisableBoth": "Não é possível desativar ambos os tipos de pausas",
+      "enableStrictLong": "Ativar o Modo Estrito para Pausas Longas",
+      "enableStrictMini": "Ativar o Modo Estrito para Mini Pausas",
+      "strictModeInfo": "O Modo Estrito impede-o de pular Mini Pausas ou Pausas Longas e foi desenvolvido para auxiliar na disciplina.",
+      "strictMode": "Modo Estrito:",
+      "enablePostponeLong": "Ativar adiamento da Pausa Longa",
+      "showNotificationBeforeLongBreak": "Mostrar notificação antes do início de uma Pausa Longa",
+      "enableLongBreaks": "Ativar Pausas Longas",
+      "longBreaksInfo": "Pausas Longas são menos frequentes, mas tem maior duração, a permitir que estenda a pausa do seu trabalho.",
+      "longBreaks": "Pausas Longas:",
+      "enablePostponeMini": "Ativar adiamento da Mini Pausa",
+      "showNotificationBeforeMiniBreak": "Mostrar notificação antes do início da Mini Pausa",
+      "every": "A cada:",
+      "breakFor": "Pausa por:",
+      "enableMiniBreaks": "Ativar Mini Pausas",
+      "miniBreaksInfo": "Mini Pausas são pausas curtas e frequentes para dar-lhe a uma chance de alongar e relaxar.",
+      "miniBreaks": "Mini Pausas:"
+    },
+    "settings": {
+      "restoreDefaults": "Restaurar padrões",
+      "language": "Selecionar idioma:",
+      "monitorDnd": "Mostrar pausas mesmo quando no modo Não Perturbe",
+      "monitorIdleTime": "Monitor do sistema em tempo inativo (pausas são desativadas se o sistema estiver inativo).",
+      "allScreens": "Mostrar pausas em todos os monitores",
+      "showIdeas": "Mostrar dicas de exercícios durante as pausas",
+      "fullscreen": "Ecrã Cheio",
+      "window": "Janela",
+      "showBreaksIn": "Mostrar as pausas em:",
+      "openAtLogin": "Iniciar Stretchly automaticamente quando fizer login"
+    },
+    "nav": {
+      "heart": "Amo Stretchly",
+      "about": "Sobre",
+      "theme": "Tema",
+      "schedule": "Agenda",
+      "settings": "Configurações"
+    },
+    "title": "Preferências do Stretchly"
+  },
+  "break": {
+    "title": "É hora de fazer uma pausa!",
+    "skip": "Pular esta pausa",
+    "postpone": "Adiar esta pausa"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Vá pegar um copo de água."
+    },
+    "aab": {
+      "text": "Lentamente, olhe para a esquerda e depois para a direita."
+    },
+    "aac": {
+      "text": "Lentamente, olhe para cima e depois para baixo."
+    },
+    "aad": {
+      "text": "Feche os olhos e respire fundo algumas vezes."
+    },
+    "aae": {
+      "text": "Feche os olhos e relaxe."
+    },
+    "aaf": {
+      "text": "Estique as pernas."
+    },
+    "aag": {
+      "text": "Estique os braços."
+    },
+    "aah": {
+      "text": "Sua postura sentada está correta?"
+    },
+    "aai": {
+      "text": "Vire lentamente a cabeça para o lado e segure por 10 segundos."
+    },
+    "aak": {
+      "text": "Levante-se da cadeira e estique-se."
+    },
+    "aal": {
+      "text": "Focalize seus olhos em um objeto a pelo menos 20 metros de distância."
+    },
+    "aam": {
+      "text": "Reserve um momento para pensar em algo que você aprecia."
+    },
+    "aan": {
+      "text": "Tire um momento para sorrir por estar vivo."
+    },
+    "aap": {
+      "text": "Feche os olhos e conte suas respirações."
+    },
+    "aaq": {
+      "text": "Feche os olhos e nomeie as coisas que você ouve."
+    },
+    "aas": {
+      "text": "Levante o braço direito, estique-o sobre a cabeça para a esquerda e segure por 10 segundos. Repita para o outro lado."
+    },
+    "aau": {
+      "text": "Levante-se e se ajoelhe com uma perna. Segure por 10 segundos e depois faça a outra perna."
+    },
+    "aaw": {
+      "text": "Foque a cada 20 minutos por 20 segundos em um objeto a 6 metros de distância."
+    },
+    "aax": {
+      "text": "Se precisar de ajuda, peça."
+    },
+    "aay": {
+      "text": "Faça uma coisa de cada vez."
+    },
+    "aaz": {
+      "text": "Sua atenção é gasta com sabedoria?"
+    },
+    "aba": {
+      "text": "Mude sua postura sentada."
+    },
+    "abb": {
+      "text": "Exponha os olhos à luz natural."
+    },
+    "abc": {
+      "text": "Com os olhos fechados, lentamente e suavemente levante os olhos para o teto e volte para o chão."
+    },
+    "abd": {
+      "text": "Com os olhos fechados, mova os olhos lentamente e suavemente para a esquerda e depois lentamente para a direita."
+    },
+    "abf": {
+      "text": "Um de cada vez, toque a ponta de cada dedo na ponta do polegar para que eles formem uma forma de O."
+    },
+    "abh": {
+      "text": "Feche o punho e, em seguida, abra os dedos e estique-os o máximo que puder."
+    },
+    "abk": {
+      "text": "Fique de pé com os braços ao seu lado. Aperte as omoplatas juntas e segure."
+    },
+    "abl": {
+      "text": "Fique em pé com os braços levantados ao longo dos ombros. Mova as mãos ligeiramente para trás, segure por um segundo e retorne."
+    },
+    "aaj": {
+      "text": "Incline lentamente a cabeça para o lado e segure por 5-10 segundos."
+    },
+    "aao": {
+      "text": "Uma estação de trabalho verdadeiramente ergonômica é aquela da qual você se afasta regularmente."
+    },
+    "abg": {
+      "text": "Um de cada vez, toque a ponta de cada dedo na ponta do polegar para que eles formem uma forma de O."
+    },
+    "aar": {
+      "text": "Coloque as pontas dos dedos nos ombros. Role os ombros para frente por 10 segundos e depois para trás."
+    },
+    "aat": {
+      "text": "Com a mão direita, pegue cada dedo da mão esquerda e aperte. Repita para o outro lado."
+    },
+    "abe": {
+      "text": "Sacuda as mãos para obter algum alívio."
+    },
+    "abi": {
+      "text": "Sente-se ereto, braços pendurados ao lado do corpo e gire lentamente o pescoço em uma direção em um grande círculo."
+    },
+    "aav": {
+      "text": "Feche os olhos e simplesmente observe o que está ao seu redor no momento atual, sem julgamentos."
+    },
+    "abj": {
+      "text": "Fique em pé e incline lentamente a cabeça em direção ao ombro usando a mesma mão até sentir um alongamento."
+    },
+    "abv": {
+      "text": "Estenda um braço sobre o peito, segure o cotovelo com a outra mão e puxe-o suavemente em direção ao peito. Repita com o outro braço."
+    },
+    "abm": {
+      "text": "Sente-se na beirada da cadeira, vire o tronco para um lado e segure por 10 a 15 segundos. Repita do outro lado."
+    },
+    "abn": {
+      "text": "Levante-se e ponha um pé num objeto próximo, como uma cadeira ou escadinha. Mantenha o joelho dobrado e segure por 10 a 15 segundos. Repita com o outro pé."
+    },
+    "abo": {
+      "text": "Fique em pé com os pés afastados na largura dos ombros, abaixe o corpo como se estivesse sentado numa cadeira e, em seguida, levante-se. Repita várias vezes."
+    },
+    "abp": {
+      "text": "Fique em pé com as costas e as mãos apoiadas na parede e mova lentamente os braços para cima e para baixo, como se estivesse a fazer anjos de neve."
+    },
+    "abq": {
+      "text": "Fique de frente para uma parede e ponha as mãos sobre ela, depois faça várias flexões."
+    },
+    "abr": {
+      "text": "Sente-se na beirada da cadeira e estenda uma perna à sua frente, a segurar por 10 a 15 segundos. Repita com a outra perna."
+    },
+    "abs": {
+      "text": "Fique de frente para uma parede, ponha um pé para trás e o outro para a frente e, em seguida, incline-se contra a parede. Repita com a outra perna."
+    },
+    "abt": {
+      "text": "Segure um braço para cima e, em seguida, use o outro braço para empurrar suavemente o cotovelo do primeiro braço em direção à sua cabeça. Segure por 10-15 segundos. Repita com o outro braço."
+    },
+    "abu": {
+      "text": "Incline a cabeça para um lado, depois para o outro lado e depois incline-a suavemente para a frente e para trás."
+    },
+    "abw": {
+      "text": "Levante-se, ponha um pé num objeto próximo, como uma cadeira ou escadinha, e abaixe-se para tocar os dedos dos pés. Repita com a outra perna."
+    },
+    "abx": {
+      "text": "Posicione-se num caminho de porta e ponha um braço de cada lado das bordas e, em seguida, incline-se suavemente para a frente até sentir um alongamento no peito."
+    },
+    "aby": {
+      "text": "Sente-se na beira de uma cadeira ou no chão e ponha as solas dos pés juntas, a pressionar suavemente com os cotovelos para alongar a parte interna das coxas."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Não sozinho",
+      "text": "Você acha difícil fazer uma pausa sozinho? Tente fazer isso com um colega de trabalho. Além de facilitar os intervalos, você terá a chance de conhecê-los melhor. Fazer pausas juntos aumenta a produtividade."
+    },
+    "aac": {
+      "title": "Micropausas",
+      "text": "O descanso é um componente chave para garantir o desempenho do sistema musculoesquelético. Pausas frequentes podem diminuir a duração de uma tarefa e ajudar a diminuir a exposição ao risco de lesões ergonômicas."
+    },
+    "aad": {
+      "title": "Meditação",
+      "text": "Estudos de pesquisa sugerem que os exercícios baseados em atenção plena ajudam a diminuir a ansiedade, a depressão, o estresse e a dor, e ajudam a melhorar a saúde geral, a saúde mental e a qualidade de vida. Não tem certeza de como começar? Existem vários aplicativos para ajudá-lo."
+    },
+    "aae": {
+      "title": "Pisque",
+      "text": "Olhar para as telas por muito tempo faz com que você pisque menos, expondo assim seus olhos ao ar. Pisque rapidamente por alguns segundos para refrescar o filme lacrimal e limpar a poeira da superfície do olho."
+    },
+    "aaf": {
+      "title": "Ergonomia",
+      "text": "Altura e ângulo inadequados do teclado, rato, monitor ou superfície de trabalho podem causar problemas de saúde. Reserve algum tempo para ler sobre ergonomia de mesa."
+    },
+    "aag": {
+      "title": "Mova",
+      "text": "Há muitas maneiras de se exercitar dentro de seu escritório. Tente marchar no lugar ou fazer flexões na mesa."
+    },
+    "aah": {
+      "title": "Altere",
+      "text": "Você tem uma bola de estabilidade ou mesa de trabalho em pé? Considere substituir sua cadeira por eles por um tempo."
+    },
+    "aai": {
+      "title": "Perceber",
+      "text": "Você está sonhando acordado ou tendo problemas para se concentrar? É um sinal de que você precisa fazer uma pausa."
+    },
+    "aaj": {
+      "title": "Tecnologia",
+      "text": "Que tal fazer uma caminhada sem tecnologia?"
+    },
+    "aak": {
+      "title": "Metabolismo",
+      "text": "Pesquisas emergentes mostram que ficar sentado por longos períodos de tempo contribui para o risco de síndrome metabólica, ataque cardíaco e risco de acidente vascular cerebral e risco geral de morte, entre outros. Fazer pausas regulares para caminhar pode ajudar sua circulação, trabalhando para neutralizar alguns desses problemas."
+    },
+    "aal": {
+      "title": "Reuniões ativas",
+      "text": "Que tal passar as reuniões da sala de conferências para o saguão? Caminhar não apenas queima calorias, mas pode até promover um senso de colaboração."
+    },
+    "aam": {
+      "title": "Fruta",
+      "text": "Tome seu tempo e coma algumas frutas. Devagar. Observe o sabor, a textura, o frescor."
+    },
+    "aan": {
+      "title": "Banheiros",
+      "text": "Caminhe até o banheiro mais distante no local de trabalho ao ir ao banheiro."
+    },
+    "aao": {
+      "text": "Vai fazer uma pausa para o café? Considere fazer uma caminhada de 5 minutos toda vez que for fazer uma.",
+      "title": "Pausa para café"
+    },
+    "aap": {
+      "title": "Colegas",
+      "text": "Não envie e-mails ou mensagens para colegas de escritório, caminhe até suas mesas para se comunicar com eles."
+    },
+    "aaq": {
+      "title": "Aprendendo",
+      "text": "Em um estudo com voluntários saudáveis, pesquisadores do Instituto Nacional de Saúde descobriram que fazer pausas curtas, cedo e com frequência, pode ajudar nossos cérebros a aprender novas habilidades."
+    },
+    "aar": {
+      "title": "Exercício",
+      "text": "Evidências sugerem que pequenas quantidades de exercícios regulares podem trazer benefícios dramáticos à saúde, incluindo a redução mensurável do estresse."
+    },
+    "aas": {
+      "title": "Repetir",
+      "text": "Você encontrou sua rotina de alongamento? Não se esqueça de repetir mais de uma vez para combater melhor os efeitos da sessão prolongada."
+    },
+    "aau": {
+      "title": "Alongamento das costas",
+      "text": "Junte as mãos atrás da cabeça e levante-as juntas acima da cabeça, terminando com as palmas das mãos voltadas para cima."
+    },
+    "aat": {
+      "title": "Pulso e antebraço",
+      "text": "Estenda os braços com as palmas voltadas para você, depois gire lentamente as mãos quatro vezes no sentido horário e quatro vezes no sentido anti-horário."
+    },
+    "aaw": {
+      "title": "Treino de 7 minutos",
+      "text": "Este treino inclui uma rotina de exercícios de corpo inteiro em uma fração do tempo. Mas, como em qualquer exercício, tenha cuidado. Existem vários aplicativos para você começar."
+    },
+    "aav": {
+      "text": "Para cada trinta minutos de estagnação, você deve ter pelo menos um minuto de estimulação.",
+      "title": "Mobilizar"
+    },
+    "aax": {
+      "text": "Aumente a sua pulsação para 120 batimentos por minuto por 20 minutos seguidos, quatro ou cinco vezes por semana, fazendo qualquer coisa que goste. Aumentar regularmente a frequência cardíaca resulta em melhor saúde cardiovascular.",
+      "title": "Pulso"
+    },
+    "aaz": {
+      "title": "Fazer arte",
+      "text": "A arteterapia é conhecida por ter grandes benefícios para a saúde mental, especialmente quando se trata de controle do estresse. Que tal escrever um poema rápido, tirar uma foto ou pintar algo pequeno?"
+    },
+    "aay": {
+      "text": "Estudos mostraram que subir escadas, que é considerada atividade física de intensidade vigorosa, queima mais calorias por minuto do que correr.",
+      "title": "Suba as escadas"
+    },
+    "abb": {
+      "text": "A natureza está ligada a emoções positivas e diminuição do estresse e da ansiedade. Sempre que possível, tente fazer a sua pausa diária para o almoço ao ar livre, rodeado por alguma vegetação.",
+      "title": "Almoço fora"
+    },
+    "aba": {
+      "text": "Um espaço limpo ajuda seu foco no trabalho e muitas vezes está ligado a emoções positivas como felicidade.",
+      "title": "Organizar"
+    },
+    "abc": {
+      "title": "Transporte público",
+      "text": "Se você usa o transporte público regularmente, pode ficar em pé em vez de sentado. Se for possível, tente substituir o máximo possível de suas viagens diárias por caminhadas ou ciclismo."
+    },
+    "abd": {
+      "title": "Bocejo",
+      "text": "Bocejar pode ser muito útil, pois produz lágrimas para ajudar a umedecer e lubrificar os olhos."
+    },
+    "abe": {
+      "title": "Mudança de foco",
+      "text": "Segure um dedo perto do olho e concentre-se nele. Afaste lentamente o dedo, concentre-se ao longe e depois volte ao dedo. Traga o dedo para trás e concentre-se em algo distante."
+    },
+    "abf": {
+      "title": "Apalpar",
+      "text": "Enquanto estiver sentado, apoie os cotovelos na mesa e perto da borda da mesa. Deixe seu peso cair para frente e coloque as mãos sobre os olhos. Feche os olhos e inspire lentamente pelo nariz e segure por alguns segundos. Continue respirando profundamente."
+    },
+    "abh": {
+      "title": "Respiração lenta",
+      "text": "Pesquisas emergentes sugerem potencial para o uso de técnicas de respiração lenta controlada como meio de otimizar parâmetros fisiológicos que parecem estar associados à saúde e à longevidade."
+    },
+    "abg": {
+      "text": "Aperte um par de peúgas enroladas ou uma bola de borracha macia e segure por 5 segundos. Repita todo o processo algumas vezes.",
+      "title": "Apertos de mão"
+    },
+    "aab": {
+      "title": "Afaste-se",
+      "text": "Você já notou como seu cérebro pode descobrir as coisas por si só? Basta se afastar do computador e fazer uma pausa para pensar em algo totalmente não relacionado."
+    },
+    "abi": {
+      "title": "Visualização imaginativa",
+      "text": "Feche os olhos e imagine-se num lugar tranquilo e calmo, como uma praia ou uma floresta, a concentrar-se nas imagens, sons e sensações desse ambiente."
+    }
+  }
+}

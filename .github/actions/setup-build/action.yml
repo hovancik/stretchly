@@ -1,0 +1,31 @@
+name: Setup Build Environment
+description: Setup Node.js, Python and npm dependencies for Stretchly builds
+
+runs:
+  using: composite
+  steps:
+    - name: Setup macOS
+      if: runner.os == 'macOS'
+      run: sudo xcode-select -s /Library/Developer/CommandLineTools
+      shell: bash
+    - name: Setup Linux base dependencies
+      if: runner.os == 'Linux'
+      run: sudo apt update && sudo apt-get install -y libinput-dev libudev-dev
+      shell: bash
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+    - name: Install Python setuptools
+      run: pip install setuptools
+      shell: bash
+    - name: Update npm
+      run: npm install -g npm
+      shell: bash
+    - name: Install dependencies
+      run: npm install
+      shell: bash

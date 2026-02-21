@@ -1,0 +1,70 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - Потсетник за паузи",
+    "syncPreferences": "Синхронизирај подесувања",
+    "contributorPreferences": "Подесувања на соработници",
+    "preferences": "Подесувања",
+    "cancel": "Откажи",
+    "continue": "Продолжи",
+    "warning": "Ова ќе ги врати стандардните вредност на апликацијата и сите ваши подесувања ќе бидат избришани.",
+    "restoreDefaults": "Вратете ги стандардните вредности",
+    "quitStretchly": "Затвори Stretchly",
+    "resetBreaks": "Ресетирај паузи",
+    "indefinitely": "Неопределено",
+    "untilMorning": "До изутрина",
+    "for5Hours": "5 часа",
+    "for2Hours": "2 часа",
+    "forHour": "1 час",
+    "pause": "Паузирај паузи",
+    "resume": "Продолжи со паузи",
+    "skipToTheNext": "Прескокни до следната",
+    "toMicrobreak": "Кратка пауза",
+    "toBreak": "Долга пауза",
+    "downloadLatestVersion": "Превземање на најновата верзија",
+    "resumingBreaks": "Продолжување на паузите",
+    "breakIn": "Долга пауза за $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Мала пауза за $t(utils.seconds, {'count': {{seconds}} })"
+  },
+  "preferences": {
+    "schedule": {
+      "strictMode": "Строг Режим:",
+      "enablePostponeLong": "Овозможете одложување на Долги Паузи",
+      "showNotificationBeforeLongBreak": "Прикажи нотификација пред започнувањето на Долга Пауза",
+      "enableLongBreaks": "Овозможи Долги Паузи",
+      "longBreaksInfo": "Долгите паузи се прават помалку редовно, но имаат поголемо траење, што ви овозможува да направите подолга пауза од вашата работа.",
+      "longBreaks": "Долги Паузи:",
+      "enablePostponeMini": "Овозможете одложување на Мали Паузи",
+      "showNotificationBeforeMiniBreak": "Прикажи нотификација пред започнување на Мала Пауза",
+      "every": "Секои:",
+      "breakFor": "Пауза за:",
+      "enableMiniBreaks": "Овозможи Мали Паузи",
+      "miniBreaksInfo": "Мали паузи се кратки паузи направени редовно за да ви дадат можност да се истегнете и опуштите.",
+      "miniBreaks": "Мали паузи:"
+    },
+    "settings": {
+      "restoreDefaults": "Врати ги стандардните вредности",
+      "language": "Избери јазик:",
+      "monitorDnd": "Прикажи ги паузите и во режимот „Не вознемирувај“",
+      "monitorIdleTime": "Следете го времето на мирување на системот (паузите се паузираат ако системот е во мирување).",
+      "allScreens": "Прикажи ги паузите на сите монитори",
+      "showIdeas": "Прикажи совети за вежби за време на паузите",
+      "fullscreen": "Цел екран",
+      "window": "Прозорец",
+      "showBreaksIn": "Прикажи ги паузите на:",
+      "openAtLogin": "Стартувај го Stretchly автоматски кога ќе се најавиш"
+    },
+    "nav": {
+      "heart": "Засакај го Stretchly",
+      "about": "За нас",
+      "theme": "Тема",
+      "schedule": "Распоред",
+      "settings": "Подесувања"
+    },
+    "title": "Stretchly подесувања"
+  },
+  "break": {
+    "title": "Време е за пауза!",
+    "skip": "Прескокнете ја оваа пауза",
+    "postpone": "Одложете ја оваа пауза"
+  }
+}

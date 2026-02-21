@@ -1,0 +1,257 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - Pause påmindelses app",
+    "microbreakIn": "Mini pause om $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Pause om $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "Genoptag pauser",
+    "downloadLatestVersion": "Hent den nyeste version",
+    "toBreak": "Pause",
+    "toMicrobreak": "Mini pause",
+    "skipToTheNext": "Spring til næste..",
+    "resume": "Genoptag",
+    "pause": "Pause Stretchly",
+    "forHour": "en time",
+    "for2Hours": "2 timer",
+    "for5Hours": "5 timer",
+    "untilMorning": "Indtil imorgen",
+    "indefinitely": "For evigt",
+    "resetBreaks": "Genstart pauser",
+    "quitStretchly": "Luk Stretchly",
+    "restoreDefaults": "Nulstil til standardindstillinger",
+    "warning": "Dette vil nulstille til standardindstillinger og alle dine indstillinger vil blive slettet.",
+    "continue": "Fortsæt",
+    "cancel": "Afbryd",
+    "preferences": "Indstillinger",
+    "contributorPreferences": "Sponser præferencer",
+    "syncPreferences": "Synkroniser indstillinger"
+  },
+  "break": {
+    "postpone": "…vent en lille smule",
+    "skip": "…nej, jeg vil bare fortsætte",
+    "title": "Tid til at holde en pause!"
+  },
+  "preferences": {
+    "title": "Stretchly Indstillinger",
+    "nav": {
+      "settings": "Indstillinger",
+      "schedule": "Schedule",
+      "theme": "Tema",
+      "about": "Om os",
+      "heart": "Elsker Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Start Stretchly automatisk når du logger ind",
+      "showBreaksIn": "Viser pauser i:",
+      "window": "Vindue",
+      "fullscreen": "Fuld skærm",
+      "showIdeas": "Vis træningstips i pauserne",
+      "allScreens": "Vis pause på alle skærme",
+      "monitorIdleTime": "Hold øje med om computeren bliver brugt eller ej (Nedtælling til pause stoppes)",
+      "monitorDnd": "Vis pauser også selvom du er i 'Ikke forstyr tilstand'",
+      "language": "Vælg sprog:",
+      "restoreDefaults": "Nulstil til standardindstillinger"
+    },
+    "schedule": {
+      "miniBreaks": "Mini pauser:",
+      "miniBreaksInfo": "Mini pauser er korte pauser som tages ofte for, at få chancen for at slappe af og strække ud.",
+      "enableMiniBreaks": "Tillad Mini pauser",
+      "breakFor": "Pause i:",
+      "every": "Hver:",
+      "showNotificationBeforeMiniBreak": "Vis notification før Mini pauser starter",
+      "enablePostponeMini": "Tillad udskydelse af Mini pauser",
+      "longBreaks": "Lang pause:",
+      "longBreaksInfo": "Lang pause tages mindre hyppigt, men er længere og tillader dig, at tage en pause fra dit arbejde.",
+      "enableLongBreaks": "Tillad Lang pauser",
+      "showNotificationBeforeLongBreak": "Vis notification før lange pauser starter",
+      "enablePostponeLong": "Tillad udskydelse af lange pauser",
+      "strictMode": "Striks tilstand:",
+      "strictModeInfo": "Striks tilstand sørger for, at du ikke kan skippe minipauser eller lange pauser.",
+      "enableStrictMini": "Tillad Striks tilstand for minipauser",
+      "enableStrictLong": "Tillad Striks tilstand for lange pauser",
+      "cantDisableBoth": "Du skal have en af mulighederne sat til"
+    },
+    "theme": {
+      "appearance": "Udseende:",
+      "sounds": "Lyde:",
+      "enableSounds": "Slå lyd til",
+      "trayIcon": "Menubar ikon:",
+      "colour": "Farve",
+      "monochrome": "Monokrom",
+      "invertedMonochrome": "invertere Monokrom",
+      "snowWhite": "Snehvidt",
+      "greenClouds": "Grønne skyer",
+      "autumnBeBlessed": "Vidunderlige efterår",
+      "graphiteCrystal": "Grafit krystal",
+      "coffeeKisses": "Kaffekys",
+      "morningSwim": "Morgen svømmetur",
+      "transparentMode": "Aktiver gennemsigtighed",
+      "crystalGlass": "Krystalglas",
+      "windChime": "vindspil",
+      "ticToc": "Tik-Tak",
+      "reverie": "Dagdrøm"
+    },
+    "about": {
+      "tagline": "Pause påmindelses app",
+      "version": "Version ",
+      "latestVersion": "Nyeste version ",
+      "notifyNewVersion": "Vis nye opdateringer automatisk",
+      "learnMore": "For at lære mere om Stretchlys funktioner, se en vejledning, hent den nyeste version eller kontakt os for support,",
+      "ourWebsite": "besøg vores hjemmeside",
+      "dot": ".",
+      "developedBy": "Udviklet af",
+      "janH": "Jan Hovancik",
+      "designedBy": "Ikon og UI design af Colin Shanley",
+      "checkNewVersion": "Tjek automatisk for app opdateringer"
+    },
+    "heart": {
+      "loveStretchly": "Elsker du Stretchly?",
+      "desc1": "At tage pauser ofte når man bruger en computer er påvist videnskabligt bevist, at det vigtigt for din fysiske og mentale helbred.",
+      "desc2": "Stretchly er gratis. Men du kan blive sponsor ved, at donere og hjælpe os med at forberede Stretchly og publisere andet gratis software.",
+      "becomeContributor": "Bliv sponsor (Patron)",
+      "alreadyContributor": "Jeg er allerede sponsor",
+      "authenticateUsing": "Autentificeringen via:",
+      "contributorPreferences": "Sponser præferencer",
+      "syncPreferences": "Synkroniser indstillinger"
+    }
+  },
+  "contributorPreferences": {
+    "title": "Sponser præferencer",
+    "notifications": "Pause notifikationer:",
+    "notificationsInfo": "System notifikationer vises før pauser states for, at du kan forberede dig.",
+    "beforeLongBreak": "Lang pause:",
+    "beforeMiniBreak": "Mini pause:",
+    "newVersion": "Ny version:",
+    "newVersionNotification": "Fortæl mig når der er en ny version",
+    "customIdeas": "Dine idéer:",
+    "customIdeasInfo": "Giver dig mulighed for, at lave dine egne pause beskeder ved, at ændre i konfigurations filer. (For avanceret brugere.)",
+    "useIdeasFromSettings": "Brug pause beskeder fra konfigurations filer",
+    "breakPostpone": "Udskydelse af pauser:",
+    "breakPostponeInfo": "Hvis du har valgt det i de normale indstillinger kan du udsætte pauser. Her kan du vælge for, hvor længe og hvor mange gange du kan udsætte en pause.",
+    "miniBreaks": "Mini pauser:",
+    "postponableFor": "Kan udsættes i:",
+    "postponeFor": "Udsæt for:",
+    "maxPostpones": "Max udskydelser:",
+    "longBreaks": "Lange pauser:",
+    "pauseUntilMorning": "Stop indtil imorgen:",
+    "pauseUntil": "Pause indtil:",
+    "pauseUntilMorningInfo": "Vælg hvilken time, som 'Stop indtil imorgen' skal slås fra igen.",
+    "welcomeWindow": "Velkomst vindue:",
+    "showWelcomeWindow": "Vis velkomst vindue på næste start",
+    "sounds": "Lyde:",
+    "volume": "Lydniveau:",
+    "miniBreakStartSound": "Spil pause-afslutnings lyden også som mini pause-start lyd",
+    "longBreakStartSound": "Spil pause-afslutnings lyden også som lang pause-start lyd",
+    "naturalBreaks": "Naturlige pauser:",
+    "naturalBreaksInfo": "Hvis 'Hold øje med om computeren bliver brugt eller ej' er slået til i indstillingerne kan du her indstille efter, hvor lang tid nedtællingen skal pauses",
+    "pauseAfter": "Pause efter:",
+    "appearance": "Udseende:",
+    "light": "Lys",
+    "dark": "Mørk",
+    "system": "System",
+    "0": "Første skærm",
+    "3": "Fjerde skærm",
+    "2": "Tredje Skærm",
+    "1": "Anden Skærm",
+    "4": "Femte skærm",
+    "opacityTheme": "Tema gennemsigtighed:",
+    "showBreaksAsRegularWindowsInfo": "Hvis slået til vil Pause vinduer blive fokusserbare, de vil ikke være \"Altid øverst\" længere og de vil også vises i taskbaren.",
+    "showBreaksAsRegularWindowsTitle": "Funger som almindeligt vindue:",
+    "screen": "Monitorer for Pauser:",
+    "opacity": "Transperens:",
+    "opacityInfo": "Hvor solidt skal pausevinduet være?",
+    "breakWindowSizeInfo": "Hvor stor en procentdel af skærmbilledet skal pausevinduet dække?",
+    "breakWindowWidth": "Bredde:",
+    "breakWindowSize": "Pause vinduets størrelse",
+    "showBreaksAsRegularWindows": "Vis pauser som almindelige vinduer",
+    "breakWindowHeight": "Højde:",
+    "screenInfo": "Når pauser på alle skærme er slået fra, kan du vælge hvilken skærm de skal vises på.",
+    "showOnMonitor": "Vis Pauser på",
+    "primary": "Primære skærm",
+    "cursor": "Følg cursoren",
+    "showTimeToBreakInTray": "Vis tid til næste pause i menubar ikon",
+    "timeToBreakInTray": "Tid til en pause",
+    "currentTimeInBreaks": "Aktuel tid",
+    "showCurrentTimeInBreaks": "Vis aktuel lokal tid i pause vindue"
+  },
+  "utils": {
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} procent",
+    "percent_other": "{{count}} procent",
+    "oclock_one": "Kl: {{count}}",
+    "oclock_other": "Kl: {{count}} ",
+    "seconds_one": "{{count}} sekund",
+    "seconds_other": "{{count}} sekunder",
+    "minutes_one": "{{count}} minut",
+    "minutes_other": "{{count}} minutter",
+    "hours_one": "{{count}} time",
+    "hours_other": "{{count}} timer",
+    "remaining": "{{count}} tilbage",
+    "inAbout": "omkring {{count}}"
+  },
+  "process": {
+    "newVersionAvailable": "Ny version er tilgængelig!"
+  },
+  "welcome": {
+    "title": "Velkommen til Stretchly",
+    "breakTimeReminderApp": "Pause påmindelses app",
+    "viewTutorial": "Se vejledning",
+    "openPreferences": "Åben præferencer",
+    "getStarted": "Kom igang"
+  },
+  "statusMessages": {
+    "paused": "Pauset",
+    "indefinitely": "På ubstemt tid",
+    "dndMode": "Ikke forstyr tilstand er slået til",
+    "nextLongBreak": "Næste Lange Pause",
+    "nextMiniBreak": "Næste Mini Pause",
+    "afterMiniBreak_one": "efter {{count}} Mini pause",
+    "afterMiniBreak_other": "efter {{count}} Mini pause",
+    "resuming": "Fortsæt",
+    "appExclusion": "App undtagelses regel"
+  },
+  "miniBreakIdeas": {
+    "aab": {
+      "text": "Kig langsomt helt til venstre og til højre."
+    },
+    "aac": {
+      "text": "Kig langsomt op og ned."
+    },
+    "aaj": {
+      "text": "Tip dit hoved langsomt til siden og hold det der i 5-10 sekunder."
+    },
+    "aan": {
+      "text": "Tag et øjeblik og smil over du er i live."
+    },
+    "aaf": {
+      "text": "Stræk dine ben."
+    },
+    "aak": {
+      "text": "Rejs dig op og stræk ud."
+    },
+    "aal": {
+      "text": "Fokuser på et objekt der er mindst 20 meter væk."
+    },
+    "aaa": {
+      "text": "Tag et glas vand."
+    },
+    "aad": {
+      "text": "Luk dine øjne og tag et par dybe vejrtrækninger."
+    },
+    "aah": {
+      "text": "Sidder du med en god kropsholdning?"
+    },
+    "aae": {
+      "text": "Luk dine øjne og slap af."
+    },
+    "aag": {
+      "text": "Stræk dine arme."
+    },
+    "aai": {
+      "text": "Drej dit hoved langsomt til siden og hold det der i 10 sekunder."
+    },
+    "aam": {
+      "text": "Tag et øjeblik til at tænke på noget du er taknemlig for."
+    }
+  }
+}

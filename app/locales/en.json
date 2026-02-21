@@ -1,0 +1,520 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - The break time reminder app",
+    "microbreakIn": "Mini break in $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Long break in $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "Resuming breaks",
+    "downloadLatestVersion": "Download latest version",
+    "toBreak": "Long break",
+    "toMicrobreak": "Mini break",
+    "skipToTheNext": "Skip to the next",
+    "resume": "Resume breaks",
+    "pause": "Pause breaks",
+    "forHour": "1 hour",
+    "for2Hours": "2 hours",
+    "for5Hours": "5 hours",
+    "untilMorning": "Until morning",
+    "indefinitely": "Indefinitely",
+    "resetBreaks": "Reset breaks",
+    "quitStretchly": "Quit Stretchly",
+    "restoreDefaults": "Restore defaults",
+    "warning": "This will restore app defaults and all your settings will be lost.",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "preferences": "Preferences",
+    "contributorPreferences": "Contributor Preferences",
+    "syncPreferences": "Sync Preferences"
+  },
+  "break": {
+    "postpone": "Postpone this break",
+    "skip": "Skip this break",
+    "title": "Time to take a break!",
+    "finish": "Finish this break"
+  },
+  "preferences": {
+    "title": "Stretchly Preferences",
+    "nav": {
+      "settings": "Settings",
+      "schedule": "Schedule",
+      "theme": "Theme",
+      "about": "About",
+      "heart": "Love Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Start Stretchly automatically when logging in",
+      "showBreaksIn": "Shows breaks in:",
+      "window": "Window",
+      "fullscreen": "Full screen",
+      "showIdeas": "Show exercise tips during breaks",
+      "allScreens": "Shows breaks on all monitors",
+      "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
+      "monitorDnd": "Show breaks even in Do Not Disturb mode",
+      "language": "Select language:",
+      "restoreDefaults": "Restore defaults"
+    },
+    "schedule": {
+      "miniBreaks": "Mini breaks:",
+      "miniBreaksInfo": "Mini breaks are short breaks taken regularly to give you a chance to stretch and relax.",
+      "enableMiniBreaks": "Enable Mini breaks",
+      "breakFor": "Break for:",
+      "every": "Every:",
+      "showNotificationBeforeMiniBreak": "Show notification before Mini break starts",
+      "enablePostponeMini": "Enable postponement for Mini break",
+      "longBreaks": "Long breaks:",
+      "longBreaksInfo": "Long breaks are taken less regularly, but are of greater duration, allowing you to take an extended break from your work.",
+      "enableLongBreaks": "Enable Long breaks",
+      "showNotificationBeforeLongBreak": "Show notification before Long break starts",
+      "enablePostponeLong": "Enable postponement for Long break",
+      "strictMode": "Strict mode:",
+      "strictModeInfo": "Strict mode prevents you from skipping either Mini breaks or Long breaks and is designed to help discipline.",
+      "enableStrictMini": "Enable Strict mode for Mini breaks",
+      "enableStrictLong": "Enable Strict mode for Long breaks",
+      "cantDisableBoth": "It is not possible to disable both types of breaks"
+    },
+    "theme": {
+      "appearance": "Appearance:",
+      "greenClouds": "Green clouds",
+      "autumnBeBlessed": "Autumn be blessed",
+      "graphiteCrystal": "Graphite crystal",
+      "coffeeKisses": "Coffee kisses",
+      "morningSwim": "Morning swim",
+      "transparentMode": "Enable transparency",
+      "sounds": "Sounds:",
+      "enableSounds": "Enable sounds",
+      "crystalGlass": "Crystal glass",
+      "windChime": "Wind chime",
+      "ticToc": "Tic toc",
+      "reverie": "Reverie",
+      "silence": "Silence",
+      "trayIcon": "Menubar (Tray):",
+      "colour": "Colour",
+      "monochrome": "Monochrome",
+      "invertedMonochrome": "Inverted Monochrome",
+      "snowWhite": "Snow white",
+      "trayIconStyleLabel": "Style:",
+      "trayIconStyleDefault": "Default",
+      "trayIconStyleTime": "Time to break",
+      "trayIconStyleProgress": "Progress to break"
+    },
+    "about": {
+      "tagline": "The break time reminder app",
+      "version": "Version ",
+      "latestVersion": "Latest version ",
+      "checkNewVersion": "Automatically check for app updates",
+      "learnMore": "To learn more about Stretchly features, view a tutorial, download the latest version or contact us for support, ",
+      "ourWebsite": "visit our website",
+      "dot": ".",
+      "developedBy": "Developed by",
+      "janH": "Jan Hovancik",
+      "designedBy": "Icon and UI design by Colin Shanley"
+    },
+    "heart": {
+      "loveStretchly": "Love your Stretchly?",
+      "desc1": "Taking regular breaks when using a computer is scientifically proven to be important for your physical and mental well-being.",
+      "desc2": "Stretchly is free. But you can lend your support by donating and help us continue to improve Stretchly and release other free software.",
+      "becomeContributor": "Become a contributor",
+      "alreadyContributor": "I'm already a contributor",
+      "authenticateUsing": "Authenticate using:",
+      "contributorPreferences": "Contributor Preferences",
+      "syncPreferences": "Sync Preferences"
+    }
+  },
+  "contributorPreferences": {
+    "0": "First monitor",
+    "1": "Second monitor",
+    "2": "Third monitor",
+    "3": "Fourth monitor",
+    "4": "Fifth monitor",
+    "title": "Contributor Preferences",
+    "notifications": "Break notifications:",
+    "notificationsInfo": "System notification shown before breaks to let you prepare for it.",
+    "beforeLongBreak": "Long break:",
+    "beforeMiniBreak": "Mini break:",
+    "newVersion": "New version:",
+    "newVersionNotification": "Notify when new version is available",
+    "customIdeas": "Custom ideas:",
+    "customIdeasInfo": "Allows you to use custom break ideas by editing configuration file. (For advanced users.)",
+    "useIdeasFromSettings": "Use break ideas from configuration file",
+    "breakPostpone": "Postponement of breaks:",
+    "breakPostponeInfo": "If enabled in main Preferences, you can postpone breaks. Following settings allow you to specify when, for how long and how many times you can postpone a break.",
+    "miniBreaks": "Mini breaks:",
+    "postponableFor": "Postponable for:",
+    "postponeFor": "Postpone for:",
+    "maxPostpones": "Maximum postpones:",
+    "longBreaks": "Long breaks:",
+    "pauseUntilMorning": "Pause until morning:",
+    "pauseUntil": "Pause until:",
+    "pauseUntilMorningInfo": "Specify till what hour 'Pause until morning' should pause.",
+    "welcomeWindow": "Welcome window:",
+    "showWelcomeWindow": "Show Welcome window on next start",
+    "opacityTheme": "Theme transparency:",
+    "opacityInfo": "How solid should the break window be?",
+    "opacity": "Opacity:",
+    "breakWindowSize": "Break window size",
+    "breakWindowSizeInfo": "What percentage of the screen should the break window hide?",
+    "breakWindowWidth": "Width:",
+    "breakWindowHeight": "Height:",
+    "sounds": "Sounds:",
+    "volume": "Volume:",
+    "miniBreakStartSound": "Sound at the start of Mini break",
+    "longBreakStartSound": "Sound at the start of Long break",
+    "naturalBreaks": "Natural breaks:",
+    "naturalBreaksInfo": "If monitoring of idle time is enabled in main Preferences, you can specify after what time the breaks should be paused.",
+    "pauseAfter": "Pause after:",
+    "appearance": "Appearance:",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "showBreaksAsRegularWindowsTitle": "Act as regular window:",
+    "showBreaksAsRegularWindowsInfo": "When enabled, break windows will become focusable, they won't be 'Always on top' anymore and they will also appear in the taskbar.",
+    "showBreaksAsRegularWindows": "Show breaks as regular windows",
+    "screen": "Monitor for breaks:",
+    "screenInfo": "When showing breaks on all monitors is disabled, you can choose which one you would like to show your breaks on.",
+    "showOnMonitor": "Show breaks on",
+    "primary": "Primary monitor",
+    "cursor": "Follow cursor",
+    "showTrayIcon": "Show tray icon",
+    "toShowTrayIcon": "Show Stretchly icon in tray",
+    "currentTimeInBreaks": "Current time",
+    "showCurrentTimeInBreaks": "Show current local time in break window"
+  },
+  "utils": {
+    "remaining": "{{count}} remaining",
+    "elapsed": "{{count}} elapsed",
+    "inAbout": "in about {{count}}",
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} percent",
+    "percent_other": "{{count}} percent",
+    "oclock_one": "{{count}} o'clock",
+    "oclock_other": "{{count}} o'clock",
+    "seconds_one": "{{count}} second",
+    "seconds_other": "{{count}} seconds",
+    "minutes_one": "{{count}} minute",
+    "minutes_other": "{{count}} minutes",
+    "hours_one": "{{count}} hour",
+    "hours_other": "{{count}} hours"
+  },
+  "process": {
+    "newVersionAvailable": "New version is available!"
+  },
+  "welcome": {
+    "title": "Welcome to Stretchly",
+    "breakTimeReminderApp": "The break time reminder app",
+    "viewTutorial": "View Tutorial",
+    "openPreferences": "Open Preferences",
+    "getStarted": "Get Started"
+  },
+  "statusMessages": {
+    "paused": "Paused",
+    "indefinitely": "Indefinitely",
+    "dndMode": "Do Not Disturb is on",
+    "appExclusion": "App exclusion rule",
+    "nextLongBreak": "Next Long break",
+    "nextMiniBreak": "Next Mini break",
+    "afterMiniBreak_one": "after {{count}} Mini break",
+    "afterMiniBreak_other": "after {{count}} Mini breaks",
+    "resuming": "Resuming"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Go grab a glass of water."
+    },
+    "aab": {
+      "text": "Slowly look all the way left, then right."
+    },
+    "aac": {
+      "text": "Slowly look all the way up, then down."
+    },
+    "aad": {
+      "text": "Close your eyes and take few deep breaths."
+    },
+    "aae": {
+      "text": "Close your eyes and relax."
+    },
+    "aaf": {
+      "text": "Stretch your legs."
+    },
+    "aag": {
+      "text": "Stretch your arms."
+    },
+    "aah": {
+      "text": "Is your sitting posture correct?"
+    },
+    "aai": {
+      "text": "Slowly turn head to side and hold for 10 seconds."
+    },
+    "aaj": {
+      "text": "Slowly tilt head to side and hold for 5-10 seconds."
+    },
+    "aak": {
+      "text": "Stand from your chair and stretch."
+    },
+    "aal": {
+      "text": "Refocus your eyes on an object at least 20 meters away."
+    },
+    "aam": {
+      "text": "Take a moment to think about something you appreciate."
+    },
+    "aan": {
+      "text": "Take a moment to smile at being alive."
+    },
+    "aao": {
+      "text": "A truly ergonomic workstation is one that you regularly push away from."
+    },
+    "aap": {
+      "text": "Close your eyes and count your breaths."
+    },
+    "aaq": {
+      "text": "Close your eyes and name the things you hear."
+    },
+    "aar": {
+      "text": "Place your fingertips on your shoulders. Roll your shoulders forward for 10 seconds, then backward."
+    },
+    "aas": {
+      "text": "Raise your right arm, stretch it over your head to the left, and hold for 10 seconds. Repeat on the other side."
+    },
+    "aat": {
+      "text": "With your right hand, grab each finger of your left hand in turn and squeeze. Repeat on the other side."
+    },
+    "aau": {
+      "text": "Stand up and do a lunge. Hold for 10 seconds, then do the other leg."
+    },
+    "aav": {
+      "text": "Close your eyes and simply notice whatever arises in current moment, without judgement."
+    },
+    "aaw": {
+      "text": "Focus every 20 minutes for 20 seconds on an object at 20 feet distance."
+    },
+    "aax": {
+      "text": "If you need help, ask for it."
+    },
+    "aay": {
+      "text": "Do one thing at a time."
+    },
+    "aaz": {
+      "text": "Is your attention spent wisely?"
+    },
+    "aba": {
+      "text": "Change your sitting posture."
+    },
+    "abb": {
+      "text": "Expose your eyes to natural light."
+    },
+    "abc": {
+      "text": "With your eyes closed, slowly and gently raise your eyes to the ceiling and back down to the floor."
+    },
+    "abd": {
+      "text": "With your eyes closed, slowly and gently move your eyes to the left, then slowly to the right."
+    },
+    "abe": {
+      "text": "Shake your hands out to get some relief."
+    },
+    "abf": {
+      "text": "One at a time, touch the tip of each finger to the tip of your thumb so they make an O-shape."
+    },
+    "abg": {
+      "text": "Make a fist and then slide your fingers up until they point toward the ceiling, like you're telling someone to stop."
+    },
+    "abh": {
+      "text": "Make a fist and then fan your fingers out and stretch them as far as you can."
+    },
+    "abi": {
+      "text": "Sit tall, arms hanging at your sides, and slowly rotate neck in one direction in a large circle."
+    },
+    "abj": {
+      "text": "Stand tall and slowly tilt your head toward the shoulder using the same hand until you feel a stretch."
+    },
+    "abk": {
+      "text": "Stand tall with your arms by your side. Squeeze your shoulder blades together and hold."
+    },
+    "abl": {
+      "text": "Stand tall with your arms raised along your shoulders. Move hands slightly behind your back, hold for a second and return."
+    },
+    "abm": {
+      "text": "Sit on the edge of your chair, twist your torso to one side and hold for 10-15 seconds. Repeat on the other side."
+    },
+    "abn": {
+      "text": "Stand up and put one foot on a nearby object, like a chair or step stool. Keep your knee bent and hold for 10-15 seconds. Repeat with the other foot."
+    },
+    "abo": {
+      "text": "Stand with your feet shoulder-width apart, lower your body down as if you were sitting back into a chair, then stand back up. Repeat several times."
+    },
+    "abp": {
+      "text": "Stand with your back and hands on a wall, then slowly move your arms up and down as if you were making snow angels."
+    },
+    "abq": {
+      "text": "Stand facing a wall and place your hands on it, then do several push-ups."
+    },
+    "abr": {
+      "text": "Sit on the edge of your chair and extend one leg straight out in front of you, holding for 10-15 seconds. Repeat with the other leg."
+    },
+    "abs": {
+      "text": "Stand facing a wall, put one foot back and the other foot forward, then lean into the wall. Repeat with the other leg."
+    },
+    "abt": {
+      "text": "Hold one arm straight up, then use the other arm to gently push the elbow of the first arm towards your head. Hold for 10-15 seconds. Repeat with the other arm."
+    },
+    "abu": {
+      "text": "Tilt your head to one side, then to the other side, and then gently tilt it forward and backward."
+    },
+    "abv": {
+      "text": "Reach one arm across your chest, hold onto the elbow with the other hand, and gently pull it in towards your chest. Repeat with the other arm."
+    },
+    "abw": {
+      "text": "Stand up, put one foot on a nearby object, like a chair or step stool, and reach down to touch your toes. Repeat with the other leg."
+    },
+    "abx": {
+      "text": "Stand in a doorway and place one arm on each side of the doorway, then gently lean forward until you feel a stretch in your chest."
+    },
+    "aby": {
+      "text": "Sit on the edge of a chair or on the floor, and place the soles of your feet together, gently pressing down with your elbows to stretch your inner thighs."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Not alone",
+      "text": "Do you find it hard to take a break alone? Try to do it with a co-worker. Aside from making it easier to stick to breaks, you will have a chance to get to know them better. Taking breaks together increases productivity."
+    },
+    "aab": {
+      "title": "Step away",
+      "text": "Do you ever notice how your brain can figure things out by itself? All it takes is to step away from the computer and take a break to think about something totally unrelated."
+    },
+    "aac": {
+      "title": "Microbreaks",
+      "text": "Rest is a key component in ensuring the performance of the musculoskeletal system. Frequent breaks can decrease the duration of a task and help lower the exposure to ergonomic injury risk."
+    },
+    "aad": {
+      "title": "Meditation",
+      "text": "Research studies suggest that mindfulness-based exercises help decrease anxiety, depression, stress, and pain, and help improve general health, mental health, and quality of life. Not sure how to start? There are numerous apps to help you out."
+    },
+    "aae": {
+      "title": "Blink",
+      "text": "Looking at screens for a long time causes you to blink less, thus exposing your eyes to the air. Blink rapidly for a few seconds to refresh the tear film and clear dust from the eye surface."
+    },
+    "aaf": {
+      "title": "Ergonomics",
+      "text": "Improper height and angle of the keyboard, mouse, monitor or working surface can cause health problems. Take some time to read about desk ergonomics."
+    },
+    "aag": {
+      "title": "Move",
+      "text": "There are a lot of ways you can exercise within your office. Try marching in place or doing desk push-ups."
+    },
+    "aah": {
+      "title": "Change",
+      "text": "Do you have a stability ball or standing work desk? Consider replacing your desk chair with them for a while."
+    },
+    "aai": {
+      "title": "Notice",
+      "text": "Are you daydreaming or having trouble focusing? It is a sign that you need to take a break."
+    },
+    "aaj": {
+      "title": "Tech",
+      "text": "How about taking a no-tech walk?"
+    },
+    "aak": {
+      "title": "Metabolism",
+      "text": "Emerging research shows that sitting for long periods of time contributes to risk of metabolic syndrome, heart attack and stroke risk and overall death risk, among others. Taking regular walking breaks can help your circulation, working to counteract some of those problems."
+    },
+    "aal": {
+      "title": "Active Meetings",
+      "text": "How about moving meetings from the conference room to the concourse? Walking not only burns calories but it may even foster a sense of collaboration."
+    },
+    "aam": {
+      "title": "Fruit",
+      "text": "Take your time and eat some fruit. Slowly. Notice the flavor, the texture, the freshness."
+    },
+    "aan": {
+      "title": "Bathrooms",
+      "text": "Walk to the farthest bathroom in the worksite facility when going to the restroom."
+    },
+    "aao": {
+      "title": "Coffee break",
+      "text": "Going on coffee break? Consider doing a 5-minute walk every time you go for one."
+    },
+    "aap": {
+      "title": "Colleagues",
+      "text": "Do not email or message office colleagues, walk to their desks to communicate with them."
+    },
+    "aaq": {
+      "title": "Learning",
+      "text": "In a study of healthy volunteers, NIH researchers found that taking short breaks, early and often, may help our brains learn new skills."
+    },
+    "aar": {
+      "title": "Exercise",
+      "text": "Evidence suggests small amounts of regular exercise can bring dramatic health benefits, including measurably reducing stress."
+    },
+    "aas": {
+      "title": "Repeat",
+      "text": "Have you found your stretch-ly-routine? Do not forget to repeat it for more than once to better fight effects of prolonged sitting."
+    },
+    "aat": {
+      "title": "Wrist and forearm",
+      "text": "Extend your arms with the palms facing towards you, then slowly rotate the hands four times clockwise, then four times counter-clockwise."
+    },
+    "aau": {
+      "title": "Back stretching",
+      "text": "Join your hands behind your head, then lift them together up above your head ending with your palms facing upward."
+    },
+    "aav": {
+      "title": "Mobilize",
+      "text": "For every thirty minutes of stagnation, you should have at least one minute of stimulation."
+    },
+    "aaw": {
+      "title": "7 Minute Workout",
+      "text": "This workout packs in a full-body exercise routine in a fraction of the time. But as with any exercise, be careful. There are numerous apps to get you started."
+    },
+    "aax": {
+      "title": "Pulse",
+      "text": "Raise your pulse rate to 120 beats per minute for 20 straight minutes four or five times a week doing anything you enjoy. Regularly raising your heart rate results in improved cardiovascular health."
+    },
+    "aay": {
+      "title": "Take the stairs",
+      "text": "Studies have shown that stair climbing, which is considered vigorous-intensity physical activity, burns more calories per minute than jogging."
+    },
+    "aaz": {
+      "title": "Make art",
+      "text": "Art therapy is known to have great mental health benefits, especially when it comes to stress management. How about writing a quick poem, taking a picture or painting something small?"
+    },
+    "aba": {
+      "title": "Declutter",
+      "text": "A clean space helps your focus at work and is often linked to positive emotions like happiness."
+    },
+    "abb": {
+      "title": "Lunch outside",
+      "text": "Nature is linked to positive emotions and decreased stress and anxiety. Whenever possible, try to take your daily lunch break outside, surrounded by some greenery."
+    },
+    "abc": {
+      "title": "Public transport",
+      "text": "If you use public transport regularly, you can stand instead of sitting. If it is possible, try to replace as many of your daily trips as possible with walking or cycling."
+    },
+    "abd": {
+      "title": "Yawning",
+      "text": "Yawning can be really helpful, as it produces tears to help moisten and lubricate the eyes."
+    },
+    "abe": {
+      "title": "Focus change",
+      "text": "Hold one finger close to the eye and focus on it. Slowly move the finger away, focus far into the distance and then back to the finger. Bring the finger back and focus on something far away."
+    },
+    "abf": {
+      "title": "Palming",
+      "text": "While seated, brace elbows on the desk and close to the desk edge. Let your weight fall forward and cup hands over eyes. Close your eyes and inhale slowly through nose and hold for few seconds. Continue deep breathing."
+    },
+    "abg": {
+      "title": "Hand squeezes",
+      "text": "Squeeze a pair of balled-up socks or a soft rubber ball, hold for 5 seconds. Repeat whole process a few times."
+    },
+    "abh": {
+      "title": "Slow Breathing",
+      "text": "Emerging research suggests potential for use of controlled slow breathing techniques as a means of optimising physiological parameters that appear to be associated with health and longevity."
+    },
+    "abi": {
+      "title": "Imaginative visualization",
+      "text": "Close your eyes and imagine yourself in a peaceful and calming place, such as a beach or a forest, focusing on the sights, sounds, and sensations of that environment."
+    },
+    "abj": {
+      "title": "Overwhelmed?",
+      "text": "Try the 5-4-3-2-1 Grounding Technique: Identify 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, and 1 thing you can taste."
+    }
+  }
+}

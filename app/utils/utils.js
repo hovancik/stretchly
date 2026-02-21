@@ -1,50 +1,108 @@
-let formatRemaining = function (seconds) {
-  if (seconds < 60) {
-    return `${seconds + 1} seconds left`
+import fs from 'node:fs'
+
+function formatTimeRemaining (milliseconds, locale, i18next, humanizeDuration) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
+  }
+  return i18next.t('utils.remaining', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'] })
+  })
+}
+
+function formatElapsedDuration (milliseconds, locale, i18next, humanizeDuration) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
+  }
+  return i18next.t('utils.elapsed', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'] })
+  })
+}
+
+function formatTimeIn (milliseconds, locale, i18next, humanizeDuration) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
+  }
+  return i18next.t('utils.inAbout', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'], units: ['d', 'h', 'm'] })
+  })
+}
+
+function formatUnitAndValue (unit, value, i18next) {
+  if (unit === 'seconds') {
+    if (value < 60) {
+      return i18next.t('utils.seconds', { count: parseInt(value) })
+    } else {
+      const val = parseFloat((value / 60).toFixed(1))
+      if (val % 1 === 0) {
+        return i18next.t('utils.minutes', { count: parseInt(val) })
+      } else {
+        return i18next.t('utils.minutes', { count: parseFloat(val) })
+      }
+    }
   } else {
-    return `${Math.trunc((seconds / 60) + 1)} minutes left`
+    return i18next.t(`utils.${unit}`, { count: parseInt(value) })
   }
 }
 
-let updateProgress = function (started, duration, progress, progressTime) {
-  if (Date.now() - started < duration) {
-    progress.value = (Date.now() - started) / duration * 10000
-    progressTime.innerHTML = formatRemaining(Math.trunc((duration - Date.now() + started) / 1000))
-  }
+// does not consider `postponesLimit`
+function canPostpone (postpone, passedPercent, postponePercent) {
+  return postpone && passedPercent <= postponePercent
 }
 
-let formatTillBreak = function (milliseconds) {
-  let minutes = Math.round(milliseconds / 60000)
-  if (minutes < 1) {
-    let seconds = Math.round((milliseconds % 60000) / 5000) * 5
-    return `~${seconds}s`
-  } else {
-    return `${minutes}m`
-  }
+// does not consider `postponesLimit`
+function canSkip (strictMode, postpone, passedPercent, postponePercent) {
+  return !((postpone && passedPercent <= postponePercent) || strictMode)
 }
 
-let formatPauseTimeLeft = function (milliseconds) {
-  let timeString = ''
-  let hours = Math.floor(milliseconds / (1000 * 3600))
-  let remainder = (milliseconds - hours * 1000 * 3600)
-  let minutes = Math.floor(remainder / 60000)
-  if (minutes >= 60) {
-    minutes -= 60
-    hours += 1
-  }
-  if (hours >= 1) {
-    timeString += `${hours}h`
-  }
-  if (minutes >= 1) {
-    timeString += `${minutes}m`
-  }
-  if (minutes < 1 && hours < 1) {
-    timeString = 'less than 1m'
-  }
-  return timeString
+function formatKeyboardShortcut (keyboardShortcut) {
+  return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
 }
 
-module.exports.formatRemaining = formatRemaining
-module.exports.formatTillBreak = formatTillBreak
-module.exports.formatPauseTimeLeft = formatPauseTimeLeft
-module.exports.updateProgress = updateProgress
+function minutesRemaining (milliseconds) {
+  return Math.round(milliseconds / 60000.0)
+}
+
+function shouldShowNotificationTitle (platform, systemVersion, semver) {
+  if (platform === 'win32' && semver.gte(semver.coerce(systemVersion), '10.0.19042')) {
+    return false
+  }
+  if (platform === 'darwin' && semver.gte(semver.coerce(systemVersion), '10.16.0')) {
+    return false
+  }
+  return true
+}
+
+function insideFlatpak () {
+  return process.platform === 'linux' && fs.existsSync('/.flatpak-info')
+}
+
+function insideWindowsStore () {
+  return process.platform === 'win32' && !!process.windowsStore
+}
+
+function insideSnap () {
+  return process.platform === 'linux' && !!process.env.SNAP
+}
+
+function insideWindowsPortable () {
+  return process.platform === 'win32' && !!process.env.PORTABLE_EXECUTABLE_DIR
+}
+
+export {
+  formatTimeRemaining,
+  formatElapsedDuration,
+  formatTimeIn,
+  formatUnitAndValue,
+  canPostpone,
+  canSkip,
+  formatKeyboardShortcut,
+  minutesRemaining,
+  shouldShowNotificationTitle,
+  insideFlatpak,
+  insideWindowsStore,
+  insideSnap,
+  insideWindowsPortable
+}

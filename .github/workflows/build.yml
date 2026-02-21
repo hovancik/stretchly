@@ -1,0 +1,32 @@
+name: Packages build
+
+on:
+  push:
+    branches:
+      - release
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+      fail-fast: false
+    steps:
+    - name: run on linux
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libarchive-tools pkg-config
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build packages
+      run: node_modules/.bin/electron-builder build
+      env:
+        GH_TOKEN: ${{ secrets.github_token }}

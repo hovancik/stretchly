@@ -1,0 +1,453 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - Przerwo-przypominajka",
+    "microbreakIn": "Mikroprzerwa za $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Długa przerwa za $t(utils.seconds, {'count': {{seconds}} })",
+    "resumingBreaks": "Wznawiam przerwy",
+    "downloadLatestVersion": "Pobierz najnowszą wersję",
+    "toBreak": "Długa przerwa",
+    "toMicrobreak": "Mikroprzerwa",
+    "skipToTheNext": "Przejdź do następnej",
+    "resume": "Wznów",
+    "pause": "Wstrzymaj",
+    "forHour": "na godzinę",
+    "for2Hours": "na 2 godziny",
+    "for5Hours": "na 5 godzin",
+    "untilMorning": "do rana",
+    "indefinitely": "do odwołania",
+    "resetBreaks": "Zresetuj przerwy",
+    "quitStretchly": "Zamknij Stretchly",
+    "restoreDefaults": "Przywróć domyślne",
+    "warning": "To przywróci ustawienia domyślne i skasuje twoje zmiany.",
+    "continue": "Kontynuuj",
+    "cancel": "Anuluj",
+    "preferences": "Ustawienia",
+    "contributorPreferences": "Ustawienia wspierającego",
+    "syncPreferences": "Synchronizuj Ustawienia"
+  },
+  "break": {
+    "postpone": "Przełóż przerwę na później",
+    "skip": "Pomiń przerwę",
+    "title": "Czas na przerwę!"
+  },
+  "preferences": {
+    "title": "Ustawienia Stretchly",
+    "nav": {
+      "settings": "Ustawienia",
+      "schedule": "Harmonogram",
+      "theme": "Motyw",
+      "about": "O Stretchly",
+      "heart": "Pokochaj Stretchly"
+    },
+    "settings": {
+      "openAtLogin": "Uruchom Stretchly automatycznie po zalogowaniu",
+      "showBreaksIn": "Pokaż przerwy za:",
+      "window": "Okno",
+      "fullscreen": "Pełny ekran",
+      "showIdeas": "Pokaż ćwiczenia podczas przerw",
+      "allScreens": "Pokaż przerwy na wszystkich monitorach",
+      "monitorIdleTime": "Monitoruj nieaktywność systemu (odliczanie jest wstrzymane gdy brak aktywności).",
+      "monitorDnd": "Pokaż przerwy nawet w trybie Nie przeszkadzać",
+      "language": "Wybierz język:",
+      "restoreDefaults": "Przywróć domyślne"
+    },
+    "schedule": {
+      "miniBreaks": "Mikroprzerwy:",
+      "miniBreaksInfo": "Mikroprzerwy to krótkie i regularne przerwy abyś mógł się rozciągnąć i zrelaksować.",
+      "enableMiniBreaks": "Włącz mikroprzerwy",
+      "breakFor": "Przerwa przez:",
+      "every": "Co:",
+      "showNotificationBeforeMiniBreak": "Pokaż powiadomienie przed rozpoczęciem mikroprzerwy",
+      "enablePostponeMini": "Włącz przekładanie mikroprzerwy",
+      "longBreaks": "Długie przerwy:",
+      "longBreaksInfo": "Długie przerwy są rzadsze, ale trwają dłużej, pozwalając ci na dłuższą przerwę od pracy.",
+      "enableLongBreaks": "Włącz długie przerwy",
+      "showNotificationBeforeLongBreak": "Pokaż powiadomienie przed rozpoczęciem długiej przerwy",
+      "enablePostponeLong": "Włącz przekładanie długiej przerwy",
+      "strictMode": "Tryb zdyscyplinowany:",
+      "strictModeInfo": "Tryb zdyscyplinowany uniemożliwa ci pomijanie mikroprzerw i/lub długich przerw i jest stworzony aby utrzymać dyscyplinę.",
+      "enableStrictMini": "Włącz tryb zdyscyplinowany dla mikroprzerw",
+      "enableStrictLong": "Włącz tryb zdyscyplinowany dla długich przerw",
+      "cantDisableBoth": "Nie można wyłączyć obydwóch rodzajów przerw"
+    },
+    "theme": {
+      "appearance": "Wygląd:",
+      "greenClouds": "Zielone chmury",
+      "autumnBeBlessed": "Niech żyje jesień",
+      "graphiteCrystal": "Grafitowy kryształ",
+      "coffeeKisses": "Kawowe buziaki",
+      "morningSwim": "Poranna kąpiel",
+      "transparentMode": "Włącz przezroczystość",
+      "sounds": "Dźwięki:",
+      "enableSounds": "Włącz dźwięki",
+      "crystalGlass": "Kryształowe szkło",
+      "windChime": "Wietrzny dzwonek",
+      "ticToc": "Tik tak",
+      "trayIcon": "Ikona w pasku:",
+      "colour": "Kolorowa",
+      "monochrome": "Monochromatyczna",
+      "invertedMonochrome": "Odwrócona monochromatyczna",
+      "snowWhite": "Śnieżna biel",
+      "reverie": "Zaduma"
+    },
+    "about": {
+      "tagline": "Przerwo-przypominajka",
+      "version": "Wersja ",
+      "latestVersion": "Najnowsza wersja ",
+      "notifyNewVersion": "Automatycznie powiadamiaj o aktualizacjach aplikacji",
+      "learnMore": "Aby dowiedzieć się więcej o funkjach Stretchly, zobacz wprowadzenie, pobierz najnowszą wersję lub skontaktuj się z nami po wsparcie, ",
+      "ourWebsite": "odwiedź naszą stronę",
+      "dot": ".",
+      "developedBy": "Stworzona przez",
+      "janH": "Jana Hovancika",
+      "designedBy": "Ikony oraz UI Colin Shanley",
+      "checkNewVersion": "Automatycznie sprawdzaj aktualizacje"
+    },
+    "heart": {
+      "loveStretchly": "Kochasz Stretchly?",
+      "desc1": "Stosowanie długich przerw podczas korzystania z komputera jest ważne dla twojego fizycznego i umysłowego zdrowia, co zostało dowiedzione naukowo.",
+      "desc2": "Stretchly jest darmowe. Możesz jednak je wesprzeć poprzez dotację, aby pomóc nam ulepszać Stretchly i tworzyć inne darmowe oprogramowanie.",
+      "becomeContributor": "Zostań Patronem",
+      "alreadyContributor": "Już jestem wspierającym",
+      "authenticateUsing": "Uwierzytelnij się używając:",
+      "contributorPreferences": "Ustawienia wspierającego",
+      "syncPreferences": "Synchronizuj Ustawienia"
+    }
+  },
+  "contributorPreferences": {
+    "0": "Pierwszy monitor",
+    "1": "Drugi monitor",
+    "2": "Trzeci monitor",
+    "3": "Czwarty monitor",
+    "4": "Piąty monitor",
+    "title": "Ustawienia wspierającego",
+    "notifications": "Powiadomienia przerw:",
+    "notificationsInfo": "Powiadomienie systemowe pokazane przed przerwą, żeby móc się do niego przygotować.",
+    "beforeLongBreak": "Długa przerwa:",
+    "beforeMiniBreak": "Mikroprzerwa:",
+    "newVersion": "Nowa wersja:",
+    "newVersionNotification": "Powiadamiaj gdy dostępna jest nowa wersja",
+    "customIdeas": "Własne pomysły:",
+    "customIdeasInfo": "Pozwala ci użyć własnych pomysłów poprzez edycję pliku konfiguracyjnego. (Dla zaawansowanych użytkowników.)",
+    "useIdeasFromSettings": "Użyj pomysłów z pliku konfiguracyjnego",
+    "breakPostpone": "Przekładanie przerw:",
+    "breakPostponeInfo": "Gdy włączone w głównych ustawieniach, możesz przekładać przerwy. Następujące ustawienia pozwalają ustawić kiedy, na jak długo i ile razy możesz przełożyć przerwę.",
+    "miniBreaks": "Mikroprzerwy:",
+    "postponableFor": "Przekładalna za:",
+    "postponeFor": "Przełóż za:",
+    "maxPostpones": "Maksymalna liczba przełożeń:",
+    "longBreaks": "Długie przerwy:",
+    "pauseUntilMorning": "Wstrzymaj do rana:",
+    "pauseUntil": "Wstrzymaj do:",
+    "pauseUntilMorningInfo": "Ustaw do której godziny 'Wstrzymaj do rana' powinno wstrzymywać przerwy.",
+    "welcomeWindow": "Okno powitalne:",
+    "showWelcomeWindow": "Pokaż okno powitalne przy następnym uruchomieniu",
+    "sounds": "Dźwięki:",
+    "volume": "Głośność:",
+    "miniBreakStartSound": "Odtwórz dźwięk końca przerwy również na początku mikroprzerwy",
+    "longBreakStartSound": "Odtwórz dźwięk końca przerwy również na początku długiej przerwy",
+    "naturalBreaks": "Naturalne przerwy:",
+    "naturalBreaksInfo": "Gdy monitorowanie nieaktywności jest włączone w głównych ustawieniach, możesz ustawić po jakim czasie odliczanie powinno zostać wstrzymane.",
+    "pauseAfter": "Wstrzymaj po:",
+    "appearance": "Wygląd:",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "system": "Systemowy",
+    "breakWindowHeight": "Wysokość:",
+    "showBreaksAsRegularWindows": "Wyświetlaj przerwy w zwykłych oknach",
+    "breakWindowWidth": "Szerokość:",
+    "opacityTheme": "Przeźroczystość tła:",
+    "showBreaksAsRegularWindowsInfo": "Kiedy włączone, okna przerwy będą możliwe do wybrania, nie będą 'zawsze na wierzchu' oraz będą widoczne na pasku zadań.",
+    "showBreaksAsRegularWindowsTitle": "Działaj jako zwykłe okno:",
+    "opacityInfo": "Jak bardzo okno przerwy powinno być widoczne?",
+    "cursor": "Podążaj za myszą",
+    "primary": "Główny monitor",
+    "showOnMonitor": "Pokaż przerwy na",
+    "screenInfo": "Kiedy pokazywanie przerwy na wszystkich monitorach jest wyłączone, możesz wybrać na którym z monitorów mają się pokazywać.",
+    "screen": "Ekran dla przerw:",
+    "breakWindowSizeInfo": "Jaki procent ekranu powinno ukryć okno przerwy?",
+    "breakWindowSize": "Wielkość okna przerwy",
+    "opacity": "Przezroczystość:",
+    "timeToBreakInTray": "Czas na przerwę",
+    "currentTimeInBreaks": "Aktualny czas",
+    "showCurrentTimeInBreaks": "Pokaż aktualną godzinę w okienku przerwy",
+    "showTimeToBreakInTray": "Pokaż czas pozostały do następnej przerwy w ikonie paska zadań",
+    "toShowTrayIcon": "Pokaż ikonę Stretchly w pasku menu",
+    "showTrayIcon": "Pokaż ikonę na pasku menu"
+  },
+  "utils": {
+    "none_one": "{{count}}",
+    "none_few": "{{count}}",
+    "none_many": "{{count}}",
+    "percent_one": "{{count}} procent",
+    "percent_few": "{{count}} procent",
+    "percent_many": "{{count}} procent",
+    "oclock_one": "{{count}}",
+    "oclock_few": "{{count}}",
+    "oclock_many": "{{count}}",
+    "seconds_one": "{{count}} sekunda",
+    "seconds_few": "{{count}} sekundy",
+    "seconds_many": "{{count}} sekund",
+    "minutes_one": "{{count}} minuta",
+    "minutes_few": "{{count}} minuty",
+    "minutes_many": "{{count}} minut",
+    "hours_one": "{{count}} godzina",
+    "hours_few": "{{count}} godziny",
+    "hours_many": "{{count}} godzin",
+    "remaining": "Pozostało {{count}}",
+    "inAbout": "za około {{count}}"
+  },
+  "process": {
+    "newVersionAvailable": "Dostępna nowa wersja!"
+  },
+  "welcome": {
+    "title": "Witaj w Stretchly",
+    "breakTimeReminderApp": "Przerwo-przypominajka",
+    "viewTutorial": "Zobacz wprowadzenie",
+    "openPreferences": "Otwórz ustawienia",
+    "getStarted": "Rozpocznij"
+  },
+  "statusMessages": {
+    "paused": "Wstrzymana",
+    "indefinitely": "Do odwołania",
+    "dndMode": "Tryb Nie przeszkadzać jest włączony",
+    "nextLongBreak": "Następna długa przerwa",
+    "nextMiniBreak": "Następna mikroprzerwa",
+    "afterMiniBreak_one": "po {{count}} mikroprzerwie",
+    "afterMiniBreak_few": "po {{count}} mikroprzerwach",
+    "afterMiniBreak_many": "po {{count}} mikroprzerwach",
+    "resuming": "Wznawianie",
+    "appExclusion": "Zasada wyjątku aplikacji"
+  },
+  "miniBreakIdeas": {
+    "aac": {
+      "text": "Powoli spójrz w górę, następnie w dół."
+    },
+    "aaa": {
+      "text": "Idź po szklankę wody."
+    },
+    "aab": {
+      "text": "Powoli spójrz w lewo, następnie w prawo."
+    },
+    "aad": {
+      "text": "Zamknij oczy i weź kilka głębokich oddechów."
+    },
+    "aae": {
+      "text": "Zamknij oczy i zrelaksuj się."
+    },
+    "aaf": {
+      "text": "Rozciągnij mięśnie nóg."
+    },
+    "aag": {
+      "text": "Rozciągnij ramiona."
+    },
+    "aah": {
+      "text": "Czy twoja pozycja siedząca jest prawidłowa?"
+    },
+    "aai": {
+      "text": "Powoli skręć głowę w bok i zatrzymaj na 10 sekund."
+    },
+    "aaj": {
+      "text": "Powoli przechyl głowę na bok i przytrzymaj przez 5-10 sekund."
+    },
+    "aak": {
+      "text": "Wstań i przeciągnij się."
+    },
+    "aal": {
+      "text": "Spójrz na coś oddalone co najmniej 20 metrów."
+    },
+    "aam": {
+      "text": "Poświęć chwilę, aby pomyśleć o czymś, co doceniasz."
+    },
+    "aan": {
+      "text": "Poświęć chwilę, aby docenić to, że żyjesz."
+    },
+    "aao": {
+      "text": "Prawdziwie ergonomiczne miejsce pracy to takie, od którego regularnie odchodzisz."
+    },
+    "aap": {
+      "text": "Zamknij oczy i policz swoje oddechy."
+    },
+    "aaq": {
+      "text": "Zamknij oczy i nazwij to, co słyszysz."
+    },
+    "aar": {
+      "text": "Połóż opuszki palców na ramionach. Poruszaj ramionami do przodu przez 10 sekund, a następnie do tyłu."
+    },
+    "aas": {
+      "text": "Podnieś prawą rękę, wyciągnij ją nad głową w lewo i przytrzymaj przez 10 sekund. Powtórz po drugiej stronie."
+    },
+    "aaw": {
+      "text": "Skup się co 20 minut przez 20 sekund na obiekcie w odległości 20 metrów."
+    },
+    "aax": {
+      "text": "Jeśli potrzebujesz pomocy, poproś o nią."
+    },
+    "aay": {
+      "text": "Rób jedną rzecz na raz."
+    },
+    "aaz": {
+      "text": "Czy mądrze poświęcasz uwagę?"
+    },
+    "aba": {
+      "text": "Zmień pozycję siedzącą."
+    },
+    "abb": {
+      "text": "Wystaw swoje oczy na naturalne światło."
+    },
+    "aat": {
+      "text": "Prawą ręką chwyć kolejno każdy palec lewej ręki i ściśnij. Powtórz po drugiej stronie."
+    },
+    "aau": {
+      "text": "Wstań i zrób wypad. Przytrzymaj tak przez 10 sekund i zmień nogę."
+    },
+    "abc": {
+      "text": "Mając zamknięte oczy, powoli i delikatnie przesuwaj oczy w górę i dół."
+    },
+    "abd": {
+      "text": "Mając zamknięte oczy, polowi i delikatnie przesuwaj wzrok w lewo i w prawo."
+    },
+    "aav": {
+      "text": "Zamknij oczy i skup się na tym co Ciebie otacza, nie oceniając tego."
+    },
+    "abi": {
+      "text": "Usiądź prosto, z rękami opuszczonymi wzdłuż ciała, i powoli obracaj szyją w jednym kierunku, wykonując duży krąg."
+    },
+    "abe": {
+      "text": "Wstrząśnij rękami, aby poczuć ulgę."
+    },
+    "abf": {
+      "text": "Po kolei dotykaj czubkiem każdego palca do czubka kciuka, tak aby utworzyły kształt litery O."
+    },
+    "abg": {
+      "text": "Zaciśnij pięść, a następnie wyprostuj palce do góry, tak aby wskazywały na sufit, jakbyś kazał komuś się zatrzymać."
+    },
+    "abh": {
+      "text": "Zaciśnij pięść, a następnie rozłóż palce i rozciągnij je tak daleko, jak tylko możesz."
+    },
+    "abj": {
+      "text": "Stań prosto i powoli przechyl głowę w kierunku ramienia, używając tej samej ręki, aż poczujesz rozciąganie."
+    },
+    "abk": {
+      "text": "Stań prosto z rękami wzdłuż ciała. Ściśnij łopatki razem i przytrzymaj."
+    },
+    "abl": {
+      "text": "Stań prosto z ramionami uniesionymi wzdłuż barków. Przesuń ręce lekko za plecy, przytrzymaj przez sekundę i wróć."
+    },
+    "abm": {
+      "text": "Usiądź na krawędzi krzesła, skręć tułów w jedną stronę i przytrzymaj przez 10-15 sekund. Powtórz na drugą stronę."
+    },
+    "abn": {
+      "text": "Wstań i postaw jedną stopę na pobliskim obiekcie, takim jak krzesło lub stopień. Utrzymuj kolano zgięte i przytrzymaj przez 10-15 sekund. Powtórz z drugą stopą."
+    },
+    "abo": {
+      "text": "Stań z stopami rozstawionymi na szerokość barków, opuść ciało w dół, jakbyś siadał na krześle, a następnie wstań. Powtórz kilka razy."
+    },
+    "abp": {
+      "text": "Stań plecami i rękami przy ścianie, a następnie powoli poruszaj ramionami w górę i w dół, jakbyś robił aniołki na śniegu."
+    },
+    "abq": {
+      "text": "Stań przodem do ściany i połóż na niej ręce, a następnie wykonaj kilka pompek."
+    },
+    "abt": {
+      "text": "Unieś jedną rękę pionowo w górę, potem drugą ręką delikatnie popchnij łokieć pierwszej ręki w stronę głowy. Przytrzymaj przez 10-15 sekund. Zrób to samo z drugą ręką."
+    },
+    "abr": {
+      "text": "Usiądź na krawędzi krzesła i wyciągnij jedną nogę prosto przed siebie, przytrzymując ją przez 10-15 sekund. Powtórz to samo z drugą nogą."
+    },
+    "abv": {
+      "text": "Wyciągnij jedną rękę przez klatkę piersiową, chwyć łokieć drugą ręką i delikatnie przyciągnij go do klatki piersiowej. Powtórz z drugą ręką."
+    },
+    "abw": {
+      "text": "Wstań, postaw jedną nogę na jakimś przedmiocie w pobliżu, np. na krześle lub stopniu, i sięgnij w dół, aby dotknąć palców u stóp. Powtórz z drugą nogą."
+    },
+    "abs": {
+      "text": "Stań twarzą do ściany, jedną nogę ustaw z tyłu, a drugą z przodu, następnie pochyl się w stronę ściany. Powtórz z drugą nogą."
+    },
+    "abu": {
+      "text": "Pochyl głowę w bok, następnie w drugi bok, a potem delikatnie przechylaj ją do przodu i do tyłu."
+    },
+    "abx": {
+      "text": "Stań w drzwiach, umieść jedną rękę po każdej stronie drzwi, a następnie delikatnie pochyl się do przodu, aż poczujesz rozciągnięcie w klatce piersiowej."
+    },
+    "aby": {
+      "text": "Usiądź na skraju krzesła lub na podłodze, złącz stopy podeszwami do siebie i delikatnie naciskaj łokciami, aby rozciągnąć wewnętrzną stronę ud."
+    }
+  },
+  "longBreakIdeas": {
+    "aab": {
+      "title": "Odsuń się",
+      "text": "Czy kiedykolwiek zauważyłeś, jak twój mózg potrafi sam rozwiązać problemy? Wystarczy tylko oderwać się od komputera i zrobić sobie przerwę, aby pomyśleć o czymś zupełnie innym."
+    },
+    "aaa": {
+      "text": "Czy ciężko Ci jest robić sobie przerwy sam? Spróbuj robić je z współpracownikiem. Oprócz tego, że łatwiej będzie Ci się trzymać tych przerw, będziesz miał szansę lepiej poznać swojego współpracownika. Robienie przerw razem zwiększa produktywność.",
+      "title": "Nie sam"
+    },
+    "aac": {
+      "title": "Mikroprzerwa",
+      "text": "Odpoczynek stanowi podstawowy element w utrzymaniu wydajności układu mięśniowo-szkieletowego. Regularne przerwy mogą zmniejszyć czas wykonywania zadania i przyczynić się do obniżenia narażenia na ryzyko urazów ergonomicznych."
+    },
+    "aad": {
+      "text": "Badania naukowe sugerują, że ćwiczenia oparte na uważności pomagają zmniejszyć lęk, depresję, stres i ból, a także poprawić ogólne zdrowie, zdrowie psychiczne i jakość życia. Nie wiesz, jak zacząć? Istnieje wiele aplikacji, które mogą Ci pomóc.",
+      "title": "Medytacja"
+    },
+    "aaf": {
+      "title": "Ergonomia",
+      "text": "Nieprawidłowa wysokość i kąt ustawienia klawiatury, myszy, monitora lub powierzchni roboczej mogą powodować problemy zdrowotne. Znajdź chwilę, aby dowiedzieć się więcej o ergonomii stanowiska pracy."
+    },
+    "aag": {
+      "title": "Ruch",
+      "text": "Istnieje wiele możliwości ćwiczeń w biurze. Spróbuj maszerować w miejscu lub robić pompki przy biurku."
+    },
+    "aah": {
+      "title": "Zmiana",
+      "text": "Masz piłkę do ćwiczeń lub stojące biurko? Zastanów się nad tym, aby na jakiś czas zastąpić swoje krzesło biurowe jednym z nich."
+    },
+    "aai": {
+      "title": "Powiadomienie",
+      "text": "Czy masz problemy z koncentracją lub myślisz o czymś innym? To może być sygnał, że potrzebujesz przerwy."
+    },
+    "aae": {
+      "text": "Długotrwałe patrzenie na ekrany powoduje, że rzadziej mrugamy, co naraża nasze oczy na działanie powietrza. Szybko mrugaj przez kilka sekund, aby odnowić film łzowy i oczyścić powierzchnię oka z kurzu.",
+      "title": "Mrugnięcie"
+    },
+    "aal": {
+      "title": "Aktywne Spotkania"
+    },
+    "aam": {
+      "title": "Owoc",
+      "text": "Zjedz jakiś owoc. Powoli, bez pośpiechu. Zauważ jaki ma smak, teksturę i świeżość."
+    },
+    "aao": {
+      "text": "Idziesz na przerwę kawową? Rozważ 5-minutowy spacer za każdym razem gdy sięgasz po filiżankę.",
+      "title": "Przerwa kawowa"
+    },
+    "aap": {
+      "title": "Koledzy",
+      "text": "Nie wysyłaj maili i wiadomości do kolegów z pracy, podejdź do ich biurek by się z nimi komunikować."
+    },
+    "aaq": {
+      "text": "W badaniu na zdrowych osobach, badacze z NIH zauważyli, że krótkie przerwy, wcześnie i często, mogą pomóc naszym mózgom zdobywać nowe umiejętności.",
+      "title": "Uczenie się"
+    },
+    "aar": {
+      "title": "Ćwiczenia",
+      "text": "Badania sugerują, że małe ilości regularnych ćwiczeń mogą przynieść ogromne korzyści zdrowotne, w tym znacząco zredukować stres."
+    },
+    "aat": {
+      "title": "Nadgarstek i przedramię"
+    },
+    "aau": {
+      "title": "Rozciąganie pleców"
+    },
+    "aaj": {
+      "text": "Co powiesz na spacer bez urządzeń?"
+    },
+    "aak": {
+      "title": "Metabolizm"
+    },
+    "aas": {
+      "title": "Powtarzanie"
+    }
+  }
+}

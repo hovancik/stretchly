@@ -1,0 +1,522 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - prisimink pertraukėles",
+    "resumingBreaks": "Pertraukėlė tęsiasi",
+    "downloadLatestVersion": "Atsisiųsti naujausią versiją",
+    "skipToTheNext": "Praleisti iki kitos",
+    "resume": "Tęsti",
+    "pause": "Sustabdyti",
+    "forHour": "valandai",
+    "for2Hours": "2 valandoms",
+    "for5Hours": "5 valandoms",
+    "untilMorning": "iki rytojaus",
+    "indefinitely": "neribotam laikui",
+    "resetBreaks": "Atstatyti pertraukėles",
+    "quitStretchly": "Išjungti Stretchly",
+    "preferences": "Nuostatos",
+    "syncPreferences": "Sinchronizavimo nuostatos",
+    "contributorPreferences": "Nuostatos rėmėjams",
+    "cancel": "Atšaukti",
+    "continue": "Tęsti",
+    "toMicrobreak": "trumpos pertraukėlės",
+    "toBreak": "ilgos pertraukos",
+    "breakIn": "Ilga pertrauka po $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Trumpa pertraukėlė po $t(utils.seconds, {'count': {{seconds}} })",
+    "restoreDefaults": "Atstatyti nuostatas",
+    "warning": "Taip bus atkurtos numatytosios programos nuostatos, tuo pačiu prarasite visas savo pakeistas nuostatas."
+  },
+  "break": {
+    "title": "Laikas pertraukėlei!",
+    "skip": "Praleisti šią pertraukėlę",
+    "postpone": "Atidėti šią pertraukėlę"
+  },
+  "preferences": {
+    "theme": {
+      "greenClouds": "Žali debesys",
+      "autumnBeBlessed": "Šventas ruduo",
+      "graphiteCrystal": "Grafito kristalas",
+      "coffeeKisses": "Kavos bučiniai",
+      "morningSwim": "Rytinis pasiplaukiojimas",
+      "snowWhite": "Sniego baltumo",
+      "colour": "Spalva",
+      "trayIcon": "Meniu juostos piktograma:",
+      "ticToc": "Tik tak",
+      "windChime": "Vėjo skambesys",
+      "crystalGlass": "Krištolo stiklas",
+      "enableSounds": "Įjungti garsus",
+      "sounds": "Garsai:",
+      "transparentMode": "Įgalinti skaidrumą",
+      "appearance": "Išvaizda:",
+      "invertedMonochrome": "Apverstas vienspalvis",
+      "monochrome": "Vienspalvis",
+      "reverie": "Svajos"
+    },
+    "about": {
+      "tagline": "Prisimink pertraukėles",
+      "designedBy": "Ženkliukas ir vartotojo sąsajos išvaizda - Colin Shanley",
+      "janH": "Janas Hovancikas",
+      "developedBy": "Sukūrė",
+      "dot": ".",
+      "ourWebsite": "apsilankykite mūsų svetainėje",
+      "latestVersion": "Naujausia versija ",
+      "version": "Versija ",
+      "checkNewVersion": "Automatiškai tikrinti, ar yra programos atnaujinimų",
+      "learnMore": "Jei norite sužinoti daugiau apie Stretchly funkcijas, peržiūrėkite pamoką, atsisiųskite naujausią versiją arba susisiekite su mumis dėl pagalbos, "
+    },
+    "schedule": {
+      "enableStrictLong": "Įjungti griežtą veikseną ilgoms pertraukoms",
+      "cantDisableBoth": "Negalima išjungti abiejų pertraukų tipų",
+      "breakFor": "Pertraukėlė:",
+      "enableMiniBreaks": "Įjungti trumpas pertraukėles",
+      "miniBreaksInfo": "„Trumpos pertraukėlės“ yra mažos pertraukėlės, daromos reguliariai, kad suteiktų galimybę pajudėti ir atsipalaiduoti.",
+      "miniBreaks": "Trumpos pertraukėlės:",
+      "enableStrictMini": "Įjungti griežtą veikseną trumpos pertraukėlėms",
+      "strictModeInfo": "Griežtoji veiksena neleidžia praleisti nei trumpų, nei ilgų pertraukų ir skirta drausmei palaikyti.",
+      "strictMode": "Griežtoji veiksena:",
+      "enablePostponeLong": "Įgalinti ilgos pertraukos atidėjimą",
+      "showNotificationBeforeLongBreak": "Rodyti pranešimą prieš prasidedant ilgai pertraukai",
+      "enableLongBreaks": "Įgalinti ilgas pertraukas",
+      "longBreaksInfo": "Ilgosios pertraukos daromos rečiau, bet yra ilgesnės trukmės, todėl galite ilgesniam laikui atsitraukti nuo darbo.",
+      "longBreaks": "Ilgos pertraukos:",
+      "every": "Kas:",
+      "enablePostponeMini": "Įgalinti trumpos pertraukėlė atidėjimą",
+      "showNotificationBeforeMiniBreak": "Rodyti pranešimą prieš prasidedant trumpai pertraukėlei"
+    },
+    "settings": {
+      "restoreDefaults": "Atkurti numatytąsias reikšmes",
+      "language": "Pasirinkite kalbą:",
+      "monitorDnd": "Rodyti pertraukėles „netrukdymo“ veiksenoje",
+      "allScreens": "Rodyti pertraukėles per visus ekranus",
+      "showIdeas": "Rodyti pratimus pertraukų metu",
+      "fullscreen": "Pilnu ekranu",
+      "window": "Langu",
+      "showBreaksIn": "Rodo pertraukėles po:",
+      "openAtLogin": "Automatiškai paleisti Strechly prisijungus prie kompiuterio",
+      "monitorIdleTime": "Stebėti sistemos neveikimo laiką (pertraukos pristabdomos, jei sistema neveikia)."
+    },
+    "nav": {
+      "heart": "Prisidėk / paremk",
+      "about": "Apie",
+      "theme": "Išvaizda",
+      "settings": "Nuostatos",
+      "schedule": "Tvarkaraštis"
+    },
+    "title": "Strechly nuostatos",
+    "heart": {
+      "syncPreferences": "Sinchronizavimo nuostatos",
+      "contributorPreferences": "Nuostatos rėmėjams",
+      "authenticateUsing": "Tapatybės patvirtinimas naudojant:",
+      "alreadyContributor": "Aš jau prisidėjau",
+      "becomeContributor": "Paremti",
+      "desc2": "Stretchly yra nemokama. Tačiau galite paremti aukodami ir padėti mums toliau tobulinti Stretchly bei leisti kitą nemokamą programinę įrangą.",
+      "desc1": "Moksliškai įrodyta, kad reguliarios pertraukos naudojantis kompiuteriu yra svarbios jūsų fizinei ir psichinei savijautai.",
+      "loveStretchly": "Ar patinka Stretchly?"
+    }
+  },
+  "process": {
+    "newVersionAvailable": "Pasiekiama nauja versija!"
+  },
+  "welcome": {
+    "title": "Jus sveikina Stretchly",
+    "breakTimeReminderApp": "Prisimink pertraukėles",
+    "viewTutorial": "Peržiūrėti pamoką",
+    "openPreferences": "Atverti nuostatas",
+    "getStarted": "Pradėti"
+  },
+  "contributorPreferences": {
+    "0": "Pirmas ekranas",
+    "1": "Antras ekranas",
+    "2": "Trečias ekranas",
+    "3": "Ketvirtas ekranas",
+    "4": "Penktas ekranas",
+    "volume": "Garsumas:",
+    "breakWindowWidth": "Plotis:",
+    "newVersionNotification": "Pranešti atsiradus naujai versijai",
+    "beforeLongBreak": "Ilga pertrauka:",
+    "sounds": "Garsai:",
+    "breakWindowHeight": "Aukštis:",
+    "breakWindowSizeInfo": "Kokią ekrano dalį turėtų slėpti pertraukos langas?",
+    "breakWindowSize": "Pertraukos lango dydis",
+    "opacity": "Skaidrumas:",
+    "opacityInfo": "Kokio skaidrumo turėtų būti pertraukos langas?",
+    "opacityTheme": "Apipavidalinimo skaidrumas:",
+    "showWelcomeWindow": "Rodyti pasveikinimo langą kito paleidimo metu",
+    "welcomeWindow": "Pasveikinimo langas:",
+    "pauseUntilMorningInfo": "Nurodykite, iki kurios valandos „Pristabdyti iki ryto“ turėtų pristabdyti.",
+    "pauseUntil": "Pristabdyti iki:",
+    "pauseUntilMorning": "Pristabdyti iki ryto:",
+    "longBreaks": "Ilgos pertraukos:",
+    "maxPostpones": "Didžiausias atidėjimų skaičius:",
+    "postponeFor": "Atidėti:",
+    "postponableFor": "Atidedama:",
+    "breakPostponeInfo": "Jei įgalinta pagrindinėse nuostatose, galite atidėti pertraukėles. Šie parametrai leidžia nurodyti, kada, kiek laiko ir kiek kartų galite atidėti pertraukėlę.",
+    "breakPostpone": "Pertraukų atidėjimas:",
+    "newVersion": "Nauja versija:",
+    "notificationsInfo": "Sistemos pranešimas rodomas prieš pertraukėles, kad galėtumėte jam pasiruošti.",
+    "notifications": "Pranešimai apie pertraukėles:",
+    "title": "Nuostatos rėmėjams",
+    "showOnMonitor": "Rodyti pertraukėles",
+    "screenInfo": "Kai pertraukų rodymas visuose monitoriuose yra išjungtas, galite pasirinkti, kuriame monitoriuje norite rodyti pertraukėles.",
+    "showBreaksAsRegularWindows": "Rodyti pertraukėles kaip įprastus langus",
+    "primary": "Pagrindinis ekranas",
+    "screen": "Ekranas pertraukoms:",
+    "miniBreakStartSound": "Groti pertraukos pabaigos garsą ir trumpos pertraukėlės pradžioje",
+    "miniBreaks": "Trumpos pertraukėlės:",
+    "customIdeas": "Saviti patarimai:",
+    "beforeMiniBreak": "Trumpa pertraukėlė:",
+    "customIdeasInfo": "Galima rodyti jūsų pačių įrašytus patarimus pertraukų metu redaguojant konfigūracijos rinkmeną. (Pažengusiems naudotojams.)",
+    "useIdeasFromSettings": "Naudoti pertraukų patarimus iš konfigūracijos rinkmenos",
+    "naturalBreaksInfo": "Jei pagrindinės programos nuostatose įjungtas neveikimo laiko stebėjimas, galite nurodyti, po kurio laiko pertraukos turėtų būti sustabdytos.",
+    "pauseAfter": "Padarykite pertrauką po:",
+    "light": "Šviesi",
+    "dark": "Tamsi",
+    "cursor": "Sekti žymeklį",
+    "longBreakStartSound": "Groti pertraukos pabaigos garsą ir ilgos pertraukos pradžioje",
+    "naturalBreaks": "Natūralios pertraukos:",
+    "appearance": "Išvaizda:",
+    "system": "Sistemos",
+    "showBreaksAsRegularWindowsTitle": "Veikti kaip įprastas langas:",
+    "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje.",
+    "timeToBreakInTray": "Laikas pertraukai",
+    "showTimeToBreakInTray": "Rodyti laiką iki kitos pertraukos meniu juostos piktogramoje",
+    "currentTimeInBreaks": "Dabartinis laikas",
+    "showCurrentTimeInBreaks": "Rodyti vietinį laiką pertraukos lange",
+    "showTrayIcon": "Rodyti meniu juostos ženkliuką",
+    "toShowTrayIcon": "Rodyti Stretchly ženkliuką meniu juostoje"
+  },
+  "statusMessages": {
+    "nextLongBreak": "Kita ilgoji pertrauka",
+    "afterMiniBreak_one": "po {{count}} trumpa pertraukėlė",
+    "afterMiniBreak_few": "po {{count}} Mini pertraukėlės",
+    "afterMiniBreak_other": "po {{count}} trumpų pertraukėlių",
+    "nextMiniBreak": "Kita trumpa pertraukėlė",
+    "appExclusion": "Programos išskyrimo taisyklė",
+    "indefinitely": "Neribotam laikui",
+    "dndMode": "Įjungta funkcija „Netrukdyti“",
+    "paused": "Pristabdyta",
+    "resuming": "Tęsiama"
+  },
+  "utils": {
+    "inAbout": "po maždaug {{count}}",
+    "remaining": "Liko maždaug {{count}}",
+    "minutes_one": "{{count}} minutė",
+    "minutes_few": "{{count}} minutės",
+    "minutes_other": "{{count}} minučių",
+    "hours_one": "{{count}} valanda",
+    "hours_few": "{{count}} valandos",
+    "hours_other": "{{count}} valandų",
+    "none_one": "{{count}}",
+    "none_few": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} procentas",
+    "percent_few": "{{count}} procentai",
+    "percent_other": "{{count}} procentų",
+    "oclock_one": "{{count}} valanda",
+    "oclock_few": "{{count}} valandos",
+    "oclock_other": "{{count}} valandų",
+    "seconds_one": "{{count}} sekundė",
+    "seconds_few": "{{count}} sekundės",
+    "seconds_other": "{{count}} sekundžių"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Išgerkite stiklinę vandens."
+    },
+    "aab": {
+      "text": "Lėtai pažiūrėk į kairę, po to į dešinę."
+    },
+    "aac": {
+      "text": "Lėtai pažiūrėk į viršų, po to į dešinę."
+    },
+    "aad": {
+      "text": "Užsimerk ir giliai įkvėpk keletą kartų."
+    },
+    "aae": {
+      "text": "Užsimerk ir atsipalaiduok."
+    },
+    "aaf": {
+      "text": "Pratampyk kojas."
+    },
+    "aag": {
+      "text": "Pratampyk rankas."
+    },
+    "aah": {
+      "text": "Ar tavo sėdėjimo laikysena taisyklinga?"
+    },
+    "abi": {
+      "text": "Sėdėkite išsitiesę, rankos kabo šonuose, ir lėtai pasukite kaklą viena kryptimi dideliu ratu."
+    },
+    "abj": {
+      "text": "Atsistokite išsitiesę ir ta pačia ranka lėtai pakreipkite galvą link peties, kol pajusite tempimą."
+    },
+    "aai": {
+      "text": "Lėtai pasukite galvą į šoną ir palaikykite 10 sekundžių."
+    },
+    "aal": {
+      "text": "Nukreipkite akis į objektą, esantį bent už 20 metrų."
+    },
+    "aaj": {
+      "text": "Lėtai pakreipkite galvą į šoną ir palaikykite 5-10 sekundžių."
+    },
+    "aak": {
+      "text": "Atsistokite nuo kėdės ir išsitieskite."
+    },
+    "aap": {
+      "text": "Užmerkite akis ir skaičiuokite įkvėpimus."
+    },
+    "aaq": {
+      "text": "Užmerkite akis ir įvardykite dalykus, kuriuos girdite."
+    },
+    "aam": {
+      "text": "Skirkite šiek tiek laiko pagalvoti apie tai, ką vertinate."
+    },
+    "aan": {
+      "text": "Gyvybingai nusišypsokite."
+    },
+    "aao": {
+      "text": "Tikrai ergonomiška darbo vieta yra tokia, nuo kurios reguliariai atsitraukiate."
+    },
+    "aar": {
+      "text": "Padėkite pirštų galiukus ant pečių. 10 sekundžių sukite pečius į priekį, paskui atgal."
+    },
+    "aas": {
+      "text": "Pakelkite dešinę ranką, ištieskite ją virš galvos į kairę ir palaikykite 10 sekundžių. Pakartokite kitoje pusėje."
+    },
+    "aat": {
+      "text": "Dešine ranka paeiliui suimkite kiekvieną kairės rankos pirštą ir suspauskite. Pakartokite kitoje pusėje."
+    },
+    "aau": {
+      "text": "Atsistokite ir atlikite įtūpstą. Laikykite 10 sekundžių, tada atlikite kitą koją."
+    },
+    "aav": {
+      "text": "Užmerkite akis ir tiesiog pastebėkite tai, kas vyksta dabartiniu momentu, to nevertinant."
+    },
+    "aaw": {
+      "text": "Kas 20 minučių 20 sekundžių sutelkite dėmesį į objektą, esantį 20 pėdų atstumu."
+    },
+    "aax": {
+      "text": "Jei reikia pagalbos, paprašykite jos."
+    },
+    "aay": {
+      "text": "Darykite po vieną dalyką vienu metu."
+    },
+    "aaz": {
+      "text": "Ar jūsų dėmesys naudojamas protingai?"
+    },
+    "aba": {
+      "text": "Pakeiskite savo sėdėjimo padėtį."
+    },
+    "abb": {
+      "text": "Atskleiskite akis natūraliai šviesai."
+    },
+    "abc": {
+      "text": "Užsimerkę lėtai ir švelniai pakelkite akis į lubas ir grįžkite žemyn iki grindų."
+    },
+    "abd": {
+      "text": "Užmerkę akis lėtai ir švelniai perkelkite akis į kairę, tada lėtai į dešinę."
+    },
+    "abf": {
+      "text": "Po vieną kiekvieno piršto galiuku palieskite nykščio galiuką, kad jie sudarytų O formą."
+    },
+    "abh": {
+      "text": "Sugniaužkite kumštį, o tada ištieskite pirštus ir ištieskite juos kuo toliau."
+    },
+    "abg": {
+      "text": "Sugniaužkite kumštį, o tada pirštus stumkite aukštyn, kol jie bus nukreipti į lubas, tarsi liepdami kam nors sustoti."
+    },
+    "abk": {
+      "text": "Atsistokite išsitiesę, rankas laikydami prie šonų. Suspauskite pečių mentes ir palaikykite."
+    },
+    "abl": {
+      "text": "Atsistokite tiesiai, rankas iškėlę išilgai pečių. Rankas šiek tiek perkelkite už nugaros, palaikykite sekundę ir grįžkite atgal."
+    },
+    "abe": {
+      "text": "Pakratykite rankas, kad gautumėte palengvėjimą."
+    },
+    "abr": {
+      "text": "Atsisėskite ant kėdės krašto ir ištieskite vieną koją tiesiai prieš save, palaikykite 10-15 sekundžių. Pakartokite su kita koja."
+    },
+    "abt": {
+      "text": "Vieną ranką laikykite tiesiai į viršų, o kita ranka švelniai stumkite pirmosios rankos alkūnę link galvos. Laikykite 10-15 sekundžių. Pakartokite su kita ranka."
+    },
+    "abv": {
+      "text": "Ištieskite vieną ranką per krūtinę, kita ranka suimkite alkūnę ir švelniai pritraukite ją prie krūtinės. Pakartokite su kita ranka."
+    },
+    "abw": {
+      "text": "Atsistokite, vieną koją pastatykite ant šalia esančio daikto, pavyzdžiui, kėdės ar taburetės, ir palieskite kojų pirštus. Pakartokite su kita koja."
+    },
+    "abm": {
+      "text": "Atsisėskite ant kėdės krašto, pasukite liemenį į vieną pusę ir pabūkite 10-15 sekundžių. Pakartokite į kitą pusę."
+    },
+    "abn": {
+      "text": "Atsistokite ir vieną koją pastatykite ant šalia esančio daikto, pavyzdžiui, kėdės ar taburetės. Laikykite sulenktą kelį ir palaikykite 10-15 sekundžių. Pakartokite su kita koja."
+    },
+    "abo": {
+      "text": "Atsistokite taip, kad kojos būtų pečių plotyje, lenkitės žemyn tarsi sėstumėtės ant kėdės, po to vėl atsistokite. Pakartokite kelis kartus."
+    },
+    "abq": {
+      "text": "Atsistokite žiūrėdami į sieną ir atsiremkite į ją rankomis, paskui padarykite kelis atsispaudimus."
+    },
+    "abs": {
+      "text": "Atsistokite veidu į sieną, vieną koją pastatykite atgal, kitą - į priekį, tuomet atsiremkite į sieną. Pakartokite su kita koja."
+    },
+    "abu": {
+      "text": "Pakreipkite galvą į vieną, paskui į kitą pusę, po to švelniai palenkite ją į priekį ir atgal."
+    },
+    "abx": {
+      "text": "Atsistokite tarpduryje ir rankomis atsiremkite į abu statramsčius, tuomet švelniai lenkitės į priekį tol, kol pajusite tempimą krūtinėje."
+    },
+    "aby": {
+      "text": "Atsisėskite ant kėdės krašto arba ant grindų, suglauskite kojų padus ir švelniai prispauskite alkūnėmis taip, kad ištemptumėte vidinę šlaunų pusę."
+    },
+    "abp": {
+      "text": "Atsistokite, nugara ir rankomis atsiremkite į sieną, tuomet lėtai judinkite rankas aukštyn ir žemyn."
+    }
+  },
+  "longBreakIdeas": {
+    "aaa": {
+      "title": "Ne vienas",
+      "text": "Ar jums sunku pailsėti vienam? Pabandykite tai padaryti su bendradarbiu. Be to, kad bus lengviau laikytis pertraukų, turėsite galimybę geriau jį pažinti. Pertraukas darant kartu padidėja produktyvumas."
+    },
+    "aab": {
+      "text": "Ar kada nors pastebėjote, kad jūsų smegenys gali viską išsiaiškinti pačios? Tereikia atsitraukti nuo kompiuterio ir padaryti pertraukėlę, kad pagalvotumėte apie ką nors visiškai nesusijusio.",
+      "title": "Atsitraukite"
+    },
+    "aac": {
+      "text": "Poilsis yra pagrindinis komponentas, užtikrinantis raumenų ir kaulų sistemos veiklą. Dažnos pertraukėlės gali sutrumpinti užduoties trukmę ir sumažinti ergonominių sužalojimų riziką.",
+      "title": "Mikro pertraukėlės"
+    },
+    "aad": {
+      "title": "Meditacija",
+      "text": "Tyrimai rodo, kad sąmoningumu pagrįsti pratimai padeda sumažinti nerimą, depresiją, stresą ir skausmą bei pagerinti bendrą sveikatą, psichinę sveikatą ir gyvenimo kokybę. Nežinote, kaip pradėti? Yra daug programų, kurios jums padės."
+    },
+    "aae": {
+      "title": "Pamirksėkite",
+      "text": "Ilgai žiūrėdami į ekraną mažiau mirksite, todėl jūsų akys yra veikiamos oro. Kelias sekundes greitai mirksėkite, kad atsinaujintų ašarų plėvelė ir nuo akių paviršiaus pasišalintų dulkės."
+    },
+    "aaf": {
+      "title": "Ergonomika",
+      "text": "Netinkamas klaviatūros, pelės, monitoriaus ar darbinio paviršiaus aukštis ir kampas gali sukelti sveikatos problemų. Skirkite šiek tiek laiko ir paskaitykite apie stalo ergonomiką."
+    },
+    "aag": {
+      "title": "Judesys",
+      "text": "Yra daugybė būdų, kaip galite mankštintis savo biure. Pabandykite žygiuoti vietoje arba daryti stalo atsispaudimus."
+    },
+    "aai": {
+      "title": "Pastebėkite",
+      "text": "Ar svajojate ar jums sunku susikaupti? Tai ženklas, kad reikia padaryti pertrauką."
+    },
+    "aah": {
+      "text": "Ar turite stabilumo kamuolį ar stovintį darbo stalą? Apsvarstykite galimybę kuriam laikui pakeisti savo stalo kėdę jais.",
+      "title": "Pokyčiai"
+    },
+    "aaj": {
+      "title": "Technologijos",
+      "text": "O kaip apie pasivaikščiojimą be technologijų?"
+    },
+    "aak": {
+      "title": "Metabolizmas",
+      "text": "Nauji tyrimai rodo, kad ilgas sėdėjimas padidina metabolinio sindromo, širdies priepuolio ir insulto riziką bei bendrą mirties riziką. Reguliarios vaikščiojimo pertraukėlės gali pagerinti jūsų kraujotaką ir padėti įveikti kai kurias iš šių problemų."
+    },
+    "aal": {
+      "title": "Aktyvūs susitikimai",
+      "text": "O kaip apie susitikimų perkėlimą iš konferencijų salės į salę? Vaikščiojimas ne tik degina kalorijas, bet ir gali skatinti bendradarbiavimo jausmą."
+    },
+    "aam": {
+      "title": "Vaisiai",
+      "text": "Neskubėkite ir suvalgykite vaisių. Lėtai. Atkreipkite dėmesį į skonį, tekstūrą, šviežumą."
+    },
+    "aan": {
+      "text": "Eidami į tualetą eikite į tolimiausią tualetą darbo vietoje.",
+      "title": "Tualetas"
+    },
+    "aao": {
+      "title": "Kavos pertraukėlė",
+      "text": "Einate kavos pertraukėlės? Apsvarstykite galimybę 5 minutes pasivaikščioti kiekvieną kartą, kai einate į ją."
+    },
+    "aap": {
+      "title": "Kolegos",
+      "text": "Nesiųskite el. laiškų ir nesiųskite žinučių biuro kolegoms, eikite prie jų darbo stalo ir bendraukite su jais."
+    },
+    "aaq": {
+      "title": "Mokymasis",
+      "text": "Tirdami sveikus savanorius, NIH mokslininkai nustatė, kad trumpos pertraukėlės, anksti ir dažnai, gali padėti mūsų smegenims išmokti naujų įgūdžių."
+    },
+    "aar": {
+      "title": "Pratimai",
+      "text": "Įrodymai rodo, kad nedidelis reguliarios mankštos kiekis gali turėti didelę naudą sveikatai, įskaitant pastebimą streso sumažinimą."
+    },
+    "aas": {
+      "text": "Ar radote savo tempimo rutiną? Nepamirškite to pakartoti daugiau nei vieną kartą, kad geriau kovotumėte su ilgo sėdėjimo padariniais.",
+      "title": "Pakartokite"
+    },
+    "aat": {
+      "title": "Riešas ir dilbis",
+      "text": "Ištieskite rankas delnais į save, tada lėtai pasukite rankas keturis kartus pagal laikrodžio rodyklę, tada keturis kartus prieš laikrodžio rodyklę."
+    },
+    "aau": {
+      "title": "Nugaros tempimas",
+      "text": "Sujunkite rankas už galvos, tada pakelkite jas virš galvos, delnais į viršų."
+    },
+    "aav": {
+      "title": "Mobilumas",
+      "text": "Kiekvieną trisdešimties stagnacijos minučių turėtumėte turėti bent vieną minutę stimuliacijos."
+    },
+    "aay": {
+      "text": "Tyrimai parodė, kad lipimas laiptais, kuris laikomas intensyvaus intensyvumo fizine veikla, sudegina daugiau kalorijų per minutę nei bėgiojimas.",
+      "title": "Lipkite laiptais"
+    },
+    "aaz": {
+      "title": "Kurkite meną",
+      "text": "Yra žinoma, kad meno terapija turi didelę naudą psichinei sveikatai, ypač kai kalbama apie streso valdymą. Kodėl neparašyti greito eilėraščio, nenufotografuoti ar nenupiešti ką nors nedidelio?"
+    },
+    "aba": {
+      "text": "Švari erdvė padeda sutelkti dėmesį į darbą ir dažnai yra susijusi su teigiamomis emocijomis, tokiomis kaip laimė.",
+      "title": "Atsisakykite netvarkos"
+    },
+    "abb": {
+      "text": "Gamta yra susijusi su teigiamomis emocijomis ir sumažėjusiu stresu bei nerimu. Kai tik įmanoma, pabandykite padaryti dienos pietų pertrauką lauke, apsupti žalumos.",
+      "title": "Pietūs lauke"
+    },
+    "abc": {
+      "title": "Viešasis transportas",
+      "text": "Jei reguliariai naudojatės viešuoju transportu, galite stovėti, o ne sėdėti. Jei įmanoma, stenkitės kuo daugiau savo kasdienių kelionių pakeisti pėsčiomis ar važiavimu dviračiu."
+    },
+    "abe": {
+      "title": "Dėmesio nukreipimas",
+      "text": "Laikykite vieną pirštą prie akies ir sutelkite dėmesį į jį. Lėtai atitraukite pirštą, sufokusuokite dėmesį į tolį, o tada atgal į pirštą. Patraukite pirštą atgal ir sutelkite dėmesį į kažką toli dar kartą."
+    },
+    "abd": {
+      "title": "Žiovulys",
+      "text": "Žiovulys gali būti tikrai naudingas, nes jis gamina ašaras, kurios padeda drėkinti ir sutepti akis."
+    },
+    "abf": {
+      "title": "Delnai",
+      "text": "Sėdėdami priglauskite alkūnes prie stalo ir prisiglauskite prie stalo krašto. Tegul jūsų svoris nukrenta į priekį, o tuomet uždėkite rankas ant akių. Užmerkite akis ir lėtai įkvėpkite per nosį ir palaikykite kelias sekundes. Tęskite gilų kvėpavimą."
+    },
+    "abg": {
+      "title": "Rankų suspaudimai",
+      "text": "Suspauskite porą susuktų kojinių arba minkštą guminį kamuoliuką, palaikykite 5 sekundes. Viską pakartokite keletą kartų."
+    },
+    "abh": {
+      "title": "Lėtas kvėpavimas",
+      "text": "Nauji tyrimai rodo, kad galima naudoti kontroliuojamo lėto kvėpavimo metodus kaip priemonę optimizuoti fiziologinius parametrus, kurie, atrodo, yra susiję su sveikata ir ilgaamžiškumu."
+    },
+    "aaw": {
+      "title": "7 minučių treniruotė",
+      "text": "Ši treniruotė per trumpą laiką apima viso kūno mankštą. Tačiau, kaip ir atliekant bet kokį pratimą, būkite atsargūs. Yra daug programėlių, kurios padės jums pradėti."
+    },
+    "aax": {
+      "title": "Pulsas",
+      "text": "Padidinkite pulso dažnį iki 120 dūžių per minutę 20 minučių keturis ar penkis kartus per savaitę darydami viską, kas jums patinka. Reguliarus širdies susitraukimų dažnio didinimas pagerina širdies ir kraujagyslių sistemos būklę."
+    },
+    "abi": {
+      "title": "Įsivaizdavimas",
+      "text": "Užsimerkite ir įsivaizduokite save ramioje, raminančioje vietoje, pavyzdžiui, paplūdimyje ar miške, ir susitelkite į šios aplinkos vaizdus, garsus ir pojūčius."
+    },
+    "abj": {
+      "title": "Užvaldė emocijos?",
+      "text": "Išbandykite įsižeminimo pratimą „5-4-3-2-1“: pastebėkite 5 dalykus, kuriuos matote, 4 – paliečiamus, 3 – skleidžiančius garsą, 2 – kvepiančius ir vieną, kurį galėtumėte paragauti."
+    }
+  }
+}

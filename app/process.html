@@ -2,12 +2,12 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>stretchly</title>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src https://api.github.com">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src https://api.github.com">
+    <title>Stretchly</title>
   </head>
   <body>
-    <script>
-      require('./process.js')
-    </script>
   </body>
+  <script type="module" src="./process-renderer.js"></script>
 </html>

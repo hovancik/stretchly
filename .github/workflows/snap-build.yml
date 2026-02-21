@@ -1,0 +1,30 @@
+name: Linux Snap build
+
+on:
+  push:
+    branches:
+      - release
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Setup build environment
+      uses: ./.github/actions/setup-build
+    - name: Build snap package
+      run: node_modules/.bin/electron-builder --linux snap --publish=never
+      env:
+        GH_TOKEN: ${{ secrets.github_token }}
+    - name: Setup Snapcraft
+      run: |
+          sudo snap install snapcraft --classic
+          echo "$SNAP_TOKEN" | snapcraft login --with -
+          snapcraft upload --release=candidate ./dist/Stretchly_*.snap
+      env:
+        SNAP_TOKEN: ${{secrets.snap_token}}

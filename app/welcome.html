@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title data-i18next="welcome.title"></title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/color-scheme.css">
+  <link rel="stylesheet" type="text/css" href="css/commons.css">
+  <link rel="stylesheet" type="text/css" href="css/welcome.css">
+</head>
+
+<body>
+  <div class="welcome">
+    <div>
+      <div>
+        <img src="images/stretchly.svg" data-has-dark-version alt="Stretchy logo">
+        <span>Stretchly</span>
+      </div>
+      <span data-i18next="welcome.breakTimeReminderApp"></span>
+    </div>
+    <div>
+      <select name="language" id="language" size="20">
+        <!--Keep languages in the alphabet order-->
+        <option value="ajp">اللهجة الأردنية</option>
+        <option value="bg">Български</option>
+        <option value="be">Беларуская мова</option>
+        <option value="bn">বাংলা</option>
+        <option value="ca">Català</option>
+        <option value="cs">Čeština</option>
+        <option value="da">Dansk</option>
+        <option value="de">Deutsch</option>
+        <option value="el">Ελληνικά</option>
+        <option value="en">English</option>
+        <option value="eo">Esperanto</option>
+        <option value="es">Español</option>
+        <option value="et">Eesti keel</option>
+        <option value="fa">فارسی</option>
+        <option value="fi">Suomi</option>
+        <option value="fil">Wikang Filipino</option>
+        <option value="fr">Français</option>
+        <option value="gl">Galego</option>
+        <option value="gu">ગુજરાતી</option>
+        <option value="he">עברית</option>
+        <option value="hi">हिन्दी</option>
+        <option value="hu">Magyar</option>
+        <option value="id">Bahasa Indonesia</option>
+        <option value="it">Italiano</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="lt">Lietuvių</option>
+        <option value="lv">Latviešu</option>
+        <option value="mk">Македонски</option>
+        <option value="nb-NO">Bokmål</option>
+        <option value="nl">Nederlands</option>
+        <option value="np">नेपाली</option>
+        <option value="pl">Polski</option>
+        <option value="pt">Português</option>
+        <option value="pt-BR">Brasileiro</option>
+        <option value="pu">ਪੰਜਾਬੀ</option>
+        <option value="ro">Română</option>
+        <option value="ru">Русский</option>
+        <option value="si">සිංහල</option>
+        <option value="sk">Slovenčina</option>
+        <option value="sl">Slovenščina</option>
+        <option value="sr">српски језик</option>
+        <option value="sv">Svenska</option>
+        <option value="ta">தமிழ்</option>
+        <option value="th">ภาษาไทย</option>
+        <option value="tr">Türkçe</option>
+        <option value="uk">Українська</option>
+        <option value="vi">Tiếng Việt</option>
+        <option value="yi">ייִדיש</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">正體中文</option>
+      </select>
+    </div>
+    <div>
+      <div>
+        <button type="button" data-location="tutorial" data-same-width-button
+          data-i18next="welcome.viewTutorial"></button>
+      </div>
+      <div>
+        <button type="button" data-location="preferences" data-same-width-button
+          data-i18next="welcome.openPreferences"></button>
+        <p></p>
+        <button class="push" type="button" data-same-width-button data-i18next="welcome.getStarted" autofocus></button>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="module" src="./welcome-renderer.js"></script>
+
+</html>

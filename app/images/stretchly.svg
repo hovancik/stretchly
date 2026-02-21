@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>• Logo Stretchly / Generic / Aqua</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 57.3333333 0 57.3333333 64 0 64"></polygon>
+    </defs>
+    <g id="•-Logo-Stretchly-/-Generic-/-Aqua" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <rect id="posn" x="0" y="0" width="64" height="64"></rect>
+            <g id="logo-stretchly-01" transform="translate(3.000000, 0.000000)">
+                <g id="Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Path"></g>
+                    <g id="Group" mask="url(#mask-2)" fill-rule="nonzero">
+                        <path d="M43.054,46.1053333 C43.054,26.3393333 24,30.2126667 24,19.676 C24,15.292 25.6293333,10.6666667 33.3773333,10.6666667 C46.474,10.6666667 57.3333333,22.8153333 57.3333333,37.4673333 C57.3333333,52.1206667 46.566,64 33.47,64 C39.2533333,60.6473333 43.054,53.892 43.054,46.1053333" id="Path" fill="#000000"></path>
+                        <path d="M23.8626667,0 C18.0793333,3.352 14.2793333,10.1073333 14.2793333,17.896 C14.2793333,37.662 33.3333333,33.786 33.3333333,44.3226667 C33.3333333,48.7086667 31.7033333,53.3333333 23.954,53.3333333 C10.8586667,53.3333333 0,41.1833333 0,26.532 C0,11.88 10.7666667,0 23.8626667,0" id="Path" fill="#CC0000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

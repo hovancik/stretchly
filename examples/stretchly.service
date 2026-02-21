@@ -1,0 +1,16 @@
+[Unit]
+Description="Start Stretchly"
+After=default.target
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 1
+ExecStart=/usr/bin/stretchly
+# Flatpak
+# ExecStart=flatpak run net.hovancik.Stretchly
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=default.target

@@ -1,4 +1,4 @@
-let Shuffled = require('./shuffled')
+import Shuffled from './shuffled.js'
 
 class IdeasLoader {
   constructor (data) {
@@ -11,4 +11,5 @@ class IdeasLoader {
     )
   }
 }
-module.exports = IdeasLoader
+
+export default IdeasLoader

@@ -1,47 +1,43 @@
 {
-  "name": "stretchly",
-  "version": "0.8.1",
-  "description": "break time reminder app",
-  "engines": {
-    "node": "7.4.0"
-  },
+  "name": "Stretchly",
+  "version": "1.20.0",
+  "description": "The break time reminder app",
+  "main": "app/main.js",
+  "type": "module",
   "scripts": {
-    "start": "electron ./app --enable-logging --remote-debugging-port=9222",
-    "dev": "NODE_ENV='development' npm run start",
-    "postinstall": "install-app-deps",
-    "pack-all": "build --dir -mwl --x64 --ia32",
-    "dist-all": "build -mwl --x64 --ia32",
-    "pack": "build --dir",
-    "dist": "build --x64 --ia32",
-    "test": "mocha test"
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
+    "postinstall": "electron-builder install-app-deps",
+    "pack": "electron-builder build --dir",
+    "dist": "electron-builder build",
+    "test": "vitest run",
+    "test-single": "vitest run $1",
+    "coverage": "vitest run --coverage",
+    "tdd": "vitest --watch test",
+    "lint": "cross-env ./node_modules/.bin/standard",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hovancik/stretchly.git"
   },
   "keywords": [
-    "stretchly",
+    "Stretchly",
     "break",
     "time",
     "reminder"
   ],
-  "author": "Jan Hovancik <conta.srdr@gmail.com>",
+  "author": "Jan Hovancik <jan@hovancik.net>",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/hovancik/stretchly/issues"
   },
   "homepage": "https://hovancik.net/stretchly",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "electron": "^1.6.2",
-    "electron-builder": "^16.8.4",
-    "mocha": "^3.2.0",
-    "spectron": "^3.6.1"
-  },
   "build": {
     "appId": "net.hovancik.stretchly",
-    "productName": "stretchly",
+    "productName": "Stretchly",
     "dmg": {
       "icon": "build/icon.icns",
       "iconSize": 128,
@@ -62,37 +58,109 @@
     "mac": {
       "category": "public.app-category.healthcare-fitness",
       "target": [
-        "dmg",
-        "zip"
-      ]
+        {
+          "target": "dmg",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "extendInfo": {
+        "LSBackgroundOnly": 1,
+        "LSUIElement": 1
+      }
     },
     "linux": {
+      "category": "Utility",
       "target": [
         "AppImage",
         "deb",
         "rpm",
         "freebsd",
         "pacman",
-        "tar.xz"
+        "tar.xz",
+        "apk"
+      ],
+      "asarUnpack": "node_modules/macos-notification-state/**"
+    },
+    "rpm": {
+      "fpm": [
+        "--rpm-rpmbuild-define",
+        "_build_id_links none"
       ]
+    },
+    "appx": {
+      "identityName": "33881JanHovancik.stretchly",
+      "publisher": "CN=35004EDA-CCDD-4304-A014-784D754E043F",
+      "publisherDisplayName": "Jan Hovancik",
+      "applicationId": "Stretchly",
+      "displayName": "Stretchly"
     },
     "win": {
       "target": [
         "nsis",
         "7z",
-        "zip"
+        "appx",
+        "portable"
+      ],
+      "asarUnpack": [
+        "node_modules/windows-notification-state/**",
+        "node_modules/macos-notification-state/**"
       ]
+    },
+    "portable": {
+      "artifactName": "${productName} Portable ${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "nsisWeb": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   },
   "standard": {
     "globals": [
       "it",
       "describe",
+      "before",
+      "after",
       "beforeEach",
       "afterEach",
       "Audio",
       "fetch",
-      "Notification"
+      "Notification",
+      "alert",
+      "__electronLog"
     ]
+  },
+  "devDependencies": {
+    "@vitest/coverage-istanbul": "^4.0.18",
+    "cross-env": "^10.1.0",
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1",
+    "husky": "^9.1.7",
+    "jsdom": "^28.1.0",
+    "rimraf": "^6.1.3",
+    "standard": "^17.1.2",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@particle/dbus-next": "^0.11.4",
+    "auto-launch": "^6.0.0-rc1",
+    "dompurify": "^3.3.1",
+    "electron-log": "^5.4.3",
+    "electron-store": "^11.0.2",
+    "humanize-duration": "^3.33.2",
+    "i18next": "^25.8.11",
+    "i18next-fs-backend": "^2.6.1",
+    "luxon": "^3.7.2",
+    "meeussunmoon": "^3.1.0",
+    "node-desktop-idle-v2": "^1.1.22",
+    "ps-list": "^9.0.0",
+    "semver": "^7.7.4",
+    "windows-focus-assist": "^1.4.0"
   }
 }

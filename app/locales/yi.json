@@ -1,0 +1,109 @@
+{
+  "preferences": {
+    "nav": {
+      "schedule": "זמנים",
+      "about": "וועגן",
+      "heart": "האב ליב סטרעטשלי",
+      "settings": "אָפּציעס",
+      "theme": "אויסזען"
+    },
+    "settings": {
+      "language": "שפּראַך קלייבן:",
+      "window": "פֿענצטער",
+      "fullscreen": "אויף די גאַנצע פאַרשטעלן"
+    },
+    "title": "סטרעטשלי־אָפּציעס",
+    "schedule": {
+      "every": "יעדער:",
+      "longBreaks": "לאנג ברעכנער"
+    },
+    "theme": {
+      "greenClouds": "גרין וואָלקן",
+      "coffeeKisses": "קאווע־קיס",
+      "morningSwim": "מאָרגן־שווימען",
+      "crystalGlass": "קריסטאַל־גלאָז",
+      "ticToc": "טיק־טאַק",
+      "snowWhite": "ווייס־שניי",
+      "graphiteCrystal": "גראפֿיט־קריסטאַל",
+      "sounds": "סאָונדס:",
+      "windChime": "ווינט־שפּיל",
+      "colour": "פֿארבּיק",
+      "monochrome": "מאָנאָכראָם",
+      "appearance": "אויס־זען:",
+      "autumnBeBlessed": "ברכה'דיגע הַארבּסט"
+    },
+    "about": {
+      "version": "ווערסיאַ: ",
+      "latestVersion": "נאַוסטע ווערסיאַ: ",
+      "ourWebsite": "אונדזער וועבזייטל בעזוכן",
+      "dot": ".",
+      "janH": "יאַן האָוואַנציק"
+    },
+    "heart": {
+      "loveStretchly": "האָב ליב איר סטרעטשלי?",
+      "syncPreferences": "סינכראָניזאַציע אָפּציעס"
+    }
+  },
+  "longBreakIdeas": {
+    "aad": {
+      "title": "מעדיטאַציע"
+    },
+    "aan": {
+      "title": "וואָשצימערען"
+    },
+    "aaj": {
+      "title": "טעכנאָלאָגיע"
+    },
+    "aam": {
+      "title": "פרוקטן"
+    },
+    "aaq": {
+      "title": "לערנען"
+    },
+    "aaf": {
+      "title": "ערגאָנאָמיקע"
+    }
+  },
+  "utils": {
+    "hours_one": "{{count}} שעה",
+    "hours_other": "{{count}} שעהען",
+    "minutes_one": "{{count}} מינוט",
+    "minutes_other": "{{count}} מינוטן",
+    "seconds_one": "{{count}} סעקונד",
+    "seconds_other": "{{count}} סעקונדעס"
+  },
+  "main": {
+    "breakIn": "לאנג ברעכן $t(utils.seconds, {'count': {{seconds}} }) ארום",
+    "untilMorning": "ביז מאָרגן",
+    "toolTipHeader": "סטרעטשלי - די ברעכן דערמאָנונג אַפּ",
+    "microbreakIn": "מיני־ברעכן $t(utils.seconds, {'count': {{seconds}} }) ארום",
+    "toBreak": "לאנג ברעכן",
+    "toMicrobreak": "מיני־ברעכן",
+    "pause": "פויז ברעכן",
+    "forHour": "איינע שעה",
+    "for2Hours": "2 שעהען",
+    "for5Hours": "5 שעהען",
+    "downloadLatestVersion": "אָפּלאָדירן די נואַסט ווערסיע",
+    "quitStretchly": "האַלטן סטרעטשלי",
+    "continue": "פֿאָרזעצן",
+    "cancel": "קאַנסאַל",
+    "preferences": "אָפּציעס"
+  },
+  "contributorPreferences": {
+    "appearance": "אויסזען:",
+    "welcomeWindow": "",
+    "beforeLongBreak": "לאַנג ברעכן:",
+    "beforeMiniBreak": "מיני ברעכן:",
+    "system": "ווי דאָס סיסטעם",
+    "dark": "טונקל",
+    "light": "ליכטיק",
+    "timeToBreakInTray": "עס איז ברעכן־צייט",
+    "sounds": "סאָונדס:"
+  },
+  "break": {
+    "title": "דאָס איז אַ ברעכן־צייט!"
+  },
+  "welcome": {
+    "title": "ברוכים־הבאים צו סטרעטשלי"
+  }
+}

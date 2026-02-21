@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    volumes:
+      - .:/stretchly
+    command: bash -c "tail -F anything"
+    network_mode: "bridge"

@@ -1,0 +1,519 @@
+{
+  "main": {
+    "toolTipHeader": "Stretchly - A szünet emlékeztető alkalmazás",
+    "microbreakIn": "Rövid szünet $t(utils.seconds, {'count': {{seconds}} }) múlva",
+    "breakIn": "Hosszú szünet $t(utils.seconds, {'count': {{seconds}} }) múlva",
+    "resumingBreaks": "Szünetek folytatása",
+    "downloadLatestVersion": "Legfrissebb verzió letöltése",
+    "toBreak": "Hosszú szünet",
+    "toMicrobreak": "Rövid szünet",
+    "skipToTheNext": "Ugrás a következőre",
+    "resume": "Szünetek folytatása",
+    "pause": "Szünetek felfüggesztése",
+    "forHour": "1 órára",
+    "for2Hours": "2 órára",
+    "for5Hours": "5 órára",
+    "untilMorning": "Reggelig",
+    "indefinitely": "Határozatlan ideig",
+    "resetBreaks": "Szünetek visszaállítása",
+    "quitStretchly": "Stretchly bezárása",
+    "restoreDefaults": "Alapértelmezések visszaállítása",
+    "warning": "Az alkalmazás alapértelmezett beállításai visszaállnak és az összes jelenlegi beállítás elvész.",
+    "continue": "Folytatás",
+    "cancel": "Mégsem",
+    "preferences": "Beállítások",
+    "contributorPreferences": "Támogatói beállítások",
+    "syncPreferences": "Beállítások szinkronizálása"
+  },
+  "break": {
+    "postpone": "Szünet elhalasztása",
+    "skip": "Szünet kihagyása",
+    "title": "Itt az ideje szünetet tartani!",
+    "finish": "Szünet befejezése"
+  },
+  "preferences": {
+    "title": "Stretchly Beállítások",
+    "nav": {
+      "settings": "Beállítások",
+      "schedule": "Időzítés",
+      "theme": "Téma",
+      "about": "Névjegy",
+      "heart": "Stretchly támogatása"
+    },
+    "settings": {
+      "openAtLogin": "Stretchly automatikus indítása bejelentkezés után",
+      "showBreaksIn": "Szünetek megjelenítése:",
+      "window": "Ablakban",
+      "fullscreen": "Teljes képernyőn",
+      "showIdeas": "Gyakorlati tippek megjelenítése szünetek alatt",
+      "allScreens": "Szünetek megjelenítése az összes monitoron",
+      "monitorIdleTime": "Távollét figyelése (szünetek felfüggesztve, amíg a rendszer tétlen).",
+      "monitorDnd": "Szünetek megjelenítése Ne Zavarjanak Módban is",
+      "language": "Nyelv kiválasztása:",
+      "restoreDefaults": "Alapértelmezések visszaállítása"
+    },
+    "schedule": {
+      "miniBreaks": "Rövid szünetek:",
+      "miniBreaksInfo": "A Rövid szünetek nyújtózás és relaxálás céljából végzett rövid ideig tartó szünetek.",
+      "enableMiniBreaks": "Rövid szünetek engedélyezése",
+      "breakFor": "Hossza:",
+      "every": "Gyakorisága:",
+      "showNotificationBeforeMiniBreak": "Értesítés megjelenítése mielőtt a Rövid szünet kezdődik",
+      "enablePostponeMini": "Rövid szünetek elhalasztásának engedélyezése",
+      "longBreaks": "Hosszú szünetek:",
+      "longBreaksInfo": "A Hosszú szünetek ritkább, de hosszabb ideig tartó szünetek, melyek segítségével hosszabb pihenőt tarthatsz munka közben.",
+      "enableLongBreaks": "Hosszú szünetek engedélyezése",
+      "showNotificationBeforeLongBreak": "Értesítés megjelenítése mielőtt a Hosszú szünet kezdődik",
+      "enablePostponeLong": "Hosszú szünetek elhalasztásának engedélyezése",
+      "strictMode": "Szigorú mód:",
+      "strictModeInfo": "A Szigorú mód megakadályozza, hogy kihagyd a Rövid és/vagy Hosszú szüneteket, fejlesztve ezzel a fegyelmed.",
+      "enableStrictMini": "Szigorú mód engedélyezése Rövid szünetekre",
+      "enableStrictLong": "Szigorú mód engedélyezése Hosszú szünetekre",
+      "cantDisableBoth": "Nem tudod mindkét típusú szünetet letiltani"
+    },
+    "theme": {
+      "appearance": "Kinézet:",
+      "greenClouds": "Zöld felhők",
+      "autumnBeBlessed": "Őszi áldás",
+      "graphiteCrystal": "Grafitkristály",
+      "coffeeKisses": "Kávé csók",
+      "morningSwim": "Reggeli úszás",
+      "sounds": "Hangok:",
+      "enableSounds": "Hangok engedélyezése",
+      "crystalGlass": "Üveg csilingelés",
+      "windChime": "Szélcsengő",
+      "ticToc": "Tikk-takk",
+      "trayIcon": "Menüsáv ikon:",
+      "colour": "Színes",
+      "monochrome": "Egyszínű",
+      "invertedMonochrome": "Fordított egyszínű",
+      "snowWhite": "Hófehér",
+      "transparentMode": "Áttetszőség bekapcsolása",
+      "reverie": "Álmodozás",
+      "silence": "Csend"
+    },
+    "about": {
+      "tagline": "A szünet emlékeztető alkalmazás",
+      "version": "Verzió: ",
+      "latestVersion": "Legfrissebb verzió: ",
+      "notifyNewVersion": "Automatikus értesítés új verziók esetén",
+      "learnMore": "Ahhoz, hogy többet tudj meg a Stretchly funkciókról, útmutatókat nézz meg, letöltsd a legfrissebb verziót vagy, hogy írj az ügyfélszolgálatunknak, ",
+      "ourWebsite": "látogasd meg a weboldalunkat",
+      "dot": ".",
+      "developedBy": "Fejlesztette",
+      "janH": "Jan Hovancik",
+      "designedBy": "Ikont és kinézetet tervezte Colin Shanley",
+      "checkNewVersion": "Frissítés automatikus engedélyezése"
+    },
+    "heart": {
+      "loveStretchly": "Szereted a Stretchlyt?",
+      "desc1": "A számítógép használat közben tartott rendszeres szünetek tudományosan bizonyítottan fontosak a testi és szellemi jólét fenntartásához.",
+      "desc2": "A Stretchly alkalmazás ingyenes, de támogathatsz minket, hogy továbbra is fejleszteni tudjuk a Stretchly-t és egyéb ingyenes szoftvereinket.",
+      "becomeContributor": "Legyél támogató (Patreon)",
+      "alreadyContributor": "Már támogató vagyok",
+      "authenticateUsing": "Azonosítás a következővel:",
+      "contributorPreferences": "Támogatói beállítások",
+      "syncPreferences": "Beállítások szinkronizálása"
+    }
+  },
+  "contributorPreferences": {
+    "title": "Támogatói beállítások",
+    "notifications": "Szünet értesítések:",
+    "notificationsInfo": "A lent megadott időpontban értesítés fog érkezni, hogy felkészülhess a szünetekre.",
+    "beforeLongBreak": "Hosszú szünet előtt:",
+    "beforeMiniBreak": "Rövid szünet előtt:",
+    "newVersion": "Új verzió:",
+    "newVersionNotification": "Értesítsen, ha új verzió érhető el",
+    "customIdeas": "Egyéni szünet alatti ötletek:",
+    "customIdeasInfo": "Egyéni szünet alatti ötleteket adhatsz meg a konfigurációs fájl szerkesztésével. (Haladó felhasználóknak.)",
+    "useIdeasFromSettings": "Mozgás tippek használata a konfigurációs fájlból",
+    "breakPostpone": "Szünetek elhalasztása:",
+    "breakPostponeInfo": "Lehetőség van a szünetek elhalasztására, ha a Beállítások ablakban engedélyezed azt. A következő beállítások segítségével megadhatod, hogy mikor, milyen hosszú időre, illetve hány alkalommal halaszthass el egy szünetet.",
+    "miniBreaks": "Rövid szünetek:",
+    "postponableFor": "Elhalasztható eddig:",
+    "postponeFor": "Elhalasztás eddig:",
+    "maxPostpones": "Elhalasztható ennyiszer:",
+    "longBreaks": "Hosszú szünetek:",
+    "pauseUntilMorning": "Felfüggesztés reggelig:",
+    "pauseUntil": "Szüneteltetés eddig:",
+    "pauseUntilMorningInfo": "Állítsd be, hogy a 'Felfüggesztés reggelig' hány óráig függessze fel a szüneteket.",
+    "welcomeWindow": "Üdvözlő ablak:",
+    "showWelcomeWindow": "Üdvözlő ablak megjelenítése a következő indításkor",
+    "sounds": "Hangok:",
+    "volume": "Hangerő:",
+    "miniBreakStartSound": "Hang a Rövid szünetek kezdetekor",
+    "longBreakStartSound": "Hang a Hosszú szünetek kezdetekor",
+    "naturalBreaks": "Természetes szünetek:",
+    "naturalBreaksInfo": "Ha a Távollét naplózása engedélyezve van a Beállítások ablakban, itt megadhatod, hogy mennyi idő eltelte után legyen a visszaszámlálás szüneteltetve.",
+    "pauseAfter": "Szüneteltetés ezután:",
+    "appearance": "Megjelenés:",
+    "light": "Világos",
+    "dark": "Sötét",
+    "system": "Rendszer",
+    "breakWindowWidth": "Szélesség:",
+    "breakWindowHeight": "Magasság:",
+    "4": "Ötödik monitor",
+    "0": "Első monitor",
+    "1": "Második monitor",
+    "2": "Harmadik monitor",
+    "3": "Negyedik monitor",
+    "showBreaksAsRegularWindowsTitle": "Ablak üzemmód:",
+    "showTrayIcon": "Tálca ikon megjelenítése",
+    "toShowTrayIcon": "Mutassa a Stretcly ikont a tálcán",
+    "showCurrentTimeInBreaks": "Mutassa a jelenlegi időt a szünet ablakban",
+    "screen": "Monitor a szünetekhez:",
+    "screenInfo": "Ha a szünetek megjelenítése az összes monitoron nincs engedélyezve, kiválaszthatod, hogy melyik monitoron szeretnéd a szüneteket megjeleníteni.",
+    "cursor": "Egérmutató követése",
+    "showOnMonitor": "Szünetek megjelenítése",
+    "primary": "Elsődleges monitor",
+    "timeToBreakInTray": "Hátralévő idő szünetig",
+    "showTimeToBreakInTray": "Mutassa a következő szünetig hátralévő időt a tálca ikonon",
+    "breakWindowSize": "Szünet ablak mérete",
+    "breakWindowSizeInfo": "A képernyő hány százalékát töltse ki a szünet ablak?",
+    "opacity": "Áttetszőség:",
+    "opacityTheme": "Téma áttetszősége:",
+    "showBreaksAsRegularWindows": "Mutassa a szüneteket ablak üzemmódban",
+    "opacityInfo": "Mennyire legyen áttetsző a szünet ablak?",
+    "showBreaksAsRegularWindowsInfo": "Ha engedélyezed, a szünet ablak nem lesz \"Mindig felül\" módban, fókuszálható lesz és a tálcán is megjelenik.",
+    "currentTimeInBreaks": "Jelenlegi idő"
+  },
+  "utils": {
+    "none_one": "{{count}}",
+    "none_other": "{{count}}",
+    "percent_one": "{{count}} százalék",
+    "percent_other": "{{count}} százalék",
+    "oclock_one": "{{count}}:00",
+    "oclock_other": "{{count}}:00",
+    "seconds_one": "{{count}} másodperc",
+    "seconds_other": "{{count}} másodperc",
+    "minutes_one": "{{count}} perc",
+    "minutes_other": "{{count}} perc",
+    "hours_one": "{{count}} óra",
+    "hours_other": "{{count}} óra",
+    "remaining": "{{count}} van hátra",
+    "inAbout": "kb {{count}} múlva",
+    "elapsed": "{{count}} eltelt"
+  },
+  "process": {
+    "newVersionAvailable": "Új verzió érhető el!"
+  },
+  "welcome": {
+    "title": "Üdvözöl a Stretchly",
+    "breakTimeReminderApp": "A szünet emlékeztető alkalmazás",
+    "viewTutorial": "Útmutató megnyitása",
+    "openPreferences": "Beállítások megnyitása",
+    "getStarted": "Kezdés"
+  },
+  "statusMessages": {
+    "paused": "Felfüggesztve",
+    "indefinitely": "Határozatlan ideig",
+    "dndMode": "Ne Zavarjanak Mód engedélyezve van",
+    "nextLongBreak": "Következő Hosszú szünet",
+    "nextMiniBreak": "Következő Rövid szünet",
+    "afterMiniBreak_one": "{{count}} rövid szünet után",
+    "afterMiniBreak_other": "{{count}} rövid szünet után",
+    "resuming": "Folytatás",
+    "appExclusion": "Alkalmazás kivétel szabály"
+  },
+  "miniBreakIdeas": {
+    "aac": {
+      "text": "Lassan nézz teljesen felfelé, majd pedig lefelé."
+    },
+    "aam": {
+      "text": "Gondolj egy pillanatig valamire, amit nagyra értékelsz."
+    },
+    "aax": {
+      "text": "Ha segítségre van szükséged, kérj."
+    },
+    "aaa": {
+      "text": "Menj és igyál egy pohár vizet."
+    },
+    "aab": {
+      "text": "Lassan nézz teljesen balra, majd pedig jobbra."
+    },
+    "aad": {
+      "text": "Csukd be a szemeidet és vegyél néhány mély levegőt."
+    },
+    "aae": {
+      "text": "Csukd be a szemeidet és relaxálj."
+    },
+    "aaf": {
+      "text": "Nyújtsd ki a lábaidat."
+    },
+    "aag": {
+      "text": "Nyújtsd ki a karjaidat."
+    },
+    "aah": {
+      "text": "Megfelelő az ülő testhelyzeted?"
+    },
+    "aai": {
+      "text": "Lassan fordítsd el a fejed oldalra és tartsd így 10 másodpercig."
+    },
+    "aaj": {
+      "text": "Lassan döntsd a fejed oldalra és tartsd így 5-10 másodpercig."
+    },
+    "aak": {
+      "text": "Állj fel a székedből és nyújtózkodj egyet."
+    },
+    "aal": {
+      "text": "Fókuszálj a szemeiddel egy legalább 20 méter távolságban lévő tárgyra."
+    },
+    "aao": {
+      "text": "Az igazán ergonomikus munkaállomás az, amitől rendszeresen felállsz."
+    },
+    "aap": {
+      "text": "Csukd be a szemeidet és számold a lélegzetvételeidet."
+    },
+    "aar": {
+      "text": "Tedd az ujjhegyeidet a vállaidra. Körözz a vállaiddal előre 10 másodpercig, majd pedig hátra."
+    },
+    "aaq": {
+      "text": "Csukd be a szemeidet és nevezd meg, hogy miket hallasz."
+    },
+    "aaz": {
+      "text": "A megfelelő dolgokra koncentrálsz?"
+    },
+    "aba": {
+      "text": "Változtass az ülő testhelyzeteden."
+    },
+    "aan": {
+      "text": "Mosolyogj egy pillanatig amiért életben vagy."
+    },
+    "aay": {
+      "text": "Egyszerre csak egy dolgot csinálj."
+    },
+    "abe": {
+      "text": "Rázd meg a kezeidet egy kis megkönnyebbülésért."
+    },
+    "abf": {
+      "text": "Egyesével érintsd össze a hüvelykujjad hegyét a többi ujjad hegyével úgy, hogy O-alakot formáljanak."
+    },
+    "aas": {
+      "text": "Emeld fel a jobb karod, nyújtsd a fejed fölött balra, és tartsd így 10 másodpercig. Ismételd meg a másik oldalra is."
+    },
+    "abi": {
+      "text": "Ülj egyenesen, karjaidat lógasd magad mellett, és lassan körözz a nyakaddal egy irányba egy nagy kört leírva."
+    },
+    "abm": {
+      "text": "Ülj a szék szélére, csavard el a törzsed az egyik oldalra, és tartsd úgy 10-15 másodpercig. Ismételd meg a másik irányba is."
+    },
+    "abn": {
+      "text": "Állj fel, és tedd az egyik lábad egy közeli tárgyra, például székre vagy zsámolyra. Behajlított térddel tartsd így a lábad 10-15 másodpercig. Ismételd meg a másik lábbal is."
+    },
+    "abo": {
+      "text": "Állj vállszélességű terpeszben, engedd le a tested, mintha leülnél egy székre, majd egyenesedj ki. Ismételd meg többször."
+    },
+    "abq": {
+      "text": "Állj a fal felé fordulva, tedd a falra a kezeidet, majd csinálj néhány karhajlítást."
+    },
+    "abr": {
+      "text": "Ülj a szék elülső részére, és nyújtsd ki az egyik lábad egyenesen magad elé, tartsd 10-15 másodpercig. Ismételd meg a másik lábaddal."
+    },
+    "abd": {
+      "text": "Csukott szemmel lassan és óvatosan mozgasd a szemed balra, majd lassan jobbra."
+    },
+    "aat": {
+      "text": "A jobb kezeddel fogd meg a bal kezed minden ujját egyesével, és szorítsd meg őket. Ismételd meg a másik oldalon."
+    },
+    "abp": {
+      "text": "Állj háttal és kezekkel a falhoz, majd lassan mozgasd fel és le a karjaidat, mintha hóangyalt csinálnál."
+    },
+    "abs": {
+      "text": "Állj a fal felé fordulva, tedd az egyik lábad hátra, a másikat pedig előre, majd dőlj a falnak. Ismételd meg a másik lábaddal is."
+    },
+    "aau": {
+      "text": "Állj fel, lépj előre és csinálj egy kitörést. Tartsd 10 másodpercig, majd ismételd meg a másik lábaddal is."
+    },
+    "aav": {
+      "text": "Csukd be a szemed, és egyszerűen figyeld meg, ami az aktuális pillanatban történik, ítélkezés nélkül."
+    },
+    "aaw": {
+      "text": "Fókuszálj 20 percenként 20 másodpercig egy 5 méter távolságban lévő tárgyra."
+    },
+    "abb": {
+      "text": "Tedd ki a szemed természetes fénynek."
+    },
+    "abc": {
+      "text": "Csukott szemmel lassan és óvatosan mozgasd felfelé a szemed a plafon felé, majd pedig lassan lefelé a padló felé."
+    },
+    "abg": {
+      "text": "Szorítsd ökölbe a kezeidet, majd nyújtsd ki az ujjaidat a plafon felé, mintha azt mutatnád valakinek, hogy álljon meg."
+    },
+    "abh": {
+      "text": "Szorítsd ökölbe a kezeidet, majd nyújtsd ki az ujjaidat amennyire csak tudod."
+    },
+    "abk": {
+      "text": "Állj egyenesen, karjaiddal az oldalad mellett. Szorítsd össze a lapockáidat és tartsd úgy."
+    },
+    "abj": {
+      "text": "Állj egyenesen, majd lassan döntsd oldalra a fejed az azonos oldali kezed segítségével a vállad felé, amíg nyúlást nem érzel a nyakadban."
+    },
+    "abl": {
+      "text": "Állj egyenesen, karjaidat a vállak mellett emeld fel. Mozgasd a kezeid kissé a hátad mögé, tartsd egy másodpercig, ezután pedig lazítsd el őket."
+    },
+    "abt": {
+      "text": "Tartsd az egyik karodat egyenesen felfelé, majd a másik kezeddel gyengéden húzd a kinyújtott karodat könyöknél a fejed irányába. Tartsd így 10-15 másodpercig. Ismételd meg a másik karoddal is."
+    },
+    "abu": {
+      "text": "Döntsd a fejed az egyik oldalra, aztán a másik oldalra, majd óvatosan döntsd előre, aztán hátra."
+    },
+    "abv": {
+      "text": "Nyújtsd az egyik karodat a mellkasod előtt keresztbe, fogd meg a másik kezeddel a könyöködet és gyengéden húzd a mellkasod felé. Ismételd meg a másik karral is."
+    },
+    "aby": {
+      "text": "Ülj a szék elülső részére, vagy a padlóra és rakd össze a talpaidat, majd gyengéden nyomd lefelé a könyököddel a lábaidat, hogy nyújtsd a belső combjaidat."
+    },
+    "abw": {
+      "text": "Állj fel, rakd az egyik lábad egy közeli tárgyra, például székre, vagy zsámolyra, nyúlj le és érintsd meg a lábujjaidat. Ismételd meg a másik lábbal is."
+    },
+    "abx": {
+      "text": "Állj egy közeli nyitott ajtóhoz és rakd az egyik karod az egyik ajtófélfához, a másikat a másikhoz, ezután gyengéden dőlj előre amíg a mellkasodban feszülést nem érzel."
+    }
+  },
+  "longBreakIdeas": {
+    "aap": {
+      "text": "Ne e-mailezz vagy chatelj az irodában a kollégákkal, sétálj oda beszélni hozzájuk személyesen.",
+      "title": "Kollégák"
+    },
+    "abd": {
+      "title": "Ásítás",
+      "text": "Az ásítás nagyon hasznos lehet, mivel könnyeket termel, ami segít nedvesen tartani a szemeket."
+    },
+    "abi": {
+      "title": "Fantáziadús vizualizáció",
+      "text": "Csukd be a szemeidet és képzeld el magad egy békés és megnyugtatható helyen, például egy tengerparton vagy erdőben, majd fókuszálj a környezet látványára, hangjaira és a kiváltott érzésekre."
+    },
+    "aao": {
+      "text": "Kávészünetre mész? Fontold meg, hogy minden kávészünetben egy 5 perces sétát is beiktatsz.",
+      "title": "Kávészünet"
+    },
+    "aaq": {
+      "title": "Tanulás",
+      "text": "Egy egészséges önkéntesekkel készült kutatásban megállapították, hogy gyakori rövid szünetek tartásával segítjük az agyunkat új készségek megtanulásában."
+    },
+    "aae": {
+      "text": "Ha hosszú ideig bámulod a képernyőt, akkor kevesebbet pislogsz, így a szemed ki van téve a levegőnek. Pislogj gyorsan néhány másodpercig, hogy felfrissítsd a könnyfilmet és eltávolítsd a port a szem felszínéről.",
+      "title": "Pislogás"
+    },
+    "aaf": {
+      "title": "Ergonómia",
+      "text": "A billentyűzet, az egér, a monitor vagy a munkafelület nem megfelelő magassága és dőlésszöge egészségügyi problémákat okozhat. Szánj egy kis időt az munkakörnyezet ergonómiájáról szóló olvasásra."
+    },
+    "aam": {
+      "text": "Szánj rá időt, és egyél gyümölcsöt. Lassan. Figyeld meg az ízét, állagát és a frissességét.",
+      "title": "Gyümölcs"
+    },
+    "aan": {
+      "text": "Sétálj a munkahelyed legtávolabbi mosdójába, amikor használnod kell.",
+      "title": "Mosdók"
+    },
+    "aar": {
+      "title": "Edzés",
+      "text": "Bizonyítékok azt mutatják, hogy a kis mennyiségű rendszeres testmozgás drámai egészségügyi előnyökkel járhat, beleértve a stressz mérhető csökkenését."
+    },
+    "abc": {
+      "title": "Tömegközlekedés",
+      "text": "Ha rendszeresen használsz tömegközlekedést, ülés helyett állhatsz. Ha lehetséges, próbáld meg a lehető legtöbb napi utazást gyaloglással vagy kerékpározással helyettesíteni."
+    },
+    "abe": {
+      "title": "Fókuszváltás",
+      "text": "Tartsd egy ujjadat közel a szemedhez és fókuszálj rá. Lassan vedd el az ujjadat, fókuszálj a távolba, majd újra az ujjadra. Vedd el az ujjadat és fókuszálj újra valamire a távolban."
+    },
+    "aad": {
+      "title": "Meditáció",
+      "text": "Tanulmányok azt sugallják, hogy a meditációs gyakorlatok csökkentik a szorongást, depressziót és a fájdalmat, valamint fejlesztik az általános és mentális egészséget, illetve az életminőséget. Nem tudod hogyan kezdj bele? Számost ilyen app áll segítségedre."
+    },
+    "aag": {
+      "title": "Mozgás",
+      "text": "Számos módja van az edzésnek az irodában. Próbáld ki az egy helyben sétát, vagy az asztali fekvőtámaszt."
+    },
+    "aaj": {
+      "title": "Technológia",
+      "text": "Mit szólnál egy technológiáktól mentes sétához?"
+    },
+    "aal": {
+      "title": "Aktív megbeszélések",
+      "text": "Mit szólnál a megbeszélések áthelyezéséhez a tárgyalóból az előtérbe? A gyaloglás nemcsak kalóriákat éget, de még az együttműködés érzését is elősegítheti."
+    },
+    "aax": {
+      "title": "Pulzus",
+      "text": "Emeld fel a pulzusodat 120-ra 20 percig négy vagy öt alkalommal egy héten, tetszőleges tevékenységgel. Rendszeres pulzus emelés hozzájárul a szív- és érrendszer egészségéhez."
+    },
+    "aaw": {
+      "title": "7 perces edzés",
+      "text": "Ez az edzés egy teljes testet megmozgató gyakorlatok sora töredékidő alatt. Azonban mint minden gyakorlatnál, itt is légy óvatos. Számos app létezik, mely segít hogy hozzákezdj."
+    },
+    "aay": {
+      "title": "Lépcsőzés",
+      "text": "Tanulmányok megmutatták, hogy a lépcsőzés, amely erőteljes intenzitású fizikai aktivitásnak számít, több kalóriát éget el percenként, mint a kocogás."
+    },
+    "abb": {
+      "title": "Ebéd a szabadban",
+      "text": "A természet hozzájárul a pozitív érzelmekhez, valamint a stressz és a szorongás csökkentéséhez. Amikor csak lehetséges, próbáld meg a napi ebédszünetet a szabadban tartani, zöldövezetben."
+    },
+    "abh": {
+      "title": "Lassú légzés",
+      "text": "Feltörekvő kutatások azt sugallják, hogy a szabályozott lassú légzési technikák alkalmazásának lehetőségét az egészséggel és a hosszú élettartammal összefüggő élettani paraméterek optimalizálásának eszközeként lehet alkalmazni."
+    },
+    "aac": {
+      "title": "Rövid szünetek",
+      "text": "A pihenés egy kulcsfontosságú összetevő a vázizom rendszer teljesítményének biztosítására. Gyakori szünetek csökkentik a feladatok hosszát és segítik csökkenteni az ergonómiai sérülésveszélyt."
+    },
+    "aah": {
+      "title": "Változás",
+      "text": "Van fitness labdád vagy álló munkaasztalod? Vedd fontolóra ezek használatát egy időre a szék helyett."
+    },
+    "aas": {
+      "title": "Ismétlés",
+      "text": "Megtaláltad már a Stretchly rutinod? Ne felejtsd el ismételni több alkalommal is, hogy a hosszantartó ülés káros hatásait megelőzd."
+    },
+    "aaa": {
+      "title": "Nem vagy egyedül",
+      "text": "Nehéznek találod egyedül szünetet tartani? Próbáld meg egy munkatárssal. Azon kívül, hogy így könnyebb betartani a szüneteket, nagyobb az esélye, hogy jobban megismerjétek egymást. A közös szünetek növelik a produktivitást."
+    },
+    "aav": {
+      "title": "Mobilizálás",
+      "text": "Minden harminc perc stagnálás után legalább egy percnyi stimulációt kell végezni."
+    },
+    "aak": {
+      "title": "Anyagcsere",
+      "text": "Új kutatások azt mutatják, hogy a hosszú ideig tartó ülés hozzájárul többek között a metabolikus szindróma, a szívroham és az agyvérzés kockázatához, valamint az általános halálozási kockázathoz. A rendszeres gyaloglási szünetek tartása javíthatja a keringést, és ellensúlyozhatja ezeket a problémákat."
+    },
+    "aau": {
+      "title": "Hát nyújtás",
+      "text": "Fogd össze a kezeidet a fejed mögött, majd emeld fel őket a fejed fölé úgy, hogy a végén a tenyereid felfelé nézzenek."
+    },
+    "aba": {
+      "text": "Egy tiszta környezet segít a munkára fókuszálni és gyakran pozitív érzelmeket, például boldogságot vált ki.",
+      "title": "Rendrakás"
+    },
+    "aab": {
+      "title": "Arrébb lépés",
+      "text": "Észrevetted már, hogy az agyad magától ki tud találni dolgokat? Csak annyit kell tenned, hogy arrébb lépsz a számítógéptől és tartasz egy szünetet, hogy valami egészen másra gondolj."
+    },
+    "abg": {
+      "title": "Kéz szorítás",
+      "text": "Szoríts össze a kezedben egy pár összegöngyölt zoknit, vagy egy puha gumilabdát 5 másodpercig. Ismételd meg ezt néhány alkalommal."
+    },
+    "aai": {
+      "text": "Álmodozol vagy problémát jelent a fókuszálás? Ez annak a jele, hogy ideje szünetet tartani.",
+      "title": "Figyelem"
+    },
+    "aat": {
+      "title": "Csukló és alkar",
+      "text": "Nyújtsd ki a karjaidat tenyerekkel magad felé, majd lassan forgasd a kezeidet négyszer órajárásával megegyezően, majd négyszer a másik irányban."
+    },
+    "aaz": {
+      "title": "Alkotás",
+      "text": "A művészetterápia köztudottan nagy mentális egészségügyi előnyökkel jár, különösen, ha a stresszkezelésről van szó. Mit szólnál, ha írnál egy gyors verset, fényképeznél vagy festenél valami apróságot?"
+    },
+    "abf": {
+      "title": "Tenyerezés",
+      "text": "Asztalnál ülve könyökölj az asztalra, annak széléhez közel. Engedd a testsúlyodat előre és takard el a szemeidet a kezeiddel. Hunyd le a szemed és lélegezz lassan az orrodon keresztül egy pár másodpercig. Folytasd a mély lélegzetvételeket."
+    },
+    "abj": {
+      "title": "Túlterhelt?",
+      "text": "Próbáld ki az 5-4-3-2-1 technikát: Nevezz meg 5 dolgot, amit láthatsz, 4 dolgot, amit megtapinthatsz, 3 dolgot, amit hallhatsz, 2 dolgot, amit megszagolhatsz, és 1 dolgot, amit megízlelhetsz."
+    }
+  }
+}

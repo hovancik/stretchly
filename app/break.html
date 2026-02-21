@@ -2,25 +2,42 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Time to take a break!</title>
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <title data-i18next="break.title"></title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/color-scheme.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/break.css">
   </head>
   <body>
-    <div class="microbreak">
-      <div class="break-idea"></div>
-      <div class="break-text"></div>
-      <progress id='progress' max="10000" ></progress><br/>
-      <p id='progress-time'></p>
-      <a id="close" title="Ctrl/Cmd + x">...nah, I'll just keep going on</a>
+    <div class="breaks">
+      <div>
+        <div class="break-idea" dir="auto"></div>
+        <div class="break-text" dir="auto"></div>
+        <progress id='progress' max="10000" aria-hidden="true"></progress>
+        <span id='progress-time' aria-hidden="true"></span>
+      </div>
+      <div>
+        <a id="postpone" class="tooltip top hidden">
+          <span data-i18next="break.postpone"></span>
+          <img src="images/breaks/break-postpone.svg" />
+          <span class="tiptext"></span>
+        </a>
+        <a id="close" class="tooltip top hidden">
+          <span data-i18next="break.skip"></span>
+          <img src="images/breaks/break-skip.svg" />
+          <span class="tiptext"></span>
+        </a>
+        <a id="finish" class="tooltip top hidden">
+          <span data-i18next="break.finish"></span>
+          <img src="images/breaks/break-finish.svg" />
+          <span class="tiptext"></span>
+        </a>
+      </div>
+      <div>
+      </div>
     </div>
-    <div id="danger-a">
-    </div>
-    <div id="danger-b">
-    </div>
-    <div id="danger-c">
-    </div>
-    <script>
-      require('./break.js')
-    </script>
   </body>
+  <script type="module" src="./break-renderer.js"></script>
 </html>
