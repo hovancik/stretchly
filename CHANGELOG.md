@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- advanced option for Break Health Mode
+
 ### Fixed
 - fix focus mode detection on macOS Tahoe
 - fix idle time detection on Wayland

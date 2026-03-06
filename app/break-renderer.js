@@ -1,11 +1,13 @@
 import HtmlTranslate from './utils/htmlTranslate.js'
+import applyBreakHealthEffect from './utils/breakHealthEffect.js'
 import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
 
   new HtmlTranslate(document).translate()
+  applyBreakHealthEffect(danger, breakHealthMode)
 
   document.ondragover = event =>
     event.preventDefault()
@@ -14,7 +16,7 @@ window.onload = async (event) => {
     event.preventDefault()
 
   document.querySelector('#close').onclick = async event =>
-    await window.breaks.finishBreak()
+    await window.breaks.finishBreak(manualAwaiting)
 
   document.querySelector('#postpone').onclick = async event =>
     await window.breaks.postponeBreak()
@@ -58,7 +60,7 @@ window.onload = async (event) => {
   const locale = await window.settings.get('language')
 
   manualFinishElement.onclick = async () => {
-    await window.breaks.finishBreak()
+    await window.breaks.finishBreak(manualAwaiting)
   }
 
   setInterval(async () => {

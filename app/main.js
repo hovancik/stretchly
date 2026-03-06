@@ -73,6 +73,7 @@ let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
+let danger = 10
 let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
@@ -320,6 +321,7 @@ async function initialize (isAppStart = true) {
         enterMiniBreakManualContinuation(shouldPlaySound)
         return
       }
+      decreaseDanger(1)
       finishMicrobreak(shouldPlaySound, shouldPlanNext)
     })
     breakPlanner.on('startBreak', () => { startBreak() })
@@ -328,6 +330,7 @@ async function initialize (isAppStart = true) {
         enterLongBreakManualContinuation(shouldPlaySound)
         return
       }
+      decreaseDanger(2)
       finishBreak(shouldPlaySound, shouldPlanNext)
     })
     breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
@@ -736,19 +739,21 @@ function startMicrobreak () {
       globalShortcut.register(shortcut, () => {
         const passedPercent = (Date.now() - startTime) / breakDuration * 100
         if (passedPercent >= 100) {
+          decreaseDanger(1)
           finishMicrobreak(false)
           return
         }
         if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
           postponeMicrobreak()
         } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+          increaseDanger(1)
           finishMicrobreak(false)
         }
       })
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('miniBreakColor'))]
+      calculateBackgroundColor(settings.get('miniBreakColor')), danger, settings.get('breakHealthMode')]
   })
 
   for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
@@ -890,19 +895,21 @@ function startBreak () {
       globalShortcut.register(shortcut, () => {
         const passedPercent = (Date.now() - startTime) / breakDuration * 100
         if (passedPercent >= 100) {
+          decreaseDanger(2)
           finishBreak(false)
           return
         }
         if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
           postponeBreak()
         } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+          increaseDanger(2)
           finishBreak(false)
         }
       })
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('mainColor'))]
+      calculateBackgroundColor(settings.get('mainColor')), danger, settings.get('breakHealthMode')]
   })
 
   for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
@@ -1025,6 +1032,22 @@ function breakComplete (shouldPlaySound, windows, breakType) {
   return closeWindows(windows)
 }
 
+function increaseDanger (amount) {
+  if (!settings.get('breakHealthMode')) {
+    return
+  }
+  danger = Math.min(danger + amount, 10)
+  log.info(`Stretchly: danger increased to ${danger}`)
+}
+
+function decreaseDanger (amount) {
+  if (!settings.get('breakHealthMode')) {
+    return
+  }
+  danger = Math.max(danger - amount, 0)
+  log.info(`Stretchly: danger decreased to ${danger}`)
+}
+
 function enterManualAwaitPhase (type, shouldPlaySound) {
   const isMini = type === 'mini'
   const manualSettingKey = isMini ? 'miniBreakManualFinish' : 'longBreakManualFinish'
@@ -1070,6 +1093,7 @@ function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
 }
 
 function postponeMicrobreak () {
+  increaseDanger(1)
   microbreakWins = breakComplete(false, microbreakWins, 'mini')
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Mini break')
@@ -1077,6 +1101,7 @@ function postponeMicrobreak () {
 }
 
 function postponeBreak () {
+  increaseDanger(1)
   breakWins = breakComplete(false, breakWins, 'long')
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Long break')
@@ -1085,9 +1110,11 @@ function postponeBreak () {
 
 function skipToMicrobreak (delay) {
   if (microbreakWins) {
+    increaseDanger(1)
     microbreakWins = breakComplete(false, microbreakWins)
   }
   if (breakWins) {
+    increaseDanger(2)
     breakWins = breakComplete(false, breakWins)
   }
   if (delay) {
@@ -1102,9 +1129,11 @@ function skipToMicrobreak (delay) {
 
 function skipToBreak (delay) {
   if (microbreakWins) {
+    increaseDanger(1)
     microbreakWins = breakComplete(false, microbreakWins)
   }
   if (breakWins) {
+    increaseDanger(2)
     breakWins = breakComplete(false, breakWins)
   }
   if (delay) {
@@ -1124,6 +1153,8 @@ function resetBreaks () {
   if (breakWins) {
     breakWins = breakComplete(false, breakWins)
   }
+  danger = 0
+  log.info(`Stretchly: danger reset to ${danger}`)
   breakPlanner.reset()
   log.info('Stretchly: resetting breaks')
   updateTray()
@@ -1166,9 +1197,11 @@ function loadIdeas () {
 
 function pauseBreaks (milliseconds) {
   if (microbreakWins) {
+    increaseDanger(1)
     finishMicrobreak(false)
   }
   if (breakWins) {
+    increaseDanger(2)
     finishBreak(false)
   }
   breakPlanner.pause(milliseconds)
@@ -1457,12 +1490,22 @@ ipcMain.on('postpone-long-break', function (event) {
   postponeBreak()
 })
 
-ipcMain.on('finish-mini-break', function (event, shouldPlaySound, shouldPlanNext) {
-  finishMicrobreak(shouldPlaySound, shouldPlanNext)
+ipcMain.on('finish-mini-break', function (event, shouldPlaySound, manualAwaiting) {
+  if (manualAwaiting) {
+    decreaseDanger(1)
+  } else {
+    increaseDanger(1)
+  }
+  finishMicrobreak(shouldPlaySound)
 })
 
-ipcMain.on('finish-long-break', function (event, shouldPlaySound, shouldPlanNext) {
-  finishBreak(shouldPlaySound, shouldPlanNext)
+ipcMain.on('finish-long-break', function (event, shouldPlaySound, manualAwaiting) {
+  if (manualAwaiting) {
+    decreaseDanger(2)
+  } else {
+    increaseDanger(2)
+  }
+  finishBreak(shouldPlaySound)
 })
 
 ipcMain.on('save-setting', function (event, key, value) {
@@ -1504,6 +1547,11 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'openAtLogin') {
     autostartManager.setAutostartEnabled(value)
+  }
+
+  if (key === 'breakHealthMode' && !value) {
+    danger = 0
+    log.info('Stretchly: danger reset after disabling breakHealthMode')
   }
 
   settings.set(key, value)

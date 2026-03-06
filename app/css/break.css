@@ -1,5 +1,15 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
 .breaks {
   align-items: center;
+  box-sizing: border-box;
   color: #FFFFFF;
   display: grid;
   font-family: 'Noto Sans Light', 'Noto Sans Arabic Light',
@@ -10,6 +20,12 @@
   font-weight: 300;
   grid-template: 85vh 10vh / 100px auto 100px;
   justify-items: center;
+  min-height: 100%;
+}
+
+body.break-health-mode {
+  box-shadow: var(--break-health-shadow, none);
+  transition: box-shadow 450ms ease-out;
 }
 
 .breaks > * {

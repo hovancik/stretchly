@@ -444,6 +444,9 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 #### Show current time in breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show current time in breaks, set the value of `currentTimeInBreaks` from `false` to `true`.
 
+#### Break Health Mode
+Inspired by the red screen-edge vignette used in video games to indicate low health, this mode adds a similar pulsing red glow around the edges of your break screen. The effect starts subtle and grows more intense each time you skip or postpone a break, and fades back down when you let breaks complete naturally. To enable it, set `breakHealthMode` to `true`.
+
 #### Hide menubar/tray icon [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To hide Stretchly icon in menubar/tray, set the value of `showTrayIcon` from `true` to `false`.
 
