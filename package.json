@@ -82,7 +82,10 @@
         "tar.xz",
         "apk"
       ],
-      "asarUnpack": "node_modules/macos-notification-state/**"
+      "asarUnpack": [
+        "node_modules/macos-notification-state/**",
+        "node_modules/better-sqlite3/**"
+      ]
     },
     "rpm": {
       "fpm": [
@@ -106,7 +109,8 @@
       ],
       "asarUnpack": [
         "node_modules/windows-notification-state/**",
-        "node_modules/macos-notification-state/**"
+        "node_modules/macos-notification-state/**",
+        "node_modules/better-sqlite3/**"
       ]
     },
     "portable": {
@@ -139,7 +143,7 @@
   "devDependencies": {
     "@vitest/coverage-istanbul": "^4.0.18",
     "cross-env": "^10.1.0",
-    "electron": "^40.6.0",
+    "electron": "^40.8.0",
     "electron-builder": "^26.8.1",
     "husky": "^9.1.7",
     "jsdom": "^28.1.0",
@@ -150,11 +154,12 @@
   "dependencies": {
     "@particle/dbus-next": "^0.11.4",
     "auto-launch": "^6.0.0-rc1",
-    "dompurify": "^3.3.1",
+    "better-sqlite3": "^12.6.2",
+    "dompurify": "^3.3.3",
     "electron-log": "^5.4.3",
     "electron-store": "^11.0.2",
     "humanize-duration": "^3.33.2",
-    "i18next": "^25.8.11",
+    "i18next": "^25.8.18",
     "i18next-fs-backend": "^2.6.1",
     "luxon": "^3.7.2",
     "meeussunmoon": "^3.1.0",

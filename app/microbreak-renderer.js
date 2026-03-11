@@ -3,7 +3,7 @@ import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, todayStats] = await window.breaks.sendBreakData()
 
   new HtmlTranslate(document).translate()
 
@@ -37,6 +37,14 @@ window.onload = async (event) => {
       img.remove()
     }
   })
+
+  if (todayStats) {
+    const badge = document.querySelector('#stats-badge')
+    if (badge) {
+      badge.textContent = `Break #${Number(todayStats.taken) + 1} today`
+      badge.classList.remove('hidden')
+    }
+  }
 
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')

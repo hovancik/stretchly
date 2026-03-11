@@ -142,5 +142,37 @@ export default [
   {
     data: ['Overwhelmed?', 'Try the 5-4-3-2-1 Grounding Technique: Identify 5 things you can see, 4 things you can touch, 3 things you can hear, 2 things you can smell, and 1 thing you can taste.'],
     enabled: true
+  },
+  {
+    data: ['Senior devs take more breaks', 'Not fewer. The most productive developers know that sustained focus requires regular recovery. Your brain consolidates learning during rest.'],
+    enabled: true
+  },
+  {
+    data: ['The best debugging tool', 'A 5-minute walk. When you step away from a problem, your brain continues working on it subconsciously. Many breakthroughs happen away from the keyboard.'],
+    enabled: true
+  },
+  {
+    data: ['Sharper code reviews', 'Code reviews are sharper after breaks. Your team will thank you for catching that subtle bug with fresh eyes.'],
+    enabled: true
+  },
+  {
+    data: ['A break now saves a revert later', 'Fatigued developers introduce more bugs. Taking regular breaks is not slacking off — it is quality assurance for your code.'],
+    enabled: true
+  },
+  {
+    data: ['You can\'t AI-generate good health', 'No model can fix RSI, eye strain, or a stiff neck. Step away from the screen and move your body.'],
+    enabled: true
+  },
+  {
+    data: ['RSI doesn\'t care about your sprint', 'Stretch your wrists now. Repetitive strain builds up silently. Prevention is infinitely cheaper than treatment.'],
+    enabled: true
+  },
+  {
+    data: ['Your wrists are writing your career', 'Treat them well. Wrist circles, finger stretches, and regular breaks are the best investment you can make in your longevity as a developer.'],
+    enabled: true
+  },
+  {
+    data: ['10,000 frames', 'Your eyes have rendered roughly 10,000 frames since your last break. Give them a rest — look at something far away for 20 seconds.'],
+    enabled: true
   }
 ]

@@ -103,6 +103,55 @@ body[dir=rtl] .breaks > :nth-child(2) > a img {
   filter: hue-rotate(359deg) brightness(101%) contrast(103%);
 }
 
+#stats-badge {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  padding: 4px 14px;
+}
+
+.ffffff #stats-badge {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.week-chart {
+  align-items: flex-end;
+  display: flex;
+  gap: 8px;
+  height: 60px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.week-bar-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  width: 24px;
+}
+
+.week-bar {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+  width: 16px;
+}
+
+.ffffff .week-bar {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.week-day {
+  font-size: 10px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
 .breaks > :last-child {
   bottom: 12px;
   font-size: 28px;

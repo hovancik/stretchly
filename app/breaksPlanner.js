@@ -3,6 +3,8 @@ import EventEmitter from 'events'
 import NaturalBreaksManager from './utils/naturalBreaksManager.js'
 import DndManager from './utils/dndManager.js'
 import AppExclusionsManager from './utils/appExclusionsManager.js'
+import CallAndScreenShareManager from './utils/callAndScreenShareManager.js'
+import CalendarManager from './utils/calendarManager.js'
 import log from 'electron-log/main.js'
 
 class BreaksPlanner extends EventEmitter {
@@ -13,9 +15,14 @@ class BreaksPlanner extends EventEmitter {
     this.postponesNumber = 0
     this.scheduler = null
     this.isPaused = false
+    this.isFocusSession = false
+    this.focusSessionEnd = null
+    this._focusSessionTimer = null
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
+    this.callAndScreenShareManager = new CallAndScreenShareManager(settings)
+    this.calendarManager = new CalendarManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('microbreakDuration')
@@ -107,6 +114,40 @@ class BreaksPlanner extends EventEmitter {
         }
       }
     })
+
+    this.callAndScreenShareManager.on('callOrSharingStarted', () => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        this.clear()
+        log.info('Stretchly: pausing breaks for active call or screen sharing')
+        this.emit('updateToolTip')
+      } else if (!this.isPaused && this.scheduler.reference === 'finishBreak') {
+        this.emit('finishBreak', false, false)
+        this.clear()
+        log.info('Stretchly: closing current and pausing breaks for active call or screen sharing')
+        this.emit('updateToolTip')
+      } else if (!this.isPaused && this.scheduler.reference === 'finishMicrobreak') {
+        this.emit('finishMicrobreak', false, false)
+        this.clear()
+        log.info('Stretchly: closing current and pausing breaks for active call or screen sharing')
+        this.emit('updateToolTip')
+      } else {
+        this.callAndScreenShareManager.isInCallOrSharing = false
+      }
+    })
+
+    this.callAndScreenShareManager.on('callOrSharingFinished', () => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+        this.reset()
+        log.info('Stretchly: resuming breaks after call or screen sharing ended')
+        this.emit('updateToolTip')
+      }
+    })
+
+    this.on('focusSessionEnded', () => {
+      this.endFocusSession()
+      log.info('Stretchly: focus session ended')
+      this.emit('updateToolTip')
+    })
   }
 
   nextBreak () {
@@ -119,6 +160,18 @@ class BreaksPlanner extends EventEmitter {
     const breakNotificationInterval = this.settings.get('breakNotificationInterval')
     const microbreakNotification = this.settings.get('microbreakNotification')
     const microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
+
+    if (this.isFocusSession && shouldBreak) {
+      const focusInterval = this.settings.get('focusLongBreakInterval')
+      if (breakNotification) {
+        this.scheduler = new Scheduler(() => this.emit('startBreakNotification'), focusInterval - breakNotificationInterval, 'startBreakNotification')
+      } else {
+        this.scheduler = new Scheduler(() => this.emit('startBreak'), focusInterval, 'startBreak')
+      }
+      this.scheduler.plan()
+      return
+    }
+
     if (!shouldBreak && shouldMicrobreak) {
       if (microbreakNotification) {
         this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
@@ -148,6 +201,22 @@ class BreaksPlanner extends EventEmitter {
         }
       }
     }
+
+    if (this.calendarManager.monitorCalendar && this.scheduler) {
+      const breakDuration = this.settings.get(
+        this.scheduler.reference.includes('Break') || this.scheduler.reference.includes('break')
+          ? 'breakDuration'
+          : 'microbreakDuration'
+      )
+      const freeSlotOffset = this.calendarManager.getNextFreeSlot(this.scheduler.delay, breakDuration)
+      if (freeSlotOffset > 0 && freeSlotOffset > this.scheduler.delay) {
+        const originalRef = this.scheduler.reference
+        const originalFunc = this.scheduler.func
+        this.scheduler = new Scheduler(originalFunc, freeSlotOffset, originalRef)
+        log.info(`Stretchly: shifted break to avoid calendar event, new delay: ${freeSlotOffset}ms`)
+      }
+    }
+
     this.scheduler.plan()
   }
 
@@ -268,6 +337,53 @@ class BreaksPlanner extends EventEmitter {
       if (!this.isPaused && this.scheduler.reference === null) {
         this.reset()
       }
+    }
+  }
+
+  callAndScreenShare (shouldUse) {
+    if (shouldUse) {
+      this.callAndScreenShareManager.start()
+    } else {
+      this.callAndScreenShareManager.stop()
+      if (!this.isPaused && this.scheduler.reference === null) {
+        this.reset()
+      }
+    }
+  }
+
+  calendar (shouldUse) {
+    if (shouldUse) {
+      this.calendarManager.start()
+    } else {
+      this.calendarManager.stop()
+    }
+  }
+
+  startFocusSession (durationMs) {
+    this.isFocusSession = true
+    this.focusSessionEnd = Date.now() + durationMs
+    this._focusSessionTimer = setTimeout(() => this.emit('focusSessionEnded'), durationMs)
+    if (this.scheduler) this.scheduler.cancel()
+    this.breakNumber = 0
+    this.postponesNumber = 0
+    this.nextBreak()
+    log.info(`Stretchly: starting focus session for ${durationMs}ms`)
+    this.emit('updateToolTip')
+  }
+
+  endFocusSession () {
+    clearTimeout(this._focusSessionTimer)
+    this._focusSessionTimer = null
+    this.isFocusSession = false
+    this.focusSessionEnd = null
+    if (this.settings.get('focusSessionEndBreak')) {
+      if (this.scheduler) this.scheduler.cancel()
+      this.breakNumber = 0
+      this.postponesNumber = 0
+      this.scheduler = new Scheduler(() => this.emit('startBreak'), 100, 'startBreak')
+      this.scheduler.plan()
+    } else {
+      this.reset()
     }
   }
 

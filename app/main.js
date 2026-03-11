@@ -28,6 +28,7 @@ import Command from './utils/commands.js'
 import { registerBreakShortcuts } from './utils/breakShortcuts.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
+import StatsManager from './utils/statsManager.js'
 import DisplayManager from './utils/displayManager.js'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -71,6 +72,7 @@ let contributorPreferencesWin = null
 let syncPreferencesWin = null
 let myStretchlyWin = null
 let settings
+let statsManager = null
 let pausedForSuspendOrLock = false
 let nextIdea = null
 let updateChecker
@@ -206,6 +208,14 @@ app.on('before-quit', (event) => {
     if (autostartManager) {
       autostartManager.disconnect()
     }
+    if (breakPlanner) {
+      if (breakPlanner.isFocusSession) breakPlanner.endFocusSession()
+      breakPlanner.callAndScreenShareManager.stop()
+      breakPlanner.calendarManager.stop()
+    }
+    if (statsManager) {
+      statsManager.close()
+    }
     app.quit()
   }
 })
@@ -311,10 +321,15 @@ async function initialize (isAppStart = true) {
   }
   if (!breakPlanner) {
     breakPlanner = new BreaksPlanner(settings)
+    statsManager = new StatsManager(app.getPath('userData'))
+    statsManager.updateStreak()
     breakPlanner.nextBreak()
     breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
     breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
-    breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
+    breakPlanner.on('startMicrobreak', () => {
+      if (statsManager) statsManager.logScheduledBreak()
+      startMicrobreak()
+    })
     breakPlanner.on('finishMicrobreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('miniBreakManualFinish')) {
         enterMiniBreakManualContinuation(shouldPlaySound)
@@ -322,7 +337,10 @@ async function initialize (isAppStart = true) {
       }
       finishMicrobreak(shouldPlaySound, shouldPlanNext)
     })
-    breakPlanner.on('startBreak', () => { startBreak() })
+    breakPlanner.on('startBreak', () => {
+      if (statsManager) statsManager.logScheduledBreak()
+      startBreak()
+    })
     breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('longBreakManualFinish')) {
         enterLongBreakManualContinuation(shouldPlaySound)
@@ -334,10 +352,28 @@ async function initialize (isAppStart = true) {
     breakPlanner.on('updateToolTip', function () {
       updateTray()
     })
+    breakPlanner.callAndScreenShareManager.on('callOrSharingStarted', () => {
+      if (settings.get('notifyOnCallDetection')) {
+        showNotification(i18next.t('main.breaksPausedCall'))
+      }
+    })
+    breakPlanner.callAndScreenShareManager.on('callOrSharingFinished', () => {
+      if (settings.get('notifyOnCallDetection')) {
+        showNotification(i18next.t('main.breaksResumedCall'))
+      }
+    })
   } else {
+    if (breakPlanner.isFocusSession) breakPlanner.endFocusSession()
     breakPlanner.clear()
+    if (statsManager) {
+      statsManager.close()
+    }
+    statsManager = new StatsManager(app.getPath('userData'))
+    statsManager.updateStreak()
     breakPlanner.appExclusionsManager.reinitialize(settings)
     breakPlanner.doNotDisturb(settings.get('monitorDnd'))
+    breakPlanner.callAndScreenShare(settings.get('monitorCallsAndSharing'))
+    breakPlanner.calendar(settings.get('monitorCalendar'))
     breakPlanner.naturalBreaks(settings.get('naturalBreaks'))
     breakPlanner.nextBreak()
   }
@@ -453,7 +489,8 @@ function onSuspendOrLock () {
   if (settings.get('pauseForSuspendOrLock')) {
     if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
-      breakPlanner.appExclusionsManager.isSchedulerCleared) {
+      breakPlanner.appExclusionsManager.isSchedulerCleared ||
+      breakPlanner.callAndScreenShareManager.isSchedulerCleared) {
       log.info('Stretchly: not pausing for suspendOrLock because paused already')
     } else {
       pausedForSuspendOrLock = true
@@ -508,7 +545,8 @@ function trayIconPath () {
       breakPlanner.isPaused ||
       breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
-      breakPlanner.appExclusionsManager.isSchedulerCleared,
+      breakPlanner.appExclusionsManager.isSchedulerCleared ||
+      breakPlanner.callAndScreenShareManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: settings.get('useMonochromeInvertedTrayIcon'),
     darkMode: nativeTheme.shouldUseDarkColors,
@@ -746,9 +784,11 @@ function startMicrobreak () {
         }
       })
     }
+    const todayStats = statsManager ? statsManager.getTodayStats() : null
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('miniBreakColor'))]
+      calculateBackgroundColor(settings.get('miniBreakColor')),
+      todayStats]
   })
 
   for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
@@ -900,9 +940,12 @@ function startBreak () {
         }
       })
     }
+    const todayStats = statsManager ? statsManager.getTodayStats() : null
+    const weekHistory = statsManager ? statsManager.getWeekHistory() : null
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('mainColor'))]
+      calculateBackgroundColor(settings.get('mainColor')),
+      todayStats, weekHistory]
   })
 
   for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
@@ -1050,6 +1093,9 @@ const enterLongBreakManualContinuation = (shouldPlaySound) => enterManualAwaitPh
 function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
   microbreakWins = breakComplete(shouldPlaySound, microbreakWins, 'mini')
   log.info(`Stretchly: finishing Mini break (shouldPlanNext: ${shouldPlanNext})`)
+  if (statsManager && shouldPlanNext) {
+    statsManager.logBreakEvent('microbreak', 'taken', settings.get('microbreakDuration'))
+  }
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
   } else {
@@ -1061,6 +1107,9 @@ function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
 function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
   breakWins = breakComplete(shouldPlaySound, breakWins, 'long')
   log.info(`Stretchly: finishing Long break (shouldPlanNext: ${shouldPlanNext})`)
+  if (statsManager && shouldPlanNext) {
+    statsManager.logBreakEvent('break', 'taken', settings.get('breakDuration'))
+  }
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
   } else {
@@ -1071,6 +1120,7 @@ function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
 
 function postponeMicrobreak () {
   microbreakWins = breakComplete(false, microbreakWins, 'mini')
+  if (statsManager) statsManager.logBreakEvent('microbreak', 'postponed', null)
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Mini break')
   updateTray()
@@ -1078,6 +1128,7 @@ function postponeMicrobreak () {
 
 function postponeBreak () {
   breakWins = breakComplete(false, breakWins, 'long')
+  if (statsManager) statsManager.logBreakEvent('break', 'postponed', null)
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Long break')
   updateTray()
@@ -1179,6 +1230,8 @@ function pauseBreaks (milliseconds) {
 function resumeBreaks (notify = true) {
   if (breakPlanner.dndManager.isOnDnd) {
     log.info('Stretchly: not resuming breaks because in Do Not Disturb')
+  } else if (breakPlanner.callAndScreenShareManager.isSchedulerCleared) {
+    log.info('Stretchly: not resuming breaks because in active call or screen sharing')
   } else {
     breakPlanner.resume()
     log.info('Stretchly: resuming breaks')
@@ -1280,12 +1333,15 @@ function getTrayMenuTemplate () {
     })
   }
 
-  const statusMessage = new StatusMessages({
+  const statusObj = new StatusMessages({
     breakPlanner,
     settings,
     i18next,
-    humanizeDuration
-  }).trayMessage
+    humanizeDuration,
+    statsManager
+  })
+  const statusMessage = statusObj.trayMessage
+  const statsLine = statusObj.statsLine
 
   if (statusMessage !== '') {
     const messages = statusMessage.split('\n')
@@ -1301,6 +1357,15 @@ function getTrayMenuTemplate () {
     })
   }
 
+  if (statsLine) {
+    trayMenu.push({
+      label: statsLine,
+      enabled: false
+    }, {
+      type: 'separator'
+    })
+  }
+
   if ((breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode') &&
         !settings.get('showTrayMenuInStrictMode')) ||
       (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
@@ -1310,7 +1375,7 @@ function getTrayMenuTemplate () {
     return trayMenu
   }
 
-  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
+  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared || breakPlanner.callAndScreenShareManager.isSchedulerCleared)) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -1340,11 +1405,16 @@ function getTrayMenuTemplate () {
         updateTray()
       }
     })
-  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
+  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared || breakPlanner.callAndScreenShareManager.isSchedulerCleared)) {
     trayMenu.push({
       label: i18next.t('main.pause'),
       submenu: [
         {
+          label: i18next.t('utils.minutes', { count: 5 }),
+          click: function () {
+            pauseBreaks(300 * 1000)
+          }
+        }, {
           label: i18next.t('utils.minutes', { count: 30 }),
           accelerator: settings.get('pauseBreaksFor30MinutesShortcut') || null,
           click: function () {
@@ -1387,6 +1457,61 @@ function getTrayMenuTemplate () {
     }, {
       label: i18next.t('main.resetBreaks'),
       click: resetBreaks
+    })
+
+    if (!breakPlanner.isFocusSession) {
+      trayMenu.push({
+        label: i18next.t('main.focusSession'),
+        submenu: [
+          {
+            label: i18next.t('main.forHour'),
+            click: function () {
+              breakPlanner.startFocusSession(3600 * 1000)
+              updateTray()
+            }
+          }, {
+            label: i18next.t('main.for2Hours'),
+            click: function () {
+              breakPlanner.startFocusSession(3600 * 2 * 1000)
+              updateTray()
+            }
+          }, {
+            label: i18next.t('main.for5Hours').replace('5', '3'),
+            click: function () {
+              breakPlanner.startFocusSession(3600 * 3 * 1000)
+              updateTray()
+            }
+          }
+        ]
+      })
+    }
+  }
+
+  if (breakPlanner.isFocusSession) {
+    const remaining = breakPlanner.focusSessionEnd ? breakPlanner.focusSessionEnd - Date.now() : 0
+    const remainingText = remaining > 0
+      ? humanizeDuration(remaining, { round: true, units: ['h', 'm'], language: settings.get('language').replace('-', '_'), fallbacks: ['en'] })
+      : ''
+    trayMenu.push({
+      label: i18next.t('main.endFocusSession') + (remainingText ? ' (' + remainingText + ')' : ''),
+      click: function () {
+        breakPlanner.endFocusSession()
+        updateTray()
+      }
+    })
+  }
+
+  if (process.platform === 'darwin') {
+    trayMenu.push({
+      label: i18next.t('main.toggleCallDetection'),
+      type: 'checkbox',
+      checked: settings.get('monitorCallsAndSharing'),
+      click: function () {
+        const current = settings.get('monitorCallsAndSharing')
+        settings.set('monitorCallsAndSharing', !current)
+        breakPlanner.callAndScreenShare(!current)
+        updateTray()
+      }
     })
   }
 
@@ -1432,7 +1557,8 @@ function updateToolTip () {
     breakPlanner,
     settings,
     i18next,
-    humanizeDuration
+    humanizeDuration,
+    statsManager
   }).trayMessage
   if (message !== '') {
     trayMessage += '\n\n' + message
@@ -1472,6 +1598,14 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'monitorDnd') {
     breakPlanner.doNotDisturb(value)
+  }
+
+  if (key === 'monitorCallsAndSharing') {
+    breakPlanner.callAndScreenShare(value)
+  }
+
+  if (key === 'monitorCalendar') {
+    breakPlanner.calendar(value)
   }
 
   if (key === 'language') {

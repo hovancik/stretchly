@@ -3,7 +3,7 @@ import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, todayStats, weekHistory] = await window.breaks.sendBreakData()
 
   new HtmlTranslate(document).translate()
 
@@ -38,6 +38,36 @@ window.onload = async (event) => {
       img.remove()
     }
   })
+
+  if (todayStats) {
+    const badge = document.querySelector('#stats-badge')
+    if (badge) {
+      badge.textContent = `Break #${Number(todayStats.taken) + 1} today`
+      badge.classList.remove('hidden')
+    }
+  }
+
+  if (weekHistory && weekHistory.length > 0) {
+    const chart = document.querySelector('#weekly-chart')
+    if (chart) {
+      const maxScheduled = Math.max(...weekHistory.map(d => d.scheduled), 1)
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      let html = '<div class="week-chart">'
+      for (const day of weekHistory) {
+        const date = new Date(day.date + 'T12:00:00')
+        const dayName = days[date.getDay()]
+        const height = Math.round((day.taken / maxScheduled) * 100)
+        const isEmpty = day.scheduled === 0
+        html += `<div class="week-bar-container">
+          <div class="week-bar" style="height: ${isEmpty ? 0 : height}%"></div>
+          <span class="week-day">${dayName}</span>
+        </div>`
+      }
+      html += '</div>'
+      chart.innerHTML = html
+      chart.classList.remove('hidden')
+    }
+  }
 
   const progress = document.querySelector('#progress')
   const progressTime = document.querySelector('#progress-time')

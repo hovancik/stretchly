@@ -403,3 +403,8 @@ body[dir=rtl] .heart > .authenticate > a {
   padding-right: 0;
   padding-left: 20px;
 }
+
+.win32 .macos-only,
+.linux .macos-only {
+  display: none;
+}

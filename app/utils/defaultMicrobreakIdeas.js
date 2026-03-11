@@ -202,5 +202,45 @@ export default [
   {
     data: 'Sit on the edge of a chair or on the floor, and place the soles of your feet together, gently pressing down with your elbows to stretch your inner thighs.',
     enabled: true
+  },
+  {
+    data: 'Your IDE won\'t miss you for 20 seconds.',
+    enabled: true
+  },
+  {
+    data: 'git commit -m \'touched grass\'',
+    enabled: true
+  },
+  {
+    data: 'Even Claude needs a context window break.',
+    enabled: true
+  },
+  {
+    data: 'Step away. The bug will still be there, but you\'ll see it differently.',
+    enabled: true
+  },
+  {
+    data: 'Your rubber duck is judging your posture right now.',
+    enabled: true
+  },
+  {
+    data: 'Ctrl+Z your slouch.',
+    enabled: true
+  },
+  {
+    data: 'This break has fewer bugs than your last PR.',
+    enabled: true
+  },
+  {
+    data: 'Your eyes have parsed more code than the linter today.',
+    enabled: true
+  },
+  {
+    data: 'Screen time: high. Blink count: concerning. Break time: now.',
+    enabled: true
+  },
+  {
+    data: '20-20-20 rule: every 20 min, look 20 feet away, for 20 seconds.',
+    enabled: true
   }
 ]

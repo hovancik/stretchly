@@ -23,7 +23,12 @@
     "cancel": "Cancel",
     "preferences": "Preferences",
     "contributorPreferences": "Contributor Preferences",
-    "syncPreferences": "Sync Preferences"
+    "syncPreferences": "Sync Preferences",
+    "toggleCallDetection": "Call detection",
+    "breaksPausedCall": "Breaks paused — activity detected",
+    "breaksResumedCall": "Breaks resumed — activity ended",
+    "focusSession": "Focus Session",
+    "endFocusSession": "End Focus Session"
   },
   "break": {
     "postpone": "Postpone this break",
@@ -49,6 +54,8 @@
       "allScreens": "Shows breaks on all monitors",
       "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
       "monitorDnd": "Show breaks even in Do Not Disturb mode",
+      "monitorCallsAndSharing": "Pause breaks during calls and screen sharing (macOS only)",
+      "monitorCalendar": "Adjust break timing based on calendar events (macOS only)",
       "language": "Select language:",
       "restoreDefaults": "Restore defaults"
     },
@@ -210,11 +217,19 @@
     "indefinitely": "Indefinitely",
     "dndMode": "Do Not Disturb is on",
     "appExclusion": "App exclusion rule",
+    "callOrScreenSharing": "In a call or sharing screen",
+    "teamsActivity": "Teams activity detected",
+    "screenSharing": "Screen sharing active",
+    "teamsAndSharing": "Teams activity + screen sharing",
+    "focusMode": "Focus mode",
     "nextLongBreak": "Next Long break",
     "nextMiniBreak": "Next Mini break",
     "afterMiniBreak_one": "after {{count}} Mini break",
     "afterMiniBreak_other": "after {{count}} Mini breaks",
-    "resuming": "Resuming"
+    "resuming": "Resuming",
+    "statsToday": "Today: {{taken}}/{{scheduled}} breaks",
+    "statsStreak_one": "Streak: {{count}} day",
+    "statsStreak_other": "Streak: {{count}} days"
   },
   "miniBreakIdeas": {
     "aaa": {
