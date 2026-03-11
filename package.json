@@ -1,6 +1,6 @@
 {
   "name": "Stretchly",
-  "version": "1.20.0",
+  "version": "1.21.0-custom",
   "description": "The break time reminder app",
   "main": "app/main.js",
   "type": "module",
@@ -9,6 +9,7 @@
     "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
+    "predist": "electron-rebuild -f -w better-sqlite3",
     "dist": "electron-builder build",
     "test": "vitest run",
     "test-single": "vitest run $1",
