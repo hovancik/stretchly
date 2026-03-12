@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stretchly Danger Color Tester</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1a1a1a; color: #eee; padding: 20px; }
+  h1 { text-align: center; margin-bottom: 8px; font-size: 22px; }
+  p.subtitle { text-align: center; margin-bottom: 24px; color: #999; font-size: 13px; }
+  .theme-section { margin-bottom: 32px; }
+  .theme-title { font-size: 16px; margin-bottom: 8px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+  .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; }
+  .cell {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    min-height: 100px;
+    overflow: hidden;
+  }
+  .cell .label { position: relative; z-index: 1; font-weight: 600; }
+  .cell .info { position: relative; z-index: 1; font-size: 10px; opacity: 0.8; margin-top: 4px; text-align: center; line-height: 1.3; }
+  .cell .idea { position: relative; z-index: 1; font-size: 11px; margin-top: 8px; opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<h1>Stretchly — Danger Color Preview</h1>
+<p class="subtitle">Each row shows danger levels 1–10 for a theme. Levels 1–2 have no effect (as in the real code).</p>
+
+<div id="app"></div>
+
+<script>
+const themes = [
+  { name: 'Green Clouds',      hex: '#478484', dangerRGB: [255, 36, 36],  opacityMul: 1.5, textColor: '#fff' },
+  { name: 'Autumn Be Blessed', hex: '#633738', dangerRGB: [255, 50, 80],  opacityMul: 1.5, textColor: '#fff' },
+  { name: 'Snow White',        hex: '#ffffff', dangerRGB: [200, 30, 30],  opacityMul: 2.0, textColor: '#000' },
+  { name: 'Graphite Crystal',  hex: '#1D1F21', dangerRGB: [255, 70, 70],  opacityMul: 1.0, textColor: '#fff' },
+  { name: 'Coffee Kisses',     hex: '#A49898', dangerRGB: [255, 36, 36],  opacityMul: 1.5, textColor: '#fff' },
+  { name: 'Morning Swim',      hex: '#567890', dangerRGB: [255, 36, 36],  opacityMul: 1.4, textColor: '#fff' },
+  { name: 'Custom (fallback)', hex: '#AB12CD', dangerRGB: [255, 36, 36],  opacityMul: 1.0, textColor: '#fff' },
+]
+
+function computeShadow (danger, r, g, b, opacityMul) {
+  if (danger <= 2) return 'none'
+  const strength = Math.min(danger - 2, 8) / 8
+  const opacity = ((0.1 + strength * 0.15) * opacityMul).toFixed(3)
+  const blur = Math.round(80 + strength * 40)
+  const spread = Math.round(12 + strength * 18)
+  return `inset 0 0 ${blur}px ${spread}px rgba(${r}, ${g}, ${b}, ${opacity})`
+}
+
+const app = document.getElementById('app')
+
+themes.forEach(theme => {
+  const section = document.createElement('div')
+  section.className = 'theme-section'
+
+  const title = document.createElement('div')
+  title.className = 'theme-title'
+  title.style.background = theme.hex
+  title.style.color = theme.textColor
+  title.textContent = `${theme.name}  (${theme.hex})`
+  if (theme.hex === '#ffffff') title.style.border = '1px solid #ccc'
+  section.appendChild(title)
+
+  const grid = document.createElement('div')
+  grid.className = 'grid'
+
+  for (let danger = 1; danger <= 10; danger++) {
+    const [r, g, b] = theme.dangerRGB
+    const shadow = computeShadow(danger, r, g, b, theme.opacityMul)
+    const cell = document.createElement('div')
+    cell.className = 'cell'
+    cell.style.backgroundColor = theme.hex
+    cell.style.color = theme.textColor
+    cell.style.boxShadow = shadow
+    if (theme.hex === '#ffffff') cell.style.border = '1px solid #ddd'
+
+    const label = document.createElement('div')
+    label.className = 'label'
+    label.textContent = `Danger ${danger}`
+
+    const info = document.createElement('div')
+    info.className = 'info'
+    if (danger <= 2) {
+      info.textContent = 'no effect'
+    } else {
+      const strength = Math.min(danger - 2, 8) / 8
+      const opacity = ((0.1 + strength * 0.15) * theme.opacityMul).toFixed(3)
+      info.innerHTML = `rgb(${r},${g},${b})<br>\u03B1 ${opacity} (${theme.opacityMul}x)`
+    }
+
+    const idea = document.createElement('div')
+    idea.className = 'idea'
+    idea.textContent = 'Stretch your legs'
+
+    cell.appendChild(label)
+    cell.appendChild(info)
+    cell.appendChild(idea)
+    grid.appendChild(cell)
+  }
+
+  section.appendChild(grid)
+  app.appendChild(section)
+})
+</script>
+</body>
+</html>

@@ -6,8 +6,10 @@ window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
     postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
 
+  const mainColor = await window.settings.get('mainColor')
+
   new HtmlTranslate(document).translate()
-  applyBreakHealthEffect(danger, breakHealthMode)
+  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
 
   document.ondragover = event =>
     event.preventDefault()
@@ -46,7 +48,6 @@ window.onload = async (event) => {
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
   const manualFinishElement = document.querySelector('#finish')
-  const mainColor = await window.settings.get('mainColor')
   document.body.classList.add(mainColor.substring(1))
   document.body.style.backgroundColor = backgroundColor
 

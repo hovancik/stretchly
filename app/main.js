@@ -73,7 +73,7 @@ let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
-let danger = 10
+let danger = 0
 let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
