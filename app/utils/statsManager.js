@@ -1,7 +1,7 @@
 import Database from 'better-sqlite3'
 import log from 'electron-log/main.js'
 import { join } from 'node:path'
-import { mkdirSync, renameSync } from 'node:fs'
+import { chmodSync, mkdirSync, renameSync } from 'node:fs'
 
 const SCHEMA_VERSION = 1
 
@@ -15,7 +15,7 @@ class StatsManager {
   _initDb (userDataPath) {
     const statsDir = join(userDataPath, 'stats')
     try {
-      mkdirSync(statsDir, { recursive: true })
+      mkdirSync(statsDir, { recursive: true, mode: 0o700 })
     } catch (e) {
       log.error('Stretchly: failed to create stats directory:', e)
     }
@@ -23,6 +23,7 @@ class StatsManager {
     this._dbPath = join(statsDir, 'stretchly-stats.db')
     try {
       this._db = new Database(this._dbPath)
+      chmodSync(this._dbPath, 0o600)
       this._db.pragma('journal_mode = WAL')
       this._migrate()
       this._prune()
@@ -34,6 +35,7 @@ class StatsManager {
         log.info(`Stretchly: corrupted db backed up to ${backupPath}`)
       } catch (_) {}
       this._db = new Database(this._dbPath)
+      chmodSync(this._dbPath, 0o600)
       this._db.pragma('journal_mode = WAL')
       this._migrate()
     }
