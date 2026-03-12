@@ -62,14 +62,29 @@ class CallAndScreenShareManager extends EventEmitter {
     try {
       const asyncExec = this._getOrCreateAsyncExec()
       const { stdout } = await asyncExec(
-        'osascript -e \'tell application "System Events" to get name of every window of (processes whose name contains "Teams")\''
+        'osascript -e \'tell application "System Events" to get name of every process whose name is "MSTeams" or whose name is "Microsoft Teams"\''
       )
-      const windowTitles = stdout.trim()
-      if (!windowTitles || windowTitles === '') return false
-      const callIndicators = ['Call', 'Meeting', '|']
-      return callIndicators.some(indicator => windowTitles.includes(indicator))
+      if (!stdout.trim()) return false
+      return await this._isMicOrCameraActive()
     } catch (e) {
       this._logErrorOnce('teams-activity', e)
+      return false
+    }
+  }
+
+  async _isMicOrCameraActive () {
+    try {
+      const asyncExec = this._getOrCreateAsyncExec()
+      const { stdout: camPids } = await asyncExec(
+        'pgrep -x VDCAssistant 2>/dev/null || pgrep -x AppleCameraAssistant 2>/dev/null || true'
+      )
+      if (camPids.trim().length > 0) return true
+      const { stdout: micCount } = await asyncExec(
+        'ioreg -r -d 1 -c IOAudioEngine 2>/dev/null | grep -E "^\\+-o|IOAudioEngineState" | grep -B1 "= 1" | grep -ci input || echo 0'
+      )
+      return parseInt(micCount.trim(), 10) > 0
+    } catch (e) {
+      this._logErrorOnce('mic-camera-check', e)
       return false
     }
   }
@@ -82,12 +97,7 @@ class CallAndScreenShareManager extends EventEmitter {
         'osascript -e \'tell application "System Events" to get name of every process whose name contains "screencaptureui" or name contains "Screen Sharing"\''
       )
       const trimmed = stdout.trim()
-      if (trimmed.length > 0 && trimmed !== '{}') return true
-      const { stdout: teamsOut } = await asyncExec(
-        'osascript -e \'tell application "System Events" to get name of every window of (processes whose name contains "Teams")\''
-      )
-      const lower = teamsOut.toLowerCase()
-      return lower.includes('sharing') || lower.includes('presenter')
+      return trimmed.length > 0 && trimmed !== '{}'
     } catch (e) {
       this._logErrorOnce('screen-sharing', e)
       return false
