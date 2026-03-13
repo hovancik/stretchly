@@ -571,7 +571,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 ## Known issues
 - Autostart does not work in Flathub app ([#1517](https://github.com/hovancik/stretchly/issues/1517))
 - idle time detection doesn't work on Wayland ([electron/electron#27912](https://github.com/electron/electron/issues/27912))
-- Windows Store build's autostart is not working, so was disabled. To use autostart, install Stretchly with the [regular installer](https://github.com/hovancik/stretchly/releases) which has built-in autostart support in Preferences.
+- Windows Store build's autostart is not working, so was disabled. To use autostart, install Stretchly with the [regular installer](https://github.com/hovancik/stretchly/releases), or create a shortcut to Stretchly from `shell:AppsFolder` (Win+R) and move it to the `shell:startup` folder (Win+R).
 - Wayland multi-display window placement issue puts all break windows on one monitor; start with X11 backend (`stretchly --ozone-platform=x11`) if needed. See [electron/electron#48749](https://github.com/electron/electron/issues/48749).
 
 ### MacOS
