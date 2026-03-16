@@ -26,16 +26,16 @@ The latest official **installers** and **portable versions** for macOS, Windows 
 
 ### macOS
 
-It is recommended to install *Stretchly* with [Homebrew](https://brew.sh/) by running the folowing command.
+It is recommended to install *Stretchly* with [Homebrew tap](https://github.com/hovancik/homebrew-stretchly) by running the following command.
 See [Application Signing](#application-signing) for details.
 ```zsh
-brew update && brew install --cask --no-quarantine stretchly
+brew install --cask --no-quarantine hovancik/stretchly/stretchly
 ```
 
 When upgrading, run the following command.
 Don't forget to Quit Stretchly, first.
 ```zsh
-brew update && brew upgrade --cask
+brew upgrade --cask hovancik/stretchly/stretchly
 ```
 
 If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.raycast.com/) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) or [Raycast Extension](https://www.raycast.com/u-ran/stretchly) to interact with Stretchly.
@@ -56,7 +56,7 @@ If you install via [Homebrew](https://brew.sh), you can use the `--no-quarantine
 workaround.
 
 ```bash
-brew install --cask --no-quarantine stretchly
+brew install --cask --no-quarantine hovancik/stretchly/stretchly
 ```
 
 Not sure which chip your computer has? [Here's how to tell](https://support.apple.com/en-us/HT211814).
