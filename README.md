@@ -170,6 +170,7 @@ Clicking the *Stretchly* icon in your tray area will display the current status 
 When a Stretchly instance is running, the `stretchly` command can be use to interact with it from the command line.
 
 Type `stretchly help` to get a list of all commands and options available as well as some examples.
+Type `stretchly --status` to see either active break details (type + time remaining) or, when no break is active, time to next break and next long break.
 
 ## Preferences
 

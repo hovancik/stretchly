@@ -90,6 +90,7 @@ let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
 let trayUpdateIntervalObj = null
+const cliStatusFileName = 'cli-status.json'
 
 if (insideWindowsPortable()) {
   const portableDataPath = join(process.env.PORTABLE_EXECUTABLE_DIR, 'Data')
@@ -126,8 +127,12 @@ const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
 
 if (!gotTheLock) {
   const cmd = new Command(commandLineArguments, app.getVersion(), false)
-  cmd.runOrForward()
-  app.quit()
+  if (cmd.command === 'status') {
+    printCliStatusFromSnapshot()
+  } else {
+    cmd.runOrForward()
+    app.quit()
+  }
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory, commandLineArguments) => {
     log.info(`Stretchly: arguments received from second instance: ${commandLineArguments}`)
@@ -219,6 +224,7 @@ app.on('before-quit', (event) => {
     if (autostartManager) {
       autostartManager.disconnect()
     }
+    deleteCliStatusSnapshot()
   }
 })
 
@@ -370,6 +376,12 @@ async function initialize (isAppStart = true) {
     breakPlanner.nextBreak()
   }
 
+  const startupCommand = new Command(commandLineArguments, app.getVersion(), false)
+  if (startupCommand.command === 'status') {
+    printCliStatusAndQuit()
+    return
+  }
+
   autostartManager = new AutostartManager({
     app,
     settings
@@ -463,6 +475,93 @@ function startI18next () {
         log.error(err.stack)
       }
     })
+}
+
+function formatCliDuration (milliseconds) {
+  if (!Number.isFinite(milliseconds) || milliseconds < 0) {
+    return 'unavailable'
+  }
+  return humanizeDuration(milliseconds, {
+    round: true,
+    largest: 2
+  })
+}
+
+function nextLongBreakTime (nextBreakTime) {
+  if (!settings.get('break')) {
+    return null
+  }
+
+  const reference = breakPlanner.scheduler.reference
+  if (reference === 'startBreak' || reference === 'startBreakNotification') {
+    return nextBreakTime
+  }
+
+  if (reference !== 'startMicrobreak' && reference !== 'startMicrobreakNotification') {
+    return null
+  }
+
+  if (!Number.isFinite(nextBreakTime) || nextBreakTime < 0) {
+    return null
+  }
+
+  const breakInterval = settings.get('breakInterval') + 1
+  const breakNumber = breakPlanner.breakNumber % breakInterval
+  const miniBreaksUntilLong = breakInterval - breakNumber
+  const miniBreakCycle = settings.get('microbreakDuration') + settings.get('microbreakInterval')
+
+  return nextBreakTime + miniBreaksUntilLong * miniBreakCycle
+}
+
+function buildCliStatusSnapshot () {
+  if (!breakPlanner || !breakPlanner.scheduler || !settings) {
+    return ['Stretchly status is unavailable.']
+  }
+
+  const reference = breakPlanner.scheduler.reference
+  if (reference === 'finishMicrobreak' || reference === 'finishBreak') {
+    return [
+      'Status: active break',
+      `Break type: ${reference === 'finishMicrobreak' ? 'mini' : 'long'}`,
+      `Time to break end: ${formatCliDuration(breakPlanner.scheduler.timeLeft)}`
+    ]
+  }
+
+  const nextBreakTime = breakPlanner.timeToNextBreak
+  const longBreakTime = nextLongBreakTime(nextBreakTime)
+
+  return [
+    'Status: no active break',
+    `Time to next break: ${formatCliDuration(nextBreakTime)}`,
+    `Time to next long break: ${settings.get('break') ? formatCliDuration(longBreakTime) : 'disabled'}`
+  ]
+}
+
+function cliStatusSnapshotPath () {
+  return join(app.getPath('userData'), cliStatusFileName)
+}
+
+function writeCliStatusSnapshot () {
+  writeFile(cliStatusSnapshotPath(), buildCliStatusSnapshot().join('\n'), () => { })
+}
+
+function printCliStatusFromSnapshot () {
+  readFile(cliStatusSnapshotPath(), 'utf8', (err, data) => {
+    if (err) {
+      console.log('Stretchly status is unavailable. Make sure Stretchly is running.')
+      app.quit()
+      return
+    }
+
+    console.log(data)
+    app.quit()
+  })
+}
+
+function printCliStatusAndQuit () {
+  const snapshot = buildCliStatusSnapshot()
+  console.log(snapshot.join('\n'))
+  app.quit()
 }
 
 i18next.on('languageChanged', () => {
@@ -1313,6 +1412,8 @@ function updateTray () {
       app.dock.hide()
     }
   }
+
+  writeCliStatusSnapshot()
 
   if (!appIcon && !settings.get('showTrayIcon')) {
     return

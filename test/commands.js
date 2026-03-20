@@ -34,6 +34,17 @@ describe('commands', () => {
     cmd.options.noskip.should.be.equal(true)
   })
 
+  it('should parse --status as a supported command', () => {
+    const cmd = new Command(['--status'], '1.2.3')
+    cmd.command.should.be.equal('status')
+    cmd.hasSupportedCommand.should.be.equal(true)
+  })
+
+  it('should not forward status command to the main instance', () => {
+    const cmd = new Command(['--status'], '1.2.3')
+    cmd.checkInMain().should.be.equal(false)
+  })
+
   it('includes only the specified options in the resulting options object', () => {
     const cmd = new Command(['mini', '-T', 'test'], '1.2.3')
     cmd.options.should.deep.equal({ title: 'test' })
