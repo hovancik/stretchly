@@ -1556,6 +1556,10 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   settings.set(key, value)
 
+  if (['microbreakIdeas', 'breakIdeas', 'useIdeasFromSettings'].includes(key)) {
+    loadIdeas()
+  }
+
   updateTray()
 })
 
