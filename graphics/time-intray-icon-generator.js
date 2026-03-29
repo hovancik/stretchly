@@ -1,10 +1,12 @@
-// Script to generate icons for "Time in tray" feature
-// `canvas` is not installed so install it before running this script
+// Script to generate tray icons
+// `canvas` npm package and `inkscape` CLI are not installed so install them before running this script
 // Run this script using `node graphics/time-intray-icon-generator.js`
 // You can optionally pass an argument to generate only specific icons:
-// `node graphics/time-intray-icon-generator.js numbers`
-// `node graphics/time-intray-icon-generator.js progress`
+// `node graphics/time-intray-icon-generator.js base` - generate base PNGs from SVGs using Inkscape
+// `node graphics/time-intray-icon-generator.js numbers` - generate number overlay icons (0-99)
+// `node graphics/time-intray-icon-generator.js progress` - generate progress overlay icons (0-100)
 import { createCanvas, loadImage, registerFont } from 'canvas'
+import { execSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -52,9 +54,7 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontCo
     ctx.shadowOffsetX = 0
     ctx.shadowOffsetY = 0
 
-    // Force high contrast colors for numbers
-    const highContrastColor = fontColor === '#8c8c8c' ? '#ffffff' : fontColor
-    ctx.fillStyle = highContrastColor
+    ctx.fillStyle = fontColor
 
     // Draw the text onto the canvas
     ctx.fillText(text, textX, textY, maxTextWidthRatio * imageWidth)
@@ -69,9 +69,10 @@ async function overlayTextOnImage (inputImagePath, outputImagePath, text, fontCo
   }
 }
 
-async function overlayProgressOnImage (inputImagePath, outputImagePath, percentage, fontColor) {
+async function overlayProgressOnImage (inputImagePath, foregroundImagePath, outputImagePath, percentage, fontColor) {
   try {
     const baseImage = await loadImage(inputImagePath)
+    const foregroundImage = await loadImage(foregroundImagePath)
     const imageWidth = baseImage.width
     const imageHeight = baseImage.height
 
@@ -91,7 +92,7 @@ async function overlayProgressOnImage (inputImagePath, outputImagePath, percenta
     ctx.beginPath()
     ctx.rect(0, y, imageWidth, fillHeight)
     ctx.clip()
-    ctx.drawImage(baseImage, 0, 0, imageWidth, imageHeight)
+    ctx.drawImage(foregroundImage, 0, 0, imageWidth, imageHeight)
     ctx.restore()
 
     const buffer = canvas.toBuffer('image/png')
@@ -104,6 +105,30 @@ async function overlayProgressOnImage (inputImagePath, outputImagePath, percenta
 const fontFamily = 'Noto Sans Regular'
 const generationMode = process.argv[2]
 
+const baseIcons = [
+  { svg: 'appicon-colour-light-mode.svg', outputs: [{ name: 'tray.png', size: 32 }, { name: 'trayMac.png', size: 16 }, { name: 'trayMac@2x.png', size: 32 }] },
+  { svg: 'appicon-colour-dark-mode.svg', outputs: [{ name: 'trayDark.png', size: 32 }, { name: 'trayMacDark.png', size: 16 }, { name: 'trayMacDark@2x.png', size: 32 }] },
+  { svg: 'appicon-colour-light-mode-paused.svg', outputs: [{ name: 'trayPaused.png', size: 32 }, { name: 'trayMacPaused.png', size: 16 }, { name: 'trayMacPaused@2x.png', size: 32 }] },
+  { svg: 'appicon-colour-dark-mode-paused.svg', outputs: [{ name: 'trayPausedDark.png', size: 32 }, { name: 'trayMacPausedDark.png', size: 16 }, { name: 'trayMacPausedDark@2x.png', size: 32 }] },
+  { svg: 'appicon-mono-light-mode.svg', outputs: [{ name: 'trayMonochrome.png', size: 32 }, { name: 'trayMacMonochromeTemplate.png', size: 16 }, { name: 'trayMacMonochromeTemplate@2x.png', size: 32 }] },
+  { svg: 'appicon-mono-light-mode-paused.svg', outputs: [{ name: 'trayMonochromePaused.png', size: 32 }, { name: 'trayMacMonochromePausedTemplate.png', size: 16 }, { name: 'trayMacMonochromePausedTemplate@2x.png', size: 32 }] },
+  { svg: 'appicon-mono-dark-mode.svg', outputs: [{ name: 'trayMonochromeInverted.png', size: 32 }] },
+  { svg: 'appicon-mono-dark-mode-overlay.svg', outputs: [{ name: 'trayMonochromeInvertedOverlay.png', size: 32 }] },
+  { svg: 'appicon-mono-dark-mode-paused.svg', outputs: [{ name: 'trayMonochromeInvertedPaused.png', size: 32 }] }
+]
+
+if (generationMode === 'base') {
+  for (const icon of baseIcons) {
+    const svgPath = path.join(__dirname, icon.svg)
+    for (const output of icon.outputs) {
+      const outputPath = path.join(__dirname, `../app/images/app-icons/${output.name}`)
+      execSync(`inkscape '${svgPath}' --export-type=png --export-filename='${outputPath}' --export-width=${output.size} --export-height=${output.size} --export-background-opacity=0`)
+      console.log(`Generated ${output.name} (${output.size}x${output.size}) from ${icon.svg}`)
+    }
+  }
+  process.exit(0)
+}
+
 const iconStyles = [
   {
     name: 'tray',
@@ -111,7 +136,7 @@ const iconStyles = [
   },
   {
     name: 'trayDark',
-    fontColor: '#8c8c8c'
+    fontColor: '#ffffff'
   },
   {
     name: 'trayMonochrome',
@@ -120,7 +145,9 @@ const iconStyles = [
   },
   {
     name: 'trayMonochromeInverted',
-    fontColor: '#8c8c8c'
+    inputName: 'trayMonochromeInvertedOverlay',
+    foregroundName: 'trayMonochromeInverted',
+    fontColor: '#ffffff'
   },
   {
     name: 'trayMac',
@@ -132,11 +159,11 @@ const iconStyles = [
   },
   {
     name: 'trayMacDark',
-    fontColor: '#8c8c8c'
+    fontColor: '#ffffff'
   },
   {
     name: ['trayMacDark', '@2x'],
-    fontColor: '#8c8c8c'
+    fontColor: '#ffffff'
   },
   {
     name: ['trayMacMonochrome', 'Template'],
@@ -153,7 +180,10 @@ iconStyles.forEach(iconStyle => {
   const fullName = nameArray.join('')
   const prefix = nameArray[0]
   const suffix = nameArray[1]
-  const inputImagePath = path.join(__dirname, `../app/images/app-icons/${fullName}.png`)
+  const inputName = iconStyle.inputName || fullName
+  const foregroundName = iconStyle.foregroundName || inputName
+  const inputImagePath = path.join(__dirname, `../app/images/app-icons/${inputName}.png`)
+  const foregroundImagePath = path.join(__dirname, `../app/images/app-icons/${foregroundName}.png`)
 
   let promises = []
   if (!generationMode || generationMode === 'numbers') {
@@ -168,7 +198,7 @@ iconStyles.forEach(iconStyle => {
   if (!generationMode || generationMode === 'progress') {
     progressPromises = Array.from({ length: 101 }, (_, k) => k).map(i => {
       const outputImagePath = path.join(__dirname, `../app/images/app-icons/${prefix}Progress${i}${suffix}.png`)
-      return overlayProgressOnImage(inputImagePath, outputImagePath, i, iconStyle.fontColor)
+      return overlayProgressOnImage(inputImagePath, foregroundImagePath, outputImagePath, i, iconStyle.fontColor)
     })
   }
 
