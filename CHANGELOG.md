@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - advanced option for Break Health Mode
+- VS Code Dev Container for zero-config contributor setup
 
 ### Fixed
 - fix focus mode detection on macOS Tahoe
