@@ -545,6 +545,28 @@ Now you can clone the repo with `git clone https://github.com/hovancik/stretchly
 
 Read on.
 
+### Dev Container
+
+This repository includes a [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) in `.devcontainer/` so you can work in a consistent Linux environment without manually installing all dependencies on your host.
+
+To use it:
+- Install [Docker](https://www.docker.com/) and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- Open the repository in VS Code
+- Run **Dev Containers: Reopen in Container**
+
+The container installs dependencies with `npm install` on first creation and includes Electron runtime libraries required for development commands and tests.
+
+It also maps common developer identity settings from your host:
+- SSH agent forwarding (`SSH_AUTH_SOCK`) for Git over SSH without copying private keys
+- Read-only mount of `~/.ssh`
+- Read-only mount of `~/.gitconfig`
+- Read-only mount of `~/.npmrc`
+
+Common commands inside the container:
+- `npm run lint`
+- `npm test`
+- `npm run dev`
+
 ### Debugging
 
 You can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:

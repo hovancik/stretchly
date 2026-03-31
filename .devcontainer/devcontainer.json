@@ -1,0 +1,47 @@
+{
+  "name": "Stretchly Dev",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspaces/stretchly",
+  "remoteUser": "node",
+  "updateRemoteUserUID": true,
+  "runArgs": [
+    "--init"
+  ],
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  },
+  "mounts": [
+    "source=stretchly-node-modules,target=/workspaces/stretchly/node_modules,type=volume",
+    "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind",
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,readonly",
+    "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,readonly",
+    "source=${localEnv:HOME}/.npmrc,target=/home/node/.npmrc,type=bind,readonly"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "initializeCommand": "touch ~/.gitconfig ~/.npmrc",
+  "postCreateCommand": "sudo mkdir -p /workspaces/stretchly/node_modules && sudo chown -R node:node /workspaces/stretchly/node_modules && npm install && find node_modules/.bin -maxdepth 1 -type l -exec sh -c 'chmod u+x \"$(readlink -f \"$0\")\"' {} \\;",
+  "forwardPorts": [
+    9222
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "vitest.explorer"
+      ],
+      "settings": {
+        "eslint.validate": [
+          "javascript"
+        ],
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      }
+    }
+  }
+}
