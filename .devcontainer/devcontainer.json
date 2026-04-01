@@ -10,12 +10,8 @@
   "runArgs": [
     "--init"
   ],
-  "remoteEnv": {
-    "SSH_AUTH_SOCK": "/ssh-agent"
-  },
   "mounts": [
     "source=stretchly-node-modules,target=/workspaces/stretchly/node_modules,type=volume",
-    "source=${localEnv:SSH_AUTH_SOCK},target=/ssh-agent,type=bind",
     "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,readonly",
     "source=${localEnv:HOME}/.gitconfig,target=/home/node/.gitconfig,type=bind,readonly",
     "source=${localEnv:HOME}/.npmrc,target=/home/node/.npmrc,type=bind,readonly"
