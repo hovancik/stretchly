@@ -566,6 +566,7 @@ Common commands inside the container:
 - `npm run lint`
 - `npm test`
 - `npm run dev`
+- `npm run dev:container` (use this in dev containers if Electron sandboxing is restricted)
 
 ### Debugging
 
@@ -575,7 +576,7 @@ You can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in th
 
 You can copy debug information to the clipboard.
 
-If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
+If you start *Stretchly* in development mode with the `npm run dev` command (or `npm run dev:container` when running inside a dev container), it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
 ### Logging
 
