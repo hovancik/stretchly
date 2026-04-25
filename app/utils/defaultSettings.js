@@ -83,5 +83,11 @@ export default {
   longBreakManualFinish: false,
   breakHealthMode: false,
   openAtLogin: false,
-  _migratedOpenAtLogin: false
+  _migratedOpenAtLogin: false,
+  ankiEnabled: true,
+  ankiDeckName: '',
+  ankiCardsPerBreak: 3,
+  ankiMaxBreakDurationSeconds: 120,
+  ankiFallbackMode: 'eye-rest',
+  ankiAutoLaunchAnki: false
 }

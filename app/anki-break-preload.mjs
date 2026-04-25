@@ -1,6 +1,6 @@
 import {
   exposeElectronApi,
-  exposeGlobal,
+  exposeBreaks,
   exposeI18next,
   exposeRuntime,
   exposeSettings,
@@ -10,7 +10,7 @@ import {
 } from './utils/context-bridge-exposers.js'
 
 exposeElectronApi()
-exposeGlobal()
+exposeBreaks('long')
 exposeI18next()
 exposeRuntime()
 exposeSettings()

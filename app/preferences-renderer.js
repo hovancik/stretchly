@@ -301,6 +301,8 @@ window.onload = async (e) => {
     }
   })
 
+  await initAnkiPreferences()
+
   document.querySelector('.version').innerHTML = await window.stretchly.getVersion()
   if (!settings.disableAppUpdateFeatures) {
     versionChecker.latest()
@@ -311,6 +313,54 @@ window.onload = async (e) => {
         console.error(exception)
         document.querySelector('.latestVersion').innerHTML = 'N/A'
       })
+  }
+
+  async function initAnkiPreferences () {
+    const deckSelect = document.querySelector('#ankiDeckName')
+    if (!deckSelect) return
+
+    async function populateDecks () {
+      const decks = await window.anki.getDecks().catch(() => [])
+      while (deckSelect.options.length > 1) deckSelect.remove(1)
+      decks.forEach(name => {
+        const opt = document.createElement('option')
+        opt.value = name
+        opt.textContent = name
+        deckSelect.add(opt)
+      })
+      if (settings.ankiDeckName && decks.includes(settings.ankiDeckName)) {
+        deckSelect.value = settings.ankiDeckName
+      }
+    }
+    await populateDecks()
+
+    if (!eventsAttached) {
+      deckSelect.onchange = (event) => {
+        window.settings.saveSettings('ankiDeckName', event.target.value)
+      }
+
+      const refreshBtn = document.querySelector('#ankiRefreshDecks')
+      if (refreshBtn) refreshBtn.onclick = () => populateDecks()
+
+      const testBtn = document.querySelector('#ankiTestConnection')
+      const status = document.querySelector('#ankiTestStatus')
+      if (testBtn) {
+        testBtn.onclick = async () => {
+          status.textContent = await window.i18next.t('preferences.anki.testConnection.pending')
+          const result = await window.anki.testConnection()
+          if (result && result.ok) {
+            status.textContent = await window.i18next.t('preferences.anki.testConnection.success', { count: result.deckCount })
+            status.className = 'ok'
+          } else {
+            status.textContent = await window.i18next.t('preferences.anki.testConnection.fail')
+            status.className = 'fail'
+          }
+        }
+      }
+
+      const openBtn = document.querySelector('#ankiOpenAnki')
+      if (openBtn) openBtn.onclick = () => window.anki.openAnki()
+    }
   }
 
   function setWindowHeight () {

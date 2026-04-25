@@ -29,6 +29,7 @@ function exposeI18next () {
 function exposeBreaks (type) {
   contextBridge.exposeInMainWorld('breaks', {
     sendBreakData: () => ipcRenderer.invoke(`send-${type}-break-data`),
+    sendAnkiBreakData: () => ipcRenderer.invoke('send-anki-break-data'),
     finishBreak: (manualAwaiting) => ipcRenderer.send(`finish-${type}-break`, false, manualAwaiting),
     postponeBreak: () => ipcRenderer.send(`postpone-${type}-break`),
     signalLoaded: () => ipcRenderer.send(`${type}-break-loaded`),
@@ -99,6 +100,16 @@ function exposeStretchly () {
   })
 }
 
+function exposeAnki () {
+  contextBridge.exposeInMainWorld('anki', {
+    fetchBundle: () => ipcRenderer.invoke('anki:consumePendingBundle'),
+    rateCard: (cardId, ease) => ipcRenderer.send('anki:rateCard', cardId, ease),
+    getDecks: () => ipcRenderer.invoke('anki:getDecks'),
+    testConnection: () => ipcRenderer.invoke('anki:testConnection'),
+    openAnki: () => ipcRenderer.send('anki:openAnki')
+  })
+}
+
 function exposeUtils () {
   const i18n = {
     t: (key, options) => ipcRenderer.invoke('i18next-translate', key, options)
@@ -131,5 +142,6 @@ export {
   exposeSettings,
   exposeStretchly,
   exposeRuntime,
-  exposeUtils
+  exposeUtils,
+  exposeAnki
 }

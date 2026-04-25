@@ -40,6 +40,12 @@
         <span data-i18next="preferences.nav.about"></span>
       </div>
     </a>
+    <a href="#" data-section="anki">
+      <div>
+        <img src="images/preferences/settings.svg">
+        <span data-i18next="preferences.nav.anki"></span>
+      </div>
+    </a>
     <a href="#" data-section="heart">
       <div>
         <img src="images/preferences/heart.svg">
@@ -433,6 +439,51 @@
     <div>
       <span data-i18next="preferences.about.designedBy"></span>
       (<a href="http://www.colinshanley.com/">www.colinshanley.com</a>)
+    </div>
+  </div>
+  <div class="anki hidden">
+    <div>
+      <input type="checkbox" value="ankiEnabled" id="ankiEnabled">
+      <label data-i18next="preferences.anki.enabled" for="ankiEnabled"></label>
+    </div>
+    <div>
+      <label data-i18next="preferences.anki.deck" for="ankiDeckName"></label>
+      <div class="has-select">
+        <select name="ankiDeckName" id="ankiDeckName">
+          <option value="" data-i18next="preferences.anki.selectDeck"></option>
+        </select>
+      </div>
+      <button id="ankiRefreshDecks" data-i18next="preferences.anki.refreshDecks"></button>
+    </div>
+    <div>
+      <label data-i18next="preferences.anki.cardsPerBreak" for="ankiCardsPerBreak"></label>
+      <input type="range" name="ankiCardsPerBreak" id="ankiCardsPerBreak" min="1" max="10" step="1" data-divisor="1">
+      <output data-unit="cards"></output>
+    </div>
+    <div>
+      <label data-i18next="preferences.anki.maxBreakDuration" for="ankiMaxBreakDurationSeconds"></label>
+      <input type="range" name="ankiMaxBreakDurationSeconds" id="ankiMaxBreakDurationSeconds" min="30" max="600" step="15" data-divisor="1">
+      <output data-unit="seconds"></output>
+    </div>
+    <div>
+      <span data-i18next="preferences.anki.fallbackMode.label"></span>
+    </div>
+    <div>
+      <input type="radio" value="eye-rest" name="ankiFallbackMode" id="ankiFallbackEyeRest">
+      <label data-i18next="preferences.anki.fallbackMode.eyeRest" for="ankiFallbackEyeRest"></label>
+      <input type="radio" value="learning-ahead" name="ankiFallbackMode" id="ankiFallbackLearningAhead">
+      <label data-i18next="preferences.anki.fallbackMode.learningAhead" for="ankiFallbackLearningAhead"></label>
+      <input type="radio" value="new" name="ankiFallbackMode" id="ankiFallbackNew">
+      <label data-i18next="preferences.anki.fallbackMode.new" for="ankiFallbackNew"></label>
+    </div>
+    <div>
+      <input type="checkbox" value="ankiAutoLaunchAnki" id="ankiAutoLaunchAnki">
+      <label data-i18next="preferences.anki.autoLaunch" for="ankiAutoLaunchAnki"></label>
+    </div>
+    <div>
+      <button id="ankiTestConnection" data-i18next="preferences.anki.testConnection.button"></button>
+      <button id="ankiOpenAnki" data-i18next="preferences.anki.openAnki"></button>
+      <span id="ankiTestStatus"></span>
     </div>
   </div>
   <div class="heart hidden">

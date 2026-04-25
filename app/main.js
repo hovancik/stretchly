@@ -29,6 +29,8 @@ import { registerBreakShortcuts } from './utils/breakShortcuts.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
 import DisplayManager from './utils/displayManager.js'
+import AnkiClient from './utils/ankiClient.js'
+import AnkiRetryQueue from './utils/ankiRetryQueue.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -78,6 +80,10 @@ let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
 let trayUpdateIntervalObj = null
+let ankiClient = null
+let ankiRetryQueue = null
+let pendingAnkiBundle = null
+let ankiUnavailableNotifiedAt = 0
 
 if (insideWindowsPortable()) {
   const portableDataPath = join(process.env.PORTABLE_EXECUTABLE_DIR, 'Data')
@@ -314,7 +320,10 @@ async function initialize (isAppStart = true) {
     breakPlanner = new BreaksPlanner(settings)
     breakPlanner.nextBreak()
     breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
-    breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
+    breakPlanner.on('startBreakNotification', () => {
+      startBreakNotification()
+      prepareAnkiBundle()
+    })
     breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
     breakPlanner.on('finishMicrobreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('miniBreakManualFinish')) {
@@ -324,7 +333,11 @@ async function initialize (isAppStart = true) {
       decreaseDanger(1)
       finishMicrobreak(shouldPlaySound, shouldPlanNext)
     })
-    breakPlanner.on('startBreak', () => { startBreak() })
+    breakPlanner.on('startBreak', async () => {
+      const useAnki = await shouldUseAnkiBreak()
+      if (useAnki) startAnkiBreak()
+      else startBreak()
+    })
     breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('longBreakManualFinish')) {
         enterLongBreakManualContinuation(shouldPlaySound)
@@ -349,6 +362,19 @@ async function initialize (isAppStart = true) {
     app,
     settings
   })
+
+  if (!ankiClient) {
+    ankiClient = new AnkiClient({})
+    ankiRetryQueue = new AnkiRetryQueue({
+      filePath: join(app.getPath('userData'), 'anki-retry-queue.json')
+    })
+    setTimeout(() => {
+      ankiRetryQueue.flush(ankiClient).then(({ flushed }) => {
+        if (flushed > 0) log.info(`Stretchly: flushed ${flushed} queued Anki ratings at startup`)
+      })
+      prepareAnkiBundle()
+    }, 3000)
+  }
 
   if (!settings.get('_migratedOpenAtLogin')) {
     // one time migration with 1.20 or after
@@ -497,6 +523,8 @@ function closeWindows (windowArray) {
     if (windowArray[0] === window) {
       ipcMain.removeHandler('send-long-break-data')
       ipcMain.removeHandler('send-mini-break-data')
+      ipcMain.removeHandler('send-anki-break-data')
+      ipcMain.removeHandler('anki:consumePendingBundle')
     }
 
     // Use destroy() for immediate, guaranteed cleanup on all platforms
@@ -1017,6 +1045,264 @@ function startBreak () {
   }
 }
 
+async function prepareAnkiBundle () {
+  if (!settings.get('ankiEnabled')) {
+    log.info('Stretchly: Anki disabled, skipping bundle prep')
+    pendingAnkiBundle = null
+    return
+  }
+  if (!ankiClient) return
+  try {
+    await ankiRetryQueue.flush(ankiClient)
+    const available = await ankiClient.isAvailable()
+    if (!available) {
+      log.info('Stretchly: AnkiConnect not reachable — falling back to eye-rest break')
+      maybeNotifyAnkiUnavailable()
+      pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+      return
+    }
+    const deckName = settings.get('ankiDeckName')
+    if (!deckName) {
+      log.info('Stretchly: no Anki deck selected — falling back to eye-rest break')
+      pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+      return
+    }
+    const decks = await ankiClient.getDecks()
+    if (!decks.includes(deckName)) {
+      log.warn(`Stretchly: Anki deck "${deckName}" not found in [${decks.join(', ')}]`)
+      showNotification(
+        `Anki deck "${deckName}" not found. Open Preferences → Anki to re-select.`
+      )
+      pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+      return
+    }
+    const limit = Math.max(1, Math.min(10, settings.get('ankiCardsPerBreak') || 3))
+    let ids = await ankiClient.findDueCards(deckName, limit)
+    let mode = 'due'
+    if (ids.length === 0) {
+      const fallback = settings.get('ankiFallbackMode') || 'eye-rest'
+      log.info(`Stretchly: no due cards in "${deckName}", applying fallback: ${fallback}`)
+      if (fallback === 'learning-ahead') {
+        ids = await ankiClient.findLearningAheadCards(deckName, limit)
+        mode = 'learning-ahead'
+      } else if (fallback === 'new') {
+        ids = await ankiClient.findNewCards(deckName, limit)
+        mode = 'new'
+      } else {
+        pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+        return
+      }
+      if (ids.length === 0) {
+        log.info(`Stretchly: fallback "${fallback}" also found no cards — eye-rest`)
+        pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+        return
+      }
+    }
+    const cards = await ankiClient.prepareCards(ids)
+    pendingAnkiBundle = { mode, cards }
+    log.info(`Stretchly: prepared ${cards.length} Anki cards for next break (deck="${deckName}", mode=${mode})`)
+  } catch (err) {
+    log.warn('Stretchly: failed to prepare Anki bundle:', err && err.message)
+    pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+  }
+}
+
+function maybeNotifyAnkiUnavailable () {
+  const now = Date.now()
+  if (now - ankiUnavailableNotifiedAt < 10 * 60 * 1000) return
+  ankiUnavailableNotifiedAt = now
+  showNotification('Anki not running — taking a regular break')
+}
+
+async function shouldUseAnkiBreak () {
+  if (!settings.get('ankiEnabled')) {
+    log.info('Stretchly: Anki disabled; using standard break')
+    return false
+  }
+  if (!pendingAnkiBundle) {
+    log.info('Stretchly: no pre-warmed Anki bundle; fetching on demand (up to 8s)')
+    try {
+      await Promise.race([
+        prepareAnkiBundle(),
+        new Promise((_resolve, reject) => setTimeout(() => reject(new Error('timeout')), 8000))
+      ])
+    } catch (err) {
+      log.warn(`Stretchly: on-demand Anki prep ${err.message}; falling back to eye-rest break`)
+      pendingAnkiBundle = { mode: 'eye-rest', cards: [] }
+    }
+  }
+  const ok = !!(pendingAnkiBundle && pendingAnkiBundle.cards && pendingAnkiBundle.cards.length > 0)
+  log.info(`Stretchly: break type decision — ${ok ? 'Anki' : 'standard'} (bundle mode=${pendingAnkiBundle ? pendingAnkiBundle.mode : 'null'}, cards=${pendingAnkiBundle ? pendingAnkiBundle.cards.length : 0})`)
+  return ok
+}
+
+function startAnkiBreak () {
+  if (breakWins) {
+    log.warn('Stretchly: Long break already running, not starting Anki break')
+    return
+  }
+  const bundle = pendingAnkiBundle
+  if (!bundle || !bundle.cards || bundle.cards.length === 0) {
+    startBreak()
+    return
+  }
+
+  const breakDuration = Math.max(30, Math.min(600, settings.get('ankiMaxBreakDurationSeconds') || 120)) * 1000
+  const strictMode = settings.get('breakStrictMode')
+  const postponesLimit = settings.get('breakPostponesLimit')
+  const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
+  const postponable = settings.get('breakPostpone') &&
+    breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
+  const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
+
+  const primaryModalPath = 'file://' + join(__dirname, '/anki-break.html')
+  const secondaryModalPath = 'file://' + join(__dirname, '/break.html')
+  breakWins = []
+  breakPlanner._ankiBreakActive = true
+
+  if (!settings.get('silentNotifications')) {
+    const sound = settings.get('longBreakStartSound')
+    if (sound !== 'silence') {
+      processWin.webContents.send('play-sound', sound, settings.get('volume'))
+    }
+  }
+
+  const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
+  const idea = nextIdea ? (nextIdea.map((val, index) => val || defaultNextIdea[index])) : defaultNextIdea
+  nextIdea = null
+
+  ipcMain.handle('send-anki-break-data', () => {
+    const startTime = Date.now()
+    return [
+      startTime,
+      breakDuration,
+      strictMode,
+      postponable,
+      postponableDurationPercent,
+      calculateBackgroundColor(settings.get('mainColor')),
+      danger
+    ]
+  })
+
+  ipcMain.handle('send-long-break-data', () => {
+    const startTime = Date.now()
+    return [idea, startTime, breakDuration, strictMode,
+      postponable, postponableDurationPercent,
+      calculateBackgroundColor(settings.get('mainColor')), danger, settings.get('breakHealthMode')]
+  })
+
+  ipcMain.handle('anki:consumePendingBundle', () => {
+    const snapshot = pendingAnkiBundle
+    pendingAnkiBundle = null
+    return snapshot
+  })
+
+  for (let localDisplayId = 0; localDisplayId < displayManager.getDisplayCount(); localDisplayId++) {
+    const isPrimary = localDisplayId === 0
+    const modalPath = isPrimary ? primaryModalPath : secondaryModalPath
+    const preloadPath = isPrimary
+      ? join(__dirname, './anki-break-preload.mjs')
+      : join(__dirname, './break-preload.mjs')
+    const windowOptions = {
+      width: Math.floor(displayManager.getDisplayWidth(localDisplayId) * settings.get('breakWindowWidth')),
+      height: Math.floor(displayManager.getDisplayHeight(localDisplayId) * settings.get('breakWindowHeight')),
+      autoHideMenuBar: true,
+      icon: windowIconPath(),
+      resizable: false,
+      frame: showBreaksAsRegularWindows,
+      show: false,
+      backgroundThrottling: false,
+      transparent: !showBreaksAsRegularWindows,
+      ...getBlurredBackgroundWindowOptions(),
+      backgroundColor: calculateBackgroundColor(settings.get('mainColor')),
+      skipTaskbar: !showBreaksAsRegularWindows,
+      focusable: showBreaksAsRegularWindows,
+      alwaysOnTop: !showBreaksAsRegularWindows,
+      hasShadow: false,
+      title: 'Stretchly',
+      titleBarStyle: process.platform === 'darwin' ? (showBreaksAsRegularWindows ? 'default' : 'hidden') : undefined,
+      titleBarOverlay: process.platform === 'darwin' ? !showBreaksAsRegularWindows : undefined,
+      webPreferences: {
+        preload: preloadPath,
+        sandbox: false,
+        webviewTag: isPrimary
+      }
+    }
+
+    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+      windowOptions.width = displayManager.getDisplayWidth(localDisplayId)
+      windowOptions.height = displayManager.getDisplayHeight(localDisplayId)
+      windowOptions.x = displayManager.getDisplayX(localDisplayId, 0, true)
+      windowOptions.y = displayManager.getDisplayY(localDisplayId, 0, true)
+    } else if (!(settings.get('fullscreen') && process.platform === 'win32')) {
+      windowOptions.x = displayManager.getDisplayX(localDisplayId, windowOptions.width, false)
+      windowOptions.y = displayManager.getDisplayY(localDisplayId, windowOptions.height, false)
+    }
+
+    let breakWinLocal = new BrowserWindow(windowOptions)
+    breakWinLocal.setSize(windowOptions.width, windowOptions.height)
+
+    breakWinLocal.once('ready-to-show', () => {
+      log.info('Stretchly: Anki break ready-to-show fired')
+    })
+
+    ipcMain.once('long-break-loaded', () => {
+      log.info('Stretchly: Anki break window loaded')
+      if (showBreaksAsRegularWindows) {
+        breakWinLocal.show()
+      } else {
+        breakWinLocal.showInactive()
+      }
+      if (process.platform === 'darwin') {
+        if (showBreaksAsRegularWindows) {
+          breakWinLocal.setFullScreen(settings.get('fullscreen'))
+        } else {
+          breakWinLocal.setMinimizable(false)
+          breakWinLocal.setClosable(false)
+          breakWinLocal.setKiosk(settings.get('fullscreen'))
+        }
+      }
+      if (localDisplayId === 0) {
+        breakPlanner.emit('breakStarted', true)
+        log.info('Stretchly: starting Anki break')
+      }
+      if (!settings.get('fullscreen') && process.platform !== 'darwin') {
+        setTimeout(() => {
+          breakWinLocal.center()
+        }, 0)
+      }
+      updateTray()
+    })
+
+    breakWinLocal.loadURL(modalPath)
+    breakWinLocal.setVisibleOnAllWorkspaces(true)
+    breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
+    breakWinLocal.on('close', (e) => {
+      if (breakPlanner.scheduler.timeLeft > 0 && settings.get('breakStrictMode')) {
+        log.info('Stretchly: preventing closing Anki break window as in strict mode')
+        e.preventDefault()
+      }
+    })
+    breakWinLocal.once('closed', () => {
+      breakWinLocal = null
+    })
+    breakWins.push(breakWinLocal)
+
+    if (!settings.get('allScreens')) {
+      if (displayManager.getDisplayCount() > 1) {
+        log.info('Stretchly: not showing Anki break on more Monitors as it is disabled.')
+      }
+      break
+    }
+  }
+
+  if (process.platform === 'darwin') {
+    if (app.dock.isVisible) {
+      app.dock.hide()
+    }
+  }
+}
+
 function breakComplete (shouldPlaySound, windows, breakType) {
   if (settings.get('endBreakShortcut') && globalShortcut.isRegistered(settings.get('endBreakShortcut'))) {
     globalShortcut.unregister(settings.get('endBreakShortcut'))
@@ -1083,11 +1369,18 @@ function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
 
 function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
   breakWins = breakComplete(shouldPlaySound, breakWins, 'long')
+  if (breakPlanner._ankiBreakActive) {
+    breakPlanner._ankiBreakActive = false
+    pendingAnkiBundle = null
+  }
   log.info(`Stretchly: finishing Long break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
   } else {
     breakPlanner.clear()
+  }
+  if (ankiClient && settings.get('ankiEnabled')) {
+    setTimeout(() => prepareAnkiBundle(), 2000)
   }
   updateTray()
 }
@@ -1517,6 +1810,13 @@ ipcMain.on('save-setting', function (event, key, value) {
     breakPlanner.doNotDisturb(value)
   }
 
+  if (key === 'ankiDeckName' || key === 'ankiEnabled' || key === 'ankiFallbackMode' || key === 'ankiCardsPerBreak') {
+    pendingAnkiBundle = null
+    if (ankiClient && (key !== 'ankiEnabled' || value)) {
+      setTimeout(() => prepareAnkiBundle(), 200)
+    }
+  }
+
   if (key === 'language') {
     i18next.changeLanguage(value)
   }
@@ -1689,6 +1989,50 @@ ipcMain.handle('i18next-dir', (event) => {
 
 ipcMain.handle('settings-get', (event, key) => {
   return settings.get(key)
+})
+
+ipcMain.handle('anki:isAvailable', async () => {
+  if (!ankiClient) return false
+  return await ankiClient.isAvailable()
+})
+
+ipcMain.handle('anki:getDecks', async () => {
+  if (!ankiClient) return []
+  try {
+    return await ankiClient.getDecks()
+  } catch {
+    return []
+  }
+})
+
+ipcMain.handle('anki:testConnection', async () => {
+  if (!ankiClient) return { ok: false, reason: 'not-initialized' }
+  try {
+    const available = await ankiClient.isAvailable()
+    if (!available) return { ok: false, reason: 'unreachable' }
+    const decks = await ankiClient.getDecks()
+    return { ok: true, deckCount: decks.length }
+  } catch (err) {
+    return { ok: false, reason: err.message || 'error' }
+  }
+})
+
+ipcMain.on('anki:rateCard', async (_event, cardId, ease) => {
+  if (!ankiClient) return
+  try {
+    await ankiClient.answerCards([{ cardId, ease }])
+    if (ankiRetryQueue && ankiRetryQueue.size() > 0) {
+      ankiRetryQueue.flush(ankiClient)
+    }
+  } catch (err) {
+    log.warn(`Stretchly: failed to rate Anki card ${cardId}, queuing for retry`, err && err.message)
+    ankiRetryQueue.enqueue({ cardId, ease })
+  }
+})
+
+ipcMain.on('anki:openAnki', async () => {
+  if (!ankiClient) return
+  await ankiClient.guiDeckBrowser()
 })
 
 ipcMain.on('close-current-window', (event) => {

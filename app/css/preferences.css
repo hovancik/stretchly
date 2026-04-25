@@ -8,7 +8,7 @@ body > div > :last-child {
   box-shadow: var(--box-shadow);
   display: grid;
   grid-gap: 16px;
-  grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
+  grid-template: 56px/ minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) minmax(57px, min-content) auto;
   padding: 0 16px;
   position: fixed;
   width: calc(100% - 16px);
@@ -82,6 +82,40 @@ body > div > :last-child {
 .settings > :nth-child(3) > label {
   margin-right: 32px;
 }
+
+.anki {
+  display: grid;
+  font-size: 13px;
+  grid-gap: 16px 0;
+  grid-template: auto / 89px auto 16px;
+  letter-spacing: -0.08px;
+  padding-top: 86px;
+}
+
+.anki > div {
+  grid-column: 2/-2;
+}
+
+.anki label {
+  margin-right: 12px;
+}
+
+.anki input[type="range"] {
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.anki button {
+  margin-left: 8px;
+}
+
+#ankiTestStatus {
+  margin-left: 12px;
+  font-size: 12px;
+}
+
+#ankiTestStatus.ok { color: #4e9a65; }
+#ankiTestStatus.fail { color: #c75450; }
 
 .schedule {
   display: grid;

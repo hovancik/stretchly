@@ -24,7 +24,9 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
-      const interval = this.settings.get('breakDuration')
+      const interval = this._ankiBreakActive
+        ? this.settings.get('ankiMaxBreakDurationSeconds') * 1000
+        : this.settings.get('breakDuration')
       this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound, true), interval, 'finishBreak')
       this.scheduler.plan()
     })

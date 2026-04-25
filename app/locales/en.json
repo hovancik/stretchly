@@ -31,6 +31,14 @@
     "title": "Time to take a break!",
     "finish": "Finish this break"
   },
+  "ankiBreak": {
+    "showAnswer": "Show answer",
+    "again": "Again",
+    "hard": "Hard",
+    "good": "Good",
+    "easy": "Easy",
+    "doneTitle": "Nice work!"
+  },
   "preferences": {
     "title": "Stretchly Preferences",
     "nav": {
@@ -38,7 +46,30 @@
       "schedule": "Schedule",
       "theme": "Theme",
       "about": "About",
+      "anki": "Anki",
       "heart": "Love Stretchly"
+    },
+    "anki": {
+      "enabled": "Show Anki flashcards during long breaks",
+      "deck": "Deck",
+      "selectDeck": "— select a deck —",
+      "refreshDecks": "Refresh",
+      "cardsPerBreak": "Cards per break",
+      "maxBreakDuration": "Max break duration",
+      "fallbackMode": {
+        "label": "When no cards are due:",
+        "eyeRest": "Show a normal eye-rest break",
+        "learningAhead": "Pull cards due in the next 6 hours",
+        "new": "Pull new cards"
+      },
+      "autoLaunch": "Launch Anki when Stretchly starts",
+      "openAnki": "Open Anki",
+      "testConnection": {
+        "button": "Test connection",
+        "pending": "Checking…",
+        "success": "Connected ({{count}} decks)",
+        "fail": "Anki not reachable"
+      }
     },
     "settings": {
       "openAtLogin": "Start Stretchly automatically when logging in",

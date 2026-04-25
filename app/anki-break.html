@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title data-i18next="break.title"></title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' data: blob:; media-src data: blob:; frame-src data:; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/color-scheme.css">
+    <link rel="stylesheet" type="text/css" href="css/commons.css">
+    <link rel="stylesheet" type="text/css" href="css/break.css">
+    <link rel="stylesheet" type="text/css" href="css/anki-break.css">
+  </head>
+  <body>
+    <div class="breaks anki-break">
+      <div class="anki-stage">
+        <webview id="card" src="about:blank" partition="persist:anki-break" allowpopups="false"></webview>
+        <div id="anki-done" class="hidden">
+          <p class="done-title" data-i18next="ankiBreak.doneTitle"></p>
+          <p class="done-count"></p>
+        </div>
+      </div>
+      <div class="anki-controls">
+        <button id="show-answer" class="anki-btn">
+          <span data-i18next="ankiBreak.showAnswer"></span>
+          <kbd>Space</kbd>
+        </button>
+        <div id="rate-buttons" class="hidden">
+          <button id="rate-again" class="anki-btn rate again"><span data-i18next="ankiBreak.again"></span><kbd>1</kbd></button>
+          <button id="rate-hard" class="anki-btn rate hard"><span data-i18next="ankiBreak.hard"></span><kbd>2</kbd></button>
+          <button id="rate-good" class="anki-btn rate good"><span data-i18next="ankiBreak.good"></span><kbd>3</kbd></button>
+          <button id="rate-easy" class="anki-btn rate easy"><span data-i18next="ankiBreak.easy"></span><kbd>4</kbd></button>
+        </div>
+      </div>
+      <div>
+        <progress id='progress' max="10000" aria-hidden="true"></progress>
+        <span id='progress-time' aria-hidden="true"></span>
+      </div>
+      <div>
+        <a id="postpone" class="tooltip top hidden">
+          <span data-i18next="break.postpone"></span>
+          <img src="images/breaks/break-postpone.svg" />
+          <span class="tiptext"></span>
+        </a>
+        <a id="close" class="tooltip top hidden">
+          <span data-i18next="break.skip"></span>
+          <img src="images/breaks/break-skip.svg" />
+          <span class="tiptext"></span>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="./anki-break-renderer.js"></script>
+</html>
