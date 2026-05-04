@@ -119,6 +119,10 @@ if (!gotTheLock) {
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory, commandLineArguments) => {
     log.info(`Stretchly: arguments received from second instance: ${commandLineArguments}`)
+    if (!commandLineArguments) {
+      log.warn('Stretchly: second instance sent null arguments, ignoring')
+      return
+    }
     const cmd = new Command(commandLineArguments, app.getVersion())
 
     if (!cmd.hasSupportedCommand) {
@@ -207,7 +211,8 @@ app.on('before-quit', (event) => {
     if (autostartManager) {
       autostartManager.disconnect()
     }
-    app.quit()
+    // Do NOT call app.quit() here — we are already inside the quit sequence.
+    // Calling it again triggers before-quit recursively → RangeError: Maximum call stack size exceeded.
   }
 })
 
