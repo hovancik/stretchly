@@ -805,8 +805,12 @@ function startMicrobreak () {
       log.info('Stretchly: ready-to-show fired')
     })
 
-    ipcMain.once('mini-break-loaded', () => {
+    const onMiniBreakLoaded = () => {
       log.info('Stretchly: Mini break window loaded')
+      if (!microbreakWinLocal || microbreakWinLocal.isDestroyed()) {
+        log.warn('Stretchly: mini-break-loaded fired after window was destroyed, ignoring')
+        return
+      }
       if (showBreaksAsRegularWindows) {
         microbreakWinLocal.show()
       } else {
@@ -833,7 +837,9 @@ function startMicrobreak () {
         }, 0)
       }
       updateTray()
-    })
+    }
+
+    ipcMain.once('mini-break-loaded', onMiniBreakLoaded)
 
     microbreakWinLocal.loadURL(modalPath)
     microbreakWinLocal.setVisibleOnAllWorkspaces(true)
@@ -846,6 +852,7 @@ function startMicrobreak () {
         }
       })
       microbreakWinLocal.once('closed', () => {
+        ipcMain.removeListener('mini-break-loaded', onMiniBreakLoaded)
         microbreakWinLocal = null
       })
     }
@@ -961,8 +968,12 @@ function startBreak () {
       log.info('Stretchly: ready-to-show fired')
     })
 
-    ipcMain.once('long-break-loaded', () => {
+    const onLongBreakLoaded = () => {
       log.info('Stretchly: Long break window loaded')
+      if (!breakWinLocal || breakWinLocal.isDestroyed()) {
+        log.warn('Stretchly: long-break-loaded fired after window was destroyed, ignoring')
+        return
+      }
       if (showBreaksAsRegularWindows) {
         breakWinLocal.show()
       } else {
@@ -990,7 +1001,9 @@ function startBreak () {
         }, 0)
       }
       updateTray()
-    })
+    }
+
+    ipcMain.once('long-break-loaded', onLongBreakLoaded)
 
     breakWinLocal.loadURL(modalPath)
     breakWinLocal.setVisibleOnAllWorkspaces(true)
@@ -1003,6 +1016,7 @@ function startBreak () {
         }
       })
       breakWinLocal.once('closed', () => {
+        ipcMain.removeListener('long-break-loaded', onLongBreakLoaded)
         breakWinLocal = null
       })
     }
