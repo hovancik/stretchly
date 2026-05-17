@@ -49,6 +49,7 @@
       "allScreens": "Pausen auf allen Monitoren anzeigen",
       "monitorIdleTime": "Abwesenheit vom Gerät berücksichtigen (Zeit, wenn das System inaktiv ist, wird nicht mitgezählt).",
       "monitorDnd": "Pausen auch im Modus \"Nicht stören\" anzeigen",
+      "monitorFullscreenApp": "Pausen anhalten, wenn eine andere App im Vollbildmodus ist",
       "language": "Sprache auswählen:",
       "restoreDefaults": "Standardeinstellungen wiederherstellen"
     },

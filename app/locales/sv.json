@@ -49,6 +49,7 @@
       "allScreens": "Visar pauser på alla bildskärmar",
       "monitorIdleTime": "Övervaka systemets vilotid (nedräkning pausas om systemet är inaktivt).",
       "monitorDnd": "Visa pauser även i läget Stör inte",
+      "monitorFullscreenApp": "Pausa pauser när en annan app är i helskärm",
       "language": "Välj språk:",
       "restoreDefaults": "Återställ till standardvärden"
     },

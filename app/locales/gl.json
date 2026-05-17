@@ -48,6 +48,7 @@
       "allScreens": "Amosar descansos en todos os monitores",
       "monitorIdleTime": "Supervisar a inactividade do sistema (deter os descansos si o sistema está inactivo).",
       "monitorDnd": "Amosar descansos incluso no modo Sen molestias",
+      "monitorFullscreenApp": "Pausar os descansos cando outra aplicación estea en pantalla completa",
       "language": "Escoller idioma:",
       "restoreDefaults": "Restituír opcións por defecto"
     },

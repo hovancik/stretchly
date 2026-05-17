@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- option to pause breaks while another app is in full screen
 
 ## [1.21.0] - 2026-04-25
 ### Added

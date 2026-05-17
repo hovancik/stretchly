@@ -142,6 +142,7 @@
       "restoreDefaults": "Tilbakestill forvalg",
       "language": "Velg spåk:",
       "monitorDnd": "Viser pauser selv i \"Ikke forstyrr\"-modus",
+      "monitorFullscreenApp": "Sett pauser på pause når en annen app er i fullskjerm",
       "monitorIdleTime": "Følg med på når maskinen ikke er i bruk (utsetter pauser hvis maskinen ikke brukes).",
       "allScreens": "Vis pauser på alle skjermer",
       "showIdeas": "Vis treningstips i pausene",

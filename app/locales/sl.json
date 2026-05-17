@@ -209,6 +209,7 @@
       "restoreDefaults": "Ponastavi na privzeto",
       "language": "Izberite jezik:",
       "monitorDnd": "Prikaz premorov tudi v načinu Ne moti",
+      "monitorFullscreenApp": "Začasno ustavi premore, ko je druga aplikacija v celozaslonskem načinu",
       "monitorIdleTime": "Nadzoruj mirovanje sistema (premori so zaustavljeni, ko sistem miruje).",
       "allScreens": "Prikaz premorov na vseh zaslonih",
       "showIdeas": "Prikaz vadbenih nasvetov med premori",

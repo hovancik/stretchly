@@ -48,6 +48,7 @@
       "allScreens": "Pokaż przerwy na wszystkich monitorach",
       "monitorIdleTime": "Monitoruj nieaktywność systemu (odliczanie jest wstrzymane gdy brak aktywności).",
       "monitorDnd": "Pokaż przerwy nawet w trybie Nie przeszkadzać",
+      "monitorFullscreenApp": "Wstrzymuj przerwy, gdy inna aplikacja jest w trybie pełnoekranowym",
       "language": "Wybierz język:",
       "restoreDefaults": "Przywróć domyślne"
     },

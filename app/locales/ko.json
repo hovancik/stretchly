@@ -48,6 +48,7 @@
       "allScreens": "모든 모니터에 휴식 표시",
       "monitorIdleTime": "시스템 유휴 시간 모니터링 (시스템이 유휴 상태일 경우 휴식 일시 중지).",
       "monitorDnd": "방해금지 모드에서도 휴식 표시",
+      "monitorFullscreenApp": "다른 앱이 전체 화면일 때 휴식을 일시 중지",
       "language": "언어 선택:",
       "restoreDefaults": "기본값 복원"
     },

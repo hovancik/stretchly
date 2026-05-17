@@ -3,6 +3,7 @@ import EventEmitter from 'events'
 import NaturalBreaksManager from './utils/naturalBreaksManager.js'
 import DndManager from './utils/dndManager.js'
 import AppExclusionsManager from './utils/appExclusionsManager.js'
+import FullscreenAppManager from './utils/fullscreenAppManager.js'
 import log from 'electron-log/main.js'
 
 class BreaksPlanner extends EventEmitter {
@@ -16,6 +17,7 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
+    this.fullscreenAppManager = new FullscreenAppManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('microbreakDuration')
@@ -37,7 +39,7 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd && !this.fullscreenAppManager.isOnFullscreenApp) {
         this.reset()
         log.info('Stretchly: resuming breaks after idle time')
         this.emit('updateToolTip')
@@ -87,6 +89,24 @@ class BreaksPlanner extends EventEmitter {
           log.info(`Stretchly: resuming breaks as 'resume' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
         }
+      }
+    })
+
+    this.fullscreenAppManager.on('fullscreenAppStarted', () => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        this.clear()
+        log.info('Stretchly: pausing breaks because a fullscreen app is active')
+        this.emit('updateToolTip')
+      } else {
+        this.fullscreenAppManager.isOnFullscreenApp = false
+      }
+    })
+
+    this.fullscreenAppManager.on('fullscreenAppFinished', () => {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
+        this.reset()
+        log.info('Stretchly: resuming breaks after fullscreen app is no longer active')
+        this.emit('updateToolTip')
       }
     })
 
@@ -265,6 +285,17 @@ class BreaksPlanner extends EventEmitter {
       this.dndManager.start()
     } else {
       this.dndManager.stop()
+      if (!this.isPaused && this.scheduler.reference === null) {
+        this.reset()
+      }
+    }
+  }
+
+  fullscreenApp (shouldUse) {
+    if (shouldUse) {
+      this.fullscreenAppManager.start()
+    } else {
+      this.fullscreenAppManager.stop()
       if (!this.isPaused && this.scheduler.reference === null) {
         this.reset()
       }

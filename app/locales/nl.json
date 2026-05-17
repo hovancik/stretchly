@@ -48,6 +48,7 @@
       "allScreens": "Toon pauzes op alle monitoren",
       "monitorIdleTime": "Controleer inactieve tijd van het systeem (aftellen wordt gepauzeerd als het systeem inactief is).",
       "monitorDnd": "Toon pauzes in Niet Storen modus",
+      "monitorFullscreenApp": "Pauzes pauzeren wanneer een andere app schermvullend is",
       "language": "Selecteer taal:",
       "restoreDefaults": "Standaardinstellingen herstellen"
     },

@@ -30,6 +30,7 @@
       "openAtLogin": "Iniciar Stretchly automàticament en iniciar sessió",
       "monitorIdleTime": "Controlar el temps inactiu del sistema (pauses són aturades si el sistema està inactiu).",
       "monitorDnd": "Mostrar pauses fins i tot en el mode No Molestar",
+      "monitorFullscreenApp": "Pausa els descansos quan una altra aplicació estigui en pantalla completa",
       "allScreens": "Mostrar pauses a tots els monitors",
       "showIdeas": "Mostrar consells d'exercicis durant les pauses",
       "fullscreen": "Pantalla completa",
