@@ -145,7 +145,7 @@
     "jsdom": "^29.0.2",
     "rimraf": "^6.1.3",
     "standard": "^17.1.2",
-    "vitest": "^4.1.5"
+    "vitest": "^4.1.6"
   },
   "dependencies": {
     "@particle/dbus-next": "^0.11.4",
