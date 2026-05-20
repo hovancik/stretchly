@@ -207,6 +207,7 @@ app.on('before-quit', (event) => {
     if (autostartManager) {
       autostartManager.disconnect()
     }
+    app.quit()
   }
 })
 
