@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Fixed
-- fix duplicate powerMonitor listeners accumulating on system resume or screen unlock
+- fix crashes on system unlock
 
 ## [1.21.0] - 2026-04-25
 ### Added
