@@ -161,6 +161,7 @@
     "node-desktop-idle-v2": "^1.1.23",
     "ps-list": "^9.0.0",
     "semver": "^7.7.4",
-    "windows-focus-assist": "^1.4.0"
+    "windows-focus-assist": "^1.4.0",
+    "windows-notification-state": "^2.0.0"
   }
 }

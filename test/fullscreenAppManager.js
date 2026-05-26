@@ -1,10 +1,14 @@
 import { vi } from 'vitest'
 import 'chai/register-should'
 import { join } from 'path'
-import FullscreenAppManager from '../app/utils/fullscreenAppManager'
 import Store from 'electron-store'
 import defaultSettings from '../app/utils/defaultSettings'
 import { unlinkSync } from 'node:fs'
+
+const wnsMock = vi.hoisted(() => ({ shQueryUserNotificationState: vi.fn(() => 5) }))
+vi.mock('windows-notification-state', () => wnsMock)
+
+const { default: FullscreenAppManager } = await import('../app/utils/fullscreenAppManager')
 
 const timeout = process.env.CI ? 30000 : 10000
 
@@ -109,6 +113,44 @@ describe('fullscreenAppManager', function () {
     manager._logErrorOnce('scope-a', err)
     manager._logErrorOnce('scope-a', err)
     Object.keys(manager._errorLogged).length.should.be.equal(1)
+  })
+
+  describe('_detectFullscreenWindows (mocked windows-notification-state)', function () {
+    // _detectFullscreenWindows is called directly so the test runs on any host
+    // OS, not only Windows.
+    const fullscreenStates = [
+      [2, 'QUNS_BUSY'],
+      [3, 'QUNS_RUNNING_D3D_FULL_SCREEN'],
+      [4, 'QUNS_PRESENTATION_MODE']
+    ]
+    const nonFullscreenStates = [
+      [1, 'QUNS_NOT_PRESENT'],
+      [5, 'QUNS_ACCEPTS_NOTIFICATIONS'],
+      [6, 'QUNS_QUIET_TIME'],
+      [7, 'QUNS_APP']
+    ]
+
+    for (const [value, name] of fullscreenStates) {
+      it(`returns true for ${name} (${value})`, () => {
+        wnsMock.shQueryUserNotificationState.mockReturnValueOnce(value)
+        manager._detectFullscreenWindows().should.be.equal(true)
+      })
+    }
+
+    for (const [value, name] of nonFullscreenStates) {
+      it(`returns false for ${name} (${value})`, () => {
+        wnsMock.shQueryUserNotificationState.mockReturnValueOnce(value)
+        manager._detectFullscreenWindows().should.be.equal(false)
+      })
+    }
+
+    it('returns false and logs when the native call throws', () => {
+      wnsMock.shQueryUserNotificationState.mockImplementationOnce(() => {
+        throw new Error('not on windows')
+      })
+      manager._detectFullscreenWindows().should.be.equal(false)
+      Object.keys(manager._errorLogged).should.include('win32-state-not on windows')
+    })
   })
 
   afterEach(() => {
