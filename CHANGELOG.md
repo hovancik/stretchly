@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - option to pause breaks while another app is in full screen
+### Fixed
+- fix crashes on system unlock
+- fix custom title for Mini break from command line
 
 ## [1.21.0] - 2026-04-25
 ### Added

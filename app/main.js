@@ -143,7 +143,7 @@ if (!gotTheLock) {
           log.error('Stretchly: error parsing wait interval to ms because of invalid value')
           return
         }
-        if (cmd.options.title) nextIdea = [cmd.options.title]
+        if (cmd.options.title) nextIdea = cmd.options.title
         if (!cmd.options.noskip || delay) skipToMicrobreak(delay)
         break
       }
@@ -483,6 +483,10 @@ function onResumeOrUnlock () {
 }
 
 function startPowerMonitoring () {
+  powerMonitor.removeListener('suspend', onSuspendOrLock)
+  powerMonitor.removeListener('lock-screen', onSuspendOrLock)
+  powerMonitor.removeListener('resume', onResumeOrUnlock)
+  powerMonitor.removeListener('unlock-screen', onResumeOrUnlock)
   powerMonitor.on('suspend', onSuspendOrLock)
   powerMonitor.on('lock-screen', onSuspendOrLock)
   powerMonitor.on('resume', onResumeOrUnlock)

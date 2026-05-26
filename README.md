@@ -26,6 +26,8 @@ The latest official **installers** and **portable versions** for macOS, Windows 
 
 ### macOS
 
+Requires macOS Monterey (12) or later.
+
 It is recommended to install *Stretchly* with [Homebrew tap](https://github.com/hovancik/homebrew-stretchly) by running the following command.
 See [Application Signing](#application-signing) for details.
 ```zsh
@@ -37,6 +39,14 @@ Don't forget to Quit Stretchly, first.
 ```zsh
 brew upgrade --cask hovancik/stretchly/stretchly
 ```
+
+To uninstall:
+```zsh
+brew uninstall --cask hovancik/stretchly/stretchly
+brew untap hovancik/stretchly
+```
+
+> **Note:** A `stretchly` cask also exists in the default `homebrew/cask` tap. It is deprecated and [scheduled to be disabled on September 1, 2026](https://github.com/Homebrew/homebrew-cask/blob/main/Casks/s/stretchly.rb) because the app is unsigned and fails Homebrew's Gatekeeper check. Until then, the bare name `stretchly` is ambiguous — always use the fully qualified `hovancik/stretchly/stretchly` to get this tap's version.
 
 If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.raycast.com/) on macOS you can use this [Alfred Workflow](https://github.com/KingOfSpades/stretchFred) or [Raycast Extension](https://www.raycast.com/u-ran/stretchly) to interact with Stretchly.
 
