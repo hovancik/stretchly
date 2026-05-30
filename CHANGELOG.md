@@ -5,8 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
-### Added
 - option to pause breaks while another app is in full screen
+- 
+### Added
+- advanced option `breakContentScreen` to show break countdown/idea only on the primary, cursor, or a specific screen while other screens stay blanked
+
 ### Fixed
 - fix crashes on system unlock
 - fix custom title for Mini break from command line

@@ -6,16 +6,23 @@ window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
     postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
 
-  const mainColor = await window.settings.get('mainColor')
-
-  new HtmlTranslate(document).translate()
-  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
-
   document.ondragover = event =>
     event.preventDefault()
 
   document.ondrop = event =>
     event.preventDefault()
+
+  if (new URLSearchParams(window.location.search).get('blank') === '1') {
+    document.body.style.backgroundColor = backgroundColor
+    document.querySelector('.breaks').style.display = 'none'
+    await window.breaks.signalLoaded()
+    return
+  }
+
+  const mainColor = await window.settings.get('mainColor')
+
+  new HtmlTranslate(document).translate()
+  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
 
   document.querySelector('#close').onclick = async event =>
     await window.breaks.finishBreak(manualAwaiting)

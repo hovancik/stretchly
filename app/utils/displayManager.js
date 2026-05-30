@@ -84,6 +84,29 @@ class DisplayManager {
       height: fullscreen ? this.getDisplayHeight(displayID) : height
     }
   }
+
+  getContentDisplayId () {
+    const setting = this.settings.get('breakContentScreen')
+    if (setting === 'all') return -1
+
+    let target
+    if (setting === 'primary') {
+      target = screen.getPrimaryDisplay()
+    } else if (setting === 'cursor') {
+      target = screen.getDisplayNearestPoint(screen.getCursorScreenPoint())
+    }
+
+    const index = target
+      ? screen.getAllDisplays().findIndex(d => d.id === target.id)
+      : parseInt(setting)
+
+    if (!Number.isInteger(index) || index < 0 || index >= this.getDisplayCount()) {
+      log.warn(`Stretchly: invalid breakContentScreen "${setting}", showing break content on all screens`)
+      return -1
+    }
+
+    return index
+  }
 }
 
 export default DisplayManager

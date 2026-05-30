@@ -243,4 +243,60 @@ describe('DisplayManager', function () {
       zeroHeight.should.equal(540)
     })
   })
+
+  describe('getContentDisplayId', function () {
+    beforeEach(function () {
+      displayManager = new DisplayManager(mockSettings)
+    })
+
+    it('returns -1 when breakContentScreen is "all"', function () {
+      mockSettings.get.mockImplementation((key) => {
+        if (key === 'breakContentScreen') return 'all'
+        return null
+      })
+      displayManager.getContentDisplayId().should.equal(-1)
+    })
+
+    it('returns primary display index when breakContentScreen is "primary"', function () {
+      mockSettings.get.mockImplementation((key) => {
+        if (key === 'breakContentScreen') return 'primary'
+        return null
+      })
+      displayManager.getContentDisplayId().should.equal(0)
+      expect(screen.getPrimaryDisplay).toHaveBeenCalled()
+    })
+
+    it('returns cursor display index when breakContentScreen is "cursor"', function () {
+      mockSettings.get.mockImplementation((key) => {
+        if (key === 'breakContentScreen') return 'cursor'
+        return null
+      })
+      displayManager.getContentDisplayId().should.equal(0)
+      expect(screen.getDisplayNearestPoint).toHaveBeenCalled()
+    })
+
+    it('returns numeric display index when breakContentScreen is a numeric string', function () {
+      mockSettings.get.mockImplementation((key) => {
+        if (key === 'breakContentScreen') return '1'
+        return null
+      })
+      displayManager.getContentDisplayId().should.equal(1)
+    })
+
+    it('returns -1 for unknown string values (falls back to all screens)', function () {
+      mockSettings.get.mockImplementation((key) => {
+        if (key === 'breakContentScreen') return 'nonsense'
+        return null
+      })
+      displayManager.getContentDisplayId().should.equal(-1)
+    })
+
+    it('returns -1 for out-of-range numeric values (falls back to all screens)', function () {
+      mockSettings.get.mockImplementation((key) => {
+        if (key === 'breakContentScreen') return '5'
+        return null
+      })
+      displayManager.getContentDisplayId().should.equal(-1)
+    })
+  })
 })
