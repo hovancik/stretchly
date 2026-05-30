@@ -73,7 +73,6 @@
       "language": "Dili seç:",
       "restoreDefaults": "Varsayılanı geri yükle",
       "monitorDnd": "Rahatsız Etme modundayken de molaları göster",
-      "monitorFullscreenApp": "Başka bir uygulama tam ekrandayken molaları duraklat",
       "monitorIdleTime": "Sistemin boşta olduğu zamanı gözlemle (sistem boşta iken molalar durdurulur)."
     },
     "nav": {

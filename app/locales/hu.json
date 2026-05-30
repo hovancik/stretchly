@@ -49,7 +49,6 @@
       "allScreens": "Szünetek megjelenítése az összes monitoron",
       "monitorIdleTime": "Távollét figyelése (szünetek felfüggesztve, amíg a rendszer tétlen).",
       "monitorDnd": "Szünetek megjelenítése Ne Zavarjanak Módban is",
-      "monitorFullscreenApp": "Szünetek szüneteltetése, ha egy másik alkalmazás teljes képernyős módban van",
       "language": "Nyelv kiválasztása:",
       "restoreDefaults": "Alapértelmezések visszaállítása"
     },

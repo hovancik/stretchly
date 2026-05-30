@@ -48,7 +48,6 @@
       "allScreens": "Näytä tauot kaikilla näytöillä.",
       "monitorIdleTime": "Seuraa järjestelmän käyttöä (tauot pysäytetään, jos järjestelmää ei käytetä).",
       "monitorDnd": "Näytä tauot myös Älä häiritse tilassa",
-      "monitorFullscreenApp": "Keskeytä tauot, kun toinen sovellus on koko näytöllä",
       "language": "Valitse kieli:",
       "restoreDefaults": "Palauta oletusasetukset"
     },

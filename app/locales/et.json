@@ -221,7 +221,6 @@
       "language": "Vali keel:",
       "window": "Aknas",
       "monitorDnd": "Näita pause isegi \"Ära häiri\" režiimis",
-      "monitorFullscreenApp": "Peata pausid, kui mõni teine rakendus on täisekraanil",
       "allScreens": "Kuvab pause kõigil ekraanidel",
       "restoreDefaults": "Taasta vaikeseaded",
       "monitorIdleTime": "Monitoorib süsteemi passiivset aega (pausid on peatatud, kui süsteem on passiivne).",

@@ -49,7 +49,6 @@
       "allScreens": "Mostrar descansos en todos los monitores",
       "monitorIdleTime": "Supervise el tiempo de inactividad del sistema (los descansos se pausan si el sistema está inactivo).",
       "monitorDnd": "Mostrar pausas incluso en el modo No molestar",
-      "monitorFullscreenApp": "Pausar los descansos cuando otra aplicación esté en pantalla completa",
       "language": "Seleccione el idioma:",
       "restoreDefaults": "Restaurar valores predeterminados"
     },

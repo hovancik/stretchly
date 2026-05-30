@@ -46,7 +46,6 @@
       "allScreens": "Hiển thị nội dung giải lao ở tất cả các màn hình",
       "monitorIdleTime": "Khi hệ thống nhàn dỗi (Tạm dừng giải lao nếu hệ thống không hoạt động).",
       "monitorDnd": "Hiển thị Giải lao ngay cả trong chế độ Không làm phiền",
-      "monitorFullscreenApp": "Tạm dừng giải lao khi ứng dụng khác đang ở chế độ toàn màn hình",
       "language": "Lựa chọn ngôn ngữ:",
       "restoreDefaults": "Khôi phục mặc định",
       "window": "Cửa sổ"

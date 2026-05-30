@@ -61,7 +61,6 @@
       "showIdeas": "休憩中のエクササイズのヒントを表示する",
       "allScreens": "全てのモニターに休憩画面を表示する",
       "monitorDnd": "Do Not Disturbモードでも休憩画面を表示する",
-      "monitorFullscreenApp": "他のアプリがフルスクリーン中は休憩を一時停止する",
       "language": "言語選択:",
       "restoreDefaults": "デフォルト設定に戻す"
     },

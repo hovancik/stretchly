@@ -50,7 +50,6 @@
       "allScreens": "Zobrazovat přestávky na všech monitorech",
       "monitorIdleTime": "Sledovat neaktivitu (přestávky jsou během vaší neaktivity přerušeny).",
       "monitorDnd": "Zobrazovat přestávky i během režimu Nerušit",
-      "monitorFullscreenApp": "Pozastavit přestávky, když je jiná aplikace v režimu celé obrazovky",
       "language": "Vyberte jazyk:",
       "restoreDefaults": "Obnovit původní nastavení"
     },

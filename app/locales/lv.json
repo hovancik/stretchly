@@ -201,7 +201,6 @@
       "restoreDefaults": "Atgriezt noklusējuma iestādījumus",
       "language": "Izvēlēties valodu:",
       "monitorDnd": "Rādīt pārtraukumus arī \"Do Not Disturb\" režīmā",
-      "monitorFullscreenApp": "Apturēt pārtraukumus, kad cita lietotne ir pilnekrāna režīmā",
       "monitorIdleTime": "Iepauzēt pārtraukumus, kamēr dators netiek lietots.",
       "allScreens": "Rādīt pārtraukumus uz visiem ekrāniem",
       "showIdeas": "Rādīt vingrošanas ieteikumus pārtraukumos",

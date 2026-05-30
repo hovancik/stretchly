@@ -48,7 +48,6 @@
       "allScreens": "Mostra la pausa su tutti i monitor",
       "monitorIdleTime": "Monitoraggio del tempo di inattività del sistema (le pause vengono interrotte se il sistema è inattivo).",
       "monitorDnd": "Mostra le pause anche in modalità Non disturbare",
-      "monitorFullscreenApp": "Sospendi le pause quando un'altra app è a schermo intero",
       "language": "Scegli lingua:",
       "restoreDefaults": "Ripristina impostazioni"
     },

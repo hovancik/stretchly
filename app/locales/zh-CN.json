@@ -49,7 +49,6 @@
       "allScreens": "在所有显示器显示休息提示画面",
       "monitorIdleTime": "监控系统的闲置时间（系统闲置时暂停计时）。",
       "monitorDnd": "即使处于「勿扰」模式，仍显示休息画面",
-      "monitorFullscreenApp": "当另一个应用处于全屏时暂停休息",
       "language": "选择语言：",
       "restoreDefaults": "还原至默认值"
     },

@@ -48,7 +48,6 @@
       "allScreens": "Vis pause på alle skærme",
       "monitorIdleTime": "Hold øje med om computeren bliver brugt eller ej (Nedtælling til pause stoppes)",
       "monitorDnd": "Vis pauser også selvom du er i 'Ikke forstyr tilstand'",
-      "monitorFullscreenApp": "Sæt pauser på pause, når en anden app er i fuld skærm",
       "language": "Vælg sprog:",
       "restoreDefaults": "Nulstil til standardindstillinger"
     },

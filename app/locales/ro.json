@@ -92,8 +92,7 @@
       "language": "Selectează limba:",
       "restoreDefaults": "Restabiliți setările de bază",
       "showIdeas": "Afișați sfaturi de exerciții în timpul pauzelor",
-      "monitorDnd": "Afișează pauzele chiar și în modul Nu deranja",
-      "monitorFullscreenApp": "Întrerupe pauzele când o altă aplicație este pe ecran complet"
+      "monitorDnd": "Afișează pauzele chiar și în modul Nu deranja"
     },
     "schedule": {
       "miniBreaks": "Pauze scurte:",

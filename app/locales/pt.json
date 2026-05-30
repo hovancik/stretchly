@@ -196,7 +196,6 @@
       "restoreDefaults": "Restaurar padrões",
       "language": "Selecionar idioma:",
       "monitorDnd": "Mostrar pausas mesmo quando no modo Não Perturbe",
-      "monitorFullscreenApp": "Pausar pausas quando outra aplicação estiver em ecrã inteiro",
       "monitorIdleTime": "Monitor do sistema em tempo inativo (pausas são desativadas se o sistema estiver inativo).",
       "allScreens": "Mostrar pausas em todos os monitores",
       "showIdeas": "Mostrar dicas de exercícios durante as pausas",

@@ -48,7 +48,6 @@
       "allScreens": "Mostrar pausas em todos os monitores",
       "monitorIdleTime": "Monitorar tempo ocioso do sistema (pausas são desabilitadas se o sistema estiver ocioso).",
       "monitorDnd": "Mostrar pausas mesmo quando no modo Não Perturbe",
-      "monitorFullscreenApp": "Pausar pausas quando outro aplicativo estiver em tela cheia",
       "language": "Selecionar idioma:",
       "restoreDefaults": "Restaurar padrões"
     },
