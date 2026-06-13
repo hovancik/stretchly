@@ -175,7 +175,9 @@
     "showTrayIcon": "Show tray icon",
     "toShowTrayIcon": "Show Stretchly icon in tray",
     "currentTimeInBreaks": "Current time",
-    "showCurrentTimeInBreaks": "Show current local time in break window"
+    "showCurrentTimeInBreaks": "Show current local time in break window",
+    "gradientBreakBackground": "Break background",
+    "useGradientBreakBackground": "Use a gradient derived from the break colour"
   },
   "utils": {
     "remaining": "{{count}} remaining",
