@@ -870,7 +870,10 @@ function startMicrobreak () {
     ipcMain.on('mini-break-loaded', onMiniBreakLoaded)
 
     microbreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
-    microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
+    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
+      microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    }
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
@@ -1037,7 +1040,10 @@ function startBreak () {
     ipcMain.on('long-break-loaded', onLongBreakLoaded)
 
     breakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
-    breakWinLocal.setVisibleOnAllWorkspaces(true)
+    // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
+    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
+      breakWinLocal.setVisibleOnAllWorkspaces(true)
+    }
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
