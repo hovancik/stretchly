@@ -19,12 +19,14 @@ class BreaksPlanner extends EventEmitter {
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('microbreakDuration')
+      if (this.scheduler) this.scheduler.cancel()
       this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound, true), interval, 'finishMicrobreak')
       this.scheduler.plan()
     })
 
     this.on('breakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('breakDuration')
+      if (this.scheduler) this.scheduler.cancel()
       this.scheduler = new Scheduler(() => this.emit('finishBreak', shouldPlaySound, true), interval, 'finishBreak')
       this.scheduler.plan()
     })

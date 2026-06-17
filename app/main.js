@@ -517,6 +517,7 @@ function startPowerMonitoring () {
 }
 
 function closeWindows (windowArray) {
+  if (!windowArray || !Array.isArray(windowArray)) return null
   for (const window of windowArray) {
     if (!window || window.isDestroyed()) {
       continue
