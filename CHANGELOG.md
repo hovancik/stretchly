@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix custom title for Mini break from command line
 - fix repeated crash windows after an error
 - improve double-click error prevention in breaks
+- fix text selection on break screens allowing escape via the macOS force-click dictionary
 
 ## [1.21.0] - 2026-04-25
 ### Added
