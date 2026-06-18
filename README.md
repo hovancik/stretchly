@@ -679,6 +679,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Philip Wintersteiner, [@Wikiwix](https://github.com/wikiwix)
 - Steven Cai, [@stevencaiOR](https://github.com/stevencaiOR)
 - Zhekai Jiang, [@zhekai-jiang](https://github.com/zhekai-jiang)
+- Bence Kovács, [@githappens](https://github.com/githappens)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

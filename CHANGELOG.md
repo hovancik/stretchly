@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix custom title for Mini break from command line
 - fix repeated crash windows after an error
 - improve double-click error prevention in breaks
+- fix fullscreen breaks dropping out of their Space after a few seconds on macOS
 
 ## [1.21.0] - 2026-04-25
 ### Added
