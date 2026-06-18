@@ -3,6 +3,16 @@ body {
   height: 100%;
 }
 
+* {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+::selection {
+  background: transparent;
+}
+
 body {
   overflow: hidden;
 }
@@ -80,6 +90,10 @@ body.break-health-mode {
 body[dir=rtl] .breaks > :nth-child(2) > a img {
   padding-left: 0;
   padding-right: 20px;
+}
+
+.breaks > :nth-child(2) > a {
+  cursor: pointer;
 }
 
 .breaks > :nth-child(2) > a:hover img {
