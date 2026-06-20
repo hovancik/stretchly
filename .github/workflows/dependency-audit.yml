@@ -1,0 +1,30 @@
+name: Dependency audit
+
+on:
+  pull_request:
+    branches:
+      - trunk
+
+permissions:
+  contents: read
+
+jobs:
+  npm-audit:
+    name: Run npm audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Check production dependencies for vulnerabilities
+        run: npm audit --omit=dev --audit-level=high
