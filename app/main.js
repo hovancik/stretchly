@@ -498,7 +498,7 @@ function printCliStatusFromSnapshot (jsonOutput = false) {
   readFile(cliStatusSnapshotPath(), 'utf8', (err, data) => {
     if (err) {
       console.log('Stretchly status is unavailable. Make sure Stretchly is running.')
-      app.quit()
+      app.exit(0)
       return
     }
     if (jsonOutput) {
@@ -507,7 +507,7 @@ function printCliStatusFromSnapshot (jsonOutput = false) {
       const snapshot = JSON.parse(data)
       printJsonSnapshotAsText(snapshot)
     }
-    app.quit()
+    app.exit(0)
   })
 }
 
@@ -518,7 +518,7 @@ function printCliStatusAndQuit (jsonOutput = false) {
   } else {
     console.log(snapshot.join('\n'))
   }
-  app.quit()
+  app.exit(0)
 }
 
 function printJsonSnapshotAsText (snapshot) {
@@ -534,15 +534,15 @@ function printJsonSnapshotAsText (snapshot) {
     case 'active_break':
       console.log('Status: active break')
       console.log('Break type: ' + snapshot.break_type)
-      console.log('Time to break end: ' + (snapshot.time_to_break_end_human || (snapshot.time_to_break_end + 'ms')))
+      console.log('Time to break end: ' + (snapshot.time_to_break_end_human || (snapshot.time_to_break_end_ms + 'ms')))
       break
     case 'no_active_break':
       console.log('Status: no active break')
-      console.log('Time to next break: ' + (snapshot.time_to_next_break_human || (snapshot.time_to_next_break + 'ms')))
+      console.log('Time to next break: ' + (snapshot.time_to_next_break_human || (snapshot.time_to_next_break_ms + 'ms')))
       if (snapshot.long_break_enabled === false) {
         console.log('Time to next long break: disabled')
       } else {
-        console.log('Time to next long break: ' + (snapshot.time_to_next_long_break_human || (snapshot.time_to_next_long_break + 'ms')))
+        console.log('Time to next long break: ' + (snapshot.time_to_next_long_break_human || (snapshot.time_to_next_long_break_ms + 'ms')))
       }
       break
     default:

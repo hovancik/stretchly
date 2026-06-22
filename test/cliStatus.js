@@ -294,7 +294,12 @@ describe('buildCliStatusSnapshot', () => {
       })
       result.should.deep.equal({
         status: 'paused',
-        reason: 'Stretchly is paused.'
+        reason: 'Stretchly is paused.',
+        paused: true,
+        break_type: null,
+        time_to_break_end_ms: null,
+        time_to_next_break_ms: null,
+        time_to_next_long_break_ms: null
       })
     })
 
@@ -315,7 +320,8 @@ describe('buildCliStatusSnapshot', () => {
       result.should.deep.equal({
         status: 'active_break',
         break_type: 'mini',
-        time_to_break_end: 30000
+        time_to_break_end_ms: 30000,
+        time_to_break_end_human: '30 seconds'
       })
     })
 
@@ -336,7 +342,8 @@ describe('buildCliStatusSnapshot', () => {
       result.should.deep.equal({
         status: 'active_break',
         break_type: 'long',
-        time_to_break_end: 60000
+        time_to_break_end_ms: 60000,
+        time_to_break_end_human: '1 minute'
       })
     })
 
@@ -365,8 +372,11 @@ describe('buildCliStatusSnapshot', () => {
       })
       result.should.deep.equal({
         status: 'no_active_break',
-        time_to_next_break: 120000,
-        time_to_next_long_break: 1080000
+        time_to_next_break_ms: 120000,
+        time_to_next_break_human: '2 minutes',
+        time_to_next_long_break_ms: 1080000,
+        time_to_next_long_break_human: '18 minutes',
+        long_break_enabled: true
       })
     })
   })

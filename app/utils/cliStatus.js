@@ -48,7 +48,12 @@ function buildCliStatusSnapshot ({ breakPlanner, settings, json = false }) {
     if (json) {
       return {
         status: 'paused',
-        reason: 'Stretchly is paused.'
+        reason: 'Stretchly is paused.',
+        paused: true,
+        break_type: null,
+        time_to_break_end_ms: null,
+        time_to_next_break_ms: null,
+        time_to_next_long_break_ms: null
       }
     }
     return [
@@ -63,7 +68,8 @@ function buildCliStatusSnapshot ({ breakPlanner, settings, json = false }) {
       return {
         status: 'active_break',
         break_type: reference === 'finishMicrobreak' ? 'mini' : 'long',
-        time_to_break_end: breakPlanner.scheduler.timeLeft
+        time_to_break_end_ms: breakPlanner.scheduler.timeLeft,
+        time_to_break_end_human: formatCliDuration(breakPlanner.scheduler.timeLeft)
       }
     }
     return [
@@ -79,8 +85,11 @@ function buildCliStatusSnapshot ({ breakPlanner, settings, json = false }) {
   if (json) {
     return {
       status: 'no_active_break',
-      time_to_next_break: nextBreakTime,
-      time_to_next_long_break: settings.get('break') ? longBreakTime : null
+      time_to_next_break_ms: nextBreakTime,
+      time_to_next_break_human: formatCliDuration(nextBreakTime),
+      time_to_next_long_break_ms: settings.get('break') ? longBreakTime : null,
+      time_to_next_long_break_human: settings.get('break') ? formatCliDuration(longBreakTime) : null,
+      long_break_enabled: settings.get('break')
     }
   }
 
