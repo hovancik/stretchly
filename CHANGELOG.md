@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- `stretchly status` command to show current break state from CLI
+- `stretchly status --json` flag for machine-readable JSON output
 - advanced option `breakContentScreen` to show break countdown/idea only on the primary, cursor, or a specific screen while other screens stay blanked
 - advanced option `trayIconThemeSource` (`system`, `light`, or `dark`) to set the tray icon's light or dark variant
 
@@ -22,6 +24,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.21.0] - 2026-04-25
 ### Added
+=======
+- `stretchly status` command to show current break state from CLI
+- `stretchly status --json` flag for machine-readable JSON output
+>>>>>>> f254297a (feat: implement stretchly status command with --json flag)
 - advanced option for Break Health Mode
 
 ### Fixed

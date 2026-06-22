@@ -26,6 +26,12 @@ const allOptions = {
     description: 'Specify an interval to wait before skipping to this break (Long or Mini) [HHhMMm|HHh|MMm|MM]',
     withValue: true
   },
+  json: {
+    long: '--json',
+    short: '-j',
+    description: 'Output in JSON format (for scripts)',
+    withValue: false
+  },
   duration: {
     long: '--duration',
     short: '-d',
@@ -45,7 +51,8 @@ const allCommands = {
     description: 'Show location of logs file'
   },
   status: {
-    description: 'Show current break status'
+    description: 'Show current break status',
+    options: [allOptions.json]
   },
   reset: {
     description: 'Reset breaks'
@@ -108,6 +115,14 @@ const allExamples = [{
 {
   cmd: 'stretchly long -w 20m -T "Stretch up!"',
   description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
+},
+{
+  cmd: 'stretchly status --json',
+  description: 'Show break status as JSON'
+},
+{
+  cmd: 'stretchly status -j',
+  description: 'Show break status as JSON'
 },
 {
   cmd: 'stretchly preferences',

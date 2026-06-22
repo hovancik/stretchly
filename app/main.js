@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFile, writeFile, unlink, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import { fileURLToPath } from 'url'
@@ -29,6 +29,7 @@ import { registerBreakShortcuts } from './utils/breakShortcuts.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
 import DisplayManager from './utils/displayManager.js'
+import { buildCliStatusSnapshot } from './utils/cliStatus.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -128,7 +129,7 @@ const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
 if (!gotTheLock) {
   const cmd = new Command(commandLineArguments, app.getVersion(), false)
   if (cmd.command === 'status') {
-    printCliStatusFromSnapshot()
+    printCliStatusFromSnapshot(cmd.options && cmd.options.json)
   } else {
     cmd.runOrForward()
     app.quit()
@@ -378,7 +379,7 @@ async function initialize (isAppStart = true) {
 
   const startupCommand = new Command(commandLineArguments, app.getVersion(), false)
   if (startupCommand.command === 'status') {
-    printCliStatusAndQuit()
+    printCliStatusAndQuit(startupCommand.options && startupCommand.options.json)
     return
   }
 
@@ -477,64 +478,11 @@ function startI18next () {
     })
 }
 
-function formatCliDuration (milliseconds) {
-  if (!Number.isFinite(milliseconds) || milliseconds < 0) {
-    return 'unavailable'
+function deleteCliStatusSnapshot () {
+  const path = cliStatusSnapshotPath()
+  if (existsSync(path)) {
+    unlink(path, () => {})
   }
-  return humanizeDuration(milliseconds, {
-    round: true,
-    largest: 2
-  })
-}
-
-function nextLongBreakTime (nextBreakTime) {
-  if (!settings.get('break')) {
-    return null
-  }
-
-  const reference = breakPlanner.scheduler.reference
-  if (reference === 'startBreak' || reference === 'startBreakNotification') {
-    return nextBreakTime
-  }
-
-  if (reference !== 'startMicrobreak' && reference !== 'startMicrobreakNotification') {
-    return null
-  }
-
-  if (!Number.isFinite(nextBreakTime) || nextBreakTime < 0) {
-    return null
-  }
-
-  const breakInterval = settings.get('breakInterval') + 1
-  const breakNumber = breakPlanner.breakNumber % breakInterval
-  const miniBreaksUntilLong = breakInterval - breakNumber
-  const miniBreakCycle = settings.get('microbreakDuration') + settings.get('microbreakInterval')
-
-  return nextBreakTime + miniBreaksUntilLong * miniBreakCycle
-}
-
-function buildCliStatusSnapshot () {
-  if (!breakPlanner || !breakPlanner.scheduler || !settings) {
-    return ['Stretchly status is unavailable.']
-  }
-
-  const reference = breakPlanner.scheduler.reference
-  if (reference === 'finishMicrobreak' || reference === 'finishBreak') {
-    return [
-      'Status: active break',
-      `Break type: ${reference === 'finishMicrobreak' ? 'mini' : 'long'}`,
-      `Time to break end: ${formatCliDuration(breakPlanner.scheduler.timeLeft)}`
-    ]
-  }
-
-  const nextBreakTime = breakPlanner.timeToNextBreak
-  const longBreakTime = nextLongBreakTime(nextBreakTime)
-
-  return [
-    'Status: no active break',
-    `Time to next break: ${formatCliDuration(nextBreakTime)}`,
-    `Time to next long break: ${settings.get('break') ? formatCliDuration(longBreakTime) : 'disabled'}`
-  ]
 }
 
 function cliStatusSnapshotPath () {
@@ -542,26 +490,64 @@ function cliStatusSnapshotPath () {
 }
 
 function writeCliStatusSnapshot () {
-  writeFile(cliStatusSnapshotPath(), buildCliStatusSnapshot().join('\n'), () => { })
+  const snapshot = buildCliStatusSnapshot({ breakPlanner, settings, json: true })
+  writeFile(cliStatusSnapshotPath(), JSON.stringify(snapshot, null, 2), () => {})
 }
 
-function printCliStatusFromSnapshot () {
+function printCliStatusFromSnapshot (jsonOutput = false) {
   readFile(cliStatusSnapshotPath(), 'utf8', (err, data) => {
     if (err) {
       console.log('Stretchly status is unavailable. Make sure Stretchly is running.')
       app.quit()
       return
     }
-
-    console.log(data)
+    if (jsonOutput) {
+      console.log(data)
+    } else {
+      const snapshot = JSON.parse(data)
+      printJsonSnapshotAsText(snapshot)
+    }
     app.quit()
   })
 }
 
-function printCliStatusAndQuit () {
-  const snapshot = buildCliStatusSnapshot()
-  console.log(snapshot.join('\n'))
+function printCliStatusAndQuit (jsonOutput = false) {
+  const snapshot = buildCliStatusSnapshot({ breakPlanner, settings, json: jsonOutput })
+  if (jsonOutput) {
+    console.log(JSON.stringify(snapshot, null, 2))
+  } else {
+    console.log(snapshot.join('\n'))
+  }
   app.quit()
+}
+
+function printJsonSnapshotAsText (snapshot) {
+  if (snapshot.error) {
+    console.log(snapshot.error)
+    return
+  }
+
+  switch (snapshot.status) {
+    case 'paused':
+      console.log('Status: paused')
+      break
+    case 'active_break':
+      console.log('Status: active break')
+      console.log('Break type: ' + snapshot.break_type)
+      console.log('Time to break end: ' + (snapshot.time_to_break_end_human || (snapshot.time_to_break_end + 'ms')))
+      break
+    case 'no_active_break':
+      console.log('Status: no active break')
+      console.log('Time to next break: ' + (snapshot.time_to_next_break_human || (snapshot.time_to_next_break + 'ms')))
+      if (snapshot.long_break_enabled === false) {
+        console.log('Time to next long break: disabled')
+      } else {
+        console.log('Time to next long break: ' + (snapshot.time_to_next_long_break_human || (snapshot.time_to_next_long_break + 'ms')))
+      }
+      break
+    default:
+      console.log('Stretchly status is unavailable.')
+  }
 }
 
 i18next.on('languageChanged', () => {
