@@ -504,8 +504,12 @@ function printCliStatusFromSnapshot (jsonOutput = false) {
     if (jsonOutput) {
       console.log(data)
     } else {
-      const snapshot = JSON.parse(data)
-      printJsonSnapshotAsText(snapshot)
+      try {
+        const snapshot = JSON.parse(data)
+        printJsonSnapshotAsText(snapshot)
+      } catch (error) {
+        console.log('Stretchly status is unavailable. Make sure Stretchly is running.')
+      }
     }
     app.exit(0)
   })
