@@ -233,6 +233,12 @@ async function initialize (isAppStart = true) {
   if (!gotTheLock) {
     return
   }
+  const startupCommand = new Command(commandLineArguments, app.getVersion(), false)
+  if (startupCommand.command === 'status') {
+    printCliStatusFromSnapshot(startupCommand.options && startupCommand.options.json)
+    return
+  }
+
   // TODO maybe we should not reinitialize but handle everything when we save new values for preferences
   log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
 
@@ -377,12 +383,6 @@ async function initialize (isAppStart = true) {
     breakPlanner.nextBreak()
   }
 
-  const startupCommand = new Command(commandLineArguments, app.getVersion(), false)
-  if (startupCommand.command === 'status') {
-    printCliStatusAndQuit(startupCommand.options && startupCommand.options.json)
-    return
-  }
-
   autostartManager = new AutostartManager({
     app,
     settings
@@ -513,16 +513,6 @@ function printCliStatusFromSnapshot (jsonOutput = false) {
     }
     app.exit(0)
   })
-}
-
-function printCliStatusAndQuit (jsonOutput = false) {
-  const snapshot = buildCliStatusSnapshot({ breakPlanner, settings, json: jsonOutput })
-  if (jsonOutput) {
-    console.log(JSON.stringify(snapshot, null, 2))
-  } else {
-    console.log(snapshot.join('\n'))
-  }
-  app.exit(0)
 }
 
 function printJsonSnapshotAsText (snapshot) {
@@ -1405,6 +1395,10 @@ function updateTray () {
 
   writeCliStatusSnapshot()
 
+  if (!trayUpdateIntervalObj) {
+    trayUpdateIntervalObj = setInterval(updateTray, 10000)
+  }
+
   if (!appIcon && !settings.get('showTrayIcon')) {
     return
   }
@@ -1419,10 +1413,6 @@ function updateTray () {
         appIcon.popUpContextMenu(Menu.buildFromTemplate(currentTrayMenuTemplate))
       })
     }
-    if (!trayUpdateIntervalObj) {
-      trayUpdateIntervalObj = setInterval(updateTray, 10000)
-    }
-
     updateToolTip()
 
     const newTrayIconPath = trayIconPath()
