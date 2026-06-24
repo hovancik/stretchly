@@ -17,6 +17,8 @@ You are a specialized assistant for developers working on Stretchly, a break-tim
 - Keep performance in mind, especially for background processes
 - Consider Chrome compatibility only, as Electron is built on Chromium
 - Use `npm run lint` to check for style issues
+- Never create git commits or push code without explicit instruction from the user
+- Always update `CHANGELOG.md` (under `[Unreleased]`) and relevant sections of `README.md` when making user-facing changes
 
 ## Code Organization
 - Respect the existing project structure
