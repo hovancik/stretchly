@@ -569,6 +569,29 @@ Now you can clone the repo with `git clone https://github.com/hovancik/stretchly
 
 Read on.
 
+### Dev Container
+
+This repository includes a [VS Code Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) in `.devcontainer/` so you can work in a consistent Linux environment without manually installing all dependencies on your host.
+
+To use it:
+- Install [Docker](https://www.docker.com/) and the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- Open the repository in VS Code
+- Run **Dev Containers: Reopen in Container**
+
+The container installs dependencies with `npm install` on first creation and includes Electron runtime libraries required for development commands and tests.
+
+It also maps common developer identity settings from your host:
+- SSH agent forwarding (`SSH_AUTH_SOCK`) for Git over SSH without copying private keys
+- Read-only mount of `~/.ssh`
+- Read-only mount of `~/.gitconfig`
+- Read-only mount of `~/.npmrc`
+
+Common commands inside the container:
+- `npm run lint`
+- `npm test`
+- `npm run dev`
+- `npm run dev:container` (use this in dev containers if Electron sandboxing is restricted)
+
 ### Debugging
 
 You can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in the About section to show information such as:
@@ -577,7 +600,7 @@ You can use Stretchly's built-in debug shortcut by pressing `Ctrl/Cmd + D` in th
 
 You can copy debug information to the clipboard.
 
-If you start *Stretchly* in development mode with the `npm run dev` command, it makes it possible to debug the application in your browser on `http://localhost:9222`.
+If you start *Stretchly* in development mode with the `npm run dev` command (or `npm run dev:container` when running inside a dev container), it makes it possible to debug the application in your browser on `http://localhost:9222`.
 
 ### Logging
 
@@ -679,6 +702,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Philip Wintersteiner, [@Wikiwix](https://github.com/wikiwix)
 - Steven Cai, [@stevencaiOR](https://github.com/stevencaiOR)
 - Zhekai Jiang, [@zhekai-jiang](https://github.com/zhekai-jiang)
+- Navid Malekghaini, [@navidpadid](https://github.com/navidpadid)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

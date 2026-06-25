@@ -7,6 +7,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
+    "dev:container": "cross-env NODE_ENV=development electron . --no-sandbox --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9223 --remote-allow-origins=*",
     "postinstall": "electron-builder install-app-deps",
     "pack": "electron-builder build --dir",
     "dist": "electron-builder build",
