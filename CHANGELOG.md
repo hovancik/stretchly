@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- option to pause breaks while another app is in full screen
+- 
 ### Added
 - Windows installer now adds `stretchly` to PATH so CLI commands (e.g. `stretchly pause`) can be run from any terminal without specifying the full executable path
 - advanced option `breakContentScreen` to show break countdown/idea only on the primary, cursor, or a specific screen while other screens stay blanked

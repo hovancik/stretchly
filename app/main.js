@@ -367,6 +367,7 @@ async function initialize (isAppStart = true) {
     breakPlanner.clear()
     breakPlanner.appExclusionsManager.reinitialize(settings)
     breakPlanner.doNotDisturb(settings.get('monitorDnd'))
+    breakPlanner.fullscreenApp(settings.get('monitorFullscreenApp'))
     breakPlanner.naturalBreaks(settings.get('naturalBreaks'))
     breakPlanner.nextBreak()
   }
@@ -482,7 +483,8 @@ function onSuspendOrLock () {
   if (settings.get('pauseForSuspendOrLock')) {
     if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
-      breakPlanner.appExclusionsManager.isSchedulerCleared) {
+      breakPlanner.appExclusionsManager.isSchedulerCleared ||
+      breakPlanner.fullscreenAppManager.isOnFullscreenApp) {
       log.info('Stretchly: not pausing for suspendOrLock because paused already')
     } else {
       pausedForSuspendOrLock = true
@@ -549,7 +551,8 @@ function trayIconPath () {
       breakPlanner.isPaused ||
       breakPlanner.dndManager.isOnDnd ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
-      breakPlanner.appExclusionsManager.isSchedulerCleared,
+      breakPlanner.appExclusionsManager.isSchedulerCleared ||
+      breakPlanner.fullscreenAppManager.isOnFullscreenApp,
     monochrome: settings.get('useMonochromeTrayIcon'),
     inverted: useDarkColors,
     darkMode: useDarkColors,
@@ -1263,6 +1266,8 @@ function pauseBreaks (milliseconds) {
 function resumeBreaks (notify = true) {
   if (breakPlanner.dndManager.isOnDnd) {
     log.info('Stretchly: not resuming breaks because in Do Not Disturb')
+  } else if (breakPlanner.fullscreenAppManager.isOnFullscreenApp) {
+    log.info('Stretchly: not resuming breaks because a fullscreen app is active')
   } else {
     breakPlanner.resume()
     log.info('Stretchly: resuming breaks')
@@ -1394,7 +1399,7 @@ function getTrayMenuTemplate () {
     return trayMenu
   }
 
-  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
+  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared || breakPlanner.fullscreenAppManager.isOnFullscreenApp)) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -1424,7 +1429,7 @@ function getTrayMenuTemplate () {
         updateTray()
       }
     })
-  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
+  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared || breakPlanner.fullscreenAppManager.isOnFullscreenApp)) {
     trayMenu.push({
       label: i18next.t('main.pause'),
       submenu: [
@@ -1570,6 +1575,10 @@ ipcMain.on('save-setting', function (event, key, value) {
 
   if (key === 'monitorDnd') {
     breakPlanner.doNotDisturb(value)
+  }
+
+  if (key === 'monitorFullscreenApp') {
+    breakPlanner.fullscreenApp(value)
   }
 
   if (key === 'language') {

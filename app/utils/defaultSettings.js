@@ -47,6 +47,7 @@ export default {
   trayIconThemeSource: 'system',
   silentNotifications: false,
   monitorDnd: true,
+  monitorFullscreenApp: false,
   miniBreakStartSound: 'silence',
   longBreakStartSound: 'silence',
   themeSource: 'system',
