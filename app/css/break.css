@@ -92,10 +92,6 @@ body[dir=rtl] .breaks > :nth-child(2) > a img {
   padding-right: 20px;
 }
 
-.breaks > :nth-child(2) > a {
-  cursor: pointer;
-}
-
 .breaks > :nth-child(2) > a:hover img {
   filter: invert(87%) sepia(71%) saturate(3206%) hue-rotate(359deg) brightness(101%) contrast(103%);
 }
