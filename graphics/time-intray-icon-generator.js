@@ -52,18 +52,27 @@ function newContext (size) {
 function drawText (ctx, size, text, fontColor) {
   const textHeightRatio = 0.75
   const maxTextWidthRatio = 0.9
+  const safeAreaWidthRatio = 0.12
   ctx.font = `${textHeightRatio * size}px '${fontFamily}'`
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
   const textMetrics = ctx.measureText(text)
   const verticalOffsetFix = (textMetrics.actualBoundingBoxAscent - textMetrics.actualBoundingBoxDescent) / 2
-  // Use Shadow/Glow instead of Stroke for better legibility at small sizes
-  ctx.shadowColor = fontColor === '#000000' ? '#ffffff' : '#000000'
-  ctx.shadowBlur = 4
-  ctx.shadowOffsetX = 0
-  ctx.shadowOffsetY = 0
+  const x = size / 2
+  const y = size / 2 + verticalOffsetFix
+  const maxTextWidth = maxTextWidthRatio * size
+
+  ctx.save()
+  ctx.globalCompositeOperation = 'destination-out'
+  ctx.lineCap = 'round'
+  ctx.lineJoin = 'round'
+  ctx.lineWidth = Math.max(1, safeAreaWidthRatio * size)
+  ctx.strokeText(text, x, y, maxTextWidth)
+  ctx.fillText(text, x, y, maxTextWidth)
+  ctx.restore()
+
   ctx.fillStyle = fontColor
-  ctx.fillText(text, size / 2, size / 2 + verticalOffsetFix, maxTextWidthRatio * size)
+  ctx.fillText(text, x, y, maxTextWidth)
 }
 
 async function renderText (baseName, size, text, fontColor) {

@@ -13,6 +13,7 @@ class BreaksPlanner extends EventEmitter {
     this.postponesNumber = 0
     this.scheduler = null
     this.isPaused = false
+    this.pollersSuspended = false
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
@@ -79,7 +80,7 @@ class BreaksPlanner extends EventEmitter {
           log.info(`Stretchly: closing current and pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
         } else {
-          this.appExclusionsManager.inOnException = false
+          this.appExclusionsManager.isOnAppExclusion = false
         }
       } else if (rule === 'resume') {
         if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
@@ -103,7 +104,7 @@ class BreaksPlanner extends EventEmitter {
           log.info("Stretchly: pausing breaks as no 'resume' exclusion found running")
           this.emit('updateToolTip')
         } else {
-          this.appExclusionsManager.inOnException = true
+          this.appExclusionsManager.isOnAppExclusion = true
         }
       }
     })
@@ -215,6 +216,10 @@ class BreaksPlanner extends EventEmitter {
   pause (milliseconds) {
     this.clear()
     this.isPaused = true
+    this.pollersSuspended = true
+    this.naturalBreaksManager.stop()
+    this.dndManager.stop()
+    this.appExclusionsManager.stop()
     if (milliseconds !== 1) {
       this.scheduler = new Scheduler(() => this.emit('resumeBreaks'), milliseconds, 'resumeBreaks')
       this.scheduler.plan()
@@ -226,6 +231,12 @@ class BreaksPlanner extends EventEmitter {
     this.isPaused = false
     this.appExclusionsManager.reset()
     this.nextBreak()
+    if (this.pollersSuspended) {
+      this.pollersSuspended = false
+      if (this.settings.get('naturalBreaks')) this.naturalBreaksManager.start()
+      if (this.settings.get('monitorDnd')) this.dndManager.start()
+      this.appExclusionsManager.reinitialize(this.settings)
+    }
   }
 
   correctScheduler () {

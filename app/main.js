@@ -101,9 +101,10 @@ if (insideWindowsPortable()) {
 
 log.initialize({ preload: true })
 
-// https://stackoverflow.com/questions/65859634/notification-from-electron-shows-electron-app-electron/65863174#65863174
-if (process.platform === 'win32') {
-  app.setAppUserModelId('Stretchly')
+// Match the appId the installer stamps onto the shortcut so notifications show Stretchly.
+// Skip the Store build (OS-assigned AUMID) and unpackaged dev runs.
+if (process.platform === 'win32' && !insideWindowsStore() && app.isPackaged) {
+  app.setAppUserModelId('net.hovancik.stretchly')
 }
 
 const global = {
@@ -219,6 +220,10 @@ app.on('before-quit', (event) => {
     if (autostartManager) {
       autostartManager.disconnect()
     }
+    if (processWin && !processWin.isDestroyed()) {
+      processWin.destroy()
+      processWin = null
+    }
   }
 })
 
@@ -322,6 +327,12 @@ async function initialize (isAppStart = true) {
             store.delete('useMonochromeInvertedTrayIcon')
           } else {
             log.info('Stretchly: not migrating useMonochromeInvertedTrayIcon')
+          }
+          if (store.get('appExclusionsCheckInterval') === 1000) {
+            store.set('appExclusionsCheckInterval', 2000)
+            log.info('Stretchly: migrating appExclusionsCheckInterval from 1000 to 2000')
+          } else {
+            log.info('Stretchly: not migrating appExclusionsCheckInterval')
           }
         }
       },
@@ -499,7 +510,7 @@ function onResumeOrUnlock () {
     pausedForSuspendOrLock = false
     resumeBreaks(false)
   } else {
-    // corrrect the planner for the time spent in suspend
+    // correct the planner for the time spent in suspend
     breakPlanner.correctScheduler()
   }
   updateTray()
@@ -686,7 +697,7 @@ function createSyncPreferencesWindow () {
 function planVersionCheck (seconds = 1) {
   if (settings.get('disableAppUpdateFeatures')) return
   if (updateChecker) {
-    clearInterval(updateChecker)
+    clearTimeout(updateChecker)
     updateChecker = null
   }
   updateChecker = setTimeout(checkVersion, seconds * 1000)
@@ -870,7 +881,10 @@ function startMicrobreak () {
     ipcMain.on('mini-break-loaded', onMiniBreakLoaded)
 
     microbreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
-    microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
+    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
+      microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+    }
     microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (microbreakWinLocal) {
       microbreakWinLocal.on('close', (e) => {
@@ -1037,7 +1051,10 @@ function startBreak () {
     ipcMain.on('long-break-loaded', onLongBreakLoaded)
 
     breakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
-    breakWinLocal.setVisibleOnAllWorkspaces(true)
+    // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
+    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
+      breakWinLocal.setVisibleOnAllWorkspaces(true)
+    }
     breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
     if (breakWinLocal) {
       breakWinLocal.on('close', (e) => {
