@@ -26,8 +26,16 @@ class AppExclusionsManager extends EventEmitter {
   }
 
   start () {
+    if (this.timer) return
     this._checkRunningExceptions()
     log.info('Stretchly: starting App exclusions monitoring')
+  }
+
+  stop () {
+    if (!this.timer) return
+    clearInterval(this.timer)
+    this.timer = null
+    log.info('Stretchly: stopping App exclusions monitoring')
   }
 
   reset () {

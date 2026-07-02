@@ -67,15 +67,22 @@ window.onload = async (event) => {
   let manualAwaiting = false
 
   const locale = await window.settings.get('language')
+  const showCurrentTime = await window.settings.get('currentTimeInBreaks')
+  const currentTimeElement = showCurrentTime ? document.querySelector('.breaks > :last-child') : null
 
   manualFinishElement.onclick = runOnce(() => window.breaks.finishBreak(manualAwaiting))
 
+  let lastShownSecond = null
+
   setInterval(async () => {
-    if (await window.settings.get('currentTimeInBreaks')) {
-      document.querySelector('.breaks > :last-child').innerHTML = (new Date()).toLocaleTimeString()
+    if (showCurrentTime) {
+      currentTimeElement.innerHTML = (new Date()).toLocaleTimeString()
     }
     const now = Date.now()
     const passed = now - started
+    const currentSecond = Math.floor(passed / 1000)
+    const secondChanged = currentSecond !== lastShownSecond
+    lastShownSecond = currentSecond
     if (!manualAwaiting) {
       if (passed < duration) {
         const passedPercent = passed / duration * 100
@@ -90,10 +97,14 @@ window.onload = async (event) => {
           closeElement.classList.add('hidden')
         }
         progress.value = (100 - passedPercent) * progress.max / 100
-        progressTime.innerHTML = await window.utils.formatTimeRemaining(duration - passed, locale)
+        if (secondChanged) {
+          progressTime.innerHTML = await window.utils.formatTimeRemaining(duration - passed, locale)
+        }
       }
     } else {
-      progressTime.innerHTML = await window.utils.formatElapsedDuration(passed, locale)
+      if (secondChanged) {
+        progressTime.innerHTML = await window.utils.formatElapsedDuration(passed, locale)
+      }
     }
   }, 100)
 

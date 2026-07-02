@@ -60,6 +60,14 @@ describe('naturalBreaksManager', function () {
     naturalBreaksManager.idleTime.should.be.equal(0)
   })
 
+  it('does not create a second timer when start() is called twice', () => {
+    naturalBreaksManager.stop()
+    naturalBreaksManager.start()
+    const timer = naturalBreaksManager.timer
+    naturalBreaksManager.start()
+    naturalBreaksManager.timer.should.be.equal(timer)
+  })
+
   afterEach(() => {
     naturalBreaksManager.stop()
     naturalBreaksManager = null
