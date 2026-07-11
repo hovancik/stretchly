@@ -38,6 +38,16 @@ class NaturalBreaksManager extends EventEmitter {
 
   get idleTime () {
     if (this.usingNaturalBreaks) {
+      // On macOS, powerMonitor.getSystemIdleTime() can report false idle values
+      // (observed on macOS 26 / Darwin 25: it oscillates between a few seconds and
+      // values above naturalBreaksInactivityResetTime even during active use). Because
+      // the inflated value is non-zero, the accurate native fallback is never reached,
+      // causing clearBreakScheduler/naturalBreakFinished churn that keeps resetting the
+      // break countdown so breaks never fire. Use the native IOHID source directly on
+      // darwin; keep the existing behaviour on other platforms.
+      if (process.platform === 'darwin') {
+        return desktopIdle.getIdleTime() * 1000
+      }
       return (powerMonitor.getSystemIdleTime() || desktopIdle.getIdleTime()) * 1000
     } else {
       return 0
