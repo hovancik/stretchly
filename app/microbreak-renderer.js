@@ -1,6 +1,7 @@
 import HtmlTranslate from './utils/htmlTranslate.js'
 import applyBreakHealthEffect from './utils/breakHealthEffect.js'
 import createRunOnce from './utils/runOnce.js'
+import auroraBackground from './utils/auroraBackground.js'
 import './platform.js'
 
 window.onload = async (event) => {
@@ -15,6 +16,10 @@ window.onload = async (event) => {
 
   if (new URLSearchParams(window.location.search).get('blank') === '1') {
     document.body.style.backgroundColor = backgroundColor
+    if (await window.settings.get('gradientBreakBackground')) {
+      document.body.style.background = auroraBackground(backgroundColor)
+      document.body.style.backgroundAttachment = 'fixed'
+    }
     document.querySelector('.breaks').style.display = 'none'
     await window.breaks.signalLoaded()
     return
@@ -57,6 +62,10 @@ window.onload = async (event) => {
   const manualFinishElement = document.querySelector('#finish')
   document.body.classList.add(mainColor.substring(1))
   document.body.style.backgroundColor = backgroundColor
+  if (await window.settings.get('gradientBreakBackground')) {
+    document.body.style.background = auroraBackground(backgroundColor)
+    document.body.style.backgroundAttachment = 'fixed'
+  }
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
     const keyboardShortcut = await window.settings.get('endBreakShortcut')
