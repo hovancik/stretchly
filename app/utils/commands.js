@@ -26,6 +26,12 @@ const allOptions = {
     description: 'Specify an interval to wait before skipping to this break (Long or Mini) [HHhMMm|HHh|MMm|MM]',
     withValue: true
   },
+  json: {
+    long: '--json',
+    short: '-j',
+    description: 'Output in JSON format (for scripts)',
+    withValue: false
+  },
   duration: {
     long: '--duration',
     short: '-d',
@@ -43,6 +49,10 @@ const allCommands = {
   },
   logs: {
     description: 'Show location of logs file'
+  },
+  status: {
+    description: 'Show current break status',
+    options: [allOptions.json]
   },
   reset: {
     description: 'Reset breaks'
@@ -71,6 +81,10 @@ const allCommands = {
 }
 
 const allExamples = [{
+  cmd: 'stretchly --status',
+  description: 'Show active break status or time until next breaks'
+},
+{
   cmd: 'stretchly pause',
   description: 'Pause breaks indefinitely'
 },
@@ -103,6 +117,14 @@ const allExamples = [{
   description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
 },
 {
+  cmd: 'stretchly status --json',
+  description: 'Show break status as JSON'
+},
+{
+  cmd: 'stretchly status -j',
+  description: 'Show break status as JSON'
+},
+{
   cmd: 'stretchly preferences',
   description: 'Open Preferences window'
 }]
@@ -121,7 +143,7 @@ class Command {
   parse (input) {
     // filter out electron flags first
     let i = 0
-    while (i < input.length && input[i].startsWith('--')) {
+    while (i < input.length && input[i].startsWith('--') && input[i] !== '--status') {
       i++
     }
 
@@ -130,6 +152,9 @@ class Command {
 
     if (this.command === undefined) {
       this.command = 'help'
+    }
+    if (this.command === '--status') {
+      this.command = 'status'
     }
 
     if (!this.supported[this.command]) {
@@ -185,6 +210,8 @@ class Command {
       case 'logs':
         this.logs()
         break
+      case 'status':
+        break
 
       default:
         if (this.hasSupportedCommand) {
@@ -223,7 +250,7 @@ class Command {
       return false
     }
 
-    if (this.command === 'version' || this.command === 'help') {
+    if (this.command === 'version' || this.command === 'help' || this.command === 'status') {
       return false
     }
 

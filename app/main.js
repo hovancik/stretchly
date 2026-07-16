@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFile, writeFile, unlink, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import { fileURLToPath } from 'url'
@@ -29,6 +29,7 @@ import { registerBreakShortcuts } from './utils/breakShortcuts.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
 import DisplayManager from './utils/displayManager.js'
+import { buildCliStatusSnapshot } from './utils/cliStatus.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -90,6 +91,7 @@ let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
 let trayUpdateIntervalObj = null
+const cliStatusFileName = 'cli-status.json'
 
 if (insideWindowsPortable()) {
   const portableDataPath = join(process.env.PORTABLE_EXECUTABLE_DIR, 'Data')
@@ -127,8 +129,12 @@ const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
 
 if (!gotTheLock) {
   const cmd = new Command(commandLineArguments, app.getVersion(), false)
-  cmd.runOrForward()
-  app.quit()
+  if (cmd.command === 'status') {
+    printCliStatusFromSnapshot(cmd.options && cmd.options.json)
+  } else {
+    cmd.runOrForward()
+    app.quit()
+  }
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory, commandLineArguments) => {
     log.info(`Stretchly: arguments received from second instance: ${commandLineArguments}`)
@@ -220,6 +226,7 @@ app.on('before-quit', (event) => {
     if (autostartManager) {
       autostartManager.disconnect()
     }
+    deleteCliStatusSnapshot()
     if (processWin && !processWin.isDestroyed()) {
       processWin.destroy()
       processWin = null
@@ -231,6 +238,12 @@ async function initialize (isAppStart = true) {
   if (!gotTheLock) {
     return
   }
+  const startupCommand = new Command(commandLineArguments, app.getVersion(), false)
+  if (startupCommand.command === 'status') {
+    printCliStatusFromSnapshot(startupCommand.options && startupCommand.options.json)
+    return
+  }
+
   // TODO maybe we should not reinitialize but handle everything when we save new values for preferences
   log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
 
@@ -474,6 +487,72 @@ function startI18next () {
         log.error(err.stack)
       }
     })
+}
+
+function deleteCliStatusSnapshot () {
+  const path = cliStatusSnapshotPath()
+  if (existsSync(path)) {
+    unlink(path, () => {})
+  }
+}
+
+function cliStatusSnapshotPath () {
+  return join(app.getPath('userData'), cliStatusFileName)
+}
+
+function writeCliStatusSnapshot () {
+  const snapshot = buildCliStatusSnapshot({ breakPlanner, settings, json: true })
+  writeFile(cliStatusSnapshotPath(), JSON.stringify(snapshot, null, 2), () => {})
+}
+
+function printCliStatusFromSnapshot (jsonOutput = false) {
+  readFile(cliStatusSnapshotPath(), 'utf8', (err, data) => {
+    if (err) {
+      console.log('Stretchly status is unavailable. Make sure Stretchly is running.')
+      app.exit(0)
+      return
+    }
+    if (jsonOutput) {
+      console.log(data)
+    } else {
+      try {
+        const snapshot = JSON.parse(data)
+        printJsonSnapshotAsText(snapshot)
+      } catch (error) {
+        console.log('Stretchly status is unavailable. Make sure Stretchly is running.')
+      }
+    }
+    app.exit(0)
+  })
+}
+
+function printJsonSnapshotAsText (snapshot) {
+  if (snapshot.error) {
+    console.log(snapshot.error)
+    return
+  }
+
+  switch (snapshot.status) {
+    case 'paused':
+      console.log('Status: paused')
+      break
+    case 'active_break':
+      console.log('Status: active break')
+      console.log('Break type: ' + snapshot.break_type)
+      console.log('Time to break end: ' + (snapshot.time_to_break_end_human || (snapshot.time_to_break_end_ms + 'ms')))
+      break
+    case 'no_active_break':
+      console.log('Status: no active break')
+      console.log('Time to next break: ' + (snapshot.time_to_next_break_human || (snapshot.time_to_next_break_ms + 'ms')))
+      if (snapshot.long_break_enabled === false) {
+        console.log('Time to next long break: disabled')
+      } else {
+        console.log('Time to next long break: ' + (snapshot.time_to_next_long_break_human || (snapshot.time_to_next_long_break_ms + 'ms')))
+      }
+      break
+    default:
+      console.log('Stretchly status is unavailable.')
+  }
 }
 
 i18next.on('languageChanged', () => {
@@ -1331,6 +1410,12 @@ function updateTray () {
     }
   }
 
+  writeCliStatusSnapshot()
+
+  if (!trayUpdateIntervalObj) {
+    trayUpdateIntervalObj = setInterval(updateTray, 10000)
+  }
+
   if (!appIcon && !settings.get('showTrayIcon')) {
     return
   }
@@ -1345,10 +1430,6 @@ function updateTray () {
         appIcon.popUpContextMenu(Menu.buildFromTemplate(currentTrayMenuTemplate))
       })
     }
-    if (!trayUpdateIntervalObj) {
-      trayUpdateIntervalObj = setInterval(updateTray, 10000)
-    }
-
     updateToolTip()
 
     const newTrayIconPath = trayIconPath()
