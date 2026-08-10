@@ -180,6 +180,7 @@
   },
   "utils": {
     "remaining": "{{count}} remaining",
+    "skippableIn": "Skippable in {{count}}",
     "elapsed": "{{count}} elapsed",
     "inAbout": "in about {{count}}",
     "none_one": "{{count}}",

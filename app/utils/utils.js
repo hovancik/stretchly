@@ -10,6 +10,16 @@ function formatTimeRemaining (milliseconds, locale, i18next, humanizeDuration) {
   })
 }
 
+function formatSkippableIn (milliseconds, locale, i18next, humanizeDuration) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
+  }
+  return i18next.t('utils.skippableIn', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'] })
+  })
+}
+
 function formatElapsedDuration (milliseconds, locale, i18next, humanizeDuration) {
   if (locale === 'pt-BR') {
     locale = 'pt'
@@ -118,6 +128,7 @@ function getLinuxDisplayBackend (ozonePlatform = '', runtime = process) {
 
 export {
   formatTimeRemaining,
+  formatSkippableIn,
   formatElapsedDuration,
   formatTimeIn,
   formatUnitAndValue,

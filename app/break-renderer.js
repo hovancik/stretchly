@@ -56,6 +56,7 @@ window.onload = async (event) => {
   const progressTime = document.querySelector('#progress-time')
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
+  const lockHintElement = document.querySelector('#lock-hint')
   const manualFinishElement = document.querySelector('#finish')
   document.body.classList.add(mainColor.substring(1))
   document.body.style.backgroundColor = backgroundColor
@@ -96,6 +97,15 @@ window.onload = async (event) => {
           closeElement.classList.remove('hidden')
         } else {
           closeElement.classList.add('hidden')
+        }
+        if (lockedPercent > 0 && passedPercent < lockedPercent) {
+          lockHintElement.classList.remove('hidden')
+          if (secondChanged) {
+            lockHintElement.innerHTML = await window.utils.formatSkippableIn(
+              duration * lockedPercent / 100 - passed, locale)
+          }
+        } else {
+          lockHintElement.classList.add('hidden')
         }
         progress.value = (100 - passedPercent) * progress.max / 100
         if (secondChanged) {
