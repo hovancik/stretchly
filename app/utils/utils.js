@@ -47,14 +47,21 @@ function formatUnitAndValue (unit, value, i18next) {
   }
 }
 
-// does not consider `postponesLimit`
-function canPostpone (postpone, passedPercent, postponePercent) {
-  return postpone && passedPercent <= postponePercent
+// exits are locked for the opening `lockedPercent` of the break
+function isLocked (passedPercent, lockedPercent) {
+  return passedPercent < lockedPercent
 }
 
 // does not consider `postponesLimit`
-function canSkip (strictMode, postpone, passedPercent, postponePercent) {
-  return !((postpone && passedPercent <= postponePercent) || strictMode)
+function canPostpone (postpone, passedPercent, postponePercent, lockedPercent = 0) {
+  return !isLocked(passedPercent, lockedPercent) &&
+    postpone && passedPercent <= postponePercent
+}
+
+// does not consider `postponesLimit`
+function canSkip (strictMode, postpone, passedPercent, postponePercent, lockedPercent = 0) {
+  return !isLocked(passedPercent, lockedPercent) &&
+    !((postpone && passedPercent <= postponePercent) || strictMode)
 }
 
 function formatKeyboardShortcut (keyboardShortcut) {

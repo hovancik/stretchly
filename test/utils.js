@@ -143,6 +143,29 @@ describe('Others', () => {
     })
   })
 
+  describe('lockedDurationPercent', () => {
+    // no exits are offered before lockedPercent of the break has elapsed
+    it('locks skip before locked percent', () => {
+      canSkip(false, false, 3, 30, 5).should.equal(false)
+    })
+    it('offers skip at locked percent', () => {
+      canSkip(false, false, 5, 30, 5).should.equal(true)
+    })
+    it('locks postpone before locked percent', () => {
+      canPostpone(true, 3, 30, 5).should.equal(false)
+    })
+    it('offers postpone at locked percent', () => {
+      canPostpone(true, 5, 30, 5).should.equal(true)
+    })
+    it('is inert when zero, keeping default behaviour', () => {
+      canSkip(false, false, 0, 30, 0).should.equal(true)
+      canPostpone(true, 0, 30, 0).should.equal(true)
+    })
+    it('never overrides strict mode', () => {
+      canSkip(true, false, 90, 30, 5).should.equal(false)
+    })
+  })
+
   describe('formatKeyboardShortcut', () => {
     it('formats Or to /', () => {
       formatKeyboardShortcut('CmdOrCtrl+X').should.equal('Cmd/Ctrl + X')

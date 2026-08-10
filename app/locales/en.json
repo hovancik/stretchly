@@ -138,6 +138,7 @@
     "breakPostponeInfo": "If enabled in main Preferences, you can postpone breaks. Following settings allow you to specify when, for how long and how many times you can postpone a break.",
     "miniBreaks": "Mini breaks:",
     "postponableFor": "Postponable for:",
+    "lockedFor": "No skip or postpone for:",
     "postponeFor": "Postpone for:",
     "maxPostpones": "Maximum postpones:",
     "longBreaks": "Long breaks:",
