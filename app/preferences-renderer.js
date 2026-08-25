@@ -1,6 +1,7 @@
 import VersionChecker from './utils/versionChecker.js'
 import { setSameWidths } from './utils/sameWidths.js'
 import HtmlTranslate from './utils/htmlTranslate.js'
+import CustomMessages from './custom-messages.js'
 
 import './platform.js'
 
@@ -30,6 +31,22 @@ window.onload = async (e) => {
   new HtmlTranslate(document).translate()
   setWindowHeight()
   setTimeout(() => { eventsAttached = true }, 500)
+
+  const customMessages = new CustomMessages({
+    root: document.querySelector('#customMessages'),
+    settings,
+    saveSettings: (key, value) => window.settings.saveSettings(key, value),
+    translate: async (key, fallback) => {
+      const translated = await window.i18next.t(key)
+      return translated === key ? fallback : translated
+    },
+    onHeightChange: () => {
+      setSameWidths()
+      setWindowHeight()
+    }
+  })
+
+  await customMessages.render()
 
   if (settings.customPreferencesMessage) {
     const customMessageDiv = document.createElement('div')
@@ -100,6 +117,7 @@ window.onload = async (e) => {
 
   window.stretchly.onTranslate(async () => {
     new HtmlTranslate(document).translate()
+    await customMessages.render()
     document.querySelectorAll('input[type="range"]').forEach(async range => {
       const settings = await window.settings.currentSettings()
       const divisor = range.dataset.divisor
@@ -178,7 +196,7 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+  document.querySelectorAll('input[type="checkbox"]:not([data-custom-message-control])').forEach(checkbox => {
     const isNegative = checkbox.classList.contains('negative')
     checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]
     if (!eventsAttached) {
@@ -265,7 +283,7 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelector('.settings > div > button').onclick = (event) => {
+  document.querySelector('.settings > div:last-child > button').onclick = (event) => {
     window.stretchly.restoreDefaults()
   }
 

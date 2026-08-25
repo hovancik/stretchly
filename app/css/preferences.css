@@ -83,6 +83,74 @@ body > div > :last-child {
   margin-right: 32px;
 }
 
+.custom-messages-section > p {
+  margin: 0;
+  max-width: 420px;
+}
+
+.custom-messages-group + .custom-messages-group {
+  margin-top: 24px;
+}
+
+.custom-messages-group > h3 {
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0 0 12px;
+}
+
+.custom-messages-table {
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.custom-messages-table th,
+.custom-messages-table td {
+  border-bottom: 1px solid var(--hr-color);
+  padding: 8px 12px 8px 0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+body[dir=rtl] .custom-messages-table th,
+body[dir=rtl] .custom-messages-table td {
+  padding: 8px 0 8px 12px;
+  text-align: right;
+}
+
+.custom-messages-table th {
+  font-weight: normal;
+}
+
+.custom-messages-table th:nth-child(2),
+.custom-messages-table td:nth-child(2),
+.custom-messages-table th:nth-child(3),
+.custom-messages-table td:nth-child(3) {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.custom-messages-table input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.custom-messages-enabled {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  min-width: 18px;
+}
+
+.custom-messages-enabled > label {
+  display: inline-block;
+}
+
+.custom-messages-add,
+.custom-messages-delete {
+  white-space: nowrap;
+}
+
 .schedule {
   display: grid;
   font-size: 13px;
