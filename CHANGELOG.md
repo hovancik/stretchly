@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - fix snap startup crash
 
+### Changed
+- macOS app bundles are now ad-hoc signed
+
 ## [1.22.1] - 2026-08-13
 ### Fixed
 - tray icon system theme now follows the Windows mode used by the taskbar instead of the default app mode

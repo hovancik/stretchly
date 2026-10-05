@@ -57,6 +57,7 @@
     },
     "mac": {
       "category": "public.app-category.healthcare-fitness",
+      "identity": "-",
       "target": [
         {
           "target": "dmg",

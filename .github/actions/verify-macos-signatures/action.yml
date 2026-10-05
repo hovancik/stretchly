@@ -1,0 +1,15 @@
+name: Verify macOS app signatures
+description: Verify ad-hoc app signatures for Intel and Apple Silicon builds
+
+runs:
+  using: composite
+  steps:
+    - name: Verify ad-hoc signatures for both architectures
+      shell: bash
+      run: |
+        for app_bundle in "dist/mac/Stretchly.app" "dist/mac-arm64/Stretchly.app"; do
+          codesign --verify --deep --strict --verbose=2 "$app_bundle"
+          signature=$(codesign -dv --verbose=2 "$app_bundle" 2>&1)
+          printf '%s\n' "$signature"
+          printf '%s\n' "$signature" | grep -q 'flags=.*adhoc'
+        done

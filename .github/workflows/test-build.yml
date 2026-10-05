@@ -51,6 +51,9 @@ jobs:
       run: node_modules/.bin/electron-builder build --publish=never
       env:
         GH_TOKEN: ${{ secrets.github_token }}
+    - name: Verify macOS app signatures
+      if: runner.os == 'macOS'
+      uses: ./.github/actions/verify-macos-signatures
     - name: Upload artifacts
       uses: actions/upload-artifact@v6
       with:
