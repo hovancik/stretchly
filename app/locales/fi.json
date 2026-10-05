@@ -201,5 +201,46 @@
     "afterMiniBreak_one": "{{count}} minitauon jälkeen",
     "afterMiniBreak_other": "{{count}} minitauon jälkeen",
     "resuming": "Jatketaan"
+  },
+  "miniBreakIdeas": {
+    "aaa": {
+      "text": "Hae lasi vettä"
+    },
+    "aab": {
+      "text": "Käännä päätäsi hitaasti oikealta vasemmalle ja takaisin"
+    },
+    "aac": {
+      "text": "Käännä päätäsi alhaalta ylös ja takaisin"
+    },
+    "aad": {
+      "text": "Sulje silmäsi ja ota muutama syvä hengitys"
+    },
+    "aae": {
+      "text": "Sulje silmäsi ja ajattele jotain rentouttavaa"
+    },
+    "aaf": {
+      "text": "Venyttele jalkojasi"
+    },
+    "aag": {
+      "text": "Venyttele käsiäsi"
+    },
+    "aah": {
+      "text": "Istutko hyvässä asennossa?"
+    },
+    "aai": {
+      "text": "Käännä päätäsi sivuilta sivuille ja pidä asento 10 sekunttia"
+    },
+    "aak": {
+      "text": "Nouse tuolilta ja venyttele."
+    },
+    "aal": {
+      "text": "Katso vähintään 20 metrin päähän."
+    },
+    "aam": {
+      "text": "Ajattele hetki jotain miellyttävää."
+    },
+    "aan": {
+      "text": "Hymyile hetki vain koska olet olemassa."
+    }
   }
 }
