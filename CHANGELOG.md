@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix snap startup crash
 
 ### Changed
+- macOS Ventura (13) or later is now required
 - macOS app bundles are now ad-hoc signed
 
 ## [1.22.1] - 2026-08-13
