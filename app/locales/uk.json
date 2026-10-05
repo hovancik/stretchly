@@ -15,7 +15,7 @@
     "indefinitely": "на невизначений термін",
     "resetBreaks": "Скинути перерви",
     "quitStretchly": "Вихід з Stretchly",
-    "preferences": "Налаштування",
+    "preferences": "Параметри",
     "restoreDefaults": "Скинути налаштування",
     "syncPreferences": "Синхронізація налаштувань",
     "contributorPreferences": "Налаштування учасника",
@@ -95,7 +95,7 @@
       "authenticateUsing": "Ввійти за допомогою:",
       "alreadyContributor": "Я вже долучився",
       "becomeContributor": "Підтримати",
-      "desc2": "Stretchly - безкоштовна програма. Але ви можете підтримати проєкт, що допоможе нам покращити Stretchly та випускати інше вільне ПЗ.",
+      "desc2": "Stretchly - безкоштовна програма. Але ви можете підтримати проєкт, що допоможе нам покращити Stretchly та випускати інші безкоштовні програми.",
       "desc1": "Науково доведено, що регулярні перерви при використанні комп'ютера важливі для вашого фізичного та психічного здоров'я.",
       "loveStretchly": "Сподобався Stretchly?"
     },
@@ -223,7 +223,8 @@
     "percent_many": "{{count}} відсотків",
     "none_one": "{{count}}",
     "none_few": "{{count}}",
-    "none_many": "{{count}}"
+    "none_many": "{{count}}",
+    "elapsed": "{{count}} минуло"
   },
   "miniBreakIdeas": {
     "aaa": {

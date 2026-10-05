@@ -43,7 +43,9 @@
     "breakWindowWidth": "ความกว้าง:",
     "breakWindowSizeInfo": "ต้องการให้หน้าจอพักใช้พื้นที่กี่เปอร์เซนต์ของหน้าจอ?",
     "breakWindowHeight": "ความสูง:",
-    "light": "สว่าง"
+    "light": "สว่าง",
+    "naturalBreaksInfo": "หากเปิดการใช้งานตัวนับเวลาที่พักในการปรับแต่ง, คุณสามารถระบุดวลาได้ว่ากี่โมงถึงจะหยุดการพักชั่วคราว.",
+    "primary": "จอมอนิเตอร์หลัก"
   },
   "preferences": {
     "heart": {
@@ -86,7 +88,12 @@
       "graphiteCrystal": "ผลึกแกรไฟต์",
       "greenClouds": "นภาเขียว",
       "autumnBeBlessed": "สุขุมยามผลัดใบ",
-      "appearance": "หน้าตา:"
+      "appearance": "หน้าตา:",
+      "silence": "เงียบสงัด",
+      "trayIconStyleLabel": "สไตล์:",
+      "trayIconStyleDefault": "ค่าเริ่มต้น",
+      "trayIconStyleTime": "ระยะเวลาที่พัก",
+      "trayIconStyleProgress": "ความคืบหน้าการพัก"
     },
     "schedule": {
       "cantDisableBoth": "คุณไม่สามารถปิดทั้งการพักใหญ่และการพักย่อยพร้อมกันได้",
@@ -131,7 +138,8 @@
   "break": {
     "title": "ได้เวลาพักแล้วจ้า!",
     "skip": "ข้ามการพักนี้",
-    "postpone": "เลื่อนการพักนี้ออกไปก่อน"
+    "postpone": "เลื่อนการพักนี้ออกไปก่อน",
+    "finish": "สิ้นสุดการพัก"
   },
   "main": {
     "syncPreferences": "ตั้งค่าการซิงก์",
@@ -185,6 +193,12 @@
     },
     "aac": {
       "text": "เงยขึ้น และก้มลงอย่างช้าๆ"
+    },
+    "aad": {
+      "text": "หลับตาลง และหายใจเข้าลึกๆสักนิด"
+    },
+    "aae": {
+      "text": "หลับตาลงและผ่อนคลาย"
     }
   },
   "longBreakIdeas": {
