@@ -54,7 +54,7 @@ If you're using [Alfred](https://www.alfredapp.com) or [Raycast](https://www.ray
 
 #### Application Signing
 
-*Stretchly* is not signed (due to its costs and me not owning supported Apple device) so you will need to use a workaround for the first run. The workaround
+*Stretchly* is only ad-hoc signed (due to its costs and me not owning supported Apple device) so you will need to use a workaround for the first run. The workaround
 depends on if you're running an Intel or Apple Silicon chip.
 
 - **Intel Chips**: [Open a Mac app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac).
