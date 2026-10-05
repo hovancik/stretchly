@@ -26,7 +26,7 @@ The latest official **installers** and **portable versions** for macOS, Windows 
 
 ### macOS
 
-Requires macOS Monterey (12) or later.
+Requires macOS Ventura (13) or later.
 
 It is recommended to install *Stretchly* with [Homebrew tap](https://github.com/hovancik/homebrew-stretchly) by running the following command.
 See [Application Signing](#application-signing) for details.
