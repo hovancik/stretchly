@@ -1,15 +1,15 @@
 {
   "main": {
-    "toolTipHeader": "Stretchly – Pamatuje na přestávky za Vás",
-    "microbreakIn": "Mini přestávka za $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Dlouhá přestávka za $t(utils.seconds, {'count': {{seconds}} })",
+    "toolTipHeader": "Stretchly – Pamatuje na přestávky za vás",
+    "microbreakIn": "Krátká přestávka za $t(utils.seconds, {'count': {{seconds}}, 'context': 'in' })",
+    "breakIn": "Dlouhá přestávka za $t(utils.seconds, {'count': {{seconds}}, 'context': 'in' })",
     "resumingBreaks": "Obnovení přestávek",
     "downloadLatestVersion": "Stáhnout nejnovější verzi",
     "toBreak": "Dlouhou přestávku",
-    "toMicrobreak": "Mini přestávku",
+    "toMicrobreak": "Krátkou přestávku",
     "skipToTheNext": "Přeskočit na další",
     "resume": "Pokračovat v přestávkách",
-    "pause": "Přerušit přestávky",
+    "pause": "Pozastavit přestávky",
     "forHour": "1 hodina",
     "for2Hours": "2 hodiny",
     "for5Hours": "5 hodin",
@@ -18,13 +18,13 @@
     "resetBreaks": "Resetovat přestávky",
     "quitStretchly": "Ukončit Stretchly",
     "restoreDefaults": "Obnovit výchozí nastavení",
-    "areYouSure": "Tato akce obnoví původní nastavení a všechny vaše změny budou ztraceny.",
+    "areYouSure": "Tato akce obnoví výchozí nastavení a všechny vaše změny se ztratí.",
     "continue": "Pokračovat",
     "cancel": "Zrušit",
-    "preferences": "Předvolby",
-    "contributorPreferences": "Nastavení pro přispěvatele",
-    "syncPreferences": "Synchronizace nastavení",
-    "warning": "Tím se obnoví původní nastavení aplikace a všechna vámi provedená budou ztracena."
+    "preferences": "Nastavení",
+    "contributorPreferences": "Nastavení pro Přispěvatele",
+    "syncPreferences": "Synchronizace Nastavení",
+    "warning": "Tím se obnoví výchozí nastavení aplikace a všechna vaše nastavení se ztratí."
   },
   "break": {
     "postpone": "Odložit tuto přestávku",
@@ -39,36 +39,36 @@
       "schedule": "Časování",
       "theme": "Motiv",
       "about": "Informace",
-      "heart": "Pomoci Stretchly"
+      "heart": "Podpořit Stretchly"
     },
     "settings": {
       "openAtLogin": "Spustit Stretchly automaticky po přihlášení",
       "showBreaksIn": "Zobrazovat přestávky jako:",
       "window": "Okno",
       "fullscreen": "Celá obrazovka",
-      "showIdeas": "Zobrazovat během přestávek nápady na cvičení",
+      "showIdeas": "Zobrazovat během přestávek tipy na cvičení",
       "allScreens": "Zobrazovat přestávky na všech monitorech",
-      "monitorIdleTime": "Sledovat neaktivitu (přestávky jsou během vaší neaktivity přerušeny).",
+      "monitorIdleTime": "Sledovat čas neaktivity (přestávky se během neaktivity pozastaví).",
       "monitorDnd": "Zobrazovat přestávky i během režimu Nerušit",
-      "language": "Vyberte jazyk:",
-      "restoreDefaults": "Obnovit původní nastavení"
+      "language": "Vybrat jazyk:",
+      "restoreDefaults": "Obnovit výchozí nastavení"
     },
     "schedule": {
-      "miniBreaks": "Mini přestávky:",
-      "miniBreaksInfo": "Mini přestávky jsou kratší a častější přestávky, které vám umožní oddechnout si, natáhnout se a relaxovat.",
-      "enableMiniBreaks": "Povolit Mini přestávky",
-      "breakFor": "Dopřát si přestávku:",
-      "every": "Každých:",
-      "showNotificationBeforeMiniBreak": "Zobrazit před začátkem Mini přestávky upozornění",
-      "enablePostponeMini": "Umožnit odložení Mini přestávky",
+      "miniBreaks": "Krátké přestávky:",
+      "miniBreaksInfo": "Krátké přestávky se opakují pravidelně a umožňují vám protáhnout se a odpočinout si.",
+      "enableMiniBreaks": "Povolit Krátké přestávky",
+      "breakFor": "Trvání přestávky:",
+      "every": "Interval:",
+      "showNotificationBeforeMiniBreak": "Zobrazit upozornění před začátkem Krátké přestávky",
+      "enablePostponeMini": "Umožnit odložení Krátké přestávky",
       "longBreaks": "Dlouhé přestávky:",
       "longBreaksInfo": "Dlouhé přestávky nejsou tak časté, ale trvají delší dobu, takže vám umožní lépe si odpočinout od práce.",
       "enableLongBreaks": "Povolit Dlouhé přestávky",
-      "showNotificationBeforeLongBreak": "Zobrazit před začátkem Dlouhé přestávky upozornění",
+      "showNotificationBeforeLongBreak": "Zobrazit upozornění před začátkem Dlouhé přestávky",
       "enablePostponeLong": "Umožnit odložení Dlouhé přestávky",
       "strictMode": "Přísný režim:",
-      "strictModeInfo": "Přísný režim vám neumožní přestávky přeskakovat a pomůže tak vaší disciplíně.",
-      "enableStrictMini": "Zapnout Přísný režim pro Mini přestávky",
+      "strictModeInfo": "Přísný režim zabraňuje přeskakování přestávek a pomáhá vám je pravidelně dodržovat.",
+      "enableStrictMini": "Zapnout Přísný režim pro Krátké přestávky",
       "enableStrictLong": "Zapnout Přísný režim pro Dlouhé přestávky",
       "cantDisableBoth": "Není možné vypnout oba druhy přestávek"
     },
@@ -86,7 +86,7 @@
       "windChime": "Zvonkohra",
       "ticToc": "Tik tak",
       "silence": "Ticho",
-      "trayIcon": "Ikonka:",
+      "trayIcon": "Ikona v Systémové liště:",
       "colour": "Barevná",
       "monochrome": "Černobílá",
       "invertedMonochrome": "Převrácená černobílá",
@@ -94,15 +94,15 @@
       "reverie": "Zátiší",
       "trayIconStyleLabel": "Styl:",
       "trayIconStyleDefault": "Výchozí",
-      "trayIconStyleTime": "Čas na přestávku",
-      "trayIconStyleProgress": "Postup k přestávce"
+      "trayIconStyleTime": "Čas do přestávky",
+      "trayIconStyleProgress": "Průběh času do přestávky"
     },
     "about": {
       "tagline": "Pamatuje na přestávky za vás",
       "version": "Verze ",
       "latestVersion": "Nejnovější verze ",
       "notifyNewVersion": "Automaticky upozorňovat na nové verze",
-      "learnMore": "Pokud se chcete o funkcích Stretchly dozvědět víc, zhlédnout tutoriál, stáhnout nejnovější verzi nebo nás kontaktovat kvůli podpoře, ",
+      "learnMore": "Pokud se chcete o funkcích Stretchly dozvědět víc, prohlédnout si návod, stáhnout nejnovější verzi nebo nás kontaktovat se žádostí o podporu, ",
       "ourWebsite": "navštivte naši webovou stránku",
       "dot": ".",
       "developedBy": "Vyvinul",
@@ -111,14 +111,14 @@
       "checkNewVersion": "Automaticky kontrolovat aktualizace aplikace"
     },
     "heart": {
-      "loveStretchly": "Chcete Stretchly pomoci?",
+      "loveStretchly": "Chcete Stretchly podpořit?",
       "desc1": "Přestávky během práce s počítačem jsou vědecky ověřenou metodou na zlepšení fyzického i psychického zdraví.",
-      "desc2": "Stretchly je zdarma. Můžete však věnovat svůj čas nebo peníze a pomoci tak ke zlepšení Stretchly a dalších programů.",
-      "becomeContributor": "Staňte se Patronem",
-      "alreadyContributor": "Už jsem přispěl/a",
-      "authenticateUsing": "Autentifikovat pomocí:",
-      "contributorPreferences": "Nastavení pro přispěvatele",
-      "syncPreferences": "Synchronizace nastavení"
+      "desc2": "Stretchly je zdarma. Darováním času nebo peněz můžete podpořit další vývoj Stretchly a dalších bezplatných programů.",
+      "becomeContributor": "Staňte se přispěvatelem",
+      "alreadyContributor": "Už přispívám",
+      "authenticateUsing": "Ověřit pomocí:",
+      "contributorPreferences": "Nastavení pro Přispěvatele",
+      "syncPreferences": "Synchronizace Nastavení"
     }
   },
   "contributorPreferences": {
@@ -127,60 +127,60 @@
     "2": "Třetí monitor",
     "3": "Čtvrtý monitor",
     "4": "Pátý monitor",
-    "title": "Nastavení pro přispěvatele",
-    "notifications": "Upozornění na přestávku:",
-    "notificationsInfo": "Systémová notifikace zobrazená krátce před přestávkou, která vám umožní se na ni lépe připravit.",
+    "title": "Nastavení pro Přispěvatele",
+    "notifications": "Upozornění na přestávky:",
+    "notificationsInfo": "Systémové upozornění zobrazené krátce před přestávkou, abyste se na ni mohli připravit.",
     "beforeLongBreak": "Dlouhá přestávka:",
-    "beforeMiniBreak": "Mini přestávka:",
+    "beforeMiniBreak": "Krátká přestávka:",
     "newVersion": "Nová verze:",
     "newVersionNotification": "Upozornit na novou verzi",
     "customIdeas": "Vlastní nápady na přestávky:",
-    "customIdeasInfo": "Umožňuje použití vlastních nápadů na přestávky editováním konfiguračního souboru. (Pro pokročilé uživatele)",
+    "customIdeasInfo": "Vlastní nápady na přestávky můžete nastavit úpravou konfiguračního souboru. (Pro pokročilé uživatele.)",
     "useIdeasFromSettings": "Použít nápady na přestávky z konfiguračního souboru",
-    "breakPostpone": "Posunutí přestávek:",
-    "breakPostponeInfo": "Pokud je v hlavním nastavení povoleno, můžete přestávku odložit. Následující nastavení vám umožní nastavit kdy, na jak dlouho a kolikrát je možné přestávku odložit.",
-    "miniBreaks": "Mini přestávky:",
-    "postponableFor": "Můžou se odložit:",
-    "postponeFor": "Odloží se o:",
-    "maxPostpones": "Maximální doba odložení:",
+    "breakPostpone": "Odkládání přestávek:",
+    "breakPostponeInfo": "Pokud je odkládání povoleno v hlavním Nastavení, můžete přestávky odložit. Zde můžete určit, kdy, na jak dlouho a kolikrát lze přestávku odložit.",
+    "miniBreaks": "Krátké přestávky:",
+    "postponableFor": "Lze odložit během prvních:",
+    "postponeFor": "Délka odkladu:",
+    "maxPostpones": "Maximální počet odložení:",
     "longBreaks": "Dlouhé přestávky:",
-    "pauseUntilMorning": "Přerušení do rána:",
-    "pauseUntil": "Přerušit do:",
-    "pauseUntilMorningInfo": "Specifikujte hodinu pro 'Přerušit do rána'.",
+    "pauseUntilMorning": "Pozastavení do rána:",
+    "pauseUntil": "Obnovit přestávky v:",
+    "pauseUntilMorningInfo": "Určete, v kolik hodin se přestávky obnoví při volbě „Do rána“.",
     "welcomeWindow": "Úvodní obrazovka:",
-    "showWelcomeWindow": "Při příštím spuštění zobrazit Úvodní obrazovku",
-    "opacityTheme": "Průhledné téma:",
-    "opacityInfo": "Jak moc by měla být téma neprůhledná?",
-    "opacity": "Opacity (neprůhlednost):",
+    "showWelcomeWindow": "Zobrazit Úvodní obrazovku při příštím spuštění",
+    "opacityTheme": "Průhlednost motivu:",
+    "opacityInfo": "Jak neprůhledné má být okno přestávky?",
+    "opacity": "Neprůhlednost:",
     "breakWindowSize": "Velikost okna přestávek",
     "breakWindowSizeInfo": "Jaké procento obrazovky by mělo okno přestávky skrýt?",
     "breakWindowWidth": "Šířka:",
     "breakWindowHeight": "Výška:",
     "sounds": "Zvuky:",
     "volume": "Hlasitost:",
-    "miniBreakStartSound": "Přehrát koncový zvuk i na začátku Mini přestávky",
-    "longBreakStartSound": "Přehrát koncový zvuk i na začátku Dlouhé přestávky",
+    "miniBreakStartSound": "Zvuk na začátku Krátké přestávky",
+    "longBreakStartSound": "Zvuk na začátku Dlouhé přestávky",
     "naturalBreaks": "Přirozené přestávky:",
-    "naturalBreaksInfo": "Pokud je v hlavním nastavení povoleno sledování neaktivity, můžete určit po jaké době by se měli přestávky přerušit.",
-    "pauseAfter": "Přerušit po:",
-    "appearance": "Motiv:",
+    "naturalBreaksInfo": "Pokud je v hlavním Nastavení zapnuté sledování času neaktivity, můžete určit, po jak dlouhé neaktivitě se mají přestávky pozastavit.",
+    "pauseAfter": "Čas neaktivity před pozastavením:",
+    "appearance": "Vzhled:",
     "light": "Světlý",
     "dark": "Tmavý",
     "system": "Podle systému",
-    "cursor": "Sledování kurzoru",
+    "cursor": "Podle polohy kurzoru",
     "primary": "Hlavní monitor",
-    "showOnMonitor": "Zobrazit přestávky na",
+    "showOnMonitor": "Zobrazit přestávky na monitoru:",
     "screenInfo": "Pokud je zobrazení přestávek na všech monitorech zakázáno, můžete si vybrat, na kterém z nich chcete přestávky zobrazit.",
     "screen": "Monitor pro přestávky:",
     "showBreaksAsRegularWindows": "Zobrazit přestávky jako běžná okna",
     "showBreaksAsRegularWindowsTitle": "Chovat se jako běžné okno:",
     "currentTimeInBreaks": "Aktuální čas",
     "showCurrentTimeInBreaks": "Zobrazit aktuální místní čas v okně přestávky",
-    "showBreaksAsRegularWindowsInfo": "Pokud je tato funkce povolena, okna přestávek se budou moci zaostřovat, nebudou již „vždy nahoře“ a budou se také zobrazovat na hlavním panelu.",
-    "timeToBreakInTray": "Čas si dát přestávku",
-    "showTimeToBreakInTray": "Zobrazit čas do další přestávky v ikoně na panelu nabídek",
-    "showTrayIcon": "Zobrazit ikonu nabídky",
-    "toShowTrayIcon": "Zobrazit ikonu aplikace Stretchly v nabídce"
+    "showBreaksAsRegularWindowsInfo": "Po zapnutí bude možné okna přestávek aktivovat, nebudou již „Vždy nahoře“ a zobrazí se také na hlavním panelu.",
+    "timeToBreakInTray": "Čas do přestávky",
+    "showTimeToBreakInTray": "Zobrazit čas do další přestávky v ikoně",
+    "showTrayIcon": "Ikona v systémové liště",
+    "toShowTrayIcon": "Zobrazit ikonu Stretchly v systémové liště"
   },
   "utils": {
     "none_one": "{{count}}",
@@ -193,12 +193,14 @@
     "oclock_few": "{{count}} hodiny",
     "oclock_other": "{{count}} hodin",
     "seconds_one": "{{count}} sekunda",
+    "seconds_in_one": "{{count}} sekundu",
     "seconds_few": "{{count}} sekundy",
     "seconds_other": "{{count}} sekund",
     "minutes_one": "{{count}} minuta",
     "minutes_few": "{{count}} minuty",
+    "minutes_many": "{{count, number}} minuty",
     "minutes_other": "{{count}} minut",
-    "hours_one": "{{count}} hodinu",
+    "hours_one": "{{count}} hodina",
     "hours_few": "{{count}} hodiny",
     "hours_other": "{{count}} hodin",
     "remaining": "{{count}} do konce",
@@ -211,19 +213,19 @@
   "welcome": {
     "title": "Vítejte ve Stretchly",
     "breakTimeReminderApp": "Pamatuje na přestávky za vás",
-    "viewTutorial": "Zhlédnout Tutoriál",
+    "viewTutorial": "Prohlédnout si Návod",
     "openPreferences": "Otevřít Nastavení",
     "getStarted": "Začínáme"
   },
   "statusMessages": {
-    "paused": "Přerušeny",
+    "paused": "Pozastaveny",
     "indefinitely": "Na neurčito",
     "dndMode": "Režim Nerušit",
     "nextLongBreak": "Další Dlouhá přestávka",
-    "nextMiniBreak": "Další Mini přestávka",
-    "afterMiniBreak_one": "po {{count}} Mini přestávce",
-    "afterMiniBreak_few": "po {{count}} Mini přestávkách",
-    "afterMiniBreak_other": "po {{count}} Mini přestávkách",
+    "nextMiniBreak": "Další Krátká přestávka",
+    "afterMiniBreak_one": "po {{count}} Krátké přestávce",
+    "afterMiniBreak_few": "po {{count}} Krátkých přestávkách",
+    "afterMiniBreak_other": "po {{count}} Krátkých přestávkách",
     "resuming": "Obnovování",
     "appExclusion": "Pravidlo pro vyloučení aplikace"
   },
@@ -250,7 +252,7 @@
       "text": "Zavřete oči a počítejte nádechy."
     },
     "aar": {
-      "text": "Položte si konečky prstů na ramena. Po dobu 10 sekund pohybujte rameny dopředu a dozadu."
+      "text": "Položte si konečky prstů na ramena. 10 sekund kružte rameny dopředu a potom dozadu."
     },
     "aav": {
       "text": "Zavřete oči a jednoduše si všímejte všeho, co se v daném okamžiku objeví, aniž byste to hodnotili."
@@ -277,10 +279,10 @@
       "text": "Sevřete ruce v pěst a pak posouvejte prsty nahoru, dokud nebudou směřovat ke stropu, jako byste někomu říkali, aby zastavil."
     },
     "abh": {
-      "text": "Sevřete prsty v pěst a pak je roztáhněte co nejvíce to jde."
+      "text": "Sevřete ruku v pěst, potom roztáhněte prsty a co nejvíce je natáhněte."
     },
     "abl": {
-      "text": "Postavte se zpříma s rukama zvednutýma podél ramen. Přesuňte ruce mírně za záda, chvíli podržte a vraťte zpět."
+      "text": "Postavte se zpříma a zvedněte ruce do výšky ramen. Posuňte je mírně za záda, na sekundu vydržte a vraťte je zpět."
     },
     "aae": {
       "text": "Zavřete oči a uvolněte se."
@@ -301,13 +303,13 @@
       "text": "Potřebujete-li pomoc, požádejte o ni."
     },
     "abj": {
-      "text": "Postavte se zpříma a pomocí ruky naklánějte hlavu směrem k rameni dokud neucítíte protažení."
+      "text": "Postavte se zpříma a rukou na stejné straně pomalu nakloňte hlavu k rameni, dokud neucítíte protažení."
     },
     "abo": {
       "text": "Postavte se s nohama na šířku ramen, udělejte pohyb, jako byste si chtěli sednout zpět na židli. Pak se postavte a několikrát opakujte."
     },
     "abp": {
-      "text": "Postavte se zády a rukama ke zdi a pak pomalu pohybujte rukama nahoru a dolů, jako byste dělali \"sněhové anděly\"."
+      "text": "Opřete se zády a rukama o zeď a potom pomalu pohybujte rukama nahoru a dolů, jako byste dělali anděly ve sněhu."
     },
     "abq": {
       "text": "Postavte se čelem ke zdi, opřete se o ni rukama a udělejte několik kliků."
@@ -349,19 +351,19 @@
       "text": "Zvedněte pravou ruku, natáhněte ji nad hlavu doleva a vydržte 10 sekund. Opakujte na druhou stranu."
     },
     "aaw": {
-      "text": "Zaměřte svůj pohled každých 20 minut po dobu 20 sekund na objekt ve vzdálenosti 6 metrů."
+      "text": "Každých 20 minut se na 20 sekund zadívejte na předmět vzdálený alespoň 20 stop (přibližně 6 metrů)."
     },
     "abc": {
-      "text": "Zavřete oči a jemně je zvedejte ke stropu a pak zpět k zemi."
+      "text": "Se zavřenýma očima pomalu a jemně obraťte pohled ke stropu a potom dolů k podlaze."
     },
     "abd": {
       "text": "Zavřete oči a pomalu s nimi pohybujte doleva a doprava."
     },
     "abi": {
-      "text": "Posaďte se zpříma, ruce nechte viset podél těla a pomalu kružte hlavou."
+      "text": "Posaďte se zpříma, ruce nechte volně viset podél těla a pomalu opisujte hlavou velký kruh jedním směrem."
     },
     "abk": {
-      "text": "Postavte se zpříma s rukama podél těla a tlačte lopatky k sobě."
+      "text": "Postavte se zpříma s rukama podél těla. Stáhněte lopatky k sobě a chvíli vydržte."
     },
     "abm": {
       "text": "Posaďte se na okraj židle, otočte trup na jednu stranu a vydržte 10-15 sekund. Opakujte na druhou stranu."
@@ -376,10 +378,10 @@
       "text": "Jednu ruku držte vzpřímeně a druhou rukou jemně tlačte loket první ruky směrem k hlavě. Vydržte 10-15 sekund. Opakujte s druhou paží."
     },
     "abw": {
-      "text": "Postavte se, jednou nohou se opřete o blízký předmět, například židli nebo stoličku a dotkněte se prstů na nohou. Opakujte s druhou nohou."
+      "text": "Postavte se, položte jedno chodidlo na blízký předmět, například židli nebo stoličku, a dotkněte se prstů na nohou. Opakujte s druhou nohou."
     },
     "abx": {
-      "text": "Postavte se do dveří a položte jednu ruku na každou stranu dveří, pak se jemně předkloňte, dokud neucítíte protažení v hrudníku."
+      "text": "Postavte se do dveřního otvoru, opřete ruce o obě strany zárubně a jemně se nakloňte dopředu, dokud neucítíte protažení v hrudníku."
     }
   },
   "longBreakIdeas": {
@@ -392,11 +394,11 @@
       "text": "Všimli jste si někdy, že váš mozek dokáže na všechno přijít sám? Stačí odejít od počítače, udělat si přestávku a přemýšlet nad něčím naprosto odlišným."
     },
     "aac": {
-      "title": "Mini přestávky",
+      "title": "Krátké přestávky",
       "text": "Odpočinek je klíčovým prvkem pro zajištění výkonnosti pohybového aparátu. Časté přestávky mohou zkrátit dobu nutnou pro splnění úkolu a pomáhají snížit riziko ergonomického zranění."
     },
     "aaf": {
-      "text": "Nevhodná výška a úhel klávesnice, myši, monitoru nebo pracovní plochy mohou způsobit zdravotní problémy. Najděte si chvíli čas a přečtěte něco málo o této problematice.",
+      "text": "Nevhodná výška a úhel klávesnice, myši, monitoru nebo pracovní plochy mohou způsobit zdravotní problémy. Najděte si chvíli a přečtěte si něco o ergonomii pracovního stolu.",
       "title": "Ergonomie"
     },
     "aah": {
@@ -433,7 +435,7 @@
     },
     "aar": {
       "title": "Cvičte",
-      "text": "Výzkumy naznačují, že i malé množství pravidelného cvičení může mít výrazný přínos pro Vaše zdraví, včetně měřitelného snížení stresu."
+      "text": "Výzkumy naznačují, že i malé množství pravidelného cvičení může mít výrazný přínos pro vaše zdraví, včetně měřitelného snížení stresu."
     },
     "aap": {
       "text": "Neposílejte e-maily ani zprávy kolegům v kanceláři, ale běžte si s nimi popovídat k jejich stolům.",
@@ -449,7 +451,7 @@
     },
     "aax": {
       "title": "Srdeční tep",
-      "text": "Čtyřikrát nebo pětkrát týdně zvyšte svou tepovou frekvenci na 120 tepů za minutu a dělejte přitom cokoli, co vás baví. Pravidelné zvyšování tepové frekvence vede ke zlepšení kardiovaskulárního zdraví."
+      "text": "Čtyřikrát nebo pětkrát týdně si na 20 minut v kuse zvyšte tepovou frekvenci na 120 tepů za minutu při jakékoli činnosti, která vás baví. Pravidelné zvyšování tepové frekvence vede ke zlepšení kardiovaskulárního zdraví."
     },
     "aay": {
       "title": "Jděte raději po schodech",
@@ -469,15 +471,15 @@
     },
     "abe": {
       "title": "Zaostřete do dálky",
-      "text": "Přiložte jeden prst k oku a zaměřte se na něj. Pomalu prst oddalujte, zaostřete do dálky a pak zpět."
+      "text": "Podržte prst blízko oka a zaostřete na něj. Pomalu ho oddalujte, zaostřete do dálky a potom opět na prst. Přibližte prst zpět a zaostřete na něco vzdáleného."
     },
     "abh": {
-      "title": "Pomalu a s klidem",
+      "title": "Pomalé Dýchání",
       "text": "Nové výzkumy naznačují využití technik řízeného pomalého dýchání jako prostředku k optimalizaci fyziologických parametrů. Ty se zdají být úzce propojeny se zdravím a dlouhověkostí."
     },
     "aat": {
       "title": "Zápěstí a předloktí",
-      "text": "Natáhněte ruce před sebe a dlaněmi k sobě. Pak jimi pomalu otáčejte po směru a poté proti směru hodinových ručiček."
+      "text": "Natáhněte ruce s dlaněmi směřujícími k vám. Pak pomalu otáčejte rukama čtyřikrát ve směru hodinových ručiček a čtyřikrát proti němu."
     },
     "aau": {
       "title": "Protažení zad",
@@ -489,15 +491,15 @@
     },
     "aae": {
       "title": "Mrkejte",
-      "text": "Při dlouhém sledování obrazovky méně mrkáte, a vystavujete tak oči působení vzduchu. Proto jednou za čas rychle zamrkejte, abyste oči osvěžili a odstranili z nich povrchový prach."
+      "text": "Při dlouhém sledování obrazovky méně mrkáte, a vystavujete tak oči působení vzduchu. Několik sekund rychle mrkejte, abyste osvěžili slzný film a odstranili prach z povrchu očí."
     },
     "aal": {
-      "title": "Schůzky v pohybu",
-      "text": "Co takhle přesunout schůzky z konferenční místnosti ven? Chůze nejenže spaluje kalorie, ale může dokonce podpořit smysl pro spolupráci."
+      "title": "Schůzky v Pohybu",
+      "text": "Co takhle přesunout schůzky ze zasedací místnosti na chodbu a při nich se projít? Chůze spaluje kalorie a může podpořit i spolupráci."
     },
     "aaw": {
-      "title": "7minutové cvičení",
-      "text": "Tento trénink představuje procvičení celého těla za zlomek času. Ale jako u každého cvičení i zde buďte opatrní a nepřežeňte to."
+      "title": "7minutové Cvičení",
+      "text": "Tato sestava vám umožní procvičit celé tělo za krátký čas. Jako u každého cvičení i zde buďte opatrní. Existuje mnoho aplikací, které vám pomohou začít."
     },
     "abc": {
       "text": "Používáte-li pravidelně veřejnou dopravu, zkuste místo sezení stát. Pokud je to možné, snažte se co nejvíce svých každodenních cest nahradit chůzí nebo jízdou na kole.",
@@ -509,7 +511,7 @@
     },
     "abf": {
       "title": "Využijte dlaně",
-      "text": "Vsedě se opřete lokty o stůl a přitiskněte se k jeho okraji. Nakloňte se dopředu a zakryjte si oči dlaněmi. Ty pak zavřete, pomalu se nadechněte nosem a několik sekund vydržte. Pokračujte v hlubokém dýchání."
+      "text": "Posaďte se a opřete si lokty o stůl blízko jeho okraje. Nakloňte se dopředu a zakryjte si oči dlaněmi. Zavřete oči, pomalu se nadechněte nosem a na několik sekund zadržte dech. Pokračujte v hlubokém dýchání."
     },
     "abi": {
       "text": "Zavřete oči a představte si, že jste na klidném a mírumilovném místě, například na pláži nebo v lese. Soustřeďte se na pohledy, zvuky a vjemy tohoto prostředí.",
@@ -517,15 +519,15 @@
     },
     "aad": {
       "title": "Meditace",
-      "text": "Výzkumné studie naznačují, že cvičení založená na všímavosti pomáhají snižovat úzkost, depresi, stres a bolest. Zároveň pomáhají zlepšovat celkový zdravotní stav, duševní zdraví a kvalitu života."
+      "text": "Výzkumné studie naznačují, že cvičení založená na všímavosti pomáhají snižovat úzkost, depresi, stres a bolest. Zároveň pomáhají zlepšovat celkový zdravotní stav, duševní zdraví a kvalitu života. Nejste si jistí, jak začít? Existuje mnoho aplikací, které vám pomohou."
     },
     "abg": {
-      "text": "Stiskněte pár sbalených ponožek nebo měkký gumový míček a vydržte tak po dobu 5 sekund, pak povolte. Celý proces několikrát zopakujte.",
+      "text": "Stiskněte pár smotaných ponožek nebo měkký gumový míček a vydržte tak po dobu 5 sekund, pak povolte. Celý proces několikrát zopakujte.",
       "title": "Stisk ruky"
     },
     "abj": {
       "title": "Pod tlakem?",
-      "text": "Zkuste uzemňovací techniku 5-4-3-2-1: Najděte 5 věcí, které vidíte, 4 věci, kterých se můžete dotknout, 3 věci, které slyšíte, 2 věci, které cítíte, a 1 věc, kterou můžete ochutnat."
+      "text": "Zkuste Techniku Uzemnění 5-4-3-2-1: Pojmenujte 5 věcí, které vidíte, 4 věci, kterých se můžete dotknout, 3 věci, které slyšíte, 2 věci, jejichž vůni cítíte, a 1 věc, kterou můžete ochutnat."
     }
   }
 }
