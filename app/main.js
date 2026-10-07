@@ -17,8 +17,7 @@ import { DateTime } from 'luxon'
 
 import {
   canPostpone, canSkip, formatTimeRemaining,
-  minutesRemaining, insideWindowsStore, insideFlatpak, insideSnap, insideWindowsPortable,
-  getLinuxDisplayBackend
+  minutesRemaining, insideWindowsStore, insideFlatpak, insideSnap, insideWindowsPortable
 } from './utils/utils.js'
 import IdeasLoader from './utils/ideasLoader.js'
 import BreaksPlanner from './breaksPlanner.js'
@@ -91,7 +90,6 @@ let updateChecker
 let currentTrayIconPath = null
 let currentTrayMenuTemplate = null
 let trayUpdateIntervalObj = null
-let endBreakShortcutSupported
 
 if (insideWindowsPortable()) {
   const portableDataPath = join(process.env.PORTABLE_EXECUTABLE_DIR, 'Data')
@@ -235,15 +233,6 @@ async function initialize (isAppStart = true) {
   }
   // TODO maybe we should not reinitialize but handle everything when we save new values for preferences
   log.info(`Stretchly: ${isAppStart ? '' : 're'}initializing...`)
-  const linuxDisplayBackend = getLinuxDisplayBackend(
-    app.commandLine.getSwitchValue('ozone-platform')
-  )
-  // TODO: Re-enable when Electron can unregister individual Wayland portal shortcuts.
-  endBreakShortcutSupported = linuxDisplayBackend !== 'wayland'
-  if (isAppStart && !endBreakShortcutSupported) {
-    log.info('Stretchly: end break shortcut disabled on native Wayland')
-  }
-
   EventEmitter.setMaxListeners(200) // for watching Store changes
   if (!settings) {
     settings = new Store({
@@ -787,7 +776,7 @@ function startMicrobreak () {
   ipcMain.handle('send-mini-break-data', (event) => {
     const startTime = Date.now()
     const shortcut = settings.get('endBreakShortcut')
-    if (shortcut && endBreakShortcutSupported) {
+    if (shortcut) {
       globalShortcut.register(shortcut, () => {
         log.info('Stretchly: end break shortcut pressed during Mini break')
         const passedPercent = (Date.now() - startTime) / breakDuration * 100
@@ -956,7 +945,7 @@ function startBreak () {
   ipcMain.handle('send-long-break-data', (event) => {
     const startTime = Date.now()
     const shortcut = settings.get('endBreakShortcut')
-    if (shortcut && endBreakShortcutSupported) {
+    if (shortcut) {
       globalShortcut.register(shortcut, () => {
         log.info('Stretchly: end break shortcut pressed during Long break')
         const passedPercent = (Date.now() - startTime) / breakDuration * 100

@@ -593,7 +593,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 
 ## Known issues
-- The end break shortcut is disabled on native Wayland because temporary global shortcuts cannot be reliably released. Use the break controls or start Stretchly with the X11 backend (`stretchly --ozone-platform=x11`). On KDE, remove any assignment created by an earlier Stretchly version once in System Settings > Keyboard > Shortcuts.
+- On KDE Wayland, global shortcuts can appear configured but fail to work; see [electron/electron#42573](https://github.com/electron/electron/issues/42573). Use the tray menu and break controls, or quit Stretchly and restart with `stretchly --ozone-platform=x11`.
 - Windows Store build's autostart is not working, so was disabled. To use autostart, install Stretchly with the [regular installer](https://github.com/hovancik/stretchly/releases), or create a shortcut to Stretchly from `shell:AppsFolder` (Win+R) and move it to the `shell:startup` folder (Win+R).
 - The Snap build may fail to start on native Wayland. Start it with the X11 backend (`stretchly --ozone-platform=x11`) as a workaround. See [#1693](https://github.com/hovancik/stretchly/issues/1693).
 - Wayland multi-display window placement issue puts all break windows on one monitor; start with X11 backend (`stretchly --ozone-platform=x11`) if needed. See [electron/electron#48749](https://github.com/electron/electron/issues/48749).

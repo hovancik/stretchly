@@ -4,6 +4,6 @@ Exec=run.sh %U
 Terminal=false
 Type=Application
 Icon=net.hovancik.Stretchly
-StartupWMClass=Stretchly
+StartupWMClass=net.hovancik.Stretchly
 Comment=The break time reminder app
 Categories=Utility;
