@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - fix snap startup crash
 - improve Linux desktop integration
+- time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
 - macOS Ventura (13) or later is now required
