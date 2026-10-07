@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Fixed
 - fix snap startup crash
+- improve Linux desktop integration
 
 ### Changed
 - macOS Ventura (13) or later is now required
