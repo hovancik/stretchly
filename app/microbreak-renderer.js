@@ -26,6 +26,9 @@ window.onload = async (event) => {
   applyBreakHealthEffect(danger, breakHealthMode, mainColor)
 
   const runOnce = createRunOnce()
+  const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
+  const skipFromCLI = runOnce(() => window.breaks.finishBreak(false, 'cli'))
+  const finishFromCLI = runOnce(() => window.breaks.finishBreak(true, 'cli'))
 
   document.querySelector('#close').onclick = runOnce(() => window.breaks.finishBreak(manualAwaiting))
 
@@ -116,6 +119,34 @@ window.onload = async (event) => {
     closeElement.classList.add('hidden')
     manualFinishElement.classList.remove('hidden')
     progressTime.innerHTML = await window.utils.formatElapsedDuration(Date.now() - started, locale)
+  })
+
+  window.breaks.onPostponeRequest(() => {
+    const passed = Date.now() - started
+    if (!manualAwaiting && passed < duration &&
+        window.utils.canPostpone(postpone, passed / duration * 100, postponePercent)) {
+      postponeFromCLI()
+    } else {
+      __electronLog.info('Stretchly: cannot postpone break (source: cli): postponement is not allowed right now')
+    }
+  })
+
+  window.breaks.onSkipRequest(() => {
+    const passed = Date.now() - started
+    if (!manualAwaiting && passed < duration &&
+        window.utils.canSkip(strictMode, postpone, passed / duration * 100, postponePercent)) {
+      skipFromCLI()
+    } else {
+      __electronLog.info('Stretchly: cannot skip break (source: cli): skipping is not allowed right now')
+    }
+  })
+
+  window.breaks.onFinishRequest(() => {
+    if (manualAwaiting) {
+      finishFromCLI()
+    } else {
+      __electronLog.info('Stretchly: cannot finish break (source: cli): break is not waiting for manual finish')
+    }
   })
 
   await window.breaks.signalLoaded()

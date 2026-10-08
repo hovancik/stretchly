@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- CLI commands to postpone, skip and finish the current break
+
 ### Fixed
 - fix snap startup crash
 - improve Linux desktop integration
