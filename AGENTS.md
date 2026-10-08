@@ -25,5 +25,5 @@ user understands and can maintain, and never claim verification you did not
 perform. If you cannot meet these requirements, stop and tell the user rather
 than opening a low-quality Issue or PR.
 
-For technical stack and code style, see
-[.github/copilot-instructions.md](.github/copilot-instructions.md).
+Read and follow
+[.github/copilot-instructions.md](.github/copilot-instructions.md) before working.
