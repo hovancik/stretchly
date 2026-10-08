@@ -58,7 +58,10 @@ const allCommands = {
     description: 'Pause/unpause breaks'
   },
   postpone: {
-    description: 'Postpone the current break when postponement is allowed'
+    description: 'Postpone the currently running break, when allowed'
+  },
+  skip: {
+    description: 'Skip the currently running break, when allowed'
   },
   mini: {
     description: 'Skip to the Mini break, customize it',
@@ -91,7 +94,11 @@ const allExamples = [{
 },
 {
   cmd: 'stretchly postpone',
-  description: 'Postpone the current break using existing preferences'
+  description: 'Postpone the currently running break using existing preferences'
+},
+{
+  cmd: 'stretchly skip',
+  description: 'Skip the currently running break using existing preferences'
 },
 {
   cmd: 'stretchly mini -T "Stretch up!"',

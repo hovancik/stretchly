@@ -184,8 +184,9 @@ if (!gotTheLock) {
         else pauseBreaks(1)
         break
 
-      case 'postpone': {
-        log.info('Stretchly: requesting break postponement (requested by second instance)')
+      case 'postpone':
+      case 'skip': {
+        log.info(`Stretchly: requesting to ${cmd.command} the current break (requested by second instance)`)
         const reference = breakPlanner?.scheduler?.reference
         let windows
         if (reference === 'finishMicrobreak') {
@@ -198,9 +199,9 @@ if (!gotTheLock) {
           (win.isVisible() || win.isMinimized()) &&
           !win.webContents.getURL().includes('?blank=1'))
         if (win) {
-          win.webContents.send('request-postpone-break')
+          win.webContents.send(`request-${cmd.command}-break`)
         } else {
-          log.info('Stretchly: cannot postpone break (source: cli): no active break window')
+          log.info(`Stretchly: cannot ${cmd.command} break (source: cli): no active break window`)
         }
         break
       }
@@ -1580,8 +1581,8 @@ ipcMain.on('postpone-long-break', function (event, source = 'button') {
   postponeBreak()
 })
 
-ipcMain.on('finish-mini-break', function (event, shouldPlaySound, manualAwaiting) {
-  log.info(`Stretchly: finish button clicked during Mini break (manualAwaiting: ${manualAwaiting})`)
+ipcMain.on('finish-mini-break', function (event, shouldPlaySound, manualAwaiting, source = 'button') {
+  log.info(`Stretchly: ${manualAwaiting ? 'finish' : 'skip'} requested during Mini break (source: ${source})`)
   if (manualAwaiting) {
     decreaseDanger(1)
   } else {
@@ -1590,8 +1591,8 @@ ipcMain.on('finish-mini-break', function (event, shouldPlaySound, manualAwaiting
   finishMicrobreak(shouldPlaySound)
 })
 
-ipcMain.on('finish-long-break', function (event, shouldPlaySound, manualAwaiting) {
-  log.info(`Stretchly: finish button clicked during Long break (manualAwaiting: ${manualAwaiting})`)
+ipcMain.on('finish-long-break', function (event, shouldPlaySound, manualAwaiting, source = 'button') {
+  log.info(`Stretchly: ${manualAwaiting ? 'finish' : 'skip'} requested during Long break (source: ${source})`)
   if (manualAwaiting) {
     decreaseDanger(2)
   } else {

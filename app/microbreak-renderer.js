@@ -27,6 +27,7 @@ window.onload = async (event) => {
 
   const runOnce = createRunOnce()
   const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
+  const skipFromCLI = runOnce(() => window.breaks.finishBreak(false, 'cli'))
 
   document.querySelector('#close').onclick = runOnce(() => window.breaks.finishBreak(manualAwaiting))
 
@@ -126,6 +127,16 @@ window.onload = async (event) => {
       postponeFromCLI()
     } else {
       __electronLog.info('Stretchly: cannot postpone break (source: cli): postponement is not allowed right now')
+    }
+  })
+
+  window.breaks.onSkipRequest(() => {
+    const passed = Date.now() - started
+    if (!manualAwaiting && passed < duration &&
+        window.utils.canSkip(strictMode, postpone, passed / duration * 100, postponePercent)) {
+      skipFromCLI()
+    } else {
+      __electronLog.info('Stretchly: cannot skip break (source: cli): skipping is not allowed right now')
     }
   })
 
