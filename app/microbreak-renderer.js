@@ -28,6 +28,7 @@ window.onload = async (event) => {
   const runOnce = createRunOnce()
   const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
   const skipFromCLI = runOnce(() => window.breaks.finishBreak(false, 'cli'))
+  const finishFromCLI = runOnce(() => window.breaks.finishBreak(true, 'cli'))
 
   document.querySelector('#close').onclick = runOnce(() => window.breaks.finishBreak(manualAwaiting))
 
@@ -137,6 +138,14 @@ window.onload = async (event) => {
       skipFromCLI()
     } else {
       __electronLog.info('Stretchly: cannot skip break (source: cli): skipping is not allowed right now')
+    }
+  })
+
+  window.breaks.onFinishRequest(() => {
+    if (manualAwaiting) {
+      finishFromCLI()
+    } else {
+      __electronLog.info('Stretchly: cannot finish break (source: cli): break is not waiting for manual finish')
     }
   })
 

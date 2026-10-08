@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- CLI commands to postpone and skip the current break
+- CLI commands to postpone, skip and finish the current break
 
 ### Fixed
 - fix snap startup crash

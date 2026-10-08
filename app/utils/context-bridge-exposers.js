@@ -33,6 +33,7 @@ function exposeBreaks (type) {
     postponeBreak: (source) => ipcRenderer.send(`postpone-${type}-break`, source),
     onPostponeRequest: (callback) => ipcRenderer.on('request-postpone-break', () => callback()),
     onSkipRequest: (callback) => ipcRenderer.on('request-skip-break', () => callback()),
+    onFinishRequest: (callback) => ipcRenderer.on('request-finish-break', () => callback()),
     signalLoaded: () => ipcRenderer.send(`${type}-break-loaded`),
     onEnterManualAwait: (callback) => ipcRenderer.on('enter-manual-await', (_e, which) => callback(which)),
     sanitizeIdea: (value) => sanitizeIdea(value)
