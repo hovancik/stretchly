@@ -30,7 +30,8 @@ function exposeBreaks (type) {
   contextBridge.exposeInMainWorld('breaks', {
     sendBreakData: () => ipcRenderer.invoke(`send-${type}-break-data`),
     finishBreak: (manualAwaiting) => ipcRenderer.send(`finish-${type}-break`, false, manualAwaiting),
-    postponeBreak: () => ipcRenderer.send(`postpone-${type}-break`),
+    postponeBreak: (source) => ipcRenderer.send(`postpone-${type}-break`, source),
+    onPostponeRequest: (callback) => ipcRenderer.on('request-postpone-break', () => callback()),
     signalLoaded: () => ipcRenderer.send(`${type}-break-loaded`),
     onEnterManualAwait: (callback) => ipcRenderer.on('enter-manual-await', (_e, which) => callback(which)),
     sanitizeIdea: (value) => sanitizeIdea(value)

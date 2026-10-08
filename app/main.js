@@ -184,6 +184,27 @@ if (!gotTheLock) {
         else pauseBreaks(1)
         break
 
+      case 'postpone': {
+        log.info('Stretchly: requesting break postponement (requested by second instance)')
+        const reference = breakPlanner?.scheduler?.reference
+        let windows
+        if (reference === 'finishMicrobreak') {
+          windows = microbreakWins
+        } else if (reference === 'finishBreak') {
+          windows = breakWins
+        }
+        const win = windows?.find(win =>
+          !win.isDestroyed() &&
+          (win.isVisible() || win.isMinimized()) &&
+          !win.webContents.getURL().includes('?blank=1'))
+        if (win) {
+          win.webContents.send('request-postpone-break')
+        } else {
+          log.info('Stretchly: cannot postpone break (source: cli): no active break window')
+        }
+        break
+      }
+
       case 'pause': {
         log.info('Stretchly: pause Breaks (requested by second instance)')
         const duration = cmd.durationToMs(settings)
@@ -1549,13 +1570,13 @@ function showNotification (text) {
   )
 }
 
-ipcMain.on('postpone-mini-break', function (event) {
-  log.info('Stretchly: postpone button clicked during Mini break')
+ipcMain.on('postpone-mini-break', function (event, source = 'button') {
+  log.info(`Stretchly: postponement requested during Mini break (source: ${source})`)
   postponeMicrobreak()
 })
 
-ipcMain.on('postpone-long-break', function (event) {
-  log.info('Stretchly: postpone button clicked during Long break')
+ipcMain.on('postpone-long-break', function (event, source = 'button') {
+  log.info(`Stretchly: postponement requested during Long break (source: ${source})`)
   postponeBreak()
 })
 

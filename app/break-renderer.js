@@ -26,6 +26,7 @@ window.onload = async (event) => {
   applyBreakHealthEffect(danger, breakHealthMode, mainColor)
 
   const runOnce = createRunOnce()
+  const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
 
   document.querySelector('#close').onclick = runOnce(() => window.breaks.finishBreak(manualAwaiting))
 
@@ -117,6 +118,16 @@ window.onload = async (event) => {
     closeElement.classList.add('hidden')
     manualFinishElement.classList.remove('hidden')
     progressTime.innerHTML = await window.utils.formatElapsedDuration(Date.now() - started, locale)
+  })
+
+  window.breaks.onPostponeRequest(() => {
+    const passed = Date.now() - started
+    if (!manualAwaiting && passed < duration &&
+        window.utils.canPostpone(postpone, passed / duration * 100, postponePercent)) {
+      postponeFromCLI()
+    } else {
+      __electronLog.info('Stretchly: cannot postpone break (source: cli): postponement is not allowed right now')
+    }
   })
 
   await window.breaks.signalLoaded()

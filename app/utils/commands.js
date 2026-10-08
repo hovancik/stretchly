@@ -57,6 +57,9 @@ const allCommands = {
   toggle: {
     description: 'Pause/unpause breaks'
   },
+  postpone: {
+    description: 'Postpone the current break when postponement is allowed'
+  },
   mini: {
     description: 'Skip to the Mini break, customize it',
     options: [allOptions.title, allOptions.noskip, allOptions.wait]
@@ -85,6 +88,10 @@ const allExamples = [{
 {
   cmd: 'stretchly pause -d 1h20m',
   description: 'Pause breaks for one hour and twenty minutes'
+},
+{
+  cmd: 'stretchly postpone',
+  description: 'Postpone the current break using existing preferences'
 },
 {
   cmd: 'stretchly mini -T "Stretch up!"',
