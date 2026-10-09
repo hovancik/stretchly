@@ -332,6 +332,36 @@ describe('appIcon', function () {
     appIcon.trayIconFileName.should.equal('tray.png')
   })
 
+  it('does not add Number when timeToBreak is above 99', function () {
+    const params = {
+      paused: false,
+      monochrome: true,
+      inverted: false,
+      darkMode: false,
+      platform: 'darwin',
+      trayIconStyle: 'time',
+      timeToBreak: 120,
+      reference: 'startMicrobreak'
+    }
+    const appIcon = new AppIcon(params)
+    appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
+  })
+
+  it('adds Number when timeToBreak is 99', function () {
+    const params = {
+      paused: false,
+      monochrome: true,
+      inverted: false,
+      darkMode: false,
+      platform: 'darwin',
+      trayIconStyle: 'time',
+      timeToBreak: 99,
+      reference: 'startMicrobreak'
+    }
+    const appIcon = new AppIcon(params)
+    appIcon.trayIconFileName.should.equal('trayMacMonochromeNumber99Template.png')
+  })
+
   it('trayIconFileName works for light mode on Windows', function () {
     const params = {
       paused: false,
