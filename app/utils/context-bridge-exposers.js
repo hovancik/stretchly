@@ -111,6 +111,9 @@ function exposeUtils () {
     formatTimeRemaining: async (milliseconds, locale) => {
       return utils.formatTimeRemaining(milliseconds, locale, i18n, humanizeDuration)
     },
+    formatSkippableIn: async (milliseconds, locale) => {
+      return utils.formatSkippableIn(milliseconds, locale, i18n, humanizeDuration)
+    },
     formatElapsedDuration: async (milliseconds, locale) => {
       return utils.formatElapsedDuration(milliseconds, locale, i18n, humanizeDuration)
     },

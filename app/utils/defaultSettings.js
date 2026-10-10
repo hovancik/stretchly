@@ -24,6 +24,8 @@ export default {
   microbreakPostponableDurationPercent: 30,
   breakPostponesLimit: 1,
   breakPostponableDurationPercent: 30,
+  microbreakLockedDurationPercent: 0,
+  breakLockedDurationPercent: 0,
   mainColor: '#478484',
   miniBreakColor: '#478484',
   transparentMode: false,

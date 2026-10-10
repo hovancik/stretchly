@@ -10,6 +10,16 @@ function formatTimeRemaining (milliseconds, locale, i18next, humanizeDuration) {
   })
 }
 
+function formatSkippableIn (milliseconds, locale, i18next, humanizeDuration) {
+  if (locale === 'pt-BR') {
+    locale = 'pt'
+  }
+  return i18next.t('utils.skippableIn', {
+    count: humanizeDuration(milliseconds,
+      { round: true, delimiter: ' ', language: locale.replace('-', '_'), fallbacks: ['en'] })
+  })
+}
+
 function formatElapsedDuration (milliseconds, locale, i18next, humanizeDuration) {
   if (locale === 'pt-BR') {
     locale = 'pt'
@@ -47,14 +57,21 @@ function formatUnitAndValue (unit, value, i18next) {
   }
 }
 
-// does not consider `postponesLimit`
-function canPostpone (postpone, passedPercent, postponePercent) {
-  return postpone && passedPercent <= postponePercent
+// exits are locked for the opening `lockedPercent` of the break
+function isLocked (passedPercent, lockedPercent) {
+  return passedPercent < lockedPercent
 }
 
 // does not consider `postponesLimit`
-function canSkip (strictMode, postpone, passedPercent, postponePercent) {
-  return !((postpone && passedPercent <= postponePercent) || strictMode)
+function canPostpone (postpone, passedPercent, postponePercent, lockedPercent = 0) {
+  return !isLocked(passedPercent, lockedPercent) &&
+    postpone && passedPercent <= postponePercent
+}
+
+// does not consider `postponesLimit`
+function canSkip (strictMode, postpone, passedPercent, postponePercent, lockedPercent = 0) {
+  return !isLocked(passedPercent, lockedPercent) &&
+    !((postpone && passedPercent <= postponePercent) || strictMode)
 }
 
 function formatKeyboardShortcut (keyboardShortcut) {
@@ -111,6 +128,7 @@ function getLinuxDisplayBackend (ozonePlatform = '', runtime = process) {
 
 export {
   formatTimeRemaining,
+  formatSkippableIn,
   formatElapsedDuration,
   formatTimeIn,
   formatUnitAndValue,
