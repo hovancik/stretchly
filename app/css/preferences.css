@@ -158,25 +158,25 @@ body[dir=rtl] .theme > :nth-child(1) {
   text-align: left
 }
 
-.theme > :nth-child(10) {
+.theme > :nth-child(11) {
   grid-column: 1/2;
-  grid-row: 9/10;
+  grid-row: 10/11;
   padding: 0 16px;
   text-align: right;
 }
 
-body[dir=rtl] .theme > :nth-child(10) {
+body[dir=rtl] .theme > :nth-child(11) {
   text-align: left
 }
 
-.theme > :nth-child(17) {
+.theme > :nth-child(18) {
   grid-column: 1/2;
-  grid-row: 15/18;
+  grid-row: 16/19;
   padding: 0 16px;
   text-align: right;
 }
 
-body[dir=rtl] .theme > :nth-child(17) {
+body[dir=rtl] .theme > :nth-child(18) {
   text-align: left
 }
 
@@ -244,11 +244,17 @@ body[dir=rtl] .theme > :nth-child(17) {
   color: #000000;
 }
 
+#randomColor + label:before {
+  background: conic-gradient(#478484 0 60deg, #567890 60deg 120deg, #A49898 120deg 180deg, #ffffff 180deg 240deg, #633738 240deg 300deg, #1D1F21 300deg 360deg);
+  color: #FFFFFF;
+}
+
 .appearance > #greenClouds:checked + label:before,
 .appearance > #autumnBeBlessed:checked + label:before,
 .appearance > #graphiteCrystal:checked + label:before,
 .appearance > #coffeeKisses:checked + label:before,
-.appearance > #morningSwim:checked + label:before {
+.appearance > #morningSwim:checked + label:before,
+.appearance > #randomColor:checked + label:before {
   color: #FFFFFF;
 }
 

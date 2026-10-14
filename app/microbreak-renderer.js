@@ -5,7 +5,8 @@ import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger, breakHealthMode,
+    breakColor] = await window.breaks.sendBreakData()
 
   document.ondragover = event =>
     event.preventDefault()
@@ -20,10 +21,8 @@ window.onload = async (event) => {
     return
   }
 
-  const mainColor = await window.settings.get('mainColor')
-
   new HtmlTranslate(document).translate()
-  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
+  applyBreakHealthEffect(danger, breakHealthMode, breakColor)
 
   const runOnce = createRunOnce()
   const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
@@ -58,7 +57,7 @@ window.onload = async (event) => {
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
   const manualFinishElement = document.querySelector('#finish')
-  document.body.classList.add(mainColor.substring(1))
+  document.body.classList.add(breakColor.substring(1))
   document.body.style.backgroundColor = backgroundColor
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
