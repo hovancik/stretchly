@@ -5,6 +5,7 @@ export default defineConfig({
     globals: true,
     pool: "forks",
     include: ['test\/*.?(c|m)[jt]s'],
+    fsModuleCache: true,
     coverage: {
       enabled: true,
       clean: true,
