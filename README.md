@@ -680,6 +680,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Steven Cai, [@stevencaiOR](https://github.com/stevencaiOR)
 - Zhekai Jiang, [@zhekai-jiang](https://github.com/zhekai-jiang)
 - Bence Kovács, [@githappens](https://github.com/githappens)
+- chijianjian246, [@czl2463882404](https://github.com/czl2463882404)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

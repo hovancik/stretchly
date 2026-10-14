@@ -29,6 +29,7 @@ import { registerBreakShortcuts } from './utils/breakShortcuts.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
 import DisplayManager from './utils/displayManager.js'
+import { resolveColor } from './utils/colorTheme.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -782,6 +783,7 @@ function startMicrobreak () {
   const postponable = settings.get('microbreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
+  const breakColor = resolveColor(settings.get('miniBreakColor'))
 
   const modalPath = 'file://' + join(__dirname, '/microbreak.html')
   microbreakWins = []
@@ -818,7 +820,7 @@ function startMicrobreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('miniBreakColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(breakColor), danger, settings.get('breakHealthMode'), breakColor]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()
@@ -838,7 +840,7 @@ function startMicrobreak () {
       backgroundThrottling: false,
       transparent: !showBreaksAsRegularWindows,
       ...getBlurredBackgroundWindowOptions(),
-      backgroundColor: calculateBackgroundColor(settings.get('miniBreakColor')),
+      backgroundColor: calculateBackgroundColor(breakColor),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
@@ -950,6 +952,7 @@ function startBreak () {
   const postponable = settings.get('breakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
+  const breakColor = resolveColor(settings.get('mainColor'))
 
   const modalPath = 'file://' + join(__dirname, '/break.html')
   breakWins = []
@@ -987,7 +990,7 @@ function startBreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('mainColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(breakColor), danger, settings.get('breakHealthMode'), breakColor]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()
@@ -1007,7 +1010,7 @@ function startBreak () {
       backgroundThrottling: false,
       transparent: !showBreaksAsRegularWindows,
       ...getBlurredBackgroundWindowOptions(),
-      backgroundColor: calculateBackgroundColor(settings.get('mainColor')),
+      backgroundColor: calculateBackgroundColor(breakColor),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
