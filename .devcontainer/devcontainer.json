@@ -1,0 +1,26 @@
+{
+  "name": "Stretchly",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/vscode/stretchly,type=bind",
+  "workspaceFolder": "/home/vscode/stretchly",
+  "containerUser": "vscode",
+  "runArgs": ["--cap-drop=ALL"],
+  "securityOpt": ["no-new-privileges:true"],
+  "features": {
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "none",
+      "nodeGypDependencies": false,
+      "pnpmVersion": "none"
+    }
+  },
+  "containerEnv": {
+    "TZ": "Europe/Amsterdam"
+  },
+  "mounts": [
+    "source=${devcontainerId}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "waitFor": "postCreateCommand"
+}
