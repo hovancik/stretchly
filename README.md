@@ -567,6 +567,8 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 
 Now you can clone the repo with `git clone https://github.com/hovancik/stretchly.git`. Change to the new created directory and run `npm i` to install node packages needed. If your system is running Python 3.12 and newer, you also need to install `setuptools`, for example with `pip install setuptools`, as `distutils` have been [deprecated](https://docs.python.org/3/library/distutils.html).
 
+Alternatively, open the repo in the included [Dev Container](https://containers.dev/) (`.devcontainer`). It is a minimal, hardened environment (non-root user, all Linux capabilities dropped, no forwarded ports) for editing code and running tests, which makes it a good fit for LLM coding agents. It is not meant for running the Stretchly GUI.
+
 Read on.
 
 ### Debugging
