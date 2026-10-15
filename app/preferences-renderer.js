@@ -72,7 +72,7 @@ window.onload = async (e) => {
     if (event.key === 'd' && (event.ctrlKey || event.metaKey)) {
       const [
         reference, timeleft, breaknumber,
-        postponesnumber, settingsfile, logsfile, doNotDisturb, imagesfolder
+        postponesnumber, settingsfile, logsfile, doNotDisturb, imagesfolder, audiofolder
       ] = await window.stretchly.showDebug()
       const debugInfo = document.querySelector('.debug > :first-child')
       if (!debugInfo.classList.contains('hidden')) {
@@ -83,9 +83,10 @@ window.onload = async (e) => {
         document.querySelector('#timeleft').innerHTML = timeleft
         document.querySelector('#breakNumber').innerHTML = breaknumber
         document.querySelector('#postponesNumber').innerHTML = postponesnumber
-        document.querySelector('#settingsfile').innerHTML = settingsfile
-        document.querySelector('#logsfile').innerHTML = logsfile
-        document.querySelector('#imagesfolder').innerHTML = imagesfolder
+        document.querySelector('#settingsfile').textContent = settingsfile
+        document.querySelector('#logsfile').textContent = logsfile
+        document.querySelector('#imagesfolder').textContent = imagesfolder
+        document.querySelector('#audiofolder').textContent = audiofolder
         document.querySelector('#donotdisturb').innerHTML = doNotDisturb
         document.querySelector('#node').innerHTML = await window.runtime.node()
         document.querySelector('#chrome').innerHTML = await window.runtime.chrome()
@@ -273,7 +274,7 @@ window.onload = async (e) => {
     item.onclick = (event) => {
       event.preventDefault()
       if (event.target.classList.contains('file')) {
-        window.electronApi.openPath(event.target.innerHTML)
+        window.electronApi.openPath(event.target.textContent)
       } else {
         window.electronApi.openExternal(event.target.href)
       }

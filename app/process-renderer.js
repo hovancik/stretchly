@@ -1,11 +1,15 @@
 import VersionChecker from './utils/versionChecker.js'
 
 window.onload = async (e) => {
-  window.stretchly.onPlaySound((file, volume) => {
-    __electronLog.info(`Stretchly: playing audio/${file}.wav (volume: ${volume})`)
-    const audio = new Audio(`audio/${file}.wav`)
+  window.stretchly.onPlaySound(async (file, volume) => {
+    const customAudio = file === 'silence'
+      ? null
+      : await window.electronApi.resolveLocalAudio(`${file}.wav`)
+    const source = customAudio || `audio/${file}.wav`
+    __electronLog.info(`Stretchly: playing ${source} (volume: ${volume})`)
+    const audio = new Audio(source)
     audio.volume = volume
-    audio.play()
+    audio.play().catch(exception => __electronLog.error(exception))
   })
 
   window.stretchly.onShowNotification(async (text, silent) => {

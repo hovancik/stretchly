@@ -286,10 +286,20 @@ In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` t
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
 
 #### Sounds at the start of breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
-To configure the sound when a break starts, set for example `"miniBreakStartSound": "crystal-glass"`. Same for `longBreakStartSound`. Accepted values: `silence`, `crystal-glass`, `wind-chime`, `tic-toc`, `reverie`. Setting the value to `silence` means no sound will be played.
+To configure the sound when a break starts, set for example `"miniBreakStartSound": "crystal-glass"`. Same for `longBreakStartSound`. Built-in values: `silence`, `crystal-glass`, `wind-chime`, `tic-toc`, `reverie`. Setting the value to `silence` means no sound will be played.
 
 #### Different sound for Mini and Long breaks
 To play different sound for Mini breaks, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`).
+
+#### Custom sounds
+
+To use your own sounds, put WAV files in the `audio` folder inside Stretchly's user data directory. Open it from Preferences → About by pressing `Ctrl/Cmd + D` and clicking `audioFolder`.
+
+To replace a sound from Preferences, name your file `crystal-glass.wav`, `wind-chime.wav`, `tic-toc.wav`, or `reverie.wav`. For example, save it as `crystal-glass.wav` and select Crystal Glass. Stretchly will use your file whenever that sound plays, including previews. Delete the file to get the original sound back.
+
+You can also use your own filename, for example `my-sound.wav`. In the preferences file, set `"miniBreakAudio": "my-sound"` or `"longBreakAudio": "my-sound"`. The same works for `miniBreakStartSound` and `longBreakStartSound`. Leave out `.wav` in these settings. These sounds won't appear as new choices in Preferences. If you delete the file, change the setting back to a built-in sound.
+
+Filenames can contain letters (`a-z`, `A-Z`), numbers, dots, underscores, and hyphens. Only `.wav` files are supported. The `silence` option always stays silent.
 
 #### Different color theme for Mini and Long breaks
 To have different theme for Mini breaks, set `miniBreakColor` to desired value, ie `#123456`.

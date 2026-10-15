@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - CLI commands to postpone, skip and finish the current break
+- advanced preferences for custom break sounds
 
 ### Fixed
+- fix debug file and folder links when paths contain HTML special characters
+- fix custom break images when the user data path contains URL special characters
 - fix snap startup crash
 - improve Linux desktop integration
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain

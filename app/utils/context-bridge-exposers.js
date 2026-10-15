@@ -8,7 +8,8 @@ function exposeElectronApi () {
   contextBridge.exposeInMainWorld('electronApi', {
     openExternal: (path) => shell.openExternal(path),
     openPath: (path) => shell.openPath(path),
-    resolveLocalImage: (filename) => ipcRenderer.invoke('resolve-local-image', filename)
+    resolveLocalImage: (filename) => ipcRenderer.invoke('resolve-local-image', filename),
+    resolveLocalAudio: (filename) => ipcRenderer.invoke('resolve-local-audio', filename)
   })
 }
 
