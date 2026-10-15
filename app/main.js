@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFile, readFileSync, writeFile, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import { resolveLocalAudio } from './utils/audioResolver.js'
@@ -18,7 +18,8 @@ import { DateTime } from 'luxon'
 
 import {
   canPostpone, canSkip, formatTimeRemaining,
-  minutesRemaining, insideWindowsStore, insideFlatpak, insideSnap, insideWindowsPortable
+  minutesRemaining, insideWindowsStore, insideFlatpak, insideSnap, insideWindowsPortable,
+  shouldRelaunchWithX11, shouldSuggestX11OnWayland
 } from './utils/utils.js'
 import IdeasLoader from './utils/ideasLoader.js'
 import BreaksPlanner from './breaksPlanner.js'
@@ -124,9 +125,25 @@ ipcMain.handle('get-global-value', (event, name) => {
 const commandLineArguments = process.argv
   .slice(app.isPackaged ? 1 : 2)
 
-const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
+function readForceX11OnWayland () {
+  try {
+    const config = JSON.parse(readFileSync(join(app.getPath('userData'), 'config.json'), 'utf8'))
+    return config.forceX11OnWayland === true
+  } catch {
+    return false
+  }
+}
 
-if (!gotTheLock) {
+const relaunchingWithX11 = shouldRelaunchWithX11(readForceX11OnWayland(), commandLineArguments,
+  app.commandLine.getSwitchValue('ozone-platform'))
+
+const gotTheLock = !relaunchingWithX11 && app.requestSingleInstanceLock(commandLineArguments)
+
+if (relaunchingWithX11) {
+  log.info('Stretchly: relaunching with X11 backend because forceX11OnWayland is enabled')
+  app.relaunch({ args: process.argv.slice(1).concat(['--ozone-platform=x11']) })
+  app.exit(0)
+} else if (!gotTheLock) {
   const cmd = new Command(commandLineArguments, app.getVersion(), false)
   cmd.runOrForward()
   app.quit()
@@ -448,6 +465,11 @@ async function initialize (isAppStart = true) {
   }
 
   displayManager = new DisplayManager(settings)
+
+  if (isAppStart && shouldSuggestX11OnWayland(settings.get('forceX11OnWayland'),
+    app.commandLine.getSwitchValue('ozone-platform'), screen.getAllDisplays().length)) {
+    log.info('Stretchly: running on Wayland with multiple displays; breaks may show on one monitor only. Set forceX11OnWayland to true in preferences file to use the X11 backend')
+  }
 
   startI18next()
   startProcessWin()
