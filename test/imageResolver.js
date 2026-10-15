@@ -2,7 +2,8 @@ import { isAllowedImageFilename, resolveLocalImage } from '../app/utils/imageRes
 import { beforeEach, afterEach } from 'vitest'
 import { should as chaiShould } from 'chai'
 import { join } from 'path'
-import { existsSync, mkdirSync, writeFileSync, unlinkSync, rmSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync, unlinkSync, rmSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
 const should = chaiShould()
 
@@ -85,8 +86,27 @@ describe('imageResolver', function () {
       writeFileSync(filepath, 'test')
 
       const result = resolveLocalImage(testDir, filename)
-      result.should.equal('file://' + filepath)
+      fileURLToPath(result).should.equal(filepath)
     })
+
+    for (const directory of ['images#1', 'images%20backup', 'images with spaces', 'obrázky']) {
+      it(`returns a usable file URL for images in "${directory}"`, () => {
+        const imagesPath = join(testDir, directory)
+        const filename = 'test-image.png'
+        const filepath = join(imagesPath, filename)
+        mkdirSync(imagesPath)
+        writeFileSync(filepath, 'custom image')
+
+        const result = resolveLocalImage(imagesPath, filename)
+        const url = new URL(result)
+
+        url.protocol.should.equal('file:')
+        url.hash.should.equal('')
+        url.search.should.equal('')
+        fileURLToPath(url).should.equal(filepath)
+        readFileSync(url, 'utf8').should.equal('custom image')
+      })
+    }
 
     it('returns null for non-existent image', () => {
       const result = resolveLocalImage(testDir, 'nonexistent.png')
@@ -115,7 +135,7 @@ describe('imageResolver', function () {
         writeFileSync(filepath, 'test')
 
         const result = resolveLocalImage(testDir, filename)
-        result.should.equal('file://' + filepath)
+        fileURLToPath(result).should.equal(filepath)
 
         unlinkSync(filepath)
       })
@@ -137,7 +157,7 @@ describe('imageResolver', function () {
       writeFileSync(filepath, 'test')
 
       const result = resolveLocalImage(testDir, filename)
-      result.should.equal('file://' + filepath)
+      fileURLToPath(result).should.equal(filepath)
     })
   })
 })

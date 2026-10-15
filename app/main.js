@@ -7,6 +7,7 @@ import { EventEmitter } from 'node:events'
 import { readFile, writeFile, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
+import { resolveLocalAudio } from './utils/audioResolver.js'
 import { fileURLToPath } from 'url'
 import i18next from 'i18next'
 import Backend from 'i18next-fs-backend'
@@ -428,6 +429,15 @@ async function initialize (isAppStart = true) {
       mkdirSync(imagesDir, { recursive: true })
     } catch (error) {
       log.error('Stretchly: error creating images directory', error)
+    }
+  }
+
+  const audioDir = join(app.getPath('userData'), 'audio')
+  if (!existsSync(audioDir)) {
+    try {
+      mkdirSync(audioDir, { recursive: true })
+    } catch (error) {
+      log.error('Stretchly: error creating audio directory', error)
     }
   }
   // Initialize portal early for Flatpak so it's ready when user opens preferences
@@ -1690,10 +1700,12 @@ ipcMain.handle('show-debug', (event) => {
   let settingsFile = settings.path
   let logsFile = log.transports.file.getFile().path
   let imagesFolder = join(app.getPath('userData'), 'images')
+  let audioFolder = join(app.getPath('userData'), 'audio')
   if (insideWindowsStore()) {
     settingsFile = settingsFile.replace('Roaming', 'Local\\Packages\\33881JanHovancik.stretchly_24fg4m0zq65je\\LocalCache\\Roaming')
     logsFile = logsFile.replace('Roaming', 'Local\\Packages\\33881JanHovancik.stretchly_24fg4m0zq65je\\LocalCache\\Roaming')
     imagesFolder = imagesFolder.replace('Roaming', 'Local\\Packages\\33881JanHovancik.stretchly_24fg4m0zq65je\\LocalCache\\Roaming')
+    audioFolder = audioFolder.replace('Roaming', 'Local\\Packages\\33881JanHovancik.stretchly_24fg4m0zq65je\\LocalCache\\Roaming')
   }
   return [
     reference,
@@ -1703,7 +1715,8 @@ ipcMain.handle('show-debug', (event) => {
     settingsFile,
     logsFile,
     doNotDisturb,
-    imagesFolder
+    imagesFolder,
+    audioFolder
   ]
 })
 
@@ -1809,4 +1822,9 @@ ipcMain.handle('get-version', (event) => {
 ipcMain.handle('resolve-local-image', (event, filename) => {
   const imagesPath = join(app.getPath('userData'), 'images')
   return resolveLocalImage(imagesPath, filename)
+})
+
+ipcMain.handle('resolve-local-audio', (event, filename) => {
+  const audioPath = join(app.getPath('userData'), 'audio')
+  return resolveLocalAudio(audioPath, filename)
 })
