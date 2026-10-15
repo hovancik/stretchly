@@ -86,5 +86,6 @@ export default {
   longBreakManualFinish: false,
   breakHealthMode: false,
   openAtLogin: false,
+  forceX11OnWayland: false,
   _migratedOpenAtLogin: false
 }
