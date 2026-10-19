@@ -49,6 +49,17 @@ describe('commands', () => {
     cmd.hasSupportedCommand.should.be.equal(true)
   })
 
+  it('forwards the last command to the main instance', () => {
+    const cmd = new Command(['last'], '1.2.3')
+    cmd.hasSupportedCommand.should.be.equal(true)
+    cmd.checkInMain().should.be.equal(true)
+  })
+
+  it('lists the last command in help', () => {
+    const cmd = new Command(['help'], '1.2.3')
+    cmd.cmdHelp().should.include('stretchly last')
+  })
+
   it('parses a number duration as the number of minutes to pause', () => {
     const input = ['pause', '-d', '60']
     const cmd = new Command(input, '1.2.3')

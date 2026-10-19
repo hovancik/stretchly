@@ -74,6 +74,9 @@ const allCommands = {
     description: 'Skip to the Long break, customize it',
     options: [allOptions.text, allOptions.title, allOptions.noskip, allOptions.wait]
   },
+  last: {
+    description: 'Start the last Mini or Long break again'
+  },
   preferences: {
     description: 'Open Preferences window'
   }
@@ -122,6 +125,10 @@ const allExamples = [{
 {
   cmd: 'stretchly long -w 20m -T "Stretch up!"',
   description: 'Wait 20 minutes, then start a long break with the title set to "Stretch up!"'
+},
+{
+  cmd: 'stretchly last',
+  description: 'Start the last break again, with the same idea'
 },
 {
   cmd: 'stretchly preferences',

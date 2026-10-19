@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `forceX11OnWayland` advanced preference to restart with the X11 backend on Wayland, so breaks show on all monitors
 - `currentTimeInBreaksFormat` advanced preference to set the format of current time in breaks, e.g. to show date and weekday
 - `currentTimeInBreaksFontSize` advanced preference to change the clock's font size in breaks
+- CLI command and shortcut to start the last break again
 
 ### Fixed
 - fix debug file and folder links when paths contain HTML special characters
