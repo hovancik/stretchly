@@ -117,8 +117,8 @@ function shouldRelaunchWithX11 (forceX11OnWayland, commandLineArguments, ozonePl
   return getLinuxDisplayBackend(ozonePlatform, runtime) === 'wayland'
 }
 
-function shouldSuggestX11OnWayland (forceX11OnWayland, ozonePlatform, displayCount, runtime = process, fileExists = fs.existsSync) {
-  if (forceX11OnWayland === true || displayCount < 2) return false
+function shouldSuggestX11OnWayland (forceX11OnWayland, ozonePlatform, runtime = process, fileExists = fs.existsSync) {
+  if (forceX11OnWayland === true) return false
   if (insideFlatpak(runtime, fileExists)) return false
   return getLinuxDisplayBackend(ozonePlatform, runtime) === 'wayland'
 }

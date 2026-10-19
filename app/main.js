@@ -134,19 +134,18 @@ function readForceX11OnWayland () {
   }
 }
 
-const relaunchingWithX11 = shouldRelaunchWithX11(readForceX11OnWayland(), commandLineArguments,
-  app.commandLine.getSwitchValue('ozone-platform'))
+const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
 
-const gotTheLock = !relaunchingWithX11 && app.requestSingleInstanceLock(commandLineArguments)
-
-if (relaunchingWithX11) {
-  log.info('Stretchly: relaunching with X11 backend because forceX11OnWayland is enabled')
-  app.relaunch({ args: process.argv.slice(1).concat(['--ozone-platform=x11']) })
-  app.exit(0)
-} else if (!gotTheLock) {
+if (!gotTheLock) {
   const cmd = new Command(commandLineArguments, app.getVersion(), false)
   cmd.runOrForward()
   app.quit()
+} else if (shouldRelaunchWithX11(readForceX11OnWayland(), commandLineArguments,
+  app.commandLine.getSwitchValue('ozone-platform'))) {
+  log.info('Stretchly: relaunching with X11 backend because forceX11OnWayland is enabled')
+  app.releaseSingleInstanceLock()
+  app.relaunch({ args: process.argv.slice(1).concat(['--ozone-platform=x11']) })
+  app.exit(0)
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory, commandLineArguments) => {
     log.info(`Stretchly: arguments received from second instance: ${commandLineArguments}`)
@@ -467,8 +466,8 @@ async function initialize (isAppStart = true) {
   displayManager = new DisplayManager(settings)
 
   if (isAppStart && shouldSuggestX11OnWayland(settings.get('forceX11OnWayland'),
-    app.commandLine.getSwitchValue('ozone-platform'), screen.getAllDisplays().length)) {
-    log.info('Stretchly: running on Wayland with multiple displays; breaks may show on one monitor only. Set forceX11OnWayland to true in preferences file to use the X11 backend')
+    app.commandLine.getSwitchValue('ozone-platform'))) {
+    log.info('Stretchly: running on Wayland, where some features may not work: with multiple monitors, all break windows can open on one monitor, and global keyboard shortcuts may not register or work. Set forceX11OnWayland to true in preferences file to use the X11 backend, which shows breaks on all monitors')
   }
 
   startI18next()

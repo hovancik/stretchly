@@ -312,28 +312,29 @@ describe('Others', () => {
       const waylandSession = { platform: 'linux', env: { XDG_SESSION_TYPE: 'wayland', WAYLAND_DISPLAY: 'wayland-0' } }
       const notFlatpak = () => false
 
-      it('suggests on Wayland with multiple displays', () => {
-        shouldSuggestX11OnWayland(false, '', 2, waylandSession, notFlatpak).should.equal(true)
-      })
-
-      it('does not suggest with a single display', () => {
-        shouldSuggestX11OnWayland(false, '', 1, waylandSession, notFlatpak).should.equal(false)
+      it('suggests on native Wayland', () => {
+        shouldSuggestX11OnWayland(false, '', waylandSession, notFlatpak).should.equal(true)
+        shouldSuggestX11OnWayland(undefined, 'wayland', waylandSession, notFlatpak).should.equal(true)
       })
 
       it('does not suggest when already enabled', () => {
-        shouldSuggestX11OnWayland(true, '', 2, waylandSession, notFlatpak).should.equal(false)
+        shouldSuggestX11OnWayland(true, '', waylandSession, notFlatpak).should.equal(false)
       })
 
       it('does not suggest when running with the X11 backend', () => {
-        shouldSuggestX11OnWayland(false, 'x11', 2, waylandSession, notFlatpak).should.equal(false)
+        shouldSuggestX11OnWayland(false, 'x11', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not suggest in an X11 session', () => {
+        shouldSuggestX11OnWayland(false, '', { platform: 'linux', env: { XDG_SESSION_TYPE: 'x11', DISPLAY: ':0' } }, notFlatpak).should.equal(false)
       })
 
       it('does not suggest inside Flatpak', () => {
-        shouldSuggestX11OnWayland(false, '', 2, waylandSession, () => true).should.equal(false)
+        shouldSuggestX11OnWayland(false, '', waylandSession, () => true).should.equal(false)
       })
 
       it('does not suggest on other platforms', () => {
-        shouldSuggestX11OnWayland(false, '', 2, { platform: 'darwin', env: {} }, notFlatpak).should.equal(false)
+        shouldSuggestX11OnWayland(false, '', { platform: 'darwin', env: {} }, notFlatpak).should.equal(false)
       })
     })
   })
