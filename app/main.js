@@ -63,7 +63,7 @@ process.on('uncaughtException', (err, _) => {
 })
 
 nativeTheme.on('updated', function theThemeHasChanged () {
-  if (!gotTheLock) {
+  if (!gotTheLock || !i18next.isInitialized) {
     return
   }
   updateTray()
@@ -449,7 +449,14 @@ async function initialize (isAppStart = true) {
 
   displayManager = new DisplayManager(settings)
 
-  startI18next()
+  try {
+    await startI18next()
+  } catch (err) {
+    log.error(err.stack)
+  }
+
+  loadIdeas()
+
   startProcessWin()
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
@@ -491,7 +498,7 @@ async function initialize (isAppStart = true) {
 }
 
 function startI18next () {
-  i18next
+  return i18next
     .use(Backend)
     .init({
       lng: settings.get('language'),
@@ -501,14 +508,13 @@ function startI18next () {
         loadPath: join(__dirname, '/locales/{{lng}}.json'),
         jsonIndent: 2
       }
-    }, function (err, t) {
-      if (err) {
-        log.error(err.stack)
-      }
     })
 }
 
 i18next.on('languageChanged', () => {
+  if (!i18next.isInitialized) {
+    return
+  }
   if (welcomeWin) {
     welcomeWin.webContents.send('translate')
   }
