@@ -1,21 +1,21 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - A aplicación para lembrar acougar",
-    "microbreakIn": "Descanso breve en $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Descanso longo en $t(utils.seconds, {'count': {{seconds}} })",
+    "microbreakIn": "Repouso pequeno en $t(utils.seconds, {'count': {{seconds}} })",
+    "breakIn": "Repouso longo en $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "A retomar os descansos",
     "downloadLatestVersion": "Baixar a última versión",
-    "toBreak": "Descanso longo",
-    "toMicrobreak": "Descanso breve",
+    "toBreak": "Repouso longo",
+    "toMicrobreak": "Repouso pequeno",
     "skipToTheNext": "Saltar ao seguinte",
-    "resume": "Retomar Descansos",
-    "pause": "Pausar Descansos",
+    "resume": "Retomar repousos",
+    "pause": "Pausar repousos",
     "forHour": "1 hora",
     "for2Hours": "2 horas",
     "for5Hours": "5 horas",
     "untilMorning": "Ata mañá",
     "indefinitely": "Indefinidamente",
-    "resetBreaks": "Restituír descansos",
+    "resetBreaks": "Restituír repousos",
     "quitStretchly": "Saír de Stretchly",
     "restoreDefaults": "Restituír opcións por defecto",
     "warning": "Isto vai restituír as opcións por defecto da aplicación e perderás as que teñas configuradas.",
@@ -28,7 +28,8 @@
   "break": {
     "postpone": "Adiar este descanso",
     "skip": "Saltar este descanso",
-    "title": "Tempo de acougar!"
+    "title": "Tempo de acougar!",
+    "finish": "Rematar este repouso"
   },
   "preferences": {
     "title": "Configuración de Stretchly",
@@ -52,22 +53,22 @@
       "restoreDefaults": "Restituír opcións por defecto"
     },
     "schedule": {
-      "miniBreaks": "Descansos breves:",
-      "miniBreaksInfo": "Os descansos breves son acougos curtos que se toman a miúdo para aproveitar e espreguizarse ou relaxarse.",
-      "enableMiniBreaks": "Activar Descansos breves",
+      "miniBreaks": "Repousos pequenos:",
+      "miniBreaksInfo": "Os repousos pequenos son acougos curtos que se toman a miúdo para aproveitar e espreguizarse ou relaxarse.",
+      "enableMiniBreaks": "Activar repousos pequenos",
       "breakFor": "Descansar durante:",
       "every": "Cada:",
-      "showNotificationBeforeMiniBreak": "Notificar antes de comezar un Descanso breve",
-      "enablePostponeMini": "Activar a posibilidade de saltar os Descansos breves",
-      "longBreaks": "Descansos longos:",
-      "longBreaksInfo": "Os Descansos longos teñen menor frecuencia pero miaior duración, e permiten acougar do traballo.",
-      "enableLongBreaks": "Activar Descansos longos",
-      "showNotificationBeforeLongBreak": "Notificar antes de comezar un Descanso longo",
-      "enablePostponeLong": "Activar a posibilidade de saltar os Descansos longos",
-      "strictMode": "Modo rigoroso:",
-      "strictModeInfo": "O modo rigoroso impide que saltes os Descansos breves ou longos, e está deseñado para que mellores na disciplina.",
-      "enableStrictMini": "Activar Modo rigoroso para os Descansos breves",
-      "enableStrictLong": "Actividar Modo rigoroso para os Descansos longos",
+      "showNotificationBeforeMiniBreak": "Notificar antes de comezar un repouso pequeno",
+      "enablePostponeMini": "Activar o aprazamento dos repouso pequeno",
+      "longBreaks": "Repousos longos:",
+      "longBreaksInfo": "Os repousos longos teñen menor frecuencia pero maior duración, e permiten acougar do traballo.",
+      "enableLongBreaks": "Activar repousos longos",
+      "showNotificationBeforeLongBreak": "Notificar antes de comezar un repouso longo",
+      "enablePostponeLong": "Activar o aprazamento dos repousos longos",
+      "strictMode": "Modo estrito:",
+      "strictModeInfo": "O modo estrito impide que apraces os repoudos pequenos ou longos, e está deseñado para que mellores na disciplina.",
+      "enableStrictMini": "Activar modo estrito para os repousos pequenos",
+      "enableStrictLong": "Activiar o modo estrito para os repousos longos",
       "cantDisableBoth": "Non se poden desactivar os dous tipos de descansos"
     },
     "theme": {
@@ -87,7 +88,13 @@
       "colour": "Cor",
       "monochrome": "Monocromo",
       "invertedMonochrome": "Monocromo invertido",
-      "snowWhite": "Neve branca"
+      "snowWhite": "Neve branca",
+      "reverie": "Soñar esperto",
+      "silence": "Silencio",
+      "trayIconStyleLabel": "Estilo:",
+      "trayIconStyleDefault": "Predeterminado",
+      "trayIconStyleTime": "Tempo de repouso",
+      "trayIconStyleProgress": "Progreso para o repouso"
     },
     "about": {
       "tagline": "A aplicación para lembrar acougar",
@@ -121,8 +128,8 @@
     "title": "Configuración de colaborador",
     "notifications": "Notificacións de descansos:",
     "notificationsInfo": "As notificacións do sistema amósanse antes dos descansos para que te prepares para eles.",
-    "beforeLongBreak": "Descanso longo:",
-    "beforeMiniBreak": "Descanso breve:",
+    "beforeLongBreak": "Repouso longo:",
+    "beforeMiniBreak": "Repouso pequeno:",
     "newVersion": "Versión nova:",
     "newVersionNotification": "Notificar cando exista una nova versión",
     "customIdeas": "Ideas personalizadas:",
@@ -130,11 +137,11 @@
     "useIdeasFromSettings": "Usar ideas para os descansos do ficheiro de configuración",
     "breakPostpone": "Aprazamento de descansos:",
     "breakPostponeInfo": "Cando está activado na configuración principal, podes adiar os descansos. As seguintes opcións permítenche especificar cando, canto tempo, e cantas veces podes adiar un descanso.",
-    "miniBreaks": "Descansos breves:",
+    "miniBreaks": "Repousos pequenos:",
     "postponableFor": "Pódese adiar durante:",
     "postponeFor": "Adiar durante:",
     "maxPostpones": "Número máximo de aprazamentos:",
-    "longBreaks": "Descansos longos:",
+    "longBreaks": "Repousos longos:",
     "pauseUntilMorning": "Pausa ata mañá:",
     "pauseUntil": "Pausar ata:",
     "pauseUntilMorningInfo": "Especificar ata qué hora se aplica a 'Pausa ata mañá'.",
@@ -149,8 +156,8 @@
     "breakWindowHeight": "Altura:",
     "sounds": "Sons:",
     "volume": "Volumen:",
-    "miniBreakStartSound": "Reproducir o son de remate do acougo tamén ao comezo do descanso breve",
-    "longBreakStartSound": "Reproducir o son de remate do acougo tamén ao comezo do descanso longo",
+    "miniBreakStartSound": "Son ao comezo do repous pequeno",
+    "longBreakStartSound": "Son ao comezo do repouso longo",
     "naturalBreaks": "Descansos naturais:",
     "naturalBreaksInfo": "Cando a supervisión de inactividade está activada na configuración principal, podes especificar despois de cánto tempo se deben pausar os descansos.",
     "pauseAfter": "Pausar despois de:",
@@ -159,17 +166,19 @@
     "dark": "Escuro",
     "system": "Sistema",
     "showBreaksAsRegularWindowsTitle": "Comportarse como unha ventá estándar:",
-    "showBreaksAsRegularWindowsInfo": "Cando se activa, as ventás dos descansos poden recibir o foco, non estarán \"Sempre enriba\" e tamén aparecerán na barra ou panel de tarefas.",
+    "showBreaksAsRegularWindowsInfo": "Cando estean activadas, as xanelas do repouso poderán enfocarse, deixarán de estar \"Sempre enriba\" e tamén aparecerán na barra de tarefas.",
     "showBreaksAsRegularWindows": "Mostrar descansos en ventás estándar",
-    "screen": "Monitor para descansos:",
-    "screenInfo": "Cando se desactiva a visualización de descansos en todos os monitores, podes elexir en cal queres que se vexan os Descansos.",
-    "showOnMonitor": "Amosar os denscansos",
+    "screen": "Monitor para repousos:",
+    "screenInfo": "Cando se desactiva a opción de amosar os repousos en todos os monitores, podes escoller en cal queres que se amosen.",
+    "showOnMonitor": "Amosar os repousos",
     "primary": "No monitor principal",
     "cursor": "No monitor no que esté o cursor",
     "timeToBreakInTray": "Tempo de acougar",
     "showTimeToBreakInTray": "Amosar o tempo ata o seguinte descanso na icona do panel do menú",
     "currentTimeInBreaks": "Tempo actual",
-    "showCurrentTimeInBreaks": "Amosar a hora local na ventá dos acougos"
+    "showCurrentTimeInBreaks": "Amosar a hora local na ventá dos acougos",
+    "showTrayIcon": "Amosar icona na bandexa do sistema",
+    "toShowTrayIcon": "Amosar a icona de Stretchly na bandexa do sistema"
   },
   "utils": {
     "remaining": "quedan {{count}}",
@@ -185,7 +194,8 @@
     "minutes_one": "{{count}} minuto",
     "minutes_other": "{{count}} minutos",
     "hours_one": "{{count}} hora",
-    "hours_other": "{{count}} horas"
+    "hours_other": "{{count}} horas",
+    "elapsed": "{{count}} transcorridos"
   },
   "process": {
     "newVersionAvailable": "Nova versión dispoñíbel!"
@@ -202,10 +212,10 @@
     "indefinitely": "Indefinidamente",
     "dndMode": "Non molestar está activado",
     "appExclusion": "Norma de exclusión dunha aplicación",
-    "nextLongBreak": "Próximo descanso longo",
-    "nextMiniBreak": "Próximo descanso breve",
-    "afterMiniBreak_one": "despois de {{count}} descanso breve",
-    "afterMiniBreak_other": "despois de {{count}} descansos breves",
+    "nextLongBreak": "Próximo repouso longo",
+    "nextMiniBreak": "Próximo repouso pequeno",
+    "afterMiniBreak_one": "despois de {{count}} repouso pequeno",
+    "afterMiniBreak_other": "despois de {{count}} repousos pequenos",
     "resuming": "A retomar"
   },
   "miniBreakIdeas": {
@@ -322,6 +332,45 @@
     },
     "abl": {
       "text": "Levántate cos brazos levantados á altura dos ombreiros. Move as mans cara a espalda, mantén un segundo, e volve."
+    },
+    "abm": {
+      "text": "Senta na beira da cadeira, xira o torso cara a un lado e mantén a posición durante 10-15 segundos. Repite co outro lado."
+    },
+    "abn": {
+      "text": "Érguete e apoia un pé nun obxecto próximo, como unha cadeira ou unha banqueta de chanzos. Mantén o xeonllo dobrado durante 10-15 segundos. Repite co outro pé."
+    },
+    "abo": {
+      "text": "Póñete de pé cos pés separados á anchura dos ombreiros, baixa o corpo coma se foses sentar nunha cadeira e despois volve erguerte. Repite varias veces."
+    },
+    "abp": {
+      "text": "Póñete de costas contra unha parede, coas mans tamén apoiadas nela, e logo move os brazos lentamente cara arriba e cara abaixo, coma se estiveses a facer anxos na neve."
+    },
+    "abq": {
+      "text": "Póñete de fronte a unha parede e apoia nela as mans; despois, fai varias flexións."
+    },
+    "abr": {
+      "text": "Séntate no bordo da cadeira e estira unha perna cara a adiante, manténdoa así durante 10-15 segundos. Repite coa outra perna."
+    },
+    "abs": {
+      "text": "Póñete de pé fronte a unha parede, coloca un pé cara atrás e o outro cara adiante e, despois, inclínate cara á parede. Repite coa outra perna."
+    },
+    "abt": {
+      "text": "Mantén un brazo estirado cara arriba e, co outro brazo, empurra suavemente o cóbado do primeiro cara á cabeza. Mantén a posición durante 10-15 segundos. Repite co outro brazo."
+    },
+    "abu": {
+      "text": "Inclina a cabeza cara a un lado, despois cara ao outro e, a continuación, inclínaa suavemente cara a adiante e cara a atrás."
+    },
+    "abv": {
+      "text": "Leva un brazo a través do peito, suxeita o cóbado coa outra man e tira del suavemente cara ao peito. Repite co outro brazo."
+    },
+    "abw": {
+      "text": "Érguete, coloque un pé sobre un obxecto próximo —como unha cadeira ou un banquiño— e esténdase cara abaixo para tocar os dedos dos pés. Repita coa outra perna."
+    },
+    "abx": {
+      "text": "Póñete no marco dunha porta e coloca un brazo a cada lado; despois, inclínate suavemente cara a adiante ata que notes un estiramento no peito."
+    },
+    "aby": {
+      "text": "Séntate no bordo dunha cadeira ou no chan e xunta as plantas dos pés; logo, preme suavemente cara abaixo cos cóbados para estirar a parte interna das coxas."
     }
   },
   "longBreakIdeas": {
@@ -460,6 +509,14 @@
     "abh": {
       "title": "Respiración lenta",
       "text": "Investigacións emerxentes suxiren o uso potencial de técnicas de respiración lenta controlada como medio de optimizár parámetros psicolóxicos que aparecen asociados á saúde e á lonxevidade."
+    },
+    "abi": {
+      "title": "Visualización imaxinativa",
+      "text": "Pecha os ollos e imaxínate nun lugar tranquilo e relaxante, como unha praia ou un bosque, centrándote nas vistas, os sons e as sensacións dese contorno."
+    },
+    "abj": {
+      "title": "Abafado?",
+      "text": "Proba a Técnica de conexión a terra 5-4-3-2-1: identifica 5 cousas que poidas ver, 4 cousas que poidas tocar, 3 cousas que poidas oír, 2 cousas que poidas cheirar e 1 cousa que poidas saborear."
     }
   }
 }
