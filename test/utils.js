@@ -1,4 +1,4 @@
-import { formatTimeRemaining, formatElapsedDuration, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle, formatUnitAndValue, insideFlatpak, insideWindowsStore, insideSnap, insideWindowsPortable, getLinuxDisplayBackend } from '../app/utils/utils'
+import { formatTimeRemaining, formatElapsedDuration, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle, formatUnitAndValue, insideFlatpak, insideWindowsStore, insideSnap, insideWindowsPortable, getLinuxDisplayBackend, shouldRelaunchWithX11, shouldSuggestX11OnWayland } from '../app/utils/utils'
 import { beforeAll, afterAll, vi } from 'vitest'
 import { expect } from 'chai'
 import 'chai/register-should'
@@ -262,6 +262,79 @@ describe('Others', () => {
 
       it('returns null when the Linux backend is unknown', () => {
         expect(getLinuxDisplayBackend('', { platform: 'linux', env: {} })).to.equal(null)
+      })
+    })
+
+    describe('shouldRelaunchWithX11', () => {
+      const waylandSession = { platform: 'linux', env: { XDG_SESSION_TYPE: 'wayland', WAYLAND_DISPLAY: 'wayland-0' } }
+      const notFlatpak = () => false
+
+      it('relaunches on native Wayland when enabled', () => {
+        shouldRelaunchWithX11(true, [], 'wayland', waylandSession, notFlatpak).should.equal(true)
+        shouldRelaunchWithX11(true, ['--hidden'], 'wayland', waylandSession, notFlatpak).should.equal(true)
+        shouldRelaunchWithX11(true, [], '', waylandSession, notFlatpak).should.equal(true)
+      })
+
+      it('does not relaunch when disabled', () => {
+        shouldRelaunchWithX11(false, [], 'wayland', waylandSession, notFlatpak).should.equal(false)
+        shouldRelaunchWithX11(undefined, [], 'wayland', waylandSession, notFlatpak).should.equal(false)
+        shouldRelaunchWithX11('true', [], 'wayland', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not relaunch when already running with the X11 backend', () => {
+        shouldRelaunchWithX11(true, [], 'x11', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not relaunch when the ozone platform is passed explicitly', () => {
+        shouldRelaunchWithX11(true, ['--ozone-platform=wayland'], 'wayland', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not relaunch when running a command', () => {
+        shouldRelaunchWithX11(true, ['pause', '-d', '60'], 'wayland', waylandSession, notFlatpak).should.equal(false)
+        shouldRelaunchWithX11(true, ['--hidden', 'help'], 'wayland', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not relaunch in an X11 session', () => {
+        shouldRelaunchWithX11(true, [], '', { platform: 'linux', env: { XDG_SESSION_TYPE: 'x11', DISPLAY: ':0' } }, notFlatpak).should.equal(false)
+      })
+
+      it('does not relaunch inside Flatpak', () => {
+        shouldRelaunchWithX11(true, [], 'wayland', waylandSession, () => true).should.equal(false)
+      })
+
+      it('does not relaunch on other platforms', () => {
+        shouldRelaunchWithX11(true, [], '', { platform: 'darwin', env: {} }, notFlatpak).should.equal(false)
+        shouldRelaunchWithX11(true, [], '', { platform: 'win32', env: {} }, notFlatpak).should.equal(false)
+      })
+    })
+
+    describe('shouldSuggestX11OnWayland', () => {
+      const waylandSession = { platform: 'linux', env: { XDG_SESSION_TYPE: 'wayland', WAYLAND_DISPLAY: 'wayland-0' } }
+      const notFlatpak = () => false
+
+      it('suggests on native Wayland', () => {
+        shouldSuggestX11OnWayland(false, '', waylandSession, notFlatpak).should.equal(true)
+        shouldSuggestX11OnWayland(undefined, 'wayland', waylandSession, notFlatpak).should.equal(true)
+      })
+
+      it('does not suggest when already enabled', () => {
+        shouldSuggestX11OnWayland(true, '', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not suggest when running with the X11 backend', () => {
+        shouldSuggestX11OnWayland(false, 'x11', waylandSession, notFlatpak).should.equal(false)
+      })
+
+      it('does not suggest in an X11 session', () => {
+        shouldSuggestX11OnWayland(false, '', { platform: 'linux', env: { XDG_SESSION_TYPE: 'x11', DISPLAY: ':0' } }, notFlatpak).should.equal(false)
+      })
+
+      it('does not suggest inside Flatpak', () => {
+        shouldSuggestX11OnWayland(false, '', waylandSession, () => true).should.equal(false)
+      })
+
+      it('does not suggest on other platforms', () => {
+        shouldSuggestX11OnWayland(false, '', { platform: 'darwin', env: {} }, notFlatpak).should.equal(false)
       })
     })
   })

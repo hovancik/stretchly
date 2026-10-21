@@ -109,6 +109,20 @@ function getLinuxDisplayBackend (ozonePlatform = '', runtime = process) {
   return null
 }
 
+function shouldRelaunchWithX11 (forceX11OnWayland, commandLineArguments, ozonePlatform, runtime = process, fileExists = fs.existsSync) {
+  if (forceX11OnWayland !== true) return false
+  if (!commandLineArguments.every(arg => arg.startsWith('--'))) return false
+  if (commandLineArguments.some(arg => arg.startsWith('--ozone-platform='))) return false
+  if (insideFlatpak(runtime, fileExists)) return false
+  return getLinuxDisplayBackend(ozonePlatform, runtime) === 'wayland'
+}
+
+function shouldSuggestX11OnWayland (forceX11OnWayland, ozonePlatform, runtime = process, fileExists = fs.existsSync) {
+  if (forceX11OnWayland === true) return false
+  if (insideFlatpak(runtime, fileExists)) return false
+  return getLinuxDisplayBackend(ozonePlatform, runtime) === 'wayland'
+}
+
 export {
   formatTimeRemaining,
   formatElapsedDuration,
@@ -123,5 +137,7 @@ export {
   insideWindowsStore,
   insideSnap,
   insideWindowsPortable,
-  getLinuxDisplayBackend
+  getLinuxDisplayBackend,
+  shouldRelaunchWithX11,
+  shouldSuggestX11OnWayland
 }

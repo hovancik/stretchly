@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFile, readFileSync, writeFile, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import { resolveLocalAudio } from './utils/audioResolver.js'
@@ -18,7 +18,8 @@ import { DateTime } from 'luxon'
 
 import {
   canPostpone, canSkip, formatTimeRemaining,
-  minutesRemaining, insideWindowsStore, insideFlatpak, insideSnap, insideWindowsPortable
+  minutesRemaining, insideWindowsStore, insideFlatpak, insideSnap, insideWindowsPortable,
+  shouldRelaunchWithX11, shouldSuggestX11OnWayland
 } from './utils/utils.js'
 import IdeasLoader from './utils/ideasLoader.js'
 import BreaksPlanner from './breaksPlanner.js'
@@ -124,12 +125,27 @@ ipcMain.handle('get-global-value', (event, name) => {
 const commandLineArguments = process.argv
   .slice(app.isPackaged ? 1 : 2)
 
+function readForceX11OnWayland () {
+  try {
+    const config = JSON.parse(readFileSync(join(app.getPath('userData'), 'config.json'), 'utf8'))
+    return config.forceX11OnWayland === true
+  } catch {
+    return false
+  }
+}
+
 const gotTheLock = app.requestSingleInstanceLock(commandLineArguments)
 
 if (!gotTheLock) {
   const cmd = new Command(commandLineArguments, app.getVersion(), false)
   cmd.runOrForward()
   app.quit()
+} else if (shouldRelaunchWithX11(readForceX11OnWayland(), commandLineArguments,
+  app.commandLine.getSwitchValue('ozone-platform'))) {
+  log.info('Stretchly: relaunching with X11 backend because forceX11OnWayland is enabled')
+  app.releaseSingleInstanceLock()
+  app.relaunch({ args: process.argv.slice(1).concat(['--ozone-platform=x11']) })
+  app.exit(0)
 } else {
   app.on('second-instance', (event, commandLine, workingDirectory, commandLineArguments) => {
     log.info(`Stretchly: arguments received from second instance: ${commandLineArguments}`)
@@ -448,6 +464,11 @@ async function initialize (isAppStart = true) {
   }
 
   displayManager = new DisplayManager(settings)
+
+  if (isAppStart && shouldSuggestX11OnWayland(settings.get('forceX11OnWayland'),
+    app.commandLine.getSwitchValue('ozone-platform'))) {
+    log.info('Stretchly: running on Wayland, where some features may not work: with multiple monitors, all break windows can open on one monitor, and global keyboard shortcuts may not register or work. Set forceX11OnWayland to true in preferences file to use the X11 backend, which shows breaks on all monitors')
+  }
 
   try {
     await startI18next()

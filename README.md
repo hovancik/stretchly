@@ -509,6 +509,13 @@ If you want to hide Strict Mode preferences section from the Preferences window,
 
 This might be useful for corporate installations.
 
+#### Use X11 backend on Wayland
+On Linux Wayland sessions, all break windows can open on one monitor (see [Known issues](#known-issues)). If you want Stretchly to always use the X11 backend (XWayland) instead, set `forceX11OnWayland` to `true`. Stretchly will then restart itself with `--ozone-platform=x11` on start, however it was launched (autostart, app menu or terminal), so you don't need to edit launcher files.
+
+This has no effect in the Flatpak build, which already uses X11. A `--ozone-platform` switch on the command line is never overridden: if you start Stretchly with one, it won't restart, even with `forceX11OnWayland` set to `true`. If Stretchly starts on Wayland while this is off, it writes a note to the log about features that may not work there.
+
+The X11 backend does not fully fix global keyboard shortcuts. On GNOME, for example, they register but only work while an X11 window has focus.
+
 #### Set automatic start from congfig file
 If you want autostart to work based on the value from config file, set `openAtLogin`.
 
@@ -608,7 +615,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - On KDE Wayland, global shortcuts can appear configured but fail to work; see [electron/electron#42573](https://github.com/electron/electron/issues/42573). Use the tray menu and break controls, or quit Stretchly and restart with `stretchly --ozone-platform=x11`.
 - Windows Store build's autostart is not working, so was disabled. To use autostart, install Stretchly with the [regular installer](https://github.com/hovancik/stretchly/releases), or create a shortcut to Stretchly from `shell:AppsFolder` (Win+R) and move it to the `shell:startup` folder (Win+R).
 - The Snap build may fail to start on native Wayland. Start it with the X11 backend (`stretchly --ozone-platform=x11`) as a workaround. See [#1693](https://github.com/hovancik/stretchly/issues/1693).
-- Wayland multi-display window placement issue puts all break windows on one monitor; start with X11 backend (`stretchly --ozone-platform=x11`) if needed. See [electron/electron#48749](https://github.com/electron/electron/issues/48749).
+- Wayland multi-display window placement issue puts all break windows on one monitor; start with X11 backend (`stretchly --ozone-platform=x11`) if needed, or set [`forceX11OnWayland`](#use-x11-backend-on-wayland) to make Stretchly do it automatically. See [electron/electron#48749](https://github.com/electron/electron/issues/48749).
 
 ### MacOS
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
@@ -692,6 +699,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Steven Cai, [@stevencaiOR](https://github.com/stevencaiOR)
 - Zhekai Jiang, [@zhekai-jiang](https://github.com/zhekai-jiang)
 - Bence Kovács, [@githappens](https://github.com/githappens)
+- Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
