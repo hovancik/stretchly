@@ -512,7 +512,7 @@ This might be useful for corporate installations.
 #### Use X11 backend on Wayland
 On Linux Wayland sessions, all break windows can open on one monitor (see [Known issues](#known-issues)). If you want Stretchly to always use the X11 backend (XWayland) instead, set `forceX11OnWayland` to `true`. Stretchly will then restart itself with `--ozone-platform=x11` on start, however it was launched (autostart, app menu or terminal), so you don't need to edit launcher files.
 
-This has no effect if you start Stretchly with `--ozone-platform` yourself, or in the Flatpak build, which already uses X11. If Stretchly starts on Wayland while this is off, it writes a note to the log about features that may not work there.
+This has no effect in the Flatpak build, which already uses X11. A `--ozone-platform` switch on the command line is never overridden: if you start Stretchly with one, it won't restart, even with `forceX11OnWayland` set to `true`. If Stretchly starts on Wayland while this is off, it writes a note to the log about features that may not work there.
 
 The X11 backend does not fully fix global keyboard shortcuts. On GNOME, for example, they register but only work while an X11 window has focus.
 

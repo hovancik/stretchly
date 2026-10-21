@@ -109,7 +109,7 @@ function getLinuxDisplayBackend (ozonePlatform = '', runtime = process) {
   return null
 }
 
-function shouldRelaunchWithX11 (forceX11OnWayland, commandLineArguments, ozonePlatform = '', runtime = process, fileExists = fs.existsSync) {
+function shouldRelaunchWithX11 (forceX11OnWayland, commandLineArguments, ozonePlatform, runtime = process, fileExists = fs.existsSync) {
   if (forceX11OnWayland !== true) return false
   if (!commandLineArguments.every(arg => arg.startsWith('--'))) return false
   if (commandLineArguments.some(arg => arg.startsWith('--ozone-platform='))) return false
