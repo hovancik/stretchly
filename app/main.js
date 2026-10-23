@@ -87,6 +87,7 @@ let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
+let lastBreak = null
 let danger = 0
 let updateChecker
 let currentTrayIconPath = null
@@ -189,6 +190,11 @@ if (!gotTheLock) {
         if (!cmd.options.noskip || delay) skipToBreak(delay)
         break
       }
+
+      case 'last':
+        log.info('Stretchly: start last break again (requested by second instance)')
+        startLastBreakAgain()
+        break
 
       case 'resume':
         log.info('Stretchly: resume Breaks (requested by second instance)')
@@ -512,7 +518,7 @@ async function initialize (isAppStart = true) {
     log,
     globalShortcut,
     breakPlanner,
-    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak, resetBreaks }
+    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak, resetBreaks, startLastBreakAgain }
   })
 
   updateTray()
@@ -825,6 +831,7 @@ function startMicrobreak () {
 
   const idea = nextIdea || (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
   nextIdea = null
+  lastBreak = { type: 'mini', idea }
 
   if (!settings.get('silentNotifications')) {
     const sound = settings.get('miniBreakStartSound')
@@ -994,6 +1001,7 @@ function startBreak () {
   const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
   const idea = nextIdea ? (nextIdea.map((val, index) => val || defaultNextIdea[index])) : defaultNextIdea
   nextIdea = null
+  lastBreak = { type: 'long', idea }
 
   if (!settings.get('silentNotifications')) {
     const sound = settings.get('longBreakStartSound')
@@ -1271,6 +1279,27 @@ function skipToBreak (delay) {
     log.info('Stretchly: skipping to Long break')
   }
   updateTray()
+}
+
+function startLastBreakAgain () {
+  if (!lastBreak) {
+    log.info('Stretchly: no last break to start again')
+    return
+  }
+  if (microbreakWins || breakWins) {
+    log.info('Stretchly: not starting last break again, a break is running')
+    return
+  }
+  if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared) {
+    log.info('Stretchly: not starting last break again, breaks are paused')
+    return
+  }
+  nextIdea = lastBreak.idea
+  if (lastBreak.type === 'mini') {
+    skipToMicrobreak()
+  } else {
+    skipToBreak()
+  }
 }
 
 function resetBreaks () {

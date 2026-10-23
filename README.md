@@ -365,6 +365,12 @@ In the preferences file, set `resetBreaksShortcut` to your preferred value. We d
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
+#### Start last break again shortcut
+
+In the preferences file, set `startLastBreakAgainShortcut` to your preferred value. Like the `stretchly last` command, it starts the last Mini or Long break again, with the same idea, even if that break was skipped or postponed. It does nothing while a break is running or breaks are paused. We do not validate this input, so please check [Electron's documentation](https://www.electronjs.org/docs/latest/tutorial/keyboard-shortcuts#accelerators) for available values for key and modifier. When a given accelerator is already taken by other applications, this call will silently fail. This behavior is intended by operating systems, since they don't want applications to fight for global shortcuts.
+
+If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
+
 #### Appearance [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.
 
@@ -716,6 +722,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Bence Kovács, [@githappens](https://github.com/githappens)
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
+- Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
