@@ -481,6 +481,8 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 #### Show current time in breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show current time in breaks, set the value of `currentTimeInBreaks` from `false` to `true`.
 
+To change the clock's font size, set `currentTimeInBreaksFontSize` to a number in pixels, for example `48`. The default is `28`.
+
 To change how the time is shown, set `currentTimeInBreaksFormat` to a [Luxon format string](https://moment.github.io/luxon/#/formatting?id=table-of-tokens). The default is `"tt"` (localized time with seconds). For example, `"cccc, D, tt"` also shows the weekday and date.
 
 #### Break Health Mode

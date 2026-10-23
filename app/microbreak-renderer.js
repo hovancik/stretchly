@@ -73,6 +73,10 @@ window.onload = async (event) => {
   const currentTimeFormat = await window.settings.get('currentTimeInBreaksFormat')
   const currentTimeElement = showCurrentTime ? document.querySelector('.breaks > :last-child') : null
 
+  if (showCurrentTime) {
+    currentTimeElement.style.fontSize = `${await window.settings.get('currentTimeInBreaksFontSize')}px`
+  }
+
   manualFinishElement.onclick = runOnce(() => window.breaks.finishBreak(manualAwaiting))
 
   let lastShownSecond = null
