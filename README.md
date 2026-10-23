@@ -14,6 +14,7 @@
 - [Preferences](#preferences)
 - [Advanced Preferences](#advanced-preferences)
 - [Contributor Preferences](#contributor-preferences)
+- [Getting help](#getting-help)
 - [Development](#development)
 - [Known issues](#known-issues)
 - [Contributors](#contributors)
@@ -571,6 +572,14 @@ PayPal has fees.
 
 *By contributing code (or translations), you will be able to access Contributor Preferences, Sync Preferences.
 You won't be able to chat on Discord.*
+
+## Getting help
+
+For setup and usage, see the [tutorial](https://hovancik.net/stretchly/about), [Preferences](#preferences), and [Advanced Preferences](#advanced-preferences).
+
+Check [Known issues](#known-issues) and [existing issues](https://github.com/hovancik/stretchly/issues?q=is%3Aissue) before opening a [bug report](https://github.com/hovancik/stretchly/issues/new?template=bug_report.yml) or [feature request](https://github.com/hovancik/stretchly/issues/new?template=feature_request.yml). Please complete the relevant template.
+
+For development discussions and contributions, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development
 Feel free to join in the [development](https://github.com/hovancik/stretchly/blob/master/CONTRIBUTING.md) of this app via Issues and Pull Requests.
