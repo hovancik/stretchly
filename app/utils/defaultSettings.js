@@ -72,6 +72,7 @@ export default {
   breakContentScreen: 'all',
   trayIconStyle: 'default',
   currentTimeInBreaks: false,
+  currentTimeInBreaksFormat: 'tt',
   showTrayIcon: true,
   skipToNextScheduledBreakShortcut: '',
   skipToNextMiniBreakShortcut: '',

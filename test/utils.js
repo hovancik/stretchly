@@ -1,4 +1,4 @@
-import { formatTimeRemaining, formatElapsedDuration, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, minutesRemaining, shouldShowNotificationTitle, formatUnitAndValue, insideFlatpak, insideWindowsStore, insideSnap, insideWindowsPortable, getLinuxDisplayBackend, shouldRelaunchWithX11, shouldSuggestX11OnWayland } from '../app/utils/utils'
+import { formatTimeRemaining, formatElapsedDuration, formatTimeIn, canSkip, canPostpone, formatKeyboardShortcut, formatCurrentTime, minutesRemaining, shouldShowNotificationTitle, formatUnitAndValue, insideFlatpak, insideWindowsStore, insideSnap, insideWindowsPortable, getLinuxDisplayBackend, shouldRelaunchWithX11, shouldSuggestX11OnWayland } from '../app/utils/utils'
 import { beforeAll, afterAll, vi } from 'vitest'
 import { expect } from 'chai'
 import 'chai/register-should'
@@ -7,6 +7,7 @@ import semver from 'semver'
 import { join } from 'path'
 import Backend from 'i18next-fs-backend'
 import humanizeDuration from 'humanize-duration'
+import { DateTime, Settings } from 'luxon'
 
 describe('Times formatters', function () {
   beforeAll(async () => {
@@ -149,6 +150,27 @@ describe('Others', () => {
     })
     it('formats + to have spaces', () => {
       formatKeyboardShortcut('Command+X').should.equal('Command + X')
+    })
+  })
+
+  describe('formatCurrentTime', () => {
+    const dateTime = DateTime.fromISO('2026-10-23T14:05:09', { locale: 'en-US' })
+    it('formats default format like toLocaleTimeString', () => {
+      formatCurrentTime('tt', dateTime).should.equal(dateTime.toJSDate().toLocaleTimeString('en-US'))
+    })
+    it('formats date and weekday', () => {
+      formatCurrentTime('cccc, d. L. HH:mm', dateTime).should.equal('Friday, 23. 10. 14:05')
+    })
+    it('formats weekday in system locale when no locale is specified', () => {
+      const { resolvedOptions } = Intl.DateTimeFormat.prototype
+      const spy = vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockImplementation(function () {
+        return { ...resolvedOptions.call(this), locale: 'de-DE' }
+      })
+      Settings.resetCaches()
+      const systemDateTime = DateTime.fromISO('2026-10-23T14:05:09')
+      spy.mockRestore()
+      Settings.resetCaches()
+      formatCurrentTime('cccc', systemDateTime).should.equal('Freitag')
     })
   })
 

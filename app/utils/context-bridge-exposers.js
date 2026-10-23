@@ -109,6 +109,7 @@ function exposeUtils () {
   }
   contextBridge.exposeInMainWorld('utils', {
     formatKeyboardShortcut: utils.formatKeyboardShortcut,
+    formatCurrentTime: (format) => utils.formatCurrentTime(format),
     formatTimeRemaining: async (milliseconds, locale) => {
       return utils.formatTimeRemaining(milliseconds, locale, i18n, humanizeDuration)
     },

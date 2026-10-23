@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { DateTime } from 'luxon'
 
 function formatTimeRemaining (milliseconds, locale, i18next, humanizeDuration) {
   if (locale === 'pt-BR') {
@@ -59,6 +60,10 @@ function canSkip (strictMode, postpone, passedPercent, postponePercent) {
 
 function formatKeyboardShortcut (keyboardShortcut) {
   return keyboardShortcut.replace('Or', '/').replace('+', ' + ')
+}
+
+function formatCurrentTime (format, dateTime = DateTime.local()) {
+  return dateTime.toFormat(format, { locale: dateTime.locale })
 }
 
 function minutesRemaining (milliseconds) {
@@ -131,6 +136,7 @@ export {
   canPostpone,
   canSkip,
   formatKeyboardShortcut,
+  formatCurrentTime,
   minutesRemaining,
   shouldShowNotificationTitle,
   insideFlatpak,
