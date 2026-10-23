@@ -480,6 +480,8 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 #### Show current time in breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show current time in breaks, set the value of `currentTimeInBreaks` from `false` to `true`.
 
+To change how the time is shown, set `currentTimeInBreaksFormat` to a [Luxon format string](https://moment.github.io/luxon/#/formatting?id=table-of-tokens). The default is `"tt"` (localized time with seconds). For example, `"cccc, D, tt"` also shows the weekday and date.
+
 #### Break Health Mode
 Inspired by the screen-edge vignette used in video games to indicate low health, this mode adds a visual indicator around the edges of your break screen. The effect starts subtle and grows more intense each time you skip or postpone a break, and fades back down when you let breaks complete naturally. To enable it, set `breakHealthMode` to `true`.
 
@@ -702,6 +704,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Zhekai Jiang, [@zhekai-jiang](https://github.com/zhekai-jiang)
 - Bence Kovács, [@githappens](https://github.com/githappens)
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
+- Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
