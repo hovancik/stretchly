@@ -396,11 +396,11 @@ By default, when breaks are shown on all screens (`allScreens: true`), the count
 
 This option has no effect when `allScreens` is `false` or when `showBreaksAsRegularWindows` is `true`. Invalid values fall back to `"all"`.
 
-#### Pause/resume breaks only when specific command is running
+#### Pause/resume breaks based on running programs
 
-By editing `appExclusions` in preferences file, you can automatically control when Stretchly breaks are paused.
+By editing `appExclusions` in the preferences file, you can automatically control when Stretchly breaks are paused.
 
-If you want Stretchly to be paused when specific apps are running, you could have this value (breaks are paused when Skype or Atom are running):
+To pause breaks while any of the listed programs are running, use `"rule": "pause"`:
 
 Linux
 ```
@@ -409,8 +409,8 @@ Linux
         "rule": "pause",
         "active": true,
         "commands": [
-            "/usr/share/skypeforlinux/skypeforlinux",
-            "atom"
+            "/usr/bin/vlc",
+            "signal-desktop"
         ]
     }
 ]
@@ -430,7 +430,7 @@ Windows
 ]
 ```
 
-If you want Stretchly to be running when specific apps are as well, you could have this value (breaks are paused when Skype or Atom are not running):
+To allow breaks only while at least one listed program is running, use `"rule": "resume"`. Breaks are paused when none of the listed programs are running:
 
 Linux
 ```
@@ -439,8 +439,8 @@ Linux
         "rule": "resume",
         "active": true,
         "commands": [
-            "/usr/share/skypeforlinux/skypeforlinux",
-            "atom"
+            "/usr/bin/vlc",
+            "signal-desktop"
         ]
     }
 ]
@@ -460,7 +460,9 @@ Windows
 ]
 ```
 
-You can specify multiple values, (as `appExclusions` is array) and Stretchly will take the first one that is marked as `"active": true`. Multiple `commands` can be specified as well. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows). Commands can also be substrings, meaning a rule containing "exe" will trigger when there's any running processes that contains "exe" in its name or cmd properties.
+You can specify multiple rules in `appExclusions`. Stretchly uses only the first rule marked `"active": true`; all later rules are ignored, even if the selected rule matches no running program. Both `pause` and `resume` rules can be present in the file, but they are not combined.
+
+Within the selected rule, any matching entry in `commands` is enough. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows). Commands can also be substrings, meaning a rule containing "exe" will trigger when there's any running processes that contains "exe" in its name or cmd properties.
 
 For Windows, note that paths not specified. This is because on Windows, the API we're using only checks the names of processes being run, which in the vast majority of cases is "process_name.exe". If you try to specify paths, it will not work.
 
