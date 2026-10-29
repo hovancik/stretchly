@@ -4,6 +4,7 @@ class StatusMessages {
   constructor ({ breakPlanner, settings, i18next, humanizeDuration }) {
     this.reference = breakPlanner.scheduler.reference
     this.doNotDisturb = breakPlanner.dndManager.isOnDnd
+    this.onCall = breakPlanner.callManager.isOnCall
     this.appExclusionPause = breakPlanner.appExclusionsManager.isSchedulerCleared
     this.timeLeft = breakPlanner.scheduler.timeLeft
     this.timeToNextBreak = breakPlanner.timeToNextBreak
@@ -35,6 +36,11 @@ class StatusMessages {
 
     if (this.doNotDisturb) {
       message += this.i18next.t('statusMessages.paused') + ' - ' + this.i18next.t('statusMessages.dndMode')
+      return message
+    }
+
+    if (this.onCall) {
+      message += this.i18next.t('statusMessages.paused') + ' - ' + this.i18next.t('statusMessages.onCall')
       return message
     }
 

@@ -49,6 +49,7 @@
       "allScreens": "Shows breaks on all monitors",
       "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
       "monitorDnd": "Show breaks even in Do Not Disturb mode",
+      "monitorCalls": "Pause breaks during calls (when camera or microphone is in use)",
       "language": "Select language:",
       "restoreDefaults": "Restore defaults"
     },
@@ -208,6 +209,7 @@
     "paused": "Paused",
     "indefinitely": "Indefinitely",
     "dndMode": "Do Not Disturb is on",
+    "onCall": "Camera or microphone is in use",
     "appExclusion": "App exclusion rule",
     "nextLongBreak": "Next Long break",
     "nextMiniBreak": "Next Mini break",

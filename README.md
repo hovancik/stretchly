@@ -121,6 +121,8 @@ If you're on Wayland and you would like to be able to monitor idle time, you'll 
 
 To run *Stretchly* from source you will need [Node.js](https://nodejs.org/), ideally the one specified in `package.json`. Clone the repo, run `npm install` and then simply run `npm start` to start *Stretchly*.
 
+On macOS, run `npm run build-call-detector` once before `npm start` to build the small helper used to [pause breaks during calls](#pause-breaks-during-calls-macos). It needs the Xcode Command Line Tools (`xcode-select --install`). `npm run pack` and `npm run dist` build it automatically.
+
 ### Custom installer
 
 You can create a custom installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
@@ -154,6 +156,8 @@ Clicking the *Stretchly* icon in your tray area will display the current status 
 *Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be paused until you return.
 
 *Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On.
+
+On macOS, *Stretchly* also pauses breaks while you are on a call (Teams, Zoom, Slack huddles, Google Meet, FaceTime and others), and resumes them when the call ends. See [Pause breaks during calls](#pause-breaks-during-calls-macos).
 
 *Stretchly* follows the theme of your system and is also available in dark mode.
 
@@ -223,6 +227,7 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `trayIconStyle` - icon style for menubar: default, time to break, or progress to break
 - `silentNotifications` - enable sounds
 - `monitorDnd` - monitor DND mode
+- `monitorCalls` - pause breaks during calls (macOS only)
 - `checkNewVersion` - check for new versions
 
 #### Editing break ideas
@@ -312,6 +317,20 @@ You can also set `naturalBreaksCheckInterval` in milliseconds: how often idle ti
 
 #### Do Not Disturb check interval
 In the preferences file, set `monitorDndCheckInterval` in milliseconds: how often Do Not Disturb status is checked. A higher number means lower CPU and energy usage, but slightly less responsive detection. On macOS and Linux this check can be relatively expensive, so increasing it can noticeably lower energy usage. Default value is `2000` which is 2 seconds.
+
+#### Pause breaks during calls (macOS)
+On macOS, *Stretchly* pauses breaks while a camera or a microphone is in use, which covers calls in any app (Microsoft Teams, Zoom, Slack huddles, Google Meet or other calls in a browser, FaceTime, Webex, Discord, ...). It is enabled by default and can be turned off in Preferences with "Pause breaks during calls" or by setting `monitorCalls` to `false`. The option is not shown and has no effect on Windows and Linux.
+
+How it works:
+- A small helper (`call-detector`, bundled with the app) asks macOS whether any camera is running and which apps are recording from a microphone. It only reads device and app state, so *Stretchly* does not need camera or microphone permission and never accesses audio or video.
+- A call starts when a camera or microphone is in use for two checks in a row, and finishes when neither is in use for two checks in a row, so short use (e.g. dictation) or a brief gap does not pause or resume breaks.
+- While on a call, the tray shows "Paused - Camera or microphone is in use" and the pause, reset and skip items are hidden, the same as in Do Not Disturb mode. Resetting breaks or skipping to a break with a shortcut or from the command line is ignored during a call.
+- If a break is showing when a call starts, the break is closed and does not count as taken in Break Health Mode. A break in Strict mode is not closed: it runs to the end, and breaks are paused after it.
+- When the call finishes, breaks start again from the beginning of the schedule, the same as after Do Not Disturb mode ends.
+
+You can set `monitorCallsCheckInterval` in milliseconds: how often the camera and microphone are checked, between `1000` (1 second) and `60000` (1 minute). Default value is `5000` which is 5 seconds, so a call is noticed within about 5 to 10 seconds.
+
+Anything that keeps a camera or microphone in use also pauses breaks, e.g. Voice Memos or other recording apps, Voice Control, dictation, Siri, audio software monitoring an input, or a browser tab with microphone access. The apps that were using the microphone are written to the log file when breaks are paused (`Stretchly: pausing breaks during call (...)`). On macOS 13 an app playing sound through a headset that also has a microphone may be detected as a call. If a call app releases the microphone while muted and the camera is off, the call may be treated as finished.
 
 #### Volume for break sounds [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume. This applies to both start and end break sounds.
@@ -518,7 +537,7 @@ If you want to hide location of preferences file in Debug info, set `hidePrefere
 This might be useful for corporate installations.
 
 #### Hide Strict Mode preferences
-If you want to hide Strict Mode preferences section from the Preferences window, set `hideStrictModePreferences` to `true`.
+If you want to hide Strict Mode preferences section from the Preferences window, set `hideStrictModePreferences` to `true`. This also hides the "Pause breaks during calls" preference.
 
 This might be useful for corporate installations.
 
@@ -640,6 +659,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ### MacOS
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
+- breaks stay paused while any app keeps a camera or microphone in use, even when you are not on a call. Check the log file to see which app it is, or turn off "Pause breaks during calls" in Preferences. See [Pause breaks during calls](#pause-breaks-during-calls-macos).
 
 ### Windows
 - users who upgraded to Windows 10 from previous Windows versions might be in "Do Not Disturb mode" all the time so they need to check "Show breaks even in Do Not Disturb mode"

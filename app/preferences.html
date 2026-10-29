@@ -77,6 +77,10 @@
       <input type="checkbox" class="negative" value="monitorDnd" id="monitorDnd">
       <label data-i18next="preferences.settings.monitorDnd" for="monitorDnd"></label>
     </div>
+    <div class="linux-hidden win32-hidden" data-strict-mode>
+      <input type="checkbox" value="monitorCalls" id="monitorCalls">
+      <label data-i18next="preferences.settings.monitorCalls" for="monitorCalls"></label>
+    </div>
     <div>
       <hr />
     </div>
@@ -400,7 +404,8 @@
           timeleft: <span id="timeleft"></span>,
           breakNumber: <span id="breakNumber"></span>,
           postponesNumber: <span id="postponesNumber"></span>,
-          Do Not Disturb: <span id="donotdisturb"></span>}
+          Do Not Disturb: <span id="donotdisturb"></span>,
+          On a call: <span id="oncall"></span>}
           <br />
           <span data-preferences-file>
           settingsFile: <a href="" class="file" id="settingsfile"></a>

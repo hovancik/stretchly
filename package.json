@@ -9,6 +9,7 @@
     "start": "electron .",
     "dev": "cross-env NODE_ENV=development electron . --trace-warnings --trace-deprecation --enable-logging --remote-debugging-port=9222",
     "postinstall": "electron-builder install-app-deps",
+    "build-call-detector": "node native/call-detector/build.js",
     "pack": "electron-builder build --dir",
     "dist": "electron-builder build",
     "test": "vitest run",
@@ -39,6 +40,11 @@
   "build": {
     "appId": "net.hovancik.stretchly",
     "productName": "Stretchly",
+    "beforePack": "./native/call-detector/build.js",
+    "afterPack": "./native/call-detector/build.js",
+    "files": [
+      "!native{,/**/*}"
+    ],
     "dmg": {
       "icon": "build/icon.icns",
       "iconSize": 128,
@@ -71,7 +77,16 @@
       "extendInfo": {
         "LSBackgroundOnly": 1,
         "LSUIElement": 1
-      }
+      },
+      "signIgnore": [
+        "/Contents/Resources/call-detector$"
+      ],
+      "extraResources": [
+        {
+          "from": "native/call-detector/build/call-detector",
+          "to": "call-detector"
+        }
+      ]
     },
     "linux": {
       "category": "Utility",

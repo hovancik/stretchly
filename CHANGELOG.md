@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `currentTimeInBreaksFormat` advanced preference to set the format of current time in breaks, e.g. to show date and weekday
 - `currentTimeInBreaksFontSize` advanced preference to change the clock's font size in breaks
 - CLI command and shortcut to start the last break again
+- pause breaks during calls on macOS, detected by camera or microphone use, with a preference to turn it off; Strict mode breaks are not interrupted
 
 ### Fixed
 - fix debug file and folder links when paths contain HTML special characters
@@ -19,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix snap startup crash
 - improve Linux desktop integration
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
+- breaks closed by a 'pause' app exclusion are now closed even with manual finish enabled
 
 ### Changed
 - macOS Ventura (13) or later is now required

@@ -72,7 +72,7 @@ window.onload = async (e) => {
     if (event.key === 'd' && (event.ctrlKey || event.metaKey)) {
       const [
         reference, timeleft, breaknumber,
-        postponesnumber, settingsfile, logsfile, doNotDisturb, imagesfolder, audiofolder
+        postponesnumber, settingsfile, logsfile, doNotDisturb, imagesfolder, audiofolder, onCall
       ] = await window.stretchly.showDebug()
       const debugInfo = document.querySelector('.debug > :first-child')
       if (!debugInfo.classList.contains('hidden')) {
@@ -88,6 +88,7 @@ window.onload = async (e) => {
         document.querySelector('#imagesfolder').textContent = imagesfolder
         document.querySelector('#audiofolder').textContent = audiofolder
         document.querySelector('#donotdisturb').innerHTML = doNotDisturb
+        document.querySelector('#oncall').innerHTML = onCall
         document.querySelector('#node').innerHTML = await window.runtime.node()
         document.querySelector('#chrome').innerHTML = await window.runtime.chrome()
         document.querySelector('#electron').innerHTML = await window.runtime.electron()
