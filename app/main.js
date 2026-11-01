@@ -1529,12 +1529,14 @@ function getTrayMenuTemplate () {
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
         label: i18next.t('main.toMicrobreak'),
+        accelerator: settings.get('skipToNextMiniBreakShortcut') || null,
         click: () => skipToMicrobreak()
       }])
     }
     if (settings.get('break')) {
       submenu = submenu.concat([{
         label: i18next.t('main.toBreak'),
+        accelerator: settings.get('skipToNextLongBreakShortcut') || null,
         click: () => skipToBreak()
       }])
     }
@@ -1549,6 +1551,7 @@ function getTrayMenuTemplate () {
   if (breakPlanner.isPaused) {
     trayMenu.push({
       label: i18next.t('main.resume'),
+      accelerator: settings.get('pauseBreaksToggleShortcut') || null,
       click: function () {
         resumeBreaks(false)
         updateTray()
@@ -1570,6 +1573,7 @@ function getTrayMenuTemplate () {
           type: 'separator'
         }, {
           label: i18next.t('main.indefinitely'),
+          accelerator: settings.get('pauseBreaksToggleShortcut') || null,
           click: function () {
             pauseBreaks(1)
           }
@@ -1577,6 +1581,7 @@ function getTrayMenuTemplate () {
       ]
     }, {
       label: i18next.t('main.resetBreaks'),
+      accelerator: settings.get('resetBreaksShortcut') || null,
       click: resetBreaks
     })
   }

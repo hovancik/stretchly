@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
+- tray menu shows configured shortcuts beside matching actions
 - macOS Ventura (13) or later is now required
 - macOS app bundles are now ad-hoc signed
 - updated many translations
