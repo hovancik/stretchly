@@ -341,17 +341,22 @@ In the preferences file, set `pauseBreaksToggleShortcut` to your preferred value
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
-#### Pause breaks for duration shortcuts
+#### Pause breaks durations and shortcuts
 
-You can also set shortcuts to pause breaks for a specific duration by modifying the following values in the preferences file:
+In the preferences file, set `pauseBreaksDurations` to define the timed options in the Pause breaks menu, in the listed order. Each entry has a `duration` in milliseconds and an optional global `shortcut`. For example, for 30 minutes and 90 minutes:
 
-- `pauseBreaksFor30MinutesShortcut`
-- `pauseBreaksFor1HourShortcut`
-- `pauseBreaksFor2HoursShortcut`
-- `pauseBreaksFor5HoursShortcut`
-- `pauseBreaksUntilMorningShortcut`
+```json
+"pauseBreaksDurations": [
+  { "duration": 1800000, "shortcut": "" },
+  { "duration": 5400000, "shortcut": "CmdOrCtrl+Shift+P" }
+]
+```
 
-If you'd like to disable the shortcuts, set value to empty string `""`. That's the default value as well.
+The defaults are 30 minutes, 1 hour, 2 hours and 5 hours, with shortcuts disabled. Use positive multiples of `60000` up to `2147460000`. Invalid entries are skipped; a value that isn't a list falls back to the defaults. Set `[]` to remove timed options and their shortcuts. Until morning and Indefinitely remain available.
+
+Omit `shortcut` or set it to `""` to disable it. See [Electron's accelerator documentation](https://www.electronjs.org/docs/latest/tutorial/keyboard-shortcuts#accelerators) for supported shortcuts. Shortcuts already used by other applications may be unavailable. Existing fixed-duration shortcut preferences are migrated automatically into this list.
+
+The separate `pauseBreaksUntilMorningShortcut` preference sets the Until morning shortcut and defaults to `""` (disabled).
 
 #### Skip to the next break shortcut
 

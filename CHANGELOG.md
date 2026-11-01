@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- `pauseBreaksDurations` advanced preference to customize timed pause options and their shortcuts
 - CLI commands to postpone, skip and finish the current break
 - advanced preferences for custom break sounds
 - `forceX11OnWayland` advanced preference to restart with the X11 backend on Wayland, so breaks show on all monitors

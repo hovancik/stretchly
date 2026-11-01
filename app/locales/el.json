@@ -8,7 +8,6 @@
     "toMicrobreak": "Μίνι διάλειμμα",
     "skipToTheNext": "Μετάβαση στο επόμενο",
     "resume": "Συνέχιση διαλειμμάτων",
-    "for5Hours": "5 ώρες",
     "untilMorning": "Μέχρι το πρωί",
     "indefinitely": "Επ' αόριστον",
     "restoreDefaults": "Επαναφορά προεπιλογών",
@@ -17,10 +16,8 @@
     "contributorPreferences": "Προτιμήσεις συνεισφέροντα",
     "syncPreferences": "Ρυθμίσεις συγχρονισμού",
     "pause": "Παύση διαλειμμάτων",
-    "for2Hours": "2 ώρες",
     "resetBreaks": "Επαναφορά διαλειμμάτων",
     "warning": "Αυτό θα επαναφέρει τις προεπιλογές της εφαρμογής και όλες οι ρυθμίσεις σας θα χαθούν.",
-    "forHour": "1 ώρα",
     "quitStretchly": "Έξοδος από το Stretchly",
     "continue": "Συνέχεια",
     "downloadLatestVersion": "Κατεβάστε την τελευταία έκδοση"
