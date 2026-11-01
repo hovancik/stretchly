@@ -47,7 +47,6 @@
       "trayIcon": "Icon ng Menubar:",
       "colour": "Colour",
       "monochrome": "Monochrome",
-      "invertedMonochrome": "Inverted Monochrome",
       "snowWhite": "Snow white",
       "appearance": "Hitsura:",
       "transparentMode": "Paganahin ang transparency",
@@ -159,9 +158,7 @@
     "screenInfo": "Kapag ang pagpapakita ng mga pahinga sa lahat ng monitor ay hindi pinagana, maaari mong piliin kung saan mo gusto ipakita ang iyong mga Pahinga.",
     "showOnMonitor": "Ipakita ang mga Pahinga sa",
     "primary": "Pangunahing monitor",
-    "showTimeToBreakInTray": "Ipakita ang oras sa susunod na pahinga sa icon ng menubar",
-    "cursor": "Sundin ang cursor",
-    "timeToBreakInTray": "Oras na magpahinga"
+    "cursor": "Sundin ang cursor"
   },
   "utils": {
     "remaining": "{{count}} na natira",

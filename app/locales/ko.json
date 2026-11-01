@@ -84,7 +84,6 @@
       "trayIcon": "메뉴바 아이콘:",
       "colour": "색상",
       "monochrome": "흑백",
-      "invertedMonochrome": "반전 흑백",
       "snowWhite": "눈처럼 흰색"
     },
     "about": {
@@ -164,8 +163,6 @@
     "showOnMonitor": "휴식 표시 모니터",
     "primary": "주 모니터",
     "cursor": "커서 따라가기",
-    "timeToBreakInTray": "휴식까지 남은 시간",
-    "showTimeToBreakInTray": "메뉴바 아이콘에 다음 휴식까지 남은 시간 표시",
     "showTrayIcon": "메뉴바 아이콘 표시",
     "toShowTrayIcon": "메뉴바에 Stretchly 아이콘 표시",
     "currentTimeInBreaks": "현재 시간",
