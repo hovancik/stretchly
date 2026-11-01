@@ -822,6 +822,7 @@ function startMicrobreak () {
   const strictMode = settings.get('microbreakStrictMode')
   const postponesLimit = settings.get('microbreakPostponesLimit')
   const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
+  const lockedDurationPercent = settings.get('microbreakLockedDurationPercent')
   const postponable = settings.get('microbreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
@@ -852,9 +853,9 @@ function startMicrobreak () {
           finishMicrobreak(false)
           return
         }
-        if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+        if (canPostpone(postponable, passedPercent, postponableDurationPercent, lockedDurationPercent)) {
           postponeMicrobreak()
-        } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+        } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent, lockedDurationPercent)) {
           increaseDanger(1)
           finishMicrobreak(false)
         }
@@ -862,7 +863,8 @@ function startMicrobreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('miniBreakColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(settings.get('miniBreakColor')), danger,
+      settings.get('breakHealthMode'), lockedDurationPercent]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()
@@ -991,6 +993,7 @@ function startBreak () {
   const strictMode = settings.get('breakStrictMode')
   const postponesLimit = settings.get('breakPostponesLimit')
   const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
+  const lockedDurationPercent = settings.get('breakLockedDurationPercent')
   const postponable = settings.get('breakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
@@ -1022,9 +1025,9 @@ function startBreak () {
           finishBreak(false)
           return
         }
-        if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
+        if (canPostpone(postponable, passedPercent, postponableDurationPercent, lockedDurationPercent)) {
           postponeBreak()
-        } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
+        } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent, lockedDurationPercent)) {
           increaseDanger(2)
           finishBreak(false)
         }
@@ -1032,7 +1035,8 @@ function startBreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('mainColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(settings.get('mainColor')), danger,
+      settings.get('breakHealthMode'), lockedDurationPercent]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()
