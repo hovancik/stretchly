@@ -28,6 +28,7 @@ import { UntilMorning } from './utils/untilMorning.js'
 import AutostartManager from './utils/autostartManager.js'
 import Command from './utils/commands.js'
 import { registerBreakShortcuts } from './utils/breakShortcuts.js'
+import { pauseMenu } from './utils/pauseMenu.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
 import DisplayManager from './utils/displayManager.js'
@@ -378,6 +379,30 @@ async function initialize (isAppStart = true) {
             log.info('Stretchly: migrating appExclusionsCheckInterval from 1000 to 2000')
           } else {
             log.info('Stretchly: not migrating appExclusionsCheckInterval')
+          }
+        },
+        '1.23.0': store => {
+          const legacyShortcuts = {
+            pauseBreaksFor30MinutesShortcut: 1800000,
+            pauseBreaksFor1HourShortcut: 3600000,
+            pauseBreaksFor2HoursShortcut: 7200000,
+            pauseBreaksFor5HoursShortcut: 18000000
+          }
+          if (Object.keys(legacyShortcuts).some(key => store.has(key))) {
+            const entries = Object.entries(legacyShortcuts).map(([key, duration]) => {
+              const shortcut = store.get(key)
+              return { duration, shortcut: typeof shortcut === 'string' ? shortcut : '' }
+            })
+            store.set('pauseBreaksDurations', entries)
+            log.info(`Stretchly: migrating pause durations and shortcuts to pauseBreaksDurations: ${JSON.stringify(entries)}`)
+            for (const key of Object.keys(legacyShortcuts)) {
+              if (store.has(key)) {
+                store.delete(key)
+                log.info(`Stretchly: removing ${key}`)
+              }
+            }
+          } else {
+            log.info('Stretchly: not migrating pauseBreaksDurations')
           }
         }
       },
@@ -1533,31 +1558,8 @@ function getTrayMenuTemplate () {
     trayMenu.push({
       label: i18next.t('main.pause'),
       submenu: [
+        ...pauseMenu(settings, i18next, pauseBreaks),
         {
-          label: i18next.t('utils.minutes', { count: 30 }),
-          accelerator: settings.get('pauseBreaksFor30MinutesShortcut') || null,
-          click: function () {
-            pauseBreaks(1800 * 1000)
-          }
-        }, {
-          label: i18next.t('main.forHour'),
-          accelerator: settings.get('pauseBreaksFor1HourShortcut') || null,
-          click: function () {
-            pauseBreaks(3600 * 1000)
-          }
-        }, {
-          label: i18next.t('main.for2Hours'),
-          accelerator: settings.get('pauseBreaksFor2HoursShortcut') || null,
-          click: function () {
-            pauseBreaks(3600 * 2 * 1000)
-          }
-        }, {
-          label: i18next.t('main.for5Hours'),
-          accelerator: settings.get('pauseBreaksFor5HoursShortcut') || null,
-          click: function () {
-            pauseBreaks(3600 * 5 * 1000)
-          }
-        }, {
           label: i18next.t('main.untilMorning'),
           accelerator: settings.get('pauseBreaksUntilMorningShortcut') || null,
           click: function () {

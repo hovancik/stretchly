@@ -2,8 +2,6 @@
   "main": {
     "microbreakIn": "إستراحة مصغّرة خلال $t(utils.seconds, {'count': {{seconds}} })",
     "resume": "إستكمال الإستراحة",
-    "for2Hours": "ساعتين",
-    "for5Hours": "5 ساعات",
     "untilMorning": "حتى الصباح",
     "resetBreaks": "إستعادة ضبط الإستراحات",
     "quitStretchly": "خروج",
@@ -19,7 +17,6 @@
     "toMicrobreak": "إستراحة مصغّرة",
     "skipToTheNext": "تخطي نحو التالي",
     "pause": "أوقف الإستراحة",
-    "forHour": "ساعة",
     "indefinitely": "إلى أجل غير مسمى",
     "warning": "سيتم إستعادة الضبط الإفتراضي وستُفقد التفضيلات المخزنة.",
     "preferences": "التفضيلات",

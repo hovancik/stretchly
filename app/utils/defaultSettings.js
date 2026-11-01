@@ -62,11 +62,13 @@ export default {
   appExclusions: [],
   appExclusionsCheckInterval: 2000,
   pauseForSuspendOrLock: true,
+  pauseBreaksDurations: [
+    { duration: 1800000, shortcut: '' },
+    { duration: 3600000, shortcut: '' },
+    { duration: 7200000, shortcut: '' },
+    { duration: 18000000, shortcut: '' }
+  ],
   pauseBreaksToggleShortcut: '',
-  pauseBreaksFor30MinutesShortcut: '',
-  pauseBreaksFor1HourShortcut: '',
-  pauseBreaksFor2HoursShortcut: '',
-  pauseBreaksFor5HoursShortcut: '',
   pauseBreaksUntilMorningShortcut: '',
   screen: 'primary',
   breakContentScreen: 'all',

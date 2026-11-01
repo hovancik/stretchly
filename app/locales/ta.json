@@ -1,6 +1,5 @@
 {
   "main": {
-    "forHour": "1 மணி நேரம்",
     "toMicrobreak": "சிறிய இடைவேளை",
     "microbreakIn": "சிறிய இடைவேளை இன்னும் $t(utils.seconds, {'count': {{seconds}} }) நேரத்தில்",
     "skipToTheNext": "நேரடியாக அடுத்து செல்லவும்",
@@ -10,10 +9,8 @@
     "toBreak": "நீண்ட இடைவேளை",
     "resume": "இடைவேளையை தொடரவும்",
     "pause": "இடைவேளையை நிறுத்தவும்",
-    "for5Hours": "5 மணி நேரம்",
     "untilMorning": "காலை வரை",
     "indefinitely": "காலவரையின்றி",
-    "for2Hours": "2 மணி நேரம்",
     "resumingBreaks": "இடைவேளையை மீண்டும் தொடங்குகிறது",
     "resetBreaks": "இடைவேளையை மீட்டமை",
     "quitStretchly": "நீட்டமாக வெளியேறுங்கள்",
