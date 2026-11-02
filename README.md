@@ -153,7 +153,7 @@ Clicking the *Stretchly* icon in your tray area will display the current status 
 
 *Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be paused until you return.
 
-*Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On.
+*Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On. The break timer keeps running while DnD is On, and if it ran out, the break is shown right after DnD ends.
 
 *Stretchly* follows the theme of your system and is also available in dark mode.
 
@@ -222,7 +222,7 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `useMonochromeTrayIcon` - use monochrome icon
 - `trayIconStyle` - icon style for menubar: default, time to break, or progress to break
 - `silentNotifications` - enable sounds
-- `monitorDnd` - monitor DND mode
+- `monitorDnd` - monitor DND mode. While DND is on, the break timer keeps running and, if it ran out, the break (or its notification) starts right after DND ends. Being idle during DND long enough to count as a natural break resets the timer instead
 - `checkNewVersion` - check for new versions
 
 #### Editing break ideas
@@ -728,6 +728,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 - Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
+- Meelis Saluvee, [@dominioon](https://github.com/dominioon)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

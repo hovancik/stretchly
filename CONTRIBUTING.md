@@ -18,6 +18,6 @@ Other things to keep in mind:
 - edit screenshots in [README](https://github.com/hovancik/stretchly/blob/master/README.md) if needed
 - be nice and have fun ;]
 
-When you are ready with your code, make sure to follow steps in PULL_REQUEST_TEMPLATE.
+When you are ready with your code, make sure to follow steps in [PULL_REQUEST_TEMPLATE](https://github.com/hovancik/stretchly/blob/master/.github/PULL_REQUEST_TEMPLATE.md).
 
 Thanks for your interest in making *Stretchly* better!

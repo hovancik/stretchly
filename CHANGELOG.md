@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `currentTimeInBreaksFormat` advanced preference to set the format of current time in breaks, e.g. to show date and weekday
 - `currentTimeInBreaksFontSize` advanced preference to change the clock's font size in breaks
 - CLI command and shortcut to start the last break again
+- Do Not Disturb monitoring (`monitorDnd`) now keeps the break timer running while Do Not Disturb is on and shows an overdue break right after it ends, instead of resetting the timer
 
 ### Fixed
 - fix debug file and folder links when paths contain HTML special characters

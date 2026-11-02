@@ -14,6 +14,7 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler = null
     this.isPaused = false
     this.pollersSuspended = false
+    this.pendingBreak = null
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
@@ -38,7 +39,9 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
+      if (this.dndManager.isOnDnd) {
+        this.pendingBreak = null
+      } else if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
         this.reset()
         log.info('Stretchly: resuming breaks after idle time')
         this.emit('updateToolTip')
@@ -47,7 +50,13 @@ class BreaksPlanner extends EventEmitter {
 
     this.dndManager.on('dndStarted', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        const { reference, timeLeft } = this.scheduler
+        const breakNumber = this.breakNumber
+        const postponesNumber = this.postponesNumber
         this.clear()
+        this.breakNumber = breakNumber
+        this.postponesNumber = postponesNumber
+        this.pendingBreak = { reference, deadline: Date.now() + timeLeft }
         log.info('Stretchly: pausing breaks for Do Not Distrub')
         this.emit('updateToolTip')
       } else {
@@ -57,7 +66,11 @@ class BreaksPlanner extends EventEmitter {
 
     this.dndManager.on('dndFinished', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
-        this.reset()
+        if (this.pendingBreak) {
+          this._restorePendingBreak()
+        } else {
+          this.reset()
+        }
         log.info('Stretchly: resuming breaks for Do Not Distrub')
         this.emit('updateToolTip')
       }
@@ -112,6 +125,7 @@ class BreaksPlanner extends EventEmitter {
 
   nextBreak () {
     this.postponesNumber = 0
+    this.pendingBreak = null
     if (this.scheduler) this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
@@ -162,6 +176,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   postponeCurrentBreak () {
+    this.pendingBreak = null
     this.scheduler.cancel()
     this.postponesNumber += 1
     let postponeTime, eventName
@@ -180,6 +195,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   skipToMicrobreak (delay = 100) {
+    this.pendingBreak = null
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
@@ -195,6 +211,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   skipToBreak (delay = 100) {
+    this.pendingBreak = null
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
@@ -207,7 +224,17 @@ class BreaksPlanner extends EventEmitter {
     this.emit('updateToolTip')
   }
 
+  _restorePendingBreak () {
+    const { reference, deadline } = this.pendingBreak
+    this.pendingBreak = null
+    this.scheduler.cancel()
+    const delay = Math.max(deadline - Date.now(), 100)
+    this.scheduler = new Scheduler(() => this.emit(reference), delay, reference)
+    this.scheduler.plan()
+  }
+
   clear () {
+    this.pendingBreak = null
     this.scheduler.cancel()
     this.breakNumber = 0
     this.postponesNumber = 0
