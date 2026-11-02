@@ -49,6 +49,8 @@ export default {
   silentNotifications: false,
   monitorDnd: true,
   monitorDndCheckInterval: 2000,
+  monitorCalls: true,
+  monitorCallsCheckInterval: 5000,
   miniBreakStartSound: 'silence',
   longBreakStartSound: 'silence',
   themeSource: 'system',

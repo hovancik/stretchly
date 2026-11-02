@@ -422,21 +422,21 @@ async function initialize (isAppStart = true) {
     breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
     breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
     breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
-    breakPlanner.on('finishMicrobreak', (shouldPlaySound, shouldPlanNext) => {
-      if (settings.get('miniBreakManualFinish')) {
+    breakPlanner.on('finishMicrobreak', (shouldPlaySound, shouldPlanNext, reason) => {
+      if (settings.get('miniBreakManualFinish') && shouldPlanNext) {
         enterMiniBreakManualContinuation(shouldPlaySound)
         return
       }
-      decreaseDanger(1)
+      if (reason !== 'call') decreaseDanger(1)
       finishMicrobreak(shouldPlaySound, shouldPlanNext)
     })
     breakPlanner.on('startBreak', () => { startBreak() })
-    breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext) => {
-      if (settings.get('longBreakManualFinish')) {
+    breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext, reason) => {
+      if (settings.get('longBreakManualFinish') && shouldPlanNext) {
         enterLongBreakManualContinuation(shouldPlaySound)
         return
       }
-      decreaseDanger(2)
+      if (reason !== 'call') decreaseDanger(2)
       finishBreak(shouldPlaySound, shouldPlanNext)
     })
     breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
@@ -447,6 +447,7 @@ async function initialize (isAppStart = true) {
     breakPlanner.clear()
     breakPlanner.appExclusionsManager.reinitialize(settings)
     breakPlanner.doNotDisturb(settings.get('monitorDnd'))
+    breakPlanner.monitorCalls(settings.get('monitorCalls'))
     breakPlanner.naturalBreaks(settings.get('naturalBreaks'))
     breakPlanner.nextBreak()
   }
@@ -581,6 +582,7 @@ function onSuspendOrLock () {
   log.info('System: suspend or lock')
   if (settings.get('pauseForSuspendOrLock')) {
     if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd ||
+      breakPlanner.callManager.isOnCall ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
       breakPlanner.appExclusionsManager.isSchedulerCleared) {
       log.info('Stretchly: not pausing for suspendOrLock because paused already')
@@ -649,6 +651,7 @@ function trayIconPath () {
     paused:
       breakPlanner.isPaused ||
       breakPlanner.dndManager.isOnDnd ||
+      breakPlanner.callManager.isOnCall ||
       breakPlanner.naturalBreaksManager.isSchedulerCleared ||
       breakPlanner.appExclusionsManager.isSchedulerCleared,
     monochrome: settings.get('useMonochromeTrayIcon'),
@@ -1269,6 +1272,10 @@ function postponeBreak () {
 }
 
 function skipToMicrobreak (delay) {
+  if (breakPlanner.callManager.isOnCall) {
+    log.info('Stretchly: not skipping to Mini break, breaks are paused during call')
+    return
+  }
   if (microbreakWins) {
     increaseDanger(1)
     microbreakWins = breakComplete(false, microbreakWins)
@@ -1288,6 +1295,10 @@ function skipToMicrobreak (delay) {
 }
 
 function skipToBreak (delay) {
+  if (breakPlanner.callManager.isOnCall) {
+    log.info('Stretchly: not skipping to Long break, breaks are paused during call')
+    return
+  }
   if (microbreakWins) {
     increaseDanger(1)
     microbreakWins = breakComplete(false, microbreakWins)
@@ -1315,7 +1326,8 @@ function startLastBreakAgain () {
     log.info('Stretchly: not starting last break again, a break is running')
     return
   }
-  if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared) {
+  if (breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.callManager.isOnCall ||
+    breakPlanner.appExclusionsManager.isSchedulerCleared) {
     log.info('Stretchly: not starting last break again, breaks are paused')
     return
   }
@@ -1328,6 +1340,10 @@ function startLastBreakAgain () {
 }
 
 function resetBreaks () {
+  if (breakPlanner.callManager.isOnCall) {
+    log.info('Stretchly: not resetting breaks, breaks are paused during call')
+    return
+  }
   if (microbreakWins) {
     microbreakWins = breakComplete(false, microbreakWins)
   }
@@ -1393,6 +1409,8 @@ function pauseBreaks (milliseconds) {
 function resumeBreaks (notify = true) {
   if (breakPlanner.dndManager.isOnDnd) {
     log.info('Stretchly: not resuming breaks because in Do Not Disturb')
+  } else if (breakPlanner.callManager.isOnCall) {
+    log.info('Stretchly: not resuming breaks because on a call')
   } else {
     breakPlanner.resume()
     log.info('Stretchly: resuming breaks')
@@ -1524,7 +1542,8 @@ function getTrayMenuTemplate () {
     return trayMenu
   }
 
-  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
+  if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.callManager.isOnCall ||
+    breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     let submenu = []
     if (settings.get('microbreak')) {
       submenu = submenu.concat([{
@@ -1557,7 +1576,8 @@ function getTrayMenuTemplate () {
         updateTray()
       }
     })
-  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
+  } else if (!(breakPlanner.dndManager.isOnDnd || breakPlanner.callManager.isOnCall ||
+    breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     trayMenu.push({
       label: i18next.t('main.pause'),
       submenu: [
@@ -1684,6 +1704,10 @@ ipcMain.on('save-setting', function (event, key, value) {
     breakPlanner.doNotDisturb(value)
   }
 
+  if (key === 'monitorCalls') {
+    breakPlanner.monitorCalls(value)
+  }
+
   if (key === 'language') {
     i18next.changeLanguage(value)
   }
@@ -1760,6 +1784,7 @@ ipcMain.handle('show-debug', (event) => {
   const breaknumber = breakPlanner.breakNumber
   const postponesnumber = breakPlanner.postponesNumber
   const doNotDisturb = breakPlanner.dndManager.isOnDnd
+  const onCall = breakPlanner.callManager.isOnCall
   let settingsFile = settings.path
   let logsFile = log.transports.file.getFile().path
   let imagesFolder = join(app.getPath('userData'), 'images')
@@ -1779,7 +1804,8 @@ ipcMain.handle('show-debug', (event) => {
     logsFile,
     doNotDisturb,
     imagesFolder,
-    audioFolder
+    audioFolder,
+    onCall
   ]
 })
 

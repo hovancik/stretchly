@@ -3,6 +3,7 @@ import EventEmitter from 'events'
 import NaturalBreaksManager from './utils/naturalBreaksManager.js'
 import DndManager from './utils/dndManager.js'
 import AppExclusionsManager from './utils/appExclusionsManager.js'
+import CallManager from './utils/callManager.js'
 import log from 'electron-log/main.js'
 
 class BreaksPlanner extends EventEmitter {
@@ -17,6 +18,7 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
+    this.callManager = new CallManager(settings)
 
     this.on('microbreakStarted', (shouldPlaySound) => {
       const interval = this.settings.get('microbreakDuration')
@@ -38,7 +40,7 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd && !this.callManager.isOnCall) {
         this.reset()
         log.info('Stretchly: resuming breaks after idle time')
         this.emit('updateToolTip')
@@ -56,7 +58,7 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.dndManager.on('dndFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.callManager.isOnCall) {
         this.reset()
         log.info('Stretchly: resuming breaks for Do Not Distrub')
         this.emit('updateToolTip')
@@ -83,7 +85,7 @@ class BreaksPlanner extends EventEmitter {
           this.appExclusionsManager.isOnAppExclusion = false
         }
       } else if (rule === 'resume') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.callManager.isOnCall) {
           this.reset()
           log.info(`Stretchly: resuming breaks as 'resume' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
@@ -93,7 +95,7 @@ class BreaksPlanner extends EventEmitter {
 
     this.appExclusionsManager.on('appExclusionFinished', (rule) => {
       if (rule === 'pause') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.callManager.isOnCall) {
           this.reset()
           log.info("Stretchly: resuming breaks as no 'pause' exclusion found running")
           this.emit('updateToolTip')
@@ -108,11 +110,40 @@ class BreaksPlanner extends EventEmitter {
         }
       }
     })
+
+    this.callManager.on('callStarted', (source) => {
+      if (this.isPaused) {
+        this.callManager.isOnCall = false
+        return
+      }
+      const reference = this.scheduler.reference
+      if (reference === 'finishMicrobreak' || reference === 'finishBreak') {
+        if (this.settings.get(reference === 'finishBreak' ? 'breakStrictMode' : 'microbreakStrictMode')) {
+          log.info(`Stretchly: call started during Strict mode break, pausing breaks after it (${source})`)
+          this.emit('updateToolTip')
+          return
+        }
+        this.emit(reference, false, false, 'call')
+        log.info(`Stretchly: closing current break and pausing breaks during call (${source})`)
+      } else {
+        log.info(`Stretchly: pausing breaks during call (${source})`)
+      }
+      this.clear()
+      this.emit('updateToolTip')
+    })
+
+    this.callManager.on('callFinished', () => {
+      this._resumeAfterCall()
+    })
   }
 
   nextBreak () {
     this.postponesNumber = 0
     if (this.scheduler) this.scheduler.cancel()
+    if (this.callManager.isOnCall) {
+      log.info('Stretchly: not planning next break during call')
+      return
+    }
     const shouldBreak = this.settings.get('break')
     const shouldMicrobreak = this.settings.get('microbreak')
     const interval = this.settings.get('microbreakInterval')
@@ -164,6 +195,11 @@ class BreaksPlanner extends EventEmitter {
   postponeCurrentBreak () {
     this.scheduler.cancel()
     this.postponesNumber += 1
+    if (this.callManager.isOnCall) {
+      log.info('Stretchly: not planning postponed break during call')
+      this.emit('updateToolTip')
+      return
+    }
     let postponeTime, eventName
     const scheduledBreakType = this._scheduledBreakType
     const notification = this.settings.get(`${scheduledBreakType}Notification`)
@@ -220,6 +256,7 @@ class BreaksPlanner extends EventEmitter {
     this.naturalBreaksManager.stop()
     this.dndManager.stop()
     this.appExclusionsManager.stop()
+    this.callManager.stop()
     if (milliseconds !== 1) {
       this.scheduler = new Scheduler(() => this.emit('resumeBreaks'), milliseconds, 'resumeBreaks')
       this.scheduler.plan()
@@ -235,6 +272,7 @@ class BreaksPlanner extends EventEmitter {
       this.pollersSuspended = false
       if (this.settings.get('naturalBreaks')) this.naturalBreaksManager.start()
       if (this.settings.get('monitorDnd')) this.dndManager.start()
+      if (this.settings.get('monitorCalls')) this.callManager.start()
       this.appExclusionsManager.reinitialize(this.settings)
     }
   }
@@ -280,6 +318,25 @@ class BreaksPlanner extends EventEmitter {
         this.reset()
       }
     }
+  }
+
+  monitorCalls (shouldUse) {
+    const wasOnCall = this.callManager.isOnCall
+    this.callManager.stop()
+    if (shouldUse && !this.pollersSuspended) {
+      this.callManager.start()
+    } else if (!shouldUse && wasOnCall) {
+      this._resumeAfterCall()
+    }
+  }
+
+  _resumeAfterCall () {
+    if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' &&
+      !this.dndManager.isOnDnd && !this.appExclusionsManager.isSchedulerCleared) {
+      this.reset()
+      log.info('Stretchly: resuming breaks after call')
+    }
+    this.emit('updateToolTip')
   }
 
   get timeToNextBreak () {
