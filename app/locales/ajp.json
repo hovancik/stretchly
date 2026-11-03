@@ -1,6 +1,6 @@
 {
   "main": {
-    "microbreakIn": "إستراحة مصغّرة خلال $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "إستراحة مصغّرة خلال $t(utils.seconds, {'count': {{seconds}} })",
     "resume": "إستكمال الإستراحة",
     "untilMorning": "حتى الصباح",
     "resetBreaks": "إستعادة ضبط الإستراحات",
@@ -9,12 +9,12 @@
     "continue": "تابع",
     "cancel": "إلغاء",
     "syncPreferences": "مزامنة التفضيلات",
-    "toBreak": "إستراحة مطوّلة",
+    "toLongBreak": "إستراحة مطوّلة",
     "toolTipHeader": "Stretchly - تطبيق التذكير لأخذ الإستراحات",
-    "breakIn": "إستراحة مطوّلة خلال $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "إستراحة مطوّلة خلال $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "إستكمال الإستراحة",
     "downloadLatestVersion": "تحميل أحدث إصدار",
-    "toMicrobreak": "إستراحة مصغّرة",
+    "toMiniBreak": "إستراحة مصغّرة",
     "skipToTheNext": "تخطي نحو التالي",
     "pause": "أوقف الإستراحة",
     "indefinitely": "إلى أجل غير مسمى",

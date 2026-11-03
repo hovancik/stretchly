@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - приложение, което напомня да си почивате",
-    "microbreakIn": "Кратка почивка след $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Дълга почивка след $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Кратка почивка след $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Дълга почивка след $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Почивките се възобновяват",
     "downloadLatestVersion": "Сваляне на най-новата версия",
-    "toBreak": "Дълга почивка",
-    "toMicrobreak": "Кратка почивка",
+    "toLongBreak": "Дълга почивка",
+    "toMiniBreak": "Кратка почивка",
     "skipToTheNext": "Прескачане към следващата",
     "resume": "Възобновяване на почивките",
     "pause": "Преустановяване на почивките",

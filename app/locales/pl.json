@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - Przerwo-przypominajka",
-    "microbreakIn": "Mikroprzerwa za $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Długa przerwa za $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Mikroprzerwa za $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Długa przerwa za $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Wznawiam przerwy",
     "downloadLatestVersion": "Pobierz najnowszą wersję",
-    "toBreak": "Długa przerwa",
-    "toMicrobreak": "Mikroprzerwa",
+    "toLongBreak": "Długa przerwa",
+    "toMiniBreak": "Mikroprzerwa",
     "skipToTheNext": "Przejdź do następnej",
     "resume": "Wznów",
     "pause": "Wstrzymaj",

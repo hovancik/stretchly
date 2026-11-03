@@ -306,11 +306,11 @@ window.onload = async (e) => {
   if (!settings.disableAppUpdateFeatures) {
     versionChecker.latest()
       .then(version => {
-        document.querySelector('.latestVersion').innerHTML = version.replace('v', '')
+        document.querySelector('.latest-version').innerHTML = version.replace('v', '')
       })
       .catch(exception => {
         console.error(exception)
-        document.querySelector('.latestVersion').innerHTML = 'N/A'
+        document.querySelector('.latest-version').innerHTML = 'N/A'
       })
   }
 
@@ -338,8 +338,8 @@ window.onload = async (e) => {
   }
 
   function realBreakInterval () {
-    const microbreakInterval = document.querySelector('#miniBreakEvery').value * 1
-    const breakInterval = document.querySelector('#longBreakEvery').value * 1
-    return microbreakInterval * (breakInterval + 1)
+    const miniBreakInterval = document.querySelector('#miniBreakEvery').value * 1
+    const longBreakInterval = document.querySelector('#longBreakEvery').value * 1
+    return miniBreakInterval * (longBreakInterval + 1)
   }
 }

@@ -15,12 +15,12 @@
     "pause": "Паузирај паузи",
     "resume": "Продолжи со паузи",
     "skipToTheNext": "Прескокни до следната",
-    "toMicrobreak": "Кратка пауза",
-    "toBreak": "Долга пауза",
+    "toMiniBreak": "Кратка пауза",
+    "toLongBreak": "Долга пауза",
     "downloadLatestVersion": "Превземање на најновата верзија",
     "resumingBreaks": "Продолжување на паузите",
-    "breakIn": "Долга пауза за $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "Мала пауза за $t(utils.seconds, {'count': {{seconds}} })"
+    "longBreakIn": "Долга пауза за $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Мала пауза за $t(utils.seconds, {'count': {{seconds}} })"
   },
   "preferences": {
     "schedule": {

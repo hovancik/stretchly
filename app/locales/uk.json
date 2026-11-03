@@ -1,8 +1,8 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - застосунок для нагадування про перерви",
-    "microbreakIn": "Маленька перерва за $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Довга перерва за $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Маленька перерва за $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Довга перерва за $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Роботу відновлено",
     "downloadLatestVersion": "Завантажити останню версію",
     "skipToTheNext": "Перейти до наступної перерви",
@@ -19,8 +19,8 @@
     "cancel": "Скасувати",
     "continue": "Продовжити",
     "warning": "Відновити налаштування за замовчуванням, ваші зміни будуть втрачені.",
-    "toMicrobreak": "Коротка перева",
-    "toBreak": "Довга перерва"
+    "toMiniBreak": "Коротка перева",
+    "toLongBreak": "Довга перерва"
   },
   "break": {
     "title": "Перерва!",

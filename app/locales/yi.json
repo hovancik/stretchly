@@ -73,12 +73,12 @@
     "seconds_other": "{{count}} סעקונדעס"
   },
   "main": {
-    "breakIn": "לאנג ברעכן $t(utils.seconds, {'count': {{seconds}} }) ארום",
+    "longBreakIn": "לאנג ברעכן $t(utils.seconds, {'count': {{seconds}} }) ארום",
     "untilMorning": "ביז מאָרגן",
     "toolTipHeader": "סטרעטשלי - די ברעכן דערמאָנונג אַפּ",
-    "microbreakIn": "מיני־ברעכן $t(utils.seconds, {'count': {{seconds}} }) ארום",
-    "toBreak": "לאנג ברעכן",
-    "toMicrobreak": "מיני־ברעכן",
+    "miniBreakIn": "מיני־ברעכן $t(utils.seconds, {'count': {{seconds}} }) ארום",
+    "toLongBreak": "לאנג ברעכן",
+    "toMiniBreak": "מיני־ברעכן",
     "pause": "פויז ברעכן",
     "downloadLatestVersion": "אָפּלאָדירן די נואַסט ווערסיע",
     "quitStretchly": "האַלטן סטרעטשלי",

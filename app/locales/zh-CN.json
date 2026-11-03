@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - 休息提醒应用",
-    "microbreakIn": "距离下次小憩约 $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "距离下次休息约 $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "距离下次小憩约 $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "距离下次休息约 $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "正在恢复休息",
     "downloadLatestVersion": "下载最新版本",
-    "toBreak": "休息",
-    "toMicrobreak": "小憩",
+    "toLongBreak": "休息",
+    "toMiniBreak": "小憩",
     "skipToTheNext": "跳到下一次",
     "resume": "恢复休息",
     "pause": "暂停休息",

@@ -17,10 +17,10 @@
     "continue": "Devam",
     "warning": "Varsayılanlara dönülecek ve tüm ayarlarınız kaybolacak.",
     "restoreDefaults": "Varsayılanlara dön",
-    "toMicrobreak": "Kısa Mola",
-    "toBreak": "Uzun Mola",
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
-    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra kısa mola"
+    "toMiniBreak": "Kısa Mola",
+    "toLongBreak": "Uzun Mola",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
+    "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra kısa mola"
   },
   "break": {
     "title": "Mola zamanı!",

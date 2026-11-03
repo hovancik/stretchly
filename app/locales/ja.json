@@ -1,14 +1,14 @@
 {
   "main": {
-    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) 後に一息入れましょう",
+    "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) 後に一息入れましょう",
     "resetBreaks": "休憩をリセット",
     "warning": "デフォルト設定に戻すと、全てのユーザ設定は削除されます。",
-    "toMicrobreak": "小休憩",
+    "toMiniBreak": "小休憩",
     "toolTipHeader": "Stretchly - 休憩時間リマインダアプリ",
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} })後に休憩しましょう",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} })後に休憩しましょう",
     "resumingBreaks": "休憩を再開します",
     "downloadLatestVersion": "最新版をダウンロード",
-    "toBreak": "休憩",
+    "toLongBreak": "休憩",
     "skipToTheNext": "休憩をスキップする",
     "resume": "休憩を再開する",
     "pause": "休憩を一時中断",
