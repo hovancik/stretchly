@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly - La aplikaĵo por memorigi pri paŭzoj",
     "miniBreakIn": "Paŭzeto post $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Longa Paŭzo post $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Longa Paŭzo post $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Daŭrigi paŭzojn",
     "downloadLatestVersion": "Elŝuti la plej freŝan version",
-    "toBreak": "Longa Paŭzo",
+    "toLongBreak": "Longa Paŭzo",
     "toMiniBreak": "Paŭzeto",
     "skipToTheNext": "Iri al la sekva",
     "resume": "Daŭrigi Paŭzojn",

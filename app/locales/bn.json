@@ -1,9 +1,9 @@
 {
   "main": {
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে দীর্ঘ বিরতি",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে দীর্ঘ বিরতি",
     "resumingBreaks": "বিরতি শুরু হচ্ছে",
     "downloadLatestVersion": "নতুন ভার্সন ডাউনলোড করুন",
-    "toBreak": "দীর্ঘ বিরতি",
+    "toLongBreak": "দীর্ঘ বিরতি",
     "skipToTheNext": "পরেরটাতে যান",
     "resume": "বিরতি শুরু করুন",
     "pause": "বিরতি থামান",

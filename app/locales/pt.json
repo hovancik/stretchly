@@ -15,11 +15,11 @@
     "resume": "Resumir pausas",
     "skipToTheNext": "Passar à próxima",
     "toMiniBreak": "Pausa Curta",
-    "toBreak": "Pausa Longa",
+    "toLongBreak": "Pausa Longa",
     "downloadLatestVersion": "Descarregar a última versão",
     "resumingBreaks": "Resumindo pausas",
     "miniBreakIn": "Pausa curta em $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Pausa longa em $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Pausa longa em $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - A app de lembretes para pausas"
   },
   "statusMessages": {

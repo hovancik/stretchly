@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly - A szünet emlékeztető alkalmazás",
     "miniBreakIn": "Rövid szünet $t(utils.seconds, {'count': {{seconds}} }) múlva",
-    "breakIn": "Hosszú szünet $t(utils.seconds, {'count': {{seconds}} }) múlva",
+    "longBreakIn": "Hosszú szünet $t(utils.seconds, {'count': {{seconds}} }) múlva",
     "resumingBreaks": "Szünetek folytatása",
     "downloadLatestVersion": "Legfrissebb verzió letöltése",
-    "toBreak": "Hosszú szünet",
+    "toLongBreak": "Hosszú szünet",
     "toMiniBreak": "Rövid szünet",
     "skipToTheNext": "Ugrás a következőre",
     "resume": "Szünetek folytatása",

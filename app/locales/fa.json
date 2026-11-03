@@ -110,10 +110,10 @@
     "resume": "ادامهٔ استراحت‌ها",
     "skipToTheNext": "پرش به استراحت بعدی",
     "toMiniBreak": "استراحت کوتاه",
-    "toBreak": "استراحت طولانی",
+    "toLongBreak": "استراحت طولانی",
     "downloadLatestVersion": "بارگیری آخرین نسخه",
     "resumingBreaks": "در حال ادامهٔ استراحت‌ها",
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) تا استراحت طولانی",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) تا استراحت طولانی",
     "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) تا استراحت کوتاه",
     "toolTipHeader": "استرچلی - برنامه یادآور زمان استراحت"
   },

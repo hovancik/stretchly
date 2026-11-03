@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly – Application de rappel de pauses",
     "miniBreakIn": "Petite pause dans $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Grande pause dans $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Grande pause dans $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Reprise des pauses",
     "downloadLatestVersion": "Télécharger la dernière version",
-    "toBreak": "Grande pause",
+    "toLongBreak": "Grande pause",
     "toMiniBreak": "Petite pause",
     "skipToTheNext": "Passer à la prochaine",
     "resume": "Reprendre",

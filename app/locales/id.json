@@ -203,10 +203,10 @@
     "resume": "Lanjutkan istirahat",
     "skipToTheNext": "Lewati ke berikutnya",
     "toMiniBreak": "Istirahat mini",
-    "toBreak": "Istirahat panjang",
+    "toLongBreak": "Istirahat panjang",
     "downloadLatestVersion": "Unduh versi terbaru",
     "resumingBreaks": "Melanjutkan istirahat",
-    "breakIn": "Istirahat panjang dalam $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Istirahat panjang dalam $t(utils.seconds, {'count': {{seconds}} })",
     "miniBreakIn": "Istirahat mini dalam $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Aplikasi pengingat waktu istirahat"
   },

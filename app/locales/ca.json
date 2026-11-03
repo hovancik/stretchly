@@ -1,7 +1,7 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - L'app de recordatori de pauses",
-    "breakIn": "Pausa Llarga en $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Pausa Llarga en $t(utils.seconds, {'count': {{seconds}} })",
     "skipToTheNext": "Saltar al següent",
     "untilMorning": "Fins el matí",
     "pause": "Aturar Pauses",
@@ -10,7 +10,7 @@
     "miniBreakIn": "Mini Pausa en $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Reprenent pauses",
     "downloadLatestVersion": "Descarrega l'última versió",
-    "toBreak": "Pausa Llarga",
+    "toLongBreak": "Pausa Llarga",
     "toMiniBreak": "Mini Pausa",
     "resume": "Reprendre Pauses",
     "quitStretchly": "Sortir de Stretchly",

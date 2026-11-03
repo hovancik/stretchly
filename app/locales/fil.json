@@ -2,8 +2,8 @@
   "main": {
     "warning": "Ibabalik nito ang defaults at lahat ng iyong mga setting ay mawawala.",
     "toMiniBreak": "Mabilisang Pahinga",
-    "breakIn": "Matagalang Pahinga ng $t(utils.seconds, {'count': {{seconds}} })",
-    "toBreak": "Matagalang Pahinga",
+    "longBreakIn": "Matagalang Pahinga ng $t(utils.seconds, {'count': {{seconds}} })",
+    "toLongBreak": "Matagalang Pahinga",
     "miniBreakIn": "Mabilisang Pahinga ng $t(utils.seconds, {'count': {{seconds}} })",
     "pause": "Ihinto Sandali Ang Pahinga",
     "resetBreaks": "I-reset ang pahinga",

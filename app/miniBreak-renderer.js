@@ -34,16 +34,16 @@ window.onload = async (event) => {
 
   document.querySelector('#postpone').onclick = runOnce(() => window.breaks.postponeBreak())
 
-  document.querySelector('.miniBreak-idea').innerHTML = window.breaks.sanitizeIdea(idea)
+  document.querySelector('.mini-break-idea').innerHTML = window.breaks.sanitizeIdea(idea)
 
-  document.querySelectorAll('.miniBreak-idea a').forEach(a => {
+  document.querySelectorAll('.mini-break-idea a').forEach(a => {
     a.onclick = (event) => {
       event.preventDefault()
       window.electronApi.openExternal(a.href)
     }
   })
 
-  document.querySelectorAll('.miniBreak-idea img').forEach(async img => {
+  document.querySelectorAll('.mini-break-idea img').forEach(async img => {
     const src = img.getAttribute('src') || ''
     const resolved = await window.electronApi.resolveLocalImage(src)
     if (resolved) {

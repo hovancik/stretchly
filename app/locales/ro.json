@@ -15,11 +15,11 @@
     "cancel": "Anulează",
     "continue": "Continuă",
     "toMiniBreak": "Pauză Mică",
-    "toBreak": "Pauză lungă",
+    "toLongBreak": "Pauză lungă",
     "restoreDefaults": "Restabiliți setările de bază",
     "contributorPreferences": "Preferințe pentru colaboratori",
     "miniBreakIn": "Pauză scurtă in $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Pauză lungă in $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Pauză lungă in $t(utils.seconds, {'count': {{seconds}} })",
     "warning": "Aceasta va restabili setările implicite ale aplicației și toate setările dvs. vor fi pierdute."
   },
   "break": {

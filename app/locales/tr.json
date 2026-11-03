@@ -18,8 +18,8 @@
     "warning": "Varsayılanlara dönülecek ve tüm ayarlarınız kaybolacak.",
     "restoreDefaults": "Varsayılanlara dön",
     "toMiniBreak": "Kısa Mola",
-    "toBreak": "Uzun Mola",
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
+    "toLongBreak": "Uzun Mola",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
     "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra kısa mola"
   },
   "break": {

@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly - Pauze herinnering app",
     "miniBreakIn": "Mini pauze in $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Lange pauze in $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Lange pauze in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Pauzes hervatten",
     "downloadLatestVersion": "Download de laatste versie",
-    "toBreak": "Lange pauze",
+    "toLongBreak": "Lange pauze",
     "toMiniBreak": "Mini pauze",
     "skipToTheNext": "Ga naar de volgende",
     "resume": "Hervat",

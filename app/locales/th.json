@@ -158,9 +158,9 @@
     "resumingBreaks": "กำลังจะพักต่อ",
     "skipToTheNext": "ข้ามไปต่อ",
     "toMiniBreak": "พักสั้น",
-    "toBreak": "พักยาว",
+    "toLongBreak": "พักยาว",
     "downloadLatestVersion": "ดาวน์โหลดเวอร์ชั่นล่าสุด",
-    "breakIn": "พักใหญ่ใน $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "พักใหญ่ใน $t(utils.seconds, {'count': {{seconds}} })",
     "miniBreakIn": "พักย่อยใน $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - แอปสำหรับเตือนเวลาพัก"
   },

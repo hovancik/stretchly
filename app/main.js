@@ -72,14 +72,14 @@ nativeTheme.on('updated', function theThemeHasChanged () {
 })
 
 let miniBreakIdeas
-let breakIdeas
+let longBreakIdeas
 let breakPlanner
 let appIcon = null
 let autostartManager = null
 let displayManager = null
 let processWin = null
 let miniBreakWins = null
-let breakWins = null
+let longBreakWins = null
 let preferencesWin = null
 let welcomeWin = null
 let contributorPreferencesWin = null
@@ -188,7 +188,7 @@ if (!gotTheLock) {
           return
         }
         nextIdea = [cmd.options.title ? cmd.options.title : null, cmd.options.text ? cmd.options.text : null]
-        if (!cmd.options.noskip || delay) skipToBreak(delay)
+        if (!cmd.options.noskip || delay) skipToLongBreak(delay)
         break
       }
 
@@ -216,8 +216,8 @@ if (!gotTheLock) {
         let windows
         if (reference === 'finishMiniBreak') {
           windows = miniBreakWins
-        } else if (reference === 'finishBreak') {
-          windows = breakWins
+        } else if (reference === 'finishLongBreak') {
+          windows = longBreakWins
         }
         const win = windows?.find(win =>
           !win.isDestroyed() &&
@@ -257,7 +257,7 @@ app.on('window-all-closed', () => {
 })
 app.on('before-quit', (event) => {
   if ((breakPlanner?.scheduler?.reference === 'finishMiniBreak' && settings?.get('miniBreakStrictMode')) ||
-      (breakPlanner?.scheduler?.reference === 'finishBreak' && settings?.get('breakStrictMode'))
+      (breakPlanner?.scheduler?.reference === 'finishLongBreak' && settings?.get('longBreakStrictMode'))
   ) {
     log.info('Stretchly: preventing app closure (in break with strict mode)')
     event.preventDefault()
@@ -428,6 +428,30 @@ async function initialize (isAppStart = true) {
               log.info(`Stretchly: not migrating ${oldKey}`)
             }
           }
+          const legacyLongBreakSettings = {
+            break: 'longBreak',
+            breakDuration: 'longBreakDuration',
+            breakInterval: 'longBreakInterval',
+            breakNotification: 'longBreakNotification',
+            breakNotificationInterval: 'longBreakNotificationInterval',
+            breakStrictMode: 'longBreakStrictMode',
+            breakPostpone: 'longBreakPostpone',
+            breakPostponeTime: 'longBreakPostponeTime',
+            breakPostponesLimit: 'longBreakPostponesLimit',
+            breakPostponableDurationPercent: 'longBreakPostponableDurationPercent',
+            breakIdeas: 'longBreakIdeas'
+          }
+          for (const [oldKey, newKey] of Object.entries(legacyLongBreakSettings)) {
+            if (store.has(oldKey)) {
+              const value = store.get(oldKey)
+              store.set(newKey, value)
+              log.info(`Stretchly: migrating ${oldKey} to ${newKey} with value ${JSON.stringify(value)}`)
+              store.delete(oldKey)
+              log.info(`Stretchly: removing ${oldKey}`)
+            } else {
+              log.info(`Stretchly: not migrating ${oldKey}`)
+            }
+          }
         }
       },
       watch: true
@@ -444,7 +468,7 @@ async function initialize (isAppStart = true) {
     breakPlanner = new BreaksPlanner(settings)
     breakPlanner.nextBreak()
     breakPlanner.on('startMiniBreakNotification', () => { startMiniBreakNotification() })
-    breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
+    breakPlanner.on('startLongBreakNotification', () => { startLongBreakNotification() })
     breakPlanner.on('startMiniBreak', () => { startMiniBreak() })
     breakPlanner.on('finishMiniBreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('miniBreakManualFinish')) {
@@ -454,14 +478,14 @@ async function initialize (isAppStart = true) {
       decreaseDanger(1)
       finishMiniBreak(shouldPlaySound, shouldPlanNext)
     })
-    breakPlanner.on('startBreak', () => { startBreak() })
-    breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext) => {
+    breakPlanner.on('startLongBreak', () => { startLongBreak() })
+    breakPlanner.on('finishLongBreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('longBreakManualFinish')) {
         enterLongBreakManualContinuation(shouldPlaySound)
         return
       }
       decreaseDanger(2)
-      finishBreak(shouldPlaySound, shouldPlanNext)
+      finishLongBreak(shouldPlaySound, shouldPlanNext)
     })
     breakPlanner.on('resumeBreaks', () => { resumeBreaks() })
     breakPlanner.on('updateToolTip', function () {
@@ -567,7 +591,7 @@ async function initialize (isAppStart = true) {
     log,
     globalShortcut,
     breakPlanner,
-    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMiniBreak, resetBreaks, startLastBreakAgain }
+    functions: { pauseBreaks, resumeBreaks, skipToLongBreak, skipToMiniBreak, resetBreaks, startLastBreakAgain }
   })
 
   updateTray()
@@ -837,8 +861,8 @@ function startMiniBreakNotification () {
   updateTray()
 }
 
-function startBreakNotification () {
-  showNotification(i18next.t('main.breakIn', { seconds: settings.get('breakNotificationInterval') / 1000 }))
+function startLongBreakNotification () {
+  showNotification(i18next.t('main.longBreakIn', { seconds: settings.get('longBreakNotificationInterval') / 1000 }))
   log.info('Stretchly: showing Long break notification')
   breakPlanner.nextBreakAfterNotification()
   updateTray()
@@ -1030,24 +1054,24 @@ function startMiniBreak () {
   }
 }
 
-function startBreak () {
-  if (breakWins) {
+function startLongBreak () {
+  if (longBreakWins) {
     log.warn('Stretchly: Long break already running, not starting Long break')
     return
   }
 
-  const breakDuration = settings.get('breakDuration')
-  const strictMode = settings.get('breakStrictMode')
-  const postponesLimit = settings.get('breakPostponesLimit')
-  const postponableDurationPercent = settings.get('breakPostponableDurationPercent')
-  const postponable = settings.get('breakPostpone') &&
+  const breakDuration = settings.get('longBreakDuration')
+  const strictMode = settings.get('longBreakStrictMode')
+  const postponesLimit = settings.get('longBreakPostponesLimit')
+  const postponableDurationPercent = settings.get('longBreakPostponableDurationPercent')
+  const postponable = settings.get('longBreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
-  const modalPath = 'file://' + join(__dirname, '/break.html')
-  breakWins = []
+  const modalPath = 'file://' + join(__dirname, '/longBreak.html')
+  longBreakWins = []
 
-  const defaultNextIdea = settings.get('ideas') ? breakIdeas.randomElement : ['', '']
+  const defaultNextIdea = settings.get('ideas') ? longBreakIdeas.randomElement : ['', '']
   const idea = nextIdea ? (nextIdea.map((val, index) => val || defaultNextIdea[index])) : defaultNextIdea
   nextIdea = null
   lastBreak = { type: 'long', idea }
@@ -1068,14 +1092,14 @@ function startBreak () {
         const passedPercent = (Date.now() - startTime) / breakDuration * 100
         if (passedPercent >= 100) {
           decreaseDanger(2)
-          finishBreak(false)
+          finishLongBreak(false)
           return
         }
         if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-          postponeBreak()
+          postponeLongBreak()
         } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
           increaseDanger(2)
-          finishBreak(false)
+          finishLongBreak(false)
         }
       })
     }
@@ -1110,7 +1134,7 @@ function startBreak () {
       titleBarStyle: process.platform === 'darwin' ? (showBreaksAsRegularWindows ? 'default' : 'hidden') : undefined,
       titleBarOverlay: process.platform === 'darwin' ? !showBreaksAsRegularWindows : undefined,
       webPreferences: {
-        preload: join(__dirname, './break-preload.mjs'),
+        preload: join(__dirname, './longBreak-preload.mjs'),
         sandbox: false
       }
     }
@@ -1125,67 +1149,67 @@ function startBreak () {
       windowOptions.y = displayManager.getDisplayY(localDisplayId, windowOptions.height, false)
     }
 
-    let breakWinLocal = new BrowserWindow(windowOptions)
+    let longBreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
-    breakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    longBreakWinLocal.setSize(windowOptions.width, windowOptions.height)
 
-    breakWinLocal.once('ready-to-show', () => {
+    longBreakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
     })
 
     const onLongBreakLoaded = (event) => {
-      if (event.sender !== breakWinLocal.webContents) return
+      if (event.sender !== longBreakWinLocal.webContents) return
       ipcMain.off('long-break-loaded', onLongBreakLoaded)
       log.info('Stretchly: Long break window loaded')
       if (showBreaksAsRegularWindows) {
-        breakWinLocal.show()
+        longBreakWinLocal.show()
       } else {
-        breakWinLocal.showInactive()
+        longBreakWinLocal.showInactive()
       }
 
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${displayManager.getDisplayCount()}`)
       if (process.platform === 'darwin') {
         if (showBreaksAsRegularWindows) {
-          breakWinLocal.setFullScreen(settings.get('fullscreen'))
+          longBreakWinLocal.setFullScreen(settings.get('fullscreen'))
         } else {
-          breakWinLocal.setMinimizable(false)
-          breakWinLocal.setClosable(false)
-          breakWinLocal.setKiosk(settings.get('fullscreen'))
+          longBreakWinLocal.setMinimizable(false)
+          longBreakWinLocal.setClosable(false)
+          longBreakWinLocal.setKiosk(settings.get('fullscreen'))
         }
       }
       if (localDisplayId === emitOnId) {
-        breakPlanner.emit('breakStarted', true)
+        breakPlanner.emit('longBreakStarted', true)
         log.info('Stretchly: starting Long break')
       }
 
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
-          breakWinLocal.center()
+          longBreakWinLocal.center()
         }, 0)
       }
       updateTray()
     }
     ipcMain.on('long-break-loaded', onLongBreakLoaded)
 
-    breakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
+    longBreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
     // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
     if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
-      breakWinLocal.setVisibleOnAllWorkspaces(true)
+      longBreakWinLocal.setVisibleOnAllWorkspaces(true)
     }
-    breakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
-    if (breakWinLocal) {
-      breakWinLocal.on('close', (e) => {
-        if (breakPlanner.scheduler.timeLeft > 0 && settings.get('breakStrictMode')) {
+    longBreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
+    if (longBreakWinLocal) {
+      longBreakWinLocal.on('close', (e) => {
+        if (breakPlanner.scheduler.timeLeft > 0 && settings.get('longBreakStrictMode')) {
           log.info('Stretchly: preventing closing break window as in strict mode')
           e.preventDefault()
         }
       })
-      breakWinLocal.once('closed', () => {
+      longBreakWinLocal.once('closed', () => {
         ipcMain.off('long-break-loaded', onLongBreakLoaded)
-        breakWinLocal = null
+        longBreakWinLocal = null
       })
     }
-    breakWins.push(breakWinLocal)
+    longBreakWins.push(longBreakWinLocal)
 
     if (!settings.get('allScreens')) {
       if (displayManager.getDisplayCount() > 1) {
@@ -1240,11 +1264,11 @@ function enterManualAwaitPhase (type, shouldPlaySound) {
     const audioKey = isMini ? 'miniBreakAudio' : 'longBreakAudio'
     processWin.webContents.send('play-sound', settings.get(audioKey), settings.get('volume'))
   }
-  const wins = isMini ? miniBreakWins : breakWins
+  const wins = isMini ? miniBreakWins : longBreakWins
   if (wins) {
     wins.forEach(w => {
       if (w && !w.isDestroyed()) {
-        w.webContents.send('enter-manual-await', isMini ? 'miniBreak' : 'break')
+        w.webContents.send('enter-manual-await', isMini ? 'miniBreak' : 'longBreak')
       }
     })
   }
@@ -1265,8 +1289,8 @@ function finishMiniBreak (shouldPlaySound = true, shouldPlanNext = true) {
   updateTray()
 }
 
-function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
-  breakWins = breakComplete(shouldPlaySound, breakWins, 'long')
+function finishLongBreak (shouldPlaySound = true, shouldPlanNext = true) {
+  longBreakWins = breakComplete(shouldPlaySound, longBreakWins, 'long')
   log.info(`Stretchly: finishing Long break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
@@ -1284,9 +1308,9 @@ function postponeMiniBreak () {
   updateTray()
 }
 
-function postponeBreak () {
+function postponeLongBreak () {
   increaseDanger(1)
-  breakWins = breakComplete(false, breakWins, 'long')
+  longBreakWins = breakComplete(false, longBreakWins, 'long')
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Long break')
   updateTray()
@@ -1297,9 +1321,9 @@ function skipToMiniBreak (delay) {
     increaseDanger(1)
     miniBreakWins = breakComplete(false, miniBreakWins)
   }
-  if (breakWins) {
+  if (longBreakWins) {
     increaseDanger(2)
-    breakWins = breakComplete(false, breakWins)
+    longBreakWins = breakComplete(false, longBreakWins)
   }
   if (delay) {
     breakPlanner.skipToMiniBreak(delay)
@@ -1311,20 +1335,20 @@ function skipToMiniBreak (delay) {
   updateTray()
 }
 
-function skipToBreak (delay) {
+function skipToLongBreak (delay) {
   if (miniBreakWins) {
     increaseDanger(1)
     miniBreakWins = breakComplete(false, miniBreakWins)
   }
-  if (breakWins) {
+  if (longBreakWins) {
     increaseDanger(2)
-    breakWins = breakComplete(false, breakWins)
+    longBreakWins = breakComplete(false, longBreakWins)
   }
   if (delay) {
-    breakPlanner.skipToBreak(delay)
+    breakPlanner.skipToLongBreak(delay)
     log.info(`Stretchly: skipping to Long break in ${delay}ms`)
   } else {
-    breakPlanner.skipToBreak()
+    breakPlanner.skipToLongBreak()
     log.info('Stretchly: skipping to Long break')
   }
   updateTray()
@@ -1335,7 +1359,7 @@ function startLastBreakAgain () {
     log.info('Stretchly: no last break to start again')
     return
   }
-  if (miniBreakWins || breakWins) {
+  if (miniBreakWins || longBreakWins) {
     log.info('Stretchly: not starting last break again, a break is running')
     return
   }
@@ -1347,7 +1371,7 @@ function startLastBreakAgain () {
   if (lastBreak.type === 'mini') {
     skipToMiniBreak()
   } else {
-    skipToBreak()
+    skipToLongBreak()
   }
 }
 
@@ -1355,8 +1379,8 @@ function resetBreaks () {
   if (miniBreakWins) {
     miniBreakWins = breakComplete(false, miniBreakWins)
   }
-  if (breakWins) {
-    breakWins = breakComplete(false, breakWins)
+  if (longBreakWins) {
+    longBreakWins = breakComplete(false, longBreakWins)
   }
   danger = 0
   log.info(`Stretchly: danger reset to ${danger}`)
@@ -1377,7 +1401,7 @@ function loadIdeas () {
   let longBreakIdeasData
   let miniBreakIdeasData
   if (settings.get('useIdeasFromSettings')) {
-    longBreakIdeasData = settings.get('breakIdeas')
+    longBreakIdeasData = settings.get('longBreakIdeas')
     miniBreakIdeasData = settings.get('miniBreakIdeas')
     log.info('Stretchly: loading custom break ideas from preferences file')
   } else {
@@ -1396,7 +1420,7 @@ function loadIdeas () {
     log.info('Stretchly: loading default break ideas')
   }
 
-  breakIdeas = new IdeasLoader(longBreakIdeasData).ideas()
+  longBreakIdeas = new IdeasLoader(longBreakIdeasData).ideas()
   miniBreakIdeas = new IdeasLoader(miniBreakIdeasData).ideas()
 }
 
@@ -1405,9 +1429,9 @@ function pauseBreaks (milliseconds) {
     increaseDanger(1)
     finishMiniBreak(false)
   }
-  if (breakWins) {
+  if (longBreakWins) {
     increaseDanger(2)
-    finishBreak(false)
+    finishLongBreak(false)
   }
   breakPlanner.pause(milliseconds)
   log.info(`Stretchly: pausing breaks for ${milliseconds}ms`)
@@ -1541,7 +1565,7 @@ function getTrayMenuTemplate () {
 
   if ((breakPlanner.scheduler.reference === 'finishMiniBreak' && settings.get('miniBreakStrictMode') &&
         !settings.get('showTrayMenuInStrictMode')) ||
-      (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
+      (breakPlanner.scheduler.reference === 'finishLongBreak' && settings.get('longBreakStrictMode') &&
       !settings.get('showTrayMenuInStrictMode'))
   ) {
     // empty menu, we are in strict mode
@@ -1557,14 +1581,14 @@ function getTrayMenuTemplate () {
         click: () => skipToMiniBreak()
       }])
     }
-    if (settings.get('break')) {
+    if (settings.get('longBreak')) {
       submenu = submenu.concat([{
-        label: i18next.t('main.toBreak'),
+        label: i18next.t('main.toLongBreak'),
         accelerator: settings.get('skipToNextLongBreakShortcut') || null,
-        click: () => skipToBreak()
+        click: () => skipToLongBreak()
       }])
     }
-    if (settings.get('break') || settings.get('miniBreak')) {
+    if (settings.get('longBreak') || settings.get('miniBreak')) {
       trayMenu.push({
         label: i18next.t('main.skipToTheNext'),
         submenu
@@ -1676,7 +1700,7 @@ ipcMain.on('postpone-mini-break', function (event, source = 'button') {
 
 ipcMain.on('postpone-long-break', function (event, source = 'button') {
   log.info(`Stretchly: postponement requested during Long break (source: ${source})`)
-  postponeBreak()
+  postponeLongBreak()
 })
 
 ipcMain.on('finish-mini-break', function (event, shouldPlaySound, manualAwaiting, source = 'button') {
@@ -1696,7 +1720,7 @@ ipcMain.on('finish-long-break', function (event, shouldPlaySound, manualAwaiting
   } else {
     increaseDanger(2)
   }
-  finishBreak(shouldPlaySound)
+  finishLongBreak(shouldPlaySound)
 })
 
 ipcMain.on('save-setting', function (event, key, value) {

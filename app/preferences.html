@@ -218,12 +218,12 @@
       </p>
     </div>
     <div>
-      <input type="checkbox" class="enabletype" value="break" id="enableLongBreaks">
+      <input type="checkbox" class="enabletype" value="longBreak" id="enableLongBreaks">
       <label data-i18next="preferences.schedule.enableLongBreaks" for="enableLongBreaks"></label>
     </div>
     <div>
       <label data-i18next="preferences.schedule.breakFor" data-same-width-label for="longBreakFor"></label>
-      <input type="range" min="1" max="60" step="1" list="tickmarksLongBreakFor" name="breakDuration"
+      <input type="range" min="1" max="60" step="1" list="tickmarksLongBreakFor" name="longBreakDuration"
         data-divisor="60000" id="longBreakFor">
       <datalist id="tickmarksLongBreakFor">
         <option value="10"></option>
@@ -236,7 +236,7 @@
     </div>
     <div>
       <label data-i18next="preferences.schedule.every" data-same-width-label for="longBreakEvery"></label>
-      <input type="range" min="1" max="30" step="1" list="tickmarksLongBreakEvery" name="breakInterval" data-divisor="1"
+      <input type="range" min="1" max="30" step="1" list="tickmarksLongBreakEvery" name="longBreakInterval" data-divisor="1"
         id="longBreakEvery">
       <datalist id="tickmarksLongBreakEvery">
         <option value="5"></option>
@@ -249,12 +249,12 @@
       <output data-unit="minutes"></output>
     </div>
     <div>
-      <input type="checkbox" value="breakNotification" id="showNotificationBeforeLongBreak">
+      <input type="checkbox" value="longBreakNotification" id="showNotificationBeforeLongBreak">
       <label data-i18next="preferences.schedule.showNotificationBeforeLongBreak"
         for="showNotificationBeforeLongBreak"></label>
     </div>
     <div>
-      <input type="checkbox" value="breakPostpone" id="enablePostponeLong">
+      <input type="checkbox" value="longBreakPostpone" id="enablePostponeLong">
       <label data-i18next="preferences.schedule.enablePostponeLong" for="enablePostponeLong"></label>
     </div>
     <div data-strict-mode>
@@ -273,7 +273,7 @@
       <label data-i18next="preferences.schedule.enableStrictMini" for="enableStrictMini"></label>
     </div>
     <div data-strict-mode>
-      <input type="checkbox" value="breakStrictMode" id="enableStrictLong">
+      <input type="checkbox" value="longBreakStrictMode" id="enableStrictLong">
       <label data-i18next="preferences.schedule.enableStrictLong" for="enableStrictLong"></label>
     </div>
   </div>
@@ -383,7 +383,7 @@
       <input type="checkbox" value="checkNewVersion" id="checkNewVersion">
       <label data-i18next="preferences.about.checkNewVersion" for="checkNewVersion"></label>
       <br />(<span data-i18next="preferences.about.latestVersion"></span>
-      <span class="latestVersion"></span>)
+      <span class="latest-version"></span>)
     </div>
     <div>
       <img src="images/preferences/home.svg" data-has-dark-version alt="Home">

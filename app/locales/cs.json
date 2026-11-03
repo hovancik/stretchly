@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly – Pamatuje na přestávky za vás",
     "miniBreakIn": "Krátká přestávka za $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Dlouhá přestávka za $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Dlouhá přestávka za $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Obnovení přestávek",
     "downloadLatestVersion": "Stáhnout nejnovější verzi",
-    "toBreak": "Dlouhou přestávku",
+    "toLongBreak": "Dlouhou přestávku",
     "toMiniBreak": "Krátkou přestávku",
     "skipToTheNext": "Přeskočit na další",
     "resume": "Pokračovat v přestávkách",

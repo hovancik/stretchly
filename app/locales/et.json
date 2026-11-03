@@ -463,7 +463,7 @@
   "main": {
     "skipToTheNext": "Liigu järgmisele",
     "downloadLatestVersion": "Lae alla uusim versioon",
-    "toBreak": "Pikk paus",
+    "toLongBreak": "Pikk paus",
     "restoreDefaults": "Taasta vaikesätted",
     "syncPreferences": "Sünkroniseerimise seaded",
     "preferences": "Eelistused",
@@ -478,7 +478,7 @@
     "contributorPreferences": "Kaasautorite eelistused",
     "quitStretchly": "Sulge Stretchly",
     "toolTipHeader": "Stretchly - Puhkehetkede meeldetuletusrakendus",
-    "breakIn": "Pika pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Pika pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })",
     "resetBreaks": "Lähtesta pausid",
     "resumingBreaks": "Pauside jätkamine",
     "miniBreakIn": "Lühikese pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })"

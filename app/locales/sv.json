@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly – appen för pauspåminnelser",
     "miniBreakIn": "Kort paus om $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Lång paus om $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Lång paus om $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Återupptar pauser",
     "downloadLatestVersion": "Hämta den senaste versionen",
-    "toBreak": "Ta en lång paus",
+    "toLongBreak": "Ta en lång paus",
     "toMiniBreak": "Ta en kort paus",
     "skipToTheNext": "Hoppa till nästa",
     "resume": "Återuppta pauser",

@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly - The break time reminder app",
     "miniBreakIn": "Mini break in $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Long break in $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Long break in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Resuming breaks",
     "downloadLatestVersion": "Download latest version",
-    "toBreak": "Long break",
+    "toLongBreak": "Long break",
     "toMiniBreak": "Mini break",
     "skipToTheNext": "Skip to the next",
     "resume": "Resume breaks",

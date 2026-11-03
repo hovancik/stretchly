@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "સ્ટ્રેચલી - વિરામ સમય યાદ કરાવતી એપ્લિકેશન",
     "miniBreakIn": "લઘુ વિરામ $t(utils.seconds, {'count': {{seconds}} }) માં",
-    "breakIn": "લાંબો વિરામ $t(utils.seconds, {'count': {{seconds}} }) માં",
+    "longBreakIn": "લાંબો વિરામ $t(utils.seconds, {'count': {{seconds}} }) માં",
     "resumingBreaks": "વિરામ ફરી શરૂ થાય છે",
     "downloadLatestVersion": "નવીનતમ સંસ્કરણ ડાઉનલોડ કરો",
-    "toBreak": "લાંબો વિરામ",
+    "toLongBreak": "લાંબો વિરામ",
     "toMiniBreak": "લઘુ વિરામ",
     "skipToTheNext": "આગલા પર જાઓ",
     "resume": "વિરામ ફરી શરૂ કરો",

@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "ਸਟ੍ਰੈਚਲੀ - ਬਰੇਕ ਟਾਈਮ ਰੀਮਾਈਂਡਰ ਐਪਲੀਕੇਸ਼ਨ",
     "miniBreakIn": "ਛੋਟਾ ਵਿਰਾਮ $t(utils.seconds, {'count': {{seconds}} }) ਵਿਚ",
-    "breakIn": "ਲੰਮਾ ਵਿਰਾਮ $t(utils.seconds, {'count': {{seconds}} }) ਵਿਚ",
+    "longBreakIn": "ਲੰਮਾ ਵਿਰਾਮ $t(utils.seconds, {'count': {{seconds}} }) ਵਿਚ",
     "resumingBreaks": "ਵਿਰਾਮ ਮੁੜ ਸ਼ੁਰੂ ਹੋਇਆ",
     "downloadLatestVersion": "ਨਵੀਨਤਮ ਵਰਜਨ ਡਾਨਲੋਡ ਕਰੋ",
-    "toBreak": "ਲੰਮਾ ਵਿਰਾਮ",
+    "toLongBreak": "ਲੰਮਾ ਵਿਰਾਮ",
     "toMiniBreak": "ਛੋਟਾ ਵਿਰਾਮ",
     "skipToTheNext": "ਅਗਲੇ ਤੇ ਜਾਓ",
     "resume": "ਵਿਰਾਮ ਮੁੜ",

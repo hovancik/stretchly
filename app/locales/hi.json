@@ -19,8 +19,8 @@
     "continue": "जारी रखें",
     "warning": "यह डिफॉल्ट्स को पुनर्स्थापित कर देगा और आपकी सभी सेटिंग्स खो जाएंगी।",
     "restoreDefaults": "डिफॉल्ट्स का पुनःस्थापन",
-    "toBreak": "लंबा विराम",
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) सेकंड में एक लंबा विराम"
+    "toLongBreak": "लंबा विराम",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) सेकंड में एक लंबा विराम"
   },
   "break": {
     "title": "ब्रेक लेने का समय आ गया है!",

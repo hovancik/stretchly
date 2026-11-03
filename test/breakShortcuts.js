@@ -56,28 +56,28 @@ describe('breakShortcuts', () => {
     describe('skipToNextScheduledBreakShortcut', () => {
       it('skips to next scheduled break', () => {
         const log = { info: vi.fn() }
-        const skipToBreak = vi.fn()
+        const skipToLongBreak = vi.fn()
         const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
-        const breakPlanner = { _scheduledBreakType: 'break' }
+        const breakPlanner = { _scheduledBreakType: 'longBreak' }
 
         onShortcut({
           name: 'skipToNextScheduledBreakShortcut',
           settings: null,
           breakPlanner,
-          functions: { skipToBreak, skipToMiniBreak, pauseBreaks },
+          functions: { skipToLongBreak, skipToMiniBreak, pauseBreaks },
           log
         })
 
         expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next scheduled break by shortcut')
-        expect(skipToBreak).toHaveBeenCalled()
+        expect(skipToLongBreak).toHaveBeenCalled()
         expect(skipToMiniBreak).not.toHaveBeenCalled()
         expect(pauseBreaks).not.toHaveBeenCalled()
       })
 
       it('skips to next scheduled Mini break', () => {
         const log = { info: vi.fn() }
-        const skipToBreak = vi.fn()
+        const skipToLongBreak = vi.fn()
         const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
         const breakPlanner = { _scheduledBreakType: 'miniBreak' }
@@ -86,12 +86,12 @@ describe('breakShortcuts', () => {
           name: 'skipToNextScheduledBreakShortcut',
           settings: null,
           breakPlanner,
-          functions: { skipToBreak, skipToMiniBreak, pauseBreaks },
+          functions: { skipToLongBreak, skipToMiniBreak, pauseBreaks },
           log
         })
 
         expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next scheduled break by shortcut')
-        expect(skipToBreak).not.toHaveBeenCalled()
+        expect(skipToLongBreak).not.toHaveBeenCalled()
         expect(skipToMiniBreak).toHaveBeenCalled()
         expect(pauseBreaks).not.toHaveBeenCalled()
       })
@@ -140,19 +140,19 @@ describe('breakShortcuts', () => {
     describe('skipToNextLongBreakShortcut', () => {
       it('skips to next scheduled long break', () => {
         const log = { info: vi.fn() }
-        const skipToBreak = vi.fn()
+        const skipToLongBreak = vi.fn()
         const pauseBreaks = vi.fn()
 
         onShortcut({
           name: 'skipToNextLongBreakShortcut',
           settings: null,
           breakPlanner: null,
-          functions: { skipToBreak, pauseBreaks },
+          functions: { skipToLongBreak, pauseBreaks },
           log
         })
 
         expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next Long break by shortcut')
-        expect(skipToBreak).toHaveBeenCalled()
+        expect(skipToLongBreak).toHaveBeenCalled()
         expect(pauseBreaks).not.toHaveBeenCalled()
       })
     })

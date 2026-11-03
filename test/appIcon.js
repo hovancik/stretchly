@@ -1391,7 +1391,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'finishBreak'
+      reference: 'finishLongBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')

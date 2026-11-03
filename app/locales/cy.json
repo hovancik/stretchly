@@ -1,12 +1,12 @@
 {
   "main": {
-    "breakIn": "Egwyl hir mewn $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Egwyl hir mewn $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Yr app atgoffa am saib",
     "miniBreakIn": "Egwyl byr mewn $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Ailgychwyn seibiau",
     "downloadLatestVersion": "Lawrlwythwch y fersiwn ddiweddaraf",
     "skipToTheNext": "Neidio i'r nesaf",
-    "toBreak": "egwyl hir",
+    "toLongBreak": "egwyl hir",
     "toMiniBreak": "egwyl byr",
     "resume": "Seibiannau ailgychwyn"
   }

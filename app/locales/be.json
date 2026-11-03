@@ -2,7 +2,7 @@
   "main": {
     "skipToTheNext": "Пачаць наступны",
     "downloadLatestVersion": "Спампаваць апошнюю версію",
-    "toBreak": "Доўгі перапынак",
+    "toLongBreak": "Доўгі перапынак",
     "restoreDefaults": "Аднавіць прадвызначаныя налады",
     "preferences": "Параметры",
     "pause": "Паўза",
@@ -15,7 +15,7 @@
     "toMiniBreak": "Кароткі перапынак",
     "quitStretchly": "Выйсьці",
     "toolTipHeader": "Stretchly - Праграма напамінаў пра перапынкі",
-    "breakIn": "Доўгі перапынак праз $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Доўгі перапынак праз $t(utils.seconds, {'count': {{seconds}} })",
     "resetBreaks": "Скінуць таймер перапынкаў",
     "resumingBreaks": "Аднаўленне перапынкаў",
     "miniBreakIn": "Кароткі перапынак праз $t(utils.seconds, {'count': {{seconds}} })",

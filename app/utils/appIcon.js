@@ -27,7 +27,7 @@ class AppIcon {
     const darkModeString = this.darkMode ? 'Dark' : ''
     let suffixString = ''
 
-    if (!(this.paused || this.reference === 'finishMiniBreak' || this.reference === 'finishBreak')) {
+    if (!(this.paused || this.reference === 'finishMiniBreak' || this.reference === 'finishLongBreak')) {
       if (this.trayIconStyle === 'progress' && Number.isInteger(this.percentage) && this.percentage >= 0 && this.percentage <= 100) {
         suffixString = `Progress${this.percentage}`
       } else if (this.trayIconStyle === 'time' && Number.isInteger(this.timeToBreak) && this.timeToBreak >= 0 && this.timeToBreak <= 99) {

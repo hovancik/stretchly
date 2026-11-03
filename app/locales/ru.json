@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly — напоминания о перерывах",
     "miniBreakIn": "Мини-перерыв через $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Длинный перерыв через $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Длинный перерыв через $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Продолжаем перерывы",
     "downloadLatestVersion": "Загрузить последнюю версию",
-    "toBreak": "длинный перерыв",
+    "toLongBreak": "длинный перерыв",
     "toMiniBreak": "мини-перерыв",
     "skipToTheNext": "Перейти к ближайшему",
     "resume": "Возобновить перерывы",

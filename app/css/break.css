@@ -50,19 +50,19 @@ body.break-health-mode {
   margin-top: 50px;
 }
 
-.breaks > :nth-child(1) >  .miniBreak-idea {
+.breaks > :nth-child(1) >  .mini-break-idea {
   font-size: 30px;
   letter-spacing: 0.44px;
   line-height: 46px;
 }
 
-.breaks > :nth-child(1) >  .break-idea {
+.breaks > :nth-child(1) >  .long-break-idea {
   font-size: 36px;
   letter-spacing: 0.52px;
   line-height: 49px;
 }
 
-.breaks > :nth-child(1) >  .break-text {
+.breaks > :nth-child(1) >  .long-break-text {
   font-size: 24px;
   letter-spacing: 0.35px;
   line-height: 33px;

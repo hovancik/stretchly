@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly - Taukomuistutussovellus",
     "miniBreakIn": "Minitauko $t(utils.seconds, {'count': {{seconds}} }) kuluttua",
-    "breakIn": "Pitkä tauko $t(utils.seconds, {'count': {{seconds}} }) kuluttua",
+    "longBreakIn": "Pitkä tauko $t(utils.seconds, {'count': {{seconds}} }) kuluttua",
     "resumingBreaks": "Jatketaan taukoja",
     "downloadLatestVersion": "Lataa uusin versio",
-    "toBreak": "Pitkä tauko",
+    "toLongBreak": "Pitkä tauko",
     "toMiniBreak": "Minitauko",
     "skipToTheNext": "Siirry seuraavaan",
     "resume": "Jatka taukoja",

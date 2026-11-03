@@ -2,10 +2,10 @@
   "main": {
     "toolTipHeader": "Stretchly - Pause påmindelses app",
     "miniBreakIn": "Mini pause om $t(utils.seconds, {'count': {{seconds}} })",
-    "breakIn": "Pause om $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Pause om $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Genoptag pauser",
     "downloadLatestVersion": "Hent den nyeste version",
-    "toBreak": "Pause",
+    "toLongBreak": "Pause",
     "toMiniBreak": "Mini pause",
     "skipToTheNext": "Spring til næste..",
     "resume": "Genoptag",

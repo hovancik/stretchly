@@ -201,10 +201,10 @@
     "resume": "Gjenoppta pauser",
     "skipToTheNext": "Gå til neste",
     "toMiniBreak": "Minipause",
-    "toBreak": "Lang pause",
+    "toLongBreak": "Lang pause",
     "downloadLatestVersion": "Last ned siste versjon",
     "resumingBreaks": "Gjenopptar pauser",
-    "breakIn": "Lang pause om $t(utils.seconds, {'count': {{seconds}} })",
+    "longBreakIn": "Lang pause om $t(utils.seconds, {'count': {{seconds}} })",
     "miniBreakIn": "Minipause om $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Pausepåminnelsesprogrammet"
   },
