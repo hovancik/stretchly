@@ -338,8 +338,8 @@ window.onload = async (e) => {
   }
 
   function realBreakInterval () {
-    const microbreakInterval = document.querySelector('#miniBreakEvery').value * 1
+    const miniBreakInterval = document.querySelector('#miniBreakEvery').value * 1
     const breakInterval = document.querySelector('#longBreakEvery').value * 1
-    return microbreakInterval * (breakInterval + 1)
+    return miniBreakInterval * (breakInterval + 1)
   }
 }

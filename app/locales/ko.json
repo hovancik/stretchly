@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - 휴식 시간 알림 앱",
-    "microbreakIn": "짧은 휴식까지 $t(utils.seconds, {'count': {{seconds}} }) 남음",
+    "miniBreakIn": "짧은 휴식까지 $t(utils.seconds, {'count': {{seconds}} }) 남음",
     "breakIn": "긴 휴식까지 $t(utils.seconds, {'count': {{seconds}} }) 남음",
     "resumingBreaks": "휴식 재개",
     "downloadLatestVersion": "최신 버전 다운로드",
     "toBreak": "긴 휴식",
-    "toMicrobreak": "짧은 휴식",
+    "toMiniBreak": "짧은 휴식",
     "skipToTheNext": "다음으로 건너뛰기",
     "resume": "휴식 재개",
     "pause": "일시 중지",

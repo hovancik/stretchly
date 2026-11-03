@@ -1,7 +1,7 @@
 {
   "main": {
-    "toMicrobreak": "சிறிய இடைவேளை",
-    "microbreakIn": "சிறிய இடைவேளை இன்னும் $t(utils.seconds, {'count': {{seconds}} }) நேரத்தில்",
+    "toMiniBreak": "சிறிய இடைவேளை",
+    "miniBreakIn": "சிறிய இடைவேளை இன்னும் $t(utils.seconds, {'count': {{seconds}} }) நேரத்தில்",
     "skipToTheNext": "நேரடியாக அடுத்து செல்லவும்",
     "toolTipHeader": "Stretchly - இடைவேளை நினைவூட்டும் செயலி",
     "breakIn": "நீண்ட இடைவேளை இன்னும் $t(utils.seconds, {'count': {{seconds}} }) நேரத்தில்",

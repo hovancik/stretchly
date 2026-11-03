@@ -2,10 +2,10 @@
   "main": {
     "breakIn": "Μεγάλο διάλυμα σε $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Η εφαρμογή υπενθύμισης διαλυμάτων",
-    "microbreakIn": "Μικρό διάλυμα σε $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Μικρό διάλυμα σε $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Συνέχιση των διαλειμμάτων",
     "toBreak": "Μεγάλο διάλειμμα",
-    "toMicrobreak": "Μίνι διάλειμμα",
+    "toMiniBreak": "Μίνι διάλειμμα",
     "skipToTheNext": "Μετάβαση στο επόμενο",
     "resume": "Συνέχιση διαλειμμάτων",
     "untilMorning": "Μέχρι το πρωί",

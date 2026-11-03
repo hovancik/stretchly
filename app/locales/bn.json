@@ -9,8 +9,8 @@
     "pause": "বিরতি থামান",
     "untilMorning": "সকাল অবধি",
     "toolTipHeader": "স্ট্রেচলি - বিরতির সময় মনে করানোর অ্যাপ",
-    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে ছোটো বিরতি",
-    "toMicrobreak": "ছোটো বিরতি",
+    "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে ছোটো বিরতি",
+    "toMiniBreak": "ছোটো বিরতি",
     "indefinitely": "অনির্দিষ্ট কালের জন্যে"
   }
 }

@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - A aplicación para lembrar acougar",
-    "microbreakIn": "Repouso pequeno en $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Repouso pequeno en $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Repouso longo en $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "A retomar os descansos",
     "downloadLatestVersion": "Baixar a última versión",
     "toBreak": "Repouso longo",
-    "toMicrobreak": "Repouso pequeno",
+    "toMiniBreak": "Repouso pequeno",
     "skipToTheNext": "Saltar ao seguinte",
     "resume": "Retomar repousos",
     "pause": "Pausar repousos",

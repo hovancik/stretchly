@@ -2,7 +2,7 @@ import { vi } from 'vitest'
 import { expect } from 'chai'
 import { calculateInterval, registerBreakShortcuts, setupBreak, onShortcut } from '../app/utils/breakShortcuts'
 
-describe('pauseBreaksShortcut', () => {
+describe('breakShortcuts', () => {
   describe('calculateInterval', () => {
     it('should return correct interval for pauseBreaksUntilMorningShortcut', () => {
       const settings = { get: () => 6 }
@@ -57,7 +57,7 @@ describe('pauseBreaksShortcut', () => {
       it('skips to next scheduled break', () => {
         const log = { info: vi.fn() }
         const skipToBreak = vi.fn()
-        const skipToMicrobreak = vi.fn()
+        const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
         const breakPlanner = { _scheduledBreakType: 'break' }
 
@@ -65,34 +65,34 @@ describe('pauseBreaksShortcut', () => {
           name: 'skipToNextScheduledBreakShortcut',
           settings: null,
           breakPlanner,
-          functions: { skipToBreak, skipToMicrobreak, pauseBreaks },
+          functions: { skipToBreak, skipToMiniBreak, pauseBreaks },
           log
         })
 
         expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next scheduled break by shortcut')
         expect(skipToBreak).toHaveBeenCalled()
-        expect(skipToMicrobreak).not.toHaveBeenCalled()
+        expect(skipToMiniBreak).not.toHaveBeenCalled()
         expect(pauseBreaks).not.toHaveBeenCalled()
       })
 
-      it('skips to next scheduled microbreak', () => {
+      it('skips to next scheduled Mini break', () => {
         const log = { info: vi.fn() }
         const skipToBreak = vi.fn()
-        const skipToMicrobreak = vi.fn()
+        const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
-        const breakPlanner = { _scheduledBreakType: 'microbreak' }
+        const breakPlanner = { _scheduledBreakType: 'miniBreak' }
 
         onShortcut({
           name: 'skipToNextScheduledBreakShortcut',
           settings: null,
           breakPlanner,
-          functions: { skipToBreak, skipToMicrobreak, pauseBreaks },
+          functions: { skipToBreak, skipToMiniBreak, pauseBreaks },
           log
         })
 
         expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next scheduled break by shortcut')
         expect(skipToBreak).not.toHaveBeenCalled()
-        expect(skipToMicrobreak).toHaveBeenCalled()
+        expect(skipToMiniBreak).toHaveBeenCalled()
         expect(pauseBreaks).not.toHaveBeenCalled()
       })
     })
@@ -158,21 +158,21 @@ describe('pauseBreaksShortcut', () => {
     })
 
     describe('skipToNextMiniBreakShortcut', () => {
-      it('skips to next scheduled microbreak', () => {
+      it('skips to next scheduled Mini break', () => {
         const log = { info: vi.fn() }
-        const skipToMicrobreak = vi.fn()
+        const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
 
         onShortcut({
           name: 'skipToNextMiniBreakShortcut',
           settings: null,
           breakPlanner: null,
-          functions: { skipToMicrobreak, pauseBreaks },
+          functions: { skipToMiniBreak, pauseBreaks },
           log
         })
 
         expect(log.info).toHaveBeenCalledWith('Stretchly: skipping to next Mini break by shortcut')
-        expect(skipToMicrobreak).toHaveBeenCalled()
+        expect(skipToMiniBreak).toHaveBeenCalled()
         expect(pauseBreaks).not.toHaveBeenCalled()
       })
     })

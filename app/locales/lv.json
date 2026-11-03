@@ -73,12 +73,12 @@
     "pause": "Apturēt pārtraukumus",
     "resume": "Atsākt pārtraukumus",
     "toBreak": "Garo pārtraukums",
-    "toMicrobreak": "Īso pātraukumu",
+    "toMiniBreak": "Īso pātraukumu",
     "skipToTheNext": "Uzsākt nākamo",
     "downloadLatestVersion": "Lejupielādēt jaunāko versiju",
     "resumingBreaks": "Pārtraukumi tiek atsākti",
     "breakIn": "Garais pārtraukums pēc $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "Mazais pārtraukums pēc $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Mazais pārtraukums pēc $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Pārtraukumu atgādinātājs"
   },
   "statusMessages": {

@@ -474,14 +474,14 @@
     "untilMorning": "Kuni hommikuni",
     "resume": "Jätka pausidega",
     "cancel": "Katkesta",
-    "toMicrobreak": "Lühike paus",
+    "toMiniBreak": "Lühike paus",
     "contributorPreferences": "Kaasautorite eelistused",
     "quitStretchly": "Sulge Stretchly",
     "toolTipHeader": "Stretchly - Puhkehetkede meeldetuletusrakendus",
     "breakIn": "Pika pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })",
     "resetBreaks": "Lähtesta pausid",
     "resumingBreaks": "Pauside jätkamine",
-    "microbreakIn": "Lühikese pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })"
+    "miniBreakIn": "Lühikese pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })"
   },
   "utils": {
     "percent_one": "{{count}} protsenti",

@@ -109,11 +109,11 @@
     "pause": "השהיית ההפסקות",
     "resume": "חידוש ההפסקות",
     "skipToTheNext": "דילוג להפסקה הבאה",
-    "toMicrobreak": "הפסקה קצרה",
+    "toMiniBreak": "הפסקה קצרה",
     "toBreak": "הפסקה ארוכה",
     "downloadLatestVersion": "הורדת הגרסה העדכנית",
     "breakIn": "הפסקה ארוכה בעוד $t(utils.seconds, {'count': {{seconds}} })",
-    "microbreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "הפסקה קצרה בעוד $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "חידוש ההפסקות",
     "toolTipHeader": "‏Stretchly - היישום שמזכיר לך לקחת הפסקה"
   },

@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - Aplicación para notificar cuándo hacer descansos",
-    "microbreakIn": "Descanso corto en $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Descanso corto en $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Descanso largo en $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Reanudando descansos",
     "downloadLatestVersion": "Descarga la última versión",
     "toBreak": "Descanso largo",
-    "toMicrobreak": "Descanso corto",
+    "toMiniBreak": "Descanso corto",
     "skipToTheNext": "Saltar hasta el siguiente",
     "resume": "Reanudar descansos",
     "pause": "Pausar descansos",

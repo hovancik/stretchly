@@ -2,7 +2,7 @@
   "main": {
     "resumingBreaks": "Tiếp tục giải lao",
     "toBreak": "Khoảng giải lao DÀI",
-    "toMicrobreak": "Khoảng giải lao NGẮN",
+    "toMiniBreak": "Khoảng giải lao NGẮN",
     "resume": "Tiếp tục giải lao",
     "untilMorning": "Tới sáng mai",
     "indefinitely": "Không thời hạn",
@@ -12,7 +12,7 @@
     "contributorPreferences": "Tuỳ chọn Cộng tác viên",
     "syncPreferences": "Đồng bộ tuỳ chọn",
     "toolTipHeader": "Stretchly - Ứng dụng nhắc giờ giải lao",
-    "microbreakIn": "Khoảng giải lao NGẮN sẽ bắt đầu sau $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Khoảng giải lao NGẮN sẽ bắt đầu sau $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Khoảng giải lao DÀI sẽ bắt đầu sau $t(utils.seconds, {'count': {{seconds}} })",
     "downloadLatestVersion": "Tải phiên bản mới nhất",
     "skipToTheNext": "Chuyển khoảng giải lao tiếp theo",

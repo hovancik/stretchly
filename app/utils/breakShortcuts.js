@@ -36,13 +36,13 @@ function onShortcut ({ name, duration, settings, log, breakPlanner, functions })
       log.info('Stretchly: skipping to next scheduled break by shortcut')
       if (breakPlanner._scheduledBreakType === 'break') {
         functions.skipToBreak()
-      } else if (breakPlanner._scheduledBreakType === 'microbreak') {
-        functions.skipToMicrobreak()
+      } else if (breakPlanner._scheduledBreakType === 'miniBreak') {
+        functions.skipToMiniBreak()
       }
       break
     case 'skipToNextMiniBreakShortcut':
       log.info('Stretchly: skipping to next Mini break by shortcut')
-      functions.skipToMicrobreak()
+      functions.skipToMiniBreak()
       break
     case 'skipToNextLongBreakShortcut':
       log.info('Stretchly: skipping to next Long break by shortcut')

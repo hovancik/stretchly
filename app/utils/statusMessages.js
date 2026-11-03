@@ -16,7 +16,7 @@ class StatusMessages {
 
   get trayMessage () {
     let message = ''
-    if (this.reference === 'finishMicrobreak' || this.reference === 'finishBreak') {
+    if (this.reference === 'finishMiniBreak' || this.reference === 'finishBreak') {
       return message
     }
 
@@ -52,7 +52,7 @@ class StatusMessages {
       return message
     }
 
-    if (this.reference === 'startMicrobreak' || this.reference === 'startMicrobreakNotification') {
+    if (this.reference === 'startMiniBreak' || this.reference === 'startMiniBreakNotification') {
       message += this.i18next.t('statusMessages.nextMiniBreak') + ' ' +
         formatTimeIn(this.timeToNextBreak, this.settings.get('language'), this.i18next, this.humanizeDuration)
       if (this.settings.get('break')) {

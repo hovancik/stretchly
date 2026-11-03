@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - L'app che ti ricorda quando prenderti una pausa",
-    "microbreakIn": "Mini-Pausa fra $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Mini-Pausa fra $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Pausa fra $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Riattiva pause",
     "downloadLatestVersion": "Scarica l'ultima versione",
     "toBreak": "Pausa",
-    "toMicrobreak": "Mini-Pausa",
+    "toMiniBreak": "Mini-Pausa",
     "skipToTheNext": "Salta alla prossima",
     "resume": "Riprendi",
     "pause": "Pausa",

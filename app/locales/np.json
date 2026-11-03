@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - ब्रेक समय रिमाइन्डर एप्लिकेशन",
-    "microbreakIn": "अर्को छोटो ब्रेक पुनः $t(utils.seconds, {'count': {{seconds}} }) मा सुरु हुन्छ । ",
+    "miniBreakIn": "अर्को छोटो ब्रेक पुनः $t(utils.seconds, {'count': {{seconds}} }) मा सुरु हुन्छ । ",
     "breakIn": "अर्को लामो ब्रेक पुनः $t(utils.seconds, {'count': {{seconds}} }) मा सुरु हुन्छ ।",
     "resumingBreaks": "पुनः ब्रेक सुरु गर्दै ।",
     "downloadLatestVersion": "नयाँ संस्करण डाउनलोड गर्नुहोस् ।",
     "toBreak": "लामो ब्रेक ।",
-    "toMicrobreak": "छोटो ब्रेक ।",
+    "toMiniBreak": "छोटो ब्रेक ।",
     "skipToTheNext": "अर्को ब्रेकमा जानुहोस् ।",
     "resume": "पुनःसुरु गर्नुहोस् ।",
     "pause": "ब्रेक रोक्नुहोस् |",

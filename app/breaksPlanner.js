@@ -18,9 +18,9 @@ class BreaksPlanner extends EventEmitter {
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
 
-    this.on('microbreakStarted', (shouldPlaySound) => {
-      const interval = this.settings.get('microbreakDuration')
-      this.scheduler = new Scheduler(() => this.emit('finishMicrobreak', shouldPlaySound, true), interval, 'finishMicrobreak')
+    this.on('miniBreakStarted', (shouldPlaySound) => {
+      const interval = this.settings.get('miniBreakDuration')
+      this.scheduler = new Scheduler(() => this.emit('finishMiniBreak', shouldPlaySound, true), interval, 'finishMiniBreak')
       this.scheduler.plan()
     })
 
@@ -31,14 +31,14 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.naturalBreaksManager.on('clearBreakScheduler', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
         log.info('Stretchly: pausing breaks because of idle time')
       }
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak' && !this.dndManager.isOnDnd) {
         this.reset()
         log.info('Stretchly: resuming breaks after idle time')
         this.emit('updateToolTip')
@@ -46,7 +46,7 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.dndManager.on('dndStarted', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
         this.clear()
         log.info('Stretchly: pausing breaks for Do Not Distrub')
         this.emit('updateToolTip')
@@ -56,7 +56,7 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.dndManager.on('dndFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+      if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak') {
         this.reset()
         log.info('Stretchly: resuming breaks for Do Not Distrub')
         this.emit('updateToolTip')
@@ -65,7 +65,7 @@ class BreaksPlanner extends EventEmitter {
 
     this.appExclusionsManager.on('appExclusionStarted', (rule, exclusion) => {
       if (rule === 'pause') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
           this.clear()
           log.info(`Stretchly: pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
@@ -74,8 +74,8 @@ class BreaksPlanner extends EventEmitter {
           this.clear()
           log.info(`Stretchly: closing current and pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
-        } else if (!this.isPaused && this.scheduler.reference === 'finishMicrobreak') {
-          this.emit('finishMicrobreak', false, false)
+        } else if (!this.isPaused && this.scheduler.reference === 'finishMiniBreak') {
+          this.emit('finishMiniBreak', false, false)
           this.clear()
           log.info(`Stretchly: closing current and pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
@@ -83,7 +83,7 @@ class BreaksPlanner extends EventEmitter {
           this.appExclusionsManager.isOnAppExclusion = false
         }
       } else if (rule === 'resume') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+        if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak') {
           this.reset()
           log.info(`Stretchly: resuming breaks as 'resume' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
@@ -93,13 +93,13 @@ class BreaksPlanner extends EventEmitter {
 
     this.appExclusionsManager.on('appExclusionFinished', (rule) => {
       if (rule === 'pause') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak') {
+        if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak') {
           this.reset()
           log.info("Stretchly: resuming breaks as no 'pause' exclusion found running")
           this.emit('updateToolTip')
         }
       } else if (rule === 'resume') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMicrobreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
+        if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishBreak' && this.scheduler.reference !== null) {
           this.clear()
           log.info("Stretchly: pausing breaks as no 'resume' exclusion found running")
           this.emit('updateToolTip')
@@ -114,25 +114,25 @@ class BreaksPlanner extends EventEmitter {
     this.postponesNumber = 0
     if (this.scheduler) this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
-    const shouldMicrobreak = this.settings.get('microbreak')
-    const interval = this.settings.get('microbreakInterval')
+    const shouldMiniBreak = this.settings.get('miniBreak')
+    const interval = this.settings.get('miniBreakInterval')
     const breakNotification = this.settings.get('breakNotification')
     const breakNotificationInterval = this.settings.get('breakNotificationInterval')
-    const microbreakNotification = this.settings.get('microbreakNotification')
-    const microbreakNotificationInterval = this.settings.get('microbreakNotificationInterval')
-    if (!shouldBreak && shouldMicrobreak) {
-      if (microbreakNotification) {
-        this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
+    const miniBreakNotification = this.settings.get('miniBreakNotification')
+    const miniBreakNotificationInterval = this.settings.get('miniBreakNotificationInterval')
+    if (!shouldBreak && shouldMiniBreak) {
+      if (miniBreakNotification) {
+        this.scheduler = new Scheduler(() => this.emit('startMiniBreakNotification'), interval - miniBreakNotificationInterval, 'startMiniBreakNotification')
       } else {
-        this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
+        this.scheduler = new Scheduler(() => this.emit('startMiniBreak'), interval, 'startMiniBreak')
       }
-    } else if (shouldBreak && !shouldMicrobreak) {
+    } else if (shouldBreak && !shouldMiniBreak) {
       if (breakNotification) {
         this.scheduler = new Scheduler(() => this.emit('startBreakNotification'), interval * (this.settings.get('breakInterval') + 1) - breakNotificationInterval, 'startBreakNotification')
       } else {
         this.scheduler = new Scheduler(() => this.emit('startBreak'), interval * (this.settings.get('breakInterval') + 1), 'startBreak')
       }
-    } else if (shouldBreak && shouldMicrobreak) {
+    } else if (shouldBreak && shouldMiniBreak) {
       this.breakNumber = this.breakNumber + 1
       const breakInterval = this.settings.get('breakInterval') + 1
       if (this.breakNumber % breakInterval === 0) {
@@ -142,10 +142,10 @@ class BreaksPlanner extends EventEmitter {
           this.scheduler = new Scheduler(() => this.emit('startBreak'), interval, 'startBreak')
         }
       } else {
-        if (microbreakNotification) {
-          this.scheduler = new Scheduler(() => this.emit('startMicrobreakNotification'), interval - microbreakNotificationInterval, 'startMicrobreakNotification')
+        if (miniBreakNotification) {
+          this.scheduler = new Scheduler(() => this.emit('startMiniBreakNotification'), interval - miniBreakNotificationInterval, 'startMiniBreakNotification')
         } else {
-          this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), interval, 'startMicrobreak')
+          this.scheduler = new Scheduler(() => this.emit('startMiniBreak'), interval, 'startMiniBreak')
         }
       }
     }
@@ -179,17 +179,17 @@ class BreaksPlanner extends EventEmitter {
     this.emit('updateToolTip')
   }
 
-  skipToMicrobreak (delay = 100) {
+  skipToMiniBreak (delay = 100) {
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
-    const shouldMicrobreak = this.settings.get('microbreak')
-    if (shouldBreak && shouldMicrobreak) {
+    const shouldMiniBreak = this.settings.get('miniBreak')
+    if (shouldBreak && shouldMiniBreak) {
       const breakInterval = this.settings.get('breakInterval') + 1
       if (this.breakNumber % breakInterval === 0) {
         this.breakNumber = 1
       }
     }
-    this.scheduler = new Scheduler(() => this.emit('startMicrobreak'), delay, 'startMicrobreak')
+    this.scheduler = new Scheduler(() => this.emit('startMiniBreak'), delay, 'startMiniBreak')
     this.scheduler.plan()
     this.emit('updateToolTip')
   }
@@ -197,8 +197,8 @@ class BreaksPlanner extends EventEmitter {
   skipToBreak (delay = 100) {
     this.scheduler.cancel()
     const shouldBreak = this.settings.get('break')
-    const shouldMicrobreak = this.settings.get('microbreak')
-    if (shouldBreak && shouldMicrobreak) {
+    const shouldMiniBreak = this.settings.get('miniBreak')
+    if (shouldBreak && shouldMiniBreak) {
       const breakInterval = this.settings.get('breakInterval') + 1
       this.breakNumber = breakInterval
     }
@@ -250,14 +250,14 @@ class BreaksPlanner extends EventEmitter {
 
   get _scheduledBreakType () {
     const shouldBreak = this.settings.get('break')
-    const shouldMicrobreak = this.settings.get('microbreak')
+    const shouldMiniBreak = this.settings.get('miniBreak')
     const breakInterval = this.settings.get('breakInterval') + 1
     let scheduledBreakType
-    if (shouldBreak && shouldMicrobreak) {
-      scheduledBreakType = this.breakNumber % breakInterval !== 0 ? 'microbreak' : 'break'
+    if (shouldBreak && shouldMiniBreak) {
+      scheduledBreakType = this.breakNumber % breakInterval !== 0 ? 'miniBreak' : 'break'
     } else if (!shouldBreak) {
-      scheduledBreakType = 'microbreak'
-    } else if (!shouldMicrobreak) {
+      scheduledBreakType = 'miniBreak'
+    } else if (!shouldMiniBreak) {
       scheduledBreakType = 'break'
     }
     return scheduledBreakType
@@ -284,7 +284,7 @@ class BreaksPlanner extends EventEmitter {
 
   get timeToNextBreak () {
     if (!this.scheduler) return null
-    if (this.scheduler.reference === 'startMicrobreak' || this.scheduler.reference === 'startBreak') {
+    if (this.scheduler.reference === 'startMiniBreak' || this.scheduler.reference === 'startBreak') {
       return this.scheduler.timeLeft
     }
     if (this.scheduler.reference === 'startBreakNotification') {
@@ -292,9 +292,9 @@ class BreaksPlanner extends EventEmitter {
         ? this.settings.get('breakNotificationInterval')
         : 0)
     }
-    if (this.scheduler.reference === 'startMicrobreakNotification') {
-      return this.scheduler.timeLeft + (this.settings.get('microbreakNotification')
-        ? this.settings.get('microbreakNotificationInterval')
+    if (this.scheduler.reference === 'startMiniBreakNotification') {
+      return this.scheduler.timeLeft + (this.settings.get('miniBreakNotification')
+        ? this.settings.get('miniBreakNotificationInterval')
         : 0)
     }
     return null
@@ -304,7 +304,7 @@ class BreaksPlanner extends EventEmitter {
     if (!this.scheduler) return null
     const { reference, delay } = this.scheduler
 
-    if (reference === 'startMicrobreak' || reference === 'startBreak') {
+    if (reference === 'startMiniBreak' || reference === 'startBreak') {
       return delay
     }
 
@@ -312,8 +312,8 @@ class BreaksPlanner extends EventEmitter {
       return delay + this.settings.get('breakNotificationInterval')
     }
 
-    if (reference === 'startMicrobreakNotification') {
-      return delay + this.settings.get('microbreakNotificationInterval')
+    if (reference === 'startMiniBreakNotification') {
+      return delay + this.settings.get('miniBreakNotificationInterval')
     }
 
     return null

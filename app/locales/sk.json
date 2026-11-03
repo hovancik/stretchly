@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly - Pamätá si prestávky za vás",
-    "microbreakIn": "Krátka prestávka za $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Krátka prestávka za $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Dlhá prestávka za $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Obnovenie prestávok",
     "downloadLatestVersion": "Stiahnuť najnovšiu verziu",
     "toBreak": "Dlhú prestávku",
-    "toMicrobreak": "Krátku prestávku",
+    "toMiniBreak": "Krátku prestávku",
     "skipToTheNext": "Preskočiť na ďalšiu",
     "resume": "Pokračovať v prestávkach",
     "pause": "Pozastaviť prestávky",

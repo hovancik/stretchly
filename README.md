@@ -193,21 +193,21 @@ Some of the extra preferences are available in Contributor Preferences for [Cont
 
 Preferences marked with ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow) might not work correctly and might break *Stretchly*. Use at own risk.
 
-**Note:** Before 1.0, Mini breaks and Long breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.
+**Note:** Mini break preferences use the `miniBreak` prefix; Long break preferences use the `break` prefix.
 
 #### Preferences editable in the app
 
 Here are the preferences editable via the app. If values in the app does not suite your style, you could edit them maually:
 
-- `microbreakDuration` - duration of Mini break (ms)
-- `microbreakInterval` - interval of Mini break (ms)
+- `miniBreakDuration` - duration of Mini break (ms)
+- `miniBreakInterval` - interval of Mini break (ms)
 - `breakDuration` - duration of Long break (ms)
 - `breakInterval` - interval of Long break (Mini breaks)
-- `breakNotification` - show notification before Mini break
-- `microbreakNotification` - show notification before Long break
-- `microbreak` - enable Mini breaks
+- `breakNotification` - show notification before Long break
+- `miniBreakNotification` - show notification before Mini break
+- `miniBreak` - enable Mini breaks
 - `break` - enable Long breaks
-- `microbreakStrictMode` - enable strict mode for Mini breaks
+- `miniBreakStrictMode` - enable strict mode for Mini breaks
 - `breakStrictMode` - enable strict mode for Long breaks
 - `mainColor` - theme color code (for Long breaks),
 - `miniBreakColor` - theme color code (for Mini breaks),
@@ -226,9 +226,9 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `checkNewVersion` - check for new versions
 
 #### Editing break ideas
-In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
+In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `miniBreakIdeas`.
 
-Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window.
+Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten nor new break ideas will be added to your custom ones. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window.
 
 ##### Using HTML in break ideas
 You can use simple HTML formatting in custom break ideas to enhance their appearance:
@@ -281,7 +281,7 @@ E.g. if you live in Boston you would set:
 `posLongitude: 71`
 
 #### Editing postpone functionality [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
-In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable the ability to postpone breaks, `microbreakPostponeTime` and `breakPostponeTime` to change the postpone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change the number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
+In the preferences file, you can edit `miniBreakPostpone` and `breakPostpone` to enable or disable the ability to postpone breaks, `miniBreakPostponeTime` and `breakPostponeTime` to change the postpone time in milliseconds, `miniBreakPostponesLimit` and `breakPostponesLimit` to change the number of allowed postpones per break, and finally, `miniBreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
 
 #### New version notification [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.

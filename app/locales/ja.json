@@ -1,9 +1,9 @@
 {
   "main": {
-    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) 後に一息入れましょう",
+    "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) 後に一息入れましょう",
     "resetBreaks": "休憩をリセット",
     "warning": "デフォルト設定に戻すと、全てのユーザ設定は削除されます。",
-    "toMicrobreak": "小休憩",
+    "toMiniBreak": "小休憩",
     "toolTipHeader": "Stretchly - 休憩時間リマインダアプリ",
     "breakIn": "$t(utils.seconds, {'count': {{seconds}} })後に休憩しましょう",
     "resumingBreaks": "休憩を再開します",

@@ -71,14 +71,14 @@ nativeTheme.on('updated', function theThemeHasChanged () {
   updateTray()
 })
 
-let microbreakIdeas
+let miniBreakIdeas
 let breakIdeas
 let breakPlanner
 let appIcon = null
 let autostartManager = null
 let displayManager = null
 let processWin = null
-let microbreakWins = null
+let miniBreakWins = null
 let breakWins = null
 let preferencesWin = null
 let welcomeWin = null
@@ -176,7 +176,7 @@ if (!gotTheLock) {
           return
         }
         if (cmd.options.title) nextIdea = cmd.options.title
-        if (!cmd.options.noskip || delay) skipToMicrobreak(delay)
+        if (!cmd.options.noskip || delay) skipToMiniBreak(delay)
         break
       }
 
@@ -214,8 +214,8 @@ if (!gotTheLock) {
         log.info(`Stretchly: requesting to ${cmd.command} the current break (requested by second instance)`)
         const reference = breakPlanner?.scheduler?.reference
         let windows
-        if (reference === 'finishMicrobreak') {
-          windows = microbreakWins
+        if (reference === 'finishMiniBreak') {
+          windows = miniBreakWins
         } else if (reference === 'finishBreak') {
           windows = breakWins
         }
@@ -256,7 +256,7 @@ app.on('window-all-closed', () => {
   // do nothing, so app wont get closed
 })
 app.on('before-quit', (event) => {
-  if ((breakPlanner?.scheduler?.reference === 'finishMicrobreak' && settings?.get('microbreakStrictMode')) ||
+  if ((breakPlanner?.scheduler?.reference === 'finishMiniBreak' && settings?.get('miniBreakStrictMode')) ||
       (breakPlanner?.scheduler?.reference === 'finishBreak' && settings?.get('breakStrictMode'))
   ) {
     log.info('Stretchly: preventing app closure (in break with strict mode)')
@@ -404,6 +404,30 @@ async function initialize (isAppStart = true) {
           } else {
             log.info('Stretchly: not migrating pauseBreaksDurations')
           }
+          const legacyMiniBreakSettings = {
+            microbreak: 'miniBreak',
+            microbreakDuration: 'miniBreakDuration',
+            microbreakInterval: 'miniBreakInterval',
+            microbreakNotification: 'miniBreakNotification',
+            microbreakNotificationInterval: 'miniBreakNotificationInterval',
+            microbreakStrictMode: 'miniBreakStrictMode',
+            microbreakPostpone: 'miniBreakPostpone',
+            microbreakPostponeTime: 'miniBreakPostponeTime',
+            microbreakPostponesLimit: 'miniBreakPostponesLimit',
+            microbreakPostponableDurationPercent: 'miniBreakPostponableDurationPercent',
+            microbreakIdeas: 'miniBreakIdeas'
+          }
+          for (const [oldKey, newKey] of Object.entries(legacyMiniBreakSettings)) {
+            if (store.has(oldKey)) {
+              const value = store.get(oldKey)
+              store.set(newKey, value)
+              log.info(`Stretchly: migrating ${oldKey} to ${newKey} with value ${JSON.stringify(value)}`)
+              store.delete(oldKey)
+              log.info(`Stretchly: removing ${oldKey}`)
+            } else {
+              log.info(`Stretchly: not migrating ${oldKey}`)
+            }
+          }
         }
       },
       watch: true
@@ -419,16 +443,16 @@ async function initialize (isAppStart = true) {
   if (!breakPlanner) {
     breakPlanner = new BreaksPlanner(settings)
     breakPlanner.nextBreak()
-    breakPlanner.on('startMicrobreakNotification', () => { startMicrobreakNotification() })
+    breakPlanner.on('startMiniBreakNotification', () => { startMiniBreakNotification() })
     breakPlanner.on('startBreakNotification', () => { startBreakNotification() })
-    breakPlanner.on('startMicrobreak', () => { startMicrobreak() })
-    breakPlanner.on('finishMicrobreak', (shouldPlaySound, shouldPlanNext) => {
+    breakPlanner.on('startMiniBreak', () => { startMiniBreak() })
+    breakPlanner.on('finishMiniBreak', (shouldPlaySound, shouldPlanNext) => {
       if (settings.get('miniBreakManualFinish')) {
         enterMiniBreakManualContinuation(shouldPlaySound)
         return
       }
       decreaseDanger(1)
-      finishMicrobreak(shouldPlaySound, shouldPlanNext)
+      finishMiniBreak(shouldPlaySound, shouldPlanNext)
     })
     breakPlanner.on('startBreak', () => { startBreak() })
     breakPlanner.on('finishBreak', (shouldPlaySound, shouldPlanNext) => {
@@ -543,7 +567,7 @@ async function initialize (isAppStart = true) {
     log,
     globalShortcut,
     breakPlanner,
-    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMicrobreak, resetBreaks, startLastBreakAgain }
+    functions: { pauseBreaks, resumeBreaks, skipToBreak, skipToMiniBreak, resetBreaks, startLastBreakAgain }
   })
 
   updateTray()
@@ -806,8 +830,8 @@ function checkVersion () {
   }
 }
 
-function startMicrobreakNotification () {
-  showNotification(i18next.t('main.microbreakIn', { seconds: settings.get('microbreakNotificationInterval') / 1000 }))
+function startMiniBreakNotification () {
+  showNotification(i18next.t('main.miniBreakIn', { seconds: settings.get('miniBreakNotificationInterval') / 1000 }))
   log.info('Stretchly: showing Mini break notification')
   breakPlanner.nextBreakAfterNotification()
   updateTray()
@@ -836,25 +860,25 @@ function getBlurredBackgroundWindowOptions () {
   }
 }
 
-function startMicrobreak () {
+function startMiniBreak () {
   // don't start another break if break running
-  if (microbreakWins) {
+  if (miniBreakWins) {
     log.warn('Stretchly: Mini break already running, not starting Mini break')
     return
   }
 
-  const breakDuration = settings.get('microbreakDuration')
-  const strictMode = settings.get('microbreakStrictMode')
-  const postponesLimit = settings.get('microbreakPostponesLimit')
-  const postponableDurationPercent = settings.get('microbreakPostponableDurationPercent')
-  const postponable = settings.get('microbreakPostpone') &&
+  const breakDuration = settings.get('miniBreakDuration')
+  const strictMode = settings.get('miniBreakStrictMode')
+  const postponesLimit = settings.get('miniBreakPostponesLimit')
+  const postponableDurationPercent = settings.get('miniBreakPostponableDurationPercent')
+  const postponable = settings.get('miniBreakPostpone') &&
     breakPlanner.postponesNumber < postponesLimit && postponesLimit > 0
   const showBreaksAsRegularWindows = settings.get('showBreaksAsRegularWindows')
 
-  const modalPath = 'file://' + join(__dirname, '/microbreak.html')
-  microbreakWins = []
+  const modalPath = 'file://' + join(__dirname, '/miniBreak.html')
+  miniBreakWins = []
 
-  const idea = nextIdea || (settings.get('ideas') ? microbreakIdeas.randomElement : [''])
+  const idea = nextIdea || (settings.get('ideas') ? miniBreakIdeas.randomElement : [''])
   nextIdea = null
   lastBreak = { type: 'mini', idea }
 
@@ -874,14 +898,14 @@ function startMicrobreak () {
         const passedPercent = (Date.now() - startTime) / breakDuration * 100
         if (passedPercent >= 100) {
           decreaseDanger(1)
-          finishMicrobreak(false)
+          finishMiniBreak(false)
           return
         }
         if (canPostpone(postponable, passedPercent, postponableDurationPercent)) {
-          postponeMicrobreak()
+          postponeMiniBreak()
         } else if (canSkip(strictMode, postponable, passedPercent, postponableDurationPercent)) {
           increaseDanger(1)
-          finishMicrobreak(false)
+          finishMiniBreak(false)
         }
       })
     }
@@ -916,7 +940,7 @@ function startMicrobreak () {
       titleBarStyle: process.platform === 'darwin' ? (showBreaksAsRegularWindows ? 'default' : 'hidden') : undefined,
       titleBarOverlay: process.platform === 'darwin' ? !showBreaksAsRegularWindows : undefined,
       webPreferences: {
-        preload: join(__dirname, './microbreak-preload.mjs'),
+        preload: join(__dirname, './miniBreak-preload.mjs'),
         sandbox: false
       }
     }
@@ -931,66 +955,66 @@ function startMicrobreak () {
       windowOptions.y = displayManager.getDisplayY(localDisplayId, windowOptions.height, false)
     }
 
-    let microbreakWinLocal = new BrowserWindow(windowOptions)
+    let miniBreakWinLocal = new BrowserWindow(windowOptions)
     // seems to help with multiple-displays problems
-    microbreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    miniBreakWinLocal.setSize(windowOptions.width, windowOptions.height)
 
-    microbreakWinLocal.once('ready-to-show', () => {
+    miniBreakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
     })
 
     const onMiniBreakLoaded = (event) => {
-      if (event.sender !== microbreakWinLocal.webContents) return
+      if (event.sender !== miniBreakWinLocal.webContents) return
       ipcMain.off('mini-break-loaded', onMiniBreakLoaded)
       log.info('Stretchly: Mini break window loaded')
       if (showBreaksAsRegularWindows) {
-        microbreakWinLocal.show()
+        miniBreakWinLocal.show()
       } else {
-        microbreakWinLocal.showInactive()
+        miniBreakWinLocal.showInactive()
       }
 
       log.info(`Stretchly: showing window ${localDisplayId + 1} of ${displayManager.getDisplayCount()}`)
       if (process.platform === 'darwin') {
         if (showBreaksAsRegularWindows) {
-          microbreakWinLocal.setFullScreen(settings.get('fullscreen'))
+          miniBreakWinLocal.setFullScreen(settings.get('fullscreen'))
         } else {
-          microbreakWinLocal.setMinimizable(false)
-          microbreakWinLocal.setClosable(false)
-          microbreakWinLocal.setKiosk(settings.get('fullscreen'))
+          miniBreakWinLocal.setMinimizable(false)
+          miniBreakWinLocal.setClosable(false)
+          miniBreakWinLocal.setKiosk(settings.get('fullscreen'))
         }
       }
       if (localDisplayId === emitOnId) {
-        breakPlanner.emit('microbreakStarted', true)
+        breakPlanner.emit('miniBreakStarted', true)
         log.info('Stretchly: starting Mini break')
       }
       if (!settings.get('fullscreen') && process.platform !== 'darwin') {
         setTimeout(() => {
-          microbreakWinLocal.center()
+          miniBreakWinLocal.center()
         }, 0)
       }
       updateTray()
     }
     ipcMain.on('mini-break-loaded', onMiniBreakLoaded)
 
-    microbreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
+    miniBreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
     // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
     if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
-      microbreakWinLocal.setVisibleOnAllWorkspaces(true)
+      miniBreakWinLocal.setVisibleOnAllWorkspaces(true)
     }
-    microbreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
-    if (microbreakWinLocal) {
-      microbreakWinLocal.on('close', (e) => {
-        if (breakPlanner.scheduler.timeLeft > 0 && settings.get('microbreakStrictMode')) {
+    miniBreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
+    if (miniBreakWinLocal) {
+      miniBreakWinLocal.on('close', (e) => {
+        if (breakPlanner.scheduler.timeLeft > 0 && settings.get('miniBreakStrictMode')) {
           log.info('Stretchly: preventing closing break window as in strict mode')
           e.preventDefault()
         }
       })
-      microbreakWinLocal.once('closed', () => {
+      miniBreakWinLocal.once('closed', () => {
         ipcMain.off('mini-break-loaded', onMiniBreakLoaded)
-        microbreakWinLocal = null
+        miniBreakWinLocal = null
       })
     }
-    microbreakWins.push(microbreakWinLocal)
+    miniBreakWins.push(miniBreakWinLocal)
 
     if (!settings.get('allScreens')) {
       if (displayManager.getDisplayCount() > 1) {
@@ -1216,11 +1240,11 @@ function enterManualAwaitPhase (type, shouldPlaySound) {
     const audioKey = isMini ? 'miniBreakAudio' : 'longBreakAudio'
     processWin.webContents.send('play-sound', settings.get(audioKey), settings.get('volume'))
   }
-  const wins = isMini ? microbreakWins : breakWins
+  const wins = isMini ? miniBreakWins : breakWins
   if (wins) {
     wins.forEach(w => {
       if (w && !w.isDestroyed()) {
-        w.webContents.send('enter-manual-await', isMini ? 'microbreak' : 'break')
+        w.webContents.send('enter-manual-await', isMini ? 'miniBreak' : 'break')
       }
     })
   }
@@ -1230,8 +1254,8 @@ function enterManualAwaitPhase (type, shouldPlaySound) {
 const enterMiniBreakManualContinuation = (shouldPlaySound) => enterManualAwaitPhase('mini', shouldPlaySound)
 const enterLongBreakManualContinuation = (shouldPlaySound) => enterManualAwaitPhase('long', shouldPlaySound)
 
-function finishMicrobreak (shouldPlaySound = true, shouldPlanNext = true) {
-  microbreakWins = breakComplete(shouldPlaySound, microbreakWins, 'mini')
+function finishMiniBreak (shouldPlaySound = true, shouldPlanNext = true) {
+  miniBreakWins = breakComplete(shouldPlaySound, miniBreakWins, 'mini')
   log.info(`Stretchly: finishing Mini break (shouldPlanNext: ${shouldPlanNext})`)
   if (shouldPlanNext) {
     breakPlanner.nextBreak()
@@ -1252,9 +1276,9 @@ function finishBreak (shouldPlaySound = true, shouldPlanNext = true) {
   updateTray()
 }
 
-function postponeMicrobreak () {
+function postponeMiniBreak () {
   increaseDanger(1)
-  microbreakWins = breakComplete(false, microbreakWins, 'mini')
+  miniBreakWins = breakComplete(false, miniBreakWins, 'mini')
   breakPlanner.postponeCurrentBreak()
   log.info('Stretchly: postponing Mini break')
   updateTray()
@@ -1268,29 +1292,29 @@ function postponeBreak () {
   updateTray()
 }
 
-function skipToMicrobreak (delay) {
-  if (microbreakWins) {
+function skipToMiniBreak (delay) {
+  if (miniBreakWins) {
     increaseDanger(1)
-    microbreakWins = breakComplete(false, microbreakWins)
+    miniBreakWins = breakComplete(false, miniBreakWins)
   }
   if (breakWins) {
     increaseDanger(2)
     breakWins = breakComplete(false, breakWins)
   }
   if (delay) {
-    breakPlanner.skipToMicrobreak(delay)
+    breakPlanner.skipToMiniBreak(delay)
     log.info(`Stretchly: skipping to Mini break in ${delay}ms`)
   } else {
-    breakPlanner.skipToMicrobreak()
+    breakPlanner.skipToMiniBreak()
     log.info('Stretchly: skipping to Mini break')
   }
   updateTray()
 }
 
 function skipToBreak (delay) {
-  if (microbreakWins) {
+  if (miniBreakWins) {
     increaseDanger(1)
-    microbreakWins = breakComplete(false, microbreakWins)
+    miniBreakWins = breakComplete(false, miniBreakWins)
   }
   if (breakWins) {
     increaseDanger(2)
@@ -1311,7 +1335,7 @@ function startLastBreakAgain () {
     log.info('Stretchly: no last break to start again')
     return
   }
-  if (microbreakWins || breakWins) {
+  if (miniBreakWins || breakWins) {
     log.info('Stretchly: not starting last break again, a break is running')
     return
   }
@@ -1321,15 +1345,15 @@ function startLastBreakAgain () {
   }
   nextIdea = lastBreak.idea
   if (lastBreak.type === 'mini') {
-    skipToMicrobreak()
+    skipToMiniBreak()
   } else {
     skipToBreak()
   }
 }
 
 function resetBreaks () {
-  if (microbreakWins) {
-    microbreakWins = breakComplete(false, microbreakWins)
+  if (miniBreakWins) {
+    miniBreakWins = breakComplete(false, miniBreakWins)
   }
   if (breakWins) {
     breakWins = breakComplete(false, breakWins)
@@ -1354,7 +1378,7 @@ function loadIdeas () {
   let miniBreakIdeasData
   if (settings.get('useIdeasFromSettings')) {
     longBreakIdeasData = settings.get('breakIdeas')
-    miniBreakIdeasData = settings.get('microbreakIdeas')
+    miniBreakIdeasData = settings.get('miniBreakIdeas')
     log.info('Stretchly: loading custom break ideas from preferences file')
   } else {
     const t = i18next.getFixedT('en')
@@ -1373,13 +1397,13 @@ function loadIdeas () {
   }
 
   breakIdeas = new IdeasLoader(longBreakIdeasData).ideas()
-  microbreakIdeas = new IdeasLoader(miniBreakIdeasData).ideas()
+  miniBreakIdeas = new IdeasLoader(miniBreakIdeasData).ideas()
 }
 
 function pauseBreaks (milliseconds) {
-  if (microbreakWins) {
+  if (miniBreakWins) {
     increaseDanger(1)
-    finishMicrobreak(false)
+    finishMiniBreak(false)
   }
   if (breakWins) {
     increaseDanger(2)
@@ -1515,7 +1539,7 @@ function getTrayMenuTemplate () {
     })
   }
 
-  if ((breakPlanner.scheduler.reference === 'finishMicrobreak' && settings.get('microbreakStrictMode') &&
+  if ((breakPlanner.scheduler.reference === 'finishMiniBreak' && settings.get('miniBreakStrictMode') &&
         !settings.get('showTrayMenuInStrictMode')) ||
       (breakPlanner.scheduler.reference === 'finishBreak' && settings.get('breakStrictMode') &&
       !settings.get('showTrayMenuInStrictMode'))
@@ -1526,11 +1550,11 @@ function getTrayMenuTemplate () {
 
   if (!(breakPlanner.isPaused || breakPlanner.dndManager.isOnDnd || breakPlanner.appExclusionsManager.isSchedulerCleared)) {
     let submenu = []
-    if (settings.get('microbreak')) {
+    if (settings.get('miniBreak')) {
       submenu = submenu.concat([{
-        label: i18next.t('main.toMicrobreak'),
+        label: i18next.t('main.toMiniBreak'),
         accelerator: settings.get('skipToNextMiniBreakShortcut') || null,
-        click: () => skipToMicrobreak()
+        click: () => skipToMiniBreak()
       }])
     }
     if (settings.get('break')) {
@@ -1540,7 +1564,7 @@ function getTrayMenuTemplate () {
         click: () => skipToBreak()
       }])
     }
-    if (settings.get('break') || settings.get('microbreak')) {
+    if (settings.get('break') || settings.get('miniBreak')) {
       trayMenu.push({
         label: i18next.t('main.skipToTheNext'),
         submenu
@@ -1647,7 +1671,7 @@ function showNotification (text) {
 
 ipcMain.on('postpone-mini-break', function (event, source = 'button') {
   log.info(`Stretchly: postponement requested during Mini break (source: ${source})`)
-  postponeMicrobreak()
+  postponeMiniBreak()
 })
 
 ipcMain.on('postpone-long-break', function (event, source = 'button') {
@@ -1662,7 +1686,7 @@ ipcMain.on('finish-mini-break', function (event, shouldPlaySound, manualAwaiting
   } else {
     increaseDanger(1)
   }
-  finishMicrobreak(shouldPlaySound)
+  finishMiniBreak(shouldPlaySound)
 })
 
 ipcMain.on('finish-long-break', function (event, shouldPlaySound, manualAwaiting, source = 'button') {

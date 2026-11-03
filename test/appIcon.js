@@ -11,7 +11,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacDark.png')
@@ -26,7 +26,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacDarkNumber2.png')
@@ -41,7 +41,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacDarkProgress20.png')
@@ -56,7 +56,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDark.png')
@@ -71,7 +71,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDarkNumber2.png')
@@ -86,7 +86,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDarkProgress20.png')
@@ -101,7 +101,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDark.ico')
@@ -116,7 +116,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDarkNumber2.ico')
@@ -131,7 +131,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayDarkProgress20.ico')
@@ -146,7 +146,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacPausedDark.png')
@@ -161,7 +161,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacPausedDark.png')
@@ -176,7 +176,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPausedDark.png')
@@ -191,7 +191,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPausedDark.png')
@@ -206,7 +206,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPausedDark.ico')
@@ -221,7 +221,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPausedDark.ico')
@@ -236,7 +236,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMac.png')
@@ -251,7 +251,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacNumber2.png')
@@ -266,7 +266,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacProgress20.png')
@@ -281,7 +281,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')
@@ -296,7 +296,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayNumber2.png')
@@ -311,7 +311,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayProgress20.png')
@@ -326,7 +326,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: -1,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')
@@ -341,7 +341,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 120,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -356,7 +356,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 99,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeNumber99Template.png')
@@ -371,7 +371,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.ico')
@@ -386,7 +386,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayNumber2.ico')
@@ -401,7 +401,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayProgress20.ico')
@@ -416,7 +416,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacPaused.png')
@@ -431,7 +431,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacPaused.png')
@@ -446,7 +446,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPaused.png')
@@ -461,7 +461,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPaused.png')
@@ -476,7 +476,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPaused.ico')
@@ -491,7 +491,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPaused.ico')
@@ -506,7 +506,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -521,7 +521,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeNumber2Template.png')
@@ -536,7 +536,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeProgress20Template.png')
@@ -551,7 +551,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.png')
@@ -566,7 +566,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeNumber2.png')
@@ -581,7 +581,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeProgress20.png')
@@ -596,7 +596,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.ico')
@@ -611,7 +611,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeNumber2.ico')
@@ -626,7 +626,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeProgress20.ico')
@@ -641,7 +641,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -656,7 +656,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -671,7 +671,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.png')
@@ -686,7 +686,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.png')
@@ -701,7 +701,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.ico')
@@ -716,7 +716,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.ico')
@@ -731,7 +731,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -746,7 +746,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeNumber2Template.png')
@@ -761,7 +761,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.png')
@@ -776,7 +776,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeNumber2.png')
@@ -791,7 +791,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochrome.ico')
@@ -806,7 +806,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeNumber2.ico')
@@ -821,7 +821,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -836,7 +836,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -851,7 +851,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.png')
@@ -866,7 +866,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.png')
@@ -881,7 +881,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.ico')
@@ -896,7 +896,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromePaused.ico')
@@ -911,7 +911,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -926,7 +926,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeNumber2Template.png')
@@ -941,7 +941,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.png')
@@ -956,7 +956,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedNumber2.png')
@@ -971,7 +971,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedProgress20.png')
@@ -986,7 +986,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.ico')
@@ -1001,7 +1001,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedNumber2.ico')
@@ -1016,7 +1016,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedProgress20.ico')
@@ -1031,7 +1031,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -1046,7 +1046,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -1061,7 +1061,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.png')
@@ -1076,7 +1076,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.png')
@@ -1091,7 +1091,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.ico')
@@ -1106,7 +1106,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.ico')
@@ -1121,7 +1121,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeTemplate.png')
@@ -1136,7 +1136,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeNumber2Template.png')
@@ -1151,7 +1151,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.png')
@@ -1166,7 +1166,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedNumber2.png')
@@ -1181,7 +1181,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInverted.ico')
@@ -1196,7 +1196,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedNumber2.ico')
@@ -1211,7 +1211,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -1226,7 +1226,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromePausedTemplate.png')
@@ -1241,7 +1241,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.png')
@@ -1256,7 +1256,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.png')
@@ -1271,7 +1271,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.ico')
@@ -1286,7 +1286,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'time',
       timeToBreak: 2,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMonochromeInvertedPaused.ico')
@@ -1301,7 +1301,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.windowIconFileName.should.equal('trayDark.png')
@@ -1316,7 +1316,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.windowIconFileName.should.equal('tray.png')
@@ -1331,7 +1331,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.windowIconFileName.should.equal('tray.png')
@@ -1346,7 +1346,7 @@ describe('appIcon', function () {
       platform: 'win32',
       trayIconStyle: 'default',
       timeToBreak: 2,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.windowIconFileName.should.equal('trayDark.png')
@@ -1361,13 +1361,13 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayPaused.png')
   })
 
-  it('trayIconFileName does not show progress when finishing microbreak', function () {
+  it('trayIconFileName does not show progress when finishing Mini break', function () {
     const params = {
       paused: false,
       monochrome: false,
@@ -1376,7 +1376,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'finishMicrobreak'
+      reference: 'finishMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')
@@ -1406,7 +1406,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 0,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayProgress0.png')
@@ -1421,7 +1421,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 100,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayProgress100.png')
@@ -1436,7 +1436,7 @@ describe('appIcon', function () {
       platform: 'darwin',
       trayIconStyle: 'progress',
       percentage: 20,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('trayMacMonochromeProgress20Template.png')
@@ -1451,7 +1451,7 @@ describe('appIcon', function () {
       platform: 'linux',
       trayIconStyle: 'progress',
       percentage: 101,
-      reference: 'startMicrobreak'
+      reference: 'startMiniBreak'
     }
     const appIcon = new AppIcon(params)
     appIcon.trayIconFileName.should.equal('tray.png')

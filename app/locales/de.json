@@ -1,12 +1,12 @@
 {
   "main": {
     "toolTipHeader": "Stretchly – Die Pausen-Erinnerungs-App",
-    "microbreakIn": "Mini-Pause in $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Mini-Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Lange Pause in $t(utils.seconds, {'count': {{seconds}} })",
     "resumingBreaks": "Pausen fortsetzen",
     "downloadLatestVersion": "Neueste Version herunterladen",
     "toBreak": "Lange Pause",
-    "toMicrobreak": "Mini-Pause",
+    "toMiniBreak": "Mini-Pause",
     "skipToTheNext": "Springe zur nächsten",
     "resume": "Pausen fortsetzen",
     "pause": "Pausen anhalten",

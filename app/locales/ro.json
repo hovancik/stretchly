@@ -14,11 +14,11 @@
     "syncPreferences": "Sincronizează preferințele",
     "cancel": "Anulează",
     "continue": "Continuă",
-    "toMicrobreak": "Pauză Mică",
+    "toMiniBreak": "Pauză Mică",
     "toBreak": "Pauză lungă",
     "restoreDefaults": "Restabiliți setările de bază",
     "contributorPreferences": "Preferințe pentru colaboratori",
-    "microbreakIn": "Pauză scurtă in $t(utils.seconds, {'count': {{seconds}} })",
+    "miniBreakIn": "Pauză scurtă in $t(utils.seconds, {'count': {{seconds}} })",
     "breakIn": "Pauză lungă in $t(utils.seconds, {'count': {{seconds}} })",
     "warning": "Aceasta va restabili setările implicite ale aplicației și toate setările dvs. vor fi pierdute."
   },

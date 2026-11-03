@@ -34,16 +34,16 @@ window.onload = async (event) => {
 
   document.querySelector('#postpone').onclick = runOnce(() => window.breaks.postponeBreak())
 
-  document.querySelector('.microbreak-idea').innerHTML = window.breaks.sanitizeIdea(idea)
+  document.querySelector('.miniBreak-idea').innerHTML = window.breaks.sanitizeIdea(idea)
 
-  document.querySelectorAll('.microbreak-idea a').forEach(a => {
+  document.querySelectorAll('.miniBreak-idea a').forEach(a => {
     a.onclick = (event) => {
       event.preventDefault()
       window.electronApi.openExternal(a.href)
     }
   })
 
-  document.querySelectorAll('.microbreak-idea img').forEach(async img => {
+  document.querySelectorAll('.miniBreak-idea img').forEach(async img => {
     const src = img.getAttribute('src') || ''
     const resolved = await window.electronApi.resolveLocalImage(src)
     if (resolved) {
@@ -116,7 +116,7 @@ window.onload = async (event) => {
   }, 100)
 
   window.breaks.onEnterManualAwait(async (which) => {
-    if (which !== 'microbreak' || manualAwaiting) return
+    if (which !== 'miniBreak' || manualAwaiting) return
     manualAwaiting = true
     progress.value = 0
     progressTime.classList.remove('hidden')
