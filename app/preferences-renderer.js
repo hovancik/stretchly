@@ -201,7 +201,10 @@ window.onload = async (e) => {
       default:
         value = radio.value
     }
-    radio.checked = settings[radio.name] === value
+    const savedValue = settings[radio.name]
+    radio.checked = radio.name === 'longBreakColor'
+      ? savedValue.toUpperCase() === value
+      : savedValue === value
     if (!eventsAttached) {
       radio.onchange = (event) => {
         window.settings.saveSettings(radio.name, value)

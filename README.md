@@ -209,8 +209,8 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `longBreak` - enable Long breaks
 - `miniBreakStrictMode` - enable strict mode for Mini breaks
 - `longBreakStrictMode` - enable strict mode for Long breaks
-- `mainColor` - theme color code (for Long breaks),
-- `miniBreakColor` - theme color code (for Mini breaks),
+- `longBreakColor` - theme color code for Long breaks,
+- `miniBreakColor` - theme color code for Mini breaks,
 - `transparentMode` - show break windows as transparent
 - `longBreakAudio` - sound theme name (for Long breaks)
 - `miniBreakAudio` - sound theme name (for Mini breaks)
@@ -303,7 +303,7 @@ You can also use your own filename, for example `my-sound.wav`. In the preferenc
 Filenames can contain letters (`a-z`, `A-Z`), numbers, dots, underscores, and hyphens. Only `.wav` files are supported. The `silence` option always stays silent.
 
 #### Different color theme for Mini and Long breaks
-To have different theme for Mini breaks, set `miniBreakColor` to desired value, ie `#123456`.
+To use a different theme for Mini breaks, set `miniBreakColor` in the preferences file to your desired color, e.g. `#123456`. Use `longBreakColor` for Long breaks. Choosing a theme in Preferences sets both colors to the selected preset.
 
 #### Natural breaks inactivity time [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* breaks will be paused until the user resumes activity.
@@ -382,7 +382,7 @@ In the preferences file, change `themeSource: 'system'` to either `'light'` or `
 In the preferences file, change `trayIconThemeSource: 'system'` to either `'light'` or `'dark'` to force the tray icon's light or dark variant instead of following the system theme. On Windows, `'system'` follows the Windows mode used by the taskbar. On macOS and Linux, it follows the same light/dark theme as the rest of Stretchly (the OS theme, or whatever `themeSource` is set to). On macOS this affects colour icons only; monochrome icons are tinted by the system.
 
 #### Break window color
-In the preferences file, change `mainColor` to whatever color you like.
+In the preferences file, set `miniBreakColor` or `longBreakColor` to a six-digit hex color, such as `#123456`. Custom colors use the existing default text styling; text contrast is not selected automatically.
 
 #### Welcome window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.

@@ -24,7 +24,7 @@ export default {
   miniBreakPostponableDurationPercent: 30,
   longBreakPostponesLimit: 1,
   longBreakPostponableDurationPercent: 30,
-  mainColor: '#478484',
+  longBreakColor: '#478484',
   miniBreakColor: '#478484',
   transparentMode: false,
   blurredBackground: false,

@@ -439,7 +439,8 @@ async function initialize (isAppStart = true) {
             breakPostponeTime: 'longBreakPostponeTime',
             breakPostponesLimit: 'longBreakPostponesLimit',
             breakPostponableDurationPercent: 'longBreakPostponableDurationPercent',
-            breakIdeas: 'longBreakIdeas'
+            breakIdeas: 'longBreakIdeas',
+            mainColor: 'longBreakColor'
           }
           for (const [oldKey, newKey] of Object.entries(legacyLongBreakSettings)) {
             if (store.has(oldKey)) {
@@ -1105,7 +1106,7 @@ function startLongBreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('mainColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(settings.get('longBreakColor')), danger, settings.get('breakHealthMode')]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()
@@ -1125,7 +1126,7 @@ function startLongBreak () {
       backgroundThrottling: false,
       transparent: !showBreaksAsRegularWindows,
       ...getBlurredBackgroundWindowOptions(),
-      backgroundColor: calculateBackgroundColor(settings.get('mainColor')),
+      backgroundColor: calculateBackgroundColor(settings.get('longBreakColor')),
       skipTaskbar: !showBreaksAsRegularWindows,
       focusable: showBreaksAsRegularWindows,
       alwaysOnTop: !showBreaksAsRegularWindows,
@@ -1744,7 +1745,7 @@ ipcMain.on('save-setting', function (event, key, value) {
     settings.set('miniBreakAudio', value)
   }
 
-  if (key === 'mainColor') {
+  if (key === 'longBreakColor') {
     settings.set('miniBreakColor', value)
   }
 
