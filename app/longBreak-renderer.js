@@ -20,10 +20,10 @@ window.onload = async (event) => {
     return
   }
 
-  const mainColor = await window.settings.get('mainColor')
+  const longBreakColor = await window.settings.get('longBreakColor')
 
   new HtmlTranslate(document).translate()
-  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
+  applyBreakHealthEffect(danger, breakHealthMode, longBreakColor)
 
   const runOnce = createRunOnce()
   const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
@@ -59,7 +59,7 @@ window.onload = async (event) => {
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
   const manualFinishElement = document.querySelector('#finish')
-  document.body.classList.add(mainColor.substring(1))
+  document.body.classList.add(longBreakColor.substring(1).toLowerCase())
   document.body.style.backgroundColor = backgroundColor
 
   document.querySelectorAll('.tiptext').forEach(async tt => {

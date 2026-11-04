@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - CLI command and shortcut to start the last break again
 
 ### Fixed
+- fix styling when using different Mini and Long break colors
 - fix maximum postpones controls saving incorrect counts in Contributor Preferences
 - fix debug file and folder links when paths contain HTML special characters
 - fix custom break images when the user data path contains URL special characters
@@ -23,7 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
-- renamed `microbreak` to `miniBreak` and `break` to `longBreak`; preferences migrate automatically
+- renamed break preferences to use `miniBreak` and `longBreak`; existing settings migrate automatically
 - tray menu shows configured shortcuts beside matching actions
 - macOS Ventura (13) or later is now required
 - macOS app bundles are now ad-hoc signed
