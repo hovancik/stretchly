@@ -747,7 +747,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 - Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
-- [@lzh-xdu](https://github.com/lzh-xdu)
+- lzh-xdu, [@lzh-xdu](https://github.com/lzh-xdu)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 
