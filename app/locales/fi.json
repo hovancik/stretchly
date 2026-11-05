@@ -83,14 +83,12 @@
       "trayIcon": "Valikon kuvake:",
       "colour": "Värillinen",
       "monochrome": "Mustavalkoinen",
-      "invertedMonochrome": "Käänteinen mustavalkoinen",
       "snowWhite": "Lumenvalkoinen"
     },
     "about": {
       "tagline": "Taukomuistutusaplikaatio",
       "version": "Versio ",
       "latestVersion": "Viimeisin versio ",
-      "notifyNewVersion": "Ilmoita päivityksistä automaattisesti",
       "learnMore": "Saadaksesi lisätietoa Stretchlyn ominaisuuksista, katso tutoriaali, lataa uusin versio tai ota yhteyttä tukeen, ",
       "ourWebsite": "vieraile nettisivuillamme",
       "dot": ".",
@@ -156,7 +154,6 @@
     "2": "Kolmas näyttö",
     "3": "Neljäs näyttö",
     "4": "Viides näyttö",
-    "timeToBreakInTray": "Tauon paikka",
     "showBreaksAsRegularWindows": "Näytä tauko ikkunat perus ikkunoina",
     "cursor": "Seuraa hiirtä",
     "showTrayIcon": "Näytä ilmoituspalkissa",

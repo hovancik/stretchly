@@ -82,7 +82,6 @@
       "trayIcon": "選單列圖示：",
       "colour": "色彩",
       "monochrome": "單色",
-      "invertedMonochrome": "負片單色",
       "transparentMode": "使用透明視窗",
       "snowWhite": "雪白",
       "reverie": "遐想"
@@ -91,7 +90,6 @@
       "tagline": "休息提醒軟體",
       "version": "版本 ",
       "latestVersion": "最新版 ",
-      "notifyNewVersion": "自動在 App 有更新時提醒",
       "learnMore": "如要深入了解 Stretchly 的功能，請查看教學文件、下載最新版或聯絡我們尋求支援， ",
       "ourWebsite": "造訪我們的網站",
       "dot": ".",
@@ -166,8 +164,6 @@
     "currentTimeInBreaks": "當前時間",
     "screenInfo": "禁用所有顯示器顯示休息畫面，你可以選擇在哪個顯示器顯示休息畫面。",
     "showOnMonitor": "顯示休息時間",
-    "timeToBreakInTray": "休息時間",
-    "showTimeToBreakInTray": "在托盤圖標顯示下次休息時間",
     "showCurrentTimeInBreaks": "在休息畫面顯示當前時間",
     "showTrayIcon": "顯示選單列圖示",
     "toShowTrayIcon": "在選單列中顯示 Stretchly 圖示"

@@ -83,7 +83,6 @@
       "trayIcon": "Ikona w pasku:",
       "colour": "Kolorowa",
       "monochrome": "Monochromatyczna",
-      "invertedMonochrome": "Odwrócona monochromatyczna",
       "snowWhite": "Śnieżna biel",
       "reverie": "Zaduma"
     },
@@ -91,7 +90,6 @@
       "tagline": "Przerwo-przypominajka",
       "version": "Wersja ",
       "latestVersion": "Najnowsza wersja ",
-      "notifyNewVersion": "Automatycznie powiadamiaj o aktualizacjach aplikacji",
       "learnMore": "Aby dowiedzieć się więcej o funkjach Stretchly, zobacz wprowadzenie, pobierz najnowszą wersję lub skontaktuj się z nami po wsparcie, ",
       "ourWebsite": "odwiedź naszą stronę",
       "dot": ".",
@@ -165,10 +163,8 @@
     "breakWindowSizeInfo": "Jaki procent ekranu powinno ukryć okno przerwy?",
     "breakWindowSize": "Wielkość okna przerwy",
     "opacity": "Przezroczystość:",
-    "timeToBreakInTray": "Czas na przerwę",
     "currentTimeInBreaks": "Aktualny czas",
     "showCurrentTimeInBreaks": "Pokaż aktualną godzinę w okienku przerwy",
-    "showTimeToBreakInTray": "Pokaż czas pozostały do następnej przerwy w ikonie paska zadań",
     "toShowTrayIcon": "Pokaż ikonę Stretchly w pasku menu",
     "showTrayIcon": "Pokaż ikonę na pasku menu"
   },

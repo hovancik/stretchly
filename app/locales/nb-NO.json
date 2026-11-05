@@ -69,8 +69,6 @@
     "showOnMonitor": "Vis pauser på",
     "screenInfo": "Om du ikke velger å vise pauser på alle skjermer kan du velge hvilken skjerm det skal vises på.",
     "screen": "Vis pauser på enkeltskjerm:",
-    "timeToBreakInTray": "Hvor lenge til neste pause",
-    "showTimeToBreakInTray": "Vis tid igjen til neste pause i menylinjeikonet",
     "currentTimeInBreaks": "Nåværende tid",
     "showCurrentTimeInBreaks": "Vis nåværende lokal tid i pausevindu",
     "toShowTrayIcon": "Vis ikon for Stretchly i menylinjen"
@@ -88,7 +86,6 @@
     },
     "about": {
       "learnMore": "For å lære mer om funksjonene i Stretchly, få en gjennomgang, laste ned nyeste versjon eller kontakte oss for brukerstøtte, ",
-      "notifyNewVersion": "Gi varsling om nye versjoner automatisk",
       "version": "Versjon ",
       "tagline": "Pausepåminnelsesprogrammet",
       "designedBy": "Ikon- og grensesnittsdesign av Colin Shanley",
@@ -100,7 +97,6 @@
       "checkNewVersion": "Se automatisk etter oppdatering"
     },
     "theme": {
-      "invertedMonochrome": "Invertert ensfarget",
       "monochrome": "Ensfarget",
       "colour": "Mangefarget",
       "trayIcon": "Ikoner på menylinjen:",

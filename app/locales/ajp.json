@@ -50,7 +50,6 @@
       "autumnBeBlessed": "خمري",
       "graphiteCrystal": "غامق",
       "monochrome": "أحادي اللون",
-      "invertedMonochrome": "معكوس أحادي اللون",
       "snowWhite": "أبيض",
       "windChime": "رياح",
       "transparentMode": "تشغيل الشفافية",
@@ -167,9 +166,7 @@
     "currentTimeInBreaks": "الوقت الحالي",
     "showCurrentTimeInBreaks": "إظهار التوقيت المحلي الحالي في فترة الاستراحة",
     "showTrayIcon": "إظهار أيقونة القائمة",
-    "toShowTrayIcon": "إظهار أيقونة 'سترتشلي' في القائمة",
-    "timeToBreakInTray": "وقت الراحة",
-    "showTimeToBreakInTray": "إظهار وقت الراحة التالية في أيقونة القائمة"
+    "toShowTrayIcon": "إظهار أيقونة 'سترتشلي' في القائمة"
   },
   "utils": {
     "oclock_one": "{{count}} الساعة",
