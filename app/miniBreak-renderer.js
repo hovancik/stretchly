@@ -1,11 +1,14 @@
 import HtmlTranslate from './utils/htmlTranslate.js'
 import applyBreakHealthEffect from './utils/breakHealthEffect.js'
+import applyBreakBackground from './utils/breakBackground.js'
 import createRunOnce from './utils/runOnce.js'
 import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger, breakHealthMode, backgroundImage] = await window.breaks.sendBreakData()
+
+  applyBreakBackground(backgroundImage)
 
   document.ondragover = event =>
     event.preventDefault()

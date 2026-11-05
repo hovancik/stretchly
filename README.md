@@ -390,6 +390,23 @@ To show the Welcome window again on the next start, change `"isFirstRun"` to `tr
 #### Theme transparency [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify how solid the break window should be when Theme transparency is enabled, set the value of `opacity` from `0` to `1` (which is in turn 0 to 100%). If you want the break window to have a blurred background, set the value of `blurredBackground` to `true` (for macOS only).
 
+#### Break background images
+
+To show local images behind Mini and Long breaks, quit *Stretchly* and edit these advanced preferences in the preferences file:
+
+```json
+"breakBackgroundImage": true,
+"breakImageFolder": "C:\\Users\\YourName\\Pictures\\Breaks"
+```
+
+Use an absolute folder path, for example `/Users/YourName/Pictures/Breaks` on macOS or `/home/yourname/Pictures/Breaks` on Linux. Windows backslashes must be escaped as `\\` in JSON. These settings are available through the preferences file only; they do not yet have controls in Contributor Preferences. By default, `breakBackgroundImage` is `false` and `breakImageFolder` is empty.
+
+Stretchly reads PNG, JPG, JPEG and WebP files directly inside that folder, without searching subfolders. No images are bundled or downloaded. Flatpak and Snap installations can only use folders readable from their sandbox.
+
+Each break selects one image, shared by all of its screens, including screens with no break content. Images fill the window with a dark overlay for readability, and also work when break ideas are disabled. Mini and Long breaks share a shuffled rotation: every candidate is selected once before a new cycle begins. The last image of one cycle may be selected first in the next. Changing the folder or adding or removing image files starts a new cycle.
+
+If the folder is empty or unavailable, or the selected image cannot be loaded, the break uses the existing solid-color background without an image overlay. A failed image is not retried during that break; selection continues with the next break. Opaque images cover the window's theme transparency and macOS blurred background; those settings remain unchanged for the solid-color fallback.
+
 #### Break window size [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify the size of the break window, set the value of `breakWindowHeight` and `breakWindowWidth` from `0` to `0.99` (which is in turn 0 to 99% of the size of the screen). Don't set 100% as that's fullscreen.
 
@@ -730,6 +747,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 - Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
+- [@lzh-xdu](https://github.com/lzh-xdu)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

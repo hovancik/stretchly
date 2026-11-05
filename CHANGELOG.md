@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- `breakBackgroundImage` and `breakImageFolder` advanced preferences for shuffled local background images in Mini and Long breaks
 - `pauseBreaksDurations` advanced preference to customize timed pause options and their shortcuts
 - CLI commands to postpone, skip and finish the current break
 - advanced preferences for custom break sounds
