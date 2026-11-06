@@ -74,7 +74,7 @@ nativeTheme.on('updated', function theThemeHasChanged () {
 
 let miniBreakIdeas
 let longBreakIdeas
-const backgroundImages = new BackgroundImages()
+let backgroundImages
 let breakPlanner
 let appIcon = null
 let autostartManager = null
@@ -467,6 +467,8 @@ async function initialize (isAppStart = true) {
       })
     })
   }
+  backgroundImages = new BackgroundImages(settings.get('breakBackgroundImage'), settings.get('breakImageFolder'))
+
   if (!breakPlanner) {
     breakPlanner = new BreaksPlanner(settings)
     breakPlanner.nextBreak()
@@ -908,7 +910,7 @@ function startMiniBreak () {
   const idea = nextIdea || (settings.get('ideas') ? miniBreakIdeas.randomElement : [''])
   nextIdea = null
   lastBreak = { type: 'mini', idea }
-  const backgroundImage = backgroundImages.nextImage(settings.get('breakBackgroundImage'), settings.get('breakImageFolder'))
+  const backgroundImage = backgroundImages.nextImage()
 
   if (!settings.get('silentNotifications')) {
     const sound = settings.get('miniBreakStartSound')
@@ -1079,7 +1081,7 @@ function startLongBreak () {
   const idea = nextIdea ? (nextIdea.map((val, index) => val || defaultNextIdea[index])) : defaultNextIdea
   nextIdea = null
   lastBreak = { type: 'long', idea }
-  const backgroundImage = backgroundImages.nextImage(settings.get('breakBackgroundImage'), settings.get('breakImageFolder'))
+  const backgroundImage = backgroundImages.nextImage()
 
   if (!settings.get('silentNotifications')) {
     const sound = settings.get('longBreakStartSound')

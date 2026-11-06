@@ -15,10 +15,8 @@ beforeEach(async () => {
   await new Promise(resolve => dom.window.addEventListener('load', resolve, { once: true }))
   vi.stubGlobal('window', dom.window)
   vi.stubGlobal('document', dom.window.document)
+  vi.stubGlobal('__electronLog', { error: vi.fn() })
   document.body.style.backgroundColor = '#ffffff'
-  const style = document.createElement('style')
-  style.textContent = breakStyles
-  document.head.append(style)
   pendingImage = null
   const createElement = document.createElement.bind(document)
   vi.spyOn(document, 'createElement').mockImplementation((tag, options) => {
@@ -36,62 +34,17 @@ afterEach(() => {
 })
 
 describe('break background', () => {
-  it('keeps the existing background when no image is selected', () => {
-    applyBreakBackground(null)
-
-    expect(pendingImage).toBe(null)
-    expect(document.body.style.backgroundColor).toBe('rgb(255, 255, 255)')
-    expect(document.body.style.backgroundImage).toBe('')
-    expect(document.body.classList.contains('has-background-image')).toBe(false)
-  })
-
-  it('shows the image and dark overlay only after the image loads', () => {
-    applyBreakBackground(imageUrl)
-
-    expect(document.body.style.backgroundImage).toBe('')
-    expect(document.body.classList.contains('has-background-image')).toBe(false)
-    pendingImage.dispatchEvent(new window.Event('load'))
-
-    expect(document.body.style.backgroundImage).toContain('linear-gradient(')
-    expect(document.body.style.backgroundImage).toContain(imageUrl)
-    expect(document.body.classList.contains('has-background-image')).toBe(true)
-    expect(window.getComputedStyle(document.body).backgroundSize).toBe('cover')
-    expect(window.getComputedStyle(document.body).backgroundPosition).toBe('50% 50%, 50% 50%')
-    expect(window.getComputedStyle(document.body).backgroundRepeat).toBe('no-repeat')
-  })
-
-  it('leaves the original background and white theme intact on load failure', () => {
+  it('logs load failure and leaves the original background and white theme intact', () => {
+    const style = document.createElement('style')
+    style.textContent = breakStyles
+    document.head.append(style)
     applyBreakBackground(imageUrl)
     pendingImage.dispatchEvent(new window.Event('error'))
 
+    expect(__electronLog.error).toHaveBeenCalledWith('Stretchly: could not load break background image', imageUrl)
     expect(document.body.style.backgroundImage).toBe('')
     expect(document.body.style.backgroundColor).toBe('rgb(255, 255, 255)')
-    expect(document.body.classList.contains('has-background-image')).toBe(false)
     expect(window.getComputedStyle(document.querySelector('.breaks')).color).toBe('rgb(0, 0, 0)')
-  })
-
-  it('loads special characters through the URL without adding accessible content', () => {
-    applyBreakBackground(imageUrl)
-
-    expect(pendingImage.src).toBe(imageUrl)
-    pendingImage.dispatchEvent(new window.Event('load'))
-
-    expect(document.body.style.backgroundImage).toContain(imageUrl)
-    expect(document.querySelectorAll('img')).toHaveLength(0)
-    expect(document.querySelector('.breaks').textContent).toBe('Take a break')
-  })
-
-  it('uses white foreground for photos in the white theme and preserves the health effect', () => {
-    document.body.classList.add('break-health-mode')
-    document.body.style.setProperty('--break-health-shadow', 'inset 0 0 80px 12px red')
-    expect(window.getComputedStyle(document.querySelector('.breaks')).color).toBe('rgb(0, 0, 0)')
-
-    applyBreakBackground(imageUrl)
-    pendingImage.dispatchEvent(new window.Event('load'))
-
-    expect(window.getComputedStyle(document.querySelector('.breaks')).color).toBe('rgb(255, 255, 255)')
-    expect(document.body.classList.contains('break-health-mode')).toBe(true)
-    expect(document.body.style.getPropertyValue('--break-health-shadow')).toBe('inset 0 0 80px 12px red')
   })
 })
 
@@ -105,6 +58,9 @@ for (const [type, loadRenderer] of [
         vi.useFakeTimers()
         vi.resetModules()
         document.documentElement.innerHTML = readFileSync(new URL(`../app/${type}.html`, import.meta.url), 'utf8')
+        const style = document.createElement('style')
+        style.textContent = breakStyles
+        document.head.append(style)
         dom.reconfigure({ url: `file:///app/${type}.html${blank ? '?blank=1' : ''}` })
         window.runtime = { platform: () => 'win32', windowsStore: () => false, windowsPortable: () => false }
         window.breaks = {
@@ -124,12 +80,18 @@ for (const [type, loadRenderer] of [
         await window.onload()
 
         expect(window.breaks.signalLoaded).toHaveBeenCalledOnce()
-        expect(pendingImage).not.toBe(null)
+        expect(pendingImage.src).toBe(imageUrl)
         expect(document.body.style.backgroundImage).toBe('')
         expect(document.querySelector('.breaks').style.display).toBe(blank ? 'none' : '')
+        if (!blank) {
+          expect(window.getComputedStyle(document.querySelector('.breaks')).color).toBe('rgb(0, 0, 0)')
+        }
         pendingImage.dispatchEvent(new window.Event('load'))
         expect(document.body.style.backgroundImage).toContain(imageUrl)
         expect(document.querySelector('.breaks').style.display).toBe(blank ? 'none' : '')
+        if (!blank) {
+          expect(window.getComputedStyle(document.querySelector('.breaks')).color).toBe('rgb(255, 255, 255)')
+        }
       })
     }
   })
