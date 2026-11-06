@@ -390,6 +390,23 @@ To show the Welcome window again on the next start, change `"isFirstRun"` to `tr
 #### Theme transparency [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify how solid the break window should be when Theme transparency is enabled, set the value of `opacity` from `0` to `1` (which is in turn 0 to 100%). If you want the break window to have a blurred background, set the value of `blurredBackground` to `true` (for macOS only).
 
+#### Break background images
+
+To show local images behind Mini and Long breaks, set these preferences:
+
+```json
+"breakBackgroundImage": true,
+"breakImageFolder": "C:\\Users\\YourName\\Pictures\\Breaks"
+```
+
+Use an absolute folder path, such as `/Users/YourName/Pictures/Breaks` on macOS or `/home/yourname/Pictures/Breaks` on Linux. Escape Windows backslashes as `\\` in JSON. By default, `breakBackgroundImage` is `false` and `breakImageFolder` is empty.
+
+Stretchly loads the list of PNG, JPG, JPEG and WebP files in that folder at startup, without searching subfolders. The list is refreshed on restart. Flatpak and Snap require a folder accessible from their sandbox.
+
+Images rotate randomly, with one image shared by all screens during each break. A dark overlay keeps the text readable. Opaque images cover theme transparency and macOS background blur.
+
+If a selected file is unavailable, Stretchly tries one other image. Empty or unreadable folders and failed image loads keep the original background and write an error to the log.
+
 #### Break window size [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify the size of the break window, set the value of `breakWindowHeight` and `breakWindowWidth` from `0` to `0.99` (which is in turn 0 to 99% of the size of the screen). Don't set 100% as that's fullscreen.
 
@@ -730,6 +747,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 - Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
+- lzh-xdu, [@lzh-xdu](https://github.com/lzh-xdu)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

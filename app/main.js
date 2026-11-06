@@ -7,6 +7,7 @@ import { EventEmitter } from 'node:events'
 import { readFile, readFileSync, writeFile, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
+import BackgroundImages from './utils/backgroundImage.js'
 import { resolveLocalAudio } from './utils/audioResolver.js'
 import { fileURLToPath } from 'url'
 import i18next from 'i18next'
@@ -73,6 +74,7 @@ nativeTheme.on('updated', function theThemeHasChanged () {
 
 let miniBreakIdeas
 let longBreakIdeas
+let backgroundImages
 let breakPlanner
 let appIcon = null
 let autostartManager = null
@@ -465,6 +467,8 @@ async function initialize (isAppStart = true) {
       })
     })
   }
+  backgroundImages = new BackgroundImages(settings.get('breakBackgroundImage'), settings.get('breakImageFolder'))
+
   if (!breakPlanner) {
     breakPlanner = new BreaksPlanner(settings)
     breakPlanner.nextBreak()
@@ -906,6 +910,7 @@ function startMiniBreak () {
   const idea = nextIdea || (settings.get('ideas') ? miniBreakIdeas.randomElement : [''])
   nextIdea = null
   lastBreak = { type: 'mini', idea }
+  const backgroundImage = backgroundImages.nextImage()
 
   if (!settings.get('silentNotifications')) {
     const sound = settings.get('miniBreakStartSound')
@@ -936,7 +941,7 @@ function startMiniBreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('miniBreakColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(settings.get('miniBreakColor')), danger, settings.get('breakHealthMode'), backgroundImage]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()
@@ -1076,6 +1081,7 @@ function startLongBreak () {
   const idea = nextIdea ? (nextIdea.map((val, index) => val || defaultNextIdea[index])) : defaultNextIdea
   nextIdea = null
   lastBreak = { type: 'long', idea }
+  const backgroundImage = backgroundImages.nextImage()
 
   if (!settings.get('silentNotifications')) {
     const sound = settings.get('longBreakStartSound')
@@ -1106,7 +1112,7 @@ function startLongBreak () {
     }
     return [idea, startTime, breakDuration, strictMode,
       postponable, postponableDurationPercent,
-      calculateBackgroundColor(settings.get('longBreakColor')), danger, settings.get('breakHealthMode')]
+      calculateBackgroundColor(settings.get('longBreakColor')), danger, settings.get('breakHealthMode'), backgroundImage]
   })
 
   const contentDisplayId = displayManager.getContentDisplayId()

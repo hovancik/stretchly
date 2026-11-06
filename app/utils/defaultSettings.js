@@ -26,6 +26,8 @@ export default {
   longBreakPostponableDurationPercent: 30,
   longBreakColor: '#478484',
   miniBreakColor: '#478484',
+  breakBackgroundImage: false,
+  breakImageFolder: '',
   transparentMode: false,
   blurredBackground: false,
   opacity: 0.9,
