@@ -109,7 +109,7 @@ window.onload = async (e) => {
       const unit = output.dataset.unit
       output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
       document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-        .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+        .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
     })
     setWindowHeight()
   })
@@ -233,18 +233,18 @@ window.onload = async (e) => {
     const unit = output.dataset.unit
     output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
     document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-      .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+      .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
     if (!eventsAttached) {
       range.onchange = async event => {
         output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
         document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
         window.settings.saveSettings(range.name, range.value * divisor)
       }
       range.oninput = async event => {
         output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
         document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
       }
     }
   })
@@ -340,7 +340,7 @@ window.onload = async (e) => {
     }
   }
 
-  function realBreakInterval () {
+  function longBreakIntervalMinutes () {
     const miniBreakInterval = document.querySelector('#miniBreakEvery').value * 1
     const longBreakInterval = document.querySelector('#longBreakEvery').value * 1
     return miniBreakInterval * (longBreakInterval + 1)
