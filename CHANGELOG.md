@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
-- renamed break preferences to use `miniBreak` and `longBreak`; existing settings migrate automatically
+- renamed break preferences to use `miniBreak` and `longBreak`, and end-sound preferences to `miniBreakEndSound` and `longBreakEndSound`; existing settings migrate automatically
 - tray menu shows configured shortcuts beside matching actions
 - macOS Ventura (13) or later is now required
 - macOS app bundles are now ad-hoc signed

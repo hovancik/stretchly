@@ -29,7 +29,7 @@ function exposeI18next () {
 
 function exposeBreaks (type) {
   contextBridge.exposeInMainWorld('breaks', {
-    sendBreakData: () => ipcRenderer.invoke(`send-${type}-break-data`),
+    getBreakData: () => ipcRenderer.invoke(`send-${type}-break-data`),
     finishBreak: (manualAwaiting, source) => ipcRenderer.send(`finish-${type}-break`, false, manualAwaiting, source),
     postponeBreak: (source) => ipcRenderer.send(`postpone-${type}-break`, source),
     onPostponeRequest: (callback) => ipcRenderer.on('request-postpone-break', () => callback()),
@@ -70,7 +70,7 @@ function exposeSettings () {
     currentSettings: async () => {
       return await ipcRenderer.invoke('current-settings')
     },
-    saveSettings: async (key, value) => {
+    saveSetting: async (key, value) => {
       ipcRenderer.send('save-setting', key, value)
     }
   })

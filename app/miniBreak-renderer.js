@@ -6,7 +6,7 @@ import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor, danger, breakHealthMode, backgroundImage] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger, breakHealthMode, backgroundImage] = await window.breaks.getBreakData()
 
   applyBreakBackground(backgroundImage)
 

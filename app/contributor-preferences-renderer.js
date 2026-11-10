@@ -19,7 +19,7 @@ window.onload = async (event) => {
     checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]
     if (!eventsAttached) {
       checkbox.onchange = (event) =>
-        window.settings.saveSettings(checkbox.value,
+        window.settings.saveSetting(checkbox.value,
           isNegative ? !checkbox.checked : checkbox.checked)
     }
   })
@@ -39,7 +39,7 @@ window.onload = async (event) => {
     radio.checked = settings[radio.name] === value
     if (!eventsAttached) {
       radio.onchange = (event) => {
-        window.settings.saveSettings(radio.name, value)
+        window.settings.saveSetting(radio.name, value)
       }
     }
   })
@@ -48,7 +48,7 @@ window.onload = async (event) => {
     select.value = settings[select.name]
     if (!eventsAttached) {
       select.onchange = (event) => {
-        window.settings.saveSettings(select.name, select.value)
+        window.settings.saveSetting(select.name, select.value)
       }
     }
   })
@@ -62,7 +62,7 @@ window.onload = async (event) => {
     if (!eventsAttached) {
       range.onchange = async event => {
         output.innerHTML = await window.i18next.t(`utils.${unit}`, { count: parseInt(range.value) })
-        window.settings.saveSettings(range.name, range.value * divisor)
+        window.settings.saveSetting(range.name, range.value * divisor)
       }
       range.oninput = async event => {
         output.innerHTML = await window.i18next.t(`utils.${unit}`, { count: parseInt(range.value) })

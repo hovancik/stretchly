@@ -64,7 +64,7 @@ for (const [type, loadRenderer] of [
         dom.reconfigure({ url: `file:///app/${type}.html${blank ? '?blank=1' : ''}` })
         window.runtime = { platform: () => 'win32', windowsStore: () => false, windowsPortable: () => false }
         window.breaks = {
-          sendBreakData: async () => [type === 'miniBreak' ? 'Stretch' : ['Stretch', 'Look away'], Date.now(), 20000, false, false, 0, '#ffffff', 0, false, imageUrl],
+          getBreakData: async () => [type === 'miniBreak' ? 'Stretch' : ['Stretch', 'Look away'], Date.now(), 20000, false, false, 0, '#ffffff', 0, false, imageUrl],
           signalLoaded: vi.fn(async () => {}),
           sanitizeIdea: idea => idea,
           onEnterManualAwait: vi.fn(),

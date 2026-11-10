@@ -109,7 +109,7 @@ window.onload = async (e) => {
       const unit = output.dataset.unit
       output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
       document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-        .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+        .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
     })
     setWindowHeight()
   })
@@ -184,7 +184,7 @@ window.onload = async (e) => {
     checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]
     if (!eventsAttached) {
       checkbox.onchange = (event) =>
-        window.settings.saveSettings(checkbox.value,
+        window.settings.saveSetting(checkbox.value,
           isNegative ? !checkbox.checked : checkbox.checked)
     }
   })
@@ -207,7 +207,7 @@ window.onload = async (e) => {
       : savedValue === value
     if (!eventsAttached) {
       radio.onchange = (event) => {
-        window.settings.saveSettings(radio.name, value)
+        window.settings.saveSetting(radio.name, value)
       }
     }
   })
@@ -215,14 +215,14 @@ window.onload = async (e) => {
   document.querySelector('#language').value = settings.language
   if (!eventsAttached) {
     document.querySelector('#language').onchange = (event) => {
-      window.settings.saveSettings('language', event.target.value)
+      window.settings.saveSetting('language', event.target.value)
     }
   }
 
   document.querySelector('#trayIconStyle').value = settings.trayIconStyle
   if (!eventsAttached) {
     document.querySelector('#trayIconStyle').onchange = (event) => {
-      window.settings.saveSettings('trayIconStyle', event.target.value)
+      window.settings.saveSetting('trayIconStyle', event.target.value)
     }
   }
 
@@ -233,18 +233,18 @@ window.onload = async (e) => {
     const unit = output.dataset.unit
     output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
     document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-      .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+      .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
     if (!eventsAttached) {
       range.onchange = async event => {
         output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
         document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
-        window.settings.saveSettings(range.name, range.value * divisor)
+          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
+        window.settings.saveSetting(range.name, range.value * divisor)
       }
       range.oninput = async event => {
         output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
         document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(realBreakInterval()) })
+          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
       }
     }
   })
@@ -263,7 +263,7 @@ window.onload = async (e) => {
       const enabletypeChecked = document.querySelectorAll('.enabletype:checked')
       if (enabletypeChecked.length === 0) {
         element.checked = true
-        window.settings.saveSettings(element.value, element.checked)
+        window.settings.saveSetting(element.value, element.checked)
         window.alert(await window.i18next.t('preferences.schedule.cantDisableBoth'))
       }
     }
@@ -340,7 +340,7 @@ window.onload = async (e) => {
     }
   }
 
-  function realBreakInterval () {
+  function longBreakIntervalMinutes () {
     const miniBreakInterval = document.querySelector('#miniBreakEvery').value * 1
     const longBreakInterval = document.querySelector('#longBreakEvery').value * 1
     return miniBreakInterval * (longBreakInterval + 1)

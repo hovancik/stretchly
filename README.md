@@ -212,8 +212,8 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `longBreakColor` - theme color code for Long breaks,
 - `miniBreakColor` - theme color code for Mini breaks,
 - `transparentMode` - show break windows as transparent
-- `longBreakAudio` - sound theme name (for Long breaks)
-- `miniBreakAudio` - sound theme name (for Mini breaks)
+- `longBreakEndSound` - sound at the end of Long breaks
+- `miniBreakEndSound` - sound at the end of Mini breaks
 - `fullscreen` - show breaks in fullscreen mode
 - `ideas` - show break ideas
 - `naturalBreaks` - monitor idle time
@@ -290,7 +290,7 @@ In the preferences file, set `notifyNewVersion: false,` to disable new version n
 To configure the sound when a break starts, set for example `"miniBreakStartSound": "crystal-glass"`. Same for `longBreakStartSound`. Built-in values: `silence`, `crystal-glass`, `wind-chime`, `tic-toc`, `reverie`. Setting the value to `silence` means no sound will be played.
 
 #### Different sound for Mini and Long breaks
-To play different sound for Mini breaks, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`).
+To use a different end sound for Mini breaks, set `miniBreakEndSound` to your desired value, e.g. `wind-chime`. Use `longBreakEndSound` for Long breaks. Choosing a sound in Preferences sets both end sounds. In manual-finish mode, the end sound plays when the configured duration is reached.
 
 #### Custom sounds
 
@@ -298,7 +298,7 @@ To use your own sounds, put WAV files in the `audio` folder inside Stretchly's u
 
 To replace a sound from Preferences, name your file `crystal-glass.wav`, `wind-chime.wav`, `tic-toc.wav`, or `reverie.wav`. For example, save it as `crystal-glass.wav` and select Crystal Glass. Stretchly will use your file whenever that sound plays, including previews. Delete the file to get the original sound back.
 
-You can also use your own filename, for example `my-sound.wav`. In the preferences file, set `"miniBreakAudio": "my-sound"` or `"longBreakAudio": "my-sound"`. The same works for `miniBreakStartSound` and `longBreakStartSound`. Leave out `.wav` in these settings. These sounds won't appear as new choices in Preferences. If you delete the file, change the setting back to a built-in sound.
+You can also use your own filename, for example `my-sound.wav`. In the preferences file, set `"miniBreakEndSound": "my-sound"` or `"longBreakEndSound": "my-sound"`. The same works for `miniBreakStartSound` and `longBreakStartSound`. Leave out `.wav` in these settings. These sounds won't appear as new choices in Preferences. If you delete the file, change the setting back to a built-in sound.
 
 Filenames can contain letters (`a-z`, `A-Z`), numbers, dots, underscores, and hyphens. Only `.wav` files are supported. The `silence` option always stays silent.
 
