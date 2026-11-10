@@ -59,7 +59,7 @@ describe('breakShortcuts', () => {
         const skipToLongBreak = vi.fn()
         const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
-        const breakPlanner = { _scheduledBreakType: 'longBreak' }
+        const breakPlanner = { scheduledBreakType: 'longBreak' }
 
         onShortcut({
           name: 'skipToNextScheduledBreakShortcut',
@@ -80,7 +80,7 @@ describe('breakShortcuts', () => {
         const skipToLongBreak = vi.fn()
         const skipToMiniBreak = vi.fn()
         const pauseBreaks = vi.fn()
-        const breakPlanner = { _scheduledBreakType: 'miniBreak' }
+        const breakPlanner = { scheduledBreakType: 'miniBreak' }
 
         onShortcut({
           name: 'skipToNextScheduledBreakShortcut',
