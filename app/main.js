@@ -333,7 +333,7 @@ async function initialize (isAppStart = true) {
             log.info('Stretchly: not migrating audio to longBreakAudio')
           }
           if (store.has('microbreakStartSoundPlaying')) {
-            const val = store.get('microbreakStartSoundPlaying') ? store.get('miniBreakAudio') : 'silence'
+            const val = store.get('microbreakStartSoundPlaying') ? store.get('miniBreakAudio', defaultSettings.miniBreakEndSound) : 'silence'
             store.set('miniBreakStartSound', val)
             log.info(`Stretchly: migrating microbreakStartSoundPlaying to miniBreakStartSound with value "${val}"`)
             store.delete('microbreakStartSoundPlaying')
@@ -342,7 +342,7 @@ async function initialize (isAppStart = true) {
             log.info('Stretchly: not migrating microbreakStartSoundPlaying')
           }
           if (store.has('breakStartSoundPlaying')) {
-            const val = store.get('breakStartSoundPlaying') ? store.get('longBreakAudio') : 'silence'
+            const val = store.get('breakStartSoundPlaying') ? store.get('longBreakAudio', defaultSettings.longBreakEndSound) : 'silence'
             store.set('longBreakStartSound', val)
             log.info(`Stretchly: migrating breakStartSoundPlaying to longBreakStartSound with value "${val}"`)
             store.delete('breakStartSoundPlaying')
@@ -417,7 +417,8 @@ async function initialize (isAppStart = true) {
             microbreakPostponeTime: 'miniBreakPostponeTime',
             microbreakPostponesLimit: 'miniBreakPostponesLimit',
             microbreakPostponableDurationPercent: 'miniBreakPostponableDurationPercent',
-            microbreakIdeas: 'miniBreakIdeas'
+            microbreakIdeas: 'miniBreakIdeas',
+            miniBreakAudio: 'miniBreakEndSound'
           }
           for (const [oldKey, newKey] of Object.entries(legacyMiniBreakSettings)) {
             if (store.has(oldKey)) {
@@ -442,7 +443,8 @@ async function initialize (isAppStart = true) {
             breakPostponesLimit: 'longBreakPostponesLimit',
             breakPostponableDurationPercent: 'longBreakPostponableDurationPercent',
             breakIdeas: 'longBreakIdeas',
-            mainColor: 'longBreakColor'
+            mainColor: 'longBreakColor',
+            longBreakAudio: 'longBreakEndSound'
           }
           for (const [oldKey, newKey] of Object.entries(legacyLongBreakSettings)) {
             if (store.has(oldKey)) {
@@ -1237,7 +1239,7 @@ function breakComplete (shouldPlaySound, windows, breakType) {
     globalShortcut.unregister(settings.get('endBreakShortcut'))
   }
   if (shouldPlaySound && !settings.get('silentNotifications')) {
-    const audio = breakType === 'mini' ? 'miniBreakAudio' : 'longBreakAudio'
+    const audio = breakType === 'mini' ? 'miniBreakEndSound' : 'longBreakEndSound'
     processWin.webContents.send('play-sound', settings.get(audio), settings.get('volume'))
   }
   if (process.platform === 'darwin') {
@@ -1268,7 +1270,7 @@ function enterManualAwaitPhase (type, shouldPlaySound) {
   const manualSettingKey = isMini ? 'miniBreakManualFinish' : 'longBreakManualFinish'
   if (!settings.get(manualSettingKey)) return
   if (shouldPlaySound && !settings.get('silentNotifications')) {
-    const audioKey = isMini ? 'miniBreakAudio' : 'longBreakAudio'
+    const audioKey = isMini ? 'miniBreakEndSound' : 'longBreakEndSound'
     processWin.webContents.send('play-sound', settings.get(audioKey), settings.get('volume'))
   }
   const wins = isMini ? miniBreakWins : longBreakWins
@@ -1747,8 +1749,8 @@ ipcMain.on('save-setting', function (event, key, value) {
     nativeTheme.themeSource = value
   }
 
-  if (key === 'longBreakAudio') {
-    settings.set('miniBreakAudio', value)
+  if (key === 'longBreakEndSound') {
+    settings.set('miniBreakEndSound', value)
   }
 
   if (key === 'longBreakColor') {
