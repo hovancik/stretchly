@@ -6,6 +6,7 @@
     "oclock_other": "klokken {{count}}",
     "inAbout": "om omkring {{count}}",
     "remaining": "{{count}} igjen",
+    "elapsed": "{{count}} har gått",
     "hours_one": "{{count}} time",
     "hours_other": "{{count}} timer",
     "minutes_one": "{{count}} minutt",
@@ -65,12 +66,11 @@
     "showBreaksAsRegularWindows": "Vis pauser som vanlige vinduer",
     "showBreaksAsRegularWindowsTitle": "Oppførsel som vanlig vindu:",
     "cursor": "Følg musepekeren",
+    "showTrayIcon": "Vis ikon i menylinjen",
     "primary": "Hovedskjermen",
     "showOnMonitor": "Vis pauser på",
     "screenInfo": "Om du ikke velger å vise pauser på alle skjermer kan du velge hvilken skjerm det skal vises på.",
     "screen": "Vis pauser på enkeltskjerm:",
-    "timeToBreakInTray": "Hvor lenge til neste pause",
-    "showTimeToBreakInTray": "Vis tid igjen til neste pause i menylinjeikonet",
     "currentTimeInBreaks": "Nåværende tid",
     "showCurrentTimeInBreaks": "Vis nåværende lokal tid i pausevindu",
     "toShowTrayIcon": "Vis ikon for Stretchly i menylinjen"
@@ -88,7 +88,6 @@
     },
     "about": {
       "learnMore": "For å lære mer om funksjonene i Stretchly, få en gjennomgang, laste ned nyeste versjon eller kontakte oss for brukerstøtte, ",
-      "notifyNewVersion": "Gi varsling om nye versjoner automatisk",
       "version": "Versjon ",
       "tagline": "Pausepåminnelsesprogrammet",
       "designedBy": "Ikon- og grensesnittsdesign av Colin Shanley",
@@ -100,7 +99,6 @@
       "checkNewVersion": "Se automatisk etter oppdatering"
     },
     "theme": {
-      "invertedMonochrome": "Invertert ensfarget",
       "monochrome": "Ensfarget",
       "colour": "Mangefarget",
       "trayIcon": "Ikoner på menylinjen:",
@@ -117,7 +115,12 @@
       "greenClouds": "Grønne skyer",
       "appearance": "Utseende:",
       "snowWhite": "Snøhvitt",
-      "reverie": "Dagdrøm"
+      "trayIconStyleLabel": "Stil:",
+      "trayIconStyleDefault": "Standard",
+      "trayIconStyleTime": "Tid til neste pause",
+      "trayIconStyleProgress": "Fremdrift mot neste pause",
+      "reverie": "Dagdrøm",
+      "silence": "Stillhet"
     },
     "schedule": {
       "cantDisableBoth": "Det er ikke mulig å skru av begge typer pauser",
@@ -182,6 +185,7 @@
   },
   "break": {
     "title": "På tide med en pause!",
+    "finish": "Avslutt denne pausen",
     "skip": "Hopp over denne pausen",
     "postpone": "Utsett denne pausen"
   },
@@ -229,6 +233,45 @@
     },
     "abl": {
       "text": "Stå opp med armene strukket rett langs skuldrene. Ta hengene bak ryggen, hold dem der en stund og strekk armene ut igjen."
+    },
+    "abm": {
+      "text": "Sett deg ytterst på stolen, vri overkroppen til den ene siden og hold i 10 til 15 sekunder. Gjenta til den andre siden."
+    },
+    "abn": {
+      "text": "Reis deg og sett den ene foten på noe i nærheten, for eksempel en stol eller en krakk. Ha kneet bøyd og hold stillingen i 10 til 15 sekunder. Gjenta med den andre foten."
+    },
+    "abo": {
+      "text": "Stå med føttene i skulderbreddes avstand, senk kroppen som om du skulle sette deg på en stol, og reis deg igjen. Gjenta flere ganger."
+    },
+    "abp": {
+      "text": "Stå med ryggen og hendene mot en vegg, og beveg armene sakte opp og ned som om du lager en snøengel."
+    },
+    "abq": {
+      "text": "Stå vendt mot en vegg, sett hendene mot den og ta noen armhevinger."
+    },
+    "abr": {
+      "text": "Sett deg ytterst på stolen og strekk det ene benet rett frem. Hold i 10 til 15 sekunder. Gjenta med det andre benet."
+    },
+    "abs": {
+      "text": "Stå vendt mot en vegg med den ene foten bak og den andre foran, og len deg inn mot veggen. Bytt ben og gjenta."
+    },
+    "abt": {
+      "text": "Strekk den ene armen rett opp, og bruk den andre hånden til å presse albuen forsiktig inn mot hodet. Hold i 10 til 15 sekunder. Gjenta med den andre armen."
+    },
+    "abu": {
+      "text": "Vipp hodet til den ene siden og så til den andre, og vipp det deretter forsiktig forover og bakover."
+    },
+    "abv": {
+      "text": "Før den ene armen over brystet, ta tak i albuen med den andre hånden og trekk armen forsiktig inn mot brystet. Gjenta med den andre armen."
+    },
+    "abw": {
+      "text": "Reis deg, sett den ene foten på noe i nærheten, for eksempel en stol eller en krakk, og strekk deg ned mot tærne. Gjenta med det andre benet."
+    },
+    "abx": {
+      "text": "Stå i en døråpning med en arm mot hver side av karmen, og len deg forsiktig fremover til du kjenner at det strekker i brystet."
+    },
+    "aby": {
+      "text": "Sett deg ytterst på en stol eller på gulvet med fotsålene mot hverandre, og press knærne forsiktig ned med albuene for å strekke innsiden av lårene."
     },
     "aaa": {
       "text": "Gå og ta ett glass vann."
@@ -400,6 +443,14 @@
     "abh": {
       "text": "Ny forskning viser at bruk av kontrollerte sakte pusteteknikker har et potensiale som et middel for å optimalisere fysiologiske parametere som ser ut til å være assosiert med helse og lang levetid.",
       "title": "Sakte pusting"
+    },
+    "abi": {
+      "title": "Visualisering",
+      "text": "Lukk øynene og se for deg at du er på et fredelig og rolig sted, for eksempel på en strand eller i en skog. Legg merke til hva du ser, hører og kjenner der."
+    },
+    "abj": {
+      "title": "Overveldet?",
+      "text": "Prøv jordingsøvelsen 5-4-3-2-1: finn 5 ting du kan se, 4 ting du kan ta på, 3 ting du kan høre, 2 ting du kan lukte og 1 ting du kan smake."
     },
     "abf": {
       "text": "Mens du sitter, fest albuene på skrivebordet og nær skrivebordskanten. La vekten falle fremover og legg hendene over øynene. Lukk øynene og inhaler sakte gjennom nesen og hold i noen sekunder. Fortsett å puste dypt.",
