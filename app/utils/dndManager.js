@@ -152,6 +152,9 @@ class DndManager extends EventEmitter {
         return wfa === 1 || wfa === 2
       } else if (process.platform === 'darwin') {
         const macOSMajorVersion = parseInt(process.getSystemVersion().split('.')[0])
+        if (macOSMajorVersion >= 27) {
+          return await this._getMacOSFocusState()
+        }
         let cmd = ''
         if (macOSMajorVersion >= 26) {
           cmd = 'defaults read com.apple.controlcenter "NSStatusItem VisibleCC FocusModes"'
@@ -183,6 +186,27 @@ class DndManager extends EventEmitter {
       this.__asyncExec = promisify(exec)
     }
     return this.__asyncExec
+  }
+
+  async _getMacOSFocusState () {
+    try {
+      const contents = await readFile(join(homedir(), 'Library', 'DoNotDisturb', 'DB', 'Assertions.json'), 'utf8')
+      const { data } = JSON.parse(contents)
+      if (!Array.isArray(data)) {
+        throw new Error('Invalid macOS Focus assertion data')
+      }
+      return data.some(store => (store.storeAssertionRecords ?? []).some(record => {
+        const mode = record.assertionDetails?.assertionDetailsModeIdentifier
+        return typeof mode === 'string' && mode.length > 0
+      }))
+    } catch (e) {
+      if (e.code === 'EACCES' || e.code === 'EPERM') {
+        this._logErrorOnce('macos-focus (grant Stretchly Full Disk Access in System Settings > Privacy & Security, then restart Stretchly)', e)
+      } else {
+        this._logErrorOnce('macos-focus', e)
+      }
+      return this.isOnDnd
+    }
   }
 
   async _getConfigValue (filePath, key) {
