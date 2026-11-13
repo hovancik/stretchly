@@ -35,6 +35,7 @@ export default {
   miniBreakEndSound: 'crystal-glass',
   volume: 1,
   fullscreen: false,
+  useKioskMode: true,
   ideas: true,
   naturalBreaks: true,
   naturalBreaksInactivityResetTime: 300000,
