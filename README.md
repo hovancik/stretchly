@@ -663,6 +663,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Wayland multi-display window placement issue puts all break windows on one monitor; start with X11 backend (`stretchly --ozone-platform=x11`) if needed, or set [`forceX11OnWayland`](#use-x11-backend-on-wayland) to make Stretchly do it automatically. See [electron/electron#48749](https://github.com/electron/electron/issues/48749).
 
 ### MacOS
+- On macOS 27 and later, Do Not Disturb detection reads active Focus assertions from `~/Library/DoNotDisturb/DB/Assertions.json`. Any active Focus mode pauses breaks when "Show breaks even in Do Not Disturb mode" is unchecked. If the log reports a permission error, allow Stretchly in System Settings > Privacy & Security > Full Disk Access, then quit and reopen it. Read failures are logged and preserve the last detected state (initially off); detection retries at the configured interval. When running from source, permission may instead be needed for the terminal or Electron used to launch Stretchly.
 - users experiencing their Dock hiding after a break, requiring command + tab or a mouse click to get focus back, check System Preferences > Users & Groups > {User} > Login Items. If Hide is checked for Stretchly, uncheck it, it should solve the issue.
 
 ### Windows

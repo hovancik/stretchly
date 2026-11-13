@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - CLI command and shortcut to start the last break again
 
 ### Fixed
+- detect Do Not Disturb on macOS 27 and later using active Focus assertions, with Full Disk Access guidance when access is denied
 - fix styling when using different Mini and Long break colors
 - fix maximum postpones controls saving incorrect counts in Contributor Preferences
 - fix debug file and folder links when paths contain HTML special characters
