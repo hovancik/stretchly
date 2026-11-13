@@ -42,6 +42,7 @@
       "showBreaksIn": "Shows breaks in:",
       "window": "Window",
       "fullscreen": "Full screen",
+      "useKioskMode": "Use kiosk mode for full screen breaks (separate Space with animation)",
       "showIdeas": "Show exercise tips during breaks",
       "allScreens": "Shows breaks on all monitors",
       "monitorIdleTime": "Monitor system idle time (breaks are paused if system is idle).",
