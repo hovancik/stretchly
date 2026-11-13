@@ -154,6 +154,7 @@ body {
 }
 
 .darwin .darwin-hidden,
+.win32 .win32-hidden,
 .linux .linux-hidden,
 .freebsd .linux-hidden,
 .openbsd .linux-hidden,

@@ -414,6 +414,12 @@ To specify the size of the break window, set the value of `breakWindowHeight` an
 
 If you want Stretchly breaks to act as regular windows (have a titlebar, turn off always on top, be minimizable and focusable) set `showBreaksAsRegularWindows` to `true`.
 
+#### Kiosk mode for full screen breaks on macOS
+
+On macOS, full screen breaks use kiosk mode (native full screen), which moves breaks to their own Space with the system slide animation when a break starts and ends. To show full screen breaks in a window covering the whole screen instead, without any animation, uncheck "Use kiosk mode for full screen breaks" in Preferences, or set `useKioskMode` to `false` in the preferences file. Breaks then open on the current Space, the same way as breaks in a window, also above apps in native full screen, and cover the menu bar and Dock.
+
+This is macOS only, and only applies when breaks are shown in Full screen and `showBreaksAsRegularWindows` is `false`. Setting `breakWindowWidth` and `breakWindowHeight` to `1` for breaks in a window is not the same: macOS keeps such a window below the menu bar.
+
 #### Show break countdown only on one screen
 
 By default, when breaks are shown on all screens (`allScreens: true`), the countdown and break idea are shown on every screen. If you'd rather keep the other screens blanked and show the countdown and idea on a single screen only, set `breakContentScreen` in the preferences file to one of:

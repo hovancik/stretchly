@@ -33,6 +33,7 @@ import { pauseMenu } from './utils/pauseMenu.js'
 import defaultSettings from './utils/defaultSettings.js'
 import StatusMessages from './utils/statusMessages.js'
 import DisplayManager from './utils/displayManager.js'
+import { usesOverlayFullscreen, overlayFullscreenWindowOptions, overlayFullscreenBounds } from './utils/kioskMode.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -672,6 +673,15 @@ function startPowerMonitoring () {
   powerMonitor.on('unlock-screen', onResumeOrUnlock)
 }
 
+function isOverlayFullscreen (showBreaksAsRegularWindows) {
+  return usesOverlayFullscreen({
+    platform: process.platform,
+    fullscreen: settings.get('fullscreen'),
+    useKioskMode: settings.get('useKioskMode'),
+    showBreaksAsRegularWindows
+  })
+}
+
 function closeWindows (windowArray) {
   for (const window of windowArray) {
     if (!window || window.isDestroyed()) {
@@ -977,7 +987,10 @@ function startMiniBreak () {
       }
     }
 
-    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+    const overlayFullscreen = isOverlayFullscreen(showBreaksAsRegularWindows)
+    if (overlayFullscreen) {
+      Object.assign(windowOptions, overlayFullscreenWindowOptions(displayManager.getDisplayBounds(localDisplayId)))
+    } else if (settings.get('fullscreen') && process.platform !== 'darwin') {
       windowOptions.width = displayManager.getDisplayWidth(localDisplayId)
       windowOptions.height = displayManager.getDisplayHeight(localDisplayId)
       windowOptions.x = displayManager.getDisplayX(localDisplayId, 0, true)
@@ -988,8 +1001,12 @@ function startMiniBreak () {
     }
 
     let miniBreakWinLocal = new BrowserWindow(windowOptions)
-    // seems to help with multiple-displays problems
-    miniBreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    if (overlayFullscreen) {
+      miniBreakWinLocal.setBounds(overlayFullscreenBounds(windowOptions))
+    } else {
+      // seems to help with multiple-displays problems
+      miniBreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    }
 
     miniBreakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
@@ -1012,7 +1029,9 @@ function startMiniBreak () {
         } else {
           miniBreakWinLocal.setMinimizable(false)
           miniBreakWinLocal.setClosable(false)
-          miniBreakWinLocal.setKiosk(settings.get('fullscreen'))
+          if (!overlayFullscreen) {
+            miniBreakWinLocal.setKiosk(settings.get('fullscreen'))
+          }
         }
       }
       if (localDisplayId === emitOnId) {
@@ -1030,7 +1049,7 @@ function startMiniBreak () {
 
     miniBreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
     // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
-    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
+    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen') && !overlayFullscreen)) {
       miniBreakWinLocal.setVisibleOnAllWorkspaces(true)
     }
     miniBreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
@@ -1148,7 +1167,10 @@ function startLongBreak () {
       }
     }
 
-    if (settings.get('fullscreen') && process.platform !== 'darwin') {
+    const overlayFullscreen = isOverlayFullscreen(showBreaksAsRegularWindows)
+    if (overlayFullscreen) {
+      Object.assign(windowOptions, overlayFullscreenWindowOptions(displayManager.getDisplayBounds(localDisplayId)))
+    } else if (settings.get('fullscreen') && process.platform !== 'darwin') {
       windowOptions.width = displayManager.getDisplayWidth(localDisplayId)
       windowOptions.height = displayManager.getDisplayHeight(localDisplayId)
       windowOptions.x = displayManager.getDisplayX(localDisplayId, 0, true)
@@ -1159,8 +1181,12 @@ function startLongBreak () {
     }
 
     let longBreakWinLocal = new BrowserWindow(windowOptions)
-    // seems to help with multiple-displays problems
-    longBreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    if (overlayFullscreen) {
+      longBreakWinLocal.setBounds(overlayFullscreenBounds(windowOptions))
+    } else {
+      // seems to help with multiple-displays problems
+      longBreakWinLocal.setSize(windowOptions.width, windowOptions.height)
+    }
 
     longBreakWinLocal.once('ready-to-show', () => {
       log.info('Stretchly: ready-to-show fired')
@@ -1183,7 +1209,9 @@ function startLongBreak () {
         } else {
           longBreakWinLocal.setMinimizable(false)
           longBreakWinLocal.setClosable(false)
-          longBreakWinLocal.setKiosk(settings.get('fullscreen'))
+          if (!overlayFullscreen) {
+            longBreakWinLocal.setKiosk(settings.get('fullscreen'))
+          }
         }
       }
       if (localDisplayId === emitOnId) {
@@ -1202,7 +1230,7 @@ function startLongBreak () {
 
     longBreakWinLocal.loadURL(isBlank ? modalPath + '?blank=1' : modalPath)
     // kiosk fullscreen owns its own Space; CanJoinAllSpaces would eject it (menu bar returns)
-    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen'))) {
+    if (!(process.platform === 'darwin' && !showBreaksAsRegularWindows && settings.get('fullscreen') && !overlayFullscreen)) {
       longBreakWinLocal.setVisibleOnAllWorkspaces(true)
     }
     longBreakWinLocal.setAlwaysOnTop(!showBreaksAsRegularWindows, 'pop-up-menu')
