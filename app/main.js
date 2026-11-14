@@ -84,7 +84,7 @@ let miniBreakWins = null
 let longBreakWins = null
 let preferencesWin = null
 let welcomeWin = null
-let contributorPreferencesWin = null
+let advancedPreferencesWin = null
 let syncPreferencesWin = null
 let myStretchlyWin = null
 let settings
@@ -576,7 +576,7 @@ async function initialize (isAppStart = true) {
       global.isContributor = true
       log.info('Stretchly: Thanks for your contributions!')
       if (preferencesWin) {
-        preferencesWin.webContents.send('enable-contributor-preferences')
+        preferencesWin.webContents.send('enable-advanced-preferences')
       }
       updateTray()
     }
@@ -588,8 +588,8 @@ async function initialize (isAppStart = true) {
   if (welcomeWin) {
     welcomeWin.webContents.send('renderSettings', settings.store)
   }
-  if (contributorPreferencesWin) {
-    contributorPreferencesWin.webContents.send('renderSettings', settings.store)
+  if (advancedPreferencesWin) {
+    advancedPreferencesWin.webContents.send('renderSettings', settings.store)
   }
   globalShortcut.unregisterAll()
 
@@ -778,13 +778,13 @@ function createWelcomeWindow (isAppStart = true) {
   }
 }
 
-function createContributorSettingsWindow () {
-  if (contributorPreferencesWin) {
-    contributorPreferencesWin.show()
+function createAdvancedPreferencesWindow () {
+  if (advancedPreferencesWin) {
+    advancedPreferencesWin.show()
     return
   }
-  const modalPath = 'file://' + join(__dirname, '/contributor-preferences.html')
-  contributorPreferencesWin = new BrowserWindow({
+  const modalPath = 'file://' + join(__dirname, '/advanced-preferences.html')
+  advancedPreferencesWin = new BrowserWindow({
     x: displayManager.getDisplayX(-1, 735),
     y: displayManager.getDisplayY(),
     width: 735,
@@ -793,17 +793,17 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      preload: join(__dirname, './contributor-preferences-preload.mjs'),
+      preload: join(__dirname, './advanced-preferences-preload.mjs'),
       sandbox: false
     }
   })
-  contributorPreferencesWin.webContents.loadURL(modalPath)
-  contributorPreferencesWin.once('ready-to-show', () => {
-    contributorPreferencesWin.center()
-    contributorPreferencesWin.show()
+  advancedPreferencesWin.webContents.loadURL(modalPath)
+  advancedPreferencesWin.once('ready-to-show', () => {
+    advancedPreferencesWin.center()
+    advancedPreferencesWin.show()
   })
-  contributorPreferencesWin.once('closed', () => {
-    contributorPreferencesWin = null
+  advancedPreferencesWin.once('closed', () => {
+    advancedPreferencesWin = null
   })
 }
 
@@ -1654,9 +1654,9 @@ function getTrayMenuTemplate () {
 
   if (global.isContributor) {
     trayMenu.push({
-      label: i18next.t('main.contributorPreferences'),
+      label: i18next.t('main.advancedPreferences'),
       click: function () {
-        createContributorSettingsWindow()
+        createAdvancedPreferencesWindow()
       }
     }, {
       label: i18next.t('main.syncPreferences'),
@@ -1851,13 +1851,13 @@ ipcMain.on('set-contributor', function (event) {
   global.isContributor = true
   log.info('Stretchly: Logged in. Thanks for your contributions!')
   if (preferencesWin) {
-    preferencesWin.webContents.send('enable-contributor-preferences')
+    preferencesWin.webContents.send('enable-advanced-preferences')
   }
   updateTray()
 })
 
-ipcMain.on('open-contributor-preferences', function () {
-  createContributorSettingsWindow()
+ipcMain.on('open-advanced-preferences', function () {
+  createAdvancedPreferencesWindow()
 })
 
 ipcMain.on('open-contributor-auth', function (event, provider) {

@@ -18,7 +18,7 @@
     "continue": "Doorgaan",
     "cancel": "Annuleer",
     "preferences": "Instellingen",
-    "contributorPreferences": "Bijdrager Instellingen",
+    "advancedPreferences": "Geavanceerde instellingen",
     "syncPreferences": "Sync. voorkeuren",
     "restoreDefaults": "Standaard instellingen herstellen"
   },
@@ -107,17 +107,17 @@
       "becomeContributor": "Word een Patron",
       "alreadyContributor": "Ik ben al een bijdrager",
       "authenticateUsing": "Authenticeren met:",
-      "contributorPreferences": "Bijdrager Instellingen",
+      "advancedPreferences": "Geavanceerde instellingen",
       "syncPreferences": "Sync. voorkeuren"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Eerste monitor",
     "1": "Tweede monitor",
     "2": "Derde monitor",
     "3": "Vierde monitor",
     "4": "Vijfde monitor",
-    "title": "Bijdrage Instellingen",
+    "title": "Geavanceerde instellingen",
     "notifications": "Pauze notificaties:",
     "notificationsInfo": "Systeem notificatie die word vertoond voor de pauzes zodat je jezelf kan voorbereiden.",
     "beforeLongBreak": "Lange Pauze:",

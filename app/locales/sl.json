@@ -17,7 +17,7 @@
     "longBreakIn": "Dolg premor čez $t(utils.seconds, {'count': {{seconds}} })",
     "miniBreakIn": "Mini premor čez $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Opomnik za odmor",
-    "contributorPreferences": "Nastavitve podpornikov",
+    "advancedPreferences": "Napredne nastavitve",
     "pause": "Zaustavi premore",
     "resume": "Nadaljuj premor",
     "resumingBreaks": "Nadaljevanje premorov"
@@ -74,7 +74,7 @@
     "none_other": "{{count}}",
     "elapsed": "{{count}} preteklo"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Prvi zaslon",
     "1": "Drugi zaslon",
     "2": "Tretji zaslon",
@@ -127,7 +127,7 @@
     "beforeLongBreak": "Dolgi premor:",
     "notificationsInfo": "Prikaz sistemskega obvestila pred premori, da se lahko pripravite nanje.",
     "notifications": "Obvestila premorov:",
-    "title": "Nastavitve podpornikov",
+    "title": "Napredne nastavitve",
     "timeToBreakInTray": "Čas za premor",
     "showTimeToBreakInTray": "Prikaži čas do naslednjega premora v ikoni opravilne vrstice",
     "currentTimeInBreaks": "Trenutni čas",
@@ -138,7 +138,7 @@
   "preferences": {
     "heart": {
       "syncPreferences": "Sinhroniziraj nastavitve",
-      "contributorPreferences": "Nastavitve podpornikov",
+      "advancedPreferences": "Napredne nastavitve",
       "authenticateUsing": "Avtenticirajte se z:",
       "alreadyContributor": "Že podpiram",
       "becomeContributor": "Postanite Patron",

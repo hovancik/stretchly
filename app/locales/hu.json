@@ -19,7 +19,7 @@
     "continue": "Folytatás",
     "cancel": "Mégsem",
     "preferences": "Beállítások",
-    "contributorPreferences": "Támogatói beállítások",
+    "advancedPreferences": "Speciális beállítások",
     "syncPreferences": "Beállítások szinkronizálása"
   },
   "break": {
@@ -113,12 +113,12 @@
       "becomeContributor": "Legyél támogató (Patreon)",
       "alreadyContributor": "Már támogató vagyok",
       "authenticateUsing": "Azonosítás a következővel:",
-      "contributorPreferences": "Támogatói beállítások",
+      "advancedPreferences": "Speciális beállítások",
       "syncPreferences": "Beállítások szinkronizálása"
     }
   },
-  "contributorPreferences": {
-    "title": "Támogatói beállítások",
+  "advancedPreferences": {
+    "title": "Speciális beállítások",
     "notifications": "Szünet értesítések:",
     "notificationsInfo": "A lent megadott időpontban értesítés fog érkezni, hogy felkészülhess a szünetekre.",
     "beforeLongBreak": "Hosszú szünet előtt:",

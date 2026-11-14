@@ -19,7 +19,7 @@
     "continue": "Daŭrigi",
     "cancel": "Nuligi",
     "preferences": "Agordoj",
-    "contributorPreferences": "Kontribuantaj Agordoj",
+    "advancedPreferences": "Altnivelaj agordoj",
     "syncPreferences": "Sinkronigi Agordojn"
   },
   "break": {
@@ -107,17 +107,17 @@
       "becomeContributor": "Iĝi Patron",
       "alreadyContributor": "Mi jam estas kontribuanto",
       "authenticateUsing": "Aŭtentigi per:",
-      "contributorPreferences": "Kontribuantaj Agordoj",
+      "advancedPreferences": "Altnivelaj agordoj",
       "syncPreferences": "Sinkronigi Agordojn"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Unua ekrano",
     "1": "Dua ekrano",
     "2": "Tria ekrano",
     "3": "Kvara ekrano",
     "4": "Kvina ekrano",
-    "title": "Kontribuantaj Agordoj",
+    "title": "Altnivelaj agordoj",
     "notifications": "Paŭzaj sciigoj:",
     "notificationsInfo": "Sistema sciigo aperas antaŭ paŭzoj por permesi vin pretigi.",
     "beforeLongBreak": "Longa Paŭzo:",

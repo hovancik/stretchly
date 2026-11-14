@@ -15,7 +15,7 @@
     "preferences": "Параметри",
     "restoreDefaults": "Скинути налаштування",
     "syncPreferences": "Синхронізація налаштувань",
-    "contributorPreferences": "Налаштування учасника",
+    "advancedPreferences": "Розширені налаштування",
     "cancel": "Скасувати",
     "continue": "Продовжити",
     "warning": "Відновити налаштування за замовчуванням, ваші зміни будуть втрачені.",
@@ -88,7 +88,7 @@
     },
     "heart": {
       "syncPreferences": "Синхронізація налаштувань",
-      "contributorPreferences": "Налаштування учасника",
+      "advancedPreferences": "Розширені налаштування",
       "authenticateUsing": "Ввійти за допомогою:",
       "alreadyContributor": "Я вже долучився",
       "becomeContributor": "Підтримати",
@@ -127,7 +127,7 @@
     "viewTutorial": "Переглянути інструкцію",
     "title": "Вітаємо в Stretchly"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Перший монітор",
     "1": "Другий монітор",
     "2": "Третій монітор",
@@ -175,7 +175,7 @@
     "newVersionNotification": "Сповіщати про доступність нової версії",
     "notificationsInfo": "Системне сповіщення з'являється завчасно, щоб ви могли підготуватися.",
     "notifications": "Сповіщення про перерви:",
-    "title": "Налаштування учасника",
+    "title": "Розширені налаштування",
     "cursor": "Стежити за вказівником",
     "primary": "Основний монітор",
     "showOnMonitor": "Показувати вікно перерви на",

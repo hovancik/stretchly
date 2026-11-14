@@ -17,7 +17,7 @@
     "toMiniBreak": "Pauză Mică",
     "toLongBreak": "Pauză lungă",
     "restoreDefaults": "Restabiliți setările de bază",
-    "contributorPreferences": "Preferințe pentru colaboratori",
+    "advancedPreferences": "Preferințe avansate",
     "miniBreakIn": "Pauză scurtă in $t(utils.seconds, {'count': {{seconds}} })",
     "longBreakIn": "Pauză lungă in $t(utils.seconds, {'count': {{seconds}} })",
     "warning": "Aceasta va restabili setările implicite ale aplicației și toate setările dvs. vor fi pierdute."
@@ -66,7 +66,7 @@
       "becomeContributor": "Deveniți un Patron",
       "alreadyContributor": "Sunt deja un colaborator",
       "authenticateUsing": "Autentificare folosind:",
-      "contributorPreferences": "Preferințele colaboratorilor",
+      "advancedPreferences": "Preferințe avansate",
       "syncPreferences": "Sincronizați preferințele",
       "desc1": "Este dovedit științific că luarea pauzelor regulate atunci când utilizați un computer este important pentru bunăstare fizică și mentală.",
       "desc2": "Stretchly este gratuit. Dar vă puteți oferi sprijinul donând și ajutându-ne să continuăm să îmbunătățim Stretchly și să lansăm alte programe gratuite."
@@ -121,8 +121,8 @@
     "getStarted": "Start",
     "title": "Bun venit la Stretchly"
   },
-  "contributorPreferences": {
-    "title": "Preferințele colaboratorilor",
+  "advancedPreferences": {
+    "title": "Preferințe avansate",
     "notifications": "Notificări pentru pauze:",
     "newVersionNotification": "Notificați când noua versiune este disponibilă",
     "customIdeas": "Idei personalizate:",

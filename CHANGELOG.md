@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - fix styling when using different Mini and Long break colors
-- fix maximum postpones controls saving incorrect counts in Contributor Preferences
+- fix maximum postpones controls saving incorrect counts in Advanced Preferences
 - fix debug file and folder links when paths contain HTML special characters
 - fix custom break images when the user data path contains URL special characters
 - fix snap startup crash
@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
+- renamed Contributor Preferences to Advanced Preferences
 - renamed break preferences to use `miniBreak` and `longBreak`, and end-sound preferences to `miniBreakEndSound` and `longBreakEndSound`; existing settings migrate automatically
 - tray menu shows configured shortcuts beside matching actions
 - macOS Ventura (13) or later is now required

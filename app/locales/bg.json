@@ -19,7 +19,7 @@
     "continue": "Продължаване",
     "cancel": "Отказ",
     "preferences": "Предпочитания",
-    "contributorPreferences": "Предпочитания за дарители",
+    "advancedPreferences": "Разширени настройки",
     "syncPreferences": "Синхронизиране на предпочитанията"
   },
   "break": {
@@ -113,17 +113,17 @@
       "becomeContributor": "Станете патрон",
       "alreadyContributor": "Вече подкрепям проекта",
       "authenticateUsing": "Удостоверяване чрез:",
-      "contributorPreferences": "Предпочитания за дарители",
+      "advancedPreferences": "Разширени настройки",
       "syncPreferences": "Настройки за синхронизация"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Първия монитор",
     "1": "Втория монитор",
     "2": "Третия монитор",
     "3": "Четвъртия монитор",
     "4": "Петия монитор",
-    "title": "Предпочитания за дарители",
+    "title": "Разширени настройки",
     "notifications": "Известия за почивките:",
     "notificationsInfo": "Системно известие, което се показва малко преди почивката, така че да можете да се подготвите за нея.",
     "beforeLongBreak": "Дълга почивка:",

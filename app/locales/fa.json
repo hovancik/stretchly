@@ -66,7 +66,7 @@
     },
     "heart": {
       "syncPreferences": "تنظیمات همگام‌سازی",
-      "contributorPreferences": "تنظیمات کمک‌کنندگان",
+      "advancedPreferences": "تنظیمات پیشرفته",
       "authenticateUsing": "اعتبارسنجی از طریق:",
       "alreadyContributor": "من هم‌اکنون نیز از کمک‌کنندگان هستم",
       "becomeContributor": "یکی از حامیان برنامه شوید",
@@ -96,7 +96,7 @@
   },
   "main": {
     "syncPreferences": "همگام‌سازی تنظیمات",
-    "contributorPreferences": "تنظیمات دست‌اندرکاران",
+    "advancedPreferences": "تنظیمات پیشرفته",
     "preferences": "تنظیمات",
     "cancel": "لغو",
     "continue": "ادامه",
@@ -155,7 +155,7 @@
   "process": {
     "newVersionAvailable": "نسخه جدیدی موجود است!"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "مانیتور اول",
     "1": "مانیتور دوم",
     "2": "مانیتور سوم",
@@ -200,7 +200,7 @@
     "beforeLongBreak": "استراحت‌های طولانی:",
     "notificationsInfo": "نمایش اخطار سیستمی پیش از شروع استراحت برای آماده‌کردن شما.",
     "notifications": "اعلان‌های استراحت‌ها:",
-    "title": "تنظیمات کمک‌کنندگان",
+    "title": "تنظیمات پیشرفته",
     "showBreaksAsRegularWindowsTitle": "عمل کردن به عنوان پنجره معمولی:",
     "cursor": "مکان نما را دنبال کن",
     "primary": "مانیتور اصلی",

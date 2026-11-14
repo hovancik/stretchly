@@ -19,7 +19,7 @@
     "continue": "જારી રાખો",
     "cancel": "રદ કરો",
     "preferences": "પસંદગીઓ",
-    "contributorPreferences": "યોગદાનકર્તા પસંદગીઓ",
+    "advancedPreferences": "અદ્યતન પસંદગીઓ",
     "syncPreferences": "સમન્વય પસંદગીઓ"
   },
   "break": {
@@ -105,12 +105,12 @@
       "becomeContributor": "પુરસ્કર્તા બનો",
       "alreadyContributor": "હું પહેલેથી જ ફાળો આપનાર છું",
       "authenticateUsing": "આના દ્વારા પ્રમાણિત કરો:",
-      "contributorPreferences": "યોગદાનકર્તા પસંદગીઓ",
+      "advancedPreferences": "અદ્યતન પસંદગીઓ",
       "syncPreferences": "સમન્વય પસંદગીઓ"
     }
   },
-  "contributorPreferences": {
-    "title": "યોગદાનકર્તા પસંદગીઓ",
+  "advancedPreferences": {
+    "title": "અદ્યતન પસંદગીઓ",
     "notifications": "વિરામ સૂચનાઓ:",
     "notificationsInfo": "સિસ્ટમ સૂચનાઓ તમને તેની તૈયારી કરવા માટે વિરામ પહેલાં બતાવવામાં આવે છે.",
     "beforeLongBreak": "લાંબો વિરામ:",

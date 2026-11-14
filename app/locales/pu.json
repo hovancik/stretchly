@@ -19,7 +19,7 @@
     "continue": "ਜਾਰੀ ਰੱਖੋ",
     "cancel": "ਰੱਦ ਕਰੋ",
     "preferences": "ਪਸੰਦ",
-    "contributorPreferences": "ਸਹਿਯੋਗੀ ਪਸੰਦ",
+    "advancedPreferences": "ਉੱਨਤ ਤਰਜੀਹਾਂ",
     "syncPreferences": "ਸਿੰਕ ਪਸੰਦ"
   },
   "break": {
@@ -105,12 +105,12 @@
       "becomeContributor": "ਸਰਪ੍ਰਸਤ ਬਣੋ",
       "alreadyContributor": "ਮੈਂ ਪਹਿਲਾਂ ਹੀ ਸਹਿਯੋਗੀ ਹਾਂ",
       "authenticateUsing": "ਦੁਆਰਾ ਪ੍ਰਮਾਣਿਤ:",
-      "contributorPreferences": "ਯੋਗਦਾਨ ਪਸੰਦ",
+      "advancedPreferences": "ਉੱਨਤ ਤਰਜੀਹਾਂ",
       "syncPreferences": "ਸਿੰਕ ਪਸੰਦ"
     }
   },
-  "contributorPreferences": {
-    "title": "ਯੋਗਦਾਨ ਪਸੰਦ",
+  "advancedPreferences": {
+    "title": "ਉੱਨਤ ਤਰਜੀਹਾਂ",
     "notifications": "ਬਰੇਕ ਨੋਟੀਫਿਕੇਸ਼ਨ:",
     "notificationsInfo": "ਸਿਸਟਮ ਨੋਟੀਫਿਕੇਸ਼ਨ ਬਰੇਕ ਤੋਂ ਪਹਿਲਾਂ ਦਿਖਾਇਆ ਗਿਆ ਹੈ ਤਾਂ ਜੋ ਤੁਹਾਨੂੰ ਇਸ ਦੀ ਤਿਆਰੀ ਕਰਨ ਲਈ.",
     "beforeLongBreak": "ਲੰਮੇ ਬਰੇਕ:",

@@ -13,7 +13,7 @@
 - [Default behavior](#default-behavior)
 - [Preferences](#preferences)
 - [Advanced Preferences](#advanced-preferences)
-- [Contributor Preferences](#contributor-preferences)
+- [Advanced Preferences window](#advanced-preferences-window)
 - [Getting help](#getting-help)
 - [Development](#development)
 - [Known issues](#known-issues)
@@ -189,7 +189,7 @@ To make sure that all works as expected, it's always good idea to check that for
 
 After you make changes to preferences files, some of the values being shown in Preferences or elsewhere might show incorrect value, as the UI is expecting specific values and is not handling cases where user makes manual changes to preferences file.
 
-Some of the extra preferences are available in Contributor Preferences for [Contributors](#contributor-preferences). Those are marked by [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) badge.
+Some of the extra preferences are available in Advanced Preferences for [Contributors](#advanced-preferences-window). Those are marked by [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window) badge.
 
 Preferences marked with ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow) might not work correctly and might break *Stretchly*. Use at own risk.
 
@@ -268,7 +268,7 @@ Supported image formats: PNG, JPEG, WebP, GIF. Only images from the local `image
 
 Stretchly sanitizes all HTML to keep break windows secure by removing any unsupported tags or unsafe content.
 
-#### Editing break notification interval [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Editing break notification interval [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 In the preferences file, change `longBreakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini breaks.
 
 #### Editing sunrise time to pause breaks until morning
@@ -280,13 +280,13 @@ E.g. if you live in Boston you would set:
 `posLatitude: 42.3,`
 `posLongitude: 71`
 
-#### Editing postpone functionality [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Editing postpone functionality [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 In the preferences file, you can edit `miniBreakPostpone` and `longBreakPostpone` to enable or disable the ability to postpone breaks, `miniBreakPostponeTime` and `longBreakPostponeTime` to change the postpone time in milliseconds, `miniBreakPostponesLimit` and `longBreakPostponesLimit` to change the number of allowed postpones per break, and finally, `miniBreakPostponableDurationPercent` and `longBreakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
 
-#### New version notification [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### New version notification [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
 
-#### Sounds at the start of breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Sounds at the start of breaks [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 To configure the sound when a break starts, set for example `"miniBreakStartSound": "crystal-glass"`. Same for `longBreakStartSound`. Built-in values: `silence`, `crystal-glass`, `wind-chime`, `tic-toc`, `reverie`. Setting the value to `silence` means no sound will be played.
 
 #### Different sound for Mini and Long breaks
@@ -305,7 +305,7 @@ Filenames can contain letters (`a-z`, `A-Z`), numbers, dots, underscores, and hy
 #### Different color theme for Mini and Long breaks
 To use a different theme for Mini breaks, set `miniBreakColor` in the preferences file to your desired color, e.g. `#123456`. Use `longBreakColor` for Long breaks. Choosing a theme in Preferences sets both colors to the selected preset.
 
-#### Natural breaks inactivity time [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Natural breaks inactivity time [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* breaks will be paused until the user resumes activity.
 
 You can also set `naturalBreaksCheckInterval` in milliseconds: how often idle time is checked. A higher number means lower CPU and energy usage, but slightly less responsive detection. Default value is `2000` which is 2 seconds.
@@ -313,7 +313,7 @@ You can also set `naturalBreaksCheckInterval` in milliseconds: how often idle ti
 #### Do Not Disturb check interval
 In the preferences file, set `monitorDndCheckInterval` in milliseconds: how often Do Not Disturb status is checked. A higher number means lower CPU and energy usage, but slightly less responsive detection. On macOS and Linux this check can be relatively expensive, so increasing it can noticeably lower energy usage. Default value is `2000` which is 2 seconds.
 
-#### Volume for break sounds [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Volume for break sounds [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 In the preferences file, set `volume` to your preferred value. Default value is `1`, which is 100% volume. Set it, for example, to `0.61` for 61% volume. This applies to both start and end break sounds.
 
 #### Postpone/finish break shortcut
@@ -376,7 +376,7 @@ In the preferences file, set `startLastBreakAgainShortcut` to your preferred val
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
-#### Appearance [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Appearance [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 In the preferences file, change `themeSource: 'system'` to either `'light'` or `'dark'` to always use the specified theme.
 
 In the preferences file, change `trayIconThemeSource: 'system'` to either `'light'` or `'dark'` to force the tray icon's light or dark variant instead of following the system theme. On Windows, `'system'` follows the Windows mode used by the taskbar. On macOS and Linux, it follows the same light/dark theme as the rest of Stretchly (the OS theme, or whatever `themeSource` is set to). On macOS this affects colour icons only; monochrome icons are tinted by the system.
@@ -384,10 +384,10 @@ In the preferences file, change `trayIconThemeSource: 'system'` to either `'ligh
 #### Break window color
 In the preferences file, set `miniBreakColor` or `longBreakColor` to a six-digit hex color, such as `#123456`. Custom colors use the existing default text styling; text contrast is not selected automatically.
 
-#### Welcome window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Welcome window [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
 
-#### Theme transparency [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Theme transparency [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 To specify how solid the break window should be when Theme transparency is enabled, set the value of `opacity` from `0` to `1` (which is in turn 0 to 100%). If you want the break window to have a blurred background, set the value of `blurredBackground` to `true` (for macOS only).
 
 #### Break background images
@@ -407,10 +407,10 @@ Images rotate randomly, with one image shared by all screens during each break. 
 
 If a selected file is unavailable, Stretchly tries one other image. Empty or unreadable folders and failed image loads keep the original background and write an error to the log.
 
-#### Break window size [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Break window size [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 To specify the size of the break window, set the value of `breakWindowHeight` and `breakWindowWidth` from `0` to `0.99` (which is in turn 0 to 99% of the size of the screen). Don't set 100% as that's fullscreen.
 
-#### Make Stretchly show breaks as regular windows [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences) ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
+#### Make Stretchly show breaks as regular windows [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window) ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow)
 
 If you want Stretchly breaks to act as regular windows (have a titlebar, turn off always on top, be minimizable and focusable) set `showBreaksAsRegularWindows` to `true`.
 
@@ -508,7 +508,7 @@ In case you have disabled showing of breaks on all monitors, you can specify whi
 - `"cursor"` - monitor where there is cursor
 - `"0"` (or `0`), `"1"`, `"2"` etc, where `"0"` is the first monitor returned by OS and so forth
 
-#### Show current time in breaks [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Show current time in breaks [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 To show current time in breaks, set the value of `currentTimeInBreaks` from `false` to `true`.
 
 To change the clock's font size, set `currentTimeInBreaksFontSize` to a number in pixels, for example `48`. The default is `28`.
@@ -518,7 +518,7 @@ To change how the time is shown, set `currentTimeInBreaksFormat` to a [Luxon for
 #### Break Health Mode
 Inspired by the screen-edge vignette used in video games to indicate low health, this mode adds a visual indicator around the edges of your break screen. The effect starts subtle and grows more intense each time you skip or postpone a break, and fades back down when you let breaks complete naturally. To enable it, set `breakHealthMode` to `true`.
 
-#### Hide menubar/tray icon [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
+#### Hide menubar/tray icon [![Advanced Preferences](https://img.shields.io/badge/Advanced_Preferences-✔-success)](#advanced-preferences-window)
 To hide Stretchly icon in menubar/tray, set the value of `showTrayIcon` from `true` to `false`.
 
 Note that this will disable graphical way of opening Stretchly Preferences. To access Preferences, you will have to use command line options (ie: `stretchly preferences` on Linux).
@@ -558,26 +558,24 @@ If you want autostart to work based on the value from config file, set `openAtLo
 
 This might be useful for corporate installations.
 
-## Contributor Preferences
+## Advanced Preferences window
 
-*Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Contributor Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
+*Stretchly* is free but you can support it by contributing code, translations or money. You will be rewarded by getting access to **Advanced Preferences**, ability to **Sync Preferences**, chat on **Discord** and more!
 
 You can access contributor features after authenticating with  Github or Patreon in the "Love Stretchly" section of Preferences.
-
-<img src="contributors.png" height="340"/>
 
 ### [Sponsoring on Github](https://github.com/sponsors/hovancik) [![Become a Sponsor!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=success)](https://github.com/sponsors/hovancik)
 
 GitHub Sponsors **does not charge any fees** for sponsorships from user accounts, so 100% of these sponsorships go to the sponsored developer or organization. [Github Sponsors Matching Fund](https://docs.github.com/en/free-pro-team@latest/github/supporting-the-open-source-community-with-github-sponsors/about-github-sponsors#about-the-github-sponsors-matching-fund) will also **match every donation**.
 
-*You will be able to access Contributor Preferences, Sync Preferences.
+*You will be able to access Advanced Preferences, Sync Preferences.
 You won't be able to chat on Discord.*
 
 ### [Sponsoring on Patreon](https://www.patreon.com/hovancik) [![Become a Patron!](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=Patreon&color=success)](https://www.patreon.com/hovancik)
 
 Patreon [has fees](https://support.patreon.com/hc/en-us/articles/360027674431-Creator-fees-breakdown) plus it uses PayPal, which has its fees as well.
 
-*You will be able to access Contributor Preferences, Sync Preferences and Discord chat.*
+*You will be able to access Advanced Preferences, Sync Preferences and Discord chat.*
 
 ### Donating with Crypto currencies
 
@@ -604,7 +602,7 @@ PayPal has fees.
 
 ### [Contributing code](#development)
 
-*By contributing code (or translations), you will be able to access Contributor Preferences, Sync Preferences.
+*By contributing code (or translations), you will be able to access Advanced Preferences, Sync Preferences.
 You won't be able to chat on Discord.*
 
 ## Getting help

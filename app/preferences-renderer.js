@@ -114,11 +114,11 @@ window.onload = async (e) => {
     setWindowHeight()
   })
 
-  window.stretchly.onEnableContributorPreferences(() => {
-    showContributorPreferencesButton()
+  window.stretchly.onEnableAdvancedPreferences(() => {
+    showAdvancedPreferencesButton()
   })
 
-  const showContributorPreferencesButton = () => {
+  const showAdvancedPreferencesButton = () => {
     document.querySelectorAll('.contributor').forEach((item) => {
       item.classList.remove('hidden')
     })
@@ -132,12 +132,12 @@ window.onload = async (e) => {
   }
 
   if (await window.global.getValue('isContributor')) {
-    showContributorPreferencesButton()
+    showAdvancedPreferencesButton()
   }
 
-  document.querySelector('[name="contributorPreferences"]').onclick = (event) => {
+  document.querySelector('[name="advancedPreferences"]').onclick = (event) => {
     event.preventDefault()
-    window.stretchly.openContributorPreferences()
+    window.stretchly.openAdvancedPreferences()
   }
 
   document.querySelector('[name="syncPreferences"]').onclick = (event) => {

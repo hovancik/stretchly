@@ -19,7 +19,7 @@
     "continue": "Continuar",
     "cancel": "Cancelar",
     "preferences": "Configuración",
-    "contributorPreferences": "Configuración de colaborador",
+    "advancedPreferences": "Preferencias avanzadas",
     "syncPreferences": "Configuración de sincronización"
   },
   "break": {
@@ -112,17 +112,17 @@
       "becomeContributor": "Convírtete en patrocinador",
       "alreadyContributor": "Xa son colaborador",
       "authenticateUsing": "Autenticar usando:",
-      "contributorPreferences": "Configuración de colaborador",
+      "advancedPreferences": "Preferencias avanzadas",
       "syncPreferences": "Configuración de sincronización"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Primero monitor",
     "1": "Segundo monitor",
     "2": "Terceiro monitor",
     "3": "Cuarto monitor",
     "4": "Quinto monitor",
-    "title": "Configuración de colaborador",
+    "title": "Preferencias avanzadas",
     "notifications": "Notificacións de descansos:",
     "notificationsInfo": "As notificacións do sistema amósanse antes dos descansos para que te prepares para eles.",
     "beforeLongBreak": "Repouso longo:",

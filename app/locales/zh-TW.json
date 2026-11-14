@@ -19,7 +19,7 @@
     "continue": "繼續",
     "cancel": "取消",
     "preferences": "偏好設定",
-    "contributorPreferences": "貢獻者偏好設定",
+    "advancedPreferences": "進階偏好設定",
     "syncPreferences": "同步偏好設定"
   },
   "break": {
@@ -107,17 +107,17 @@
       "becomeContributor": "成為捐助者",
       "alreadyContributor": "我已經是貢獻者了",
       "authenticateUsing": "身分核對方式：",
-      "contributorPreferences": "貢獻者偏好設定",
+      "advancedPreferences": "進階偏好設定",
       "syncPreferences": "同步偏好設定"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "第一顯示器",
     "1": "第二顯示器",
     "2": "第三顯示器",
     "3": "第四顯示器",
     "4": "第五顯示器",
-    "title": "貢獻者偏好設定",
+    "title": "進階偏好設定",
     "notifications": "休息通知：",
     "notificationsInfo": "在休息前顯示系統通知，以讓您準備好休息。",
     "beforeLongBreak": "長休息：",
