@@ -19,7 +19,7 @@
     "continue": "Продолжить",
     "cancel": "Отменить",
     "preferences": "Настройки",
-    "contributorPreferences": "Настройки для поддержавших",
+    "advancedPreferences": "Расширенные настройки",
     "syncPreferences": "Синхронизация настроек"
   },
   "break": {
@@ -113,17 +113,17 @@
       "becomeContributor": "Поддержать Stretchly",
       "alreadyContributor": "Я уже поддерживаю",
       "authenticateUsing": "Войти с помощью:",
-      "contributorPreferences": "Настройки для поддержавших",
+      "advancedPreferences": "Расширенные настройки",
       "syncPreferences": "Синхронизация настроек"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Первый монитор",
     "1": "Второй монитор",
     "2": "Третий монитор",
     "3": "Четвёртый монитор",
     "4": "Пятый монитор",
-    "title": "Настройки для поддержавших",
+    "title": "Расширенные настройки",
     "notifications": "Уведомления о перерывах:",
     "notificationsInfo": "Системные уведомления, показывающиеся перед перерывами, чтобы дать время приготовиться.",
     "beforeLongBreak": "Перед длинным перерывом:",

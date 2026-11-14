@@ -9,7 +9,7 @@
     "resetBreaks": "Đặt lại",
     "restoreDefaults": "Khôi phục mặc dịnh",
     "continue": "Tiếp tục",
-    "contributorPreferences": "Tuỳ chọn Cộng tác viên",
+    "advancedPreferences": "Tuỳ chọn nâng cao",
     "syncPreferences": "Đồng bộ tuỳ chọn",
     "toolTipHeader": "Stretchly - Ứng dụng nhắc giờ giải lao",
     "miniBreakIn": "Khoảng giải lao NGẮN sẽ bắt đầu sau $t(utils.seconds, {'count': {{seconds}} })",
@@ -105,11 +105,11 @@
       "becomeContributor": "Trở thành Người Bảo hộ",
       "alreadyContributor": "Tôi đã sẵn sàng là một công tác viên",
       "authenticateUsing": "Xác thực bằng cách sử dụng:",
-      "contributorPreferences": "Tuỳ chọn công tác viên",
+      "advancedPreferences": "Tuỳ chọn nâng cao",
       "syncPreferences": "Đồng bộ tuỳ chọn"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "breakWindowWidth": "Chiều rộng:",
     "system": "Hệ thống",
     "beforeLongBreak": "Khoảng giải lao dài:",
@@ -117,7 +117,7 @@
     "1": "Màn hình thứ hai",
     "2": "Màn hình thứ ba",
     "4": "Màn hình thứ năm",
-    "title": "Tuỳ chọn công tác viên",
+    "title": "Tuỳ chọn nâng cao",
     "3": "Màn hình thứ tư",
     "notificationsInfo": "Thông báo hệ thống hiển thị trước khoảng giải lao để bạn chuẩn bị cho nó.",
     "notifications": "Thông báo khoảng giải lao:",

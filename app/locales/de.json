@@ -19,7 +19,7 @@
     "continue": "Fortsetzen",
     "cancel": "Abbrechen",
     "preferences": "Einstellungen",
-    "contributorPreferences": "Einstellungen für Mitwirkende",
+    "advancedPreferences": "Erweiterte Einstellungen",
     "syncPreferences": "Einstellungen synchronisieren"
   },
   "break": {
@@ -109,17 +109,17 @@
       "becomeContributor": "Werde ein Patron",
       "alreadyContributor": "Ich bin bereits ein Mitwirkender",
       "authenticateUsing": "Authentifizierung durch:",
-      "contributorPreferences": "Einstellungen für Mitwirkende",
+      "advancedPreferences": "Erweiterte Einstellungen",
       "syncPreferences": "Einstellungen synchronisieren"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Erster Monitor",
     "1": "Zweiter Monitor",
     "2": "Dritter Monitor",
     "3": "Vierter Monitor",
     "4": "Fünfter Monitor",
-    "title": "Einstellungen für Mitwirkende",
+    "title": "Erweiterte Einstellungen",
     "notifications": "Pausenbenachrichtigungen:",
     "notificationsInfo": "Die Systembenachrichtigung wird vor den Pausen angezeigt, damit du dich darauf vorbereiten kannst.",
     "beforeLongBreak": "Lange Pause:",

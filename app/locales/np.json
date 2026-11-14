@@ -19,7 +19,7 @@
     "continue": "जारी राख्नुहोस् ।",
     "cancel": "रद्द गर्नुहोस् ।",
     "preferences": "सेटिंग्स",
-    "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू"
+    "advancedPreferences": "उन्नत प्राथमिकताहरू"
   },
   "break": {
     "postpone": "यस ब्रेकलाई स्थगित गर्नुहोस् ।",
@@ -100,11 +100,11 @@
       "becomeContributor": "संरक्षक बन्नुहोस्",
       "alreadyContributor": "म पहिले नै एक योगदानकर्ता हुँ",
       "authenticateUsing": "प्रमाणित गर्नुहोस्, मार्फत:",
-      "contributorPreferences": "योगदानकर्ता प्राथमिकताहरू"
+      "advancedPreferences": "उन्नत प्राथमिकताहरू"
     }
   },
-  "contributorPreferences": {
-    "title": "योगदानकर्ता प्राथमिकताहरू",
+  "advancedPreferences": {
+    "title": "उन्नत प्राथमिकताहरू",
     "notifications": "ब्रेकबारे सूचनाहरू:",
     "notificationsInfo": "प्रणाली सूचना ,तपाईंलाई यसको लागि तयार गर्न ब्रेकको अघि देखाइने छ ।",
     "beforeLongBreak": "लामो ब्रेक:",

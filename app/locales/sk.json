@@ -19,7 +19,7 @@
     "continue": "Pokračovať",
     "cancel": "Zrušiť",
     "preferences": "Nastavenia",
-    "contributorPreferences": "Nastavenia pre Prispievateľov",
+    "advancedPreferences": "Pokročilé nastavenia",
     "syncPreferences": "Synchronizácia Nastavení",
     "warning": "Týmto sa obnovia pôvodné nastavenia aplikácie a všetky vaše nastavenia sa stratia."
   },
@@ -114,17 +114,17 @@
       "becomeContributor": "Staňte sa prispievateľom",
       "alreadyContributor": "Už som prispievateľom",
       "authenticateUsing": "Overiť pomocou:",
-      "contributorPreferences": "Nastavenia pre Prispievateľov",
+      "advancedPreferences": "Pokročilé nastavenia",
       "syncPreferences": "Synchronizácia Nastavení"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Prvý monitor",
     "1": "Druhý monitor",
     "2": "Tretí monitor",
     "3": "Štvrtý monitor",
     "4": "Piaty monitor",
-    "title": "Nastavenia pre Prispievateľov",
+    "title": "Pokročilé nastavenia",
     "notifications": "Upozornenia na prestávky:",
     "notificationsInfo": "Systémové upozornenie zobrazené krátko pred prestávkou, aby ste sa na ňu mohli pripraviť.",
     "beforeLongBreak": "Dlhá prestávka:",

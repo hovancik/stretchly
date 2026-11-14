@@ -14,7 +14,7 @@
     "toMiniBreak": "छोटा ब्रेक",
     "miniBreakIn": "छोटा ब्रेक $t(utils.seconds, {'count': {{seconds}} }) में",
     "syncPreferences": "सिंक वरीयताएँ",
-    "contributorPreferences": "कंट्रीब्यूटर की पसंद",
+    "advancedPreferences": "उन्नत प्राथमिकताएँ",
     "cancel": "रद्द करें",
     "continue": "जारी रखें",
     "warning": "यह डिफॉल्ट्स को पुनर्स्थापित कर देगा और आपकी सभी सेटिंग्स खो जाएंगी।",
@@ -61,7 +61,7 @@
     },
     "heart": {
       "syncPreferences": "सिंक वरीयताएँ",
-      "contributorPreferences": "योगदानकर्ता वरीयताएँ",
+      "advancedPreferences": "उन्नत प्राथमिकताएँ",
       "authenticateUsing": "प्रमाणित करने के लिए अपयोग करे:",
       "alreadyContributor": "मैं पहले से ही एक योगदानकर्ता हूँ",
       "becomeContributor": "संरक्षक बनें",
@@ -146,7 +146,7 @@
     "indefinitely": "अनिश्चित काल के लिए",
     "paused": "रोके गए"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "पहला मॉनिटर",
     "1": "दूसरा मॉनिटर",
     "2": "तीसरा मॉनिटर",
@@ -199,6 +199,6 @@
     "beforeLongBreak": "लंबा विराम:",
     "notificationsInfo": "ब्रेक से पहले दिखाया गया सिस्टम नोटिफिकेशन आपको इसकी तैयारी करने देता है।",
     "notifications": "ब्रेक सूचनाएं:",
-    "title": "योगदानकर्ता वरीयताएँ"
+    "title": "उन्नत प्राथमिकताएँ"
   }
 }

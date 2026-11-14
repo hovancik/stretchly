@@ -20,7 +20,7 @@
     "preferences": "Preferències",
     "syncPreferences": "Preferències de sincronització",
     "restoreDefaults": "Restaurar valors per defecte",
-    "contributorPreferences": "Preferències de Contribuïdor"
+    "advancedPreferences": "Preferències avançades"
   },
   "preferences": {
     "settings": {
@@ -90,7 +90,7 @@
       "becomeContributor": "Fes-te Patron",
       "alreadyContributor": "Ja soc un contribuïdor",
       "authenticateUsing": "Autenticar usant:",
-      "contributorPreferences": "Preferències de Contribuïdor",
+      "advancedPreferences": "Preferències avançades",
       "syncPreferences": "Preferències de sincronització",
       "desc1": "Està científicament demostrat que fer pauses regulars mentre fem servir l'ordinador és important per a la nostra salut física i mental.",
       "loveStretchly": "T'agrada Stretchly?",
@@ -105,10 +105,10 @@
     },
     "title": "Preferències de Stretchly"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Primer monitor",
     "4": "Cinquè monitor",
-    "title": "Preferències de Contribuïdor",
+    "title": "Preferències avançades",
     "beforeLongBreak": "Pausa Llarga:",
     "newVersionNotification": "Notificar quan una nova versió estigui disponible",
     "customIdeas": "Idees personalitzades:",

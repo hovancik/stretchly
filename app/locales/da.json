@@ -19,7 +19,7 @@
     "continue": "Fortsæt",
     "cancel": "Afbryd",
     "preferences": "Indstillinger",
-    "contributorPreferences": "Sponser præferencer",
+    "advancedPreferences": "Avancerede indstillinger",
     "syncPreferences": "Synkroniser indstillinger"
   },
   "break": {
@@ -107,12 +107,12 @@
       "becomeContributor": "Bliv sponsor (Patron)",
       "alreadyContributor": "Jeg er allerede sponsor",
       "authenticateUsing": "Autentificeringen via:",
-      "contributorPreferences": "Sponser præferencer",
+      "advancedPreferences": "Avancerede indstillinger",
       "syncPreferences": "Synkroniser indstillinger"
     }
   },
-  "contributorPreferences": {
-    "title": "Sponser præferencer",
+  "advancedPreferences": {
+    "title": "Avancerede indstillinger",
     "notifications": "Pause notifikationer:",
     "notificationsInfo": "System notifikationer vises før pauser states for, at du kan forberede dig.",
     "beforeLongBreak": "Lang pause:",

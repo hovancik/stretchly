@@ -19,7 +19,7 @@
     "quitStretchly": "Itigil ang Stretchly",
     "downloadLatestVersion": "I-download ang kasalukuyang version",
     "preferences": "Mga Kagustuhan",
-    "contributorPreferences": "Mga Kagustuhan para sa Contributor",
+    "advancedPreferences": "Mga advanced na kagustuhan",
     "syncPreferences": "Mga Kagustuhan para sa Sync"
   },
   "preferences": {
@@ -71,7 +71,7 @@
       "becomeContributor": "Maging isang Patron",
       "alreadyContributor": "Contributor na ako",
       "authenticateUsing": "Patotohanan gamit ang:",
-      "contributorPreferences": "Mga Kagustuhan sa Contributor",
+      "advancedPreferences": "Mga advanced na kagustuhan",
       "syncPreferences": "Mga Kagustuhan sa Pag-sync",
       "desc1": "Ang regular na pahinga kapag gumagamit ng computer ay napatunaya sa siyentipikong paraan na mahalaga para sa iyong pisikal at mental na kagalingan.",
       "desc2": "Libre ang stretchly. Ngunit maaari mong ipahiram ang iyong suporta sa pamamagitan ng pagbibigay ng donasyon at tulungan kaming patuloy na mapabuti ang Stretchly at maglabas ng iba pang libreng software."
@@ -104,13 +104,13 @@
       "about": "Tungkol"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Unang monitor",
     "1": "Pangalawang monitor",
     "2": "Pangatlong monitor",
     "3": "Pang-apat na monitor",
     "4": "Ikalimang monitor",
-    "title": "Mga Kagustuhan sa Contributor",
+    "title": "Mga advanced na kagustuhan",
     "notifications": "Mga abiso sa pagpahinga:",
     "notificationsInfo": "Ipinapakita ang notification ng system bago ang mga pahinga upang hayaan kang maghanda para dito.",
     "beforeLongBreak": "Matagalang Pahinga:",

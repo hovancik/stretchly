@@ -19,7 +19,7 @@
     "continue": "Jatka",
     "cancel": "Peruuta",
     "preferences": "Asetukset",
-    "contributorPreferences": "Tukijoiden asetukset",
+    "advancedPreferences": "Lisäasetukset",
     "syncPreferences": "Synkronoi asetukset"
   },
   "break": {
@@ -106,12 +106,12 @@
       "becomeContributor": "Ryhdy lahjoittajaksi",
       "alreadyContributor": "Olen jo tukija",
       "authenticateUsing": "Vahvista käyttäen:",
-      "contributorPreferences": "Tukijan asetukset",
+      "advancedPreferences": "Lisäasetukset",
       "syncPreferences": "Synkronoi asetukset"
     }
   },
-  "contributorPreferences": {
-    "title": "Tukijan asetukset",
+  "advancedPreferences": {
+    "title": "Lisäasetukset",
     "notifications": "Taukoilmoitukset:",
     "notificationsInfo": "Järjestelmäimoitus, joka näytetään ennen taukoa, jotta voit valmistautua siihen.",
     "beforeLongBreak": "Pitkä tauko:",

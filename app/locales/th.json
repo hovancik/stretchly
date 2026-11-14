@@ -1,5 +1,5 @@
 {
-  "contributorPreferences": {
+  "advancedPreferences": {
     "breakPostpone": "การเลื่อนการพัก:",
     "useIdeasFromSettings": "ใช้ไอเดียระหว่างพักจากไฟล์ตั้งค่า",
     "customIdeasInfo": "คุณสามารถเพิ่มหรือแก้ไขไอเดียที่แสดงระหว่างพักด้วยการแก้ไขไฟล์ตั้งค่า (สำหรับผู้ใช้ที่เชี่ยวชาญ)",
@@ -10,7 +10,7 @@
     "beforeLongBreak": "การพักใหญ่:",
     "notificationsInfo": "การแจ้งเตือนก่อนพักเพื่อช่วยให้คุณได้เตรียมตัว",
     "notifications": "การแจ้งเตือนการพัก:",
-    "title": "ตั้งค่าสำหรับผู้ร่วมสนับสนุน",
+    "title": "การตั้งค่าขั้นสูง",
     "breakWindowSize": "ขนาดหน้าต่างพัก",
     "opacity": "ระดับความทึบ:",
     "opacityInfo": "หน้าต่างพักควรจะทึบมากน้อยเพียงใด?",
@@ -50,7 +50,7 @@
   "preferences": {
     "heart": {
       "syncPreferences": "การตั้งค่าการซิงก์",
-      "contributorPreferences": "การตั้งค่าสำหรับผู้สนับสนุน",
+      "advancedPreferences": "การตั้งค่าขั้นสูง",
       "authenticateUsing": "ยืนยันตัวตนด้วย:",
       "alreadyContributor": "ฉันร่วมสนับสนุนก่อนหน้านี้แล้ว",
       "becomeContributor": "ร่วมสนับสนุน",
@@ -143,7 +143,7 @@
   },
   "main": {
     "syncPreferences": "ตั้งค่าการซิงก์",
-    "contributorPreferences": "ตั้งค่าสำหรับผู้ร่วมสนับสนุน",
+    "advancedPreferences": "การตั้งค่าขั้นสูง",
     "preferences": "ตั้งค่า",
     "cancel": "ยกเลิก",
     "continue": "ต่อ",

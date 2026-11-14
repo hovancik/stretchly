@@ -19,7 +19,7 @@
     "continue": "继续",
     "cancel": "取消",
     "preferences": "偏好设置",
-    "contributorPreferences": "贡献者偏好设置",
+    "advancedPreferences": "高级偏好设置",
     "syncPreferences": "同步偏好设置"
   },
   "break": {
@@ -113,17 +113,17 @@
       "becomeContributor": "捐助",
       "alreadyContributor": "我已经是贡献者了",
       "authenticateUsing": "通过下列方法认证：",
-      "contributorPreferences": "贡献者偏好设置",
+      "advancedPreferences": "高级偏好设置",
       "syncPreferences": "同步偏好设置"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "第一台显示器",
     "1": "第二台显示器",
     "2": "第三台显示器",
     "3": "第四台显示器",
     "4": "第五台显示器",
-    "title": "贡献者偏好设置",
+    "title": "高级偏好设置",
     "notifications": "休息通知：",
     "notificationsInfo": "在休息前弹出系统通知，让您做好准备。",
     "beforeLongBreak": "休息：",

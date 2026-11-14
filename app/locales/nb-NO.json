@@ -16,7 +16,7 @@
     "percent_one": "{{count}} prosent",
     "percent_other": "{{count}} prosent"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Den første skjermen",
     "1": "Den andre skjermen",
     "2": "Den tredje skjermen",
@@ -61,7 +61,7 @@
     "newVersion": "Ny versjon:",
     "beforeMiniBreak": "Minipause:",
     "notifications": "Pausemerknader:",
-    "title": "Bidragsyterinnstillinger",
+    "title": "Avanserte innstillinger",
     "showBreaksAsRegularWindowsInfo": "Vinduer blir fokuserbare, og de er ikke «Alltid på topp» lenger, og de vises også i oppgavefeltet.",
     "showBreaksAsRegularWindows": "Vis pauser som vanlige vinduer",
     "showBreaksAsRegularWindowsTitle": "Oppførsel som vanlig vindu:",
@@ -79,7 +79,7 @@
     "heart": {
       "desc2": "Stretchly er gratis. Men du kan støtte oss ved å gi penger og hjelpe oss å forbedre Stretchly og å gi ut annen fri programvare.",
       "desc1": "Det er vitenskapelig bevist at det er sunt for kropp og sjel å ta regelmessige pauser fra datamaskinen.",
-      "contributorPreferences": "Innstillinger for bidragsytere",
+      "advancedPreferences": "Avanserte innstillinger",
       "syncPreferences": "Synkroniseringsinnstillinger",
       "authenticateUsing": "Legitimer deg med:",
       "alreadyContributor": "Jeg er allerede en bidragsyter",
@@ -191,7 +191,7 @@
   },
   "main": {
     "syncPreferences": "Synkroniseringsinnstillinger",
-    "contributorPreferences": "Bidragsyter-innstillinger",
+    "advancedPreferences": "Avanserte innstillinger",
     "preferences": "Innstillinger",
     "cancel": "Avbryt",
     "continue": "Fortsett",

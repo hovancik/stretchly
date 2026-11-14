@@ -19,7 +19,7 @@
     "continue": "계속",
     "cancel": "취소",
     "preferences": "환경설정",
-    "contributorPreferences": "기여자 환경설정",
+    "advancedPreferences": "고급 환경설정",
     "syncPreferences": "환경설정 동기화"
   },
   "break": {
@@ -106,17 +106,17 @@
       "becomeContributor": "후원자 되기",
       "alreadyContributor": "이미 기여자입니다",
       "authenticateUsing": "인증 방법:",
-      "contributorPreferences": "기여자 환경설정",
+      "advancedPreferences": "고급 환경설정",
       "syncPreferences": "환경설정 동기화"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "첫 번째 모니터",
     "1": "두 번째 모니터",
     "2": "세 번째 모니터",
     "3": "네 번째 모니터",
     "4": "다섯 번째 모니터",
-    "title": "기여자 환경설정",
+    "title": "고급 환경설정",
     "notifications": "휴식 알림:",
     "notificationsInfo": "휴식 준비를 위해 휴식 전에 표시되는 시스템 알림입니다.",
     "beforeLongBreak": "긴 휴식:",
