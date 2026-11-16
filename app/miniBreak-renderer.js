@@ -1,11 +1,14 @@
 import HtmlTranslate from './utils/htmlTranslate.js'
 import applyBreakHealthEffect from './utils/breakHealthEffect.js'
+import applyBreakBackground from './utils/breakBackground.js'
 import createRunOnce from './utils/runOnce.js'
 import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger, breakHealthMode, backgroundImage] = await window.breaks.getBreakData()
+
+  applyBreakBackground(backgroundImage)
 
   document.ondragover = event =>
     event.preventDefault()
@@ -20,10 +23,10 @@ window.onload = async (event) => {
     return
   }
 
-  const mainColor = await window.settings.get('mainColor')
+  const miniBreakColor = await window.settings.get('miniBreakColor')
 
   new HtmlTranslate(document).translate()
-  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
+  applyBreakHealthEffect(danger, breakHealthMode, miniBreakColor)
 
   const runOnce = createRunOnce()
   const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
@@ -34,16 +37,16 @@ window.onload = async (event) => {
 
   document.querySelector('#postpone').onclick = runOnce(() => window.breaks.postponeBreak())
 
-  document.querySelector('.microbreak-idea').innerHTML = window.breaks.sanitizeIdea(idea)
+  document.querySelector('.mini-break-idea').innerHTML = window.breaks.sanitizeIdea(idea)
 
-  document.querySelectorAll('.microbreak-idea a').forEach(a => {
+  document.querySelectorAll('.mini-break-idea a').forEach(a => {
     a.onclick = (event) => {
       event.preventDefault()
       window.electronApi.openExternal(a.href)
     }
   })
 
-  document.querySelectorAll('.microbreak-idea img').forEach(async img => {
+  document.querySelectorAll('.mini-break-idea img').forEach(async img => {
     const src = img.getAttribute('src') || ''
     const resolved = await window.electronApi.resolveLocalImage(src)
     if (resolved) {
@@ -58,7 +61,7 @@ window.onload = async (event) => {
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
   const manualFinishElement = document.querySelector('#finish')
-  document.body.classList.add(mainColor.substring(1))
+  document.body.classList.add(miniBreakColor.substring(1).toLowerCase())
   document.body.style.backgroundColor = backgroundColor
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
@@ -116,7 +119,7 @@ window.onload = async (event) => {
   }, 100)
 
   window.breaks.onEnterManualAwait(async (which) => {
-    if (which !== 'microbreak' || manualAwaiting) return
+    if (which !== 'miniBreak' || manualAwaiting) return
     manualAwaiting = true
     progress.value = 0
     progressTime.classList.remove('hidden')

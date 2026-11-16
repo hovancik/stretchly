@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- `breakBackgroundImage` and `breakImageFolder` advanced preferences for random local background images in Mini and Long breaks, loaded at startup with logged fallback on failure
+- `pauseBreaksDurations` advanced preference to customize timed pause options and their shortcuts
 - CLI commands to postpone, skip and finish the current break
 - advanced preferences for custom break sounds
 - `forceX11OnWayland` advanced preference to restart with the X11 backend on Wayland, so breaks show on all monitors
@@ -15,6 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Do Not Disturb monitoring (`monitorDnd`) now keeps the break timer running while Do Not Disturb is on and shows an overdue break right after it ends, instead of resetting the timer
 
 ### Fixed
+- fix styling when using different Mini and Long break colors
+- fix maximum postpones controls saving incorrect counts in Contributor Preferences
 - fix debug file and folder links when paths contain HTML special characters
 - fix custom break images when the user data path contains URL special characters
 - fix snap startup crash
@@ -26,6 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - timed manual pauses now keep idle monitoring active when natural breaks are enabled and wait for activity if the pause expires while idle
 - timed manual pauses now preserve the pending break deadline, including on early resume, instead of restarting the break interval
 - `appExclusions` with `"rule": "pause"` now preserves the pending break deadline like Do Not Disturb, instead of restarting the interval when the exclusion ends
+- renamed break preferences to use `miniBreak` and `longBreak`, and end-sound preferences to `miniBreakEndSound` and `longBreakEndSound`; existing settings migrate automatically
+- tray menu shows configured shortcuts beside matching actions
 - macOS Ventura (13) or later is now required
 - macOS app bundles are now ad-hoc signed
 - updated many translations

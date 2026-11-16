@@ -17,6 +17,12 @@ body {
   overflow: hidden;
 }
 
+body.has-background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .breaks {
   align-items: center;
   box-sizing: border-box;
@@ -50,19 +56,19 @@ body.break-health-mode {
   margin-top: 50px;
 }
 
-.breaks > :nth-child(1) >  .microbreak-idea {
+.breaks > :nth-child(1) >  .mini-break-idea {
   font-size: 30px;
   letter-spacing: 0.44px;
   line-height: 46px;
 }
 
-.breaks > :nth-child(1) >  .break-idea {
+.breaks > :nth-child(1) >  .long-break-idea {
   font-size: 36px;
   letter-spacing: 0.52px;
   line-height: 49px;
 }
 
-.breaks > :nth-child(1) >  .break-text {
+.breaks > :nth-child(1) >  .long-break-text {
   font-size: 24px;
   letter-spacing: 0.35px;
   line-height: 33px;
@@ -102,30 +108,30 @@ body[dir=rtl] .breaks > :nth-child(2) > a img {
   padding-top: 20px;
 }
 
-.ffffff .breaks {
+.ffffff:not(.has-background-image) .breaks {
   color: #000000;
 }
-.ffffff .breaks > :nth-child(2) > a:hover {
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) > a:hover {
   color: #ffffff;
 }
 
-.ffffff .breaks > :nth-child(2) > a:hover img,
-.ffffff .breaks > :nth-child(2) > a:hover {
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) > a:hover img,
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) > a:hover {
   color: #000000;
 }
 
-.ffffff .breaks > :nth-child(2) .tiptext,
-.ffffff .breaks > :nth-child(2) .tiptext  {
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) .tiptext,
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) .tiptext  {
   color: #000000;
   background-color: #ffffff;
   border: 1px solid #000000;
 }
 
-.ffffff .breaks > :nth-child(2) > a img {
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) > a img {
   filter: hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 
-.ffffff .breaks > :nth-child(2) > a:hover img {
+.ffffff:not(.has-background-image) .breaks > :nth-child(2) > a:hover img {
   filter: hue-rotate(359deg) brightness(101%) contrast(103%);
 }
 

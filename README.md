@@ -195,27 +195,27 @@ Some of the extra preferences are available in Contributor Preferences for [Cont
 
 Preferences marked with ![Not Reliable](https://img.shields.io/badge/Not_Reliable-β-yellow) might not work correctly and might break *Stretchly*. Use at own risk.
 
-**Note:** Before 1.0, Mini breaks and Long breaks were called Microbreaks and Breaks, respectively. To keep the upgrade smooth they still use that name in preferences file and in code.
+**Note:** Mini break preferences use the `miniBreak` prefix; Long break preferences use the `longBreak` prefix.
 
 #### Preferences editable in the app
 
 Here are the preferences editable via the app. If values in the app does not suite your style, you could edit them maually:
 
-- `microbreakDuration` - duration of Mini break (ms)
-- `microbreakInterval` - interval of Mini break (ms)
-- `breakDuration` - duration of Long break (ms)
-- `breakInterval` - interval of Long break (Mini breaks)
-- `breakNotification` - show notification before Mini break
-- `microbreakNotification` - show notification before Long break
-- `microbreak` - enable Mini breaks
-- `break` - enable Long breaks
-- `microbreakStrictMode` - enable strict mode for Mini breaks
-- `breakStrictMode` - enable strict mode for Long breaks
-- `mainColor` - theme color code (for Long breaks),
-- `miniBreakColor` - theme color code (for Mini breaks),
+- `miniBreakDuration` - duration of Mini break (ms)
+- `miniBreakInterval` - interval of Mini break (ms)
+- `longBreakDuration` - duration of Long break (ms)
+- `longBreakInterval` - interval of Long break (Mini breaks)
+- `longBreakNotification` - show notification before Long break
+- `miniBreakNotification` - show notification before Mini break
+- `miniBreak` - enable Mini breaks
+- `longBreak` - enable Long breaks
+- `miniBreakStrictMode` - enable strict mode for Mini breaks
+- `longBreakStrictMode` - enable strict mode for Long breaks
+- `longBreakColor` - theme color code for Long breaks,
+- `miniBreakColor` - theme color code for Mini breaks,
 - `transparentMode` - show break windows as transparent
-- `longBreakAudio` - sound theme name (for Long breaks)
-- `miniBreakAudio` - sound theme name (for Mini breaks)
+- `longBreakEndSound` - sound at the end of Long breaks
+- `miniBreakEndSound` - sound at the end of Mini breaks
 - `fullscreen` - show breaks in fullscreen mode
 - `ideas` - show break ideas
 - `naturalBreaks` - monitor idle time
@@ -228,9 +228,9 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `checkNewVersion` - check for new versions
 
 #### Editing break ideas
-In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `breakIdeas` and `microbreakIdeas`.
+In the preferences file, change `useIdeasFromSettings: false,` to `useIdeasFromSettings: true,` and edit `longBreakIdeas` and `miniBreakIdeas`.
 
-Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window.
+Note that when a new *Stretchly* version with new break ideas is out, your custom ideas will not be overwritten nor new break ideas will be added to your custom ones. You can reset break ideas to the latest defaults when you "Restore defaults" from Preferences window.
 
 ##### Using HTML in break ideas
 You can use simple HTML formatting in custom break ideas to enhance their appearance:
@@ -246,7 +246,7 @@ You can use simple HTML formatting in custom break ideas to enhance their appear
 
 **Using links:**
 ```json
-"breakIdeas": [
+"longBreakIdeas": [
   {
     "data": ["<b>Stretch Time!</b>", "Try this <a href=\"https://example.com/stretch\">stretching routine</a>"],
     "enabled": true
@@ -259,7 +259,7 @@ You can use simple HTML formatting in custom break ideas to enhance their appear
 Place your images in the `images` folder inside Stretchly's user data directory (see Preferences → About → Debug info for the exact location). Then reference them by filename only:
 
 ```json
-"breakIdeas": [
+"longBreakIdeas": [
   {
     "data": ["<b>Desk Yoga</b>", "Try this pose: <img src=\"yoga-pose.png\" width=\"200\">"],
     "enabled": true
@@ -271,7 +271,7 @@ Supported image formats: PNG, JPEG, WebP, GIF. Only images from the local `image
 Stretchly sanitizes all HTML to keep break windows secure by removing any unsupported tags or unsafe content.
 
 #### Editing break notification interval [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
-In the preferences file, change `breakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini breaks.
+In the preferences file, change `longBreakNotificationInterval: 30000,` to whatever value you want. 30000 is 30 seconds. Same goes for Mini breaks.
 
 #### Editing sunrise time to pause breaks until morning
 In the preferences file you can set the `morningHour` setting to pause until that hour today or the next day
@@ -283,7 +283,7 @@ E.g. if you live in Boston you would set:
 `posLongitude: 71`
 
 #### Editing postpone functionality [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
-In the preferences file, you can edit `microbreakPostpone` and `breakPostpone` to enable or disable the ability to postpone breaks, `microbreakPostponeTime` and `breakPostponeTime` to change the postpone time in milliseconds, `microbreakPostponesLimit` and `breakPostponesLimit` to change the number of allowed postpones per break, and finally, `microbreakPostponableDurationPercent` and `breakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
+In the preferences file, you can edit `miniBreakPostpone` and `longBreakPostpone` to enable or disable the ability to postpone breaks, `miniBreakPostponeTime` and `longBreakPostponeTime` to change the postpone time in milliseconds, `miniBreakPostponesLimit` and `longBreakPostponesLimit` to change the number of allowed postpones per break, and finally, `miniBreakPostponableDurationPercent` and `longBreakPostponableDurationPercent` to change the percentage of the break during which the user can postpone it.
 
 #### New version notification [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `notifyNewVersion: false,` to disable new version notification.
@@ -292,7 +292,7 @@ In the preferences file, set `notifyNewVersion: false,` to disable new version n
 To configure the sound when a break starts, set for example `"miniBreakStartSound": "crystal-glass"`. Same for `longBreakStartSound`. Built-in values: `silence`, `crystal-glass`, `wind-chime`, `tic-toc`, `reverie`. Setting the value to `silence` means no sound will be played.
 
 #### Different sound for Mini and Long breaks
-To play different sound for Mini breaks, set `miniBreakAudio` to desired value (`crystal-glass`, `silence`, `tic-toc`, `wind-chime`).
+To use a different end sound for Mini breaks, set `miniBreakEndSound` to your desired value, e.g. `wind-chime`. Use `longBreakEndSound` for Long breaks. Choosing a sound in Preferences sets both end sounds. In manual-finish mode, the end sound plays when the configured duration is reached.
 
 #### Custom sounds
 
@@ -300,12 +300,12 @@ To use your own sounds, put WAV files in the `audio` folder inside Stretchly's u
 
 To replace a sound from Preferences, name your file `crystal-glass.wav`, `wind-chime.wav`, `tic-toc.wav`, or `reverie.wav`. For example, save it as `crystal-glass.wav` and select Crystal Glass. Stretchly will use your file whenever that sound plays, including previews. Delete the file to get the original sound back.
 
-You can also use your own filename, for example `my-sound.wav`. In the preferences file, set `"miniBreakAudio": "my-sound"` or `"longBreakAudio": "my-sound"`. The same works for `miniBreakStartSound` and `longBreakStartSound`. Leave out `.wav` in these settings. These sounds won't appear as new choices in Preferences. If you delete the file, change the setting back to a built-in sound.
+You can also use your own filename, for example `my-sound.wav`. In the preferences file, set `"miniBreakEndSound": "my-sound"` or `"longBreakEndSound": "my-sound"`. The same works for `miniBreakStartSound` and `longBreakStartSound`. Leave out `.wav` in these settings. These sounds won't appear as new choices in Preferences. If you delete the file, change the setting back to a built-in sound.
 
 Filenames can contain letters (`a-z`, `A-Z`), numbers, dots, underscores, and hyphens. Only `.wav` files are supported. The `silence` option always stays silent.
 
 #### Different color theme for Mini and Long breaks
-To have different theme for Mini breaks, set `miniBreakColor` to desired value, ie `#123456`.
+To use a different theme for Mini breaks, set `miniBreakColor` in the preferences file to your desired color, e.g. `#123456`. Use `longBreakColor` for Long breaks. Choosing a theme in Preferences sets both colors to the selected preset.
 
 #### Natural breaks inactivity time [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 In the preferences file, set `naturalBreaksInactivityResetTime` to your preferred value (in milliseconds greater than than 20000ms). This is an idle time length, after which *Stretchly* breaks will be paused until the user resumes activity.
@@ -343,17 +343,22 @@ In the preferences file, set `pauseBreaksToggleShortcut` to your preferred value
 
 If you'd like to disable the shortcut, set value to empty string `""`. That's the default value as well.
 
-#### Pause breaks for duration shortcuts
+#### Pause breaks durations and shortcuts
 
-You can also set shortcuts to pause breaks for a specific duration by modifying the following values in the preferences file:
+In the preferences file, set `pauseBreaksDurations` to define the timed options in the Pause breaks menu, in the listed order. Each entry has a `duration` in milliseconds and an optional global `shortcut`. For example, for 30 minutes and 90 minutes:
 
-- `pauseBreaksFor30MinutesShortcut`
-- `pauseBreaksFor1HourShortcut`
-- `pauseBreaksFor2HoursShortcut`
-- `pauseBreaksFor5HoursShortcut`
-- `pauseBreaksUntilMorningShortcut`
+```json
+"pauseBreaksDurations": [
+  { "duration": 1800000, "shortcut": "" },
+  { "duration": 5400000, "shortcut": "CmdOrCtrl+Shift+P" }
+]
+```
 
-If you'd like to disable the shortcuts, set value to empty string `""`. That's the default value as well.
+The defaults are 30 minutes, 1 hour, 2 hours and 5 hours, with shortcuts disabled. Use positive multiples of `60000` up to `2147460000`. Invalid entries are skipped; a value that isn't a list falls back to the defaults. Set `[]` to remove timed options and their shortcuts. Until morning and Indefinitely remain available.
+
+Omit `shortcut` or set it to `""` to disable it. See [Electron's accelerator documentation](https://www.electronjs.org/docs/latest/tutorial/keyboard-shortcuts#accelerators) for supported shortcuts. Shortcuts already used by other applications may be unavailable. Existing fixed-duration shortcut preferences are migrated automatically into this list.
+
+The separate `pauseBreaksUntilMorningShortcut` preference sets the Until morning shortcut and defaults to `""` (disabled).
 
 #### Skip to the next break shortcut
 
@@ -379,13 +384,30 @@ In the preferences file, change `themeSource: 'system'` to either `'light'` or `
 In the preferences file, change `trayIconThemeSource: 'system'` to either `'light'` or `'dark'` to force the tray icon's light or dark variant instead of following the system theme. On Windows, `'system'` follows the Windows mode used by the taskbar. On macOS and Linux, it follows the same light/dark theme as the rest of Stretchly (the OS theme, or whatever `themeSource` is set to). On macOS this affects colour icons only; monochrome icons are tinted by the system.
 
 #### Break window color
-In the preferences file, change `mainColor` to whatever color you like.
+In the preferences file, set `miniBreakColor` or `longBreakColor` to a six-digit hex color, such as `#123456`. Custom colors use the existing default text styling; text contrast is not selected automatically.
 
 #### Welcome window [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To show the Welcome window again on the next start, change `"isFirstRun"` to `true`.
 
 #### Theme transparency [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify how solid the break window should be when Theme transparency is enabled, set the value of `opacity` from `0` to `1` (which is in turn 0 to 100%). If you want the break window to have a blurred background, set the value of `blurredBackground` to `true` (for macOS only).
+
+#### Break background images
+
+To show local images behind Mini and Long breaks, set these preferences:
+
+```json
+"breakBackgroundImage": true,
+"breakImageFolder": "C:\\Users\\YourName\\Pictures\\Breaks"
+```
+
+Use an absolute folder path, such as `/Users/YourName/Pictures/Breaks` on macOS or `/home/yourname/Pictures/Breaks` on Linux. Escape Windows backslashes as `\\` in JSON. By default, `breakBackgroundImage` is `false` and `breakImageFolder` is empty.
+
+Stretchly loads the list of PNG, JPG, JPEG and WebP files in that folder at startup, without searching subfolders. The list is refreshed on restart. Flatpak and Snap require a folder accessible from their sandbox.
+
+Images rotate randomly, with one image shared by all screens during each break. A dark overlay keeps the text readable. Opaque images cover theme transparency and macOS background blur.
+
+If a selected file is unavailable, Stretchly tries one other image. Empty or unreadable folders and failed image loads keep the original background and write an error to the log.
 
 #### Break window size [![Contributor Preferences](https://img.shields.io/badge/Contributor_Preferences-✔-success)](#contributor-preferences)
 To specify the size of the break window, set the value of `breakWindowHeight` and `breakWindowWidth` from `0` to `0.99` (which is in turn 0 to 99% of the size of the screen). Don't set 100% as that's fullscreen.
@@ -405,11 +427,11 @@ By default, when breaks are shown on all screens (`allScreens: true`), the count
 
 This option has no effect when `allScreens` is `false` or when `showBreaksAsRegularWindows` is `true`. Invalid values fall back to `"all"`.
 
-#### Pause/resume breaks based on running programs
+#### Control break reminders based on running programs
 
-By editing `appExclusions` in the preferences file, you can automatically control when Stretchly breaks are paused.
+By editing `appExclusions` in the preferences file, you can automatically control when Stretchly schedules break reminders based on running programs.
 
-To pause breaks while any of the listed programs are running, use `"rule": "pause"`:
+To pause break reminders while any of the listed programs are running, use `"rule": "pause"`:
 
 The break timer keeps running while a `pause` exclusion is active, just as with Do Not Disturb. When the exclusion ends, the pending timer resumes at its original deadline; if it is overdue, it fires right away. An already displayed break is closed rather than saved. Returning from a natural break starts a fresh pending countdown in the background, even while the exclusion remains active. An indefinite pause or a reset discards the pending timer. A timed manual pause preserves it.
 
@@ -441,7 +463,7 @@ Windows
 ]
 ```
 
-To allow breaks only while at least one listed program is running, use `"rule": "resume"`. Breaks are paused when none of the listed programs are running:
+To allow break reminders only while at least one listed program is running, use `"rule": "resume"`. Break reminders are paused when none of the listed programs are running:
 
 Linux
 ```
@@ -471,11 +493,13 @@ Windows
 ]
 ```
 
-You can specify multiple rules in `appExclusions`. Stretchly uses only the first rule marked `"active": true`; all later rules are ignored, even if the selected rule matches no running program. Both `pause` and `resume` rules can be present in the file, but they are not combined.
+The `active` setting enables or disables a rule. You can specify multiple rules in `appExclusions`. Stretchly uses only the first rule marked `"active": true`; all later rules are ignored, even if the selected rule matches no running program. Both `pause` and `resume` rules can be present in the file, but they are not combined. If no rule is active, running programs do not affect break reminders.
 
-Within the selected rule, any matching entry in `commands` is enough. Commands should be case sensitive, but seems like this is not consistent across platforms. Therefore, sometimes, going all lowercase might be needed (this was noticed on Windows). Commands can also be substrings, meaning a rule containing "exe" will trigger when there's any running processes that contains "exe" in its name or cmd properties.
+Within the selected rule, any matching entry in `commands` is enough. Matching uses case-sensitive substrings of the process name or command line reported by the operating system. Match the capitalization as reported, which may differ from the program's display name. For example, `"exe"` matches any process whose reported name or command line contains `"exe"`.
 
-For Windows, note that paths not specified. This is because on Windows, the API we're using only checks the names of processes being run, which in the vast majority of cases is "process_name.exe". If you try to specify paths, it will not work.
+On Windows, use process names such as `librewolf.exe`, without paths. The process-listing API used by Stretchly reports only process names on Windows, so paths will not match.
+
+Manually pausing Stretchly stops monitoring running programs for the duration of that pause. When you resume, or a timed pause ends, monitoring restarts and the selected rule applies again. Resuming does not disable the rule.
 
 You can also specify `appExclusionsCheckInterval` in milliseconds: lower number means more often checks, but also higher CPU usage. Default value is `2000` which is 2 seconds.
 
@@ -728,6 +752,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 - Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
 - Meelis Saluvee, [@dominioon](https://github.com/dominioon)
+- lzh-xdu, [@lzh-xdu](https://github.com/lzh-xdu)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
 

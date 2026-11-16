@@ -16,9 +16,9 @@ describe('breaksPlanner Do Not Disturb', function () {
       name: 'test-settings-breaksPlannerDnd',
       defaults: { ...defaultSettings, monitorDnd: false, naturalBreaks: false }
     })
-    settings.set('microbreakInterval', 10000)
-    settings.set('microbreakNotification', false)
-    settings.set('break', false)
+    settings.set('miniBreakInterval', 10000)
+    settings.set('miniBreakNotification', false)
+    settings.set('longBreak', false)
     planner = new BreaksPlanner(settings)
     planner.nextBreak()
   })
@@ -31,7 +31,7 @@ describe('breaksPlanner Do Not Disturb', function () {
 
   const run = (dndMs) => {
     const started = []
-    planner.on('startMicrobreak', () => started.push(Date.now()))
+    planner.on('startMiniBreak', () => started.push(Date.now()))
     vi.advanceTimersByTime(4000)
     planner.dndManager.emit('dndStarted')
     vi.advanceTimersByTime(dndMs)
@@ -51,10 +51,10 @@ describe('breaksPlanner Do Not Disturb', function () {
 
   it('skip during DND does not cause duplicate breaks', () => {
     let started = 0
-    planner.on('startMicrobreak', () => { started++ })
+    planner.on('startMiniBreak', () => { started++ })
     vi.advanceTimersByTime(4000)
     planner.dndManager.emit('dndStarted')
-    planner.skipToMicrobreak(5000)
+    planner.skipToMiniBreak(5000)
     vi.advanceTimersByTime(1000)
     planner.dndManager.emit('dndFinished')
     vi.advanceTimersByTime(20000)
@@ -63,7 +63,7 @@ describe('breaksPlanner Do Not Disturb', function () {
 
   it('natural break during DND waits full interval after DND', () => {
     const started = []
-    planner.on('startMicrobreak', () => started.push(Date.now()))
+    planner.on('startMiniBreak', () => started.push(Date.now()))
     vi.advanceTimersByTime(4000)
     planner.dndManager.isOnDnd = true
     planner.dndManager.emit('dndStarted')

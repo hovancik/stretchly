@@ -1,11 +1,14 @@
 import HtmlTranslate from './utils/htmlTranslate.js'
 import applyBreakHealthEffect from './utils/breakHealthEffect.js'
+import applyBreakBackground from './utils/breakBackground.js'
 import createRunOnce from './utils/runOnce.js'
 import './platform.js'
 
 window.onload = async (event) => {
   const [idea, started, duration, strictMode, postpone,
-    postponePercent, backgroundColor, danger, breakHealthMode] = await window.breaks.sendBreakData()
+    postponePercent, backgroundColor, danger, breakHealthMode, backgroundImage] = await window.breaks.getBreakData()
+
+  applyBreakBackground(backgroundImage)
 
   document.ondragover = event =>
     event.preventDefault()
@@ -20,10 +23,10 @@ window.onload = async (event) => {
     return
   }
 
-  const mainColor = await window.settings.get('mainColor')
+  const longBreakColor = await window.settings.get('longBreakColor')
 
   new HtmlTranslate(document).translate()
-  applyBreakHealthEffect(danger, breakHealthMode, mainColor)
+  applyBreakHealthEffect(danger, breakHealthMode, longBreakColor)
 
   const runOnce = createRunOnce()
   const postponeFromCLI = runOnce(() => window.breaks.postponeBreak('cli'))
@@ -34,17 +37,17 @@ window.onload = async (event) => {
 
   document.querySelector('#postpone').onclick = runOnce(() => window.breaks.postponeBreak())
 
-  document.querySelector('.break-idea').innerHTML = window.breaks.sanitizeIdea(idea[0])
-  document.querySelector('.break-text').innerHTML = window.breaks.sanitizeIdea(idea[1])
+  document.querySelector('.long-break-idea').innerHTML = window.breaks.sanitizeIdea(idea[0])
+  document.querySelector('.long-break-text').innerHTML = window.breaks.sanitizeIdea(idea[1])
 
-  document.querySelectorAll('.break-idea a, .break-text a').forEach(a => {
+  document.querySelectorAll('.long-break-idea a, .long-break-text a').forEach(a => {
     a.onclick = (event) => {
       event.preventDefault()
       window.electronApi.openExternal(a.href)
     }
   })
 
-  document.querySelectorAll('.break-idea img, .break-text img').forEach(async img => {
+  document.querySelectorAll('.long-break-idea img, .long-break-text img').forEach(async img => {
     const src = img.getAttribute('src') || ''
     const resolved = await window.electronApi.resolveLocalImage(src)
     if (resolved) {
@@ -59,7 +62,7 @@ window.onload = async (event) => {
   const postponeElement = document.querySelector('#postpone')
   const closeElement = document.querySelector('#close')
   const manualFinishElement = document.querySelector('#finish')
-  document.body.classList.add(mainColor.substring(1))
+  document.body.classList.add(longBreakColor.substring(1).toLowerCase())
   document.body.style.backgroundColor = backgroundColor
 
   document.querySelectorAll('.tiptext').forEach(async tt => {
@@ -117,7 +120,7 @@ window.onload = async (event) => {
   }, 100)
 
   window.breaks.onEnterManualAwait(async (which) => {
-    if (which !== 'break' || manualAwaiting) return
+    if (which !== 'longBreak' || manualAwaiting) return
     manualAwaiting = true
     progress.value = 0
     progressTime.classList.remove('hidden')

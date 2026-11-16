@@ -6,9 +6,6 @@
     "skipToTheNext": "Bir sonrakine geç",
     "resume": "Devam et",
     "pause": "Durdur",
-    "forHour": "Bir saatliğine",
-    "for2Hours": "Iki saatliğine",
-    "for5Hours": "5 saatliğine",
     "untilMorning": "Sabaha kadar",
     "indefinitely": "Sonsuza kadar",
     "resetBreaks": "Molaları sıfırla",
@@ -20,10 +17,10 @@
     "continue": "Devam",
     "warning": "Varsayılanlara dönülecek ve tüm ayarlarınız kaybolacak.",
     "restoreDefaults": "Varsayılanlara dön",
-    "toMicrobreak": "Kısa Mola",
-    "toBreak": "Uzun Mola",
-    "breakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
-    "microbreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra kısa mola"
+    "toMiniBreak": "Kısa Mola",
+    "toLongBreak": "Uzun Mola",
+    "longBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra uzun mola",
+    "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) sonra kısa mola"
   },
   "break": {
     "title": "Mola zamanı!",

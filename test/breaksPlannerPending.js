@@ -11,9 +11,9 @@ describe('breaksPlanner pending breaks', () => {
     settings.set('monitorDnd', false)
     settings.set('naturalBreaks', false)
     settings.set('appExclusions', [])
-    settings.set('microbreakInterval', 10000)
-    settings.set('microbreakNotification', false)
-    settings.set('break', false)
+    settings.set('miniBreakInterval', 10000)
+    settings.set('miniBreakNotification', false)
+    settings.set('longBreak', false)
     planner = new BreaksPlanner(settings)
     planner.appExclusionsManager.appExclusion = { rule: 'pause' }
     planner.nextBreak()
@@ -54,7 +54,7 @@ describe('breaksPlanner pending breaks', () => {
       [8000, 100]
     ])('resumes after %i ms with %i ms until the pending break', (duration, delay) => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       vi.advanceTimersByTime(4000)
       start(source)
       vi.advanceTimersByTime(duration)
@@ -70,18 +70,18 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it.each([
-      ['startMicrobreak', false, false],
-      ['startMicrobreakNotification', false, true],
-      ['startBreak', true, false],
-      ['startBreakNotification', true, true]
+      ['startMiniBreak', false, false],
+      ['startMiniBreakNotification', false, true],
+      ['startLongBreak', true, false],
+      ['startLongBreakNotification', true, true]
     ])('preserves the scheduled %s event', (reference, longBreak, notification) => {
-      settings.set('break', longBreak)
-      settings.set('microbreak', !longBreak)
-      settings.set('breakInterval', 0)
-      settings.set('breakNotification', notification)
-      settings.set('microbreakNotification', notification)
-      settings.set('breakNotificationInterval', 2000)
-      settings.set('microbreakNotificationInterval', 2000)
+      settings.set('longBreak', longBreak)
+      settings.set('miniBreak', !longBreak)
+      settings.set('longBreakInterval', 0)
+      settings.set('longBreakNotification', notification)
+      settings.set('miniBreakNotification', notification)
+      settings.set('longBreakNotificationInterval', 2000)
+      settings.set('miniBreakNotificationInterval', 2000)
       planner.nextBreak()
       const started = vi.fn()
       planner.on(reference, started)
@@ -99,11 +99,11 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it('preserves long-break cadence and postponement count', () => {
-      settings.set('break', true)
-      settings.set('breakInterval', 1)
-      settings.set('breakNotification', false)
-      settings.set('breakPostponeTime', 10000)
-      planner.skipToBreak()
+      settings.set('longBreak', true)
+      settings.set('longBreakInterval', 1)
+      settings.set('longBreakNotification', false)
+      settings.set('longBreakPostponeTime', 10000)
+      planner.skipToLongBreak()
       planner.postponeCurrentBreak()
       vi.advanceTimersByTime(4000)
       start(source)
@@ -111,20 +111,20 @@ describe('breaksPlanner pending breaks', () => {
       expect(planner.postponesNumber).toBe(1)
       vi.advanceTimersByTime(1000)
       finish(source)
-      expect(planner.scheduler.reference).toBe('startBreak')
+      expect(planner.scheduler.reference).toBe('startLongBreak')
       expect(planner.scheduler.timeLeft).toBe(5000)
       expect(planner.breakNumber).toBe(2)
       expect(planner.postponesNumber).toBe(1)
       planner.nextBreak()
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
     })
 
     it('skipping discards the pending timer without duplicate breaks', () => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       vi.advanceTimersByTime(4000)
       start(source)
-      planner.skipToMicrobreak(5000)
+      planner.skipToMiniBreak(5000)
       expect(planner.pendingBreak).toBeNull()
       vi.advanceTimersByTime(1000)
       finish(source)
@@ -134,12 +134,12 @@ describe('breaksPlanner pending breaks', () => {
 
     it('counts down from the end of a natural break while still suppressed', () => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       vi.advanceTimersByTime(4000)
       start(source)
       vi.advanceTimersByTime(8000)
       planner.naturalBreaksManager.emit('naturalBreakFinished')
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 10000 })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 10000 })
       expect(planner.scheduler.reference).toBeNull()
       vi.advanceTimersByTime(4000)
       finish(source)
@@ -184,7 +184,7 @@ describe('breaksPlanner pending breaks', () => {
       vi.advanceTimersByTime(1000)
       planner.resume()
       expect(planner.pendingBreak).toBeNull()
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
       expect(planner.scheduler.timeLeft).toBe(5000)
     })
 
@@ -203,12 +203,12 @@ describe('breaksPlanner pending breaks', () => {
     ])('automatically resumes after %i ms with %i ms until the break', (duration, delay) => {
       const started = vi.fn()
       const resumed = vi.fn(() => planner.resume())
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       planner.on('resumeBreaks', resumed)
       vi.advanceTimersByTime(4000)
       const deadline = Date.now() + planner.scheduler.timeLeft
       planner.pause(duration)
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline })
       expect(planner.scheduler.reference).toBe('resumeBreaks')
       expect(planner.isPaused).toBe(true)
       vi.advanceTimersByTime(duration - 1)
@@ -230,7 +230,7 @@ describe('breaksPlanner pending breaks', () => {
     it('early resume cancels automatic resume and keeps the original deadline', () => {
       const started = vi.fn()
       const resumed = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       planner.on('resumeBreaks', resumed)
       vi.advanceTimersByTime(4000)
       planner.pause(20000)
@@ -247,17 +247,17 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it.each([
-      ['startMicrobreakNotification', false, true],
-      ['startBreak', true, false],
-      ['startBreakNotification', true, true]
+      ['startMiniBreakNotification', false, true],
+      ['startLongBreak', true, false],
+      ['startLongBreakNotification', true, true]
     ])('preserves %s across a timed pause', (reference, longBreak, notification) => {
-      settings.set('break', longBreak)
-      settings.set('microbreak', !longBreak)
-      settings.set('breakInterval', 0)
-      settings.set('breakNotification', notification)
-      settings.set('microbreakNotification', notification)
-      settings.set('breakNotificationInterval', 2000)
-      settings.set('microbreakNotificationInterval', 2000)
+      settings.set('longBreak', longBreak)
+      settings.set('miniBreak', !longBreak)
+      settings.set('longBreakInterval', 0)
+      settings.set('longBreakNotification', notification)
+      settings.set('miniBreakNotification', notification)
+      settings.set('longBreakNotificationInterval', 2000)
+      settings.set('miniBreakNotificationInterval', 2000)
       planner.nextBreak()
       const started = vi.fn()
       planner.on(reference, started)
@@ -286,7 +286,7 @@ describe('breaksPlanner pending breaks', () => {
       expect(resumed).not.toHaveBeenCalled()
       vi.advanceTimersByTime(1)
       expect(resumed).toHaveBeenCalledTimes(1)
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
       expect(planner.scheduler.timeLeft).toBe(3500)
     })
 
@@ -317,11 +317,11 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it('preserves long-break cadence and postponement count', () => {
-      settings.set('break', true)
-      settings.set('breakInterval', 1)
-      settings.set('breakNotification', false)
-      settings.set('breakPostponeTime', 10000)
-      planner.skipToBreak()
+      settings.set('longBreak', true)
+      settings.set('longBreakInterval', 1)
+      settings.set('longBreakNotification', false)
+      settings.set('longBreakPostponeTime', 10000)
+      planner.skipToLongBreak()
       planner.postponeCurrentBreak()
       vi.advanceTimersByTime(4000)
       planner.pause(1000)
@@ -329,22 +329,22 @@ describe('breaksPlanner pending breaks', () => {
       expect(planner.postponesNumber).toBe(1)
       vi.advanceTimersByTime(1000)
       planner.resume()
-      expect(planner.scheduler.reference).toBe('startBreak')
+      expect(planner.scheduler.reference).toBe('startLongBreak')
       expect(planner.scheduler.timeLeft).toBe(5000)
       expect(planner.breakNumber).toBe(2)
       expect(planner.postponesNumber).toBe(1)
       planner.nextBreak()
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
     })
 
     it('does not save a break-finish timer', () => {
       planner.scheduler.cancel()
-      planner.emit('microbreakStarted', true)
+      planner.emit('miniBreakStarted', true)
       planner.pause(1000)
       expect(planner.pendingBreak).toBeNull()
       vi.advanceTimersByTime(1000)
       planner.resume()
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
       expect(planner.scheduler.timeLeft).toBe(10000)
     })
 
@@ -354,7 +354,7 @@ describe('breaksPlanner pending breaks', () => {
       planner.pause(2000)
       expect(planner.pendingBreak).toBeNull()
       planner.resume()
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
       expect(planner.scheduler.timeLeft).toBe(10000)
     })
 
@@ -387,7 +387,7 @@ describe('breaksPlanner pending breaks', () => {
       planner.pause(1000)
       const resumeScheduler = planner.scheduler
       planner.naturalBreaksManager.emit('naturalBreakFinished')
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 10000 })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 10000 })
       expect(planner.isPaused).toBe(true)
       expect(planner.scheduler).toBe(resumeScheduler)
       expect(planner.scheduler.reference).toBe('resumeBreaks')
@@ -396,16 +396,16 @@ describe('breaksPlanner pending breaks', () => {
 
   describe('notification and break scheduling', () => {
     it.each([
-      ['DND', 'microbreak', 'Microbreak'],
-      ['DND', 'break', 'Break'],
-      ['app exclusion', 'microbreak', 'Microbreak'],
-      ['app exclusion', 'break', 'Break'],
-      ['timed manual pause', 'microbreak', 'Microbreak'],
-      ['timed manual pause', 'break', 'Break']
+      ['DND', 'miniBreak', 'MiniBreak'],
+      ['DND', 'longBreak', 'LongBreak'],
+      ['app exclusion', 'miniBreak', 'MiniBreak'],
+      ['app exclusion', 'longBreak', 'LongBreak'],
+      ['timed manual pause', 'miniBreak', 'MiniBreak'],
+      ['timed manual pause', 'longBreak', 'LongBreak']
     ])('restores a %s-paused %s notification and starts the break once', (source, type, eventType) => {
-      settings.set('microbreak', type === 'microbreak')
-      settings.set('break', type === 'break')
-      settings.set('breakInterval', 0)
+      settings.set('miniBreak', type === 'miniBreak')
+      settings.set('longBreak', type === 'longBreak')
+      settings.set('longBreakInterval', 0)
       settings.set(`${type}Notification`, true)
       settings.set(`${type}NotificationInterval`, 2000)
       planner.nextBreak()
@@ -438,12 +438,12 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     describe.each([
-      ['microbreak', 'Microbreak'],
-      ['break', 'Break']
+      ['miniBreak', 'MiniBreak'],
+      ['longBreak', 'LongBreak']
     ])('%s postponement', (type, eventType) => {
       it.each([1000, 2000, 5000])('starts exactly once after a %i ms postponement', (postponeTime) => {
-        settings.set('microbreak', type === 'microbreak')
-        settings.set('break', type === 'break')
+        settings.set('miniBreak', type === 'miniBreak')
+        settings.set('longBreak', type === 'longBreak')
         settings.set(`${type}Notification`, true)
         settings.set(`${type}NotificationInterval`, 2000)
         settings.set(`${type}PostponeTime`, postponeTime)
@@ -474,16 +474,16 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it.each([false, true])('runs Mini, Long, then Mini with notifications %s', (notifications) => {
-      settings.set('break', true)
-      settings.set('breakInterval', 1)
-      settings.set('microbreakNotification', notifications)
-      settings.set('breakNotification', notifications)
-      settings.set('microbreakNotificationInterval', 2000)
-      settings.set('breakNotificationInterval', 2000)
-      settings.set('microbreakDuration', 1000)
-      settings.set('breakDuration', 1000)
+      settings.set('longBreak', true)
+      settings.set('longBreakInterval', 1)
+      settings.set('miniBreakNotification', notifications)
+      settings.set('longBreakNotification', notifications)
+      settings.set('miniBreakNotificationInterval', 2000)
+      settings.set('longBreakNotificationInterval', 2000)
+      settings.set('miniBreakDuration', 1000)
+      settings.set('longBreakDuration', 1000)
       const events = []
-      for (const [type, eventType] of [['microbreak', 'Microbreak'], ['break', 'Break']]) {
+      for (const [type, eventType] of [['miniBreak', 'MiniBreak'], ['longBreak', 'LongBreak']]) {
         planner.on(`start${eventType}Notification`, () => {
           events.push(`${type} notification`)
           planner.nextBreakAfterNotification()
@@ -500,7 +500,7 @@ describe('breaksPlanner pending breaks', () => {
         })
       }
       planner.nextBreak()
-      for (const type of ['microbreak', 'break', 'microbreak']) {
+      for (const type of ['miniBreak', 'longBreak', 'miniBreak']) {
         const previous = [...events]
         vi.advanceTimersByTime(notifications ? 7999 : 9999)
         expect(events).toEqual(previous)
@@ -517,7 +517,7 @@ describe('breaksPlanner pending breaks', () => {
         vi.advanceTimersByTime(1)
         expect(events.at(-1)).toBe(`${type} finish`)
       }
-      expect(events).toEqual(['microbreak', 'break', 'microbreak'].flatMap(type => [
+      expect(events).toEqual(['miniBreak', 'longBreak', 'miniBreak'].flatMap(type => [
         ...(notifications ? [`${type} notification`] : []),
         `${type} start`,
         `${type} finish`
@@ -527,8 +527,8 @@ describe('breaksPlanner pending breaks', () => {
 
   describe('resume guards', () => {
     it.each([
-      ['microbreak', 'Microbreak'],
-      ['break', 'Break']
+      ['miniBreak', 'MiniBreak'],
+      ['longBreak', 'LongBreak']
     ])('idle events do not interrupt an active %s', (type, eventType) => {
       settings.set(`${type}Duration`, 10000)
       const finished = vi.fn()
@@ -570,7 +570,7 @@ describe('breaksPlanner pending breaks', () => {
       expect(planner.isPaused).toBe(true)
       vi.advanceTimersByTime(1)
       expect(planner.isPaused).toBe(false)
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
       expect(planner.scheduler.timeLeft).toBe(100)
     })
   })
@@ -581,7 +581,7 @@ describe('breaksPlanner pending breaks', () => {
     beforeEach(() => {
       settings.set('naturalBreaks', true)
       settings.set('naturalBreaksInactivityResetTime', 300000)
-      settings.set('microbreakInterval', 600000)
+      settings.set('miniBreakInterval', 600000)
       planner.nextBreak()
       idleTime = 0
       vi.spyOn(planner.naturalBreaksManager, 'idleTime', 'get').mockImplementation(() => idleTime)
@@ -595,10 +595,10 @@ describe('breaksPlanner pending breaks', () => {
 
     it('clears normal scheduling after the idle threshold and starts a fresh interval on return', () => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       pollIdle(300000)
       expect(planner.naturalBreaksManager.isSchedulerCleared).toBe(false)
-      expect(planner.scheduler.reference).toBe('startMicrobreak')
+      expect(planner.scheduler.reference).toBe('startMiniBreak')
       pollIdle(300001)
       expect(planner.naturalBreaksManager.isSchedulerCleared).toBe(true)
       expect(planner.scheduler.reference).toBeNull()
@@ -616,7 +616,7 @@ describe('breaksPlanner pending breaks', () => {
 
     it.each(['DND', 'app exclusion', 'timed manual pause'])('resets after sufficient idle time during %s', (source) => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       const manual = source === 'timed manual pause'
       if (manual) {
         planner.pause(900000)
@@ -630,7 +630,7 @@ describe('breaksPlanner pending breaks', () => {
       expect(planner.pendingBreak).toBe(pending)
       expect(planner.scheduler).toBe(scheduler)
       pollIdle(0)
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 600000 })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 600000 })
       expect(planner.scheduler).toBe(scheduler)
       vi.advanceTimersByTime(100000)
       expect(started).not.toHaveBeenCalled()
@@ -655,7 +655,7 @@ describe('breaksPlanner pending breaks', () => {
       const resumeDeadline = Date.now() + planner.scheduler.timeLeft
       pollIdle(300001)
       pollIdle(0)
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 600000 })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 600000 })
       expect(planner.isPaused).toBe(true)
       expect(Date.now() + planner.scheduler.timeLeft).toBe(resumeDeadline)
       vi.advanceTimersByTime(resumeDeadline - Date.now() - 1)
@@ -667,7 +667,7 @@ describe('breaksPlanner pending breaks', () => {
 
     it.each(['automatic', 'early'])('waits for activity when %s resume occurs during a natural break', (mode) => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       planner.on('resumeBreaks', () => planner.resume())
       planner.pause(10000)
       pollIdle(300001)
@@ -708,7 +708,7 @@ describe('breaksPlanner pending breaks', () => {
       expect(planner.naturalBreaksManager.timer).toBe(timer)
       expect(planner.naturalBreaksManager.isSchedulerCleared).toBe(true)
       pollIdle(0)
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 600000 })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 600000 })
       expect(planner.isPaused).toBe(true)
       expect(planner.scheduler.reference).toBe('resumeBreaks')
     })
@@ -735,7 +735,7 @@ describe('breaksPlanner pending breaks', () => {
 
     it.each(['DND', 'app exclusion', 'timed manual pause'])('shows an overdue break after 6 idle minutes and 24 working minutes during %s', (source) => {
       const started = vi.fn()
-      planner.on('startMicrobreak', started)
+      planner.on('startMiniBreak', started)
       vi.advanceTimersByTime(120000)
       const pauseStart = Date.now()
       if (source === 'timed manual pause') {
@@ -748,7 +748,7 @@ describe('breaksPlanner pending breaks', () => {
       vi.advanceTimersByTime(360000 - planner.naturalBreaksManager.naturalBreaksCheckInterval)
       pollIdle(0)
       const deadline = Date.now() + 600000
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline })
       expect(Date.now() - pauseStart).toBe(360000)
       vi.advanceTimersByTime(1440000 - 1)
       expect(started).not.toHaveBeenCalled()
@@ -765,14 +765,14 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it.each([
-      ['microbreak', 'Microbreak', false],
-      ['microbreak', 'Microbreak', true],
-      ['break', 'Break', false],
-      ['break', 'Break', true]
+      ['miniBreak', 'MiniBreak', false],
+      ['miniBreak', 'MiniBreak', true],
+      ['longBreak', 'LongBreak', false],
+      ['longBreak', 'LongBreak', true]
     ])('refreshes %s (%s, notifications %s) after repeated natural breaks', (type, eventType, notification) => {
-      settings.set('microbreak', type === 'microbreak')
-      settings.set('break', type === 'break')
-      settings.set('breakInterval', 0)
+      settings.set('miniBreak', type === 'miniBreak')
+      settings.set('longBreak', type === 'longBreak')
+      settings.set('longBreakInterval', 0)
       settings.set(`${type}Notification`, notification)
       settings.set(`${type}NotificationInterval`, 2000)
       planner.nextBreak()
@@ -801,9 +801,9 @@ describe('breaksPlanner pending breaks', () => {
     })
 
     it('resets cadence and postponement count without overwriting the manual resume timer', () => {
-      settings.set('break', true)
-      settings.set('breakInterval', 1)
-      planner.skipToBreak()
+      settings.set('longBreak', true)
+      settings.set('longBreakInterval', 1)
+      planner.skipToLongBreak()
       planner.postponeCurrentBreak()
       planner.pause(1800000)
       const scheduler = planner.scheduler
@@ -812,7 +812,7 @@ describe('breaksPlanner pending breaks', () => {
       pollIdle(0)
       expect(planner.breakNumber).toBe(1)
       expect(planner.postponesNumber).toBe(0)
-      expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 600000 })
+      expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 600000 })
       expect(planner.scheduler).toBe(scheduler)
       expect(Date.now() + planner.scheduler.timeLeft).toBe(resumeDeadline)
     })
@@ -833,7 +833,7 @@ describe('breaksPlanner pending breaks', () => {
     ['app exclusion', 'DND', 'app exclusion', 'DND']
   ])('overlap: start %s then %s, finish %s then %s', (firstStart, secondStart, firstFinish, secondFinish) => {
     const started = vi.fn()
-    planner.on('startMicrobreak', started)
+    planner.on('startMiniBreak', started)
     vi.advanceTimersByTime(4000)
     start(firstStart)
     const pending = planner.pendingBreak
@@ -879,14 +879,14 @@ describe('breaksPlanner pending breaks', () => {
     planner.naturalBreaksManager.emit('naturalBreakFinished')
     start('DND')
     expect(planner.dndManager.isOnDnd).toBe(true)
-    expect(planner.pendingBreak).toEqual({ reference: 'startMicrobreak', deadline: Date.now() + 10000 })
+    expect(planner.pendingBreak).toEqual({ reference: 'startMiniBreak', deadline: Date.now() + 10000 })
     finish('app exclusion')
     expect(planner.scheduler.reference).toBeNull()
     finish('DND')
     expect(planner.scheduler.timeLeft).toBe(10000)
   })
 
-  it.each(['microbreakStarted', 'breakStarted'])('DND leaves an active %s running', (event) => {
+  it.each(['miniBreakStarted', 'longBreakStarted'])('DND leaves an active %s running', (event) => {
     planner.scheduler.cancel()
     planner.emit(event, true)
     const scheduler = planner.scheduler
@@ -910,8 +910,8 @@ describe('breaksPlanner pending breaks', () => {
   })
 
   it.each([
-    ['microbreakStarted', 'finishMicrobreak'],
-    ['breakStarted', 'finishBreak']
+    ['miniBreakStarted', 'finishMiniBreak'],
+    ['longBreakStarted', 'finishLongBreak']
   ])('a pause exclusion closes an active %s without saving it', (event, finishEvent) => {
     planner.scheduler.cancel()
     planner.emit(event, true)

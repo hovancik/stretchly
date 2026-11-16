@@ -60,7 +60,7 @@ window.onload = async (event) => {
     radio.checked = settings[radio.name] === value
     if (!eventsAttached) {
       radio.onchange = (event) => {
-        window.settings.saveSettings(radio.name, value)
+        window.settings.saveSetting(radio.name, value)
       }
     }
   })
@@ -69,7 +69,7 @@ window.onload = async (event) => {
   document.querySelector('#language').focus()
   if (!eventsAttached) {
     document.querySelector('#language').onchange = (event) => {
-      window.settings.saveSettings('language', event.target.value)
+      window.settings.saveSetting('language', event.target.value)
     }
   }
 
@@ -78,7 +78,7 @@ window.onload = async (event) => {
   document.querySelectorAll('button').forEach(button => {
     if (!eventsAttached) {
       button.onclick = () => {
-        window.settings.saveSettings('isFirstRun', false)
+        window.settings.saveSetting('isFirstRun', false)
         switch (button.getAttribute('data-location')) {
           case 'tutorial':
             window.electronApi.openExternal('https://hovancik.net/stretchly/about')
