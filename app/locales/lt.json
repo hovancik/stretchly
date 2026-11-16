@@ -44,7 +44,6 @@
       "sounds": "Garsai:",
       "transparentMode": "Įgalinti skaidrumą",
       "appearance": "Išvaizda:",
-      "invertedMonochrome": "Apverstas vienspalvis",
       "monochrome": "Vienspalvis",
       "reverie": "Svajos"
     },
@@ -174,8 +173,6 @@
     "system": "Sistemos",
     "showBreaksAsRegularWindowsTitle": "Veikti kaip įprastas langas:",
     "showBreaksAsRegularWindowsInfo": "Įjungus šią funkciją, pertraukų langus bus galima fokusuoti, jie nebebus visada viršuje ir taip pat bus rodomi užduočių juostoje.",
-    "timeToBreakInTray": "Laikas pertraukai",
-    "showTimeToBreakInTray": "Rodyti laiką iki kitos pertraukos meniu juostos piktogramoje",
     "currentTimeInBreaks": "Dabartinis laikas",
     "showCurrentTimeInBreaks": "Rodyti vietinį laiką pertraukos lange",
     "showTrayIcon": "Rodyti meniu juostos ženkliuką",

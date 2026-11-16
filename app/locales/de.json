@@ -84,7 +84,6 @@
       "trayIcon": "Taskleisten-Symbol:",
       "colour": "Farbig",
       "monochrome": "Einfarbig",
-      "invertedMonochrome": "Einfarbig invertiert",
       "snowWhite": "Schneeweiß",
       "reverie": "Tagträumerei",
       "silence": "Stille"
@@ -93,7 +92,6 @@
       "tagline": "Die Pausen-Erinnerungs-App",
       "version": "Version ",
       "latestVersion": "Neueste Version ",
-      "notifyNewVersion": "Automatisch über Anwendungsaktualisierungen benachrichtigen",
       "learnMore": "Um mehr über die Funktionen von Stretchly zu erfahren, unser Tutorial anzuschauen, die neueste Version herunterzuladen oder uns für Support zu kontaktieren, ",
       "ourWebsite": "besuche unsere Website",
       "dot": ".",
@@ -168,8 +166,6 @@
     "screenInfo": "Wenn die Anzeige von Pausen auf allen Monitoren deaktiviert ist, kannst du auswählen, auf welchem Monitor du deine Pausen anzeigen möchtest.",
     "screen": "Bildschirm für Pausen:",
     "showCurrentTimeInBreaks": "Zeige die aktuelle Uhrzeit im Pausenfenster",
-    "timeToBreakInTray": "Zeit bis zur Pause",
-    "showTimeToBreakInTray": "Zeige Zeit bis zur nächsten Pause im Taskleistensymbol",
     "currentTimeInBreaks": "Aktuelle Uhrzeit",
     "showTrayIcon": "Menüleistensymbol anzeigen",
     "toShowTrayIcon": "Stretchly-Symbol in Menüleiste anzeigen"

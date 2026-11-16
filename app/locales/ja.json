@@ -77,7 +77,6 @@
       "trayIcon": "メニューバーアイコン:",
       "colour": "色",
       "monochrome": "モノクロ",
-      "invertedMonochrome": "モノクロ反転",
       "snowWhite": "白雪",
       "reverie": "ほわわわ～ん"
     },
@@ -126,8 +125,6 @@
     "1": "2番目のモニター",
     "2": "3番目のモニター",
     "3": "4番目のモニター",
-    "timeToBreakInTray": "休憩時間",
-    "showTimeToBreakInTray": "メニューバーアイコンに次の休憩までの時間を表示する",
     "4": "5番目のモニター",
     "notifications": "休憩の通知:",
     "customIdeas": "詳細設定:",

@@ -122,8 +122,6 @@
     "3": "Quarto monitor",
     "1": "Segundo monitor",
     "showCurrentTimeInBreaks": "Mostrar a hora local atual na janela de pausa",
-    "timeToBreakInTray": "Tempo para pausar",
-    "showTimeToBreakInTray": "Mostrar tempo para a próxima pausa no ícone da barra de menu",
     "showTrayIcon": "Mostrar ícone da barra de menu",
     "toShowTrayIcon": "Mostrar ícone do Stretchly na barra de menu"
   },
@@ -152,7 +150,6 @@
     },
     "theme": {
       "snowWhite": "Branco Neve",
-      "invertedMonochrome": "Monocromático Invertido",
       "monochrome": "Monocromático",
       "colour": "Cor",
       "trayIcon": "Ícone da barra de menu:",

@@ -53,8 +53,6 @@
     "showOnMonitor": "Rādīt pārtraukumus uz",
     "screenInfo": "Kad pārtraukumus nerāda uz visiem ekrāniem, Jūs varat izvēlēties uz kura ekrāna pārtraukums tiks rādīts.",
     "screen": "Monitors pārtraukumiem:",
-    "timeToBreakInTray": "Laiks pārtraukumam",
-    "showTimeToBreakInTray": "Rādīt laiku līdz nākamajam pārtraukumam izvēlnes joslas ikonā",
     "currentTimeInBreaks": "Pašreizējais laiks",
     "showCurrentTimeInBreaks": "Rādīt pašreizējo vietējo laiku pātraukuma logā"
   },
@@ -129,7 +127,6 @@
     "theme": {
       "windChime": "Vēja zvani",
       "snowWhite": "Sniegbalta",
-      "invertedMonochrome": "Melnbalta (invertēta)",
       "monochrome": "Melnbalta",
       "colour": "Krāsaina",
       "trayIcon": "Rīkjoslas ikona:",
@@ -169,7 +166,6 @@
       "dot": ".",
       "ourWebsite": "apmeklē mūsu mājaslapu",
       "learnMore": "Lai uzzinātu vairāk par Stretchly, skatītos pamācības, lejupielādētu jaunāko versiju vai sazinātos ar mums, ",
-      "notifyNewVersion": "Automātiski ziņot par aplikācijas atjauninājumiem",
       "latestVersion": "Jaunākā versija ",
       "version": "Versija ",
       "tagline": "Pārtraukumu atgādinātājs",

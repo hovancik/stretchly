@@ -128,8 +128,6 @@
     "notificationsInfo": "Prikaz sistemskega obvestila pred premori, da se lahko pripravite nanje.",
     "notifications": "Obvestila premorov:",
     "title": "Nastavitve podpornikov",
-    "timeToBreakInTray": "Čas za premor",
-    "showTimeToBreakInTray": "Prikaži čas do naslednjega premora v ikoni opravilne vrstice",
     "currentTimeInBreaks": "Trenutni čas",
     "showCurrentTimeInBreaks": "Prikaži trenutni lokalni čas v oknu premora",
     "showTrayIcon": "Pokaži ikono v opravilni vrstici",
@@ -160,7 +158,6 @@
     },
     "theme": {
       "snowWhite": "Snežno bela",
-      "invertedMonochrome": "Invertirana črno bela",
       "monochrome": "Enobarvna",
       "colour": "Barvna",
       "trayIcon": "Ikona opravilne vrstice:",

@@ -84,7 +84,6 @@
       "trayIcon": "மெனுபார் ஐகான்:",
       "colour": "நிறம்",
       "monochrome": "ஒரே வண்ணமுடைய",
-      "invertedMonochrome": "தலைகீழ் ஒரே வண்ணமுடைய",
       "snowWhite": "பனி வெள்ளை"
     },
     "about": {
@@ -164,8 +163,6 @@
     "showOnMonitor": "இடைவெளிகளைக் காட்டு",
     "primary": "முதன்மை மானிட்டர்",
     "cursor": "கர்சரைப் பின்தொடரவும்",
-    "timeToBreakInTray": "உடைக்க நேரம்",
-    "showTimeToBreakInTray": "மெனுபார் ஐகானில் அடுத்த இடைவெளிக்கு நேரத்தைக் காட்டு",
     "showTrayIcon": "மெனுபார் ஐகானைக் காட்டு",
     "toShowTrayIcon": "மெனுபாரில் நீடித்த ஐகானைக் காட்டு",
     "currentTimeInBreaks": "தற்போதைய நேரம்",
