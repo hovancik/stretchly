@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
+- returning from a natural break now starts a fresh pending countdown during DND, `pause` app exclusions, and timed manual pauses, so an overdue break is shown when suppression ends
+- timed manual pauses now keep idle monitoring active when natural breaks are enabled and wait for activity if the pause expires while idle
+- timed manual pauses now preserve the pending break deadline, including on early resume, instead of restarting the break interval
+- `appExclusions` with `"rule": "pause"` now preserves the pending break deadline like Do Not Disturb, instead of restarting the interval when the exclusion ends
 - macOS Ventura (13) or later is now required
 - macOS app bundles are now ad-hoc signed
 - updated many translations
