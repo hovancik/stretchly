@@ -14,6 +14,7 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler = null
     this.isPaused = false
     this.pollersSuspended = false
+    this.pendingBreak = null
     this.naturalBreaksManager = new NaturalBreaksManager(settings)
     this.dndManager = new DndManager(settings)
     this.appExclusionsManager = new AppExclusionsManager(settings)
@@ -38,7 +39,15 @@ class BreaksPlanner extends EventEmitter {
     })
 
     this.naturalBreaksManager.on('naturalBreakFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak' && !this.dndManager.isOnDnd) {
+      if (this.isPaused || this.dndManager.isOnDnd || this.appExclusionsManager.isSchedulerCleared) {
+        this.pendingBreak = null
+        if ((!this.isPaused && (this.dndManager.isOnDnd || this.appExclusionsManager.appExclusion?.rule === 'pause')) || this.scheduler.reference === 'resumeBreaks') {
+          this.breakNumber = 0
+          this.postponesNumber = 0
+          const scheduler = this._createNextBreakScheduler()
+          this.pendingBreak = { reference: scheduler.reference, deadline: Date.now() + scheduler.delay }
+        }
+      } else if (this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak') {
         this.reset()
         log.info('Stretchly: resuming breaks after idle time')
         this.emit('updateToolTip')
@@ -47,17 +56,21 @@ class BreaksPlanner extends EventEmitter {
 
     this.dndManager.on('dndStarted', () => {
       if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak' && this.scheduler.reference !== null) {
-        this.clear()
+        this._savePendingBreak()
         log.info('Stretchly: pausing breaks for Do Not Distrub')
         this.emit('updateToolTip')
-      } else {
+      } else if (this.isPaused || (!this.pendingBreak && !this.appExclusionsManager.isSchedulerCleared && !this.naturalBreaksManager.isSchedulerCleared)) {
         this.dndManager.isOnDnd = false
       }
     })
 
     this.dndManager.on('dndFinished', () => {
-      if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak') {
-        this.reset()
+      if (!this.isPaused && !this.appExclusionsManager.isSchedulerCleared && !this.naturalBreaksManager.isSchedulerCleared && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak') {
+        if (this.pendingBreak) {
+          this._restorePendingBreak()
+        } else {
+          this.reset()
+        }
         log.info('Stretchly: resuming breaks for Do Not Distrub')
         this.emit('updateToolTip')
       }
@@ -66,7 +79,7 @@ class BreaksPlanner extends EventEmitter {
     this.appExclusionsManager.on('appExclusionStarted', (rule, exclusion) => {
       if (rule === 'pause') {
         if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak' && this.scheduler.reference !== null) {
-          this.clear()
+          this._savePendingBreak()
           log.info(`Stretchly: pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
         } else if (!this.isPaused && this.scheduler.reference === 'finishLongBreak') {
@@ -79,7 +92,7 @@ class BreaksPlanner extends EventEmitter {
           this.clear()
           log.info(`Stretchly: closing current and pausing breaks as 'pause' exclusion found running: '${exclusion}'`)
           this.emit('updateToolTip')
-        } else {
+        } else if (this.isPaused || (!this.pendingBreak && !this.dndManager.isOnDnd && !this.naturalBreaksManager.isSchedulerCleared)) {
           this.appExclusionsManager.isOnAppExclusion = false
         }
       } else if (rule === 'resume') {
@@ -93,8 +106,12 @@ class BreaksPlanner extends EventEmitter {
 
     this.appExclusionsManager.on('appExclusionFinished', (rule) => {
       if (rule === 'pause') {
-        if (!this.isPaused && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak') {
-          this.reset()
+        if (!this.isPaused && !this.dndManager.isOnDnd && !this.naturalBreaksManager.isSchedulerCleared && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak') {
+          if (this.pendingBreak) {
+            this._restorePendingBreak()
+          } else {
+            this.reset()
+          }
           log.info("Stretchly: resuming breaks as no 'pause' exclusion found running")
           this.emit('updateToolTip')
         }
@@ -112,7 +129,13 @@ class BreaksPlanner extends EventEmitter {
 
   nextBreak () {
     this.postponesNumber = 0
+    this.pendingBreak = null
     if (this.scheduler) this.scheduler.cancel()
+    this.scheduler = this._createNextBreakScheduler()
+    this.scheduler.plan()
+  }
+
+  _createNextBreakScheduler () {
     const shouldLongBreak = this.settings.get('longBreak')
     const shouldMiniBreak = this.settings.get('miniBreak')
     const interval = this.settings.get('miniBreakInterval')
@@ -122,34 +145,33 @@ class BreaksPlanner extends EventEmitter {
     const miniBreakNotificationInterval = this.settings.get('miniBreakNotificationInterval')
     if (!shouldLongBreak && shouldMiniBreak) {
       if (miniBreakNotification) {
-        this.scheduler = new Scheduler(() => this.emit('startMiniBreakNotification'), interval - miniBreakNotificationInterval, 'startMiniBreakNotification')
+        return new Scheduler(() => this.emit('startMiniBreakNotification'), interval - miniBreakNotificationInterval, 'startMiniBreakNotification')
       } else {
-        this.scheduler = new Scheduler(() => this.emit('startMiniBreak'), interval, 'startMiniBreak')
+        return new Scheduler(() => this.emit('startMiniBreak'), interval, 'startMiniBreak')
       }
     } else if (shouldLongBreak && !shouldMiniBreak) {
       if (longBreakNotification) {
-        this.scheduler = new Scheduler(() => this.emit('startLongBreakNotification'), interval * (this.settings.get('longBreakInterval') + 1) - longBreakNotificationInterval, 'startLongBreakNotification')
+        return new Scheduler(() => this.emit('startLongBreakNotification'), interval * (this.settings.get('longBreakInterval') + 1) - longBreakNotificationInterval, 'startLongBreakNotification')
       } else {
-        this.scheduler = new Scheduler(() => this.emit('startLongBreak'), interval * (this.settings.get('longBreakInterval') + 1), 'startLongBreak')
+        return new Scheduler(() => this.emit('startLongBreak'), interval * (this.settings.get('longBreakInterval') + 1), 'startLongBreak')
       }
     } else if (shouldLongBreak && shouldMiniBreak) {
       this.breakNumber = this.breakNumber + 1
       const longBreakInterval = this.settings.get('longBreakInterval') + 1
       if (this.breakNumber % longBreakInterval === 0) {
         if (longBreakNotification) {
-          this.scheduler = new Scheduler(() => this.emit('startLongBreakNotification'), interval - longBreakNotificationInterval, 'startLongBreakNotification')
+          return new Scheduler(() => this.emit('startLongBreakNotification'), interval - longBreakNotificationInterval, 'startLongBreakNotification')
         } else {
-          this.scheduler = new Scheduler(() => this.emit('startLongBreak'), interval, 'startLongBreak')
+          return new Scheduler(() => this.emit('startLongBreak'), interval, 'startLongBreak')
         }
       } else {
         if (miniBreakNotification) {
-          this.scheduler = new Scheduler(() => this.emit('startMiniBreakNotification'), interval - miniBreakNotificationInterval, 'startMiniBreakNotification')
+          return new Scheduler(() => this.emit('startMiniBreakNotification'), interval - miniBreakNotificationInterval, 'startMiniBreakNotification')
         } else {
-          this.scheduler = new Scheduler(() => this.emit('startMiniBreak'), interval, 'startMiniBreak')
+          return new Scheduler(() => this.emit('startMiniBreak'), interval, 'startMiniBreak')
         }
       }
     }
-    this.scheduler.plan()
   }
 
   nextBreakAfterNotification () {
@@ -162,6 +184,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   postponeCurrentBreak () {
+    this.pendingBreak = null
     this.scheduler.cancel()
     this.postponesNumber += 1
     let postponeTime, eventName
@@ -180,6 +203,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   skipToMiniBreak (delay = 100) {
+    this.pendingBreak = null
     this.scheduler.cancel()
     const shouldLongBreak = this.settings.get('longBreak')
     const shouldMiniBreak = this.settings.get('miniBreak')
@@ -195,6 +219,7 @@ class BreaksPlanner extends EventEmitter {
   }
 
   skipToLongBreak (delay = 100) {
+    this.pendingBreak = null
     this.scheduler.cancel()
     const shouldLongBreak = this.settings.get('longBreak')
     const shouldMiniBreak = this.settings.get('miniBreak')
@@ -207,17 +232,48 @@ class BreaksPlanner extends EventEmitter {
     this.emit('updateToolTip')
   }
 
+  _savePendingBreak () {
+    const { reference, timeLeft } = this.scheduler
+    const deadline = Date.now() + timeLeft
+    const breakNumber = this.breakNumber
+    const postponesNumber = this.postponesNumber
+    this.clear()
+    this.breakNumber = breakNumber
+    this.postponesNumber = postponesNumber
+    this.pendingBreak = { reference, deadline }
+  }
+
+  _restorePendingBreak () {
+    const { reference, deadline } = this.pendingBreak
+    this.pendingBreak = null
+    this.scheduler.cancel()
+    const delay = Math.max(deadline - Date.now(), 100)
+    this.scheduler = new Scheduler(() => this.emit(reference), delay, reference)
+    this.scheduler.plan()
+  }
+
   clear () {
+    this.pendingBreak = null
     this.scheduler.cancel()
     this.breakNumber = 0
     this.postponesNumber = 0
   }
 
   pause (milliseconds) {
-    this.clear()
+    if (milliseconds !== 1 && !this.isPaused && this.scheduler.reference !== null && this.scheduler.reference !== 'finishMiniBreak' && this.scheduler.reference !== 'finishLongBreak') {
+      this._savePendingBreak()
+    } else if (milliseconds !== 1 && this.pendingBreak) {
+      this.scheduler.cancel()
+    } else {
+      this.clear()
+    }
     this.isPaused = true
     this.pollersSuspended = true
-    this.naturalBreaksManager.stop()
+    if (milliseconds !== 1 && this.settings.get('naturalBreaks')) {
+      this.naturalBreaksManager.start()
+    } else {
+      this.naturalBreaksManager.stop()
+    }
     this.dndManager.stop()
     this.appExclusionsManager.stop()
     if (milliseconds !== 1) {
@@ -230,7 +286,13 @@ class BreaksPlanner extends EventEmitter {
     this.scheduler.cancel()
     this.isPaused = false
     this.appExclusionsManager.reset()
-    this.nextBreak()
+    if (!this.naturalBreaksManager.isSchedulerCleared) {
+      if (this.pendingBreak) {
+        this._restorePendingBreak()
+      } else {
+        this.nextBreak()
+      }
+    }
     if (this.pollersSuspended) {
       this.pollersSuspended = false
       if (this.settings.get('naturalBreaks')) this.naturalBreaksManager.start()
@@ -276,8 +338,12 @@ class BreaksPlanner extends EventEmitter {
       this.dndManager.start()
     } else {
       this.dndManager.stop()
-      if (!this.isPaused && this.scheduler.reference === null) {
-        this.reset()
+      if (!this.isPaused && !this.appExclusionsManager.isSchedulerCleared && !this.naturalBreaksManager.isSchedulerCleared && this.scheduler.reference === null) {
+        if (this.pendingBreak) {
+          this._restorePendingBreak()
+        } else {
+          this.reset()
+        }
       }
     }
   }

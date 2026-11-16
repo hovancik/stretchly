@@ -151,9 +151,11 @@ Clicking the *Stretchly* icon in your tray area will display the current status 
 
 <img src="tray.png" height="140">
 
+Pausing breaks for a specific duration preserves the pending break timer's original deadline, including if you resume early. If the timer becomes overdue during the pause, the break (or its notification) starts right after resuming. With natural breaks enabled, idle monitoring continues during timed pauses: returning after sufficient idle time starts a fresh pending countdown in the background without ending the manual pause. If that countdown becomes overdue, it fires right after the pause ends. If the pause expires while you are still idle, breaks wait until you return, then start a fresh interval. DND and app-exclusion monitoring remain stopped during manual pauses. Pausing indefinitely stops idle monitoring and discards the pending timer. Resetting breaks also discards the pending timer.
+
 *Stretchly* is monitoring your idle time, so when you are idle for 5 minutes, breaks will be paused until you return.
 
-*Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On.
+*Stretchly* is also monitoring Do Not Disturb mode, so breaks are paused when DnD mode is On. The break timer keeps running while DnD is On, and if it ran out, the break is shown right after DnD ends.
 
 *Stretchly* follows the theme of your system and is also available in dark mode.
 
@@ -222,7 +224,7 @@ Here are the preferences editable via the app. If values in the app does not sui
 - `useMonochromeTrayIcon` - use monochrome icon
 - `trayIconStyle` - icon style for menubar: default, time to break, or progress to break
 - `silentNotifications` - enable sounds
-- `monitorDnd` - monitor DND mode
+- `monitorDnd` - monitor DND mode. While DND is on, the break timer keeps running and, if it ran out, the break (or its notification) starts right after DND ends. Returning from a natural break during DND starts a fresh pending countdown in the background
 - `checkNewVersion` - check for new versions
 
 #### Editing break ideas
@@ -430,6 +432,8 @@ This option has no effect when `allScreens` is `false` or when `showBreaksAsRegu
 By editing `appExclusions` in the preferences file, you can automatically control when Stretchly schedules break reminders based on running programs.
 
 To pause break reminders while any of the listed programs are running, use `"rule": "pause"`:
+
+The break timer keeps running while a `pause` exclusion is active, just as with Do Not Disturb. When the exclusion ends, the pending timer resumes at its original deadline; if it is overdue, it fires right away. An already displayed break is closed rather than saved. Returning from a natural break starts a fresh pending countdown in the background, even while the exclusion remains active. An indefinite pause or a reset discards the pending timer. A timed manual pause preserves it.
 
 Linux
 ```
@@ -747,6 +751,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 - Simon R. Lincoln, [@simonl65](https://github.com/simonl65)
 - Florian Josef Altendorfer, [@florianaltendorfer](https://github.com/florianaltendorfer)
 - Ayush-kukrety, [@Ayush-kukrety](https://github.com/Ayush-kukrety)
+- Meelis Saluvee, [@dominioon](https://github.com/dominioon)
 - lzh-xdu, [@lzh-xdu](https://github.com/lzh-xdu)
 
 Also see Github's list of [contributors](https://github.com/hovancik/stretchly/graphs/contributors).
