@@ -1650,23 +1650,17 @@ function getTrayMenuTemplate () {
     click: function () {
       createPreferencesWindow()
     }
-  })
-
-  if (global.isContributor) {
-    trayMenu.push({
-      label: i18next.t('main.advancedPreferences'),
-      click: function () {
-        createAdvancedPreferencesWindow()
-      }
-    }, {
-      label: i18next.t('main.syncPreferences'),
-      click: function () {
-        createSyncPreferencesWindow()
-      }
-    })
-  }
-
-  trayMenu.push({
+  }, {
+    label: i18next.t('main.advancedPreferences'),
+    click: function () {
+      createAdvancedPreferencesWindow()
+    }
+  }, {
+    label: i18next.t('main.syncPreferences'),
+    click: function () {
+      createSyncPreferencesWindow()
+    }
+  }, {
     type: 'separator'
   }, {
     label: i18next.t('main.quitStretchly'),

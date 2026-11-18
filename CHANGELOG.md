@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
+- Advanced Preferences and Sync Preferences are available from the tray menu
 - renamed Contributor Preferences to Advanced Preferences
 - renamed break preferences to use `miniBreak` and `longBreak`, and end-sound preferences to `miniBreakEndSound` and `longBreakEndSound`; existing settings migrate automatically
 - tray menu shows configured shortcuts beside matching actions
