@@ -34,10 +34,10 @@ body:
 - type:          checkboxes
   id:            advanced-preferences
   attributes:
-    label:       Advanced Preferences
-    description: Please check [Advanced Preferences](https://github.com/hovancik/stretchly#advanced-preferences) as it may contain a solution for your problem.
+    label:       Preferences and configuration file
+    description: Please check [Preferences](https://github.com/hovancik/stretchly#preferences) and [Configuration file](https://github.com/hovancik/stretchly#configuration-file) as they may contain a solution for your problem.
     options:
-    - label:     I've checked Advanced Preferences
+    - label:     I've checked Preferences and the configuration file
       required:  true
 - type:          dropdown
   attributes:
