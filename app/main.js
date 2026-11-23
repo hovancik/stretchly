@@ -1781,7 +1781,7 @@ ipcMain.on('update-tray', function (event) {
   updateTray()
 })
 
-ipcMain.on('restore-defaults', (event) => {
+ipcMain.on('restore-defaults', () => {
   const dialogOpts = {
     type: 'question',
     title: i18next.t('main.restoreDefaults'),
@@ -1793,7 +1793,6 @@ ipcMain.on('restore-defaults', (event) => {
       log.info('Stretchly: restoring default settings')
       settings.store = Object.assign(defaultSettings, { isFirstRun: false, __internal__: settings.get('__internal__') })
       initialize(false)
-      event.sender.reload()
     }
   })
 })

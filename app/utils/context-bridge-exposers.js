@@ -67,6 +67,7 @@ function exposeSemver () {
 function exposeSettings () {
   contextBridge.exposeInMainWorld('settings', {
     get: (key) => ipcRenderer.invoke('settings-get', key),
+    onRenderSettings: (callback) => ipcRenderer.on('renderSettings', (_event, settings) => callback(settings)),
     currentSettings: async () => {
       return await ipcRenderer.invoke('current-settings')
     },
