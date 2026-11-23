@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - `currentTimeInBreaksFormat` advanced preference to set the format of current time in breaks, e.g. to show date and weekday
 - `currentTimeInBreaksFontSize` advanced preference to change the clock's font size in breaks
 - CLI command and shortcut to start the last break again
+- Do Not Disturb monitoring (`monitorDnd`) now keeps the break timer running while Do Not Disturb is on and shows an overdue break right after it ends, instead of resetting the timer
 
 ### Fixed
 - detect Do Not Disturb on macOS 27 and later using active Focus assertions, with Full Disk Access guidance when access is denied
@@ -26,6 +27,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
 
 ### Changed
+- returning from a natural break now starts a fresh pending countdown during DND, `pause` app exclusions, and timed manual pauses, so an overdue break is shown when suppression ends
+- timed manual pauses now keep idle monitoring active when natural breaks are enabled and wait for activity if the pause expires while idle
+- timed manual pauses now preserve the pending break deadline, including on early resume, instead of restarting the break interval
+- `appExclusions` with `"rule": "pause"` now preserves the pending break deadline like Do Not Disturb, instead of restarting the interval when the exclusion ends
 - renamed break preferences to use `miniBreak` and `longBreak`, and end-sound preferences to `miniBreakEndSound` and `longBreakEndSound`; existing settings migrate automatically
 - tray menu shows configured shortcuts beside matching actions
 - macOS Ventura (13) or later is now required
