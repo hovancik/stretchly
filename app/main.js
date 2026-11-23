@@ -813,7 +813,7 @@ function createSyncPreferencesWindow () {
     return
   }
 
-  const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
+  const syncPreferencesUrl = 'https://my.stretchly.net/app/v2'
   syncPreferencesWin = new BrowserWindow({
     show: false,
     autoHideMenuBar: true,
