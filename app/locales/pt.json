@@ -129,11 +129,7 @@
   },
   "preferences": {
     "heart": {
-      "syncPreferences": "Preferências de Sincronização",
-      "advancedPreferences": "Preferências avançadas",
-      "authenticateUsing": "Autenticar a usar:",
-      "alreadyContributor": "Já sou um contribuidor",
-      "becomeContributor": "Torne-se um Benfeitor",
+      "supportStretchly": "Apoiar o Stretchly",
       "desc2": "Stretchly é gratuito. Mas pode dar-nos suporte a doar e nos a ajudar a continuar a aperfeiçoar o Stretchly e a lançar outro software gratuito.",
       "desc1": "Fazer pausas regulares quando se está a usar um computador é cientificamente provado ser importante para o seu bem-estar físico e mental.",
       "loveStretchly": "Ama o seu Stretchly?"

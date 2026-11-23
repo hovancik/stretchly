@@ -79,11 +79,7 @@
     "heart": {
       "desc2": "Stretchly er gratis. Men du kan støtte oss ved å gi penger og hjelpe oss å forbedre Stretchly og å gi ut annen fri programvare.",
       "desc1": "Det er vitenskapelig bevist at det er sunt for kropp og sjel å ta regelmessige pauser fra datamaskinen.",
-      "advancedPreferences": "Avanserte innstillinger",
-      "syncPreferences": "Synkroniseringsinnstillinger",
-      "authenticateUsing": "Legitimer deg med:",
-      "alreadyContributor": "Jeg er allerede en bidragsyter",
-      "becomeContributor": "Bli en kroneruller",
+      "supportStretchly": "Støtt Stretchly",
       "loveStretchly": "Elsker du Stretchly?"
     },
     "about": {

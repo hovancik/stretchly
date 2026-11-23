@@ -56,6 +56,9 @@
       "miniBreaksInfo": "කුඩා විවේක යනු ඔබට දිගු කිරීමට සහ සන්සුන් වීමට අවස්ථාවක් ලබා දීම සඳහා නිතිපතා ගන්නා කෙටි විවේකයකි.",
       "enableMiniBreaks": "කුඩා විවේක සක්‍රිය කරන්න",
       "showNotificationBeforeMiniBreak": "කුඩා විවේකය ආරම්භ වීමට පෙර දැනුම්දීම පෙන්වන්න"
+    },
+    "heart": {
+      "supportStretchly": "Stretchly වෙත සහාය වන්න"
     }
   }
 }

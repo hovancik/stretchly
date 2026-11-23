@@ -100,11 +100,7 @@
     },
     "title": "Strechly nuostatos",
     "heart": {
-      "syncPreferences": "Sinchronizavimo nuostatos",
-      "advancedPreferences": "Išplėstinės nuostatos",
-      "authenticateUsing": "Tapatybės patvirtinimas naudojant:",
-      "alreadyContributor": "Aš jau prisidėjau",
-      "becomeContributor": "Paremti",
+      "supportStretchly": "Paremti Stretchly",
       "desc2": "Stretchly yra nemokama. Tačiau galite paremti aukodami ir padėti mums toliau tobulinti Stretchly bei leisti kitą nemokamą programinę įrangą.",
       "desc1": "Moksliškai įrodyta, kad reguliarios pertraukos naudojantis kompiuteriu yra svarbios jūsų fizinei ir psichinei savijautai.",
       "loveStretchly": "Ar patinka Stretchly?"

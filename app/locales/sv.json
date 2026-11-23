@@ -109,11 +109,7 @@
       "loveStretchly": "Gillar du Stretchly?",
       "desc1": "Regelbundna pauser vid datorarbete är viktiga för både det fysiska och psykiska välbefinnandet.",
       "desc2": "Stretchly är gratis. Du kan stödja utvecklingen genom att donera och hjälpa oss att fortsätta förbättra Stretchly och utveckla annan fri programvara.",
-      "becomeContributor": "Bli supporter",
-      "alreadyContributor": "Jag är redan en bidragsgivare",
-      "authenticateUsing": "Autentisera med:",
-      "advancedPreferences": "Avancerade inställningar",
-      "syncPreferences": "Synkroniseringsinställningar"
+      "supportStretchly": "Stöd Stretchly"
     }
   },
   "advancedPreferences": {

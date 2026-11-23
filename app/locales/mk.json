@@ -57,7 +57,10 @@
       "schedule": "Распоред",
       "settings": "Подесувања"
     },
-    "title": "Stretchly подесувања"
+    "title": "Stretchly подесувања",
+    "heart": {
+      "supportStretchly": "Поддржете го Stretchly"
+    }
   },
   "break": {
     "title": "Време е за пауза!",

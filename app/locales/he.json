@@ -55,11 +55,7 @@
     "heart": {
       "loveStretchly": "אהבת את Stretchly?",
       "desc1": "לקיחת הפסקות קצובות מהשימוש במחשב הוכחה מדעית כחשובה לבריאות הגופנית והנפשית.",
-      "authenticateUsing": "הזדהות דרך:",
-      "syncPreferences": "העדפות סנכרון",
-      "alreadyContributor": "כבר מתבצעת על ידי תרומה קבועה",
-      "advancedPreferences": "העדפות מתקדמות",
-      "becomeContributor": "להפוך לפטרון",
+      "supportStretchly": "תמיכה ב־Stretchly",
       "desc2": "‏Stretchly היא תוכנה חופשית. עם זאת, כן אפשר לתרום בשביל להביע תמיכה, וכך גם לעזור לנו לשפר את Stretchly ולפתח עוד תוכנה חופשית."
     },
     "theme": {

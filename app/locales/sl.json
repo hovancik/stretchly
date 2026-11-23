@@ -137,11 +137,7 @@
   },
   "preferences": {
     "heart": {
-      "syncPreferences": "Sinhroniziraj nastavitve",
-      "advancedPreferences": "Napredne nastavitve",
-      "authenticateUsing": "Avtenticirajte se z:",
-      "alreadyContributor": "Že podpiram",
-      "becomeContributor": "Postanite Patron",
+      "supportStretchly": "Podprite Stretchly",
       "desc2": "Stretchly je brezplačen. Svojo podporo lahko izkažete z donacijo in nam pomagate še naprej izboljševati Stretchly in izdajati druge brezplačne programe.",
       "desc1": "Redni odmori pri uporabi računalnika so znanstveno dokazano pomembni za vaše telesno in duševno počutje.",
       "loveStretchly": "Ljubite Stretchly?"

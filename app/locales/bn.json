@@ -12,5 +12,10 @@
     "miniBreakIn": "$t(utils.seconds, {'count': {{seconds}} }) সেকেন্ডের মধ্যে ছোটো বিরতি",
     "toMiniBreak": "ছোটো বিরতি",
     "indefinitely": "অনির্দিষ্ট কালের জন্যে"
+  },
+  "preferences": {
+    "heart": {
+      "supportStretchly": "Stretchly-কে সমর্থন করুন"
+    }
   }
 }

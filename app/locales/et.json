@@ -213,14 +213,10 @@
     },
     "title": "Stretchly Seaded",
     "heart": {
-      "becomeContributor": "Hakka toetajaks",
+      "supportStretchly": "Toeta Stretchlyt",
       "desc1": "On teaduslikult tõestatud, et arvutit kasutades on regulaarsed pausid olulised nii sinu füüsilise kui ka vaimse heaolu jaoks.",
-      "authenticateUsing": "Autentimine toimub kasutades:",
       "loveStretchly": "Kas armastad oma Stretchlyt?",
-      "desc2": "Stretchly on tasuta. Kuid sa saad toetada meie arendust, tehes annetuse ja aidates meil jätkata Stretchly täiustamist ning välja anda teisi tasuta tarkvaratooteid.",
-      "advancedPreferences": "Täpsemad seaded",
-      "alreadyContributor": "Olen juba kaasautor",
-      "syncPreferences": "Sünkroniseerimise seaded"
+      "desc2": "Stretchly on tasuta. Kuid sa saad toetada meie arendust, tehes annetuse ja aidates meil jätkata Stretchly täiustamist ning välja anda teisi tasuta tarkvaratooteid."
     },
     "settings": {
       "language": "Vali keel:",

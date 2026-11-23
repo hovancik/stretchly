@@ -388,18 +388,3 @@ body[dir=rtl] .about > :nth-child(4) > div {
 .heart > :nth-child(2) > span {
   font-size: 36px;
 }
-
-.heart > .authenticate > span {
-  font-size: 13px;
-  letter-spacing: -0.08px;
-}
-
-.heart > .authenticate > a {
-  padding-right: 20px;
-  text-decoration: none;
-}
-
-body[dir=rtl] .heart > .authenticate > a {
-  padding-right: 0;
-  padding-left: 20px;
-}
