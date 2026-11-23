@@ -151,25 +151,7 @@ class DndManager extends EventEmitter {
         } catch (e) { wfa = -1 } // getFocusAssist() throw an error if OS isn't windows
         return wfa === 1 || wfa === 2
       } else if (process.platform === 'darwin') {
-        const macOSMajorVersion = parseInt(process.getSystemVersion().split('.')[0])
-        let cmd = ''
-        if (macOSMajorVersion >= 26) {
-          cmd = 'defaults read com.apple.controlcenter "NSStatusItem VisibleCC FocusModes"'
-        } else {
-          cmd = 'defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"'
-        }
-        try {
-          const asyncExec = this._getOrCreateAsyncExec()
-          const { stdout } = await asyncExec(cmd)
-          if (stdout.replace(/[^0-9a-zA-Z]/g, '') === '1') {
-            return true
-          }
-        } catch (e) {
-          if (!e.message.includes('The domain/default pair of (com.apple.controlcenter, NSStatusItem VisibleCC FocusModes) does not exist')) {
-            // On macOS Tahoe 26.0, this entry would not exist if no focus mode is enabled
-            this._logErrorOnce('macos', e)
-          }
-        }
+        return await this._getMacOSFocusState()
       } else if (process.platform === 'linux') {
         return await this._isDndEnabledLinux()
       }
@@ -183,6 +165,48 @@ class DndManager extends EventEmitter {
       this.__asyncExec = promisify(exec)
     }
     return this.__asyncExec
+  }
+
+  async _getMacOSFocusState () {
+    const macOSMajorVersion = parseInt(process.getSystemVersion().split('.')[0])
+    if (macOSMajorVersion >= 27) {
+      try {
+        const contents = await readFile(join(homedir(), 'Library', 'DoNotDisturb', 'DB', 'Assertions.json'), 'utf8')
+        const { data } = JSON.parse(contents)
+        if (!Array.isArray(data)) {
+          throw new Error('Invalid macOS Focus assertion data')
+        }
+        return data.some(store => (store.storeAssertionRecords ?? []).some(record => {
+          const mode = record.assertionDetails?.assertionDetailsModeIdentifier
+          return typeof mode === 'string' && mode.length > 0
+        }))
+      } catch (e) {
+        if (e.code === 'EACCES' || e.code === 'EPERM') {
+          this._logErrorOnce('macos-focus: grant Stretchly Full Disk Access in System Settings > Privacy & Security, then restart Stretchly', e)
+        } else {
+          this._logErrorOnce('macos-focus', e)
+        }
+        return this.isOnDnd
+      }
+    }
+    let cmd = ''
+    if (macOSMajorVersion >= 26) {
+      cmd = 'defaults read com.apple.controlcenter "NSStatusItem VisibleCC FocusModes"'
+    } else {
+      cmd = 'defaults read com.apple.controlcenter "NSStatusItem Visible FocusModes"'
+    }
+    try {
+      const asyncExec = this._getOrCreateAsyncExec()
+      const { stdout } = await asyncExec(cmd)
+      if (stdout.replace(/[^0-9a-zA-Z]/g, '') === '1') {
+        return true
+      }
+    } catch (e) {
+      if (!e.message.includes('The domain/default pair of (com.apple.controlcenter, NSStatusItem VisibleCC FocusModes) does not exist')) {
+        // On macOS Tahoe 26.0, this entry would not exist if no focus mode is enabled
+        this._logErrorOnce('macos', e)
+      }
+    }
   }
 
   async _getConfigValue (filePath, key) {
