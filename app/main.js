@@ -1896,7 +1896,7 @@ ipcMain.handle('current-settings', (event) => {
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
   log.info('Stretchly: restoring remote settings')
   settings.store = remoteSettings
-  initialize(false)
+  return initialize(false)
 })
 
 ipcMain.handle('i18next-translate', (event, key, options) => {

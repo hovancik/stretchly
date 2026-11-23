@@ -27,6 +27,6 @@ contextBridge.exposeInMainWorld('ElectronBridge', {
   },
 
   restoreRemoteSettings: (remoteSettings) => {
-    ipcRenderer.invoke('restore-remote-settings', remoteSettings)
+    return ipcRenderer.invoke('restore-remote-settings', remoteSettings)
   }
 })
