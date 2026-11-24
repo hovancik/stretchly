@@ -12,6 +12,9 @@ class NaturalBreaksManager extends EventEmitter {
     this.timer = null
     this.isOnNaturalBreak = false
     this.isSchedulerCleared = false
+    // Once powerMonitor reports a non-zero idle time we know it works on this
+    // platform. From then on a 0 means "user is active", not "unsupported".
+    this.powerMonitorWorks = false
     if (this.usingNaturalBreaks) {
       this.start()
     }
@@ -21,6 +24,7 @@ class NaturalBreaksManager extends EventEmitter {
     if (this.timer) return
     this.usingNaturalBreaks = true
     desktopIdle.startMonitoring()
+    this.monitoringStartedAt = Date.now()
     this._checkIdleTime()
     log.info('Stretchly: starting Idle time monitoring')
   }
@@ -38,10 +42,33 @@ class NaturalBreaksManager extends EventEmitter {
 
   get idleTime () {
     if (this.usingNaturalBreaks) {
-      return (powerMonitor.getSystemIdleTime() || desktopIdle.getIdleTime()) * 1000
+      return this._idleSeconds(powerMonitor.getSystemIdleTime(), () => desktopIdle.getIdleTime()) * 1000
     } else {
       return 0
     }
+  }
+
+  // powerMonitor returns 0 both when the user is active and when idle time is
+  // not supported (e.g. some Wayland compositors). Falling back on every 0
+  // breaks platforms where powerMonitor works but desktopIdle does not
+  // (KDE Wayland without access to /dev/input: desktopIdle then reports the
+  // time since start, which pauses breaks 5 minutes after launch).
+  _idleSeconds (powerMonitorSeconds, getFallbackSeconds) {
+    if (powerMonitorSeconds > 0) {
+      if (!this.powerMonitorWorks) {
+        this.powerMonitorWorks = true
+        log.info('Stretchly: powerMonitor idle time works, not using desktopIdle fallback')
+      }
+      return powerMonitorSeconds
+    }
+    if (this.powerMonitorWorks) return 0
+    const fallbackSeconds = getFallbackSeconds()
+    // If desktopIdle cannot read input devices it never sees any event and
+    // just reports the time since monitoring started. Such a value carries
+    // no information about the user, so ignore it.
+    const secondsSinceStart = (Date.now() - this.monitoringStartedAt) / 1000
+    if (fallbackSeconds >= secondsSinceStart - 2) return 0
+    return fallbackSeconds
   }
 
   _checkIdleTime () {

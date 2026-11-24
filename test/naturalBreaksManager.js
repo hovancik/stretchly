@@ -68,6 +68,25 @@ describe('naturalBreaksManager', function () {
     naturalBreaksManager.timer.should.be.equal(timer)
   })
 
+  it('uses fallback while powerMonitor has only reported 0', () => {
+    naturalBreaksManager.monitoringStartedAt = Date.now() - 1000 * 1000
+    naturalBreaksManager._idleSeconds(0, () => 400).should.be.equal(400)
+    naturalBreaksManager.powerMonitorWorks.should.be.equal(false)
+  })
+
+  it('ignores fallback that never saw any input since start', () => {
+    naturalBreaksManager.monitoringStartedAt = Date.now() - 400 * 1000
+    naturalBreaksManager._idleSeconds(0, () => 400).should.be.equal(0)
+  })
+
+  it('stops using fallback once powerMonitor reports idle time', () => {
+    naturalBreaksManager.monitoringStartedAt = Date.now() - 1000 * 1000
+    naturalBreaksManager._idleSeconds(0, () => 400).should.be.equal(400)
+    naturalBreaksManager._idleSeconds(3, () => 400).should.be.equal(3)
+    naturalBreaksManager.powerMonitorWorks.should.be.equal(true)
+    naturalBreaksManager._idleSeconds(0, () => 400).should.be.equal(0)
+  })
+
   afterEach(async () => {
     naturalBreaksManager.stop()
     naturalBreaksManager = null

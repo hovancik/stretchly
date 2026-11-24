@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix snap startup crash
 - improve Linux desktop integration
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
+- fix natural breaks pausing breaks 5 minutes after start on Linux Wayland (e.g. KDE Plasma) when idle-time fallback cannot read input devices
 
 ### Changed
 - renamed break preferences to use `miniBreak` and `longBreak`, and end-sound preferences to `miniBreakEndSound` and `longBreakEndSound`; existing settings migrate automatically
