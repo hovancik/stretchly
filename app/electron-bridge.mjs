@@ -5,15 +5,6 @@ contextBridge.exposeInMainWorld('ElectronBridge', {
   //   console.log("Hello World")
   // },
 
-  showAdvancedPreferences: () => {
-    ipcRenderer.send('open-advanced-preferences')
-    ipcRenderer.send('close-current-window')
-  },
-
-  setContributor: () => {
-    ipcRenderer.send('set-contributor')
-  },
-
   openExternal: (link) => {
     shell.openExternal(link)
   },

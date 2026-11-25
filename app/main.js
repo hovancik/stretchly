@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, readFileSync, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFileSync, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import BackgroundImages from './utils/backgroundImage.js'
@@ -15,7 +15,6 @@ import Backend from 'i18next-fs-backend'
 import log from 'electron-log/main.js'
 import Store from 'electron-store'
 import humanizeDuration from 'humanize-duration'
-import { DateTime } from 'luxon'
 
 import {
   canPostpone, canSkip, formatTimeRemaining,
@@ -86,7 +85,6 @@ let preferencesWin = null
 let welcomeWin = null
 let advancedPreferencesWin = null
 let syncPreferencesWin = null
-let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
@@ -114,8 +112,7 @@ if (process.platform === 'win32' && !insideWindowsStore() && app.isPackaged) {
 }
 
 const global = {
-  isNewVersion: false,
-  isContributor: false
+  isNewVersion: false
 }
 
 ipcMain.on('set-global-value', (event, name, value) => {
@@ -568,19 +565,6 @@ async function initialize (isAppStart = true) {
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 
-  readFile(join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
-    if (err) {
-      return
-    }
-    if (DateTime.fromISO(data).month === DateTime.now().month) {
-      global.isContributor = true
-      log.info('Stretchly: Thanks for your contributions!')
-      if (preferencesWin) {
-        preferencesWin.webContents.send('enable-advanced-preferences')
-      }
-      updateTray()
-    }
-  })
   startPowerMonitoring()
   if (preferencesWin) {
     preferencesWin.webContents.send('renderSettings', settings.store)
@@ -1835,58 +1819,6 @@ ipcMain.handle('show-debug', (event) => {
 
 ipcMain.on('open-preferences', function (event) {
   createPreferencesWindow()
-})
-
-ipcMain.on('set-contributor', function (event) {
-  const dir = app.getPath('userData')
-  const contributorStampFile = `${dir}/stamp`
-  writeFile(contributorStampFile, DateTime.now().toString(), () => { })
-  global.isContributor = true
-  log.info('Stretchly: Logged in. Thanks for your contributions!')
-  if (preferencesWin) {
-    preferencesWin.webContents.send('enable-advanced-preferences')
-  }
-  updateTray()
-})
-
-ipcMain.on('open-advanced-preferences', function () {
-  createAdvancedPreferencesWindow()
-})
-
-ipcMain.on('open-contributor-auth', function (event, provider) {
-  if (myStretchlyWin) {
-    myStretchlyWin.show()
-    return
-  }
-  const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
-  myStretchlyWin = new BrowserWindow({
-    autoHideMenuBar: true,
-    show: false,
-    width: 1000,
-    height: 700,
-    icon: windowIconPath(),
-    x: displayManager.getDisplayX(),
-    y: displayManager.getDisplayY(),
-    backgroundColor: 'whitesmoke',
-    webPreferences: {
-      preload: join(__dirname, './electron-bridge.mjs'),
-      sandbox: false
-    }
-  })
-  myStretchlyWin.webContents.loadURL(myStretchlyUrl)
-
-  myStretchlyWin.once('closed', () => {
-    myStretchlyWin = null
-  })
-
-  myStretchlyWin.once('ready-to-show', () => {
-    myStretchlyWin.center()
-    myStretchlyWin.show()
-  })
-})
-
-ipcMain.on('open-sync-preferences', () => {
-  createSyncPreferencesWindow()
 })
 
 ipcMain.handle('current-settings', (event) => {
