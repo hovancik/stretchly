@@ -19,7 +19,7 @@
     "continue": "Folytatás",
     "cancel": "Mégsem",
     "preferences": "Beállítások",
-    "contributorPreferences": "Támogatói beállítások",
+    "advancedPreferences": "Speciális beállítások",
     "syncPreferences": "Beállítások szinkronizálása"
   },
   "break": {
@@ -110,15 +110,11 @@
       "loveStretchly": "Szereted a Stretchlyt?",
       "desc1": "A számítógép használat közben tartott rendszeres szünetek tudományosan bizonyítottan fontosak a testi és szellemi jólét fenntartásához.",
       "desc2": "A Stretchly alkalmazás ingyenes, de támogathatsz minket, hogy továbbra is fejleszteni tudjuk a Stretchlyt és egyéb ingyenes szoftvereinket.",
-      "becomeContributor": "Legyél támogató (Patreon)",
-      "alreadyContributor": "Már támogató vagyok",
-      "authenticateUsing": "Azonosítás a következővel:",
-      "contributorPreferences": "Támogatói beállítások",
-      "syncPreferences": "Beállítások szinkronizálása"
+      "supportStretchly": "A Stretchly támogatása"
     }
   },
-  "contributorPreferences": {
-    "title": "Támogatói beállítások",
+  "advancedPreferences": {
+    "title": "Speciális beállítások",
     "notifications": "Szünet értesítések:",
     "notificationsInfo": "A lent megadott időpontban értesítés fog érkezni, hogy felkészülhess a szünetekre.",
     "beforeLongBreak": "Hosszú szünet előtt:",

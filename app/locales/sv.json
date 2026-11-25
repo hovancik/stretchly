@@ -19,7 +19,7 @@
     "continue": "Fortsätt",
     "cancel": "Avbryt",
     "preferences": "Inställningar",
-    "contributorPreferences": "Bidragsgivarinställningar",
+    "advancedPreferences": "Avancerade inställningar",
     "syncPreferences": "Synkroniseringsinställningar"
   },
   "break": {
@@ -109,20 +109,16 @@
       "loveStretchly": "Gillar du Stretchly?",
       "desc1": "Regelbundna pauser vid datorarbete är viktiga för både det fysiska och psykiska välbefinnandet.",
       "desc2": "Stretchly är gratis. Du kan stödja utvecklingen genom att donera och hjälpa oss att fortsätta förbättra Stretchly och utveckla annan fri programvara.",
-      "becomeContributor": "Bli supporter",
-      "alreadyContributor": "Jag är redan en bidragsgivare",
-      "authenticateUsing": "Autentisera med:",
-      "contributorPreferences": "Bidragsgivarinställningar",
-      "syncPreferences": "Synkroniseringsinställningar"
+      "supportStretchly": "Stöd Stretchly"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Första bildskärmen",
     "1": "Andra bildskärmen",
     "2": "Tredje bildskärmen",
     "3": "Fjärde bildskärmen",
     "4": "Femte bildskärmen",
-    "title": "Bidragsgivarinställningar",
+    "title": "Avancerade inställningar",
     "notifications": "Pausaviseringar:",
     "notificationsInfo": "Systemaviseringar visas före pauser så att du hinner förbereda dig.",
     "beforeLongBreak": "Lång paus:",

@@ -19,7 +19,7 @@
     "continue": "ਜਾਰੀ ਰੱਖੋ",
     "cancel": "ਰੱਦ ਕਰੋ",
     "preferences": "ਪਸੰਦ",
-    "contributorPreferences": "ਸਹਿਯੋਗੀ ਪਸੰਦ",
+    "advancedPreferences": "ਉੱਨਤ ਤਰਜੀਹਾਂ",
     "syncPreferences": "ਸਿੰਕ ਪਸੰਦ"
   },
   "break": {
@@ -102,15 +102,11 @@
       "loveStretchly": "ਆਪਣੀ ਖਿੱਚ ਨੂੰ ਪਿਆਰ ਕਰੋ?",
       "desc1": "ਕੰਪਿ ਕੰਪਿਊਟਰ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਸਮੇਂ ਨਿਯਮਿਤ ਤੌਰ ਤੇ ਬਰੇਕ ਲੈਣਾ ਵਿਗਿਆਨਕ ਤੌਰ ਤੇ ਇਹ ਸਾਬਤ ਹੁੰਦਾ ਹੈ ਕਿ ਤੁਹਾਡੀ ਸਰੀਰਕ ਅਤੇ ਮਾਨਸਿਕ ਤੰਦਰੁਸਤੀ ਲਈ ਮਹੱਤਵਪੂਰਣ ਹੈ.",
       "desc2": "ਸਟ੍ਰੈਚਲੀ ਮੁਫ਼ਤ ਹੈ. ਪਰ ਤੁਸੀਂ ਦਾਨ ਦੇ ਕੇ ਆਪਣਾ ਸਮਰਥਨ ਉਧਾਰ ਦੇ ਸਕਦੇ ਹੋ ਅਤੇ ਸਾਡੀ ਸਟਰੈਚਲੀ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਅਤੇ ਹੋਰ ਮੁਫਤ ਸਾੱਫਟਵੇਅਰ ਨੂੰ ਜਾਰੀ ਕਰਨ ਵਿੱਚ ਸਹਾਇਤਾ ਕਰ ਸਕਦੇ ਹੋ.",
-      "becomeContributor": "ਸਰਪ੍ਰਸਤ ਬਣੋ",
-      "alreadyContributor": "ਮੈਂ ਪਹਿਲਾਂ ਹੀ ਸਹਿਯੋਗੀ ਹਾਂ",
-      "authenticateUsing": "ਦੁਆਰਾ ਪ੍ਰਮਾਣਿਤ:",
-      "contributorPreferences": "ਯੋਗਦਾਨ ਪਸੰਦ",
-      "syncPreferences": "ਸਿੰਕ ਪਸੰਦ"
+      "supportStretchly": "Stretchly ਦਾ ਸਮਰਥਨ ਕਰੋ"
     }
   },
-  "contributorPreferences": {
-    "title": "ਯੋਗਦਾਨ ਪਸੰਦ",
+  "advancedPreferences": {
+    "title": "ਉੱਨਤ ਤਰਜੀਹਾਂ",
     "notifications": "ਬਰੇਕ ਨੋਟੀਫਿਕੇਸ਼ਨ:",
     "notificationsInfo": "ਸਿਸਟਮ ਨੋਟੀਫਿਕੇਸ਼ਨ ਬਰੇਕ ਤੋਂ ਪਹਿਲਾਂ ਦਿਖਾਇਆ ਗਿਆ ਹੈ ਤਾਂ ਜੋ ਤੁਹਾਨੂੰ ਇਸ ਦੀ ਤਿਆਰੀ ਕਰਨ ਲਈ.",
     "beforeLongBreak": "ਲੰਮੇ ਬਰੇਕ:",

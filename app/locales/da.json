@@ -19,7 +19,7 @@
     "continue": "Fortsæt",
     "cancel": "Afbryd",
     "preferences": "Indstillinger",
-    "contributorPreferences": "Sponser præferencer",
+    "advancedPreferences": "Avancerede indstillinger",
     "syncPreferences": "Synkroniser indstillinger"
   },
   "break": {
@@ -104,15 +104,11 @@
       "loveStretchly": "Elsker du Stretchly?",
       "desc1": "At tage pauser ofte når man bruger en computer er påvist videnskabligt bevist, at det vigtigt for din fysiske og mentale helbred.",
       "desc2": "Stretchly er gratis. Men du kan blive sponsor ved, at donere og hjælpe os med at forberede Stretchly og publisere andet gratis software.",
-      "becomeContributor": "Bliv sponsor (Patron)",
-      "alreadyContributor": "Jeg er allerede sponsor",
-      "authenticateUsing": "Autentificeringen via:",
-      "contributorPreferences": "Sponser præferencer",
-      "syncPreferences": "Synkroniser indstillinger"
+      "supportStretchly": "Støt Stretchly"
     }
   },
-  "contributorPreferences": {
-    "title": "Sponser præferencer",
+  "advancedPreferences": {
+    "title": "Avancerede indstillinger",
     "notifications": "Pause notifikationer:",
     "notificationsInfo": "System notifikationer vises før pauser states for, at du kan forberede dig.",
     "beforeLongBreak": "Lang pause:",

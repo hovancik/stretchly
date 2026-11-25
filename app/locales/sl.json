@@ -17,7 +17,7 @@
     "longBreakIn": "Dolg premor čez $t(utils.seconds, {'count': {{seconds}} })",
     "miniBreakIn": "Mini premor čez $t(utils.seconds, {'count': {{seconds}} })",
     "toolTipHeader": "Stretchly - Opomnik za odmor",
-    "contributorPreferences": "Nastavitve podpornikov",
+    "advancedPreferences": "Napredne nastavitve",
     "pause": "Zaustavi premore",
     "resume": "Nadaljuj premor",
     "resumingBreaks": "Nadaljevanje premorov"
@@ -74,7 +74,7 @@
     "none_other": "{{count}}",
     "elapsed": "{{count}} preteklo"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Prvi zaslon",
     "1": "Drugi zaslon",
     "2": "Tretji zaslon",
@@ -127,7 +127,7 @@
     "beforeLongBreak": "Dolgi premor:",
     "notificationsInfo": "Prikaz sistemskega obvestila pred premori, da se lahko pripravite nanje.",
     "notifications": "Obvestila premorov:",
-    "title": "Nastavitve podpornikov",
+    "title": "Napredne nastavitve",
     "timeToBreakInTray": "Čas za premor",
     "showTimeToBreakInTray": "Prikaži čas do naslednjega premora v ikoni opravilne vrstice",
     "currentTimeInBreaks": "Trenutni čas",
@@ -137,11 +137,7 @@
   },
   "preferences": {
     "heart": {
-      "syncPreferences": "Sinhroniziraj nastavitve",
-      "contributorPreferences": "Nastavitve podpornikov",
-      "authenticateUsing": "Avtenticirajte se z:",
-      "alreadyContributor": "Že podpiram",
-      "becomeContributor": "Postanite Patron",
+      "supportStretchly": "Podprite Stretchly",
       "desc2": "Stretchly je brezplačen. Svojo podporo lahko izkažete z donacijo in nam pomagate še naprej izboljševati Stretchly in izdajati druge brezplačne programe.",
       "desc1": "Redni odmori pri uporabi računalnika so znanstveno dokazano pomembni za vaše telesno in duševno počutje.",
       "loveStretchly": "Ljubite Stretchly?"

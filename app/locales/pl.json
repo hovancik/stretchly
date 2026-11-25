@@ -19,7 +19,7 @@
     "continue": "Kontynuuj",
     "cancel": "Anuluj",
     "preferences": "Ustawienia",
-    "contributorPreferences": "Ustawienia wspierającego",
+    "advancedPreferences": "Ustawienia zaawansowane",
     "syncPreferences": "Synchronizuj Ustawienia"
   },
   "break": {
@@ -104,20 +104,16 @@
       "loveStretchly": "Kochasz Stretchly?",
       "desc1": "Stosowanie długich przerw podczas korzystania z komputera jest ważne dla twojego fizycznego i umysłowego zdrowia, co zostało dowiedzione naukowo.",
       "desc2": "Stretchly jest darmowe. Możesz jednak je wesprzeć poprzez dotację, aby pomóc nam ulepszać Stretchly i tworzyć inne darmowe oprogramowanie.",
-      "becomeContributor": "Zostań Patronem",
-      "alreadyContributor": "Już jestem wspierającym",
-      "authenticateUsing": "Uwierzytelnij się używając:",
-      "contributorPreferences": "Ustawienia wspierającego",
-      "syncPreferences": "Synchronizuj Ustawienia"
+      "supportStretchly": "Wesprzyj Stretchly"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Pierwszy monitor",
     "1": "Drugi monitor",
     "2": "Trzeci monitor",
     "3": "Czwarty monitor",
     "4": "Piąty monitor",
-    "title": "Ustawienia wspierającego",
+    "title": "Ustawienia zaawansowane",
     "notifications": "Powiadomienia przerw:",
     "notificationsInfo": "Powiadomienie systemowe pokazane przed przerwą, żeby móc się do niego przygotować.",
     "beforeLongBreak": "Długa przerwa:",

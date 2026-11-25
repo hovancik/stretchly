@@ -13,4 +13,4 @@ read-only tools; leave fixes and external replies to the human.
   available; investigate upstream dependencies or similar apps when relevant.
 - Report findings, uncertainty, sources, and a focused next investigation in
   plain language. Keep the response concise.
-- Do not suggest Contributor preferences; they are not available to all customers.
+

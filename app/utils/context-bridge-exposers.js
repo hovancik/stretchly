@@ -67,6 +67,7 @@ function exposeSemver () {
 function exposeSettings () {
   contextBridge.exposeInMainWorld('settings', {
     get: (key) => ipcRenderer.invoke('settings-get', key),
+    onRenderSettings: (callback) => ipcRenderer.on('renderSettings', (_event, settings) => callback(settings)),
     currentSettings: async () => {
       return await ipcRenderer.invoke('current-settings')
     },
@@ -86,16 +87,11 @@ function exposeStretchly () {
       (_event, text, silent) => callback(text, silent)),
     onCheckVersion: (callback) => ipcRenderer.on('check-version',
       (_event, oldVersion, notify, silent) => callback(oldVersion, notify, silent)),
-    onEnableContributorPreferences: (callback) => ipcRenderer.on('enable-contributor-preferences',
-      () => callback()),
     getWindowBounds: () => ipcRenderer.invoke('get-window-bounds'),
     getVersion: () => ipcRenderer.invoke('get-version'),
     setWindowSize: (width, height) => ipcRenderer.send('set-window-size', width, height),
     restoreDefaults: () => ipcRenderer.send('restore-defaults'),
     closeWindow: () => ipcRenderer.send('close-current-window'),
-    openContributorAuth: (provider) => ipcRenderer.send('open-contributor-auth', provider),
-    openContributorPreferences: () => ipcRenderer.send('open-contributor-preferences'),
-    openSyncPreferences: () => ipcRenderer.send('open-sync-preferences'),
     openPreferences: () => ipcRenderer.send('open-preferences'),
     playSound: (name) => ipcRenderer.send('play-sound', name),
     showDebug: () => ipcRenderer.invoke('show-debug'),

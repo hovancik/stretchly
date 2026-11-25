@@ -55,11 +55,7 @@
     "heart": {
       "loveStretchly": "אהבת את Stretchly?",
       "desc1": "לקיחת הפסקות קצובות מהשימוש במחשב הוכחה מדעית כחשובה לבריאות הגופנית והנפשית.",
-      "authenticateUsing": "הזדהות דרך:",
-      "syncPreferences": "העדפות סנכרון",
-      "alreadyContributor": "כבר מתבצעת על ידי תרומה קבועה",
-      "contributorPreferences": "העדפות תורמים",
-      "becomeContributor": "להפוך לפטרון",
+      "supportStretchly": "תמיכה ב־Stretchly",
       "desc2": "‏Stretchly היא תוכנה חופשית. עם זאת, כן אפשר לתרום בשביל להביע תמיכה, וכך גם לעזור לנו לשפר את Stretchly ולפתח עוד תוכנה חופשית."
     },
     "theme": {
@@ -96,7 +92,7 @@
   },
   "main": {
     "syncPreferences": "העדפות סנכרון",
-    "contributorPreferences": "העדפות מיוחדות לתורמים",
+    "advancedPreferences": "העדפות מתקדמות",
     "preferences": "העדפות",
     "cancel": "ביטול",
     "continue": "אישור",
@@ -117,7 +113,7 @@
     "resumingBreaks": "חידוש ההפסקות",
     "toolTipHeader": "‏Stretchly - היישום שמזכיר לך לקחת הפסקה"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "הצג הראשון",
     "1": "הצג השני",
     "2": "הצג השלישי",
@@ -165,7 +161,7 @@
     "beforeLongBreak": "הפסקה ארוכה:",
     "notificationsInfo": "הודעת מערכת מוצגת לפני הפסקות כדי להתכונן אליה.",
     "notifications": "התראות הפסקה:",
-    "title": "העדפות תורמים",
+    "title": "העדפות מתקדמות",
     "cursor": "מעקב אחר הסמן",
     "primary": "הצג הראשי",
     "showOnMonitor": "להציג הפסקות אצל",

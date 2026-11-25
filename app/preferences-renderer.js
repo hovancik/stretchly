@@ -5,39 +5,10 @@ import HtmlTranslate from './utils/htmlTranslate.js'
 import './platform.js'
 
 const versionChecker = new VersionChecker()
-let eventsAttached = false
 
 window.onload = async (e) => {
+  let versionCheckStarted = false
   const bounds = await window.stretchly.getWindowBounds()
-  const settings = await window.settings.currentSettings()
-  if (settings.disableAppUpdateFeatures) {
-    document.querySelector('#checkNewVersion').closest('div').classList.add('hidden')
-  }
-
-  if (settings.hideStrictModePreferences) {
-    document.querySelectorAll('[data-strict-mode]').forEach(element => {
-      element.classList.add('hidden')
-    })
-    document.querySelector('#enablePostponeLong').closest('div').style.marginBottom = '56px'
-  }
-
-  if (settings.hidePreferencesFileLocation) {
-    document.querySelectorAll('[data-preferences-file]').forEach(element => {
-      element.classList.add('hidden')
-    })
-  }
-
-  new HtmlTranslate(document).translate()
-  setWindowHeight()
-  setTimeout(() => { eventsAttached = true }, 500)
-
-  if (settings.customPreferencesMessage) {
-    const customMessageDiv = document.createElement('div')
-    customMessageDiv.className = 'custom-message'
-    customMessageDiv.textContent = settings.customPreferencesMessage
-    document.querySelector('.navigation').parentNode.insertBefore(customMessageDiv, document.querySelector('.navigation').nextSibling)
-  }
-
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     const imagesWithDarkVersion = document.querySelectorAll('[data-has-dark-version]')
     imagesWithDarkVersion.forEach(image => {
@@ -100,50 +71,8 @@ window.onload = async (e) => {
   }
 
   window.stretchly.onTranslate(async () => {
-    new HtmlTranslate(document).translate()
-    document.querySelectorAll('input[type="range"]').forEach(async range => {
-      const settings = await window.settings.currentSettings()
-      const divisor = range.dataset.divisor
-      const output = range.closest('div').querySelector('output')
-      range.value = settings[range.name] / divisor
-      const unit = output.dataset.unit
-      output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
-      document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-        .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
-    })
-    setWindowHeight()
+    renderSettings(await window.settings.currentSettings())
   })
-
-  window.stretchly.onEnableContributorPreferences(() => {
-    showContributorPreferencesButton()
-  })
-
-  const showContributorPreferencesButton = () => {
-    document.querySelectorAll('.contributor').forEach((item) => {
-      item.classList.remove('hidden')
-    })
-    document.querySelectorAll('.become').forEach((item) => {
-      item.classList.add('hidden')
-    })
-    document.querySelectorAll('.authenticate').forEach((item) => {
-      item.classList.add('hidden')
-    })
-    setWindowHeight()
-  }
-
-  if (await window.global.getValue('isContributor')) {
-    showContributorPreferencesButton()
-  }
-
-  document.querySelector('[name="contributorPreferences"]').onclick = (event) => {
-    event.preventDefault()
-    window.stretchly.openContributorPreferences()
-  }
-
-  document.querySelector('[name="syncPreferences"]').onclick = (event) => {
-    event.preventDefault()
-    window.stretchly.openSyncPreferences()
-  }
 
   document.querySelector('.debug button').onclick = async (event) => {
     event.preventDefault()
@@ -179,81 +108,106 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-    const isNegative = checkbox.classList.contains('negative')
-    checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]
-    if (!eventsAttached) {
-      checkbox.onchange = (event) =>
-        window.settings.saveSetting(checkbox.value,
-          isNegative ? !checkbox.checked : checkbox.checked)
+  function renderSettings (settings, attachEvents = false) {
+    document.querySelector('#checkNewVersion').closest('div').classList.toggle('hidden', settings.disableAppUpdateFeatures)
+    if (!settings.disableAppUpdateFeatures && !versionCheckStarted) {
+      versionCheckStarted = true
+      const label = document.querySelector('.latest-version')
+      versionChecker.latest()
+        .then(version => { label.textContent = version.replace('v', '') })
+        .catch(exception => {
+          console.error(exception)
+          label.textContent = 'N/A'
+        })
     }
-  })
+    document.querySelectorAll('[data-strict-mode]').forEach(element => {
+      element.classList.toggle('hidden', settings.hideStrictModePreferences)
+    })
+    document.querySelector('#enablePostponeLong').closest('div').style.marginBottom = settings.hideStrictModePreferences ? '56px' : ''
+    document.querySelectorAll('[data-preferences-file]').forEach(element => {
+      element.classList.toggle('hidden', settings.hidePreferencesFileLocation)
+    })
+    const message = document.querySelector('.custom-message')
+    message.textContent = settings.customPreferencesMessage
+    message.classList.toggle('hidden', !settings.customPreferencesMessage)
 
-  document.querySelectorAll('input[type="radio"]').forEach(radio => {
-    let value
-    switch (radio.value) {
-      case 'true':
-        value = true
-        break
-      case 'false':
-        value = false
-        break
-      default:
-        value = radio.value
-    }
-    const savedValue = settings[radio.name]
-    radio.checked = radio.name === 'longBreakColor'
-      ? savedValue.toUpperCase() === value
-      : savedValue === value
-    if (!eventsAttached) {
-      radio.onchange = (event) => {
-        window.settings.saveSetting(radio.name, value)
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      const isNegative = checkbox.classList.contains('negative')
+      checkbox.checked = isNegative ? !settings[checkbox.value] : settings[checkbox.value]
+      if (attachEvents) {
+        checkbox.onchange = (event) =>
+          window.settings.saveSetting(checkbox.value,
+            isNegative ? !checkbox.checked : checkbox.checked)
+      }
+    })
+
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      let value
+      switch (radio.value) {
+        case 'true':
+          value = true
+          break
+        case 'false':
+          value = false
+          break
+        default:
+          value = radio.value
+      }
+      const savedValue = settings[radio.name]
+      radio.checked = radio.name === 'longBreakColor'
+        ? savedValue.toUpperCase() === value
+        : savedValue === value
+      if (attachEvents) {
+        radio.onchange = (event) => {
+          window.settings.saveSetting(radio.name, value)
+        }
+      }
+    })
+
+    document.querySelector('#language').value = settings.language
+    if (attachEvents) {
+      document.querySelector('#language').onchange = (event) => {
+        window.settings.saveSetting('language', event.target.value)
       }
     }
-  })
 
-  document.querySelector('#language').value = settings.language
-  if (!eventsAttached) {
-    document.querySelector('#language').onchange = (event) => {
-      window.settings.saveSetting('language', event.target.value)
+    document.querySelector('#trayIconStyle').value = settings.trayIconStyle
+    if (attachEvents) {
+      document.querySelector('#trayIconStyle').onchange = (event) => {
+        window.settings.saveSetting('trayIconStyle', event.target.value)
+      }
     }
+
+    document.querySelectorAll('input[type="range"]').forEach(async range => {
+      const divisor = range.dataset.divisor
+      const output = range.closest('div').querySelector('output')
+      range.value = settings[range.name] / divisor
+      const unit = output.dataset.unit
+      output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
+      document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+        .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
+      if (attachEvents) {
+        range.onchange = async event => {
+          output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
+          document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+            .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
+          window.settings.saveSetting(range.name, range.value * divisor)
+        }
+        range.oninput = async event => {
+          output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
+          document.querySelector('#longBreakEvery').closest('div').querySelector('output')
+            .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
+        }
+      }
+    })
+
+    new HtmlTranslate(document).translate()
+    setWindowHeight()
   }
-
-  document.querySelector('#trayIconStyle').value = settings.trayIconStyle
-  if (!eventsAttached) {
-    document.querySelector('#trayIconStyle').onchange = (event) => {
-      window.settings.saveSetting('trayIconStyle', event.target.value)
-    }
-  }
-
-  document.querySelectorAll('input[type="range"]').forEach(async range => {
-    const divisor = range.dataset.divisor
-    const output = range.closest('div').querySelector('output')
-    range.value = settings[range.name] / divisor
-    const unit = output.dataset.unit
-    output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
-    document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-      .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
-    if (!eventsAttached) {
-      range.onchange = async event => {
-        output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
-        document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
-        window.settings.saveSetting(range.name, range.value * divisor)
-      }
-      range.oninput = async event => {
-        output.innerHTML = await window.utils.formatUnitAndValue(unit, range.value)
-        document.querySelector('#longBreakEvery').closest('div').querySelector('output')
-          .innerHTML = await window.i18next.t('utils.minutes', { count: parseInt(longBreakIntervalMinutes()) })
-      }
-    }
-  })
 
   document.querySelectorAll('.sounds img').forEach(preview => {
-    if (!eventsAttached) {
-      preview.onclick = (event) =>
-        window.stretchly.playSound(preview.closest('div').querySelector('input').value)
-    }
+    preview.onclick = () =>
+      window.stretchly.playSound(preview.closest('div').querySelector('input').value)
   })
 
   setWindowHeight()
@@ -284,38 +238,15 @@ window.onload = async (e) => {
     }
   })
 
-  document.querySelector('[name="becomeContributor"]').onclick = () => {
+  document.querySelector('[name="supportStretchly"]').onclick = () => {
     window.electronApi.openExternal('https://hovancik.net/stretchly/sponsor')
   }
 
-  document.querySelector('[name="alreadyContributor"]').onclick = () => {
-    document.querySelectorAll('.become').forEach((item) => {
-      item.classList.add('hidden')
-    })
-    document.querySelectorAll('.authenticate').forEach((item) => {
-      item.classList.remove('hidden')
-    })
-    setWindowHeight()
-  }
-
-  document.querySelectorAll('.authenticate a').forEach((button) => {
-    button.onclick = (event) => {
-      event.preventDefault()
-      window.stretchly.openContributorAuth(button.dataset.provider)
-    }
-  })
+  const initialSettings = await window.settings.currentSettings()
+  renderSettings(initialSettings, true)
+  window.settings.onRenderSettings(renderSettings)
 
   document.querySelector('.version').innerHTML = await window.stretchly.getVersion()
-  if (!settings.disableAppUpdateFeatures) {
-    versionChecker.latest()
-      .then(version => {
-        document.querySelector('.latest-version').innerHTML = version.replace('v', '')
-      })
-      .catch(exception => {
-        console.error(exception)
-        document.querySelector('.latest-version').innerHTML = 'N/A'
-      })
-  }
 
   function setWindowHeight () {
     const classes = document.querySelector('body').classList

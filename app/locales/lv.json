@@ -1,5 +1,5 @@
 {
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Pirmais monitors",
     "1": "Otrais monitors",
     "2": "Trešais monitors",
@@ -31,7 +31,7 @@
     "breakWindowWidth": "Platums:",
     "system": "Sistēmas",
     "notifications": "Pātraukumu paziņojumi:",
-    "title": "Atbalstītāju Iestatījumi",
+    "title": "Papildu iestatījumi",
     "maxPostpones": "Maksimālais atlikšanu skaits:",
     "naturalBreaksInfo": "Ja pārtraukumu apstādināšana, kamēr dators netiek lietots ir ieslēgta galvenajos Iestatījumos, jūs variet norādīt pēc cik ilga laika apstādināt pārtraukumus.",
     "longBreaks": "Garie Pārtraukumi:",
@@ -62,7 +62,7 @@
     "syncPreferences": "Iestatījumu Sinhronizācija",
     "resetBreaks": "Sākt Pārtraukumus no jauna",
     "indefinitely": "Bezgalīgi",
-    "contributorPreferences": "Atbalstītāju Iestatījumi",
+    "advancedPreferences": "Papildu iestatījumi",
     "preferences": "Iestatījumi",
     "cancel": "Atcelt",
     "continue": "Turpināt",
@@ -153,14 +153,10 @@
       "settings": "Iestatījumi"
     },
     "heart": {
-      "contributorPreferences": "Atbalstītāju Iestatījumi",
-      "authenticateUsing": "Autentificēties ar:",
-      "becomeContributor": "Kļūt par atbalstītāju",
-      "alreadyContributor": "Jau atbalstu stretchly",
+      "supportStretchly": "Atbalstīt Stretchly",
       "desc2": "Stretchly ir bezmaksas. Jūs variet atbalstīt mūs ar ziedojumiem, kuri palīdzēs mums turpināt uzlabot Stretchly un būvēt citus bezmaksas rīkus.",
       "desc1": "Regulāri pārtraukumi, lietojot datoru, ir zinātniski pierādīti kā svarīgi, lai uzturētu gan fizisko, gan garīgo labkājību.",
-      "loveStretchly": "Mīli savu Stretchly?",
-      "syncPreferences": "Iestatījumu Sinhronizācija"
+      "loveStretchly": "Mīli savu Stretchly?"
     },
     "about": {
       "designedBy": "Logotipu un lietotāju saskarnes dizainu veidojis Colin Shanley",

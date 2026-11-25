@@ -4,7 +4,7 @@ import {
   powerMonitor
 } from 'electron'
 import { EventEmitter } from 'node:events'
-import { readFile, readFileSync, writeFile, existsSync, mkdirSync } from 'node:fs'
+import { readFileSync, existsSync, mkdirSync } from 'node:fs'
 import { dirname, join } from 'path'
 import { resolveLocalImage } from './utils/imageResolver.js'
 import BackgroundImages from './utils/backgroundImage.js'
@@ -15,7 +15,6 @@ import Backend from 'i18next-fs-backend'
 import log from 'electron-log/main.js'
 import Store from 'electron-store'
 import humanizeDuration from 'humanize-duration'
-import { DateTime } from 'luxon'
 
 import {
   canPostpone, canSkip, formatTimeRemaining,
@@ -36,6 +35,7 @@ import DisplayManager from './utils/displayManager.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
+const syncPreferencesUrl = new URL('https://my.stretchly.net/app/v2')
 
 let handlingUncaughtException = false
 process.on('uncaughtException', (err, _) => {
@@ -84,9 +84,8 @@ let miniBreakWins = null
 let longBreakWins = null
 let preferencesWin = null
 let welcomeWin = null
-let contributorPreferencesWin = null
+let advancedPreferencesWin = null
 let syncPreferencesWin = null
-let myStretchlyWin = null
 let settings
 let pausedForSuspendOrLock = false
 let nextIdea = null
@@ -114,8 +113,7 @@ if (process.platform === 'win32' && !insideWindowsStore() && app.isPackaged) {
 }
 
 const global = {
-  isNewVersion: false,
-  isContributor: false
+  isNewVersion: false
 }
 
 ipcMain.on('set-global-value', (event, name, value) => {
@@ -568,19 +566,6 @@ async function initialize (isAppStart = true) {
   createWelcomeWindow()
   nativeTheme.themeSource = settings.get('themeSource')
 
-  readFile(join(app.getPath('userData'), 'stamp'), 'utf8', (err, data) => {
-    if (err) {
-      return
-    }
-    if (DateTime.fromISO(data).month === DateTime.now().month) {
-      global.isContributor = true
-      log.info('Stretchly: Thanks for your contributions!')
-      if (preferencesWin) {
-        preferencesWin.webContents.send('enable-contributor-preferences')
-      }
-      updateTray()
-    }
-  })
   startPowerMonitoring()
   if (preferencesWin) {
     preferencesWin.webContents.send('renderSettings', settings.store)
@@ -588,8 +573,8 @@ async function initialize (isAppStart = true) {
   if (welcomeWin) {
     welcomeWin.webContents.send('renderSettings', settings.store)
   }
-  if (contributorPreferencesWin) {
-    contributorPreferencesWin.webContents.send('renderSettings', settings.store)
+  if (advancedPreferencesWin) {
+    advancedPreferencesWin.webContents.send('renderSettings', settings.store)
   }
   globalShortcut.unregisterAll()
 
@@ -778,13 +763,13 @@ function createWelcomeWindow (isAppStart = true) {
   }
 }
 
-function createContributorSettingsWindow () {
-  if (contributorPreferencesWin) {
-    contributorPreferencesWin.show()
+function createAdvancedPreferencesWindow () {
+  if (advancedPreferencesWin) {
+    advancedPreferencesWin.show()
     return
   }
-  const modalPath = 'file://' + join(__dirname, '/contributor-preferences.html')
-  contributorPreferencesWin = new BrowserWindow({
+  const modalPath = 'file://' + join(__dirname, '/advanced-preferences.html')
+  advancedPreferencesWin = new BrowserWindow({
     x: displayManager.getDisplayX(-1, 735),
     y: displayManager.getDisplayY(),
     width: 735,
@@ -793,17 +778,17 @@ function createContributorSettingsWindow () {
     icon: windowIconPath(),
     backgroundColor: 'EDEDED',
     webPreferences: {
-      preload: join(__dirname, './contributor-preferences-preload.mjs'),
+      preload: join(__dirname, './advanced-preferences-preload.mjs'),
       sandbox: false
     }
   })
-  contributorPreferencesWin.webContents.loadURL(modalPath)
-  contributorPreferencesWin.once('ready-to-show', () => {
-    contributorPreferencesWin.center()
-    contributorPreferencesWin.show()
+  advancedPreferencesWin.webContents.loadURL(modalPath)
+  advancedPreferencesWin.once('ready-to-show', () => {
+    advancedPreferencesWin.center()
+    advancedPreferencesWin.show()
   })
-  contributorPreferencesWin.once('closed', () => {
-    contributorPreferencesWin = null
+  advancedPreferencesWin.once('closed', () => {
+    advancedPreferencesWin = null
   })
 }
 
@@ -813,7 +798,6 @@ function createSyncPreferencesWindow () {
     return
   }
 
-  const syncPreferencesUrl = 'https://my.stretchly.net/app/v1/sync'
   syncPreferencesWin = new BrowserWindow({
     show: false,
     autoHideMenuBar: true,
@@ -828,7 +812,7 @@ function createSyncPreferencesWindow () {
       sandbox: false
     }
   })
-  syncPreferencesWin.webContents.loadURL(syncPreferencesUrl)
+  syncPreferencesWin.webContents.loadURL(syncPreferencesUrl.href)
 
   syncPreferencesWin.once('closed', () => {
     syncPreferencesWin = null
@@ -1650,23 +1634,17 @@ function getTrayMenuTemplate () {
     click: function () {
       createPreferencesWindow()
     }
-  })
-
-  if (global.isContributor) {
-    trayMenu.push({
-      label: i18next.t('main.contributorPreferences'),
-      click: function () {
-        createContributorSettingsWindow()
-      }
-    }, {
-      label: i18next.t('main.syncPreferences'),
-      click: function () {
-        createSyncPreferencesWindow()
-      }
-    })
-  }
-
-  trayMenu.push({
+  }, {
+    label: i18next.t('main.advancedPreferences'),
+    click: function () {
+      createAdvancedPreferencesWindow()
+    }
+  }, {
+    label: i18next.t('main.syncPreferences'),
+    click: function () {
+      createSyncPreferencesWindow()
+    }
+  }, {
     type: 'separator'
   }, {
     label: i18next.t('main.quitStretchly'),
@@ -1787,7 +1765,7 @@ ipcMain.on('update-tray', function (event) {
   updateTray()
 })
 
-ipcMain.on('restore-defaults', (event) => {
+ipcMain.on('restore-defaults', () => {
   const dialogOpts = {
     type: 'question',
     title: i18next.t('main.restoreDefaults'),
@@ -1799,7 +1777,6 @@ ipcMain.on('restore-defaults', (event) => {
       log.info('Stretchly: restoring default settings')
       settings.store = Object.assign(defaultSettings, { isFirstRun: false, __internal__: settings.get('__internal__') })
       initialize(false)
-      event.sender.reload()
     }
   })
 })
@@ -1844,66 +1821,19 @@ ipcMain.on('open-preferences', function (event) {
   createPreferencesWindow()
 })
 
-ipcMain.on('set-contributor', function (event) {
-  const dir = app.getPath('userData')
-  const contributorStampFile = `${dir}/stamp`
-  writeFile(contributorStampFile, DateTime.now().toString(), () => { })
-  global.isContributor = true
-  log.info('Stretchly: Logged in. Thanks for your contributions!')
-  if (preferencesWin) {
-    preferencesWin.webContents.send('enable-contributor-preferences')
-  }
-  updateTray()
-})
-
-ipcMain.on('open-contributor-preferences', function () {
-  createContributorSettingsWindow()
-})
-
-ipcMain.on('open-contributor-auth', function (event, provider) {
-  if (myStretchlyWin) {
-    myStretchlyWin.show()
-    return
-  }
-  const myStretchlyUrl = `https://my.stretchly.net/app/v1?provider=${provider}`
-  myStretchlyWin = new BrowserWindow({
-    autoHideMenuBar: true,
-    show: false,
-    width: 1000,
-    height: 700,
-    icon: windowIconPath(),
-    x: displayManager.getDisplayX(),
-    y: displayManager.getDisplayY(),
-    backgroundColor: 'whitesmoke',
-    webPreferences: {
-      preload: join(__dirname, './electron-bridge.mjs'),
-      sandbox: false
-    }
-  })
-  myStretchlyWin.webContents.loadURL(myStretchlyUrl)
-
-  myStretchlyWin.once('closed', () => {
-    myStretchlyWin = null
-  })
-
-  myStretchlyWin.once('ready-to-show', () => {
-    myStretchlyWin.center()
-    myStretchlyWin.show()
-  })
-})
-
-ipcMain.on('open-sync-preferences', () => {
-  createSyncPreferencesWindow()
-})
-
 ipcMain.handle('current-settings', (event) => {
   return settings.store
 })
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
+  if (event.senderFrame !== syncPreferencesWin?.webContents.mainFrame ||
+      event.senderFrame?.origin !== syncPreferencesUrl.origin) {
+    log.error(`Stretchly: rejected preferences restore from origin ${event.senderFrame?.origin ?? 'unknown'}`)
+    throw new Error('Only the Stretchly Sync page can restore preferences')
+  }
   log.info('Stretchly: restoring remote settings')
   settings.store = remoteSettings
-  initialize(false)
+  return initialize(false)
 })
 
 ipcMain.handle('i18next-translate', (event, key, options) => {

@@ -19,7 +19,7 @@
     "continue": "Continuar",
     "cancel": "Cancelar",
     "preferences": "Configuración",
-    "contributorPreferences": "Configuración de colaborador",
+    "advancedPreferences": "Preferencias avanzadas",
     "syncPreferences": "Configuración de sincronización"
   },
   "break": {
@@ -110,20 +110,16 @@
       "loveStretchly": "¿Te encanta tu Stretchly?",
       "desc1": "Está científicamente comprobado que tomar descansos regulares al usar una computadora es importante para su bienestar físico y mental.",
       "desc2": "Stretchly es gratis. Pero puedes brindar tu apoyo donando y ayudándonos a continuar mejorando Stretchly y lanzando otro software gratuito.",
-      "becomeContributor": "Conviértete en un patrocinador",
-      "alreadyContributor": "Ya soy colaborador",
-      "authenticateUsing": "Autenticar usando:",
-      "contributorPreferences": "Configuración de colaborador",
-      "syncPreferences": "Configuración de sincronización"
+      "supportStretchly": "Apoyar a Stretchly"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Primer monitor",
     "1": "Segundo monitor",
     "2": "Tercer monitor",
     "3": "Cuarto monitor",
     "4": "Quinto monitor",
-    "title": "Configuración de colaborador",
+    "title": "Preferencias avanzadas",
     "notifications": "Notificaciones de descansos:",
     "notificationsInfo": "Las notificaciones del sistema se muestran antes de los descansos para que te prepares para ellos.",
     "beforeLongBreak": "Descanso largo:",

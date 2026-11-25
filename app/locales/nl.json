@@ -18,7 +18,7 @@
     "continue": "Doorgaan",
     "cancel": "Annuleer",
     "preferences": "Instellingen",
-    "contributorPreferences": "Bijdrager Instellingen",
+    "advancedPreferences": "Geavanceerde instellingen",
     "syncPreferences": "Sync. voorkeuren",
     "restoreDefaults": "Standaard instellingen herstellen"
   },
@@ -104,20 +104,16 @@
       "loveStretchly": "Hou je van Stretchly?",
       "desc1": "Het is wetenschappelijk bewezen dat regelmatig pauzes nemen tijdens het gebruik van een computer belangrijk is voor je fysieke en mentale welzijn.",
       "desc2": "Stretchly is gratis. Maar je kan ons ondersteunen door te doneren en ons daarmee te helpen om Stretchly te verbeteren en andere gratis software uit te brengen.",
-      "becomeContributor": "Word een Patron",
-      "alreadyContributor": "Ik ben al een bijdrager",
-      "authenticateUsing": "Authenticeren met:",
-      "contributorPreferences": "Bijdrager Instellingen",
-      "syncPreferences": "Sync. voorkeuren"
+      "supportStretchly": "Steun Stretchly"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Eerste monitor",
     "1": "Tweede monitor",
     "2": "Derde monitor",
     "3": "Vierde monitor",
     "4": "Vijfde monitor",
-    "title": "Bijdrage Instellingen",
+    "title": "Geavanceerde instellingen",
     "notifications": "Pauze notificaties:",
     "notificationsInfo": "Systeem notificatie die word vertoond voor de pauzes zodat je jezelf kan voorbereiden.",
     "beforeLongBreak": "Lange Pauze:",

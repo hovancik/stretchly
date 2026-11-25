@@ -213,14 +213,10 @@
     },
     "title": "Stretchly Seaded",
     "heart": {
-      "becomeContributor": "Hakka toetajaks",
+      "supportStretchly": "Toeta Stretchlyt",
       "desc1": "On teaduslikult tõestatud, et arvutit kasutades on regulaarsed pausid olulised nii sinu füüsilise kui ka vaimse heaolu jaoks.",
-      "authenticateUsing": "Autentimine toimub kasutades:",
       "loveStretchly": "Kas armastad oma Stretchlyt?",
-      "desc2": "Stretchly on tasuta. Kuid sa saad toetada meie arendust, tehes annetuse ja aidates meil jätkata Stretchly täiustamist ning välja anda teisi tasuta tarkvaratooteid.",
-      "contributorPreferences": "Kaasautori seaded",
-      "alreadyContributor": "Olen juba kaasautor",
-      "syncPreferences": "Sünkroniseerimise seaded"
+      "desc2": "Stretchly on tasuta. Kuid sa saad toetada meie arendust, tehes annetuse ja aidates meil jätkata Stretchly täiustamist ning välja anda teisi tasuta tarkvaratooteid."
     },
     "settings": {
       "language": "Vali keel:",
@@ -242,7 +238,7 @@
       "about": "Info"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "breakWindowHeight": "Kõrgus:",
     "longBreakStartSound": "Anna pika pausi alguses heliga märku",
     "customIdeasInfo": "Võimaldab kasutada kohandatud pausiideid, muutes konfiguratsioonifaili. (Kogenenud kasutajatele.)",
@@ -253,7 +249,7 @@
     "4": "Viies monitor",
     "screen": "Monitor pauside jaoks:",
     "showTrayIcon": "Kuva süsteemisalve ikoon",
-    "title": "Kaasautori seaded",
+    "title": "Täpsemad seaded",
     "appearance": "Kujundus:",
     "newVersionNotification": "Teavita kui uus versioon on saadaval",
     "1": "Teine monitor",
@@ -475,7 +471,7 @@
     "resume": "Jätka pausidega",
     "cancel": "Katkesta",
     "toMiniBreak": "Lühike paus",
-    "contributorPreferences": "Kaasautorite eelistused",
+    "advancedPreferences": "Täpsemad seaded",
     "quitStretchly": "Sulge Stretchly",
     "toolTipHeader": "Stretchly - Puhkehetkede meeldetuletusrakendus",
     "longBreakIn": "Pika pausini on jäänud $t(utils.seconds, {'count': {{seconds}} })",

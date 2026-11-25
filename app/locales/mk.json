@@ -2,7 +2,7 @@
   "main": {
     "toolTipHeader": "Stretchly - Потсетник за паузи",
     "syncPreferences": "Синхронизирај подесувања",
-    "contributorPreferences": "Подесувања на соработници",
+    "advancedPreferences": "Напредни поставки",
     "preferences": "Подесувања",
     "cancel": "Откажи",
     "continue": "Продолжи",
@@ -57,7 +57,10 @@
       "schedule": "Распоред",
       "settings": "Подесувања"
     },
-    "title": "Stretchly подесувања"
+    "title": "Stretchly подесувања",
+    "heart": {
+      "supportStretchly": "Поддржете го Stretchly"
+    }
   },
   "break": {
     "title": "Време е за пауза!",

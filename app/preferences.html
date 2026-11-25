@@ -47,6 +47,7 @@
       </div>
     </a>
   </nav>
+  <div class="custom-message hidden"></div>
   <div class="settings">
     <div class="store-hidden portable-hidden">
       <input type="checkbox" value="openAtLogin" id="openAtLogin">
@@ -446,35 +447,9 @@
       <span data-i18next="preferences.heart.desc2"></span>
     </div>
     <div>
+      <button type="button" name="supportStretchly" data-same-width-button
+        data-i18next="preferences.heart.supportStretchly"></button>
     </div>
-    <div class="become">
-      <button type="button" name="becomeContributor" data-same-width-button
-        data-i18next="preferences.heart.becomeContributor"></button>
-    </div>
-    <div class="become">
-      <button type="button" name="alreadyContributor" data-same-width-button
-        data-i18next="preferences.heart.alreadyContributor"></button>
-    </div>
-    <div class="authenticate hidden">
-      <span data-i18next="preferences.heart.authenticateUsing"></span>
-    </div>
-    <div class="contributor hidden">
-      <button type="button" name="contributorPreferences" data-same-width-button
-        data-i18next="preferences.heart.contributorPreferences"></button>
-    </div>
-    <div class="contributor hidden">
-      <button type="button" name="syncPreferences" data-same-width-button
-        data-i18next="preferences.heart.syncPreferences"></button>
-    </div>
-    <div class="authenticate hidden">
-      <a data-provider="patreon">
-        <img src="images/preferences/patreon.svg" data-has-dark-version alt="Patreon">
-      </a>
-      <a data-provider="github">
-        <img src="images/preferences/github.svg" data-has-dark-version alt="Github">
-      </a>
-    </div>
-    <div></div>
   </div>
 </body>
 <script type="module" src="./preferences-renderer.js"></script>

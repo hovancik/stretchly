@@ -19,7 +19,7 @@
     "continue": "Jatka",
     "cancel": "Peruuta",
     "preferences": "Asetukset",
-    "contributorPreferences": "Tukijoiden asetukset",
+    "advancedPreferences": "Lisäasetukset",
     "syncPreferences": "Synkronoi asetukset"
   },
   "break": {
@@ -103,15 +103,11 @@
       "loveStretchly": "Rakasta Stretchlyä?",
       "desc1": "Säännöllisten taukojen pitäminen tietokonetta käyttäessä on tieteellisesti todistetusti tärkeää fyysisen ja henkisen hyvinvoinnin kannalta.",
       "desc2": "Stretchly on ilmainen. Voit kuitenkin antaa tukesi lahjoittamalla tai auttamalla meitä kehittämään Stretchlyä ja julkaisemaan muita ilmaisia sovelluksia.",
-      "becomeContributor": "Ryhdy lahjoittajaksi",
-      "alreadyContributor": "Olen jo tukija",
-      "authenticateUsing": "Vahvista käyttäen:",
-      "contributorPreferences": "Tukijan asetukset",
-      "syncPreferences": "Synkronoi asetukset"
+      "supportStretchly": "Tue Stretchlyä"
     }
   },
-  "contributorPreferences": {
-    "title": "Tukijan asetukset",
+  "advancedPreferences": {
+    "title": "Lisäasetukset",
     "notifications": "Taukoilmoitukset:",
     "notificationsInfo": "Järjestelmäimoitus, joka näytetään ennen taukoa, jotta voit valmistautua siihen.",
     "beforeLongBreak": "Pitkä tauko:",

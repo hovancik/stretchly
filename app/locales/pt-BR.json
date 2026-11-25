@@ -19,7 +19,7 @@
     "continue": "Continuar",
     "cancel": "Cancelar",
     "preferences": "Preferências",
-    "contributorPreferences": "Preferências do Contribuidor",
+    "advancedPreferences": "Preferências avançadas",
     "syncPreferences": "Preferências de Sincronização"
   },
   "break": {
@@ -103,20 +103,16 @@
       "loveStretchly": "Ama o seu Stretchly?",
       "desc1": "Fazer pausas regulares ao usar um computador é cientificamente provado ser importante para o seu bem-estar físico e mental.",
       "desc2": "Stretchly é gratuito. Mas você pode dar seu apoio doando e nos ajudar a continuar aperfeiçoando o Stretchly e a lançar outros softwares gratuitos.",
-      "becomeContributor": "Torne-se um Patrono",
-      "alreadyContributor": "Eu já sou um contribuidor",
-      "authenticateUsing": "Autenticar usando:",
-      "contributorPreferences": "Preferências do Contribuidor",
-      "syncPreferences": "Sincronizar Preferências"
+      "supportStretchly": "Apoiar o Stretchly"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Primeiro monitor",
     "1": "Segundo monitor",
     "2": "Terceiro monitor",
     "3": "Quarto monitor",
     "4": "Quinto monitor",
-    "title": "Preferências do Contribuidor",
+    "title": "Preferências avançadas",
     "notifications": "Notificações de pausas:",
     "notificationsInfo": "Notificação do sistema mostrada antes das pausas para permitir que você se prepare.",
     "beforeLongBreak": "Pausa Longa:",

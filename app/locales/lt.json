@@ -12,7 +12,7 @@
     "quitStretchly": "Išjungti Stretchly",
     "preferences": "Nuostatos",
     "syncPreferences": "Sinchronizavimo nuostatos",
-    "contributorPreferences": "Nuostatos rėmėjams",
+    "advancedPreferences": "Išplėstinės nuostatos",
     "cancel": "Atšaukti",
     "continue": "Tęsti",
     "toMiniBreak": "trumpos pertraukėlės",
@@ -100,11 +100,7 @@
     },
     "title": "Strechly nuostatos",
     "heart": {
-      "syncPreferences": "Sinchronizavimo nuostatos",
-      "contributorPreferences": "Nuostatos rėmėjams",
-      "authenticateUsing": "Tapatybės patvirtinimas naudojant:",
-      "alreadyContributor": "Aš jau prisidėjau",
-      "becomeContributor": "Paremti",
+      "supportStretchly": "Paremti Stretchly",
       "desc2": "Stretchly yra nemokama. Tačiau galite paremti aukodami ir padėti mums toliau tobulinti Stretchly bei leisti kitą nemokamą programinę įrangą.",
       "desc1": "Moksliškai įrodyta, kad reguliarios pertraukos naudojantis kompiuteriu yra svarbios jūsų fizinei ir psichinei savijautai.",
       "loveStretchly": "Ar patinka Stretchly?"
@@ -120,7 +116,7 @@
     "openPreferences": "Atverti nuostatas",
     "getStarted": "Pradėti"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Pirmas ekranas",
     "1": "Antras ekranas",
     "2": "Trečias ekranas",
@@ -151,7 +147,7 @@
     "newVersion": "Nauja versija:",
     "notificationsInfo": "Sistemos pranešimas rodomas prieš pertraukėles, kad galėtumėte jam pasiruošti.",
     "notifications": "Pranešimai apie pertraukėles:",
-    "title": "Nuostatos rėmėjams",
+    "title": "Išplėstinės nuostatos",
     "showOnMonitor": "Rodyti pertraukėles",
     "screenInfo": "Kai pertraukų rodymas visuose monitoriuose yra išjungtas, galite pasirinkti, kuriame monitoriuje norite rodyti pertraukėles.",
     "showBreaksAsRegularWindows": "Rodyti pertraukėles kaip įprastus langus",

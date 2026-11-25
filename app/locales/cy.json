@@ -9,5 +9,10 @@
     "toLongBreak": "egwyl hir",
     "toMiniBreak": "egwyl byr",
     "resume": "Seibiannau ailgychwyn"
+  },
+  "preferences": {
+    "heart": {
+      "supportStretchly": "Cefnogi Stretchly"
+    }
   }
 }

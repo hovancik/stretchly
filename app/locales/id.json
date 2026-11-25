@@ -45,11 +45,7 @@
       "trayIconStyleProgress": "Progres menuju istirahat"
     },
     "heart": {
-      "syncPreferences": "Sinkronisasi Preferensi",
-      "contributorPreferences": "Preferensi Kontributor",
-      "authenticateUsing": "Autentikasi menggunakan:",
-      "alreadyContributor": "Saya sudah menjadi kontributor",
-      "becomeContributor": "Jadilah kontributor",
+      "supportStretchly": "Dukung Stretchly",
       "desc2": "Stretchly gratis. Namun Anda dapat memberikan dukungan dengan berdonasi dan membantu kami terus meningkatkan Stretchly serta merilis perangkat lunak gratis lainnya.",
       "desc1": "Beristirahat secara teratur saat menggunakan komputer terbukti secara ilmiah penting bagi kesehatan fisik dan mental Anda.",
       "loveStretchly": "Suka Stretchly Anda?"
@@ -126,7 +122,7 @@
     "hours_other": "{{count}} jam",
     "elapsed": "{{count}} telah berlalu"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Monitor pertama",
     "1": "Monitor kedua",
     "2": "Monitor ketiga",
@@ -171,7 +167,7 @@
     "beforeLongBreak": "Istirahat panjang:",
     "notificationsInfo": "Notifikasi sistem yang ditampilkan sebelum istirahat agar Anda dapat mempersiapkan diri.",
     "notifications": "Notifikasi istirahat:",
-    "title": "Preferensi Kontributor",
+    "title": "Preferensi lanjutan",
     "showBreaksAsRegularWindowsInfo": "Jika diaktifkan, jendela istirahat akan dapat difokuskan, tidak lagi 'Selalu di atas', dan juga akan muncul di bilah tugas.",
     "showBreaksAsRegularWindowsTitle": "Bertindak sebagai jendela biasa:",
     "showBreaksAsRegularWindows": "Tampilkan istirahat sebagai jendela biasa",
@@ -189,7 +185,7 @@
   },
   "main": {
     "syncPreferences": "Sinkronisasi Preferensi",
-    "contributorPreferences": "Preferensi Kontributor",
+    "advancedPreferences": "Preferensi lanjutan",
     "preferences": "Preferensi",
     "cancel": "Batal",
     "continue": "Lanjutkan",

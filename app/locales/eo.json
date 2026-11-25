@@ -19,7 +19,7 @@
     "continue": "Daŭrigi",
     "cancel": "Nuligi",
     "preferences": "Agordoj",
-    "contributorPreferences": "Kontribuantaj Agordoj",
+    "advancedPreferences": "Altnivelaj agordoj",
     "syncPreferences": "Sinkronigi Agordojn"
   },
   "break": {
@@ -104,20 +104,16 @@
       "loveStretchly": "Ĉu vi amas vian Stretchly?",
       "desc1": "Fari oftajn paŭzojn dum vi uzas komputilon estas science montrata importi por via korpa kaj mensa sano.",
       "desc2": "Stretchly estas senpaga. Sed, vi povas asisti per donaci kaj helpi nin daŭrigi plibonigi Stretchly kaj eldoni aliajn senpagajn aplikaĵojn.",
-      "becomeContributor": "Iĝi Patron",
-      "alreadyContributor": "Mi jam estas kontribuanto",
-      "authenticateUsing": "Aŭtentigi per:",
-      "contributorPreferences": "Kontribuantaj Agordoj",
-      "syncPreferences": "Sinkronigi Agordojn"
+      "supportStretchly": "Subtenu Stretchly"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Unua ekrano",
     "1": "Dua ekrano",
     "2": "Tria ekrano",
     "3": "Kvara ekrano",
     "4": "Kvina ekrano",
-    "title": "Kontribuantaj Agordoj",
+    "title": "Altnivelaj agordoj",
     "notifications": "Paŭzaj sciigoj:",
     "notificationsInfo": "Sistema sciigo aperas antaŭ paŭzoj por permesi vin pretigi.",
     "beforeLongBreak": "Longa Paŭzo:",

@@ -8,5 +8,10 @@
     "toLongBreak": "استراحة طويلة",
     "toMiniBreak": "استراحة قصيرة",
     "skipToTheNext": "تخطي إلى التالي"
+  },
+  "preferences": {
+    "heart": {
+      "supportStretchly": "ادعم Stretchly"
+    }
   }
 }

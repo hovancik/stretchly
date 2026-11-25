@@ -20,7 +20,7 @@
     "indefinitely": "إلى أجل غير مسمى",
     "warning": "سيتم إستعادة الضبط الإفتراضي وستُفقد التفضيلات المخزنة.",
     "preferences": "التفضيلات",
-    "contributorPreferences": "تفضيلات المساهم"
+    "advancedPreferences": "تفضيلات متقدمة"
   },
   "preferences": {
     "schedule": {
@@ -82,12 +82,8 @@
     "heart": {
       "loveStretchly": "هل تحب Stretchly؟",
       "desc2": "تطبيق Stretchly هو مجاني، لكن يمكن تقديم المساعدة لنا لكي نحافظ عليه ونطوّره.",
-      "becomeContributor": "كن راعياً",
-      "alreadyContributor": "أنا مساهم بالفعل",
-      "authenticateUsing": "التوثيق بإستخدام:",
-      "desc1": "ثبت علمياً أن أخذ الإستراحات عند إستخدام الكمبيوتر مهم للمحافظة على الصحة البدنية والنفسية.",
-      "contributorPreferences": "تفضيلات المساهم",
-      "syncPreferences": "تفضيلات المزامنة"
+      "supportStretchly": "ادعم Stretchly",
+      "desc1": "ثبت علمياً أن أخذ الإستراحات عند إستخدام الكمبيوتر مهم للمحافظة على الصحة البدنية والنفسية."
     },
     "title": "تفضيلات Stretchly",
     "nav": {
@@ -110,13 +106,13 @@
       "restoreDefaults": "إستعادة الوضع الإفتراضي"
     }
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "الشاشة الأولى",
     "1": "الشاشة الثانية",
     "2": "الشاشة الثالثة",
     "3": "الشاشة الرابعة",
     "4": "الشاشة الخامسة",
-    "title": "تفضيلات المساهم",
+    "title": "تفضيلات متقدمة",
     "notifications": "إشعارات الإستراحات:",
     "notificationsInfo": "تظهر إشعارات النظام قبل بدء الإستراحات بقليل لكي تستعد لها.",
     "beforeLongBreak": "الإستراحة المطوّلة:",

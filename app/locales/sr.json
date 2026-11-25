@@ -32,9 +32,7 @@
       "settings": "Подешавања"
     },
     "heart": {
-      "becomeContributor": "Постаните спонзор",
-      "authenticateUsing": "Пријавите се помоћу:",
-      "alreadyContributor": "Већ подржавам пројекат",
+      "supportStretchly": "Подржите Stretchly",
       "loveStretchly": "Свиђа вам се Stretchly?"
     },
     "theme": {

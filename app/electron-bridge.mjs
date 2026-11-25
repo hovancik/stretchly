@@ -1,18 +1,9 @@
 import { contextBridge, ipcRenderer, shell } from 'electron'
 
-contextBridge.exposeInMainWorld('ElectronBridge', {
+const electronBridge = {
   // helloWorld: () {
   //   console.log("Hello World")
   // },
-
-  showContributorPreferences: () => {
-    ipcRenderer.send('open-contributor-preferences')
-    ipcRenderer.send('close-current-window')
-  },
-
-  setContributor: () => {
-    ipcRenderer.send('set-contributor')
-  },
 
   openExternal: (link) => {
     shell.openExternal(link)
@@ -27,6 +18,10 @@ contextBridge.exposeInMainWorld('ElectronBridge', {
   },
 
   restoreRemoteSettings: (remoteSettings) => {
-    ipcRenderer.invoke('restore-remote-settings', remoteSettings)
+    return ipcRenderer.invoke('restore-remote-settings', remoteSettings)
   }
-})
+}
+
+if (process.isMainFrame && window.location.origin === 'https://my.stretchly.net') {
+  contextBridge.exposeInMainWorld('ElectronBridge', electronBridge)
+}

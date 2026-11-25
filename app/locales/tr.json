@@ -12,7 +12,7 @@
     "quitStretchly": "Stretchly'den çık",
     "preferences": "Tercihler",
     "syncPreferences": "Ayarları Eşzamanla",
-    "contributorPreferences": "Destekçi Ayarları",
+    "advancedPreferences": "Gelişmiş tercihler",
     "cancel": "İptal",
     "continue": "Devam",
     "warning": "Varsayılanlara dönülecek ve tüm ayarlarınız kaybolacak.",
@@ -100,11 +100,7 @@
       "longBreaksInfo": "Uzun Molalar, çalışmanızdan daha uzun süre mola vermenizi sağlayan ve daha uzun aralıklarla daha uzun süren molalardır."
     },
     "heart": {
-      "syncPreferences": "Tercihleri Senkronize Et",
-      "contributorPreferences": "Katılımcı Tercihleri",
-      "authenticateUsing": "Tasdik etme yöntemi:",
-      "alreadyContributor": "Zaten katkıda bulunuyorum",
-      "becomeContributor": "Destekçi ol",
+      "supportStretchly": "Stretchly'yi destekle",
       "desc2": "Stretchly ücretsiz. Ama Stretchly'i geliştirmeye devam etmemiz veya diğer özgür yazılımları geliştirmemize katkı sağlamak için bize bağış yapabilirsiniz.",
       "desc1": "Bilgisayar kullanırken düzenli mola vermenin fiziksel ve zihinsel iyiliğiniz için yararlı olduğu bilimsel olarak kanıtlanmıştır.",
       "loveStretchly": "Strechly'i seviyor musunuz?"
@@ -120,7 +116,7 @@
     "openPreferences": "Seçenekleri aç",
     "getStarted": "Başla"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "0": "Birinci gözlem",
     "1": "İkinci gözlem",
     "2": "Üçüncü gözlem",
@@ -173,7 +169,7 @@
     "beforeLongBreak": "Uzun Mola:",
     "notificationsInfo": "Molalara hazırlanmanız için, molalardan önce bildirim gösterilir.",
     "notifications": "Mola bildirimleri:",
-    "title": "Katılımcı Tercihleri",
+    "title": "Gelişmiş tercihler",
     "timeToBreakInTray": "Mola zamanı",
     "showTimeToBreakInTray": "Menü çubuğu simgesinde bir sonraki molaya kadar olan zamanı göster",
     "currentTimeInBreaks": "Geçerli saat",

@@ -19,7 +19,7 @@
     "continue": "続ける",
     "cancel": "キャンセル",
     "preferences": "設定",
-    "contributorPreferences": "コントリビュータ設定",
+    "advancedPreferences": "詳細設定",
     "syncPreferences": "同期設定"
   },
   "preferences": {
@@ -97,15 +97,11 @@
       "loveStretchly": "Stretchlyはお気に召しましたか？",
       "desc1": "コンピュータに向かう際には、定期的に休憩を取ると身体的・精神的によいことが科学的に証明されています。",
       "desc2": "Stretchlyは無料で利用可能です。しかし、我々がStretchlyや他のフリーソフトウェアをよりよいものにし続けるためにも、ご寄付を頂けると幸いです。",
-      "becomeContributor": "寄付をする",
-      "alreadyContributor": "すでにコントリビュータです",
-      "authenticateUsing": "以下で認証する:",
-      "contributorPreferences": "コントリビュータ設定",
-      "syncPreferences": "同期設定"
+      "supportStretchly": "Stretchly を支援"
     },
     "title": "Stretchlyの設定"
   },
-  "contributorPreferences": {
+  "advancedPreferences": {
     "newVersionNotification": "アプリの更新がある場合に通知する",
     "dark": "ダーク",
     "notificationsInfo": "システム通知は休憩前に準備時間を設けるために表示されます。",
@@ -121,7 +117,7 @@
     "primary": "プライマリモニター",
     "showBreaksAsRegularWindowsTitle": "通常のウィンドウと同様に動作する:",
     "showBreaksAsRegularWindowsInfo": "有効時、休憩画面がフォーカス可能になり、常に最前面に表示されず、またタスクバーにも表示されるようになります。",
-    "title": "コントリビュータ設定",
+    "title": "詳細設定",
     "0": "1番目のモニター",
     "1": "2番目のモニター",
     "2": "3番目のモニター",
