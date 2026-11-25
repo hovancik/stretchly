@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer, shell } from 'electron'
 
-contextBridge.exposeInMainWorld('ElectronBridge', {
+const electronBridge = {
   // helloWorld: () {
   //   console.log("Hello World")
   // },
@@ -20,4 +20,8 @@ contextBridge.exposeInMainWorld('ElectronBridge', {
   restoreRemoteSettings: (remoteSettings) => {
     return ipcRenderer.invoke('restore-remote-settings', remoteSettings)
   }
-})
+}
+
+if (process.isMainFrame && window.location.origin === 'https://my.stretchly.net') {
+  contextBridge.exposeInMainWorld('ElectronBridge', electronBridge)
+}

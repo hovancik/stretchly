@@ -35,6 +35,7 @@ import DisplayManager from './utils/displayManager.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
+const syncPreferencesUrl = new URL('https://my.stretchly.net/app/v2')
 
 let handlingUncaughtException = false
 process.on('uncaughtException', (err, _) => {
@@ -797,7 +798,6 @@ function createSyncPreferencesWindow () {
     return
   }
 
-  const syncPreferencesUrl = 'https://my.stretchly.net/app/v2'
   syncPreferencesWin = new BrowserWindow({
     show: false,
     autoHideMenuBar: true,
@@ -812,7 +812,7 @@ function createSyncPreferencesWindow () {
       sandbox: false
     }
   })
-  syncPreferencesWin.webContents.loadURL(syncPreferencesUrl)
+  syncPreferencesWin.webContents.loadURL(syncPreferencesUrl.href)
 
   syncPreferencesWin.once('closed', () => {
     syncPreferencesWin = null
@@ -1826,6 +1826,11 @@ ipcMain.handle('current-settings', (event) => {
 })
 
 ipcMain.handle('restore-remote-settings', (event, remoteSettings) => {
+  if (event.senderFrame !== syncPreferencesWin?.webContents.mainFrame ||
+      event.senderFrame?.origin !== syncPreferencesUrl.origin) {
+    log.error(`Stretchly: rejected preferences restore from origin ${event.senderFrame?.origin ?? 'unknown'}`)
+    throw new Error('Only the Stretchly Sync page can restore preferences')
+  }
   log.info('Stretchly: restoring remote settings')
   settings.store = remoteSettings
   return initialize(false)
