@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - fix snap startup crash
 - improve Linux desktop integration
 - time-to-break tray icon no longer requests a missing number icon when more than 99 minutes remain
+- fix natural breaks pausing breaks 5 minutes after start on Linux Wayland (e.g. KDE Plasma) when idle-time fallback cannot read input devices
 
 ### Changed
 - Advanced Preferences and Sync Preferences are available from the tray menu
