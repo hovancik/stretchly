@@ -26,7 +26,7 @@
 
 ## Install [![GitHub All Releases](https://img.shields.io/github/downloads/hovancik/stretchly/total)](https://github.com/hovancik/stretchly/releases) [![Packaging status](https://repology.org/badge/tiny-repos/stretchly.svg)](https://repology.org/project/stretchly/versions)
 
-The latest official **installers** and **portable versions** for macOS, Windows and Linux can be found at [Github Releases](https://github.com/hovancik/stretchly/releases) page. For supported versions of your OS check [Electron's supported versions](https://github.com/electron/electron/blob/main/README.md#platform-support). Read on for details of specific OSes.
+Visit the [official Stretchly releases](https://github.com/hovancik/stretchly/releases) to download Stretchly for macOS, Windows or Linux. Choose an installation package or a portable version for your system. For supported OS versions, see [Electron's platform support](https://github.com/electron/electron/blob/main/README.md#platform-support).
 
 ### macOS
 
@@ -72,6 +72,8 @@ Not sure which chip your computer has? [Here's how to tell](https://support.appl
 
 ### Windows
 
+To download Stretchly for Windows, open the [Stretchly releases page](https://github.com/hovancik/stretchly/releases) and choose the `.exe` file whose name starts with `Stretchly-Setup-` in the latest release. Open the downloaded file to install Stretchly.
+
 You can also install *Stretchly* with [Chocolatey](https://chocolatey.org) by running the following command from the command line or from PowerShell:
 ```powershell
 choco install stretchly
@@ -88,20 +90,18 @@ You can install it by running:
 winget install -e --id Stretchly.Stretchly
 ```
 
-Stretchly can be also found at official [Microsoft Store](https://apps.microsoft.com/store/detail/stretchly/9PP2B76LQQBN?hl=en-us&gl=us).
+[Get Stretchly from the Microsoft Store](https://apps.microsoft.com/store/detail/stretchly/9PP2B76LQQBN?hl=en-us&gl=us).
 
-You can install *Stretchly* for all users silently by running this as administrator:
+To install Stretchly silently for all users, open Command Prompt as administrator in the download folder. Replace `installer.exe` in this command with the name of the Stretchly setup file you downloaded:
 ```cmd
 installer.exe /S /allusers
 ```
 
 ### Linux / Portable
 
-For portable versions and for Linux installers, head to [Github Releases page](https://github.com/hovancik/stretchly/releases). The most widely used distributions should be covered.
+Choose a Linux package or a portable version of Stretchly from the [official Stretchly releases](https://github.com/hovancik/stretchly/releases).
 
-Stretchly is also available in some of the Linux stores:
-- [Flathub](https://flathub.org/apps/details/net.hovancik.Stretchly)
-- [Snap Store](https://snapcraft.io/stretchly)
+You can also get [Stretchly on Flathub](https://flathub.org/apps/details/net.hovancik.Stretchly) or [Stretchly on the Snap Store](https://snapcraft.io/stretchly).
 
 For Debian/Ubuntu and derivates you could also try this `apt` repository: `deb [trusted=yes] https://apt.fury.io/hovancik/ /`.
 
@@ -126,7 +126,7 @@ To run *Stretchly* from source you will need [Node.js](https://nodejs.org/), ide
 
 ### Custom installer
 
-You can create a custom installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
+You can create a custom Stretchly installer by running `npm run pack` or `npm run dist` after `npm install --no-save`.
 
 ## Default behavior
 
@@ -166,7 +166,7 @@ Clicking the *Stretchly* icon in your tray area will display the current status 
 
 When a Stretchly instance is running, the `stretchly` command can be use to interact with it from the command line.
 
-The regular Windows installer adds `stretchly` to PATH, so commands can be run from a new terminal without specifying the full executable path.
+The Stretchly setup file from GitHub Releases adds `stretchly` to PATH on Windows, so you can run commands from a new terminal without specifying the full executable path.
 
 Type `stretchly help` to get a list of all commands and options available as well as some examples.
 
@@ -626,7 +626,7 @@ Feel free to join in the [development](https://github.com/hovancik/stretchly/blo
 ### Pre-requisites
 - [Node.js](https://nodejs.org/) (please use version specified in `package.json`)
   - Linux/MacOS - you might want to use [Node Version Manager](https://github.com/nvm-sh/nvm) to install specific version
-  - Windows - download [installer](https://nodejs.org/en/download/) for specific version; during installation *check* “Install Additional Tools for Node.js”
+  - Windows - [download Node.js for Windows](https://nodejs.org/en/download/) using the version specified in `package.json`. Run the Node.js installer and select “Install Additional Tools for Node.js”.
 - [git](https://git-scm.com/)
 - [Github account](https://github.com/), if you'd like to upstream your changes
 
@@ -661,7 +661,7 @@ You can help to translate Stretchly on [Weblate](https://hosted.weblate.org/enga
 
 ## Known issues
 - On KDE Wayland, global shortcuts can appear configured but fail to work; see [electron/electron#42573](https://github.com/electron/electron/issues/42573). Use the tray menu and break controls, or quit Stretchly and restart with `stretchly --ozone-platform=x11`.
-- Windows Store build's autostart is not working, so was disabled. To use autostart, install Stretchly with the [regular installer](https://github.com/hovancik/stretchly/releases), or create a shortcut to Stretchly from `shell:AppsFolder` (Win+R) and move it to the `shell:startup` folder (Win+R).
+- Autostart is disabled in the Microsoft Store version of Stretchly. To use autostart, follow the [Windows setup instructions](#windows) to install Stretchly from GitHub Releases, or create a shortcut to Stretchly from `shell:AppsFolder` (Win+R) and move it to the `shell:startup` folder (Win+R).
 - The Snap build may fail to start on native Wayland. Start it with the X11 backend (`stretchly --ozone-platform=x11`) as a workaround. See [#1693](https://github.com/hovancik/stretchly/issues/1693).
 - Wayland multi-display window placement issue puts all break windows on one monitor; start with X11 backend (`stretchly --ozone-platform=x11`) if needed, or set [`forceX11OnWayland`](#use-x11-backend-on-wayland) to make Stretchly do it automatically. See [electron/electron#48749](https://github.com/electron/electron/issues/48749).
 
