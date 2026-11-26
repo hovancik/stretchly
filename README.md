@@ -557,6 +557,11 @@ If you want to hide Strict Mode preferences section from the Preferences window,
 
 This might be useful for corporate installations.
 
+### Hide Sync Preferences
+To hide Sync Preferences from the tray menu, set `hideSyncPreferences` to `true`.
+
+This might be useful for corporate installations.
+
 ### Use X11 backend on Wayland
 On Linux Wayland sessions, all break windows can open on one monitor (see [Known issues](#known-issues)). If you want Stretchly to always use the X11 backend (XWayland) instead, set `forceX11OnWayland` to `true`. Stretchly will then restart itself with `--ozone-platform=x11` on start, however it was launched (autostart, app menu or terminal), so you don't need to edit launcher files.
 

@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- `hideSyncPreferences` preference to hide Sync Preferences from the tray menu
 - `breakBackgroundImage` and `breakImageFolder` advanced preferences for random local background images in Mini and Long breaks, loaded at startup with logged fallback on failure
 - `pauseBreaksDurations` advanced preference to customize timed pause options and their shortcuts
 - CLI commands to postpone, skip and finish the current break

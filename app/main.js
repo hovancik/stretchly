@@ -1641,6 +1641,7 @@ function getTrayMenuTemplate () {
     }
   }, {
     label: i18next.t('main.syncPreferences'),
+    visible: !settings.get('hideSyncPreferences'),
     click: function () {
       createSyncPreferencesWindow()
     }
