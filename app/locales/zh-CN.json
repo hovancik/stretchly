@@ -171,11 +171,17 @@
     "toShowTrayIcon": "在托盘中显示 Stretchly 图标"
   },
   "utils": {
+    "none_one": "{{count}}",
     "none_other": "{{count}}",
+    "percent_one": "{{count}} %",
     "percent_other": "{{count}} %",
+    "oclock_one": "{{count}} 点钟",
     "oclock_other": "{{count}} 点钟",
+    "seconds_one": "{{count}} 秒",
     "seconds_other": "{{count}} 秒",
+    "minutes_one": "{{count}} 分",
     "minutes_other": "{{count}} 分",
+    "hours_one": "{{count}} 时",
     "hours_other": "{{count}} 时",
     "remaining": "还有 {{count}}",
     "inAbout": "大约 {{count}}后",
@@ -197,6 +203,7 @@
     "dndMode": "已启用「勿扰」",
     "nextLongBreak": "下次休息",
     "nextMiniBreak": "下次小憩",
+    "afterMiniBreak_one": "{{count}} 次小憩后",
     "afterMiniBreak_other": "{{count}} 次小憩后",
     "resuming": "继续",
     "appExclusion": "应用程序排除规则"
