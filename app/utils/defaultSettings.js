@@ -89,6 +89,7 @@ export default {
   disableAppUpdateFeatures: insideFlatpak() || insideWindowsStore() || insideSnap() || insideWindowsPortable(),
   hidePreferencesFileLocation: false,
   hideStrictModePreferences: false,
+  hideSyncPreferences: false,
   miniBreakManualFinish: false,
   longBreakManualFinish: false,
   breakHealthMode: false,
