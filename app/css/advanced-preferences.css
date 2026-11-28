@@ -186,3 +186,13 @@ body[dir=rtl] .advanced-preferences > :nth-child(64) {
  text-align: left;
 }
 
+.advanced-preferences > :nth-child(67) {
+  grid-column: 1/2;
+  grid-row: 52/53;
+  padding: 0 16px;
+  text-align: right;
+}
+
+body[dir=rtl] .advanced-preferences > :nth-child(67) {
+  text-align: left;
+}
